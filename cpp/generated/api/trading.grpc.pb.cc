@@ -20,397 +20,398 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace api {
+namespace v1 {
 
-static const char* trading_method_names[] = {
-  "/api.trading/PrepareSubmitOrder",
-  "/api.trading/PrepareCancelOrder",
-  "/api.trading/PrepareAmendOrder",
-  "/api.trading/PrepareWithdraw",
-  "/api.trading/SubmitTransaction",
-  "/api.trading/PrepareProposal",
-  "/api.trading/PrepareVote",
-  "/api.trading/PropagateChainEvent",
-  "/api.trading/PrepareLiquidityProvision",
+static const char* TradingService_method_names[] = {
+  "/api.v1.TradingService/PrepareSubmitOrder",
+  "/api.v1.TradingService/PrepareCancelOrder",
+  "/api.v1.TradingService/PrepareAmendOrder",
+  "/api.v1.TradingService/PrepareWithdraw",
+  "/api.v1.TradingService/SubmitTransaction",
+  "/api.v1.TradingService/PrepareProposal",
+  "/api.v1.TradingService/PrepareVote",
+  "/api.v1.TradingService/PropagateChainEvent",
+  "/api.v1.TradingService/PrepareLiquidityProvision",
 };
 
-std::unique_ptr< trading::Stub> trading::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< TradingService::Stub> TradingService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< trading::Stub> stub(new trading::Stub(channel));
+  std::unique_ptr< TradingService::Stub> stub(new TradingService::Stub(channel));
   return stub;
 }
 
-trading::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_PrepareSubmitOrder_(trading_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareCancelOrder_(trading_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareAmendOrder_(trading_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareWithdraw_(trading_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SubmitTransaction_(trading_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareProposal_(trading_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareVote_(trading_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PropagateChainEvent_(trading_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareLiquidityProvision_(trading_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+TradingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_PrepareSubmitOrder_(TradingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareCancelOrder_(TradingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareAmendOrder_(TradingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareWithdraw_(TradingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SubmitTransaction_(TradingService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareProposal_(TradingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareVote_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PropagateChainEvent_(TradingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareLiquidityProvision_(TradingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status trading::Stub::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::SubmitOrderRequest& request, ::api::PrepareSubmitOrderResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::SubmitOrderRequest, ::api::PrepareSubmitOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareSubmitOrder_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest& request, ::api::v1::PrepareSubmitOrderResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareSubmitOrderRequest, ::api::v1::PrepareSubmitOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareSubmitOrder_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::SubmitOrderRequest* request, ::api::PrepareSubmitOrderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::SubmitOrderRequest, ::api::PrepareSubmitOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareSubmitOrder_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest* request, ::api::v1::PrepareSubmitOrderResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareSubmitOrderRequest, ::api::v1::PrepareSubmitOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareSubmitOrder_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::SubmitOrderRequest* request, ::api::PrepareSubmitOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest* request, ::api::v1::PrepareSubmitOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareSubmitOrder_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareSubmitOrderResponse>* trading::Stub::PrepareAsyncPrepareSubmitOrderRaw(::grpc::ClientContext* context, const ::api::SubmitOrderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareSubmitOrderResponse, ::api::SubmitOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareSubmitOrder_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareSubmitOrderResponse>* TradingService::Stub::PrepareAsyncPrepareSubmitOrderRaw(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareSubmitOrderResponse, ::api::v1::PrepareSubmitOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareSubmitOrder_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareSubmitOrderResponse>* trading::Stub::AsyncPrepareSubmitOrderRaw(::grpc::ClientContext* context, const ::api::SubmitOrderRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareSubmitOrderResponse>* TradingService::Stub::AsyncPrepareSubmitOrderRaw(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareSubmitOrderRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PrepareCancelOrder(::grpc::ClientContext* context, const ::api::CancelOrderRequest& request, ::api::PrepareCancelOrderResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::CancelOrderRequest, ::api::PrepareCancelOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareCancelOrder_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareCancelOrder(::grpc::ClientContext* context, const ::api::v1::PrepareCancelOrderRequest& request, ::api::v1::PrepareCancelOrderResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareCancelOrderRequest, ::api::v1::PrepareCancelOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareCancelOrder_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareCancelOrder(::grpc::ClientContext* context, const ::api::CancelOrderRequest* request, ::api::PrepareCancelOrderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::CancelOrderRequest, ::api::PrepareCancelOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareCancelOrder_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareCancelOrder(::grpc::ClientContext* context, const ::api::v1::PrepareCancelOrderRequest* request, ::api::v1::PrepareCancelOrderResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareCancelOrderRequest, ::api::v1::PrepareCancelOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareCancelOrder_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareCancelOrder(::grpc::ClientContext* context, const ::api::CancelOrderRequest* request, ::api::PrepareCancelOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareCancelOrder(::grpc::ClientContext* context, const ::api::v1::PrepareCancelOrderRequest* request, ::api::v1::PrepareCancelOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareCancelOrder_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareCancelOrderResponse>* trading::Stub::PrepareAsyncPrepareCancelOrderRaw(::grpc::ClientContext* context, const ::api::CancelOrderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareCancelOrderResponse, ::api::CancelOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareCancelOrder_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareCancelOrderResponse>* TradingService::Stub::PrepareAsyncPrepareCancelOrderRaw(::grpc::ClientContext* context, const ::api::v1::PrepareCancelOrderRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareCancelOrderResponse, ::api::v1::PrepareCancelOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareCancelOrder_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareCancelOrderResponse>* trading::Stub::AsyncPrepareCancelOrderRaw(::grpc::ClientContext* context, const ::api::CancelOrderRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareCancelOrderResponse>* TradingService::Stub::AsyncPrepareCancelOrderRaw(::grpc::ClientContext* context, const ::api::v1::PrepareCancelOrderRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareCancelOrderRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PrepareAmendOrder(::grpc::ClientContext* context, const ::api::AmendOrderRequest& request, ::api::PrepareAmendOrderResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::AmendOrderRequest, ::api::PrepareAmendOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareAmendOrder_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareAmendOrder(::grpc::ClientContext* context, const ::api::v1::PrepareAmendOrderRequest& request, ::api::v1::PrepareAmendOrderResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareAmendOrderRequest, ::api::v1::PrepareAmendOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareAmendOrder_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareAmendOrder(::grpc::ClientContext* context, const ::api::AmendOrderRequest* request, ::api::PrepareAmendOrderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::AmendOrderRequest, ::api::PrepareAmendOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareAmendOrder_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareAmendOrder(::grpc::ClientContext* context, const ::api::v1::PrepareAmendOrderRequest* request, ::api::v1::PrepareAmendOrderResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareAmendOrderRequest, ::api::v1::PrepareAmendOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareAmendOrder_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareAmendOrder(::grpc::ClientContext* context, const ::api::AmendOrderRequest* request, ::api::PrepareAmendOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareAmendOrder(::grpc::ClientContext* context, const ::api::v1::PrepareAmendOrderRequest* request, ::api::v1::PrepareAmendOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareAmendOrder_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareAmendOrderResponse>* trading::Stub::PrepareAsyncPrepareAmendOrderRaw(::grpc::ClientContext* context, const ::api::AmendOrderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareAmendOrderResponse, ::api::AmendOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareAmendOrder_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareAmendOrderResponse>* TradingService::Stub::PrepareAsyncPrepareAmendOrderRaw(::grpc::ClientContext* context, const ::api::v1::PrepareAmendOrderRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareAmendOrderResponse, ::api::v1::PrepareAmendOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareAmendOrder_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareAmendOrderResponse>* trading::Stub::AsyncPrepareAmendOrderRaw(::grpc::ClientContext* context, const ::api::AmendOrderRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareAmendOrderResponse>* TradingService::Stub::AsyncPrepareAmendOrderRaw(::grpc::ClientContext* context, const ::api::v1::PrepareAmendOrderRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareAmendOrderRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PrepareWithdraw(::grpc::ClientContext* context, const ::api::PrepareWithdrawRequest& request, ::api::PrepareWithdrawResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PrepareWithdrawRequest, ::api::PrepareWithdrawResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareWithdraw_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareWithdraw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest& request, ::api::v1::PrepareWithdrawResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareWithdrawRequest, ::api::v1::PrepareWithdrawResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareWithdraw_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareWithdraw(::grpc::ClientContext* context, const ::api::PrepareWithdrawRequest* request, ::api::PrepareWithdrawResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PrepareWithdrawRequest, ::api::PrepareWithdrawResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareWithdraw_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareWithdraw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest* request, ::api::v1::PrepareWithdrawResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareWithdrawRequest, ::api::v1::PrepareWithdrawResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareWithdraw_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareWithdraw(::grpc::ClientContext* context, const ::api::PrepareWithdrawRequest* request, ::api::PrepareWithdrawResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareWithdraw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest* request, ::api::v1::PrepareWithdrawResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareWithdraw_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareWithdrawResponse>* trading::Stub::PrepareAsyncPrepareWithdrawRaw(::grpc::ClientContext* context, const ::api::PrepareWithdrawRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareWithdrawResponse, ::api::PrepareWithdrawRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareWithdraw_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareWithdrawResponse>* TradingService::Stub::PrepareAsyncPrepareWithdrawRaw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareWithdrawResponse, ::api::v1::PrepareWithdrawRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareWithdraw_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareWithdrawResponse>* trading::Stub::AsyncPrepareWithdrawRaw(::grpc::ClientContext* context, const ::api::PrepareWithdrawRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareWithdrawResponse>* TradingService::Stub::AsyncPrepareWithdrawRaw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareWithdrawRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::SubmitTransaction(::grpc::ClientContext* context, const ::api::SubmitTransactionRequest& request, ::api::SubmitTransactionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::SubmitTransactionRequest, ::api::SubmitTransactionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SubmitTransaction_, context, request, response);
+::grpc::Status TradingService::Stub::SubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::api::v1::SubmitTransactionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::SubmitTransactionRequest, ::api::v1::SubmitTransactionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SubmitTransaction_, context, request, response);
 }
 
-void trading::Stub::experimental_async::SubmitTransaction(::grpc::ClientContext* context, const ::api::SubmitTransactionRequest* request, ::api::SubmitTransactionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::SubmitTransactionRequest, ::api::SubmitTransactionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransaction_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::SubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::SubmitTransactionRequest, ::api::v1::SubmitTransactionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransaction_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::SubmitTransaction(::grpc::ClientContext* context, const ::api::SubmitTransactionRequest* request, ::api::SubmitTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::SubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransaction_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::SubmitTransactionResponse>* trading::Stub::PrepareAsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::SubmitTransactionResponse, ::api::SubmitTransactionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SubmitTransaction_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>* TradingService::Stub::PrepareAsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::SubmitTransactionResponse, ::api::v1::SubmitTransactionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SubmitTransaction_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::SubmitTransactionResponse>* trading::Stub::AsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>* TradingService::Stub::AsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSubmitTransactionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PrepareProposal(::grpc::ClientContext* context, const ::api::PrepareProposalRequest& request, ::api::PrepareProposalResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PrepareProposalRequest, ::api::PrepareProposalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareProposal_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareProposal(::grpc::ClientContext* context, const ::api::v1::PrepareProposalRequest& request, ::api::v1::PrepareProposalResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareProposalRequest, ::api::v1::PrepareProposalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareProposal_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareProposal(::grpc::ClientContext* context, const ::api::PrepareProposalRequest* request, ::api::PrepareProposalResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PrepareProposalRequest, ::api::PrepareProposalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareProposal_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareProposal(::grpc::ClientContext* context, const ::api::v1::PrepareProposalRequest* request, ::api::v1::PrepareProposalResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareProposalRequest, ::api::v1::PrepareProposalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareProposal_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareProposal(::grpc::ClientContext* context, const ::api::PrepareProposalRequest* request, ::api::PrepareProposalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareProposal(::grpc::ClientContext* context, const ::api::v1::PrepareProposalRequest* request, ::api::v1::PrepareProposalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareProposal_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareProposalResponse>* trading::Stub::PrepareAsyncPrepareProposalRaw(::grpc::ClientContext* context, const ::api::PrepareProposalRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareProposalResponse, ::api::PrepareProposalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareProposal_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareProposalResponse>* TradingService::Stub::PrepareAsyncPrepareProposalRaw(::grpc::ClientContext* context, const ::api::v1::PrepareProposalRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareProposalResponse, ::api::v1::PrepareProposalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareProposal_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareProposalResponse>* trading::Stub::AsyncPrepareProposalRaw(::grpc::ClientContext* context, const ::api::PrepareProposalRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareProposalResponse>* TradingService::Stub::AsyncPrepareProposalRaw(::grpc::ClientContext* context, const ::api::v1::PrepareProposalRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareProposalRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PrepareVote(::grpc::ClientContext* context, const ::api::PrepareVoteRequest& request, ::api::PrepareVoteResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PrepareVoteRequest, ::api::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareVote_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareVote(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest& request, ::api::v1::PrepareVoteResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareVoteRequest, ::api::v1::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareVote_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareVote(::grpc::ClientContext* context, const ::api::PrepareVoteRequest* request, ::api::PrepareVoteResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PrepareVoteRequest, ::api::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVote_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareVote(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest* request, ::api::v1::PrepareVoteResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareVoteRequest, ::api::v1::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVote_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareVote(::grpc::ClientContext* context, const ::api::PrepareVoteRequest* request, ::api::PrepareVoteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareVote(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest* request, ::api::v1::PrepareVoteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVote_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareVoteResponse>* trading::Stub::PrepareAsyncPrepareVoteRaw(::grpc::ClientContext* context, const ::api::PrepareVoteRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareVoteResponse, ::api::PrepareVoteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareVote_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteResponse>* TradingService::Stub::PrepareAsyncPrepareVoteRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareVoteResponse, ::api::v1::PrepareVoteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareVote_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareVoteResponse>* trading::Stub::AsyncPrepareVoteRaw(::grpc::ClientContext* context, const ::api::PrepareVoteRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteResponse>* TradingService::Stub::AsyncPrepareVoteRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareVoteRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PropagateChainEvent(::grpc::ClientContext* context, const ::api::PropagateChainEventRequest& request, ::api::PropagateChainEventResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PropagateChainEventRequest, ::api::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PropagateChainEvent_, context, request, response);
+::grpc::Status TradingService::Stub::PropagateChainEvent(::grpc::ClientContext* context, const ::api::v1::PropagateChainEventRequest& request, ::api::v1::PropagateChainEventResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PropagateChainEvent_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PropagateChainEvent(::grpc::ClientContext* context, const ::api::PropagateChainEventRequest* request, ::api::PropagateChainEventResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PropagateChainEventRequest, ::api::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PropagateChainEvent_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PropagateChainEvent(::grpc::ClientContext* context, const ::api::v1::PropagateChainEventRequest* request, ::api::v1::PropagateChainEventResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PropagateChainEvent_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PropagateChainEvent(::grpc::ClientContext* context, const ::api::PropagateChainEventRequest* request, ::api::PropagateChainEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PropagateChainEvent(::grpc::ClientContext* context, const ::api::v1::PropagateChainEventRequest* request, ::api::v1::PropagateChainEventResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PropagateChainEvent_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PropagateChainEventResponse>* trading::Stub::PrepareAsyncPropagateChainEventRaw(::grpc::ClientContext* context, const ::api::PropagateChainEventRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PropagateChainEventResponse, ::api::PropagateChainEventRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PropagateChainEvent_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PropagateChainEventResponse>* TradingService::Stub::PrepareAsyncPropagateChainEventRaw(::grpc::ClientContext* context, const ::api::v1::PropagateChainEventRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PropagateChainEventResponse, ::api::v1::PropagateChainEventRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PropagateChainEvent_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PropagateChainEventResponse>* trading::Stub::AsyncPropagateChainEventRaw(::grpc::ClientContext* context, const ::api::PropagateChainEventRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PropagateChainEventResponse>* TradingService::Stub::AsyncPropagateChainEventRaw(::grpc::ClientContext* context, const ::api::v1::PropagateChainEventRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPropagateChainEventRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading::Stub::PrepareLiquidityProvision(::grpc::ClientContext* context, const ::api::PrepareLiquidityProvisionRequest& request, ::api::PrepareLiquidityProvisionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PrepareLiquidityProvisionRequest, ::api::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareLiquidityProvision_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareLiquidityProvision(::grpc::ClientContext* context, const ::api::v1::PrepareLiquidityProvisionRequest& request, ::api::v1::PrepareLiquidityProvisionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareLiquidityProvision_, context, request, response);
 }
 
-void trading::Stub::experimental_async::PrepareLiquidityProvision(::grpc::ClientContext* context, const ::api::PrepareLiquidityProvisionRequest* request, ::api::PrepareLiquidityProvisionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PrepareLiquidityProvisionRequest, ::api::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareLiquidityProvision_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareLiquidityProvision(::grpc::ClientContext* context, const ::api::v1::PrepareLiquidityProvisionRequest* request, ::api::v1::PrepareLiquidityProvisionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareLiquidityProvision_, context, request, response, std::move(f));
 }
 
-void trading::Stub::experimental_async::PrepareLiquidityProvision(::grpc::ClientContext* context, const ::api::PrepareLiquidityProvisionRequest* request, ::api::PrepareLiquidityProvisionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingService::Stub::experimental_async::PrepareLiquidityProvision(::grpc::ClientContext* context, const ::api::v1::PrepareLiquidityProvisionRequest* request, ::api::v1::PrepareLiquidityProvisionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareLiquidityProvision_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareLiquidityProvisionResponse>* trading::Stub::PrepareAsyncPrepareLiquidityProvisionRaw(::grpc::ClientContext* context, const ::api::PrepareLiquidityProvisionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PrepareLiquidityProvisionResponse, ::api::PrepareLiquidityProvisionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareLiquidityProvision_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareLiquidityProvisionResponse>* TradingService::Stub::PrepareAsyncPrepareLiquidityProvisionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareLiquidityProvisionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareLiquidityProvisionResponse, ::api::v1::PrepareLiquidityProvisionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareLiquidityProvision_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PrepareLiquidityProvisionResponse>* trading::Stub::AsyncPrepareLiquidityProvisionRaw(::grpc::ClientContext* context, const ::api::PrepareLiquidityProvisionRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareLiquidityProvisionResponse>* TradingService::Stub::AsyncPrepareLiquidityProvisionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareLiquidityProvisionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPrepareLiquidityProvisionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-trading::Service::Service() {
+TradingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[0],
+      TradingService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::SubmitOrderRequest, ::api::PrepareSubmitOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareSubmitOrderRequest, ::api::v1::PrepareSubmitOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::SubmitOrderRequest* req,
-             ::api::PrepareSubmitOrderResponse* resp) {
+             const ::api::v1::PrepareSubmitOrderRequest* req,
+             ::api::v1::PrepareSubmitOrderResponse* resp) {
                return service->PrepareSubmitOrder(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[1],
+      TradingService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::CancelOrderRequest, ::api::PrepareCancelOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareCancelOrderRequest, ::api::v1::PrepareCancelOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::CancelOrderRequest* req,
-             ::api::PrepareCancelOrderResponse* resp) {
+             const ::api::v1::PrepareCancelOrderRequest* req,
+             ::api::v1::PrepareCancelOrderResponse* resp) {
                return service->PrepareCancelOrder(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[2],
+      TradingService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::AmendOrderRequest, ::api::PrepareAmendOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareAmendOrderRequest, ::api::v1::PrepareAmendOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::AmendOrderRequest* req,
-             ::api::PrepareAmendOrderResponse* resp) {
+             const ::api::v1::PrepareAmendOrderRequest* req,
+             ::api::v1::PrepareAmendOrderResponse* resp) {
                return service->PrepareAmendOrder(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[3],
+      TradingService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::PrepareWithdrawRequest, ::api::PrepareWithdrawResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareWithdrawRequest, ::api::v1::PrepareWithdrawResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PrepareWithdrawRequest* req,
-             ::api::PrepareWithdrawResponse* resp) {
+             const ::api::v1::PrepareWithdrawRequest* req,
+             ::api::v1::PrepareWithdrawResponse* resp) {
                return service->PrepareWithdraw(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[4],
+      TradingService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::SubmitTransactionRequest, ::api::SubmitTransactionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::SubmitTransactionRequest, ::api::v1::SubmitTransactionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::SubmitTransactionRequest* req,
-             ::api::SubmitTransactionResponse* resp) {
+             const ::api::v1::SubmitTransactionRequest* req,
+             ::api::v1::SubmitTransactionResponse* resp) {
                return service->SubmitTransaction(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[5],
+      TradingService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::PrepareProposalRequest, ::api::PrepareProposalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareProposalRequest, ::api::v1::PrepareProposalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PrepareProposalRequest* req,
-             ::api::PrepareProposalResponse* resp) {
+             const ::api::v1::PrepareProposalRequest* req,
+             ::api::v1::PrepareProposalResponse* resp) {
                return service->PrepareProposal(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[6],
+      TradingService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::PrepareVoteRequest, ::api::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareVoteRequest, ::api::v1::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PrepareVoteRequest* req,
-             ::api::PrepareVoteResponse* resp) {
+             const ::api::v1::PrepareVoteRequest* req,
+             ::api::v1::PrepareVoteResponse* resp) {
                return service->PrepareVote(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[7],
+      TradingService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::PropagateChainEventRequest, ::api::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PropagateChainEventRequest* req,
-             ::api::PropagateChainEventResponse* resp) {
+             const ::api::v1::PropagateChainEventRequest* req,
+             ::api::v1::PropagateChainEventResponse* resp) {
                return service->PropagateChainEvent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_method_names[8],
+      TradingService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading::Service, ::api::PrepareLiquidityProvisionRequest, ::api::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PrepareLiquidityProvisionRequest* req,
-             ::api::PrepareLiquidityProvisionResponse* resp) {
+             const ::api::v1::PrepareLiquidityProvisionRequest* req,
+             ::api::v1::PrepareLiquidityProvisionResponse* resp) {
                return service->PrepareLiquidityProvision(ctx, req, resp);
              }, this)));
 }
 
-trading::Service::~Service() {
+TradingService::Service::~Service() {
 }
 
-::grpc::Status trading::Service::PrepareSubmitOrder(::grpc::ServerContext* context, const ::api::SubmitOrderRequest* request, ::api::PrepareSubmitOrderResponse* response) {
+::grpc::Status TradingService::Service::PrepareSubmitOrder(::grpc::ServerContext* context, const ::api::v1::PrepareSubmitOrderRequest* request, ::api::v1::PrepareSubmitOrderResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PrepareCancelOrder(::grpc::ServerContext* context, const ::api::CancelOrderRequest* request, ::api::PrepareCancelOrderResponse* response) {
+::grpc::Status TradingService::Service::PrepareCancelOrder(::grpc::ServerContext* context, const ::api::v1::PrepareCancelOrderRequest* request, ::api::v1::PrepareCancelOrderResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PrepareAmendOrder(::grpc::ServerContext* context, const ::api::AmendOrderRequest* request, ::api::PrepareAmendOrderResponse* response) {
+::grpc::Status TradingService::Service::PrepareAmendOrder(::grpc::ServerContext* context, const ::api::v1::PrepareAmendOrderRequest* request, ::api::v1::PrepareAmendOrderResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PrepareWithdraw(::grpc::ServerContext* context, const ::api::PrepareWithdrawRequest* request, ::api::PrepareWithdrawResponse* response) {
+::grpc::Status TradingService::Service::PrepareWithdraw(::grpc::ServerContext* context, const ::api::v1::PrepareWithdrawRequest* request, ::api::v1::PrepareWithdrawResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::SubmitTransaction(::grpc::ServerContext* context, const ::api::SubmitTransactionRequest* request, ::api::SubmitTransactionResponse* response) {
+::grpc::Status TradingService::Service::SubmitTransaction(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PrepareProposal(::grpc::ServerContext* context, const ::api::PrepareProposalRequest* request, ::api::PrepareProposalResponse* response) {
+::grpc::Status TradingService::Service::PrepareProposal(::grpc::ServerContext* context, const ::api::v1::PrepareProposalRequest* request, ::api::v1::PrepareProposalResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PrepareVote(::grpc::ServerContext* context, const ::api::PrepareVoteRequest* request, ::api::PrepareVoteResponse* response) {
+::grpc::Status TradingService::Service::PrepareVote(::grpc::ServerContext* context, const ::api::v1::PrepareVoteRequest* request, ::api::v1::PrepareVoteResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PropagateChainEvent(::grpc::ServerContext* context, const ::api::PropagateChainEventRequest* request, ::api::PropagateChainEventResponse* response) {
+::grpc::Status TradingService::Service::PropagateChainEvent(::grpc::ServerContext* context, const ::api::v1::PropagateChainEventRequest* request, ::api::v1::PropagateChainEventResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading::Service::PrepareLiquidityProvision(::grpc::ServerContext* context, const ::api::PrepareLiquidityProvisionRequest* request, ::api::PrepareLiquidityProvisionResponse* response) {
+::grpc::Status TradingService::Service::PrepareLiquidityProvision(::grpc::ServerContext* context, const ::api::v1::PrepareLiquidityProvisionRequest* request, ::api::v1::PrepareLiquidityProvisionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -418,2474 +419,2600 @@ trading::Service::~Service() {
 }
 
 
-static const char* trading_data_method_names[] = {
-  "/api.trading_data/MarketAccounts",
-  "/api.trading_data/PartyAccounts",
-  "/api.trading_data/FeeInfrastructureAccounts",
-  "/api.trading_data/Candles",
-  "/api.trading_data/MarketDataByID",
-  "/api.trading_data/MarketsData",
-  "/api.trading_data/MarketByID",
-  "/api.trading_data/MarketDepth",
-  "/api.trading_data/Markets",
-  "/api.trading_data/OrderByMarketAndID",
-  "/api.trading_data/OrderByReference",
-  "/api.trading_data/OrdersByMarket",
-  "/api.trading_data/OrdersByParty",
-  "/api.trading_data/OrderByID",
-  "/api.trading_data/OrderVersionsByID",
-  "/api.trading_data/MarginLevels",
-  "/api.trading_data/Parties",
-  "/api.trading_data/PartyByID",
-  "/api.trading_data/PositionsByParty",
-  "/api.trading_data/LastTrade",
-  "/api.trading_data/TradesByMarket",
-  "/api.trading_data/TradesByOrder",
-  "/api.trading_data/TradesByParty",
-  "/api.trading_data/GetProposals",
-  "/api.trading_data/GetProposalsByParty",
-  "/api.trading_data/GetVotesByParty",
-  "/api.trading_data/GetNewMarketProposals",
-  "/api.trading_data/GetUpdateMarketProposals",
-  "/api.trading_data/GetNetworkParametersProposals",
-  "/api.trading_data/GetNewAssetProposals",
-  "/api.trading_data/GetProposalByID",
-  "/api.trading_data/GetProposalByReference",
-  "/api.trading_data/ObserveGovernance",
-  "/api.trading_data/ObservePartyProposals",
-  "/api.trading_data/ObservePartyVotes",
-  "/api.trading_data/ObserveProposalVotes",
-  "/api.trading_data/ObserveEventBus",
-  "/api.trading_data/Statistics",
-  "/api.trading_data/GetVegaTime",
-  "/api.trading_data/AccountsSubscribe",
-  "/api.trading_data/CandlesSubscribe",
-  "/api.trading_data/MarginLevelsSubscribe",
-  "/api.trading_data/MarketDepthSubscribe",
-  "/api.trading_data/MarketDepthUpdatesSubscribe",
-  "/api.trading_data/MarketsDataSubscribe",
-  "/api.trading_data/OrdersSubscribe",
-  "/api.trading_data/PositionsSubscribe",
-  "/api.trading_data/TradesSubscribe",
-  "/api.trading_data/TransferResponsesSubscribe",
-  "/api.trading_data/GetNodeSignaturesAggregate",
-  "/api.trading_data/AssetByID",
-  "/api.trading_data/Assets",
-  "/api.trading_data/EstimateFee",
-  "/api.trading_data/EstimateMargin",
-  "/api.trading_data/ERC20WithdrawalApproval",
-  "/api.trading_data/Withdrawal",
-  "/api.trading_data/Withdrawals",
-  "/api.trading_data/Deposit",
-  "/api.trading_data/Deposits",
-  "/api.trading_data/NetworkParameters",
-  "/api.trading_data/LiquidityProvisions",
+static const char* TradingDataService_method_names[] = {
+  "/api.v1.TradingDataService/MarketAccounts",
+  "/api.v1.TradingDataService/PartyAccounts",
+  "/api.v1.TradingDataService/FeeInfrastructureAccounts",
+  "/api.v1.TradingDataService/Candles",
+  "/api.v1.TradingDataService/MarketDataByID",
+  "/api.v1.TradingDataService/MarketsData",
+  "/api.v1.TradingDataService/MarketByID",
+  "/api.v1.TradingDataService/MarketDepth",
+  "/api.v1.TradingDataService/Markets",
+  "/api.v1.TradingDataService/OrderByMarketAndID",
+  "/api.v1.TradingDataService/OrderByReference",
+  "/api.v1.TradingDataService/OrdersByMarket",
+  "/api.v1.TradingDataService/OrdersByParty",
+  "/api.v1.TradingDataService/OrderByID",
+  "/api.v1.TradingDataService/OrderVersionsByID",
+  "/api.v1.TradingDataService/MarginLevels",
+  "/api.v1.TradingDataService/Parties",
+  "/api.v1.TradingDataService/PartyByID",
+  "/api.v1.TradingDataService/PositionsByParty",
+  "/api.v1.TradingDataService/LastTrade",
+  "/api.v1.TradingDataService/TradesByMarket",
+  "/api.v1.TradingDataService/TradesByOrder",
+  "/api.v1.TradingDataService/TradesByParty",
+  "/api.v1.TradingDataService/GetProposals",
+  "/api.v1.TradingDataService/GetProposalsByParty",
+  "/api.v1.TradingDataService/GetVotesByParty",
+  "/api.v1.TradingDataService/GetNewMarketProposals",
+  "/api.v1.TradingDataService/GetUpdateMarketProposals",
+  "/api.v1.TradingDataService/GetNetworkParametersProposals",
+  "/api.v1.TradingDataService/GetNewAssetProposals",
+  "/api.v1.TradingDataService/GetProposalByID",
+  "/api.v1.TradingDataService/GetProposalByReference",
+  "/api.v1.TradingDataService/ObserveGovernance",
+  "/api.v1.TradingDataService/ObservePartyProposals",
+  "/api.v1.TradingDataService/ObservePartyVotes",
+  "/api.v1.TradingDataService/ObserveProposalVotes",
+  "/api.v1.TradingDataService/ObserveEventBus",
+  "/api.v1.TradingDataService/Statistics",
+  "/api.v1.TradingDataService/GetVegaTime",
+  "/api.v1.TradingDataService/AccountsSubscribe",
+  "/api.v1.TradingDataService/CandlesSubscribe",
+  "/api.v1.TradingDataService/MarginLevelsSubscribe",
+  "/api.v1.TradingDataService/MarketDepthSubscribe",
+  "/api.v1.TradingDataService/MarketDepthUpdatesSubscribe",
+  "/api.v1.TradingDataService/MarketsDataSubscribe",
+  "/api.v1.TradingDataService/OrdersSubscribe",
+  "/api.v1.TradingDataService/PositionsSubscribe",
+  "/api.v1.TradingDataService/TradesSubscribe",
+  "/api.v1.TradingDataService/TransferResponsesSubscribe",
+  "/api.v1.TradingDataService/GetNodeSignaturesAggregate",
+  "/api.v1.TradingDataService/AssetByID",
+  "/api.v1.TradingDataService/Assets",
+  "/api.v1.TradingDataService/EstimateFee",
+  "/api.v1.TradingDataService/EstimateMargin",
+  "/api.v1.TradingDataService/ERC20WithdrawalApproval",
+  "/api.v1.TradingDataService/Withdrawal",
+  "/api.v1.TradingDataService/Withdrawals",
+  "/api.v1.TradingDataService/Deposit",
+  "/api.v1.TradingDataService/Deposits",
+  "/api.v1.TradingDataService/NetworkParameters",
+  "/api.v1.TradingDataService/LiquidityProvisions",
+  "/api.v1.TradingDataService/OracleSpec",
+  "/api.v1.TradingDataService/OracleSpecs",
+  "/api.v1.TradingDataService/OracleDataBySpec",
 };
 
-std::unique_ptr< trading_data::Stub> trading_data::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< TradingDataService::Stub> TradingDataService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< trading_data::Stub> stub(new trading_data::Stub(channel));
+  std::unique_ptr< TradingDataService::Stub> stub(new TradingDataService::Stub(channel));
   return stub;
 }
 
-trading_data::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_MarketAccounts_(trading_data_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PartyAccounts_(trading_data_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_FeeInfrastructureAccounts_(trading_data_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Candles_(trading_data_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MarketDataByID_(trading_data_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MarketsData_(trading_data_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MarketByID_(trading_data_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MarketDepth_(trading_data_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Markets_(trading_data_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OrderByMarketAndID_(trading_data_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OrderByReference_(trading_data_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OrdersByMarket_(trading_data_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OrdersByParty_(trading_data_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OrderByID_(trading_data_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OrderVersionsByID_(trading_data_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MarginLevels_(trading_data_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Parties_(trading_data_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PartyByID_(trading_data_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PositionsByParty_(trading_data_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_LastTrade_(trading_data_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_TradesByMarket_(trading_data_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_TradesByOrder_(trading_data_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_TradesByParty_(trading_data_method_names[22], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetProposals_(trading_data_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetProposalsByParty_(trading_data_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetVotesByParty_(trading_data_method_names[25], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetNewMarketProposals_(trading_data_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetUpdateMarketProposals_(trading_data_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetNetworkParametersProposals_(trading_data_method_names[28], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetNewAssetProposals_(trading_data_method_names[29], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetProposalByID_(trading_data_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetProposalByReference_(trading_data_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ObserveGovernance_(trading_data_method_names[32], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_ObservePartyProposals_(trading_data_method_names[33], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_ObservePartyVotes_(trading_data_method_names[34], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_ObserveProposalVotes_(trading_data_method_names[35], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_ObserveEventBus_(trading_data_method_names[36], ::grpc::internal::RpcMethod::BIDI_STREAMING, channel)
-  , rpcmethod_Statistics_(trading_data_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetVegaTime_(trading_data_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AccountsSubscribe_(trading_data_method_names[39], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_CandlesSubscribe_(trading_data_method_names[40], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarginLevelsSubscribe_(trading_data_method_names[41], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarketDepthSubscribe_(trading_data_method_names[42], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarketDepthUpdatesSubscribe_(trading_data_method_names[43], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarketsDataSubscribe_(trading_data_method_names[44], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_OrdersSubscribe_(trading_data_method_names[45], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_PositionsSubscribe_(trading_data_method_names[46], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_TradesSubscribe_(trading_data_method_names[47], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_TransferResponsesSubscribe_(trading_data_method_names[48], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetNodeSignaturesAggregate_(trading_data_method_names[49], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AssetByID_(trading_data_method_names[50], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Assets_(trading_data_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EstimateFee_(trading_data_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EstimateMargin_(trading_data_method_names[53], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ERC20WithdrawalApproval_(trading_data_method_names[54], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Withdrawal_(trading_data_method_names[55], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Withdrawals_(trading_data_method_names[56], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Deposit_(trading_data_method_names[57], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Deposits_(trading_data_method_names[58], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_NetworkParameters_(trading_data_method_names[59], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_LiquidityProvisions_(trading_data_method_names[60], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+TradingDataService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_MarketAccounts_(TradingDataService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PartyAccounts_(TradingDataService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FeeInfrastructureAccounts_(TradingDataService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Candles_(TradingDataService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MarketDataByID_(TradingDataService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MarketsData_(TradingDataService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MarketByID_(TradingDataService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MarketDepth_(TradingDataService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Markets_(TradingDataService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OrderByMarketAndID_(TradingDataService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OrderByReference_(TradingDataService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OrdersByMarket_(TradingDataService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OrdersByParty_(TradingDataService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OrderByID_(TradingDataService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OrderVersionsByID_(TradingDataService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MarginLevels_(TradingDataService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Parties_(TradingDataService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PartyByID_(TradingDataService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PositionsByParty_(TradingDataService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LastTrade_(TradingDataService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_TradesByMarket_(TradingDataService_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_TradesByOrder_(TradingDataService_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_TradesByParty_(TradingDataService_method_names[22], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProposals_(TradingDataService_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProposalsByParty_(TradingDataService_method_names[24], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetVotesByParty_(TradingDataService_method_names[25], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNewMarketProposals_(TradingDataService_method_names[26], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetUpdateMarketProposals_(TradingDataService_method_names[27], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNetworkParametersProposals_(TradingDataService_method_names[28], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetNewAssetProposals_(TradingDataService_method_names[29], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProposalByID_(TradingDataService_method_names[30], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProposalByReference_(TradingDataService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ObserveGovernance_(TradingDataService_method_names[32], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_ObservePartyProposals_(TradingDataService_method_names[33], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_ObservePartyVotes_(TradingDataService_method_names[34], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_ObserveProposalVotes_(TradingDataService_method_names[35], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_ObserveEventBus_(TradingDataService_method_names[36], ::grpc::internal::RpcMethod::BIDI_STREAMING, channel)
+  , rpcmethod_Statistics_(TradingDataService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetVegaTime_(TradingDataService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AccountsSubscribe_(TradingDataService_method_names[39], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_CandlesSubscribe_(TradingDataService_method_names[40], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarginLevelsSubscribe_(TradingDataService_method_names[41], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarketDepthSubscribe_(TradingDataService_method_names[42], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarketDepthUpdatesSubscribe_(TradingDataService_method_names[43], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarketsDataSubscribe_(TradingDataService_method_names[44], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_OrdersSubscribe_(TradingDataService_method_names[45], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_PositionsSubscribe_(TradingDataService_method_names[46], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_TradesSubscribe_(TradingDataService_method_names[47], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_TransferResponsesSubscribe_(TradingDataService_method_names[48], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetNodeSignaturesAggregate_(TradingDataService_method_names[49], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AssetByID_(TradingDataService_method_names[50], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Assets_(TradingDataService_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EstimateFee_(TradingDataService_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EstimateMargin_(TradingDataService_method_names[53], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ERC20WithdrawalApproval_(TradingDataService_method_names[54], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Withdrawal_(TradingDataService_method_names[55], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Withdrawals_(TradingDataService_method_names[56], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Deposit_(TradingDataService_method_names[57], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Deposits_(TradingDataService_method_names[58], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_NetworkParameters_(TradingDataService_method_names[59], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LiquidityProvisions_(TradingDataService_method_names[60], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleSpec_(TradingDataService_method_names[61], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleSpecs_(TradingDataService_method_names[62], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleDataBySpec_(TradingDataService_method_names[63], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status trading_data::Stub::MarketAccounts(::grpc::ClientContext* context, const ::api::MarketAccountsRequest& request, ::api::MarketAccountsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::MarketAccountsRequest, ::api::MarketAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketAccounts_, context, request, response);
+::grpc::Status TradingDataService::Stub::MarketAccounts(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest& request, ::api::v1::MarketAccountsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarketAccountsRequest, ::api::v1::MarketAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketAccounts_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::MarketAccounts(::grpc::ClientContext* context, const ::api::MarketAccountsRequest* request, ::api::MarketAccountsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::MarketAccountsRequest, ::api::MarketAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketAccounts_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::MarketAccounts(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest* request, ::api::v1::MarketAccountsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarketAccountsRequest, ::api::v1::MarketAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketAccounts_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::MarketAccounts(::grpc::ClientContext* context, const ::api::MarketAccountsRequest* request, ::api::MarketAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::MarketAccounts(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest* request, ::api::v1::MarketAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketAccounts_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketAccountsResponse>* trading_data::Stub::PrepareAsyncMarketAccountsRaw(::grpc::ClientContext* context, const ::api::MarketAccountsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarketAccountsResponse, ::api::MarketAccountsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketAccounts_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketAccountsResponse>* TradingDataService::Stub::PrepareAsyncMarketAccountsRaw(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarketAccountsResponse, ::api::v1::MarketAccountsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketAccounts_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketAccountsResponse>* trading_data::Stub::AsyncMarketAccountsRaw(::grpc::ClientContext* context, const ::api::MarketAccountsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketAccountsResponse>* TradingDataService::Stub::AsyncMarketAccountsRaw(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarketAccountsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::PartyAccounts(::grpc::ClientContext* context, const ::api::PartyAccountsRequest& request, ::api::PartyAccountsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PartyAccountsRequest, ::api::PartyAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PartyAccounts_, context, request, response);
+::grpc::Status TradingDataService::Stub::PartyAccounts(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest& request, ::api::v1::PartyAccountsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PartyAccountsRequest, ::api::v1::PartyAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PartyAccounts_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::PartyAccounts(::grpc::ClientContext* context, const ::api::PartyAccountsRequest* request, ::api::PartyAccountsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PartyAccountsRequest, ::api::PartyAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PartyAccounts_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::PartyAccounts(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest* request, ::api::v1::PartyAccountsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PartyAccountsRequest, ::api::v1::PartyAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PartyAccounts_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::PartyAccounts(::grpc::ClientContext* context, const ::api::PartyAccountsRequest* request, ::api::PartyAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::PartyAccounts(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest* request, ::api::v1::PartyAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PartyAccounts_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PartyAccountsResponse>* trading_data::Stub::PrepareAsyncPartyAccountsRaw(::grpc::ClientContext* context, const ::api::PartyAccountsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PartyAccountsResponse, ::api::PartyAccountsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PartyAccounts_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PartyAccountsResponse>* TradingDataService::Stub::PrepareAsyncPartyAccountsRaw(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PartyAccountsResponse, ::api::v1::PartyAccountsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PartyAccounts_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PartyAccountsResponse>* trading_data::Stub::AsyncPartyAccountsRaw(::grpc::ClientContext* context, const ::api::PartyAccountsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PartyAccountsResponse>* TradingDataService::Stub::AsyncPartyAccountsRaw(::grpc::ClientContext* context, const ::api::v1::PartyAccountsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPartyAccountsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::FeeInfrastructureAccountsRequest& request, ::api::FeeInfrastructureAccountsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::FeeInfrastructureAccountsRequest, ::api::FeeInfrastructureAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_FeeInfrastructureAccounts_, context, request, response);
+::grpc::Status TradingDataService::Stub::FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest& request, ::api::v1::FeeInfrastructureAccountsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::FeeInfrastructureAccountsRequest, ::api::v1::FeeInfrastructureAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_FeeInfrastructureAccounts_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::FeeInfrastructureAccountsRequest* request, ::api::FeeInfrastructureAccountsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::FeeInfrastructureAccountsRequest, ::api::FeeInfrastructureAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FeeInfrastructureAccounts_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest* request, ::api::v1::FeeInfrastructureAccountsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::FeeInfrastructureAccountsRequest, ::api::v1::FeeInfrastructureAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FeeInfrastructureAccounts_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::FeeInfrastructureAccountsRequest* request, ::api::FeeInfrastructureAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::FeeInfrastructureAccounts(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest* request, ::api::v1::FeeInfrastructureAccountsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FeeInfrastructureAccounts_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::FeeInfrastructureAccountsResponse>* trading_data::Stub::PrepareAsyncFeeInfrastructureAccountsRaw(::grpc::ClientContext* context, const ::api::FeeInfrastructureAccountsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::FeeInfrastructureAccountsResponse, ::api::FeeInfrastructureAccountsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_FeeInfrastructureAccounts_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::FeeInfrastructureAccountsResponse>* TradingDataService::Stub::PrepareAsyncFeeInfrastructureAccountsRaw(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::FeeInfrastructureAccountsResponse, ::api::v1::FeeInfrastructureAccountsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_FeeInfrastructureAccounts_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::FeeInfrastructureAccountsResponse>* trading_data::Stub::AsyncFeeInfrastructureAccountsRaw(::grpc::ClientContext* context, const ::api::FeeInfrastructureAccountsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::FeeInfrastructureAccountsResponse>* TradingDataService::Stub::AsyncFeeInfrastructureAccountsRaw(::grpc::ClientContext* context, const ::api::v1::FeeInfrastructureAccountsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncFeeInfrastructureAccountsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Candles(::grpc::ClientContext* context, const ::api::CandlesRequest& request, ::api::CandlesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::CandlesRequest, ::api::CandlesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Candles_, context, request, response);
+::grpc::Status TradingDataService::Stub::Candles(::grpc::ClientContext* context, const ::api::v1::CandlesRequest& request, ::api::v1::CandlesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::CandlesRequest, ::api::v1::CandlesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Candles_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Candles(::grpc::ClientContext* context, const ::api::CandlesRequest* request, ::api::CandlesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::CandlesRequest, ::api::CandlesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Candles_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Candles(::grpc::ClientContext* context, const ::api::v1::CandlesRequest* request, ::api::v1::CandlesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::CandlesRequest, ::api::v1::CandlesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Candles_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Candles(::grpc::ClientContext* context, const ::api::CandlesRequest* request, ::api::CandlesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Candles(::grpc::ClientContext* context, const ::api::v1::CandlesRequest* request, ::api::v1::CandlesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Candles_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::CandlesResponse>* trading_data::Stub::PrepareAsyncCandlesRaw(::grpc::ClientContext* context, const ::api::CandlesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::CandlesResponse, ::api::CandlesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Candles_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::CandlesResponse>* TradingDataService::Stub::PrepareAsyncCandlesRaw(::grpc::ClientContext* context, const ::api::v1::CandlesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::CandlesResponse, ::api::v1::CandlesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Candles_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::CandlesResponse>* trading_data::Stub::AsyncCandlesRaw(::grpc::ClientContext* context, const ::api::CandlesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::CandlesResponse>* TradingDataService::Stub::AsyncCandlesRaw(::grpc::ClientContext* context, const ::api::v1::CandlesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCandlesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::MarketDataByID(::grpc::ClientContext* context, const ::api::MarketDataByIDRequest& request, ::api::MarketDataByIDResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::MarketDataByIDRequest, ::api::MarketDataByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketDataByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::MarketDataByID(::grpc::ClientContext* context, const ::api::v1::MarketDataByIDRequest& request, ::api::v1::MarketDataByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarketDataByIDRequest, ::api::v1::MarketDataByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketDataByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::MarketDataByID(::grpc::ClientContext* context, const ::api::MarketDataByIDRequest* request, ::api::MarketDataByIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::MarketDataByIDRequest, ::api::MarketDataByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketDataByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::MarketDataByID(::grpc::ClientContext* context, const ::api::v1::MarketDataByIDRequest* request, ::api::v1::MarketDataByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarketDataByIDRequest, ::api::v1::MarketDataByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketDataByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::MarketDataByID(::grpc::ClientContext* context, const ::api::MarketDataByIDRequest* request, ::api::MarketDataByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::MarketDataByID(::grpc::ClientContext* context, const ::api::v1::MarketDataByIDRequest* request, ::api::v1::MarketDataByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketDataByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketDataByIDResponse>* trading_data::Stub::PrepareAsyncMarketDataByIDRaw(::grpc::ClientContext* context, const ::api::MarketDataByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarketDataByIDResponse, ::api::MarketDataByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketDataByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketDataByIDResponse>* TradingDataService::Stub::PrepareAsyncMarketDataByIDRaw(::grpc::ClientContext* context, const ::api::v1::MarketDataByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarketDataByIDResponse, ::api::v1::MarketDataByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketDataByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketDataByIDResponse>* trading_data::Stub::AsyncMarketDataByIDRaw(::grpc::ClientContext* context, const ::api::MarketDataByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketDataByIDResponse>* TradingDataService::Stub::AsyncMarketDataByIDRaw(::grpc::ClientContext* context, const ::api::v1::MarketDataByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarketDataByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::MarketsData(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::api::MarketsDataResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::api::MarketsDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketsData_, context, request, response);
+::grpc::Status TradingDataService::Stub::MarketsData(::grpc::ClientContext* context, const ::api::v1::MarketsDataRequest& request, ::api::v1::MarketsDataResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarketsDataRequest, ::api::v1::MarketsDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketsData_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::MarketsData(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::MarketsDataResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::api::MarketsDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketsData_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::MarketsData(::grpc::ClientContext* context, const ::api::v1::MarketsDataRequest* request, ::api::v1::MarketsDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarketsDataRequest, ::api::v1::MarketsDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketsData_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::MarketsData(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::MarketsDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::MarketsData(::grpc::ClientContext* context, const ::api::v1::MarketsDataRequest* request, ::api::v1::MarketsDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketsData_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketsDataResponse>* trading_data::Stub::PrepareAsyncMarketsDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarketsDataResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketsData_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketsDataResponse>* TradingDataService::Stub::PrepareAsyncMarketsDataRaw(::grpc::ClientContext* context, const ::api::v1::MarketsDataRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarketsDataResponse, ::api::v1::MarketsDataRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketsData_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketsDataResponse>* trading_data::Stub::AsyncMarketsDataRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketsDataResponse>* TradingDataService::Stub::AsyncMarketsDataRaw(::grpc::ClientContext* context, const ::api::v1::MarketsDataRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarketsDataRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::MarketByID(::grpc::ClientContext* context, const ::api::MarketByIDRequest& request, ::api::MarketByIDResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::MarketByIDRequest, ::api::MarketByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::MarketByID(::grpc::ClientContext* context, const ::api::v1::MarketByIDRequest& request, ::api::v1::MarketByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarketByIDRequest, ::api::v1::MarketByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::MarketByID(::grpc::ClientContext* context, const ::api::MarketByIDRequest* request, ::api::MarketByIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::MarketByIDRequest, ::api::MarketByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::MarketByID(::grpc::ClientContext* context, const ::api::v1::MarketByIDRequest* request, ::api::v1::MarketByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarketByIDRequest, ::api::v1::MarketByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::MarketByID(::grpc::ClientContext* context, const ::api::MarketByIDRequest* request, ::api::MarketByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::MarketByID(::grpc::ClientContext* context, const ::api::v1::MarketByIDRequest* request, ::api::v1::MarketByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketByIDResponse>* trading_data::Stub::PrepareAsyncMarketByIDRaw(::grpc::ClientContext* context, const ::api::MarketByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarketByIDResponse, ::api::MarketByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketByIDResponse>* TradingDataService::Stub::PrepareAsyncMarketByIDRaw(::grpc::ClientContext* context, const ::api::v1::MarketByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarketByIDResponse, ::api::v1::MarketByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketByIDResponse>* trading_data::Stub::AsyncMarketByIDRaw(::grpc::ClientContext* context, const ::api::MarketByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketByIDResponse>* TradingDataService::Stub::AsyncMarketByIDRaw(::grpc::ClientContext* context, const ::api::v1::MarketByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarketByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::MarketDepth(::grpc::ClientContext* context, const ::api::MarketDepthRequest& request, ::api::MarketDepthResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::MarketDepthRequest, ::api::MarketDepthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketDepth_, context, request, response);
+::grpc::Status TradingDataService::Stub::MarketDepth(::grpc::ClientContext* context, const ::api::v1::MarketDepthRequest& request, ::api::v1::MarketDepthResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarketDepthRequest, ::api::v1::MarketDepthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarketDepth_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::MarketDepth(::grpc::ClientContext* context, const ::api::MarketDepthRequest* request, ::api::MarketDepthResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::MarketDepthRequest, ::api::MarketDepthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketDepth_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::MarketDepth(::grpc::ClientContext* context, const ::api::v1::MarketDepthRequest* request, ::api::v1::MarketDepthResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarketDepthRequest, ::api::v1::MarketDepthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketDepth_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::MarketDepth(::grpc::ClientContext* context, const ::api::MarketDepthRequest* request, ::api::MarketDepthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::MarketDepth(::grpc::ClientContext* context, const ::api::v1::MarketDepthRequest* request, ::api::v1::MarketDepthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarketDepth_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketDepthResponse>* trading_data::Stub::PrepareAsyncMarketDepthRaw(::grpc::ClientContext* context, const ::api::MarketDepthRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarketDepthResponse, ::api::MarketDepthRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketDepth_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketDepthResponse>* TradingDataService::Stub::PrepareAsyncMarketDepthRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarketDepthResponse, ::api::v1::MarketDepthRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarketDepth_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketDepthResponse>* trading_data::Stub::AsyncMarketDepthRaw(::grpc::ClientContext* context, const ::api::MarketDepthRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketDepthResponse>* TradingDataService::Stub::AsyncMarketDepthRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarketDepthRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Markets(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::api::MarketsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::api::MarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Markets_, context, request, response);
+::grpc::Status TradingDataService::Stub::Markets(::grpc::ClientContext* context, const ::api::v1::MarketsRequest& request, ::api::v1::MarketsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarketsRequest, ::api::v1::MarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Markets_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Markets(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::MarketsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::api::MarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Markets_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Markets(::grpc::ClientContext* context, const ::api::v1::MarketsRequest* request, ::api::v1::MarketsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarketsRequest, ::api::v1::MarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Markets_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Markets(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::MarketsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Markets(::grpc::ClientContext* context, const ::api::v1::MarketsRequest* request, ::api::v1::MarketsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Markets_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketsResponse>* trading_data::Stub::PrepareAsyncMarketsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarketsResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Markets_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketsResponse>* TradingDataService::Stub::PrepareAsyncMarketsRaw(::grpc::ClientContext* context, const ::api::v1::MarketsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarketsResponse, ::api::v1::MarketsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Markets_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarketsResponse>* trading_data::Stub::AsyncMarketsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarketsResponse>* TradingDataService::Stub::AsyncMarketsRaw(::grpc::ClientContext* context, const ::api::v1::MarketsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarketsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::OrderByMarketAndID(::grpc::ClientContext* context, const ::api::OrderByMarketAndIdRequest& request, ::api::OrderByMarketAndIdResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::OrderByMarketAndIdRequest, ::api::OrderByMarketAndIdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderByMarketAndID_, context, request, response);
+::grpc::Status TradingDataService::Stub::OrderByMarketAndID(::grpc::ClientContext* context, const ::api::v1::OrderByMarketAndIDRequest& request, ::api::v1::OrderByMarketAndIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OrderByMarketAndIDRequest, ::api::v1::OrderByMarketAndIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderByMarketAndID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::OrderByMarketAndID(::grpc::ClientContext* context, const ::api::OrderByMarketAndIdRequest* request, ::api::OrderByMarketAndIdResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::OrderByMarketAndIdRequest, ::api::OrderByMarketAndIdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByMarketAndID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::OrderByMarketAndID(::grpc::ClientContext* context, const ::api::v1::OrderByMarketAndIDRequest* request, ::api::v1::OrderByMarketAndIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OrderByMarketAndIDRequest, ::api::v1::OrderByMarketAndIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByMarketAndID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::OrderByMarketAndID(::grpc::ClientContext* context, const ::api::OrderByMarketAndIdRequest* request, ::api::OrderByMarketAndIdResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::OrderByMarketAndID(::grpc::ClientContext* context, const ::api::v1::OrderByMarketAndIDRequest* request, ::api::v1::OrderByMarketAndIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByMarketAndID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrderByMarketAndIdResponse>* trading_data::Stub::PrepareAsyncOrderByMarketAndIDRaw(::grpc::ClientContext* context, const ::api::OrderByMarketAndIdRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::OrderByMarketAndIdResponse, ::api::OrderByMarketAndIdRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderByMarketAndID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderByMarketAndIDResponse>* TradingDataService::Stub::PrepareAsyncOrderByMarketAndIDRaw(::grpc::ClientContext* context, const ::api::v1::OrderByMarketAndIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OrderByMarketAndIDResponse, ::api::v1::OrderByMarketAndIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderByMarketAndID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrderByMarketAndIdResponse>* trading_data::Stub::AsyncOrderByMarketAndIDRaw(::grpc::ClientContext* context, const ::api::OrderByMarketAndIdRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderByMarketAndIDResponse>* TradingDataService::Stub::AsyncOrderByMarketAndIDRaw(::grpc::ClientContext* context, const ::api::v1::OrderByMarketAndIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncOrderByMarketAndIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::OrderByReference(::grpc::ClientContext* context, const ::api::OrderByReferenceRequest& request, ::api::OrderByReferenceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::OrderByReferenceRequest, ::api::OrderByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderByReference_, context, request, response);
+::grpc::Status TradingDataService::Stub::OrderByReference(::grpc::ClientContext* context, const ::api::v1::OrderByReferenceRequest& request, ::api::v1::OrderByReferenceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OrderByReferenceRequest, ::api::v1::OrderByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderByReference_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::OrderByReference(::grpc::ClientContext* context, const ::api::OrderByReferenceRequest* request, ::api::OrderByReferenceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::OrderByReferenceRequest, ::api::OrderByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByReference_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::OrderByReference(::grpc::ClientContext* context, const ::api::v1::OrderByReferenceRequest* request, ::api::v1::OrderByReferenceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OrderByReferenceRequest, ::api::v1::OrderByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByReference_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::OrderByReference(::grpc::ClientContext* context, const ::api::OrderByReferenceRequest* request, ::api::OrderByReferenceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::OrderByReference(::grpc::ClientContext* context, const ::api::v1::OrderByReferenceRequest* request, ::api::v1::OrderByReferenceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByReference_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrderByReferenceResponse>* trading_data::Stub::PrepareAsyncOrderByReferenceRaw(::grpc::ClientContext* context, const ::api::OrderByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::OrderByReferenceResponse, ::api::OrderByReferenceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderByReference_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderByReferenceResponse>* TradingDataService::Stub::PrepareAsyncOrderByReferenceRaw(::grpc::ClientContext* context, const ::api::v1::OrderByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OrderByReferenceResponse, ::api::v1::OrderByReferenceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderByReference_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrderByReferenceResponse>* trading_data::Stub::AsyncOrderByReferenceRaw(::grpc::ClientContext* context, const ::api::OrderByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderByReferenceResponse>* TradingDataService::Stub::AsyncOrderByReferenceRaw(::grpc::ClientContext* context, const ::api::v1::OrderByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncOrderByReferenceRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::OrdersByMarket(::grpc::ClientContext* context, const ::api::OrdersByMarketRequest& request, ::api::OrdersByMarketResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::OrdersByMarketRequest, ::api::OrdersByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrdersByMarket_, context, request, response);
+::grpc::Status TradingDataService::Stub::OrdersByMarket(::grpc::ClientContext* context, const ::api::v1::OrdersByMarketRequest& request, ::api::v1::OrdersByMarketResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OrdersByMarketRequest, ::api::v1::OrdersByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrdersByMarket_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::OrdersByMarket(::grpc::ClientContext* context, const ::api::OrdersByMarketRequest* request, ::api::OrdersByMarketResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::OrdersByMarketRequest, ::api::OrdersByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrdersByMarket_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::OrdersByMarket(::grpc::ClientContext* context, const ::api::v1::OrdersByMarketRequest* request, ::api::v1::OrdersByMarketResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OrdersByMarketRequest, ::api::v1::OrdersByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrdersByMarket_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::OrdersByMarket(::grpc::ClientContext* context, const ::api::OrdersByMarketRequest* request, ::api::OrdersByMarketResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::OrdersByMarket(::grpc::ClientContext* context, const ::api::v1::OrdersByMarketRequest* request, ::api::v1::OrdersByMarketResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrdersByMarket_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrdersByMarketResponse>* trading_data::Stub::PrepareAsyncOrdersByMarketRaw(::grpc::ClientContext* context, const ::api::OrdersByMarketRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::OrdersByMarketResponse, ::api::OrdersByMarketRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrdersByMarket_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::OrdersByMarketResponse>* TradingDataService::Stub::PrepareAsyncOrdersByMarketRaw(::grpc::ClientContext* context, const ::api::v1::OrdersByMarketRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OrdersByMarketResponse, ::api::v1::OrdersByMarketRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrdersByMarket_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrdersByMarketResponse>* trading_data::Stub::AsyncOrdersByMarketRaw(::grpc::ClientContext* context, const ::api::OrdersByMarketRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::OrdersByMarketResponse>* TradingDataService::Stub::AsyncOrdersByMarketRaw(::grpc::ClientContext* context, const ::api::v1::OrdersByMarketRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncOrdersByMarketRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::OrdersByParty(::grpc::ClientContext* context, const ::api::OrdersByPartyRequest& request, ::api::OrdersByPartyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::OrdersByPartyRequest, ::api::OrdersByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrdersByParty_, context, request, response);
+::grpc::Status TradingDataService::Stub::OrdersByParty(::grpc::ClientContext* context, const ::api::v1::OrdersByPartyRequest& request, ::api::v1::OrdersByPartyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OrdersByPartyRequest, ::api::v1::OrdersByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrdersByParty_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::OrdersByParty(::grpc::ClientContext* context, const ::api::OrdersByPartyRequest* request, ::api::OrdersByPartyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::OrdersByPartyRequest, ::api::OrdersByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrdersByParty_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::OrdersByParty(::grpc::ClientContext* context, const ::api::v1::OrdersByPartyRequest* request, ::api::v1::OrdersByPartyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OrdersByPartyRequest, ::api::v1::OrdersByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrdersByParty_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::OrdersByParty(::grpc::ClientContext* context, const ::api::OrdersByPartyRequest* request, ::api::OrdersByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::OrdersByParty(::grpc::ClientContext* context, const ::api::v1::OrdersByPartyRequest* request, ::api::v1::OrdersByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrdersByParty_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrdersByPartyResponse>* trading_data::Stub::PrepareAsyncOrdersByPartyRaw(::grpc::ClientContext* context, const ::api::OrdersByPartyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::OrdersByPartyResponse, ::api::OrdersByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrdersByParty_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::OrdersByPartyResponse>* TradingDataService::Stub::PrepareAsyncOrdersByPartyRaw(::grpc::ClientContext* context, const ::api::v1::OrdersByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OrdersByPartyResponse, ::api::v1::OrdersByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrdersByParty_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrdersByPartyResponse>* trading_data::Stub::AsyncOrdersByPartyRaw(::grpc::ClientContext* context, const ::api::OrdersByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::OrdersByPartyResponse>* TradingDataService::Stub::AsyncOrdersByPartyRaw(::grpc::ClientContext* context, const ::api::v1::OrdersByPartyRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncOrdersByPartyRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::OrderByID(::grpc::ClientContext* context, const ::api::OrderByIDRequest& request, ::vega::Order* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::OrderByIDRequest, ::vega::Order, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::OrderByID(::grpc::ClientContext* context, const ::api::v1::OrderByIDRequest& request, ::api::v1::OrderByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OrderByIDRequest, ::api::v1::OrderByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::OrderByID(::grpc::ClientContext* context, const ::api::OrderByIDRequest* request, ::vega::Order* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::OrderByIDRequest, ::vega::Order, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::OrderByID(::grpc::ClientContext* context, const ::api::v1::OrderByIDRequest* request, ::api::v1::OrderByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OrderByIDRequest, ::api::v1::OrderByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::OrderByID(::grpc::ClientContext* context, const ::api::OrderByIDRequest* request, ::vega::Order* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::OrderByID(::grpc::ClientContext* context, const ::api::v1::OrderByIDRequest* request, ::api::v1::OrderByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::vega::Order>* trading_data::Stub::PrepareAsyncOrderByIDRaw(::grpc::ClientContext* context, const ::api::OrderByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::vega::Order, ::api::OrderByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderByIDResponse>* TradingDataService::Stub::PrepareAsyncOrderByIDRaw(::grpc::ClientContext* context, const ::api::v1::OrderByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OrderByIDResponse, ::api::v1::OrderByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::vega::Order>* trading_data::Stub::AsyncOrderByIDRaw(::grpc::ClientContext* context, const ::api::OrderByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderByIDResponse>* TradingDataService::Stub::AsyncOrderByIDRaw(::grpc::ClientContext* context, const ::api::v1::OrderByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncOrderByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::OrderVersionsByID(::grpc::ClientContext* context, const ::api::OrderVersionsByIDRequest& request, ::api::OrderVersionsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::OrderVersionsByIDRequest, ::api::OrderVersionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderVersionsByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::OrderVersionsByID(::grpc::ClientContext* context, const ::api::v1::OrderVersionsByIDRequest& request, ::api::v1::OrderVersionsByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OrderVersionsByIDRequest, ::api::v1::OrderVersionsByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OrderVersionsByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::OrderVersionsByID(::grpc::ClientContext* context, const ::api::OrderVersionsByIDRequest* request, ::api::OrderVersionsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::OrderVersionsByIDRequest, ::api::OrderVersionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderVersionsByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::OrderVersionsByID(::grpc::ClientContext* context, const ::api::v1::OrderVersionsByIDRequest* request, ::api::v1::OrderVersionsByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OrderVersionsByIDRequest, ::api::v1::OrderVersionsByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderVersionsByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::OrderVersionsByID(::grpc::ClientContext* context, const ::api::OrderVersionsByIDRequest* request, ::api::OrderVersionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::OrderVersionsByID(::grpc::ClientContext* context, const ::api::v1::OrderVersionsByIDRequest* request, ::api::v1::OrderVersionsByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OrderVersionsByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrderVersionsResponse>* trading_data::Stub::PrepareAsyncOrderVersionsByIDRaw(::grpc::ClientContext* context, const ::api::OrderVersionsByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::OrderVersionsResponse, ::api::OrderVersionsByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderVersionsByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderVersionsByIDResponse>* TradingDataService::Stub::PrepareAsyncOrderVersionsByIDRaw(::grpc::ClientContext* context, const ::api::v1::OrderVersionsByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OrderVersionsByIDResponse, ::api::v1::OrderVersionsByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OrderVersionsByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::OrderVersionsResponse>* trading_data::Stub::AsyncOrderVersionsByIDRaw(::grpc::ClientContext* context, const ::api::OrderVersionsByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::OrderVersionsByIDResponse>* TradingDataService::Stub::AsyncOrderVersionsByIDRaw(::grpc::ClientContext* context, const ::api::v1::OrderVersionsByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncOrderVersionsByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::MarginLevels(::grpc::ClientContext* context, const ::api::MarginLevelsRequest& request, ::api::MarginLevelsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::MarginLevelsRequest, ::api::MarginLevelsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarginLevels_, context, request, response);
+::grpc::Status TradingDataService::Stub::MarginLevels(::grpc::ClientContext* context, const ::api::v1::MarginLevelsRequest& request, ::api::v1::MarginLevelsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::MarginLevelsRequest, ::api::v1::MarginLevelsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_MarginLevels_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::MarginLevels(::grpc::ClientContext* context, const ::api::MarginLevelsRequest* request, ::api::MarginLevelsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::MarginLevelsRequest, ::api::MarginLevelsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarginLevels_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::MarginLevels(::grpc::ClientContext* context, const ::api::v1::MarginLevelsRequest* request, ::api::v1::MarginLevelsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::MarginLevelsRequest, ::api::v1::MarginLevelsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarginLevels_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::MarginLevels(::grpc::ClientContext* context, const ::api::MarginLevelsRequest* request, ::api::MarginLevelsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::MarginLevels(::grpc::ClientContext* context, const ::api::v1::MarginLevelsRequest* request, ::api::v1::MarginLevelsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_MarginLevels_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarginLevelsResponse>* trading_data::Stub::PrepareAsyncMarginLevelsRaw(::grpc::ClientContext* context, const ::api::MarginLevelsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::MarginLevelsResponse, ::api::MarginLevelsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarginLevels_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::MarginLevelsResponse>* TradingDataService::Stub::PrepareAsyncMarginLevelsRaw(::grpc::ClientContext* context, const ::api::v1::MarginLevelsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::MarginLevelsResponse, ::api::v1::MarginLevelsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_MarginLevels_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::MarginLevelsResponse>* trading_data::Stub::AsyncMarginLevelsRaw(::grpc::ClientContext* context, const ::api::MarginLevelsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::MarginLevelsResponse>* TradingDataService::Stub::AsyncMarginLevelsRaw(::grpc::ClientContext* context, const ::api::v1::MarginLevelsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncMarginLevelsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Parties(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::api::PartiesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::api::PartiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Parties_, context, request, response);
+::grpc::Status TradingDataService::Stub::Parties(::grpc::ClientContext* context, const ::api::v1::PartiesRequest& request, ::api::v1::PartiesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PartiesRequest, ::api::v1::PartiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Parties_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Parties(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::PartiesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::api::PartiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Parties_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Parties(::grpc::ClientContext* context, const ::api::v1::PartiesRequest* request, ::api::v1::PartiesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PartiesRequest, ::api::v1::PartiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Parties_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Parties(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::PartiesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Parties(::grpc::ClientContext* context, const ::api::v1::PartiesRequest* request, ::api::v1::PartiesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Parties_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PartiesResponse>* trading_data::Stub::PrepareAsyncPartiesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PartiesResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Parties_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PartiesResponse>* TradingDataService::Stub::PrepareAsyncPartiesRaw(::grpc::ClientContext* context, const ::api::v1::PartiesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PartiesResponse, ::api::v1::PartiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Parties_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PartiesResponse>* trading_data::Stub::AsyncPartiesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PartiesResponse>* TradingDataService::Stub::AsyncPartiesRaw(::grpc::ClientContext* context, const ::api::v1::PartiesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPartiesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::PartyByID(::grpc::ClientContext* context, const ::api::PartyByIDRequest& request, ::api::PartyByIDResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PartyByIDRequest, ::api::PartyByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PartyByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::PartyByID(::grpc::ClientContext* context, const ::api::v1::PartyByIDRequest& request, ::api::v1::PartyByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PartyByIDRequest, ::api::v1::PartyByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PartyByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::PartyByID(::grpc::ClientContext* context, const ::api::PartyByIDRequest* request, ::api::PartyByIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PartyByIDRequest, ::api::PartyByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PartyByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::PartyByID(::grpc::ClientContext* context, const ::api::v1::PartyByIDRequest* request, ::api::v1::PartyByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PartyByIDRequest, ::api::v1::PartyByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PartyByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::PartyByID(::grpc::ClientContext* context, const ::api::PartyByIDRequest* request, ::api::PartyByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::PartyByID(::grpc::ClientContext* context, const ::api::v1::PartyByIDRequest* request, ::api::v1::PartyByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PartyByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PartyByIDResponse>* trading_data::Stub::PrepareAsyncPartyByIDRaw(::grpc::ClientContext* context, const ::api::PartyByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PartyByIDResponse, ::api::PartyByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PartyByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PartyByIDResponse>* TradingDataService::Stub::PrepareAsyncPartyByIDRaw(::grpc::ClientContext* context, const ::api::v1::PartyByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PartyByIDResponse, ::api::v1::PartyByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PartyByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PartyByIDResponse>* trading_data::Stub::AsyncPartyByIDRaw(::grpc::ClientContext* context, const ::api::PartyByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PartyByIDResponse>* TradingDataService::Stub::AsyncPartyByIDRaw(::grpc::ClientContext* context, const ::api::v1::PartyByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPartyByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::PositionsByParty(::grpc::ClientContext* context, const ::api::PositionsByPartyRequest& request, ::api::PositionsByPartyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::PositionsByPartyRequest, ::api::PositionsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PositionsByParty_, context, request, response);
+::grpc::Status TradingDataService::Stub::PositionsByParty(::grpc::ClientContext* context, const ::api::v1::PositionsByPartyRequest& request, ::api::v1::PositionsByPartyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PositionsByPartyRequest, ::api::v1::PositionsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PositionsByParty_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::PositionsByParty(::grpc::ClientContext* context, const ::api::PositionsByPartyRequest* request, ::api::PositionsByPartyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::PositionsByPartyRequest, ::api::PositionsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PositionsByParty_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::PositionsByParty(::grpc::ClientContext* context, const ::api::v1::PositionsByPartyRequest* request, ::api::v1::PositionsByPartyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PositionsByPartyRequest, ::api::v1::PositionsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PositionsByParty_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::PositionsByParty(::grpc::ClientContext* context, const ::api::PositionsByPartyRequest* request, ::api::PositionsByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::PositionsByParty(::grpc::ClientContext* context, const ::api::v1::PositionsByPartyRequest* request, ::api::v1::PositionsByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PositionsByParty_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PositionsByPartyResponse>* trading_data::Stub::PrepareAsyncPositionsByPartyRaw(::grpc::ClientContext* context, const ::api::PositionsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::PositionsByPartyResponse, ::api::PositionsByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PositionsByParty_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PositionsByPartyResponse>* TradingDataService::Stub::PrepareAsyncPositionsByPartyRaw(::grpc::ClientContext* context, const ::api::v1::PositionsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PositionsByPartyResponse, ::api::v1::PositionsByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PositionsByParty_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::PositionsByPartyResponse>* trading_data::Stub::AsyncPositionsByPartyRaw(::grpc::ClientContext* context, const ::api::PositionsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PositionsByPartyResponse>* TradingDataService::Stub::AsyncPositionsByPartyRaw(::grpc::ClientContext* context, const ::api::v1::PositionsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPositionsByPartyRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::LastTrade(::grpc::ClientContext* context, const ::api::LastTradeRequest& request, ::api::LastTradeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::LastTradeRequest, ::api::LastTradeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LastTrade_, context, request, response);
+::grpc::Status TradingDataService::Stub::LastTrade(::grpc::ClientContext* context, const ::api::v1::LastTradeRequest& request, ::api::v1::LastTradeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::LastTradeRequest, ::api::v1::LastTradeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LastTrade_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::LastTrade(::grpc::ClientContext* context, const ::api::LastTradeRequest* request, ::api::LastTradeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::LastTradeRequest, ::api::LastTradeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LastTrade_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::LastTrade(::grpc::ClientContext* context, const ::api::v1::LastTradeRequest* request, ::api::v1::LastTradeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::LastTradeRequest, ::api::v1::LastTradeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LastTrade_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::LastTrade(::grpc::ClientContext* context, const ::api::LastTradeRequest* request, ::api::LastTradeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::LastTrade(::grpc::ClientContext* context, const ::api::v1::LastTradeRequest* request, ::api::v1::LastTradeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LastTrade_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::LastTradeResponse>* trading_data::Stub::PrepareAsyncLastTradeRaw(::grpc::ClientContext* context, const ::api::LastTradeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::LastTradeResponse, ::api::LastTradeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LastTrade_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::LastTradeResponse>* TradingDataService::Stub::PrepareAsyncLastTradeRaw(::grpc::ClientContext* context, const ::api::v1::LastTradeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::LastTradeResponse, ::api::v1::LastTradeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LastTrade_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::LastTradeResponse>* trading_data::Stub::AsyncLastTradeRaw(::grpc::ClientContext* context, const ::api::LastTradeRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::LastTradeResponse>* TradingDataService::Stub::AsyncLastTradeRaw(::grpc::ClientContext* context, const ::api::v1::LastTradeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncLastTradeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::TradesByMarket(::grpc::ClientContext* context, const ::api::TradesByMarketRequest& request, ::api::TradesByMarketResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::TradesByMarketRequest, ::api::TradesByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TradesByMarket_, context, request, response);
+::grpc::Status TradingDataService::Stub::TradesByMarket(::grpc::ClientContext* context, const ::api::v1::TradesByMarketRequest& request, ::api::v1::TradesByMarketResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::TradesByMarketRequest, ::api::v1::TradesByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TradesByMarket_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::TradesByMarket(::grpc::ClientContext* context, const ::api::TradesByMarketRequest* request, ::api::TradesByMarketResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::TradesByMarketRequest, ::api::TradesByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByMarket_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::TradesByMarket(::grpc::ClientContext* context, const ::api::v1::TradesByMarketRequest* request, ::api::v1::TradesByMarketResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::TradesByMarketRequest, ::api::v1::TradesByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByMarket_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::TradesByMarket(::grpc::ClientContext* context, const ::api::TradesByMarketRequest* request, ::api::TradesByMarketResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::TradesByMarket(::grpc::ClientContext* context, const ::api::v1::TradesByMarketRequest* request, ::api::v1::TradesByMarketResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByMarket_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::TradesByMarketResponse>* trading_data::Stub::PrepareAsyncTradesByMarketRaw(::grpc::ClientContext* context, const ::api::TradesByMarketRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::TradesByMarketResponse, ::api::TradesByMarketRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TradesByMarket_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::TradesByMarketResponse>* TradingDataService::Stub::PrepareAsyncTradesByMarketRaw(::grpc::ClientContext* context, const ::api::v1::TradesByMarketRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::TradesByMarketResponse, ::api::v1::TradesByMarketRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TradesByMarket_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::TradesByMarketResponse>* trading_data::Stub::AsyncTradesByMarketRaw(::grpc::ClientContext* context, const ::api::TradesByMarketRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::TradesByMarketResponse>* TradingDataService::Stub::AsyncTradesByMarketRaw(::grpc::ClientContext* context, const ::api::v1::TradesByMarketRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncTradesByMarketRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::TradesByOrder(::grpc::ClientContext* context, const ::api::TradesByOrderRequest& request, ::api::TradesByOrderResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::TradesByOrderRequest, ::api::TradesByOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TradesByOrder_, context, request, response);
+::grpc::Status TradingDataService::Stub::TradesByOrder(::grpc::ClientContext* context, const ::api::v1::TradesByOrderRequest& request, ::api::v1::TradesByOrderResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::TradesByOrderRequest, ::api::v1::TradesByOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TradesByOrder_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::TradesByOrder(::grpc::ClientContext* context, const ::api::TradesByOrderRequest* request, ::api::TradesByOrderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::TradesByOrderRequest, ::api::TradesByOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByOrder_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::TradesByOrder(::grpc::ClientContext* context, const ::api::v1::TradesByOrderRequest* request, ::api::v1::TradesByOrderResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::TradesByOrderRequest, ::api::v1::TradesByOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByOrder_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::TradesByOrder(::grpc::ClientContext* context, const ::api::TradesByOrderRequest* request, ::api::TradesByOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::TradesByOrder(::grpc::ClientContext* context, const ::api::v1::TradesByOrderRequest* request, ::api::v1::TradesByOrderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByOrder_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::TradesByOrderResponse>* trading_data::Stub::PrepareAsyncTradesByOrderRaw(::grpc::ClientContext* context, const ::api::TradesByOrderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::TradesByOrderResponse, ::api::TradesByOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TradesByOrder_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::TradesByOrderResponse>* TradingDataService::Stub::PrepareAsyncTradesByOrderRaw(::grpc::ClientContext* context, const ::api::v1::TradesByOrderRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::TradesByOrderResponse, ::api::v1::TradesByOrderRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TradesByOrder_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::TradesByOrderResponse>* trading_data::Stub::AsyncTradesByOrderRaw(::grpc::ClientContext* context, const ::api::TradesByOrderRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::TradesByOrderResponse>* TradingDataService::Stub::AsyncTradesByOrderRaw(::grpc::ClientContext* context, const ::api::v1::TradesByOrderRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncTradesByOrderRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::TradesByParty(::grpc::ClientContext* context, const ::api::TradesByPartyRequest& request, ::api::TradesByPartyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::TradesByPartyRequest, ::api::TradesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TradesByParty_, context, request, response);
+::grpc::Status TradingDataService::Stub::TradesByParty(::grpc::ClientContext* context, const ::api::v1::TradesByPartyRequest& request, ::api::v1::TradesByPartyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::TradesByPartyRequest, ::api::v1::TradesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_TradesByParty_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::TradesByParty(::grpc::ClientContext* context, const ::api::TradesByPartyRequest* request, ::api::TradesByPartyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::TradesByPartyRequest, ::api::TradesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByParty_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::TradesByParty(::grpc::ClientContext* context, const ::api::v1::TradesByPartyRequest* request, ::api::v1::TradesByPartyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::TradesByPartyRequest, ::api::v1::TradesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByParty_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::TradesByParty(::grpc::ClientContext* context, const ::api::TradesByPartyRequest* request, ::api::TradesByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::TradesByParty(::grpc::ClientContext* context, const ::api::v1::TradesByPartyRequest* request, ::api::v1::TradesByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_TradesByParty_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::TradesByPartyResponse>* trading_data::Stub::PrepareAsyncTradesByPartyRaw(::grpc::ClientContext* context, const ::api::TradesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::TradesByPartyResponse, ::api::TradesByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TradesByParty_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::TradesByPartyResponse>* TradingDataService::Stub::PrepareAsyncTradesByPartyRaw(::grpc::ClientContext* context, const ::api::v1::TradesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::TradesByPartyResponse, ::api::v1::TradesByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_TradesByParty_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::TradesByPartyResponse>* trading_data::Stub::AsyncTradesByPartyRaw(::grpc::ClientContext* context, const ::api::TradesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::TradesByPartyResponse>* TradingDataService::Stub::AsyncTradesByPartyRaw(::grpc::ClientContext* context, const ::api::v1::TradesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncTradesByPartyRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetProposals(::grpc::ClientContext* context, const ::api::GetProposalsRequest& request, ::api::GetProposalsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetProposalsRequest, ::api::GetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposals_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetProposals(::grpc::ClientContext* context, const ::api::v1::GetProposalsRequest& request, ::api::v1::GetProposalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetProposalsRequest, ::api::v1::GetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposals_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetProposals(::grpc::ClientContext* context, const ::api::GetProposalsRequest* request, ::api::GetProposalsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetProposalsRequest, ::api::GetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposals_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetProposals(::grpc::ClientContext* context, const ::api::v1::GetProposalsRequest* request, ::api::v1::GetProposalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetProposalsRequest, ::api::v1::GetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposals_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetProposals(::grpc::ClientContext* context, const ::api::GetProposalsRequest* request, ::api::GetProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetProposals(::grpc::ClientContext* context, const ::api::v1::GetProposalsRequest* request, ::api::v1::GetProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalsResponse>* trading_data::Stub::PrepareAsyncGetProposalsRaw(::grpc::ClientContext* context, const ::api::GetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetProposalsResponse, ::api::GetProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposals_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalsResponse>* TradingDataService::Stub::PrepareAsyncGetProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetProposalsResponse, ::api::v1::GetProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposals_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalsResponse>* trading_data::Stub::AsyncGetProposalsRaw(::grpc::ClientContext* context, const ::api::GetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalsResponse>* TradingDataService::Stub::AsyncGetProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetProposalsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetProposalsByParty(::grpc::ClientContext* context, const ::api::GetProposalsByPartyRequest& request, ::api::GetProposalsByPartyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetProposalsByPartyRequest, ::api::GetProposalsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposalsByParty_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetProposalsByParty(::grpc::ClientContext* context, const ::api::v1::GetProposalsByPartyRequest& request, ::api::v1::GetProposalsByPartyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetProposalsByPartyRequest, ::api::v1::GetProposalsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposalsByParty_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetProposalsByParty(::grpc::ClientContext* context, const ::api::GetProposalsByPartyRequest* request, ::api::GetProposalsByPartyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetProposalsByPartyRequest, ::api::GetProposalsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalsByParty_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetProposalsByParty(::grpc::ClientContext* context, const ::api::v1::GetProposalsByPartyRequest* request, ::api::v1::GetProposalsByPartyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetProposalsByPartyRequest, ::api::v1::GetProposalsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalsByParty_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetProposalsByParty(::grpc::ClientContext* context, const ::api::GetProposalsByPartyRequest* request, ::api::GetProposalsByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetProposalsByParty(::grpc::ClientContext* context, const ::api::v1::GetProposalsByPartyRequest* request, ::api::v1::GetProposalsByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalsByParty_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalsByPartyResponse>* trading_data::Stub::PrepareAsyncGetProposalsByPartyRaw(::grpc::ClientContext* context, const ::api::GetProposalsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetProposalsByPartyResponse, ::api::GetProposalsByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposalsByParty_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalsByPartyResponse>* TradingDataService::Stub::PrepareAsyncGetProposalsByPartyRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetProposalsByPartyResponse, ::api::v1::GetProposalsByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposalsByParty_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalsByPartyResponse>* trading_data::Stub::AsyncGetProposalsByPartyRaw(::grpc::ClientContext* context, const ::api::GetProposalsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalsByPartyResponse>* TradingDataService::Stub::AsyncGetProposalsByPartyRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalsByPartyRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetProposalsByPartyRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetVotesByParty(::grpc::ClientContext* context, const ::api::GetVotesByPartyRequest& request, ::api::GetVotesByPartyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetVotesByPartyRequest, ::api::GetVotesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetVotesByParty_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetVotesByParty(::grpc::ClientContext* context, const ::api::v1::GetVotesByPartyRequest& request, ::api::v1::GetVotesByPartyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetVotesByPartyRequest, ::api::v1::GetVotesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetVotesByParty_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetVotesByParty(::grpc::ClientContext* context, const ::api::GetVotesByPartyRequest* request, ::api::GetVotesByPartyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetVotesByPartyRequest, ::api::GetVotesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVotesByParty_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetVotesByParty(::grpc::ClientContext* context, const ::api::v1::GetVotesByPartyRequest* request, ::api::v1::GetVotesByPartyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetVotesByPartyRequest, ::api::v1::GetVotesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVotesByParty_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetVotesByParty(::grpc::ClientContext* context, const ::api::GetVotesByPartyRequest* request, ::api::GetVotesByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetVotesByParty(::grpc::ClientContext* context, const ::api::v1::GetVotesByPartyRequest* request, ::api::v1::GetVotesByPartyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVotesByParty_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetVotesByPartyResponse>* trading_data::Stub::PrepareAsyncGetVotesByPartyRaw(::grpc::ClientContext* context, const ::api::GetVotesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetVotesByPartyResponse, ::api::GetVotesByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetVotesByParty_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetVotesByPartyResponse>* TradingDataService::Stub::PrepareAsyncGetVotesByPartyRaw(::grpc::ClientContext* context, const ::api::v1::GetVotesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetVotesByPartyResponse, ::api::v1::GetVotesByPartyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetVotesByParty_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetVotesByPartyResponse>* trading_data::Stub::AsyncGetVotesByPartyRaw(::grpc::ClientContext* context, const ::api::GetVotesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetVotesByPartyResponse>* TradingDataService::Stub::AsyncGetVotesByPartyRaw(::grpc::ClientContext* context, const ::api::v1::GetVotesByPartyRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetVotesByPartyRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetNewMarketProposals(::grpc::ClientContext* context, const ::api::GetNewMarketProposalsRequest& request, ::api::GetNewMarketProposalsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetNewMarketProposalsRequest, ::api::GetNewMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNewMarketProposals_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetNewMarketProposals(::grpc::ClientContext* context, const ::api::v1::GetNewMarketProposalsRequest& request, ::api::v1::GetNewMarketProposalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetNewMarketProposalsRequest, ::api::v1::GetNewMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNewMarketProposals_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetNewMarketProposals(::grpc::ClientContext* context, const ::api::GetNewMarketProposalsRequest* request, ::api::GetNewMarketProposalsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetNewMarketProposalsRequest, ::api::GetNewMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNewMarketProposals_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetNewMarketProposals(::grpc::ClientContext* context, const ::api::v1::GetNewMarketProposalsRequest* request, ::api::v1::GetNewMarketProposalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetNewMarketProposalsRequest, ::api::v1::GetNewMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNewMarketProposals_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetNewMarketProposals(::grpc::ClientContext* context, const ::api::GetNewMarketProposalsRequest* request, ::api::GetNewMarketProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetNewMarketProposals(::grpc::ClientContext* context, const ::api::v1::GetNewMarketProposalsRequest* request, ::api::v1::GetNewMarketProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNewMarketProposals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNewMarketProposalsResponse>* trading_data::Stub::PrepareAsyncGetNewMarketProposalsRaw(::grpc::ClientContext* context, const ::api::GetNewMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetNewMarketProposalsResponse, ::api::GetNewMarketProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNewMarketProposals_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNewMarketProposalsResponse>* TradingDataService::Stub::PrepareAsyncGetNewMarketProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetNewMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetNewMarketProposalsResponse, ::api::v1::GetNewMarketProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNewMarketProposals_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNewMarketProposalsResponse>* trading_data::Stub::AsyncGetNewMarketProposalsRaw(::grpc::ClientContext* context, const ::api::GetNewMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNewMarketProposalsResponse>* TradingDataService::Stub::AsyncGetNewMarketProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetNewMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetNewMarketProposalsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetUpdateMarketProposals(::grpc::ClientContext* context, const ::api::GetUpdateMarketProposalsRequest& request, ::api::GetUpdateMarketProposalsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetUpdateMarketProposalsRequest, ::api::GetUpdateMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetUpdateMarketProposals_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetUpdateMarketProposals(::grpc::ClientContext* context, const ::api::v1::GetUpdateMarketProposalsRequest& request, ::api::v1::GetUpdateMarketProposalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetUpdateMarketProposalsRequest, ::api::v1::GetUpdateMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetUpdateMarketProposals_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetUpdateMarketProposals(::grpc::ClientContext* context, const ::api::GetUpdateMarketProposalsRequest* request, ::api::GetUpdateMarketProposalsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetUpdateMarketProposalsRequest, ::api::GetUpdateMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUpdateMarketProposals_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetUpdateMarketProposals(::grpc::ClientContext* context, const ::api::v1::GetUpdateMarketProposalsRequest* request, ::api::v1::GetUpdateMarketProposalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetUpdateMarketProposalsRequest, ::api::v1::GetUpdateMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUpdateMarketProposals_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetUpdateMarketProposals(::grpc::ClientContext* context, const ::api::GetUpdateMarketProposalsRequest* request, ::api::GetUpdateMarketProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetUpdateMarketProposals(::grpc::ClientContext* context, const ::api::v1::GetUpdateMarketProposalsRequest* request, ::api::v1::GetUpdateMarketProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUpdateMarketProposals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetUpdateMarketProposalsResponse>* trading_data::Stub::PrepareAsyncGetUpdateMarketProposalsRaw(::grpc::ClientContext* context, const ::api::GetUpdateMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetUpdateMarketProposalsResponse, ::api::GetUpdateMarketProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetUpdateMarketProposals_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetUpdateMarketProposalsResponse>* TradingDataService::Stub::PrepareAsyncGetUpdateMarketProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetUpdateMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetUpdateMarketProposalsResponse, ::api::v1::GetUpdateMarketProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetUpdateMarketProposals_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetUpdateMarketProposalsResponse>* trading_data::Stub::AsyncGetUpdateMarketProposalsRaw(::grpc::ClientContext* context, const ::api::GetUpdateMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetUpdateMarketProposalsResponse>* TradingDataService::Stub::AsyncGetUpdateMarketProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetUpdateMarketProposalsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetUpdateMarketProposalsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetNetworkParametersProposals(::grpc::ClientContext* context, const ::api::GetNetworkParametersProposalsRequest& request, ::api::GetNetworkParametersProposalsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetNetworkParametersProposalsRequest, ::api::GetNetworkParametersProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNetworkParametersProposals_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetNetworkParametersProposals(::grpc::ClientContext* context, const ::api::v1::GetNetworkParametersProposalsRequest& request, ::api::v1::GetNetworkParametersProposalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetNetworkParametersProposalsRequest, ::api::v1::GetNetworkParametersProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNetworkParametersProposals_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetNetworkParametersProposals(::grpc::ClientContext* context, const ::api::GetNetworkParametersProposalsRequest* request, ::api::GetNetworkParametersProposalsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetNetworkParametersProposalsRequest, ::api::GetNetworkParametersProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNetworkParametersProposals_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetNetworkParametersProposals(::grpc::ClientContext* context, const ::api::v1::GetNetworkParametersProposalsRequest* request, ::api::v1::GetNetworkParametersProposalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetNetworkParametersProposalsRequest, ::api::v1::GetNetworkParametersProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNetworkParametersProposals_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetNetworkParametersProposals(::grpc::ClientContext* context, const ::api::GetNetworkParametersProposalsRequest* request, ::api::GetNetworkParametersProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetNetworkParametersProposals(::grpc::ClientContext* context, const ::api::v1::GetNetworkParametersProposalsRequest* request, ::api::v1::GetNetworkParametersProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNetworkParametersProposals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNetworkParametersProposalsResponse>* trading_data::Stub::PrepareAsyncGetNetworkParametersProposalsRaw(::grpc::ClientContext* context, const ::api::GetNetworkParametersProposalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetNetworkParametersProposalsResponse, ::api::GetNetworkParametersProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNetworkParametersProposals_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNetworkParametersProposalsResponse>* TradingDataService::Stub::PrepareAsyncGetNetworkParametersProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetNetworkParametersProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetNetworkParametersProposalsResponse, ::api::v1::GetNetworkParametersProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNetworkParametersProposals_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNetworkParametersProposalsResponse>* trading_data::Stub::AsyncGetNetworkParametersProposalsRaw(::grpc::ClientContext* context, const ::api::GetNetworkParametersProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNetworkParametersProposalsResponse>* TradingDataService::Stub::AsyncGetNetworkParametersProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetNetworkParametersProposalsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetNetworkParametersProposalsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetNewAssetProposals(::grpc::ClientContext* context, const ::api::GetNewAssetProposalsRequest& request, ::api::GetNewAssetProposalsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetNewAssetProposalsRequest, ::api::GetNewAssetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNewAssetProposals_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetNewAssetProposals(::grpc::ClientContext* context, const ::api::v1::GetNewAssetProposalsRequest& request, ::api::v1::GetNewAssetProposalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetNewAssetProposalsRequest, ::api::v1::GetNewAssetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNewAssetProposals_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetNewAssetProposals(::grpc::ClientContext* context, const ::api::GetNewAssetProposalsRequest* request, ::api::GetNewAssetProposalsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetNewAssetProposalsRequest, ::api::GetNewAssetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNewAssetProposals_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetNewAssetProposals(::grpc::ClientContext* context, const ::api::v1::GetNewAssetProposalsRequest* request, ::api::v1::GetNewAssetProposalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetNewAssetProposalsRequest, ::api::v1::GetNewAssetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNewAssetProposals_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetNewAssetProposals(::grpc::ClientContext* context, const ::api::GetNewAssetProposalsRequest* request, ::api::GetNewAssetProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetNewAssetProposals(::grpc::ClientContext* context, const ::api::v1::GetNewAssetProposalsRequest* request, ::api::v1::GetNewAssetProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNewAssetProposals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNewAssetProposalsResponse>* trading_data::Stub::PrepareAsyncGetNewAssetProposalsRaw(::grpc::ClientContext* context, const ::api::GetNewAssetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetNewAssetProposalsResponse, ::api::GetNewAssetProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNewAssetProposals_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNewAssetProposalsResponse>* TradingDataService::Stub::PrepareAsyncGetNewAssetProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetNewAssetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetNewAssetProposalsResponse, ::api::v1::GetNewAssetProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNewAssetProposals_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNewAssetProposalsResponse>* trading_data::Stub::AsyncGetNewAssetProposalsRaw(::grpc::ClientContext* context, const ::api::GetNewAssetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNewAssetProposalsResponse>* TradingDataService::Stub::AsyncGetNewAssetProposalsRaw(::grpc::ClientContext* context, const ::api::v1::GetNewAssetProposalsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetNewAssetProposalsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetProposalByID(::grpc::ClientContext* context, const ::api::GetProposalByIDRequest& request, ::api::GetProposalByIDResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetProposalByIDRequest, ::api::GetProposalByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposalByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetProposalByID(::grpc::ClientContext* context, const ::api::v1::GetProposalByIDRequest& request, ::api::v1::GetProposalByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetProposalByIDRequest, ::api::v1::GetProposalByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposalByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetProposalByID(::grpc::ClientContext* context, const ::api::GetProposalByIDRequest* request, ::api::GetProposalByIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetProposalByIDRequest, ::api::GetProposalByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetProposalByID(::grpc::ClientContext* context, const ::api::v1::GetProposalByIDRequest* request, ::api::v1::GetProposalByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetProposalByIDRequest, ::api::v1::GetProposalByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetProposalByID(::grpc::ClientContext* context, const ::api::GetProposalByIDRequest* request, ::api::GetProposalByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetProposalByID(::grpc::ClientContext* context, const ::api::v1::GetProposalByIDRequest* request, ::api::v1::GetProposalByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalByIDResponse>* trading_data::Stub::PrepareAsyncGetProposalByIDRaw(::grpc::ClientContext* context, const ::api::GetProposalByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetProposalByIDResponse, ::api::GetProposalByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposalByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalByIDResponse>* TradingDataService::Stub::PrepareAsyncGetProposalByIDRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetProposalByIDResponse, ::api::v1::GetProposalByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposalByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalByIDResponse>* trading_data::Stub::AsyncGetProposalByIDRaw(::grpc::ClientContext* context, const ::api::GetProposalByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalByIDResponse>* TradingDataService::Stub::AsyncGetProposalByIDRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetProposalByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetProposalByReference(::grpc::ClientContext* context, const ::api::GetProposalByReferenceRequest& request, ::api::GetProposalByReferenceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetProposalByReferenceRequest, ::api::GetProposalByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposalByReference_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetProposalByReference(::grpc::ClientContext* context, const ::api::v1::GetProposalByReferenceRequest& request, ::api::v1::GetProposalByReferenceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetProposalByReferenceRequest, ::api::v1::GetProposalByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProposalByReference_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetProposalByReference(::grpc::ClientContext* context, const ::api::GetProposalByReferenceRequest* request, ::api::GetProposalByReferenceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetProposalByReferenceRequest, ::api::GetProposalByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalByReference_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetProposalByReference(::grpc::ClientContext* context, const ::api::v1::GetProposalByReferenceRequest* request, ::api::v1::GetProposalByReferenceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetProposalByReferenceRequest, ::api::v1::GetProposalByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalByReference_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetProposalByReference(::grpc::ClientContext* context, const ::api::GetProposalByReferenceRequest* request, ::api::GetProposalByReferenceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetProposalByReference(::grpc::ClientContext* context, const ::api::v1::GetProposalByReferenceRequest* request, ::api::v1::GetProposalByReferenceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProposalByReference_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalByReferenceResponse>* trading_data::Stub::PrepareAsyncGetProposalByReferenceRaw(::grpc::ClientContext* context, const ::api::GetProposalByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetProposalByReferenceResponse, ::api::GetProposalByReferenceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposalByReference_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalByReferenceResponse>* TradingDataService::Stub::PrepareAsyncGetProposalByReferenceRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetProposalByReferenceResponse, ::api::v1::GetProposalByReferenceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProposalByReference_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetProposalByReferenceResponse>* trading_data::Stub::AsyncGetProposalByReferenceRaw(::grpc::ClientContext* context, const ::api::GetProposalByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetProposalByReferenceResponse>* TradingDataService::Stub::AsyncGetProposalByReferenceRaw(::grpc::ClientContext* context, const ::api::v1::GetProposalByReferenceRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetProposalByReferenceRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::ClientReader< ::vega::GovernanceData>* trading_data::Stub::ObserveGovernanceRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::GovernanceData>::Create(channel_.get(), rpcmethod_ObserveGovernance_, context, request);
+::grpc::ClientReader< ::api::v1::ObserveGovernanceResponse>* TradingDataService::Stub::ObserveGovernanceRaw(::grpc::ClientContext* context, const ::api::v1::ObserveGovernanceRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::ObserveGovernanceResponse>::Create(channel_.get(), rpcmethod_ObserveGovernance_, context, request);
 }
 
-void trading_data::Stub::experimental_async::ObserveGovernance(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::vega::GovernanceData>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::GovernanceData>::Create(stub_->channel_.get(), stub_->rpcmethod_ObserveGovernance_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::ObserveGovernance(::grpc::ClientContext* context, ::api::v1::ObserveGovernanceRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::ObserveGovernanceResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::ObserveGovernanceResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_ObserveGovernance_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::GovernanceData>* trading_data::Stub::AsyncObserveGovernanceRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::GovernanceData>::Create(channel_.get(), cq, rpcmethod_ObserveGovernance_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::ObserveGovernanceResponse>* TradingDataService::Stub::AsyncObserveGovernanceRaw(::grpc::ClientContext* context, const ::api::v1::ObserveGovernanceRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObserveGovernanceResponse>::Create(channel_.get(), cq, rpcmethod_ObserveGovernance_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::GovernanceData>* trading_data::Stub::PrepareAsyncObserveGovernanceRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::GovernanceData>::Create(channel_.get(), cq, rpcmethod_ObserveGovernance_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::ObserveGovernanceResponse>* TradingDataService::Stub::PrepareAsyncObserveGovernanceRaw(::grpc::ClientContext* context, const ::api::v1::ObserveGovernanceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObserveGovernanceResponse>::Create(channel_.get(), cq, rpcmethod_ObserveGovernance_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::GovernanceData>* trading_data::Stub::ObservePartyProposalsRaw(::grpc::ClientContext* context, const ::api::ObservePartyProposalsRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::GovernanceData>::Create(channel_.get(), rpcmethod_ObservePartyProposals_, context, request);
+::grpc::ClientReader< ::api::v1::ObservePartyProposalsResponse>* TradingDataService::Stub::ObservePartyProposalsRaw(::grpc::ClientContext* context, const ::api::v1::ObservePartyProposalsRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::ObservePartyProposalsResponse>::Create(channel_.get(), rpcmethod_ObservePartyProposals_, context, request);
 }
 
-void trading_data::Stub::experimental_async::ObservePartyProposals(::grpc::ClientContext* context, ::api::ObservePartyProposalsRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::GovernanceData>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::GovernanceData>::Create(stub_->channel_.get(), stub_->rpcmethod_ObservePartyProposals_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::ObservePartyProposals(::grpc::ClientContext* context, ::api::v1::ObservePartyProposalsRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::ObservePartyProposalsResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::ObservePartyProposalsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_ObservePartyProposals_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::GovernanceData>* trading_data::Stub::AsyncObservePartyProposalsRaw(::grpc::ClientContext* context, const ::api::ObservePartyProposalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::GovernanceData>::Create(channel_.get(), cq, rpcmethod_ObservePartyProposals_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::ObservePartyProposalsResponse>* TradingDataService::Stub::AsyncObservePartyProposalsRaw(::grpc::ClientContext* context, const ::api::v1::ObservePartyProposalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObservePartyProposalsResponse>::Create(channel_.get(), cq, rpcmethod_ObservePartyProposals_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::GovernanceData>* trading_data::Stub::PrepareAsyncObservePartyProposalsRaw(::grpc::ClientContext* context, const ::api::ObservePartyProposalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::GovernanceData>::Create(channel_.get(), cq, rpcmethod_ObservePartyProposals_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::ObservePartyProposalsResponse>* TradingDataService::Stub::PrepareAsyncObservePartyProposalsRaw(::grpc::ClientContext* context, const ::api::v1::ObservePartyProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObservePartyProposalsResponse>::Create(channel_.get(), cq, rpcmethod_ObservePartyProposals_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::Vote>* trading_data::Stub::ObservePartyVotesRaw(::grpc::ClientContext* context, const ::api::ObservePartyVotesRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::Vote>::Create(channel_.get(), rpcmethod_ObservePartyVotes_, context, request);
+::grpc::ClientReader< ::api::v1::ObservePartyVotesResponse>* TradingDataService::Stub::ObservePartyVotesRaw(::grpc::ClientContext* context, const ::api::v1::ObservePartyVotesRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::ObservePartyVotesResponse>::Create(channel_.get(), rpcmethod_ObservePartyVotes_, context, request);
 }
 
-void trading_data::Stub::experimental_async::ObservePartyVotes(::grpc::ClientContext* context, ::api::ObservePartyVotesRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::Vote>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::Vote>::Create(stub_->channel_.get(), stub_->rpcmethod_ObservePartyVotes_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::ObservePartyVotes(::grpc::ClientContext* context, ::api::v1::ObservePartyVotesRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::ObservePartyVotesResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::ObservePartyVotesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_ObservePartyVotes_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::Vote>* trading_data::Stub::AsyncObservePartyVotesRaw(::grpc::ClientContext* context, const ::api::ObservePartyVotesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Vote>::Create(channel_.get(), cq, rpcmethod_ObservePartyVotes_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::ObservePartyVotesResponse>* TradingDataService::Stub::AsyncObservePartyVotesRaw(::grpc::ClientContext* context, const ::api::v1::ObservePartyVotesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObservePartyVotesResponse>::Create(channel_.get(), cq, rpcmethod_ObservePartyVotes_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::Vote>* trading_data::Stub::PrepareAsyncObservePartyVotesRaw(::grpc::ClientContext* context, const ::api::ObservePartyVotesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Vote>::Create(channel_.get(), cq, rpcmethod_ObservePartyVotes_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::ObservePartyVotesResponse>* TradingDataService::Stub::PrepareAsyncObservePartyVotesRaw(::grpc::ClientContext* context, const ::api::v1::ObservePartyVotesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObservePartyVotesResponse>::Create(channel_.get(), cq, rpcmethod_ObservePartyVotes_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::Vote>* trading_data::Stub::ObserveProposalVotesRaw(::grpc::ClientContext* context, const ::api::ObserveProposalVotesRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::Vote>::Create(channel_.get(), rpcmethod_ObserveProposalVotes_, context, request);
+::grpc::ClientReader< ::api::v1::ObserveProposalVotesResponse>* TradingDataService::Stub::ObserveProposalVotesRaw(::grpc::ClientContext* context, const ::api::v1::ObserveProposalVotesRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::ObserveProposalVotesResponse>::Create(channel_.get(), rpcmethod_ObserveProposalVotes_, context, request);
 }
 
-void trading_data::Stub::experimental_async::ObserveProposalVotes(::grpc::ClientContext* context, ::api::ObserveProposalVotesRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::Vote>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::Vote>::Create(stub_->channel_.get(), stub_->rpcmethod_ObserveProposalVotes_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::ObserveProposalVotes(::grpc::ClientContext* context, ::api::v1::ObserveProposalVotesRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::ObserveProposalVotesResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::ObserveProposalVotesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_ObserveProposalVotes_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::Vote>* trading_data::Stub::AsyncObserveProposalVotesRaw(::grpc::ClientContext* context, const ::api::ObserveProposalVotesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Vote>::Create(channel_.get(), cq, rpcmethod_ObserveProposalVotes_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::ObserveProposalVotesResponse>* TradingDataService::Stub::AsyncObserveProposalVotesRaw(::grpc::ClientContext* context, const ::api::v1::ObserveProposalVotesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObserveProposalVotesResponse>::Create(channel_.get(), cq, rpcmethod_ObserveProposalVotes_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::Vote>* trading_data::Stub::PrepareAsyncObserveProposalVotesRaw(::grpc::ClientContext* context, const ::api::ObserveProposalVotesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Vote>::Create(channel_.get(), cq, rpcmethod_ObserveProposalVotes_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::ObserveProposalVotesResponse>* TradingDataService::Stub::PrepareAsyncObserveProposalVotesRaw(::grpc::ClientContext* context, const ::api::v1::ObserveProposalVotesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::ObserveProposalVotesResponse>::Create(channel_.get(), cq, rpcmethod_ObserveProposalVotes_, context, request, false, nullptr);
 }
 
-::grpc::ClientReaderWriter< ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>* trading_data::Stub::ObserveEventBusRaw(::grpc::ClientContext* context) {
-  return ::grpc::internal::ClientReaderWriterFactory< ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>::Create(channel_.get(), rpcmethod_ObserveEventBus_, context);
+::grpc::ClientReaderWriter< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>* TradingDataService::Stub::ObserveEventBusRaw(::grpc::ClientContext* context) {
+  return ::grpc::internal::ClientReaderWriterFactory< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>::Create(channel_.get(), rpcmethod_ObserveEventBus_, context);
 }
 
-void trading_data::Stub::experimental_async::ObserveEventBus(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::api::ObserveEventsRequest,::api::ObserveEventsResponse>* reactor) {
-  ::grpc::internal::ClientCallbackReaderWriterFactory< ::api::ObserveEventsRequest,::api::ObserveEventsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_ObserveEventBus_, context, reactor);
+void TradingDataService::Stub::experimental_async::ObserveEventBus(::grpc::ClientContext* context, ::grpc::experimental::ClientBidiReactor< ::api::v1::ObserveEventBusRequest,::api::v1::ObserveEventBusResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderWriterFactory< ::api::v1::ObserveEventBusRequest,::api::v1::ObserveEventBusResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_ObserveEventBus_, context, reactor);
 }
 
-::grpc::ClientAsyncReaderWriter< ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>* trading_data::Stub::AsyncObserveEventBusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>::Create(channel_.get(), cq, rpcmethod_ObserveEventBus_, context, true, tag);
+::grpc::ClientAsyncReaderWriter< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>* TradingDataService::Stub::AsyncObserveEventBusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>::Create(channel_.get(), cq, rpcmethod_ObserveEventBus_, context, true, tag);
 }
 
-::grpc::ClientAsyncReaderWriter< ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>* trading_data::Stub::PrepareAsyncObserveEventBusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>::Create(channel_.get(), cq, rpcmethod_ObserveEventBus_, context, false, nullptr);
+::grpc::ClientAsyncReaderWriter< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>* TradingDataService::Stub::PrepareAsyncObserveEventBusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderWriterFactory< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>::Create(channel_.get(), cq, rpcmethod_ObserveEventBus_, context, false, nullptr);
 }
 
-::grpc::Status trading_data::Stub::Statistics(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::vega::Statistics* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::vega::Statistics, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Statistics_, context, request, response);
+::grpc::Status TradingDataService::Stub::Statistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::api::v1::StatisticsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::StatisticsRequest, ::api::v1::StatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Statistics_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Statistics(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vega::Statistics* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::vega::Statistics, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Statistics_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Statistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::StatisticsRequest, ::api::v1::StatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Statistics_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Statistics(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::vega::Statistics* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Statistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Statistics_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::vega::Statistics>* trading_data::Stub::PrepareAsyncStatisticsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::vega::Statistics, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Statistics_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>* TradingDataService::Stub::PrepareAsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::StatisticsResponse, ::api::v1::StatisticsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Statistics_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::vega::Statistics>* trading_data::Stub::AsyncStatisticsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>* TradingDataService::Stub::AsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncStatisticsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::GetVegaTime(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::api::VegaTimeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::api::VegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetVegaTime_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::api::v1::GetVegaTimeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetVegaTime_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetVegaTime(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::VegaTimeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::api::VegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVegaTime_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVegaTime_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetVegaTime(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::api::VegaTimeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVegaTime_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::VegaTimeResponse>* trading_data::Stub::PrepareAsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::VegaTimeResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetVegaTime_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetVegaTimeResponse>* TradingDataService::Stub::PrepareAsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetVegaTimeResponse, ::api::v1::GetVegaTimeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetVegaTime_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::VegaTimeResponse>* trading_data::Stub::AsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetVegaTimeResponse>* TradingDataService::Stub::AsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetVegaTimeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::ClientReader< ::vega::Account>* trading_data::Stub::AccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::AccountsSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::Account>::Create(channel_.get(), rpcmethod_AccountsSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::AccountsSubscribeResponse>* TradingDataService::Stub::AccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::AccountsSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::AccountsSubscribeResponse>::Create(channel_.get(), rpcmethod_AccountsSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::AccountsSubscribe(::grpc::ClientContext* context, ::api::AccountsSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::Account>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::Account>::Create(stub_->channel_.get(), stub_->rpcmethod_AccountsSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::AccountsSubscribe(::grpc::ClientContext* context, ::api::v1::AccountsSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::AccountsSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::AccountsSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_AccountsSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::Account>* trading_data::Stub::AsyncAccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::AccountsSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Account>::Create(channel_.get(), cq, rpcmethod_AccountsSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::AccountsSubscribeResponse>* TradingDataService::Stub::AsyncAccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::AccountsSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::AccountsSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_AccountsSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::Account>* trading_data::Stub::PrepareAsyncAccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::AccountsSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Account>::Create(channel_.get(), cq, rpcmethod_AccountsSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::AccountsSubscribeResponse>* TradingDataService::Stub::PrepareAsyncAccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::AccountsSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::AccountsSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_AccountsSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::Candle>* trading_data::Stub::CandlesSubscribeRaw(::grpc::ClientContext* context, const ::api::CandlesSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::Candle>::Create(channel_.get(), rpcmethod_CandlesSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::CandlesSubscribeResponse>* TradingDataService::Stub::CandlesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::CandlesSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::CandlesSubscribeResponse>::Create(channel_.get(), rpcmethod_CandlesSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::CandlesSubscribe(::grpc::ClientContext* context, ::api::CandlesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::Candle>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::Candle>::Create(stub_->channel_.get(), stub_->rpcmethod_CandlesSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::CandlesSubscribe(::grpc::ClientContext* context, ::api::v1::CandlesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::CandlesSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::CandlesSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_CandlesSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::Candle>* trading_data::Stub::AsyncCandlesSubscribeRaw(::grpc::ClientContext* context, const ::api::CandlesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Candle>::Create(channel_.get(), cq, rpcmethod_CandlesSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::CandlesSubscribeResponse>* TradingDataService::Stub::AsyncCandlesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::CandlesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::CandlesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_CandlesSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::Candle>* trading_data::Stub::PrepareAsyncCandlesSubscribeRaw(::grpc::ClientContext* context, const ::api::CandlesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Candle>::Create(channel_.get(), cq, rpcmethod_CandlesSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::CandlesSubscribeResponse>* TradingDataService::Stub::PrepareAsyncCandlesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::CandlesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::CandlesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_CandlesSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::MarginLevels>* trading_data::Stub::MarginLevelsSubscribeRaw(::grpc::ClientContext* context, const ::api::MarginLevelsSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::MarginLevels>::Create(channel_.get(), rpcmethod_MarginLevelsSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::MarginLevelsSubscribeResponse>* TradingDataService::Stub::MarginLevelsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarginLevelsSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::MarginLevelsSubscribeResponse>::Create(channel_.get(), rpcmethod_MarginLevelsSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::MarginLevelsSubscribe(::grpc::ClientContext* context, ::api::MarginLevelsSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::MarginLevels>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::MarginLevels>::Create(stub_->channel_.get(), stub_->rpcmethod_MarginLevelsSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::MarginLevelsSubscribe(::grpc::ClientContext* context, ::api::v1::MarginLevelsSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::MarginLevelsSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::MarginLevelsSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_MarginLevelsSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarginLevels>* trading_data::Stub::AsyncMarginLevelsSubscribeRaw(::grpc::ClientContext* context, const ::api::MarginLevelsSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarginLevels>::Create(channel_.get(), cq, rpcmethod_MarginLevelsSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::MarginLevelsSubscribeResponse>* TradingDataService::Stub::AsyncMarginLevelsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarginLevelsSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarginLevelsSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarginLevelsSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarginLevels>* trading_data::Stub::PrepareAsyncMarginLevelsSubscribeRaw(::grpc::ClientContext* context, const ::api::MarginLevelsSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarginLevels>::Create(channel_.get(), cq, rpcmethod_MarginLevelsSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::MarginLevelsSubscribeResponse>* TradingDataService::Stub::PrepareAsyncMarginLevelsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarginLevelsSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarginLevelsSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarginLevelsSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::MarketDepth>* trading_data::Stub::MarketDepthSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketDepthSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::MarketDepth>::Create(channel_.get(), rpcmethod_MarketDepthSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::MarketDepthSubscribeResponse>* TradingDataService::Stub::MarketDepthSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::MarketDepthSubscribeResponse>::Create(channel_.get(), rpcmethod_MarketDepthSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::MarketDepthSubscribe(::grpc::ClientContext* context, ::api::MarketDepthSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::MarketDepth>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::MarketDepth>::Create(stub_->channel_.get(), stub_->rpcmethod_MarketDepthSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::MarketDepthSubscribe(::grpc::ClientContext* context, ::api::v1::MarketDepthSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::MarketDepthSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::MarketDepthSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_MarketDepthSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarketDepth>* trading_data::Stub::AsyncMarketDepthSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketDepthSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarketDepth>::Create(channel_.get(), cq, rpcmethod_MarketDepthSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::MarketDepthSubscribeResponse>* TradingDataService::Stub::AsyncMarketDepthSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarketDepthSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarketDepthSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarketDepth>* trading_data::Stub::PrepareAsyncMarketDepthSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketDepthSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarketDepth>::Create(channel_.get(), cq, rpcmethod_MarketDepthSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::MarketDepthSubscribeResponse>* TradingDataService::Stub::PrepareAsyncMarketDepthSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarketDepthSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarketDepthSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::MarketDepthUpdate>* trading_data::Stub::MarketDepthUpdatesSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketDepthUpdatesSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::MarketDepthUpdate>::Create(channel_.get(), rpcmethod_MarketDepthUpdatesSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::MarketDepthUpdatesSubscribeResponse>* TradingDataService::Stub::MarketDepthUpdatesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthUpdatesSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::MarketDepthUpdatesSubscribeResponse>::Create(channel_.get(), rpcmethod_MarketDepthUpdatesSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::MarketDepthUpdatesSubscribe(::grpc::ClientContext* context, ::api::MarketDepthUpdatesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::MarketDepthUpdate>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::MarketDepthUpdate>::Create(stub_->channel_.get(), stub_->rpcmethod_MarketDepthUpdatesSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::MarketDepthUpdatesSubscribe(::grpc::ClientContext* context, ::api::v1::MarketDepthUpdatesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::MarketDepthUpdatesSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::MarketDepthUpdatesSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_MarketDepthUpdatesSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarketDepthUpdate>* trading_data::Stub::AsyncMarketDepthUpdatesSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketDepthUpdatesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarketDepthUpdate>::Create(channel_.get(), cq, rpcmethod_MarketDepthUpdatesSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::MarketDepthUpdatesSubscribeResponse>* TradingDataService::Stub::AsyncMarketDepthUpdatesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthUpdatesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarketDepthUpdatesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarketDepthUpdatesSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarketDepthUpdate>* trading_data::Stub::PrepareAsyncMarketDepthUpdatesSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketDepthUpdatesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarketDepthUpdate>::Create(channel_.get(), cq, rpcmethod_MarketDepthUpdatesSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::MarketDepthUpdatesSubscribeResponse>* TradingDataService::Stub::PrepareAsyncMarketDepthUpdatesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketDepthUpdatesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarketDepthUpdatesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarketDepthUpdatesSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::MarketData>* trading_data::Stub::MarketsDataSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketsDataSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::MarketData>::Create(channel_.get(), rpcmethod_MarketsDataSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::MarketsDataSubscribeResponse>* TradingDataService::Stub::MarketsDataSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketsDataSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::MarketsDataSubscribeResponse>::Create(channel_.get(), rpcmethod_MarketsDataSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::MarketsDataSubscribe(::grpc::ClientContext* context, ::api::MarketsDataSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::MarketData>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::MarketData>::Create(stub_->channel_.get(), stub_->rpcmethod_MarketsDataSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::MarketsDataSubscribe(::grpc::ClientContext* context, ::api::v1::MarketsDataSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::MarketsDataSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::MarketsDataSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_MarketsDataSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarketData>* trading_data::Stub::AsyncMarketsDataSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketsDataSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarketData>::Create(channel_.get(), cq, rpcmethod_MarketsDataSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::MarketsDataSubscribeResponse>* TradingDataService::Stub::AsyncMarketsDataSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketsDataSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarketsDataSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarketsDataSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::MarketData>* trading_data::Stub::PrepareAsyncMarketsDataSubscribeRaw(::grpc::ClientContext* context, const ::api::MarketsDataSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::MarketData>::Create(channel_.get(), cq, rpcmethod_MarketsDataSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::MarketsDataSubscribeResponse>* TradingDataService::Stub::PrepareAsyncMarketsDataSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::MarketsDataSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::MarketsDataSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_MarketsDataSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::api::OrdersStream>* trading_data::Stub::OrdersSubscribeRaw(::grpc::ClientContext* context, const ::api::OrdersSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::api::OrdersStream>::Create(channel_.get(), rpcmethod_OrdersSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::OrdersSubscribeResponse>* TradingDataService::Stub::OrdersSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::OrdersSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::OrdersSubscribeResponse>::Create(channel_.get(), rpcmethod_OrdersSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::OrdersSubscribe(::grpc::ClientContext* context, ::api::OrdersSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::OrdersStream>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::api::OrdersStream>::Create(stub_->channel_.get(), stub_->rpcmethod_OrdersSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::OrdersSubscribe(::grpc::ClientContext* context, ::api::v1::OrdersSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::OrdersSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::OrdersSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_OrdersSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::api::OrdersStream>* trading_data::Stub::AsyncOrdersSubscribeRaw(::grpc::ClientContext* context, const ::api::OrdersSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::api::OrdersStream>::Create(channel_.get(), cq, rpcmethod_OrdersSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::OrdersSubscribeResponse>* TradingDataService::Stub::AsyncOrdersSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::OrdersSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::OrdersSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_OrdersSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::api::OrdersStream>* trading_data::Stub::PrepareAsyncOrdersSubscribeRaw(::grpc::ClientContext* context, const ::api::OrdersSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::api::OrdersStream>::Create(channel_.get(), cq, rpcmethod_OrdersSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::OrdersSubscribeResponse>* TradingDataService::Stub::PrepareAsyncOrdersSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::OrdersSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::OrdersSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_OrdersSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::Position>* trading_data::Stub::PositionsSubscribeRaw(::grpc::ClientContext* context, const ::api::PositionsSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::Position>::Create(channel_.get(), rpcmethod_PositionsSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::PositionsSubscribeResponse>* TradingDataService::Stub::PositionsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::PositionsSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::PositionsSubscribeResponse>::Create(channel_.get(), rpcmethod_PositionsSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::PositionsSubscribe(::grpc::ClientContext* context, ::api::PositionsSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::vega::Position>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::Position>::Create(stub_->channel_.get(), stub_->rpcmethod_PositionsSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::PositionsSubscribe(::grpc::ClientContext* context, ::api::v1::PositionsSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::PositionsSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::PositionsSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_PositionsSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::Position>* trading_data::Stub::AsyncPositionsSubscribeRaw(::grpc::ClientContext* context, const ::api::PositionsSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Position>::Create(channel_.get(), cq, rpcmethod_PositionsSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::PositionsSubscribeResponse>* TradingDataService::Stub::AsyncPositionsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::PositionsSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::PositionsSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_PositionsSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::Position>* trading_data::Stub::PrepareAsyncPositionsSubscribeRaw(::grpc::ClientContext* context, const ::api::PositionsSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::Position>::Create(channel_.get(), cq, rpcmethod_PositionsSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::PositionsSubscribeResponse>* TradingDataService::Stub::PrepareAsyncPositionsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::PositionsSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::PositionsSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_PositionsSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::api::TradesStream>* trading_data::Stub::TradesSubscribeRaw(::grpc::ClientContext* context, const ::api::TradesSubscribeRequest& request) {
-  return ::grpc::internal::ClientReaderFactory< ::api::TradesStream>::Create(channel_.get(), rpcmethod_TradesSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::TradesSubscribeResponse>* TradingDataService::Stub::TradesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::TradesSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::TradesSubscribeResponse>::Create(channel_.get(), rpcmethod_TradesSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::TradesSubscribe(::grpc::ClientContext* context, ::api::TradesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::TradesStream>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::api::TradesStream>::Create(stub_->channel_.get(), stub_->rpcmethod_TradesSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::TradesSubscribe(::grpc::ClientContext* context, ::api::v1::TradesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::TradesSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::TradesSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_TradesSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::api::TradesStream>* trading_data::Stub::AsyncTradesSubscribeRaw(::grpc::ClientContext* context, const ::api::TradesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::api::TradesStream>::Create(channel_.get(), cq, rpcmethod_TradesSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::TradesSubscribeResponse>* TradingDataService::Stub::AsyncTradesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::TradesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::TradesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_TradesSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::api::TradesStream>* trading_data::Stub::PrepareAsyncTradesSubscribeRaw(::grpc::ClientContext* context, const ::api::TradesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::api::TradesStream>::Create(channel_.get(), cq, rpcmethod_TradesSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::TradesSubscribeResponse>* TradingDataService::Stub::PrepareAsyncTradesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::TradesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::TradesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_TradesSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::vega::TransferResponse>* trading_data::Stub::TransferResponsesSubscribeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request) {
-  return ::grpc::internal::ClientReaderFactory< ::vega::TransferResponse>::Create(channel_.get(), rpcmethod_TransferResponsesSubscribe_, context, request);
+::grpc::ClientReader< ::api::v1::TransferResponsesSubscribeResponse>* TradingDataService::Stub::TransferResponsesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::TransferResponsesSubscribeRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::api::v1::TransferResponsesSubscribeResponse>::Create(channel_.get(), rpcmethod_TransferResponsesSubscribe_, context, request);
 }
 
-void trading_data::Stub::experimental_async::TransferResponsesSubscribe(::grpc::ClientContext* context, ::google::protobuf::Empty* request, ::grpc::experimental::ClientReadReactor< ::vega::TransferResponse>* reactor) {
-  ::grpc::internal::ClientCallbackReaderFactory< ::vega::TransferResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_TransferResponsesSubscribe_, context, request, reactor);
+void TradingDataService::Stub::experimental_async::TransferResponsesSubscribe(::grpc::ClientContext* context, ::api::v1::TransferResponsesSubscribeRequest* request, ::grpc::experimental::ClientReadReactor< ::api::v1::TransferResponsesSubscribeResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::api::v1::TransferResponsesSubscribeResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_TransferResponsesSubscribe_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::vega::TransferResponse>* trading_data::Stub::AsyncTransferResponsesSubscribeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::TransferResponse>::Create(channel_.get(), cq, rpcmethod_TransferResponsesSubscribe_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::api::v1::TransferResponsesSubscribeResponse>* TradingDataService::Stub::AsyncTransferResponsesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::TransferResponsesSubscribeRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::TransferResponsesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_TransferResponsesSubscribe_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::vega::TransferResponse>* trading_data::Stub::PrepareAsyncTransferResponsesSubscribeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncReaderFactory< ::vega::TransferResponse>::Create(channel_.get(), cq, rpcmethod_TransferResponsesSubscribe_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::api::v1::TransferResponsesSubscribeResponse>* TradingDataService::Stub::PrepareAsyncTransferResponsesSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::TransferResponsesSubscribeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::api::v1::TransferResponsesSubscribeResponse>::Create(channel_.get(), cq, rpcmethod_TransferResponsesSubscribe_, context, request, false, nullptr);
 }
 
-::grpc::Status trading_data::Stub::GetNodeSignaturesAggregate(::grpc::ClientContext* context, const ::api::GetNodeSignaturesAggregateRequest& request, ::api::GetNodeSignaturesAggregateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::GetNodeSignaturesAggregateRequest, ::api::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNodeSignaturesAggregate_, context, request, response);
+::grpc::Status TradingDataService::Stub::GetNodeSignaturesAggregate(::grpc::ClientContext* context, const ::api::v1::GetNodeSignaturesAggregateRequest& request, ::api::v1::GetNodeSignaturesAggregateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNodeSignaturesAggregate_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::GetNodeSignaturesAggregate(::grpc::ClientContext* context, const ::api::GetNodeSignaturesAggregateRequest* request, ::api::GetNodeSignaturesAggregateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::GetNodeSignaturesAggregateRequest, ::api::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNodeSignaturesAggregate_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::GetNodeSignaturesAggregate(::grpc::ClientContext* context, const ::api::v1::GetNodeSignaturesAggregateRequest* request, ::api::v1::GetNodeSignaturesAggregateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNodeSignaturesAggregate_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::GetNodeSignaturesAggregate(::grpc::ClientContext* context, const ::api::GetNodeSignaturesAggregateRequest* request, ::api::GetNodeSignaturesAggregateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::GetNodeSignaturesAggregate(::grpc::ClientContext* context, const ::api::v1::GetNodeSignaturesAggregateRequest* request, ::api::v1::GetNodeSignaturesAggregateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNodeSignaturesAggregate_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNodeSignaturesAggregateResponse>* trading_data::Stub::PrepareAsyncGetNodeSignaturesAggregateRaw(::grpc::ClientContext* context, const ::api::GetNodeSignaturesAggregateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::GetNodeSignaturesAggregateResponse, ::api::GetNodeSignaturesAggregateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNodeSignaturesAggregate_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNodeSignaturesAggregateResponse>* TradingDataService::Stub::PrepareAsyncGetNodeSignaturesAggregateRaw(::grpc::ClientContext* context, const ::api::v1::GetNodeSignaturesAggregateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::GetNodeSignaturesAggregateResponse, ::api::v1::GetNodeSignaturesAggregateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNodeSignaturesAggregate_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::GetNodeSignaturesAggregateResponse>* trading_data::Stub::AsyncGetNodeSignaturesAggregateRaw(::grpc::ClientContext* context, const ::api::GetNodeSignaturesAggregateRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::GetNodeSignaturesAggregateResponse>* TradingDataService::Stub::AsyncGetNodeSignaturesAggregateRaw(::grpc::ClientContext* context, const ::api::v1::GetNodeSignaturesAggregateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetNodeSignaturesAggregateRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::AssetByID(::grpc::ClientContext* context, const ::api::AssetByIDRequest& request, ::api::AssetByIDResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::AssetByIDRequest, ::api::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AssetByID_, context, request, response);
+::grpc::Status TradingDataService::Stub::AssetByID(::grpc::ClientContext* context, const ::api::v1::AssetByIDRequest& request, ::api::v1::AssetByIDResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AssetByID_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::AssetByID(::grpc::ClientContext* context, const ::api::AssetByIDRequest* request, ::api::AssetByIDResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::AssetByIDRequest, ::api::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AssetByID_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::AssetByID(::grpc::ClientContext* context, const ::api::v1::AssetByIDRequest* request, ::api::v1::AssetByIDResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AssetByID_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::AssetByID(::grpc::ClientContext* context, const ::api::AssetByIDRequest* request, ::api::AssetByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::AssetByID(::grpc::ClientContext* context, const ::api::v1::AssetByIDRequest* request, ::api::v1::AssetByIDResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AssetByID_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::AssetByIDResponse>* trading_data::Stub::PrepareAsyncAssetByIDRaw(::grpc::ClientContext* context, const ::api::AssetByIDRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::AssetByIDResponse, ::api::AssetByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AssetByID_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::AssetByIDResponse>* TradingDataService::Stub::PrepareAsyncAssetByIDRaw(::grpc::ClientContext* context, const ::api::v1::AssetByIDRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::AssetByIDResponse, ::api::v1::AssetByIDRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AssetByID_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::AssetByIDResponse>* trading_data::Stub::AsyncAssetByIDRaw(::grpc::ClientContext* context, const ::api::AssetByIDRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::AssetByIDResponse>* TradingDataService::Stub::AsyncAssetByIDRaw(::grpc::ClientContext* context, const ::api::v1::AssetByIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncAssetByIDRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Assets(::grpc::ClientContext* context, const ::api::AssetsRequest& request, ::api::AssetsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::AssetsRequest, ::api::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Assets_, context, request, response);
+::grpc::Status TradingDataService::Stub::Assets(::grpc::ClientContext* context, const ::api::v1::AssetsRequest& request, ::api::v1::AssetsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::AssetsRequest, ::api::v1::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Assets_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Assets(::grpc::ClientContext* context, const ::api::AssetsRequest* request, ::api::AssetsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::AssetsRequest, ::api::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Assets_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Assets(::grpc::ClientContext* context, const ::api::v1::AssetsRequest* request, ::api::v1::AssetsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::AssetsRequest, ::api::v1::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Assets_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Assets(::grpc::ClientContext* context, const ::api::AssetsRequest* request, ::api::AssetsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Assets(::grpc::ClientContext* context, const ::api::v1::AssetsRequest* request, ::api::v1::AssetsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Assets_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::AssetsResponse>* trading_data::Stub::PrepareAsyncAssetsRaw(::grpc::ClientContext* context, const ::api::AssetsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::AssetsResponse, ::api::AssetsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Assets_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::AssetsResponse>* TradingDataService::Stub::PrepareAsyncAssetsRaw(::grpc::ClientContext* context, const ::api::v1::AssetsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::AssetsResponse, ::api::v1::AssetsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Assets_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::AssetsResponse>* trading_data::Stub::AsyncAssetsRaw(::grpc::ClientContext* context, const ::api::AssetsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::AssetsResponse>* TradingDataService::Stub::AsyncAssetsRaw(::grpc::ClientContext* context, const ::api::v1::AssetsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncAssetsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::EstimateFee(::grpc::ClientContext* context, const ::api::EstimateFeeRequest& request, ::api::EstimateFeeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::EstimateFeeRequest, ::api::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_EstimateFee_, context, request, response);
+::grpc::Status TradingDataService::Stub::EstimateFee(::grpc::ClientContext* context, const ::api::v1::EstimateFeeRequest& request, ::api::v1::EstimateFeeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_EstimateFee_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::EstimateFee(::grpc::ClientContext* context, const ::api::EstimateFeeRequest* request, ::api::EstimateFeeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::EstimateFeeRequest, ::api::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EstimateFee_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::EstimateFee(::grpc::ClientContext* context, const ::api::v1::EstimateFeeRequest* request, ::api::v1::EstimateFeeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EstimateFee_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::EstimateFee(::grpc::ClientContext* context, const ::api::EstimateFeeRequest* request, ::api::EstimateFeeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::EstimateFee(::grpc::ClientContext* context, const ::api::v1::EstimateFeeRequest* request, ::api::v1::EstimateFeeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EstimateFee_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::EstimateFeeResponse>* trading_data::Stub::PrepareAsyncEstimateFeeRaw(::grpc::ClientContext* context, const ::api::EstimateFeeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::EstimateFeeResponse, ::api::EstimateFeeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_EstimateFee_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::EstimateFeeResponse>* TradingDataService::Stub::PrepareAsyncEstimateFeeRaw(::grpc::ClientContext* context, const ::api::v1::EstimateFeeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::EstimateFeeResponse, ::api::v1::EstimateFeeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_EstimateFee_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::EstimateFeeResponse>* trading_data::Stub::AsyncEstimateFeeRaw(::grpc::ClientContext* context, const ::api::EstimateFeeRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::EstimateFeeResponse>* TradingDataService::Stub::AsyncEstimateFeeRaw(::grpc::ClientContext* context, const ::api::v1::EstimateFeeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncEstimateFeeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::EstimateMargin(::grpc::ClientContext* context, const ::api::EstimateMarginRequest& request, ::api::EstimateMarginResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::EstimateMarginRequest, ::api::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_EstimateMargin_, context, request, response);
+::grpc::Status TradingDataService::Stub::EstimateMargin(::grpc::ClientContext* context, const ::api::v1::EstimateMarginRequest& request, ::api::v1::EstimateMarginResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_EstimateMargin_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::EstimateMargin(::grpc::ClientContext* context, const ::api::EstimateMarginRequest* request, ::api::EstimateMarginResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::EstimateMarginRequest, ::api::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EstimateMargin_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::EstimateMargin(::grpc::ClientContext* context, const ::api::v1::EstimateMarginRequest* request, ::api::v1::EstimateMarginResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EstimateMargin_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::EstimateMargin(::grpc::ClientContext* context, const ::api::EstimateMarginRequest* request, ::api::EstimateMarginResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::EstimateMargin(::grpc::ClientContext* context, const ::api::v1::EstimateMarginRequest* request, ::api::v1::EstimateMarginResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_EstimateMargin_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::EstimateMarginResponse>* trading_data::Stub::PrepareAsyncEstimateMarginRaw(::grpc::ClientContext* context, const ::api::EstimateMarginRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::EstimateMarginResponse, ::api::EstimateMarginRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_EstimateMargin_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::EstimateMarginResponse>* TradingDataService::Stub::PrepareAsyncEstimateMarginRaw(::grpc::ClientContext* context, const ::api::v1::EstimateMarginRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::EstimateMarginResponse, ::api::v1::EstimateMarginRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_EstimateMargin_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::EstimateMarginResponse>* trading_data::Stub::AsyncEstimateMarginRaw(::grpc::ClientContext* context, const ::api::EstimateMarginRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::EstimateMarginResponse>* TradingDataService::Stub::AsyncEstimateMarginRaw(::grpc::ClientContext* context, const ::api::v1::EstimateMarginRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncEstimateMarginRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::ERC20WithdrawalApproval(::grpc::ClientContext* context, const ::api::ERC20WithdrawalApprovalRequest& request, ::api::ERC20WithdrawalApprovalResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::ERC20WithdrawalApprovalRequest, ::api::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ERC20WithdrawalApproval_, context, request, response);
+::grpc::Status TradingDataService::Stub::ERC20WithdrawalApproval(::grpc::ClientContext* context, const ::api::v1::ERC20WithdrawalApprovalRequest& request, ::api::v1::ERC20WithdrawalApprovalResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ERC20WithdrawalApproval_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::ERC20WithdrawalApproval(::grpc::ClientContext* context, const ::api::ERC20WithdrawalApprovalRequest* request, ::api::ERC20WithdrawalApprovalResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::ERC20WithdrawalApprovalRequest, ::api::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ERC20WithdrawalApproval_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::ERC20WithdrawalApproval(::grpc::ClientContext* context, const ::api::v1::ERC20WithdrawalApprovalRequest* request, ::api::v1::ERC20WithdrawalApprovalResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ERC20WithdrawalApproval_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::ERC20WithdrawalApproval(::grpc::ClientContext* context, const ::api::ERC20WithdrawalApprovalRequest* request, ::api::ERC20WithdrawalApprovalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::ERC20WithdrawalApproval(::grpc::ClientContext* context, const ::api::v1::ERC20WithdrawalApprovalRequest* request, ::api::v1::ERC20WithdrawalApprovalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ERC20WithdrawalApproval_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::ERC20WithdrawalApprovalResponse>* trading_data::Stub::PrepareAsyncERC20WithdrawalApprovalRaw(::grpc::ClientContext* context, const ::api::ERC20WithdrawalApprovalRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::ERC20WithdrawalApprovalResponse, ::api::ERC20WithdrawalApprovalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ERC20WithdrawalApproval_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::ERC20WithdrawalApprovalResponse>* TradingDataService::Stub::PrepareAsyncERC20WithdrawalApprovalRaw(::grpc::ClientContext* context, const ::api::v1::ERC20WithdrawalApprovalRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::ERC20WithdrawalApprovalResponse, ::api::v1::ERC20WithdrawalApprovalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ERC20WithdrawalApproval_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::ERC20WithdrawalApprovalResponse>* trading_data::Stub::AsyncERC20WithdrawalApprovalRaw(::grpc::ClientContext* context, const ::api::ERC20WithdrawalApprovalRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::ERC20WithdrawalApprovalResponse>* TradingDataService::Stub::AsyncERC20WithdrawalApprovalRaw(::grpc::ClientContext* context, const ::api::v1::ERC20WithdrawalApprovalRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncERC20WithdrawalApprovalRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Withdrawal(::grpc::ClientContext* context, const ::api::WithdrawalRequest& request, ::api::WithdrawalResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::WithdrawalRequest, ::api::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Withdrawal_, context, request, response);
+::grpc::Status TradingDataService::Stub::Withdrawal(::grpc::ClientContext* context, const ::api::v1::WithdrawalRequest& request, ::api::v1::WithdrawalResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Withdrawal_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Withdrawal(::grpc::ClientContext* context, const ::api::WithdrawalRequest* request, ::api::WithdrawalResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::WithdrawalRequest, ::api::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Withdrawal_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Withdrawal(::grpc::ClientContext* context, const ::api::v1::WithdrawalRequest* request, ::api::v1::WithdrawalResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Withdrawal_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Withdrawal(::grpc::ClientContext* context, const ::api::WithdrawalRequest* request, ::api::WithdrawalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Withdrawal(::grpc::ClientContext* context, const ::api::v1::WithdrawalRequest* request, ::api::v1::WithdrawalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Withdrawal_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::WithdrawalResponse>* trading_data::Stub::PrepareAsyncWithdrawalRaw(::grpc::ClientContext* context, const ::api::WithdrawalRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::WithdrawalResponse, ::api::WithdrawalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Withdrawal_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::WithdrawalResponse>* TradingDataService::Stub::PrepareAsyncWithdrawalRaw(::grpc::ClientContext* context, const ::api::v1::WithdrawalRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::WithdrawalResponse, ::api::v1::WithdrawalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Withdrawal_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::WithdrawalResponse>* trading_data::Stub::AsyncWithdrawalRaw(::grpc::ClientContext* context, const ::api::WithdrawalRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::WithdrawalResponse>* TradingDataService::Stub::AsyncWithdrawalRaw(::grpc::ClientContext* context, const ::api::v1::WithdrawalRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncWithdrawalRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Withdrawals(::grpc::ClientContext* context, const ::api::WithdrawalsRequest& request, ::api::WithdrawalsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::WithdrawalsRequest, ::api::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Withdrawals_, context, request, response);
+::grpc::Status TradingDataService::Stub::Withdrawals(::grpc::ClientContext* context, const ::api::v1::WithdrawalsRequest& request, ::api::v1::WithdrawalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Withdrawals_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Withdrawals(::grpc::ClientContext* context, const ::api::WithdrawalsRequest* request, ::api::WithdrawalsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::WithdrawalsRequest, ::api::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Withdrawals_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Withdrawals(::grpc::ClientContext* context, const ::api::v1::WithdrawalsRequest* request, ::api::v1::WithdrawalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Withdrawals_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Withdrawals(::grpc::ClientContext* context, const ::api::WithdrawalsRequest* request, ::api::WithdrawalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Withdrawals(::grpc::ClientContext* context, const ::api::v1::WithdrawalsRequest* request, ::api::v1::WithdrawalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Withdrawals_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::WithdrawalsResponse>* trading_data::Stub::PrepareAsyncWithdrawalsRaw(::grpc::ClientContext* context, const ::api::WithdrawalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::WithdrawalsResponse, ::api::WithdrawalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Withdrawals_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::WithdrawalsResponse>* TradingDataService::Stub::PrepareAsyncWithdrawalsRaw(::grpc::ClientContext* context, const ::api::v1::WithdrawalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::WithdrawalsResponse, ::api::v1::WithdrawalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Withdrawals_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::WithdrawalsResponse>* trading_data::Stub::AsyncWithdrawalsRaw(::grpc::ClientContext* context, const ::api::WithdrawalsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::WithdrawalsResponse>* TradingDataService::Stub::AsyncWithdrawalsRaw(::grpc::ClientContext* context, const ::api::v1::WithdrawalsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncWithdrawalsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Deposit(::grpc::ClientContext* context, const ::api::DepositRequest& request, ::api::DepositResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::DepositRequest, ::api::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Deposit_, context, request, response);
+::grpc::Status TradingDataService::Stub::Deposit(::grpc::ClientContext* context, const ::api::v1::DepositRequest& request, ::api::v1::DepositResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::DepositRequest, ::api::v1::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Deposit_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Deposit(::grpc::ClientContext* context, const ::api::DepositRequest* request, ::api::DepositResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::DepositRequest, ::api::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Deposit_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Deposit(::grpc::ClientContext* context, const ::api::v1::DepositRequest* request, ::api::v1::DepositResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::DepositRequest, ::api::v1::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Deposit_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Deposit(::grpc::ClientContext* context, const ::api::DepositRequest* request, ::api::DepositResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Deposit(::grpc::ClientContext* context, const ::api::v1::DepositRequest* request, ::api::v1::DepositResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Deposit_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::DepositResponse>* trading_data::Stub::PrepareAsyncDepositRaw(::grpc::ClientContext* context, const ::api::DepositRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::DepositResponse, ::api::DepositRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Deposit_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::DepositResponse>* TradingDataService::Stub::PrepareAsyncDepositRaw(::grpc::ClientContext* context, const ::api::v1::DepositRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::DepositResponse, ::api::v1::DepositRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Deposit_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::DepositResponse>* trading_data::Stub::AsyncDepositRaw(::grpc::ClientContext* context, const ::api::DepositRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::DepositResponse>* TradingDataService::Stub::AsyncDepositRaw(::grpc::ClientContext* context, const ::api::v1::DepositRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncDepositRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::Deposits(::grpc::ClientContext* context, const ::api::DepositsRequest& request, ::api::DepositsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::DepositsRequest, ::api::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Deposits_, context, request, response);
+::grpc::Status TradingDataService::Stub::Deposits(::grpc::ClientContext* context, const ::api::v1::DepositsRequest& request, ::api::v1::DepositsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::DepositsRequest, ::api::v1::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_Deposits_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::Deposits(::grpc::ClientContext* context, const ::api::DepositsRequest* request, ::api::DepositsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::DepositsRequest, ::api::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Deposits_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::Deposits(::grpc::ClientContext* context, const ::api::v1::DepositsRequest* request, ::api::v1::DepositsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::DepositsRequest, ::api::v1::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Deposits_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::Deposits(::grpc::ClientContext* context, const ::api::DepositsRequest* request, ::api::DepositsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::Deposits(::grpc::ClientContext* context, const ::api::v1::DepositsRequest* request, ::api::v1::DepositsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_Deposits_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::DepositsResponse>* trading_data::Stub::PrepareAsyncDepositsRaw(::grpc::ClientContext* context, const ::api::DepositsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::DepositsResponse, ::api::DepositsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Deposits_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::DepositsResponse>* TradingDataService::Stub::PrepareAsyncDepositsRaw(::grpc::ClientContext* context, const ::api::v1::DepositsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::DepositsResponse, ::api::v1::DepositsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_Deposits_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::DepositsResponse>* trading_data::Stub::AsyncDepositsRaw(::grpc::ClientContext* context, const ::api::DepositsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::DepositsResponse>* TradingDataService::Stub::AsyncDepositsRaw(::grpc::ClientContext* context, const ::api::v1::DepositsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncDepositsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::NetworkParameters(::grpc::ClientContext* context, const ::api::NetworkParametersRequest& request, ::api::NetworkParametersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::NetworkParametersRequest, ::api::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NetworkParameters_, context, request, response);
+::grpc::Status TradingDataService::Stub::NetworkParameters(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest& request, ::api::v1::NetworkParametersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_NetworkParameters_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::NetworkParameters(::grpc::ClientContext* context, const ::api::NetworkParametersRequest* request, ::api::NetworkParametersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::NetworkParametersRequest, ::api::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NetworkParameters_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::NetworkParameters(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest* request, ::api::v1::NetworkParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NetworkParameters_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::NetworkParameters(::grpc::ClientContext* context, const ::api::NetworkParametersRequest* request, ::api::NetworkParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::NetworkParameters(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest* request, ::api::v1::NetworkParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_NetworkParameters_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::NetworkParametersResponse>* trading_data::Stub::PrepareAsyncNetworkParametersRaw(::grpc::ClientContext* context, const ::api::NetworkParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::NetworkParametersResponse, ::api::NetworkParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NetworkParameters_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::NetworkParametersResponse>* TradingDataService::Stub::PrepareAsyncNetworkParametersRaw(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::NetworkParametersResponse, ::api::v1::NetworkParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_NetworkParameters_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::NetworkParametersResponse>* trading_data::Stub::AsyncNetworkParametersRaw(::grpc::ClientContext* context, const ::api::NetworkParametersRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::NetworkParametersResponse>* TradingDataService::Stub::AsyncNetworkParametersRaw(::grpc::ClientContext* context, const ::api::v1::NetworkParametersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncNetworkParametersRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status trading_data::Stub::LiquidityProvisions(::grpc::ClientContext* context, const ::api::LiquidityProvisionsRequest& request, ::api::LiquidityProvisionsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::LiquidityProvisionsRequest, ::api::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LiquidityProvisions_, context, request, response);
+::grpc::Status TradingDataService::Stub::LiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::api::v1::LiquidityProvisionsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LiquidityProvisions_, context, request, response);
 }
 
-void trading_data::Stub::experimental_async::LiquidityProvisions(::grpc::ClientContext* context, const ::api::LiquidityProvisionsRequest* request, ::api::LiquidityProvisionsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::LiquidityProvisionsRequest, ::api::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LiquidityProvisions_, context, request, response, std::move(f));
+void TradingDataService::Stub::experimental_async::LiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LiquidityProvisions_, context, request, response, std::move(f));
 }
 
-void trading_data::Stub::experimental_async::LiquidityProvisions(::grpc::ClientContext* context, const ::api::LiquidityProvisionsRequest* request, ::api::LiquidityProvisionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void TradingDataService::Stub::experimental_async::LiquidityProvisions(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LiquidityProvisions_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::LiquidityProvisionsResponse>* trading_data::Stub::PrepareAsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::LiquidityProvisionsResponse, ::api::LiquidityProvisionsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LiquidityProvisions_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::LiquidityProvisionsResponse>* TradingDataService::Stub::PrepareAsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::LiquidityProvisionsResponse, ::api::v1::LiquidityProvisionsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LiquidityProvisions_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::LiquidityProvisionsResponse>* trading_data::Stub::AsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::LiquidityProvisionsResponse>* TradingDataService::Stub::AsyncLiquidityProvisionsRaw(::grpc::ClientContext* context, const ::api::v1::LiquidityProvisionsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncLiquidityProvisionsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-trading_data::Service::Service() {
+::grpc::Status TradingDataService::Stub::OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::api::v1::OracleSpecResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OracleSpec_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpec_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpec(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpec_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>* TradingDataService::Stub::PrepareAsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OracleSpecResponse, ::api::v1::OracleSpecRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OracleSpec_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecResponse>* TradingDataService::Stub::AsyncOracleSpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOracleSpecRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingDataService::Stub::OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::api::v1::OracleSpecsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OracleSpecs_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpecs_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::OracleSpecs(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleSpecs_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>* TradingDataService::Stub::PrepareAsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OracleSpecsResponse, ::api::v1::OracleSpecsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OracleSpecs_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleSpecsResponse>* TradingDataService::Stub::AsyncOracleSpecsRaw(::grpc::ClientContext* context, const ::api::v1::OracleSpecsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOracleSpecsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingDataService::Stub::OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::api::v1::OracleDataBySpecResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_OracleDataBySpec_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleDataBySpec_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::OracleDataBySpec(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_OracleDataBySpec_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>* TradingDataService::Stub::PrepareAsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::OracleDataBySpecResponse, ::api::v1::OracleDataBySpecRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_OracleDataBySpec_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::OracleDataBySpecResponse>* TradingDataService::Stub::AsyncOracleDataBySpecRaw(::grpc::ClientContext* context, const ::api::v1::OracleDataBySpecRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOracleDataBySpecRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+TradingDataService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[0],
+      TradingDataService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::MarketAccountsRequest, ::api::MarketAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarketAccountsRequest, ::api::v1::MarketAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketAccountsRequest* req,
-             ::api::MarketAccountsResponse* resp) {
+             const ::api::v1::MarketAccountsRequest* req,
+             ::api::v1::MarketAccountsResponse* resp) {
                return service->MarketAccounts(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[1],
+      TradingDataService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::PartyAccountsRequest, ::api::PartyAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::PartyAccountsRequest, ::api::v1::PartyAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PartyAccountsRequest* req,
-             ::api::PartyAccountsResponse* resp) {
+             const ::api::v1::PartyAccountsRequest* req,
+             ::api::v1::PartyAccountsResponse* resp) {
                return service->PartyAccounts(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[2],
+      TradingDataService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::FeeInfrastructureAccountsRequest, ::api::FeeInfrastructureAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::FeeInfrastructureAccountsRequest, ::api::v1::FeeInfrastructureAccountsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::FeeInfrastructureAccountsRequest* req,
-             ::api::FeeInfrastructureAccountsResponse* resp) {
+             const ::api::v1::FeeInfrastructureAccountsRequest* req,
+             ::api::v1::FeeInfrastructureAccountsResponse* resp) {
                return service->FeeInfrastructureAccounts(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[3],
+      TradingDataService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::CandlesRequest, ::api::CandlesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::CandlesRequest, ::api::v1::CandlesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::CandlesRequest* req,
-             ::api::CandlesResponse* resp) {
+             const ::api::v1::CandlesRequest* req,
+             ::api::v1::CandlesResponse* resp) {
                return service->Candles(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[4],
+      TradingDataService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::MarketDataByIDRequest, ::api::MarketDataByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarketDataByIDRequest, ::api::v1::MarketDataByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketDataByIDRequest* req,
-             ::api::MarketDataByIDResponse* resp) {
+             const ::api::v1::MarketDataByIDRequest* req,
+             ::api::v1::MarketDataByIDResponse* resp) {
                return service->MarketDataByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[5],
+      TradingDataService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::google::protobuf::Empty, ::api::MarketsDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarketsDataRequest, ::api::v1::MarketsDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::api::MarketsDataResponse* resp) {
+             const ::api::v1::MarketsDataRequest* req,
+             ::api::v1::MarketsDataResponse* resp) {
                return service->MarketsData(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[6],
+      TradingDataService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::MarketByIDRequest, ::api::MarketByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarketByIDRequest, ::api::v1::MarketByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketByIDRequest* req,
-             ::api::MarketByIDResponse* resp) {
+             const ::api::v1::MarketByIDRequest* req,
+             ::api::v1::MarketByIDResponse* resp) {
                return service->MarketByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[7],
+      TradingDataService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::MarketDepthRequest, ::api::MarketDepthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarketDepthRequest, ::api::v1::MarketDepthResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketDepthRequest* req,
-             ::api::MarketDepthResponse* resp) {
+             const ::api::v1::MarketDepthRequest* req,
+             ::api::v1::MarketDepthResponse* resp) {
                return service->MarketDepth(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[8],
+      TradingDataService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::google::protobuf::Empty, ::api::MarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarketsRequest, ::api::v1::MarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::api::MarketsResponse* resp) {
+             const ::api::v1::MarketsRequest* req,
+             ::api::v1::MarketsResponse* resp) {
                return service->Markets(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[9],
+      TradingDataService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::OrderByMarketAndIdRequest, ::api::OrderByMarketAndIdResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OrderByMarketAndIDRequest, ::api::v1::OrderByMarketAndIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrderByMarketAndIdRequest* req,
-             ::api::OrderByMarketAndIdResponse* resp) {
+             const ::api::v1::OrderByMarketAndIDRequest* req,
+             ::api::v1::OrderByMarketAndIDResponse* resp) {
                return service->OrderByMarketAndID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[10],
+      TradingDataService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::OrderByReferenceRequest, ::api::OrderByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OrderByReferenceRequest, ::api::v1::OrderByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrderByReferenceRequest* req,
-             ::api::OrderByReferenceResponse* resp) {
+             const ::api::v1::OrderByReferenceRequest* req,
+             ::api::v1::OrderByReferenceResponse* resp) {
                return service->OrderByReference(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[11],
+      TradingDataService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::OrdersByMarketRequest, ::api::OrdersByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OrdersByMarketRequest, ::api::v1::OrdersByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrdersByMarketRequest* req,
-             ::api::OrdersByMarketResponse* resp) {
+             const ::api::v1::OrdersByMarketRequest* req,
+             ::api::v1::OrdersByMarketResponse* resp) {
                return service->OrdersByMarket(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[12],
+      TradingDataService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::OrdersByPartyRequest, ::api::OrdersByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OrdersByPartyRequest, ::api::v1::OrdersByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrdersByPartyRequest* req,
-             ::api::OrdersByPartyResponse* resp) {
+             const ::api::v1::OrdersByPartyRequest* req,
+             ::api::v1::OrdersByPartyResponse* resp) {
                return service->OrdersByParty(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[13],
+      TradingDataService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::OrderByIDRequest, ::vega::Order, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OrderByIDRequest, ::api::v1::OrderByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrderByIDRequest* req,
-             ::vega::Order* resp) {
+             const ::api::v1::OrderByIDRequest* req,
+             ::api::v1::OrderByIDResponse* resp) {
                return service->OrderByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[14],
+      TradingDataService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::OrderVersionsByIDRequest, ::api::OrderVersionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OrderVersionsByIDRequest, ::api::v1::OrderVersionsByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrderVersionsByIDRequest* req,
-             ::api::OrderVersionsResponse* resp) {
+             const ::api::v1::OrderVersionsByIDRequest* req,
+             ::api::v1::OrderVersionsByIDResponse* resp) {
                return service->OrderVersionsByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[15],
+      TradingDataService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::MarginLevelsRequest, ::api::MarginLevelsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::MarginLevelsRequest, ::api::v1::MarginLevelsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarginLevelsRequest* req,
-             ::api::MarginLevelsResponse* resp) {
+             const ::api::v1::MarginLevelsRequest* req,
+             ::api::v1::MarginLevelsResponse* resp) {
                return service->MarginLevels(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[16],
+      TradingDataService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::google::protobuf::Empty, ::api::PartiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::PartiesRequest, ::api::v1::PartiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::api::PartiesResponse* resp) {
+             const ::api::v1::PartiesRequest* req,
+             ::api::v1::PartiesResponse* resp) {
                return service->Parties(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[17],
+      TradingDataService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::PartyByIDRequest, ::api::PartyByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::PartyByIDRequest, ::api::v1::PartyByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PartyByIDRequest* req,
-             ::api::PartyByIDResponse* resp) {
+             const ::api::v1::PartyByIDRequest* req,
+             ::api::v1::PartyByIDResponse* resp) {
                return service->PartyByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[18],
+      TradingDataService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::PositionsByPartyRequest, ::api::PositionsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::PositionsByPartyRequest, ::api::v1::PositionsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PositionsByPartyRequest* req,
-             ::api::PositionsByPartyResponse* resp) {
+             const ::api::v1::PositionsByPartyRequest* req,
+             ::api::v1::PositionsByPartyResponse* resp) {
                return service->PositionsByParty(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[19],
+      TradingDataService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::LastTradeRequest, ::api::LastTradeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::LastTradeRequest, ::api::v1::LastTradeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::LastTradeRequest* req,
-             ::api::LastTradeResponse* resp) {
+             const ::api::v1::LastTradeRequest* req,
+             ::api::v1::LastTradeResponse* resp) {
                return service->LastTrade(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[20],
+      TradingDataService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::TradesByMarketRequest, ::api::TradesByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::TradesByMarketRequest, ::api::v1::TradesByMarketResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::TradesByMarketRequest* req,
-             ::api::TradesByMarketResponse* resp) {
+             const ::api::v1::TradesByMarketRequest* req,
+             ::api::v1::TradesByMarketResponse* resp) {
                return service->TradesByMarket(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[21],
+      TradingDataService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::TradesByOrderRequest, ::api::TradesByOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::TradesByOrderRequest, ::api::v1::TradesByOrderResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::TradesByOrderRequest* req,
-             ::api::TradesByOrderResponse* resp) {
+             const ::api::v1::TradesByOrderRequest* req,
+             ::api::v1::TradesByOrderResponse* resp) {
                return service->TradesByOrder(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[22],
+      TradingDataService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::TradesByPartyRequest, ::api::TradesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::TradesByPartyRequest, ::api::v1::TradesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::TradesByPartyRequest* req,
-             ::api::TradesByPartyResponse* resp) {
+             const ::api::v1::TradesByPartyRequest* req,
+             ::api::v1::TradesByPartyResponse* resp) {
                return service->TradesByParty(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[23],
+      TradingDataService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetProposalsRequest, ::api::GetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetProposalsRequest, ::api::v1::GetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetProposalsRequest* req,
-             ::api::GetProposalsResponse* resp) {
+             const ::api::v1::GetProposalsRequest* req,
+             ::api::v1::GetProposalsResponse* resp) {
                return service->GetProposals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[24],
+      TradingDataService_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetProposalsByPartyRequest, ::api::GetProposalsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetProposalsByPartyRequest, ::api::v1::GetProposalsByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetProposalsByPartyRequest* req,
-             ::api::GetProposalsByPartyResponse* resp) {
+             const ::api::v1::GetProposalsByPartyRequest* req,
+             ::api::v1::GetProposalsByPartyResponse* resp) {
                return service->GetProposalsByParty(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[25],
+      TradingDataService_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetVotesByPartyRequest, ::api::GetVotesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetVotesByPartyRequest, ::api::v1::GetVotesByPartyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetVotesByPartyRequest* req,
-             ::api::GetVotesByPartyResponse* resp) {
+             const ::api::v1::GetVotesByPartyRequest* req,
+             ::api::v1::GetVotesByPartyResponse* resp) {
                return service->GetVotesByParty(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[26],
+      TradingDataService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetNewMarketProposalsRequest, ::api::GetNewMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetNewMarketProposalsRequest, ::api::v1::GetNewMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetNewMarketProposalsRequest* req,
-             ::api::GetNewMarketProposalsResponse* resp) {
+             const ::api::v1::GetNewMarketProposalsRequest* req,
+             ::api::v1::GetNewMarketProposalsResponse* resp) {
                return service->GetNewMarketProposals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[27],
+      TradingDataService_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetUpdateMarketProposalsRequest, ::api::GetUpdateMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetUpdateMarketProposalsRequest, ::api::v1::GetUpdateMarketProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetUpdateMarketProposalsRequest* req,
-             ::api::GetUpdateMarketProposalsResponse* resp) {
+             const ::api::v1::GetUpdateMarketProposalsRequest* req,
+             ::api::v1::GetUpdateMarketProposalsResponse* resp) {
                return service->GetUpdateMarketProposals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[28],
+      TradingDataService_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetNetworkParametersProposalsRequest, ::api::GetNetworkParametersProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetNetworkParametersProposalsRequest, ::api::v1::GetNetworkParametersProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetNetworkParametersProposalsRequest* req,
-             ::api::GetNetworkParametersProposalsResponse* resp) {
+             const ::api::v1::GetNetworkParametersProposalsRequest* req,
+             ::api::v1::GetNetworkParametersProposalsResponse* resp) {
                return service->GetNetworkParametersProposals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[29],
+      TradingDataService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetNewAssetProposalsRequest, ::api::GetNewAssetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetNewAssetProposalsRequest, ::api::v1::GetNewAssetProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetNewAssetProposalsRequest* req,
-             ::api::GetNewAssetProposalsResponse* resp) {
+             const ::api::v1::GetNewAssetProposalsRequest* req,
+             ::api::v1::GetNewAssetProposalsResponse* resp) {
                return service->GetNewAssetProposals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[30],
+      TradingDataService_method_names[30],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetProposalByIDRequest, ::api::GetProposalByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetProposalByIDRequest, ::api::v1::GetProposalByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetProposalByIDRequest* req,
-             ::api::GetProposalByIDResponse* resp) {
+             const ::api::v1::GetProposalByIDRequest* req,
+             ::api::v1::GetProposalByIDResponse* resp) {
                return service->GetProposalByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[31],
+      TradingDataService_method_names[31],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetProposalByReferenceRequest, ::api::GetProposalByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetProposalByReferenceRequest, ::api::v1::GetProposalByReferenceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetProposalByReferenceRequest* req,
-             ::api::GetProposalByReferenceResponse* resp) {
+             const ::api::v1::GetProposalByReferenceRequest* req,
+             ::api::v1::GetProposalByReferenceResponse* resp) {
                return service->GetProposalByReference(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[32],
+      TradingDataService_method_names[32],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::google::protobuf::Empty, ::vega::GovernanceData>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::ObserveGovernanceRequest, ::api::v1::ObserveGovernanceResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::grpc::ServerWriter<::vega::GovernanceData>* writer) {
+             const ::api::v1::ObserveGovernanceRequest* req,
+             ::grpc::ServerWriter<::api::v1::ObserveGovernanceResponse>* writer) {
                return service->ObserveGovernance(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[33],
+      TradingDataService_method_names[33],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::ObservePartyProposalsRequest, ::vega::GovernanceData>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::ObservePartyProposalsRequest, ::api::v1::ObservePartyProposalsResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::ObservePartyProposalsRequest* req,
-             ::grpc::ServerWriter<::vega::GovernanceData>* writer) {
+             const ::api::v1::ObservePartyProposalsRequest* req,
+             ::grpc::ServerWriter<::api::v1::ObservePartyProposalsResponse>* writer) {
                return service->ObservePartyProposals(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[34],
+      TradingDataService_method_names[34],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::ObservePartyVotesRequest, ::vega::Vote>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::ObservePartyVotesRequest, ::api::v1::ObservePartyVotesResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::ObservePartyVotesRequest* req,
-             ::grpc::ServerWriter<::vega::Vote>* writer) {
+             const ::api::v1::ObservePartyVotesRequest* req,
+             ::grpc::ServerWriter<::api::v1::ObservePartyVotesResponse>* writer) {
                return service->ObservePartyVotes(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[35],
+      TradingDataService_method_names[35],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::ObserveProposalVotesRequest, ::vega::Vote>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::ObserveProposalVotesRequest, ::api::v1::ObserveProposalVotesResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::ObserveProposalVotesRequest* req,
-             ::grpc::ServerWriter<::vega::Vote>* writer) {
+             const ::api::v1::ObserveProposalVotesRequest* req,
+             ::grpc::ServerWriter<::api::v1::ObserveProposalVotesResponse>* writer) {
                return service->ObserveProposalVotes(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[36],
+      TradingDataService_method_names[36],
       ::grpc::internal::RpcMethod::BIDI_STREAMING,
-      new ::grpc::internal::BidiStreamingHandler< trading_data::Service, ::api::ObserveEventsRequest, ::api::ObserveEventsResponse>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::BidiStreamingHandler< TradingDataService::Service, ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             ::grpc::ServerReaderWriter<::api::ObserveEventsResponse,
-             ::api::ObserveEventsRequest>* stream) {
+             ::grpc::ServerReaderWriter<::api::v1::ObserveEventBusResponse,
+             ::api::v1::ObserveEventBusRequest>* stream) {
                return service->ObserveEventBus(ctx, stream);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[37],
+      TradingDataService_method_names[37],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::google::protobuf::Empty, ::vega::Statistics, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::StatisticsRequest, ::api::v1::StatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::vega::Statistics* resp) {
+             const ::api::v1::StatisticsRequest* req,
+             ::api::v1::StatisticsResponse* resp) {
                return service->Statistics(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[38],
+      TradingDataService_method_names[38],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::google::protobuf::Empty, ::api::VegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::api::VegaTimeResponse* resp) {
+             const ::api::v1::GetVegaTimeRequest* req,
+             ::api::v1::GetVegaTimeResponse* resp) {
                return service->GetVegaTime(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[39],
+      TradingDataService_method_names[39],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::AccountsSubscribeRequest, ::vega::Account>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::AccountsSubscribeRequest, ::api::v1::AccountsSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::AccountsSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::Account>* writer) {
+             const ::api::v1::AccountsSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::AccountsSubscribeResponse>* writer) {
                return service->AccountsSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[40],
+      TradingDataService_method_names[40],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::CandlesSubscribeRequest, ::vega::Candle>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::CandlesSubscribeRequest, ::api::v1::CandlesSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::CandlesSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::Candle>* writer) {
+             const ::api::v1::CandlesSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::CandlesSubscribeResponse>* writer) {
                return service->CandlesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[41],
+      TradingDataService_method_names[41],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::MarginLevelsSubscribeRequest, ::vega::MarginLevels>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarginLevelsSubscribeRequest, ::api::v1::MarginLevelsSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarginLevelsSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::MarginLevels>* writer) {
+             const ::api::v1::MarginLevelsSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::MarginLevelsSubscribeResponse>* writer) {
                return service->MarginLevelsSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[42],
+      TradingDataService_method_names[42],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::MarketDepthSubscribeRequest, ::vega::MarketDepth>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarketDepthSubscribeRequest, ::api::v1::MarketDepthSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketDepthSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::MarketDepth>* writer) {
+             const ::api::v1::MarketDepthSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::MarketDepthSubscribeResponse>* writer) {
                return service->MarketDepthSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[43],
+      TradingDataService_method_names[43],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::MarketDepthUpdatesSubscribeRequest, ::vega::MarketDepthUpdate>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarketDepthUpdatesSubscribeRequest, ::api::v1::MarketDepthUpdatesSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketDepthUpdatesSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::MarketDepthUpdate>* writer) {
+             const ::api::v1::MarketDepthUpdatesSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::MarketDepthUpdatesSubscribeResponse>* writer) {
                return service->MarketDepthUpdatesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[44],
+      TradingDataService_method_names[44],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::MarketsDataSubscribeRequest, ::vega::MarketData>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarketsDataSubscribeRequest, ::api::v1::MarketsDataSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::MarketsDataSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::MarketData>* writer) {
+             const ::api::v1::MarketsDataSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::MarketsDataSubscribeResponse>* writer) {
                return service->MarketsDataSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[45],
+      TradingDataService_method_names[45],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::OrdersSubscribeRequest, ::api::OrdersStream>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::OrdersSubscribeRequest, ::api::v1::OrdersSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::OrdersSubscribeRequest* req,
-             ::grpc::ServerWriter<::api::OrdersStream>* writer) {
+             const ::api::v1::OrdersSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::OrdersSubscribeResponse>* writer) {
                return service->OrdersSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[46],
+      TradingDataService_method_names[46],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::PositionsSubscribeRequest, ::vega::Position>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::PositionsSubscribeRequest, ::api::v1::PositionsSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::PositionsSubscribeRequest* req,
-             ::grpc::ServerWriter<::vega::Position>* writer) {
+             const ::api::v1::PositionsSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::PositionsSubscribeResponse>* writer) {
                return service->PositionsSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[47],
+      TradingDataService_method_names[47],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::api::TradesSubscribeRequest, ::api::TradesStream>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::TradesSubscribeRequest, ::api::v1::TradesSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::TradesSubscribeRequest* req,
-             ::grpc::ServerWriter<::api::TradesStream>* writer) {
+             const ::api::v1::TradesSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::TradesSubscribeResponse>* writer) {
                return service->TradesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[48],
+      TradingDataService_method_names[48],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< trading_data::Service, ::google::protobuf::Empty, ::vega::TransferResponse>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::TransferResponsesSubscribeRequest, ::api::v1::TransferResponsesSubscribeResponse>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::grpc::ServerWriter<::vega::TransferResponse>* writer) {
+             const ::api::v1::TransferResponsesSubscribeRequest* req,
+             ::grpc::ServerWriter<::api::v1::TransferResponsesSubscribeResponse>* writer) {
                return service->TransferResponsesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[49],
+      TradingDataService_method_names[49],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::GetNodeSignaturesAggregateRequest, ::api::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::GetNodeSignaturesAggregateRequest* req,
-             ::api::GetNodeSignaturesAggregateResponse* resp) {
+             const ::api::v1::GetNodeSignaturesAggregateRequest* req,
+             ::api::v1::GetNodeSignaturesAggregateResponse* resp) {
                return service->GetNodeSignaturesAggregate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[50],
+      TradingDataService_method_names[50],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::AssetByIDRequest, ::api::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::AssetByIDRequest* req,
-             ::api::AssetByIDResponse* resp) {
+             const ::api::v1::AssetByIDRequest* req,
+             ::api::v1::AssetByIDResponse* resp) {
                return service->AssetByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[51],
+      TradingDataService_method_names[51],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::AssetsRequest, ::api::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::AssetsRequest, ::api::v1::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::AssetsRequest* req,
-             ::api::AssetsResponse* resp) {
+             const ::api::v1::AssetsRequest* req,
+             ::api::v1::AssetsResponse* resp) {
                return service->Assets(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[52],
+      TradingDataService_method_names[52],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::EstimateFeeRequest, ::api::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::EstimateFeeRequest* req,
-             ::api::EstimateFeeResponse* resp) {
+             const ::api::v1::EstimateFeeRequest* req,
+             ::api::v1::EstimateFeeResponse* resp) {
                return service->EstimateFee(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[53],
+      TradingDataService_method_names[53],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::EstimateMarginRequest, ::api::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::EstimateMarginRequest* req,
-             ::api::EstimateMarginResponse* resp) {
+             const ::api::v1::EstimateMarginRequest* req,
+             ::api::v1::EstimateMarginResponse* resp) {
                return service->EstimateMargin(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[54],
+      TradingDataService_method_names[54],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::ERC20WithdrawalApprovalRequest, ::api::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::ERC20WithdrawalApprovalRequest* req,
-             ::api::ERC20WithdrawalApprovalResponse* resp) {
+             const ::api::v1::ERC20WithdrawalApprovalRequest* req,
+             ::api::v1::ERC20WithdrawalApprovalResponse* resp) {
                return service->ERC20WithdrawalApproval(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[55],
+      TradingDataService_method_names[55],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::WithdrawalRequest, ::api::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::WithdrawalRequest* req,
-             ::api::WithdrawalResponse* resp) {
+             const ::api::v1::WithdrawalRequest* req,
+             ::api::v1::WithdrawalResponse* resp) {
                return service->Withdrawal(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[56],
+      TradingDataService_method_names[56],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::WithdrawalsRequest, ::api::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::WithdrawalsRequest* req,
-             ::api::WithdrawalsResponse* resp) {
+             const ::api::v1::WithdrawalsRequest* req,
+             ::api::v1::WithdrawalsResponse* resp) {
                return service->Withdrawals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[57],
+      TradingDataService_method_names[57],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::DepositRequest, ::api::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::DepositRequest, ::api::v1::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::DepositRequest* req,
-             ::api::DepositResponse* resp) {
+             const ::api::v1::DepositRequest* req,
+             ::api::v1::DepositResponse* resp) {
                return service->Deposit(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[58],
+      TradingDataService_method_names[58],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::DepositsRequest, ::api::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::DepositsRequest, ::api::v1::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::DepositsRequest* req,
-             ::api::DepositsResponse* resp) {
+             const ::api::v1::DepositsRequest* req,
+             ::api::v1::DepositsResponse* resp) {
                return service->Deposits(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[59],
+      TradingDataService_method_names[59],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::NetworkParametersRequest, ::api::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::NetworkParametersRequest* req,
-             ::api::NetworkParametersResponse* resp) {
+             const ::api::v1::NetworkParametersRequest* req,
+             ::api::v1::NetworkParametersResponse* resp) {
                return service->NetworkParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      trading_data_method_names[60],
+      TradingDataService_method_names[60],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< trading_data::Service, ::api::LiquidityProvisionsRequest, ::api::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](trading_data::Service* service,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::LiquidityProvisionsRequest* req,
-             ::api::LiquidityProvisionsResponse* resp) {
+             const ::api::v1::LiquidityProvisionsRequest* req,
+             ::api::v1::LiquidityProvisionsResponse* resp) {
                return service->LiquidityProvisions(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[61],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::OracleSpecRequest* req,
+             ::api::v1::OracleSpecResponse* resp) {
+               return service->OracleSpec(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[62],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::OracleSpecsRequest* req,
+             ::api::v1::OracleSpecsResponse* resp) {
+               return service->OracleSpecs(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[63],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::OracleDataBySpecRequest* req,
+             ::api::v1::OracleDataBySpecResponse* resp) {
+               return service->OracleDataBySpec(ctx, req, resp);
              }, this)));
 }
 
-trading_data::Service::~Service() {
+TradingDataService::Service::~Service() {
 }
 
-::grpc::Status trading_data::Service::MarketAccounts(::grpc::ServerContext* context, const ::api::MarketAccountsRequest* request, ::api::MarketAccountsResponse* response) {
+::grpc::Status TradingDataService::Service::MarketAccounts(::grpc::ServerContext* context, const ::api::v1::MarketAccountsRequest* request, ::api::v1::MarketAccountsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::PartyAccounts(::grpc::ServerContext* context, const ::api::PartyAccountsRequest* request, ::api::PartyAccountsResponse* response) {
+::grpc::Status TradingDataService::Service::PartyAccounts(::grpc::ServerContext* context, const ::api::v1::PartyAccountsRequest* request, ::api::v1::PartyAccountsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::FeeInfrastructureAccounts(::grpc::ServerContext* context, const ::api::FeeInfrastructureAccountsRequest* request, ::api::FeeInfrastructureAccountsResponse* response) {
+::grpc::Status TradingDataService::Service::FeeInfrastructureAccounts(::grpc::ServerContext* context, const ::api::v1::FeeInfrastructureAccountsRequest* request, ::api::v1::FeeInfrastructureAccountsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Candles(::grpc::ServerContext* context, const ::api::CandlesRequest* request, ::api::CandlesResponse* response) {
+::grpc::Status TradingDataService::Service::Candles(::grpc::ServerContext* context, const ::api::v1::CandlesRequest* request, ::api::v1::CandlesResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketDataByID(::grpc::ServerContext* context, const ::api::MarketDataByIDRequest* request, ::api::MarketDataByIDResponse* response) {
+::grpc::Status TradingDataService::Service::MarketDataByID(::grpc::ServerContext* context, const ::api::v1::MarketDataByIDRequest* request, ::api::v1::MarketDataByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketsData(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::api::MarketsDataResponse* response) {
+::grpc::Status TradingDataService::Service::MarketsData(::grpc::ServerContext* context, const ::api::v1::MarketsDataRequest* request, ::api::v1::MarketsDataResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketByID(::grpc::ServerContext* context, const ::api::MarketByIDRequest* request, ::api::MarketByIDResponse* response) {
+::grpc::Status TradingDataService::Service::MarketByID(::grpc::ServerContext* context, const ::api::v1::MarketByIDRequest* request, ::api::v1::MarketByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketDepth(::grpc::ServerContext* context, const ::api::MarketDepthRequest* request, ::api::MarketDepthResponse* response) {
+::grpc::Status TradingDataService::Service::MarketDepth(::grpc::ServerContext* context, const ::api::v1::MarketDepthRequest* request, ::api::v1::MarketDepthResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Markets(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::api::MarketsResponse* response) {
+::grpc::Status TradingDataService::Service::Markets(::grpc::ServerContext* context, const ::api::v1::MarketsRequest* request, ::api::v1::MarketsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrderByMarketAndID(::grpc::ServerContext* context, const ::api::OrderByMarketAndIdRequest* request, ::api::OrderByMarketAndIdResponse* response) {
+::grpc::Status TradingDataService::Service::OrderByMarketAndID(::grpc::ServerContext* context, const ::api::v1::OrderByMarketAndIDRequest* request, ::api::v1::OrderByMarketAndIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrderByReference(::grpc::ServerContext* context, const ::api::OrderByReferenceRequest* request, ::api::OrderByReferenceResponse* response) {
+::grpc::Status TradingDataService::Service::OrderByReference(::grpc::ServerContext* context, const ::api::v1::OrderByReferenceRequest* request, ::api::v1::OrderByReferenceResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrdersByMarket(::grpc::ServerContext* context, const ::api::OrdersByMarketRequest* request, ::api::OrdersByMarketResponse* response) {
+::grpc::Status TradingDataService::Service::OrdersByMarket(::grpc::ServerContext* context, const ::api::v1::OrdersByMarketRequest* request, ::api::v1::OrdersByMarketResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrdersByParty(::grpc::ServerContext* context, const ::api::OrdersByPartyRequest* request, ::api::OrdersByPartyResponse* response) {
+::grpc::Status TradingDataService::Service::OrdersByParty(::grpc::ServerContext* context, const ::api::v1::OrdersByPartyRequest* request, ::api::v1::OrdersByPartyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrderByID(::grpc::ServerContext* context, const ::api::OrderByIDRequest* request, ::vega::Order* response) {
+::grpc::Status TradingDataService::Service::OrderByID(::grpc::ServerContext* context, const ::api::v1::OrderByIDRequest* request, ::api::v1::OrderByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrderVersionsByID(::grpc::ServerContext* context, const ::api::OrderVersionsByIDRequest* request, ::api::OrderVersionsResponse* response) {
+::grpc::Status TradingDataService::Service::OrderVersionsByID(::grpc::ServerContext* context, const ::api::v1::OrderVersionsByIDRequest* request, ::api::v1::OrderVersionsByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarginLevels(::grpc::ServerContext* context, const ::api::MarginLevelsRequest* request, ::api::MarginLevelsResponse* response) {
+::grpc::Status TradingDataService::Service::MarginLevels(::grpc::ServerContext* context, const ::api::v1::MarginLevelsRequest* request, ::api::v1::MarginLevelsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Parties(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::api::PartiesResponse* response) {
+::grpc::Status TradingDataService::Service::Parties(::grpc::ServerContext* context, const ::api::v1::PartiesRequest* request, ::api::v1::PartiesResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::PartyByID(::grpc::ServerContext* context, const ::api::PartyByIDRequest* request, ::api::PartyByIDResponse* response) {
+::grpc::Status TradingDataService::Service::PartyByID(::grpc::ServerContext* context, const ::api::v1::PartyByIDRequest* request, ::api::v1::PartyByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::PositionsByParty(::grpc::ServerContext* context, const ::api::PositionsByPartyRequest* request, ::api::PositionsByPartyResponse* response) {
+::grpc::Status TradingDataService::Service::PositionsByParty(::grpc::ServerContext* context, const ::api::v1::PositionsByPartyRequest* request, ::api::v1::PositionsByPartyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::LastTrade(::grpc::ServerContext* context, const ::api::LastTradeRequest* request, ::api::LastTradeResponse* response) {
+::grpc::Status TradingDataService::Service::LastTrade(::grpc::ServerContext* context, const ::api::v1::LastTradeRequest* request, ::api::v1::LastTradeResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::TradesByMarket(::grpc::ServerContext* context, const ::api::TradesByMarketRequest* request, ::api::TradesByMarketResponse* response) {
+::grpc::Status TradingDataService::Service::TradesByMarket(::grpc::ServerContext* context, const ::api::v1::TradesByMarketRequest* request, ::api::v1::TradesByMarketResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::TradesByOrder(::grpc::ServerContext* context, const ::api::TradesByOrderRequest* request, ::api::TradesByOrderResponse* response) {
+::grpc::Status TradingDataService::Service::TradesByOrder(::grpc::ServerContext* context, const ::api::v1::TradesByOrderRequest* request, ::api::v1::TradesByOrderResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::TradesByParty(::grpc::ServerContext* context, const ::api::TradesByPartyRequest* request, ::api::TradesByPartyResponse* response) {
+::grpc::Status TradingDataService::Service::TradesByParty(::grpc::ServerContext* context, const ::api::v1::TradesByPartyRequest* request, ::api::v1::TradesByPartyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetProposals(::grpc::ServerContext* context, const ::api::GetProposalsRequest* request, ::api::GetProposalsResponse* response) {
+::grpc::Status TradingDataService::Service::GetProposals(::grpc::ServerContext* context, const ::api::v1::GetProposalsRequest* request, ::api::v1::GetProposalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetProposalsByParty(::grpc::ServerContext* context, const ::api::GetProposalsByPartyRequest* request, ::api::GetProposalsByPartyResponse* response) {
+::grpc::Status TradingDataService::Service::GetProposalsByParty(::grpc::ServerContext* context, const ::api::v1::GetProposalsByPartyRequest* request, ::api::v1::GetProposalsByPartyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetVotesByParty(::grpc::ServerContext* context, const ::api::GetVotesByPartyRequest* request, ::api::GetVotesByPartyResponse* response) {
+::grpc::Status TradingDataService::Service::GetVotesByParty(::grpc::ServerContext* context, const ::api::v1::GetVotesByPartyRequest* request, ::api::v1::GetVotesByPartyResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetNewMarketProposals(::grpc::ServerContext* context, const ::api::GetNewMarketProposalsRequest* request, ::api::GetNewMarketProposalsResponse* response) {
+::grpc::Status TradingDataService::Service::GetNewMarketProposals(::grpc::ServerContext* context, const ::api::v1::GetNewMarketProposalsRequest* request, ::api::v1::GetNewMarketProposalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetUpdateMarketProposals(::grpc::ServerContext* context, const ::api::GetUpdateMarketProposalsRequest* request, ::api::GetUpdateMarketProposalsResponse* response) {
+::grpc::Status TradingDataService::Service::GetUpdateMarketProposals(::grpc::ServerContext* context, const ::api::v1::GetUpdateMarketProposalsRequest* request, ::api::v1::GetUpdateMarketProposalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetNetworkParametersProposals(::grpc::ServerContext* context, const ::api::GetNetworkParametersProposalsRequest* request, ::api::GetNetworkParametersProposalsResponse* response) {
+::grpc::Status TradingDataService::Service::GetNetworkParametersProposals(::grpc::ServerContext* context, const ::api::v1::GetNetworkParametersProposalsRequest* request, ::api::v1::GetNetworkParametersProposalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetNewAssetProposals(::grpc::ServerContext* context, const ::api::GetNewAssetProposalsRequest* request, ::api::GetNewAssetProposalsResponse* response) {
+::grpc::Status TradingDataService::Service::GetNewAssetProposals(::grpc::ServerContext* context, const ::api::v1::GetNewAssetProposalsRequest* request, ::api::v1::GetNewAssetProposalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetProposalByID(::grpc::ServerContext* context, const ::api::GetProposalByIDRequest* request, ::api::GetProposalByIDResponse* response) {
+::grpc::Status TradingDataService::Service::GetProposalByID(::grpc::ServerContext* context, const ::api::v1::GetProposalByIDRequest* request, ::api::v1::GetProposalByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetProposalByReference(::grpc::ServerContext* context, const ::api::GetProposalByReferenceRequest* request, ::api::GetProposalByReferenceResponse* response) {
+::grpc::Status TradingDataService::Service::GetProposalByReference(::grpc::ServerContext* context, const ::api::v1::GetProposalByReferenceRequest* request, ::api::v1::GetProposalByReferenceResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::ObserveGovernance(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpc::ServerWriter< ::vega::GovernanceData>* writer) {
+::grpc::Status TradingDataService::Service::ObserveGovernance(::grpc::ServerContext* context, const ::api::v1::ObserveGovernanceRequest* request, ::grpc::ServerWriter< ::api::v1::ObserveGovernanceResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::ObservePartyProposals(::grpc::ServerContext* context, const ::api::ObservePartyProposalsRequest* request, ::grpc::ServerWriter< ::vega::GovernanceData>* writer) {
+::grpc::Status TradingDataService::Service::ObservePartyProposals(::grpc::ServerContext* context, const ::api::v1::ObservePartyProposalsRequest* request, ::grpc::ServerWriter< ::api::v1::ObservePartyProposalsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::ObservePartyVotes(::grpc::ServerContext* context, const ::api::ObservePartyVotesRequest* request, ::grpc::ServerWriter< ::vega::Vote>* writer) {
+::grpc::Status TradingDataService::Service::ObservePartyVotes(::grpc::ServerContext* context, const ::api::v1::ObservePartyVotesRequest* request, ::grpc::ServerWriter< ::api::v1::ObservePartyVotesResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::ObserveProposalVotes(::grpc::ServerContext* context, const ::api::ObserveProposalVotesRequest* request, ::grpc::ServerWriter< ::vega::Vote>* writer) {
+::grpc::Status TradingDataService::Service::ObserveProposalVotes(::grpc::ServerContext* context, const ::api::v1::ObserveProposalVotesRequest* request, ::grpc::ServerWriter< ::api::v1::ObserveProposalVotesResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::ObserveEventBus(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::api::ObserveEventsResponse, ::api::ObserveEventsRequest>* stream) {
+::grpc::Status TradingDataService::Service::ObserveEventBus(::grpc::ServerContext* context, ::grpc::ServerReaderWriter< ::api::v1::ObserveEventBusResponse, ::api::v1::ObserveEventBusRequest>* stream) {
   (void) context;
   (void) stream;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Statistics(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::vega::Statistics* response) {
+::grpc::Status TradingDataService::Service::Statistics(::grpc::ServerContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetVegaTime(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::api::VegaTimeResponse* response) {
+::grpc::Status TradingDataService::Service::GetVegaTime(::grpc::ServerContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::AccountsSubscribe(::grpc::ServerContext* context, const ::api::AccountsSubscribeRequest* request, ::grpc::ServerWriter< ::vega::Account>* writer) {
+::grpc::Status TradingDataService::Service::AccountsSubscribe(::grpc::ServerContext* context, const ::api::v1::AccountsSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::AccountsSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::CandlesSubscribe(::grpc::ServerContext* context, const ::api::CandlesSubscribeRequest* request, ::grpc::ServerWriter< ::vega::Candle>* writer) {
+::grpc::Status TradingDataService::Service::CandlesSubscribe(::grpc::ServerContext* context, const ::api::v1::CandlesSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::CandlesSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarginLevelsSubscribe(::grpc::ServerContext* context, const ::api::MarginLevelsSubscribeRequest* request, ::grpc::ServerWriter< ::vega::MarginLevels>* writer) {
+::grpc::Status TradingDataService::Service::MarginLevelsSubscribe(::grpc::ServerContext* context, const ::api::v1::MarginLevelsSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::MarginLevelsSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketDepthSubscribe(::grpc::ServerContext* context, const ::api::MarketDepthSubscribeRequest* request, ::grpc::ServerWriter< ::vega::MarketDepth>* writer) {
+::grpc::Status TradingDataService::Service::MarketDepthSubscribe(::grpc::ServerContext* context, const ::api::v1::MarketDepthSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::MarketDepthSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketDepthUpdatesSubscribe(::grpc::ServerContext* context, const ::api::MarketDepthUpdatesSubscribeRequest* request, ::grpc::ServerWriter< ::vega::MarketDepthUpdate>* writer) {
+::grpc::Status TradingDataService::Service::MarketDepthUpdatesSubscribe(::grpc::ServerContext* context, const ::api::v1::MarketDepthUpdatesSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::MarketDepthUpdatesSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::MarketsDataSubscribe(::grpc::ServerContext* context, const ::api::MarketsDataSubscribeRequest* request, ::grpc::ServerWriter< ::vega::MarketData>* writer) {
+::grpc::Status TradingDataService::Service::MarketsDataSubscribe(::grpc::ServerContext* context, const ::api::v1::MarketsDataSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::MarketsDataSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::OrdersSubscribe(::grpc::ServerContext* context, const ::api::OrdersSubscribeRequest* request, ::grpc::ServerWriter< ::api::OrdersStream>* writer) {
+::grpc::Status TradingDataService::Service::OrdersSubscribe(::grpc::ServerContext* context, const ::api::v1::OrdersSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::OrdersSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::PositionsSubscribe(::grpc::ServerContext* context, const ::api::PositionsSubscribeRequest* request, ::grpc::ServerWriter< ::vega::Position>* writer) {
+::grpc::Status TradingDataService::Service::PositionsSubscribe(::grpc::ServerContext* context, const ::api::v1::PositionsSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::PositionsSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::TradesSubscribe(::grpc::ServerContext* context, const ::api::TradesSubscribeRequest* request, ::grpc::ServerWriter< ::api::TradesStream>* writer) {
+::grpc::Status TradingDataService::Service::TradesSubscribe(::grpc::ServerContext* context, const ::api::v1::TradesSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::TradesSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::TransferResponsesSubscribe(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpc::ServerWriter< ::vega::TransferResponse>* writer) {
+::grpc::Status TradingDataService::Service::TransferResponsesSubscribe(::grpc::ServerContext* context, const ::api::v1::TransferResponsesSubscribeRequest* request, ::grpc::ServerWriter< ::api::v1::TransferResponsesSubscribeResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::GetNodeSignaturesAggregate(::grpc::ServerContext* context, const ::api::GetNodeSignaturesAggregateRequest* request, ::api::GetNodeSignaturesAggregateResponse* response) {
+::grpc::Status TradingDataService::Service::GetNodeSignaturesAggregate(::grpc::ServerContext* context, const ::api::v1::GetNodeSignaturesAggregateRequest* request, ::api::v1::GetNodeSignaturesAggregateResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::AssetByID(::grpc::ServerContext* context, const ::api::AssetByIDRequest* request, ::api::AssetByIDResponse* response) {
+::grpc::Status TradingDataService::Service::AssetByID(::grpc::ServerContext* context, const ::api::v1::AssetByIDRequest* request, ::api::v1::AssetByIDResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Assets(::grpc::ServerContext* context, const ::api::AssetsRequest* request, ::api::AssetsResponse* response) {
+::grpc::Status TradingDataService::Service::Assets(::grpc::ServerContext* context, const ::api::v1::AssetsRequest* request, ::api::v1::AssetsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::EstimateFee(::grpc::ServerContext* context, const ::api::EstimateFeeRequest* request, ::api::EstimateFeeResponse* response) {
+::grpc::Status TradingDataService::Service::EstimateFee(::grpc::ServerContext* context, const ::api::v1::EstimateFeeRequest* request, ::api::v1::EstimateFeeResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::EstimateMargin(::grpc::ServerContext* context, const ::api::EstimateMarginRequest* request, ::api::EstimateMarginResponse* response) {
+::grpc::Status TradingDataService::Service::EstimateMargin(::grpc::ServerContext* context, const ::api::v1::EstimateMarginRequest* request, ::api::v1::EstimateMarginResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::ERC20WithdrawalApproval(::grpc::ServerContext* context, const ::api::ERC20WithdrawalApprovalRequest* request, ::api::ERC20WithdrawalApprovalResponse* response) {
+::grpc::Status TradingDataService::Service::ERC20WithdrawalApproval(::grpc::ServerContext* context, const ::api::v1::ERC20WithdrawalApprovalRequest* request, ::api::v1::ERC20WithdrawalApprovalResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Withdrawal(::grpc::ServerContext* context, const ::api::WithdrawalRequest* request, ::api::WithdrawalResponse* response) {
+::grpc::Status TradingDataService::Service::Withdrawal(::grpc::ServerContext* context, const ::api::v1::WithdrawalRequest* request, ::api::v1::WithdrawalResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Withdrawals(::grpc::ServerContext* context, const ::api::WithdrawalsRequest* request, ::api::WithdrawalsResponse* response) {
+::grpc::Status TradingDataService::Service::Withdrawals(::grpc::ServerContext* context, const ::api::v1::WithdrawalsRequest* request, ::api::v1::WithdrawalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Deposit(::grpc::ServerContext* context, const ::api::DepositRequest* request, ::api::DepositResponse* response) {
+::grpc::Status TradingDataService::Service::Deposit(::grpc::ServerContext* context, const ::api::v1::DepositRequest* request, ::api::v1::DepositResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::Deposits(::grpc::ServerContext* context, const ::api::DepositsRequest* request, ::api::DepositsResponse* response) {
+::grpc::Status TradingDataService::Service::Deposits(::grpc::ServerContext* context, const ::api::v1::DepositsRequest* request, ::api::v1::DepositsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::NetworkParameters(::grpc::ServerContext* context, const ::api::NetworkParametersRequest* request, ::api::NetworkParametersResponse* response) {
+::grpc::Status TradingDataService::Service::NetworkParameters(::grpc::ServerContext* context, const ::api::v1::NetworkParametersRequest* request, ::api::v1::NetworkParametersResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status trading_data::Service::LiquidityProvisions(::grpc::ServerContext* context, const ::api::LiquidityProvisionsRequest* request, ::api::LiquidityProvisionsResponse* response) {
+::grpc::Status TradingDataService::Service::LiquidityProvisions(::grpc::ServerContext* context, const ::api::v1::LiquidityProvisionsRequest* request, ::api::v1::LiquidityProvisionsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::OracleSpec(::grpc::ServerContext* context, const ::api::v1::OracleSpecRequest* request, ::api::v1::OracleSpecResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::OracleSpecs(::grpc::ServerContext* context, const ::api::v1::OracleSpecsRequest* request, ::api::v1::OracleSpecsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::OracleDataBySpec(::grpc::ServerContext* context, const ::api::v1::OracleDataBySpecRequest* request, ::api::v1::OracleDataBySpecResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -2894,4 +3021,5 @@ trading_data::Service::~Service() {
 
 
 }  // namespace api
+}  // namespace v1
 

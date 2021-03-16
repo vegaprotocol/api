@@ -6,9 +6,11 @@ package proto
 import (
 	fmt "fmt"
 	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	_ "github.com/vegaprotocol/api/go/generated/code.vegaprotocol.io/vega/proto/oracles/v1"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -25,6 +27,16 @@ func (this *FutureProduct) Validate() error {
 	}
 	if this.QuoteName == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("QuoteName", fmt.Errorf(`value '%v' must not be an empty string`, this.QuoteName))
+	}
+	if this.OracleSpec != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.OracleSpec); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("OracleSpec", err)
+		}
+	}
+	if this.OracleSpecBinding != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.OracleSpecBinding); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("OracleSpecBinding", err)
+		}
 	}
 	return nil
 }
@@ -91,6 +103,23 @@ func (this *NewMarketConfiguration) Validate() error {
 	}
 	return nil
 }
+func (this *NewMarketCommitment) Validate() error {
+	for _, item := range this.Sells {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Sells", err)
+			}
+		}
+	}
+	for _, item := range this.Buys {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Buys", err)
+			}
+		}
+	}
+	return nil
+}
 func (this *NewMarket) Validate() error {
 	if nil == this.Changes {
 		return github_com_mwitkow_go_proto_validators.FieldError("Changes", fmt.Errorf("message must exist"))
@@ -98,6 +127,11 @@ func (this *NewMarket) Validate() error {
 	if this.Changes != nil {
 		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Changes); err != nil {
 			return github_com_mwitkow_go_proto_validators.FieldError("Changes", err)
+		}
+	}
+	if this.LiquidityCommitment != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.LiquidityCommitment); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("LiquidityCommitment", err)
 		}
 	}
 	return nil
@@ -189,8 +223,8 @@ func (this *GovernanceData) Validate() error {
 	return nil
 }
 func (this *Proposal) Validate() error {
-	if this.PartyID == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("PartyID", fmt.Errorf(`value '%v' must not be an empty string`, this.PartyID))
+	if this.PartyId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("PartyId", fmt.Errorf(`value '%v' must not be an empty string`, this.PartyId))
 	}
 	if _, ok := Proposal_State_name[int32(this.State)]; !ok {
 		return github_com_mwitkow_go_proto_validators.FieldError("State", fmt.Errorf(`value '%v' must be a valid Proposal_State field`, this.State))
@@ -206,14 +240,14 @@ func (this *Proposal) Validate() error {
 	return nil
 }
 func (this *Vote) Validate() error {
-	if this.PartyID == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("PartyID", fmt.Errorf(`value '%v' must not be an empty string`, this.PartyID))
+	if this.PartyId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("PartyId", fmt.Errorf(`value '%v' must not be an empty string`, this.PartyId))
 	}
 	if _, ok := Vote_Value_name[int32(this.Value)]; !ok {
 		return github_com_mwitkow_go_proto_validators.FieldError("Value", fmt.Errorf(`value '%v' must be a valid Vote_Value field`, this.Value))
 	}
-	if this.ProposalID == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("ProposalID", fmt.Errorf(`value '%v' must not be an empty string`, this.ProposalID))
+	if this.ProposalId == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("ProposalId", fmt.Errorf(`value '%v' must not be an empty string`, this.ProposalId))
 	}
 	return nil
 }

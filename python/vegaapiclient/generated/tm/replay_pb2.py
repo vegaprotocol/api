@@ -16,16 +16,16 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='tm/replay.proto',
-  package='vega',
+  package='tm',
   syntax='proto3',
   serialized_options=b'\n\027io.vegaprotocol.vega.tmZ\034code.vegaprotocol.io/vega/tm',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0ftm/replay.proto\x12\x04vega\"\x90\x03\n\x07TmEvent\x12<\n\x0creqInitChain\x18\x01 \x01(\x0b\x32\x16.vega.RequestInitChainH\x00R\x0creqInitChain\x12=\n\x0cresInitChain\x18\x02 \x01(\x0b\x32\x17.vega.ResponseInitChainH\x00R\x0cresInitChain\x12<\n\x0creqDeliverTx\x18\x03 \x01(\x0b\x32\x16.vega.RequestDeliverTxH\x00R\x0creqDeliverTx\x12=\n\x0cresDeliverTx\x18\x04 \x01(\x0b\x32\x17.vega.ResponseDeliverTxH\x00R\x0cresDeliverTx\x12?\n\rreqBeginBlock\x18\x05 \x01(\x0b\x32\x17.vega.RequestBeginBlockH\x00R\rreqBeginBlock\x12@\n\rresBeginBlock\x18\x06 \x01(\x0b\x32\x18.vega.ResponseBeginBlockH\x00R\rresBeginBlockB\x08\n\x06\x41\x63tion\"\x84\x02\n\x10RequestInitChain\x12\x12\n\x04time\x18\x01 \x01(\x03R\x04time\x12\x18\n\x07\x63hainID\x18\x02 \x01(\tR\x07\x63hainID\x12?\n\x0f\x63onsensusParams\x18\x03 \x01(\x0b\x32\x15.vega.ConsensusParamsR\x0f\x63onsensusParams\x12\x35\n\nvalidators\x18\x04 \x03(\x0b\x32\x15.vega.ValidatorUpdateR\nvalidators\x12$\n\rappStateBytes\x18\x05 \x01(\x0cR\rappStateBytes\x12$\n\rinitialHeight\x18\x06 \x01(\x03R\rinitialHeight\"\xcd\x01\n\x11RequestBeginBlock\x12\x12\n\x04hash\x18\x01 \x01(\x0cR\x04hash\x12$\n\x06header\x18\x02 \x01(\x0b\x32\x0c.vega.HeaderR\x06header\x12<\n\x0elastCommitInfo\x18\x03 \x01(\x0b\x32\x14.vega.LastCommitInfoR\x0elastCommitInfo\x12@\n\x13\x62yzantineValidators\x18\x04 \x03(\x0b\x32\x0e.vega.EvidenceR\x13\x62yzantineValidators\"\"\n\x10RequestDeliverTx\x12\x0e\n\x02tx\x18\x01 \x01(\x0cR\x02tx\"\xa5\x01\n\x11ResponseInitChain\x12?\n\x0f\x63onsensusParams\x18\x01 \x01(\x0b\x32\x15.vega.ConsensusParamsR\x0f\x63onsensusParams\x12\x35\n\nvalidators\x18\x02 \x03(\x0b\x32\x15.vega.ValidatorUpdateR\nvalidators\x12\x18\n\x07\x61ppHash\x18\x03 \x01(\x0cR\x07\x61ppHash\"9\n\x12ResponseBeginBlock\x12#\n\x06\x65vents\x18\x01 \x03(\x0b\x32\x0b.vega.EventR\x06\x65vents\"\xdc\x01\n\x11ResponseDeliverTx\x12\x12\n\x04\x63ode\x18\x01 \x01(\rR\x04\x63ode\x12\x12\n\x04\x64\x61ta\x18\x02 \x01(\x0cR\x04\x64\x61ta\x12\x10\n\x03log\x18\x03 \x01(\tR\x03log\x12\x12\n\x04info\x18\x04 \x01(\tR\x04info\x12\x1c\n\tgasWanted\x18\x05 \x01(\x03R\tgasWanted\x12\x18\n\x07gasUsed\x18\x06 \x01(\x03R\x07gasUsed\x12#\n\x06\x65vents\x18\x07 \x03(\x0b\x32\x0b.vega.EventR\x06\x65vents\x12\x1c\n\tcodespace\x18\x08 \x01(\tR\tcodespace\"Q\n\x05\x45vent\x12\x12\n\x04type\x18\x01 \x01(\tR\x04type\x12\x34\n\nattributes\x18\x02 \x03(\x0b\x32\x14.vega.EventAttributeR\nattributes\"N\n\x0e\x45ventAttribute\x12\x10\n\x03key\x18\x01 \x01(\x0cR\x03key\x12\x14\n\x05value\x18\x02 \x01(\x0cR\x05value\x12\x14\n\x05index\x18\x03 \x01(\x08R\x05index\"Q\n\x0fValidatorUpdate\x12(\n\x07pub_key\x18\x01 \x01(\x0b\x32\x0f.vega.PublicKeyR\x06pubKey\x12\x14\n\x05power\x18\x02 \x01(\x03R\x05power\"\xd0\x01\n\x0f\x43onsensusParams\x12\'\n\x05\x62lock\x18\x01 \x01(\x0b\x32\x11.vega.BlockParamsR\x05\x62lock\x12\x30\n\x08\x65vidence\x18\x02 \x01(\x0b\x32\x14.vega.EvidenceParamsR\x08\x65vidence\x12\x33\n\tvalidator\x18\x03 \x01(\x0b\x32\x15.vega.ValidatorParamsR\tvalidator\x12-\n\x07version\x18\x04 \x01(\x0b\x32\x13.vega.VersionParamsR\x07version\"A\n\x0b\x42lockParams\x12\x1a\n\x08maxBytes\x18\x01 \x01(\x03R\x08maxBytes\x12\x16\n\x06maxGas\x18\x02 \x01(\x03R\x06maxGas\"\xb9\x01\n\x08\x45vidence\x12&\n\x04type\x18\x01 \x01(\x0e\x32\x12.vega.EvidenceTypeR\x04type\x12-\n\tvalidator\x18\x02 \x01(\x0b\x32\x0f.vega.ValidatorR\tvalidator\x12\x16\n\x06height\x18\x03 \x01(\x03R\x06height\x12\x12\n\x04time\x18\x04 \x01(\x03R\x04time\x12*\n\x10totalVotingPower\x18\x05 \x01(\x03R\x10totalVotingPower\";\n\tValidator\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0cR\x07\x61\x64\x64ress\x12\x14\n\x05power\x18\x03 \x01(\x03R\x05power\"L\n\x0eLastCommitInfo\x12\x14\n\x05round\x18\x01 \x01(\x05R\x05round\x12$\n\x05votes\x18\x02 \x03(\x0b\x32\x0e.vega.VoteInfoR\x05votes\"c\n\x08VoteInfo\x12-\n\tvalidator\x18\x01 \x01(\x0b\x32\x0f.vega.ValidatorR\tvalidator\x12(\n\x0fsignedLastBlock\x18\x02 \x01(\x08R\x0fsignedLastBlock\"{\n\x0e\x45videnceParams\x12(\n\x0fmaxAgeNumBlocks\x18\x01 \x01(\x03R\x0fmaxAgeNumBlocks\x12&\n\x0emaxAgeDuration\x18\x02 \x01(\x03R\x0emaxAgeDuration\x12\x17\n\x07max_num\x18\x03 \x01(\rR\x06maxNum\"3\n\x0fValidatorParams\x12 \n\x0bpubKeyTypes\x18\x01 \x03(\tR\x0bpubKeyTypes\"/\n\rVersionParams\x12\x1e\n\nappVersion\x18\x01 \x01(\x04R\nappVersion\"N\n\x06Header\x12\x18\n\x07\x63hainId\x18\x01 \x01(\tR\x07\x63hainId\x12\x16\n\x06height\x18\x02 \x01(\x03R\x06height\x12\x12\n\x04time\x18\x03 \x01(\x03R\x04time\".\n\tPublicKey\x12\x1a\n\x07\x65\x64\x32\x35\x35\x31\x39\x18\x01 \x01(\x0cH\x00R\x07\x65\x64\x32\x35\x35\x31\x39\x42\x05\n\x03sum*H\n\x0c\x45videnceType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0e\x44UPLICATE_VOTE\x10\x01\x12\x17\n\x13LIGHT_CLIENT_ATTACK\x10\x02\x42\x37\n\x17io.vegaprotocol.vega.tmZ\x1c\x63ode.vegaprotocol.io/vega/tmb\x06proto3'
+  serialized_pb=b'\n\x0ftm/replay.proto\x12\x02tm\"\x90\x03\n\x07TmEvent\x12<\n\x0ereq_init_chain\x18\x01 \x01(\x0b\x32\x14.tm.RequestInitChainH\x00R\x0creqInitChain\x12=\n\x0eres_init_chain\x18\x02 \x01(\x0b\x32\x15.tm.ResponseInitChainH\x00R\x0cresInitChain\x12<\n\x0ereq_deliver_tx\x18\x03 \x01(\x0b\x32\x14.tm.RequestDeliverTxH\x00R\x0creqDeliverTx\x12=\n\x0eres_deliver_tx\x18\x04 \x01(\x0b\x32\x15.tm.ResponseDeliverTxH\x00R\x0cresDeliverTx\x12?\n\x0freq_begin_block\x18\x05 \x01(\x0b\x32\x15.tm.RequestBeginBlockH\x00R\rreqBeginBlock\x12@\n\x0fres_begin_block\x18\x06 \x01(\x0b\x32\x16.tm.ResponseBeginBlockH\x00R\rresBeginBlockB\x08\n\x06\x61\x63tion\"\x85\x02\n\x10RequestInitChain\x12\x12\n\x04time\x18\x01 \x01(\x03R\x04time\x12\x19\n\x08\x63hain_id\x18\x02 \x01(\tR\x07\x63hainId\x12>\n\x10\x63onsensus_params\x18\x03 \x01(\x0b\x32\x13.tm.ConsensusParamsR\x0f\x63onsensusParams\x12\x33\n\nvalidators\x18\x04 \x03(\x0b\x32\x13.tm.ValidatorUpdateR\nvalidators\x12&\n\x0f\x61pp_state_bytes\x18\x05 \x01(\x0cR\rappStateBytes\x12%\n\x0einitial_height\x18\x06 \x01(\x03R\rinitialHeight\"\xca\x01\n\x11RequestBeginBlock\x12\x12\n\x04hash\x18\x01 \x01(\x0cR\x04hash\x12\"\n\x06header\x18\x02 \x01(\x0b\x32\n.tm.HeaderR\x06header\x12<\n\x10last_commit_info\x18\x03 \x01(\x0b\x32\x12.tm.LastCommitInfoR\x0elastCommitInfo\x12?\n\x14\x62yzantine_validators\x18\x04 \x03(\x0b\x32\x0c.tm.EvidenceR\x13\x62yzantineValidators\"\"\n\x10RequestDeliverTx\x12\x0e\n\x02tx\x18\x01 \x01(\x0cR\x02tx\"\xa3\x01\n\x11ResponseInitChain\x12>\n\x10\x63onsensus_params\x18\x01 \x01(\x0b\x32\x13.tm.ConsensusParamsR\x0f\x63onsensusParams\x12\x33\n\nvalidators\x18\x02 \x03(\x0b\x32\x13.tm.ValidatorUpdateR\nvalidators\x12\x19\n\x08\x61pp_hash\x18\x03 \x01(\x0cR\x07\x61ppHash\"7\n\x12ResponseBeginBlock\x12!\n\x06\x65vents\x18\x01 \x03(\x0b\x32\t.tm.EventR\x06\x65vents\"\xdc\x01\n\x11ResponseDeliverTx\x12\x12\n\x04\x63ode\x18\x01 \x01(\rR\x04\x63ode\x12\x12\n\x04\x64\x61ta\x18\x02 \x01(\x0cR\x04\x64\x61ta\x12\x10\n\x03log\x18\x03 \x01(\tR\x03log\x12\x12\n\x04info\x18\x04 \x01(\tR\x04info\x12\x1d\n\ngas_wanted\x18\x05 \x01(\x03R\tgasWanted\x12\x19\n\x08gas_used\x18\x06 \x01(\x03R\x07gasUsed\x12!\n\x06\x65vents\x18\x07 \x03(\x0b\x32\t.tm.EventR\x06\x65vents\x12\x1c\n\tcodespace\x18\x08 \x01(\tR\tcodespace\"O\n\x05\x45vent\x12\x12\n\x04type\x18\x01 \x01(\tR\x04type\x12\x32\n\nattributes\x18\x02 \x03(\x0b\x32\x12.tm.EventAttributeR\nattributes\"N\n\x0e\x45ventAttribute\x12\x10\n\x03key\x18\x01 \x01(\x0cR\x03key\x12\x14\n\x05value\x18\x02 \x01(\x0cR\x05value\x12\x14\n\x05index\x18\x03 \x01(\x08R\x05index\"O\n\x0fValidatorUpdate\x12&\n\x07pub_key\x18\x01 \x01(\x0b\x32\r.tm.PublicKeyR\x06pubKey\x12\x14\n\x05power\x18\x02 \x01(\x03R\x05power\"\xc8\x01\n\x0f\x43onsensusParams\x12%\n\x05\x62lock\x18\x01 \x01(\x0b\x32\x0f.tm.BlockParamsR\x05\x62lock\x12.\n\x08\x65vidence\x18\x02 \x01(\x0b\x32\x12.tm.EvidenceParamsR\x08\x65vidence\x12\x31\n\tvalidator\x18\x03 \x01(\x0b\x32\x13.tm.ValidatorParamsR\tvalidator\x12+\n\x07version\x18\x04 \x01(\x0b\x32\x11.tm.VersionParamsR\x07version\"C\n\x0b\x42lockParams\x12\x1b\n\tmax_bytes\x18\x01 \x01(\x03R\x08maxBytes\x12\x17\n\x07max_gas\x18\x02 \x01(\x03R\x06maxGas\"\xb7\x01\n\x08\x45vidence\x12$\n\x04type\x18\x01 \x01(\x0e\x32\x10.tm.EvidenceTypeR\x04type\x12+\n\tvalidator\x18\x02 \x01(\x0b\x32\r.tm.ValidatorR\tvalidator\x12\x16\n\x06height\x18\x03 \x01(\x03R\x06height\x12\x12\n\x04time\x18\x04 \x01(\x03R\x04time\x12,\n\x12total_voting_power\x18\x05 \x01(\x03R\x10totalVotingPower\";\n\tValidator\x12\x18\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0cR\x07\x61\x64\x64ress\x12\x14\n\x05power\x18\x03 \x01(\x03R\x05power\"J\n\x0eLastCommitInfo\x12\x14\n\x05round\x18\x01 \x01(\x05R\x05round\x12\"\n\x05votes\x18\x02 \x03(\x0b\x32\x0c.tm.VoteInfoR\x05votes\"c\n\x08VoteInfo\x12+\n\tvalidator\x18\x01 \x01(\x0b\x32\r.tm.ValidatorR\tvalidator\x12*\n\x11signed_last_block\x18\x02 \x01(\x08R\x0fsignedLastBlock\"\x80\x01\n\x0e\x45videnceParams\x12+\n\x12max_age_num_blocks\x18\x01 \x01(\x03R\x0fmaxAgeNumBlocks\x12(\n\x10max_age_duration\x18\x02 \x01(\x03R\x0emaxAgeDuration\x12\x17\n\x07max_num\x18\x03 \x01(\rR\x06maxNum\"5\n\x0fValidatorParams\x12\"\n\rpub_key_types\x18\x01 \x03(\tR\x0bpubKeyTypes\"0\n\rVersionParams\x12\x1f\n\x0b\x61pp_version\x18\x01 \x01(\x04R\nappVersion\"O\n\x06Header\x12\x19\n\x08\x63hain_id\x18\x01 \x01(\tR\x07\x63hainId\x12\x16\n\x06height\x18\x02 \x01(\x03R\x06height\x12\x12\n\x04time\x18\x03 \x01(\x03R\x04time\".\n\tPublicKey\x12\x1a\n\x07\x65\x64\x32\x35\x35\x31\x39\x18\x01 \x01(\x0cH\x00R\x07\x65\x64\x32\x35\x35\x31\x39\x42\x05\n\x03sum*H\n\x0c\x45videnceType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x12\n\x0e\x44UPLICATE_VOTE\x10\x01\x12\x17\n\x13LIGHT_CLIENT_ATTACK\x10\x02\x42\x37\n\x17io.vegaprotocol.vega.tmZ\x1c\x63ode.vegaprotocol.io/vega/tmb\x06proto3'
 )
 
 _EVIDENCETYPE = _descriptor.EnumDescriptor(
   name='EvidenceType',
-  full_name='vega.EvidenceType',
+  full_name='tm.EvidenceType',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -48,8 +48,8 @@ _EVIDENCETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2692,
-  serialized_end=2764,
+  serialized_start=2680,
+  serialized_end=2752,
 )
 _sym_db.RegisterEnumDescriptor(_EVIDENCETYPE)
 
@@ -62,49 +62,49 @@ LIGHT_CLIENT_ATTACK = 2
 
 _TMEVENT = _descriptor.Descriptor(
   name='TmEvent',
-  full_name='vega.TmEvent',
+  full_name='tm.TmEvent',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reqInitChain', full_name='vega.TmEvent.reqInitChain', index=0,
+      name='req_init_chain', full_name='tm.TmEvent.req_init_chain', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='reqInitChain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='resInitChain', full_name='vega.TmEvent.resInitChain', index=1,
+      name='res_init_chain', full_name='tm.TmEvent.res_init_chain', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='resInitChain', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reqDeliverTx', full_name='vega.TmEvent.reqDeliverTx', index=2,
+      name='req_deliver_tx', full_name='tm.TmEvent.req_deliver_tx', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='reqDeliverTx', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='resDeliverTx', full_name='vega.TmEvent.resDeliverTx', index=3,
+      name='res_deliver_tx', full_name='tm.TmEvent.res_deliver_tx', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='resDeliverTx', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reqBeginBlock', full_name='vega.TmEvent.reqBeginBlock', index=4,
+      name='req_begin_block', full_name='tm.TmEvent.req_begin_block', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='reqBeginBlock', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='resBeginBlock', full_name='vega.TmEvent.resBeginBlock', index=5,
+      name='res_begin_block', full_name='tm.TmEvent.res_begin_block', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -122,61 +122,61 @@ _TMEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='Action', full_name='vega.TmEvent.Action',
+      name='action', full_name='tm.TmEvent.action',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=26,
-  serialized_end=426,
+  serialized_start=24,
+  serialized_end=424,
 )
 
 
 _REQUESTINITCHAIN = _descriptor.Descriptor(
   name='RequestInitChain',
-  full_name='vega.RequestInitChain',
+  full_name='tm.RequestInitChain',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='time', full_name='vega.RequestInitChain.time', index=0,
+      name='time', full_name='tm.RequestInitChain.time', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='time', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chainID', full_name='vega.RequestInitChain.chainID', index=1,
+      name='chain_id', full_name='tm.RequestInitChain.chain_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='chainID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='chainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='consensusParams', full_name='vega.RequestInitChain.consensusParams', index=2,
+      name='consensus_params', full_name='tm.RequestInitChain.consensus_params', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='consensusParams', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validators', full_name='vega.RequestInitChain.validators', index=3,
+      name='validators', full_name='tm.RequestInitChain.validators', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='validators', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='appStateBytes', full_name='vega.RequestInitChain.appStateBytes', index=4,
+      name='app_state_bytes', full_name='tm.RequestInitChain.app_state_bytes', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='appStateBytes', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='initialHeight', full_name='vega.RequestInitChain.initialHeight', index=5,
+      name='initial_height', full_name='tm.RequestInitChain.initial_height', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -194,42 +194,42 @@ _REQUESTINITCHAIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=429,
-  serialized_end=689,
+  serialized_start=427,
+  serialized_end=688,
 )
 
 
 _REQUESTBEGINBLOCK = _descriptor.Descriptor(
   name='RequestBeginBlock',
-  full_name='vega.RequestBeginBlock',
+  full_name='tm.RequestBeginBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hash', full_name='vega.RequestBeginBlock.hash', index=0,
+      name='hash', full_name='tm.RequestBeginBlock.hash', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='hash', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='header', full_name='vega.RequestBeginBlock.header', index=1,
+      name='header', full_name='tm.RequestBeginBlock.header', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='header', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastCommitInfo', full_name='vega.RequestBeginBlock.lastCommitInfo', index=2,
+      name='last_commit_info', full_name='tm.RequestBeginBlock.last_commit_info', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lastCommitInfo', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='byzantineValidators', full_name='vega.RequestBeginBlock.byzantineValidators', index=3,
+      name='byzantine_validators', full_name='tm.RequestBeginBlock.byzantine_validators', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -247,21 +247,21 @@ _REQUESTBEGINBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=692,
-  serialized_end=897,
+  serialized_start=691,
+  serialized_end=893,
 )
 
 
 _REQUESTDELIVERTX = _descriptor.Descriptor(
   name='RequestDeliverTx',
-  full_name='vega.RequestDeliverTx',
+  full_name='tm.RequestDeliverTx',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tx', full_name='vega.RequestDeliverTx.tx', index=0,
+      name='tx', full_name='tm.RequestDeliverTx.tx', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -279,35 +279,35 @@ _REQUESTDELIVERTX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=933,
+  serialized_start=895,
+  serialized_end=929,
 )
 
 
 _RESPONSEINITCHAIN = _descriptor.Descriptor(
   name='ResponseInitChain',
-  full_name='vega.ResponseInitChain',
+  full_name='tm.ResponseInitChain',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='consensusParams', full_name='vega.ResponseInitChain.consensusParams', index=0,
+      name='consensus_params', full_name='tm.ResponseInitChain.consensus_params', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='consensusParams', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validators', full_name='vega.ResponseInitChain.validators', index=1,
+      name='validators', full_name='tm.ResponseInitChain.validators', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='validators', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='appHash', full_name='vega.ResponseInitChain.appHash', index=2,
+      name='app_hash', full_name='tm.ResponseInitChain.app_hash', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -325,21 +325,21 @@ _RESPONSEINITCHAIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=936,
-  serialized_end=1101,
+  serialized_start=932,
+  serialized_end=1095,
 )
 
 
 _RESPONSEBEGINBLOCK = _descriptor.Descriptor(
   name='ResponseBeginBlock',
-  full_name='vega.ResponseBeginBlock',
+  full_name='tm.ResponseBeginBlock',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='events', full_name='vega.ResponseBeginBlock.events', index=0,
+      name='events', full_name='tm.ResponseBeginBlock.events', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -357,70 +357,70 @@ _RESPONSEBEGINBLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1103,
-  serialized_end=1160,
+  serialized_start=1097,
+  serialized_end=1152,
 )
 
 
 _RESPONSEDELIVERTX = _descriptor.Descriptor(
   name='ResponseDeliverTx',
-  full_name='vega.ResponseDeliverTx',
+  full_name='tm.ResponseDeliverTx',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='vega.ResponseDeliverTx.code', index=0,
+      name='code', full_name='tm.ResponseDeliverTx.code', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='code', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='data', full_name='vega.ResponseDeliverTx.data', index=1,
+      name='data', full_name='tm.ResponseDeliverTx.data', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='log', full_name='vega.ResponseDeliverTx.log', index=2,
+      name='log', full_name='tm.ResponseDeliverTx.log', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='log', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='info', full_name='vega.ResponseDeliverTx.info', index=3,
+      name='info', full_name='tm.ResponseDeliverTx.info', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='info', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='gasWanted', full_name='vega.ResponseDeliverTx.gasWanted', index=4,
+      name='gas_wanted', full_name='tm.ResponseDeliverTx.gas_wanted', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='gasWanted', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='gasUsed', full_name='vega.ResponseDeliverTx.gasUsed', index=5,
+      name='gas_used', full_name='tm.ResponseDeliverTx.gas_used', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='gasUsed', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='events', full_name='vega.ResponseDeliverTx.events', index=6,
+      name='events', full_name='tm.ResponseDeliverTx.events', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='events', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='codespace', full_name='vega.ResponseDeliverTx.codespace', index=7,
+      name='codespace', full_name='tm.ResponseDeliverTx.codespace', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -438,28 +438,28 @@ _RESPONSEDELIVERTX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1163,
-  serialized_end=1383,
+  serialized_start=1155,
+  serialized_end=1375,
 )
 
 
 _EVENT = _descriptor.Descriptor(
   name='Event',
-  full_name='vega.Event',
+  full_name='tm.Event',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='vega.Event.type', index=0,
+      name='type', full_name='tm.Event.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='attributes', full_name='vega.Event.attributes', index=1,
+      name='attributes', full_name='tm.Event.attributes', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -477,35 +477,35 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1385,
-  serialized_end=1466,
+  serialized_start=1377,
+  serialized_end=1456,
 )
 
 
 _EVENTATTRIBUTE = _descriptor.Descriptor(
   name='EventAttribute',
-  full_name='vega.EventAttribute',
+  full_name='tm.EventAttribute',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='vega.EventAttribute.key', index=0,
+      name='key', full_name='tm.EventAttribute.key', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='key', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='vega.EventAttribute.value', index=1,
+      name='value', full_name='tm.EventAttribute.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='value', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='index', full_name='vega.EventAttribute.index', index=2,
+      name='index', full_name='tm.EventAttribute.index', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -523,28 +523,28 @@ _EVENTATTRIBUTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1468,
-  serialized_end=1546,
+  serialized_start=1458,
+  serialized_end=1536,
 )
 
 
 _VALIDATORUPDATE = _descriptor.Descriptor(
   name='ValidatorUpdate',
-  full_name='vega.ValidatorUpdate',
+  full_name='tm.ValidatorUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pub_key', full_name='vega.ValidatorUpdate.pub_key', index=0,
+      name='pub_key', full_name='tm.ValidatorUpdate.pub_key', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pubKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='power', full_name='vega.ValidatorUpdate.power', index=1,
+      name='power', full_name='tm.ValidatorUpdate.power', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -562,42 +562,42 @@ _VALIDATORUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1548,
-  serialized_end=1629,
+  serialized_start=1538,
+  serialized_end=1617,
 )
 
 
 _CONSENSUSPARAMS = _descriptor.Descriptor(
   name='ConsensusParams',
-  full_name='vega.ConsensusParams',
+  full_name='tm.ConsensusParams',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='block', full_name='vega.ConsensusParams.block', index=0,
+      name='block', full_name='tm.ConsensusParams.block', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='block', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='evidence', full_name='vega.ConsensusParams.evidence', index=1,
+      name='evidence', full_name='tm.ConsensusParams.evidence', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='evidence', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validator', full_name='vega.ConsensusParams.validator', index=2,
+      name='validator', full_name='tm.ConsensusParams.validator', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='validator', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='vega.ConsensusParams.version', index=3,
+      name='version', full_name='tm.ConsensusParams.version', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -615,28 +615,28 @@ _CONSENSUSPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1632,
-  serialized_end=1840,
+  serialized_start=1620,
+  serialized_end=1820,
 )
 
 
 _BLOCKPARAMS = _descriptor.Descriptor(
   name='BlockParams',
-  full_name='vega.BlockParams',
+  full_name='tm.BlockParams',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='maxBytes', full_name='vega.BlockParams.maxBytes', index=0,
+      name='max_bytes', full_name='tm.BlockParams.max_bytes', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='maxBytes', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maxGas', full_name='vega.BlockParams.maxGas', index=1,
+      name='max_gas', full_name='tm.BlockParams.max_gas', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -654,49 +654,49 @@ _BLOCKPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1842,
-  serialized_end=1907,
+  serialized_start=1822,
+  serialized_end=1889,
 )
 
 
 _EVIDENCE = _descriptor.Descriptor(
   name='Evidence',
-  full_name='vega.Evidence',
+  full_name='tm.Evidence',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='vega.Evidence.type', index=0,
+      name='type', full_name='tm.Evidence.type', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validator', full_name='vega.Evidence.validator', index=1,
+      name='validator', full_name='tm.Evidence.validator', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='validator', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='height', full_name='vega.Evidence.height', index=2,
+      name='height', full_name='tm.Evidence.height', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='height', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='time', full_name='vega.Evidence.time', index=3,
+      name='time', full_name='tm.Evidence.time', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='time', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalVotingPower', full_name='vega.Evidence.totalVotingPower', index=4,
+      name='total_voting_power', full_name='tm.Evidence.total_voting_power', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -714,28 +714,28 @@ _EVIDENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1910,
-  serialized_end=2095,
+  serialized_start=1892,
+  serialized_end=2075,
 )
 
 
 _VALIDATOR = _descriptor.Descriptor(
   name='Validator',
-  full_name='vega.Validator',
+  full_name='tm.Validator',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='address', full_name='vega.Validator.address', index=0,
+      name='address', full_name='tm.Validator.address', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='address', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='power', full_name='vega.Validator.power', index=1,
+      name='power', full_name='tm.Validator.power', index=1,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -753,28 +753,28 @@ _VALIDATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2097,
-  serialized_end=2156,
+  serialized_start=2077,
+  serialized_end=2136,
 )
 
 
 _LASTCOMMITINFO = _descriptor.Descriptor(
   name='LastCommitInfo',
-  full_name='vega.LastCommitInfo',
+  full_name='tm.LastCommitInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='round', full_name='vega.LastCommitInfo.round', index=0,
+      name='round', full_name='tm.LastCommitInfo.round', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='round', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='votes', full_name='vega.LastCommitInfo.votes', index=1,
+      name='votes', full_name='tm.LastCommitInfo.votes', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -792,28 +792,28 @@ _LASTCOMMITINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2158,
-  serialized_end=2234,
+  serialized_start=2138,
+  serialized_end=2212,
 )
 
 
 _VOTEINFO = _descriptor.Descriptor(
   name='VoteInfo',
-  full_name='vega.VoteInfo',
+  full_name='tm.VoteInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='validator', full_name='vega.VoteInfo.validator', index=0,
+      name='validator', full_name='tm.VoteInfo.validator', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='validator', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='signedLastBlock', full_name='vega.VoteInfo.signedLastBlock', index=1,
+      name='signed_last_block', full_name='tm.VoteInfo.signed_last_block', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -831,35 +831,35 @@ _VOTEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2236,
-  serialized_end=2335,
+  serialized_start=2214,
+  serialized_end=2313,
 )
 
 
 _EVIDENCEPARAMS = _descriptor.Descriptor(
   name='EvidenceParams',
-  full_name='vega.EvidenceParams',
+  full_name='tm.EvidenceParams',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='maxAgeNumBlocks', full_name='vega.EvidenceParams.maxAgeNumBlocks', index=0,
+      name='max_age_num_blocks', full_name='tm.EvidenceParams.max_age_num_blocks', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='maxAgeNumBlocks', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maxAgeDuration', full_name='vega.EvidenceParams.maxAgeDuration', index=1,
+      name='max_age_duration', full_name='tm.EvidenceParams.max_age_duration', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='maxAgeDuration', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='max_num', full_name='vega.EvidenceParams.max_num', index=2,
+      name='max_num', full_name='tm.EvidenceParams.max_num', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -877,21 +877,21 @@ _EVIDENCEPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2337,
-  serialized_end=2460,
+  serialized_start=2316,
+  serialized_end=2444,
 )
 
 
 _VALIDATORPARAMS = _descriptor.Descriptor(
   name='ValidatorParams',
-  full_name='vega.ValidatorParams',
+  full_name='tm.ValidatorParams',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pubKeyTypes', full_name='vega.ValidatorParams.pubKeyTypes', index=0,
+      name='pub_key_types', full_name='tm.ValidatorParams.pub_key_types', index=0,
       number=1, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -909,21 +909,21 @@ _VALIDATORPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2462,
-  serialized_end=2513,
+  serialized_start=2446,
+  serialized_end=2499,
 )
 
 
 _VERSIONPARAMS = _descriptor.Descriptor(
   name='VersionParams',
-  full_name='vega.VersionParams',
+  full_name='tm.VersionParams',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='appVersion', full_name='vega.VersionParams.appVersion', index=0,
+      name='app_version', full_name='tm.VersionParams.app_version', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -941,35 +941,35 @@ _VERSIONPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2515,
-  serialized_end=2562,
+  serialized_start=2501,
+  serialized_end=2549,
 )
 
 
 _HEADER = _descriptor.Descriptor(
   name='Header',
-  full_name='vega.Header',
+  full_name='tm.Header',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='chainId', full_name='vega.Header.chainId', index=0,
+      name='chain_id', full_name='tm.Header.chain_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='chainId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='height', full_name='vega.Header.height', index=1,
+      name='height', full_name='tm.Header.height', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='height', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='time', full_name='vega.Header.time', index=2,
+      name='time', full_name='tm.Header.time', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -987,21 +987,21 @@ _HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2564,
-  serialized_end=2642,
+  serialized_start=2551,
+  serialized_end=2630,
 )
 
 
 _PUBLICKEY = _descriptor.Descriptor(
   name='PublicKey',
-  full_name='vega.PublicKey',
+  full_name='tm.PublicKey',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ed25519', full_name='vega.PublicKey.ed25519', index=0,
+      name='ed25519', full_name='tm.PublicKey.ed25519', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -1019,45 +1019,45 @@ _PUBLICKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='sum', full_name='vega.PublicKey.sum',
+      name='sum', full_name='tm.PublicKey.sum',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2644,
-  serialized_end=2690,
+  serialized_start=2632,
+  serialized_end=2678,
 )
 
-_TMEVENT.fields_by_name['reqInitChain'].message_type = _REQUESTINITCHAIN
-_TMEVENT.fields_by_name['resInitChain'].message_type = _RESPONSEINITCHAIN
-_TMEVENT.fields_by_name['reqDeliverTx'].message_type = _REQUESTDELIVERTX
-_TMEVENT.fields_by_name['resDeliverTx'].message_type = _RESPONSEDELIVERTX
-_TMEVENT.fields_by_name['reqBeginBlock'].message_type = _REQUESTBEGINBLOCK
-_TMEVENT.fields_by_name['resBeginBlock'].message_type = _RESPONSEBEGINBLOCK
-_TMEVENT.oneofs_by_name['Action'].fields.append(
-  _TMEVENT.fields_by_name['reqInitChain'])
-_TMEVENT.fields_by_name['reqInitChain'].containing_oneof = _TMEVENT.oneofs_by_name['Action']
-_TMEVENT.oneofs_by_name['Action'].fields.append(
-  _TMEVENT.fields_by_name['resInitChain'])
-_TMEVENT.fields_by_name['resInitChain'].containing_oneof = _TMEVENT.oneofs_by_name['Action']
-_TMEVENT.oneofs_by_name['Action'].fields.append(
-  _TMEVENT.fields_by_name['reqDeliverTx'])
-_TMEVENT.fields_by_name['reqDeliverTx'].containing_oneof = _TMEVENT.oneofs_by_name['Action']
-_TMEVENT.oneofs_by_name['Action'].fields.append(
-  _TMEVENT.fields_by_name['resDeliverTx'])
-_TMEVENT.fields_by_name['resDeliverTx'].containing_oneof = _TMEVENT.oneofs_by_name['Action']
-_TMEVENT.oneofs_by_name['Action'].fields.append(
-  _TMEVENT.fields_by_name['reqBeginBlock'])
-_TMEVENT.fields_by_name['reqBeginBlock'].containing_oneof = _TMEVENT.oneofs_by_name['Action']
-_TMEVENT.oneofs_by_name['Action'].fields.append(
-  _TMEVENT.fields_by_name['resBeginBlock'])
-_TMEVENT.fields_by_name['resBeginBlock'].containing_oneof = _TMEVENT.oneofs_by_name['Action']
-_REQUESTINITCHAIN.fields_by_name['consensusParams'].message_type = _CONSENSUSPARAMS
+_TMEVENT.fields_by_name['req_init_chain'].message_type = _REQUESTINITCHAIN
+_TMEVENT.fields_by_name['res_init_chain'].message_type = _RESPONSEINITCHAIN
+_TMEVENT.fields_by_name['req_deliver_tx'].message_type = _REQUESTDELIVERTX
+_TMEVENT.fields_by_name['res_deliver_tx'].message_type = _RESPONSEDELIVERTX
+_TMEVENT.fields_by_name['req_begin_block'].message_type = _REQUESTBEGINBLOCK
+_TMEVENT.fields_by_name['res_begin_block'].message_type = _RESPONSEBEGINBLOCK
+_TMEVENT.oneofs_by_name['action'].fields.append(
+  _TMEVENT.fields_by_name['req_init_chain'])
+_TMEVENT.fields_by_name['req_init_chain'].containing_oneof = _TMEVENT.oneofs_by_name['action']
+_TMEVENT.oneofs_by_name['action'].fields.append(
+  _TMEVENT.fields_by_name['res_init_chain'])
+_TMEVENT.fields_by_name['res_init_chain'].containing_oneof = _TMEVENT.oneofs_by_name['action']
+_TMEVENT.oneofs_by_name['action'].fields.append(
+  _TMEVENT.fields_by_name['req_deliver_tx'])
+_TMEVENT.fields_by_name['req_deliver_tx'].containing_oneof = _TMEVENT.oneofs_by_name['action']
+_TMEVENT.oneofs_by_name['action'].fields.append(
+  _TMEVENT.fields_by_name['res_deliver_tx'])
+_TMEVENT.fields_by_name['res_deliver_tx'].containing_oneof = _TMEVENT.oneofs_by_name['action']
+_TMEVENT.oneofs_by_name['action'].fields.append(
+  _TMEVENT.fields_by_name['req_begin_block'])
+_TMEVENT.fields_by_name['req_begin_block'].containing_oneof = _TMEVENT.oneofs_by_name['action']
+_TMEVENT.oneofs_by_name['action'].fields.append(
+  _TMEVENT.fields_by_name['res_begin_block'])
+_TMEVENT.fields_by_name['res_begin_block'].containing_oneof = _TMEVENT.oneofs_by_name['action']
+_REQUESTINITCHAIN.fields_by_name['consensus_params'].message_type = _CONSENSUSPARAMS
 _REQUESTINITCHAIN.fields_by_name['validators'].message_type = _VALIDATORUPDATE
 _REQUESTBEGINBLOCK.fields_by_name['header'].message_type = _HEADER
-_REQUESTBEGINBLOCK.fields_by_name['lastCommitInfo'].message_type = _LASTCOMMITINFO
-_REQUESTBEGINBLOCK.fields_by_name['byzantineValidators'].message_type = _EVIDENCE
-_RESPONSEINITCHAIN.fields_by_name['consensusParams'].message_type = _CONSENSUSPARAMS
+_REQUESTBEGINBLOCK.fields_by_name['last_commit_info'].message_type = _LASTCOMMITINFO
+_REQUESTBEGINBLOCK.fields_by_name['byzantine_validators'].message_type = _EVIDENCE
+_RESPONSEINITCHAIN.fields_by_name['consensus_params'].message_type = _CONSENSUSPARAMS
 _RESPONSEINITCHAIN.fields_by_name['validators'].message_type = _VALIDATORUPDATE
 _RESPONSEBEGINBLOCK.fields_by_name['events'].message_type = _EVENT
 _RESPONSEDELIVERTX.fields_by_name['events'].message_type = _EVENT
@@ -1101,147 +1101,147 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 TmEvent = _reflection.GeneratedProtocolMessageType('TmEvent', (_message.Message,), {
   'DESCRIPTOR' : _TMEVENT,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.TmEvent)
+  # @@protoc_insertion_point(class_scope:tm.TmEvent)
   })
 _sym_db.RegisterMessage(TmEvent)
 
 RequestInitChain = _reflection.GeneratedProtocolMessageType('RequestInitChain', (_message.Message,), {
   'DESCRIPTOR' : _REQUESTINITCHAIN,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.RequestInitChain)
+  # @@protoc_insertion_point(class_scope:tm.RequestInitChain)
   })
 _sym_db.RegisterMessage(RequestInitChain)
 
 RequestBeginBlock = _reflection.GeneratedProtocolMessageType('RequestBeginBlock', (_message.Message,), {
   'DESCRIPTOR' : _REQUESTBEGINBLOCK,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.RequestBeginBlock)
+  # @@protoc_insertion_point(class_scope:tm.RequestBeginBlock)
   })
 _sym_db.RegisterMessage(RequestBeginBlock)
 
 RequestDeliverTx = _reflection.GeneratedProtocolMessageType('RequestDeliverTx', (_message.Message,), {
   'DESCRIPTOR' : _REQUESTDELIVERTX,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.RequestDeliverTx)
+  # @@protoc_insertion_point(class_scope:tm.RequestDeliverTx)
   })
 _sym_db.RegisterMessage(RequestDeliverTx)
 
 ResponseInitChain = _reflection.GeneratedProtocolMessageType('ResponseInitChain', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEINITCHAIN,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ResponseInitChain)
+  # @@protoc_insertion_point(class_scope:tm.ResponseInitChain)
   })
 _sym_db.RegisterMessage(ResponseInitChain)
 
 ResponseBeginBlock = _reflection.GeneratedProtocolMessageType('ResponseBeginBlock', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEBEGINBLOCK,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ResponseBeginBlock)
+  # @@protoc_insertion_point(class_scope:tm.ResponseBeginBlock)
   })
 _sym_db.RegisterMessage(ResponseBeginBlock)
 
 ResponseDeliverTx = _reflection.GeneratedProtocolMessageType('ResponseDeliverTx', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEDELIVERTX,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ResponseDeliverTx)
+  # @@protoc_insertion_point(class_scope:tm.ResponseDeliverTx)
   })
 _sym_db.RegisterMessage(ResponseDeliverTx)
 
 Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), {
   'DESCRIPTOR' : _EVENT,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.Event)
+  # @@protoc_insertion_point(class_scope:tm.Event)
   })
 _sym_db.RegisterMessage(Event)
 
 EventAttribute = _reflection.GeneratedProtocolMessageType('EventAttribute', (_message.Message,), {
   'DESCRIPTOR' : _EVENTATTRIBUTE,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.EventAttribute)
+  # @@protoc_insertion_point(class_scope:tm.EventAttribute)
   })
 _sym_db.RegisterMessage(EventAttribute)
 
 ValidatorUpdate = _reflection.GeneratedProtocolMessageType('ValidatorUpdate', (_message.Message,), {
   'DESCRIPTOR' : _VALIDATORUPDATE,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ValidatorUpdate)
+  # @@protoc_insertion_point(class_scope:tm.ValidatorUpdate)
   })
 _sym_db.RegisterMessage(ValidatorUpdate)
 
 ConsensusParams = _reflection.GeneratedProtocolMessageType('ConsensusParams', (_message.Message,), {
   'DESCRIPTOR' : _CONSENSUSPARAMS,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ConsensusParams)
+  # @@protoc_insertion_point(class_scope:tm.ConsensusParams)
   })
 _sym_db.RegisterMessage(ConsensusParams)
 
 BlockParams = _reflection.GeneratedProtocolMessageType('BlockParams', (_message.Message,), {
   'DESCRIPTOR' : _BLOCKPARAMS,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.BlockParams)
+  # @@protoc_insertion_point(class_scope:tm.BlockParams)
   })
 _sym_db.RegisterMessage(BlockParams)
 
 Evidence = _reflection.GeneratedProtocolMessageType('Evidence', (_message.Message,), {
   'DESCRIPTOR' : _EVIDENCE,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.Evidence)
+  # @@protoc_insertion_point(class_scope:tm.Evidence)
   })
 _sym_db.RegisterMessage(Evidence)
 
 Validator = _reflection.GeneratedProtocolMessageType('Validator', (_message.Message,), {
   'DESCRIPTOR' : _VALIDATOR,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.Validator)
+  # @@protoc_insertion_point(class_scope:tm.Validator)
   })
 _sym_db.RegisterMessage(Validator)
 
 LastCommitInfo = _reflection.GeneratedProtocolMessageType('LastCommitInfo', (_message.Message,), {
   'DESCRIPTOR' : _LASTCOMMITINFO,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.LastCommitInfo)
+  # @@protoc_insertion_point(class_scope:tm.LastCommitInfo)
   })
 _sym_db.RegisterMessage(LastCommitInfo)
 
 VoteInfo = _reflection.GeneratedProtocolMessageType('VoteInfo', (_message.Message,), {
   'DESCRIPTOR' : _VOTEINFO,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.VoteInfo)
+  # @@protoc_insertion_point(class_scope:tm.VoteInfo)
   })
 _sym_db.RegisterMessage(VoteInfo)
 
 EvidenceParams = _reflection.GeneratedProtocolMessageType('EvidenceParams', (_message.Message,), {
   'DESCRIPTOR' : _EVIDENCEPARAMS,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.EvidenceParams)
+  # @@protoc_insertion_point(class_scope:tm.EvidenceParams)
   })
 _sym_db.RegisterMessage(EvidenceParams)
 
 ValidatorParams = _reflection.GeneratedProtocolMessageType('ValidatorParams', (_message.Message,), {
   'DESCRIPTOR' : _VALIDATORPARAMS,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.ValidatorParams)
+  # @@protoc_insertion_point(class_scope:tm.ValidatorParams)
   })
 _sym_db.RegisterMessage(ValidatorParams)
 
 VersionParams = _reflection.GeneratedProtocolMessageType('VersionParams', (_message.Message,), {
   'DESCRIPTOR' : _VERSIONPARAMS,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.VersionParams)
+  # @@protoc_insertion_point(class_scope:tm.VersionParams)
   })
 _sym_db.RegisterMessage(VersionParams)
 
 Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), {
   'DESCRIPTOR' : _HEADER,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.Header)
+  # @@protoc_insertion_point(class_scope:tm.Header)
   })
 _sym_db.RegisterMessage(Header)
 
 PublicKey = _reflection.GeneratedProtocolMessageType('PublicKey', (_message.Message,), {
   'DESCRIPTOR' : _PUBLICKEY,
   '__module__' : 'tm.replay_pb2'
-  # @@protoc_insertion_point(class_scope:vega.PublicKey)
+  # @@protoc_insertion_point(class_scope:tm.PublicKey)
   })
 _sym_db.RegisterMessage(PublicKey)
 

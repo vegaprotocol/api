@@ -11,6 +11,7 @@ from .helpers import grpc_error_detail
 from .walletclient import WalletClient
 from .generated import (
     api,
+    oracles,
     tm,
 {%- for i in imports %}
     {{ i }},
@@ -24,6 +25,7 @@ __all__ = [
     "WalletClient",
     "grpc_error_detail",
     "api",
+    "oracles",
     "tm",
 {%- for a in all_list %}
     "{{ a }}",
@@ -57,7 +59,7 @@ def main():
     all_list = sorted(pb2_files + [f"{f}_grpc" for f in pb2_grpc_files])
     print(
         jinja2.Template(templ).render(
-            {"imports": imports, "all_list": all_list,}
+            {"imports": imports, "all_list": all_list}
         )
     )
 

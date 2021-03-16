@@ -24,7 +24,11 @@ blackcheck:
 
 .PHONY: coverage
 coverage: | varcheck pipenv_install
-	@pipenv run env PYTHONPATH=. pytest --cov=vegaapiclient --cov-report=term --cov-report=html:coverage tests/
+	@pipenv run pytest --cov=vegaapiclient --cov-report=term --cov-report=html:coverage tests/
+
+.PHONY: check_dist
+check_dist:
+	@bash check_dist.sh
 
 .PHONY: dist
 dist:
@@ -32,7 +36,7 @@ dist:
 		echo "Please set TWINE_USERNAME and TWINE_PASSWORD." ; \
 		exit 1 ; \
 	fi
-	@rm -rf dist && mkdir dist
+	@rm -rf build dist && mkdir build dist
 	@python3 setup.py sdist bdist_wheel
 	@twine upload dist/*
 
@@ -42,7 +46,7 @@ dist_test:
 		echo "Please set TWINE_USERNAME and TWINE_PASSWORD." ; \
 		exit 1 ; \
 	fi
-	@rm -rf dist && mkdir dist
+	@rm -rf build dist && mkdir build dist
 	@python3 setup.py sdist bdist_wheel
 	@echo twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
@@ -61,7 +65,8 @@ pipenv_install:
 
 .PHONY: test
 test: | varcheck pipenv_install
-	@pipenv run env PYTHONPATH=. pytest tests/
+	@pipenv run pip install -e .
+	@pipenv run pytest tests/
 
 .PHONY: varcheck
 varcheck:

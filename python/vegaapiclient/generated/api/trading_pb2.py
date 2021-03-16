@@ -17,25 +17,26 @@ from .. import governance_pb2 as governance__pb2
 from .. import chain_events_pb2 as chain__events__pb2
 from .. import assets_pb2 as assets__pb2
 from .. import events_pb2 as events__pb2
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from ..oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
+from ..oracles.v1 import oracle_data_pb2 as oracles_dot_v1_dot_oracle__data__pb2
 from ..github.com.mwitkow.go_proto_validators import validator_pb2 as github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='api/trading.proto',
-  package='api',
+  package='api.v1',
   syntax='proto3',
   serialized_options=b'\n\030io.vegaprotocol.vega.apiZ#code.vegaprotocol.io/vega/proto/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x61pi/trading.proto\x12\x03\x61pi\x1a\nvega.proto\x1a\rmarkets.proto\x1a\x10governance.proto\x1a\x12\x63hain_events.proto\x1a\x0c\x61ssets.proto\x1a\x0c\x65vents.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"v\n\x1aPropagateChainEventRequest\x12\"\n\x03\x65vt\x18\x01 \x01(\x0b\x32\x10.vega.ChainEventR\x03\x65vt\x12\x16\n\x06pubKey\x18\x02 \x01(\tR\x06pubKey\x12\x1c\n\tsignature\x18\x03 \x01(\x0cR\tsignature\"7\n\x1bPropagateChainEventResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\"\xc4\x01\n\x18SubmitTransactionRequest\x12\"\n\x02tx\x18\x01 \x01(\x0b\x32\x12.vega.SignedBundleR\x02tx\x12\x36\n\x04type\x18\x02 \x01(\x0e\x32\".api.SubmitTransactionRequest.TypeR\x04type\"L\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nTYPE_ASYNC\x10\x01\x12\r\n\tTYPE_SYNC\x10\x02\x12\x0f\n\x0bTYPE_COMMIT\x10\x03\"5\n\x19SubmitTransactionResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\"N\n\x16PrepareWithdrawRequest\x12\x34\n\x08withdraw\x18\x01 \x01(\x0b\x32\x18.vega.WithdrawSubmissionR\x08withdraw\"-\n\x17PrepareWithdrawResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"L\n\x1aPrepareSubmitOrderResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\x12\x1a\n\x08submitID\x18\x02 \x01(\tR\x08submitID\"0\n\x1aPrepareCancelOrderResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"/\n\x19PrepareAmendOrderResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"K\n\x12SubmitOrderRequest\x12\x35\n\nsubmission\x18\x01 \x01(\x0b\x32\x15.vega.OrderSubmissionR\nsubmission\"Q\n\x12\x43\x61ncelOrderRequest\x12;\n\x0c\x63\x61ncellation\x18\x01 \x01(\x0b\x32\x17.vega.OrderCancellationR\x0c\x63\x61ncellation\"G\n\x11\x41mendOrderRequest\x12\x32\n\tamendment\x18\x01 \x01(\x0b\x32\x14.vega.OrderAmendmentR\tamendment\"\x0f\n\rAssetsRequest\"5\n\x0e\x41ssetsResponse\x12#\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.AssetR\x06\x61ssets\"*\n\x10\x41ssetByIDRequest\x12\x16\n\x02ID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02ID\"6\n\x11\x41ssetByIDResponse\x12!\n\x05\x61sset\x18\x01 \x01(\x0b\x32\x0b.vega.AssetR\x05\x61sset\";\n!GetNodeSignaturesAggregateRequest\x12\x16\n\x02ID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02ID\"Y\n\"GetNodeSignaturesAggregateResponse\x12\x33\n\nsignatures\x18\x01 \x03(\x0b\x32\x13.vega.NodeSignatureR\nsignatures\"C\n\x15OptionalProposalState\x12*\n\x05value\x18\x01 \x01(\x0e\x32\x14.vega.Proposal.StateR\x05value\"W\n\x13GetProposalsRequest\x12@\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalStateR\rselectInState\"@\n\x14GetProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"\x80\x01\n\x1aGetProposalsByPartyRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\x12@\n\rselectInState\x18\x02 \x01(\x0b\x32\x1a.api.OptionalProposalStateR\rselectInState\"G\n\x1bGetProposalsByPartyResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\":\n\x16GetVotesByPartyRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\";\n\x17GetVotesByPartyResponse\x12 \n\x05votes\x18\x01 \x03(\x0b\x32\n.vega.VoteR\x05votes\"`\n\x1cGetNewMarketProposalsRequest\x12@\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalStateR\rselectInState\"I\n\x1dGetNewMarketProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"\x87\x01\n\x1fGetUpdateMarketProposalsRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12@\n\rselectInState\x18\x02 \x01(\x0b\x32\x1a.api.OptionalProposalStateR\rselectInState\"L\n GetUpdateMarketProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"h\n$GetNetworkParametersProposalsRequest\x12@\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalStateR\rselectInState\"Q\n%GetNetworkParametersProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"_\n\x1bGetNewAssetProposalsRequest\x12@\n\rselectInState\x18\x01 \x01(\x0b\x32\x1a.api.OptionalProposalStateR\rselectInState\"H\n\x1cGetNewAssetProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"@\n\x16GetProposalByIDRequest\x12&\n\nproposalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalID\"C\n\x17GetProposalByIDResponse\x12(\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"E\n\x1dGetProposalByReferenceRequest\x12$\n\treference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\treference\"J\n\x1eGetProposalByReferenceResponse\x12(\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"@\n\x1cObservePartyProposalsRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\"E\n\x1bObserveProposalVotesRequest\x12&\n\nproposalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalID\"<\n\x18ObservePartyVotesRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\"\\\n\x1cMarginLevelsSubscribeRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\"S\n\x13MarginLevelsRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\"N\n\x14MarginLevelsResponse\x12\x36\n\x0cmarginLevels\x18\x01 \x03(\x0b\x32\x12.vega.MarginLevelsR\x0cmarginLevels\"9\n\x1bMarketsDataSubscribeRequest\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\";\n\x15MarketDataByIDRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\"J\n\x16MarketDataByIDResponse\x12\x30\n\nmarketData\x18\x01 \x01(\x0b\x32\x10.vega.MarketDataR\nmarketData\"I\n\x13MarketsDataResponse\x12\x32\n\x0bmarketsData\x18\x01 \x03(\x0b\x32\x10.vega.MarketDataR\x0bmarketsData\"6\n\x10LastTradeRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\"6\n\x11LastTradeResponse\x12!\n\x05trade\x18\x01 \x01(\x0b\x32\x0b.vega.TradeR\x05trade\"7\n\x11MarketByIDRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\":\n\x12MarketByIDResponse\x12$\n\x06market\x18\x01 \x01(\x0b\x32\x0c.vega.MarketR\x06market\"4\n\x10PartyByIDRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\"6\n\x11PartyByIDResponse\x12!\n\x05party\x18\x01 \x01(\x0b\x32\x0b.vega.PartyR\x05party\"8\n\x0fPartiesResponse\x12%\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.PartyR\x07parties\"}\n\x14TradesByPartyRequest\x12\x18\n\x07partyID\x18\x01 \x01(\tR\x07partyID\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\x12/\n\npagination\x18\x03 \x01(\x0b\x32\x0f.api.PaginationR\npagination\"<\n\x15TradesByPartyResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"0\n\x14TradesByOrderRequest\x12\x18\n\x07orderID\x18\x01 \x01(\tR\x07orderID\"<\n\x15TradesByOrderResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"\x8d\x01\n\x18\x41\x63\x63ountsSubscribeRequest\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x02 \x01(\tR\x07partyID\x12\x14\n\x05\x61sset\x18\x03 \x01(\tR\x05\x61sset\x12%\n\x04type\x18\x04 \x01(\x0e\x32\x11.vega.AccountTypeR\x04type\"N\n\x16OrdersSubscribeRequest\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x02 \x01(\tR\x07partyID\"N\n\x16TradesSubscribeRequest\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x02 \x01(\tR\x07partyID\"i\n\x17\x43\x61ndlesSubscribeRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12*\n\x08interval\x18\x02 \x01(\x0e\x32\x0e.vega.IntervalR\x08interval\"A\n\x1bMarketDepthSubscribeRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\"H\n\"MarketDepthUpdatesSubscribeRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\"Q\n\x19PositionsSubscribeRequest\x12\x18\n\x07partyID\x18\x01 \x01(\tR\x07partyID\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\"l\n\x15OrdersByMarketRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12/\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.PaginationR\npagination\"=\n\x16OrdersByMarketResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"i\n\x14OrdersByPartyRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\x12/\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.PaginationR\npagination\"<\n\x15OrdersByPartyResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"a\n\x19OrderByMarketAndIdRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12 \n\x07orderID\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07orderID\"?\n\x1aOrderByMarketAndIdResponse\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"?\n\x17OrderByReferenceRequest\x12$\n\treference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\treference\"=\n\x18OrderByReferenceResponse\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"9\n\x0fMarketsResponse\x12&\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.MarketR\x07markets\"\x90\x01\n\x0e\x43\x61ndlesRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12.\n\x0esinceTimestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x0esinceTimestamp\x12*\n\x08interval\x18\x03 \x01(\x0e\x32\x0e.vega.IntervalR\x08interval\"9\n\x0f\x43\x61ndlesResponse\x12&\n\x07\x63\x61ndles\x18\x01 \x03(\x0b\x32\x0c.vega.CandleR\x07\x63\x61ndles\"T\n\x12MarketDepthRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12\x1a\n\x08maxDepth\x18\x02 \x01(\x04R\x08maxDepth\"\xce\x01\n\x13MarketDepthResponse\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\"\n\x03\x62uy\x18\x02 \x03(\x0b\x32\x10.vega.PriceLevelR\x03\x62uy\x12$\n\x04sell\x18\x03 \x03(\x0b\x32\x10.vega.PriceLevelR\x04sell\x12)\n\tlastTrade\x18\x04 \x01(\x0b\x32\x0b.vega.TradeR\tlastTrade\x12&\n\x0esequenceNumber\x18\x05 \x01(\x04R\x0esequenceNumber\"l\n\x15TradesByMarketRequest\x12\"\n\x08marketID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketID\x12/\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.PaginationR\npagination\"=\n\x16TradesByMarketResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"W\n\x17PositionsByPartyRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\"H\n\x18PositionsByPartyResponse\x12,\n\tpositions\x18\x01 \x03(\x0b\x32\x0e.vega.PositionR\tpositions\"0\n\x10VegaTimeResponse\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"V\n\nPagination\x12\x12\n\x04skip\x18\x01 \x01(\x04R\x04skip\x12\x14\n\x05limit\x18\x02 \x01(\x04R\x05limit\x12\x1e\n\ndescending\x18\x03 \x01(\x08R\ndescending\"3\n\x0cOrdersStream\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"3\n\x0cTradesStream\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"\x89\x01\n\x14PartyAccountsRequest\x12\x18\n\x07partyID\x18\x01 \x01(\tR\x07partyID\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\x12%\n\x04type\x18\x03 \x01(\x0e\x32\x11.vega.AccountTypeR\x04type\x12\x14\n\x05\x61sset\x18\x04 \x01(\tR\x05\x61sset\"B\n\x15PartyAccountsResponse\x12)\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.AccountR\x08\x61\x63\x63ounts\"I\n\x15MarketAccountsRequest\x12\x1a\n\x08marketID\x18\x01 \x01(\tR\x08marketID\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\"C\n\x16MarketAccountsResponse\x12)\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.AccountR\x08\x61\x63\x63ounts\"8\n FeeInfrastructureAccountsRequest\x12\x14\n\x05\x61sset\x18\x01 \x01(\tR\x05\x61sset\"N\n!FeeInfrastructureAccountsResponse\x12)\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.AccountR\x08\x61\x63\x63ounts\"\x91\x01\n\x16PrepareProposalRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\x12\x1c\n\treference\x18\x02 \x01(\tR\treference\x12\x37\n\x08proposal\x18\x03 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x08proposal\"g\n\x17PrepareProposalResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\x12\x38\n\x0fpendingProposal\x18\x02 \x01(\x0b\x32\x0e.vega.ProposalR\x0fpendingProposal\"<\n\x12PrepareVoteRequest\x12&\n\x04vote\x18\x01 \x01(\x0b\x32\n.vega.VoteB\x06\xe2\xdf\x1f\x02 \x01R\x04vote\"I\n\x13PrepareVoteResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\x12\x1e\n\x04vote\x18\x02 \x01(\x0b\x32\n.vega.VoteR\x04vote\"n\n PrepareLiquidityProvisionRequest\x12J\n\nsubmission\x18\x01 \x01(\x0b\x32\".vega.LiquidityProvisionSubmissionB\x06\xe2\xdf\x1f\x02 \x01R\nsubmission\"7\n!PrepareLiquidityProvisionResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"N\n\x10OrderByIDRequest\x12 \n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01R\x07orderID\x12\x18\n\x07version\x18\x02 \x01(\x04R\x07version\"m\n\x18OrderVersionsByIDRequest\x12 \n\x07orderID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01R\x07orderID\x12/\n\npagination\x18\x02 \x01(\x0b\x32\x0f.api.PaginationR\npagination\"<\n\x15OrderVersionsResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"7\n\x12\x45stimateFeeRequest\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"2\n\x13\x45stimateFeeResponse\x12\x1b\n\x03\x66\x65\x65\x18\x02 \x01(\x0b\x32\t.vega.FeeR\x03\x66\x65\x65\":\n\x15\x45stimateMarginRequest\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"P\n\x16\x45stimateMarginResponse\x12\x36\n\x0cmarginLevels\x18\x02 \x01(\x0b\x32\x12.vega.MarginLevelsR\x0cmarginLevels\"\x92\x01\n\x14ObserveEventsRequest\x12&\n\x04type\x18\x01 \x03(\x0e\x32\x12.vega.BusEventTypeR\x04type\x12\x1a\n\x08marketID\x18\x02 \x01(\tR\x08marketID\x12\x18\n\x07partyID\x18\x03 \x01(\tR\x07partyID\x12\x1c\n\tbatchSize\x18\x04 \x01(\x03R\tbatchSize\"?\n\x15ObserveEventsResponse\x12&\n\x06\x65vents\x18\x01 \x03(\x0b\x32\x0e.vega.BusEventR\x06\x65vents\"6\n\x12WithdrawalsRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\"I\n\x13WithdrawalsResponse\x12\x32\n\x0bwithdrawals\x18\x01 \x03(\x0b\x32\x10.vega.WithdrawalR\x0bwithdrawals\"+\n\x11WithdrawalRequest\x12\x16\n\x02ID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02ID\"F\n\x12WithdrawalResponse\x12\x30\n\nwithdrawal\x18\x01 \x01(\x0b\x32\x10.vega.WithdrawalR\nwithdrawal\"L\n\x1e\x45RC20WithdrawalApprovalRequest\x12*\n\x0cwithdrawalID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x0cwithdrawalID\"\xa9\x01\n\x1f\x45RC20WithdrawalApprovalResponse\x12 \n\x0b\x61ssetSource\x18\x01 \x01(\tR\x0b\x61ssetSource\x12\x16\n\x06\x61mount\x18\x02 \x01(\tR\x06\x61mount\x12\x16\n\x06\x65xpiry\x18\x03 \x01(\x03R\x06\x65xpiry\x12\x14\n\x05nonce\x18\x04 \x01(\tR\x05nonce\x12\x1e\n\nsignatures\x18\x05 \x01(\tR\nsignatures\"3\n\x0f\x44\x65positsRequest\x12 \n\x07partyID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyID\"=\n\x10\x44\x65positsResponse\x12)\n\x08\x64\x65posits\x18\x01 \x03(\x0b\x32\r.vega.DepositR\x08\x64\x65posits\"(\n\x0e\x44\x65positRequest\x12\x16\n\x02ID\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02ID\":\n\x0f\x44\x65positResponse\x12\'\n\x07\x64\x65posit\x18\x01 \x01(\x0b\x32\r.vega.DepositR\x07\x64\x65posit\"\x1a\n\x18NetworkParametersRequest\"a\n\x19NetworkParametersResponse\x12\x44\n\x11networkParameters\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x11networkParameters\"J\n\x1aLiquidityProvisionsRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\x12\x14\n\x05party\x18\x02 \x01(\tR\x05party\"i\n\x1bLiquidityProvisionsResponse\x12J\n\x13liquidityProvisions\x18\x01 \x03(\x0b\x32\x18.vega.LiquidityProvisionR\x13liquidityProvisions2\xee\x05\n\x07trading\x12N\n\x12PrepareSubmitOrder\x12\x17.api.SubmitOrderRequest\x1a\x1f.api.PrepareSubmitOrderResponse\x12N\n\x12PrepareCancelOrder\x12\x17.api.CancelOrderRequest\x1a\x1f.api.PrepareCancelOrderResponse\x12K\n\x11PrepareAmendOrder\x12\x16.api.AmendOrderRequest\x1a\x1e.api.PrepareAmendOrderResponse\x12L\n\x0fPrepareWithdraw\x12\x1b.api.PrepareWithdrawRequest\x1a\x1c.api.PrepareWithdrawResponse\x12R\n\x11SubmitTransaction\x12\x1d.api.SubmitTransactionRequest\x1a\x1e.api.SubmitTransactionResponse\x12L\n\x0fPrepareProposal\x12\x1b.api.PrepareProposalRequest\x1a\x1c.api.PrepareProposalResponse\x12@\n\x0bPrepareVote\x12\x17.api.PrepareVoteRequest\x1a\x18.api.PrepareVoteResponse\x12X\n\x13PropagateChainEvent\x12\x1f.api.PropagateChainEventRequest\x1a .api.PropagateChainEventResponse\x12j\n\x19PrepareLiquidityProvision\x12%.api.PrepareLiquidityProvisionRequest\x1a&.api.PrepareLiquidityProvisionResponse2\xf4#\n\x0ctrading_data\x12I\n\x0eMarketAccounts\x12\x1a.api.MarketAccountsRequest\x1a\x1b.api.MarketAccountsResponse\x12\x46\n\rPartyAccounts\x12\x19.api.PartyAccountsRequest\x1a\x1a.api.PartyAccountsResponse\x12j\n\x19\x46\x65\x65InfrastructureAccounts\x12%.api.FeeInfrastructureAccountsRequest\x1a&.api.FeeInfrastructureAccountsResponse\x12\x34\n\x07\x43\x61ndles\x12\x13.api.CandlesRequest\x1a\x14.api.CandlesResponse\x12I\n\x0eMarketDataByID\x12\x1a.api.MarketDataByIDRequest\x1a\x1b.api.MarketDataByIDResponse\x12?\n\x0bMarketsData\x12\x16.google.protobuf.Empty\x1a\x18.api.MarketsDataResponse\x12=\n\nMarketByID\x12\x16.api.MarketByIDRequest\x1a\x17.api.MarketByIDResponse\x12@\n\x0bMarketDepth\x12\x17.api.MarketDepthRequest\x1a\x18.api.MarketDepthResponse\x12\x37\n\x07Markets\x12\x16.google.protobuf.Empty\x1a\x14.api.MarketsResponse\x12U\n\x12OrderByMarketAndID\x12\x1e.api.OrderByMarketAndIdRequest\x1a\x1f.api.OrderByMarketAndIdResponse\x12O\n\x10OrderByReference\x12\x1c.api.OrderByReferenceRequest\x1a\x1d.api.OrderByReferenceResponse\x12I\n\x0eOrdersByMarket\x12\x1a.api.OrdersByMarketRequest\x1a\x1b.api.OrdersByMarketResponse\x12\x46\n\rOrdersByParty\x12\x19.api.OrdersByPartyRequest\x1a\x1a.api.OrdersByPartyResponse\x12/\n\tOrderByID\x12\x15.api.OrderByIDRequest\x1a\x0b.vega.Order\x12N\n\x11OrderVersionsByID\x12\x1d.api.OrderVersionsByIDRequest\x1a\x1a.api.OrderVersionsResponse\x12\x43\n\x0cMarginLevels\x12\x18.api.MarginLevelsRequest\x1a\x19.api.MarginLevelsResponse\x12\x37\n\x07Parties\x12\x16.google.protobuf.Empty\x1a\x14.api.PartiesResponse\x12:\n\tPartyByID\x12\x15.api.PartyByIDRequest\x1a\x16.api.PartyByIDResponse\x12O\n\x10PositionsByParty\x12\x1c.api.PositionsByPartyRequest\x1a\x1d.api.PositionsByPartyResponse\x12:\n\tLastTrade\x12\x15.api.LastTradeRequest\x1a\x16.api.LastTradeResponse\x12I\n\x0eTradesByMarket\x12\x1a.api.TradesByMarketRequest\x1a\x1b.api.TradesByMarketResponse\x12\x46\n\rTradesByOrder\x12\x19.api.TradesByOrderRequest\x1a\x1a.api.TradesByOrderResponse\x12\x46\n\rTradesByParty\x12\x19.api.TradesByPartyRequest\x1a\x1a.api.TradesByPartyResponse\x12\x43\n\x0cGetProposals\x12\x18.api.GetProposalsRequest\x1a\x19.api.GetProposalsResponse\x12X\n\x13GetProposalsByParty\x12\x1f.api.GetProposalsByPartyRequest\x1a .api.GetProposalsByPartyResponse\x12L\n\x0fGetVotesByParty\x12\x1b.api.GetVotesByPartyRequest\x1a\x1c.api.GetVotesByPartyResponse\x12^\n\x15GetNewMarketProposals\x12!.api.GetNewMarketProposalsRequest\x1a\".api.GetNewMarketProposalsResponse\x12g\n\x18GetUpdateMarketProposals\x12$.api.GetUpdateMarketProposalsRequest\x1a%.api.GetUpdateMarketProposalsResponse\x12v\n\x1dGetNetworkParametersProposals\x12).api.GetNetworkParametersProposalsRequest\x1a*.api.GetNetworkParametersProposalsResponse\x12[\n\x14GetNewAssetProposals\x12 .api.GetNewAssetProposalsRequest\x1a!.api.GetNewAssetProposalsResponse\x12L\n\x0fGetProposalByID\x12\x1b.api.GetProposalByIDRequest\x1a\x1c.api.GetProposalByIDResponse\x12\x61\n\x16GetProposalByReference\x12\".api.GetProposalByReferenceRequest\x1a#.api.GetProposalByReferenceResponse\x12\x43\n\x11ObserveGovernance\x12\x16.google.protobuf.Empty\x1a\x14.vega.GovernanceData0\x01\x12R\n\x15ObservePartyProposals\x12!.api.ObservePartyProposalsRequest\x1a\x14.vega.GovernanceData0\x01\x12@\n\x11ObservePartyVotes\x12\x1d.api.ObservePartyVotesRequest\x1a\n.vega.Vote0\x01\x12\x46\n\x14ObserveProposalVotes\x12 .api.ObserveProposalVotesRequest\x1a\n.vega.Vote0\x01\x12L\n\x0fObserveEventBus\x12\x19.api.ObserveEventsRequest\x1a\x1a.api.ObserveEventsResponse(\x01\x30\x01\x12\x36\n\nStatistics\x12\x16.google.protobuf.Empty\x1a\x10.vega.Statistics\x12<\n\x0bGetVegaTime\x12\x16.google.protobuf.Empty\x1a\x15.api.VegaTimeResponse\x12\x43\n\x11\x41\x63\x63ountsSubscribe\x12\x1d.api.AccountsSubscribeRequest\x1a\r.vega.Account0\x01\x12@\n\x10\x43\x61ndlesSubscribe\x12\x1c.api.CandlesSubscribeRequest\x1a\x0c.vega.Candle0\x01\x12P\n\x15MarginLevelsSubscribe\x12!.api.MarginLevelsSubscribeRequest\x1a\x12.vega.MarginLevels0\x01\x12M\n\x14MarketDepthSubscribe\x12 .api.MarketDepthSubscribeRequest\x1a\x11.vega.MarketDepth0\x01\x12\x61\n\x1bMarketDepthUpdatesSubscribe\x12\'.api.MarketDepthUpdatesSubscribeRequest\x1a\x17.vega.MarketDepthUpdate0\x01\x12L\n\x14MarketsDataSubscribe\x12 .api.MarketsDataSubscribeRequest\x1a\x10.vega.MarketData0\x01\x12\x43\n\x0fOrdersSubscribe\x12\x1b.api.OrdersSubscribeRequest\x1a\x11.api.OrdersStream0\x01\x12\x46\n\x12PositionsSubscribe\x12\x1e.api.PositionsSubscribeRequest\x1a\x0e.vega.Position0\x01\x12\x43\n\x0fTradesSubscribe\x12\x1b.api.TradesSubscribeRequest\x1a\x11.api.TradesStream0\x01\x12N\n\x1aTransferResponsesSubscribe\x12\x16.google.protobuf.Empty\x1a\x16.vega.TransferResponse0\x01\x12m\n\x1aGetNodeSignaturesAggregate\x12&.api.GetNodeSignaturesAggregateRequest\x1a\'.api.GetNodeSignaturesAggregateResponse\x12:\n\tAssetByID\x12\x15.api.AssetByIDRequest\x1a\x16.api.AssetByIDResponse\x12\x31\n\x06\x41ssets\x12\x12.api.AssetsRequest\x1a\x13.api.AssetsResponse\x12@\n\x0b\x45stimateFee\x12\x17.api.EstimateFeeRequest\x1a\x18.api.EstimateFeeResponse\x12I\n\x0e\x45stimateMargin\x12\x1a.api.EstimateMarginRequest\x1a\x1b.api.EstimateMarginResponse\x12\x64\n\x17\x45RC20WithdrawalApproval\x12#.api.ERC20WithdrawalApprovalRequest\x1a$.api.ERC20WithdrawalApprovalResponse\x12=\n\nWithdrawal\x12\x16.api.WithdrawalRequest\x1a\x17.api.WithdrawalResponse\x12@\n\x0bWithdrawals\x12\x17.api.WithdrawalsRequest\x1a\x18.api.WithdrawalsResponse\x12\x34\n\x07\x44\x65posit\x12\x13.api.DepositRequest\x1a\x14.api.DepositResponse\x12\x37\n\x08\x44\x65posits\x12\x14.api.DepositsRequest\x1a\x15.api.DepositsResponse\x12R\n\x11NetworkParameters\x12\x1d.api.NetworkParametersRequest\x1a\x1e.api.NetworkParametersResponse\x12X\n\x13LiquidityProvisions\x12\x1f.api.LiquidityProvisionsRequest\x1a .api.LiquidityProvisionsResponseB?\n\x18io.vegaprotocol.vega.apiZ#code.vegaprotocol.io/vega/proto/apib\x06proto3'
+  serialized_pb=b'\n\x11\x61pi/trading.proto\x12\x06\x61pi.v1\x1a\nvega.proto\x1a\rmarkets.proto\x1a\x10governance.proto\x1a\x12\x63hain_events.proto\x1a\x0c\x61ssets.proto\x1a\x0c\x65vents.proto\x1a\x1coracles/v1/oracle_spec.proto\x1a\x1coracles/v1/oracle_data.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"w\n\x1aPropagateChainEventRequest\x12\"\n\x03\x65vt\x18\x01 \x01(\x0b\x32\x10.vega.ChainEventR\x03\x65vt\x12\x17\n\x07pub_key\x18\x02 \x01(\tR\x06pubKey\x12\x1c\n\tsignature\x18\x03 \x01(\x0cR\tsignature\"7\n\x1bPropagateChainEventResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\"\xc7\x01\n\x18SubmitTransactionRequest\x12\"\n\x02tx\x18\x01 \x01(\x0b\x32\x12.vega.SignedBundleR\x02tx\x12\x39\n\x04type\x18\x02 \x01(\x0e\x32%.api.v1.SubmitTransactionRequest.TypeR\x04type\"L\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nTYPE_ASYNC\x10\x01\x12\r\n\tTYPE_SYNC\x10\x02\x12\x0f\n\x0bTYPE_COMMIT\x10\x03\"5\n\x19SubmitTransactionResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\"N\n\x16PrepareWithdrawRequest\x12\x34\n\x08withdraw\x18\x01 \x01(\x0b\x32\x18.vega.WithdrawSubmissionR\x08withdraw\"-\n\x17PrepareWithdrawResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"M\n\x1aPrepareSubmitOrderResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\x12\x1b\n\tsubmit_id\x18\x02 \x01(\tR\x08submitId\"0\n\x1aPrepareCancelOrderResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"/\n\x19PrepareAmendOrderResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"R\n\x19PrepareSubmitOrderRequest\x12\x35\n\nsubmission\x18\x01 \x01(\x0b\x32\x15.vega.OrderSubmissionR\nsubmission\"X\n\x19PrepareCancelOrderRequest\x12;\n\x0c\x63\x61ncellation\x18\x01 \x01(\x0b\x32\x17.vega.OrderCancellationR\x0c\x63\x61ncellation\"N\n\x18PrepareAmendOrderRequest\x12\x32\n\tamendment\x18\x01 \x01(\x0b\x32\x14.vega.OrderAmendmentR\tamendment\"\x0f\n\rAssetsRequest\"5\n\x0e\x41ssetsResponse\x12#\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.AssetR\x06\x61ssets\"*\n\x10\x41ssetByIDRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02id\"6\n\x11\x41ssetByIDResponse\x12!\n\x05\x61sset\x18\x01 \x01(\x0b\x32\x0b.vega.AssetR\x05\x61sset\";\n!GetNodeSignaturesAggregateRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02id\"Y\n\"GetNodeSignaturesAggregateResponse\x12\x33\n\nsignatures\x18\x01 \x03(\x0b\x32\x13.vega.NodeSignatureR\nsignatures\"C\n\x15OptionalProposalState\x12*\n\x05value\x18\x01 \x01(\x0e\x32\x14.vega.Proposal.StateR\x05value\"\\\n\x13GetProposalsRequest\x12\x45\n\x0fselect_in_state\x18\x01 \x01(\x0b\x32\x1d.api.v1.OptionalProposalStateR\rselectInState\"@\n\x14GetProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"\x86\x01\n\x1aGetProposalsByPartyRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x45\n\x0fselect_in_state\x18\x02 \x01(\x0b\x32\x1d.api.v1.OptionalProposalStateR\rselectInState\"G\n\x1bGetProposalsByPartyResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\";\n\x16GetVotesByPartyRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\";\n\x17GetVotesByPartyResponse\x12 \n\x05votes\x18\x01 \x03(\x0b\x32\n.vega.VoteR\x05votes\"e\n\x1cGetNewMarketProposalsRequest\x12\x45\n\x0fselect_in_state\x18\x01 \x01(\x0b\x32\x1d.api.v1.OptionalProposalStateR\rselectInState\"I\n\x1dGetNewMarketProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"\x8d\x01\n\x1fGetUpdateMarketProposalsRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x45\n\x0fselect_in_state\x18\x02 \x01(\x0b\x32\x1d.api.v1.OptionalProposalStateR\rselectInState\"L\n GetUpdateMarketProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"m\n$GetNetworkParametersProposalsRequest\x12\x45\n\x0fselect_in_state\x18\x01 \x01(\x0b\x32\x1d.api.v1.OptionalProposalStateR\rselectInState\"Q\n%GetNetworkParametersProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"d\n\x1bGetNewAssetProposalsRequest\x12\x45\n\x0fselect_in_state\x18\x01 \x01(\x0b\x32\x1d.api.v1.OptionalProposalStateR\rselectInState\"H\n\x1cGetNewAssetProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"A\n\x16GetProposalByIDRequest\x12\'\n\x0bproposal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\"C\n\x17GetProposalByIDResponse\x12(\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"E\n\x1dGetProposalByReferenceRequest\x12$\n\treference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\treference\"J\n\x1eGetProposalByReferenceResponse\x12(\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"\x1a\n\x18ObserveGovernanceRequest\"E\n\x19ObserveGovernanceResponse\x12(\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"A\n\x1cObservePartyProposalsRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\"I\n\x1dObservePartyProposalsResponse\x12(\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x14.vega.GovernanceDataR\x04\x64\x61ta\"F\n\x1bObserveProposalVotesRequest\x12\'\n\x0bproposal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\">\n\x1cObserveProposalVotesResponse\x12\x1e\n\x04vote\x18\x01 \x01(\x0b\x32\n.vega.VoteR\x04vote\"=\n\x18ObservePartyVotesRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\";\n\x19ObservePartyVotesResponse\x12\x1e\n\x04vote\x18\x01 \x01(\x0b\x32\n.vega.VoteR\x04vote\"^\n\x1cMarginLevelsSubscribeRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"X\n\x1dMarginLevelsSubscribeResponse\x12\x37\n\rmargin_levels\x18\x01 \x01(\x0b\x32\x12.vega.MarginLevelsR\x0cmarginLevels\"U\n\x13MarginLevelsRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"O\n\x14MarginLevelsResponse\x12\x37\n\rmargin_levels\x18\x01 \x03(\x0b\x32\x12.vega.MarginLevelsR\x0cmarginLevels\":\n\x1bMarketsDataSubscribeRequest\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\"Q\n\x1cMarketsDataSubscribeResponse\x12\x31\n\x0bmarket_data\x18\x01 \x01(\x0b\x32\x10.vega.MarketDataR\nmarketData\"<\n\x15MarketDataByIDRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\"K\n\x16MarketDataByIDResponse\x12\x31\n\x0bmarket_data\x18\x01 \x01(\x0b\x32\x10.vega.MarketDataR\nmarketData\"\x14\n\x12MarketsDataRequest\"J\n\x13MarketsDataResponse\x12\x33\n\x0cmarkets_data\x18\x01 \x03(\x0b\x32\x10.vega.MarketDataR\x0bmarketsData\"7\n\x10LastTradeRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\"6\n\x11LastTradeResponse\x12!\n\x05trade\x18\x01 \x01(\x0b\x32\x0b.vega.TradeR\x05trade\"8\n\x11MarketByIDRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\":\n\x12MarketByIDResponse\x12$\n\x06market\x18\x01 \x01(\x0b\x32\x0c.vega.MarketR\x06market\"5\n\x10PartyByIDRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\"6\n\x11PartyByIDResponse\x12!\n\x05party\x18\x01 \x01(\x0b\x32\x0b.vega.PartyR\x05party\"\x10\n\x0ePartiesRequest\"8\n\x0fPartiesResponse\x12%\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.PartyR\x07parties\"\x82\x01\n\x14TradesByPartyRequest\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\x12\x32\n\npagination\x18\x03 \x01(\x0b\x32\x12.api.v1.PaginationR\npagination\"<\n\x15TradesByPartyResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"1\n\x14TradesByOrderRequest\x12\x19\n\x08order_id\x18\x01 \x01(\tR\x07orderId\"<\n\x15TradesByOrderResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"\x8f\x01\n\x18\x41\x63\x63ountsSubscribeRequest\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x14\n\x05\x61sset\x18\x03 \x01(\tR\x05\x61sset\x12%\n\x04type\x18\x04 \x01(\x0e\x32\x11.vega.AccountTypeR\x04type\"D\n\x19\x41\x63\x63ountsSubscribeResponse\x12\'\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\r.vega.AccountR\x07\x61\x63\x63ount\"P\n\x16OrdersSubscribeRequest\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\"P\n\x16TradesSubscribeRequest\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\"j\n\x17\x43\x61ndlesSubscribeRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12*\n\x08interval\x18\x02 \x01(\x0e\x32\x0e.vega.IntervalR\x08interval\"@\n\x18\x43\x61ndlesSubscribeResponse\x12$\n\x06\x63\x61ndle\x18\x01 \x01(\x0b\x32\x0c.vega.CandleR\x06\x63\x61ndle\"B\n\x1bMarketDepthSubscribeRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\"T\n\x1cMarketDepthSubscribeResponse\x12\x34\n\x0cmarket_depth\x18\x01 \x01(\x0b\x32\x11.vega.MarketDepthR\x0bmarketDepth\"I\n\"MarketDepthUpdatesSubscribeRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\"V\n#MarketDepthUpdatesSubscribeResponse\x12/\n\x06update\x18\x01 \x01(\x0b\x32\x17.vega.MarketDepthUpdateR\x06update\"S\n\x19PositionsSubscribeRequest\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"H\n\x1aPositionsSubscribeResponse\x12*\n\x08position\x18\x01 \x01(\x0b\x32\x0e.vega.PositionR\x08position\"p\n\x15OrdersByMarketRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x32\n\npagination\x18\x02 \x01(\x0b\x32\x12.api.v1.PaginationR\npagination\"=\n\x16OrdersByMarketResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"m\n\x14OrdersByPartyRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x32\n\npagination\x18\x02 \x01(\x0b\x32\x12.api.v1.PaginationR\npagination\"<\n\x15OrdersByPartyResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"c\n\x19OrderByMarketAndIDRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12!\n\x08order_id\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07orderId\"?\n\x1aOrderByMarketAndIDResponse\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"?\n\x17OrderByReferenceRequest\x12$\n\treference\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\treference\"=\n\x18OrderByReferenceResponse\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"\x10\n\x0eMarketsRequest\"9\n\x0fMarketsResponse\x12&\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.MarketR\x07markets\"\x92\x01\n\x0e\x43\x61ndlesRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12/\n\x0fsince_timestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x0esinceTimestamp\x12*\n\x08interval\x18\x03 \x01(\x0e\x32\x0e.vega.IntervalR\x08interval\"9\n\x0f\x43\x61ndlesResponse\x12&\n\x07\x63\x61ndles\x18\x01 \x03(\x0b\x32\x0c.vega.CandleR\x07\x63\x61ndles\"V\n\x12MarketDepthRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x1b\n\tmax_depth\x18\x02 \x01(\x04R\x08maxDepth\"\xd1\x01\n\x13MarketDepthResponse\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\"\n\x03\x62uy\x18\x02 \x03(\x0b\x32\x10.vega.PriceLevelR\x03\x62uy\x12$\n\x04sell\x18\x03 \x03(\x0b\x32\x10.vega.PriceLevelR\x04sell\x12*\n\nlast_trade\x18\x04 \x01(\x0b\x32\x0b.vega.TradeR\tlastTrade\x12\'\n\x0fsequence_number\x18\x05 \x01(\x04R\x0esequenceNumber\"p\n\x15TradesByMarketRequest\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x32\n\npagination\x18\x02 \x01(\x0b\x32\x12.api.v1.PaginationR\npagination\"=\n\x16TradesByMarketResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"Y\n\x17PositionsByPartyRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"H\n\x18PositionsByPartyResponse\x12,\n\tpositions\x18\x01 \x03(\x0b\x32\x0e.vega.PositionR\tpositions\"\x14\n\x12GetVegaTimeRequest\"3\n\x13GetVegaTimeResponse\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"V\n\nPagination\x12\x12\n\x04skip\x18\x01 \x01(\x04R\x04skip\x12\x14\n\x05limit\x18\x02 \x01(\x04R\x05limit\x12\x1e\n\ndescending\x18\x03 \x01(\x08R\ndescending\">\n\x17OrdersSubscribeResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\">\n\x17TradesSubscribeResponse\x12#\n\x06trades\x18\x01 \x03(\x0b\x32\x0b.vega.TradeR\x06trades\"#\n!TransferResponsesSubscribeRequest\"X\n\"TransferResponsesSubscribeResponse\x12\x32\n\x08response\x18\x01 \x01(\x0b\x32\x16.vega.TransferResponseR\x08response\"\x8b\x01\n\x14PartyAccountsRequest\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\x12%\n\x04type\x18\x03 \x01(\x0e\x32\x11.vega.AccountTypeR\x04type\x12\x14\n\x05\x61sset\x18\x04 \x01(\tR\x05\x61sset\"B\n\x15PartyAccountsResponse\x12)\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.AccountR\x08\x61\x63\x63ounts\"J\n\x15MarketAccountsRequest\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\"C\n\x16MarketAccountsResponse\x12)\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.AccountR\x08\x61\x63\x63ounts\"8\n FeeInfrastructureAccountsRequest\x12\x14\n\x05\x61sset\x18\x01 \x01(\tR\x05\x61sset\"N\n!FeeInfrastructureAccountsResponse\x12)\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\r.vega.AccountR\x08\x61\x63\x63ounts\"\x92\x01\n\x16PrepareProposalRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x1c\n\treference\x18\x02 \x01(\tR\treference\x12\x37\n\x08proposal\x18\x03 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x08proposal\"h\n\x17PrepareProposalResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\x12\x39\n\x10pending_proposal\x18\x02 \x01(\x0b\x32\x0e.vega.ProposalR\x0fpendingProposal\"<\n\x12PrepareVoteRequest\x12&\n\x04vote\x18\x01 \x01(\x0b\x32\n.vega.VoteB\x06\xe2\xdf\x1f\x02 \x01R\x04vote\"I\n\x13PrepareVoteResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\x12\x1e\n\x04vote\x18\x02 \x01(\x0b\x32\n.vega.VoteR\x04vote\"n\n PrepareLiquidityProvisionRequest\x12J\n\nsubmission\x18\x01 \x01(\x0b\x32\".vega.LiquidityProvisionSubmissionB\x06\xe2\xdf\x1f\x02 \x01R\nsubmission\"7\n!PrepareLiquidityProvisionResponse\x12\x12\n\x04\x62lob\x18\x01 \x01(\x0cR\x04\x62lob\"O\n\x10OrderByIDRequest\x12!\n\x08order_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01R\x07orderId\x12\x18\n\x07version\x18\x02 \x01(\x04R\x07version\"6\n\x11OrderByIDResponse\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"q\n\x18OrderVersionsByIDRequest\x12!\n\x08order_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02 \x01R\x07orderId\x12\x32\n\npagination\x18\x02 \x01(\x0b\x32\x12.api.v1.PaginationR\npagination\"@\n\x19OrderVersionsByIDResponse\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x0b.vega.OrderR\x06orders\"7\n\x12\x45stimateFeeRequest\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"2\n\x13\x45stimateFeeResponse\x12\x1b\n\x03\x66\x65\x65\x18\x02 \x01(\x0b\x32\t.vega.FeeR\x03\x66\x65\x65\":\n\x15\x45stimateMarginRequest\x12!\n\x05order\x18\x01 \x01(\x0b\x32\x0b.vega.OrderR\x05order\"Q\n\x16\x45stimateMarginResponse\x12\x37\n\rmargin_levels\x18\x02 \x01(\x0b\x32\x12.vega.MarginLevelsR\x0cmarginLevels\"\x97\x01\n\x16ObserveEventBusRequest\x12&\n\x04type\x18\x01 \x03(\x0e\x32\x12.vega.BusEventTypeR\x04type\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x03 \x01(\tR\x07partyId\x12\x1d\n\nbatch_size\x18\x04 \x01(\x03R\tbatchSize\"A\n\x17ObserveEventBusResponse\x12&\n\x06\x65vents\x18\x01 \x03(\x0b\x32\x0e.vega.BusEventR\x06\x65vents\"\x13\n\x11StatisticsRequest\"F\n\x12StatisticsResponse\x12\x30\n\nstatistics\x18\x01 \x01(\x0b\x32\x10.vega.StatisticsR\nstatistics\"7\n\x12WithdrawalsRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\"I\n\x13WithdrawalsResponse\x12\x32\n\x0bwithdrawals\x18\x01 \x03(\x0b\x32\x10.vega.WithdrawalR\x0bwithdrawals\"+\n\x11WithdrawalRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02id\"F\n\x12WithdrawalResponse\x12\x30\n\nwithdrawal\x18\x01 \x01(\x0b\x32\x10.vega.WithdrawalR\nwithdrawal\"M\n\x1e\x45RC20WithdrawalApprovalRequest\x12+\n\rwithdrawal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x0cwithdrawalId\"\xaa\x01\n\x1f\x45RC20WithdrawalApprovalResponse\x12!\n\x0c\x61sset_source\x18\x01 \x01(\tR\x0b\x61ssetSource\x12\x16\n\x06\x61mount\x18\x02 \x01(\tR\x06\x61mount\x12\x16\n\x06\x65xpiry\x18\x03 \x01(\x03R\x06\x65xpiry\x12\x14\n\x05nonce\x18\x04 \x01(\tR\x05nonce\x12\x1e\n\nsignatures\x18\x05 \x01(\tR\nsignatures\"4\n\x0f\x44\x65positsRequest\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\"=\n\x10\x44\x65positsResponse\x12)\n\x08\x64\x65posits\x18\x01 \x03(\x0b\x32\r.vega.DepositR\x08\x64\x65posits\"(\n\x0e\x44\x65positRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02id\":\n\x0f\x44\x65positResponse\x12\'\n\x07\x64\x65posit\x18\x01 \x01(\x0b\x32\r.vega.DepositR\x07\x64\x65posit\"\x1a\n\x18NetworkParametersRequest\"b\n\x19NetworkParametersResponse\x12\x45\n\x12network_parameters\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x11networkParameters\"J\n\x1aLiquidityProvisionsRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\x12\x14\n\x05party\x18\x02 \x01(\tR\x05party\"j\n\x1bLiquidityProvisionsResponse\x12K\n\x14liquidity_provisions\x18\x01 \x03(\x0b\x32\x18.vega.LiquidityProvisionR\x13liquidityProvisions\"+\n\x11OracleSpecRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02id\"M\n\x12OracleSpecResponse\x12\x37\n\x0boracle_spec\x18\x01 \x01(\x0b\x32\x16.oracles.v1.OracleSpecR\noracleSpec\"\x14\n\x12OracleSpecsRequest\"P\n\x13OracleSpecsResponse\x12\x39\n\x0coracle_specs\x18\x01 \x03(\x0b\x32\x16.oracles.v1.OracleSpecR\x0boracleSpecs\"1\n\x17OracleDataBySpecRequest\x12\x16\n\x02id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x02id\"S\n\x18OracleDataBySpecResponse\x12\x37\n\x0boracle_data\x18\x01 \x03(\x0b\x32\x16.oracles.v1.OracleDataR\noracleData2\xc0\x06\n\x0eTradingService\x12[\n\x12PrepareSubmitOrder\x12!.api.v1.PrepareSubmitOrderRequest\x1a\".api.v1.PrepareSubmitOrderResponse\x12[\n\x12PrepareCancelOrder\x12!.api.v1.PrepareCancelOrderRequest\x1a\".api.v1.PrepareCancelOrderResponse\x12X\n\x11PrepareAmendOrder\x12 .api.v1.PrepareAmendOrderRequest\x1a!.api.v1.PrepareAmendOrderResponse\x12R\n\x0fPrepareWithdraw\x12\x1e.api.v1.PrepareWithdrawRequest\x1a\x1f.api.v1.PrepareWithdrawResponse\x12X\n\x11SubmitTransaction\x12 .api.v1.SubmitTransactionRequest\x1a!.api.v1.SubmitTransactionResponse\x12R\n\x0fPrepareProposal\x12\x1e.api.v1.PrepareProposalRequest\x1a\x1f.api.v1.PrepareProposalResponse\x12\x46\n\x0bPrepareVote\x12\x1a.api.v1.PrepareVoteRequest\x1a\x1b.api.v1.PrepareVoteResponse\x12^\n\x13PropagateChainEvent\x12\".api.v1.PropagateChainEventRequest\x1a#.api.v1.PropagateChainEventResponse\x12p\n\x19PrepareLiquidityProvision\x12(.api.v1.PrepareLiquidityProvisionRequest\x1a).api.v1.PrepareLiquidityProvisionResponse2\xdb*\n\x12TradingDataService\x12O\n\x0eMarketAccounts\x12\x1d.api.v1.MarketAccountsRequest\x1a\x1e.api.v1.MarketAccountsResponse\x12L\n\rPartyAccounts\x12\x1c.api.v1.PartyAccountsRequest\x1a\x1d.api.v1.PartyAccountsResponse\x12p\n\x19\x46\x65\x65InfrastructureAccounts\x12(.api.v1.FeeInfrastructureAccountsRequest\x1a).api.v1.FeeInfrastructureAccountsResponse\x12:\n\x07\x43\x61ndles\x12\x16.api.v1.CandlesRequest\x1a\x17.api.v1.CandlesResponse\x12O\n\x0eMarketDataByID\x12\x1d.api.v1.MarketDataByIDRequest\x1a\x1e.api.v1.MarketDataByIDResponse\x12\x46\n\x0bMarketsData\x12\x1a.api.v1.MarketsDataRequest\x1a\x1b.api.v1.MarketsDataResponse\x12\x43\n\nMarketByID\x12\x19.api.v1.MarketByIDRequest\x1a\x1a.api.v1.MarketByIDResponse\x12\x46\n\x0bMarketDepth\x12\x1a.api.v1.MarketDepthRequest\x1a\x1b.api.v1.MarketDepthResponse\x12:\n\x07Markets\x12\x16.api.v1.MarketsRequest\x1a\x17.api.v1.MarketsResponse\x12[\n\x12OrderByMarketAndID\x12!.api.v1.OrderByMarketAndIDRequest\x1a\".api.v1.OrderByMarketAndIDResponse\x12U\n\x10OrderByReference\x12\x1f.api.v1.OrderByReferenceRequest\x1a .api.v1.OrderByReferenceResponse\x12O\n\x0eOrdersByMarket\x12\x1d.api.v1.OrdersByMarketRequest\x1a\x1e.api.v1.OrdersByMarketResponse\x12L\n\rOrdersByParty\x12\x1c.api.v1.OrdersByPartyRequest\x1a\x1d.api.v1.OrdersByPartyResponse\x12@\n\tOrderByID\x12\x18.api.v1.OrderByIDRequest\x1a\x19.api.v1.OrderByIDResponse\x12X\n\x11OrderVersionsByID\x12 .api.v1.OrderVersionsByIDRequest\x1a!.api.v1.OrderVersionsByIDResponse\x12I\n\x0cMarginLevels\x12\x1b.api.v1.MarginLevelsRequest\x1a\x1c.api.v1.MarginLevelsResponse\x12:\n\x07Parties\x12\x16.api.v1.PartiesRequest\x1a\x17.api.v1.PartiesResponse\x12@\n\tPartyByID\x12\x18.api.v1.PartyByIDRequest\x1a\x19.api.v1.PartyByIDResponse\x12U\n\x10PositionsByParty\x12\x1f.api.v1.PositionsByPartyRequest\x1a .api.v1.PositionsByPartyResponse\x12@\n\tLastTrade\x12\x18.api.v1.LastTradeRequest\x1a\x19.api.v1.LastTradeResponse\x12O\n\x0eTradesByMarket\x12\x1d.api.v1.TradesByMarketRequest\x1a\x1e.api.v1.TradesByMarketResponse\x12L\n\rTradesByOrder\x12\x1c.api.v1.TradesByOrderRequest\x1a\x1d.api.v1.TradesByOrderResponse\x12L\n\rTradesByParty\x12\x1c.api.v1.TradesByPartyRequest\x1a\x1d.api.v1.TradesByPartyResponse\x12I\n\x0cGetProposals\x12\x1b.api.v1.GetProposalsRequest\x1a\x1c.api.v1.GetProposalsResponse\x12^\n\x13GetProposalsByParty\x12\".api.v1.GetProposalsByPartyRequest\x1a#.api.v1.GetProposalsByPartyResponse\x12R\n\x0fGetVotesByParty\x12\x1e.api.v1.GetVotesByPartyRequest\x1a\x1f.api.v1.GetVotesByPartyResponse\x12\x64\n\x15GetNewMarketProposals\x12$.api.v1.GetNewMarketProposalsRequest\x1a%.api.v1.GetNewMarketProposalsResponse\x12m\n\x18GetUpdateMarketProposals\x12\'.api.v1.GetUpdateMarketProposalsRequest\x1a(.api.v1.GetUpdateMarketProposalsResponse\x12|\n\x1dGetNetworkParametersProposals\x12,.api.v1.GetNetworkParametersProposalsRequest\x1a-.api.v1.GetNetworkParametersProposalsResponse\x12\x61\n\x14GetNewAssetProposals\x12#.api.v1.GetNewAssetProposalsRequest\x1a$.api.v1.GetNewAssetProposalsResponse\x12R\n\x0fGetProposalByID\x12\x1e.api.v1.GetProposalByIDRequest\x1a\x1f.api.v1.GetProposalByIDResponse\x12g\n\x16GetProposalByReference\x12%.api.v1.GetProposalByReferenceRequest\x1a&.api.v1.GetProposalByReferenceResponse\x12Z\n\x11ObserveGovernance\x12 .api.v1.ObserveGovernanceRequest\x1a!.api.v1.ObserveGovernanceResponse0\x01\x12\x66\n\x15ObservePartyProposals\x12$.api.v1.ObservePartyProposalsRequest\x1a%.api.v1.ObservePartyProposalsResponse0\x01\x12Z\n\x11ObservePartyVotes\x12 .api.v1.ObservePartyVotesRequest\x1a!.api.v1.ObservePartyVotesResponse0\x01\x12\x63\n\x14ObserveProposalVotes\x12#.api.v1.ObserveProposalVotesRequest\x1a$.api.v1.ObserveProposalVotesResponse0\x01\x12V\n\x0fObserveEventBus\x12\x1e.api.v1.ObserveEventBusRequest\x1a\x1f.api.v1.ObserveEventBusResponse(\x01\x30\x01\x12\x43\n\nStatistics\x12\x19.api.v1.StatisticsRequest\x1a\x1a.api.v1.StatisticsResponse\x12\x46\n\x0bGetVegaTime\x12\x1a.api.v1.GetVegaTimeRequest\x1a\x1b.api.v1.GetVegaTimeResponse\x12Z\n\x11\x41\x63\x63ountsSubscribe\x12 .api.v1.AccountsSubscribeRequest\x1a!.api.v1.AccountsSubscribeResponse0\x01\x12W\n\x10\x43\x61ndlesSubscribe\x12\x1f.api.v1.CandlesSubscribeRequest\x1a .api.v1.CandlesSubscribeResponse0\x01\x12\x66\n\x15MarginLevelsSubscribe\x12$.api.v1.MarginLevelsSubscribeRequest\x1a%.api.v1.MarginLevelsSubscribeResponse0\x01\x12\x63\n\x14MarketDepthSubscribe\x12#.api.v1.MarketDepthSubscribeRequest\x1a$.api.v1.MarketDepthSubscribeResponse0\x01\x12x\n\x1bMarketDepthUpdatesSubscribe\x12*.api.v1.MarketDepthUpdatesSubscribeRequest\x1a+.api.v1.MarketDepthUpdatesSubscribeResponse0\x01\x12\x63\n\x14MarketsDataSubscribe\x12#.api.v1.MarketsDataSubscribeRequest\x1a$.api.v1.MarketsDataSubscribeResponse0\x01\x12T\n\x0fOrdersSubscribe\x12\x1e.api.v1.OrdersSubscribeRequest\x1a\x1f.api.v1.OrdersSubscribeResponse0\x01\x12]\n\x12PositionsSubscribe\x12!.api.v1.PositionsSubscribeRequest\x1a\".api.v1.PositionsSubscribeResponse0\x01\x12T\n\x0fTradesSubscribe\x12\x1e.api.v1.TradesSubscribeRequest\x1a\x1f.api.v1.TradesSubscribeResponse0\x01\x12u\n\x1aTransferResponsesSubscribe\x12).api.v1.TransferResponsesSubscribeRequest\x1a*.api.v1.TransferResponsesSubscribeResponse0\x01\x12s\n\x1aGetNodeSignaturesAggregate\x12).api.v1.GetNodeSignaturesAggregateRequest\x1a*.api.v1.GetNodeSignaturesAggregateResponse\x12@\n\tAssetByID\x12\x18.api.v1.AssetByIDRequest\x1a\x19.api.v1.AssetByIDResponse\x12\x37\n\x06\x41ssets\x12\x15.api.v1.AssetsRequest\x1a\x16.api.v1.AssetsResponse\x12\x46\n\x0b\x45stimateFee\x12\x1a.api.v1.EstimateFeeRequest\x1a\x1b.api.v1.EstimateFeeResponse\x12O\n\x0e\x45stimateMargin\x12\x1d.api.v1.EstimateMarginRequest\x1a\x1e.api.v1.EstimateMarginResponse\x12j\n\x17\x45RC20WithdrawalApproval\x12&.api.v1.ERC20WithdrawalApprovalRequest\x1a\'.api.v1.ERC20WithdrawalApprovalResponse\x12\x43\n\nWithdrawal\x12\x19.api.v1.WithdrawalRequest\x1a\x1a.api.v1.WithdrawalResponse\x12\x46\n\x0bWithdrawals\x12\x1a.api.v1.WithdrawalsRequest\x1a\x1b.api.v1.WithdrawalsResponse\x12:\n\x07\x44\x65posit\x12\x16.api.v1.DepositRequest\x1a\x17.api.v1.DepositResponse\x12=\n\x08\x44\x65posits\x12\x17.api.v1.DepositsRequest\x1a\x18.api.v1.DepositsResponse\x12X\n\x11NetworkParameters\x12 .api.v1.NetworkParametersRequest\x1a!.api.v1.NetworkParametersResponse\x12^\n\x13LiquidityProvisions\x12\".api.v1.LiquidityProvisionsRequest\x1a#.api.v1.LiquidityProvisionsResponse\x12\x43\n\nOracleSpec\x12\x19.api.v1.OracleSpecRequest\x1a\x1a.api.v1.OracleSpecResponse\x12\x46\n\x0bOracleSpecs\x12\x1a.api.v1.OracleSpecsRequest\x1a\x1b.api.v1.OracleSpecsResponse\x12U\n\x10OracleDataBySpec\x12\x1f.api.v1.OracleDataBySpecRequest\x1a .api.v1.OracleDataBySpecResponseB?\n\x18io.vegaprotocol.vega.apiZ#code.vegaprotocol.io/vega/proto/apib\x06proto3'
   ,
-  dependencies=[vega__pb2.DESCRIPTOR,markets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,chain__events__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,events__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
+  dependencies=[vega__pb2.DESCRIPTOR,markets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,chain__events__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,events__pb2.DESCRIPTOR,oracles_dot_v1_dot_oracle__spec__pb2.DESCRIPTOR,oracles_dot_v1_dot_oracle__data__pb2.DESCRIPTOR,github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
 
 
 
 _SUBMITTRANSACTIONREQUEST_TYPE = _descriptor.EnumDescriptor(
   name='Type',
-  full_name='api.SubmitTransactionRequest.Type',
+  full_name='api.v1.SubmitTransactionRequest.Type',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -63,36 +64,36 @@ _SUBMITTRANSACTIONREQUEST_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=502,
-  serialized_end=578,
+  serialized_start=540,
+  serialized_end=616,
 )
 _sym_db.RegisterEnumDescriptor(_SUBMITTRANSACTIONREQUEST_TYPE)
 
 
 _PROPAGATECHAINEVENTREQUEST = _descriptor.Descriptor(
   name='PropagateChainEventRequest',
-  full_name='api.PropagateChainEventRequest',
+  full_name='api.v1.PropagateChainEventRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='evt', full_name='api.PropagateChainEventRequest.evt', index=0,
+      name='evt', full_name='api.v1.PropagateChainEventRequest.evt', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='evt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pubKey', full_name='api.PropagateChainEventRequest.pubKey', index=1,
+      name='pub_key', full_name='api.v1.PropagateChainEventRequest.pub_key', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='pubKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='signature', full_name='api.PropagateChainEventRequest.signature', index=2,
+      name='signature', full_name='api.v1.PropagateChainEventRequest.signature', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -110,21 +111,21 @@ _PROPAGATECHAINEVENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=204,
-  serialized_end=322,
+  serialized_start=238,
+  serialized_end=357,
 )
 
 
 _PROPAGATECHAINEVENTRESPONSE = _descriptor.Descriptor(
   name='PropagateChainEventResponse',
-  full_name='api.PropagateChainEventResponse',
+  full_name='api.v1.PropagateChainEventResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='api.PropagateChainEventResponse.success', index=0,
+      name='success', full_name='api.v1.PropagateChainEventResponse.success', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -142,28 +143,28 @@ _PROPAGATECHAINEVENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=324,
-  serialized_end=379,
+  serialized_start=359,
+  serialized_end=414,
 )
 
 
 _SUBMITTRANSACTIONREQUEST = _descriptor.Descriptor(
   name='SubmitTransactionRequest',
-  full_name='api.SubmitTransactionRequest',
+  full_name='api.v1.SubmitTransactionRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tx', full_name='api.SubmitTransactionRequest.tx', index=0,
+      name='tx', full_name='api.v1.SubmitTransactionRequest.tx', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='tx', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='api.SubmitTransactionRequest.type', index=1,
+      name='type', full_name='api.v1.SubmitTransactionRequest.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -182,21 +183,21 @@ _SUBMITTRANSACTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=382,
-  serialized_end=578,
+  serialized_start=417,
+  serialized_end=616,
 )
 
 
 _SUBMITTRANSACTIONRESPONSE = _descriptor.Descriptor(
   name='SubmitTransactionResponse',
-  full_name='api.SubmitTransactionResponse',
+  full_name='api.v1.SubmitTransactionResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='api.SubmitTransactionResponse.success', index=0,
+      name='success', full_name='api.v1.SubmitTransactionResponse.success', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -214,21 +215,21 @@ _SUBMITTRANSACTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=580,
-  serialized_end=633,
+  serialized_start=618,
+  serialized_end=671,
 )
 
 
 _PREPAREWITHDRAWREQUEST = _descriptor.Descriptor(
   name='PrepareWithdrawRequest',
-  full_name='api.PrepareWithdrawRequest',
+  full_name='api.v1.PrepareWithdrawRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='withdraw', full_name='api.PrepareWithdrawRequest.withdraw', index=0,
+      name='withdraw', full_name='api.v1.PrepareWithdrawRequest.withdraw', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -246,21 +247,21 @@ _PREPAREWITHDRAWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=635,
-  serialized_end=713,
+  serialized_start=673,
+  serialized_end=751,
 )
 
 
 _PREPAREWITHDRAWRESPONSE = _descriptor.Descriptor(
   name='PrepareWithdrawResponse',
-  full_name='api.PrepareWithdrawResponse',
+  full_name='api.v1.PrepareWithdrawResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareWithdrawResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareWithdrawResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -278,33 +279,33 @@ _PREPAREWITHDRAWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=715,
-  serialized_end=760,
+  serialized_start=753,
+  serialized_end=798,
 )
 
 
 _PREPARESUBMITORDERRESPONSE = _descriptor.Descriptor(
   name='PrepareSubmitOrderResponse',
-  full_name='api.PrepareSubmitOrderResponse',
+  full_name='api.v1.PrepareSubmitOrderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareSubmitOrderResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareSubmitOrderResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='blob', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='submitID', full_name='api.PrepareSubmitOrderResponse.submitID', index=1,
+      name='submit_id', full_name='api.v1.PrepareSubmitOrderResponse.submit_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='submitID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='submitId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -317,21 +318,21 @@ _PREPARESUBMITORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=762,
-  serialized_end=838,
+  serialized_start=800,
+  serialized_end=877,
 )
 
 
 _PREPARECANCELORDERRESPONSE = _descriptor.Descriptor(
   name='PrepareCancelOrderResponse',
-  full_name='api.PrepareCancelOrderResponse',
+  full_name='api.v1.PrepareCancelOrderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareCancelOrderResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareCancelOrderResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -349,21 +350,21 @@ _PREPARECANCELORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=888,
+  serialized_start=879,
+  serialized_end=927,
 )
 
 
 _PREPAREAMENDORDERRESPONSE = _descriptor.Descriptor(
   name='PrepareAmendOrderResponse',
-  full_name='api.PrepareAmendOrderResponse',
+  full_name='api.v1.PrepareAmendOrderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareAmendOrderResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareAmendOrderResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -381,21 +382,21 @@ _PREPAREAMENDORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=890,
-  serialized_end=937,
+  serialized_start=929,
+  serialized_end=976,
 )
 
 
-_SUBMITORDERREQUEST = _descriptor.Descriptor(
-  name='SubmitOrderRequest',
-  full_name='api.SubmitOrderRequest',
+_PREPARESUBMITORDERREQUEST = _descriptor.Descriptor(
+  name='PrepareSubmitOrderRequest',
+  full_name='api.v1.PrepareSubmitOrderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='submission', full_name='api.SubmitOrderRequest.submission', index=0,
+      name='submission', full_name='api.v1.PrepareSubmitOrderRequest.submission', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -413,21 +414,21 @@ _SUBMITORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=939,
-  serialized_end=1014,
+  serialized_start=978,
+  serialized_end=1060,
 )
 
 
-_CANCELORDERREQUEST = _descriptor.Descriptor(
-  name='CancelOrderRequest',
-  full_name='api.CancelOrderRequest',
+_PREPARECANCELORDERREQUEST = _descriptor.Descriptor(
+  name='PrepareCancelOrderRequest',
+  full_name='api.v1.PrepareCancelOrderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cancellation', full_name='api.CancelOrderRequest.cancellation', index=0,
+      name='cancellation', full_name='api.v1.PrepareCancelOrderRequest.cancellation', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -445,21 +446,21 @@ _CANCELORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1016,
-  serialized_end=1097,
+  serialized_start=1062,
+  serialized_end=1150,
 )
 
 
-_AMENDORDERREQUEST = _descriptor.Descriptor(
-  name='AmendOrderRequest',
-  full_name='api.AmendOrderRequest',
+_PREPAREAMENDORDERREQUEST = _descriptor.Descriptor(
+  name='PrepareAmendOrderRequest',
+  full_name='api.v1.PrepareAmendOrderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='amendment', full_name='api.AmendOrderRequest.amendment', index=0,
+      name='amendment', full_name='api.v1.PrepareAmendOrderRequest.amendment', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -477,14 +478,14 @@ _AMENDORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1099,
-  serialized_end=1170,
+  serialized_start=1152,
+  serialized_end=1230,
 )
 
 
 _ASSETSREQUEST = _descriptor.Descriptor(
   name='AssetsRequest',
-  full_name='api.AssetsRequest',
+  full_name='api.v1.AssetsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -502,21 +503,21 @@ _ASSETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1172,
-  serialized_end=1187,
+  serialized_start=1232,
+  serialized_end=1247,
 )
 
 
 _ASSETSRESPONSE = _descriptor.Descriptor(
   name='AssetsResponse',
-  full_name='api.AssetsResponse',
+  full_name='api.v1.AssetsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='assets', full_name='api.AssetsResponse.assets', index=0,
+      name='assets', full_name='api.v1.AssetsResponse.assets', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -534,26 +535,26 @@ _ASSETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1189,
-  serialized_end=1242,
+  serialized_start=1249,
+  serialized_end=1302,
 )
 
 
 _ASSETBYIDREQUEST = _descriptor.Descriptor(
   name='AssetByIDRequest',
-  full_name='api.AssetByIDRequest',
+  full_name='api.v1.AssetByIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='api.AssetByIDRequest.ID', index=0,
+      name='id', full_name='api.v1.AssetByIDRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -566,21 +567,21 @@ _ASSETBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1244,
-  serialized_end=1286,
+  serialized_start=1304,
+  serialized_end=1346,
 )
 
 
 _ASSETBYIDRESPONSE = _descriptor.Descriptor(
   name='AssetByIDResponse',
-  full_name='api.AssetByIDResponse',
+  full_name='api.v1.AssetByIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='asset', full_name='api.AssetByIDResponse.asset', index=0,
+      name='asset', full_name='api.v1.AssetByIDResponse.asset', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -598,26 +599,26 @@ _ASSETBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1288,
-  serialized_end=1342,
+  serialized_start=1348,
+  serialized_end=1402,
 )
 
 
 _GETNODESIGNATURESAGGREGATEREQUEST = _descriptor.Descriptor(
   name='GetNodeSignaturesAggregateRequest',
-  full_name='api.GetNodeSignaturesAggregateRequest',
+  full_name='api.v1.GetNodeSignaturesAggregateRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='api.GetNodeSignaturesAggregateRequest.ID', index=0,
+      name='id', full_name='api.v1.GetNodeSignaturesAggregateRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -630,21 +631,21 @@ _GETNODESIGNATURESAGGREGATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1344,
-  serialized_end=1403,
+  serialized_start=1404,
+  serialized_end=1463,
 )
 
 
 _GETNODESIGNATURESAGGREGATERESPONSE = _descriptor.Descriptor(
   name='GetNodeSignaturesAggregateResponse',
-  full_name='api.GetNodeSignaturesAggregateResponse',
+  full_name='api.v1.GetNodeSignaturesAggregateResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='signatures', full_name='api.GetNodeSignaturesAggregateResponse.signatures', index=0,
+      name='signatures', full_name='api.v1.GetNodeSignaturesAggregateResponse.signatures', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -662,21 +663,21 @@ _GETNODESIGNATURESAGGREGATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1405,
-  serialized_end=1494,
+  serialized_start=1465,
+  serialized_end=1554,
 )
 
 
 _OPTIONALPROPOSALSTATE = _descriptor.Descriptor(
   name='OptionalProposalState',
-  full_name='api.OptionalProposalState',
+  full_name='api.v1.OptionalProposalState',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='api.OptionalProposalState.value', index=0,
+      name='value', full_name='api.v1.OptionalProposalState.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -694,21 +695,21 @@ _OPTIONALPROPOSALSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1496,
-  serialized_end=1563,
+  serialized_start=1556,
+  serialized_end=1623,
 )
 
 
 _GETPROPOSALSREQUEST = _descriptor.Descriptor(
   name='GetProposalsRequest',
-  full_name='api.GetProposalsRequest',
+  full_name='api.v1.GetProposalsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='selectInState', full_name='api.GetProposalsRequest.selectInState', index=0,
+      name='select_in_state', full_name='api.v1.GetProposalsRequest.select_in_state', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -726,21 +727,21 @@ _GETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1565,
-  serialized_end=1652,
+  serialized_start=1625,
+  serialized_end=1717,
 )
 
 
 _GETPROPOSALSRESPONSE = _descriptor.Descriptor(
   name='GetProposalsResponse',
-  full_name='api.GetProposalsResponse',
+  full_name='api.v1.GetProposalsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetProposalsResponse.data', index=0,
+      name='data', full_name='api.v1.GetProposalsResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -758,28 +759,28 @@ _GETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1654,
-  serialized_end=1718,
+  serialized_start=1719,
+  serialized_end=1783,
 )
 
 
 _GETPROPOSALSBYPARTYREQUEST = _descriptor.Descriptor(
   name='GetProposalsByPartyRequest',
-  full_name='api.GetProposalsByPartyRequest',
+  full_name='api.v1.GetProposalsByPartyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.GetProposalsByPartyRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.GetProposalsByPartyRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='selectInState', full_name='api.GetProposalsByPartyRequest.selectInState', index=1,
+      name='select_in_state', full_name='api.v1.GetProposalsByPartyRequest.select_in_state', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -797,21 +798,21 @@ _GETPROPOSALSBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1849,
+  serialized_start=1786,
+  serialized_end=1920,
 )
 
 
 _GETPROPOSALSBYPARTYRESPONSE = _descriptor.Descriptor(
   name='GetProposalsByPartyResponse',
-  full_name='api.GetProposalsByPartyResponse',
+  full_name='api.v1.GetProposalsByPartyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetProposalsByPartyResponse.data', index=0,
+      name='data', full_name='api.v1.GetProposalsByPartyResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -829,26 +830,26 @@ _GETPROPOSALSBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1851,
-  serialized_end=1922,
+  serialized_start=1922,
+  serialized_end=1993,
 )
 
 
 _GETVOTESBYPARTYREQUEST = _descriptor.Descriptor(
   name='GetVotesByPartyRequest',
-  full_name='api.GetVotesByPartyRequest',
+  full_name='api.v1.GetVotesByPartyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.GetVotesByPartyRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.GetVotesByPartyRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -861,21 +862,21 @@ _GETVOTESBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1924,
-  serialized_end=1982,
+  serialized_start=1995,
+  serialized_end=2054,
 )
 
 
 _GETVOTESBYPARTYRESPONSE = _descriptor.Descriptor(
   name='GetVotesByPartyResponse',
-  full_name='api.GetVotesByPartyResponse',
+  full_name='api.v1.GetVotesByPartyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='votes', full_name='api.GetVotesByPartyResponse.votes', index=0,
+      name='votes', full_name='api.v1.GetVotesByPartyResponse.votes', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -893,21 +894,21 @@ _GETVOTESBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1984,
-  serialized_end=2043,
+  serialized_start=2056,
+  serialized_end=2115,
 )
 
 
 _GETNEWMARKETPROPOSALSREQUEST = _descriptor.Descriptor(
   name='GetNewMarketProposalsRequest',
-  full_name='api.GetNewMarketProposalsRequest',
+  full_name='api.v1.GetNewMarketProposalsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='selectInState', full_name='api.GetNewMarketProposalsRequest.selectInState', index=0,
+      name='select_in_state', full_name='api.v1.GetNewMarketProposalsRequest.select_in_state', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -925,21 +926,21 @@ _GETNEWMARKETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2045,
-  serialized_end=2141,
+  serialized_start=2117,
+  serialized_end=2218,
 )
 
 
 _GETNEWMARKETPROPOSALSRESPONSE = _descriptor.Descriptor(
   name='GetNewMarketProposalsResponse',
-  full_name='api.GetNewMarketProposalsResponse',
+  full_name='api.v1.GetNewMarketProposalsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetNewMarketProposalsResponse.data', index=0,
+      name='data', full_name='api.v1.GetNewMarketProposalsResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -957,28 +958,28 @@ _GETNEWMARKETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2143,
-  serialized_end=2216,
+  serialized_start=2220,
+  serialized_end=2293,
 )
 
 
 _GETUPDATEMARKETPROPOSALSREQUEST = _descriptor.Descriptor(
   name='GetUpdateMarketProposalsRequest',
-  full_name='api.GetUpdateMarketProposalsRequest',
+  full_name='api.v1.GetUpdateMarketProposalsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.GetUpdateMarketProposalsRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.GetUpdateMarketProposalsRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='selectInState', full_name='api.GetUpdateMarketProposalsRequest.selectInState', index=1,
+      name='select_in_state', full_name='api.v1.GetUpdateMarketProposalsRequest.select_in_state', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -996,21 +997,21 @@ _GETUPDATEMARKETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2219,
-  serialized_end=2354,
+  serialized_start=2296,
+  serialized_end=2437,
 )
 
 
 _GETUPDATEMARKETPROPOSALSRESPONSE = _descriptor.Descriptor(
   name='GetUpdateMarketProposalsResponse',
-  full_name='api.GetUpdateMarketProposalsResponse',
+  full_name='api.v1.GetUpdateMarketProposalsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetUpdateMarketProposalsResponse.data', index=0,
+      name='data', full_name='api.v1.GetUpdateMarketProposalsResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1028,21 +1029,21 @@ _GETUPDATEMARKETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2356,
-  serialized_end=2432,
+  serialized_start=2439,
+  serialized_end=2515,
 )
 
 
 _GETNETWORKPARAMETERSPROPOSALSREQUEST = _descriptor.Descriptor(
   name='GetNetworkParametersProposalsRequest',
-  full_name='api.GetNetworkParametersProposalsRequest',
+  full_name='api.v1.GetNetworkParametersProposalsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='selectInState', full_name='api.GetNetworkParametersProposalsRequest.selectInState', index=0,
+      name='select_in_state', full_name='api.v1.GetNetworkParametersProposalsRequest.select_in_state', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1060,21 +1061,21 @@ _GETNETWORKPARAMETERSPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2434,
-  serialized_end=2538,
+  serialized_start=2517,
+  serialized_end=2626,
 )
 
 
 _GETNETWORKPARAMETERSPROPOSALSRESPONSE = _descriptor.Descriptor(
   name='GetNetworkParametersProposalsResponse',
-  full_name='api.GetNetworkParametersProposalsResponse',
+  full_name='api.v1.GetNetworkParametersProposalsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetNetworkParametersProposalsResponse.data', index=0,
+      name='data', full_name='api.v1.GetNetworkParametersProposalsResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1092,21 +1093,21 @@ _GETNETWORKPARAMETERSPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2540,
-  serialized_end=2621,
+  serialized_start=2628,
+  serialized_end=2709,
 )
 
 
 _GETNEWASSETPROPOSALSREQUEST = _descriptor.Descriptor(
   name='GetNewAssetProposalsRequest',
-  full_name='api.GetNewAssetProposalsRequest',
+  full_name='api.v1.GetNewAssetProposalsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='selectInState', full_name='api.GetNewAssetProposalsRequest.selectInState', index=0,
+      name='select_in_state', full_name='api.v1.GetNewAssetProposalsRequest.select_in_state', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1124,21 +1125,21 @@ _GETNEWASSETPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2623,
-  serialized_end=2718,
+  serialized_start=2711,
+  serialized_end=2811,
 )
 
 
 _GETNEWASSETPROPOSALSRESPONSE = _descriptor.Descriptor(
   name='GetNewAssetProposalsResponse',
-  full_name='api.GetNewAssetProposalsResponse',
+  full_name='api.v1.GetNewAssetProposalsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetNewAssetProposalsResponse.data', index=0,
+      name='data', full_name='api.v1.GetNewAssetProposalsResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1156,26 +1157,26 @@ _GETNEWASSETPROPOSALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2720,
-  serialized_end=2792,
+  serialized_start=2813,
+  serialized_end=2885,
 )
 
 
 _GETPROPOSALBYIDREQUEST = _descriptor.Descriptor(
   name='GetProposalByIDRequest',
-  full_name='api.GetProposalByIDRequest',
+  full_name='api.v1.GetProposalByIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='proposalID', full_name='api.GetProposalByIDRequest.proposalID', index=0,
+      name='proposal_id', full_name='api.v1.GetProposalByIDRequest.proposal_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='proposalID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='proposalId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1188,21 +1189,21 @@ _GETPROPOSALBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2794,
-  serialized_end=2858,
+  serialized_start=2887,
+  serialized_end=2952,
 )
 
 
 _GETPROPOSALBYIDRESPONSE = _descriptor.Descriptor(
   name='GetProposalByIDResponse',
-  full_name='api.GetProposalByIDResponse',
+  full_name='api.v1.GetProposalByIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetProposalByIDResponse.data', index=0,
+      name='data', full_name='api.v1.GetProposalByIDResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1220,21 +1221,21 @@ _GETPROPOSALBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2860,
-  serialized_end=2927,
+  serialized_start=2954,
+  serialized_end=3021,
 )
 
 
 _GETPROPOSALBYREFERENCEREQUEST = _descriptor.Descriptor(
   name='GetProposalByReferenceRequest',
-  full_name='api.GetProposalByReferenceRequest',
+  full_name='api.v1.GetProposalByReferenceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reference', full_name='api.GetProposalByReferenceRequest.reference', index=0,
+      name='reference', full_name='api.v1.GetProposalByReferenceRequest.reference', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1252,21 +1253,21 @@ _GETPROPOSALBYREFERENCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2929,
-  serialized_end=2998,
+  serialized_start=3023,
+  serialized_end=3092,
 )
 
 
 _GETPROPOSALBYREFERENCERESPONSE = _descriptor.Descriptor(
   name='GetProposalByReferenceResponse',
-  full_name='api.GetProposalByReferenceResponse',
+  full_name='api.v1.GetProposalByReferenceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='api.GetProposalByReferenceResponse.data', index=0,
+      name='data', full_name='api.v1.GetProposalByReferenceResponse.data', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1284,26 +1285,83 @@ _GETPROPOSALBYREFERENCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3000,
-  serialized_end=3074,
+  serialized_start=3094,
+  serialized_end=3168,
+)
+
+
+_OBSERVEGOVERNANCEREQUEST = _descriptor.Descriptor(
+  name='ObserveGovernanceRequest',
+  full_name='api.v1.ObserveGovernanceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3170,
+  serialized_end=3196,
+)
+
+
+_OBSERVEGOVERNANCERESPONSE = _descriptor.Descriptor(
+  name='ObserveGovernanceResponse',
+  full_name='api.v1.ObserveGovernanceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='data', full_name='api.v1.ObserveGovernanceResponse.data', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3198,
+  serialized_end=3267,
 )
 
 
 _OBSERVEPARTYPROPOSALSREQUEST = _descriptor.Descriptor(
   name='ObservePartyProposalsRequest',
-  full_name='api.ObservePartyProposalsRequest',
+  full_name='api.v1.ObservePartyProposalsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.ObservePartyProposalsRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.ObservePartyProposalsRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1316,26 +1374,58 @@ _OBSERVEPARTYPROPOSALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3076,
-  serialized_end=3140,
+  serialized_start=3269,
+  serialized_end=3334,
+)
+
+
+_OBSERVEPARTYPROPOSALSRESPONSE = _descriptor.Descriptor(
+  name='ObservePartyProposalsResponse',
+  full_name='api.v1.ObservePartyProposalsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='data', full_name='api.v1.ObservePartyProposalsResponse.data', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='data', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3336,
+  serialized_end=3409,
 )
 
 
 _OBSERVEPROPOSALVOTESREQUEST = _descriptor.Descriptor(
   name='ObserveProposalVotesRequest',
-  full_name='api.ObserveProposalVotesRequest',
+  full_name='api.v1.ObserveProposalVotesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='proposalID', full_name='api.ObserveProposalVotesRequest.proposalID', index=0,
+      name='proposal_id', full_name='api.v1.ObserveProposalVotesRequest.proposal_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='proposalID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='proposalId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1348,26 +1438,58 @@ _OBSERVEPROPOSALVOTESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3142,
-  serialized_end=3211,
+  serialized_start=3411,
+  serialized_end=3481,
+)
+
+
+_OBSERVEPROPOSALVOTESRESPONSE = _descriptor.Descriptor(
+  name='ObserveProposalVotesResponse',
+  full_name='api.v1.ObserveProposalVotesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='vote', full_name='api.v1.ObserveProposalVotesResponse.vote', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='vote', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3483,
+  serialized_end=3545,
 )
 
 
 _OBSERVEPARTYVOTESREQUEST = _descriptor.Descriptor(
   name='ObservePartyVotesRequest',
-  full_name='api.ObservePartyVotesRequest',
+  full_name='api.v1.ObservePartyVotesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.ObservePartyVotesRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.ObservePartyVotesRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1380,33 +1502,65 @@ _OBSERVEPARTYVOTESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3213,
-  serialized_end=3273,
+  serialized_start=3547,
+  serialized_end=3608,
+)
+
+
+_OBSERVEPARTYVOTESRESPONSE = _descriptor.Descriptor(
+  name='ObservePartyVotesResponse',
+  full_name='api.v1.ObservePartyVotesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='vote', full_name='api.v1.ObservePartyVotesResponse.vote', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='vote', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3610,
+  serialized_end=3669,
 )
 
 
 _MARGINLEVELSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='MarginLevelsSubscribeRequest',
-  full_name='api.MarginLevelsSubscribeRequest',
+  full_name='api.v1.MarginLevelsSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.MarginLevelsSubscribeRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.MarginLevelsSubscribeRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarginLevelsSubscribeRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.MarginLevelsSubscribeRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1419,33 +1573,65 @@ _MARGINLEVELSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3275,
-  serialized_end=3367,
+  serialized_start=3671,
+  serialized_end=3765,
+)
+
+
+_MARGINLEVELSSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='MarginLevelsSubscribeResponse',
+  full_name='api.v1.MarginLevelsSubscribeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='margin_levels', full_name='api.v1.MarginLevelsSubscribeResponse.margin_levels', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='marginLevels', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3767,
+  serialized_end=3855,
 )
 
 
 _MARGINLEVELSREQUEST = _descriptor.Descriptor(
   name='MarginLevelsRequest',
-  full_name='api.MarginLevelsRequest',
+  full_name='api.v1.MarginLevelsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.MarginLevelsRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.MarginLevelsRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarginLevelsRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.MarginLevelsRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1458,21 +1644,21 @@ _MARGINLEVELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3369,
-  serialized_end=3452,
+  serialized_start=3857,
+  serialized_end=3942,
 )
 
 
 _MARGINLEVELSRESPONSE = _descriptor.Descriptor(
   name='MarginLevelsResponse',
-  full_name='api.MarginLevelsResponse',
+  full_name='api.v1.MarginLevelsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marginLevels', full_name='api.MarginLevelsResponse.marginLevels', index=0,
+      name='margin_levels', full_name='api.v1.MarginLevelsResponse.margin_levels', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1490,26 +1676,26 @@ _MARGINLEVELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3454,
-  serialized_end=3532,
+  serialized_start=3944,
+  serialized_end=4023,
 )
 
 
 _MARKETSDATASUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='MarketsDataSubscribeRequest',
-  full_name='api.MarketsDataSubscribeRequest',
+  full_name='api.v1.MarketsDataSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketsDataSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketsDataSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1522,53 +1708,21 @@ _MARKETSDATASUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3534,
-  serialized_end=3591,
+  serialized_start=4025,
+  serialized_end=4083,
 )
 
 
-_MARKETDATABYIDREQUEST = _descriptor.Descriptor(
-  name='MarketDataByIDRequest',
-  full_name='api.MarketDataByIDRequest',
+_MARKETSDATASUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='MarketsDataSubscribeResponse',
+  full_name='api.v1.MarketsDataSubscribeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketDataByIDRequest.marketID', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3593,
-  serialized_end=3652,
-)
-
-
-_MARKETDATABYIDRESPONSE = _descriptor.Descriptor(
-  name='MarketDataByIDResponse',
-  full_name='api.MarketDataByIDResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='marketData', full_name='api.MarketDataByIDResponse.marketData', index=0,
+      name='market_data', full_name='api.v1.MarketsDataSubscribeResponse.market_data', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1586,21 +1740,110 @@ _MARKETDATABYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3654,
-  serialized_end=3728,
+  serialized_start=4085,
+  serialized_end=4166,
 )
 
 
-_MARKETSDATARESPONSE = _descriptor.Descriptor(
-  name='MarketsDataResponse',
-  full_name='api.MarketsDataResponse',
+_MARKETDATABYIDREQUEST = _descriptor.Descriptor(
+  name='MarketDataByIDRequest',
+  full_name='api.v1.MarketDataByIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketsData', full_name='api.MarketsDataResponse.marketsData', index=0,
+      name='market_id', full_name='api.v1.MarketDataByIDRequest.market_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4168,
+  serialized_end=4228,
+)
+
+
+_MARKETDATABYIDRESPONSE = _descriptor.Descriptor(
+  name='MarketDataByIDResponse',
+  full_name='api.v1.MarketDataByIDResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='market_data', full_name='api.v1.MarketDataByIDResponse.market_data', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='marketData', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4230,
+  serialized_end=4305,
+)
+
+
+_MARKETSDATAREQUEST = _descriptor.Descriptor(
+  name='MarketsDataRequest',
+  full_name='api.v1.MarketsDataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4307,
+  serialized_end=4327,
+)
+
+
+_MARKETSDATARESPONSE = _descriptor.Descriptor(
+  name='MarketsDataResponse',
+  full_name='api.v1.MarketsDataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='markets_data', full_name='api.v1.MarketsDataResponse.markets_data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1618,26 +1861,26 @@ _MARKETSDATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3730,
-  serialized_end=3803,
+  serialized_start=4329,
+  serialized_end=4403,
 )
 
 
 _LASTTRADEREQUEST = _descriptor.Descriptor(
   name='LastTradeRequest',
-  full_name='api.LastTradeRequest',
+  full_name='api.v1.LastTradeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.LastTradeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.LastTradeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1650,21 +1893,21 @@ _LASTTRADEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3805,
-  serialized_end=3859,
+  serialized_start=4405,
+  serialized_end=4460,
 )
 
 
 _LASTTRADERESPONSE = _descriptor.Descriptor(
   name='LastTradeResponse',
-  full_name='api.LastTradeResponse',
+  full_name='api.v1.LastTradeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trade', full_name='api.LastTradeResponse.trade', index=0,
+      name='trade', full_name='api.v1.LastTradeResponse.trade', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1682,26 +1925,26 @@ _LASTTRADERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3861,
-  serialized_end=3915,
+  serialized_start=4462,
+  serialized_end=4516,
 )
 
 
 _MARKETBYIDREQUEST = _descriptor.Descriptor(
   name='MarketByIDRequest',
-  full_name='api.MarketByIDRequest',
+  full_name='api.v1.MarketByIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketByIDRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketByIDRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1714,21 +1957,21 @@ _MARKETBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3917,
-  serialized_end=3972,
+  serialized_start=4518,
+  serialized_end=4574,
 )
 
 
 _MARKETBYIDRESPONSE = _descriptor.Descriptor(
   name='MarketByIDResponse',
-  full_name='api.MarketByIDResponse',
+  full_name='api.v1.MarketByIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='market', full_name='api.MarketByIDResponse.market', index=0,
+      name='market', full_name='api.v1.MarketByIDResponse.market', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1746,26 +1989,26 @@ _MARKETBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3974,
-  serialized_end=4032,
+  serialized_start=4576,
+  serialized_end=4634,
 )
 
 
 _PARTYBYIDREQUEST = _descriptor.Descriptor(
   name='PartyByIDRequest',
-  full_name='api.PartyByIDRequest',
+  full_name='api.v1.PartyByIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.PartyByIDRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.PartyByIDRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1778,21 +2021,21 @@ _PARTYBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4034,
-  serialized_end=4086,
+  serialized_start=4636,
+  serialized_end=4689,
 )
 
 
 _PARTYBYIDRESPONSE = _descriptor.Descriptor(
   name='PartyByIDResponse',
-  full_name='api.PartyByIDResponse',
+  full_name='api.v1.PartyByIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='party', full_name='api.PartyByIDResponse.party', index=0,
+      name='party', full_name='api.v1.PartyByIDResponse.party', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1810,21 +2053,46 @@ _PARTYBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4088,
-  serialized_end=4142,
+  serialized_start=4691,
+  serialized_end=4745,
+)
+
+
+_PARTIESREQUEST = _descriptor.Descriptor(
+  name='PartiesRequest',
+  full_name='api.v1.PartiesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4747,
+  serialized_end=4763,
 )
 
 
 _PARTIESRESPONSE = _descriptor.Descriptor(
   name='PartiesResponse',
-  full_name='api.PartiesResponse',
+  full_name='api.v1.PartiesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='parties', full_name='api.PartiesResponse.parties', index=0,
+      name='parties', full_name='api.v1.PartiesResponse.parties', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1842,35 +2110,35 @@ _PARTIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4144,
-  serialized_end=4200,
+  serialized_start=4765,
+  serialized_end=4821,
 )
 
 
 _TRADESBYPARTYREQUEST = _descriptor.Descriptor(
   name='TradesByPartyRequest',
-  full_name='api.TradesByPartyRequest',
+  full_name='api.v1.TradesByPartyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.TradesByPartyRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.TradesByPartyRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.TradesByPartyRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.TradesByPartyRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pagination', full_name='api.TradesByPartyRequest.pagination', index=2,
+      name='pagination', full_name='api.v1.TradesByPartyRequest.pagination', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1888,21 +2156,21 @@ _TRADESBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4202,
-  serialized_end=4327,
+  serialized_start=4824,
+  serialized_end=4954,
 )
 
 
 _TRADESBYPARTYRESPONSE = _descriptor.Descriptor(
   name='TradesByPartyResponse',
-  full_name='api.TradesByPartyResponse',
+  full_name='api.v1.TradesByPartyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trades', full_name='api.TradesByPartyResponse.trades', index=0,
+      name='trades', full_name='api.v1.TradesByPartyResponse.trades', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1920,26 +2188,26 @@ _TRADESBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4329,
-  serialized_end=4389,
+  serialized_start=4956,
+  serialized_end=5016,
 )
 
 
 _TRADESBYORDERREQUEST = _descriptor.Descriptor(
   name='TradesByOrderRequest',
-  full_name='api.TradesByOrderRequest',
+  full_name='api.v1.TradesByOrderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orderID', full_name='api.TradesByOrderRequest.orderID', index=0,
+      name='order_id', full_name='api.v1.TradesByOrderRequest.order_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='orderID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='orderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1952,21 +2220,21 @@ _TRADESBYORDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4391,
-  serialized_end=4439,
+  serialized_start=5018,
+  serialized_end=5067,
 )
 
 
 _TRADESBYORDERRESPONSE = _descriptor.Descriptor(
   name='TradesByOrderResponse',
-  full_name='api.TradesByOrderResponse',
+  full_name='api.v1.TradesByOrderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trades', full_name='api.TradesByOrderResponse.trades', index=0,
+      name='trades', full_name='api.v1.TradesByOrderResponse.trades', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1984,42 +2252,42 @@ _TRADESBYORDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4441,
-  serialized_end=4501,
+  serialized_start=5069,
+  serialized_end=5129,
 )
 
 
 _ACCOUNTSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='AccountsSubscribeRequest',
-  full_name='api.AccountsSubscribeRequest',
+  full_name='api.v1.AccountsSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.AccountsSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.AccountsSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.AccountsSubscribeRequest.partyID', index=1,
+      name='party_id', full_name='api.v1.AccountsSubscribeRequest.party_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='asset', full_name='api.AccountsSubscribeRequest.asset', index=2,
+      name='asset', full_name='api.v1.AccountsSubscribeRequest.asset', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='asset', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='api.AccountsSubscribeRequest.type', index=3,
+      name='type', full_name='api.v1.AccountsSubscribeRequest.type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2037,33 +2305,65 @@ _ACCOUNTSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4504,
-  serialized_end=4645,
+  serialized_start=5132,
+  serialized_end=5275,
+)
+
+
+_ACCOUNTSSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='AccountsSubscribeResponse',
+  full_name='api.v1.AccountsSubscribeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='account', full_name='api.v1.AccountsSubscribeResponse.account', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='account', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5277,
+  serialized_end=5345,
 )
 
 
 _ORDERSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='OrdersSubscribeRequest',
-  full_name='api.OrdersSubscribeRequest',
+  full_name='api.v1.OrdersSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.OrdersSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.OrdersSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.OrdersSubscribeRequest.partyID', index=1,
+      name='party_id', full_name='api.v1.OrdersSubscribeRequest.party_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2076,33 +2376,33 @@ _ORDERSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4647,
-  serialized_end=4725,
+  serialized_start=5347,
+  serialized_end=5427,
 )
 
 
 _TRADESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='TradesSubscribeRequest',
-  full_name='api.TradesSubscribeRequest',
+  full_name='api.v1.TradesSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.TradesSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.TradesSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.TradesSubscribeRequest.partyID', index=1,
+      name='party_id', full_name='api.v1.TradesSubscribeRequest.party_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2115,28 +2415,28 @@ _TRADESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4727,
-  serialized_end=4805,
+  serialized_start=5429,
+  serialized_end=5509,
 )
 
 
 _CANDLESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='CandlesSubscribeRequest',
-  full_name='api.CandlesSubscribeRequest',
+  full_name='api.v1.CandlesSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.CandlesSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.CandlesSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='interval', full_name='api.CandlesSubscribeRequest.interval', index=1,
+      name='interval', full_name='api.v1.CandlesSubscribeRequest.interval', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2154,26 +2454,58 @@ _CANDLESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4807,
-  serialized_end=4912,
+  serialized_start=5511,
+  serialized_end=5617,
+)
+
+
+_CANDLESSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='CandlesSubscribeResponse',
+  full_name='api.v1.CandlesSubscribeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='candle', full_name='api.v1.CandlesSubscribeResponse.candle', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='candle', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5619,
+  serialized_end=5683,
 )
 
 
 _MARKETDEPTHSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='MarketDepthSubscribeRequest',
-  full_name='api.MarketDepthSubscribeRequest',
+  full_name='api.v1.MarketDepthSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketDepthSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketDepthSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2186,26 +2518,58 @@ _MARKETDEPTHSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4914,
-  serialized_end=4979,
+  serialized_start=5685,
+  serialized_end=5751,
+)
+
+
+_MARKETDEPTHSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='MarketDepthSubscribeResponse',
+  full_name='api.v1.MarketDepthSubscribeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='market_depth', full_name='api.v1.MarketDepthSubscribeResponse.market_depth', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='marketDepth', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5753,
+  serialized_end=5837,
 )
 
 
 _MARKETDEPTHUPDATESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='MarketDepthUpdatesSubscribeRequest',
-  full_name='api.MarketDepthUpdatesSubscribeRequest',
+  full_name='api.v1.MarketDepthUpdatesSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketDepthUpdatesSubscribeRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketDepthUpdatesSubscribeRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2218,33 +2582,65 @@ _MARKETDEPTHUPDATESSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4981,
-  serialized_end=5053,
+  serialized_start=5839,
+  serialized_end=5912,
+)
+
+
+_MARKETDEPTHUPDATESSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='MarketDepthUpdatesSubscribeResponse',
+  full_name='api.v1.MarketDepthUpdatesSubscribeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='update', full_name='api.v1.MarketDepthUpdatesSubscribeResponse.update', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='update', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5914,
+  serialized_end=6000,
 )
 
 
 _POSITIONSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   name='PositionsSubscribeRequest',
-  full_name='api.PositionsSubscribeRequest',
+  full_name='api.v1.PositionsSubscribeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.PositionsSubscribeRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.PositionsSubscribeRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.PositionsSubscribeRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.PositionsSubscribeRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2257,28 +2653,60 @@ _POSITIONSSUBSCRIBEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5055,
-  serialized_end=5136,
+  serialized_start=6002,
+  serialized_end=6085,
+)
+
+
+_POSITIONSSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='PositionsSubscribeResponse',
+  full_name='api.v1.PositionsSubscribeResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='position', full_name='api.v1.PositionsSubscribeResponse.position', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='position', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6087,
+  serialized_end=6159,
 )
 
 
 _ORDERSBYMARKETREQUEST = _descriptor.Descriptor(
   name='OrdersByMarketRequest',
-  full_name='api.OrdersByMarketRequest',
+  full_name='api.v1.OrdersByMarketRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.OrdersByMarketRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.OrdersByMarketRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pagination', full_name='api.OrdersByMarketRequest.pagination', index=1,
+      name='pagination', full_name='api.v1.OrdersByMarketRequest.pagination', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2296,21 +2724,21 @@ _ORDERSBYMARKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5138,
-  serialized_end=5246,
+  serialized_start=6161,
+  serialized_end=6273,
 )
 
 
 _ORDERSBYMARKETRESPONSE = _descriptor.Descriptor(
   name='OrdersByMarketResponse',
-  full_name='api.OrdersByMarketResponse',
+  full_name='api.v1.OrdersByMarketResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orders', full_name='api.OrdersByMarketResponse.orders', index=0,
+      name='orders', full_name='api.v1.OrdersByMarketResponse.orders', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2328,28 +2756,28 @@ _ORDERSBYMARKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5248,
-  serialized_end=5309,
+  serialized_start=6275,
+  serialized_end=6336,
 )
 
 
 _ORDERSBYPARTYREQUEST = _descriptor.Descriptor(
   name='OrdersByPartyRequest',
-  full_name='api.OrdersByPartyRequest',
+  full_name='api.v1.OrdersByPartyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.OrdersByPartyRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.OrdersByPartyRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pagination', full_name='api.OrdersByPartyRequest.pagination', index=1,
+      name='pagination', full_name='api.v1.OrdersByPartyRequest.pagination', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2367,21 +2795,21 @@ _ORDERSBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5311,
-  serialized_end=5416,
+  serialized_start=6338,
+  serialized_end=6447,
 )
 
 
 _ORDERSBYPARTYRESPONSE = _descriptor.Descriptor(
   name='OrdersByPartyResponse',
-  full_name='api.OrdersByPartyResponse',
+  full_name='api.v1.OrdersByPartyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orders', full_name='api.OrdersByPartyResponse.orders', index=0,
+      name='orders', full_name='api.v1.OrdersByPartyResponse.orders', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2399,33 +2827,33 @@ _ORDERSBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5418,
-  serialized_end=5478,
+  serialized_start=6449,
+  serialized_end=6509,
 )
 
 
 _ORDERBYMARKETANDIDREQUEST = _descriptor.Descriptor(
-  name='OrderByMarketAndIdRequest',
-  full_name='api.OrderByMarketAndIdRequest',
+  name='OrderByMarketAndIDRequest',
+  full_name='api.v1.OrderByMarketAndIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.OrderByMarketAndIdRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.OrderByMarketAndIDRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderID', full_name='api.OrderByMarketAndIdRequest.orderID', index=1,
+      name='order_id', full_name='api.v1.OrderByMarketAndIDRequest.order_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='orderID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='orderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2438,21 +2866,21 @@ _ORDERBYMARKETANDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5480,
-  serialized_end=5577,
+  serialized_start=6511,
+  serialized_end=6610,
 )
 
 
 _ORDERBYMARKETANDIDRESPONSE = _descriptor.Descriptor(
-  name='OrderByMarketAndIdResponse',
-  full_name='api.OrderByMarketAndIdResponse',
+  name='OrderByMarketAndIDResponse',
+  full_name='api.v1.OrderByMarketAndIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='order', full_name='api.OrderByMarketAndIdResponse.order', index=0,
+      name='order', full_name='api.v1.OrderByMarketAndIDResponse.order', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2470,21 +2898,21 @@ _ORDERBYMARKETANDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5579,
-  serialized_end=5642,
+  serialized_start=6612,
+  serialized_end=6675,
 )
 
 
 _ORDERBYREFERENCEREQUEST = _descriptor.Descriptor(
   name='OrderByReferenceRequest',
-  full_name='api.OrderByReferenceRequest',
+  full_name='api.v1.OrderByReferenceRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reference', full_name='api.OrderByReferenceRequest.reference', index=0,
+      name='reference', full_name='api.v1.OrderByReferenceRequest.reference', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2502,21 +2930,21 @@ _ORDERBYREFERENCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5644,
-  serialized_end=5707,
+  serialized_start=6677,
+  serialized_end=6740,
 )
 
 
 _ORDERBYREFERENCERESPONSE = _descriptor.Descriptor(
   name='OrderByReferenceResponse',
-  full_name='api.OrderByReferenceResponse',
+  full_name='api.v1.OrderByReferenceResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='order', full_name='api.OrderByReferenceResponse.order', index=0,
+      name='order', full_name='api.v1.OrderByReferenceResponse.order', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2534,21 +2962,46 @@ _ORDERBYREFERENCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5709,
-  serialized_end=5770,
+  serialized_start=6742,
+  serialized_end=6803,
+)
+
+
+_MARKETSREQUEST = _descriptor.Descriptor(
+  name='MarketsRequest',
+  full_name='api.v1.MarketsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6805,
+  serialized_end=6821,
 )
 
 
 _MARKETSRESPONSE = _descriptor.Descriptor(
   name='MarketsResponse',
-  full_name='api.MarketsResponse',
+  full_name='api.v1.MarketsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='markets', full_name='api.MarketsResponse.markets', index=0,
+      name='markets', full_name='api.v1.MarketsResponse.markets', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2566,35 +3019,35 @@ _MARKETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5772,
-  serialized_end=5829,
+  serialized_start=6823,
+  serialized_end=6880,
 )
 
 
 _CANDLESREQUEST = _descriptor.Descriptor(
   name='CandlesRequest',
-  full_name='api.CandlesRequest',
+  full_name='api.v1.CandlesRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.CandlesRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.CandlesRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sinceTimestamp', full_name='api.CandlesRequest.sinceTimestamp', index=1,
+      name='since_timestamp', full_name='api.v1.CandlesRequest.since_timestamp', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\002\020\000', json_name='sinceTimestamp', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='interval', full_name='api.CandlesRequest.interval', index=2,
+      name='interval', full_name='api.v1.CandlesRequest.interval', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2612,21 +3065,21 @@ _CANDLESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5832,
-  serialized_end=5976,
+  serialized_start=6883,
+  serialized_end=7029,
 )
 
 
 _CANDLESRESPONSE = _descriptor.Descriptor(
   name='CandlesResponse',
-  full_name='api.CandlesResponse',
+  full_name='api.v1.CandlesResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='candles', full_name='api.CandlesResponse.candles', index=0,
+      name='candles', full_name='api.v1.CandlesResponse.candles', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2644,28 +3097,28 @@ _CANDLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5978,
-  serialized_end=6035,
+  serialized_start=7031,
+  serialized_end=7088,
 )
 
 
 _MARKETDEPTHREQUEST = _descriptor.Descriptor(
   name='MarketDepthRequest',
-  full_name='api.MarketDepthRequest',
+  full_name='api.v1.MarketDepthRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketDepthRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketDepthRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maxDepth', full_name='api.MarketDepthRequest.maxDepth', index=1,
+      name='max_depth', full_name='api.v1.MarketDepthRequest.max_depth', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2683,49 +3136,49 @@ _MARKETDEPTHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6037,
-  serialized_end=6121,
+  serialized_start=7090,
+  serialized_end=7176,
 )
 
 
 _MARKETDEPTHRESPONSE = _descriptor.Descriptor(
   name='MarketDepthResponse',
-  full_name='api.MarketDepthResponse',
+  full_name='api.v1.MarketDepthResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketDepthResponse.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketDepthResponse.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='buy', full_name='api.MarketDepthResponse.buy', index=1,
+      name='buy', full_name='api.v1.MarketDepthResponse.buy', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='buy', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sell', full_name='api.MarketDepthResponse.sell', index=2,
+      name='sell', full_name='api.v1.MarketDepthResponse.sell', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='sell', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastTrade', full_name='api.MarketDepthResponse.lastTrade', index=3,
+      name='last_trade', full_name='api.v1.MarketDepthResponse.last_trade', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='lastTrade', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sequenceNumber', full_name='api.MarketDepthResponse.sequenceNumber', index=4,
+      name='sequence_number', full_name='api.v1.MarketDepthResponse.sequence_number', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2743,28 +3196,28 @@ _MARKETDEPTHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6124,
-  serialized_end=6330,
+  serialized_start=7179,
+  serialized_end=7388,
 )
 
 
 _TRADESBYMARKETREQUEST = _descriptor.Descriptor(
   name='TradesByMarketRequest',
-  full_name='api.TradesByMarketRequest',
+  full_name='api.v1.TradesByMarketRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.TradesByMarketRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.TradesByMarketRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pagination', full_name='api.TradesByMarketRequest.pagination', index=1,
+      name='pagination', full_name='api.v1.TradesByMarketRequest.pagination', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2782,21 +3235,21 @@ _TRADESBYMARKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6332,
-  serialized_end=6440,
+  serialized_start=7390,
+  serialized_end=7502,
 )
 
 
 _TRADESBYMARKETRESPONSE = _descriptor.Descriptor(
   name='TradesByMarketResponse',
-  full_name='api.TradesByMarketResponse',
+  full_name='api.v1.TradesByMarketResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trades', full_name='api.TradesByMarketResponse.trades', index=0,
+      name='trades', full_name='api.v1.TradesByMarketResponse.trades', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2814,33 +3267,33 @@ _TRADESBYMARKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6442,
-  serialized_end=6503,
+  serialized_start=7504,
+  serialized_end=7565,
 )
 
 
 _POSITIONSBYPARTYREQUEST = _descriptor.Descriptor(
   name='PositionsByPartyRequest',
-  full_name='api.PositionsByPartyRequest',
+  full_name='api.v1.PositionsByPartyRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.PositionsByPartyRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.PositionsByPartyRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.PositionsByPartyRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.PositionsByPartyRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2853,21 +3306,21 @@ _POSITIONSBYPARTYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6505,
-  serialized_end=6592,
+  serialized_start=7567,
+  serialized_end=7656,
 )
 
 
 _POSITIONSBYPARTYRESPONSE = _descriptor.Descriptor(
   name='PositionsByPartyResponse',
-  full_name='api.PositionsByPartyResponse',
+  full_name='api.v1.PositionsByPartyResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='positions', full_name='api.PositionsByPartyResponse.positions', index=0,
+      name='positions', full_name='api.v1.PositionsByPartyResponse.positions', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2885,21 +3338,46 @@ _POSITIONSBYPARTYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6594,
-  serialized_end=6666,
+  serialized_start=7658,
+  serialized_end=7730,
 )
 
 
-_VEGATIMERESPONSE = _descriptor.Descriptor(
-  name='VegaTimeResponse',
-  full_name='api.VegaTimeResponse',
+_GETVEGATIMEREQUEST = _descriptor.Descriptor(
+  name='GetVegaTimeRequest',
+  full_name='api.v1.GetVegaTimeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7732,
+  serialized_end=7752,
+)
+
+
+_GETVEGATIMERESPONSE = _descriptor.Descriptor(
+  name='GetVegaTimeResponse',
+  full_name='api.v1.GetVegaTimeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='api.VegaTimeResponse.timestamp', index=0,
+      name='timestamp', full_name='api.v1.GetVegaTimeResponse.timestamp', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2917,35 +3395,35 @@ _VEGATIMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6668,
-  serialized_end=6716,
+  serialized_start=7754,
+  serialized_end=7805,
 )
 
 
 _PAGINATION = _descriptor.Descriptor(
   name='Pagination',
-  full_name='api.Pagination',
+  full_name='api.v1.Pagination',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='skip', full_name='api.Pagination.skip', index=0,
+      name='skip', full_name='api.v1.Pagination.skip', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='skip', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='api.Pagination.limit', index=1,
+      name='limit', full_name='api.v1.Pagination.limit', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='limit', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='descending', full_name='api.Pagination.descending', index=2,
+      name='descending', full_name='api.v1.Pagination.descending', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -2963,21 +3441,21 @@ _PAGINATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6718,
-  serialized_end=6804,
+  serialized_start=7807,
+  serialized_end=7893,
 )
 
 
-_ORDERSSTREAM = _descriptor.Descriptor(
-  name='OrdersStream',
-  full_name='api.OrdersStream',
+_ORDERSSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='OrdersSubscribeResponse',
+  full_name='api.v1.OrdersSubscribeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orders', full_name='api.OrdersStream.orders', index=0,
+      name='orders', full_name='api.v1.OrdersSubscribeResponse.orders', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2995,21 +3473,21 @@ _ORDERSSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6806,
-  serialized_end=6857,
+  serialized_start=7895,
+  serialized_end=7957,
 )
 
 
-_TRADESSTREAM = _descriptor.Descriptor(
-  name='TradesStream',
-  full_name='api.TradesStream',
+_TRADESSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='TradesSubscribeResponse',
+  full_name='api.v1.TradesSubscribeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trades', full_name='api.TradesStream.trades', index=0,
+      name='trades', full_name='api.v1.TradesSubscribeResponse.trades', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3027,42 +3505,99 @@ _TRADESSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6859,
-  serialized_end=6910,
+  serialized_start=7959,
+  serialized_end=8021,
 )
 
 
-_PARTYACCOUNTSREQUEST = _descriptor.Descriptor(
-  name='PartyAccountsRequest',
-  full_name='api.PartyAccountsRequest',
+_TRANSFERRESPONSESSUBSCRIBEREQUEST = _descriptor.Descriptor(
+  name='TransferResponsesSubscribeRequest',
+  full_name='api.v1.TransferResponsesSubscribeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8023,
+  serialized_end=8058,
+)
+
+
+_TRANSFERRESPONSESSUBSCRIBERESPONSE = _descriptor.Descriptor(
+  name='TransferResponsesSubscribeResponse',
+  full_name='api.v1.TransferResponsesSubscribeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.PartyAccountsRequest.partyID', index=0,
+      name='response', full_name='api.v1.TransferResponsesSubscribeResponse.response', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='response', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8060,
+  serialized_end=8148,
+)
+
+
+_PARTYACCOUNTSREQUEST = _descriptor.Descriptor(
+  name='PartyAccountsRequest',
+  full_name='api.v1.PartyAccountsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party_id', full_name='api.v1.PartyAccountsRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.PartyAccountsRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.PartyAccountsRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='api.PartyAccountsRequest.type', index=2,
+      name='type', full_name='api.v1.PartyAccountsRequest.type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='asset', full_name='api.PartyAccountsRequest.asset', index=3,
+      name='asset', full_name='api.v1.PartyAccountsRequest.asset', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3080,21 +3615,21 @@ _PARTYACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6913,
-  serialized_end=7050,
+  serialized_start=8151,
+  serialized_end=8290,
 )
 
 
 _PARTYACCOUNTSRESPONSE = _descriptor.Descriptor(
   name='PartyAccountsResponse',
-  full_name='api.PartyAccountsResponse',
+  full_name='api.v1.PartyAccountsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='accounts', full_name='api.PartyAccountsResponse.accounts', index=0,
+      name='accounts', full_name='api.v1.PartyAccountsResponse.accounts', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3112,28 +3647,28 @@ _PARTYACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7052,
-  serialized_end=7118,
+  serialized_start=8292,
+  serialized_end=8358,
 )
 
 
 _MARKETACCOUNTSREQUEST = _descriptor.Descriptor(
   name='MarketAccountsRequest',
-  full_name='api.MarketAccountsRequest',
+  full_name='api.v1.MarketAccountsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.MarketAccountsRequest.marketID', index=0,
+      name='market_id', full_name='api.v1.MarketAccountsRequest.market_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='asset', full_name='api.MarketAccountsRequest.asset', index=1,
+      name='asset', full_name='api.v1.MarketAccountsRequest.asset', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3151,21 +3686,21 @@ _MARKETACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7120,
-  serialized_end=7193,
+  serialized_start=8360,
+  serialized_end=8434,
 )
 
 
 _MARKETACCOUNTSRESPONSE = _descriptor.Descriptor(
   name='MarketAccountsResponse',
-  full_name='api.MarketAccountsResponse',
+  full_name='api.v1.MarketAccountsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='accounts', full_name='api.MarketAccountsResponse.accounts', index=0,
+      name='accounts', full_name='api.v1.MarketAccountsResponse.accounts', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3183,21 +3718,21 @@ _MARKETACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7195,
-  serialized_end=7262,
+  serialized_start=8436,
+  serialized_end=8503,
 )
 
 
 _FEEINFRASTRUCTUREACCOUNTSREQUEST = _descriptor.Descriptor(
   name='FeeInfrastructureAccountsRequest',
-  full_name='api.FeeInfrastructureAccountsRequest',
+  full_name='api.v1.FeeInfrastructureAccountsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='asset', full_name='api.FeeInfrastructureAccountsRequest.asset', index=0,
+      name='asset', full_name='api.v1.FeeInfrastructureAccountsRequest.asset', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -3215,21 +3750,21 @@ _FEEINFRASTRUCTUREACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7264,
-  serialized_end=7320,
+  serialized_start=8505,
+  serialized_end=8561,
 )
 
 
 _FEEINFRASTRUCTUREACCOUNTSRESPONSE = _descriptor.Descriptor(
   name='FeeInfrastructureAccountsResponse',
-  full_name='api.FeeInfrastructureAccountsResponse',
+  full_name='api.v1.FeeInfrastructureAccountsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='accounts', full_name='api.FeeInfrastructureAccountsResponse.accounts', index=0,
+      name='accounts', full_name='api.v1.FeeInfrastructureAccountsResponse.accounts', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3247,35 +3782,35 @@ _FEEINFRASTRUCTUREACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7322,
-  serialized_end=7400,
+  serialized_start=8563,
+  serialized_end=8641,
 )
 
 
 _PREPAREPROPOSALREQUEST = _descriptor.Descriptor(
   name='PrepareProposalRequest',
-  full_name='api.PrepareProposalRequest',
+  full_name='api.v1.PrepareProposalRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.PrepareProposalRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.PrepareProposalRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reference', full_name='api.PrepareProposalRequest.reference', index=1,
+      name='reference', full_name='api.v1.PrepareProposalRequest.reference', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='reference', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='proposal', full_name='api.PrepareProposalRequest.proposal', index=2,
+      name='proposal', full_name='api.v1.PrepareProposalRequest.proposal', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3293,28 +3828,28 @@ _PREPAREPROPOSALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7403,
-  serialized_end=7548,
+  serialized_start=8644,
+  serialized_end=8790,
 )
 
 
 _PREPAREPROPOSALRESPONSE = _descriptor.Descriptor(
   name='PrepareProposalResponse',
-  full_name='api.PrepareProposalResponse',
+  full_name='api.v1.PrepareProposalResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareProposalResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareProposalResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='blob', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pendingProposal', full_name='api.PrepareProposalResponse.pendingProposal', index=1,
+      name='pending_proposal', full_name='api.v1.PrepareProposalResponse.pending_proposal', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3332,21 +3867,21 @@ _PREPAREPROPOSALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7550,
-  serialized_end=7653,
+  serialized_start=8792,
+  serialized_end=8896,
 )
 
 
 _PREPAREVOTEREQUEST = _descriptor.Descriptor(
   name='PrepareVoteRequest',
-  full_name='api.PrepareVoteRequest',
+  full_name='api.v1.PrepareVoteRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='vote', full_name='api.PrepareVoteRequest.vote', index=0,
+      name='vote', full_name='api.v1.PrepareVoteRequest.vote', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3364,28 +3899,28 @@ _PREPAREVOTEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7655,
-  serialized_end=7715,
+  serialized_start=8898,
+  serialized_end=8958,
 )
 
 
 _PREPAREVOTERESPONSE = _descriptor.Descriptor(
   name='PrepareVoteResponse',
-  full_name='api.PrepareVoteResponse',
+  full_name='api.v1.PrepareVoteResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareVoteResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareVoteResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='blob', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='vote', full_name='api.PrepareVoteResponse.vote', index=1,
+      name='vote', full_name='api.v1.PrepareVoteResponse.vote', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3403,21 +3938,21 @@ _PREPAREVOTERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7717,
-  serialized_end=7790,
+  serialized_start=8960,
+  serialized_end=9033,
 )
 
 
 _PREPARELIQUIDITYPROVISIONREQUEST = _descriptor.Descriptor(
   name='PrepareLiquidityProvisionRequest',
-  full_name='api.PrepareLiquidityProvisionRequest',
+  full_name='api.v1.PrepareLiquidityProvisionRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='submission', full_name='api.PrepareLiquidityProvisionRequest.submission', index=0,
+      name='submission', full_name='api.v1.PrepareLiquidityProvisionRequest.submission', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3435,21 +3970,21 @@ _PREPARELIQUIDITYPROVISIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7792,
-  serialized_end=7902,
+  serialized_start=9035,
+  serialized_end=9145,
 )
 
 
 _PREPARELIQUIDITYPROVISIONRESPONSE = _descriptor.Descriptor(
   name='PrepareLiquidityProvisionResponse',
-  full_name='api.PrepareLiquidityProvisionResponse',
+  full_name='api.v1.PrepareLiquidityProvisionResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='blob', full_name='api.PrepareLiquidityProvisionResponse.blob', index=0,
+      name='blob', full_name='api.v1.PrepareLiquidityProvisionResponse.blob', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -3467,28 +4002,28 @@ _PREPARELIQUIDITYPROVISIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7904,
-  serialized_end=7959,
+  serialized_start=9147,
+  serialized_end=9202,
 )
 
 
 _ORDERBYIDREQUEST = _descriptor.Descriptor(
   name='OrderByIDRequest',
-  full_name='api.OrderByIDRequest',
+  full_name='api.v1.OrderByIDRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orderID', full_name='api.OrderByIDRequest.orderID', index=0,
+      name='order_id', full_name='api.v1.OrderByIDRequest.order_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002 \001', json_name='orderID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002 \001', json_name='orderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='api.OrderByIDRequest.version', index=1,
+      name='version', full_name='api.v1.OrderByIDRequest.version', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -3506,28 +4041,60 @@ _ORDERBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7961,
-  serialized_end=8039,
+  serialized_start=9204,
+  serialized_end=9283,
 )
 
 
-_ORDERVERSIONSBYIDREQUEST = _descriptor.Descriptor(
-  name='OrderVersionsByIDRequest',
-  full_name='api.OrderVersionsByIDRequest',
+_ORDERBYIDRESPONSE = _descriptor.Descriptor(
+  name='OrderByIDResponse',
+  full_name='api.v1.OrderByIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orderID', full_name='api.OrderVersionsByIDRequest.orderID', index=0,
+      name='order', full_name='api.v1.OrderByIDResponse.order', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='order', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9285,
+  serialized_end=9339,
+)
+
+
+_ORDERVERSIONSBYIDREQUEST = _descriptor.Descriptor(
+  name='OrderVersionsByIDRequest',
+  full_name='api.v1.OrderVersionsByIDRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='order_id', full_name='api.v1.OrderVersionsByIDRequest.order_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002 \001', json_name='orderID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002 \001', json_name='orderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pagination', full_name='api.OrderVersionsByIDRequest.pagination', index=1,
+      name='pagination', full_name='api.v1.OrderVersionsByIDRequest.pagination', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3545,21 +4112,21 @@ _ORDERVERSIONSBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8041,
-  serialized_end=8150,
+  serialized_start=9341,
+  serialized_end=9454,
 )
 
 
-_ORDERVERSIONSRESPONSE = _descriptor.Descriptor(
-  name='OrderVersionsResponse',
-  full_name='api.OrderVersionsResponse',
+_ORDERVERSIONSBYIDRESPONSE = _descriptor.Descriptor(
+  name='OrderVersionsByIDResponse',
+  full_name='api.v1.OrderVersionsByIDResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orders', full_name='api.OrderVersionsResponse.orders', index=0,
+      name='orders', full_name='api.v1.OrderVersionsByIDResponse.orders', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3577,21 +4144,21 @@ _ORDERVERSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8152,
-  serialized_end=8212,
+  serialized_start=9456,
+  serialized_end=9520,
 )
 
 
 _ESTIMATEFEEREQUEST = _descriptor.Descriptor(
   name='EstimateFeeRequest',
-  full_name='api.EstimateFeeRequest',
+  full_name='api.v1.EstimateFeeRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='order', full_name='api.EstimateFeeRequest.order', index=0,
+      name='order', full_name='api.v1.EstimateFeeRequest.order', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3609,21 +4176,21 @@ _ESTIMATEFEEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8214,
-  serialized_end=8269,
+  serialized_start=9522,
+  serialized_end=9577,
 )
 
 
 _ESTIMATEFEERESPONSE = _descriptor.Descriptor(
   name='EstimateFeeResponse',
-  full_name='api.EstimateFeeResponse',
+  full_name='api.v1.EstimateFeeResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='fee', full_name='api.EstimateFeeResponse.fee', index=0,
+      name='fee', full_name='api.v1.EstimateFeeResponse.fee', index=0,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3641,21 +4208,21 @@ _ESTIMATEFEERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8271,
-  serialized_end=8321,
+  serialized_start=9579,
+  serialized_end=9629,
 )
 
 
 _ESTIMATEMARGINREQUEST = _descriptor.Descriptor(
   name='EstimateMarginRequest',
-  full_name='api.EstimateMarginRequest',
+  full_name='api.v1.EstimateMarginRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='order', full_name='api.EstimateMarginRequest.order', index=0,
+      name='order', full_name='api.v1.EstimateMarginRequest.order', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3673,21 +4240,21 @@ _ESTIMATEMARGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8323,
-  serialized_end=8381,
+  serialized_start=9631,
+  serialized_end=9689,
 )
 
 
 _ESTIMATEMARGINRESPONSE = _descriptor.Descriptor(
   name='EstimateMarginResponse',
-  full_name='api.EstimateMarginResponse',
+  full_name='api.v1.EstimateMarginResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marginLevels', full_name='api.EstimateMarginResponse.marginLevels', index=0,
+      name='margin_levels', full_name='api.v1.EstimateMarginResponse.margin_levels', index=0,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3705,42 +4272,42 @@ _ESTIMATEMARGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8383,
-  serialized_end=8463,
+  serialized_start=9691,
+  serialized_end=9772,
 )
 
 
-_OBSERVEEVENTSREQUEST = _descriptor.Descriptor(
-  name='ObserveEventsRequest',
-  full_name='api.ObserveEventsRequest',
+_OBSERVEEVENTBUSREQUEST = _descriptor.Descriptor(
+  name='ObserveEventBusRequest',
+  full_name='api.v1.ObserveEventBusRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='api.ObserveEventsRequest.type', index=0,
+      name='type', full_name='api.v1.ObserveEventBusRequest.type', index=0,
       number=1, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketID', full_name='api.ObserveEventsRequest.marketID', index=1,
+      name='market_id', full_name='api.v1.ObserveEventBusRequest.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='marketID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.ObserveEventsRequest.partyID', index=2,
+      name='party_id', full_name='api.v1.ObserveEventBusRequest.party_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='batchSize', full_name='api.ObserveEventsRequest.batchSize', index=3,
+      name='batch_size', full_name='api.v1.ObserveEventBusRequest.batch_size', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -3758,21 +4325,21 @@ _OBSERVEEVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8466,
-  serialized_end=8612,
+  serialized_start=9775,
+  serialized_end=9926,
 )
 
 
-_OBSERVEEVENTSRESPONSE = _descriptor.Descriptor(
-  name='ObserveEventsResponse',
-  full_name='api.ObserveEventsResponse',
+_OBSERVEEVENTBUSRESPONSE = _descriptor.Descriptor(
+  name='ObserveEventBusResponse',
+  full_name='api.v1.ObserveEventBusResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='events', full_name='api.ObserveEventsResponse.events', index=0,
+      name='events', full_name='api.v1.ObserveEventBusResponse.events', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3790,26 +4357,19 @@ _OBSERVEEVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8614,
-  serialized_end=8677,
+  serialized_start=9928,
+  serialized_end=9993,
 )
 
 
-_WITHDRAWALSREQUEST = _descriptor.Descriptor(
-  name='WithdrawalsRequest',
-  full_name='api.WithdrawalsRequest',
+_STATISTICSREQUEST = _descriptor.Descriptor(
+  name='StatisticsRequest',
+  full_name='api.v1.StatisticsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
-    _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.WithdrawalsRequest.partyID', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3822,21 +4382,85 @@ _WITHDRAWALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8679,
-  serialized_end=8733,
+  serialized_start=9995,
+  serialized_end=10014,
 )
 
 
-_WITHDRAWALSRESPONSE = _descriptor.Descriptor(
-  name='WithdrawalsResponse',
-  full_name='api.WithdrawalsResponse',
+_STATISTICSRESPONSE = _descriptor.Descriptor(
+  name='StatisticsResponse',
+  full_name='api.v1.StatisticsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='withdrawals', full_name='api.WithdrawalsResponse.withdrawals', index=0,
+      name='statistics', full_name='api.v1.StatisticsResponse.statistics', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='statistics', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10016,
+  serialized_end=10086,
+)
+
+
+_WITHDRAWALSREQUEST = _descriptor.Descriptor(
+  name='WithdrawalsRequest',
+  full_name='api.v1.WithdrawalsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party_id', full_name='api.v1.WithdrawalsRequest.party_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10088,
+  serialized_end=10143,
+)
+
+
+_WITHDRAWALSRESPONSE = _descriptor.Descriptor(
+  name='WithdrawalsResponse',
+  full_name='api.v1.WithdrawalsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='withdrawals', full_name='api.v1.WithdrawalsResponse.withdrawals', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3854,26 +4478,26 @@ _WITHDRAWALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8735,
-  serialized_end=8808,
+  serialized_start=10145,
+  serialized_end=10218,
 )
 
 
 _WITHDRAWALREQUEST = _descriptor.Descriptor(
   name='WithdrawalRequest',
-  full_name='api.WithdrawalRequest',
+  full_name='api.v1.WithdrawalRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='api.WithdrawalRequest.ID', index=0,
+      name='id', full_name='api.v1.WithdrawalRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3886,21 +4510,21 @@ _WITHDRAWALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8810,
-  serialized_end=8853,
+  serialized_start=10220,
+  serialized_end=10263,
 )
 
 
 _WITHDRAWALRESPONSE = _descriptor.Descriptor(
   name='WithdrawalResponse',
-  full_name='api.WithdrawalResponse',
+  full_name='api.v1.WithdrawalResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='withdrawal', full_name='api.WithdrawalResponse.withdrawal', index=0,
+      name='withdrawal', full_name='api.v1.WithdrawalResponse.withdrawal', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3918,26 +4542,26 @@ _WITHDRAWALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8855,
-  serialized_end=8925,
+  serialized_start=10265,
+  serialized_end=10335,
 )
 
 
 _ERC20WITHDRAWALAPPROVALREQUEST = _descriptor.Descriptor(
   name='ERC20WithdrawalApprovalRequest',
-  full_name='api.ERC20WithdrawalApprovalRequest',
+  full_name='api.v1.ERC20WithdrawalApprovalRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='withdrawalID', full_name='api.ERC20WithdrawalApprovalRequest.withdrawalID', index=0,
+      name='withdrawal_id', full_name='api.v1.ERC20WithdrawalApprovalRequest.withdrawal_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='withdrawalID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='withdrawalId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3950,49 +4574,49 @@ _ERC20WITHDRAWALAPPROVALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8927,
-  serialized_end=9003,
+  serialized_start=10337,
+  serialized_end=10414,
 )
 
 
 _ERC20WITHDRAWALAPPROVALRESPONSE = _descriptor.Descriptor(
   name='ERC20WithdrawalApprovalResponse',
-  full_name='api.ERC20WithdrawalApprovalResponse',
+  full_name='api.v1.ERC20WithdrawalApprovalResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='assetSource', full_name='api.ERC20WithdrawalApprovalResponse.assetSource', index=0,
+      name='asset_source', full_name='api.v1.ERC20WithdrawalApprovalResponse.asset_source', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='assetSource', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='amount', full_name='api.ERC20WithdrawalApprovalResponse.amount', index=1,
+      name='amount', full_name='api.v1.ERC20WithdrawalApprovalResponse.amount', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='expiry', full_name='api.ERC20WithdrawalApprovalResponse.expiry', index=2,
+      name='expiry', full_name='api.v1.ERC20WithdrawalApprovalResponse.expiry', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='expiry', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nonce', full_name='api.ERC20WithdrawalApprovalResponse.nonce', index=3,
+      name='nonce', full_name='api.v1.ERC20WithdrawalApprovalResponse.nonce', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='nonce', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='signatures', full_name='api.ERC20WithdrawalApprovalResponse.signatures', index=4,
+      name='signatures', full_name='api.v1.ERC20WithdrawalApprovalResponse.signatures', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -4010,26 +4634,26 @@ _ERC20WITHDRAWALAPPROVALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9006,
-  serialized_end=9175,
+  serialized_start=10417,
+  serialized_end=10587,
 )
 
 
 _DEPOSITSREQUEST = _descriptor.Descriptor(
   name='DepositsRequest',
-  full_name='api.DepositsRequest',
+  full_name='api.v1.DepositsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='partyID', full_name='api.DepositsRequest.partyID', index=0,
+      name='party_id', full_name='api.v1.DepositsRequest.party_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -4042,21 +4666,21 @@ _DEPOSITSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9177,
-  serialized_end=9228,
+  serialized_start=10589,
+  serialized_end=10641,
 )
 
 
 _DEPOSITSRESPONSE = _descriptor.Descriptor(
   name='DepositsResponse',
-  full_name='api.DepositsResponse',
+  full_name='api.v1.DepositsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='deposits', full_name='api.DepositsResponse.deposits', index=0,
+      name='deposits', full_name='api.v1.DepositsResponse.deposits', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -4074,26 +4698,26 @@ _DEPOSITSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9230,
-  serialized_end=9291,
+  serialized_start=10643,
+  serialized_end=10704,
 )
 
 
 _DEPOSITREQUEST = _descriptor.Descriptor(
   name='DepositRequest',
-  full_name='api.DepositRequest',
+  full_name='api.v1.DepositRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='api.DepositRequest.ID', index=0,
+      name='id', full_name='api.v1.DepositRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\002X\001', json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -4106,21 +4730,21 @@ _DEPOSITREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9293,
-  serialized_end=9333,
+  serialized_start=10706,
+  serialized_end=10746,
 )
 
 
 _DEPOSITRESPONSE = _descriptor.Descriptor(
   name='DepositResponse',
-  full_name='api.DepositResponse',
+  full_name='api.v1.DepositResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='deposit', full_name='api.DepositResponse.deposit', index=0,
+      name='deposit', full_name='api.v1.DepositResponse.deposit', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -4138,14 +4762,14 @@ _DEPOSITRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9335,
-  serialized_end=9393,
+  serialized_start=10748,
+  serialized_end=10806,
 )
 
 
 _NETWORKPARAMETERSREQUEST = _descriptor.Descriptor(
   name='NetworkParametersRequest',
-  full_name='api.NetworkParametersRequest',
+  full_name='api.v1.NetworkParametersRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -4163,21 +4787,21 @@ _NETWORKPARAMETERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9395,
-  serialized_end=9421,
+  serialized_start=10808,
+  serialized_end=10834,
 )
 
 
 _NETWORKPARAMETERSRESPONSE = _descriptor.Descriptor(
   name='NetworkParametersResponse',
-  full_name='api.NetworkParametersResponse',
+  full_name='api.v1.NetworkParametersResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='networkParameters', full_name='api.NetworkParametersResponse.networkParameters', index=0,
+      name='network_parameters', full_name='api.v1.NetworkParametersResponse.network_parameters', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -4195,28 +4819,28 @@ _NETWORKPARAMETERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9423,
-  serialized_end=9520,
+  serialized_start=10836,
+  serialized_end=10934,
 )
 
 
 _LIQUIDITYPROVISIONSREQUEST = _descriptor.Descriptor(
   name='LiquidityProvisionsRequest',
-  full_name='api.LiquidityProvisionsRequest',
+  full_name='api.v1.LiquidityProvisionsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='market', full_name='api.LiquidityProvisionsRequest.market', index=0,
+      name='market', full_name='api.v1.LiquidityProvisionsRequest.market', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='market', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='party', full_name='api.LiquidityProvisionsRequest.party', index=1,
+      name='party', full_name='api.v1.LiquidityProvisionsRequest.party', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -4234,21 +4858,21 @@ _LIQUIDITYPROVISIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9522,
-  serialized_end=9596,
+  serialized_start=10936,
+  serialized_end=11010,
 )
 
 
 _LIQUIDITYPROVISIONSRESPONSE = _descriptor.Descriptor(
   name='LiquidityProvisionsResponse',
-  full_name='api.LiquidityProvisionsResponse',
+  full_name='api.v1.LiquidityProvisionsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='liquidityProvisions', full_name='api.LiquidityProvisionsResponse.liquidityProvisions', index=0,
+      name='liquidity_provisions', full_name='api.v1.LiquidityProvisionsResponse.liquidity_provisions', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -4266,8 +4890,193 @@ _LIQUIDITYPROVISIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9598,
-  serialized_end=9703,
+  serialized_start=11012,
+  serialized_end=11118,
+)
+
+
+_ORACLESPECREQUEST = _descriptor.Descriptor(
+  name='OracleSpecRequest',
+  full_name='api.v1.OracleSpecRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='api.v1.OracleSpecRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\002X\001', json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11120,
+  serialized_end=11163,
+)
+
+
+_ORACLESPECRESPONSE = _descriptor.Descriptor(
+  name='OracleSpecResponse',
+  full_name='api.v1.OracleSpecResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='oracle_spec', full_name='api.v1.OracleSpecResponse.oracle_spec', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='oracleSpec', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11165,
+  serialized_end=11242,
+)
+
+
+_ORACLESPECSREQUEST = _descriptor.Descriptor(
+  name='OracleSpecsRequest',
+  full_name='api.v1.OracleSpecsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11244,
+  serialized_end=11264,
+)
+
+
+_ORACLESPECSRESPONSE = _descriptor.Descriptor(
+  name='OracleSpecsResponse',
+  full_name='api.v1.OracleSpecsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='oracle_specs', full_name='api.v1.OracleSpecsResponse.oracle_specs', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='oracleSpecs', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11266,
+  serialized_end=11346,
+)
+
+
+_ORACLEDATABYSPECREQUEST = _descriptor.Descriptor(
+  name='OracleDataBySpecRequest',
+  full_name='api.v1.OracleDataBySpecRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='api.v1.OracleDataBySpecRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\002X\001', json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11348,
+  serialized_end=11397,
+)
+
+
+_ORACLEDATABYSPECRESPONSE = _descriptor.Descriptor(
+  name='OracleDataBySpecResponse',
+  full_name='api.v1.OracleDataBySpecResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='oracle_data', full_name='api.v1.OracleDataBySpecResponse.oracle_data', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='oracleData', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11399,
+  serialized_end=11482,
 )
 
 _PROPAGATECHAINEVENTREQUEST.fields_by_name['evt'].message_type = chain__events__pb2._CHAINEVENT
@@ -4275,31 +5084,37 @@ _SUBMITTRANSACTIONREQUEST.fields_by_name['tx'].message_type = vega__pb2._SIGNEDB
 _SUBMITTRANSACTIONREQUEST.fields_by_name['type'].enum_type = _SUBMITTRANSACTIONREQUEST_TYPE
 _SUBMITTRANSACTIONREQUEST_TYPE.containing_type = _SUBMITTRANSACTIONREQUEST
 _PREPAREWITHDRAWREQUEST.fields_by_name['withdraw'].message_type = vega__pb2._WITHDRAWSUBMISSION
-_SUBMITORDERREQUEST.fields_by_name['submission'].message_type = vega__pb2._ORDERSUBMISSION
-_CANCELORDERREQUEST.fields_by_name['cancellation'].message_type = vega__pb2._ORDERCANCELLATION
-_AMENDORDERREQUEST.fields_by_name['amendment'].message_type = vega__pb2._ORDERAMENDMENT
+_PREPARESUBMITORDERREQUEST.fields_by_name['submission'].message_type = vega__pb2._ORDERSUBMISSION
+_PREPARECANCELORDERREQUEST.fields_by_name['cancellation'].message_type = vega__pb2._ORDERCANCELLATION
+_PREPAREAMENDORDERREQUEST.fields_by_name['amendment'].message_type = vega__pb2._ORDERAMENDMENT
 _ASSETSRESPONSE.fields_by_name['assets'].message_type = assets__pb2._ASSET
 _ASSETBYIDRESPONSE.fields_by_name['asset'].message_type = assets__pb2._ASSET
 _GETNODESIGNATURESAGGREGATERESPONSE.fields_by_name['signatures'].message_type = vega__pb2._NODESIGNATURE
 _OPTIONALPROPOSALSTATE.fields_by_name['value'].enum_type = governance__pb2._PROPOSAL_STATE
-_GETPROPOSALSREQUEST.fields_by_name['selectInState'].message_type = _OPTIONALPROPOSALSTATE
+_GETPROPOSALSREQUEST.fields_by_name['select_in_state'].message_type = _OPTIONALPROPOSALSTATE
 _GETPROPOSALSRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
-_GETPROPOSALSBYPARTYREQUEST.fields_by_name['selectInState'].message_type = _OPTIONALPROPOSALSTATE
+_GETPROPOSALSBYPARTYREQUEST.fields_by_name['select_in_state'].message_type = _OPTIONALPROPOSALSTATE
 _GETPROPOSALSBYPARTYRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
 _GETVOTESBYPARTYRESPONSE.fields_by_name['votes'].message_type = governance__pb2._VOTE
-_GETNEWMARKETPROPOSALSREQUEST.fields_by_name['selectInState'].message_type = _OPTIONALPROPOSALSTATE
+_GETNEWMARKETPROPOSALSREQUEST.fields_by_name['select_in_state'].message_type = _OPTIONALPROPOSALSTATE
 _GETNEWMARKETPROPOSALSRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
-_GETUPDATEMARKETPROPOSALSREQUEST.fields_by_name['selectInState'].message_type = _OPTIONALPROPOSALSTATE
+_GETUPDATEMARKETPROPOSALSREQUEST.fields_by_name['select_in_state'].message_type = _OPTIONALPROPOSALSTATE
 _GETUPDATEMARKETPROPOSALSRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
-_GETNETWORKPARAMETERSPROPOSALSREQUEST.fields_by_name['selectInState'].message_type = _OPTIONALPROPOSALSTATE
+_GETNETWORKPARAMETERSPROPOSALSREQUEST.fields_by_name['select_in_state'].message_type = _OPTIONALPROPOSALSTATE
 _GETNETWORKPARAMETERSPROPOSALSRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
-_GETNEWASSETPROPOSALSREQUEST.fields_by_name['selectInState'].message_type = _OPTIONALPROPOSALSTATE
+_GETNEWASSETPROPOSALSREQUEST.fields_by_name['select_in_state'].message_type = _OPTIONALPROPOSALSTATE
 _GETNEWASSETPROPOSALSRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
 _GETPROPOSALBYIDRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
 _GETPROPOSALBYREFERENCERESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
-_MARGINLEVELSRESPONSE.fields_by_name['marginLevels'].message_type = vega__pb2._MARGINLEVELS
-_MARKETDATABYIDRESPONSE.fields_by_name['marketData'].message_type = vega__pb2._MARKETDATA
-_MARKETSDATARESPONSE.fields_by_name['marketsData'].message_type = vega__pb2._MARKETDATA
+_OBSERVEGOVERNANCERESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
+_OBSERVEPARTYPROPOSALSRESPONSE.fields_by_name['data'].message_type = governance__pb2._GOVERNANCEDATA
+_OBSERVEPROPOSALVOTESRESPONSE.fields_by_name['vote'].message_type = governance__pb2._VOTE
+_OBSERVEPARTYVOTESRESPONSE.fields_by_name['vote'].message_type = governance__pb2._VOTE
+_MARGINLEVELSSUBSCRIBERESPONSE.fields_by_name['margin_levels'].message_type = vega__pb2._MARGINLEVELS
+_MARGINLEVELSRESPONSE.fields_by_name['margin_levels'].message_type = vega__pb2._MARGINLEVELS
+_MARKETSDATASUBSCRIBERESPONSE.fields_by_name['market_data'].message_type = vega__pb2._MARKETDATA
+_MARKETDATABYIDRESPONSE.fields_by_name['market_data'].message_type = vega__pb2._MARKETDATA
+_MARKETSDATARESPONSE.fields_by_name['markets_data'].message_type = vega__pb2._MARKETDATA
 _LASTTRADERESPONSE.fields_by_name['trade'].message_type = vega__pb2._TRADE
 _MARKETBYIDRESPONSE.fields_by_name['market'].message_type = markets__pb2._MARKET
 _PARTYBYIDRESPONSE.fields_by_name['party'].message_type = vega__pb2._PARTY
@@ -4308,7 +5123,12 @@ _TRADESBYPARTYREQUEST.fields_by_name['pagination'].message_type = _PAGINATION
 _TRADESBYPARTYRESPONSE.fields_by_name['trades'].message_type = vega__pb2._TRADE
 _TRADESBYORDERRESPONSE.fields_by_name['trades'].message_type = vega__pb2._TRADE
 _ACCOUNTSSUBSCRIBEREQUEST.fields_by_name['type'].enum_type = vega__pb2._ACCOUNTTYPE
+_ACCOUNTSSUBSCRIBERESPONSE.fields_by_name['account'].message_type = vega__pb2._ACCOUNT
 _CANDLESSUBSCRIBEREQUEST.fields_by_name['interval'].enum_type = vega__pb2._INTERVAL
+_CANDLESSUBSCRIBERESPONSE.fields_by_name['candle'].message_type = vega__pb2._CANDLE
+_MARKETDEPTHSUBSCRIBERESPONSE.fields_by_name['market_depth'].message_type = vega__pb2._MARKETDEPTH
+_MARKETDEPTHUPDATESSUBSCRIBERESPONSE.fields_by_name['update'].message_type = vega__pb2._MARKETDEPTHUPDATE
+_POSITIONSSUBSCRIBERESPONSE.fields_by_name['position'].message_type = vega__pb2._POSITION
 _ORDERSBYMARKETREQUEST.fields_by_name['pagination'].message_type = _PAGINATION
 _ORDERSBYMARKETRESPONSE.fields_by_name['orders'].message_type = vega__pb2._ORDER
 _ORDERSBYPARTYREQUEST.fields_by_name['pagination'].message_type = _PAGINATION
@@ -4320,35 +5140,41 @@ _CANDLESREQUEST.fields_by_name['interval'].enum_type = vega__pb2._INTERVAL
 _CANDLESRESPONSE.fields_by_name['candles'].message_type = vega__pb2._CANDLE
 _MARKETDEPTHRESPONSE.fields_by_name['buy'].message_type = vega__pb2._PRICELEVEL
 _MARKETDEPTHRESPONSE.fields_by_name['sell'].message_type = vega__pb2._PRICELEVEL
-_MARKETDEPTHRESPONSE.fields_by_name['lastTrade'].message_type = vega__pb2._TRADE
+_MARKETDEPTHRESPONSE.fields_by_name['last_trade'].message_type = vega__pb2._TRADE
 _TRADESBYMARKETREQUEST.fields_by_name['pagination'].message_type = _PAGINATION
 _TRADESBYMARKETRESPONSE.fields_by_name['trades'].message_type = vega__pb2._TRADE
 _POSITIONSBYPARTYRESPONSE.fields_by_name['positions'].message_type = vega__pb2._POSITION
-_ORDERSSTREAM.fields_by_name['orders'].message_type = vega__pb2._ORDER
-_TRADESSTREAM.fields_by_name['trades'].message_type = vega__pb2._TRADE
+_ORDERSSUBSCRIBERESPONSE.fields_by_name['orders'].message_type = vega__pb2._ORDER
+_TRADESSUBSCRIBERESPONSE.fields_by_name['trades'].message_type = vega__pb2._TRADE
+_TRANSFERRESPONSESSUBSCRIBERESPONSE.fields_by_name['response'].message_type = vega__pb2._TRANSFERRESPONSE
 _PARTYACCOUNTSREQUEST.fields_by_name['type'].enum_type = vega__pb2._ACCOUNTTYPE
 _PARTYACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = vega__pb2._ACCOUNT
 _MARKETACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = vega__pb2._ACCOUNT
 _FEEINFRASTRUCTUREACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = vega__pb2._ACCOUNT
 _PREPAREPROPOSALREQUEST.fields_by_name['proposal'].message_type = governance__pb2._PROPOSALTERMS
-_PREPAREPROPOSALRESPONSE.fields_by_name['pendingProposal'].message_type = governance__pb2._PROPOSAL
+_PREPAREPROPOSALRESPONSE.fields_by_name['pending_proposal'].message_type = governance__pb2._PROPOSAL
 _PREPAREVOTEREQUEST.fields_by_name['vote'].message_type = governance__pb2._VOTE
 _PREPAREVOTERESPONSE.fields_by_name['vote'].message_type = governance__pb2._VOTE
 _PREPARELIQUIDITYPROVISIONREQUEST.fields_by_name['submission'].message_type = vega__pb2._LIQUIDITYPROVISIONSUBMISSION
+_ORDERBYIDRESPONSE.fields_by_name['order'].message_type = vega__pb2._ORDER
 _ORDERVERSIONSBYIDREQUEST.fields_by_name['pagination'].message_type = _PAGINATION
-_ORDERVERSIONSRESPONSE.fields_by_name['orders'].message_type = vega__pb2._ORDER
+_ORDERVERSIONSBYIDRESPONSE.fields_by_name['orders'].message_type = vega__pb2._ORDER
 _ESTIMATEFEEREQUEST.fields_by_name['order'].message_type = vega__pb2._ORDER
 _ESTIMATEFEERESPONSE.fields_by_name['fee'].message_type = vega__pb2._FEE
 _ESTIMATEMARGINREQUEST.fields_by_name['order'].message_type = vega__pb2._ORDER
-_ESTIMATEMARGINRESPONSE.fields_by_name['marginLevels'].message_type = vega__pb2._MARGINLEVELS
-_OBSERVEEVENTSREQUEST.fields_by_name['type'].enum_type = events__pb2._BUSEVENTTYPE
-_OBSERVEEVENTSRESPONSE.fields_by_name['events'].message_type = events__pb2._BUSEVENT
+_ESTIMATEMARGINRESPONSE.fields_by_name['margin_levels'].message_type = vega__pb2._MARGINLEVELS
+_OBSERVEEVENTBUSREQUEST.fields_by_name['type'].enum_type = events__pb2._BUSEVENTTYPE
+_OBSERVEEVENTBUSRESPONSE.fields_by_name['events'].message_type = events__pb2._BUSEVENT
+_STATISTICSRESPONSE.fields_by_name['statistics'].message_type = vega__pb2._STATISTICS
 _WITHDRAWALSRESPONSE.fields_by_name['withdrawals'].message_type = vega__pb2._WITHDRAWAL
 _WITHDRAWALRESPONSE.fields_by_name['withdrawal'].message_type = vega__pb2._WITHDRAWAL
 _DEPOSITSRESPONSE.fields_by_name['deposits'].message_type = vega__pb2._DEPOSIT
 _DEPOSITRESPONSE.fields_by_name['deposit'].message_type = vega__pb2._DEPOSIT
-_NETWORKPARAMETERSRESPONSE.fields_by_name['networkParameters'].message_type = vega__pb2._NETWORKPARAMETER
-_LIQUIDITYPROVISIONSRESPONSE.fields_by_name['liquidityProvisions'].message_type = vega__pb2._LIQUIDITYPROVISION
+_NETWORKPARAMETERSRESPONSE.fields_by_name['network_parameters'].message_type = vega__pb2._NETWORKPARAMETER
+_LIQUIDITYPROVISIONSRESPONSE.fields_by_name['liquidity_provisions'].message_type = vega__pb2._LIQUIDITYPROVISION
+_ORACLESPECRESPONSE.fields_by_name['oracle_spec'].message_type = oracles_dot_v1_dot_oracle__spec__pb2._ORACLESPEC
+_ORACLESPECSRESPONSE.fields_by_name['oracle_specs'].message_type = oracles_dot_v1_dot_oracle__spec__pb2._ORACLESPEC
+_ORACLEDATABYSPECRESPONSE.fields_by_name['oracle_data'].message_type = oracles_dot_v1_dot_oracle__data__pb2._ORACLEDATA
 DESCRIPTOR.message_types_by_name['PropagateChainEventRequest'] = _PROPAGATECHAINEVENTREQUEST
 DESCRIPTOR.message_types_by_name['PropagateChainEventResponse'] = _PROPAGATECHAINEVENTRESPONSE
 DESCRIPTOR.message_types_by_name['SubmitTransactionRequest'] = _SUBMITTRANSACTIONREQUEST
@@ -4358,9 +5184,9 @@ DESCRIPTOR.message_types_by_name['PrepareWithdrawResponse'] = _PREPAREWITHDRAWRE
 DESCRIPTOR.message_types_by_name['PrepareSubmitOrderResponse'] = _PREPARESUBMITORDERRESPONSE
 DESCRIPTOR.message_types_by_name['PrepareCancelOrderResponse'] = _PREPARECANCELORDERRESPONSE
 DESCRIPTOR.message_types_by_name['PrepareAmendOrderResponse'] = _PREPAREAMENDORDERRESPONSE
-DESCRIPTOR.message_types_by_name['SubmitOrderRequest'] = _SUBMITORDERREQUEST
-DESCRIPTOR.message_types_by_name['CancelOrderRequest'] = _CANCELORDERREQUEST
-DESCRIPTOR.message_types_by_name['AmendOrderRequest'] = _AMENDORDERREQUEST
+DESCRIPTOR.message_types_by_name['PrepareSubmitOrderRequest'] = _PREPARESUBMITORDERREQUEST
+DESCRIPTOR.message_types_by_name['PrepareCancelOrderRequest'] = _PREPARECANCELORDERREQUEST
+DESCRIPTOR.message_types_by_name['PrepareAmendOrderRequest'] = _PREPAREAMENDORDERREQUEST
 DESCRIPTOR.message_types_by_name['AssetsRequest'] = _ASSETSREQUEST
 DESCRIPTOR.message_types_by_name['AssetsResponse'] = _ASSETSRESPONSE
 DESCRIPTOR.message_types_by_name['AssetByIDRequest'] = _ASSETBYIDREQUEST
@@ -4386,15 +5212,23 @@ DESCRIPTOR.message_types_by_name['GetProposalByIDRequest'] = _GETPROPOSALBYIDREQ
 DESCRIPTOR.message_types_by_name['GetProposalByIDResponse'] = _GETPROPOSALBYIDRESPONSE
 DESCRIPTOR.message_types_by_name['GetProposalByReferenceRequest'] = _GETPROPOSALBYREFERENCEREQUEST
 DESCRIPTOR.message_types_by_name['GetProposalByReferenceResponse'] = _GETPROPOSALBYREFERENCERESPONSE
+DESCRIPTOR.message_types_by_name['ObserveGovernanceRequest'] = _OBSERVEGOVERNANCEREQUEST
+DESCRIPTOR.message_types_by_name['ObserveGovernanceResponse'] = _OBSERVEGOVERNANCERESPONSE
 DESCRIPTOR.message_types_by_name['ObservePartyProposalsRequest'] = _OBSERVEPARTYPROPOSALSREQUEST
+DESCRIPTOR.message_types_by_name['ObservePartyProposalsResponse'] = _OBSERVEPARTYPROPOSALSRESPONSE
 DESCRIPTOR.message_types_by_name['ObserveProposalVotesRequest'] = _OBSERVEPROPOSALVOTESREQUEST
+DESCRIPTOR.message_types_by_name['ObserveProposalVotesResponse'] = _OBSERVEPROPOSALVOTESRESPONSE
 DESCRIPTOR.message_types_by_name['ObservePartyVotesRequest'] = _OBSERVEPARTYVOTESREQUEST
+DESCRIPTOR.message_types_by_name['ObservePartyVotesResponse'] = _OBSERVEPARTYVOTESRESPONSE
 DESCRIPTOR.message_types_by_name['MarginLevelsSubscribeRequest'] = _MARGINLEVELSSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['MarginLevelsSubscribeResponse'] = _MARGINLEVELSSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['MarginLevelsRequest'] = _MARGINLEVELSREQUEST
 DESCRIPTOR.message_types_by_name['MarginLevelsResponse'] = _MARGINLEVELSRESPONSE
 DESCRIPTOR.message_types_by_name['MarketsDataSubscribeRequest'] = _MARKETSDATASUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['MarketsDataSubscribeResponse'] = _MARKETSDATASUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['MarketDataByIDRequest'] = _MARKETDATABYIDREQUEST
 DESCRIPTOR.message_types_by_name['MarketDataByIDResponse'] = _MARKETDATABYIDRESPONSE
+DESCRIPTOR.message_types_by_name['MarketsDataRequest'] = _MARKETSDATAREQUEST
 DESCRIPTOR.message_types_by_name['MarketsDataResponse'] = _MARKETSDATARESPONSE
 DESCRIPTOR.message_types_by_name['LastTradeRequest'] = _LASTTRADEREQUEST
 DESCRIPTOR.message_types_by_name['LastTradeResponse'] = _LASTTRADERESPONSE
@@ -4402,26 +5236,33 @@ DESCRIPTOR.message_types_by_name['MarketByIDRequest'] = _MARKETBYIDREQUEST
 DESCRIPTOR.message_types_by_name['MarketByIDResponse'] = _MARKETBYIDRESPONSE
 DESCRIPTOR.message_types_by_name['PartyByIDRequest'] = _PARTYBYIDREQUEST
 DESCRIPTOR.message_types_by_name['PartyByIDResponse'] = _PARTYBYIDRESPONSE
+DESCRIPTOR.message_types_by_name['PartiesRequest'] = _PARTIESREQUEST
 DESCRIPTOR.message_types_by_name['PartiesResponse'] = _PARTIESRESPONSE
 DESCRIPTOR.message_types_by_name['TradesByPartyRequest'] = _TRADESBYPARTYREQUEST
 DESCRIPTOR.message_types_by_name['TradesByPartyResponse'] = _TRADESBYPARTYRESPONSE
 DESCRIPTOR.message_types_by_name['TradesByOrderRequest'] = _TRADESBYORDERREQUEST
 DESCRIPTOR.message_types_by_name['TradesByOrderResponse'] = _TRADESBYORDERRESPONSE
 DESCRIPTOR.message_types_by_name['AccountsSubscribeRequest'] = _ACCOUNTSSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['AccountsSubscribeResponse'] = _ACCOUNTSSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['OrdersSubscribeRequest'] = _ORDERSSUBSCRIBEREQUEST
 DESCRIPTOR.message_types_by_name['TradesSubscribeRequest'] = _TRADESSUBSCRIBEREQUEST
 DESCRIPTOR.message_types_by_name['CandlesSubscribeRequest'] = _CANDLESSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['CandlesSubscribeResponse'] = _CANDLESSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['MarketDepthSubscribeRequest'] = _MARKETDEPTHSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['MarketDepthSubscribeResponse'] = _MARKETDEPTHSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['MarketDepthUpdatesSubscribeRequest'] = _MARKETDEPTHUPDATESSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['MarketDepthUpdatesSubscribeResponse'] = _MARKETDEPTHUPDATESSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['PositionsSubscribeRequest'] = _POSITIONSSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['PositionsSubscribeResponse'] = _POSITIONSSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['OrdersByMarketRequest'] = _ORDERSBYMARKETREQUEST
 DESCRIPTOR.message_types_by_name['OrdersByMarketResponse'] = _ORDERSBYMARKETRESPONSE
 DESCRIPTOR.message_types_by_name['OrdersByPartyRequest'] = _ORDERSBYPARTYREQUEST
 DESCRIPTOR.message_types_by_name['OrdersByPartyResponse'] = _ORDERSBYPARTYRESPONSE
-DESCRIPTOR.message_types_by_name['OrderByMarketAndIdRequest'] = _ORDERBYMARKETANDIDREQUEST
-DESCRIPTOR.message_types_by_name['OrderByMarketAndIdResponse'] = _ORDERBYMARKETANDIDRESPONSE
+DESCRIPTOR.message_types_by_name['OrderByMarketAndIDRequest'] = _ORDERBYMARKETANDIDREQUEST
+DESCRIPTOR.message_types_by_name['OrderByMarketAndIDResponse'] = _ORDERBYMARKETANDIDRESPONSE
 DESCRIPTOR.message_types_by_name['OrderByReferenceRequest'] = _ORDERBYREFERENCEREQUEST
 DESCRIPTOR.message_types_by_name['OrderByReferenceResponse'] = _ORDERBYREFERENCERESPONSE
+DESCRIPTOR.message_types_by_name['MarketsRequest'] = _MARKETSREQUEST
 DESCRIPTOR.message_types_by_name['MarketsResponse'] = _MARKETSRESPONSE
 DESCRIPTOR.message_types_by_name['CandlesRequest'] = _CANDLESREQUEST
 DESCRIPTOR.message_types_by_name['CandlesResponse'] = _CANDLESRESPONSE
@@ -4431,10 +5272,13 @@ DESCRIPTOR.message_types_by_name['TradesByMarketRequest'] = _TRADESBYMARKETREQUE
 DESCRIPTOR.message_types_by_name['TradesByMarketResponse'] = _TRADESBYMARKETRESPONSE
 DESCRIPTOR.message_types_by_name['PositionsByPartyRequest'] = _POSITIONSBYPARTYREQUEST
 DESCRIPTOR.message_types_by_name['PositionsByPartyResponse'] = _POSITIONSBYPARTYRESPONSE
-DESCRIPTOR.message_types_by_name['VegaTimeResponse'] = _VEGATIMERESPONSE
+DESCRIPTOR.message_types_by_name['GetVegaTimeRequest'] = _GETVEGATIMEREQUEST
+DESCRIPTOR.message_types_by_name['GetVegaTimeResponse'] = _GETVEGATIMERESPONSE
 DESCRIPTOR.message_types_by_name['Pagination'] = _PAGINATION
-DESCRIPTOR.message_types_by_name['OrdersStream'] = _ORDERSSTREAM
-DESCRIPTOR.message_types_by_name['TradesStream'] = _TRADESSTREAM
+DESCRIPTOR.message_types_by_name['OrdersSubscribeResponse'] = _ORDERSSUBSCRIBERESPONSE
+DESCRIPTOR.message_types_by_name['TradesSubscribeResponse'] = _TRADESSUBSCRIBERESPONSE
+DESCRIPTOR.message_types_by_name['TransferResponsesSubscribeRequest'] = _TRANSFERRESPONSESSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['TransferResponsesSubscribeResponse'] = _TRANSFERRESPONSESSUBSCRIBERESPONSE
 DESCRIPTOR.message_types_by_name['PartyAccountsRequest'] = _PARTYACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['PartyAccountsResponse'] = _PARTYACCOUNTSRESPONSE
 DESCRIPTOR.message_types_by_name['MarketAccountsRequest'] = _MARKETACCOUNTSREQUEST
@@ -4448,14 +5292,17 @@ DESCRIPTOR.message_types_by_name['PrepareVoteResponse'] = _PREPAREVOTERESPONSE
 DESCRIPTOR.message_types_by_name['PrepareLiquidityProvisionRequest'] = _PREPARELIQUIDITYPROVISIONREQUEST
 DESCRIPTOR.message_types_by_name['PrepareLiquidityProvisionResponse'] = _PREPARELIQUIDITYPROVISIONRESPONSE
 DESCRIPTOR.message_types_by_name['OrderByIDRequest'] = _ORDERBYIDREQUEST
+DESCRIPTOR.message_types_by_name['OrderByIDResponse'] = _ORDERBYIDRESPONSE
 DESCRIPTOR.message_types_by_name['OrderVersionsByIDRequest'] = _ORDERVERSIONSBYIDREQUEST
-DESCRIPTOR.message_types_by_name['OrderVersionsResponse'] = _ORDERVERSIONSRESPONSE
+DESCRIPTOR.message_types_by_name['OrderVersionsByIDResponse'] = _ORDERVERSIONSBYIDRESPONSE
 DESCRIPTOR.message_types_by_name['EstimateFeeRequest'] = _ESTIMATEFEEREQUEST
 DESCRIPTOR.message_types_by_name['EstimateFeeResponse'] = _ESTIMATEFEERESPONSE
 DESCRIPTOR.message_types_by_name['EstimateMarginRequest'] = _ESTIMATEMARGINREQUEST
 DESCRIPTOR.message_types_by_name['EstimateMarginResponse'] = _ESTIMATEMARGINRESPONSE
-DESCRIPTOR.message_types_by_name['ObserveEventsRequest'] = _OBSERVEEVENTSREQUEST
-DESCRIPTOR.message_types_by_name['ObserveEventsResponse'] = _OBSERVEEVENTSRESPONSE
+DESCRIPTOR.message_types_by_name['ObserveEventBusRequest'] = _OBSERVEEVENTBUSREQUEST
+DESCRIPTOR.message_types_by_name['ObserveEventBusResponse'] = _OBSERVEEVENTBUSRESPONSE
+DESCRIPTOR.message_types_by_name['StatisticsRequest'] = _STATISTICSREQUEST
+DESCRIPTOR.message_types_by_name['StatisticsResponse'] = _STATISTICSRESPONSE
 DESCRIPTOR.message_types_by_name['WithdrawalsRequest'] = _WITHDRAWALSREQUEST
 DESCRIPTOR.message_types_by_name['WithdrawalsResponse'] = _WITHDRAWALSRESPONSE
 DESCRIPTOR.message_types_by_name['WithdrawalRequest'] = _WITHDRAWALREQUEST
@@ -4470,941 +5317,1138 @@ DESCRIPTOR.message_types_by_name['NetworkParametersRequest'] = _NETWORKPARAMETER
 DESCRIPTOR.message_types_by_name['NetworkParametersResponse'] = _NETWORKPARAMETERSRESPONSE
 DESCRIPTOR.message_types_by_name['LiquidityProvisionsRequest'] = _LIQUIDITYPROVISIONSREQUEST
 DESCRIPTOR.message_types_by_name['LiquidityProvisionsResponse'] = _LIQUIDITYPROVISIONSRESPONSE
+DESCRIPTOR.message_types_by_name['OracleSpecRequest'] = _ORACLESPECREQUEST
+DESCRIPTOR.message_types_by_name['OracleSpecResponse'] = _ORACLESPECRESPONSE
+DESCRIPTOR.message_types_by_name['OracleSpecsRequest'] = _ORACLESPECSREQUEST
+DESCRIPTOR.message_types_by_name['OracleSpecsResponse'] = _ORACLESPECSRESPONSE
+DESCRIPTOR.message_types_by_name['OracleDataBySpecRequest'] = _ORACLEDATABYSPECREQUEST
+DESCRIPTOR.message_types_by_name['OracleDataBySpecResponse'] = _ORACLEDATABYSPECRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 PropagateChainEventRequest = _reflection.GeneratedProtocolMessageType('PropagateChainEventRequest', (_message.Message,), {
   'DESCRIPTOR' : _PROPAGATECHAINEVENTREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PropagateChainEventRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PropagateChainEventRequest)
   })
 _sym_db.RegisterMessage(PropagateChainEventRequest)
 
 PropagateChainEventResponse = _reflection.GeneratedProtocolMessageType('PropagateChainEventResponse', (_message.Message,), {
   'DESCRIPTOR' : _PROPAGATECHAINEVENTRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PropagateChainEventResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PropagateChainEventResponse)
   })
 _sym_db.RegisterMessage(PropagateChainEventResponse)
 
 SubmitTransactionRequest = _reflection.GeneratedProtocolMessageType('SubmitTransactionRequest', (_message.Message,), {
   'DESCRIPTOR' : _SUBMITTRANSACTIONREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.SubmitTransactionRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.SubmitTransactionRequest)
   })
 _sym_db.RegisterMessage(SubmitTransactionRequest)
 
 SubmitTransactionResponse = _reflection.GeneratedProtocolMessageType('SubmitTransactionResponse', (_message.Message,), {
   'DESCRIPTOR' : _SUBMITTRANSACTIONRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.SubmitTransactionResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.SubmitTransactionResponse)
   })
 _sym_db.RegisterMessage(SubmitTransactionResponse)
 
 PrepareWithdrawRequest = _reflection.GeneratedProtocolMessageType('PrepareWithdrawRequest', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREWITHDRAWREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareWithdrawRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareWithdrawRequest)
   })
 _sym_db.RegisterMessage(PrepareWithdrawRequest)
 
 PrepareWithdrawResponse = _reflection.GeneratedProtocolMessageType('PrepareWithdrawResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREWITHDRAWRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareWithdrawResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareWithdrawResponse)
   })
 _sym_db.RegisterMessage(PrepareWithdrawResponse)
 
 PrepareSubmitOrderResponse = _reflection.GeneratedProtocolMessageType('PrepareSubmitOrderResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPARESUBMITORDERRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareSubmitOrderResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareSubmitOrderResponse)
   })
 _sym_db.RegisterMessage(PrepareSubmitOrderResponse)
 
 PrepareCancelOrderResponse = _reflection.GeneratedProtocolMessageType('PrepareCancelOrderResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPARECANCELORDERRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareCancelOrderResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareCancelOrderResponse)
   })
 _sym_db.RegisterMessage(PrepareCancelOrderResponse)
 
 PrepareAmendOrderResponse = _reflection.GeneratedProtocolMessageType('PrepareAmendOrderResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREAMENDORDERRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareAmendOrderResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareAmendOrderResponse)
   })
 _sym_db.RegisterMessage(PrepareAmendOrderResponse)
 
-SubmitOrderRequest = _reflection.GeneratedProtocolMessageType('SubmitOrderRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SUBMITORDERREQUEST,
+PrepareSubmitOrderRequest = _reflection.GeneratedProtocolMessageType('PrepareSubmitOrderRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PREPARESUBMITORDERREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.SubmitOrderRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareSubmitOrderRequest)
   })
-_sym_db.RegisterMessage(SubmitOrderRequest)
+_sym_db.RegisterMessage(PrepareSubmitOrderRequest)
 
-CancelOrderRequest = _reflection.GeneratedProtocolMessageType('CancelOrderRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CANCELORDERREQUEST,
+PrepareCancelOrderRequest = _reflection.GeneratedProtocolMessageType('PrepareCancelOrderRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PREPARECANCELORDERREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.CancelOrderRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareCancelOrderRequest)
   })
-_sym_db.RegisterMessage(CancelOrderRequest)
+_sym_db.RegisterMessage(PrepareCancelOrderRequest)
 
-AmendOrderRequest = _reflection.GeneratedProtocolMessageType('AmendOrderRequest', (_message.Message,), {
-  'DESCRIPTOR' : _AMENDORDERREQUEST,
+PrepareAmendOrderRequest = _reflection.GeneratedProtocolMessageType('PrepareAmendOrderRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PREPAREAMENDORDERREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.AmendOrderRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareAmendOrderRequest)
   })
-_sym_db.RegisterMessage(AmendOrderRequest)
+_sym_db.RegisterMessage(PrepareAmendOrderRequest)
 
 AssetsRequest = _reflection.GeneratedProtocolMessageType('AssetsRequest', (_message.Message,), {
   'DESCRIPTOR' : _ASSETSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.AssetsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.AssetsRequest)
   })
 _sym_db.RegisterMessage(AssetsRequest)
 
 AssetsResponse = _reflection.GeneratedProtocolMessageType('AssetsResponse', (_message.Message,), {
   'DESCRIPTOR' : _ASSETSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.AssetsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.AssetsResponse)
   })
 _sym_db.RegisterMessage(AssetsResponse)
 
 AssetByIDRequest = _reflection.GeneratedProtocolMessageType('AssetByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _ASSETBYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.AssetByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.AssetByIDRequest)
   })
 _sym_db.RegisterMessage(AssetByIDRequest)
 
 AssetByIDResponse = _reflection.GeneratedProtocolMessageType('AssetByIDResponse', (_message.Message,), {
   'DESCRIPTOR' : _ASSETBYIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.AssetByIDResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.AssetByIDResponse)
   })
 _sym_db.RegisterMessage(AssetByIDResponse)
 
 GetNodeSignaturesAggregateRequest = _reflection.GeneratedProtocolMessageType('GetNodeSignaturesAggregateRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNODESIGNATURESAGGREGATEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNodeSignaturesAggregateRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNodeSignaturesAggregateRequest)
   })
 _sym_db.RegisterMessage(GetNodeSignaturesAggregateRequest)
 
 GetNodeSignaturesAggregateResponse = _reflection.GeneratedProtocolMessageType('GetNodeSignaturesAggregateResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETNODESIGNATURESAGGREGATERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNodeSignaturesAggregateResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNodeSignaturesAggregateResponse)
   })
 _sym_db.RegisterMessage(GetNodeSignaturesAggregateResponse)
 
 OptionalProposalState = _reflection.GeneratedProtocolMessageType('OptionalProposalState', (_message.Message,), {
   'DESCRIPTOR' : _OPTIONALPROPOSALSTATE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OptionalProposalState)
+  # @@protoc_insertion_point(class_scope:api.v1.OptionalProposalState)
   })
 _sym_db.RegisterMessage(OptionalProposalState)
 
 GetProposalsRequest = _reflection.GeneratedProtocolMessageType('GetProposalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalsRequest)
   })
 _sym_db.RegisterMessage(GetProposalsRequest)
 
 GetProposalsResponse = _reflection.GeneratedProtocolMessageType('GetProposalsResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalsResponse)
   })
 _sym_db.RegisterMessage(GetProposalsResponse)
 
 GetProposalsByPartyRequest = _reflection.GeneratedProtocolMessageType('GetProposalsByPartyRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALSBYPARTYREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalsByPartyRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalsByPartyRequest)
   })
 _sym_db.RegisterMessage(GetProposalsByPartyRequest)
 
 GetProposalsByPartyResponse = _reflection.GeneratedProtocolMessageType('GetProposalsByPartyResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALSBYPARTYRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalsByPartyResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalsByPartyResponse)
   })
 _sym_db.RegisterMessage(GetProposalsByPartyResponse)
 
 GetVotesByPartyRequest = _reflection.GeneratedProtocolMessageType('GetVotesByPartyRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETVOTESBYPARTYREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetVotesByPartyRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetVotesByPartyRequest)
   })
 _sym_db.RegisterMessage(GetVotesByPartyRequest)
 
 GetVotesByPartyResponse = _reflection.GeneratedProtocolMessageType('GetVotesByPartyResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETVOTESBYPARTYRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetVotesByPartyResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetVotesByPartyResponse)
   })
 _sym_db.RegisterMessage(GetVotesByPartyResponse)
 
 GetNewMarketProposalsRequest = _reflection.GeneratedProtocolMessageType('GetNewMarketProposalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNEWMARKETPROPOSALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNewMarketProposalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNewMarketProposalsRequest)
   })
 _sym_db.RegisterMessage(GetNewMarketProposalsRequest)
 
 GetNewMarketProposalsResponse = _reflection.GeneratedProtocolMessageType('GetNewMarketProposalsResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETNEWMARKETPROPOSALSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNewMarketProposalsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNewMarketProposalsResponse)
   })
 _sym_db.RegisterMessage(GetNewMarketProposalsResponse)
 
 GetUpdateMarketProposalsRequest = _reflection.GeneratedProtocolMessageType('GetUpdateMarketProposalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETUPDATEMARKETPROPOSALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetUpdateMarketProposalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetUpdateMarketProposalsRequest)
   })
 _sym_db.RegisterMessage(GetUpdateMarketProposalsRequest)
 
 GetUpdateMarketProposalsResponse = _reflection.GeneratedProtocolMessageType('GetUpdateMarketProposalsResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETUPDATEMARKETPROPOSALSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetUpdateMarketProposalsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetUpdateMarketProposalsResponse)
   })
 _sym_db.RegisterMessage(GetUpdateMarketProposalsResponse)
 
 GetNetworkParametersProposalsRequest = _reflection.GeneratedProtocolMessageType('GetNetworkParametersProposalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNETWORKPARAMETERSPROPOSALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNetworkParametersProposalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNetworkParametersProposalsRequest)
   })
 _sym_db.RegisterMessage(GetNetworkParametersProposalsRequest)
 
 GetNetworkParametersProposalsResponse = _reflection.GeneratedProtocolMessageType('GetNetworkParametersProposalsResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETNETWORKPARAMETERSPROPOSALSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNetworkParametersProposalsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNetworkParametersProposalsResponse)
   })
 _sym_db.RegisterMessage(GetNetworkParametersProposalsResponse)
 
 GetNewAssetProposalsRequest = _reflection.GeneratedProtocolMessageType('GetNewAssetProposalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNEWASSETPROPOSALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNewAssetProposalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNewAssetProposalsRequest)
   })
 _sym_db.RegisterMessage(GetNewAssetProposalsRequest)
 
 GetNewAssetProposalsResponse = _reflection.GeneratedProtocolMessageType('GetNewAssetProposalsResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETNEWASSETPROPOSALSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetNewAssetProposalsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetNewAssetProposalsResponse)
   })
 _sym_db.RegisterMessage(GetNewAssetProposalsResponse)
 
 GetProposalByIDRequest = _reflection.GeneratedProtocolMessageType('GetProposalByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALBYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalByIDRequest)
   })
 _sym_db.RegisterMessage(GetProposalByIDRequest)
 
 GetProposalByIDResponse = _reflection.GeneratedProtocolMessageType('GetProposalByIDResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALBYIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalByIDResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalByIDResponse)
   })
 _sym_db.RegisterMessage(GetProposalByIDResponse)
 
 GetProposalByReferenceRequest = _reflection.GeneratedProtocolMessageType('GetProposalByReferenceRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALBYREFERENCEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalByReferenceRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalByReferenceRequest)
   })
 _sym_db.RegisterMessage(GetProposalByReferenceRequest)
 
 GetProposalByReferenceResponse = _reflection.GeneratedProtocolMessageType('GetProposalByReferenceResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETPROPOSALBYREFERENCERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProposalByReferenceResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetProposalByReferenceResponse)
   })
 _sym_db.RegisterMessage(GetProposalByReferenceResponse)
+
+ObserveGovernanceRequest = _reflection.GeneratedProtocolMessageType('ObserveGovernanceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEGOVERNANCEREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.ObserveGovernanceRequest)
+  })
+_sym_db.RegisterMessage(ObserveGovernanceRequest)
+
+ObserveGovernanceResponse = _reflection.GeneratedProtocolMessageType('ObserveGovernanceResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEGOVERNANCERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.ObserveGovernanceResponse)
+  })
+_sym_db.RegisterMessage(ObserveGovernanceResponse)
 
 ObservePartyProposalsRequest = _reflection.GeneratedProtocolMessageType('ObservePartyProposalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _OBSERVEPARTYPROPOSALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ObservePartyProposalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.ObservePartyProposalsRequest)
   })
 _sym_db.RegisterMessage(ObservePartyProposalsRequest)
+
+ObservePartyProposalsResponse = _reflection.GeneratedProtocolMessageType('ObservePartyProposalsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEPARTYPROPOSALSRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.ObservePartyProposalsResponse)
+  })
+_sym_db.RegisterMessage(ObservePartyProposalsResponse)
 
 ObserveProposalVotesRequest = _reflection.GeneratedProtocolMessageType('ObserveProposalVotesRequest', (_message.Message,), {
   'DESCRIPTOR' : _OBSERVEPROPOSALVOTESREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ObserveProposalVotesRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.ObserveProposalVotesRequest)
   })
 _sym_db.RegisterMessage(ObserveProposalVotesRequest)
+
+ObserveProposalVotesResponse = _reflection.GeneratedProtocolMessageType('ObserveProposalVotesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEPROPOSALVOTESRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.ObserveProposalVotesResponse)
+  })
+_sym_db.RegisterMessage(ObserveProposalVotesResponse)
 
 ObservePartyVotesRequest = _reflection.GeneratedProtocolMessageType('ObservePartyVotesRequest', (_message.Message,), {
   'DESCRIPTOR' : _OBSERVEPARTYVOTESREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ObservePartyVotesRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.ObservePartyVotesRequest)
   })
 _sym_db.RegisterMessage(ObservePartyVotesRequest)
+
+ObservePartyVotesResponse = _reflection.GeneratedProtocolMessageType('ObservePartyVotesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEPARTYVOTESRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.ObservePartyVotesResponse)
+  })
+_sym_db.RegisterMessage(ObservePartyVotesResponse)
 
 MarginLevelsSubscribeRequest = _reflection.GeneratedProtocolMessageType('MarginLevelsSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARGINLEVELSSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarginLevelsSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarginLevelsSubscribeRequest)
   })
 _sym_db.RegisterMessage(MarginLevelsSubscribeRequest)
+
+MarginLevelsSubscribeResponse = _reflection.GeneratedProtocolMessageType('MarginLevelsSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MARGINLEVELSSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.MarginLevelsSubscribeResponse)
+  })
+_sym_db.RegisterMessage(MarginLevelsSubscribeResponse)
 
 MarginLevelsRequest = _reflection.GeneratedProtocolMessageType('MarginLevelsRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARGINLEVELSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarginLevelsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarginLevelsRequest)
   })
 _sym_db.RegisterMessage(MarginLevelsRequest)
 
 MarginLevelsResponse = _reflection.GeneratedProtocolMessageType('MarginLevelsResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARGINLEVELSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarginLevelsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarginLevelsResponse)
   })
 _sym_db.RegisterMessage(MarginLevelsResponse)
 
 MarketsDataSubscribeRequest = _reflection.GeneratedProtocolMessageType('MarketsDataSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETSDATASUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketsDataSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketsDataSubscribeRequest)
   })
 _sym_db.RegisterMessage(MarketsDataSubscribeRequest)
+
+MarketsDataSubscribeResponse = _reflection.GeneratedProtocolMessageType('MarketsDataSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MARKETSDATASUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.MarketsDataSubscribeResponse)
+  })
+_sym_db.RegisterMessage(MarketsDataSubscribeResponse)
 
 MarketDataByIDRequest = _reflection.GeneratedProtocolMessageType('MarketDataByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETDATABYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketDataByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDataByIDRequest)
   })
 _sym_db.RegisterMessage(MarketDataByIDRequest)
 
 MarketDataByIDResponse = _reflection.GeneratedProtocolMessageType('MarketDataByIDResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARKETDATABYIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketDataByIDResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDataByIDResponse)
   })
 _sym_db.RegisterMessage(MarketDataByIDResponse)
+
+MarketsDataRequest = _reflection.GeneratedProtocolMessageType('MarketsDataRequest', (_message.Message,), {
+  'DESCRIPTOR' : _MARKETSDATAREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.MarketsDataRequest)
+  })
+_sym_db.RegisterMessage(MarketsDataRequest)
 
 MarketsDataResponse = _reflection.GeneratedProtocolMessageType('MarketsDataResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARKETSDATARESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketsDataResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketsDataResponse)
   })
 _sym_db.RegisterMessage(MarketsDataResponse)
 
 LastTradeRequest = _reflection.GeneratedProtocolMessageType('LastTradeRequest', (_message.Message,), {
   'DESCRIPTOR' : _LASTTRADEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.LastTradeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.LastTradeRequest)
   })
 _sym_db.RegisterMessage(LastTradeRequest)
 
 LastTradeResponse = _reflection.GeneratedProtocolMessageType('LastTradeResponse', (_message.Message,), {
   'DESCRIPTOR' : _LASTTRADERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.LastTradeResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.LastTradeResponse)
   })
 _sym_db.RegisterMessage(LastTradeResponse)
 
 MarketByIDRequest = _reflection.GeneratedProtocolMessageType('MarketByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETBYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketByIDRequest)
   })
 _sym_db.RegisterMessage(MarketByIDRequest)
 
 MarketByIDResponse = _reflection.GeneratedProtocolMessageType('MarketByIDResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARKETBYIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketByIDResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketByIDResponse)
   })
 _sym_db.RegisterMessage(MarketByIDResponse)
 
 PartyByIDRequest = _reflection.GeneratedProtocolMessageType('PartyByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _PARTYBYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PartyByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PartyByIDRequest)
   })
 _sym_db.RegisterMessage(PartyByIDRequest)
 
 PartyByIDResponse = _reflection.GeneratedProtocolMessageType('PartyByIDResponse', (_message.Message,), {
   'DESCRIPTOR' : _PARTYBYIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PartyByIDResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PartyByIDResponse)
   })
 _sym_db.RegisterMessage(PartyByIDResponse)
+
+PartiesRequest = _reflection.GeneratedProtocolMessageType('PartiesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PARTIESREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.PartiesRequest)
+  })
+_sym_db.RegisterMessage(PartiesRequest)
 
 PartiesResponse = _reflection.GeneratedProtocolMessageType('PartiesResponse', (_message.Message,), {
   'DESCRIPTOR' : _PARTIESRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PartiesResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PartiesResponse)
   })
 _sym_db.RegisterMessage(PartiesResponse)
 
 TradesByPartyRequest = _reflection.GeneratedProtocolMessageType('TradesByPartyRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRADESBYPARTYREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesByPartyRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesByPartyRequest)
   })
 _sym_db.RegisterMessage(TradesByPartyRequest)
 
 TradesByPartyResponse = _reflection.GeneratedProtocolMessageType('TradesByPartyResponse', (_message.Message,), {
   'DESCRIPTOR' : _TRADESBYPARTYRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesByPartyResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesByPartyResponse)
   })
 _sym_db.RegisterMessage(TradesByPartyResponse)
 
 TradesByOrderRequest = _reflection.GeneratedProtocolMessageType('TradesByOrderRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRADESBYORDERREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesByOrderRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesByOrderRequest)
   })
 _sym_db.RegisterMessage(TradesByOrderRequest)
 
 TradesByOrderResponse = _reflection.GeneratedProtocolMessageType('TradesByOrderResponse', (_message.Message,), {
   'DESCRIPTOR' : _TRADESBYORDERRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesByOrderResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesByOrderResponse)
   })
 _sym_db.RegisterMessage(TradesByOrderResponse)
 
 AccountsSubscribeRequest = _reflection.GeneratedProtocolMessageType('AccountsSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _ACCOUNTSSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.AccountsSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.AccountsSubscribeRequest)
   })
 _sym_db.RegisterMessage(AccountsSubscribeRequest)
+
+AccountsSubscribeResponse = _reflection.GeneratedProtocolMessageType('AccountsSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ACCOUNTSSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.AccountsSubscribeResponse)
+  })
+_sym_db.RegisterMessage(AccountsSubscribeResponse)
 
 OrdersSubscribeRequest = _reflection.GeneratedProtocolMessageType('OrdersSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERSSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrdersSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrdersSubscribeRequest)
   })
 _sym_db.RegisterMessage(OrdersSubscribeRequest)
 
 TradesSubscribeRequest = _reflection.GeneratedProtocolMessageType('TradesSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRADESSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesSubscribeRequest)
   })
 _sym_db.RegisterMessage(TradesSubscribeRequest)
 
 CandlesSubscribeRequest = _reflection.GeneratedProtocolMessageType('CandlesSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _CANDLESSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.CandlesSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.CandlesSubscribeRequest)
   })
 _sym_db.RegisterMessage(CandlesSubscribeRequest)
+
+CandlesSubscribeResponse = _reflection.GeneratedProtocolMessageType('CandlesSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CANDLESSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.CandlesSubscribeResponse)
+  })
+_sym_db.RegisterMessage(CandlesSubscribeResponse)
 
 MarketDepthSubscribeRequest = _reflection.GeneratedProtocolMessageType('MarketDepthSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETDEPTHSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketDepthSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDepthSubscribeRequest)
   })
 _sym_db.RegisterMessage(MarketDepthSubscribeRequest)
+
+MarketDepthSubscribeResponse = _reflection.GeneratedProtocolMessageType('MarketDepthSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MARKETDEPTHSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDepthSubscribeResponse)
+  })
+_sym_db.RegisterMessage(MarketDepthSubscribeResponse)
 
 MarketDepthUpdatesSubscribeRequest = _reflection.GeneratedProtocolMessageType('MarketDepthUpdatesSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETDEPTHUPDATESSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketDepthUpdatesSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDepthUpdatesSubscribeRequest)
   })
 _sym_db.RegisterMessage(MarketDepthUpdatesSubscribeRequest)
+
+MarketDepthUpdatesSubscribeResponse = _reflection.GeneratedProtocolMessageType('MarketDepthUpdatesSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _MARKETDEPTHUPDATESSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDepthUpdatesSubscribeResponse)
+  })
+_sym_db.RegisterMessage(MarketDepthUpdatesSubscribeResponse)
 
 PositionsSubscribeRequest = _reflection.GeneratedProtocolMessageType('PositionsSubscribeRequest', (_message.Message,), {
   'DESCRIPTOR' : _POSITIONSSUBSCRIBEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PositionsSubscribeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PositionsSubscribeRequest)
   })
 _sym_db.RegisterMessage(PositionsSubscribeRequest)
+
+PositionsSubscribeResponse = _reflection.GeneratedProtocolMessageType('PositionsSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _POSITIONSSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.PositionsSubscribeResponse)
+  })
+_sym_db.RegisterMessage(PositionsSubscribeResponse)
 
 OrdersByMarketRequest = _reflection.GeneratedProtocolMessageType('OrdersByMarketRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERSBYMARKETREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrdersByMarketRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrdersByMarketRequest)
   })
 _sym_db.RegisterMessage(OrdersByMarketRequest)
 
 OrdersByMarketResponse = _reflection.GeneratedProtocolMessageType('OrdersByMarketResponse', (_message.Message,), {
   'DESCRIPTOR' : _ORDERSBYMARKETRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrdersByMarketResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.OrdersByMarketResponse)
   })
 _sym_db.RegisterMessage(OrdersByMarketResponse)
 
 OrdersByPartyRequest = _reflection.GeneratedProtocolMessageType('OrdersByPartyRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERSBYPARTYREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrdersByPartyRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrdersByPartyRequest)
   })
 _sym_db.RegisterMessage(OrdersByPartyRequest)
 
 OrdersByPartyResponse = _reflection.GeneratedProtocolMessageType('OrdersByPartyResponse', (_message.Message,), {
   'DESCRIPTOR' : _ORDERSBYPARTYRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrdersByPartyResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.OrdersByPartyResponse)
   })
 _sym_db.RegisterMessage(OrdersByPartyResponse)
 
-OrderByMarketAndIdRequest = _reflection.GeneratedProtocolMessageType('OrderByMarketAndIdRequest', (_message.Message,), {
+OrderByMarketAndIDRequest = _reflection.GeneratedProtocolMessageType('OrderByMarketAndIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERBYMARKETANDIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderByMarketAndIdRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderByMarketAndIDRequest)
   })
-_sym_db.RegisterMessage(OrderByMarketAndIdRequest)
+_sym_db.RegisterMessage(OrderByMarketAndIDRequest)
 
-OrderByMarketAndIdResponse = _reflection.GeneratedProtocolMessageType('OrderByMarketAndIdResponse', (_message.Message,), {
+OrderByMarketAndIDResponse = _reflection.GeneratedProtocolMessageType('OrderByMarketAndIDResponse', (_message.Message,), {
   'DESCRIPTOR' : _ORDERBYMARKETANDIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderByMarketAndIdResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderByMarketAndIDResponse)
   })
-_sym_db.RegisterMessage(OrderByMarketAndIdResponse)
+_sym_db.RegisterMessage(OrderByMarketAndIDResponse)
 
 OrderByReferenceRequest = _reflection.GeneratedProtocolMessageType('OrderByReferenceRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERBYREFERENCEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderByReferenceRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderByReferenceRequest)
   })
 _sym_db.RegisterMessage(OrderByReferenceRequest)
 
 OrderByReferenceResponse = _reflection.GeneratedProtocolMessageType('OrderByReferenceResponse', (_message.Message,), {
   'DESCRIPTOR' : _ORDERBYREFERENCERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderByReferenceResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderByReferenceResponse)
   })
 _sym_db.RegisterMessage(OrderByReferenceResponse)
+
+MarketsRequest = _reflection.GeneratedProtocolMessageType('MarketsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _MARKETSREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.MarketsRequest)
+  })
+_sym_db.RegisterMessage(MarketsRequest)
 
 MarketsResponse = _reflection.GeneratedProtocolMessageType('MarketsResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARKETSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketsResponse)
   })
 _sym_db.RegisterMessage(MarketsResponse)
 
 CandlesRequest = _reflection.GeneratedProtocolMessageType('CandlesRequest', (_message.Message,), {
   'DESCRIPTOR' : _CANDLESREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.CandlesRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.CandlesRequest)
   })
 _sym_db.RegisterMessage(CandlesRequest)
 
 CandlesResponse = _reflection.GeneratedProtocolMessageType('CandlesResponse', (_message.Message,), {
   'DESCRIPTOR' : _CANDLESRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.CandlesResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.CandlesResponse)
   })
 _sym_db.RegisterMessage(CandlesResponse)
 
 MarketDepthRequest = _reflection.GeneratedProtocolMessageType('MarketDepthRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETDEPTHREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketDepthRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDepthRequest)
   })
 _sym_db.RegisterMessage(MarketDepthRequest)
 
 MarketDepthResponse = _reflection.GeneratedProtocolMessageType('MarketDepthResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARKETDEPTHRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketDepthResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketDepthResponse)
   })
 _sym_db.RegisterMessage(MarketDepthResponse)
 
 TradesByMarketRequest = _reflection.GeneratedProtocolMessageType('TradesByMarketRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRADESBYMARKETREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesByMarketRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesByMarketRequest)
   })
 _sym_db.RegisterMessage(TradesByMarketRequest)
 
 TradesByMarketResponse = _reflection.GeneratedProtocolMessageType('TradesByMarketResponse', (_message.Message,), {
   'DESCRIPTOR' : _TRADESBYMARKETRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesByMarketResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesByMarketResponse)
   })
 _sym_db.RegisterMessage(TradesByMarketResponse)
 
 PositionsByPartyRequest = _reflection.GeneratedProtocolMessageType('PositionsByPartyRequest', (_message.Message,), {
   'DESCRIPTOR' : _POSITIONSBYPARTYREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PositionsByPartyRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PositionsByPartyRequest)
   })
 _sym_db.RegisterMessage(PositionsByPartyRequest)
 
 PositionsByPartyResponse = _reflection.GeneratedProtocolMessageType('PositionsByPartyResponse', (_message.Message,), {
   'DESCRIPTOR' : _POSITIONSBYPARTYRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PositionsByPartyResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PositionsByPartyResponse)
   })
 _sym_db.RegisterMessage(PositionsByPartyResponse)
 
-VegaTimeResponse = _reflection.GeneratedProtocolMessageType('VegaTimeResponse', (_message.Message,), {
-  'DESCRIPTOR' : _VEGATIMERESPONSE,
+GetVegaTimeRequest = _reflection.GeneratedProtocolMessageType('GetVegaTimeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETVEGATIMEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.VegaTimeResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.GetVegaTimeRequest)
   })
-_sym_db.RegisterMessage(VegaTimeResponse)
+_sym_db.RegisterMessage(GetVegaTimeRequest)
+
+GetVegaTimeResponse = _reflection.GeneratedProtocolMessageType('GetVegaTimeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETVEGATIMERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.GetVegaTimeResponse)
+  })
+_sym_db.RegisterMessage(GetVegaTimeResponse)
 
 Pagination = _reflection.GeneratedProtocolMessageType('Pagination', (_message.Message,), {
   'DESCRIPTOR' : _PAGINATION,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.Pagination)
+  # @@protoc_insertion_point(class_scope:api.v1.Pagination)
   })
 _sym_db.RegisterMessage(Pagination)
 
-OrdersStream = _reflection.GeneratedProtocolMessageType('OrdersStream', (_message.Message,), {
-  'DESCRIPTOR' : _ORDERSSTREAM,
+OrdersSubscribeResponse = _reflection.GeneratedProtocolMessageType('OrdersSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ORDERSSUBSCRIBERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrdersStream)
+  # @@protoc_insertion_point(class_scope:api.v1.OrdersSubscribeResponse)
   })
-_sym_db.RegisterMessage(OrdersStream)
+_sym_db.RegisterMessage(OrdersSubscribeResponse)
 
-TradesStream = _reflection.GeneratedProtocolMessageType('TradesStream', (_message.Message,), {
-  'DESCRIPTOR' : _TRADESSTREAM,
+TradesSubscribeResponse = _reflection.GeneratedProtocolMessageType('TradesSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _TRADESSUBSCRIBERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.TradesStream)
+  # @@protoc_insertion_point(class_scope:api.v1.TradesSubscribeResponse)
   })
-_sym_db.RegisterMessage(TradesStream)
+_sym_db.RegisterMessage(TradesSubscribeResponse)
+
+TransferResponsesSubscribeRequest = _reflection.GeneratedProtocolMessageType('TransferResponsesSubscribeRequest', (_message.Message,), {
+  'DESCRIPTOR' : _TRANSFERRESPONSESSUBSCRIBEREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.TransferResponsesSubscribeRequest)
+  })
+_sym_db.RegisterMessage(TransferResponsesSubscribeRequest)
+
+TransferResponsesSubscribeResponse = _reflection.GeneratedProtocolMessageType('TransferResponsesSubscribeResponse', (_message.Message,), {
+  'DESCRIPTOR' : _TRANSFERRESPONSESSUBSCRIBERESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.TransferResponsesSubscribeResponse)
+  })
+_sym_db.RegisterMessage(TransferResponsesSubscribeResponse)
 
 PartyAccountsRequest = _reflection.GeneratedProtocolMessageType('PartyAccountsRequest', (_message.Message,), {
   'DESCRIPTOR' : _PARTYACCOUNTSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PartyAccountsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PartyAccountsRequest)
   })
 _sym_db.RegisterMessage(PartyAccountsRequest)
 
 PartyAccountsResponse = _reflection.GeneratedProtocolMessageType('PartyAccountsResponse', (_message.Message,), {
   'DESCRIPTOR' : _PARTYACCOUNTSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PartyAccountsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PartyAccountsResponse)
   })
 _sym_db.RegisterMessage(PartyAccountsResponse)
 
 MarketAccountsRequest = _reflection.GeneratedProtocolMessageType('MarketAccountsRequest', (_message.Message,), {
   'DESCRIPTOR' : _MARKETACCOUNTSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketAccountsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketAccountsRequest)
   })
 _sym_db.RegisterMessage(MarketAccountsRequest)
 
 MarketAccountsResponse = _reflection.GeneratedProtocolMessageType('MarketAccountsResponse', (_message.Message,), {
   'DESCRIPTOR' : _MARKETACCOUNTSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.MarketAccountsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.MarketAccountsResponse)
   })
 _sym_db.RegisterMessage(MarketAccountsResponse)
 
 FeeInfrastructureAccountsRequest = _reflection.GeneratedProtocolMessageType('FeeInfrastructureAccountsRequest', (_message.Message,), {
   'DESCRIPTOR' : _FEEINFRASTRUCTUREACCOUNTSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.FeeInfrastructureAccountsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.FeeInfrastructureAccountsRequest)
   })
 _sym_db.RegisterMessage(FeeInfrastructureAccountsRequest)
 
 FeeInfrastructureAccountsResponse = _reflection.GeneratedProtocolMessageType('FeeInfrastructureAccountsResponse', (_message.Message,), {
   'DESCRIPTOR' : _FEEINFRASTRUCTUREACCOUNTSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.FeeInfrastructureAccountsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.FeeInfrastructureAccountsResponse)
   })
 _sym_db.RegisterMessage(FeeInfrastructureAccountsResponse)
 
 PrepareProposalRequest = _reflection.GeneratedProtocolMessageType('PrepareProposalRequest', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREPROPOSALREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareProposalRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareProposalRequest)
   })
 _sym_db.RegisterMessage(PrepareProposalRequest)
 
 PrepareProposalResponse = _reflection.GeneratedProtocolMessageType('PrepareProposalResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREPROPOSALRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareProposalResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareProposalResponse)
   })
 _sym_db.RegisterMessage(PrepareProposalResponse)
 
 PrepareVoteRequest = _reflection.GeneratedProtocolMessageType('PrepareVoteRequest', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREVOTEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareVoteRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareVoteRequest)
   })
 _sym_db.RegisterMessage(PrepareVoteRequest)
 
 PrepareVoteResponse = _reflection.GeneratedProtocolMessageType('PrepareVoteResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPAREVOTERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareVoteResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareVoteResponse)
   })
 _sym_db.RegisterMessage(PrepareVoteResponse)
 
 PrepareLiquidityProvisionRequest = _reflection.GeneratedProtocolMessageType('PrepareLiquidityProvisionRequest', (_message.Message,), {
   'DESCRIPTOR' : _PREPARELIQUIDITYPROVISIONREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareLiquidityProvisionRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareLiquidityProvisionRequest)
   })
 _sym_db.RegisterMessage(PrepareLiquidityProvisionRequest)
 
 PrepareLiquidityProvisionResponse = _reflection.GeneratedProtocolMessageType('PrepareLiquidityProvisionResponse', (_message.Message,), {
   'DESCRIPTOR' : _PREPARELIQUIDITYPROVISIONRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.PrepareLiquidityProvisionResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.PrepareLiquidityProvisionResponse)
   })
 _sym_db.RegisterMessage(PrepareLiquidityProvisionResponse)
 
 OrderByIDRequest = _reflection.GeneratedProtocolMessageType('OrderByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERBYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderByIDRequest)
   })
 _sym_db.RegisterMessage(OrderByIDRequest)
+
+OrderByIDResponse = _reflection.GeneratedProtocolMessageType('OrderByIDResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ORDERBYIDRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OrderByIDResponse)
+  })
+_sym_db.RegisterMessage(OrderByIDResponse)
 
 OrderVersionsByIDRequest = _reflection.GeneratedProtocolMessageType('OrderVersionsByIDRequest', (_message.Message,), {
   'DESCRIPTOR' : _ORDERVERSIONSBYIDREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderVersionsByIDRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderVersionsByIDRequest)
   })
 _sym_db.RegisterMessage(OrderVersionsByIDRequest)
 
-OrderVersionsResponse = _reflection.GeneratedProtocolMessageType('OrderVersionsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _ORDERVERSIONSRESPONSE,
+OrderVersionsByIDResponse = _reflection.GeneratedProtocolMessageType('OrderVersionsByIDResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ORDERVERSIONSBYIDRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.OrderVersionsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.OrderVersionsByIDResponse)
   })
-_sym_db.RegisterMessage(OrderVersionsResponse)
+_sym_db.RegisterMessage(OrderVersionsByIDResponse)
 
 EstimateFeeRequest = _reflection.GeneratedProtocolMessageType('EstimateFeeRequest', (_message.Message,), {
   'DESCRIPTOR' : _ESTIMATEFEEREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.EstimateFeeRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.EstimateFeeRequest)
   })
 _sym_db.RegisterMessage(EstimateFeeRequest)
 
 EstimateFeeResponse = _reflection.GeneratedProtocolMessageType('EstimateFeeResponse', (_message.Message,), {
   'DESCRIPTOR' : _ESTIMATEFEERESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.EstimateFeeResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.EstimateFeeResponse)
   })
 _sym_db.RegisterMessage(EstimateFeeResponse)
 
 EstimateMarginRequest = _reflection.GeneratedProtocolMessageType('EstimateMarginRequest', (_message.Message,), {
   'DESCRIPTOR' : _ESTIMATEMARGINREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.EstimateMarginRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.EstimateMarginRequest)
   })
 _sym_db.RegisterMessage(EstimateMarginRequest)
 
 EstimateMarginResponse = _reflection.GeneratedProtocolMessageType('EstimateMarginResponse', (_message.Message,), {
   'DESCRIPTOR' : _ESTIMATEMARGINRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.EstimateMarginResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.EstimateMarginResponse)
   })
 _sym_db.RegisterMessage(EstimateMarginResponse)
 
-ObserveEventsRequest = _reflection.GeneratedProtocolMessageType('ObserveEventsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _OBSERVEEVENTSREQUEST,
+ObserveEventBusRequest = _reflection.GeneratedProtocolMessageType('ObserveEventBusRequest', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEEVENTBUSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ObserveEventsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.ObserveEventBusRequest)
   })
-_sym_db.RegisterMessage(ObserveEventsRequest)
+_sym_db.RegisterMessage(ObserveEventBusRequest)
 
-ObserveEventsResponse = _reflection.GeneratedProtocolMessageType('ObserveEventsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _OBSERVEEVENTSRESPONSE,
+ObserveEventBusResponse = _reflection.GeneratedProtocolMessageType('ObserveEventBusResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OBSERVEEVENTBUSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ObserveEventsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.ObserveEventBusResponse)
   })
-_sym_db.RegisterMessage(ObserveEventsResponse)
+_sym_db.RegisterMessage(ObserveEventBusResponse)
+
+StatisticsRequest = _reflection.GeneratedProtocolMessageType('StatisticsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _STATISTICSREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.StatisticsRequest)
+  })
+_sym_db.RegisterMessage(StatisticsRequest)
+
+StatisticsResponse = _reflection.GeneratedProtocolMessageType('StatisticsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _STATISTICSRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.StatisticsResponse)
+  })
+_sym_db.RegisterMessage(StatisticsResponse)
 
 WithdrawalsRequest = _reflection.GeneratedProtocolMessageType('WithdrawalsRequest', (_message.Message,), {
   'DESCRIPTOR' : _WITHDRAWALSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.WithdrawalsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.WithdrawalsRequest)
   })
 _sym_db.RegisterMessage(WithdrawalsRequest)
 
 WithdrawalsResponse = _reflection.GeneratedProtocolMessageType('WithdrawalsResponse', (_message.Message,), {
   'DESCRIPTOR' : _WITHDRAWALSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.WithdrawalsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.WithdrawalsResponse)
   })
 _sym_db.RegisterMessage(WithdrawalsResponse)
 
 WithdrawalRequest = _reflection.GeneratedProtocolMessageType('WithdrawalRequest', (_message.Message,), {
   'DESCRIPTOR' : _WITHDRAWALREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.WithdrawalRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.WithdrawalRequest)
   })
 _sym_db.RegisterMessage(WithdrawalRequest)
 
 WithdrawalResponse = _reflection.GeneratedProtocolMessageType('WithdrawalResponse', (_message.Message,), {
   'DESCRIPTOR' : _WITHDRAWALRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.WithdrawalResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.WithdrawalResponse)
   })
 _sym_db.RegisterMessage(WithdrawalResponse)
 
 ERC20WithdrawalApprovalRequest = _reflection.GeneratedProtocolMessageType('ERC20WithdrawalApprovalRequest', (_message.Message,), {
   'DESCRIPTOR' : _ERC20WITHDRAWALAPPROVALREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ERC20WithdrawalApprovalRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.ERC20WithdrawalApprovalRequest)
   })
 _sym_db.RegisterMessage(ERC20WithdrawalApprovalRequest)
 
 ERC20WithdrawalApprovalResponse = _reflection.GeneratedProtocolMessageType('ERC20WithdrawalApprovalResponse', (_message.Message,), {
   'DESCRIPTOR' : _ERC20WITHDRAWALAPPROVALRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.ERC20WithdrawalApprovalResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.ERC20WithdrawalApprovalResponse)
   })
 _sym_db.RegisterMessage(ERC20WithdrawalApprovalResponse)
 
 DepositsRequest = _reflection.GeneratedProtocolMessageType('DepositsRequest', (_message.Message,), {
   'DESCRIPTOR' : _DEPOSITSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.DepositsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.DepositsRequest)
   })
 _sym_db.RegisterMessage(DepositsRequest)
 
 DepositsResponse = _reflection.GeneratedProtocolMessageType('DepositsResponse', (_message.Message,), {
   'DESCRIPTOR' : _DEPOSITSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.DepositsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.DepositsResponse)
   })
 _sym_db.RegisterMessage(DepositsResponse)
 
 DepositRequest = _reflection.GeneratedProtocolMessageType('DepositRequest', (_message.Message,), {
   'DESCRIPTOR' : _DEPOSITREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.DepositRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.DepositRequest)
   })
 _sym_db.RegisterMessage(DepositRequest)
 
 DepositResponse = _reflection.GeneratedProtocolMessageType('DepositResponse', (_message.Message,), {
   'DESCRIPTOR' : _DEPOSITRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.DepositResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.DepositResponse)
   })
 _sym_db.RegisterMessage(DepositResponse)
 
 NetworkParametersRequest = _reflection.GeneratedProtocolMessageType('NetworkParametersRequest', (_message.Message,), {
   'DESCRIPTOR' : _NETWORKPARAMETERSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.NetworkParametersRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.NetworkParametersRequest)
   })
 _sym_db.RegisterMessage(NetworkParametersRequest)
 
 NetworkParametersResponse = _reflection.GeneratedProtocolMessageType('NetworkParametersResponse', (_message.Message,), {
   'DESCRIPTOR' : _NETWORKPARAMETERSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.NetworkParametersResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.NetworkParametersResponse)
   })
 _sym_db.RegisterMessage(NetworkParametersResponse)
 
 LiquidityProvisionsRequest = _reflection.GeneratedProtocolMessageType('LiquidityProvisionsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LIQUIDITYPROVISIONSREQUEST,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.LiquidityProvisionsRequest)
+  # @@protoc_insertion_point(class_scope:api.v1.LiquidityProvisionsRequest)
   })
 _sym_db.RegisterMessage(LiquidityProvisionsRequest)
 
 LiquidityProvisionsResponse = _reflection.GeneratedProtocolMessageType('LiquidityProvisionsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LIQUIDITYPROVISIONSRESPONSE,
   '__module__' : 'api.trading_pb2'
-  # @@protoc_insertion_point(class_scope:api.LiquidityProvisionsResponse)
+  # @@protoc_insertion_point(class_scope:api.v1.LiquidityProvisionsResponse)
   })
 _sym_db.RegisterMessage(LiquidityProvisionsResponse)
 
+OracleSpecRequest = _reflection.GeneratedProtocolMessageType('OracleSpecRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLESPECREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OracleSpecRequest)
+  })
+_sym_db.RegisterMessage(OracleSpecRequest)
+
+OracleSpecResponse = _reflection.GeneratedProtocolMessageType('OracleSpecResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLESPECRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OracleSpecResponse)
+  })
+_sym_db.RegisterMessage(OracleSpecResponse)
+
+OracleSpecsRequest = _reflection.GeneratedProtocolMessageType('OracleSpecsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLESPECSREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OracleSpecsRequest)
+  })
+_sym_db.RegisterMessage(OracleSpecsRequest)
+
+OracleSpecsResponse = _reflection.GeneratedProtocolMessageType('OracleSpecsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLESPECSRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OracleSpecsResponse)
+  })
+_sym_db.RegisterMessage(OracleSpecsResponse)
+
+OracleDataBySpecRequest = _reflection.GeneratedProtocolMessageType('OracleDataBySpecRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLEDATABYSPECREQUEST,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OracleDataBySpecRequest)
+  })
+_sym_db.RegisterMessage(OracleDataBySpecRequest)
+
+OracleDataBySpecResponse = _reflection.GeneratedProtocolMessageType('OracleDataBySpecResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ORACLEDATABYSPECRESPONSE,
+  '__module__' : 'api.trading_pb2'
+  # @@protoc_insertion_point(class_scope:api.v1.OracleDataBySpecResponse)
+  })
+_sym_db.RegisterMessage(OracleDataBySpecResponse)
+
 
 DESCRIPTOR._options = None
-_ASSETBYIDREQUEST.fields_by_name['ID']._options = None
-_GETNODESIGNATURESAGGREGATEREQUEST.fields_by_name['ID']._options = None
-_GETPROPOSALSBYPARTYREQUEST.fields_by_name['partyID']._options = None
-_GETVOTESBYPARTYREQUEST.fields_by_name['partyID']._options = None
-_GETUPDATEMARKETPROPOSALSREQUEST.fields_by_name['marketID']._options = None
-_GETPROPOSALBYIDREQUEST.fields_by_name['proposalID']._options = None
+_ASSETBYIDREQUEST.fields_by_name['id']._options = None
+_GETNODESIGNATURESAGGREGATEREQUEST.fields_by_name['id']._options = None
+_GETPROPOSALSBYPARTYREQUEST.fields_by_name['party_id']._options = None
+_GETVOTESBYPARTYREQUEST.fields_by_name['party_id']._options = None
+_GETUPDATEMARKETPROPOSALSREQUEST.fields_by_name['market_id']._options = None
+_GETPROPOSALBYIDREQUEST.fields_by_name['proposal_id']._options = None
 _GETPROPOSALBYREFERENCEREQUEST.fields_by_name['reference']._options = None
-_OBSERVEPARTYPROPOSALSREQUEST.fields_by_name['partyID']._options = None
-_OBSERVEPROPOSALVOTESREQUEST.fields_by_name['proposalID']._options = None
-_OBSERVEPARTYVOTESREQUEST.fields_by_name['partyID']._options = None
-_MARGINLEVELSSUBSCRIBEREQUEST.fields_by_name['partyID']._options = None
-_MARGINLEVELSREQUEST.fields_by_name['partyID']._options = None
-_MARKETDATABYIDREQUEST.fields_by_name['marketID']._options = None
-_LASTTRADEREQUEST.fields_by_name['marketID']._options = None
-_MARKETBYIDREQUEST.fields_by_name['marketID']._options = None
-_PARTYBYIDREQUEST.fields_by_name['partyID']._options = None
-_CANDLESSUBSCRIBEREQUEST.fields_by_name['marketID']._options = None
-_MARKETDEPTHSUBSCRIBEREQUEST.fields_by_name['marketID']._options = None
-_MARKETDEPTHUPDATESSUBSCRIBEREQUEST.fields_by_name['marketID']._options = None
-_ORDERSBYMARKETREQUEST.fields_by_name['marketID']._options = None
-_ORDERSBYPARTYREQUEST.fields_by_name['partyID']._options = None
-_ORDERBYMARKETANDIDREQUEST.fields_by_name['marketID']._options = None
-_ORDERBYMARKETANDIDREQUEST.fields_by_name['orderID']._options = None
+_OBSERVEPARTYPROPOSALSREQUEST.fields_by_name['party_id']._options = None
+_OBSERVEPROPOSALVOTESREQUEST.fields_by_name['proposal_id']._options = None
+_OBSERVEPARTYVOTESREQUEST.fields_by_name['party_id']._options = None
+_MARGINLEVELSSUBSCRIBEREQUEST.fields_by_name['party_id']._options = None
+_MARGINLEVELSREQUEST.fields_by_name['party_id']._options = None
+_MARKETDATABYIDREQUEST.fields_by_name['market_id']._options = None
+_LASTTRADEREQUEST.fields_by_name['market_id']._options = None
+_MARKETBYIDREQUEST.fields_by_name['market_id']._options = None
+_PARTYBYIDREQUEST.fields_by_name['party_id']._options = None
+_CANDLESSUBSCRIBEREQUEST.fields_by_name['market_id']._options = None
+_MARKETDEPTHSUBSCRIBEREQUEST.fields_by_name['market_id']._options = None
+_MARKETDEPTHUPDATESSUBSCRIBEREQUEST.fields_by_name['market_id']._options = None
+_ORDERSBYMARKETREQUEST.fields_by_name['market_id']._options = None
+_ORDERSBYPARTYREQUEST.fields_by_name['party_id']._options = None
+_ORDERBYMARKETANDIDREQUEST.fields_by_name['market_id']._options = None
+_ORDERBYMARKETANDIDREQUEST.fields_by_name['order_id']._options = None
 _ORDERBYREFERENCEREQUEST.fields_by_name['reference']._options = None
-_CANDLESREQUEST.fields_by_name['marketID']._options = None
-_CANDLESREQUEST.fields_by_name['sinceTimestamp']._options = None
-_MARKETDEPTHREQUEST.fields_by_name['marketID']._options = None
-_TRADESBYMARKETREQUEST.fields_by_name['marketID']._options = None
-_POSITIONSBYPARTYREQUEST.fields_by_name['partyID']._options = None
-_PREPAREPROPOSALREQUEST.fields_by_name['partyID']._options = None
+_CANDLESREQUEST.fields_by_name['market_id']._options = None
+_CANDLESREQUEST.fields_by_name['since_timestamp']._options = None
+_MARKETDEPTHREQUEST.fields_by_name['market_id']._options = None
+_TRADESBYMARKETREQUEST.fields_by_name['market_id']._options = None
+_POSITIONSBYPARTYREQUEST.fields_by_name['party_id']._options = None
+_PREPAREPROPOSALREQUEST.fields_by_name['party_id']._options = None
 _PREPAREPROPOSALREQUEST.fields_by_name['proposal']._options = None
 _PREPAREVOTEREQUEST.fields_by_name['vote']._options = None
 _PREPARELIQUIDITYPROVISIONREQUEST.fields_by_name['submission']._options = None
-_ORDERBYIDREQUEST.fields_by_name['orderID']._options = None
-_ORDERVERSIONSBYIDREQUEST.fields_by_name['orderID']._options = None
-_WITHDRAWALSREQUEST.fields_by_name['partyID']._options = None
-_WITHDRAWALREQUEST.fields_by_name['ID']._options = None
-_ERC20WITHDRAWALAPPROVALREQUEST.fields_by_name['withdrawalID']._options = None
-_DEPOSITSREQUEST.fields_by_name['partyID']._options = None
-_DEPOSITREQUEST.fields_by_name['ID']._options = None
+_ORDERBYIDREQUEST.fields_by_name['order_id']._options = None
+_ORDERVERSIONSBYIDREQUEST.fields_by_name['order_id']._options = None
+_WITHDRAWALSREQUEST.fields_by_name['party_id']._options = None
+_WITHDRAWALREQUEST.fields_by_name['id']._options = None
+_ERC20WITHDRAWALAPPROVALREQUEST.fields_by_name['withdrawal_id']._options = None
+_DEPOSITSREQUEST.fields_by_name['party_id']._options = None
+_DEPOSITREQUEST.fields_by_name['id']._options = None
+_ORACLESPECREQUEST.fields_by_name['id']._options = None
+_ORACLEDATABYSPECREQUEST.fields_by_name['id']._options = None
 
-_TRADING = _descriptor.ServiceDescriptor(
-  name='trading',
-  full_name='api.trading',
+_TRADINGSERVICE = _descriptor.ServiceDescriptor(
+  name='TradingService',
+  full_name='api.v1.TradingService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=9706,
-  serialized_end=10456,
+  serialized_start=11485,
+  serialized_end=12317,
   methods=[
   _descriptor.MethodDescriptor(
     name='PrepareSubmitOrder',
-    full_name='api.trading.PrepareSubmitOrder',
+    full_name='api.v1.TradingService.PrepareSubmitOrder',
     index=0,
     containing_service=None,
-    input_type=_SUBMITORDERREQUEST,
+    input_type=_PREPARESUBMITORDERREQUEST,
     output_type=_PREPARESUBMITORDERRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='PrepareCancelOrder',
-    full_name='api.trading.PrepareCancelOrder',
+    full_name='api.v1.TradingService.PrepareCancelOrder',
     index=1,
     containing_service=None,
-    input_type=_CANCELORDERREQUEST,
+    input_type=_PREPARECANCELORDERREQUEST,
     output_type=_PREPARECANCELORDERRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='PrepareAmendOrder',
-    full_name='api.trading.PrepareAmendOrder',
+    full_name='api.v1.TradingService.PrepareAmendOrder',
     index=2,
     containing_service=None,
-    input_type=_AMENDORDERREQUEST,
+    input_type=_PREPAREAMENDORDERREQUEST,
     output_type=_PREPAREAMENDORDERRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='PrepareWithdraw',
-    full_name='api.trading.PrepareWithdraw',
+    full_name='api.v1.TradingService.PrepareWithdraw',
     index=3,
     containing_service=None,
     input_type=_PREPAREWITHDRAWREQUEST,
@@ -5414,7 +6458,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='SubmitTransaction',
-    full_name='api.trading.SubmitTransaction',
+    full_name='api.v1.TradingService.SubmitTransaction',
     index=4,
     containing_service=None,
     input_type=_SUBMITTRANSACTIONREQUEST,
@@ -5424,7 +6468,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PrepareProposal',
-    full_name='api.trading.PrepareProposal',
+    full_name='api.v1.TradingService.PrepareProposal',
     index=5,
     containing_service=None,
     input_type=_PREPAREPROPOSALREQUEST,
@@ -5434,7 +6478,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PrepareVote',
-    full_name='api.trading.PrepareVote',
+    full_name='api.v1.TradingService.PrepareVote',
     index=6,
     containing_service=None,
     input_type=_PREPAREVOTEREQUEST,
@@ -5444,7 +6488,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PropagateChainEvent',
-    full_name='api.trading.PropagateChainEvent',
+    full_name='api.v1.TradingService.PropagateChainEvent',
     index=7,
     containing_service=None,
     input_type=_PROPAGATECHAINEVENTREQUEST,
@@ -5454,7 +6498,7 @@ _TRADING = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PrepareLiquidityProvision',
-    full_name='api.trading.PrepareLiquidityProvision',
+    full_name='api.v1.TradingService.PrepareLiquidityProvision',
     index=8,
     containing_service=None,
     input_type=_PREPARELIQUIDITYPROVISIONREQUEST,
@@ -5463,24 +6507,24 @@ _TRADING = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_TRADING)
+_sym_db.RegisterServiceDescriptor(_TRADINGSERVICE)
 
-DESCRIPTOR.services_by_name['trading'] = _TRADING
+DESCRIPTOR.services_by_name['TradingService'] = _TRADINGSERVICE
 
 
-_TRADING_DATA = _descriptor.ServiceDescriptor(
-  name='trading_data',
-  full_name='api.trading_data',
+_TRADINGDATASERVICE = _descriptor.ServiceDescriptor(
+  name='TradingDataService',
+  full_name='api.v1.TradingDataService',
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=10459,
-  serialized_end=15055,
+  serialized_start=12320,
+  serialized_end=17787,
   methods=[
   _descriptor.MethodDescriptor(
     name='MarketAccounts',
-    full_name='api.trading_data.MarketAccounts',
+    full_name='api.v1.TradingDataService.MarketAccounts',
     index=0,
     containing_service=None,
     input_type=_MARKETACCOUNTSREQUEST,
@@ -5490,7 +6534,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PartyAccounts',
-    full_name='api.trading_data.PartyAccounts',
+    full_name='api.v1.TradingDataService.PartyAccounts',
     index=1,
     containing_service=None,
     input_type=_PARTYACCOUNTSREQUEST,
@@ -5500,7 +6544,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='FeeInfrastructureAccounts',
-    full_name='api.trading_data.FeeInfrastructureAccounts',
+    full_name='api.v1.TradingDataService.FeeInfrastructureAccounts',
     index=2,
     containing_service=None,
     input_type=_FEEINFRASTRUCTUREACCOUNTSREQUEST,
@@ -5510,7 +6554,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Candles',
-    full_name='api.trading_data.Candles',
+    full_name='api.v1.TradingDataService.Candles',
     index=3,
     containing_service=None,
     input_type=_CANDLESREQUEST,
@@ -5520,7 +6564,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='MarketDataByID',
-    full_name='api.trading_data.MarketDataByID',
+    full_name='api.v1.TradingDataService.MarketDataByID',
     index=4,
     containing_service=None,
     input_type=_MARKETDATABYIDREQUEST,
@@ -5530,17 +6574,17 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='MarketsData',
-    full_name='api.trading_data.MarketsData',
+    full_name='api.v1.TradingDataService.MarketsData',
     index=5,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_MARKETSDATAREQUEST,
     output_type=_MARKETSDATARESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='MarketByID',
-    full_name='api.trading_data.MarketByID',
+    full_name='api.v1.TradingDataService.MarketByID',
     index=6,
     containing_service=None,
     input_type=_MARKETBYIDREQUEST,
@@ -5550,7 +6594,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='MarketDepth',
-    full_name='api.trading_data.MarketDepth',
+    full_name='api.v1.TradingDataService.MarketDepth',
     index=7,
     containing_service=None,
     input_type=_MARKETDEPTHREQUEST,
@@ -5560,17 +6604,17 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Markets',
-    full_name='api.trading_data.Markets',
+    full_name='api.v1.TradingDataService.Markets',
     index=8,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_MARKETSREQUEST,
     output_type=_MARKETSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='OrderByMarketAndID',
-    full_name='api.trading_data.OrderByMarketAndID',
+    full_name='api.v1.TradingDataService.OrderByMarketAndID',
     index=9,
     containing_service=None,
     input_type=_ORDERBYMARKETANDIDREQUEST,
@@ -5580,7 +6624,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='OrderByReference',
-    full_name='api.trading_data.OrderByReference',
+    full_name='api.v1.TradingDataService.OrderByReference',
     index=10,
     containing_service=None,
     input_type=_ORDERBYREFERENCEREQUEST,
@@ -5590,7 +6634,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='OrdersByMarket',
-    full_name='api.trading_data.OrdersByMarket',
+    full_name='api.v1.TradingDataService.OrdersByMarket',
     index=11,
     containing_service=None,
     input_type=_ORDERSBYMARKETREQUEST,
@@ -5600,7 +6644,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='OrdersByParty',
-    full_name='api.trading_data.OrdersByParty',
+    full_name='api.v1.TradingDataService.OrdersByParty',
     index=12,
     containing_service=None,
     input_type=_ORDERSBYPARTYREQUEST,
@@ -5610,27 +6654,27 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='OrderByID',
-    full_name='api.trading_data.OrderByID',
+    full_name='api.v1.TradingDataService.OrderByID',
     index=13,
     containing_service=None,
     input_type=_ORDERBYIDREQUEST,
-    output_type=vega__pb2._ORDER,
+    output_type=_ORDERBYIDRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='OrderVersionsByID',
-    full_name='api.trading_data.OrderVersionsByID',
+    full_name='api.v1.TradingDataService.OrderVersionsByID',
     index=14,
     containing_service=None,
     input_type=_ORDERVERSIONSBYIDREQUEST,
-    output_type=_ORDERVERSIONSRESPONSE,
+    output_type=_ORDERVERSIONSBYIDRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='MarginLevels',
-    full_name='api.trading_data.MarginLevels',
+    full_name='api.v1.TradingDataService.MarginLevels',
     index=15,
     containing_service=None,
     input_type=_MARGINLEVELSREQUEST,
@@ -5640,17 +6684,17 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Parties',
-    full_name='api.trading_data.Parties',
+    full_name='api.v1.TradingDataService.Parties',
     index=16,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    input_type=_PARTIESREQUEST,
     output_type=_PARTIESRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='PartyByID',
-    full_name='api.trading_data.PartyByID',
+    full_name='api.v1.TradingDataService.PartyByID',
     index=17,
     containing_service=None,
     input_type=_PARTYBYIDREQUEST,
@@ -5660,7 +6704,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PositionsByParty',
-    full_name='api.trading_data.PositionsByParty',
+    full_name='api.v1.TradingDataService.PositionsByParty',
     index=18,
     containing_service=None,
     input_type=_POSITIONSBYPARTYREQUEST,
@@ -5670,7 +6714,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='LastTrade',
-    full_name='api.trading_data.LastTrade',
+    full_name='api.v1.TradingDataService.LastTrade',
     index=19,
     containing_service=None,
     input_type=_LASTTRADEREQUEST,
@@ -5680,7 +6724,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='TradesByMarket',
-    full_name='api.trading_data.TradesByMarket',
+    full_name='api.v1.TradingDataService.TradesByMarket',
     index=20,
     containing_service=None,
     input_type=_TRADESBYMARKETREQUEST,
@@ -5690,7 +6734,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='TradesByOrder',
-    full_name='api.trading_data.TradesByOrder',
+    full_name='api.v1.TradingDataService.TradesByOrder',
     index=21,
     containing_service=None,
     input_type=_TRADESBYORDERREQUEST,
@@ -5700,7 +6744,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='TradesByParty',
-    full_name='api.trading_data.TradesByParty',
+    full_name='api.v1.TradingDataService.TradesByParty',
     index=22,
     containing_service=None,
     input_type=_TRADESBYPARTYREQUEST,
@@ -5710,7 +6754,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetProposals',
-    full_name='api.trading_data.GetProposals',
+    full_name='api.v1.TradingDataService.GetProposals',
     index=23,
     containing_service=None,
     input_type=_GETPROPOSALSREQUEST,
@@ -5720,7 +6764,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetProposalsByParty',
-    full_name='api.trading_data.GetProposalsByParty',
+    full_name='api.v1.TradingDataService.GetProposalsByParty',
     index=24,
     containing_service=None,
     input_type=_GETPROPOSALSBYPARTYREQUEST,
@@ -5730,7 +6774,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetVotesByParty',
-    full_name='api.trading_data.GetVotesByParty',
+    full_name='api.v1.TradingDataService.GetVotesByParty',
     index=25,
     containing_service=None,
     input_type=_GETVOTESBYPARTYREQUEST,
@@ -5740,7 +6784,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetNewMarketProposals',
-    full_name='api.trading_data.GetNewMarketProposals',
+    full_name='api.v1.TradingDataService.GetNewMarketProposals',
     index=26,
     containing_service=None,
     input_type=_GETNEWMARKETPROPOSALSREQUEST,
@@ -5750,7 +6794,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetUpdateMarketProposals',
-    full_name='api.trading_data.GetUpdateMarketProposals',
+    full_name='api.v1.TradingDataService.GetUpdateMarketProposals',
     index=27,
     containing_service=None,
     input_type=_GETUPDATEMARKETPROPOSALSREQUEST,
@@ -5760,7 +6804,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetNetworkParametersProposals',
-    full_name='api.trading_data.GetNetworkParametersProposals',
+    full_name='api.v1.TradingDataService.GetNetworkParametersProposals',
     index=28,
     containing_service=None,
     input_type=_GETNETWORKPARAMETERSPROPOSALSREQUEST,
@@ -5770,7 +6814,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetNewAssetProposals',
-    full_name='api.trading_data.GetNewAssetProposals',
+    full_name='api.v1.TradingDataService.GetNewAssetProposals',
     index=29,
     containing_service=None,
     input_type=_GETNEWASSETPROPOSALSREQUEST,
@@ -5780,7 +6824,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetProposalByID',
-    full_name='api.trading_data.GetProposalByID',
+    full_name='api.v1.TradingDataService.GetProposalByID',
     index=30,
     containing_service=None,
     input_type=_GETPROPOSALBYIDREQUEST,
@@ -5790,7 +6834,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetProposalByReference',
-    full_name='api.trading_data.GetProposalByReference',
+    full_name='api.v1.TradingDataService.GetProposalByReference',
     index=31,
     containing_service=None,
     input_type=_GETPROPOSALBYREFERENCEREQUEST,
@@ -5800,177 +6844,177 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ObserveGovernance',
-    full_name='api.trading_data.ObserveGovernance',
+    full_name='api.v1.TradingDataService.ObserveGovernance',
     index=32,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    output_type=governance__pb2._GOVERNANCEDATA,
+    input_type=_OBSERVEGOVERNANCEREQUEST,
+    output_type=_OBSERVEGOVERNANCERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ObservePartyProposals',
-    full_name='api.trading_data.ObservePartyProposals',
+    full_name='api.v1.TradingDataService.ObservePartyProposals',
     index=33,
     containing_service=None,
     input_type=_OBSERVEPARTYPROPOSALSREQUEST,
-    output_type=governance__pb2._GOVERNANCEDATA,
+    output_type=_OBSERVEPARTYPROPOSALSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ObservePartyVotes',
-    full_name='api.trading_data.ObservePartyVotes',
+    full_name='api.v1.TradingDataService.ObservePartyVotes',
     index=34,
     containing_service=None,
     input_type=_OBSERVEPARTYVOTESREQUEST,
-    output_type=governance__pb2._VOTE,
+    output_type=_OBSERVEPARTYVOTESRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ObserveProposalVotes',
-    full_name='api.trading_data.ObserveProposalVotes',
+    full_name='api.v1.TradingDataService.ObserveProposalVotes',
     index=35,
     containing_service=None,
     input_type=_OBSERVEPROPOSALVOTESREQUEST,
-    output_type=governance__pb2._VOTE,
+    output_type=_OBSERVEPROPOSALVOTESRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ObserveEventBus',
-    full_name='api.trading_data.ObserveEventBus',
+    full_name='api.v1.TradingDataService.ObserveEventBus',
     index=36,
     containing_service=None,
-    input_type=_OBSERVEEVENTSREQUEST,
-    output_type=_OBSERVEEVENTSRESPONSE,
+    input_type=_OBSERVEEVENTBUSREQUEST,
+    output_type=_OBSERVEEVENTBUSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Statistics',
-    full_name='api.trading_data.Statistics',
+    full_name='api.v1.TradingDataService.Statistics',
     index=37,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    output_type=vega__pb2._STATISTICS,
+    input_type=_STATISTICSREQUEST,
+    output_type=_STATISTICSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetVegaTime',
-    full_name='api.trading_data.GetVegaTime',
+    full_name='api.v1.TradingDataService.GetVegaTime',
     index=38,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    output_type=_VEGATIMERESPONSE,
+    input_type=_GETVEGATIMEREQUEST,
+    output_type=_GETVEGATIMERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AccountsSubscribe',
-    full_name='api.trading_data.AccountsSubscribe',
+    full_name='api.v1.TradingDataService.AccountsSubscribe',
     index=39,
     containing_service=None,
     input_type=_ACCOUNTSSUBSCRIBEREQUEST,
-    output_type=vega__pb2._ACCOUNT,
+    output_type=_ACCOUNTSSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CandlesSubscribe',
-    full_name='api.trading_data.CandlesSubscribe',
+    full_name='api.v1.TradingDataService.CandlesSubscribe',
     index=40,
     containing_service=None,
     input_type=_CANDLESSUBSCRIBEREQUEST,
-    output_type=vega__pb2._CANDLE,
+    output_type=_CANDLESSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='MarginLevelsSubscribe',
-    full_name='api.trading_data.MarginLevelsSubscribe',
+    full_name='api.v1.TradingDataService.MarginLevelsSubscribe',
     index=41,
     containing_service=None,
     input_type=_MARGINLEVELSSUBSCRIBEREQUEST,
-    output_type=vega__pb2._MARGINLEVELS,
+    output_type=_MARGINLEVELSSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='MarketDepthSubscribe',
-    full_name='api.trading_data.MarketDepthSubscribe',
+    full_name='api.v1.TradingDataService.MarketDepthSubscribe',
     index=42,
     containing_service=None,
     input_type=_MARKETDEPTHSUBSCRIBEREQUEST,
-    output_type=vega__pb2._MARKETDEPTH,
+    output_type=_MARKETDEPTHSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='MarketDepthUpdatesSubscribe',
-    full_name='api.trading_data.MarketDepthUpdatesSubscribe',
+    full_name='api.v1.TradingDataService.MarketDepthUpdatesSubscribe',
     index=43,
     containing_service=None,
     input_type=_MARKETDEPTHUPDATESSUBSCRIBEREQUEST,
-    output_type=vega__pb2._MARKETDEPTHUPDATE,
+    output_type=_MARKETDEPTHUPDATESSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='MarketsDataSubscribe',
-    full_name='api.trading_data.MarketsDataSubscribe',
+    full_name='api.v1.TradingDataService.MarketsDataSubscribe',
     index=44,
     containing_service=None,
     input_type=_MARKETSDATASUBSCRIBEREQUEST,
-    output_type=vega__pb2._MARKETDATA,
+    output_type=_MARKETSDATASUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='OrdersSubscribe',
-    full_name='api.trading_data.OrdersSubscribe',
+    full_name='api.v1.TradingDataService.OrdersSubscribe',
     index=45,
     containing_service=None,
     input_type=_ORDERSSUBSCRIBEREQUEST,
-    output_type=_ORDERSSTREAM,
+    output_type=_ORDERSSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='PositionsSubscribe',
-    full_name='api.trading_data.PositionsSubscribe',
+    full_name='api.v1.TradingDataService.PositionsSubscribe',
     index=46,
     containing_service=None,
     input_type=_POSITIONSSUBSCRIBEREQUEST,
-    output_type=vega__pb2._POSITION,
+    output_type=_POSITIONSSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='TradesSubscribe',
-    full_name='api.trading_data.TradesSubscribe',
+    full_name='api.v1.TradingDataService.TradesSubscribe',
     index=47,
     containing_service=None,
     input_type=_TRADESSUBSCRIBEREQUEST,
-    output_type=_TRADESSTREAM,
+    output_type=_TRADESSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='TransferResponsesSubscribe',
-    full_name='api.trading_data.TransferResponsesSubscribe',
+    full_name='api.v1.TradingDataService.TransferResponsesSubscribe',
     index=48,
     containing_service=None,
-    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    output_type=vega__pb2._TRANSFERRESPONSE,
+    input_type=_TRANSFERRESPONSESSUBSCRIBEREQUEST,
+    output_type=_TRANSFERRESPONSESSUBSCRIBERESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetNodeSignaturesAggregate',
-    full_name='api.trading_data.GetNodeSignaturesAggregate',
+    full_name='api.v1.TradingDataService.GetNodeSignaturesAggregate',
     index=49,
     containing_service=None,
     input_type=_GETNODESIGNATURESAGGREGATEREQUEST,
@@ -5980,7 +7024,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='AssetByID',
-    full_name='api.trading_data.AssetByID',
+    full_name='api.v1.TradingDataService.AssetByID',
     index=50,
     containing_service=None,
     input_type=_ASSETBYIDREQUEST,
@@ -5990,7 +7034,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Assets',
-    full_name='api.trading_data.Assets',
+    full_name='api.v1.TradingDataService.Assets',
     index=51,
     containing_service=None,
     input_type=_ASSETSREQUEST,
@@ -6000,7 +7044,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='EstimateFee',
-    full_name='api.trading_data.EstimateFee',
+    full_name='api.v1.TradingDataService.EstimateFee',
     index=52,
     containing_service=None,
     input_type=_ESTIMATEFEEREQUEST,
@@ -6010,7 +7054,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='EstimateMargin',
-    full_name='api.trading_data.EstimateMargin',
+    full_name='api.v1.TradingDataService.EstimateMargin',
     index=53,
     containing_service=None,
     input_type=_ESTIMATEMARGINREQUEST,
@@ -6020,7 +7064,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ERC20WithdrawalApproval',
-    full_name='api.trading_data.ERC20WithdrawalApproval',
+    full_name='api.v1.TradingDataService.ERC20WithdrawalApproval',
     index=54,
     containing_service=None,
     input_type=_ERC20WITHDRAWALAPPROVALREQUEST,
@@ -6030,7 +7074,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Withdrawal',
-    full_name='api.trading_data.Withdrawal',
+    full_name='api.v1.TradingDataService.Withdrawal',
     index=55,
     containing_service=None,
     input_type=_WITHDRAWALREQUEST,
@@ -6040,7 +7084,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Withdrawals',
-    full_name='api.trading_data.Withdrawals',
+    full_name='api.v1.TradingDataService.Withdrawals',
     index=56,
     containing_service=None,
     input_type=_WITHDRAWALSREQUEST,
@@ -6050,7 +7094,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Deposit',
-    full_name='api.trading_data.Deposit',
+    full_name='api.v1.TradingDataService.Deposit',
     index=57,
     containing_service=None,
     input_type=_DEPOSITREQUEST,
@@ -6060,7 +7104,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Deposits',
-    full_name='api.trading_data.Deposits',
+    full_name='api.v1.TradingDataService.Deposits',
     index=58,
     containing_service=None,
     input_type=_DEPOSITSREQUEST,
@@ -6070,7 +7114,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='NetworkParameters',
-    full_name='api.trading_data.NetworkParameters',
+    full_name='api.v1.TradingDataService.NetworkParameters',
     index=59,
     containing_service=None,
     input_type=_NETWORKPARAMETERSREQUEST,
@@ -6080,7 +7124,7 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='LiquidityProvisions',
-    full_name='api.trading_data.LiquidityProvisions',
+    full_name='api.v1.TradingDataService.LiquidityProvisions',
     index=60,
     containing_service=None,
     input_type=_LIQUIDITYPROVISIONSREQUEST,
@@ -6088,9 +7132,39 @@ _TRADING_DATA = _descriptor.ServiceDescriptor(
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
+  _descriptor.MethodDescriptor(
+    name='OracleSpec',
+    full_name='api.v1.TradingDataService.OracleSpec',
+    index=61,
+    containing_service=None,
+    input_type=_ORACLESPECREQUEST,
+    output_type=_ORACLESPECRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='OracleSpecs',
+    full_name='api.v1.TradingDataService.OracleSpecs',
+    index=62,
+    containing_service=None,
+    input_type=_ORACLESPECSREQUEST,
+    output_type=_ORACLESPECSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='OracleDataBySpec',
+    full_name='api.v1.TradingDataService.OracleDataBySpec',
+    index=63,
+    containing_service=None,
+    input_type=_ORACLEDATABYSPECREQUEST,
+    output_type=_ORACLEDATABYSPECRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
 ])
-_sym_db.RegisterServiceDescriptor(_TRADING_DATA)
+_sym_db.RegisterServiceDescriptor(_TRADINGDATASERVICE)
 
-DESCRIPTOR.services_by_name['trading_data'] = _TRADING_DATA
+DESCRIPTOR.services_by_name['TradingDataService'] = _TRADINGDATASERVICE
 
 # @@protoc_insertion_point(module_scope)

@@ -1,111 +1,108 @@
-// package: api
+// package: api.v1
 // file: api/trading.proto
 
 var api_trading_pb = require("../api/trading_pb");
-var vega_pb = require("../vega_pb");
-var governance_pb = require("../governance_pb");
-var google_protobuf_empty_pb = require("google-protobuf/google/protobuf/empty_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
-var trading = (function () {
-  function trading() {}
-  trading.serviceName = "api.trading";
-  return trading;
+var TradingService = (function () {
+  function TradingService() {}
+  TradingService.serviceName = "api.v1.TradingService";
+  return TradingService;
 }());
 
-trading.PrepareSubmitOrder = {
+TradingService.PrepareSubmitOrder = {
   methodName: "PrepareSubmitOrder",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.SubmitOrderRequest,
+  requestType: api_trading_pb.PrepareSubmitOrderRequest,
   responseType: api_trading_pb.PrepareSubmitOrderResponse
 };
 
-trading.PrepareCancelOrder = {
+TradingService.PrepareCancelOrder = {
   methodName: "PrepareCancelOrder",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.CancelOrderRequest,
+  requestType: api_trading_pb.PrepareCancelOrderRequest,
   responseType: api_trading_pb.PrepareCancelOrderResponse
 };
 
-trading.PrepareAmendOrder = {
+TradingService.PrepareAmendOrder = {
   methodName: "PrepareAmendOrder",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.AmendOrderRequest,
+  requestType: api_trading_pb.PrepareAmendOrderRequest,
   responseType: api_trading_pb.PrepareAmendOrderResponse
 };
 
-trading.PrepareWithdraw = {
+TradingService.PrepareWithdraw = {
   methodName: "PrepareWithdraw",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PrepareWithdrawRequest,
   responseType: api_trading_pb.PrepareWithdrawResponse
 };
 
-trading.SubmitTransaction = {
+TradingService.SubmitTransaction = {
   methodName: "SubmitTransaction",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.SubmitTransactionRequest,
   responseType: api_trading_pb.SubmitTransactionResponse
 };
 
-trading.PrepareProposal = {
+TradingService.PrepareProposal = {
   methodName: "PrepareProposal",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PrepareProposalRequest,
   responseType: api_trading_pb.PrepareProposalResponse
 };
 
-trading.PrepareVote = {
+TradingService.PrepareVote = {
   methodName: "PrepareVote",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PrepareVoteRequest,
   responseType: api_trading_pb.PrepareVoteResponse
 };
 
-trading.PropagateChainEvent = {
+TradingService.PropagateChainEvent = {
   methodName: "PropagateChainEvent",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PropagateChainEventRequest,
   responseType: api_trading_pb.PropagateChainEventResponse
 };
 
-trading.PrepareLiquidityProvision = {
+TradingService.PrepareLiquidityProvision = {
   methodName: "PrepareLiquidityProvision",
-  service: trading,
+  service: TradingService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PrepareLiquidityProvisionRequest,
   responseType: api_trading_pb.PrepareLiquidityProvisionResponse
 };
 
-exports.trading = trading;
+exports.TradingService = TradingService;
 
-function tradingClient(serviceHost, options) {
+function TradingServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-tradingClient.prototype.prepareSubmitOrder = function prepareSubmitOrder(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareSubmitOrder = function prepareSubmitOrder(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareSubmitOrder, {
+  var client = grpc.unary(TradingService.PrepareSubmitOrder, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -132,11 +129,11 @@ tradingClient.prototype.prepareSubmitOrder = function prepareSubmitOrder(request
   };
 };
 
-tradingClient.prototype.prepareCancelOrder = function prepareCancelOrder(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareCancelOrder = function prepareCancelOrder(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareCancelOrder, {
+  var client = grpc.unary(TradingService.PrepareCancelOrder, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -163,11 +160,11 @@ tradingClient.prototype.prepareCancelOrder = function prepareCancelOrder(request
   };
 };
 
-tradingClient.prototype.prepareAmendOrder = function prepareAmendOrder(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareAmendOrder = function prepareAmendOrder(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareAmendOrder, {
+  var client = grpc.unary(TradingService.PrepareAmendOrder, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -194,11 +191,11 @@ tradingClient.prototype.prepareAmendOrder = function prepareAmendOrder(requestMe
   };
 };
 
-tradingClient.prototype.prepareWithdraw = function prepareWithdraw(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareWithdraw = function prepareWithdraw(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareWithdraw, {
+  var client = grpc.unary(TradingService.PrepareWithdraw, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -225,11 +222,11 @@ tradingClient.prototype.prepareWithdraw = function prepareWithdraw(requestMessag
   };
 };
 
-tradingClient.prototype.submitTransaction = function submitTransaction(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.submitTransaction = function submitTransaction(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.SubmitTransaction, {
+  var client = grpc.unary(TradingService.SubmitTransaction, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -256,11 +253,11 @@ tradingClient.prototype.submitTransaction = function submitTransaction(requestMe
   };
 };
 
-tradingClient.prototype.prepareProposal = function prepareProposal(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareProposal = function prepareProposal(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareProposal, {
+  var client = grpc.unary(TradingService.PrepareProposal, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -287,11 +284,11 @@ tradingClient.prototype.prepareProposal = function prepareProposal(requestMessag
   };
 };
 
-tradingClient.prototype.prepareVote = function prepareVote(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareVote = function prepareVote(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareVote, {
+  var client = grpc.unary(TradingService.PrepareVote, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -318,11 +315,11 @@ tradingClient.prototype.prepareVote = function prepareVote(requestMessage, metad
   };
 };
 
-tradingClient.prototype.propagateChainEvent = function propagateChainEvent(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.propagateChainEvent = function propagateChainEvent(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PropagateChainEvent, {
+  var client = grpc.unary(TradingService.PropagateChainEvent, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -349,11 +346,11 @@ tradingClient.prototype.propagateChainEvent = function propagateChainEvent(reque
   };
 };
 
-tradingClient.prototype.prepareLiquidityProvision = function prepareLiquidityProvision(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareLiquidityProvision = function prepareLiquidityProvision(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading.PrepareLiquidityProvision, {
+  var client = grpc.unary(TradingService.PrepareLiquidityProvision, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -380,575 +377,602 @@ tradingClient.prototype.prepareLiquidityProvision = function prepareLiquidityPro
   };
 };
 
-exports.tradingClient = tradingClient;
+exports.TradingServiceClient = TradingServiceClient;
 
-var trading_data = (function () {
-  function trading_data() {}
-  trading_data.serviceName = "api.trading_data";
-  return trading_data;
+var TradingDataService = (function () {
+  function TradingDataService() {}
+  TradingDataService.serviceName = "api.v1.TradingDataService";
+  return TradingDataService;
 }());
 
-trading_data.MarketAccounts = {
+TradingDataService.MarketAccounts = {
   methodName: "MarketAccounts",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.MarketAccountsRequest,
   responseType: api_trading_pb.MarketAccountsResponse
 };
 
-trading_data.PartyAccounts = {
+TradingDataService.PartyAccounts = {
   methodName: "PartyAccounts",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PartyAccountsRequest,
   responseType: api_trading_pb.PartyAccountsResponse
 };
 
-trading_data.FeeInfrastructureAccounts = {
+TradingDataService.FeeInfrastructureAccounts = {
   methodName: "FeeInfrastructureAccounts",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.FeeInfrastructureAccountsRequest,
   responseType: api_trading_pb.FeeInfrastructureAccountsResponse
 };
 
-trading_data.Candles = {
+TradingDataService.Candles = {
   methodName: "Candles",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.CandlesRequest,
   responseType: api_trading_pb.CandlesResponse
 };
 
-trading_data.MarketDataByID = {
+TradingDataService.MarketDataByID = {
   methodName: "MarketDataByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.MarketDataByIDRequest,
   responseType: api_trading_pb.MarketDataByIDResponse
 };
 
-trading_data.MarketsData = {
+TradingDataService.MarketsData = {
   methodName: "MarketsData",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_empty_pb.Empty,
+  requestType: api_trading_pb.MarketsDataRequest,
   responseType: api_trading_pb.MarketsDataResponse
 };
 
-trading_data.MarketByID = {
+TradingDataService.MarketByID = {
   methodName: "MarketByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.MarketByIDRequest,
   responseType: api_trading_pb.MarketByIDResponse
 };
 
-trading_data.MarketDepth = {
+TradingDataService.MarketDepth = {
   methodName: "MarketDepth",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.MarketDepthRequest,
   responseType: api_trading_pb.MarketDepthResponse
 };
 
-trading_data.Markets = {
+TradingDataService.Markets = {
   methodName: "Markets",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_empty_pb.Empty,
+  requestType: api_trading_pb.MarketsRequest,
   responseType: api_trading_pb.MarketsResponse
 };
 
-trading_data.OrderByMarketAndID = {
+TradingDataService.OrderByMarketAndID = {
   methodName: "OrderByMarketAndID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.OrderByMarketAndIdRequest,
-  responseType: api_trading_pb.OrderByMarketAndIdResponse
+  requestType: api_trading_pb.OrderByMarketAndIDRequest,
+  responseType: api_trading_pb.OrderByMarketAndIDResponse
 };
 
-trading_data.OrderByReference = {
+TradingDataService.OrderByReference = {
   methodName: "OrderByReference",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.OrderByReferenceRequest,
   responseType: api_trading_pb.OrderByReferenceResponse
 };
 
-trading_data.OrdersByMarket = {
+TradingDataService.OrdersByMarket = {
   methodName: "OrdersByMarket",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.OrdersByMarketRequest,
   responseType: api_trading_pb.OrdersByMarketResponse
 };
 
-trading_data.OrdersByParty = {
+TradingDataService.OrdersByParty = {
   methodName: "OrdersByParty",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.OrdersByPartyRequest,
   responseType: api_trading_pb.OrdersByPartyResponse
 };
 
-trading_data.OrderByID = {
+TradingDataService.OrderByID = {
   methodName: "OrderByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.OrderByIDRequest,
-  responseType: vega_pb.Order
+  responseType: api_trading_pb.OrderByIDResponse
 };
 
-trading_data.OrderVersionsByID = {
+TradingDataService.OrderVersionsByID = {
   methodName: "OrderVersionsByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.OrderVersionsByIDRequest,
-  responseType: api_trading_pb.OrderVersionsResponse
+  responseType: api_trading_pb.OrderVersionsByIDResponse
 };
 
-trading_data.MarginLevels = {
+TradingDataService.MarginLevels = {
   methodName: "MarginLevels",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.MarginLevelsRequest,
   responseType: api_trading_pb.MarginLevelsResponse
 };
 
-trading_data.Parties = {
+TradingDataService.Parties = {
   methodName: "Parties",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_empty_pb.Empty,
+  requestType: api_trading_pb.PartiesRequest,
   responseType: api_trading_pb.PartiesResponse
 };
 
-trading_data.PartyByID = {
+TradingDataService.PartyByID = {
   methodName: "PartyByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PartyByIDRequest,
   responseType: api_trading_pb.PartyByIDResponse
 };
 
-trading_data.PositionsByParty = {
+TradingDataService.PositionsByParty = {
   methodName: "PositionsByParty",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.PositionsByPartyRequest,
   responseType: api_trading_pb.PositionsByPartyResponse
 };
 
-trading_data.LastTrade = {
+TradingDataService.LastTrade = {
   methodName: "LastTrade",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.LastTradeRequest,
   responseType: api_trading_pb.LastTradeResponse
 };
 
-trading_data.TradesByMarket = {
+TradingDataService.TradesByMarket = {
   methodName: "TradesByMarket",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.TradesByMarketRequest,
   responseType: api_trading_pb.TradesByMarketResponse
 };
 
-trading_data.TradesByOrder = {
+TradingDataService.TradesByOrder = {
   methodName: "TradesByOrder",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.TradesByOrderRequest,
   responseType: api_trading_pb.TradesByOrderResponse
 };
 
-trading_data.TradesByParty = {
+TradingDataService.TradesByParty = {
   methodName: "TradesByParty",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.TradesByPartyRequest,
   responseType: api_trading_pb.TradesByPartyResponse
 };
 
-trading_data.GetProposals = {
+TradingDataService.GetProposals = {
   methodName: "GetProposals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetProposalsRequest,
   responseType: api_trading_pb.GetProposalsResponse
 };
 
-trading_data.GetProposalsByParty = {
+TradingDataService.GetProposalsByParty = {
   methodName: "GetProposalsByParty",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetProposalsByPartyRequest,
   responseType: api_trading_pb.GetProposalsByPartyResponse
 };
 
-trading_data.GetVotesByParty = {
+TradingDataService.GetVotesByParty = {
   methodName: "GetVotesByParty",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetVotesByPartyRequest,
   responseType: api_trading_pb.GetVotesByPartyResponse
 };
 
-trading_data.GetNewMarketProposals = {
+TradingDataService.GetNewMarketProposals = {
   methodName: "GetNewMarketProposals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetNewMarketProposalsRequest,
   responseType: api_trading_pb.GetNewMarketProposalsResponse
 };
 
-trading_data.GetUpdateMarketProposals = {
+TradingDataService.GetUpdateMarketProposals = {
   methodName: "GetUpdateMarketProposals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetUpdateMarketProposalsRequest,
   responseType: api_trading_pb.GetUpdateMarketProposalsResponse
 };
 
-trading_data.GetNetworkParametersProposals = {
+TradingDataService.GetNetworkParametersProposals = {
   methodName: "GetNetworkParametersProposals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetNetworkParametersProposalsRequest,
   responseType: api_trading_pb.GetNetworkParametersProposalsResponse
 };
 
-trading_data.GetNewAssetProposals = {
+TradingDataService.GetNewAssetProposals = {
   methodName: "GetNewAssetProposals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetNewAssetProposalsRequest,
   responseType: api_trading_pb.GetNewAssetProposalsResponse
 };
 
-trading_data.GetProposalByID = {
+TradingDataService.GetProposalByID = {
   methodName: "GetProposalByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetProposalByIDRequest,
   responseType: api_trading_pb.GetProposalByIDResponse
 };
 
-trading_data.GetProposalByReference = {
+TradingDataService.GetProposalByReference = {
   methodName: "GetProposalByReference",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetProposalByReferenceRequest,
   responseType: api_trading_pb.GetProposalByReferenceResponse
 };
 
-trading_data.ObserveGovernance = {
+TradingDataService.ObserveGovernance = {
   methodName: "ObserveGovernance",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
-  requestType: google_protobuf_empty_pb.Empty,
-  responseType: governance_pb.GovernanceData
+  requestType: api_trading_pb.ObserveGovernanceRequest,
+  responseType: api_trading_pb.ObserveGovernanceResponse
 };
 
-trading_data.ObservePartyProposals = {
+TradingDataService.ObservePartyProposals = {
   methodName: "ObservePartyProposals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.ObservePartyProposalsRequest,
-  responseType: governance_pb.GovernanceData
+  responseType: api_trading_pb.ObservePartyProposalsResponse
 };
 
-trading_data.ObservePartyVotes = {
+TradingDataService.ObservePartyVotes = {
   methodName: "ObservePartyVotes",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.ObservePartyVotesRequest,
-  responseType: governance_pb.Vote
+  responseType: api_trading_pb.ObservePartyVotesResponse
 };
 
-trading_data.ObserveProposalVotes = {
+TradingDataService.ObserveProposalVotes = {
   methodName: "ObserveProposalVotes",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.ObserveProposalVotesRequest,
-  responseType: governance_pb.Vote
+  responseType: api_trading_pb.ObserveProposalVotesResponse
 };
 
-trading_data.ObserveEventBus = {
+TradingDataService.ObserveEventBus = {
   methodName: "ObserveEventBus",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: true,
   responseStream: true,
-  requestType: api_trading_pb.ObserveEventsRequest,
-  responseType: api_trading_pb.ObserveEventsResponse
+  requestType: api_trading_pb.ObserveEventBusRequest,
+  responseType: api_trading_pb.ObserveEventBusResponse
 };
 
-trading_data.Statistics = {
+TradingDataService.Statistics = {
   methodName: "Statistics",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_empty_pb.Empty,
-  responseType: vega_pb.Statistics
+  requestType: api_trading_pb.StatisticsRequest,
+  responseType: api_trading_pb.StatisticsResponse
 };
 
-trading_data.GetVegaTime = {
+TradingDataService.GetVegaTime = {
   methodName: "GetVegaTime",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_empty_pb.Empty,
-  responseType: api_trading_pb.VegaTimeResponse
+  requestType: api_trading_pb.GetVegaTimeRequest,
+  responseType: api_trading_pb.GetVegaTimeResponse
 };
 
-trading_data.AccountsSubscribe = {
+TradingDataService.AccountsSubscribe = {
   methodName: "AccountsSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.AccountsSubscribeRequest,
-  responseType: vega_pb.Account
+  responseType: api_trading_pb.AccountsSubscribeResponse
 };
 
-trading_data.CandlesSubscribe = {
+TradingDataService.CandlesSubscribe = {
   methodName: "CandlesSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.CandlesSubscribeRequest,
-  responseType: vega_pb.Candle
+  responseType: api_trading_pb.CandlesSubscribeResponse
 };
 
-trading_data.MarginLevelsSubscribe = {
+TradingDataService.MarginLevelsSubscribe = {
   methodName: "MarginLevelsSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.MarginLevelsSubscribeRequest,
-  responseType: vega_pb.MarginLevels
+  responseType: api_trading_pb.MarginLevelsSubscribeResponse
 };
 
-trading_data.MarketDepthSubscribe = {
+TradingDataService.MarketDepthSubscribe = {
   methodName: "MarketDepthSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.MarketDepthSubscribeRequest,
-  responseType: vega_pb.MarketDepth
+  responseType: api_trading_pb.MarketDepthSubscribeResponse
 };
 
-trading_data.MarketDepthUpdatesSubscribe = {
+TradingDataService.MarketDepthUpdatesSubscribe = {
   methodName: "MarketDepthUpdatesSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.MarketDepthUpdatesSubscribeRequest,
-  responseType: vega_pb.MarketDepthUpdate
+  responseType: api_trading_pb.MarketDepthUpdatesSubscribeResponse
 };
 
-trading_data.MarketsDataSubscribe = {
+TradingDataService.MarketsDataSubscribe = {
   methodName: "MarketsDataSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.MarketsDataSubscribeRequest,
-  responseType: vega_pb.MarketData
+  responseType: api_trading_pb.MarketsDataSubscribeResponse
 };
 
-trading_data.OrdersSubscribe = {
+TradingDataService.OrdersSubscribe = {
   methodName: "OrdersSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.OrdersSubscribeRequest,
-  responseType: api_trading_pb.OrdersStream
+  responseType: api_trading_pb.OrdersSubscribeResponse
 };
 
-trading_data.PositionsSubscribe = {
+TradingDataService.PositionsSubscribe = {
   methodName: "PositionsSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.PositionsSubscribeRequest,
-  responseType: vega_pb.Position
+  responseType: api_trading_pb.PositionsSubscribeResponse
 };
 
-trading_data.TradesSubscribe = {
+TradingDataService.TradesSubscribe = {
   methodName: "TradesSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
   requestType: api_trading_pb.TradesSubscribeRequest,
-  responseType: api_trading_pb.TradesStream
+  responseType: api_trading_pb.TradesSubscribeResponse
 };
 
-trading_data.TransferResponsesSubscribe = {
+TradingDataService.TransferResponsesSubscribe = {
   methodName: "TransferResponsesSubscribe",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: true,
-  requestType: google_protobuf_empty_pb.Empty,
-  responseType: vega_pb.TransferResponse
+  requestType: api_trading_pb.TransferResponsesSubscribeRequest,
+  responseType: api_trading_pb.TransferResponsesSubscribeResponse
 };
 
-trading_data.GetNodeSignaturesAggregate = {
+TradingDataService.GetNodeSignaturesAggregate = {
   methodName: "GetNodeSignaturesAggregate",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.GetNodeSignaturesAggregateRequest,
   responseType: api_trading_pb.GetNodeSignaturesAggregateResponse
 };
 
-trading_data.AssetByID = {
+TradingDataService.AssetByID = {
   methodName: "AssetByID",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.AssetByIDRequest,
   responseType: api_trading_pb.AssetByIDResponse
 };
 
-trading_data.Assets = {
+TradingDataService.Assets = {
   methodName: "Assets",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.AssetsRequest,
   responseType: api_trading_pb.AssetsResponse
 };
 
-trading_data.EstimateFee = {
+TradingDataService.EstimateFee = {
   methodName: "EstimateFee",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.EstimateFeeRequest,
   responseType: api_trading_pb.EstimateFeeResponse
 };
 
-trading_data.EstimateMargin = {
+TradingDataService.EstimateMargin = {
   methodName: "EstimateMargin",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.EstimateMarginRequest,
   responseType: api_trading_pb.EstimateMarginResponse
 };
 
-trading_data.ERC20WithdrawalApproval = {
+TradingDataService.ERC20WithdrawalApproval = {
   methodName: "ERC20WithdrawalApproval",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.ERC20WithdrawalApprovalRequest,
   responseType: api_trading_pb.ERC20WithdrawalApprovalResponse
 };
 
-trading_data.Withdrawal = {
+TradingDataService.Withdrawal = {
   methodName: "Withdrawal",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.WithdrawalRequest,
   responseType: api_trading_pb.WithdrawalResponse
 };
 
-trading_data.Withdrawals = {
+TradingDataService.Withdrawals = {
   methodName: "Withdrawals",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.WithdrawalsRequest,
   responseType: api_trading_pb.WithdrawalsResponse
 };
 
-trading_data.Deposit = {
+TradingDataService.Deposit = {
   methodName: "Deposit",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.DepositRequest,
   responseType: api_trading_pb.DepositResponse
 };
 
-trading_data.Deposits = {
+TradingDataService.Deposits = {
   methodName: "Deposits",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.DepositsRequest,
   responseType: api_trading_pb.DepositsResponse
 };
 
-trading_data.NetworkParameters = {
+TradingDataService.NetworkParameters = {
   methodName: "NetworkParameters",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.NetworkParametersRequest,
   responseType: api_trading_pb.NetworkParametersResponse
 };
 
-trading_data.LiquidityProvisions = {
+TradingDataService.LiquidityProvisions = {
   methodName: "LiquidityProvisions",
-  service: trading_data,
+  service: TradingDataService,
   requestStream: false,
   responseStream: false,
   requestType: api_trading_pb.LiquidityProvisionsRequest,
   responseType: api_trading_pb.LiquidityProvisionsResponse
 };
 
-exports.trading_data = trading_data;
+TradingDataService.OracleSpec = {
+  methodName: "OracleSpec",
+  service: TradingDataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.OracleSpecRequest,
+  responseType: api_trading_pb.OracleSpecResponse
+};
 
-function trading_dataClient(serviceHost, options) {
+TradingDataService.OracleSpecs = {
+  methodName: "OracleSpecs",
+  service: TradingDataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.OracleSpecsRequest,
+  responseType: api_trading_pb.OracleSpecsResponse
+};
+
+TradingDataService.OracleDataBySpec = {
+  methodName: "OracleDataBySpec",
+  service: TradingDataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.OracleDataBySpecRequest,
+  responseType: api_trading_pb.OracleDataBySpecResponse
+};
+
+exports.TradingDataService = TradingDataService;
+
+function TradingDataServiceClient(serviceHost, options) {
   this.serviceHost = serviceHost;
   this.options = options || {};
 }
 
-trading_dataClient.prototype.marketAccounts = function marketAccounts(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.marketAccounts = function marketAccounts(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.MarketAccounts, {
+  var client = grpc.unary(TradingDataService.MarketAccounts, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -975,11 +999,11 @@ trading_dataClient.prototype.marketAccounts = function marketAccounts(requestMes
   };
 };
 
-trading_dataClient.prototype.partyAccounts = function partyAccounts(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.partyAccounts = function partyAccounts(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.PartyAccounts, {
+  var client = grpc.unary(TradingDataService.PartyAccounts, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1006,11 +1030,11 @@ trading_dataClient.prototype.partyAccounts = function partyAccounts(requestMessa
   };
 };
 
-trading_dataClient.prototype.feeInfrastructureAccounts = function feeInfrastructureAccounts(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.feeInfrastructureAccounts = function feeInfrastructureAccounts(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.FeeInfrastructureAccounts, {
+  var client = grpc.unary(TradingDataService.FeeInfrastructureAccounts, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1037,11 +1061,11 @@ trading_dataClient.prototype.feeInfrastructureAccounts = function feeInfrastruct
   };
 };
 
-trading_dataClient.prototype.candles = function candles(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.candles = function candles(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Candles, {
+  var client = grpc.unary(TradingDataService.Candles, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1068,11 +1092,11 @@ trading_dataClient.prototype.candles = function candles(requestMessage, metadata
   };
 };
 
-trading_dataClient.prototype.marketDataByID = function marketDataByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.marketDataByID = function marketDataByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.MarketDataByID, {
+  var client = grpc.unary(TradingDataService.MarketDataByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1099,11 +1123,11 @@ trading_dataClient.prototype.marketDataByID = function marketDataByID(requestMes
   };
 };
 
-trading_dataClient.prototype.marketsData = function marketsData(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.marketsData = function marketsData(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.MarketsData, {
+  var client = grpc.unary(TradingDataService.MarketsData, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1130,11 +1154,11 @@ trading_dataClient.prototype.marketsData = function marketsData(requestMessage, 
   };
 };
 
-trading_dataClient.prototype.marketByID = function marketByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.marketByID = function marketByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.MarketByID, {
+  var client = grpc.unary(TradingDataService.MarketByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1161,11 +1185,11 @@ trading_dataClient.prototype.marketByID = function marketByID(requestMessage, me
   };
 };
 
-trading_dataClient.prototype.marketDepth = function marketDepth(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.marketDepth = function marketDepth(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.MarketDepth, {
+  var client = grpc.unary(TradingDataService.MarketDepth, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1192,11 +1216,11 @@ trading_dataClient.prototype.marketDepth = function marketDepth(requestMessage, 
   };
 };
 
-trading_dataClient.prototype.markets = function markets(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.markets = function markets(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Markets, {
+  var client = grpc.unary(TradingDataService.Markets, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1223,11 +1247,11 @@ trading_dataClient.prototype.markets = function markets(requestMessage, metadata
   };
 };
 
-trading_dataClient.prototype.orderByMarketAndID = function orderByMarketAndID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.orderByMarketAndID = function orderByMarketAndID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.OrderByMarketAndID, {
+  var client = grpc.unary(TradingDataService.OrderByMarketAndID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1254,11 +1278,11 @@ trading_dataClient.prototype.orderByMarketAndID = function orderByMarketAndID(re
   };
 };
 
-trading_dataClient.prototype.orderByReference = function orderByReference(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.orderByReference = function orderByReference(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.OrderByReference, {
+  var client = grpc.unary(TradingDataService.OrderByReference, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1285,11 +1309,11 @@ trading_dataClient.prototype.orderByReference = function orderByReference(reques
   };
 };
 
-trading_dataClient.prototype.ordersByMarket = function ordersByMarket(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.ordersByMarket = function ordersByMarket(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.OrdersByMarket, {
+  var client = grpc.unary(TradingDataService.OrdersByMarket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1316,11 +1340,11 @@ trading_dataClient.prototype.ordersByMarket = function ordersByMarket(requestMes
   };
 };
 
-trading_dataClient.prototype.ordersByParty = function ordersByParty(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.ordersByParty = function ordersByParty(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.OrdersByParty, {
+  var client = grpc.unary(TradingDataService.OrdersByParty, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1347,11 +1371,11 @@ trading_dataClient.prototype.ordersByParty = function ordersByParty(requestMessa
   };
 };
 
-trading_dataClient.prototype.orderByID = function orderByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.orderByID = function orderByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.OrderByID, {
+  var client = grpc.unary(TradingDataService.OrderByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1378,11 +1402,11 @@ trading_dataClient.prototype.orderByID = function orderByID(requestMessage, meta
   };
 };
 
-trading_dataClient.prototype.orderVersionsByID = function orderVersionsByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.orderVersionsByID = function orderVersionsByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.OrderVersionsByID, {
+  var client = grpc.unary(TradingDataService.OrderVersionsByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1409,11 +1433,11 @@ trading_dataClient.prototype.orderVersionsByID = function orderVersionsByID(requ
   };
 };
 
-trading_dataClient.prototype.marginLevels = function marginLevels(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.marginLevels = function marginLevels(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.MarginLevels, {
+  var client = grpc.unary(TradingDataService.MarginLevels, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1440,11 +1464,11 @@ trading_dataClient.prototype.marginLevels = function marginLevels(requestMessage
   };
 };
 
-trading_dataClient.prototype.parties = function parties(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.parties = function parties(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Parties, {
+  var client = grpc.unary(TradingDataService.Parties, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1471,11 +1495,11 @@ trading_dataClient.prototype.parties = function parties(requestMessage, metadata
   };
 };
 
-trading_dataClient.prototype.partyByID = function partyByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.partyByID = function partyByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.PartyByID, {
+  var client = grpc.unary(TradingDataService.PartyByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1502,11 +1526,11 @@ trading_dataClient.prototype.partyByID = function partyByID(requestMessage, meta
   };
 };
 
-trading_dataClient.prototype.positionsByParty = function positionsByParty(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.positionsByParty = function positionsByParty(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.PositionsByParty, {
+  var client = grpc.unary(TradingDataService.PositionsByParty, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1533,11 +1557,11 @@ trading_dataClient.prototype.positionsByParty = function positionsByParty(reques
   };
 };
 
-trading_dataClient.prototype.lastTrade = function lastTrade(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.lastTrade = function lastTrade(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.LastTrade, {
+  var client = grpc.unary(TradingDataService.LastTrade, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1564,11 +1588,11 @@ trading_dataClient.prototype.lastTrade = function lastTrade(requestMessage, meta
   };
 };
 
-trading_dataClient.prototype.tradesByMarket = function tradesByMarket(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.tradesByMarket = function tradesByMarket(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.TradesByMarket, {
+  var client = grpc.unary(TradingDataService.TradesByMarket, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1595,11 +1619,11 @@ trading_dataClient.prototype.tradesByMarket = function tradesByMarket(requestMes
   };
 };
 
-trading_dataClient.prototype.tradesByOrder = function tradesByOrder(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.tradesByOrder = function tradesByOrder(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.TradesByOrder, {
+  var client = grpc.unary(TradingDataService.TradesByOrder, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1626,11 +1650,11 @@ trading_dataClient.prototype.tradesByOrder = function tradesByOrder(requestMessa
   };
 };
 
-trading_dataClient.prototype.tradesByParty = function tradesByParty(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.tradesByParty = function tradesByParty(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.TradesByParty, {
+  var client = grpc.unary(TradingDataService.TradesByParty, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1657,11 +1681,11 @@ trading_dataClient.prototype.tradesByParty = function tradesByParty(requestMessa
   };
 };
 
-trading_dataClient.prototype.getProposals = function getProposals(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getProposals = function getProposals(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetProposals, {
+  var client = grpc.unary(TradingDataService.GetProposals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1688,11 +1712,11 @@ trading_dataClient.prototype.getProposals = function getProposals(requestMessage
   };
 };
 
-trading_dataClient.prototype.getProposalsByParty = function getProposalsByParty(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getProposalsByParty = function getProposalsByParty(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetProposalsByParty, {
+  var client = grpc.unary(TradingDataService.GetProposalsByParty, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1719,11 +1743,11 @@ trading_dataClient.prototype.getProposalsByParty = function getProposalsByParty(
   };
 };
 
-trading_dataClient.prototype.getVotesByParty = function getVotesByParty(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getVotesByParty = function getVotesByParty(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetVotesByParty, {
+  var client = grpc.unary(TradingDataService.GetVotesByParty, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1750,11 +1774,11 @@ trading_dataClient.prototype.getVotesByParty = function getVotesByParty(requestM
   };
 };
 
-trading_dataClient.prototype.getNewMarketProposals = function getNewMarketProposals(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getNewMarketProposals = function getNewMarketProposals(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetNewMarketProposals, {
+  var client = grpc.unary(TradingDataService.GetNewMarketProposals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1781,11 +1805,11 @@ trading_dataClient.prototype.getNewMarketProposals = function getNewMarketPropos
   };
 };
 
-trading_dataClient.prototype.getUpdateMarketProposals = function getUpdateMarketProposals(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getUpdateMarketProposals = function getUpdateMarketProposals(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetUpdateMarketProposals, {
+  var client = grpc.unary(TradingDataService.GetUpdateMarketProposals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1812,11 +1836,11 @@ trading_dataClient.prototype.getUpdateMarketProposals = function getUpdateMarket
   };
 };
 
-trading_dataClient.prototype.getNetworkParametersProposals = function getNetworkParametersProposals(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getNetworkParametersProposals = function getNetworkParametersProposals(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetNetworkParametersProposals, {
+  var client = grpc.unary(TradingDataService.GetNetworkParametersProposals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1843,11 +1867,11 @@ trading_dataClient.prototype.getNetworkParametersProposals = function getNetwork
   };
 };
 
-trading_dataClient.prototype.getNewAssetProposals = function getNewAssetProposals(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getNewAssetProposals = function getNewAssetProposals(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetNewAssetProposals, {
+  var client = grpc.unary(TradingDataService.GetNewAssetProposals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1874,11 +1898,11 @@ trading_dataClient.prototype.getNewAssetProposals = function getNewAssetProposal
   };
 };
 
-trading_dataClient.prototype.getProposalByID = function getProposalByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getProposalByID = function getProposalByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetProposalByID, {
+  var client = grpc.unary(TradingDataService.GetProposalByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1905,11 +1929,11 @@ trading_dataClient.prototype.getProposalByID = function getProposalByID(requestM
   };
 };
 
-trading_dataClient.prototype.getProposalByReference = function getProposalByReference(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getProposalByReference = function getProposalByReference(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetProposalByReference, {
+  var client = grpc.unary(TradingDataService.GetProposalByReference, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1936,13 +1960,13 @@ trading_dataClient.prototype.getProposalByReference = function getProposalByRefe
   };
 };
 
-trading_dataClient.prototype.observeGovernance = function observeGovernance(requestMessage, metadata) {
+TradingDataServiceClient.prototype.observeGovernance = function observeGovernance(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.ObserveGovernance, {
+  var client = grpc.invoke(TradingDataService.ObserveGovernance, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -1975,13 +1999,13 @@ trading_dataClient.prototype.observeGovernance = function observeGovernance(requ
   };
 };
 
-trading_dataClient.prototype.observePartyProposals = function observePartyProposals(requestMessage, metadata) {
+TradingDataServiceClient.prototype.observePartyProposals = function observePartyProposals(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.ObservePartyProposals, {
+  var client = grpc.invoke(TradingDataService.ObservePartyProposals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2014,13 +2038,13 @@ trading_dataClient.prototype.observePartyProposals = function observePartyPropos
   };
 };
 
-trading_dataClient.prototype.observePartyVotes = function observePartyVotes(requestMessage, metadata) {
+TradingDataServiceClient.prototype.observePartyVotes = function observePartyVotes(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.ObservePartyVotes, {
+  var client = grpc.invoke(TradingDataService.ObservePartyVotes, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2053,13 +2077,13 @@ trading_dataClient.prototype.observePartyVotes = function observePartyVotes(requ
   };
 };
 
-trading_dataClient.prototype.observeProposalVotes = function observeProposalVotes(requestMessage, metadata) {
+TradingDataServiceClient.prototype.observeProposalVotes = function observeProposalVotes(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.ObserveProposalVotes, {
+  var client = grpc.invoke(TradingDataService.ObserveProposalVotes, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2092,13 +2116,13 @@ trading_dataClient.prototype.observeProposalVotes = function observeProposalVote
   };
 };
 
-trading_dataClient.prototype.observeEventBus = function observeEventBus(metadata) {
+TradingDataServiceClient.prototype.observeEventBus = function observeEventBus(metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.client(trading_data.ObserveEventBus, {
+  var client = grpc.client(TradingDataService.ObserveEventBus, {
     host: this.serviceHost,
     metadata: metadata,
     transport: this.options.transport
@@ -2137,11 +2161,11 @@ trading_dataClient.prototype.observeEventBus = function observeEventBus(metadata
   };
 };
 
-trading_dataClient.prototype.statistics = function statistics(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.statistics = function statistics(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Statistics, {
+  var client = grpc.unary(TradingDataService.Statistics, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2168,11 +2192,11 @@ trading_dataClient.prototype.statistics = function statistics(requestMessage, me
   };
 };
 
-trading_dataClient.prototype.getVegaTime = function getVegaTime(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getVegaTime = function getVegaTime(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetVegaTime, {
+  var client = grpc.unary(TradingDataService.GetVegaTime, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2199,13 +2223,13 @@ trading_dataClient.prototype.getVegaTime = function getVegaTime(requestMessage, 
   };
 };
 
-trading_dataClient.prototype.accountsSubscribe = function accountsSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.accountsSubscribe = function accountsSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.AccountsSubscribe, {
+  var client = grpc.invoke(TradingDataService.AccountsSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2238,13 +2262,13 @@ trading_dataClient.prototype.accountsSubscribe = function accountsSubscribe(requ
   };
 };
 
-trading_dataClient.prototype.candlesSubscribe = function candlesSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.candlesSubscribe = function candlesSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.CandlesSubscribe, {
+  var client = grpc.invoke(TradingDataService.CandlesSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2277,13 +2301,13 @@ trading_dataClient.prototype.candlesSubscribe = function candlesSubscribe(reques
   };
 };
 
-trading_dataClient.prototype.marginLevelsSubscribe = function marginLevelsSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.marginLevelsSubscribe = function marginLevelsSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.MarginLevelsSubscribe, {
+  var client = grpc.invoke(TradingDataService.MarginLevelsSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2316,13 +2340,13 @@ trading_dataClient.prototype.marginLevelsSubscribe = function marginLevelsSubscr
   };
 };
 
-trading_dataClient.prototype.marketDepthSubscribe = function marketDepthSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.marketDepthSubscribe = function marketDepthSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.MarketDepthSubscribe, {
+  var client = grpc.invoke(TradingDataService.MarketDepthSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2355,13 +2379,13 @@ trading_dataClient.prototype.marketDepthSubscribe = function marketDepthSubscrib
   };
 };
 
-trading_dataClient.prototype.marketDepthUpdatesSubscribe = function marketDepthUpdatesSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.marketDepthUpdatesSubscribe = function marketDepthUpdatesSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.MarketDepthUpdatesSubscribe, {
+  var client = grpc.invoke(TradingDataService.MarketDepthUpdatesSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2394,13 +2418,13 @@ trading_dataClient.prototype.marketDepthUpdatesSubscribe = function marketDepthU
   };
 };
 
-trading_dataClient.prototype.marketsDataSubscribe = function marketsDataSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.marketsDataSubscribe = function marketsDataSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.MarketsDataSubscribe, {
+  var client = grpc.invoke(TradingDataService.MarketsDataSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2433,13 +2457,13 @@ trading_dataClient.prototype.marketsDataSubscribe = function marketsDataSubscrib
   };
 };
 
-trading_dataClient.prototype.ordersSubscribe = function ordersSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.ordersSubscribe = function ordersSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.OrdersSubscribe, {
+  var client = grpc.invoke(TradingDataService.OrdersSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2472,13 +2496,13 @@ trading_dataClient.prototype.ordersSubscribe = function ordersSubscribe(requestM
   };
 };
 
-trading_dataClient.prototype.positionsSubscribe = function positionsSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.positionsSubscribe = function positionsSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.PositionsSubscribe, {
+  var client = grpc.invoke(TradingDataService.PositionsSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2511,13 +2535,13 @@ trading_dataClient.prototype.positionsSubscribe = function positionsSubscribe(re
   };
 };
 
-trading_dataClient.prototype.tradesSubscribe = function tradesSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.tradesSubscribe = function tradesSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.TradesSubscribe, {
+  var client = grpc.invoke(TradingDataService.TradesSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2550,13 +2574,13 @@ trading_dataClient.prototype.tradesSubscribe = function tradesSubscribe(requestM
   };
 };
 
-trading_dataClient.prototype.transferResponsesSubscribe = function transferResponsesSubscribe(requestMessage, metadata) {
+TradingDataServiceClient.prototype.transferResponsesSubscribe = function transferResponsesSubscribe(requestMessage, metadata) {
   var listeners = {
     data: [],
     end: [],
     status: []
   };
-  var client = grpc.invoke(trading_data.TransferResponsesSubscribe, {
+  var client = grpc.invoke(TradingDataService.TransferResponsesSubscribe, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2589,11 +2613,11 @@ trading_dataClient.prototype.transferResponsesSubscribe = function transferRespo
   };
 };
 
-trading_dataClient.prototype.getNodeSignaturesAggregate = function getNodeSignaturesAggregate(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.getNodeSignaturesAggregate = function getNodeSignaturesAggregate(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.GetNodeSignaturesAggregate, {
+  var client = grpc.unary(TradingDataService.GetNodeSignaturesAggregate, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2620,11 +2644,11 @@ trading_dataClient.prototype.getNodeSignaturesAggregate = function getNodeSignat
   };
 };
 
-trading_dataClient.prototype.assetByID = function assetByID(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.assetByID = function assetByID(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.AssetByID, {
+  var client = grpc.unary(TradingDataService.AssetByID, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2651,11 +2675,11 @@ trading_dataClient.prototype.assetByID = function assetByID(requestMessage, meta
   };
 };
 
-trading_dataClient.prototype.assets = function assets(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.assets = function assets(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Assets, {
+  var client = grpc.unary(TradingDataService.Assets, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2682,11 +2706,11 @@ trading_dataClient.prototype.assets = function assets(requestMessage, metadata, 
   };
 };
 
-trading_dataClient.prototype.estimateFee = function estimateFee(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.estimateFee = function estimateFee(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.EstimateFee, {
+  var client = grpc.unary(TradingDataService.EstimateFee, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2713,11 +2737,11 @@ trading_dataClient.prototype.estimateFee = function estimateFee(requestMessage, 
   };
 };
 
-trading_dataClient.prototype.estimateMargin = function estimateMargin(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.estimateMargin = function estimateMargin(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.EstimateMargin, {
+  var client = grpc.unary(TradingDataService.EstimateMargin, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2744,11 +2768,11 @@ trading_dataClient.prototype.estimateMargin = function estimateMargin(requestMes
   };
 };
 
-trading_dataClient.prototype.eRC20WithdrawalApproval = function eRC20WithdrawalApproval(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.eRC20WithdrawalApproval = function eRC20WithdrawalApproval(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.ERC20WithdrawalApproval, {
+  var client = grpc.unary(TradingDataService.ERC20WithdrawalApproval, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2775,11 +2799,11 @@ trading_dataClient.prototype.eRC20WithdrawalApproval = function eRC20WithdrawalA
   };
 };
 
-trading_dataClient.prototype.withdrawal = function withdrawal(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.withdrawal = function withdrawal(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Withdrawal, {
+  var client = grpc.unary(TradingDataService.Withdrawal, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2806,11 +2830,11 @@ trading_dataClient.prototype.withdrawal = function withdrawal(requestMessage, me
   };
 };
 
-trading_dataClient.prototype.withdrawals = function withdrawals(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.withdrawals = function withdrawals(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Withdrawals, {
+  var client = grpc.unary(TradingDataService.Withdrawals, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2837,11 +2861,11 @@ trading_dataClient.prototype.withdrawals = function withdrawals(requestMessage, 
   };
 };
 
-trading_dataClient.prototype.deposit = function deposit(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.deposit = function deposit(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Deposit, {
+  var client = grpc.unary(TradingDataService.Deposit, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2868,11 +2892,11 @@ trading_dataClient.prototype.deposit = function deposit(requestMessage, metadata
   };
 };
 
-trading_dataClient.prototype.deposits = function deposits(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.deposits = function deposits(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.Deposits, {
+  var client = grpc.unary(TradingDataService.Deposits, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2899,11 +2923,11 @@ trading_dataClient.prototype.deposits = function deposits(requestMessage, metada
   };
 };
 
-trading_dataClient.prototype.networkParameters = function networkParameters(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.networkParameters = function networkParameters(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.NetworkParameters, {
+  var client = grpc.unary(TradingDataService.NetworkParameters, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2930,11 +2954,11 @@ trading_dataClient.prototype.networkParameters = function networkParameters(requ
   };
 };
 
-trading_dataClient.prototype.liquidityProvisions = function liquidityProvisions(requestMessage, metadata, callback) {
+TradingDataServiceClient.prototype.liquidityProvisions = function liquidityProvisions(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(trading_data.LiquidityProvisions, {
+  var client = grpc.unary(TradingDataService.LiquidityProvisions, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -2961,5 +2985,98 @@ trading_dataClient.prototype.liquidityProvisions = function liquidityProvisions(
   };
 };
 
-exports.trading_dataClient = trading_dataClient;
+TradingDataServiceClient.prototype.oracleSpec = function oracleSpec(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingDataService.OracleSpec, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TradingDataServiceClient.prototype.oracleSpecs = function oracleSpecs(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingDataService.OracleSpecs, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TradingDataServiceClient.prototype.oracleDataBySpec = function oracleDataBySpec(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingDataService.OracleDataBySpec, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+exports.TradingDataServiceClient = TradingDataServiceClient;
 

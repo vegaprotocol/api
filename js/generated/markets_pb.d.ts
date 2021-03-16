@@ -3,6 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.com/mwitkow/go-proto-validators/validator_pb";
+import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
 
 export class AuctionDuration extends jspb.Message {
   getDuration(): number;
@@ -29,8 +30,8 @@ export namespace AuctionDuration {
 }
 
 export class ContinuousTrading extends jspb.Message {
-  getTicksize(): string;
-  setTicksize(value: string): void;
+  getTickSize(): string;
+  setTickSize(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ContinuousTrading.AsObject;
@@ -44,16 +45,16 @@ export class ContinuousTrading extends jspb.Message {
 
 export namespace ContinuousTrading {
   export type AsObject = {
-    ticksize: string,
+    tickSize: string,
   }
 }
 
 export class DiscreteTrading extends jspb.Message {
-  getDurationns(): number;
-  setDurationns(value: number): void;
+  getDurationNs(): number;
+  setDurationNs(value: number): void;
 
-  getTicksize(): string;
-  setTicksize(value: string): void;
+  getTickSize(): string;
+  setTickSize(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DiscreteTrading.AsObject;
@@ -67,8 +68,8 @@ export class DiscreteTrading extends jspb.Message {
 
 export namespace DiscreteTrading {
   export type AsObject = {
-    durationns: number,
-    ticksize: string,
+    durationNs: number,
+    tickSize: string,
   }
 }
 
@@ -76,18 +77,22 @@ export class Future extends jspb.Message {
   getMaturity(): string;
   setMaturity(value: string): void;
 
-  getSettlementasset(): string;
-  setSettlementasset(value: string): void;
+  getSettlementAsset(): string;
+  setSettlementAsset(value: string): void;
 
-  getQuotename(): string;
-  setQuotename(value: string): void;
+  getQuoteName(): string;
+  setQuoteName(value: string): void;
 
-  hasEthereumevent(): boolean;
-  clearEthereumevent(): void;
-  getEthereumevent(): EthereumEvent | undefined;
-  setEthereumevent(value?: EthereumEvent): void;
+  hasOracleSpec(): boolean;
+  clearOracleSpec(): void;
+  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
 
-  getOracleCase(): Future.OracleCase;
+  hasOracleSpecBinding(): boolean;
+  clearOracleSpecBinding(): void;
+  getOracleSpecBinding(): OracleSpecToFutureBinding | undefined;
+  setOracleSpecBinding(value?: OracleSpecToFutureBinding): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Future.AsObject;
   static toObject(includeInstance: boolean, msg: Future): Future.AsObject;
@@ -101,42 +106,30 @@ export class Future extends jspb.Message {
 export namespace Future {
   export type AsObject = {
     maturity: string,
-    settlementasset: string,
-    quotename: string,
-    ethereumevent?: EthereumEvent.AsObject,
-  }
-
-  export enum OracleCase {
-    ORACLE_NOT_SET = 0,
-    ETHEREUMEVENT = 100,
+    settlementAsset: string,
+    quoteName: string,
+    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
+    oracleSpecBinding?: OracleSpecToFutureBinding.AsObject,
   }
 }
 
-export class EthereumEvent extends jspb.Message {
-  getContractid(): string;
-  setContractid(value: string): void;
-
-  getEvent(): string;
-  setEvent(value: string): void;
-
-  getValue(): number;
-  setValue(value: number): void;
+export class OracleSpecToFutureBinding extends jspb.Message {
+  getSettlementPriceProperty(): string;
+  setSettlementPriceProperty(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EthereumEvent.AsObject;
-  static toObject(includeInstance: boolean, msg: EthereumEvent): EthereumEvent.AsObject;
+  toObject(includeInstance?: boolean): OracleSpecToFutureBinding.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleSpecToFutureBinding): OracleSpecToFutureBinding.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: EthereumEvent, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EthereumEvent;
-  static deserializeBinaryFromReader(message: EthereumEvent, reader: jspb.BinaryReader): EthereumEvent;
+  static serializeBinaryToWriter(message: OracleSpecToFutureBinding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleSpecToFutureBinding;
+  static deserializeBinaryFromReader(message: OracleSpecToFutureBinding, reader: jspb.BinaryReader): OracleSpecToFutureBinding;
 }
 
-export namespace EthereumEvent {
+export namespace OracleSpecToFutureBinding {
   export type AsObject = {
-    contractid: string,
-    event: string,
-    value: number,
+    settlementPriceProperty: string,
   }
 }
 
@@ -177,9 +170,6 @@ export class Instrument extends jspb.Message {
   getMetadata(): InstrumentMetadata | undefined;
   setMetadata(value?: InstrumentMetadata): void;
 
-  getInitialmarkprice(): number;
-  setInitialmarkprice(value: number): void;
-
   hasFuture(): boolean;
   clearFuture(): void;
   getFuture(): Future | undefined;
@@ -202,7 +192,6 @@ export namespace Instrument {
     code: string,
     name: string,
     metadata?: InstrumentMetadata.AsObject,
-    initialmarkprice: number,
     future?: Future.AsObject,
   }
 
@@ -213,8 +202,8 @@ export namespace Instrument {
 }
 
 export class LogNormalRiskModel extends jspb.Message {
-  getRiskaversionparameter(): number;
-  setRiskaversionparameter(value: number): void;
+  getRiskAversionParameter(): number;
+  setRiskAversionParameter(value: number): void;
 
   getTau(): number;
   setTau(value: number): void;
@@ -236,7 +225,7 @@ export class LogNormalRiskModel extends jspb.Message {
 
 export namespace LogNormalRiskModel {
   export type AsObject = {
-    riskaversionparameter: number,
+    riskAversionParameter: number,
     tau: number,
     params?: LogNormalModelParams.AsObject,
   }
@@ -293,20 +282,20 @@ export namespace SimpleRiskModel {
 }
 
 export class SimpleModelParams extends jspb.Message {
-  getFactorlong(): number;
-  setFactorlong(value: number): void;
+  getFactorLong(): number;
+  setFactorLong(value: number): void;
 
-  getFactorshort(): number;
-  setFactorshort(value: number): void;
+  getFactorShort(): number;
+  setFactorShort(value: number): void;
 
-  getMaxmoveup(): number;
-  setMaxmoveup(value: number): void;
+  getMaxMoveUp(): number;
+  setMaxMoveUp(value: number): void;
 
-  getMinmovedown(): number;
-  setMinmovedown(value: number): void;
+  getMinMoveDown(): number;
+  setMinMoveDown(value: number): void;
 
-  getProbabilityoftrading(): number;
-  setProbabilityoftrading(value: number): void;
+  getProbabilityOfTrading(): number;
+  setProbabilityOfTrading(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SimpleModelParams.AsObject;
@@ -320,23 +309,23 @@ export class SimpleModelParams extends jspb.Message {
 
 export namespace SimpleModelParams {
   export type AsObject = {
-    factorlong: number,
-    factorshort: number,
-    maxmoveup: number,
-    minmovedown: number,
-    probabilityoftrading: number,
+    factorLong: number,
+    factorShort: number,
+    maxMoveUp: number,
+    minMoveDown: number,
+    probabilityOfTrading: number,
   }
 }
 
 export class ScalingFactors extends jspb.Message {
-  getSearchlevel(): number;
-  setSearchlevel(value: number): void;
+  getSearchLevel(): number;
+  setSearchLevel(value: number): void;
 
-  getInitialmargin(): number;
-  setInitialmargin(value: number): void;
+  getInitialMargin(): number;
+  setInitialMargin(value: number): void;
 
-  getCollateralrelease(): number;
-  setCollateralrelease(value: number): void;
+  getCollateralRelease(): number;
+  setCollateralRelease(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ScalingFactors.AsObject;
@@ -350,17 +339,17 @@ export class ScalingFactors extends jspb.Message {
 
 export namespace ScalingFactors {
   export type AsObject = {
-    searchlevel: number,
-    initialmargin: number,
-    collateralrelease: number,
+    searchLevel: number,
+    initialMargin: number,
+    collateralRelease: number,
   }
 }
 
 export class MarginCalculator extends jspb.Message {
-  hasScalingfactors(): boolean;
-  clearScalingfactors(): void;
-  getScalingfactors(): ScalingFactors | undefined;
-  setScalingfactors(value?: ScalingFactors): void;
+  hasScalingFactors(): boolean;
+  clearScalingFactors(): void;
+  getScalingFactors(): ScalingFactors | undefined;
+  setScalingFactors(value?: ScalingFactors): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MarginCalculator.AsObject;
@@ -374,7 +363,7 @@ export class MarginCalculator extends jspb.Message {
 
 export namespace MarginCalculator {
   export type AsObject = {
-    scalingfactors?: ScalingFactors.AsObject,
+    scalingFactors?: ScalingFactors.AsObject,
   }
 }
 
@@ -384,22 +373,22 @@ export class TradableInstrument extends jspb.Message {
   getInstrument(): Instrument | undefined;
   setInstrument(value?: Instrument): void;
 
-  hasMargincalculator(): boolean;
-  clearMargincalculator(): void;
-  getMargincalculator(): MarginCalculator | undefined;
-  setMargincalculator(value?: MarginCalculator): void;
+  hasMarginCalculator(): boolean;
+  clearMarginCalculator(): void;
+  getMarginCalculator(): MarginCalculator | undefined;
+  setMarginCalculator(value?: MarginCalculator): void;
 
-  hasLognormalriskmodel(): boolean;
-  clearLognormalriskmodel(): void;
-  getLognormalriskmodel(): LogNormalRiskModel | undefined;
-  setLognormalriskmodel(value?: LogNormalRiskModel): void;
+  hasLogNormalRiskModel(): boolean;
+  clearLogNormalRiskModel(): void;
+  getLogNormalRiskModel(): LogNormalRiskModel | undefined;
+  setLogNormalRiskModel(value?: LogNormalRiskModel): void;
 
-  hasSimpleriskmodel(): boolean;
-  clearSimpleriskmodel(): void;
-  getSimpleriskmodel(): SimpleRiskModel | undefined;
-  setSimpleriskmodel(value?: SimpleRiskModel): void;
+  hasSimpleRiskModel(): boolean;
+  clearSimpleRiskModel(): void;
+  getSimpleRiskModel(): SimpleRiskModel | undefined;
+  setSimpleRiskModel(value?: SimpleRiskModel): void;
 
-  getRiskmodelCase(): TradableInstrument.RiskmodelCase;
+  getRiskModelCase(): TradableInstrument.RiskModelCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TradableInstrument.AsObject;
   static toObject(includeInstance: boolean, msg: TradableInstrument): TradableInstrument.AsObject;
@@ -413,27 +402,27 @@ export class TradableInstrument extends jspb.Message {
 export namespace TradableInstrument {
   export type AsObject = {
     instrument?: Instrument.AsObject,
-    margincalculator?: MarginCalculator.AsObject,
-    lognormalriskmodel?: LogNormalRiskModel.AsObject,
-    simpleriskmodel?: SimpleRiskModel.AsObject,
+    marginCalculator?: MarginCalculator.AsObject,
+    logNormalRiskModel?: LogNormalRiskModel.AsObject,
+    simpleRiskModel?: SimpleRiskModel.AsObject,
   }
 
-  export enum RiskmodelCase {
-    RISKMODEL_NOT_SET = 0,
-    LOGNORMALRISKMODEL = 100,
-    SIMPLERISKMODEL = 101,
+  export enum RiskModelCase {
+    RISK_MODEL_NOT_SET = 0,
+    LOG_NORMAL_RISK_MODEL = 100,
+    SIMPLE_RISK_MODEL = 101,
   }
 }
 
 export class FeeFactors extends jspb.Message {
-  getMakerfee(): string;
-  setMakerfee(value: string): void;
+  getMakerFee(): string;
+  setMakerFee(value: string): void;
 
-  getInfrastructurefee(): string;
-  setInfrastructurefee(value: string): void;
+  getInfrastructureFee(): string;
+  setInfrastructureFee(value: string): void;
 
-  getLiquidityfee(): string;
-  setLiquidityfee(value: string): void;
+  getLiquidityFee(): string;
+  setLiquidityFee(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeeFactors.AsObject;
@@ -447,9 +436,9 @@ export class FeeFactors extends jspb.Message {
 
 export namespace FeeFactors {
   export type AsObject = {
-    makerfee: string,
-    infrastructurefee: string,
-    liquidityfee: string,
+    makerFee: string,
+    infrastructureFee: string,
+    liquidityFee: string,
   }
 }
 
@@ -482,8 +471,8 @@ export class PriceMonitoringTrigger extends jspb.Message {
   getProbability(): number;
   setProbability(value: number): void;
 
-  getAuctionextension(): number;
-  setAuctionextension(value: number): void;
+  getAuctionExtension(): number;
+  setAuctionExtension(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PriceMonitoringTrigger.AsObject;
@@ -499,7 +488,7 @@ export namespace PriceMonitoringTrigger {
   export type AsObject = {
     horizon: number,
     probability: number,
-    auctionextension: number,
+    auctionExtension: number,
   }
 }
 
@@ -531,8 +520,8 @@ export class PriceMonitoringSettings extends jspb.Message {
   getParameters(): PriceMonitoringParameters | undefined;
   setParameters(value?: PriceMonitoringParameters): void;
 
-  getUpdatefrequency(): number;
-  setUpdatefrequency(value: number): void;
+  getUpdateFrequency(): number;
+  setUpdateFrequency(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PriceMonitoringSettings.AsObject;
@@ -547,16 +536,16 @@ export class PriceMonitoringSettings extends jspb.Message {
 export namespace PriceMonitoringSettings {
   export type AsObject = {
     parameters?: PriceMonitoringParameters.AsObject,
-    updatefrequency: number,
+    updateFrequency: number,
   }
 }
 
 export class TargetStakeParameters extends jspb.Message {
-  getTimewindow(): number;
-  setTimewindow(value: number): void;
+  getTimeWindow(): number;
+  setTimeWindow(value: number): void;
 
-  getScalingfactor(): number;
-  setScalingfactor(value: number): void;
+  getScalingFactor(): number;
+  setScalingFactor(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TargetStakeParameters.AsObject;
@@ -570,8 +559,8 @@ export class TargetStakeParameters extends jspb.Message {
 
 export namespace TargetStakeParameters {
   export type AsObject = {
-    timewindow: number,
-    scalingfactor: number,
+    timeWindow: number,
+    scalingFactor: number,
   }
 }
 
@@ -579,23 +568,23 @@ export class Market extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  hasTradableinstrument(): boolean;
-  clearTradableinstrument(): void;
-  getTradableinstrument(): TradableInstrument | undefined;
-  setTradableinstrument(value?: TradableInstrument): void;
+  hasTradableInstrument(): boolean;
+  clearTradableInstrument(): void;
+  getTradableInstrument(): TradableInstrument | undefined;
+  setTradableInstrument(value?: TradableInstrument): void;
 
-  getDecimalplaces(): number;
-  setDecimalplaces(value: number): void;
+  getDecimalPlaces(): number;
+  setDecimalPlaces(value: number): void;
 
   hasFees(): boolean;
   clearFees(): void;
   getFees(): Fees | undefined;
   setFees(value?: Fees): void;
 
-  hasOpeningauction(): boolean;
-  clearOpeningauction(): void;
-  getOpeningauction(): AuctionDuration | undefined;
-  setOpeningauction(value?: AuctionDuration): void;
+  hasOpeningAuction(): boolean;
+  clearOpeningAuction(): void;
+  getOpeningAuction(): AuctionDuration | undefined;
+  setOpeningAuction(value?: AuctionDuration): void;
 
   hasContinuous(): boolean;
   clearContinuous(): void;
@@ -607,23 +596,23 @@ export class Market extends jspb.Message {
   getDiscrete(): DiscreteTrading | undefined;
   setDiscrete(value?: DiscreteTrading): void;
 
-  hasPricemonitoringsettings(): boolean;
-  clearPricemonitoringsettings(): void;
-  getPricemonitoringsettings(): PriceMonitoringSettings | undefined;
-  setPricemonitoringsettings(value?: PriceMonitoringSettings): void;
+  hasPriceMonitoringSettings(): boolean;
+  clearPriceMonitoringSettings(): void;
+  getPriceMonitoringSettings(): PriceMonitoringSettings | undefined;
+  setPriceMonitoringSettings(value?: PriceMonitoringSettings): void;
 
-  hasTargetstakeparameters(): boolean;
-  clearTargetstakeparameters(): void;
-  getTargetstakeparameters(): TargetStakeParameters | undefined;
-  setTargetstakeparameters(value?: TargetStakeParameters): void;
+  hasTargetStakeParameters(): boolean;
+  clearTargetStakeParameters(): void;
+  getTargetStakeParameters(): TargetStakeParameters | undefined;
+  setTargetStakeParameters(value?: TargetStakeParameters): void;
 
-  getTradingmode(): Market.TradingModeMap[keyof Market.TradingModeMap];
-  setTradingmode(value: Market.TradingModeMap[keyof Market.TradingModeMap]): void;
+  getTradingMode(): Market.TradingModeMap[keyof Market.TradingModeMap];
+  setTradingMode(value: Market.TradingModeMap[keyof Market.TradingModeMap]): void;
 
   getState(): Market.StateMap[keyof Market.StateMap];
   setState(value: Market.StateMap[keyof Market.StateMap]): void;
 
-  getTradingmodeconfigCase(): Market.TradingmodeconfigCase;
+  getTradingModeConfigCase(): Market.TradingModeConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Market.AsObject;
   static toObject(includeInstance: boolean, msg: Market): Market.AsObject;
@@ -637,15 +626,15 @@ export class Market extends jspb.Message {
 export namespace Market {
   export type AsObject = {
     id: string,
-    tradableinstrument?: TradableInstrument.AsObject,
-    decimalplaces: number,
+    tradableInstrument?: TradableInstrument.AsObject,
+    decimalPlaces: number,
     fees?: Fees.AsObject,
-    openingauction?: AuctionDuration.AsObject,
+    openingAuction?: AuctionDuration.AsObject,
     continuous?: ContinuousTrading.AsObject,
     discrete?: DiscreteTrading.AsObject,
-    pricemonitoringsettings?: PriceMonitoringSettings.AsObject,
-    targetstakeparameters?: TargetStakeParameters.AsObject,
-    tradingmode: Market.TradingModeMap[keyof Market.TradingModeMap],
+    priceMonitoringSettings?: PriceMonitoringSettings.AsObject,
+    targetStakeParameters?: TargetStakeParameters.AsObject,
+    tradingMode: Market.TradingModeMap[keyof Market.TradingModeMap],
     state: Market.StateMap[keyof Market.StateMap],
   }
 
@@ -674,8 +663,8 @@ export namespace Market {
 
   export const TradingMode: TradingModeMap;
 
-  export enum TradingmodeconfigCase {
-    TRADINGMODECONFIG_NOT_SET = 0,
+  export enum TradingModeConfigCase {
+    TRADING_MODE_CONFIG_NOT_SET = 0,
     CONTINUOUS = 100,
     DISCRETE = 101,
   }

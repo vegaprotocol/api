@@ -448,8 +448,8 @@ proto.vega.BuiltinAssetDeposit.prototype.toObject = function(opt_includeInstance
  */
 proto.vega.BuiltinAssetDeposit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -489,11 +489,11 @@ proto.vega.BuiltinAssetDeposit.deserializeBinaryFromReader = function(msg, reade
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
@@ -528,14 +528,14 @@ proto.vega.BuiltinAssetDeposit.prototype.serializeBinary = function() {
  */
 proto.vega.BuiltinAssetDeposit.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -553,10 +553,10 @@ proto.vega.BuiltinAssetDeposit.serializeBinaryToWriter = function(message, write
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.BuiltinAssetDeposit.prototype.getVegaassetid = function() {
+proto.vega.BuiltinAssetDeposit.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -565,16 +565,16 @@ proto.vega.BuiltinAssetDeposit.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.BuiltinAssetDeposit} returns this
  */
-proto.vega.BuiltinAssetDeposit.prototype.setVegaassetid = function(value) {
+proto.vega.BuiltinAssetDeposit.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.vega.BuiltinAssetDeposit.prototype.getPartyid = function() {
+proto.vega.BuiltinAssetDeposit.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -583,7 +583,7 @@ proto.vega.BuiltinAssetDeposit.prototype.getPartyid = function() {
  * @param {string} value
  * @return {!proto.vega.BuiltinAssetDeposit} returns this
  */
-proto.vega.BuiltinAssetDeposit.prototype.setPartyid = function(value) {
+proto.vega.BuiltinAssetDeposit.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -638,8 +638,8 @@ proto.vega.BuiltinAssetWithdrawal.prototype.toObject = function(opt_includeInsta
  */
 proto.vega.BuiltinAssetWithdrawal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -679,11 +679,11 @@ proto.vega.BuiltinAssetWithdrawal.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
@@ -718,14 +718,14 @@ proto.vega.BuiltinAssetWithdrawal.prototype.serializeBinary = function() {
  */
 proto.vega.BuiltinAssetWithdrawal.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -743,10 +743,10 @@ proto.vega.BuiltinAssetWithdrawal.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.BuiltinAssetWithdrawal.prototype.getVegaassetid = function() {
+proto.vega.BuiltinAssetWithdrawal.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -755,16 +755,16 @@ proto.vega.BuiltinAssetWithdrawal.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.BuiltinAssetWithdrawal} returns this
  */
-proto.vega.BuiltinAssetWithdrawal.prototype.setVegaassetid = function(value) {
+proto.vega.BuiltinAssetWithdrawal.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.vega.BuiltinAssetWithdrawal.prototype.getPartyid = function() {
+proto.vega.BuiltinAssetWithdrawal.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -773,7 +773,7 @@ proto.vega.BuiltinAssetWithdrawal.prototype.getPartyid = function() {
  * @param {string} value
  * @return {!proto.vega.BuiltinAssetWithdrawal} returns this
  */
-proto.vega.BuiltinAssetWithdrawal.prototype.setPartyid = function(value) {
+proto.vega.BuiltinAssetWithdrawal.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1056,7 +1056,7 @@ proto.vega.ERC20AssetList.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ERC20AssetList.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1095,7 +1095,7 @@ proto.vega.ERC20AssetList.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     default:
       reader.skipField();
@@ -1126,7 +1126,7 @@ proto.vega.ERC20AssetList.prototype.serializeBinary = function() {
  */
 proto.vega.ERC20AssetList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1137,10 +1137,10 @@ proto.vega.ERC20AssetList.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.ERC20AssetList.prototype.getVegaassetid = function() {
+proto.vega.ERC20AssetList.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1149,7 +1149,7 @@ proto.vega.ERC20AssetList.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20AssetList} returns this
  */
-proto.vega.ERC20AssetList.prototype.setVegaassetid = function(value) {
+proto.vega.ERC20AssetList.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1186,7 +1186,7 @@ proto.vega.ERC20AssetDelist.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ERC20AssetDelist.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, "")
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1225,7 +1225,7 @@ proto.vega.ERC20AssetDelist.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     default:
       reader.skipField();
@@ -1256,7 +1256,7 @@ proto.vega.ERC20AssetDelist.prototype.serializeBinary = function() {
  */
 proto.vega.ERC20AssetDelist.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1267,10 +1267,10 @@ proto.vega.ERC20AssetDelist.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.ERC20AssetDelist.prototype.getVegaassetid = function() {
+proto.vega.ERC20AssetDelist.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1279,7 +1279,7 @@ proto.vega.ERC20AssetDelist.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20AssetDelist} returns this
  */
-proto.vega.ERC20AssetDelist.prototype.setVegaassetid = function(value) {
+proto.vega.ERC20AssetDelist.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1316,9 +1316,9 @@ proto.vega.ERC20Deposit.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ERC20Deposit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourceethereumaddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetpartyid: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sourceEthereumAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    targetPartyId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
@@ -1358,15 +1358,15 @@ proto.vega.ERC20Deposit.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSourceethereumaddress(value);
+      msg.setSourceEthereumAddress(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTargetpartyid(value);
+      msg.setTargetPartyId(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -1401,21 +1401,21 @@ proto.vega.ERC20Deposit.prototype.serializeBinary = function() {
  */
 proto.vega.ERC20Deposit.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSourceethereumaddress();
+  f = message.getSourceEthereumAddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTargetpartyid();
+  f = message.getTargetPartyId();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -1433,10 +1433,10 @@ proto.vega.ERC20Deposit.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.ERC20Deposit.prototype.getVegaassetid = function() {
+proto.vega.ERC20Deposit.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1445,16 +1445,16 @@ proto.vega.ERC20Deposit.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20Deposit} returns this
  */
-proto.vega.ERC20Deposit.prototype.setVegaassetid = function(value) {
+proto.vega.ERC20Deposit.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string sourceEthereumAddress = 2;
+ * optional string source_ethereum_address = 2;
  * @return {string}
  */
-proto.vega.ERC20Deposit.prototype.getSourceethereumaddress = function() {
+proto.vega.ERC20Deposit.prototype.getSourceEthereumAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1463,16 +1463,16 @@ proto.vega.ERC20Deposit.prototype.getSourceethereumaddress = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20Deposit} returns this
  */
-proto.vega.ERC20Deposit.prototype.setSourceethereumaddress = function(value) {
+proto.vega.ERC20Deposit.prototype.setSourceEthereumAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string targetPartyID = 3;
+ * optional string target_party_id = 3;
  * @return {string}
  */
-proto.vega.ERC20Deposit.prototype.getTargetpartyid = function() {
+proto.vega.ERC20Deposit.prototype.getTargetPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1481,7 +1481,7 @@ proto.vega.ERC20Deposit.prototype.getTargetpartyid = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20Deposit} returns this
  */
-proto.vega.ERC20Deposit.prototype.setTargetpartyid = function(value) {
+proto.vega.ERC20Deposit.prototype.setTargetPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -1536,9 +1536,9 @@ proto.vega.ERC20Withdrawal.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ERC20Withdrawal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    targetethereumaddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    referencenonce: jspb.Message.getFieldWithDefault(msg, 3, "")
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    targetEthereumAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    referenceNonce: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1577,15 +1577,15 @@ proto.vega.ERC20Withdrawal.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTargetethereumaddress(value);
+      msg.setTargetEthereumAddress(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReferencenonce(value);
+      msg.setReferenceNonce(value);
       break;
     default:
       reader.skipField();
@@ -1616,21 +1616,21 @@ proto.vega.ERC20Withdrawal.prototype.serializeBinary = function() {
  */
 proto.vega.ERC20Withdrawal.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getTargetethereumaddress();
+  f = message.getTargetEthereumAddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getReferencenonce();
+  f = message.getReferenceNonce();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -1641,10 +1641,10 @@ proto.vega.ERC20Withdrawal.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.ERC20Withdrawal.prototype.getVegaassetid = function() {
+proto.vega.ERC20Withdrawal.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1653,16 +1653,16 @@ proto.vega.ERC20Withdrawal.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20Withdrawal} returns this
  */
-proto.vega.ERC20Withdrawal.prototype.setVegaassetid = function(value) {
+proto.vega.ERC20Withdrawal.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string targetEthereumAddress = 2;
+ * optional string target_ethereum_address = 2;
  * @return {string}
  */
-proto.vega.ERC20Withdrawal.prototype.getTargetethereumaddress = function() {
+proto.vega.ERC20Withdrawal.prototype.getTargetEthereumAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1671,16 +1671,16 @@ proto.vega.ERC20Withdrawal.prototype.getTargetethereumaddress = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20Withdrawal} returns this
  */
-proto.vega.ERC20Withdrawal.prototype.setTargetethereumaddress = function(value) {
+proto.vega.ERC20Withdrawal.prototype.setTargetEthereumAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string referenceNonce = 3;
+ * optional string reference_nonce = 3;
  * @return {string}
  */
-proto.vega.ERC20Withdrawal.prototype.getReferencenonce = function() {
+proto.vega.ERC20Withdrawal.prototype.getReferenceNonce = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1689,7 +1689,7 @@ proto.vega.ERC20Withdrawal.prototype.getReferencenonce = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20Withdrawal} returns this
  */
-proto.vega.ERC20Withdrawal.prototype.setReferencenonce = function(value) {
+proto.vega.ERC20Withdrawal.prototype.setReferenceNonce = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -1710,8 +1710,8 @@ proto.vega.ERC20Event.oneofGroups_ = [[1001,1002,1003,1004]];
  */
 proto.vega.ERC20Event.ActionCase = {
   ACTION_NOT_SET: 0,
-  ASSETLIST: 1001,
-  ASSETDELIST: 1002,
+  ASSET_LIST: 1001,
+  ASSET_DELIST: 1002,
   DEPOSIT: 1003,
   WITHDRAWAL: 1004
 };
@@ -1756,8 +1756,8 @@ proto.vega.ERC20Event.toObject = function(includeInstance, msg) {
   var f, obj = {
     index: jspb.Message.getFieldWithDefault(msg, 1, 0),
     block: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    assetlist: (f = msg.getAssetlist()) && proto.vega.ERC20AssetList.toObject(includeInstance, f),
-    assetdelist: (f = msg.getAssetdelist()) && proto.vega.ERC20AssetDelist.toObject(includeInstance, f),
+    assetList: (f = msg.getAssetList()) && proto.vega.ERC20AssetList.toObject(includeInstance, f),
+    assetDelist: (f = msg.getAssetDelist()) && proto.vega.ERC20AssetDelist.toObject(includeInstance, f),
     deposit: (f = msg.getDeposit()) && proto.vega.ERC20Deposit.toObject(includeInstance, f),
     withdrawal: (f = msg.getWithdrawal()) && proto.vega.ERC20Withdrawal.toObject(includeInstance, f)
   };
@@ -1807,12 +1807,12 @@ proto.vega.ERC20Event.deserializeBinaryFromReader = function(msg, reader) {
     case 1001:
       var value = new proto.vega.ERC20AssetList;
       reader.readMessage(value,proto.vega.ERC20AssetList.deserializeBinaryFromReader);
-      msg.setAssetlist(value);
+      msg.setAssetList(value);
       break;
     case 1002:
       var value = new proto.vega.ERC20AssetDelist;
       reader.readMessage(value,proto.vega.ERC20AssetDelist.deserializeBinaryFromReader);
-      msg.setAssetdelist(value);
+      msg.setAssetDelist(value);
       break;
     case 1003:
       var value = new proto.vega.ERC20Deposit;
@@ -1867,7 +1867,7 @@ proto.vega.ERC20Event.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAssetlist();
+  f = message.getAssetList();
   if (f != null) {
     writer.writeMessage(
       1001,
@@ -1875,7 +1875,7 @@ proto.vega.ERC20Event.serializeBinaryToWriter = function(message, writer) {
       proto.vega.ERC20AssetList.serializeBinaryToWriter
     );
   }
-  f = message.getAssetdelist();
+  f = message.getAssetDelist();
   if (f != null) {
     writer.writeMessage(
       1002,
@@ -1939,10 +1939,10 @@ proto.vega.ERC20Event.prototype.setBlock = function(value) {
 
 
 /**
- * optional ERC20AssetList assetList = 1001;
+ * optional ERC20AssetList asset_list = 1001;
  * @return {?proto.vega.ERC20AssetList}
  */
-proto.vega.ERC20Event.prototype.getAssetlist = function() {
+proto.vega.ERC20Event.prototype.getAssetList = function() {
   return /** @type{?proto.vega.ERC20AssetList} */ (
     jspb.Message.getWrapperField(this, proto.vega.ERC20AssetList, 1001));
 };
@@ -1952,7 +1952,7 @@ proto.vega.ERC20Event.prototype.getAssetlist = function() {
  * @param {?proto.vega.ERC20AssetList|undefined} value
  * @return {!proto.vega.ERC20Event} returns this
 */
-proto.vega.ERC20Event.prototype.setAssetlist = function(value) {
+proto.vega.ERC20Event.prototype.setAssetList = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1001, proto.vega.ERC20Event.oneofGroups_[0], value);
 };
 
@@ -1961,8 +1961,8 @@ proto.vega.ERC20Event.prototype.setAssetlist = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.ERC20Event} returns this
  */
-proto.vega.ERC20Event.prototype.clearAssetlist = function() {
-  return this.setAssetlist(undefined);
+proto.vega.ERC20Event.prototype.clearAssetList = function() {
+  return this.setAssetList(undefined);
 };
 
 
@@ -1970,16 +1970,16 @@ proto.vega.ERC20Event.prototype.clearAssetlist = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.ERC20Event.prototype.hasAssetlist = function() {
+proto.vega.ERC20Event.prototype.hasAssetList = function() {
   return jspb.Message.getField(this, 1001) != null;
 };
 
 
 /**
- * optional ERC20AssetDelist assetDelist = 1002;
+ * optional ERC20AssetDelist asset_delist = 1002;
  * @return {?proto.vega.ERC20AssetDelist}
  */
-proto.vega.ERC20Event.prototype.getAssetdelist = function() {
+proto.vega.ERC20Event.prototype.getAssetDelist = function() {
   return /** @type{?proto.vega.ERC20AssetDelist} */ (
     jspb.Message.getWrapperField(this, proto.vega.ERC20AssetDelist, 1002));
 };
@@ -1989,7 +1989,7 @@ proto.vega.ERC20Event.prototype.getAssetdelist = function() {
  * @param {?proto.vega.ERC20AssetDelist|undefined} value
  * @return {!proto.vega.ERC20Event} returns this
 */
-proto.vega.ERC20Event.prototype.setAssetdelist = function(value) {
+proto.vega.ERC20Event.prototype.setAssetDelist = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1002, proto.vega.ERC20Event.oneofGroups_[0], value);
 };
 
@@ -1998,8 +1998,8 @@ proto.vega.ERC20Event.prototype.setAssetdelist = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.ERC20Event} returns this
  */
-proto.vega.ERC20Event.prototype.clearAssetdelist = function() {
-  return this.setAssetdelist(undefined);
+proto.vega.ERC20Event.prototype.clearAssetDelist = function() {
+  return this.setAssetDelist(undefined);
 };
 
 
@@ -2007,7 +2007,7 @@ proto.vega.ERC20Event.prototype.clearAssetdelist = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.ERC20Event.prototype.hasAssetdelist = function() {
+proto.vega.ERC20Event.prototype.hasAssetDelist = function() {
   return jspb.Message.getField(this, 1002) != null;
 };
 
@@ -2118,9 +2118,9 @@ proto.vega.BTCDeposit.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.BTCDeposit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourcebtcaddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetpartyid: jspb.Message.getFieldWithDefault(msg, 3, "")
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sourceBtcAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    targetPartyId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2159,15 +2159,15 @@ proto.vega.BTCDeposit.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSourcebtcaddress(value);
+      msg.setSourceBtcAddress(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTargetpartyid(value);
+      msg.setTargetPartyId(value);
       break;
     default:
       reader.skipField();
@@ -2198,21 +2198,21 @@ proto.vega.BTCDeposit.prototype.serializeBinary = function() {
  */
 proto.vega.BTCDeposit.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSourcebtcaddress();
+  f = message.getSourceBtcAddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTargetpartyid();
+  f = message.getTargetPartyId();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -2223,10 +2223,10 @@ proto.vega.BTCDeposit.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.BTCDeposit.prototype.getVegaassetid = function() {
+proto.vega.BTCDeposit.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2235,16 +2235,16 @@ proto.vega.BTCDeposit.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.BTCDeposit} returns this
  */
-proto.vega.BTCDeposit.prototype.setVegaassetid = function(value) {
+proto.vega.BTCDeposit.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string sourceBTCAddress = 2;
+ * optional string source_btc_address = 2;
  * @return {string}
  */
-proto.vega.BTCDeposit.prototype.getSourcebtcaddress = function() {
+proto.vega.BTCDeposit.prototype.getSourceBtcAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2253,16 +2253,16 @@ proto.vega.BTCDeposit.prototype.getSourcebtcaddress = function() {
  * @param {string} value
  * @return {!proto.vega.BTCDeposit} returns this
  */
-proto.vega.BTCDeposit.prototype.setSourcebtcaddress = function(value) {
+proto.vega.BTCDeposit.prototype.setSourceBtcAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string targetPartyId = 3;
+ * optional string target_party_id = 3;
  * @return {string}
  */
-proto.vega.BTCDeposit.prototype.getTargetpartyid = function() {
+proto.vega.BTCDeposit.prototype.getTargetPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2271,7 +2271,7 @@ proto.vega.BTCDeposit.prototype.getTargetpartyid = function() {
  * @param {string} value
  * @return {!proto.vega.BTCDeposit} returns this
  */
-proto.vega.BTCDeposit.prototype.setTargetpartyid = function(value) {
+proto.vega.BTCDeposit.prototype.setTargetPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -2308,10 +2308,10 @@ proto.vega.BTCWithdrawal.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.BTCWithdrawal.toObject = function(includeInstance, msg) {
   var f, obj = {
-    vegaassetid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sourcepartyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    targetbtcaddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    referencenonce: jspb.Message.getFieldWithDefault(msg, 4, "")
+    vegaAssetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sourcePartyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    targetBtcAddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    referenceNonce: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -2350,19 +2350,19 @@ proto.vega.BTCWithdrawal.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVegaassetid(value);
+      msg.setVegaAssetId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSourcepartyid(value);
+      msg.setSourcePartyId(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTargetbtcaddress(value);
+      msg.setTargetBtcAddress(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReferencenonce(value);
+      msg.setReferenceNonce(value);
       break;
     default:
       reader.skipField();
@@ -2393,28 +2393,28 @@ proto.vega.BTCWithdrawal.prototype.serializeBinary = function() {
  */
 proto.vega.BTCWithdrawal.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getVegaassetid();
+  f = message.getVegaAssetId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSourcepartyid();
+  f = message.getSourcePartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getTargetbtcaddress();
+  f = message.getTargetBtcAddress();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getReferencenonce();
+  f = message.getReferenceNonce();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -2425,10 +2425,10 @@ proto.vega.BTCWithdrawal.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string vegaAssetID = 1;
+ * optional string vega_asset_id = 1;
  * @return {string}
  */
-proto.vega.BTCWithdrawal.prototype.getVegaassetid = function() {
+proto.vega.BTCWithdrawal.prototype.getVegaAssetId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2437,16 +2437,16 @@ proto.vega.BTCWithdrawal.prototype.getVegaassetid = function() {
  * @param {string} value
  * @return {!proto.vega.BTCWithdrawal} returns this
  */
-proto.vega.BTCWithdrawal.prototype.setVegaassetid = function(value) {
+proto.vega.BTCWithdrawal.prototype.setVegaAssetId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string sourcePartyId = 2;
+ * optional string source_party_id = 2;
  * @return {string}
  */
-proto.vega.BTCWithdrawal.prototype.getSourcepartyid = function() {
+proto.vega.BTCWithdrawal.prototype.getSourcePartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2455,16 +2455,16 @@ proto.vega.BTCWithdrawal.prototype.getSourcepartyid = function() {
  * @param {string} value
  * @return {!proto.vega.BTCWithdrawal} returns this
  */
-proto.vega.BTCWithdrawal.prototype.setSourcepartyid = function(value) {
+proto.vega.BTCWithdrawal.prototype.setSourcePartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string targetBTCAddress = 3;
+ * optional string target_btc_address = 3;
  * @return {string}
  */
-proto.vega.BTCWithdrawal.prototype.getTargetbtcaddress = function() {
+proto.vega.BTCWithdrawal.prototype.getTargetBtcAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -2473,16 +2473,16 @@ proto.vega.BTCWithdrawal.prototype.getTargetbtcaddress = function() {
  * @param {string} value
  * @return {!proto.vega.BTCWithdrawal} returns this
  */
-proto.vega.BTCWithdrawal.prototype.setTargetbtcaddress = function(value) {
+proto.vega.BTCWithdrawal.prototype.setTargetBtcAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string referenceNonce = 4;
+ * optional string reference_nonce = 4;
  * @return {string}
  */
-proto.vega.BTCWithdrawal.prototype.getReferencenonce = function() {
+proto.vega.BTCWithdrawal.prototype.getReferenceNonce = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -2491,7 +2491,7 @@ proto.vega.BTCWithdrawal.prototype.getReferencenonce = function() {
  * @param {string} value
  * @return {!proto.vega.BTCWithdrawal} returns this
  */
-proto.vega.BTCWithdrawal.prototype.setReferencenonce = function(value) {
+proto.vega.BTCWithdrawal.prototype.setReferenceNonce = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -3060,8 +3060,8 @@ proto.vega.Identifier.oneofGroups_ = [[1,2]];
  */
 proto.vega.Identifier.IdentifierCase = {
   IDENTIFIER_NOT_SET: 0,
-  ETHEREUMADDRESS: 1,
-  BITCOINADDRESS: 2
+  ETHEREUM_ADDRESS: 1,
+  BITCOIN_ADDRESS: 2
 };
 
 /**
@@ -3102,8 +3102,8 @@ proto.vega.Identifier.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.Identifier.toObject = function(includeInstance, msg) {
   var f, obj = {
-    ethereumaddress: (f = msg.getEthereumaddress()) && proto.vega.EthereumAddress.toObject(includeInstance, f),
-    bitcoinaddress: (f = msg.getBitcoinaddress()) && proto.vega.BitcoinAddress.toObject(includeInstance, f)
+    ethereumAddress: (f = msg.getEthereumAddress()) && proto.vega.EthereumAddress.toObject(includeInstance, f),
+    bitcoinAddress: (f = msg.getBitcoinAddress()) && proto.vega.BitcoinAddress.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3143,12 +3143,12 @@ proto.vega.Identifier.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.vega.EthereumAddress;
       reader.readMessage(value,proto.vega.EthereumAddress.deserializeBinaryFromReader);
-      msg.setEthereumaddress(value);
+      msg.setEthereumAddress(value);
       break;
     case 2:
       var value = new proto.vega.BitcoinAddress;
       reader.readMessage(value,proto.vega.BitcoinAddress.deserializeBinaryFromReader);
-      msg.setBitcoinaddress(value);
+      msg.setBitcoinAddress(value);
       break;
     default:
       reader.skipField();
@@ -3179,7 +3179,7 @@ proto.vega.Identifier.prototype.serializeBinary = function() {
  */
 proto.vega.Identifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEthereumaddress();
+  f = message.getEthereumAddress();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3187,7 +3187,7 @@ proto.vega.Identifier.serializeBinaryToWriter = function(message, writer) {
       proto.vega.EthereumAddress.serializeBinaryToWriter
     );
   }
-  f = message.getBitcoinaddress();
+  f = message.getBitcoinAddress();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -3199,10 +3199,10 @@ proto.vega.Identifier.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional EthereumAddress ethereumAddress = 1;
+ * optional EthereumAddress ethereum_address = 1;
  * @return {?proto.vega.EthereumAddress}
  */
-proto.vega.Identifier.prototype.getEthereumaddress = function() {
+proto.vega.Identifier.prototype.getEthereumAddress = function() {
   return /** @type{?proto.vega.EthereumAddress} */ (
     jspb.Message.getWrapperField(this, proto.vega.EthereumAddress, 1));
 };
@@ -3212,7 +3212,7 @@ proto.vega.Identifier.prototype.getEthereumaddress = function() {
  * @param {?proto.vega.EthereumAddress|undefined} value
  * @return {!proto.vega.Identifier} returns this
 */
-proto.vega.Identifier.prototype.setEthereumaddress = function(value) {
+proto.vega.Identifier.prototype.setEthereumAddress = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1, proto.vega.Identifier.oneofGroups_[0], value);
 };
 
@@ -3221,8 +3221,8 @@ proto.vega.Identifier.prototype.setEthereumaddress = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.Identifier} returns this
  */
-proto.vega.Identifier.prototype.clearEthereumaddress = function() {
-  return this.setEthereumaddress(undefined);
+proto.vega.Identifier.prototype.clearEthereumAddress = function() {
+  return this.setEthereumAddress(undefined);
 };
 
 
@@ -3230,16 +3230,16 @@ proto.vega.Identifier.prototype.clearEthereumaddress = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.Identifier.prototype.hasEthereumaddress = function() {
+proto.vega.Identifier.prototype.hasEthereumAddress = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional BitcoinAddress bitcoinAddress = 2;
+ * optional BitcoinAddress bitcoin_address = 2;
  * @return {?proto.vega.BitcoinAddress}
  */
-proto.vega.Identifier.prototype.getBitcoinaddress = function() {
+proto.vega.Identifier.prototype.getBitcoinAddress = function() {
   return /** @type{?proto.vega.BitcoinAddress} */ (
     jspb.Message.getWrapperField(this, proto.vega.BitcoinAddress, 2));
 };
@@ -3249,7 +3249,7 @@ proto.vega.Identifier.prototype.getBitcoinaddress = function() {
  * @param {?proto.vega.BitcoinAddress|undefined} value
  * @return {!proto.vega.Identifier} returns this
 */
-proto.vega.Identifier.prototype.setBitcoinaddress = function(value) {
+proto.vega.Identifier.prototype.setBitcoinAddress = function(value) {
   return jspb.Message.setOneofWrapperField(this, 2, proto.vega.Identifier.oneofGroups_[0], value);
 };
 
@@ -3258,8 +3258,8 @@ proto.vega.Identifier.prototype.setBitcoinaddress = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.Identifier} returns this
  */
-proto.vega.Identifier.prototype.clearBitcoinaddress = function() {
-  return this.setBitcoinaddress(undefined);
+proto.vega.Identifier.prototype.clearBitcoinAddress = function() {
+  return this.setBitcoinAddress(undefined);
 };
 
 
@@ -3267,7 +3267,7 @@ proto.vega.Identifier.prototype.clearBitcoinaddress = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.Identifier.prototype.hasBitcoinaddress = function() {
+proto.vega.Identifier.prototype.hasBitcoinAddress = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -3632,7 +3632,7 @@ proto.vega.ValidatorEvent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ValidatorEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sourceid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sourceId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     add: (f = msg.getAdd()) && proto.vega.AddValidator.toObject(includeInstance, f),
     rm: (f = msg.getRm()) && proto.vega.RemoveValidator.toObject(includeInstance, f)
   };
@@ -3673,7 +3673,7 @@ proto.vega.ValidatorEvent.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSourceid(value);
+      msg.setSourceId(value);
       break;
     case 1001:
       var value = new proto.vega.AddValidator;
@@ -3714,7 +3714,7 @@ proto.vega.ValidatorEvent.prototype.serializeBinary = function() {
  */
 proto.vega.ValidatorEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSourceid();
+  f = message.getSourceId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -3741,10 +3741,10 @@ proto.vega.ValidatorEvent.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string sourceID = 1;
+ * optional string source_id = 1;
  * @return {string}
  */
-proto.vega.ValidatorEvent.prototype.getSourceid = function() {
+proto.vega.ValidatorEvent.prototype.getSourceId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -3753,7 +3753,7 @@ proto.vega.ValidatorEvent.prototype.getSourceid = function() {
  * @param {string} value
  * @return {!proto.vega.ValidatorEvent} returns this
  */
-proto.vega.ValidatorEvent.prototype.setSourceid = function(value) {
+proto.vega.ValidatorEvent.prototype.setSourceId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -3892,7 +3892,7 @@ proto.vega.ChainEvent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ChainEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    txid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    txId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     nonce: jspb.Message.getFieldWithDefault(msg, 2, 0),
     builtin: (f = msg.getBuiltin()) && proto.vega.BuiltinAssetEvent.toObject(includeInstance, f),
     erc20: (f = msg.getErc20()) && proto.vega.ERC20Event.toObject(includeInstance, f),
@@ -3936,7 +3936,7 @@ proto.vega.ChainEvent.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTxid(value);
+      msg.setTxId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
@@ -3991,7 +3991,7 @@ proto.vega.ChainEvent.prototype.serializeBinary = function() {
  */
 proto.vega.ChainEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTxid();
+  f = message.getTxId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -4041,10 +4041,10 @@ proto.vega.ChainEvent.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string txID = 1;
+ * optional string tx_id = 1;
  * @return {string}
  */
-proto.vega.ChainEvent.prototype.getTxid = function() {
+proto.vega.ChainEvent.prototype.getTxId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4053,7 +4053,7 @@ proto.vega.ChainEvent.prototype.getTxid = function() {
  * @param {string} value
  * @return {!proto.vega.ChainEvent} returns this
  */
-proto.vega.ChainEvent.prototype.setTxid = function(value) {
+proto.vega.ChainEvent.prototype.setTxId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

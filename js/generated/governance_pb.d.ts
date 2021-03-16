@@ -6,16 +6,27 @@ import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.c
 import * as markets_pb from "./markets_pb";
 import * as vega_pb from "./vega_pb";
 import * as assets_pb from "./assets_pb";
+import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
 
 export class FutureProduct extends jspb.Message {
   getMaturity(): string;
   setMaturity(value: string): void;
 
-  getSettlementasset(): string;
-  setSettlementasset(value: string): void;
+  getSettlementAsset(): string;
+  setSettlementAsset(value: string): void;
 
-  getQuotename(): string;
-  setQuotename(value: string): void;
+  getQuoteName(): string;
+  setQuoteName(value: string): void;
+
+  hasOracleSpec(): boolean;
+  clearOracleSpec(): void;
+  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpecConfiguration | undefined;
+  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpecConfiguration): void;
+
+  hasOracleSpecBinding(): boolean;
+  clearOracleSpecBinding(): void;
+  getOracleSpecBinding(): markets_pb.OracleSpecToFutureBinding | undefined;
+  setOracleSpecBinding(value?: markets_pb.OracleSpecToFutureBinding): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FutureProduct.AsObject;
@@ -30,8 +41,10 @@ export class FutureProduct extends jspb.Message {
 export namespace FutureProduct {
   export type AsObject = {
     maturity: string,
-    settlementasset: string,
-    quotename: string,
+    settlementAsset: string,
+    quoteName: string,
+    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpecConfiguration.AsObject,
+    oracleSpecBinding?: markets_pb.OracleSpecToFutureBinding.AsObject,
   }
 }
 
@@ -77,31 +90,28 @@ export class NewMarketConfiguration extends jspb.Message {
   getInstrument(): InstrumentConfiguration | undefined;
   setInstrument(value?: InstrumentConfiguration): void;
 
-  getDecimalplaces(): number;
-  setDecimalplaces(value: number): void;
+  getDecimalPlaces(): number;
+  setDecimalPlaces(value: number): void;
 
   clearMetadataList(): void;
   getMetadataList(): Array<string>;
   setMetadataList(value: Array<string>): void;
   addMetadata(value: string, index?: number): string;
 
-  getOpeningauctionduration(): number;
-  setOpeningauctionduration(value: number): void;
-
-  hasPricemonitoringparameters(): boolean;
-  clearPricemonitoringparameters(): void;
-  getPricemonitoringparameters(): markets_pb.PriceMonitoringParameters | undefined;
-  setPricemonitoringparameters(value?: markets_pb.PriceMonitoringParameters): void;
+  hasPriceMonitoringParameters(): boolean;
+  clearPriceMonitoringParameters(): void;
+  getPriceMonitoringParameters(): markets_pb.PriceMonitoringParameters | undefined;
+  setPriceMonitoringParameters(value?: markets_pb.PriceMonitoringParameters): void;
 
   hasSimple(): boolean;
   clearSimple(): void;
   getSimple(): markets_pb.SimpleModelParams | undefined;
   setSimple(value?: markets_pb.SimpleModelParams): void;
 
-  hasLognormal(): boolean;
-  clearLognormal(): void;
-  getLognormal(): markets_pb.LogNormalRiskModel | undefined;
-  setLognormal(value?: markets_pb.LogNormalRiskModel): void;
+  hasLogNormal(): boolean;
+  clearLogNormal(): void;
+  getLogNormal(): markets_pb.LogNormalRiskModel | undefined;
+  setLogNormal(value?: markets_pb.LogNormalRiskModel): void;
 
   hasContinuous(): boolean;
   clearContinuous(): void;
@@ -113,8 +123,8 @@ export class NewMarketConfiguration extends jspb.Message {
   getDiscrete(): markets_pb.DiscreteTrading | undefined;
   setDiscrete(value?: markets_pb.DiscreteTrading): void;
 
-  getRiskparametersCase(): NewMarketConfiguration.RiskparametersCase;
-  getTradingmodeCase(): NewMarketConfiguration.TradingmodeCase;
+  getRiskParametersCase(): NewMarketConfiguration.RiskParametersCase;
+  getTradingModeCase(): NewMarketConfiguration.TradingModeCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewMarketConfiguration.AsObject;
   static toObject(includeInstance: boolean, msg: NewMarketConfiguration): NewMarketConfiguration.AsObject;
@@ -128,26 +138,65 @@ export class NewMarketConfiguration extends jspb.Message {
 export namespace NewMarketConfiguration {
   export type AsObject = {
     instrument?: InstrumentConfiguration.AsObject,
-    decimalplaces: number,
+    decimalPlaces: number,
     metadataList: Array<string>,
-    openingauctionduration: number,
-    pricemonitoringparameters?: markets_pb.PriceMonitoringParameters.AsObject,
+    priceMonitoringParameters?: markets_pb.PriceMonitoringParameters.AsObject,
     simple?: markets_pb.SimpleModelParams.AsObject,
-    lognormal?: markets_pb.LogNormalRiskModel.AsObject,
+    logNormal?: markets_pb.LogNormalRiskModel.AsObject,
     continuous?: markets_pb.ContinuousTrading.AsObject,
     discrete?: markets_pb.DiscreteTrading.AsObject,
   }
 
-  export enum RiskparametersCase {
-    RISKPARAMETERS_NOT_SET = 0,
+  export enum RiskParametersCase {
+    RISK_PARAMETERS_NOT_SET = 0,
     SIMPLE = 100,
-    LOGNORMAL = 101,
+    LOG_NORMAL = 101,
   }
 
-  export enum TradingmodeCase {
-    TRADINGMODE_NOT_SET = 0,
+  export enum TradingModeCase {
+    TRADING_MODE_NOT_SET = 0,
     CONTINUOUS = 200,
     DISCRETE = 201,
+  }
+}
+
+export class NewMarketCommitment extends jspb.Message {
+  getCommitmentAmount(): number;
+  setCommitmentAmount(value: number): void;
+
+  getFee(): string;
+  setFee(value: string): void;
+
+  clearSellsList(): void;
+  getSellsList(): Array<vega_pb.LiquidityOrder>;
+  setSellsList(value: Array<vega_pb.LiquidityOrder>): void;
+  addSells(value?: vega_pb.LiquidityOrder, index?: number): vega_pb.LiquidityOrder;
+
+  clearBuysList(): void;
+  getBuysList(): Array<vega_pb.LiquidityOrder>;
+  setBuysList(value: Array<vega_pb.LiquidityOrder>): void;
+  addBuys(value?: vega_pb.LiquidityOrder, index?: number): vega_pb.LiquidityOrder;
+
+  getReference(): string;
+  setReference(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewMarketCommitment.AsObject;
+  static toObject(includeInstance: boolean, msg: NewMarketCommitment): NewMarketCommitment.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NewMarketCommitment, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewMarketCommitment;
+  static deserializeBinaryFromReader(message: NewMarketCommitment, reader: jspb.BinaryReader): NewMarketCommitment;
+}
+
+export namespace NewMarketCommitment {
+  export type AsObject = {
+    commitmentAmount: number,
+    fee: string,
+    sellsList: Array<vega_pb.LiquidityOrder.AsObject>,
+    buysList: Array<vega_pb.LiquidityOrder.AsObject>,
+    reference: string,
   }
 }
 
@@ -156,6 +205,11 @@ export class NewMarket extends jspb.Message {
   clearChanges(): void;
   getChanges(): NewMarketConfiguration | undefined;
   setChanges(value?: NewMarketConfiguration): void;
+
+  hasLiquidityCommitment(): boolean;
+  clearLiquidityCommitment(): void;
+  getLiquidityCommitment(): NewMarketCommitment | undefined;
+  setLiquidityCommitment(value?: NewMarketCommitment): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewMarket.AsObject;
@@ -170,6 +224,7 @@ export class NewMarket extends jspb.Message {
 export namespace NewMarket {
   export type AsObject = {
     changes?: NewMarketConfiguration.AsObject,
+    liquidityCommitment?: NewMarketCommitment.AsObject,
   }
 }
 
@@ -234,34 +289,34 @@ export namespace NewAsset {
 }
 
 export class ProposalTerms extends jspb.Message {
-  getClosingtimestamp(): number;
-  setClosingtimestamp(value: number): void;
+  getClosingTimestamp(): number;
+  setClosingTimestamp(value: number): void;
 
-  getEnactmenttimestamp(): number;
-  setEnactmenttimestamp(value: number): void;
+  getEnactmentTimestamp(): number;
+  setEnactmentTimestamp(value: number): void;
 
-  getValidationtimestamp(): number;
-  setValidationtimestamp(value: number): void;
+  getValidationTimestamp(): number;
+  setValidationTimestamp(value: number): void;
 
-  hasUpdatemarket(): boolean;
-  clearUpdatemarket(): void;
-  getUpdatemarket(): UpdateMarket | undefined;
-  setUpdatemarket(value?: UpdateMarket): void;
+  hasUpdateMarket(): boolean;
+  clearUpdateMarket(): void;
+  getUpdateMarket(): UpdateMarket | undefined;
+  setUpdateMarket(value?: UpdateMarket): void;
 
-  hasNewmarket(): boolean;
-  clearNewmarket(): void;
-  getNewmarket(): NewMarket | undefined;
-  setNewmarket(value?: NewMarket): void;
+  hasNewMarket(): boolean;
+  clearNewMarket(): void;
+  getNewMarket(): NewMarket | undefined;
+  setNewMarket(value?: NewMarket): void;
 
-  hasUpdatenetworkparameter(): boolean;
-  clearUpdatenetworkparameter(): void;
-  getUpdatenetworkparameter(): UpdateNetworkParameter | undefined;
-  setUpdatenetworkparameter(value?: UpdateNetworkParameter): void;
+  hasUpdateNetworkParameter(): boolean;
+  clearUpdateNetworkParameter(): void;
+  getUpdateNetworkParameter(): UpdateNetworkParameter | undefined;
+  setUpdateNetworkParameter(value?: UpdateNetworkParameter): void;
 
-  hasNewasset(): boolean;
-  clearNewasset(): void;
-  getNewasset(): NewAsset | undefined;
-  setNewasset(value?: NewAsset): void;
+  hasNewAsset(): boolean;
+  clearNewAsset(): void;
+  getNewAsset(): NewAsset | undefined;
+  setNewAsset(value?: NewAsset): void;
 
   getChangeCase(): ProposalTerms.ChangeCase;
   serializeBinary(): Uint8Array;
@@ -276,21 +331,21 @@ export class ProposalTerms extends jspb.Message {
 
 export namespace ProposalTerms {
   export type AsObject = {
-    closingtimestamp: number,
-    enactmenttimestamp: number,
-    validationtimestamp: number,
-    updatemarket?: UpdateMarket.AsObject,
-    newmarket?: NewMarket.AsObject,
-    updatenetworkparameter?: UpdateNetworkParameter.AsObject,
-    newasset?: NewAsset.AsObject,
+    closingTimestamp: number,
+    enactmentTimestamp: number,
+    validationTimestamp: number,
+    updateMarket?: UpdateMarket.AsObject,
+    newMarket?: NewMarket.AsObject,
+    updateNetworkParameter?: UpdateNetworkParameter.AsObject,
+    newAsset?: NewAsset.AsObject,
   }
 
   export enum ChangeCase {
     CHANGE_NOT_SET = 0,
-    UPDATEMARKET = 101,
-    NEWMARKET = 102,
-    UPDATENETWORKPARAMETER = 103,
-    NEWASSET = 104,
+    UPDATE_MARKET = 101,
+    NEW_MARKET = 102,
+    UPDATE_NETWORK_PARAMETER = 103,
+    NEW_ASSET = 104,
   }
 }
 
@@ -310,10 +365,10 @@ export class GovernanceData extends jspb.Message {
   setNoList(value: Array<Vote>): void;
   addNo(value?: Vote, index?: number): Vote;
 
-  getYespartyMap(): jspb.Map<string, Vote>;
-  clearYespartyMap(): void;
-  getNopartyMap(): jspb.Map<string, Vote>;
-  clearNopartyMap(): void;
+  getYesPartyMap(): jspb.Map<string, Vote>;
+  clearYesPartyMap(): void;
+  getNoPartyMap(): jspb.Map<string, Vote>;
+  clearNoPartyMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GovernanceData.AsObject;
   static toObject(includeInstance: boolean, msg: GovernanceData): GovernanceData.AsObject;
@@ -329,8 +384,8 @@ export namespace GovernanceData {
     proposal?: Proposal.AsObject,
     yesList: Array<Vote.AsObject>,
     noList: Array<Vote.AsObject>,
-    yespartyMap: Array<[string, Vote.AsObject]>,
-    nopartyMap: Array<[string, Vote.AsObject]>,
+    yesPartyMap: Array<[string, Vote.AsObject]>,
+    noPartyMap: Array<[string, Vote.AsObject]>,
   }
 }
 
@@ -341,8 +396,8 @@ export class Proposal extends jspb.Message {
   getReference(): string;
   setReference(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getState(): Proposal.StateMap[keyof Proposal.StateMap];
   setState(value: Proposal.StateMap[keyof Proposal.StateMap]): void;
@@ -372,7 +427,7 @@ export namespace Proposal {
   export type AsObject = {
     id: string,
     reference: string,
-    partyid: string,
+    partyId: string,
     state: Proposal.StateMap[keyof Proposal.StateMap],
     timestamp: number,
     terms?: ProposalTerms.AsObject,
@@ -394,14 +449,14 @@ export namespace Proposal {
 }
 
 export class Vote extends jspb.Message {
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getValue(): Vote.ValueMap[keyof Vote.ValueMap];
   setValue(value: Vote.ValueMap[keyof Vote.ValueMap]): void;
 
-  getProposalid(): string;
-  setProposalid(value: string): void;
+  getProposalId(): string;
+  setProposalId(value: string): void;
 
   getTimestamp(): number;
   setTimestamp(value: number): void;
@@ -418,9 +473,9 @@ export class Vote extends jspb.Message {
 
 export namespace Vote {
   export type AsObject = {
-    partyid: string,
+    partyId: string,
     value: Vote.ValueMap[keyof Vote.ValueMap],
-    proposalid: string,
+    proposalId: string,
     timestamp: number,
   }
 
@@ -458,6 +513,9 @@ export interface ProposalErrorMap {
   PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED: 21;
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL: 22;
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE: 23;
+  PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT: 24;
+  PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET: 25;
+  PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT: 26;
 }
 
 export const ProposalError: ProposalErrorMap;

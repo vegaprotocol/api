@@ -34,7 +34,7 @@ extern PROTOBUF_INTERNAL_EXPORT_tm_2freplay_2eproto ::PROTOBUF_NAMESPACE_ID::int
 extern PROTOBUF_INTERNAL_EXPORT_tm_2freplay_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ValidatorUpdate_tm_2freplay_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_tm_2freplay_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VersionParams_tm_2freplay_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_tm_2freplay_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_VoteInfo_tm_2freplay_2eproto;
-namespace vega {
+namespace tm {
 class TmEventDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TmEvent> _instance;
@@ -119,13 +119,13 @@ class PublicKeyDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PublicKey> _instance;
 } _PublicKey_default_instance_;
-}  // namespace vega
+}  // namespace tm
 static void InitDefaultsscc_info_BlockParams_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_BlockParams_default_instance_;
-    new (ptr) ::vega::BlockParams();
+    void* ptr = &::tm::_BlockParams_default_instance_;
+    new (ptr) ::tm::BlockParams();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -137,8 +137,8 @@ static void InitDefaultsscc_info_ConsensusParams_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_ConsensusParams_default_instance_;
-    new (ptr) ::vega::ConsensusParams();
+    void* ptr = &::tm::_ConsensusParams_default_instance_;
+    new (ptr) ::tm::ConsensusParams();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -154,8 +154,8 @@ static void InitDefaultsscc_info_Event_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_Event_default_instance_;
-    new (ptr) ::vega::Event();
+    void* ptr = &::tm::_Event_default_instance_;
+    new (ptr) ::tm::Event();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -168,8 +168,8 @@ static void InitDefaultsscc_info_EventAttribute_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_EventAttribute_default_instance_;
-    new (ptr) ::vega::EventAttribute();
+    void* ptr = &::tm::_EventAttribute_default_instance_;
+    new (ptr) ::tm::EventAttribute();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -181,8 +181,8 @@ static void InitDefaultsscc_info_Evidence_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_Evidence_default_instance_;
-    new (ptr) ::vega::Evidence();
+    void* ptr = &::tm::_Evidence_default_instance_;
+    new (ptr) ::tm::Evidence();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -195,8 +195,8 @@ static void InitDefaultsscc_info_EvidenceParams_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_EvidenceParams_default_instance_;
-    new (ptr) ::vega::EvidenceParams();
+    void* ptr = &::tm::_EvidenceParams_default_instance_;
+    new (ptr) ::tm::EvidenceParams();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -208,8 +208,8 @@ static void InitDefaultsscc_info_Header_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_Header_default_instance_;
-    new (ptr) ::vega::Header();
+    void* ptr = &::tm::_Header_default_instance_;
+    new (ptr) ::tm::Header();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -221,8 +221,8 @@ static void InitDefaultsscc_info_LastCommitInfo_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_LastCommitInfo_default_instance_;
-    new (ptr) ::vega::LastCommitInfo();
+    void* ptr = &::tm::_LastCommitInfo_default_instance_;
+    new (ptr) ::tm::LastCommitInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -235,8 +235,8 @@ static void InitDefaultsscc_info_PublicKey_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_PublicKey_default_instance_;
-    new (ptr) ::vega::PublicKey();
+    void* ptr = &::tm::_PublicKey_default_instance_;
+    new (ptr) ::tm::PublicKey();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -248,8 +248,8 @@ static void InitDefaultsscc_info_RequestBeginBlock_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_RequestBeginBlock_default_instance_;
-    new (ptr) ::vega::RequestBeginBlock();
+    void* ptr = &::tm::_RequestBeginBlock_default_instance_;
+    new (ptr) ::tm::RequestBeginBlock();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -264,8 +264,8 @@ static void InitDefaultsscc_info_RequestDeliverTx_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_RequestDeliverTx_default_instance_;
-    new (ptr) ::vega::RequestDeliverTx();
+    void* ptr = &::tm::_RequestDeliverTx_default_instance_;
+    new (ptr) ::tm::RequestDeliverTx();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -277,8 +277,8 @@ static void InitDefaultsscc_info_RequestInitChain_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_RequestInitChain_default_instance_;
-    new (ptr) ::vega::RequestInitChain();
+    void* ptr = &::tm::_RequestInitChain_default_instance_;
+    new (ptr) ::tm::RequestInitChain();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -292,8 +292,8 @@ static void InitDefaultsscc_info_ResponseBeginBlock_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_ResponseBeginBlock_default_instance_;
-    new (ptr) ::vega::ResponseBeginBlock();
+    void* ptr = &::tm::_ResponseBeginBlock_default_instance_;
+    new (ptr) ::tm::ResponseBeginBlock();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -306,8 +306,8 @@ static void InitDefaultsscc_info_ResponseDeliverTx_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_ResponseDeliverTx_default_instance_;
-    new (ptr) ::vega::ResponseDeliverTx();
+    void* ptr = &::tm::_ResponseDeliverTx_default_instance_;
+    new (ptr) ::tm::ResponseDeliverTx();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -320,8 +320,8 @@ static void InitDefaultsscc_info_ResponseInitChain_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_ResponseInitChain_default_instance_;
-    new (ptr) ::vega::ResponseInitChain();
+    void* ptr = &::tm::_ResponseInitChain_default_instance_;
+    new (ptr) ::tm::ResponseInitChain();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -335,8 +335,8 @@ static void InitDefaultsscc_info_TmEvent_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_TmEvent_default_instance_;
-    new (ptr) ::vega::TmEvent();
+    void* ptr = &::tm::_TmEvent_default_instance_;
+    new (ptr) ::tm::TmEvent();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -354,8 +354,8 @@ static void InitDefaultsscc_info_Validator_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_Validator_default_instance_;
-    new (ptr) ::vega::Validator();
+    void* ptr = &::tm::_Validator_default_instance_;
+    new (ptr) ::tm::Validator();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -367,8 +367,8 @@ static void InitDefaultsscc_info_ValidatorParams_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_ValidatorParams_default_instance_;
-    new (ptr) ::vega::ValidatorParams();
+    void* ptr = &::tm::_ValidatorParams_default_instance_;
+    new (ptr) ::tm::ValidatorParams();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -380,8 +380,8 @@ static void InitDefaultsscc_info_ValidatorUpdate_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_ValidatorUpdate_default_instance_;
-    new (ptr) ::vega::ValidatorUpdate();
+    void* ptr = &::tm::_ValidatorUpdate_default_instance_;
+    new (ptr) ::tm::ValidatorUpdate();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -394,8 +394,8 @@ static void InitDefaultsscc_info_VersionParams_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_VersionParams_default_instance_;
-    new (ptr) ::vega::VersionParams();
+    void* ptr = &::tm::_VersionParams_default_instance_;
+    new (ptr) ::tm::VersionParams();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -407,8 +407,8 @@ static void InitDefaultsscc_info_VoteInfo_tm_2freplay_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::vega::_VoteInfo_default_instance_;
-    new (ptr) ::vega::VoteInfo();
+    void* ptr = &::tm::_VoteInfo_default_instance_;
+    new (ptr) ::tm::VoteInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
@@ -423,9 +423,9 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tm_2freplay_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::TmEvent, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::TmEvent, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::vega::TmEvent, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::tm::TmEvent, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
@@ -433,285 +433,285 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_tm_2freplay_2eproto::offsets[]
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::vega::TmEvent, Action_),
+  PROTOBUF_FIELD_OFFSET(::tm::TmEvent, action_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, time_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, chainid_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, consensusparams_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, validators_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, appstatebytes_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestInitChain, initialheight_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, time_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, chain_id_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, consensus_params_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, validators_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, app_state_bytes_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestInitChain, initial_height_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::RequestBeginBlock, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestBeginBlock, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::RequestBeginBlock, hash_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestBeginBlock, header_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestBeginBlock, lastcommitinfo_),
-  PROTOBUF_FIELD_OFFSET(::vega::RequestBeginBlock, byzantinevalidators_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestBeginBlock, hash_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestBeginBlock, header_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestBeginBlock, last_commit_info_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestBeginBlock, byzantine_validators_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::RequestDeliverTx, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestDeliverTx, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::RequestDeliverTx, tx_),
+  PROTOBUF_FIELD_OFFSET(::tm::RequestDeliverTx, tx_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseInitChain, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseInitChain, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseInitChain, consensusparams_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseInitChain, validators_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseInitChain, apphash_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseInitChain, consensus_params_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseInitChain, validators_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseInitChain, app_hash_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseBeginBlock, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseBeginBlock, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseBeginBlock, events_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseBeginBlock, events_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, code_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, data_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, log_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, info_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, gaswanted_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, gasused_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, events_),
-  PROTOBUF_FIELD_OFFSET(::vega::ResponseDeliverTx, codespace_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, code_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, data_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, log_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, info_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, gas_wanted_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, gas_used_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, events_),
+  PROTOBUF_FIELD_OFFSET(::tm::ResponseDeliverTx, codespace_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::Event, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::Event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::Event, type_),
-  PROTOBUF_FIELD_OFFSET(::vega::Event, attributes_),
+  PROTOBUF_FIELD_OFFSET(::tm::Event, type_),
+  PROTOBUF_FIELD_OFFSET(::tm::Event, attributes_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::EventAttribute, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::EventAttribute, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::EventAttribute, key_),
-  PROTOBUF_FIELD_OFFSET(::vega::EventAttribute, value_),
-  PROTOBUF_FIELD_OFFSET(::vega::EventAttribute, index_),
+  PROTOBUF_FIELD_OFFSET(::tm::EventAttribute, key_),
+  PROTOBUF_FIELD_OFFSET(::tm::EventAttribute, value_),
+  PROTOBUF_FIELD_OFFSET(::tm::EventAttribute, index_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ValidatorUpdate, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::ValidatorUpdate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ValidatorUpdate, pub_key_),
-  PROTOBUF_FIELD_OFFSET(::vega::ValidatorUpdate, power_),
+  PROTOBUF_FIELD_OFFSET(::tm::ValidatorUpdate, pub_key_),
+  PROTOBUF_FIELD_OFFSET(::tm::ValidatorUpdate, power_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ConsensusParams, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::ConsensusParams, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ConsensusParams, block_),
-  PROTOBUF_FIELD_OFFSET(::vega::ConsensusParams, evidence_),
-  PROTOBUF_FIELD_OFFSET(::vega::ConsensusParams, validator_),
-  PROTOBUF_FIELD_OFFSET(::vega::ConsensusParams, version_),
+  PROTOBUF_FIELD_OFFSET(::tm::ConsensusParams, block_),
+  PROTOBUF_FIELD_OFFSET(::tm::ConsensusParams, evidence_),
+  PROTOBUF_FIELD_OFFSET(::tm::ConsensusParams, validator_),
+  PROTOBUF_FIELD_OFFSET(::tm::ConsensusParams, version_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::BlockParams, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::BlockParams, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::BlockParams, maxbytes_),
-  PROTOBUF_FIELD_OFFSET(::vega::BlockParams, maxgas_),
+  PROTOBUF_FIELD_OFFSET(::tm::BlockParams, max_bytes_),
+  PROTOBUF_FIELD_OFFSET(::tm::BlockParams, max_gas_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::Evidence, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::Evidence, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::Evidence, type_),
-  PROTOBUF_FIELD_OFFSET(::vega::Evidence, validator_),
-  PROTOBUF_FIELD_OFFSET(::vega::Evidence, height_),
-  PROTOBUF_FIELD_OFFSET(::vega::Evidence, time_),
-  PROTOBUF_FIELD_OFFSET(::vega::Evidence, totalvotingpower_),
+  PROTOBUF_FIELD_OFFSET(::tm::Evidence, type_),
+  PROTOBUF_FIELD_OFFSET(::tm::Evidence, validator_),
+  PROTOBUF_FIELD_OFFSET(::tm::Evidence, height_),
+  PROTOBUF_FIELD_OFFSET(::tm::Evidence, time_),
+  PROTOBUF_FIELD_OFFSET(::tm::Evidence, total_voting_power_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::Validator, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::Validator, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::Validator, address_),
-  PROTOBUF_FIELD_OFFSET(::vega::Validator, power_),
+  PROTOBUF_FIELD_OFFSET(::tm::Validator, address_),
+  PROTOBUF_FIELD_OFFSET(::tm::Validator, power_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::LastCommitInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::LastCommitInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::LastCommitInfo, round_),
-  PROTOBUF_FIELD_OFFSET(::vega::LastCommitInfo, votes_),
+  PROTOBUF_FIELD_OFFSET(::tm::LastCommitInfo, round_),
+  PROTOBUF_FIELD_OFFSET(::tm::LastCommitInfo, votes_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::VoteInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::VoteInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::VoteInfo, validator_),
-  PROTOBUF_FIELD_OFFSET(::vega::VoteInfo, signedlastblock_),
+  PROTOBUF_FIELD_OFFSET(::tm::VoteInfo, validator_),
+  PROTOBUF_FIELD_OFFSET(::tm::VoteInfo, signed_last_block_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::EvidenceParams, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::EvidenceParams, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::EvidenceParams, maxagenumblocks_),
-  PROTOBUF_FIELD_OFFSET(::vega::EvidenceParams, maxageduration_),
-  PROTOBUF_FIELD_OFFSET(::vega::EvidenceParams, max_num_),
+  PROTOBUF_FIELD_OFFSET(::tm::EvidenceParams, max_age_num_blocks_),
+  PROTOBUF_FIELD_OFFSET(::tm::EvidenceParams, max_age_duration_),
+  PROTOBUF_FIELD_OFFSET(::tm::EvidenceParams, max_num_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ValidatorParams, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::ValidatorParams, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ValidatorParams, pubkeytypes_),
+  PROTOBUF_FIELD_OFFSET(::tm::ValidatorParams, pub_key_types_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::VersionParams, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::VersionParams, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::VersionParams, appversion_),
+  PROTOBUF_FIELD_OFFSET(::tm::VersionParams, app_version_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::Header, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::Header, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::Header, chainid_),
-  PROTOBUF_FIELD_OFFSET(::vega::Header, height_),
-  PROTOBUF_FIELD_OFFSET(::vega::Header, time_),
+  PROTOBUF_FIELD_OFFSET(::tm::Header, chain_id_),
+  PROTOBUF_FIELD_OFFSET(::tm::Header, height_),
+  PROTOBUF_FIELD_OFFSET(::tm::Header, time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::PublicKey, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::tm::PublicKey, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::vega::PublicKey, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::tm::PublicKey, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::vega::PublicKey, sum_),
+  PROTOBUF_FIELD_OFFSET(::tm::PublicKey, sum_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::vega::TmEvent)},
-  { 12, -1, sizeof(::vega::RequestInitChain)},
-  { 23, -1, sizeof(::vega::RequestBeginBlock)},
-  { 32, -1, sizeof(::vega::RequestDeliverTx)},
-  { 38, -1, sizeof(::vega::ResponseInitChain)},
-  { 46, -1, sizeof(::vega::ResponseBeginBlock)},
-  { 52, -1, sizeof(::vega::ResponseDeliverTx)},
-  { 65, -1, sizeof(::vega::Event)},
-  { 72, -1, sizeof(::vega::EventAttribute)},
-  { 80, -1, sizeof(::vega::ValidatorUpdate)},
-  { 87, -1, sizeof(::vega::ConsensusParams)},
-  { 96, -1, sizeof(::vega::BlockParams)},
-  { 103, -1, sizeof(::vega::Evidence)},
-  { 113, -1, sizeof(::vega::Validator)},
-  { 120, -1, sizeof(::vega::LastCommitInfo)},
-  { 127, -1, sizeof(::vega::VoteInfo)},
-  { 134, -1, sizeof(::vega::EvidenceParams)},
-  { 142, -1, sizeof(::vega::ValidatorParams)},
-  { 148, -1, sizeof(::vega::VersionParams)},
-  { 154, -1, sizeof(::vega::Header)},
-  { 162, -1, sizeof(::vega::PublicKey)},
+  { 0, -1, sizeof(::tm::TmEvent)},
+  { 12, -1, sizeof(::tm::RequestInitChain)},
+  { 23, -1, sizeof(::tm::RequestBeginBlock)},
+  { 32, -1, sizeof(::tm::RequestDeliverTx)},
+  { 38, -1, sizeof(::tm::ResponseInitChain)},
+  { 46, -1, sizeof(::tm::ResponseBeginBlock)},
+  { 52, -1, sizeof(::tm::ResponseDeliverTx)},
+  { 65, -1, sizeof(::tm::Event)},
+  { 72, -1, sizeof(::tm::EventAttribute)},
+  { 80, -1, sizeof(::tm::ValidatorUpdate)},
+  { 87, -1, sizeof(::tm::ConsensusParams)},
+  { 96, -1, sizeof(::tm::BlockParams)},
+  { 103, -1, sizeof(::tm::Evidence)},
+  { 113, -1, sizeof(::tm::Validator)},
+  { 120, -1, sizeof(::tm::LastCommitInfo)},
+  { 127, -1, sizeof(::tm::VoteInfo)},
+  { 134, -1, sizeof(::tm::EvidenceParams)},
+  { 142, -1, sizeof(::tm::ValidatorParams)},
+  { 148, -1, sizeof(::tm::VersionParams)},
+  { 154, -1, sizeof(::tm::Header)},
+  { 162, -1, sizeof(::tm::PublicKey)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_TmEvent_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_RequestInitChain_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_RequestBeginBlock_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_RequestDeliverTx_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ResponseInitChain_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ResponseBeginBlock_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ResponseDeliverTx_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Event_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_EventAttribute_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ValidatorUpdate_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ConsensusParams_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_BlockParams_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Evidence_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Validator_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_LastCommitInfo_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_VoteInfo_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_EvidenceParams_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ValidatorParams_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_VersionParams_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Header_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_PublicKey_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_TmEvent_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_RequestInitChain_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_RequestBeginBlock_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_RequestDeliverTx_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_ResponseInitChain_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_ResponseBeginBlock_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_ResponseDeliverTx_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_Event_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_EventAttribute_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_ValidatorUpdate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_ConsensusParams_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_BlockParams_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_Evidence_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_Validator_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_LastCommitInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_VoteInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_EvidenceParams_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_ValidatorParams_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_VersionParams_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_Header_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::tm::_PublicKey_default_instance_),
 };
 
 const char descriptor_table_protodef_tm_2freplay_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017tm/replay.proto\022\004vega\"\220\003\n\007TmEvent\022<\n\014r"
-  "eqInitChain\030\001 \001(\0132\026.vega.RequestInitChai"
-  "nH\000R\014reqInitChain\022=\n\014resInitChain\030\002 \001(\0132"
-  "\027.vega.ResponseInitChainH\000R\014resInitChain"
-  "\022<\n\014reqDeliverTx\030\003 \001(\0132\026.vega.RequestDel"
-  "iverTxH\000R\014reqDeliverTx\022=\n\014resDeliverTx\030\004"
-  " \001(\0132\027.vega.ResponseDeliverTxH\000R\014resDeli"
-  "verTx\022\?\n\rreqBeginBlock\030\005 \001(\0132\027.vega.Requ"
-  "estBeginBlockH\000R\rreqBeginBlock\022@\n\rresBeg"
-  "inBlock\030\006 \001(\0132\030.vega.ResponseBeginBlockH"
-  "\000R\rresBeginBlockB\010\n\006Action\"\204\002\n\020RequestIn"
-  "itChain\022\022\n\004time\030\001 \001(\003R\004time\022\030\n\007chainID\030\002"
-  " \001(\tR\007chainID\022\?\n\017consensusParams\030\003 \001(\0132\025"
-  ".vega.ConsensusParamsR\017consensusParams\0225"
-  "\n\nvalidators\030\004 \003(\0132\025.vega.ValidatorUpdat"
-  "eR\nvalidators\022$\n\rappStateBytes\030\005 \001(\014R\rap"
-  "pStateBytes\022$\n\rinitialHeight\030\006 \001(\003R\rinit"
-  "ialHeight\"\315\001\n\021RequestBeginBlock\022\022\n\004hash\030"
-  "\001 \001(\014R\004hash\022$\n\006header\030\002 \001(\0132\014.vega.Heade"
-  "rR\006header\022<\n\016lastCommitInfo\030\003 \001(\0132\024.vega"
-  ".LastCommitInfoR\016lastCommitInfo\022@\n\023byzan"
-  "tineValidators\030\004 \003(\0132\016.vega.EvidenceR\023by"
-  "zantineValidators\"\"\n\020RequestDeliverTx\022\016\n"
-  "\002tx\030\001 \001(\014R\002tx\"\245\001\n\021ResponseInitChain\022\?\n\017c"
-  "onsensusParams\030\001 \001(\0132\025.vega.ConsensusPar"
-  "amsR\017consensusParams\0225\n\nvalidators\030\002 \003(\013"
-  "2\025.vega.ValidatorUpdateR\nvalidators\022\030\n\007a"
-  "ppHash\030\003 \001(\014R\007appHash\"9\n\022ResponseBeginBl"
-  "ock\022#\n\006events\030\001 \003(\0132\013.vega.EventR\006events"
-  "\"\334\001\n\021ResponseDeliverTx\022\022\n\004code\030\001 \001(\rR\004co"
-  "de\022\022\n\004data\030\002 \001(\014R\004data\022\020\n\003log\030\003 \001(\tR\003log"
-  "\022\022\n\004info\030\004 \001(\tR\004info\022\034\n\tgasWanted\030\005 \001(\003R"
-  "\tgasWanted\022\030\n\007gasUsed\030\006 \001(\003R\007gasUsed\022#\n\006"
-  "events\030\007 \003(\0132\013.vega.EventR\006events\022\034\n\tcod"
-  "espace\030\010 \001(\tR\tcodespace\"Q\n\005Event\022\022\n\004type"
-  "\030\001 \001(\tR\004type\0224\n\nattributes\030\002 \003(\0132\024.vega."
-  "EventAttributeR\nattributes\"N\n\016EventAttri"
-  "bute\022\020\n\003key\030\001 \001(\014R\003key\022\024\n\005value\030\002 \001(\014R\005v"
-  "alue\022\024\n\005index\030\003 \001(\010R\005index\"Q\n\017ValidatorU"
-  "pdate\022(\n\007pub_key\030\001 \001(\0132\017.vega.PublicKeyR"
-  "\006pubKey\022\024\n\005power\030\002 \001(\003R\005power\"\320\001\n\017Consen"
-  "susParams\022\'\n\005block\030\001 \001(\0132\021.vega.BlockPar"
-  "amsR\005block\0220\n\010evidence\030\002 \001(\0132\024.vega.Evid"
-  "enceParamsR\010evidence\0223\n\tvalidator\030\003 \001(\0132"
-  "\025.vega.ValidatorParamsR\tvalidator\022-\n\007ver"
-  "sion\030\004 \001(\0132\023.vega.VersionParamsR\007version"
-  "\"A\n\013BlockParams\022\032\n\010maxBytes\030\001 \001(\003R\010maxBy"
-  "tes\022\026\n\006maxGas\030\002 \001(\003R\006maxGas\"\271\001\n\010Evidence"
-  "\022&\n\004type\030\001 \001(\0162\022.vega.EvidenceTypeR\004type"
-  "\022-\n\tvalidator\030\002 \001(\0132\017.vega.ValidatorR\tva"
-  "lidator\022\026\n\006height\030\003 \001(\003R\006height\022\022\n\004time\030"
-  "\004 \001(\003R\004time\022*\n\020totalVotingPower\030\005 \001(\003R\020t"
-  "otalVotingPower\";\n\tValidator\022\030\n\007address\030"
-  "\001 \001(\014R\007address\022\024\n\005power\030\003 \001(\003R\005power\"L\n\016"
-  "LastCommitInfo\022\024\n\005round\030\001 \001(\005R\005round\022$\n\005"
-  "votes\030\002 \003(\0132\016.vega.VoteInfoR\005votes\"c\n\010Vo"
-  "teInfo\022-\n\tvalidator\030\001 \001(\0132\017.vega.Validat"
-  "orR\tvalidator\022(\n\017signedLastBlock\030\002 \001(\010R\017"
-  "signedLastBlock\"{\n\016EvidenceParams\022(\n\017max"
-  "AgeNumBlocks\030\001 \001(\003R\017maxAgeNumBlocks\022&\n\016m"
-  "axAgeDuration\030\002 \001(\003R\016maxAgeDuration\022\027\n\007m"
-  "ax_num\030\003 \001(\rR\006maxNum\"3\n\017ValidatorParams\022"
-  " \n\013pubKeyTypes\030\001 \003(\tR\013pubKeyTypes\"/\n\rVer"
-  "sionParams\022\036\n\nappVersion\030\001 \001(\004R\nappVersi"
-  "on\"N\n\006Header\022\030\n\007chainId\030\001 \001(\tR\007chainId\022\026"
-  "\n\006height\030\002 \001(\003R\006height\022\022\n\004time\030\003 \001(\003R\004ti"
-  "me\".\n\tPublicKey\022\032\n\007ed25519\030\001 \001(\014H\000R\007ed25"
-  "519B\005\n\003sum*H\n\014EvidenceType\022\013\n\007UNKNOWN\020\000\022"
-  "\022\n\016DUPLICATE_VOTE\020\001\022\027\n\023LIGHT_CLIENT_ATTA"
-  "CK\020\002B7\n\027io.vegaprotocol.vega.tmZ\034code.ve"
-  "gaprotocol.io/vega/tmb\006proto3"
+  "\n\017tm/replay.proto\022\002tm\"\220\003\n\007TmEvent\022<\n\016req"
+  "_init_chain\030\001 \001(\0132\024.tm.RequestInitChainH"
+  "\000R\014reqInitChain\022=\n\016res_init_chain\030\002 \001(\0132"
+  "\025.tm.ResponseInitChainH\000R\014resInitChain\022<"
+  "\n\016req_deliver_tx\030\003 \001(\0132\024.tm.RequestDeliv"
+  "erTxH\000R\014reqDeliverTx\022=\n\016res_deliver_tx\030\004"
+  " \001(\0132\025.tm.ResponseDeliverTxH\000R\014resDelive"
+  "rTx\022\?\n\017req_begin_block\030\005 \001(\0132\025.tm.Reques"
+  "tBeginBlockH\000R\rreqBeginBlock\022@\n\017res_begi"
+  "n_block\030\006 \001(\0132\026.tm.ResponseBeginBlockH\000R"
+  "\rresBeginBlockB\010\n\006action\"\205\002\n\020RequestInit"
+  "Chain\022\022\n\004time\030\001 \001(\003R\004time\022\031\n\010chain_id\030\002 "
+  "\001(\tR\007chainId\022>\n\020consensus_params\030\003 \001(\0132\023"
+  ".tm.ConsensusParamsR\017consensusParams\0223\n\n"
+  "validators\030\004 \003(\0132\023.tm.ValidatorUpdateR\nv"
+  "alidators\022&\n\017app_state_bytes\030\005 \001(\014R\rappS"
+  "tateBytes\022%\n\016initial_height\030\006 \001(\003R\riniti"
+  "alHeight\"\312\001\n\021RequestBeginBlock\022\022\n\004hash\030\001"
+  " \001(\014R\004hash\022\"\n\006header\030\002 \001(\0132\n.tm.HeaderR\006"
+  "header\022<\n\020last_commit_info\030\003 \001(\0132\022.tm.La"
+  "stCommitInfoR\016lastCommitInfo\022\?\n\024byzantin"
+  "e_validators\030\004 \003(\0132\014.tm.EvidenceR\023byzant"
+  "ineValidators\"\"\n\020RequestDeliverTx\022\016\n\002tx\030"
+  "\001 \001(\014R\002tx\"\243\001\n\021ResponseInitChain\022>\n\020conse"
+  "nsus_params\030\001 \001(\0132\023.tm.ConsensusParamsR\017"
+  "consensusParams\0223\n\nvalidators\030\002 \003(\0132\023.tm"
+  ".ValidatorUpdateR\nvalidators\022\031\n\010app_hash"
+  "\030\003 \001(\014R\007appHash\"7\n\022ResponseBeginBlock\022!\n"
+  "\006events\030\001 \003(\0132\t.tm.EventR\006events\"\334\001\n\021Res"
+  "ponseDeliverTx\022\022\n\004code\030\001 \001(\rR\004code\022\022\n\004da"
+  "ta\030\002 \001(\014R\004data\022\020\n\003log\030\003 \001(\tR\003log\022\022\n\004info"
+  "\030\004 \001(\tR\004info\022\035\n\ngas_wanted\030\005 \001(\003R\tgasWan"
+  "ted\022\031\n\010gas_used\030\006 \001(\003R\007gasUsed\022!\n\006events"
+  "\030\007 \003(\0132\t.tm.EventR\006events\022\034\n\tcodespace\030\010"
+  " \001(\tR\tcodespace\"O\n\005Event\022\022\n\004type\030\001 \001(\tR\004"
+  "type\0222\n\nattributes\030\002 \003(\0132\022.tm.EventAttri"
+  "buteR\nattributes\"N\n\016EventAttribute\022\020\n\003ke"
+  "y\030\001 \001(\014R\003key\022\024\n\005value\030\002 \001(\014R\005value\022\024\n\005in"
+  "dex\030\003 \001(\010R\005index\"O\n\017ValidatorUpdate\022&\n\007p"
+  "ub_key\030\001 \001(\0132\r.tm.PublicKeyR\006pubKey\022\024\n\005p"
+  "ower\030\002 \001(\003R\005power\"\310\001\n\017ConsensusParams\022%\n"
+  "\005block\030\001 \001(\0132\017.tm.BlockParamsR\005block\022.\n\010"
+  "evidence\030\002 \001(\0132\022.tm.EvidenceParamsR\010evid"
+  "ence\0221\n\tvalidator\030\003 \001(\0132\023.tm.ValidatorPa"
+  "ramsR\tvalidator\022+\n\007version\030\004 \001(\0132\021.tm.Ve"
+  "rsionParamsR\007version\"C\n\013BlockParams\022\033\n\tm"
+  "ax_bytes\030\001 \001(\003R\010maxBytes\022\027\n\007max_gas\030\002 \001("
+  "\003R\006maxGas\"\267\001\n\010Evidence\022$\n\004type\030\001 \001(\0162\020.t"
+  "m.EvidenceTypeR\004type\022+\n\tvalidator\030\002 \001(\0132"
+  "\r.tm.ValidatorR\tvalidator\022\026\n\006height\030\003 \001("
+  "\003R\006height\022\022\n\004time\030\004 \001(\003R\004time\022,\n\022total_v"
+  "oting_power\030\005 \001(\003R\020totalVotingPower\";\n\tV"
+  "alidator\022\030\n\007address\030\001 \001(\014R\007address\022\024\n\005po"
+  "wer\030\003 \001(\003R\005power\"J\n\016LastCommitInfo\022\024\n\005ro"
+  "und\030\001 \001(\005R\005round\022\"\n\005votes\030\002 \003(\0132\014.tm.Vot"
+  "eInfoR\005votes\"c\n\010VoteInfo\022+\n\tvalidator\030\001 "
+  "\001(\0132\r.tm.ValidatorR\tvalidator\022*\n\021signed_"
+  "last_block\030\002 \001(\010R\017signedLastBlock\"\200\001\n\016Ev"
+  "idenceParams\022+\n\022max_age_num_blocks\030\001 \001(\003"
+  "R\017maxAgeNumBlocks\022(\n\020max_age_duration\030\002 "
+  "\001(\003R\016maxAgeDuration\022\027\n\007max_num\030\003 \001(\rR\006ma"
+  "xNum\"5\n\017ValidatorParams\022\"\n\rpub_key_types"
+  "\030\001 \003(\tR\013pubKeyTypes\"0\n\rVersionParams\022\037\n\013"
+  "app_version\030\001 \001(\004R\nappVersion\"O\n\006Header\022"
+  "\031\n\010chain_id\030\001 \001(\tR\007chainId\022\026\n\006height\030\002 \001"
+  "(\003R\006height\022\022\n\004time\030\003 \001(\003R\004time\".\n\tPublic"
+  "Key\022\032\n\007ed25519\030\001 \001(\014H\000R\007ed25519B\005\n\003sum*H"
+  "\n\014EvidenceType\022\013\n\007UNKNOWN\020\000\022\022\n\016DUPLICATE"
+  "_VOTE\020\001\022\027\n\023LIGHT_CLIENT_ATTACK\020\002B7\n\027io.v"
+  "egaprotocol.vega.tmZ\034code.vegaprotocol.i"
+  "o/vega/tmb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_tm_2freplay_2eproto_deps[1] = {
 };
@@ -740,7 +740,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_tm_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_tm_2freplay_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tm_2freplay_2eproto = {
-  false, false, descriptor_table_protodef_tm_2freplay_2eproto, "tm/replay.proto", 2829,
+  false, false, descriptor_table_protodef_tm_2freplay_2eproto, "tm/replay.proto", 2817,
   &descriptor_table_tm_2freplay_2eproto_once, descriptor_table_tm_2freplay_2eproto_sccs, descriptor_table_tm_2freplay_2eproto_deps, 21, 0,
   schemas, file_default_instances, TableStruct_tm_2freplay_2eproto::offsets,
   file_level_metadata_tm_2freplay_2eproto, 21, file_level_enum_descriptors_tm_2freplay_2eproto, file_level_service_descriptors_tm_2freplay_2eproto,
@@ -748,7 +748,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_tm_2fr
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_tm_2freplay_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_tm_2freplay_2eproto)), true);
-namespace vega {
+namespace tm {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EvidenceType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_tm_2freplay_2eproto);
   return file_level_enum_descriptors_tm_2freplay_2eproto[0];
@@ -769,185 +769,185 @@ bool EvidenceType_IsValid(int value) {
 
 class TmEvent::_Internal {
  public:
-  static const ::vega::RequestInitChain& reqinitchain(const TmEvent* msg);
-  static const ::vega::ResponseInitChain& resinitchain(const TmEvent* msg);
-  static const ::vega::RequestDeliverTx& reqdelivertx(const TmEvent* msg);
-  static const ::vega::ResponseDeliverTx& resdelivertx(const TmEvent* msg);
-  static const ::vega::RequestBeginBlock& reqbeginblock(const TmEvent* msg);
-  static const ::vega::ResponseBeginBlock& resbeginblock(const TmEvent* msg);
+  static const ::tm::RequestInitChain& req_init_chain(const TmEvent* msg);
+  static const ::tm::ResponseInitChain& res_init_chain(const TmEvent* msg);
+  static const ::tm::RequestDeliverTx& req_deliver_tx(const TmEvent* msg);
+  static const ::tm::ResponseDeliverTx& res_deliver_tx(const TmEvent* msg);
+  static const ::tm::RequestBeginBlock& req_begin_block(const TmEvent* msg);
+  static const ::tm::ResponseBeginBlock& res_begin_block(const TmEvent* msg);
 };
 
-const ::vega::RequestInitChain&
-TmEvent::_Internal::reqinitchain(const TmEvent* msg) {
-  return *msg->Action_.reqinitchain_;
+const ::tm::RequestInitChain&
+TmEvent::_Internal::req_init_chain(const TmEvent* msg) {
+  return *msg->action_.req_init_chain_;
 }
-const ::vega::ResponseInitChain&
-TmEvent::_Internal::resinitchain(const TmEvent* msg) {
-  return *msg->Action_.resinitchain_;
+const ::tm::ResponseInitChain&
+TmEvent::_Internal::res_init_chain(const TmEvent* msg) {
+  return *msg->action_.res_init_chain_;
 }
-const ::vega::RequestDeliverTx&
-TmEvent::_Internal::reqdelivertx(const TmEvent* msg) {
-  return *msg->Action_.reqdelivertx_;
+const ::tm::RequestDeliverTx&
+TmEvent::_Internal::req_deliver_tx(const TmEvent* msg) {
+  return *msg->action_.req_deliver_tx_;
 }
-const ::vega::ResponseDeliverTx&
-TmEvent::_Internal::resdelivertx(const TmEvent* msg) {
-  return *msg->Action_.resdelivertx_;
+const ::tm::ResponseDeliverTx&
+TmEvent::_Internal::res_deliver_tx(const TmEvent* msg) {
+  return *msg->action_.res_deliver_tx_;
 }
-const ::vega::RequestBeginBlock&
-TmEvent::_Internal::reqbeginblock(const TmEvent* msg) {
-  return *msg->Action_.reqbeginblock_;
+const ::tm::RequestBeginBlock&
+TmEvent::_Internal::req_begin_block(const TmEvent* msg) {
+  return *msg->action_.req_begin_block_;
 }
-const ::vega::ResponseBeginBlock&
-TmEvent::_Internal::resbeginblock(const TmEvent* msg) {
-  return *msg->Action_.resbeginblock_;
+const ::tm::ResponseBeginBlock&
+TmEvent::_Internal::res_begin_block(const TmEvent* msg) {
+  return *msg->action_.res_begin_block_;
 }
-void TmEvent::set_allocated_reqinitchain(::vega::RequestInitChain* reqinitchain) {
+void TmEvent::set_allocated_req_init_chain(::tm::RequestInitChain* req_init_chain) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_Action();
-  if (reqinitchain) {
+  clear_action();
+  if (req_init_chain) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(reqinitchain);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(req_init_chain);
     if (message_arena != submessage_arena) {
-      reqinitchain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, reqinitchain, submessage_arena);
+      req_init_chain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, req_init_chain, submessage_arena);
     }
-    set_has_reqinitchain();
-    Action_.reqinitchain_ = reqinitchain;
+    set_has_req_init_chain();
+    action_.req_init_chain_ = req_init_chain;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TmEvent.reqInitChain)
+  // @@protoc_insertion_point(field_set_allocated:tm.TmEvent.req_init_chain)
 }
-void TmEvent::set_allocated_resinitchain(::vega::ResponseInitChain* resinitchain) {
+void TmEvent::set_allocated_res_init_chain(::tm::ResponseInitChain* res_init_chain) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_Action();
-  if (resinitchain) {
+  clear_action();
+  if (res_init_chain) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(resinitchain);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(res_init_chain);
     if (message_arena != submessage_arena) {
-      resinitchain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, resinitchain, submessage_arena);
+      res_init_chain = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, res_init_chain, submessage_arena);
     }
-    set_has_resinitchain();
-    Action_.resinitchain_ = resinitchain;
+    set_has_res_init_chain();
+    action_.res_init_chain_ = res_init_chain;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TmEvent.resInitChain)
+  // @@protoc_insertion_point(field_set_allocated:tm.TmEvent.res_init_chain)
 }
-void TmEvent::set_allocated_reqdelivertx(::vega::RequestDeliverTx* reqdelivertx) {
+void TmEvent::set_allocated_req_deliver_tx(::tm::RequestDeliverTx* req_deliver_tx) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_Action();
-  if (reqdelivertx) {
+  clear_action();
+  if (req_deliver_tx) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(reqdelivertx);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(req_deliver_tx);
     if (message_arena != submessage_arena) {
-      reqdelivertx = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, reqdelivertx, submessage_arena);
+      req_deliver_tx = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, req_deliver_tx, submessage_arena);
     }
-    set_has_reqdelivertx();
-    Action_.reqdelivertx_ = reqdelivertx;
+    set_has_req_deliver_tx();
+    action_.req_deliver_tx_ = req_deliver_tx;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TmEvent.reqDeliverTx)
+  // @@protoc_insertion_point(field_set_allocated:tm.TmEvent.req_deliver_tx)
 }
-void TmEvent::set_allocated_resdelivertx(::vega::ResponseDeliverTx* resdelivertx) {
+void TmEvent::set_allocated_res_deliver_tx(::tm::ResponseDeliverTx* res_deliver_tx) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_Action();
-  if (resdelivertx) {
+  clear_action();
+  if (res_deliver_tx) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(resdelivertx);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(res_deliver_tx);
     if (message_arena != submessage_arena) {
-      resdelivertx = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, resdelivertx, submessage_arena);
+      res_deliver_tx = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, res_deliver_tx, submessage_arena);
     }
-    set_has_resdelivertx();
-    Action_.resdelivertx_ = resdelivertx;
+    set_has_res_deliver_tx();
+    action_.res_deliver_tx_ = res_deliver_tx;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TmEvent.resDeliverTx)
+  // @@protoc_insertion_point(field_set_allocated:tm.TmEvent.res_deliver_tx)
 }
-void TmEvent::set_allocated_reqbeginblock(::vega::RequestBeginBlock* reqbeginblock) {
+void TmEvent::set_allocated_req_begin_block(::tm::RequestBeginBlock* req_begin_block) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_Action();
-  if (reqbeginblock) {
+  clear_action();
+  if (req_begin_block) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(reqbeginblock);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(req_begin_block);
     if (message_arena != submessage_arena) {
-      reqbeginblock = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, reqbeginblock, submessage_arena);
+      req_begin_block = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, req_begin_block, submessage_arena);
     }
-    set_has_reqbeginblock();
-    Action_.reqbeginblock_ = reqbeginblock;
+    set_has_req_begin_block();
+    action_.req_begin_block_ = req_begin_block;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TmEvent.reqBeginBlock)
+  // @@protoc_insertion_point(field_set_allocated:tm.TmEvent.req_begin_block)
 }
-void TmEvent::set_allocated_resbeginblock(::vega::ResponseBeginBlock* resbeginblock) {
+void TmEvent::set_allocated_res_begin_block(::tm::ResponseBeginBlock* res_begin_block) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_Action();
-  if (resbeginblock) {
+  clear_action();
+  if (res_begin_block) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(resbeginblock);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(res_begin_block);
     if (message_arena != submessage_arena) {
-      resbeginblock = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, resbeginblock, submessage_arena);
+      res_begin_block = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, res_begin_block, submessage_arena);
     }
-    set_has_resbeginblock();
-    Action_.resbeginblock_ = resbeginblock;
+    set_has_res_begin_block();
+    action_.res_begin_block_ = res_begin_block;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.TmEvent.resBeginBlock)
+  // @@protoc_insertion_point(field_set_allocated:tm.TmEvent.res_begin_block)
 }
 TmEvent::TmEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.TmEvent)
+  // @@protoc_insertion_point(arena_constructor:tm.TmEvent)
 }
 TmEvent::TmEvent(const TmEvent& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  clear_has_Action();
-  switch (from.Action_case()) {
+  clear_has_action();
+  switch (from.action_case()) {
     case kReqInitChain: {
-      _internal_mutable_reqinitchain()->::vega::RequestInitChain::MergeFrom(from._internal_reqinitchain());
+      _internal_mutable_req_init_chain()->::tm::RequestInitChain::MergeFrom(from._internal_req_init_chain());
       break;
     }
     case kResInitChain: {
-      _internal_mutable_resinitchain()->::vega::ResponseInitChain::MergeFrom(from._internal_resinitchain());
+      _internal_mutable_res_init_chain()->::tm::ResponseInitChain::MergeFrom(from._internal_res_init_chain());
       break;
     }
     case kReqDeliverTx: {
-      _internal_mutable_reqdelivertx()->::vega::RequestDeliverTx::MergeFrom(from._internal_reqdelivertx());
+      _internal_mutable_req_deliver_tx()->::tm::RequestDeliverTx::MergeFrom(from._internal_req_deliver_tx());
       break;
     }
     case kResDeliverTx: {
-      _internal_mutable_resdelivertx()->::vega::ResponseDeliverTx::MergeFrom(from._internal_resdelivertx());
+      _internal_mutable_res_deliver_tx()->::tm::ResponseDeliverTx::MergeFrom(from._internal_res_deliver_tx());
       break;
     }
     case kReqBeginBlock: {
-      _internal_mutable_reqbeginblock()->::vega::RequestBeginBlock::MergeFrom(from._internal_reqbeginblock());
+      _internal_mutable_req_begin_block()->::tm::RequestBeginBlock::MergeFrom(from._internal_req_begin_block());
       break;
     }
     case kResBeginBlock: {
-      _internal_mutable_resbeginblock()->::vega::ResponseBeginBlock::MergeFrom(from._internal_resbeginblock());
+      _internal_mutable_res_begin_block()->::tm::ResponseBeginBlock::MergeFrom(from._internal_res_begin_block());
       break;
     }
     case ACTION_NOT_SET: {
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:vega.TmEvent)
+  // @@protoc_insertion_point(copy_constructor:tm.TmEvent)
 }
 
 void TmEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TmEvent_tm_2freplay_2eproto.base);
-  clear_has_Action();
+  clear_has_action();
 }
 
 TmEvent::~TmEvent() {
-  // @@protoc_insertion_point(destructor:vega.TmEvent)
+  // @@protoc_insertion_point(destructor:tm.TmEvent)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TmEvent::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  if (has_Action()) {
-    clear_Action();
+  if (has_action()) {
+    clear_action();
   }
 }
 
@@ -966,42 +966,42 @@ const TmEvent& TmEvent::default_instance() {
 }
 
 
-void TmEvent::clear_Action() {
-// @@protoc_insertion_point(one_of_clear_start:vega.TmEvent)
-  switch (Action_case()) {
+void TmEvent::clear_action() {
+// @@protoc_insertion_point(one_of_clear_start:tm.TmEvent)
+  switch (action_case()) {
     case kReqInitChain: {
       if (GetArena() == nullptr) {
-        delete Action_.reqinitchain_;
+        delete action_.req_init_chain_;
       }
       break;
     }
     case kResInitChain: {
       if (GetArena() == nullptr) {
-        delete Action_.resinitchain_;
+        delete action_.res_init_chain_;
       }
       break;
     }
     case kReqDeliverTx: {
       if (GetArena() == nullptr) {
-        delete Action_.reqdelivertx_;
+        delete action_.req_deliver_tx_;
       }
       break;
     }
     case kResDeliverTx: {
       if (GetArena() == nullptr) {
-        delete Action_.resdelivertx_;
+        delete action_.res_deliver_tx_;
       }
       break;
     }
     case kReqBeginBlock: {
       if (GetArena() == nullptr) {
-        delete Action_.reqbeginblock_;
+        delete action_.req_begin_block_;
       }
       break;
     }
     case kResBeginBlock: {
       if (GetArena() == nullptr) {
-        delete Action_.resbeginblock_;
+        delete action_.res_begin_block_;
       }
       break;
     }
@@ -1014,12 +1014,12 @@ void TmEvent::clear_Action() {
 
 
 void TmEvent::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.TmEvent)
+// @@protoc_insertion_point(message_clear_start:tm.TmEvent)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  clear_Action();
+  clear_action();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1030,45 +1030,45 @@ const char* TmEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.RequestInitChain reqInitChain = 1 [json_name = "reqInitChain"];
+      // .tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_reqinitchain(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_req_init_chain(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ResponseInitChain resInitChain = 2 [json_name = "resInitChain"];
+      // .tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_resinitchain(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_res_init_chain(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.RequestDeliverTx reqDeliverTx = 3 [json_name = "reqDeliverTx"];
+      // .tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_reqdelivertx(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_req_deliver_tx(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ResponseDeliverTx resDeliverTx = 4 [json_name = "resDeliverTx"];
+      // .tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_resdelivertx(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_res_deliver_tx(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.RequestBeginBlock reqBeginBlock = 5 [json_name = "reqBeginBlock"];
+      // .tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_reqbeginblock(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_req_begin_block(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ResponseBeginBlock resBeginBlock = 6 [json_name = "resBeginBlock"];
+      // .tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_resbeginblock(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_res_begin_block(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1096,115 +1096,115 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* TmEvent::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.TmEvent)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.TmEvent)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.RequestInitChain reqInitChain = 1 [json_name = "reqInitChain"];
-  if (_internal_has_reqinitchain()) {
+  // .tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];
+  if (_internal_has_req_init_chain()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::reqinitchain(this), target, stream);
+        1, _Internal::req_init_chain(this), target, stream);
   }
 
-  // .vega.ResponseInitChain resInitChain = 2 [json_name = "resInitChain"];
-  if (_internal_has_resinitchain()) {
+  // .tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];
+  if (_internal_has_res_init_chain()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::resinitchain(this), target, stream);
+        2, _Internal::res_init_chain(this), target, stream);
   }
 
-  // .vega.RequestDeliverTx reqDeliverTx = 3 [json_name = "reqDeliverTx"];
-  if (_internal_has_reqdelivertx()) {
+  // .tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];
+  if (_internal_has_req_deliver_tx()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::reqdelivertx(this), target, stream);
+        3, _Internal::req_deliver_tx(this), target, stream);
   }
 
-  // .vega.ResponseDeliverTx resDeliverTx = 4 [json_name = "resDeliverTx"];
-  if (_internal_has_resdelivertx()) {
+  // .tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];
+  if (_internal_has_res_deliver_tx()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::resdelivertx(this), target, stream);
+        4, _Internal::res_deliver_tx(this), target, stream);
   }
 
-  // .vega.RequestBeginBlock reqBeginBlock = 5 [json_name = "reqBeginBlock"];
-  if (_internal_has_reqbeginblock()) {
+  // .tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];
+  if (_internal_has_req_begin_block()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::reqbeginblock(this), target, stream);
+        5, _Internal::req_begin_block(this), target, stream);
   }
 
-  // .vega.ResponseBeginBlock resBeginBlock = 6 [json_name = "resBeginBlock"];
-  if (_internal_has_resbeginblock()) {
+  // .tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];
+  if (_internal_has_res_begin_block()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::resbeginblock(this), target, stream);
+        6, _Internal::res_begin_block(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.TmEvent)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.TmEvent)
   return target;
 }
 
 size_t TmEvent::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.TmEvent)
+// @@protoc_insertion_point(message_byte_size_start:tm.TmEvent)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  switch (Action_case()) {
-    // .vega.RequestInitChain reqInitChain = 1 [json_name = "reqInitChain"];
+  switch (action_case()) {
+    // .tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];
     case kReqInitChain: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Action_.reqinitchain_);
+          *action_.req_init_chain_);
       break;
     }
-    // .vega.ResponseInitChain resInitChain = 2 [json_name = "resInitChain"];
+    // .tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];
     case kResInitChain: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Action_.resinitchain_);
+          *action_.res_init_chain_);
       break;
     }
-    // .vega.RequestDeliverTx reqDeliverTx = 3 [json_name = "reqDeliverTx"];
+    // .tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];
     case kReqDeliverTx: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Action_.reqdelivertx_);
+          *action_.req_deliver_tx_);
       break;
     }
-    // .vega.ResponseDeliverTx resDeliverTx = 4 [json_name = "resDeliverTx"];
+    // .tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];
     case kResDeliverTx: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Action_.resdelivertx_);
+          *action_.res_deliver_tx_);
       break;
     }
-    // .vega.RequestBeginBlock reqBeginBlock = 5 [json_name = "reqBeginBlock"];
+    // .tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];
     case kReqBeginBlock: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Action_.reqbeginblock_);
+          *action_.req_begin_block_);
       break;
     }
-    // .vega.ResponseBeginBlock resBeginBlock = 6 [json_name = "resBeginBlock"];
+    // .tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];
     case kResBeginBlock: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *Action_.resbeginblock_);
+          *action_.res_begin_block_);
       break;
     }
     case ACTION_NOT_SET: {
@@ -1221,50 +1221,50 @@ size_t TmEvent::ByteSizeLong() const {
 }
 
 void TmEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.TmEvent)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.TmEvent)
   GOOGLE_DCHECK_NE(&from, this);
   const TmEvent* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TmEvent>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.TmEvent)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.TmEvent)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.TmEvent)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.TmEvent)
     MergeFrom(*source);
   }
 }
 
 void TmEvent::MergeFrom(const TmEvent& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.TmEvent)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.TmEvent)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  switch (from.Action_case()) {
+  switch (from.action_case()) {
     case kReqInitChain: {
-      _internal_mutable_reqinitchain()->::vega::RequestInitChain::MergeFrom(from._internal_reqinitchain());
+      _internal_mutable_req_init_chain()->::tm::RequestInitChain::MergeFrom(from._internal_req_init_chain());
       break;
     }
     case kResInitChain: {
-      _internal_mutable_resinitchain()->::vega::ResponseInitChain::MergeFrom(from._internal_resinitchain());
+      _internal_mutable_res_init_chain()->::tm::ResponseInitChain::MergeFrom(from._internal_res_init_chain());
       break;
     }
     case kReqDeliverTx: {
-      _internal_mutable_reqdelivertx()->::vega::RequestDeliverTx::MergeFrom(from._internal_reqdelivertx());
+      _internal_mutable_req_deliver_tx()->::tm::RequestDeliverTx::MergeFrom(from._internal_req_deliver_tx());
       break;
     }
     case kResDeliverTx: {
-      _internal_mutable_resdelivertx()->::vega::ResponseDeliverTx::MergeFrom(from._internal_resdelivertx());
+      _internal_mutable_res_deliver_tx()->::tm::ResponseDeliverTx::MergeFrom(from._internal_res_deliver_tx());
       break;
     }
     case kReqBeginBlock: {
-      _internal_mutable_reqbeginblock()->::vega::RequestBeginBlock::MergeFrom(from._internal_reqbeginblock());
+      _internal_mutable_req_begin_block()->::tm::RequestBeginBlock::MergeFrom(from._internal_req_begin_block());
       break;
     }
     case kResBeginBlock: {
-      _internal_mutable_resbeginblock()->::vega::ResponseBeginBlock::MergeFrom(from._internal_resbeginblock());
+      _internal_mutable_res_begin_block()->::tm::ResponseBeginBlock::MergeFrom(from._internal_res_begin_block());
       break;
     }
     case ACTION_NOT_SET: {
@@ -1274,14 +1274,14 @@ void TmEvent::MergeFrom(const TmEvent& from) {
 }
 
 void TmEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.TmEvent)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.TmEvent)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void TmEvent::CopyFrom(const TmEvent& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.TmEvent)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.TmEvent)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1294,7 +1294,7 @@ bool TmEvent::IsInitialized() const {
 void TmEvent::InternalSwap(TmEvent* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(Action_, other->Action_);
+  swap(action_, other->action_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
@@ -1307,66 +1307,66 @@ void TmEvent::InternalSwap(TmEvent* other) {
 
 class RequestInitChain::_Internal {
  public:
-  static const ::vega::ConsensusParams& consensusparams(const RequestInitChain* msg);
+  static const ::tm::ConsensusParams& consensus_params(const RequestInitChain* msg);
 };
 
-const ::vega::ConsensusParams&
-RequestInitChain::_Internal::consensusparams(const RequestInitChain* msg) {
-  return *msg->consensusparams_;
+const ::tm::ConsensusParams&
+RequestInitChain::_Internal::consensus_params(const RequestInitChain* msg) {
+  return *msg->consensus_params_;
 }
 RequestInitChain::RequestInitChain(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   validators_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.RequestInitChain)
+  // @@protoc_insertion_point(arena_constructor:tm.RequestInitChain)
 }
 RequestInitChain::RequestInitChain(const RequestInitChain& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       validators_(from.validators_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  chainid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_chainid().empty()) {
-    chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chainid(),
+  chain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_chain_id().empty()) {
+    chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chain_id(),
       GetArena());
   }
-  appstatebytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_appstatebytes().empty()) {
-    appstatebytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_appstatebytes(),
+  app_state_bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_app_state_bytes().empty()) {
+    app_state_bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_app_state_bytes(),
       GetArena());
   }
-  if (from._internal_has_consensusparams()) {
-    consensusparams_ = new ::vega::ConsensusParams(*from.consensusparams_);
+  if (from._internal_has_consensus_params()) {
+    consensus_params_ = new ::tm::ConsensusParams(*from.consensus_params_);
   } else {
-    consensusparams_ = nullptr;
+    consensus_params_ = nullptr;
   }
   ::memcpy(&time_, &from.time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&initialheight_) -
-    reinterpret_cast<char*>(&time_)) + sizeof(initialheight_));
-  // @@protoc_insertion_point(copy_constructor:vega.RequestInitChain)
+    static_cast<size_t>(reinterpret_cast<char*>(&initial_height_) -
+    reinterpret_cast<char*>(&time_)) + sizeof(initial_height_));
+  // @@protoc_insertion_point(copy_constructor:tm.RequestInitChain)
 }
 
 void RequestInitChain::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RequestInitChain_tm_2freplay_2eproto.base);
-  chainid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  appstatebytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  chain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  app_state_bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&consensusparams_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&initialheight_) -
-      reinterpret_cast<char*>(&consensusparams_)) + sizeof(initialheight_));
+      reinterpret_cast<char*>(&consensus_params_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&initial_height_) -
+      reinterpret_cast<char*>(&consensus_params_)) + sizeof(initial_height_));
 }
 
 RequestInitChain::~RequestInitChain() {
-  // @@protoc_insertion_point(destructor:vega.RequestInitChain)
+  // @@protoc_insertion_point(destructor:tm.RequestInitChain)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RequestInitChain::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  chainid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  appstatebytes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete consensusparams_;
+  chain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  app_state_bytes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete consensus_params_;
 }
 
 void RequestInitChain::ArenaDtor(void* object) {
@@ -1385,21 +1385,21 @@ const RequestInitChain& RequestInitChain::default_instance() {
 
 
 void RequestInitChain::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.RequestInitChain)
+// @@protoc_insertion_point(message_clear_start:tm.RequestInitChain)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   validators_.Clear();
-  chainid_.ClearToEmpty();
-  appstatebytes_.ClearToEmpty();
-  if (GetArena() == nullptr && consensusparams_ != nullptr) {
-    delete consensusparams_;
+  chain_id_.ClearToEmpty();
+  app_state_bytes_.ClearToEmpty();
+  if (GetArena() == nullptr && consensus_params_ != nullptr) {
+    delete consensus_params_;
   }
-  consensusparams_ = nullptr;
+  consensus_params_ = nullptr;
   ::memset(&time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&initialheight_) -
-      reinterpret_cast<char*>(&time_)) + sizeof(initialheight_));
+      reinterpret_cast<char*>(&initial_height_) -
+      reinterpret_cast<char*>(&time_)) + sizeof(initial_height_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1417,23 +1417,23 @@ const char* RequestInitChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string chainID = 2 [json_name = "chainID"];
+      // string chain_id = 2 [json_name = "chainId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_chainid();
+          auto str = _internal_mutable_chain_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.RequestInitChain.chainID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.RequestInitChain.chain_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ConsensusParams consensusParams = 3 [json_name = "consensusParams"];
+      // .tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_consensusparams(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_consensus_params(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.ValidatorUpdate validators = 4 [json_name = "validators"];
+      // repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
@@ -1445,18 +1445,18 @@ const char* RequestInitChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
-      // bytes appStateBytes = 5 [json_name = "appStateBytes"];
+      // bytes app_state_bytes = 5 [json_name = "appStateBytes"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          auto str = _internal_mutable_appstatebytes();
+          auto str = _internal_mutable_app_state_bytes();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 initialHeight = 6 [json_name = "initialHeight"];
+      // int64 initial_height = 6 [json_name = "initialHeight"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          initialheight_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          initial_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1484,7 +1484,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* RequestInitChain::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.RequestInitChain)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.RequestInitChain)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1494,25 +1494,25 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_time(), target);
   }
 
-  // string chainID = 2 [json_name = "chainID"];
-  if (this->chainid().size() > 0) {
+  // string chain_id = 2 [json_name = "chainId"];
+  if (this->chain_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_chainid().data(), static_cast<int>(this->_internal_chainid().length()),
+      this->_internal_chain_id().data(), static_cast<int>(this->_internal_chain_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.RequestInitChain.chainID");
+      "tm.RequestInitChain.chain_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_chainid(), target);
+        2, this->_internal_chain_id(), target);
   }
 
-  // .vega.ConsensusParams consensusParams = 3 [json_name = "consensusParams"];
-  if (this->has_consensusparams()) {
+  // .tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];
+  if (this->has_consensus_params()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::consensusparams(this), target, stream);
+        3, _Internal::consensus_params(this), target, stream);
   }
 
-  // repeated .vega.ValidatorUpdate validators = 4 [json_name = "validators"];
+  // repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_validators_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1520,60 +1520,60 @@ failure:
       InternalWriteMessage(4, this->_internal_validators(i), target, stream);
   }
 
-  // bytes appStateBytes = 5 [json_name = "appStateBytes"];
-  if (this->appstatebytes().size() > 0) {
+  // bytes app_state_bytes = 5 [json_name = "appStateBytes"];
+  if (this->app_state_bytes().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_appstatebytes(), target);
+        5, this->_internal_app_state_bytes(), target);
   }
 
-  // int64 initialHeight = 6 [json_name = "initialHeight"];
-  if (this->initialheight() != 0) {
+  // int64 initial_height = 6 [json_name = "initialHeight"];
+  if (this->initial_height() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_initialheight(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_initial_height(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.RequestInitChain)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.RequestInitChain)
   return target;
 }
 
 size_t RequestInitChain::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.RequestInitChain)
+// @@protoc_insertion_point(message_byte_size_start:tm.RequestInitChain)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.ValidatorUpdate validators = 4 [json_name = "validators"];
+  // repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];
   total_size += 1UL * this->_internal_validators_size();
   for (const auto& msg : this->validators_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // string chainID = 2 [json_name = "chainID"];
-  if (this->chainid().size() > 0) {
+  // string chain_id = 2 [json_name = "chainId"];
+  if (this->chain_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_chainid());
+        this->_internal_chain_id());
   }
 
-  // bytes appStateBytes = 5 [json_name = "appStateBytes"];
-  if (this->appstatebytes().size() > 0) {
+  // bytes app_state_bytes = 5 [json_name = "appStateBytes"];
+  if (this->app_state_bytes().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_appstatebytes());
+        this->_internal_app_state_bytes());
   }
 
-  // .vega.ConsensusParams consensusParams = 3 [json_name = "consensusParams"];
-  if (this->has_consensusparams()) {
+  // .tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];
+  if (this->has_consensus_params()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *consensusparams_);
+        *consensus_params_);
   }
 
   // int64 time = 1 [json_name = "time"];
@@ -1583,11 +1583,11 @@ size_t RequestInitChain::ByteSizeLong() const {
         this->_internal_time());
   }
 
-  // int64 initialHeight = 6 [json_name = "initialHeight"];
-  if (this->initialheight() != 0) {
+  // int64 initial_height = 6 [json_name = "initialHeight"];
+  if (this->initial_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_initialheight());
+        this->_internal_initial_height());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1600,54 +1600,54 @@ size_t RequestInitChain::ByteSizeLong() const {
 }
 
 void RequestInitChain::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.RequestInitChain)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.RequestInitChain)
   GOOGLE_DCHECK_NE(&from, this);
   const RequestInitChain* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RequestInitChain>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.RequestInitChain)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.RequestInitChain)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.RequestInitChain)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.RequestInitChain)
     MergeFrom(*source);
   }
 }
 
 void RequestInitChain::MergeFrom(const RequestInitChain& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.RequestInitChain)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.RequestInitChain)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   validators_.MergeFrom(from.validators_);
-  if (from.chainid().size() > 0) {
-    _internal_set_chainid(from._internal_chainid());
+  if (from.chain_id().size() > 0) {
+    _internal_set_chain_id(from._internal_chain_id());
   }
-  if (from.appstatebytes().size() > 0) {
-    _internal_set_appstatebytes(from._internal_appstatebytes());
+  if (from.app_state_bytes().size() > 0) {
+    _internal_set_app_state_bytes(from._internal_app_state_bytes());
   }
-  if (from.has_consensusparams()) {
-    _internal_mutable_consensusparams()->::vega::ConsensusParams::MergeFrom(from._internal_consensusparams());
+  if (from.has_consensus_params()) {
+    _internal_mutable_consensus_params()->::tm::ConsensusParams::MergeFrom(from._internal_consensus_params());
   }
   if (from.time() != 0) {
     _internal_set_time(from._internal_time());
   }
-  if (from.initialheight() != 0) {
-    _internal_set_initialheight(from._internal_initialheight());
+  if (from.initial_height() != 0) {
+    _internal_set_initial_height(from._internal_initial_height());
   }
 }
 
 void RequestInitChain::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.RequestInitChain)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.RequestInitChain)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void RequestInitChain::CopyFrom(const RequestInitChain& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.RequestInitChain)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.RequestInitChain)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1661,14 +1661,14 @@ void RequestInitChain::InternalSwap(RequestInitChain* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   validators_.InternalSwap(&other->validators_);
-  chainid_.Swap(&other->chainid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  appstatebytes_.Swap(&other->appstatebytes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  chain_id_.Swap(&other->chain_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  app_state_bytes_.Swap(&other->app_state_bytes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RequestInitChain, initialheight_)
-      + sizeof(RequestInitChain::initialheight_)
-      - PROTOBUF_FIELD_OFFSET(RequestInitChain, consensusparams_)>(
-          reinterpret_cast<char*>(&consensusparams_),
-          reinterpret_cast<char*>(&other->consensusparams_));
+      PROTOBUF_FIELD_OFFSET(RequestInitChain, initial_height_)
+      + sizeof(RequestInitChain::initial_height_)
+      - PROTOBUF_FIELD_OFFSET(RequestInitChain, consensus_params_)>(
+          reinterpret_cast<char*>(&consensus_params_),
+          reinterpret_cast<char*>(&other->consensus_params_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RequestInitChain::GetMetadata() const {
@@ -1680,28 +1680,28 @@ void RequestInitChain::InternalSwap(RequestInitChain* other) {
 
 class RequestBeginBlock::_Internal {
  public:
-  static const ::vega::Header& header(const RequestBeginBlock* msg);
-  static const ::vega::LastCommitInfo& lastcommitinfo(const RequestBeginBlock* msg);
+  static const ::tm::Header& header(const RequestBeginBlock* msg);
+  static const ::tm::LastCommitInfo& last_commit_info(const RequestBeginBlock* msg);
 };
 
-const ::vega::Header&
+const ::tm::Header&
 RequestBeginBlock::_Internal::header(const RequestBeginBlock* msg) {
   return *msg->header_;
 }
-const ::vega::LastCommitInfo&
-RequestBeginBlock::_Internal::lastcommitinfo(const RequestBeginBlock* msg) {
-  return *msg->lastcommitinfo_;
+const ::tm::LastCommitInfo&
+RequestBeginBlock::_Internal::last_commit_info(const RequestBeginBlock* msg) {
+  return *msg->last_commit_info_;
 }
 RequestBeginBlock::RequestBeginBlock(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  byzantinevalidators_(arena) {
+  byzantine_validators_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(arena_constructor:tm.RequestBeginBlock)
 }
 RequestBeginBlock::RequestBeginBlock(const RequestBeginBlock& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      byzantinevalidators_(from.byzantinevalidators_) {
+      byzantine_validators_(from.byzantine_validators_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_hash().empty()) {
@@ -1709,16 +1709,16 @@ RequestBeginBlock::RequestBeginBlock(const RequestBeginBlock& from)
       GetArena());
   }
   if (from._internal_has_header()) {
-    header_ = new ::vega::Header(*from.header_);
+    header_ = new ::tm::Header(*from.header_);
   } else {
     header_ = nullptr;
   }
-  if (from._internal_has_lastcommitinfo()) {
-    lastcommitinfo_ = new ::vega::LastCommitInfo(*from.lastcommitinfo_);
+  if (from._internal_has_last_commit_info()) {
+    last_commit_info_ = new ::tm::LastCommitInfo(*from.last_commit_info_);
   } else {
-    lastcommitinfo_ = nullptr;
+    last_commit_info_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(copy_constructor:tm.RequestBeginBlock)
 }
 
 void RequestBeginBlock::SharedCtor() {
@@ -1726,12 +1726,12 @@ void RequestBeginBlock::SharedCtor() {
   hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&header_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&lastcommitinfo_) -
-      reinterpret_cast<char*>(&header_)) + sizeof(lastcommitinfo_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&last_commit_info_) -
+      reinterpret_cast<char*>(&header_)) + sizeof(last_commit_info_));
 }
 
 RequestBeginBlock::~RequestBeginBlock() {
-  // @@protoc_insertion_point(destructor:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(destructor:tm.RequestBeginBlock)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1740,7 +1740,7 @@ void RequestBeginBlock::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   hash_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete header_;
-  if (this != internal_default_instance()) delete lastcommitinfo_;
+  if (this != internal_default_instance()) delete last_commit_info_;
 }
 
 void RequestBeginBlock::ArenaDtor(void* object) {
@@ -1759,21 +1759,21 @@ const RequestBeginBlock& RequestBeginBlock::default_instance() {
 
 
 void RequestBeginBlock::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.RequestBeginBlock)
+// @@protoc_insertion_point(message_clear_start:tm.RequestBeginBlock)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  byzantinevalidators_.Clear();
+  byzantine_validators_.Clear();
   hash_.ClearToEmpty();
   if (GetArena() == nullptr && header_ != nullptr) {
     delete header_;
   }
   header_ = nullptr;
-  if (GetArena() == nullptr && lastcommitinfo_ != nullptr) {
-    delete lastcommitinfo_;
+  if (GetArena() == nullptr && last_commit_info_ != nullptr) {
+    delete last_commit_info_;
   }
-  lastcommitinfo_ = nullptr;
+  last_commit_info_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1792,27 +1792,27 @@ const char* RequestBeginBlock::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Header header = 2 [json_name = "header"];
+      // .tm.Header header = 2 [json_name = "header"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_header(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.LastCommitInfo lastCommitInfo = 3 [json_name = "lastCommitInfo"];
+      // .tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_lastcommitinfo(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_last_commit_info(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.Evidence byzantineValidators = 4 [json_name = "byzantineValidators"];
+      // repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_byzantinevalidators(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_byzantine_validators(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
@@ -1842,7 +1842,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* RequestBeginBlock::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.RequestBeginBlock)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1852,7 +1852,7 @@ failure:
         1, this->_internal_hash(), target);
   }
 
-  // .vega.Header header = 2 [json_name = "header"];
+  // .tm.Header header = 2 [json_name = "header"];
   if (this->has_header()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1860,41 +1860,41 @@ failure:
         2, _Internal::header(this), target, stream);
   }
 
-  // .vega.LastCommitInfo lastCommitInfo = 3 [json_name = "lastCommitInfo"];
-  if (this->has_lastcommitinfo()) {
+  // .tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];
+  if (this->has_last_commit_info()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::lastcommitinfo(this), target, stream);
+        3, _Internal::last_commit_info(this), target, stream);
   }
 
-  // repeated .vega.Evidence byzantineValidators = 4 [json_name = "byzantineValidators"];
+  // repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_byzantinevalidators_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_byzantine_validators_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_byzantinevalidators(i), target, stream);
+      InternalWriteMessage(4, this->_internal_byzantine_validators(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.RequestBeginBlock)
   return target;
 }
 
 size_t RequestBeginBlock::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.RequestBeginBlock)
+// @@protoc_insertion_point(message_byte_size_start:tm.RequestBeginBlock)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.Evidence byzantineValidators = 4 [json_name = "byzantineValidators"];
-  total_size += 1UL * this->_internal_byzantinevalidators_size();
-  for (const auto& msg : this->byzantinevalidators_) {
+  // repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];
+  total_size += 1UL * this->_internal_byzantine_validators_size();
+  for (const auto& msg : this->byzantine_validators_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1906,18 +1906,18 @@ size_t RequestBeginBlock::ByteSizeLong() const {
         this->_internal_hash());
   }
 
-  // .vega.Header header = 2 [json_name = "header"];
+  // .tm.Header header = 2 [json_name = "header"];
   if (this->has_header()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *header_);
   }
 
-  // .vega.LastCommitInfo lastCommitInfo = 3 [json_name = "lastCommitInfo"];
-  if (this->has_lastcommitinfo()) {
+  // .tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];
+  if (this->has_last_commit_info()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *lastcommitinfo_);
+        *last_commit_info_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1930,48 +1930,48 @@ size_t RequestBeginBlock::ByteSizeLong() const {
 }
 
 void RequestBeginBlock::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.RequestBeginBlock)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.RequestBeginBlock)
   GOOGLE_DCHECK_NE(&from, this);
   const RequestBeginBlock* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RequestBeginBlock>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.RequestBeginBlock)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.RequestBeginBlock)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.RequestBeginBlock)
     MergeFrom(*source);
   }
 }
 
 void RequestBeginBlock::MergeFrom(const RequestBeginBlock& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.RequestBeginBlock)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.RequestBeginBlock)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  byzantinevalidators_.MergeFrom(from.byzantinevalidators_);
+  byzantine_validators_.MergeFrom(from.byzantine_validators_);
   if (from.hash().size() > 0) {
     _internal_set_hash(from._internal_hash());
   }
   if (from.has_header()) {
-    _internal_mutable_header()->::vega::Header::MergeFrom(from._internal_header());
+    _internal_mutable_header()->::tm::Header::MergeFrom(from._internal_header());
   }
-  if (from.has_lastcommitinfo()) {
-    _internal_mutable_lastcommitinfo()->::vega::LastCommitInfo::MergeFrom(from._internal_lastcommitinfo());
+  if (from.has_last_commit_info()) {
+    _internal_mutable_last_commit_info()->::tm::LastCommitInfo::MergeFrom(from._internal_last_commit_info());
   }
 }
 
 void RequestBeginBlock::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.RequestBeginBlock)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.RequestBeginBlock)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void RequestBeginBlock::CopyFrom(const RequestBeginBlock& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.RequestBeginBlock)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.RequestBeginBlock)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1984,11 +1984,11 @@ bool RequestBeginBlock::IsInitialized() const {
 void RequestBeginBlock::InternalSwap(RequestBeginBlock* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  byzantinevalidators_.InternalSwap(&other->byzantinevalidators_);
+  byzantine_validators_.InternalSwap(&other->byzantine_validators_);
   hash_.Swap(&other->hash_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RequestBeginBlock, lastcommitinfo_)
-      + sizeof(RequestBeginBlock::lastcommitinfo_)
+      PROTOBUF_FIELD_OFFSET(RequestBeginBlock, last_commit_info_)
+      + sizeof(RequestBeginBlock::last_commit_info_)
       - PROTOBUF_FIELD_OFFSET(RequestBeginBlock, header_)>(
           reinterpret_cast<char*>(&header_),
           reinterpret_cast<char*>(&other->header_));
@@ -2009,7 +2009,7 @@ RequestDeliverTx::RequestDeliverTx(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(arena_constructor:tm.RequestDeliverTx)
 }
 RequestDeliverTx::RequestDeliverTx(const RequestDeliverTx& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2019,7 +2019,7 @@ RequestDeliverTx::RequestDeliverTx(const RequestDeliverTx& from)
     tx_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx(),
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(copy_constructor:tm.RequestDeliverTx)
 }
 
 void RequestDeliverTx::SharedCtor() {
@@ -2028,7 +2028,7 @@ void RequestDeliverTx::SharedCtor() {
 }
 
 RequestDeliverTx::~RequestDeliverTx() {
-  // @@protoc_insertion_point(destructor:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(destructor:tm.RequestDeliverTx)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2054,7 +2054,7 @@ const RequestDeliverTx& RequestDeliverTx::default_instance() {
 
 
 void RequestDeliverTx::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.RequestDeliverTx)
+// @@protoc_insertion_point(message_clear_start:tm.RequestDeliverTx)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2102,7 +2102,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* RequestDeliverTx::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.RequestDeliverTx)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2116,12 +2116,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.RequestDeliverTx)
   return target;
 }
 
 size_t RequestDeliverTx::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.RequestDeliverTx)
+// @@protoc_insertion_point(message_byte_size_start:tm.RequestDeliverTx)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2145,22 +2145,22 @@ size_t RequestDeliverTx::ByteSizeLong() const {
 }
 
 void RequestDeliverTx::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.RequestDeliverTx)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.RequestDeliverTx)
   GOOGLE_DCHECK_NE(&from, this);
   const RequestDeliverTx* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RequestDeliverTx>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.RequestDeliverTx)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.RequestDeliverTx)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.RequestDeliverTx)
     MergeFrom(*source);
   }
 }
 
 void RequestDeliverTx::MergeFrom(const RequestDeliverTx& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.RequestDeliverTx)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.RequestDeliverTx)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2172,14 +2172,14 @@ void RequestDeliverTx::MergeFrom(const RequestDeliverTx& from) {
 }
 
 void RequestDeliverTx::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.RequestDeliverTx)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.RequestDeliverTx)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void RequestDeliverTx::CopyFrom(const RequestDeliverTx& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.RequestDeliverTx)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.RequestDeliverTx)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2204,53 +2204,53 @@ void RequestDeliverTx::InternalSwap(RequestDeliverTx* other) {
 
 class ResponseInitChain::_Internal {
  public:
-  static const ::vega::ConsensusParams& consensusparams(const ResponseInitChain* msg);
+  static const ::tm::ConsensusParams& consensus_params(const ResponseInitChain* msg);
 };
 
-const ::vega::ConsensusParams&
-ResponseInitChain::_Internal::consensusparams(const ResponseInitChain* msg) {
-  return *msg->consensusparams_;
+const ::tm::ConsensusParams&
+ResponseInitChain::_Internal::consensus_params(const ResponseInitChain* msg) {
+  return *msg->consensus_params_;
 }
 ResponseInitChain::ResponseInitChain(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   validators_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ResponseInitChain)
+  // @@protoc_insertion_point(arena_constructor:tm.ResponseInitChain)
 }
 ResponseInitChain::ResponseInitChain(const ResponseInitChain& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       validators_(from.validators_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  apphash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_apphash().empty()) {
-    apphash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_apphash(),
+  app_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_app_hash().empty()) {
+    app_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_app_hash(),
       GetArena());
   }
-  if (from._internal_has_consensusparams()) {
-    consensusparams_ = new ::vega::ConsensusParams(*from.consensusparams_);
+  if (from._internal_has_consensus_params()) {
+    consensus_params_ = new ::tm::ConsensusParams(*from.consensus_params_);
   } else {
-    consensusparams_ = nullptr;
+    consensus_params_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:vega.ResponseInitChain)
+  // @@protoc_insertion_point(copy_constructor:tm.ResponseInitChain)
 }
 
 void ResponseInitChain::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ResponseInitChain_tm_2freplay_2eproto.base);
-  apphash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  consensusparams_ = nullptr;
+  app_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  consensus_params_ = nullptr;
 }
 
 ResponseInitChain::~ResponseInitChain() {
-  // @@protoc_insertion_point(destructor:vega.ResponseInitChain)
+  // @@protoc_insertion_point(destructor:tm.ResponseInitChain)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ResponseInitChain::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  apphash_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete consensusparams_;
+  app_hash_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete consensus_params_;
 }
 
 void ResponseInitChain::ArenaDtor(void* object) {
@@ -2269,17 +2269,17 @@ const ResponseInitChain& ResponseInitChain::default_instance() {
 
 
 void ResponseInitChain::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ResponseInitChain)
+// @@protoc_insertion_point(message_clear_start:tm.ResponseInitChain)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   validators_.Clear();
-  apphash_.ClearToEmpty();
-  if (GetArena() == nullptr && consensusparams_ != nullptr) {
-    delete consensusparams_;
+  app_hash_.ClearToEmpty();
+  if (GetArena() == nullptr && consensus_params_ != nullptr) {
+    delete consensus_params_;
   }
-  consensusparams_ = nullptr;
+  consensus_params_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2290,14 +2290,14 @@ const char* ResponseInitChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.ConsensusParams consensusParams = 1 [json_name = "consensusParams"];
+      // .tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_consensusparams(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_consensus_params(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.ValidatorUpdate validators = 2 [json_name = "validators"];
+      // repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -2309,10 +2309,10 @@ const char* ResponseInitChain::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
-      // bytes appHash = 3 [json_name = "appHash"];
+      // bytes app_hash = 3 [json_name = "appHash"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_apphash();
+          auto str = _internal_mutable_app_hash();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2341,19 +2341,19 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ResponseInitChain::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ResponseInitChain)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.ResponseInitChain)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.ConsensusParams consensusParams = 1 [json_name = "consensusParams"];
-  if (this->has_consensusparams()) {
+  // .tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];
+  if (this->has_consensus_params()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::consensusparams(this), target, stream);
+        1, _Internal::consensus_params(this), target, stream);
   }
 
-  // repeated .vega.ValidatorUpdate validators = 2 [json_name = "validators"];
+  // repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_validators_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2361,47 +2361,47 @@ failure:
       InternalWriteMessage(2, this->_internal_validators(i), target, stream);
   }
 
-  // bytes appHash = 3 [json_name = "appHash"];
-  if (this->apphash().size() > 0) {
+  // bytes app_hash = 3 [json_name = "appHash"];
+  if (this->app_hash().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_apphash(), target);
+        3, this->_internal_app_hash(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ResponseInitChain)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.ResponseInitChain)
   return target;
 }
 
 size_t ResponseInitChain::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ResponseInitChain)
+// @@protoc_insertion_point(message_byte_size_start:tm.ResponseInitChain)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.ValidatorUpdate validators = 2 [json_name = "validators"];
+  // repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];
   total_size += 1UL * this->_internal_validators_size();
   for (const auto& msg : this->validators_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // bytes appHash = 3 [json_name = "appHash"];
-  if (this->apphash().size() > 0) {
+  // bytes app_hash = 3 [json_name = "appHash"];
+  if (this->app_hash().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_apphash());
+        this->_internal_app_hash());
   }
 
-  // .vega.ConsensusParams consensusParams = 1 [json_name = "consensusParams"];
-  if (this->has_consensusparams()) {
+  // .tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];
+  if (this->has_consensus_params()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *consensusparams_);
+        *consensus_params_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2414,45 +2414,45 @@ size_t ResponseInitChain::ByteSizeLong() const {
 }
 
 void ResponseInitChain::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ResponseInitChain)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.ResponseInitChain)
   GOOGLE_DCHECK_NE(&from, this);
   const ResponseInitChain* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ResponseInitChain>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ResponseInitChain)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.ResponseInitChain)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ResponseInitChain)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.ResponseInitChain)
     MergeFrom(*source);
   }
 }
 
 void ResponseInitChain::MergeFrom(const ResponseInitChain& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ResponseInitChain)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.ResponseInitChain)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   validators_.MergeFrom(from.validators_);
-  if (from.apphash().size() > 0) {
-    _internal_set_apphash(from._internal_apphash());
+  if (from.app_hash().size() > 0) {
+    _internal_set_app_hash(from._internal_app_hash());
   }
-  if (from.has_consensusparams()) {
-    _internal_mutable_consensusparams()->::vega::ConsensusParams::MergeFrom(from._internal_consensusparams());
+  if (from.has_consensus_params()) {
+    _internal_mutable_consensus_params()->::tm::ConsensusParams::MergeFrom(from._internal_consensus_params());
   }
 }
 
 void ResponseInitChain::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ResponseInitChain)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.ResponseInitChain)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ResponseInitChain::CopyFrom(const ResponseInitChain& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ResponseInitChain)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.ResponseInitChain)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2466,8 +2466,8 @@ void ResponseInitChain::InternalSwap(ResponseInitChain* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   validators_.InternalSwap(&other->validators_);
-  apphash_.Swap(&other->apphash_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(consensusparams_, other->consensusparams_);
+  app_hash_.Swap(&other->app_hash_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(consensus_params_, other->consensus_params_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ResponseInitChain::GetMetadata() const {
@@ -2486,13 +2486,13 @@ ResponseBeginBlock::ResponseBeginBlock(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   events_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(arena_constructor:tm.ResponseBeginBlock)
 }
 ResponseBeginBlock::ResponseBeginBlock(const ResponseBeginBlock& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       events_(from.events_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(copy_constructor:tm.ResponseBeginBlock)
 }
 
 void ResponseBeginBlock::SharedCtor() {
@@ -2500,7 +2500,7 @@ void ResponseBeginBlock::SharedCtor() {
 }
 
 ResponseBeginBlock::~ResponseBeginBlock() {
-  // @@protoc_insertion_point(destructor:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(destructor:tm.ResponseBeginBlock)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2525,7 +2525,7 @@ const ResponseBeginBlock& ResponseBeginBlock::default_instance() {
 
 
 void ResponseBeginBlock::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ResponseBeginBlock)
+// @@protoc_insertion_point(message_clear_start:tm.ResponseBeginBlock)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2541,7 +2541,7 @@ const char* ResponseBeginBlock::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .vega.Event events = 1 [json_name = "events"];
+      // repeated .tm.Event events = 1 [json_name = "events"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -2577,11 +2577,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ResponseBeginBlock::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.ResponseBeginBlock)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .vega.Event events = 1 [json_name = "events"];
+  // repeated .tm.Event events = 1 [json_name = "events"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_events_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2593,19 +2593,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.ResponseBeginBlock)
   return target;
 }
 
 size_t ResponseBeginBlock::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ResponseBeginBlock)
+// @@protoc_insertion_point(message_byte_size_start:tm.ResponseBeginBlock)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.Event events = 1 [json_name = "events"];
+  // repeated .tm.Event events = 1 [json_name = "events"];
   total_size += 1UL * this->_internal_events_size();
   for (const auto& msg : this->events_) {
     total_size +=
@@ -2622,22 +2622,22 @@ size_t ResponseBeginBlock::ByteSizeLong() const {
 }
 
 void ResponseBeginBlock::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ResponseBeginBlock)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.ResponseBeginBlock)
   GOOGLE_DCHECK_NE(&from, this);
   const ResponseBeginBlock* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ResponseBeginBlock>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.ResponseBeginBlock)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ResponseBeginBlock)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.ResponseBeginBlock)
     MergeFrom(*source);
   }
 }
 
 void ResponseBeginBlock::MergeFrom(const ResponseBeginBlock& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ResponseBeginBlock)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.ResponseBeginBlock)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2647,14 +2647,14 @@ void ResponseBeginBlock::MergeFrom(const ResponseBeginBlock& from) {
 }
 
 void ResponseBeginBlock::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ResponseBeginBlock)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.ResponseBeginBlock)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ResponseBeginBlock::CopyFrom(const ResponseBeginBlock& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ResponseBeginBlock)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.ResponseBeginBlock)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2686,7 +2686,7 @@ ResponseDeliverTx::ResponseDeliverTx(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   events_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ResponseDeliverTx)
+  // @@protoc_insertion_point(arena_constructor:tm.ResponseDeliverTx)
 }
 ResponseDeliverTx::ResponseDeliverTx(const ResponseDeliverTx& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2712,10 +2712,10 @@ ResponseDeliverTx::ResponseDeliverTx(const ResponseDeliverTx& from)
     codespace_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_codespace(),
       GetArena());
   }
-  ::memcpy(&gaswanted_, &from.gaswanted_,
+  ::memcpy(&gas_wanted_, &from.gas_wanted_,
     static_cast<size_t>(reinterpret_cast<char*>(&code_) -
-    reinterpret_cast<char*>(&gaswanted_)) + sizeof(code_));
-  // @@protoc_insertion_point(copy_constructor:vega.ResponseDeliverTx)
+    reinterpret_cast<char*>(&gas_wanted_)) + sizeof(code_));
+  // @@protoc_insertion_point(copy_constructor:tm.ResponseDeliverTx)
 }
 
 void ResponseDeliverTx::SharedCtor() {
@@ -2725,13 +2725,13 @@ void ResponseDeliverTx::SharedCtor() {
   info_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   codespace_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&gaswanted_) - reinterpret_cast<char*>(this)),
+      reinterpret_cast<char*>(&gas_wanted_) - reinterpret_cast<char*>(this)),
       0, static_cast<size_t>(reinterpret_cast<char*>(&code_) -
-      reinterpret_cast<char*>(&gaswanted_)) + sizeof(code_));
+      reinterpret_cast<char*>(&gas_wanted_)) + sizeof(code_));
 }
 
 ResponseDeliverTx::~ResponseDeliverTx() {
-  // @@protoc_insertion_point(destructor:vega.ResponseDeliverTx)
+  // @@protoc_insertion_point(destructor:tm.ResponseDeliverTx)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2760,7 +2760,7 @@ const ResponseDeliverTx& ResponseDeliverTx::default_instance() {
 
 
 void ResponseDeliverTx::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ResponseDeliverTx)
+// @@protoc_insertion_point(message_clear_start:tm.ResponseDeliverTx)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2770,9 +2770,9 @@ void ResponseDeliverTx::Clear() {
   log_.ClearToEmpty();
   info_.ClearToEmpty();
   codespace_.ClearToEmpty();
-  ::memset(&gaswanted_, 0, static_cast<size_t>(
+  ::memset(&gas_wanted_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&code_) -
-      reinterpret_cast<char*>(&gaswanted_)) + sizeof(code_));
+      reinterpret_cast<char*>(&gas_wanted_)) + sizeof(code_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2803,7 +2803,7 @@ const char* ResponseDeliverTx::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_log();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ResponseDeliverTx.log"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.ResponseDeliverTx.log"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2812,25 +2812,25 @@ const char* ResponseDeliverTx::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_info();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ResponseDeliverTx.info"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.ResponseDeliverTx.info"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 gasWanted = 5 [json_name = "gasWanted"];
+      // int64 gas_wanted = 5 [json_name = "gasWanted"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          gaswanted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          gas_wanted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 gasUsed = 6 [json_name = "gasUsed"];
+      // int64 gas_used = 6 [json_name = "gasUsed"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          gasused_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          gas_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.Event events = 7 [json_name = "events"];
+      // repeated .tm.Event events = 7 [json_name = "events"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr -= 1;
@@ -2847,7 +2847,7 @@ const char* ResponseDeliverTx::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_codespace();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ResponseDeliverTx.codespace"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.ResponseDeliverTx.codespace"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2875,7 +2875,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ResponseDeliverTx::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ResponseDeliverTx)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.ResponseDeliverTx)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2896,7 +2896,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_log().data(), static_cast<int>(this->_internal_log().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ResponseDeliverTx.log");
+      "tm.ResponseDeliverTx.log");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_log(), target);
   }
@@ -2906,24 +2906,24 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_info().data(), static_cast<int>(this->_internal_info().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ResponseDeliverTx.info");
+      "tm.ResponseDeliverTx.info");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_info(), target);
   }
 
-  // int64 gasWanted = 5 [json_name = "gasWanted"];
-  if (this->gaswanted() != 0) {
+  // int64 gas_wanted = 5 [json_name = "gasWanted"];
+  if (this->gas_wanted() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_gaswanted(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_gas_wanted(), target);
   }
 
-  // int64 gasUsed = 6 [json_name = "gasUsed"];
-  if (this->gasused() != 0) {
+  // int64 gas_used = 6 [json_name = "gasUsed"];
+  if (this->gas_used() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_gasused(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_gas_used(), target);
   }
 
-  // repeated .vega.Event events = 7 [json_name = "events"];
+  // repeated .tm.Event events = 7 [json_name = "events"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_events_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2936,7 +2936,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_codespace().data(), static_cast<int>(this->_internal_codespace().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ResponseDeliverTx.codespace");
+      "tm.ResponseDeliverTx.codespace");
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_codespace(), target);
   }
@@ -2945,19 +2945,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ResponseDeliverTx)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.ResponseDeliverTx)
   return target;
 }
 
 size_t ResponseDeliverTx::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ResponseDeliverTx)
+// @@protoc_insertion_point(message_byte_size_start:tm.ResponseDeliverTx)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.Event events = 7 [json_name = "events"];
+  // repeated .tm.Event events = 7 [json_name = "events"];
   total_size += 1UL * this->_internal_events_size();
   for (const auto& msg : this->events_) {
     total_size +=
@@ -2992,18 +2992,18 @@ size_t ResponseDeliverTx::ByteSizeLong() const {
         this->_internal_codespace());
   }
 
-  // int64 gasWanted = 5 [json_name = "gasWanted"];
-  if (this->gaswanted() != 0) {
+  // int64 gas_wanted = 5 [json_name = "gasWanted"];
+  if (this->gas_wanted() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_gaswanted());
+        this->_internal_gas_wanted());
   }
 
-  // int64 gasUsed = 6 [json_name = "gasUsed"];
-  if (this->gasused() != 0) {
+  // int64 gas_used = 6 [json_name = "gasUsed"];
+  if (this->gas_used() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_gasused());
+        this->_internal_gas_used());
   }
 
   // uint32 code = 1 [json_name = "code"];
@@ -3023,22 +3023,22 @@ size_t ResponseDeliverTx::ByteSizeLong() const {
 }
 
 void ResponseDeliverTx::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ResponseDeliverTx)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.ResponseDeliverTx)
   GOOGLE_DCHECK_NE(&from, this);
   const ResponseDeliverTx* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ResponseDeliverTx>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ResponseDeliverTx)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.ResponseDeliverTx)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ResponseDeliverTx)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.ResponseDeliverTx)
     MergeFrom(*source);
   }
 }
 
 void ResponseDeliverTx::MergeFrom(const ResponseDeliverTx& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ResponseDeliverTx)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.ResponseDeliverTx)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3057,11 +3057,11 @@ void ResponseDeliverTx::MergeFrom(const ResponseDeliverTx& from) {
   if (from.codespace().size() > 0) {
     _internal_set_codespace(from._internal_codespace());
   }
-  if (from.gaswanted() != 0) {
-    _internal_set_gaswanted(from._internal_gaswanted());
+  if (from.gas_wanted() != 0) {
+    _internal_set_gas_wanted(from._internal_gas_wanted());
   }
-  if (from.gasused() != 0) {
-    _internal_set_gasused(from._internal_gasused());
+  if (from.gas_used() != 0) {
+    _internal_set_gas_used(from._internal_gas_used());
   }
   if (from.code() != 0) {
     _internal_set_code(from._internal_code());
@@ -3069,14 +3069,14 @@ void ResponseDeliverTx::MergeFrom(const ResponseDeliverTx& from) {
 }
 
 void ResponseDeliverTx::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ResponseDeliverTx)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.ResponseDeliverTx)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ResponseDeliverTx::CopyFrom(const ResponseDeliverTx& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ResponseDeliverTx)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.ResponseDeliverTx)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3097,9 +3097,9 @@ void ResponseDeliverTx::InternalSwap(ResponseDeliverTx* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ResponseDeliverTx, code_)
       + sizeof(ResponseDeliverTx::code_)
-      - PROTOBUF_FIELD_OFFSET(ResponseDeliverTx, gaswanted_)>(
-          reinterpret_cast<char*>(&gaswanted_),
-          reinterpret_cast<char*>(&other->gaswanted_));
+      - PROTOBUF_FIELD_OFFSET(ResponseDeliverTx, gas_wanted_)>(
+          reinterpret_cast<char*>(&gas_wanted_),
+          reinterpret_cast<char*>(&other->gas_wanted_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ResponseDeliverTx::GetMetadata() const {
@@ -3118,7 +3118,7 @@ Event::Event(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   attributes_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.Event)
+  // @@protoc_insertion_point(arena_constructor:tm.Event)
 }
 Event::Event(const Event& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3129,7 +3129,7 @@ Event::Event(const Event& from)
     type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_type(),
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:vega.Event)
+  // @@protoc_insertion_point(copy_constructor:tm.Event)
 }
 
 void Event::SharedCtor() {
@@ -3138,7 +3138,7 @@ void Event::SharedCtor() {
 }
 
 Event::~Event() {
-  // @@protoc_insertion_point(destructor:vega.Event)
+  // @@protoc_insertion_point(destructor:tm.Event)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3164,7 +3164,7 @@ const Event& Event::default_instance() {
 
 
 void Event::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.Event)
+// @@protoc_insertion_point(message_clear_start:tm.Event)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3186,11 +3186,11 @@ const char* Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Event.type"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.Event.type"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.EventAttribute attributes = 2 [json_name = "attributes"];
+      // repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -3226,7 +3226,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Event::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.Event)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.Event)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3235,12 +3235,12 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_type().data(), static_cast<int>(this->_internal_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.Event.type");
+      "tm.Event.type");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_type(), target);
   }
 
-  // repeated .vega.EventAttribute attributes = 2 [json_name = "attributes"];
+  // repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_attributes_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -3252,19 +3252,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.Event)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.Event)
   return target;
 }
 
 size_t Event::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.Event)
+// @@protoc_insertion_point(message_byte_size_start:tm.Event)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.EventAttribute attributes = 2 [json_name = "attributes"];
+  // repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];
   total_size += 1UL * this->_internal_attributes_size();
   for (const auto& msg : this->attributes_) {
     total_size +=
@@ -3288,22 +3288,22 @@ size_t Event::ByteSizeLong() const {
 }
 
 void Event::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.Event)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.Event)
   GOOGLE_DCHECK_NE(&from, this);
   const Event* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Event>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.Event)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.Event)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.Event)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.Event)
     MergeFrom(*source);
   }
 }
 
 void Event::MergeFrom(const Event& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.Event)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.Event)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3316,14 +3316,14 @@ void Event::MergeFrom(const Event& from) {
 }
 
 void Event::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.Event)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.Event)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Event::CopyFrom(const Event& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.Event)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.Event)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3355,7 +3355,7 @@ EventAttribute::EventAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.EventAttribute)
+  // @@protoc_insertion_point(arena_constructor:tm.EventAttribute)
 }
 EventAttribute::EventAttribute(const EventAttribute& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -3371,7 +3371,7 @@ EventAttribute::EventAttribute(const EventAttribute& from)
       GetArena());
   }
   index_ = from.index_;
-  // @@protoc_insertion_point(copy_constructor:vega.EventAttribute)
+  // @@protoc_insertion_point(copy_constructor:tm.EventAttribute)
 }
 
 void EventAttribute::SharedCtor() {
@@ -3382,7 +3382,7 @@ void EventAttribute::SharedCtor() {
 }
 
 EventAttribute::~EventAttribute() {
-  // @@protoc_insertion_point(destructor:vega.EventAttribute)
+  // @@protoc_insertion_point(destructor:tm.EventAttribute)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3409,7 +3409,7 @@ const EventAttribute& EventAttribute::default_instance() {
 
 
 void EventAttribute::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.EventAttribute)
+// @@protoc_insertion_point(message_clear_start:tm.EventAttribute)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3474,7 +3474,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* EventAttribute::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.EventAttribute)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.EventAttribute)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3500,12 +3500,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.EventAttribute)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.EventAttribute)
   return target;
 }
 
 size_t EventAttribute::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.EventAttribute)
+// @@protoc_insertion_point(message_byte_size_start:tm.EventAttribute)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3541,22 +3541,22 @@ size_t EventAttribute::ByteSizeLong() const {
 }
 
 void EventAttribute::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.EventAttribute)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.EventAttribute)
   GOOGLE_DCHECK_NE(&from, this);
   const EventAttribute* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<EventAttribute>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.EventAttribute)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.EventAttribute)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.EventAttribute)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.EventAttribute)
     MergeFrom(*source);
   }
 }
 
 void EventAttribute::MergeFrom(const EventAttribute& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.EventAttribute)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.EventAttribute)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3574,14 +3574,14 @@ void EventAttribute::MergeFrom(const EventAttribute& from) {
 }
 
 void EventAttribute::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.EventAttribute)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.EventAttribute)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void EventAttribute::CopyFrom(const EventAttribute& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.EventAttribute)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.EventAttribute)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3608,10 +3608,10 @@ void EventAttribute::InternalSwap(EventAttribute* other) {
 
 class ValidatorUpdate::_Internal {
  public:
-  static const ::vega::PublicKey& pub_key(const ValidatorUpdate* msg);
+  static const ::tm::PublicKey& pub_key(const ValidatorUpdate* msg);
 };
 
-const ::vega::PublicKey&
+const ::tm::PublicKey&
 ValidatorUpdate::_Internal::pub_key(const ValidatorUpdate* msg) {
   return *msg->pub_key_;
 }
@@ -3619,18 +3619,18 @@ ValidatorUpdate::ValidatorUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(arena_constructor:tm.ValidatorUpdate)
 }
 ValidatorUpdate::ValidatorUpdate(const ValidatorUpdate& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_pub_key()) {
-    pub_key_ = new ::vega::PublicKey(*from.pub_key_);
+    pub_key_ = new ::tm::PublicKey(*from.pub_key_);
   } else {
     pub_key_ = nullptr;
   }
   power_ = from.power_;
-  // @@protoc_insertion_point(copy_constructor:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(copy_constructor:tm.ValidatorUpdate)
 }
 
 void ValidatorUpdate::SharedCtor() {
@@ -3642,7 +3642,7 @@ void ValidatorUpdate::SharedCtor() {
 }
 
 ValidatorUpdate::~ValidatorUpdate() {
-  // @@protoc_insertion_point(destructor:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(destructor:tm.ValidatorUpdate)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3668,7 +3668,7 @@ const ValidatorUpdate& ValidatorUpdate::default_instance() {
 
 
 void ValidatorUpdate::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ValidatorUpdate)
+// @@protoc_insertion_point(message_clear_start:tm.ValidatorUpdate)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3688,7 +3688,7 @@ const char* ValidatorUpdate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.PublicKey pub_key = 1 [json_name = "pubKey"];
+      // .tm.PublicKey pub_key = 1 [json_name = "pubKey"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_pub_key(), ptr);
@@ -3726,11 +3726,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ValidatorUpdate::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.ValidatorUpdate)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.PublicKey pub_key = 1 [json_name = "pubKey"];
+  // .tm.PublicKey pub_key = 1 [json_name = "pubKey"];
   if (this->has_pub_key()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3748,19 +3748,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.ValidatorUpdate)
   return target;
 }
 
 size_t ValidatorUpdate::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ValidatorUpdate)
+// @@protoc_insertion_point(message_byte_size_start:tm.ValidatorUpdate)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.PublicKey pub_key = 1 [json_name = "pubKey"];
+  // .tm.PublicKey pub_key = 1 [json_name = "pubKey"];
   if (this->has_pub_key()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3784,29 +3784,29 @@ size_t ValidatorUpdate::ByteSizeLong() const {
 }
 
 void ValidatorUpdate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ValidatorUpdate)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.ValidatorUpdate)
   GOOGLE_DCHECK_NE(&from, this);
   const ValidatorUpdate* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ValidatorUpdate>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.ValidatorUpdate)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ValidatorUpdate)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.ValidatorUpdate)
     MergeFrom(*source);
   }
 }
 
 void ValidatorUpdate::MergeFrom(const ValidatorUpdate& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ValidatorUpdate)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.ValidatorUpdate)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_pub_key()) {
-    _internal_mutable_pub_key()->::vega::PublicKey::MergeFrom(from._internal_pub_key());
+    _internal_mutable_pub_key()->::tm::PublicKey::MergeFrom(from._internal_pub_key());
   }
   if (from.power() != 0) {
     _internal_set_power(from._internal_power());
@@ -3814,14 +3814,14 @@ void ValidatorUpdate::MergeFrom(const ValidatorUpdate& from) {
 }
 
 void ValidatorUpdate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ValidatorUpdate)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.ValidatorUpdate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ValidatorUpdate::CopyFrom(const ValidatorUpdate& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ValidatorUpdate)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.ValidatorUpdate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3851,25 +3851,25 @@ void ValidatorUpdate::InternalSwap(ValidatorUpdate* other) {
 
 class ConsensusParams::_Internal {
  public:
-  static const ::vega::BlockParams& block(const ConsensusParams* msg);
-  static const ::vega::EvidenceParams& evidence(const ConsensusParams* msg);
-  static const ::vega::ValidatorParams& validator(const ConsensusParams* msg);
-  static const ::vega::VersionParams& version(const ConsensusParams* msg);
+  static const ::tm::BlockParams& block(const ConsensusParams* msg);
+  static const ::tm::EvidenceParams& evidence(const ConsensusParams* msg);
+  static const ::tm::ValidatorParams& validator(const ConsensusParams* msg);
+  static const ::tm::VersionParams& version(const ConsensusParams* msg);
 };
 
-const ::vega::BlockParams&
+const ::tm::BlockParams&
 ConsensusParams::_Internal::block(const ConsensusParams* msg) {
   return *msg->block_;
 }
-const ::vega::EvidenceParams&
+const ::tm::EvidenceParams&
 ConsensusParams::_Internal::evidence(const ConsensusParams* msg) {
   return *msg->evidence_;
 }
-const ::vega::ValidatorParams&
+const ::tm::ValidatorParams&
 ConsensusParams::_Internal::validator(const ConsensusParams* msg) {
   return *msg->validator_;
 }
-const ::vega::VersionParams&
+const ::tm::VersionParams&
 ConsensusParams::_Internal::version(const ConsensusParams* msg) {
   return *msg->version_;
 }
@@ -3877,32 +3877,32 @@ ConsensusParams::ConsensusParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ConsensusParams)
+  // @@protoc_insertion_point(arena_constructor:tm.ConsensusParams)
 }
 ConsensusParams::ConsensusParams(const ConsensusParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_block()) {
-    block_ = new ::vega::BlockParams(*from.block_);
+    block_ = new ::tm::BlockParams(*from.block_);
   } else {
     block_ = nullptr;
   }
   if (from._internal_has_evidence()) {
-    evidence_ = new ::vega::EvidenceParams(*from.evidence_);
+    evidence_ = new ::tm::EvidenceParams(*from.evidence_);
   } else {
     evidence_ = nullptr;
   }
   if (from._internal_has_validator()) {
-    validator_ = new ::vega::ValidatorParams(*from.validator_);
+    validator_ = new ::tm::ValidatorParams(*from.validator_);
   } else {
     validator_ = nullptr;
   }
   if (from._internal_has_version()) {
-    version_ = new ::vega::VersionParams(*from.version_);
+    version_ = new ::tm::VersionParams(*from.version_);
   } else {
     version_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:vega.ConsensusParams)
+  // @@protoc_insertion_point(copy_constructor:tm.ConsensusParams)
 }
 
 void ConsensusParams::SharedCtor() {
@@ -3914,7 +3914,7 @@ void ConsensusParams::SharedCtor() {
 }
 
 ConsensusParams::~ConsensusParams() {
-  // @@protoc_insertion_point(destructor:vega.ConsensusParams)
+  // @@protoc_insertion_point(destructor:tm.ConsensusParams)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3943,7 +3943,7 @@ const ConsensusParams& ConsensusParams::default_instance() {
 
 
 void ConsensusParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ConsensusParams)
+// @@protoc_insertion_point(message_clear_start:tm.ConsensusParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3974,28 +3974,28 @@ const char* ConsensusParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.BlockParams block = 1 [json_name = "block"];
+      // .tm.BlockParams block = 1 [json_name = "block"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_block(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.EvidenceParams evidence = 2 [json_name = "evidence"];
+      // .tm.EvidenceParams evidence = 2 [json_name = "evidence"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_evidence(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ValidatorParams validator = 3 [json_name = "validator"];
+      // .tm.ValidatorParams validator = 3 [json_name = "validator"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_validator(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.VersionParams version = 4 [json_name = "version"];
+      // .tm.VersionParams version = 4 [json_name = "version"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_version(), ptr);
@@ -4026,11 +4026,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ConsensusParams::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ConsensusParams)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.ConsensusParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.BlockParams block = 1 [json_name = "block"];
+  // .tm.BlockParams block = 1 [json_name = "block"];
   if (this->has_block()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4038,7 +4038,7 @@ failure:
         1, _Internal::block(this), target, stream);
   }
 
-  // .vega.EvidenceParams evidence = 2 [json_name = "evidence"];
+  // .tm.EvidenceParams evidence = 2 [json_name = "evidence"];
   if (this->has_evidence()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4046,7 +4046,7 @@ failure:
         2, _Internal::evidence(this), target, stream);
   }
 
-  // .vega.ValidatorParams validator = 3 [json_name = "validator"];
+  // .tm.ValidatorParams validator = 3 [json_name = "validator"];
   if (this->has_validator()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4054,7 +4054,7 @@ failure:
         3, _Internal::validator(this), target, stream);
   }
 
-  // .vega.VersionParams version = 4 [json_name = "version"];
+  // .tm.VersionParams version = 4 [json_name = "version"];
   if (this->has_version()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4066,40 +4066,40 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ConsensusParams)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.ConsensusParams)
   return target;
 }
 
 size_t ConsensusParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ConsensusParams)
+// @@protoc_insertion_point(message_byte_size_start:tm.ConsensusParams)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.BlockParams block = 1 [json_name = "block"];
+  // .tm.BlockParams block = 1 [json_name = "block"];
   if (this->has_block()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *block_);
   }
 
-  // .vega.EvidenceParams evidence = 2 [json_name = "evidence"];
+  // .tm.EvidenceParams evidence = 2 [json_name = "evidence"];
   if (this->has_evidence()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *evidence_);
   }
 
-  // .vega.ValidatorParams validator = 3 [json_name = "validator"];
+  // .tm.ValidatorParams validator = 3 [json_name = "validator"];
   if (this->has_validator()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *validator_);
   }
 
-  // .vega.VersionParams version = 4 [json_name = "version"];
+  // .tm.VersionParams version = 4 [json_name = "version"];
   if (this->has_version()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4116,50 +4116,50 @@ size_t ConsensusParams::ByteSizeLong() const {
 }
 
 void ConsensusParams::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ConsensusParams)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.ConsensusParams)
   GOOGLE_DCHECK_NE(&from, this);
   const ConsensusParams* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ConsensusParams>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ConsensusParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.ConsensusParams)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ConsensusParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.ConsensusParams)
     MergeFrom(*source);
   }
 }
 
 void ConsensusParams::MergeFrom(const ConsensusParams& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ConsensusParams)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.ConsensusParams)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_block()) {
-    _internal_mutable_block()->::vega::BlockParams::MergeFrom(from._internal_block());
+    _internal_mutable_block()->::tm::BlockParams::MergeFrom(from._internal_block());
   }
   if (from.has_evidence()) {
-    _internal_mutable_evidence()->::vega::EvidenceParams::MergeFrom(from._internal_evidence());
+    _internal_mutable_evidence()->::tm::EvidenceParams::MergeFrom(from._internal_evidence());
   }
   if (from.has_validator()) {
-    _internal_mutable_validator()->::vega::ValidatorParams::MergeFrom(from._internal_validator());
+    _internal_mutable_validator()->::tm::ValidatorParams::MergeFrom(from._internal_validator());
   }
   if (from.has_version()) {
-    _internal_mutable_version()->::vega::VersionParams::MergeFrom(from._internal_version());
+    _internal_mutable_version()->::tm::VersionParams::MergeFrom(from._internal_version());
   }
 }
 
 void ConsensusParams::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ConsensusParams)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.ConsensusParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ConsensusParams::CopyFrom(const ConsensusParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ConsensusParams)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.ConsensusParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4195,26 +4195,26 @@ BlockParams::BlockParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.BlockParams)
+  // @@protoc_insertion_point(arena_constructor:tm.BlockParams)
 }
 BlockParams::BlockParams(const BlockParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&maxbytes_, &from.maxbytes_,
-    static_cast<size_t>(reinterpret_cast<char*>(&maxgas_) -
-    reinterpret_cast<char*>(&maxbytes_)) + sizeof(maxgas_));
-  // @@protoc_insertion_point(copy_constructor:vega.BlockParams)
+  ::memcpy(&max_bytes_, &from.max_bytes_,
+    static_cast<size_t>(reinterpret_cast<char*>(&max_gas_) -
+    reinterpret_cast<char*>(&max_bytes_)) + sizeof(max_gas_));
+  // @@protoc_insertion_point(copy_constructor:tm.BlockParams)
 }
 
 void BlockParams::SharedCtor() {
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&maxbytes_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&maxgas_) -
-      reinterpret_cast<char*>(&maxbytes_)) + sizeof(maxgas_));
+      reinterpret_cast<char*>(&max_bytes_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&max_gas_) -
+      reinterpret_cast<char*>(&max_bytes_)) + sizeof(max_gas_));
 }
 
 BlockParams::~BlockParams() {
-  // @@protoc_insertion_point(destructor:vega.BlockParams)
+  // @@protoc_insertion_point(destructor:tm.BlockParams)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4239,14 +4239,14 @@ const BlockParams& BlockParams::default_instance() {
 
 
 void BlockParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.BlockParams)
+// @@protoc_insertion_point(message_clear_start:tm.BlockParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&maxbytes_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&maxgas_) -
-      reinterpret_cast<char*>(&maxbytes_)) + sizeof(maxgas_));
+  ::memset(&max_bytes_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&max_gas_) -
+      reinterpret_cast<char*>(&max_bytes_)) + sizeof(max_gas_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4257,17 +4257,17 @@ const char* BlockParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 maxBytes = 1 [json_name = "maxBytes"];
+      // int64 max_bytes = 1 [json_name = "maxBytes"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          maxbytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 maxGas = 2 [json_name = "maxGas"];
+      // int64 max_gas = 2 [json_name = "maxGas"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          maxgas_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_gas_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4295,50 +4295,50 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BlockParams::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.BlockParams)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.BlockParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 maxBytes = 1 [json_name = "maxBytes"];
-  if (this->maxbytes() != 0) {
+  // int64 max_bytes = 1 [json_name = "maxBytes"];
+  if (this->max_bytes() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_maxbytes(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_max_bytes(), target);
   }
 
-  // int64 maxGas = 2 [json_name = "maxGas"];
-  if (this->maxgas() != 0) {
+  // int64 max_gas = 2 [json_name = "maxGas"];
+  if (this->max_gas() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_maxgas(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_max_gas(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.BlockParams)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.BlockParams)
   return target;
 }
 
 size_t BlockParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.BlockParams)
+// @@protoc_insertion_point(message_byte_size_start:tm.BlockParams)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 maxBytes = 1 [json_name = "maxBytes"];
-  if (this->maxbytes() != 0) {
+  // int64 max_bytes = 1 [json_name = "maxBytes"];
+  if (this->max_bytes() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_maxbytes());
+        this->_internal_max_bytes());
   }
 
-  // int64 maxGas = 2 [json_name = "maxGas"];
-  if (this->maxgas() != 0) {
+  // int64 max_gas = 2 [json_name = "maxGas"];
+  if (this->max_gas() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_maxgas());
+        this->_internal_max_gas());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4351,44 +4351,44 @@ size_t BlockParams::ByteSizeLong() const {
 }
 
 void BlockParams::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.BlockParams)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.BlockParams)
   GOOGLE_DCHECK_NE(&from, this);
   const BlockParams* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BlockParams>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.BlockParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.BlockParams)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.BlockParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.BlockParams)
     MergeFrom(*source);
   }
 }
 
 void BlockParams::MergeFrom(const BlockParams& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.BlockParams)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.BlockParams)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.maxbytes() != 0) {
-    _internal_set_maxbytes(from._internal_maxbytes());
+  if (from.max_bytes() != 0) {
+    _internal_set_max_bytes(from._internal_max_bytes());
   }
-  if (from.maxgas() != 0) {
-    _internal_set_maxgas(from._internal_maxgas());
+  if (from.max_gas() != 0) {
+    _internal_set_max_gas(from._internal_max_gas());
   }
 }
 
 void BlockParams::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.BlockParams)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.BlockParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BlockParams::CopyFrom(const BlockParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.BlockParams)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.BlockParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4402,11 +4402,11 @@ void BlockParams::InternalSwap(BlockParams* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BlockParams, maxgas_)
-      + sizeof(BlockParams::maxgas_)
-      - PROTOBUF_FIELD_OFFSET(BlockParams, maxbytes_)>(
-          reinterpret_cast<char*>(&maxbytes_),
-          reinterpret_cast<char*>(&other->maxbytes_));
+      PROTOBUF_FIELD_OFFSET(BlockParams, max_gas_)
+      + sizeof(BlockParams::max_gas_)
+      - PROTOBUF_FIELD_OFFSET(BlockParams, max_bytes_)>(
+          reinterpret_cast<char*>(&max_bytes_),
+          reinterpret_cast<char*>(&other->max_bytes_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BlockParams::GetMetadata() const {
@@ -4418,10 +4418,10 @@ void BlockParams::InternalSwap(BlockParams* other) {
 
 class Evidence::_Internal {
  public:
-  static const ::vega::Validator& validator(const Evidence* msg);
+  static const ::tm::Validator& validator(const Evidence* msg);
 };
 
-const ::vega::Validator&
+const ::tm::Validator&
 Evidence::_Internal::validator(const Evidence* msg) {
   return *msg->validator_;
 }
@@ -4429,20 +4429,20 @@ Evidence::Evidence(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.Evidence)
+  // @@protoc_insertion_point(arena_constructor:tm.Evidence)
 }
 Evidence::Evidence(const Evidence& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_validator()) {
-    validator_ = new ::vega::Validator(*from.validator_);
+    validator_ = new ::tm::Validator(*from.validator_);
   } else {
     validator_ = nullptr;
   }
   ::memcpy(&height_, &from.height_,
     static_cast<size_t>(reinterpret_cast<char*>(&type_) -
     reinterpret_cast<char*>(&height_)) + sizeof(type_));
-  // @@protoc_insertion_point(copy_constructor:vega.Evidence)
+  // @@protoc_insertion_point(copy_constructor:tm.Evidence)
 }
 
 void Evidence::SharedCtor() {
@@ -4454,7 +4454,7 @@ void Evidence::SharedCtor() {
 }
 
 Evidence::~Evidence() {
-  // @@protoc_insertion_point(destructor:vega.Evidence)
+  // @@protoc_insertion_point(destructor:tm.Evidence)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4480,7 +4480,7 @@ const Evidence& Evidence::default_instance() {
 
 
 void Evidence::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.Evidence)
+// @@protoc_insertion_point(message_clear_start:tm.Evidence)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4502,15 +4502,15 @@ const char* Evidence::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.EvidenceType type = 1 [json_name = "type"];
+      // .tm.EvidenceType type = 1 [json_name = "type"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::vega::EvidenceType>(val));
+          _internal_set_type(static_cast<::tm::EvidenceType>(val));
         } else goto handle_unusual;
         continue;
-      // .vega.Validator validator = 2 [json_name = "validator"];
+      // .tm.Validator validator = 2 [json_name = "validator"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_validator(), ptr);
@@ -4531,10 +4531,10 @@ const char* Evidence::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 totalVotingPower = 5 [json_name = "totalVotingPower"];
+      // int64 total_voting_power = 5 [json_name = "totalVotingPower"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          totalvotingpower_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          total_voting_power_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4562,18 +4562,18 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Evidence::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.Evidence)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.Evidence)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.EvidenceType type = 1 [json_name = "type"];
+  // .tm.EvidenceType type = 1 [json_name = "type"];
   if (this->type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_type(), target);
   }
 
-  // .vega.Validator validator = 2 [json_name = "validator"];
+  // .tm.Validator validator = 2 [json_name = "validator"];
   if (this->has_validator()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4593,29 +4593,29 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_time(), target);
   }
 
-  // int64 totalVotingPower = 5 [json_name = "totalVotingPower"];
-  if (this->totalvotingpower() != 0) {
+  // int64 total_voting_power = 5 [json_name = "totalVotingPower"];
+  if (this->total_voting_power() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_totalvotingpower(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_total_voting_power(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.Evidence)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.Evidence)
   return target;
 }
 
 size_t Evidence::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.Evidence)
+// @@protoc_insertion_point(message_byte_size_start:tm.Evidence)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.Validator validator = 2 [json_name = "validator"];
+  // .tm.Validator validator = 2 [json_name = "validator"];
   if (this->has_validator()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4636,14 +4636,14 @@ size_t Evidence::ByteSizeLong() const {
         this->_internal_time());
   }
 
-  // int64 totalVotingPower = 5 [json_name = "totalVotingPower"];
-  if (this->totalvotingpower() != 0) {
+  // int64 total_voting_power = 5 [json_name = "totalVotingPower"];
+  if (this->total_voting_power() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_totalvotingpower());
+        this->_internal_total_voting_power());
   }
 
-  // .vega.EvidenceType type = 1 [json_name = "type"];
+  // .tm.EvidenceType type = 1 [json_name = "type"];
   if (this->type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -4659,29 +4659,29 @@ size_t Evidence::ByteSizeLong() const {
 }
 
 void Evidence::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.Evidence)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.Evidence)
   GOOGLE_DCHECK_NE(&from, this);
   const Evidence* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Evidence>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.Evidence)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.Evidence)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.Evidence)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.Evidence)
     MergeFrom(*source);
   }
 }
 
 void Evidence::MergeFrom(const Evidence& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.Evidence)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.Evidence)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_validator()) {
-    _internal_mutable_validator()->::vega::Validator::MergeFrom(from._internal_validator());
+    _internal_mutable_validator()->::tm::Validator::MergeFrom(from._internal_validator());
   }
   if (from.height() != 0) {
     _internal_set_height(from._internal_height());
@@ -4689,8 +4689,8 @@ void Evidence::MergeFrom(const Evidence& from) {
   if (from.time() != 0) {
     _internal_set_time(from._internal_time());
   }
-  if (from.totalvotingpower() != 0) {
-    _internal_set_totalvotingpower(from._internal_totalvotingpower());
+  if (from.total_voting_power() != 0) {
+    _internal_set_total_voting_power(from._internal_total_voting_power());
   }
   if (from.type() != 0) {
     _internal_set_type(from._internal_type());
@@ -4698,14 +4698,14 @@ void Evidence::MergeFrom(const Evidence& from) {
 }
 
 void Evidence::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.Evidence)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.Evidence)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Evidence::CopyFrom(const Evidence& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.Evidence)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.Evidence)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4741,7 +4741,7 @@ Validator::Validator(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.Validator)
+  // @@protoc_insertion_point(arena_constructor:tm.Validator)
 }
 Validator::Validator(const Validator& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -4752,7 +4752,7 @@ Validator::Validator(const Validator& from)
       GetArena());
   }
   power_ = from.power_;
-  // @@protoc_insertion_point(copy_constructor:vega.Validator)
+  // @@protoc_insertion_point(copy_constructor:tm.Validator)
 }
 
 void Validator::SharedCtor() {
@@ -4762,7 +4762,7 @@ void Validator::SharedCtor() {
 }
 
 Validator::~Validator() {
-  // @@protoc_insertion_point(destructor:vega.Validator)
+  // @@protoc_insertion_point(destructor:tm.Validator)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4788,7 +4788,7 @@ const Validator& Validator::default_instance() {
 
 
 void Validator::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.Validator)
+// @@protoc_insertion_point(message_clear_start:tm.Validator)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4844,7 +4844,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Validator::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.Validator)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.Validator)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4864,12 +4864,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.Validator)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.Validator)
   return target;
 }
 
 size_t Validator::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.Validator)
+// @@protoc_insertion_point(message_byte_size_start:tm.Validator)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4900,22 +4900,22 @@ size_t Validator::ByteSizeLong() const {
 }
 
 void Validator::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.Validator)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.Validator)
   GOOGLE_DCHECK_NE(&from, this);
   const Validator* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Validator>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.Validator)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.Validator)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.Validator)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.Validator)
     MergeFrom(*source);
   }
 }
 
 void Validator::MergeFrom(const Validator& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.Validator)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.Validator)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4930,14 +4930,14 @@ void Validator::MergeFrom(const Validator& from) {
 }
 
 void Validator::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.Validator)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.Validator)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Validator::CopyFrom(const Validator& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.Validator)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.Validator)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4970,14 +4970,14 @@ LastCommitInfo::LastCommitInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   votes_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.LastCommitInfo)
+  // @@protoc_insertion_point(arena_constructor:tm.LastCommitInfo)
 }
 LastCommitInfo::LastCommitInfo(const LastCommitInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       votes_(from.votes_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   round_ = from.round_;
-  // @@protoc_insertion_point(copy_constructor:vega.LastCommitInfo)
+  // @@protoc_insertion_point(copy_constructor:tm.LastCommitInfo)
 }
 
 void LastCommitInfo::SharedCtor() {
@@ -4986,7 +4986,7 @@ void LastCommitInfo::SharedCtor() {
 }
 
 LastCommitInfo::~LastCommitInfo() {
-  // @@protoc_insertion_point(destructor:vega.LastCommitInfo)
+  // @@protoc_insertion_point(destructor:tm.LastCommitInfo)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5011,7 +5011,7 @@ const LastCommitInfo& LastCommitInfo::default_instance() {
 
 
 void LastCommitInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.LastCommitInfo)
+// @@protoc_insertion_point(message_clear_start:tm.LastCommitInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5035,7 +5035,7 @@ const char* LastCommitInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.VoteInfo votes = 2 [json_name = "votes"];
+      // repeated .tm.VoteInfo votes = 2 [json_name = "votes"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -5071,7 +5071,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* LastCommitInfo::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.LastCommitInfo)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.LastCommitInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5081,7 +5081,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_round(), target);
   }
 
-  // repeated .vega.VoteInfo votes = 2 [json_name = "votes"];
+  // repeated .tm.VoteInfo votes = 2 [json_name = "votes"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_votes_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -5093,19 +5093,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.LastCommitInfo)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.LastCommitInfo)
   return target;
 }
 
 size_t LastCommitInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.LastCommitInfo)
+// @@protoc_insertion_point(message_byte_size_start:tm.LastCommitInfo)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.VoteInfo votes = 2 [json_name = "votes"];
+  // repeated .tm.VoteInfo votes = 2 [json_name = "votes"];
   total_size += 1UL * this->_internal_votes_size();
   for (const auto& msg : this->votes_) {
     total_size +=
@@ -5129,22 +5129,22 @@ size_t LastCommitInfo::ByteSizeLong() const {
 }
 
 void LastCommitInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.LastCommitInfo)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.LastCommitInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const LastCommitInfo* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<LastCommitInfo>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.LastCommitInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.LastCommitInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.LastCommitInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.LastCommitInfo)
     MergeFrom(*source);
   }
 }
 
 void LastCommitInfo::MergeFrom(const LastCommitInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.LastCommitInfo)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.LastCommitInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5157,14 +5157,14 @@ void LastCommitInfo::MergeFrom(const LastCommitInfo& from) {
 }
 
 void LastCommitInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.LastCommitInfo)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.LastCommitInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void LastCommitInfo::CopyFrom(const LastCommitInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.LastCommitInfo)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.LastCommitInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5190,10 +5190,10 @@ void LastCommitInfo::InternalSwap(LastCommitInfo* other) {
 
 class VoteInfo::_Internal {
  public:
-  static const ::vega::Validator& validator(const VoteInfo* msg);
+  static const ::tm::Validator& validator(const VoteInfo* msg);
 };
 
-const ::vega::Validator&
+const ::tm::Validator&
 VoteInfo::_Internal::validator(const VoteInfo* msg) {
   return *msg->validator_;
 }
@@ -5201,30 +5201,30 @@ VoteInfo::VoteInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.VoteInfo)
+  // @@protoc_insertion_point(arena_constructor:tm.VoteInfo)
 }
 VoteInfo::VoteInfo(const VoteInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_validator()) {
-    validator_ = new ::vega::Validator(*from.validator_);
+    validator_ = new ::tm::Validator(*from.validator_);
   } else {
     validator_ = nullptr;
   }
-  signedlastblock_ = from.signedlastblock_;
-  // @@protoc_insertion_point(copy_constructor:vega.VoteInfo)
+  signed_last_block_ = from.signed_last_block_;
+  // @@protoc_insertion_point(copy_constructor:tm.VoteInfo)
 }
 
 void VoteInfo::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VoteInfo_tm_2freplay_2eproto.base);
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&validator_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&signedlastblock_) -
-      reinterpret_cast<char*>(&validator_)) + sizeof(signedlastblock_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&signed_last_block_) -
+      reinterpret_cast<char*>(&validator_)) + sizeof(signed_last_block_));
 }
 
 VoteInfo::~VoteInfo() {
-  // @@protoc_insertion_point(destructor:vega.VoteInfo)
+  // @@protoc_insertion_point(destructor:tm.VoteInfo)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5250,7 +5250,7 @@ const VoteInfo& VoteInfo::default_instance() {
 
 
 void VoteInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.VoteInfo)
+// @@protoc_insertion_point(message_clear_start:tm.VoteInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5259,7 +5259,7 @@ void VoteInfo::Clear() {
     delete validator_;
   }
   validator_ = nullptr;
-  signedlastblock_ = false;
+  signed_last_block_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5270,17 +5270,17 @@ const char* VoteInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.Validator validator = 1 [json_name = "validator"];
+      // .tm.Validator validator = 1 [json_name = "validator"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_validator(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool signedLastBlock = 2 [json_name = "signedLastBlock"];
+      // bool signed_last_block = 2 [json_name = "signedLastBlock"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          signedlastblock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          signed_last_block_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5308,11 +5308,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* VoteInfo::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.VoteInfo)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.VoteInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.Validator validator = 1 [json_name = "validator"];
+  // .tm.Validator validator = 1 [json_name = "validator"];
   if (this->has_validator()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -5320,37 +5320,37 @@ failure:
         1, _Internal::validator(this), target, stream);
   }
 
-  // bool signedLastBlock = 2 [json_name = "signedLastBlock"];
-  if (this->signedlastblock() != 0) {
+  // bool signed_last_block = 2 [json_name = "signedLastBlock"];
+  if (this->signed_last_block() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_signedlastblock(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_signed_last_block(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.VoteInfo)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.VoteInfo)
   return target;
 }
 
 size_t VoteInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.VoteInfo)
+// @@protoc_insertion_point(message_byte_size_start:tm.VoteInfo)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.Validator validator = 1 [json_name = "validator"];
+  // .tm.Validator validator = 1 [json_name = "validator"];
   if (this->has_validator()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *validator_);
   }
 
-  // bool signedLastBlock = 2 [json_name = "signedLastBlock"];
-  if (this->signedlastblock() != 0) {
+  // bool signed_last_block = 2 [json_name = "signedLastBlock"];
+  if (this->signed_last_block() != 0) {
     total_size += 1 + 1;
   }
 
@@ -5364,44 +5364,44 @@ size_t VoteInfo::ByteSizeLong() const {
 }
 
 void VoteInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.VoteInfo)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.VoteInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const VoteInfo* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VoteInfo>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.VoteInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.VoteInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.VoteInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.VoteInfo)
     MergeFrom(*source);
   }
 }
 
 void VoteInfo::MergeFrom(const VoteInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.VoteInfo)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.VoteInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_validator()) {
-    _internal_mutable_validator()->::vega::Validator::MergeFrom(from._internal_validator());
+    _internal_mutable_validator()->::tm::Validator::MergeFrom(from._internal_validator());
   }
-  if (from.signedlastblock() != 0) {
-    _internal_set_signedlastblock(from._internal_signedlastblock());
+  if (from.signed_last_block() != 0) {
+    _internal_set_signed_last_block(from._internal_signed_last_block());
   }
 }
 
 void VoteInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.VoteInfo)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.VoteInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void VoteInfo::CopyFrom(const VoteInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.VoteInfo)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.VoteInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5415,8 +5415,8 @@ void VoteInfo::InternalSwap(VoteInfo* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VoteInfo, signedlastblock_)
-      + sizeof(VoteInfo::signedlastblock_)
+      PROTOBUF_FIELD_OFFSET(VoteInfo, signed_last_block_)
+      + sizeof(VoteInfo::signed_last_block_)
       - PROTOBUF_FIELD_OFFSET(VoteInfo, validator_)>(
           reinterpret_cast<char*>(&validator_),
           reinterpret_cast<char*>(&other->validator_));
@@ -5437,26 +5437,26 @@ EvidenceParams::EvidenceParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.EvidenceParams)
+  // @@protoc_insertion_point(arena_constructor:tm.EvidenceParams)
 }
 EvidenceParams::EvidenceParams(const EvidenceParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&maxagenumblocks_, &from.maxagenumblocks_,
+  ::memcpy(&max_age_num_blocks_, &from.max_age_num_blocks_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_num_) -
-    reinterpret_cast<char*>(&maxagenumblocks_)) + sizeof(max_num_));
-  // @@protoc_insertion_point(copy_constructor:vega.EvidenceParams)
+    reinterpret_cast<char*>(&max_age_num_blocks_)) + sizeof(max_num_));
+  // @@protoc_insertion_point(copy_constructor:tm.EvidenceParams)
 }
 
 void EvidenceParams::SharedCtor() {
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&maxagenumblocks_) - reinterpret_cast<char*>(this)),
+      reinterpret_cast<char*>(&max_age_num_blocks_) - reinterpret_cast<char*>(this)),
       0, static_cast<size_t>(reinterpret_cast<char*>(&max_num_) -
-      reinterpret_cast<char*>(&maxagenumblocks_)) + sizeof(max_num_));
+      reinterpret_cast<char*>(&max_age_num_blocks_)) + sizeof(max_num_));
 }
 
 EvidenceParams::~EvidenceParams() {
-  // @@protoc_insertion_point(destructor:vega.EvidenceParams)
+  // @@protoc_insertion_point(destructor:tm.EvidenceParams)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5481,14 +5481,14 @@ const EvidenceParams& EvidenceParams::default_instance() {
 
 
 void EvidenceParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.EvidenceParams)
+// @@protoc_insertion_point(message_clear_start:tm.EvidenceParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&maxagenumblocks_, 0, static_cast<size_t>(
+  ::memset(&max_age_num_blocks_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_num_) -
-      reinterpret_cast<char*>(&maxagenumblocks_)) + sizeof(max_num_));
+      reinterpret_cast<char*>(&max_age_num_blocks_)) + sizeof(max_num_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5499,17 +5499,17 @@ const char* EvidenceParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 maxAgeNumBlocks = 1 [json_name = "maxAgeNumBlocks"];
+      // int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          maxagenumblocks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_age_num_blocks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 maxAgeDuration = 2 [json_name = "maxAgeDuration"];
+      // int64 max_age_duration = 2 [json_name = "maxAgeDuration"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          maxageduration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_age_duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5544,20 +5544,20 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* EvidenceParams::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.EvidenceParams)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.EvidenceParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 maxAgeNumBlocks = 1 [json_name = "maxAgeNumBlocks"];
-  if (this->maxagenumblocks() != 0) {
+  // int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];
+  if (this->max_age_num_blocks() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_maxagenumblocks(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_max_age_num_blocks(), target);
   }
 
-  // int64 maxAgeDuration = 2 [json_name = "maxAgeDuration"];
-  if (this->maxageduration() != 0) {
+  // int64 max_age_duration = 2 [json_name = "maxAgeDuration"];
+  if (this->max_age_duration() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_maxageduration(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_max_age_duration(), target);
   }
 
   // uint32 max_num = 3 [json_name = "maxNum"];
@@ -5570,30 +5570,30 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.EvidenceParams)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.EvidenceParams)
   return target;
 }
 
 size_t EvidenceParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.EvidenceParams)
+// @@protoc_insertion_point(message_byte_size_start:tm.EvidenceParams)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 maxAgeNumBlocks = 1 [json_name = "maxAgeNumBlocks"];
-  if (this->maxagenumblocks() != 0) {
+  // int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];
+  if (this->max_age_num_blocks() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_maxagenumblocks());
+        this->_internal_max_age_num_blocks());
   }
 
-  // int64 maxAgeDuration = 2 [json_name = "maxAgeDuration"];
-  if (this->maxageduration() != 0) {
+  // int64 max_age_duration = 2 [json_name = "maxAgeDuration"];
+  if (this->max_age_duration() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_maxageduration());
+        this->_internal_max_age_duration());
   }
 
   // uint32 max_num = 3 [json_name = "maxNum"];
@@ -5613,32 +5613,32 @@ size_t EvidenceParams::ByteSizeLong() const {
 }
 
 void EvidenceParams::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.EvidenceParams)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.EvidenceParams)
   GOOGLE_DCHECK_NE(&from, this);
   const EvidenceParams* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<EvidenceParams>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.EvidenceParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.EvidenceParams)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.EvidenceParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.EvidenceParams)
     MergeFrom(*source);
   }
 }
 
 void EvidenceParams::MergeFrom(const EvidenceParams& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.EvidenceParams)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.EvidenceParams)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.maxagenumblocks() != 0) {
-    _internal_set_maxagenumblocks(from._internal_maxagenumblocks());
+  if (from.max_age_num_blocks() != 0) {
+    _internal_set_max_age_num_blocks(from._internal_max_age_num_blocks());
   }
-  if (from.maxageduration() != 0) {
-    _internal_set_maxageduration(from._internal_maxageduration());
+  if (from.max_age_duration() != 0) {
+    _internal_set_max_age_duration(from._internal_max_age_duration());
   }
   if (from.max_num() != 0) {
     _internal_set_max_num(from._internal_max_num());
@@ -5646,14 +5646,14 @@ void EvidenceParams::MergeFrom(const EvidenceParams& from) {
 }
 
 void EvidenceParams::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.EvidenceParams)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.EvidenceParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void EvidenceParams::CopyFrom(const EvidenceParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.EvidenceParams)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.EvidenceParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5669,9 +5669,9 @@ void EvidenceParams::InternalSwap(EvidenceParams* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(EvidenceParams, max_num_)
       + sizeof(EvidenceParams::max_num_)
-      - PROTOBUF_FIELD_OFFSET(EvidenceParams, maxagenumblocks_)>(
-          reinterpret_cast<char*>(&maxagenumblocks_),
-          reinterpret_cast<char*>(&other->maxagenumblocks_));
+      - PROTOBUF_FIELD_OFFSET(EvidenceParams, max_age_num_blocks_)>(
+          reinterpret_cast<char*>(&max_age_num_blocks_),
+          reinterpret_cast<char*>(&other->max_age_num_blocks_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EvidenceParams::GetMetadata() const {
@@ -5687,16 +5687,16 @@ class ValidatorParams::_Internal {
 
 ValidatorParams::ValidatorParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  pubkeytypes_(arena) {
+  pub_key_types_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ValidatorParams)
+  // @@protoc_insertion_point(arena_constructor:tm.ValidatorParams)
 }
 ValidatorParams::ValidatorParams(const ValidatorParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      pubkeytypes_(from.pubkeytypes_) {
+      pub_key_types_(from.pub_key_types_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:vega.ValidatorParams)
+  // @@protoc_insertion_point(copy_constructor:tm.ValidatorParams)
 }
 
 void ValidatorParams::SharedCtor() {
@@ -5704,7 +5704,7 @@ void ValidatorParams::SharedCtor() {
 }
 
 ValidatorParams::~ValidatorParams() {
-  // @@protoc_insertion_point(destructor:vega.ValidatorParams)
+  // @@protoc_insertion_point(destructor:tm.ValidatorParams)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5729,12 +5729,12 @@ const ValidatorParams& ValidatorParams::default_instance() {
 
 
 void ValidatorParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ValidatorParams)
+// @@protoc_insertion_point(message_clear_start:tm.ValidatorParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pubkeytypes_.Clear();
+  pub_key_types_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5745,15 +5745,15 @@ const char* ValidatorParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated string pubKeyTypes = 1 [json_name = "pubKeyTypes"];
+      // repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            auto str = _internal_add_pubkeytypes();
+            auto str = _internal_add_pub_key_types();
             ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ValidatorParams.pubKeyTypes"));
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.ValidatorParams.pub_key_types"));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -5783,17 +5783,17 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ValidatorParams::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ValidatorParams)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.ValidatorParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated string pubKeyTypes = 1 [json_name = "pubKeyTypes"];
-  for (int i = 0, n = this->_internal_pubkeytypes_size(); i < n; i++) {
-    const auto& s = this->_internal_pubkeytypes(i);
+  // repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];
+  for (int i = 0, n = this->_internal_pub_key_types_size(); i < n; i++) {
+    const auto& s = this->_internal_pub_key_types(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ValidatorParams.pubKeyTypes");
+      "tm.ValidatorParams.pub_key_types");
     target = stream->WriteString(1, s, target);
   }
 
@@ -5801,24 +5801,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ValidatorParams)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.ValidatorParams)
   return target;
 }
 
 size_t ValidatorParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ValidatorParams)
+// @@protoc_insertion_point(message_byte_size_start:tm.ValidatorParams)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated string pubKeyTypes = 1 [json_name = "pubKeyTypes"];
+  // repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(pubkeytypes_.size());
-  for (int i = 0, n = pubkeytypes_.size(); i < n; i++) {
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(pub_key_types_.size());
+  for (int i = 0, n = pub_key_types_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      pubkeytypes_.Get(i));
+      pub_key_types_.Get(i));
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5831,39 +5831,39 @@ size_t ValidatorParams::ByteSizeLong() const {
 }
 
 void ValidatorParams::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ValidatorParams)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.ValidatorParams)
   GOOGLE_DCHECK_NE(&from, this);
   const ValidatorParams* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ValidatorParams>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ValidatorParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.ValidatorParams)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ValidatorParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.ValidatorParams)
     MergeFrom(*source);
   }
 }
 
 void ValidatorParams::MergeFrom(const ValidatorParams& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ValidatorParams)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.ValidatorParams)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  pubkeytypes_.MergeFrom(from.pubkeytypes_);
+  pub_key_types_.MergeFrom(from.pub_key_types_);
 }
 
 void ValidatorParams::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ValidatorParams)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.ValidatorParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ValidatorParams::CopyFrom(const ValidatorParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ValidatorParams)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.ValidatorParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5876,7 +5876,7 @@ bool ValidatorParams::IsInitialized() const {
 void ValidatorParams::InternalSwap(ValidatorParams* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  pubkeytypes_.InternalSwap(&other->pubkeytypes_);
+  pub_key_types_.InternalSwap(&other->pub_key_types_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ValidatorParams::GetMetadata() const {
@@ -5894,21 +5894,21 @@ VersionParams::VersionParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.VersionParams)
+  // @@protoc_insertion_point(arena_constructor:tm.VersionParams)
 }
 VersionParams::VersionParams(const VersionParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  appversion_ = from.appversion_;
-  // @@protoc_insertion_point(copy_constructor:vega.VersionParams)
+  app_version_ = from.app_version_;
+  // @@protoc_insertion_point(copy_constructor:tm.VersionParams)
 }
 
 void VersionParams::SharedCtor() {
-  appversion_ = PROTOBUF_ULONGLONG(0);
+  app_version_ = PROTOBUF_ULONGLONG(0);
 }
 
 VersionParams::~VersionParams() {
-  // @@protoc_insertion_point(destructor:vega.VersionParams)
+  // @@protoc_insertion_point(destructor:tm.VersionParams)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5933,12 +5933,12 @@ const VersionParams& VersionParams::default_instance() {
 
 
 void VersionParams::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.VersionParams)
+// @@protoc_insertion_point(message_clear_start:tm.VersionParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  appversion_ = PROTOBUF_ULONGLONG(0);
+  app_version_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5949,10 +5949,10 @@ const char* VersionParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 appVersion = 1 [json_name = "appVersion"];
+      // uint64 app_version = 1 [json_name = "appVersion"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          appversion_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          app_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5980,37 +5980,37 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* VersionParams::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.VersionParams)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.VersionParams)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 appVersion = 1 [json_name = "appVersion"];
-  if (this->appversion() != 0) {
+  // uint64 app_version = 1 [json_name = "appVersion"];
+  if (this->app_version() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_appversion(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_app_version(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.VersionParams)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.VersionParams)
   return target;
 }
 
 size_t VersionParams::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.VersionParams)
+// @@protoc_insertion_point(message_byte_size_start:tm.VersionParams)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 appVersion = 1 [json_name = "appVersion"];
-  if (this->appversion() != 0) {
+  // uint64 app_version = 1 [json_name = "appVersion"];
+  if (this->app_version() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_appversion());
+        this->_internal_app_version());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6023,41 +6023,41 @@ size_t VersionParams::ByteSizeLong() const {
 }
 
 void VersionParams::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.VersionParams)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.VersionParams)
   GOOGLE_DCHECK_NE(&from, this);
   const VersionParams* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VersionParams>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.VersionParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.VersionParams)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.VersionParams)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.VersionParams)
     MergeFrom(*source);
   }
 }
 
 void VersionParams::MergeFrom(const VersionParams& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.VersionParams)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.VersionParams)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.appversion() != 0) {
-    _internal_set_appversion(from._internal_appversion());
+  if (from.app_version() != 0) {
+    _internal_set_app_version(from._internal_app_version());
   }
 }
 
 void VersionParams::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.VersionParams)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.VersionParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void VersionParams::CopyFrom(const VersionParams& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.VersionParams)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.VersionParams)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6070,7 +6070,7 @@ bool VersionParams::IsInitialized() const {
 void VersionParams::InternalSwap(VersionParams* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(appversion_, other->appversion_);
+  swap(app_version_, other->app_version_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VersionParams::GetMetadata() const {
@@ -6088,25 +6088,25 @@ Header::Header(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.Header)
+  // @@protoc_insertion_point(arena_constructor:tm.Header)
 }
 Header::Header(const Header& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  chainid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_chainid().empty()) {
-    chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chainid(),
+  chain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_chain_id().empty()) {
+    chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chain_id(),
       GetArena());
   }
   ::memcpy(&height_, &from.height_,
     static_cast<size_t>(reinterpret_cast<char*>(&time_) -
     reinterpret_cast<char*>(&height_)) + sizeof(time_));
-  // @@protoc_insertion_point(copy_constructor:vega.Header)
+  // @@protoc_insertion_point(copy_constructor:tm.Header)
 }
 
 void Header::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Header_tm_2freplay_2eproto.base);
-  chainid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  chain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&height_) - reinterpret_cast<char*>(this)),
       0, static_cast<size_t>(reinterpret_cast<char*>(&time_) -
@@ -6114,14 +6114,14 @@ void Header::SharedCtor() {
 }
 
 Header::~Header() {
-  // @@protoc_insertion_point(destructor:vega.Header)
+  // @@protoc_insertion_point(destructor:tm.Header)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Header::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  chainid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  chain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Header::ArenaDtor(void* object) {
@@ -6140,12 +6140,12 @@ const Header& Header::default_instance() {
 
 
 void Header::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.Header)
+// @@protoc_insertion_point(message_clear_start:tm.Header)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  chainid_.ClearToEmpty();
+  chain_id_.ClearToEmpty();
   ::memset(&height_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&time_) -
       reinterpret_cast<char*>(&height_)) + sizeof(time_));
@@ -6159,12 +6159,12 @@ const char* Header::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string chainId = 1 [json_name = "chainId"];
+      // string chain_id = 1 [json_name = "chainId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_chainid();
+          auto str = _internal_mutable_chain_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Header.chainId"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "tm.Header.chain_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6206,18 +6206,18 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Header::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.Header)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.Header)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string chainId = 1 [json_name = "chainId"];
-  if (this->chainid().size() > 0) {
+  // string chain_id = 1 [json_name = "chainId"];
+  if (this->chain_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_chainid().data(), static_cast<int>(this->_internal_chainid().length()),
+      this->_internal_chain_id().data(), static_cast<int>(this->_internal_chain_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.Header.chainId");
+      "tm.Header.chain_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_chainid(), target);
+        1, this->_internal_chain_id(), target);
   }
 
   // int64 height = 2 [json_name = "height"];
@@ -6236,23 +6236,23 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.Header)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.Header)
   return target;
 }
 
 size_t Header::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.Header)
+// @@protoc_insertion_point(message_byte_size_start:tm.Header)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string chainId = 1 [json_name = "chainId"];
-  if (this->chainid().size() > 0) {
+  // string chain_id = 1 [json_name = "chainId"];
+  if (this->chain_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_chainid());
+        this->_internal_chain_id());
   }
 
   // int64 height = 2 [json_name = "height"];
@@ -6279,29 +6279,29 @@ size_t Header::ByteSizeLong() const {
 }
 
 void Header::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.Header)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.Header)
   GOOGLE_DCHECK_NE(&from, this);
   const Header* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Header>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.Header)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.Header)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.Header)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.Header)
     MergeFrom(*source);
   }
 }
 
 void Header::MergeFrom(const Header& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.Header)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.Header)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.chainid().size() > 0) {
-    _internal_set_chainid(from._internal_chainid());
+  if (from.chain_id().size() > 0) {
+    _internal_set_chain_id(from._internal_chain_id());
   }
   if (from.height() != 0) {
     _internal_set_height(from._internal_height());
@@ -6312,14 +6312,14 @@ void Header::MergeFrom(const Header& from) {
 }
 
 void Header::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.Header)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.Header)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Header::CopyFrom(const Header& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.Header)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.Header)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6332,7 +6332,7 @@ bool Header::IsInitialized() const {
 void Header::InternalSwap(Header* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  chainid_.Swap(&other->chainid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  chain_id_.Swap(&other->chain_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Header, time_)
       + sizeof(Header::time_)
@@ -6356,7 +6356,7 @@ PublicKey::PublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.PublicKey)
+  // @@protoc_insertion_point(arena_constructor:tm.PublicKey)
 }
 PublicKey::PublicKey(const PublicKey& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -6371,7 +6371,7 @@ PublicKey::PublicKey(const PublicKey& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:vega.PublicKey)
+  // @@protoc_insertion_point(copy_constructor:tm.PublicKey)
 }
 
 void PublicKey::SharedCtor() {
@@ -6380,7 +6380,7 @@ void PublicKey::SharedCtor() {
 }
 
 PublicKey::~PublicKey() {
-  // @@protoc_insertion_point(destructor:vega.PublicKey)
+  // @@protoc_insertion_point(destructor:tm.PublicKey)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -6408,7 +6408,7 @@ const PublicKey& PublicKey::default_instance() {
 
 
 void PublicKey::clear_sum() {
-// @@protoc_insertion_point(one_of_clear_start:vega.PublicKey)
+// @@protoc_insertion_point(one_of_clear_start:tm.PublicKey)
   switch (sum_case()) {
     case kEd25519: {
       sum_.ed25519_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
@@ -6423,7 +6423,7 @@ void PublicKey::clear_sum() {
 
 
 void PublicKey::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.PublicKey)
+// @@protoc_insertion_point(message_clear_start:tm.PublicKey)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6471,7 +6471,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PublicKey::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.PublicKey)
+  // @@protoc_insertion_point(serialize_to_array_start:tm.PublicKey)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6485,12 +6485,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.PublicKey)
+  // @@protoc_insertion_point(serialize_to_array_end:tm.PublicKey)
   return target;
 }
 
 size_t PublicKey::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.PublicKey)
+// @@protoc_insertion_point(message_byte_size_start:tm.PublicKey)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6519,22 +6519,22 @@ size_t PublicKey::ByteSizeLong() const {
 }
 
 void PublicKey::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.PublicKey)
+// @@protoc_insertion_point(generalized_merge_from_start:tm.PublicKey)
   GOOGLE_DCHECK_NE(&from, this);
   const PublicKey* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PublicKey>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.PublicKey)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:tm.PublicKey)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.PublicKey)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:tm.PublicKey)
     MergeFrom(*source);
   }
 }
 
 void PublicKey::MergeFrom(const PublicKey& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.PublicKey)
+// @@protoc_insertion_point(class_specific_merge_from_start:tm.PublicKey)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6552,14 +6552,14 @@ void PublicKey::MergeFrom(const PublicKey& from) {
 }
 
 void PublicKey::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.PublicKey)
+// @@protoc_insertion_point(generalized_copy_from_start:tm.PublicKey)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PublicKey::CopyFrom(const PublicKey& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.PublicKey)
+// @@protoc_insertion_point(class_specific_copy_from_start:tm.PublicKey)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6582,70 +6582,70 @@ void PublicKey::InternalSwap(PublicKey* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace vega
+}  // namespace tm
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::vega::TmEvent* Arena::CreateMaybeMessage< ::vega::TmEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::TmEvent >(arena);
+template<> PROTOBUF_NOINLINE ::tm::TmEvent* Arena::CreateMaybeMessage< ::tm::TmEvent >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::TmEvent >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::RequestInitChain* Arena::CreateMaybeMessage< ::vega::RequestInitChain >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::RequestInitChain >(arena);
+template<> PROTOBUF_NOINLINE ::tm::RequestInitChain* Arena::CreateMaybeMessage< ::tm::RequestInitChain >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::RequestInitChain >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::RequestBeginBlock* Arena::CreateMaybeMessage< ::vega::RequestBeginBlock >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::RequestBeginBlock >(arena);
+template<> PROTOBUF_NOINLINE ::tm::RequestBeginBlock* Arena::CreateMaybeMessage< ::tm::RequestBeginBlock >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::RequestBeginBlock >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::RequestDeliverTx* Arena::CreateMaybeMessage< ::vega::RequestDeliverTx >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::RequestDeliverTx >(arena);
+template<> PROTOBUF_NOINLINE ::tm::RequestDeliverTx* Arena::CreateMaybeMessage< ::tm::RequestDeliverTx >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::RequestDeliverTx >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::ResponseInitChain* Arena::CreateMaybeMessage< ::vega::ResponseInitChain >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ResponseInitChain >(arena);
+template<> PROTOBUF_NOINLINE ::tm::ResponseInitChain* Arena::CreateMaybeMessage< ::tm::ResponseInitChain >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::ResponseInitChain >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::ResponseBeginBlock* Arena::CreateMaybeMessage< ::vega::ResponseBeginBlock >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ResponseBeginBlock >(arena);
+template<> PROTOBUF_NOINLINE ::tm::ResponseBeginBlock* Arena::CreateMaybeMessage< ::tm::ResponseBeginBlock >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::ResponseBeginBlock >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::ResponseDeliverTx* Arena::CreateMaybeMessage< ::vega::ResponseDeliverTx >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ResponseDeliverTx >(arena);
+template<> PROTOBUF_NOINLINE ::tm::ResponseDeliverTx* Arena::CreateMaybeMessage< ::tm::ResponseDeliverTx >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::ResponseDeliverTx >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::Event* Arena::CreateMaybeMessage< ::vega::Event >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::Event >(arena);
+template<> PROTOBUF_NOINLINE ::tm::Event* Arena::CreateMaybeMessage< ::tm::Event >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::Event >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::EventAttribute* Arena::CreateMaybeMessage< ::vega::EventAttribute >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::EventAttribute >(arena);
+template<> PROTOBUF_NOINLINE ::tm::EventAttribute* Arena::CreateMaybeMessage< ::tm::EventAttribute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::EventAttribute >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::ValidatorUpdate* Arena::CreateMaybeMessage< ::vega::ValidatorUpdate >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ValidatorUpdate >(arena);
+template<> PROTOBUF_NOINLINE ::tm::ValidatorUpdate* Arena::CreateMaybeMessage< ::tm::ValidatorUpdate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::ValidatorUpdate >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::ConsensusParams* Arena::CreateMaybeMessage< ::vega::ConsensusParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ConsensusParams >(arena);
+template<> PROTOBUF_NOINLINE ::tm::ConsensusParams* Arena::CreateMaybeMessage< ::tm::ConsensusParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::ConsensusParams >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::BlockParams* Arena::CreateMaybeMessage< ::vega::BlockParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::BlockParams >(arena);
+template<> PROTOBUF_NOINLINE ::tm::BlockParams* Arena::CreateMaybeMessage< ::tm::BlockParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::BlockParams >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::Evidence* Arena::CreateMaybeMessage< ::vega::Evidence >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::Evidence >(arena);
+template<> PROTOBUF_NOINLINE ::tm::Evidence* Arena::CreateMaybeMessage< ::tm::Evidence >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::Evidence >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::Validator* Arena::CreateMaybeMessage< ::vega::Validator >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::Validator >(arena);
+template<> PROTOBUF_NOINLINE ::tm::Validator* Arena::CreateMaybeMessage< ::tm::Validator >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::Validator >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::LastCommitInfo* Arena::CreateMaybeMessage< ::vega::LastCommitInfo >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::LastCommitInfo >(arena);
+template<> PROTOBUF_NOINLINE ::tm::LastCommitInfo* Arena::CreateMaybeMessage< ::tm::LastCommitInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::LastCommitInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::VoteInfo* Arena::CreateMaybeMessage< ::vega::VoteInfo >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::VoteInfo >(arena);
+template<> PROTOBUF_NOINLINE ::tm::VoteInfo* Arena::CreateMaybeMessage< ::tm::VoteInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::VoteInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::EvidenceParams* Arena::CreateMaybeMessage< ::vega::EvidenceParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::EvidenceParams >(arena);
+template<> PROTOBUF_NOINLINE ::tm::EvidenceParams* Arena::CreateMaybeMessage< ::tm::EvidenceParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::EvidenceParams >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::ValidatorParams* Arena::CreateMaybeMessage< ::vega::ValidatorParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ValidatorParams >(arena);
+template<> PROTOBUF_NOINLINE ::tm::ValidatorParams* Arena::CreateMaybeMessage< ::tm::ValidatorParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::ValidatorParams >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::VersionParams* Arena::CreateMaybeMessage< ::vega::VersionParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::VersionParams >(arena);
+template<> PROTOBUF_NOINLINE ::tm::VersionParams* Arena::CreateMaybeMessage< ::tm::VersionParams >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::VersionParams >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::Header* Arena::CreateMaybeMessage< ::vega::Header >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::Header >(arena);
+template<> PROTOBUF_NOINLINE ::tm::Header* Arena::CreateMaybeMessage< ::tm::Header >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::Header >(arena);
 }
-template<> PROTOBUF_NOINLINE ::vega::PublicKey* Arena::CreateMaybeMessage< ::vega::PublicKey >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::PublicKey >(arena);
+template<> PROTOBUF_NOINLINE ::tm::PublicKey* Arena::CreateMaybeMessage< ::tm::PublicKey >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::tm::PublicKey >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

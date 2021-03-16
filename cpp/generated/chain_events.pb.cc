@@ -367,16 +367,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_chain_5fevents_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetDeposit, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetDeposit, partyid_),
+  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetDeposit, vega_asset_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetDeposit, party_id_),
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetDeposit, amount_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetWithdrawal, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetWithdrawal, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetWithdrawal, partyid_),
+  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetWithdrawal, vega_asset_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetWithdrawal, party_id_),
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetWithdrawal, amount_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::BuiltinAssetEvent, _internal_metadata_),
@@ -391,30 +391,30 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_chain_5fevents_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20AssetList, vegaassetid_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20AssetList, vega_asset_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20AssetDelist, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20AssetDelist, vegaassetid_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20AssetDelist, vega_asset_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, sourceethereumaddress_),
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, targetpartyid_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, vega_asset_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, source_ethereum_address_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, target_party_id_),
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Deposit, amount_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, targetethereumaddress_),
-  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, referencenonce_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, vega_asset_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, target_ethereum_address_),
+  PROTOBUF_FIELD_OFFSET(::vega::ERC20Withdrawal, reference_nonce_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20Event, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -432,18 +432,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_chain_5fevents_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::BTCDeposit, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::BTCDeposit, sourcebtcaddress_),
-  PROTOBUF_FIELD_OFFSET(::vega::BTCDeposit, targetpartyid_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCDeposit, vega_asset_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCDeposit, source_btc_address_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCDeposit, target_party_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, vegaassetid_),
-  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, sourcepartyid_),
-  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, targetbtcaddress_),
-  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, referencenonce_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, vega_asset_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, source_party_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, target_btc_address_),
+  PROTOBUF_FIELD_OFFSET(::vega::BTCWithdrawal, reference_nonce_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::BTCEvent, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -491,7 +491,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_chain_5fevents_2eproto::offset
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::vega::ValidatorEvent, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ValidatorEvent, sourceid_),
+  PROTOBUF_FIELD_OFFSET(::vega::ValidatorEvent, source_id_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::ValidatorEvent, action_),
@@ -500,7 +500,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_chain_5fevents_2eproto::offset
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, txid_),
+  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, tx_id_),
   PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, nonce_),
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
@@ -551,59 +551,60 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_chain_5fevents_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\022chain_events.proto\022\004vega\"i\n\023BuiltinAss"
-  "etDeposit\022 \n\013vegaAssetID\030\001 \001(\tR\013vegaAsse"
-  "tID\022\030\n\007partyID\030\002 \001(\tR\007partyID\022\026\n\006amount\030"
-  "\003 \001(\004R\006amount\"l\n\026BuiltinAssetWithdrawal\022"
-  " \n\013vegaAssetID\030\001 \001(\tR\013vegaAssetID\022\030\n\007par"
-  "tyID\030\002 \001(\tR\007partyID\022\026\n\006amount\030\003 \001(\004R\006amo"
-  "unt\"\226\001\n\021BuiltinAssetEvent\0226\n\007deposit\030\351\007 "
-  "\001(\0132\031.vega.BuiltinAssetDepositH\000R\007deposi"
-  "t\022\?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.BuiltinAss"
-  "etWithdrawalH\000R\nwithdrawalB\010\n\006action\"2\n\016"
-  "ERC20AssetList\022 \n\013vegaAssetID\030\001 \001(\tR\013veg"
-  "aAssetID\"4\n\020ERC20AssetDelist\022 \n\013vegaAsse"
-  "tID\030\001 \001(\tR\013vegaAssetID\"\244\001\n\014ERC20Deposit\022"
-  " \n\013vegaAssetID\030\001 \001(\tR\013vegaAssetID\0224\n\025sou"
-  "rceEthereumAddress\030\002 \001(\tR\025sourceEthereum"
-  "Address\022$\n\rtargetPartyID\030\003 \001(\tR\rtargetPa"
-  "rtyID\022\026\n\006amount\030\004 \001(\tR\006amount\"\221\001\n\017ERC20W"
-  "ithdrawal\022 \n\013vegaAssetID\030\001 \001(\tR\013vegaAsse"
-  "tID\0224\n\025targetEthereumAddress\030\002 \001(\tR\025targ"
-  "etEthereumAddress\022&\n\016referenceNonce\030\003 \001("
-  "\tR\016referenceNonce\"\241\002\n\nERC20Event\022\024\n\005inde"
-  "x\030\001 \001(\004R\005index\022\024\n\005block\030\002 \001(\004R\005block\0225\n\t"
-  "assetList\030\351\007 \001(\0132\024.vega.ERC20AssetListH\000"
-  "R\tassetList\022;\n\013assetDelist\030\352\007 \001(\0132\026.vega"
-  ".ERC20AssetDelistH\000R\013assetDelist\022/\n\007depo"
-  "sit\030\353\007 \001(\0132\022.vega.ERC20DepositH\000R\007deposi"
-  "t\0228\n\nwithdrawal\030\354\007 \001(\0132\025.vega.ERC20Withd"
-  "rawalH\000R\nwithdrawalB\010\n\006action\"\200\001\n\nBTCDep"
-  "osit\022 \n\013vegaAssetID\030\001 \001(\tR\013vegaAssetID\022*"
-  "\n\020sourceBTCAddress\030\002 \001(\tR\020sourceBTCAddre"
-  "ss\022$\n\rtargetPartyId\030\003 \001(\tR\rtargetPartyId"
-  "\"\253\001\n\rBTCWithdrawal\022 \n\013vegaAssetID\030\001 \001(\tR"
-  "\013vegaAssetID\022$\n\rsourcePartyId\030\002 \001(\tR\rsou"
-  "rcePartyId\022*\n\020targetBTCAddress\030\003 \001(\tR\020ta"
-  "rgetBTCAddress\022&\n\016referenceNonce\030\004 \001(\tR\016"
-  "referenceNonce\"\247\001\n\010BTCEvent\022\024\n\005index\030\001 \001"
-  "(\004R\005index\022\024\n\005block\030\002 \001(\004R\005block\022-\n\007depos"
-  "it\030\351\007 \001(\0132\020.vega.BTCDepositH\000R\007deposit\0226"
-  "\n\nwithdrawal\030\352\007 \001(\0132\023.vega.BTCWithdrawal"
-  "H\000R\nwithdrawalB\010\n\006action\"+\n\017EthereumAddr"
-  "ess\022\030\n\007address\030\001 \001(\tR\007address\"*\n\016Bitcoin"
-  "Address\022\030\n\007address\030\001 \001(\tR\007address\"\235\001\n\nId"
-  "entifier\022A\n\017ethereumAddress\030\001 \001(\0132\025.vega"
-  ".EthereumAddressH\000R\017ethereumAddress\022>\n\016b"
-  "itcoinAddress\030\002 \001(\0132\024.vega.BitcoinAddres"
-  "sH\000R\016bitcoinAddressB\014\n\nidentifier\"0\n\014Add"
-  "Validator\022 \n\002id\030\001 \001(\0132\020.vega.IdentifierR"
-  "\002id\"3\n\017RemoveValidator\022 \n\002id\030\001 \001(\0132\020.veg"
-  "a.IdentifierR\002id\"\211\001\n\016ValidatorEvent\022\032\n\010s"
-  "ourceID\030\001 \001(\tR\010sourceID\022\'\n\003add\030\351\007 \001(\0132\022."
-  "vega.AddValidatorH\000R\003add\022(\n\002rm\030\352\007 \001(\0132\025."
-  "vega.RemoveValidatorH\000R\002rmB\010\n\006action\"\374\001\n"
-  "\nChainEvent\022\022\n\004txID\030\001 \001(\tR\004txID\022\024\n\005nonce"
+  "\n\022chain_events.proto\022\004vega\"l\n\023BuiltinAss"
+  "etDeposit\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAs"
+  "setId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amou"
+  "nt\030\003 \001(\004R\006amount\"o\n\026BuiltinAssetWithdraw"
+  "al\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAssetId\022\031"
+  "\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001("
+  "\004R\006amount\"\226\001\n\021BuiltinAssetEvent\0226\n\007depos"
+  "it\030\351\007 \001(\0132\031.vega.BuiltinAssetDepositH\000R\007"
+  "deposit\022\?\n\nwithdrawal\030\352\007 \001(\0132\034.vega.Buil"
+  "tinAssetWithdrawalH\000R\nwithdrawalB\010\n\006acti"
+  "on\"4\n\016ERC20AssetList\022\"\n\rvega_asset_id\030\001 "
+  "\001(\tR\013vegaAssetId\"6\n\020ERC20AssetDelist\022\"\n\r"
+  "vega_asset_id\030\001 \001(\tR\013vegaAssetId\"\252\001\n\014ERC"
+  "20Deposit\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAs"
+  "setId\0226\n\027source_ethereum_address\030\002 \001(\tR\025"
+  "sourceEthereumAddress\022&\n\017target_party_id"
+  "\030\003 \001(\tR\rtargetPartyId\022\026\n\006amount\030\004 \001(\tR\006a"
+  "mount\"\226\001\n\017ERC20Withdrawal\022\"\n\rvega_asset_"
+  "id\030\001 \001(\tR\013vegaAssetId\0226\n\027target_ethereum"
+  "_address\030\002 \001(\tR\025targetEthereumAddress\022\'\n"
+  "\017reference_nonce\030\003 \001(\tR\016referenceNonce\"\243"
+  "\002\n\nERC20Event\022\024\n\005index\030\001 \001(\004R\005index\022\024\n\005b"
+  "lock\030\002 \001(\004R\005block\0226\n\nasset_list\030\351\007 \001(\0132\024"
+  ".vega.ERC20AssetListH\000R\tassetList\022<\n\014ass"
+  "et_delist\030\352\007 \001(\0132\026.vega.ERC20AssetDelist"
+  "H\000R\013assetDelist\022/\n\007deposit\030\353\007 \001(\0132\022.vega"
+  ".ERC20DepositH\000R\007deposit\0228\n\nwithdrawal\030\354"
+  "\007 \001(\0132\025.vega.ERC20WithdrawalH\000R\nwithdraw"
+  "alB\010\n\006action\"\206\001\n\nBTCDeposit\022\"\n\rvega_asse"
+  "t_id\030\001 \001(\tR\013vegaAssetId\022,\n\022source_btc_ad"
+  "dress\030\002 \001(\tR\020sourceBtcAddress\022&\n\017target_"
+  "party_id\030\003 \001(\tR\rtargetPartyId\"\262\001\n\rBTCWit"
+  "hdrawal\022\"\n\rvega_asset_id\030\001 \001(\tR\013vegaAsse"
+  "tId\022&\n\017source_party_id\030\002 \001(\tR\rsourcePart"
+  "yId\022,\n\022target_btc_address\030\003 \001(\tR\020targetB"
+  "tcAddress\022\'\n\017reference_nonce\030\004 \001(\tR\016refe"
+  "renceNonce\"\247\001\n\010BTCEvent\022\024\n\005index\030\001 \001(\004R\005"
+  "index\022\024\n\005block\030\002 \001(\004R\005block\022-\n\007deposit\030\351"
+  "\007 \001(\0132\020.vega.BTCDepositH\000R\007deposit\0226\n\nwi"
+  "thdrawal\030\352\007 \001(\0132\023.vega.BTCWithdrawalH\000R\n"
+  "withdrawalB\010\n\006action\"+\n\017EthereumAddress\022"
+  "\030\n\007address\030\001 \001(\tR\007address\"*\n\016BitcoinAddr"
+  "ess\022\030\n\007address\030\001 \001(\tR\007address\"\237\001\n\nIdenti"
+  "fier\022B\n\020ethereum_address\030\001 \001(\0132\025.vega.Et"
+  "hereumAddressH\000R\017ethereumAddress\022\?\n\017bitc"
+  "oin_address\030\002 \001(\0132\024.vega.BitcoinAddressH"
+  "\000R\016bitcoinAddressB\014\n\nidentifier\"0\n\014AddVa"
+  "lidator\022 \n\002id\030\001 \001(\0132\020.vega.IdentifierR\002i"
+  "d\"3\n\017RemoveValidator\022 \n\002id\030\001 \001(\0132\020.vega."
+  "IdentifierR\002id\"\212\001\n\016ValidatorEvent\022\033\n\tsou"
+  "rce_id\030\001 \001(\tR\010sourceId\022\'\n\003add\030\351\007 \001(\0132\022.v"
+  "ega.AddValidatorH\000R\003add\022(\n\002rm\030\352\007 \001(\0132\025.v"
+  "ega.RemoveValidatorH\000R\002rmB\010\n\006action\"\375\001\n\n"
+  "ChainEvent\022\023\n\005tx_id\030\001 \001(\tR\004txId\022\024\n\005nonce"
   "\030\002 \001(\004R\005nonce\0224\n\007builtin\030\351\007 \001(\0132\027.vega.B"
   "uiltinAssetEventH\000R\007builtin\022)\n\005erc20\030\352\007 "
   "\001(\0132\020.vega.ERC20EventH\000R\005erc20\022#\n\003btc\030\353\007"
@@ -636,7 +637,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cha
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_chain_5fevents_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_chain_5fevents_2eproto = {
-  false, false, descriptor_table_protodef_chain_5fevents_2eproto, "chain_events.proto", 2396,
+  false, false, descriptor_table_protodef_chain_5fevents_2eproto, "chain_events.proto", 2436,
   &descriptor_table_chain_5fevents_2eproto_once, descriptor_table_chain_5fevents_2eproto_sccs, descriptor_table_chain_5fevents_2eproto_deps, 18, 0,
   schemas, file_default_instances, TableStruct_chain_5fevents_2eproto::offsets,
   file_level_metadata_chain_5fevents_2eproto, 18, file_level_enum_descriptors_chain_5fevents_2eproto, file_level_service_descriptors_chain_5fevents_2eproto,
@@ -661,14 +662,14 @@ BuiltinAssetDeposit::BuiltinAssetDeposit(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 BuiltinAssetDeposit::BuiltinAssetDeposit(const BuiltinAssetDeposit& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
-  partyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_partyid().empty()) {
-    partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_partyid(),
+  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_party_id().empty()) {
+    party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party_id(),
       GetArena());
   }
   amount_ = from.amount_;
@@ -677,8 +678,8 @@ BuiltinAssetDeposit::BuiltinAssetDeposit(const BuiltinAssetDeposit& from)
 
 void BuiltinAssetDeposit::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BuiltinAssetDeposit_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  partyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   amount_ = PROTOBUF_ULONGLONG(0);
 }
 
@@ -690,8 +691,8 @@ BuiltinAssetDeposit::~BuiltinAssetDeposit() {
 
 void BuiltinAssetDeposit::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  partyid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void BuiltinAssetDeposit::ArenaDtor(void* object) {
@@ -715,8 +716,8 @@ void BuiltinAssetDeposit::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
-  partyid_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
+  party_id_.ClearToEmpty();
   amount_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -728,21 +729,21 @@ const char* BuiltinAssetDeposit::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetDeposit.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetDeposit.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string partyID = 2 [json_name = "partyID"];
+      // string party_id = 2 [json_name = "partyId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_partyid();
+          auto str = _internal_mutable_party_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetDeposit.partyID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetDeposit.party_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -781,24 +782,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BuiltinAssetDeposit.vegaAssetID");
+      "vega.BuiltinAssetDeposit.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
-  // string partyID = 2 [json_name = "partyID"];
-  if (this->partyid().size() > 0) {
+  // string party_id = 2 [json_name = "partyId"];
+  if (this->party_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_partyid().data(), static_cast<int>(this->_internal_partyid().length()),
+      this->_internal_party_id().data(), static_cast<int>(this->_internal_party_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BuiltinAssetDeposit.partyID");
+      "vega.BuiltinAssetDeposit.party_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_partyid(), target);
+        2, this->_internal_party_id(), target);
   }
 
   // uint64 amount = 3 [json_name = "amount"];
@@ -823,18 +824,18 @@ size_t BuiltinAssetDeposit::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
-  // string partyID = 2 [json_name = "partyID"];
-  if (this->partyid().size() > 0) {
+  // string party_id = 2 [json_name = "partyId"];
+  if (this->party_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_partyid());
+        this->_internal_party_id());
   }
 
   // uint64 amount = 3 [json_name = "amount"];
@@ -875,11 +876,11 @@ void BuiltinAssetDeposit::MergeFrom(const BuiltinAssetDeposit& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
-  if (from.partyid().size() > 0) {
-    _internal_set_partyid(from._internal_partyid());
+  if (from.party_id().size() > 0) {
+    _internal_set_party_id(from._internal_party_id());
   }
   if (from.amount() != 0) {
     _internal_set_amount(from._internal_amount());
@@ -907,8 +908,8 @@ bool BuiltinAssetDeposit::IsInitialized() const {
 void BuiltinAssetDeposit::InternalSwap(BuiltinAssetDeposit* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  partyid_.Swap(&other->partyid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  party_id_.Swap(&other->party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(amount_, other->amount_);
 }
 
@@ -932,14 +933,14 @@ BuiltinAssetWithdrawal::BuiltinAssetWithdrawal(::PROTOBUF_NAMESPACE_ID::Arena* a
 BuiltinAssetWithdrawal::BuiltinAssetWithdrawal(const BuiltinAssetWithdrawal& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
-  partyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_partyid().empty()) {
-    partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_partyid(),
+  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_party_id().empty()) {
+    party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party_id(),
       GetArena());
   }
   amount_ = from.amount_;
@@ -948,8 +949,8 @@ BuiltinAssetWithdrawal::BuiltinAssetWithdrawal(const BuiltinAssetWithdrawal& fro
 
 void BuiltinAssetWithdrawal::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  partyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   amount_ = PROTOBUF_ULONGLONG(0);
 }
 
@@ -961,8 +962,8 @@ BuiltinAssetWithdrawal::~BuiltinAssetWithdrawal() {
 
 void BuiltinAssetWithdrawal::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  partyid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void BuiltinAssetWithdrawal::ArenaDtor(void* object) {
@@ -986,8 +987,8 @@ void BuiltinAssetWithdrawal::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
-  partyid_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
+  party_id_.ClearToEmpty();
   amount_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -999,21 +1000,21 @@ const char* BuiltinAssetWithdrawal::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetWithdrawal.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetWithdrawal.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string partyID = 2 [json_name = "partyID"];
+      // string party_id = 2 [json_name = "partyId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_partyid();
+          auto str = _internal_mutable_party_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetWithdrawal.partyID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BuiltinAssetWithdrawal.party_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1052,24 +1053,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BuiltinAssetWithdrawal.vegaAssetID");
+      "vega.BuiltinAssetWithdrawal.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
-  // string partyID = 2 [json_name = "partyID"];
-  if (this->partyid().size() > 0) {
+  // string party_id = 2 [json_name = "partyId"];
+  if (this->party_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_partyid().data(), static_cast<int>(this->_internal_partyid().length()),
+      this->_internal_party_id().data(), static_cast<int>(this->_internal_party_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BuiltinAssetWithdrawal.partyID");
+      "vega.BuiltinAssetWithdrawal.party_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_partyid(), target);
+        2, this->_internal_party_id(), target);
   }
 
   // uint64 amount = 3 [json_name = "amount"];
@@ -1094,18 +1095,18 @@ size_t BuiltinAssetWithdrawal::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
-  // string partyID = 2 [json_name = "partyID"];
-  if (this->partyid().size() > 0) {
+  // string party_id = 2 [json_name = "partyId"];
+  if (this->party_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_partyid());
+        this->_internal_party_id());
   }
 
   // uint64 amount = 3 [json_name = "amount"];
@@ -1146,11 +1147,11 @@ void BuiltinAssetWithdrawal::MergeFrom(const BuiltinAssetWithdrawal& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
-  if (from.partyid().size() > 0) {
-    _internal_set_partyid(from._internal_partyid());
+  if (from.party_id().size() > 0) {
+    _internal_set_party_id(from._internal_party_id());
   }
   if (from.amount() != 0) {
     _internal_set_amount(from._internal_amount());
@@ -1178,8 +1179,8 @@ bool BuiltinAssetWithdrawal::IsInitialized() const {
 void BuiltinAssetWithdrawal::InternalSwap(BuiltinAssetWithdrawal* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  partyid_.Swap(&other->partyid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  party_id_.Swap(&other->party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(amount_, other->amount_);
 }
 
@@ -1517,9 +1518,9 @@ ERC20AssetList::ERC20AssetList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ERC20AssetList::ERC20AssetList(const ERC20AssetList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.ERC20AssetList)
@@ -1527,7 +1528,7 @@ ERC20AssetList::ERC20AssetList(const ERC20AssetList& from)
 
 void ERC20AssetList::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ERC20AssetList_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ERC20AssetList::~ERC20AssetList() {
@@ -1538,7 +1539,7 @@ ERC20AssetList::~ERC20AssetList() {
 
 void ERC20AssetList::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ERC20AssetList::ArenaDtor(void* object) {
@@ -1562,7 +1563,7 @@ void ERC20AssetList::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1573,12 +1574,12 @@ const char* ERC20AssetList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20AssetList.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20AssetList.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1610,14 +1611,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20AssetList.vegaAssetID");
+      "vega.ERC20AssetList.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1636,11 +1637,11 @@ size_t ERC20AssetList::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1674,8 +1675,8 @@ void ERC20AssetList::MergeFrom(const ERC20AssetList& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
 }
 
@@ -1700,7 +1701,7 @@ bool ERC20AssetList::IsInitialized() const {
 void ERC20AssetList::InternalSwap(ERC20AssetList* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ERC20AssetList::GetMetadata() const {
@@ -1723,9 +1724,9 @@ ERC20AssetDelist::ERC20AssetDelist(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ERC20AssetDelist::ERC20AssetDelist(const ERC20AssetDelist& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.ERC20AssetDelist)
@@ -1733,7 +1734,7 @@ ERC20AssetDelist::ERC20AssetDelist(const ERC20AssetDelist& from)
 
 void ERC20AssetDelist::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ERC20AssetDelist_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ERC20AssetDelist::~ERC20AssetDelist() {
@@ -1744,7 +1745,7 @@ ERC20AssetDelist::~ERC20AssetDelist() {
 
 void ERC20AssetDelist::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ERC20AssetDelist::ArenaDtor(void* object) {
@@ -1768,7 +1769,7 @@ void ERC20AssetDelist::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1779,12 +1780,12 @@ const char* ERC20AssetDelist::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20AssetDelist.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20AssetDelist.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1816,14 +1817,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20AssetDelist.vegaAssetID");
+      "vega.ERC20AssetDelist.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1842,11 +1843,11 @@ size_t ERC20AssetDelist::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1880,8 +1881,8 @@ void ERC20AssetDelist::MergeFrom(const ERC20AssetDelist& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
 }
 
@@ -1906,7 +1907,7 @@ bool ERC20AssetDelist::IsInitialized() const {
 void ERC20AssetDelist::InternalSwap(ERC20AssetDelist* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ERC20AssetDelist::GetMetadata() const {
@@ -1929,19 +1930,19 @@ ERC20Deposit::ERC20Deposit(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ERC20Deposit::ERC20Deposit(const ERC20Deposit& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
-  sourceethereumaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_sourceethereumaddress().empty()) {
-    sourceethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sourceethereumaddress(),
+  source_ethereum_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_source_ethereum_address().empty()) {
+    source_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_source_ethereum_address(),
       GetArena());
   }
-  targetpartyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_targetpartyid().empty()) {
-    targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_targetpartyid(),
+  target_party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_target_party_id().empty()) {
+    target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target_party_id(),
       GetArena());
   }
   amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1954,9 +1955,9 @@ ERC20Deposit::ERC20Deposit(const ERC20Deposit& from)
 
 void ERC20Deposit::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ERC20Deposit_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sourceethereumaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetpartyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_ethereum_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1968,9 +1969,9 @@ ERC20Deposit::~ERC20Deposit() {
 
 void ERC20Deposit::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sourceethereumaddress_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetpartyid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_ethereum_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   amount_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1995,9 +1996,9 @@ void ERC20Deposit::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
-  sourceethereumaddress_.ClearToEmpty();
-  targetpartyid_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
+  source_ethereum_address_.ClearToEmpty();
+  target_party_id_.ClearToEmpty();
   amount_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2009,30 +2010,30 @@ const char* ERC20Deposit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Deposit.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Deposit.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];
+      // string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_sourceethereumaddress();
+          auto str = _internal_mutable_source_ethereum_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Deposit.sourceEthereumAddress"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Deposit.source_ethereum_address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string targetPartyID = 3 [json_name = "targetPartyID"];
+      // string target_party_id = 3 [json_name = "targetPartyId"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_targetpartyid();
+          auto str = _internal_mutable_target_party_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Deposit.targetPartyID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Deposit.target_party_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2073,34 +2074,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Deposit.vegaAssetID");
+      "vega.ERC20Deposit.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
-  // string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];
-  if (this->sourceethereumaddress().size() > 0) {
+  // string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];
+  if (this->source_ethereum_address().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sourceethereumaddress().data(), static_cast<int>(this->_internal_sourceethereumaddress().length()),
+      this->_internal_source_ethereum_address().data(), static_cast<int>(this->_internal_source_ethereum_address().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Deposit.sourceEthereumAddress");
+      "vega.ERC20Deposit.source_ethereum_address");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_sourceethereumaddress(), target);
+        2, this->_internal_source_ethereum_address(), target);
   }
 
-  // string targetPartyID = 3 [json_name = "targetPartyID"];
-  if (this->targetpartyid().size() > 0) {
+  // string target_party_id = 3 [json_name = "targetPartyId"];
+  if (this->target_party_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_targetpartyid().data(), static_cast<int>(this->_internal_targetpartyid().length()),
+      this->_internal_target_party_id().data(), static_cast<int>(this->_internal_target_party_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Deposit.targetPartyID");
+      "vega.ERC20Deposit.target_party_id");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_targetpartyid(), target);
+        3, this->_internal_target_party_id(), target);
   }
 
   // string amount = 4 [json_name = "amount"];
@@ -2129,25 +2130,25 @@ size_t ERC20Deposit::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
-  // string sourceEthereumAddress = 2 [json_name = "sourceEthereumAddress"];
-  if (this->sourceethereumaddress().size() > 0) {
+  // string source_ethereum_address = 2 [json_name = "sourceEthereumAddress"];
+  if (this->source_ethereum_address().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sourceethereumaddress());
+        this->_internal_source_ethereum_address());
   }
 
-  // string targetPartyID = 3 [json_name = "targetPartyID"];
-  if (this->targetpartyid().size() > 0) {
+  // string target_party_id = 3 [json_name = "targetPartyId"];
+  if (this->target_party_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_targetpartyid());
+        this->_internal_target_party_id());
   }
 
   // string amount = 4 [json_name = "amount"];
@@ -2188,14 +2189,14 @@ void ERC20Deposit::MergeFrom(const ERC20Deposit& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
-  if (from.sourceethereumaddress().size() > 0) {
-    _internal_set_sourceethereumaddress(from._internal_sourceethereumaddress());
+  if (from.source_ethereum_address().size() > 0) {
+    _internal_set_source_ethereum_address(from._internal_source_ethereum_address());
   }
-  if (from.targetpartyid().size() > 0) {
-    _internal_set_targetpartyid(from._internal_targetpartyid());
+  if (from.target_party_id().size() > 0) {
+    _internal_set_target_party_id(from._internal_target_party_id());
   }
   if (from.amount().size() > 0) {
     _internal_set_amount(from._internal_amount());
@@ -2223,9 +2224,9 @@ bool ERC20Deposit::IsInitialized() const {
 void ERC20Deposit::InternalSwap(ERC20Deposit* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  sourceethereumaddress_.Swap(&other->sourceethereumaddress_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  targetpartyid_.Swap(&other->targetpartyid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  source_ethereum_address_.Swap(&other->source_ethereum_address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  target_party_id_.Swap(&other->target_party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   amount_.Swap(&other->amount_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
@@ -2249,19 +2250,19 @@ ERC20Withdrawal::ERC20Withdrawal(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ERC20Withdrawal::ERC20Withdrawal(const ERC20Withdrawal& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
-  targetethereumaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_targetethereumaddress().empty()) {
-    targetethereumaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_targetethereumaddress(),
+  target_ethereum_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_target_ethereum_address().empty()) {
+    target_ethereum_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target_ethereum_address(),
       GetArena());
   }
-  referencenonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_referencenonce().empty()) {
-    referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_referencenonce(),
+  reference_nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reference_nonce().empty()) {
+    reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reference_nonce(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.ERC20Withdrawal)
@@ -2269,9 +2270,9 @@ ERC20Withdrawal::ERC20Withdrawal(const ERC20Withdrawal& from)
 
 void ERC20Withdrawal::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ERC20Withdrawal_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetethereumaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  referencenonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_ethereum_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reference_nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ERC20Withdrawal::~ERC20Withdrawal() {
@@ -2282,9 +2283,9 @@ ERC20Withdrawal::~ERC20Withdrawal() {
 
 void ERC20Withdrawal::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetethereumaddress_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  referencenonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_ethereum_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reference_nonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ERC20Withdrawal::ArenaDtor(void* object) {
@@ -2308,9 +2309,9 @@ void ERC20Withdrawal::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
-  targetethereumaddress_.ClearToEmpty();
-  referencenonce_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
+  target_ethereum_address_.ClearToEmpty();
+  reference_nonce_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2321,30 +2322,30 @@ const char* ERC20Withdrawal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Withdrawal.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Withdrawal.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];
+      // string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_targetethereumaddress();
+          auto str = _internal_mutable_target_ethereum_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Withdrawal.targetEthereumAddress"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Withdrawal.target_ethereum_address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string referenceNonce = 3 [json_name = "referenceNonce"];
+      // string reference_nonce = 3 [json_name = "referenceNonce"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_referencenonce();
+          auto str = _internal_mutable_reference_nonce();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Withdrawal.referenceNonce"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ERC20Withdrawal.reference_nonce"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2376,34 +2377,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Withdrawal.vegaAssetID");
+      "vega.ERC20Withdrawal.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
-  // string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];
-  if (this->targetethereumaddress().size() > 0) {
+  // string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];
+  if (this->target_ethereum_address().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_targetethereumaddress().data(), static_cast<int>(this->_internal_targetethereumaddress().length()),
+      this->_internal_target_ethereum_address().data(), static_cast<int>(this->_internal_target_ethereum_address().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Withdrawal.targetEthereumAddress");
+      "vega.ERC20Withdrawal.target_ethereum_address");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_targetethereumaddress(), target);
+        2, this->_internal_target_ethereum_address(), target);
   }
 
-  // string referenceNonce = 3 [json_name = "referenceNonce"];
-  if (this->referencenonce().size() > 0) {
+  // string reference_nonce = 3 [json_name = "referenceNonce"];
+  if (this->reference_nonce().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_referencenonce().data(), static_cast<int>(this->_internal_referencenonce().length()),
+      this->_internal_reference_nonce().data(), static_cast<int>(this->_internal_reference_nonce().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ERC20Withdrawal.referenceNonce");
+      "vega.ERC20Withdrawal.reference_nonce");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_referencenonce(), target);
+        3, this->_internal_reference_nonce(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2422,25 +2423,25 @@ size_t ERC20Withdrawal::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
-  // string targetEthereumAddress = 2 [json_name = "targetEthereumAddress"];
-  if (this->targetethereumaddress().size() > 0) {
+  // string target_ethereum_address = 2 [json_name = "targetEthereumAddress"];
+  if (this->target_ethereum_address().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_targetethereumaddress());
+        this->_internal_target_ethereum_address());
   }
 
-  // string referenceNonce = 3 [json_name = "referenceNonce"];
-  if (this->referencenonce().size() > 0) {
+  // string reference_nonce = 3 [json_name = "referenceNonce"];
+  if (this->reference_nonce().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_referencenonce());
+        this->_internal_reference_nonce());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2474,14 +2475,14 @@ void ERC20Withdrawal::MergeFrom(const ERC20Withdrawal& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
-  if (from.targetethereumaddress().size() > 0) {
-    _internal_set_targetethereumaddress(from._internal_targetethereumaddress());
+  if (from.target_ethereum_address().size() > 0) {
+    _internal_set_target_ethereum_address(from._internal_target_ethereum_address());
   }
-  if (from.referencenonce().size() > 0) {
-    _internal_set_referencenonce(from._internal_referencenonce());
+  if (from.reference_nonce().size() > 0) {
+    _internal_set_reference_nonce(from._internal_reference_nonce());
   }
 }
 
@@ -2506,9 +2507,9 @@ bool ERC20Withdrawal::IsInitialized() const {
 void ERC20Withdrawal::InternalSwap(ERC20Withdrawal* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  targetethereumaddress_.Swap(&other->targetethereumaddress_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  referencenonce_.Swap(&other->referencenonce_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  target_ethereum_address_.Swap(&other->target_ethereum_address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  reference_nonce_.Swap(&other->reference_nonce_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ERC20Withdrawal::GetMetadata() const {
@@ -2520,19 +2521,19 @@ void ERC20Withdrawal::InternalSwap(ERC20Withdrawal* other) {
 
 class ERC20Event::_Internal {
  public:
-  static const ::vega::ERC20AssetList& assetlist(const ERC20Event* msg);
-  static const ::vega::ERC20AssetDelist& assetdelist(const ERC20Event* msg);
+  static const ::vega::ERC20AssetList& asset_list(const ERC20Event* msg);
+  static const ::vega::ERC20AssetDelist& asset_delist(const ERC20Event* msg);
   static const ::vega::ERC20Deposit& deposit(const ERC20Event* msg);
   static const ::vega::ERC20Withdrawal& withdrawal(const ERC20Event* msg);
 };
 
 const ::vega::ERC20AssetList&
-ERC20Event::_Internal::assetlist(const ERC20Event* msg) {
-  return *msg->action_.assetlist_;
+ERC20Event::_Internal::asset_list(const ERC20Event* msg) {
+  return *msg->action_.asset_list_;
 }
 const ::vega::ERC20AssetDelist&
-ERC20Event::_Internal::assetdelist(const ERC20Event* msg) {
-  return *msg->action_.assetdelist_;
+ERC20Event::_Internal::asset_delist(const ERC20Event* msg) {
+  return *msg->action_.asset_delist_;
 }
 const ::vega::ERC20Deposit&
 ERC20Event::_Internal::deposit(const ERC20Event* msg) {
@@ -2542,35 +2543,35 @@ const ::vega::ERC20Withdrawal&
 ERC20Event::_Internal::withdrawal(const ERC20Event* msg) {
   return *msg->action_.withdrawal_;
 }
-void ERC20Event::set_allocated_assetlist(::vega::ERC20AssetList* assetlist) {
+void ERC20Event::set_allocated_asset_list(::vega::ERC20AssetList* asset_list) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_action();
-  if (assetlist) {
+  if (asset_list) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(assetlist);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(asset_list);
     if (message_arena != submessage_arena) {
-      assetlist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, assetlist, submessage_arena);
+      asset_list = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, asset_list, submessage_arena);
     }
-    set_has_assetlist();
-    action_.assetlist_ = assetlist;
+    set_has_asset_list();
+    action_.asset_list_ = asset_list;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Event.assetList)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Event.asset_list)
 }
-void ERC20Event::set_allocated_assetdelist(::vega::ERC20AssetDelist* assetdelist) {
+void ERC20Event::set_allocated_asset_delist(::vega::ERC20AssetDelist* asset_delist) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_action();
-  if (assetdelist) {
+  if (asset_delist) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(assetdelist);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(asset_delist);
     if (message_arena != submessage_arena) {
-      assetdelist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, assetdelist, submessage_arena);
+      asset_delist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, asset_delist, submessage_arena);
     }
-    set_has_assetdelist();
-    action_.assetdelist_ = assetdelist;
+    set_has_asset_delist();
+    action_.asset_delist_ = asset_delist;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Event.assetDelist)
+  // @@protoc_insertion_point(field_set_allocated:vega.ERC20Event.asset_delist)
 }
 void ERC20Event::set_allocated_deposit(::vega::ERC20Deposit* deposit) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -2617,11 +2618,11 @@ ERC20Event::ERC20Event(const ERC20Event& from)
   clear_has_action();
   switch (from.action_case()) {
     case kAssetList: {
-      _internal_mutable_assetlist()->::vega::ERC20AssetList::MergeFrom(from._internal_assetlist());
+      _internal_mutable_asset_list()->::vega::ERC20AssetList::MergeFrom(from._internal_asset_list());
       break;
     }
     case kAssetDelist: {
-      _internal_mutable_assetdelist()->::vega::ERC20AssetDelist::MergeFrom(from._internal_assetdelist());
+      _internal_mutable_asset_delist()->::vega::ERC20AssetDelist::MergeFrom(from._internal_asset_delist());
       break;
     }
     case kDeposit: {
@@ -2681,13 +2682,13 @@ void ERC20Event::clear_action() {
   switch (action_case()) {
     case kAssetList: {
       if (GetArena() == nullptr) {
-        delete action_.assetlist_;
+        delete action_.asset_list_;
       }
       break;
     }
     case kAssetDelist: {
       if (GetArena() == nullptr) {
-        delete action_.assetdelist_;
+        delete action_.asset_delist_;
       }
       break;
     }
@@ -2745,17 +2746,17 @@ const char* ERC20Event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];
+      // .vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];
       case 1001:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr = ctx->ParseMessage(_internal_mutable_assetlist(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_asset_list(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];
+      // .vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];
       case 1002:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr = ctx->ParseMessage(_internal_mutable_assetdelist(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_asset_delist(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2813,20 +2814,20 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_block(), target);
   }
 
-  // .vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];
-  if (_internal_has_assetlist()) {
+  // .vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];
+  if (_internal_has_asset_list()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1001, _Internal::assetlist(this), target, stream);
+        1001, _Internal::asset_list(this), target, stream);
   }
 
-  // .vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];
-  if (_internal_has_assetdelist()) {
+  // .vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];
+  if (_internal_has_asset_delist()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1002, _Internal::assetdelist(this), target, stream);
+        1002, _Internal::asset_delist(this), target, stream);
   }
 
   // .vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];
@@ -2876,18 +2877,18 @@ size_t ERC20Event::ByteSizeLong() const {
   }
 
   switch (action_case()) {
-    // .vega.ERC20AssetList assetList = 1001 [json_name = "assetList"];
+    // .vega.ERC20AssetList asset_list = 1001 [json_name = "assetList"];
     case kAssetList: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *action_.assetlist_);
+          *action_.asset_list_);
       break;
     }
-    // .vega.ERC20AssetDelist assetDelist = 1002 [json_name = "assetDelist"];
+    // .vega.ERC20AssetDelist asset_delist = 1002 [json_name = "assetDelist"];
     case kAssetDelist: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *action_.assetdelist_);
+          *action_.asset_delist_);
       break;
     }
     // .vega.ERC20Deposit deposit = 1003 [json_name = "deposit"];
@@ -2947,11 +2948,11 @@ void ERC20Event::MergeFrom(const ERC20Event& from) {
   }
   switch (from.action_case()) {
     case kAssetList: {
-      _internal_mutable_assetlist()->::vega::ERC20AssetList::MergeFrom(from._internal_assetlist());
+      _internal_mutable_asset_list()->::vega::ERC20AssetList::MergeFrom(from._internal_asset_list());
       break;
     }
     case kAssetDelist: {
-      _internal_mutable_assetdelist()->::vega::ERC20AssetDelist::MergeFrom(from._internal_assetdelist());
+      _internal_mutable_asset_delist()->::vega::ERC20AssetDelist::MergeFrom(from._internal_asset_delist());
       break;
     }
     case kDeposit: {
@@ -3019,19 +3020,19 @@ BTCDeposit::BTCDeposit(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 BTCDeposit::BTCDeposit(const BTCDeposit& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
-  sourcebtcaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_sourcebtcaddress().empty()) {
-    sourcebtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sourcebtcaddress(),
+  source_btc_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_source_btc_address().empty()) {
+    source_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_source_btc_address(),
       GetArena());
   }
-  targetpartyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_targetpartyid().empty()) {
-    targetpartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_targetpartyid(),
+  target_party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_target_party_id().empty()) {
+    target_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target_party_id(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.BTCDeposit)
@@ -3039,9 +3040,9 @@ BTCDeposit::BTCDeposit(const BTCDeposit& from)
 
 void BTCDeposit::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BTCDeposit_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sourcebtcaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetpartyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_btc_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BTCDeposit::~BTCDeposit() {
@@ -3052,9 +3053,9 @@ BTCDeposit::~BTCDeposit() {
 
 void BTCDeposit::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sourcebtcaddress_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetpartyid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_btc_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void BTCDeposit::ArenaDtor(void* object) {
@@ -3078,9 +3079,9 @@ void BTCDeposit::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
-  sourcebtcaddress_.ClearToEmpty();
-  targetpartyid_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
+  source_btc_address_.ClearToEmpty();
+  target_party_id_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3091,30 +3092,30 @@ const char* BTCDeposit::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCDeposit.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCDeposit.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];
+      // string source_btc_address = 2 [json_name = "sourceBtcAddress"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_sourcebtcaddress();
+          auto str = _internal_mutable_source_btc_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCDeposit.sourceBTCAddress"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCDeposit.source_btc_address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string targetPartyId = 3 [json_name = "targetPartyId"];
+      // string target_party_id = 3 [json_name = "targetPartyId"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_targetpartyid();
+          auto str = _internal_mutable_target_party_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCDeposit.targetPartyId"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCDeposit.target_party_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3146,34 +3147,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCDeposit.vegaAssetID");
+      "vega.BTCDeposit.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
-  // string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];
-  if (this->sourcebtcaddress().size() > 0) {
+  // string source_btc_address = 2 [json_name = "sourceBtcAddress"];
+  if (this->source_btc_address().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sourcebtcaddress().data(), static_cast<int>(this->_internal_sourcebtcaddress().length()),
+      this->_internal_source_btc_address().data(), static_cast<int>(this->_internal_source_btc_address().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCDeposit.sourceBTCAddress");
+      "vega.BTCDeposit.source_btc_address");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_sourcebtcaddress(), target);
+        2, this->_internal_source_btc_address(), target);
   }
 
-  // string targetPartyId = 3 [json_name = "targetPartyId"];
-  if (this->targetpartyid().size() > 0) {
+  // string target_party_id = 3 [json_name = "targetPartyId"];
+  if (this->target_party_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_targetpartyid().data(), static_cast<int>(this->_internal_targetpartyid().length()),
+      this->_internal_target_party_id().data(), static_cast<int>(this->_internal_target_party_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCDeposit.targetPartyId");
+      "vega.BTCDeposit.target_party_id");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_targetpartyid(), target);
+        3, this->_internal_target_party_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3192,25 +3193,25 @@ size_t BTCDeposit::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
-  // string sourceBTCAddress = 2 [json_name = "sourceBTCAddress"];
-  if (this->sourcebtcaddress().size() > 0) {
+  // string source_btc_address = 2 [json_name = "sourceBtcAddress"];
+  if (this->source_btc_address().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sourcebtcaddress());
+        this->_internal_source_btc_address());
   }
 
-  // string targetPartyId = 3 [json_name = "targetPartyId"];
-  if (this->targetpartyid().size() > 0) {
+  // string target_party_id = 3 [json_name = "targetPartyId"];
+  if (this->target_party_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_targetpartyid());
+        this->_internal_target_party_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3244,14 +3245,14 @@ void BTCDeposit::MergeFrom(const BTCDeposit& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
-  if (from.sourcebtcaddress().size() > 0) {
-    _internal_set_sourcebtcaddress(from._internal_sourcebtcaddress());
+  if (from.source_btc_address().size() > 0) {
+    _internal_set_source_btc_address(from._internal_source_btc_address());
   }
-  if (from.targetpartyid().size() > 0) {
-    _internal_set_targetpartyid(from._internal_targetpartyid());
+  if (from.target_party_id().size() > 0) {
+    _internal_set_target_party_id(from._internal_target_party_id());
   }
 }
 
@@ -3276,9 +3277,9 @@ bool BTCDeposit::IsInitialized() const {
 void BTCDeposit::InternalSwap(BTCDeposit* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  sourcebtcaddress_.Swap(&other->sourcebtcaddress_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  targetpartyid_.Swap(&other->targetpartyid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  source_btc_address_.Swap(&other->source_btc_address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  target_party_id_.Swap(&other->target_party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BTCDeposit::GetMetadata() const {
@@ -3301,24 +3302,24 @@ BTCWithdrawal::BTCWithdrawal(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 BTCWithdrawal::BTCWithdrawal(const BTCWithdrawal& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_vegaassetid().empty()) {
-    vegaassetid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vegaassetid(),
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_vega_asset_id().empty()) {
+    vega_asset_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vega_asset_id(),
       GetArena());
   }
-  sourcepartyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_sourcepartyid().empty()) {
-    sourcepartyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sourcepartyid(),
+  source_party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_source_party_id().empty()) {
+    source_party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_source_party_id(),
       GetArena());
   }
-  targetbtcaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_targetbtcaddress().empty()) {
-    targetbtcaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_targetbtcaddress(),
+  target_btc_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_target_btc_address().empty()) {
+    target_btc_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target_btc_address(),
       GetArena());
   }
-  referencenonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_referencenonce().empty()) {
-    referencenonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_referencenonce(),
+  reference_nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reference_nonce().empty()) {
+    reference_nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reference_nonce(),
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:vega.BTCWithdrawal)
@@ -3326,10 +3327,10 @@ BTCWithdrawal::BTCWithdrawal(const BTCWithdrawal& from)
 
 void BTCWithdrawal::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BTCWithdrawal_chain_5fevents_2eproto.base);
-  vegaassetid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sourcepartyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetbtcaddress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  referencenonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_btc_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reference_nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 BTCWithdrawal::~BTCWithdrawal() {
@@ -3340,10 +3341,10 @@ BTCWithdrawal::~BTCWithdrawal() {
 
 void BTCWithdrawal::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  vegaassetid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sourcepartyid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  targetbtcaddress_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  referencenonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vega_asset_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  target_btc_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reference_nonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void BTCWithdrawal::ArenaDtor(void* object) {
@@ -3367,10 +3368,10 @@ void BTCWithdrawal::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vegaassetid_.ClearToEmpty();
-  sourcepartyid_.ClearToEmpty();
-  targetbtcaddress_.ClearToEmpty();
-  referencenonce_.ClearToEmpty();
+  vega_asset_id_.ClearToEmpty();
+  source_party_id_.ClearToEmpty();
+  target_btc_address_.ClearToEmpty();
+  reference_nonce_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3381,39 +3382,39 @@ const char* BTCWithdrawal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string vegaAssetID = 1 [json_name = "vegaAssetID"];
+      // string vega_asset_id = 1 [json_name = "vegaAssetId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_vegaassetid();
+          auto str = _internal_mutable_vega_asset_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.vegaAssetID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.vega_asset_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string sourcePartyId = 2 [json_name = "sourcePartyId"];
+      // string source_party_id = 2 [json_name = "sourcePartyId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_sourcepartyid();
+          auto str = _internal_mutable_source_party_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.sourcePartyId"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.source_party_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string targetBTCAddress = 3 [json_name = "targetBTCAddress"];
+      // string target_btc_address = 3 [json_name = "targetBtcAddress"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_targetbtcaddress();
+          auto str = _internal_mutable_target_btc_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.targetBTCAddress"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.target_btc_address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string referenceNonce = 4 [json_name = "referenceNonce"];
+      // string reference_nonce = 4 [json_name = "referenceNonce"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_referencenonce();
+          auto str = _internal_mutable_reference_nonce();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.referenceNonce"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.BTCWithdrawal.reference_nonce"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3445,44 +3446,44 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_vegaassetid().data(), static_cast<int>(this->_internal_vegaassetid().length()),
+      this->_internal_vega_asset_id().data(), static_cast<int>(this->_internal_vega_asset_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCWithdrawal.vegaAssetID");
+      "vega.BTCWithdrawal.vega_asset_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_vegaassetid(), target);
+        1, this->_internal_vega_asset_id(), target);
   }
 
-  // string sourcePartyId = 2 [json_name = "sourcePartyId"];
-  if (this->sourcepartyid().size() > 0) {
+  // string source_party_id = 2 [json_name = "sourcePartyId"];
+  if (this->source_party_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sourcepartyid().data(), static_cast<int>(this->_internal_sourcepartyid().length()),
+      this->_internal_source_party_id().data(), static_cast<int>(this->_internal_source_party_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCWithdrawal.sourcePartyId");
+      "vega.BTCWithdrawal.source_party_id");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_sourcepartyid(), target);
+        2, this->_internal_source_party_id(), target);
   }
 
-  // string targetBTCAddress = 3 [json_name = "targetBTCAddress"];
-  if (this->targetbtcaddress().size() > 0) {
+  // string target_btc_address = 3 [json_name = "targetBtcAddress"];
+  if (this->target_btc_address().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_targetbtcaddress().data(), static_cast<int>(this->_internal_targetbtcaddress().length()),
+      this->_internal_target_btc_address().data(), static_cast<int>(this->_internal_target_btc_address().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCWithdrawal.targetBTCAddress");
+      "vega.BTCWithdrawal.target_btc_address");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_targetbtcaddress(), target);
+        3, this->_internal_target_btc_address(), target);
   }
 
-  // string referenceNonce = 4 [json_name = "referenceNonce"];
-  if (this->referencenonce().size() > 0) {
+  // string reference_nonce = 4 [json_name = "referenceNonce"];
+  if (this->reference_nonce().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_referencenonce().data(), static_cast<int>(this->_internal_referencenonce().length()),
+      this->_internal_reference_nonce().data(), static_cast<int>(this->_internal_reference_nonce().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.BTCWithdrawal.referenceNonce");
+      "vega.BTCWithdrawal.reference_nonce");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_referencenonce(), target);
+        4, this->_internal_reference_nonce(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3501,32 +3502,32 @@ size_t BTCWithdrawal::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string vegaAssetID = 1 [json_name = "vegaAssetID"];
-  if (this->vegaassetid().size() > 0) {
+  // string vega_asset_id = 1 [json_name = "vegaAssetId"];
+  if (this->vega_asset_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_vegaassetid());
+        this->_internal_vega_asset_id());
   }
 
-  // string sourcePartyId = 2 [json_name = "sourcePartyId"];
-  if (this->sourcepartyid().size() > 0) {
+  // string source_party_id = 2 [json_name = "sourcePartyId"];
+  if (this->source_party_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sourcepartyid());
+        this->_internal_source_party_id());
   }
 
-  // string targetBTCAddress = 3 [json_name = "targetBTCAddress"];
-  if (this->targetbtcaddress().size() > 0) {
+  // string target_btc_address = 3 [json_name = "targetBtcAddress"];
+  if (this->target_btc_address().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_targetbtcaddress());
+        this->_internal_target_btc_address());
   }
 
-  // string referenceNonce = 4 [json_name = "referenceNonce"];
-  if (this->referencenonce().size() > 0) {
+  // string reference_nonce = 4 [json_name = "referenceNonce"];
+  if (this->reference_nonce().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_referencenonce());
+        this->_internal_reference_nonce());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3560,17 +3561,17 @@ void BTCWithdrawal::MergeFrom(const BTCWithdrawal& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vegaassetid().size() > 0) {
-    _internal_set_vegaassetid(from._internal_vegaassetid());
+  if (from.vega_asset_id().size() > 0) {
+    _internal_set_vega_asset_id(from._internal_vega_asset_id());
   }
-  if (from.sourcepartyid().size() > 0) {
-    _internal_set_sourcepartyid(from._internal_sourcepartyid());
+  if (from.source_party_id().size() > 0) {
+    _internal_set_source_party_id(from._internal_source_party_id());
   }
-  if (from.targetbtcaddress().size() > 0) {
-    _internal_set_targetbtcaddress(from._internal_targetbtcaddress());
+  if (from.target_btc_address().size() > 0) {
+    _internal_set_target_btc_address(from._internal_target_btc_address());
   }
-  if (from.referencenonce().size() > 0) {
-    _internal_set_referencenonce(from._internal_referencenonce());
+  if (from.reference_nonce().size() > 0) {
+    _internal_set_reference_nonce(from._internal_reference_nonce());
   }
 }
 
@@ -3595,10 +3596,10 @@ bool BTCWithdrawal::IsInitialized() const {
 void BTCWithdrawal::InternalSwap(BTCWithdrawal* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  vegaassetid_.Swap(&other->vegaassetid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  sourcepartyid_.Swap(&other->sourcepartyid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  targetbtcaddress_.Swap(&other->targetbtcaddress_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  referencenonce_.Swap(&other->referencenonce_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  vega_asset_id_.Swap(&other->vega_asset_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  source_party_id_.Swap(&other->source_party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  target_btc_address_.Swap(&other->target_btc_address_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  reference_nonce_.Swap(&other->reference_nonce_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BTCWithdrawal::GetMetadata() const {
@@ -4398,47 +4399,47 @@ void BitcoinAddress::InternalSwap(BitcoinAddress* other) {
 
 class Identifier::_Internal {
  public:
-  static const ::vega::EthereumAddress& ethereumaddress(const Identifier* msg);
-  static const ::vega::BitcoinAddress& bitcoinaddress(const Identifier* msg);
+  static const ::vega::EthereumAddress& ethereum_address(const Identifier* msg);
+  static const ::vega::BitcoinAddress& bitcoin_address(const Identifier* msg);
 };
 
 const ::vega::EthereumAddress&
-Identifier::_Internal::ethereumaddress(const Identifier* msg) {
-  return *msg->identifier_.ethereumaddress_;
+Identifier::_Internal::ethereum_address(const Identifier* msg) {
+  return *msg->identifier_.ethereum_address_;
 }
 const ::vega::BitcoinAddress&
-Identifier::_Internal::bitcoinaddress(const Identifier* msg) {
-  return *msg->identifier_.bitcoinaddress_;
+Identifier::_Internal::bitcoin_address(const Identifier* msg) {
+  return *msg->identifier_.bitcoin_address_;
 }
-void Identifier::set_allocated_ethereumaddress(::vega::EthereumAddress* ethereumaddress) {
+void Identifier::set_allocated_ethereum_address(::vega::EthereumAddress* ethereum_address) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_identifier();
-  if (ethereumaddress) {
+  if (ethereum_address) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(ethereumaddress);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(ethereum_address);
     if (message_arena != submessage_arena) {
-      ethereumaddress = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, ethereumaddress, submessage_arena);
+      ethereum_address = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ethereum_address, submessage_arena);
     }
-    set_has_ethereumaddress();
-    identifier_.ethereumaddress_ = ethereumaddress;
+    set_has_ethereum_address();
+    identifier_.ethereum_address_ = ethereum_address;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.Identifier.ethereumAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.Identifier.ethereum_address)
 }
-void Identifier::set_allocated_bitcoinaddress(::vega::BitcoinAddress* bitcoinaddress) {
+void Identifier::set_allocated_bitcoin_address(::vega::BitcoinAddress* bitcoin_address) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_identifier();
-  if (bitcoinaddress) {
+  if (bitcoin_address) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(bitcoinaddress);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(bitcoin_address);
     if (message_arena != submessage_arena) {
-      bitcoinaddress = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, bitcoinaddress, submessage_arena);
+      bitcoin_address = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, bitcoin_address, submessage_arena);
     }
-    set_has_bitcoinaddress();
-    identifier_.bitcoinaddress_ = bitcoinaddress;
+    set_has_bitcoin_address();
+    identifier_.bitcoin_address_ = bitcoin_address;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.Identifier.bitcoinAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.Identifier.bitcoin_address)
 }
 Identifier::Identifier(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -4452,11 +4453,11 @@ Identifier::Identifier(const Identifier& from)
   clear_has_identifier();
   switch (from.identifier_case()) {
     case kEthereumAddress: {
-      _internal_mutable_ethereumaddress()->::vega::EthereumAddress::MergeFrom(from._internal_ethereumaddress());
+      _internal_mutable_ethereum_address()->::vega::EthereumAddress::MergeFrom(from._internal_ethereum_address());
       break;
     }
     case kBitcoinAddress: {
-      _internal_mutable_bitcoinaddress()->::vega::BitcoinAddress::MergeFrom(from._internal_bitcoinaddress());
+      _internal_mutable_bitcoin_address()->::vega::BitcoinAddress::MergeFrom(from._internal_bitcoin_address());
       break;
     }
     case IDENTIFIER_NOT_SET: {
@@ -4504,13 +4505,13 @@ void Identifier::clear_identifier() {
   switch (identifier_case()) {
     case kEthereumAddress: {
       if (GetArena() == nullptr) {
-        delete identifier_.ethereumaddress_;
+        delete identifier_.ethereum_address_;
       }
       break;
     }
     case kBitcoinAddress: {
       if (GetArena() == nullptr) {
-        delete identifier_.bitcoinaddress_;
+        delete identifier_.bitcoin_address_;
       }
       break;
     }
@@ -4539,17 +4540,17 @@ const char* Identifier::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];
+      // .vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_ethereumaddress(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_ethereum_address(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];
+      // .vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_bitcoinaddress(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_bitcoin_address(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4581,20 +4582,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];
-  if (_internal_has_ethereumaddress()) {
+  // .vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];
+  if (_internal_has_ethereum_address()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::ethereumaddress(this), target, stream);
+        1, _Internal::ethereum_address(this), target, stream);
   }
 
-  // .vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];
-  if (_internal_has_bitcoinaddress()) {
+  // .vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];
+  if (_internal_has_bitcoin_address()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::bitcoinaddress(this), target, stream);
+        2, _Internal::bitcoin_address(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4614,18 +4615,18 @@ size_t Identifier::ByteSizeLong() const {
   (void) cached_has_bits;
 
   switch (identifier_case()) {
-    // .vega.EthereumAddress ethereumAddress = 1 [json_name = "ethereumAddress"];
+    // .vega.EthereumAddress ethereum_address = 1 [json_name = "ethereumAddress"];
     case kEthereumAddress: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *identifier_.ethereumaddress_);
+          *identifier_.ethereum_address_);
       break;
     }
-    // .vega.BitcoinAddress bitcoinAddress = 2 [json_name = "bitcoinAddress"];
+    // .vega.BitcoinAddress bitcoin_address = 2 [json_name = "bitcoinAddress"];
     case kBitcoinAddress: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *identifier_.bitcoinaddress_);
+          *identifier_.bitcoin_address_);
       break;
     }
     case IDENTIFIER_NOT_SET: {
@@ -4665,11 +4666,11 @@ void Identifier::MergeFrom(const Identifier& from) {
 
   switch (from.identifier_case()) {
     case kEthereumAddress: {
-      _internal_mutable_ethereumaddress()->::vega::EthereumAddress::MergeFrom(from._internal_ethereumaddress());
+      _internal_mutable_ethereum_address()->::vega::EthereumAddress::MergeFrom(from._internal_ethereum_address());
       break;
     }
     case kBitcoinAddress: {
-      _internal_mutable_bitcoinaddress()->::vega::BitcoinAddress::MergeFrom(from._internal_bitcoinaddress());
+      _internal_mutable_bitcoin_address()->::vega::BitcoinAddress::MergeFrom(from._internal_bitcoin_address());
       break;
     }
     case IDENTIFIER_NOT_SET: {
@@ -5183,9 +5184,9 @@ ValidatorEvent::ValidatorEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ValidatorEvent::ValidatorEvent(const ValidatorEvent& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  sourceid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_sourceid().empty()) {
-    sourceid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sourceid(),
+  source_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_source_id().empty()) {
+    source_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_source_id(),
       GetArena());
   }
   clear_has_action();
@@ -5207,7 +5208,7 @@ ValidatorEvent::ValidatorEvent(const ValidatorEvent& from)
 
 void ValidatorEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ValidatorEvent_chain_5fevents_2eproto.base);
-  sourceid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   clear_has_action();
 }
 
@@ -5219,7 +5220,7 @@ ValidatorEvent::~ValidatorEvent() {
 
 void ValidatorEvent::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  sourceid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  source_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_action()) {
     clear_action();
   }
@@ -5269,7 +5270,7 @@ void ValidatorEvent::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sourceid_.ClearToEmpty();
+  source_id_.ClearToEmpty();
   clear_action();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5281,12 +5282,12 @@ const char* ValidatorEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string sourceID = 1 [json_name = "sourceID"];
+      // string source_id = 1 [json_name = "sourceId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_sourceid();
+          auto str = _internal_mutable_source_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ValidatorEvent.sourceID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ValidatorEvent.source_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5332,14 +5333,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string sourceID = 1 [json_name = "sourceID"];
-  if (this->sourceid().size() > 0) {
+  // string source_id = 1 [json_name = "sourceId"];
+  if (this->source_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_sourceid().data(), static_cast<int>(this->_internal_sourceid().length()),
+      this->_internal_source_id().data(), static_cast<int>(this->_internal_source_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ValidatorEvent.sourceID");
+      "vega.ValidatorEvent.source_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_sourceid(), target);
+        1, this->_internal_source_id(), target);
   }
 
   // .vega.AddValidator add = 1001 [json_name = "add"];
@@ -5374,11 +5375,11 @@ size_t ValidatorEvent::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string sourceID = 1 [json_name = "sourceID"];
-  if (this->sourceid().size() > 0) {
+  // string source_id = 1 [json_name = "sourceId"];
+  if (this->source_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_sourceid());
+        this->_internal_source_id());
   }
 
   switch (action_case()) {
@@ -5431,8 +5432,8 @@ void ValidatorEvent::MergeFrom(const ValidatorEvent& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.sourceid().size() > 0) {
-    _internal_set_sourceid(from._internal_sourceid());
+  if (from.source_id().size() > 0) {
+    _internal_set_source_id(from._internal_source_id());
   }
   switch (from.action_case()) {
     case kAdd: {
@@ -5470,7 +5471,7 @@ bool ValidatorEvent::IsInitialized() const {
 void ValidatorEvent::InternalSwap(ValidatorEvent* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  sourceid_.Swap(&other->sourceid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  source_id_.Swap(&other->source_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(action_, other->action_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -5575,9 +5576,9 @@ ChainEvent::ChainEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ChainEvent::ChainEvent(const ChainEvent& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  txid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_txid().empty()) {
-    txid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_txid(),
+  tx_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_id().empty()) {
+    tx_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_id(),
       GetArena());
   }
   nonce_ = from.nonce_;
@@ -5608,7 +5609,7 @@ ChainEvent::ChainEvent(const ChainEvent& from)
 
 void ChainEvent::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ChainEvent_chain_5fevents_2eproto.base);
-  txid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   nonce_ = PROTOBUF_ULONGLONG(0);
   clear_has_event();
 }
@@ -5621,7 +5622,7 @@ ChainEvent::~ChainEvent() {
 
 void ChainEvent::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  txid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_event()) {
     clear_event();
   }
@@ -5683,7 +5684,7 @@ void ChainEvent::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  txid_.ClearToEmpty();
+  tx_id_.ClearToEmpty();
   nonce_ = PROTOBUF_ULONGLONG(0);
   clear_event();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -5696,12 +5697,12 @@ const char* ChainEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string txID = 1 [json_name = "txID"];
+      // string tx_id = 1 [json_name = "txId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_txid();
+          auto str = _internal_mutable_tx_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ChainEvent.txID"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ChainEvent.tx_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5768,14 +5769,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string txID = 1 [json_name = "txID"];
-  if (this->txid().size() > 0) {
+  // string tx_id = 1 [json_name = "txId"];
+  if (this->tx_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_txid().data(), static_cast<int>(this->_internal_txid().length()),
+      this->_internal_tx_id().data(), static_cast<int>(this->_internal_tx_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ChainEvent.txID");
+      "vega.ChainEvent.tx_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_txid(), target);
+        1, this->_internal_tx_id(), target);
   }
 
   // uint64 nonce = 2 [json_name = "nonce"];
@@ -5832,11 +5833,11 @@ size_t ChainEvent::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string txID = 1 [json_name = "txID"];
-  if (this->txid().size() > 0) {
+  // string tx_id = 1 [json_name = "txId"];
+  if (this->tx_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_txid());
+        this->_internal_tx_id());
   }
 
   // uint64 nonce = 2 [json_name = "nonce"];
@@ -5910,8 +5911,8 @@ void ChainEvent::MergeFrom(const ChainEvent& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.txid().size() > 0) {
-    _internal_set_txid(from._internal_txid());
+  if (from.tx_id().size() > 0) {
+    _internal_set_tx_id(from._internal_tx_id());
   }
   if (from.nonce() != 0) {
     _internal_set_nonce(from._internal_nonce());
@@ -5960,7 +5961,7 @@ bool ChainEvent::IsInitialized() const {
 void ChainEvent::InternalSwap(ChainEvent* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  txid_.Swap(&other->txid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_id_.Swap(&other->tx_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(nonce_, other->nonce_);
   swap(event_, other->event_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);

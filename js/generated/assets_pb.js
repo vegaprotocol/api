@@ -160,7 +160,7 @@ proto.vega.Asset.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     symbol: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    totalsupply: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    totalSupply: jspb.Message.getFieldWithDefault(msg, 4, ""),
     decimals: jspb.Message.getFieldWithDefault(msg, 5, 0),
     source: (f = msg.getSource()) && proto.vega.AssetSource.toObject(includeInstance, f)
   };
@@ -213,7 +213,7 @@ proto.vega.Asset.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTotalsupply(value);
+      msg.setTotalSupply(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
@@ -274,7 +274,7 @@ proto.vega.Asset.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTotalsupply();
+  f = message.getTotalSupply();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -300,7 +300,7 @@ proto.vega.Asset.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
 proto.vega.Asset.prototype.getId = function() {
@@ -354,10 +354,10 @@ proto.vega.Asset.prototype.setSymbol = function(value) {
 
 
 /**
- * optional string totalSupply = 4;
+ * optional string total_supply = 4;
  * @return {string}
  */
-proto.vega.Asset.prototype.getTotalsupply = function() {
+proto.vega.Asset.prototype.getTotalSupply = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -366,7 +366,7 @@ proto.vega.Asset.prototype.getTotalsupply = function() {
  * @param {string} value
  * @return {!proto.vega.Asset} returns this
  */
-proto.vega.Asset.prototype.setTotalsupply = function(value) {
+proto.vega.Asset.prototype.setTotalSupply = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -442,7 +442,7 @@ proto.vega.AssetSource.oneofGroups_ = [[1,2]];
  */
 proto.vega.AssetSource.SourceCase = {
   SOURCE_NOT_SET: 0,
-  BUILTINASSET: 1,
+  BUILTIN_ASSET: 1,
   ERC20: 2
 };
 
@@ -484,7 +484,7 @@ proto.vega.AssetSource.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.AssetSource.toObject = function(includeInstance, msg) {
   var f, obj = {
-    builtinasset: (f = msg.getBuiltinasset()) && proto.vega.BuiltinAsset.toObject(includeInstance, f),
+    builtinAsset: (f = msg.getBuiltinAsset()) && proto.vega.BuiltinAsset.toObject(includeInstance, f),
     erc20: (f = msg.getErc20()) && proto.vega.ERC20.toObject(includeInstance, f)
   };
 
@@ -525,7 +525,7 @@ proto.vega.AssetSource.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.vega.BuiltinAsset;
       reader.readMessage(value,proto.vega.BuiltinAsset.deserializeBinaryFromReader);
-      msg.setBuiltinasset(value);
+      msg.setBuiltinAsset(value);
       break;
     case 2:
       var value = new proto.vega.ERC20;
@@ -561,7 +561,7 @@ proto.vega.AssetSource.prototype.serializeBinary = function() {
  */
 proto.vega.AssetSource.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBuiltinasset();
+  f = message.getBuiltinAsset();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -581,10 +581,10 @@ proto.vega.AssetSource.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional BuiltinAsset builtinAsset = 1;
+ * optional BuiltinAsset builtin_asset = 1;
  * @return {?proto.vega.BuiltinAsset}
  */
-proto.vega.AssetSource.prototype.getBuiltinasset = function() {
+proto.vega.AssetSource.prototype.getBuiltinAsset = function() {
   return /** @type{?proto.vega.BuiltinAsset} */ (
     jspb.Message.getWrapperField(this, proto.vega.BuiltinAsset, 1));
 };
@@ -594,7 +594,7 @@ proto.vega.AssetSource.prototype.getBuiltinasset = function() {
  * @param {?proto.vega.BuiltinAsset|undefined} value
  * @return {!proto.vega.AssetSource} returns this
 */
-proto.vega.AssetSource.prototype.setBuiltinasset = function(value) {
+proto.vega.AssetSource.prototype.setBuiltinAsset = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1, proto.vega.AssetSource.oneofGroups_[0], value);
 };
 
@@ -603,8 +603,8 @@ proto.vega.AssetSource.prototype.setBuiltinasset = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.AssetSource} returns this
  */
-proto.vega.AssetSource.prototype.clearBuiltinasset = function() {
-  return this.setBuiltinasset(undefined);
+proto.vega.AssetSource.prototype.clearBuiltinAsset = function() {
+  return this.setBuiltinAsset(undefined);
 };
 
 
@@ -612,7 +612,7 @@ proto.vega.AssetSource.prototype.clearBuiltinasset = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.AssetSource.prototype.hasBuiltinasset = function() {
+proto.vega.AssetSource.prototype.hasBuiltinAsset = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -688,9 +688,9 @@ proto.vega.BuiltinAsset.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     symbol: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    totalsupply: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    totalSupply: jspb.Message.getFieldWithDefault(msg, 3, ""),
     decimals: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    maxfaucetamountmint: jspb.Message.getFieldWithDefault(msg, 5, "")
+    maxFaucetAmountMint: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -737,7 +737,7 @@ proto.vega.BuiltinAsset.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTotalsupply(value);
+      msg.setTotalSupply(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
@@ -745,7 +745,7 @@ proto.vega.BuiltinAsset.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMaxfaucetamountmint(value);
+      msg.setMaxFaucetAmountMint(value);
       break;
     default:
       reader.skipField();
@@ -790,7 +790,7 @@ proto.vega.BuiltinAsset.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTotalsupply();
+  f = message.getTotalSupply();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -804,7 +804,7 @@ proto.vega.BuiltinAsset.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMaxfaucetamountmint();
+  f = message.getMaxFaucetAmountMint();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -851,10 +851,10 @@ proto.vega.BuiltinAsset.prototype.setSymbol = function(value) {
 
 
 /**
- * optional string totalSupply = 3;
+ * optional string total_supply = 3;
  * @return {string}
  */
-proto.vega.BuiltinAsset.prototype.getTotalsupply = function() {
+proto.vega.BuiltinAsset.prototype.getTotalSupply = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -863,7 +863,7 @@ proto.vega.BuiltinAsset.prototype.getTotalsupply = function() {
  * @param {string} value
  * @return {!proto.vega.BuiltinAsset} returns this
  */
-proto.vega.BuiltinAsset.prototype.setTotalsupply = function(value) {
+proto.vega.BuiltinAsset.prototype.setTotalSupply = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -887,10 +887,10 @@ proto.vega.BuiltinAsset.prototype.setDecimals = function(value) {
 
 
 /**
- * optional string maxFaucetAmountMint = 5;
+ * optional string max_faucet_amount_mint = 5;
  * @return {string}
  */
-proto.vega.BuiltinAsset.prototype.getMaxfaucetamountmint = function() {
+proto.vega.BuiltinAsset.prototype.getMaxFaucetAmountMint = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -899,7 +899,7 @@ proto.vega.BuiltinAsset.prototype.getMaxfaucetamountmint = function() {
  * @param {string} value
  * @return {!proto.vega.BuiltinAsset} returns this
  */
-proto.vega.BuiltinAsset.prototype.setMaxfaucetamountmint = function(value) {
+proto.vega.BuiltinAsset.prototype.setMaxFaucetAmountMint = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -936,7 +936,7 @@ proto.vega.ERC20.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.ERC20.toObject = function(includeInstance, msg) {
   var f, obj = {
-    contractaddress: jspb.Message.getFieldWithDefault(msg, 1, "")
+    contractAddress: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -975,7 +975,7 @@ proto.vega.ERC20.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setContractaddress(value);
+      msg.setContractAddress(value);
       break;
     default:
       reader.skipField();
@@ -1006,7 +1006,7 @@ proto.vega.ERC20.prototype.serializeBinary = function() {
  */
 proto.vega.ERC20.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getContractaddress();
+  f = message.getContractAddress();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1017,10 +1017,10 @@ proto.vega.ERC20.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string contractAddress = 1;
+ * optional string contract_address = 1;
  * @return {string}
  */
-proto.vega.ERC20.prototype.getContractaddress = function() {
+proto.vega.ERC20.prototype.getContractAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1029,7 +1029,7 @@ proto.vega.ERC20.prototype.getContractaddress = function() {
  * @param {string} value
  * @return {!proto.vega.ERC20} returns this
  */
-proto.vega.ERC20.prototype.setContractaddress = function(value) {
+proto.vega.ERC20.prototype.setContractAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

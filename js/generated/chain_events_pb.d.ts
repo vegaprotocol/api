@@ -4,11 +4,11 @@
 import * as jspb from "google-protobuf";
 
 export class BuiltinAssetDeposit extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -25,18 +25,18 @@ export class BuiltinAssetDeposit extends jspb.Message {
 
 export namespace BuiltinAssetDeposit {
   export type AsObject = {
-    vegaassetid: string,
-    partyid: string,
+    vegaAssetId: string,
+    partyId: string,
     amount: number,
   }
 }
 
 export class BuiltinAssetWithdrawal extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
-  getPartyid(): string;
-  setPartyid(value: string): void;
+  getPartyId(): string;
+  setPartyId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
@@ -53,8 +53,8 @@ export class BuiltinAssetWithdrawal extends jspb.Message {
 
 export namespace BuiltinAssetWithdrawal {
   export type AsObject = {
-    vegaassetid: string,
-    partyid: string,
+    vegaAssetId: string,
+    partyId: string,
     amount: number,
   }
 }
@@ -95,8 +95,8 @@ export namespace BuiltinAssetEvent {
 }
 
 export class ERC20AssetList extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ERC20AssetList.AsObject;
@@ -110,13 +110,13 @@ export class ERC20AssetList extends jspb.Message {
 
 export namespace ERC20AssetList {
   export type AsObject = {
-    vegaassetid: string,
+    vegaAssetId: string,
   }
 }
 
 export class ERC20AssetDelist extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ERC20AssetDelist.AsObject;
@@ -130,19 +130,19 @@ export class ERC20AssetDelist extends jspb.Message {
 
 export namespace ERC20AssetDelist {
   export type AsObject = {
-    vegaassetid: string,
+    vegaAssetId: string,
   }
 }
 
 export class ERC20Deposit extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
-  getSourceethereumaddress(): string;
-  setSourceethereumaddress(value: string): void;
+  getSourceEthereumAddress(): string;
+  setSourceEthereumAddress(value: string): void;
 
-  getTargetpartyid(): string;
-  setTargetpartyid(value: string): void;
+  getTargetPartyId(): string;
+  setTargetPartyId(value: string): void;
 
   getAmount(): string;
   setAmount(value: string): void;
@@ -159,22 +159,22 @@ export class ERC20Deposit extends jspb.Message {
 
 export namespace ERC20Deposit {
   export type AsObject = {
-    vegaassetid: string,
-    sourceethereumaddress: string,
-    targetpartyid: string,
+    vegaAssetId: string,
+    sourceEthereumAddress: string,
+    targetPartyId: string,
     amount: string,
   }
 }
 
 export class ERC20Withdrawal extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
-  getTargetethereumaddress(): string;
-  setTargetethereumaddress(value: string): void;
+  getTargetEthereumAddress(): string;
+  setTargetEthereumAddress(value: string): void;
 
-  getReferencenonce(): string;
-  setReferencenonce(value: string): void;
+  getReferenceNonce(): string;
+  setReferenceNonce(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ERC20Withdrawal.AsObject;
@@ -188,9 +188,9 @@ export class ERC20Withdrawal extends jspb.Message {
 
 export namespace ERC20Withdrawal {
   export type AsObject = {
-    vegaassetid: string,
-    targetethereumaddress: string,
-    referencenonce: string,
+    vegaAssetId: string,
+    targetEthereumAddress: string,
+    referenceNonce: string,
   }
 }
 
@@ -201,15 +201,15 @@ export class ERC20Event extends jspb.Message {
   getBlock(): number;
   setBlock(value: number): void;
 
-  hasAssetlist(): boolean;
-  clearAssetlist(): void;
-  getAssetlist(): ERC20AssetList | undefined;
-  setAssetlist(value?: ERC20AssetList): void;
+  hasAssetList(): boolean;
+  clearAssetList(): void;
+  getAssetList(): ERC20AssetList | undefined;
+  setAssetList(value?: ERC20AssetList): void;
 
-  hasAssetdelist(): boolean;
-  clearAssetdelist(): void;
-  getAssetdelist(): ERC20AssetDelist | undefined;
-  setAssetdelist(value?: ERC20AssetDelist): void;
+  hasAssetDelist(): boolean;
+  clearAssetDelist(): void;
+  getAssetDelist(): ERC20AssetDelist | undefined;
+  setAssetDelist(value?: ERC20AssetDelist): void;
 
   hasDeposit(): boolean;
   clearDeposit(): void;
@@ -236,30 +236,30 @@ export namespace ERC20Event {
   export type AsObject = {
     index: number,
     block: number,
-    assetlist?: ERC20AssetList.AsObject,
-    assetdelist?: ERC20AssetDelist.AsObject,
+    assetList?: ERC20AssetList.AsObject,
+    assetDelist?: ERC20AssetDelist.AsObject,
     deposit?: ERC20Deposit.AsObject,
     withdrawal?: ERC20Withdrawal.AsObject,
   }
 
   export enum ActionCase {
     ACTION_NOT_SET = 0,
-    ASSETLIST = 1001,
-    ASSETDELIST = 1002,
+    ASSET_LIST = 1001,
+    ASSET_DELIST = 1002,
     DEPOSIT = 1003,
     WITHDRAWAL = 1004,
   }
 }
 
 export class BTCDeposit extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
-  getSourcebtcaddress(): string;
-  setSourcebtcaddress(value: string): void;
+  getSourceBtcAddress(): string;
+  setSourceBtcAddress(value: string): void;
 
-  getTargetpartyid(): string;
-  setTargetpartyid(value: string): void;
+  getTargetPartyId(): string;
+  setTargetPartyId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BTCDeposit.AsObject;
@@ -273,24 +273,24 @@ export class BTCDeposit extends jspb.Message {
 
 export namespace BTCDeposit {
   export type AsObject = {
-    vegaassetid: string,
-    sourcebtcaddress: string,
-    targetpartyid: string,
+    vegaAssetId: string,
+    sourceBtcAddress: string,
+    targetPartyId: string,
   }
 }
 
 export class BTCWithdrawal extends jspb.Message {
-  getVegaassetid(): string;
-  setVegaassetid(value: string): void;
+  getVegaAssetId(): string;
+  setVegaAssetId(value: string): void;
 
-  getSourcepartyid(): string;
-  setSourcepartyid(value: string): void;
+  getSourcePartyId(): string;
+  setSourcePartyId(value: string): void;
 
-  getTargetbtcaddress(): string;
-  setTargetbtcaddress(value: string): void;
+  getTargetBtcAddress(): string;
+  setTargetBtcAddress(value: string): void;
 
-  getReferencenonce(): string;
-  setReferencenonce(value: string): void;
+  getReferenceNonce(): string;
+  setReferenceNonce(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BTCWithdrawal.AsObject;
@@ -304,10 +304,10 @@ export class BTCWithdrawal extends jspb.Message {
 
 export namespace BTCWithdrawal {
   export type AsObject = {
-    vegaassetid: string,
-    sourcepartyid: string,
-    targetbtcaddress: string,
-    referencenonce: string,
+    vegaAssetId: string,
+    sourcePartyId: string,
+    targetBtcAddress: string,
+    referenceNonce: string,
   }
 }
 
@@ -395,15 +395,15 @@ export namespace BitcoinAddress {
 }
 
 export class Identifier extends jspb.Message {
-  hasEthereumaddress(): boolean;
-  clearEthereumaddress(): void;
-  getEthereumaddress(): EthereumAddress | undefined;
-  setEthereumaddress(value?: EthereumAddress): void;
+  hasEthereumAddress(): boolean;
+  clearEthereumAddress(): void;
+  getEthereumAddress(): EthereumAddress | undefined;
+  setEthereumAddress(value?: EthereumAddress): void;
 
-  hasBitcoinaddress(): boolean;
-  clearBitcoinaddress(): void;
-  getBitcoinaddress(): BitcoinAddress | undefined;
-  setBitcoinaddress(value?: BitcoinAddress): void;
+  hasBitcoinAddress(): boolean;
+  clearBitcoinAddress(): void;
+  getBitcoinAddress(): BitcoinAddress | undefined;
+  setBitcoinAddress(value?: BitcoinAddress): void;
 
   getIdentifierCase(): Identifier.IdentifierCase;
   serializeBinary(): Uint8Array;
@@ -418,14 +418,14 @@ export class Identifier extends jspb.Message {
 
 export namespace Identifier {
   export type AsObject = {
-    ethereumaddress?: EthereumAddress.AsObject,
-    bitcoinaddress?: BitcoinAddress.AsObject,
+    ethereumAddress?: EthereumAddress.AsObject,
+    bitcoinAddress?: BitcoinAddress.AsObject,
   }
 
   export enum IdentifierCase {
     IDENTIFIER_NOT_SET = 0,
-    ETHEREUMADDRESS = 1,
-    BITCOINADDRESS = 2,
+    ETHEREUM_ADDRESS = 1,
+    BITCOIN_ADDRESS = 2,
   }
 }
 
@@ -474,8 +474,8 @@ export namespace RemoveValidator {
 }
 
 export class ValidatorEvent extends jspb.Message {
-  getSourceid(): string;
-  setSourceid(value: string): void;
+  getSourceId(): string;
+  setSourceId(value: string): void;
 
   hasAdd(): boolean;
   clearAdd(): void;
@@ -500,7 +500,7 @@ export class ValidatorEvent extends jspb.Message {
 
 export namespace ValidatorEvent {
   export type AsObject = {
-    sourceid: string,
+    sourceId: string,
     add?: AddValidator.AsObject,
     rm?: RemoveValidator.AsObject,
   }
@@ -513,8 +513,8 @@ export namespace ValidatorEvent {
 }
 
 export class ChainEvent extends jspb.Message {
-  getTxid(): string;
-  setTxid(value: string): void;
+  getTxId(): string;
+  setTxId(value: string): void;
 
   getNonce(): number;
   setNonce(value: number): void;
@@ -552,7 +552,7 @@ export class ChainEvent extends jspb.Message {
 
 export namespace ChainEvent {
   export type AsObject = {
-    txid: string,
+    txId: string,
     nonce: number,
     builtin?: BuiltinAssetEvent.AsObject,
     erc20?: ERC20Event.AsObject,

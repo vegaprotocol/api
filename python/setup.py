@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-VERSION = "0.29.0"
+VERSION = "0.32.0"
 
 setuptools.setup(
     name="Vega API client",
@@ -13,9 +13,9 @@ setuptools.setup(
     description="Vega API client for gRPC",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/vegaprotocol/api-clients",
+    url="https://github.com/vegaprotocol/api",
     packages=setuptools.find_packages(),
-    package_data={"vegaapiclient": ["py.typed"],},
+    package_data={"vegaapiclient": ["py.typed"]},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

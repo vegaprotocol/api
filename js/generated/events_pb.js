@@ -22,6 +22,10 @@ var governance_pb = require('./governance_pb.js');
 goog.object.extend(proto, governance_pb);
 var vega_pb = require('./vega_pb.js');
 goog.object.extend(proto, vega_pb);
+var oracles_v1_oracle_spec_pb = require('./oracles/v1/oracle_spec_pb.js');
+goog.object.extend(proto, oracles_v1_oracle_spec_pb);
+var oracles_v1_oracle_data_pb = require('./oracles/v1/oracle_data_pb.js');
+goog.object.extend(proto, oracles_v1_oracle_data_pb);
 goog.exportSymbol('proto.vega.AuctionEvent', null, global);
 goog.exportSymbol('proto.vega.BusEvent', null, global);
 goog.exportSymbol('proto.vega.BusEvent.EventCase', null, global);
@@ -321,7 +325,7 @@ proto.vega.MarketEvent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.MarketEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     payload: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -361,7 +365,7 @@ proto.vega.MarketEvent.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -396,7 +400,7 @@ proto.vega.MarketEvent.prototype.serializeBinary = function() {
  */
 proto.vega.MarketEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -414,10 +418,10 @@ proto.vega.MarketEvent.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.MarketEvent.prototype.getMarketid = function() {
+proto.vega.MarketEvent.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -426,7 +430,7 @@ proto.vega.MarketEvent.prototype.getMarketid = function() {
  * @param {string} value
  * @return {!proto.vega.MarketEvent} returns this
  */
-proto.vega.MarketEvent.prototype.setMarketid = function(value) {
+proto.vega.MarketEvent.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -465,9 +469,9 @@ proto.vega.TxErrorEvent.oneofGroups_ = [[101,102,103,104,105]];
  */
 proto.vega.TxErrorEvent.TransactionCase = {
   TRANSACTION_NOT_SET: 0,
-  ORDERSUBMISSION: 101,
-  ORDERAMENDMENT: 102,
-  ORDERCANCELLATION: 103,
+  ORDER_SUBMISSION: 101,
+  ORDER_AMENDMENT: 102,
+  ORDER_CANCELLATION: 103,
   PROPOSAL: 104,
   VOTE: 105
 };
@@ -510,11 +514,11 @@ proto.vega.TxErrorEvent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.TxErrorEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    partyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    errmsg: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    ordersubmission: (f = msg.getOrdersubmission()) && vega_pb.OrderSubmission.toObject(includeInstance, f),
-    orderamendment: (f = msg.getOrderamendment()) && vega_pb.OrderAmendment.toObject(includeInstance, f),
-    ordercancellation: (f = msg.getOrdercancellation()) && vega_pb.OrderCancellation.toObject(includeInstance, f),
+    partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    errMsg: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    orderSubmission: (f = msg.getOrderSubmission()) && vega_pb.OrderSubmission.toObject(includeInstance, f),
+    orderAmendment: (f = msg.getOrderAmendment()) && vega_pb.OrderAmendment.toObject(includeInstance, f),
+    orderCancellation: (f = msg.getOrderCancellation()) && vega_pb.OrderCancellation.toObject(includeInstance, f),
     proposal: (f = msg.getProposal()) && governance_pb.Proposal.toObject(includeInstance, f),
     vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f)
   };
@@ -555,26 +559,26 @@ proto.vega.TxErrorEvent.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setErrmsg(value);
+      msg.setErrMsg(value);
       break;
     case 101:
       var value = new vega_pb.OrderSubmission;
       reader.readMessage(value,vega_pb.OrderSubmission.deserializeBinaryFromReader);
-      msg.setOrdersubmission(value);
+      msg.setOrderSubmission(value);
       break;
     case 102:
       var value = new vega_pb.OrderAmendment;
       reader.readMessage(value,vega_pb.OrderAmendment.deserializeBinaryFromReader);
-      msg.setOrderamendment(value);
+      msg.setOrderAmendment(value);
       break;
     case 103:
       var value = new vega_pb.OrderCancellation;
       reader.readMessage(value,vega_pb.OrderCancellation.deserializeBinaryFromReader);
-      msg.setOrdercancellation(value);
+      msg.setOrderCancellation(value);
       break;
     case 104:
       var value = new governance_pb.Proposal;
@@ -615,21 +619,21 @@ proto.vega.TxErrorEvent.prototype.serializeBinary = function() {
  */
 proto.vega.TxErrorEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getErrmsg();
+  f = message.getErrMsg();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getOrdersubmission();
+  f = message.getOrderSubmission();
   if (f != null) {
     writer.writeMessage(
       101,
@@ -637,7 +641,7 @@ proto.vega.TxErrorEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.OrderSubmission.serializeBinaryToWriter
     );
   }
-  f = message.getOrderamendment();
+  f = message.getOrderAmendment();
   if (f != null) {
     writer.writeMessage(
       102,
@@ -645,7 +649,7 @@ proto.vega.TxErrorEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.OrderAmendment.serializeBinaryToWriter
     );
   }
-  f = message.getOrdercancellation();
+  f = message.getOrderCancellation();
   if (f != null) {
     writer.writeMessage(
       103,
@@ -673,10 +677,10 @@ proto.vega.TxErrorEvent.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string PartyID = 1;
+ * optional string party_id = 1;
  * @return {string}
  */
-proto.vega.TxErrorEvent.prototype.getPartyid = function() {
+proto.vega.TxErrorEvent.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -685,16 +689,16 @@ proto.vega.TxErrorEvent.prototype.getPartyid = function() {
  * @param {string} value
  * @return {!proto.vega.TxErrorEvent} returns this
  */
-proto.vega.TxErrorEvent.prototype.setPartyid = function(value) {
+proto.vega.TxErrorEvent.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string errMsg = 2;
+ * optional string err_msg = 2;
  * @return {string}
  */
-proto.vega.TxErrorEvent.prototype.getErrmsg = function() {
+proto.vega.TxErrorEvent.prototype.getErrMsg = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -703,16 +707,16 @@ proto.vega.TxErrorEvent.prototype.getErrmsg = function() {
  * @param {string} value
  * @return {!proto.vega.TxErrorEvent} returns this
  */
-proto.vega.TxErrorEvent.prototype.setErrmsg = function(value) {
+proto.vega.TxErrorEvent.prototype.setErrMsg = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional OrderSubmission orderSubmission = 101;
+ * optional OrderSubmission order_submission = 101;
  * @return {?proto.vega.OrderSubmission}
  */
-proto.vega.TxErrorEvent.prototype.getOrdersubmission = function() {
+proto.vega.TxErrorEvent.prototype.getOrderSubmission = function() {
   return /** @type{?proto.vega.OrderSubmission} */ (
     jspb.Message.getWrapperField(this, vega_pb.OrderSubmission, 101));
 };
@@ -722,7 +726,7 @@ proto.vega.TxErrorEvent.prototype.getOrdersubmission = function() {
  * @param {?proto.vega.OrderSubmission|undefined} value
  * @return {!proto.vega.TxErrorEvent} returns this
 */
-proto.vega.TxErrorEvent.prototype.setOrdersubmission = function(value) {
+proto.vega.TxErrorEvent.prototype.setOrderSubmission = function(value) {
   return jspb.Message.setOneofWrapperField(this, 101, proto.vega.TxErrorEvent.oneofGroups_[0], value);
 };
 
@@ -731,8 +735,8 @@ proto.vega.TxErrorEvent.prototype.setOrdersubmission = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.TxErrorEvent} returns this
  */
-proto.vega.TxErrorEvent.prototype.clearOrdersubmission = function() {
-  return this.setOrdersubmission(undefined);
+proto.vega.TxErrorEvent.prototype.clearOrderSubmission = function() {
+  return this.setOrderSubmission(undefined);
 };
 
 
@@ -740,16 +744,16 @@ proto.vega.TxErrorEvent.prototype.clearOrdersubmission = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.TxErrorEvent.prototype.hasOrdersubmission = function() {
+proto.vega.TxErrorEvent.prototype.hasOrderSubmission = function() {
   return jspb.Message.getField(this, 101) != null;
 };
 
 
 /**
- * optional OrderAmendment orderAmendment = 102;
+ * optional OrderAmendment order_amendment = 102;
  * @return {?proto.vega.OrderAmendment}
  */
-proto.vega.TxErrorEvent.prototype.getOrderamendment = function() {
+proto.vega.TxErrorEvent.prototype.getOrderAmendment = function() {
   return /** @type{?proto.vega.OrderAmendment} */ (
     jspb.Message.getWrapperField(this, vega_pb.OrderAmendment, 102));
 };
@@ -759,7 +763,7 @@ proto.vega.TxErrorEvent.prototype.getOrderamendment = function() {
  * @param {?proto.vega.OrderAmendment|undefined} value
  * @return {!proto.vega.TxErrorEvent} returns this
 */
-proto.vega.TxErrorEvent.prototype.setOrderamendment = function(value) {
+proto.vega.TxErrorEvent.prototype.setOrderAmendment = function(value) {
   return jspb.Message.setOneofWrapperField(this, 102, proto.vega.TxErrorEvent.oneofGroups_[0], value);
 };
 
@@ -768,8 +772,8 @@ proto.vega.TxErrorEvent.prototype.setOrderamendment = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.TxErrorEvent} returns this
  */
-proto.vega.TxErrorEvent.prototype.clearOrderamendment = function() {
-  return this.setOrderamendment(undefined);
+proto.vega.TxErrorEvent.prototype.clearOrderAmendment = function() {
+  return this.setOrderAmendment(undefined);
 };
 
 
@@ -777,16 +781,16 @@ proto.vega.TxErrorEvent.prototype.clearOrderamendment = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.TxErrorEvent.prototype.hasOrderamendment = function() {
+proto.vega.TxErrorEvent.prototype.hasOrderAmendment = function() {
   return jspb.Message.getField(this, 102) != null;
 };
 
 
 /**
- * optional OrderCancellation orderCancellation = 103;
+ * optional OrderCancellation order_cancellation = 103;
  * @return {?proto.vega.OrderCancellation}
  */
-proto.vega.TxErrorEvent.prototype.getOrdercancellation = function() {
+proto.vega.TxErrorEvent.prototype.getOrderCancellation = function() {
   return /** @type{?proto.vega.OrderCancellation} */ (
     jspb.Message.getWrapperField(this, vega_pb.OrderCancellation, 103));
 };
@@ -796,7 +800,7 @@ proto.vega.TxErrorEvent.prototype.getOrdercancellation = function() {
  * @param {?proto.vega.OrderCancellation|undefined} value
  * @return {!proto.vega.TxErrorEvent} returns this
 */
-proto.vega.TxErrorEvent.prototype.setOrdercancellation = function(value) {
+proto.vega.TxErrorEvent.prototype.setOrderCancellation = function(value) {
   return jspb.Message.setOneofWrapperField(this, 103, proto.vega.TxErrorEvent.oneofGroups_[0], value);
 };
 
@@ -805,8 +809,8 @@ proto.vega.TxErrorEvent.prototype.setOrdercancellation = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.TxErrorEvent} returns this
  */
-proto.vega.TxErrorEvent.prototype.clearOrdercancellation = function() {
-  return this.setOrdercancellation(undefined);
+proto.vega.TxErrorEvent.prototype.clearOrderCancellation = function() {
+  return this.setOrderCancellation(undefined);
 };
 
 
@@ -814,7 +818,7 @@ proto.vega.TxErrorEvent.prototype.clearOrdercancellation = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.TxErrorEvent.prototype.hasOrdercancellation = function() {
+proto.vega.TxErrorEvent.prototype.hasOrderCancellation = function() {
   return jspb.Message.getField(this, 103) != null;
 };
 
@@ -1215,10 +1219,10 @@ proto.vega.PositionResolution.prototype.toObject = function(opt_includeInstance)
  */
 proto.vega.PositionResolution.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     distressed: jspb.Message.getFieldWithDefault(msg, 2, 0),
     closed: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    markprice: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    markPrice: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1257,7 +1261,7 @@ proto.vega.PositionResolution.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
@@ -1269,7 +1273,7 @@ proto.vega.PositionResolution.deserializeBinaryFromReader = function(msg, reader
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarkprice(value);
+      msg.setMarkPrice(value);
       break;
     default:
       reader.skipField();
@@ -1300,7 +1304,7 @@ proto.vega.PositionResolution.prototype.serializeBinary = function() {
  */
 proto.vega.PositionResolution.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1321,7 +1325,7 @@ proto.vega.PositionResolution.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getMarkprice();
+  f = message.getMarkPrice();
   if (f !== 0) {
     writer.writeUint64(
       4,
@@ -1332,10 +1336,10 @@ proto.vega.PositionResolution.serializeBinaryToWriter = function(message, writer
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.PositionResolution.prototype.getMarketid = function() {
+proto.vega.PositionResolution.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1344,7 +1348,7 @@ proto.vega.PositionResolution.prototype.getMarketid = function() {
  * @param {string} value
  * @return {!proto.vega.PositionResolution} returns this
  */
-proto.vega.PositionResolution.prototype.setMarketid = function(value) {
+proto.vega.PositionResolution.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1386,10 +1390,10 @@ proto.vega.PositionResolution.prototype.setClosed = function(value) {
 
 
 /**
- * optional uint64 markPrice = 4;
+ * optional uint64 mark_price = 4;
  * @return {number}
  */
-proto.vega.PositionResolution.prototype.getMarkprice = function() {
+proto.vega.PositionResolution.prototype.getMarkPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -1398,7 +1402,7 @@ proto.vega.PositionResolution.prototype.getMarkprice = function() {
  * @param {number} value
  * @return {!proto.vega.PositionResolution} returns this
  */
-proto.vega.PositionResolution.prototype.setMarkprice = function(value) {
+proto.vega.PositionResolution.prototype.setMarkPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -1435,8 +1439,8 @@ proto.vega.LossSocialization.prototype.toObject = function(opt_includeInstance) 
  */
 proto.vega.LossSocialization.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     amount: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
@@ -1476,11 +1480,11 @@ proto.vega.LossSocialization.deserializeBinaryFromReader = function(msg, reader)
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -1515,14 +1519,14 @@ proto.vega.LossSocialization.prototype.serializeBinary = function() {
  */
 proto.vega.LossSocialization.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -1540,10 +1544,10 @@ proto.vega.LossSocialization.serializeBinaryToWriter = function(message, writer)
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.LossSocialization.prototype.getMarketid = function() {
+proto.vega.LossSocialization.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1552,16 +1556,16 @@ proto.vega.LossSocialization.prototype.getMarketid = function() {
  * @param {string} value
  * @return {!proto.vega.LossSocialization} returns this
  */
-proto.vega.LossSocialization.prototype.setMarketid = function(value) {
+proto.vega.LossSocialization.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.vega.LossSocialization.prototype.getPartyid = function() {
+proto.vega.LossSocialization.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1570,7 +1574,7 @@ proto.vega.LossSocialization.prototype.getPartyid = function() {
  * @param {string} value
  * @return {!proto.vega.LossSocialization} returns this
  */
-proto.vega.LossSocialization.prototype.setPartyid = function(value) {
+proto.vega.LossSocialization.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1792,10 +1796,10 @@ proto.vega.SettlePosition.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.SettlePosition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     price: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    tradesettlementsList: jspb.Message.toObjectList(msg.getTradesettlementsList(),
+    tradeSettlementsList: jspb.Message.toObjectList(msg.getTradeSettlementsList(),
     proto.vega.TradeSettlement.toObject, includeInstance)
   };
 
@@ -1835,11 +1839,11 @@ proto.vega.SettlePosition.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
@@ -1848,7 +1852,7 @@ proto.vega.SettlePosition.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = new proto.vega.TradeSettlement;
       reader.readMessage(value,proto.vega.TradeSettlement.deserializeBinaryFromReader);
-      msg.addTradesettlements(value);
+      msg.addTradeSettlements(value);
       break;
     default:
       reader.skipField();
@@ -1879,14 +1883,14 @@ proto.vega.SettlePosition.prototype.serializeBinary = function() {
  */
 proto.vega.SettlePosition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -1900,7 +1904,7 @@ proto.vega.SettlePosition.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTradesettlementsList();
+  f = message.getTradeSettlementsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       4,
@@ -1912,10 +1916,10 @@ proto.vega.SettlePosition.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.SettlePosition.prototype.getMarketid = function() {
+proto.vega.SettlePosition.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1924,16 +1928,16 @@ proto.vega.SettlePosition.prototype.getMarketid = function() {
  * @param {string} value
  * @return {!proto.vega.SettlePosition} returns this
  */
-proto.vega.SettlePosition.prototype.setMarketid = function(value) {
+proto.vega.SettlePosition.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.vega.SettlePosition.prototype.getPartyid = function() {
+proto.vega.SettlePosition.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1942,7 +1946,7 @@ proto.vega.SettlePosition.prototype.getPartyid = function() {
  * @param {string} value
  * @return {!proto.vega.SettlePosition} returns this
  */
-proto.vega.SettlePosition.prototype.setPartyid = function(value) {
+proto.vega.SettlePosition.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -1966,10 +1970,10 @@ proto.vega.SettlePosition.prototype.setPrice = function(value) {
 
 
 /**
- * repeated TradeSettlement tradeSettlements = 4;
+ * repeated TradeSettlement trade_settlements = 4;
  * @return {!Array<!proto.vega.TradeSettlement>}
  */
-proto.vega.SettlePosition.prototype.getTradesettlementsList = function() {
+proto.vega.SettlePosition.prototype.getTradeSettlementsList = function() {
   return /** @type{!Array<!proto.vega.TradeSettlement>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.vega.TradeSettlement, 4));
 };
@@ -1979,7 +1983,7 @@ proto.vega.SettlePosition.prototype.getTradesettlementsList = function() {
  * @param {!Array<!proto.vega.TradeSettlement>} value
  * @return {!proto.vega.SettlePosition} returns this
 */
-proto.vega.SettlePosition.prototype.setTradesettlementsList = function(value) {
+proto.vega.SettlePosition.prototype.setTradeSettlementsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
@@ -1989,7 +1993,7 @@ proto.vega.SettlePosition.prototype.setTradesettlementsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.vega.TradeSettlement}
  */
-proto.vega.SettlePosition.prototype.addTradesettlements = function(opt_value, opt_index) {
+proto.vega.SettlePosition.prototype.addTradeSettlements = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.vega.TradeSettlement, opt_index);
 };
 
@@ -1998,8 +2002,8 @@ proto.vega.SettlePosition.prototype.addTradesettlements = function(opt_value, op
  * Clears the list making it empty but non-null.
  * @return {!proto.vega.SettlePosition} returns this
  */
-proto.vega.SettlePosition.prototype.clearTradesettlementsList = function() {
-  return this.setTradesettlementsList([]);
+proto.vega.SettlePosition.prototype.clearTradeSettlementsList = function() {
+  return this.setTradeSettlementsList([]);
 };
 
 
@@ -2035,8 +2039,8 @@ proto.vega.SettleDistressed.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.SettleDistressed.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     margin: jspb.Message.getFieldWithDefault(msg, 3, 0),
     price: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
@@ -2077,11 +2081,11 @@ proto.vega.SettleDistressed.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyid(value);
+      msg.setPartyId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
@@ -2120,14 +2124,14 @@ proto.vega.SettleDistressed.prototype.serializeBinary = function() {
  */
 proto.vega.SettleDistressed.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPartyid();
+  f = message.getPartyId();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2152,10 +2156,10 @@ proto.vega.SettleDistressed.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.SettleDistressed.prototype.getMarketid = function() {
+proto.vega.SettleDistressed.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2164,16 +2168,16 @@ proto.vega.SettleDistressed.prototype.getMarketid = function() {
  * @param {string} value
  * @return {!proto.vega.SettleDistressed} returns this
  */
-proto.vega.SettleDistressed.prototype.setMarketid = function(value) {
+proto.vega.SettleDistressed.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string partyID = 2;
+ * optional string party_id = 2;
  * @return {string}
  */
-proto.vega.SettleDistressed.prototype.getPartyid = function() {
+proto.vega.SettleDistressed.prototype.getPartyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2182,7 +2186,7 @@ proto.vega.SettleDistressed.prototype.getPartyid = function() {
  * @param {string} value
  * @return {!proto.vega.SettleDistressed} returns this
  */
-proto.vega.SettleDistressed.prototype.setPartyid = function(value) {
+proto.vega.SettleDistressed.prototype.setPartyId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2348,7 +2352,7 @@ proto.vega.MarketTick.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
 proto.vega.MarketTick.prototype.getId = function() {
@@ -2415,8 +2419,8 @@ proto.vega.AuctionEvent.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.AuctionEvent.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    openingauction: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    openingAuction: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     leave: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     start: jspb.Message.getFieldWithDefault(msg, 4, 0),
     end: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -2459,11 +2463,11 @@ proto.vega.AuctionEvent.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setOpeningauction(value);
+      msg.setOpeningAuction(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2510,14 +2514,14 @@ proto.vega.AuctionEvent.prototype.serializeBinary = function() {
  */
 proto.vega.AuctionEvent.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getOpeningauction();
+  f = message.getOpeningAuction();
   if (f) {
     writer.writeBool(
       2,
@@ -2556,10 +2560,10 @@ proto.vega.AuctionEvent.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string marketID = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.AuctionEvent.prototype.getMarketid = function() {
+proto.vega.AuctionEvent.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -2568,16 +2572,16 @@ proto.vega.AuctionEvent.prototype.getMarketid = function() {
  * @param {string} value
  * @return {!proto.vega.AuctionEvent} returns this
  */
-proto.vega.AuctionEvent.prototype.setMarketid = function(value) {
+proto.vega.AuctionEvent.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bool openingAuction = 2;
+ * optional bool opening_auction = 2;
  * @return {boolean}
  */
-proto.vega.AuctionEvent.prototype.getOpeningauction = function() {
+proto.vega.AuctionEvent.prototype.getOpeningAuction = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
@@ -2586,7 +2590,7 @@ proto.vega.AuctionEvent.prototype.getOpeningauction = function() {
  * @param {boolean} value
  * @return {!proto.vega.AuctionEvent} returns this
  */
-proto.vega.AuctionEvent.prototype.setOpeningauction = function(value) {
+proto.vega.AuctionEvent.prototype.setOpeningAuction = function(value) {
   return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
@@ -2672,40 +2676,42 @@ proto.vega.AuctionEvent.prototype.setTrigger = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,1001,2001]];
+proto.vega.BusEvent.oneofGroups_ = [[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,1001,2001]];
 
 /**
  * @enum {number}
  */
 proto.vega.BusEvent.EventCase = {
   EVENT_NOT_SET: 0,
-  TIMEUPDATE: 101,
-  TRANSFERRESPONSES: 102,
-  POSITIONRESOLUTION: 103,
+  TIME_UPDATE: 101,
+  TRANSFER_RESPONSES: 102,
+  POSITION_RESOLUTION: 103,
   ORDER: 104,
   ACCOUNT: 105,
   PARTY: 106,
   TRADE: 107,
-  MARGINLEVELS: 108,
+  MARGIN_LEVELS: 108,
   PROPOSAL: 109,
   VOTE: 110,
-  MARKETDATA: 111,
-  NODESIGNATURE: 112,
-  LOSSSOCIALIZATION: 113,
-  SETTLEPOSITION: 114,
-  SETTLEDISTRESSED: 115,
-  MARKETCREATED: 116,
+  MARKET_DATA: 111,
+  NODE_SIGNATURE: 112,
+  LOSS_SOCIALIZATION: 113,
+  SETTLE_POSITION: 114,
+  SETTLE_DISTRESSED: 115,
+  MARKET_CREATED: 116,
   ASSET: 117,
-  MARKETTICK: 118,
+  MARKET_TICK: 118,
   WITHDRAWAL: 119,
   DEPOSIT: 120,
   AUCTION: 121,
-  RISKFACTOR: 122,
-  NETWORKPARAMETER: 123,
-  LIQUIDITYPROVISION: 124,
-  MARKETUPDATED: 125,
+  RISK_FACTOR: 122,
+  NETWORK_PARAMETER: 123,
+  LIQUIDITY_PROVISION: 124,
+  MARKET_UPDATED: 125,
+  ORACLE_SPEC: 126,
+  ORACLE_DATA: 127,
   MARKET: 1001,
-  TXERREVENT: 2001
+  TX_ERR_EVENT: 2001
 };
 
 /**
@@ -2749,33 +2755,35 @@ proto.vega.BusEvent.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     block: jspb.Message.getFieldWithDefault(msg, 2, ""),
     type: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    timeupdate: (f = msg.getTimeupdate()) && proto.vega.TimeUpdate.toObject(includeInstance, f),
-    transferresponses: (f = msg.getTransferresponses()) && proto.vega.TransferResponses.toObject(includeInstance, f),
-    positionresolution: (f = msg.getPositionresolution()) && proto.vega.PositionResolution.toObject(includeInstance, f),
+    timeUpdate: (f = msg.getTimeUpdate()) && proto.vega.TimeUpdate.toObject(includeInstance, f),
+    transferResponses: (f = msg.getTransferResponses()) && proto.vega.TransferResponses.toObject(includeInstance, f),
+    positionResolution: (f = msg.getPositionResolution()) && proto.vega.PositionResolution.toObject(includeInstance, f),
     order: (f = msg.getOrder()) && vega_pb.Order.toObject(includeInstance, f),
     account: (f = msg.getAccount()) && vega_pb.Account.toObject(includeInstance, f),
     party: (f = msg.getParty()) && vega_pb.Party.toObject(includeInstance, f),
     trade: (f = msg.getTrade()) && vega_pb.Trade.toObject(includeInstance, f),
-    marginlevels: (f = msg.getMarginlevels()) && vega_pb.MarginLevels.toObject(includeInstance, f),
+    marginLevels: (f = msg.getMarginLevels()) && vega_pb.MarginLevels.toObject(includeInstance, f),
     proposal: (f = msg.getProposal()) && governance_pb.Proposal.toObject(includeInstance, f),
     vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f),
-    marketdata: (f = msg.getMarketdata()) && vega_pb.MarketData.toObject(includeInstance, f),
-    nodesignature: (f = msg.getNodesignature()) && vega_pb.NodeSignature.toObject(includeInstance, f),
-    losssocialization: (f = msg.getLosssocialization()) && proto.vega.LossSocialization.toObject(includeInstance, f),
-    settleposition: (f = msg.getSettleposition()) && proto.vega.SettlePosition.toObject(includeInstance, f),
-    settledistressed: (f = msg.getSettledistressed()) && proto.vega.SettleDistressed.toObject(includeInstance, f),
-    marketcreated: (f = msg.getMarketcreated()) && markets_pb.Market.toObject(includeInstance, f),
+    marketData: (f = msg.getMarketData()) && vega_pb.MarketData.toObject(includeInstance, f),
+    nodeSignature: (f = msg.getNodeSignature()) && vega_pb.NodeSignature.toObject(includeInstance, f),
+    lossSocialization: (f = msg.getLossSocialization()) && proto.vega.LossSocialization.toObject(includeInstance, f),
+    settlePosition: (f = msg.getSettlePosition()) && proto.vega.SettlePosition.toObject(includeInstance, f),
+    settleDistressed: (f = msg.getSettleDistressed()) && proto.vega.SettleDistressed.toObject(includeInstance, f),
+    marketCreated: (f = msg.getMarketCreated()) && markets_pb.Market.toObject(includeInstance, f),
     asset: (f = msg.getAsset()) && assets_pb.Asset.toObject(includeInstance, f),
-    markettick: (f = msg.getMarkettick()) && proto.vega.MarketTick.toObject(includeInstance, f),
+    marketTick: (f = msg.getMarketTick()) && proto.vega.MarketTick.toObject(includeInstance, f),
     withdrawal: (f = msg.getWithdrawal()) && vega_pb.Withdrawal.toObject(includeInstance, f),
     deposit: (f = msg.getDeposit()) && vega_pb.Deposit.toObject(includeInstance, f),
     auction: (f = msg.getAuction()) && proto.vega.AuctionEvent.toObject(includeInstance, f),
-    riskfactor: (f = msg.getRiskfactor()) && vega_pb.RiskFactor.toObject(includeInstance, f),
-    networkparameter: (f = msg.getNetworkparameter()) && vega_pb.NetworkParameter.toObject(includeInstance, f),
-    liquidityprovision: (f = msg.getLiquidityprovision()) && vega_pb.LiquidityProvision.toObject(includeInstance, f),
-    marketupdated: (f = msg.getMarketupdated()) && markets_pb.Market.toObject(includeInstance, f),
+    riskFactor: (f = msg.getRiskFactor()) && vega_pb.RiskFactor.toObject(includeInstance, f),
+    networkParameter: (f = msg.getNetworkParameter()) && vega_pb.NetworkParameter.toObject(includeInstance, f),
+    liquidityProvision: (f = msg.getLiquidityProvision()) && vega_pb.LiquidityProvision.toObject(includeInstance, f),
+    marketUpdated: (f = msg.getMarketUpdated()) && markets_pb.Market.toObject(includeInstance, f),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpec.toObject(includeInstance, f),
+    oracleData: (f = msg.getOracleData()) && oracles_v1_oracle_data_pb.OracleData.toObject(includeInstance, f),
     market: (f = msg.getMarket()) && proto.vega.MarketEvent.toObject(includeInstance, f),
-    txerrevent: (f = msg.getTxerrevent()) && proto.vega.TxErrorEvent.toObject(includeInstance, f)
+    txErrEvent: (f = msg.getTxErrEvent()) && proto.vega.TxErrorEvent.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2827,17 +2835,17 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 101:
       var value = new proto.vega.TimeUpdate;
       reader.readMessage(value,proto.vega.TimeUpdate.deserializeBinaryFromReader);
-      msg.setTimeupdate(value);
+      msg.setTimeUpdate(value);
       break;
     case 102:
       var value = new proto.vega.TransferResponses;
       reader.readMessage(value,proto.vega.TransferResponses.deserializeBinaryFromReader);
-      msg.setTransferresponses(value);
+      msg.setTransferResponses(value);
       break;
     case 103:
       var value = new proto.vega.PositionResolution;
       reader.readMessage(value,proto.vega.PositionResolution.deserializeBinaryFromReader);
-      msg.setPositionresolution(value);
+      msg.setPositionResolution(value);
       break;
     case 104:
       var value = new vega_pb.Order;
@@ -2862,7 +2870,7 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 108:
       var value = new vega_pb.MarginLevels;
       reader.readMessage(value,vega_pb.MarginLevels.deserializeBinaryFromReader);
-      msg.setMarginlevels(value);
+      msg.setMarginLevels(value);
       break;
     case 109:
       var value = new governance_pb.Proposal;
@@ -2877,32 +2885,32 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 111:
       var value = new vega_pb.MarketData;
       reader.readMessage(value,vega_pb.MarketData.deserializeBinaryFromReader);
-      msg.setMarketdata(value);
+      msg.setMarketData(value);
       break;
     case 112:
       var value = new vega_pb.NodeSignature;
       reader.readMessage(value,vega_pb.NodeSignature.deserializeBinaryFromReader);
-      msg.setNodesignature(value);
+      msg.setNodeSignature(value);
       break;
     case 113:
       var value = new proto.vega.LossSocialization;
       reader.readMessage(value,proto.vega.LossSocialization.deserializeBinaryFromReader);
-      msg.setLosssocialization(value);
+      msg.setLossSocialization(value);
       break;
     case 114:
       var value = new proto.vega.SettlePosition;
       reader.readMessage(value,proto.vega.SettlePosition.deserializeBinaryFromReader);
-      msg.setSettleposition(value);
+      msg.setSettlePosition(value);
       break;
     case 115:
       var value = new proto.vega.SettleDistressed;
       reader.readMessage(value,proto.vega.SettleDistressed.deserializeBinaryFromReader);
-      msg.setSettledistressed(value);
+      msg.setSettleDistressed(value);
       break;
     case 116:
       var value = new markets_pb.Market;
       reader.readMessage(value,markets_pb.Market.deserializeBinaryFromReader);
-      msg.setMarketcreated(value);
+      msg.setMarketCreated(value);
       break;
     case 117:
       var value = new assets_pb.Asset;
@@ -2912,7 +2920,7 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 118:
       var value = new proto.vega.MarketTick;
       reader.readMessage(value,proto.vega.MarketTick.deserializeBinaryFromReader);
-      msg.setMarkettick(value);
+      msg.setMarketTick(value);
       break;
     case 119:
       var value = new vega_pb.Withdrawal;
@@ -2932,22 +2940,32 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 122:
       var value = new vega_pb.RiskFactor;
       reader.readMessage(value,vega_pb.RiskFactor.deserializeBinaryFromReader);
-      msg.setRiskfactor(value);
+      msg.setRiskFactor(value);
       break;
     case 123:
       var value = new vega_pb.NetworkParameter;
       reader.readMessage(value,vega_pb.NetworkParameter.deserializeBinaryFromReader);
-      msg.setNetworkparameter(value);
+      msg.setNetworkParameter(value);
       break;
     case 124:
       var value = new vega_pb.LiquidityProvision;
       reader.readMessage(value,vega_pb.LiquidityProvision.deserializeBinaryFromReader);
-      msg.setLiquidityprovision(value);
+      msg.setLiquidityProvision(value);
       break;
     case 125:
       var value = new markets_pb.Market;
       reader.readMessage(value,markets_pb.Market.deserializeBinaryFromReader);
-      msg.setMarketupdated(value);
+      msg.setMarketUpdated(value);
+      break;
+    case 126:
+      var value = new oracles_v1_oracle_spec_pb.OracleSpec;
+      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpec.deserializeBinaryFromReader);
+      msg.setOracleSpec(value);
+      break;
+    case 127:
+      var value = new oracles_v1_oracle_data_pb.OracleData;
+      reader.readMessage(value,oracles_v1_oracle_data_pb.OracleData.deserializeBinaryFromReader);
+      msg.setOracleData(value);
       break;
     case 1001:
       var value = new proto.vega.MarketEvent;
@@ -2957,7 +2975,7 @@ proto.vega.BusEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 2001:
       var value = new proto.vega.TxErrorEvent;
       reader.readMessage(value,proto.vega.TxErrorEvent.deserializeBinaryFromReader);
-      msg.setTxerrevent(value);
+      msg.setTxErrEvent(value);
       break;
     default:
       reader.skipField();
@@ -3009,7 +3027,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTimeupdate();
+  f = message.getTimeUpdate();
   if (f != null) {
     writer.writeMessage(
       101,
@@ -3017,7 +3035,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.TimeUpdate.serializeBinaryToWriter
     );
   }
-  f = message.getTransferresponses();
+  f = message.getTransferResponses();
   if (f != null) {
     writer.writeMessage(
       102,
@@ -3025,7 +3043,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.TransferResponses.serializeBinaryToWriter
     );
   }
-  f = message.getPositionresolution();
+  f = message.getPositionResolution();
   if (f != null) {
     writer.writeMessage(
       103,
@@ -3065,7 +3083,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.Trade.serializeBinaryToWriter
     );
   }
-  f = message.getMarginlevels();
+  f = message.getMarginLevels();
   if (f != null) {
     writer.writeMessage(
       108,
@@ -3089,7 +3107,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       governance_pb.Vote.serializeBinaryToWriter
     );
   }
-  f = message.getMarketdata();
+  f = message.getMarketData();
   if (f != null) {
     writer.writeMessage(
       111,
@@ -3097,7 +3115,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.MarketData.serializeBinaryToWriter
     );
   }
-  f = message.getNodesignature();
+  f = message.getNodeSignature();
   if (f != null) {
     writer.writeMessage(
       112,
@@ -3105,7 +3123,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.NodeSignature.serializeBinaryToWriter
     );
   }
-  f = message.getLosssocialization();
+  f = message.getLossSocialization();
   if (f != null) {
     writer.writeMessage(
       113,
@@ -3113,7 +3131,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.LossSocialization.serializeBinaryToWriter
     );
   }
-  f = message.getSettleposition();
+  f = message.getSettlePosition();
   if (f != null) {
     writer.writeMessage(
       114,
@@ -3121,7 +3139,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.SettlePosition.serializeBinaryToWriter
     );
   }
-  f = message.getSettledistressed();
+  f = message.getSettleDistressed();
   if (f != null) {
     writer.writeMessage(
       115,
@@ -3129,7 +3147,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.SettleDistressed.serializeBinaryToWriter
     );
   }
-  f = message.getMarketcreated();
+  f = message.getMarketCreated();
   if (f != null) {
     writer.writeMessage(
       116,
@@ -3145,7 +3163,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       assets_pb.Asset.serializeBinaryToWriter
     );
   }
-  f = message.getMarkettick();
+  f = message.getMarketTick();
   if (f != null) {
     writer.writeMessage(
       118,
@@ -3177,7 +3195,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.AuctionEvent.serializeBinaryToWriter
     );
   }
-  f = message.getRiskfactor();
+  f = message.getRiskFactor();
   if (f != null) {
     writer.writeMessage(
       122,
@@ -3185,7 +3203,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.RiskFactor.serializeBinaryToWriter
     );
   }
-  f = message.getNetworkparameter();
+  f = message.getNetworkParameter();
   if (f != null) {
     writer.writeMessage(
       123,
@@ -3193,7 +3211,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.NetworkParameter.serializeBinaryToWriter
     );
   }
-  f = message.getLiquidityprovision();
+  f = message.getLiquidityProvision();
   if (f != null) {
     writer.writeMessage(
       124,
@@ -3201,12 +3219,28 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       vega_pb.LiquidityProvision.serializeBinaryToWriter
     );
   }
-  f = message.getMarketupdated();
+  f = message.getMarketUpdated();
   if (f != null) {
     writer.writeMessage(
       125,
       f,
       markets_pb.Market.serializeBinaryToWriter
+    );
+  }
+  f = message.getOracleSpec();
+  if (f != null) {
+    writer.writeMessage(
+      126,
+      f,
+      oracles_v1_oracle_spec_pb.OracleSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getOracleData();
+  if (f != null) {
+    writer.writeMessage(
+      127,
+      f,
+      oracles_v1_oracle_data_pb.OracleData.serializeBinaryToWriter
     );
   }
   f = message.getMarket();
@@ -3217,7 +3251,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
       proto.vega.MarketEvent.serializeBinaryToWriter
     );
   }
-  f = message.getTxerrevent();
+  f = message.getTxErrEvent();
   if (f != null) {
     writer.writeMessage(
       2001,
@@ -3229,7 +3263,7 @@ proto.vega.BusEvent.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string ID = 1;
+ * optional string id = 1;
  * @return {string}
  */
 proto.vega.BusEvent.prototype.getId = function() {
@@ -3283,10 +3317,10 @@ proto.vega.BusEvent.prototype.setType = function(value) {
 
 
 /**
- * optional TimeUpdate timeUpdate = 101;
+ * optional TimeUpdate time_update = 101;
  * @return {?proto.vega.TimeUpdate}
  */
-proto.vega.BusEvent.prototype.getTimeupdate = function() {
+proto.vega.BusEvent.prototype.getTimeUpdate = function() {
   return /** @type{?proto.vega.TimeUpdate} */ (
     jspb.Message.getWrapperField(this, proto.vega.TimeUpdate, 101));
 };
@@ -3296,7 +3330,7 @@ proto.vega.BusEvent.prototype.getTimeupdate = function() {
  * @param {?proto.vega.TimeUpdate|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setTimeupdate = function(value) {
+proto.vega.BusEvent.prototype.setTimeUpdate = function(value) {
   return jspb.Message.setOneofWrapperField(this, 101, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3305,8 +3339,8 @@ proto.vega.BusEvent.prototype.setTimeupdate = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearTimeupdate = function() {
-  return this.setTimeupdate(undefined);
+proto.vega.BusEvent.prototype.clearTimeUpdate = function() {
+  return this.setTimeUpdate(undefined);
 };
 
 
@@ -3314,16 +3348,16 @@ proto.vega.BusEvent.prototype.clearTimeupdate = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasTimeupdate = function() {
+proto.vega.BusEvent.prototype.hasTimeUpdate = function() {
   return jspb.Message.getField(this, 101) != null;
 };
 
 
 /**
- * optional TransferResponses transferResponses = 102;
+ * optional TransferResponses transfer_responses = 102;
  * @return {?proto.vega.TransferResponses}
  */
-proto.vega.BusEvent.prototype.getTransferresponses = function() {
+proto.vega.BusEvent.prototype.getTransferResponses = function() {
   return /** @type{?proto.vega.TransferResponses} */ (
     jspb.Message.getWrapperField(this, proto.vega.TransferResponses, 102));
 };
@@ -3333,7 +3367,7 @@ proto.vega.BusEvent.prototype.getTransferresponses = function() {
  * @param {?proto.vega.TransferResponses|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setTransferresponses = function(value) {
+proto.vega.BusEvent.prototype.setTransferResponses = function(value) {
   return jspb.Message.setOneofWrapperField(this, 102, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3342,8 +3376,8 @@ proto.vega.BusEvent.prototype.setTransferresponses = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearTransferresponses = function() {
-  return this.setTransferresponses(undefined);
+proto.vega.BusEvent.prototype.clearTransferResponses = function() {
+  return this.setTransferResponses(undefined);
 };
 
 
@@ -3351,16 +3385,16 @@ proto.vega.BusEvent.prototype.clearTransferresponses = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasTransferresponses = function() {
+proto.vega.BusEvent.prototype.hasTransferResponses = function() {
   return jspb.Message.getField(this, 102) != null;
 };
 
 
 /**
- * optional PositionResolution positionResolution = 103;
+ * optional PositionResolution position_resolution = 103;
  * @return {?proto.vega.PositionResolution}
  */
-proto.vega.BusEvent.prototype.getPositionresolution = function() {
+proto.vega.BusEvent.prototype.getPositionResolution = function() {
   return /** @type{?proto.vega.PositionResolution} */ (
     jspb.Message.getWrapperField(this, proto.vega.PositionResolution, 103));
 };
@@ -3370,7 +3404,7 @@ proto.vega.BusEvent.prototype.getPositionresolution = function() {
  * @param {?proto.vega.PositionResolution|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setPositionresolution = function(value) {
+proto.vega.BusEvent.prototype.setPositionResolution = function(value) {
   return jspb.Message.setOneofWrapperField(this, 103, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3379,8 +3413,8 @@ proto.vega.BusEvent.prototype.setPositionresolution = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearPositionresolution = function() {
-  return this.setPositionresolution(undefined);
+proto.vega.BusEvent.prototype.clearPositionResolution = function() {
+  return this.setPositionResolution(undefined);
 };
 
 
@@ -3388,7 +3422,7 @@ proto.vega.BusEvent.prototype.clearPositionresolution = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasPositionresolution = function() {
+proto.vega.BusEvent.prototype.hasPositionResolution = function() {
   return jspb.Message.getField(this, 103) != null;
 };
 
@@ -3542,10 +3576,10 @@ proto.vega.BusEvent.prototype.hasTrade = function() {
 
 
 /**
- * optional MarginLevels marginLevels = 108;
+ * optional MarginLevels margin_levels = 108;
  * @return {?proto.vega.MarginLevels}
  */
-proto.vega.BusEvent.prototype.getMarginlevels = function() {
+proto.vega.BusEvent.prototype.getMarginLevels = function() {
   return /** @type{?proto.vega.MarginLevels} */ (
     jspb.Message.getWrapperField(this, vega_pb.MarginLevels, 108));
 };
@@ -3555,7 +3589,7 @@ proto.vega.BusEvent.prototype.getMarginlevels = function() {
  * @param {?proto.vega.MarginLevels|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setMarginlevels = function(value) {
+proto.vega.BusEvent.prototype.setMarginLevels = function(value) {
   return jspb.Message.setOneofWrapperField(this, 108, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3564,8 +3598,8 @@ proto.vega.BusEvent.prototype.setMarginlevels = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearMarginlevels = function() {
-  return this.setMarginlevels(undefined);
+proto.vega.BusEvent.prototype.clearMarginLevels = function() {
+  return this.setMarginLevels(undefined);
 };
 
 
@@ -3573,7 +3607,7 @@ proto.vega.BusEvent.prototype.clearMarginlevels = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasMarginlevels = function() {
+proto.vega.BusEvent.prototype.hasMarginLevels = function() {
   return jspb.Message.getField(this, 108) != null;
 };
 
@@ -3653,10 +3687,10 @@ proto.vega.BusEvent.prototype.hasVote = function() {
 
 
 /**
- * optional MarketData marketData = 111;
+ * optional MarketData market_data = 111;
  * @return {?proto.vega.MarketData}
  */
-proto.vega.BusEvent.prototype.getMarketdata = function() {
+proto.vega.BusEvent.prototype.getMarketData = function() {
   return /** @type{?proto.vega.MarketData} */ (
     jspb.Message.getWrapperField(this, vega_pb.MarketData, 111));
 };
@@ -3666,7 +3700,7 @@ proto.vega.BusEvent.prototype.getMarketdata = function() {
  * @param {?proto.vega.MarketData|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setMarketdata = function(value) {
+proto.vega.BusEvent.prototype.setMarketData = function(value) {
   return jspb.Message.setOneofWrapperField(this, 111, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3675,8 +3709,8 @@ proto.vega.BusEvent.prototype.setMarketdata = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearMarketdata = function() {
-  return this.setMarketdata(undefined);
+proto.vega.BusEvent.prototype.clearMarketData = function() {
+  return this.setMarketData(undefined);
 };
 
 
@@ -3684,16 +3718,16 @@ proto.vega.BusEvent.prototype.clearMarketdata = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasMarketdata = function() {
+proto.vega.BusEvent.prototype.hasMarketData = function() {
   return jspb.Message.getField(this, 111) != null;
 };
 
 
 /**
- * optional NodeSignature nodeSignature = 112;
+ * optional NodeSignature node_signature = 112;
  * @return {?proto.vega.NodeSignature}
  */
-proto.vega.BusEvent.prototype.getNodesignature = function() {
+proto.vega.BusEvent.prototype.getNodeSignature = function() {
   return /** @type{?proto.vega.NodeSignature} */ (
     jspb.Message.getWrapperField(this, vega_pb.NodeSignature, 112));
 };
@@ -3703,7 +3737,7 @@ proto.vega.BusEvent.prototype.getNodesignature = function() {
  * @param {?proto.vega.NodeSignature|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setNodesignature = function(value) {
+proto.vega.BusEvent.prototype.setNodeSignature = function(value) {
   return jspb.Message.setOneofWrapperField(this, 112, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3712,8 +3746,8 @@ proto.vega.BusEvent.prototype.setNodesignature = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearNodesignature = function() {
-  return this.setNodesignature(undefined);
+proto.vega.BusEvent.prototype.clearNodeSignature = function() {
+  return this.setNodeSignature(undefined);
 };
 
 
@@ -3721,16 +3755,16 @@ proto.vega.BusEvent.prototype.clearNodesignature = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasNodesignature = function() {
+proto.vega.BusEvent.prototype.hasNodeSignature = function() {
   return jspb.Message.getField(this, 112) != null;
 };
 
 
 /**
- * optional LossSocialization lossSocialization = 113;
+ * optional LossSocialization loss_socialization = 113;
  * @return {?proto.vega.LossSocialization}
  */
-proto.vega.BusEvent.prototype.getLosssocialization = function() {
+proto.vega.BusEvent.prototype.getLossSocialization = function() {
   return /** @type{?proto.vega.LossSocialization} */ (
     jspb.Message.getWrapperField(this, proto.vega.LossSocialization, 113));
 };
@@ -3740,7 +3774,7 @@ proto.vega.BusEvent.prototype.getLosssocialization = function() {
  * @param {?proto.vega.LossSocialization|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setLosssocialization = function(value) {
+proto.vega.BusEvent.prototype.setLossSocialization = function(value) {
   return jspb.Message.setOneofWrapperField(this, 113, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3749,8 +3783,8 @@ proto.vega.BusEvent.prototype.setLosssocialization = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearLosssocialization = function() {
-  return this.setLosssocialization(undefined);
+proto.vega.BusEvent.prototype.clearLossSocialization = function() {
+  return this.setLossSocialization(undefined);
 };
 
 
@@ -3758,16 +3792,16 @@ proto.vega.BusEvent.prototype.clearLosssocialization = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasLosssocialization = function() {
+proto.vega.BusEvent.prototype.hasLossSocialization = function() {
   return jspb.Message.getField(this, 113) != null;
 };
 
 
 /**
- * optional SettlePosition settlePosition = 114;
+ * optional SettlePosition settle_position = 114;
  * @return {?proto.vega.SettlePosition}
  */
-proto.vega.BusEvent.prototype.getSettleposition = function() {
+proto.vega.BusEvent.prototype.getSettlePosition = function() {
   return /** @type{?proto.vega.SettlePosition} */ (
     jspb.Message.getWrapperField(this, proto.vega.SettlePosition, 114));
 };
@@ -3777,7 +3811,7 @@ proto.vega.BusEvent.prototype.getSettleposition = function() {
  * @param {?proto.vega.SettlePosition|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setSettleposition = function(value) {
+proto.vega.BusEvent.prototype.setSettlePosition = function(value) {
   return jspb.Message.setOneofWrapperField(this, 114, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3786,8 +3820,8 @@ proto.vega.BusEvent.prototype.setSettleposition = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearSettleposition = function() {
-  return this.setSettleposition(undefined);
+proto.vega.BusEvent.prototype.clearSettlePosition = function() {
+  return this.setSettlePosition(undefined);
 };
 
 
@@ -3795,16 +3829,16 @@ proto.vega.BusEvent.prototype.clearSettleposition = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasSettleposition = function() {
+proto.vega.BusEvent.prototype.hasSettlePosition = function() {
   return jspb.Message.getField(this, 114) != null;
 };
 
 
 /**
- * optional SettleDistressed settleDistressed = 115;
+ * optional SettleDistressed settle_distressed = 115;
  * @return {?proto.vega.SettleDistressed}
  */
-proto.vega.BusEvent.prototype.getSettledistressed = function() {
+proto.vega.BusEvent.prototype.getSettleDistressed = function() {
   return /** @type{?proto.vega.SettleDistressed} */ (
     jspb.Message.getWrapperField(this, proto.vega.SettleDistressed, 115));
 };
@@ -3814,7 +3848,7 @@ proto.vega.BusEvent.prototype.getSettledistressed = function() {
  * @param {?proto.vega.SettleDistressed|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setSettledistressed = function(value) {
+proto.vega.BusEvent.prototype.setSettleDistressed = function(value) {
   return jspb.Message.setOneofWrapperField(this, 115, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3823,8 +3857,8 @@ proto.vega.BusEvent.prototype.setSettledistressed = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearSettledistressed = function() {
-  return this.setSettledistressed(undefined);
+proto.vega.BusEvent.prototype.clearSettleDistressed = function() {
+  return this.setSettleDistressed(undefined);
 };
 
 
@@ -3832,16 +3866,16 @@ proto.vega.BusEvent.prototype.clearSettledistressed = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasSettledistressed = function() {
+proto.vega.BusEvent.prototype.hasSettleDistressed = function() {
   return jspb.Message.getField(this, 115) != null;
 };
 
 
 /**
- * optional Market marketCreated = 116;
+ * optional Market market_created = 116;
  * @return {?proto.vega.Market}
  */
-proto.vega.BusEvent.prototype.getMarketcreated = function() {
+proto.vega.BusEvent.prototype.getMarketCreated = function() {
   return /** @type{?proto.vega.Market} */ (
     jspb.Message.getWrapperField(this, markets_pb.Market, 116));
 };
@@ -3851,7 +3885,7 @@ proto.vega.BusEvent.prototype.getMarketcreated = function() {
  * @param {?proto.vega.Market|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setMarketcreated = function(value) {
+proto.vega.BusEvent.prototype.setMarketCreated = function(value) {
   return jspb.Message.setOneofWrapperField(this, 116, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3860,8 +3894,8 @@ proto.vega.BusEvent.prototype.setMarketcreated = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearMarketcreated = function() {
-  return this.setMarketcreated(undefined);
+proto.vega.BusEvent.prototype.clearMarketCreated = function() {
+  return this.setMarketCreated(undefined);
 };
 
 
@@ -3869,7 +3903,7 @@ proto.vega.BusEvent.prototype.clearMarketcreated = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasMarketcreated = function() {
+proto.vega.BusEvent.prototype.hasMarketCreated = function() {
   return jspb.Message.getField(this, 116) != null;
 };
 
@@ -3912,10 +3946,10 @@ proto.vega.BusEvent.prototype.hasAsset = function() {
 
 
 /**
- * optional MarketTick marketTick = 118;
+ * optional MarketTick market_tick = 118;
  * @return {?proto.vega.MarketTick}
  */
-proto.vega.BusEvent.prototype.getMarkettick = function() {
+proto.vega.BusEvent.prototype.getMarketTick = function() {
   return /** @type{?proto.vega.MarketTick} */ (
     jspb.Message.getWrapperField(this, proto.vega.MarketTick, 118));
 };
@@ -3925,7 +3959,7 @@ proto.vega.BusEvent.prototype.getMarkettick = function() {
  * @param {?proto.vega.MarketTick|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setMarkettick = function(value) {
+proto.vega.BusEvent.prototype.setMarketTick = function(value) {
   return jspb.Message.setOneofWrapperField(this, 118, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -3934,8 +3968,8 @@ proto.vega.BusEvent.prototype.setMarkettick = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearMarkettick = function() {
-  return this.setMarkettick(undefined);
+proto.vega.BusEvent.prototype.clearMarketTick = function() {
+  return this.setMarketTick(undefined);
 };
 
 
@@ -3943,7 +3977,7 @@ proto.vega.BusEvent.prototype.clearMarkettick = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasMarkettick = function() {
+proto.vega.BusEvent.prototype.hasMarketTick = function() {
   return jspb.Message.getField(this, 118) != null;
 };
 
@@ -4060,10 +4094,10 @@ proto.vega.BusEvent.prototype.hasAuction = function() {
 
 
 /**
- * optional RiskFactor riskFactor = 122;
+ * optional RiskFactor risk_factor = 122;
  * @return {?proto.vega.RiskFactor}
  */
-proto.vega.BusEvent.prototype.getRiskfactor = function() {
+proto.vega.BusEvent.prototype.getRiskFactor = function() {
   return /** @type{?proto.vega.RiskFactor} */ (
     jspb.Message.getWrapperField(this, vega_pb.RiskFactor, 122));
 };
@@ -4073,7 +4107,7 @@ proto.vega.BusEvent.prototype.getRiskfactor = function() {
  * @param {?proto.vega.RiskFactor|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setRiskfactor = function(value) {
+proto.vega.BusEvent.prototype.setRiskFactor = function(value) {
   return jspb.Message.setOneofWrapperField(this, 122, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -4082,8 +4116,8 @@ proto.vega.BusEvent.prototype.setRiskfactor = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearRiskfactor = function() {
-  return this.setRiskfactor(undefined);
+proto.vega.BusEvent.prototype.clearRiskFactor = function() {
+  return this.setRiskFactor(undefined);
 };
 
 
@@ -4091,16 +4125,16 @@ proto.vega.BusEvent.prototype.clearRiskfactor = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasRiskfactor = function() {
+proto.vega.BusEvent.prototype.hasRiskFactor = function() {
   return jspb.Message.getField(this, 122) != null;
 };
 
 
 /**
- * optional NetworkParameter networkParameter = 123;
+ * optional NetworkParameter network_parameter = 123;
  * @return {?proto.vega.NetworkParameter}
  */
-proto.vega.BusEvent.prototype.getNetworkparameter = function() {
+proto.vega.BusEvent.prototype.getNetworkParameter = function() {
   return /** @type{?proto.vega.NetworkParameter} */ (
     jspb.Message.getWrapperField(this, vega_pb.NetworkParameter, 123));
 };
@@ -4110,7 +4144,7 @@ proto.vega.BusEvent.prototype.getNetworkparameter = function() {
  * @param {?proto.vega.NetworkParameter|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setNetworkparameter = function(value) {
+proto.vega.BusEvent.prototype.setNetworkParameter = function(value) {
   return jspb.Message.setOneofWrapperField(this, 123, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -4119,8 +4153,8 @@ proto.vega.BusEvent.prototype.setNetworkparameter = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearNetworkparameter = function() {
-  return this.setNetworkparameter(undefined);
+proto.vega.BusEvent.prototype.clearNetworkParameter = function() {
+  return this.setNetworkParameter(undefined);
 };
 
 
@@ -4128,16 +4162,16 @@ proto.vega.BusEvent.prototype.clearNetworkparameter = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasNetworkparameter = function() {
+proto.vega.BusEvent.prototype.hasNetworkParameter = function() {
   return jspb.Message.getField(this, 123) != null;
 };
 
 
 /**
- * optional LiquidityProvision liquidityProvision = 124;
+ * optional LiquidityProvision liquidity_provision = 124;
  * @return {?proto.vega.LiquidityProvision}
  */
-proto.vega.BusEvent.prototype.getLiquidityprovision = function() {
+proto.vega.BusEvent.prototype.getLiquidityProvision = function() {
   return /** @type{?proto.vega.LiquidityProvision} */ (
     jspb.Message.getWrapperField(this, vega_pb.LiquidityProvision, 124));
 };
@@ -4147,7 +4181,7 @@ proto.vega.BusEvent.prototype.getLiquidityprovision = function() {
  * @param {?proto.vega.LiquidityProvision|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setLiquidityprovision = function(value) {
+proto.vega.BusEvent.prototype.setLiquidityProvision = function(value) {
   return jspb.Message.setOneofWrapperField(this, 124, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -4156,8 +4190,8 @@ proto.vega.BusEvent.prototype.setLiquidityprovision = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearLiquidityprovision = function() {
-  return this.setLiquidityprovision(undefined);
+proto.vega.BusEvent.prototype.clearLiquidityProvision = function() {
+  return this.setLiquidityProvision(undefined);
 };
 
 
@@ -4165,16 +4199,16 @@ proto.vega.BusEvent.prototype.clearLiquidityprovision = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasLiquidityprovision = function() {
+proto.vega.BusEvent.prototype.hasLiquidityProvision = function() {
   return jspb.Message.getField(this, 124) != null;
 };
 
 
 /**
- * optional Market marketUpdated = 125;
+ * optional Market market_updated = 125;
  * @return {?proto.vega.Market}
  */
-proto.vega.BusEvent.prototype.getMarketupdated = function() {
+proto.vega.BusEvent.prototype.getMarketUpdated = function() {
   return /** @type{?proto.vega.Market} */ (
     jspb.Message.getWrapperField(this, markets_pb.Market, 125));
 };
@@ -4184,7 +4218,7 @@ proto.vega.BusEvent.prototype.getMarketupdated = function() {
  * @param {?proto.vega.Market|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setMarketupdated = function(value) {
+proto.vega.BusEvent.prototype.setMarketUpdated = function(value) {
   return jspb.Message.setOneofWrapperField(this, 125, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -4193,8 +4227,8 @@ proto.vega.BusEvent.prototype.setMarketupdated = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearMarketupdated = function() {
-  return this.setMarketupdated(undefined);
+proto.vega.BusEvent.prototype.clearMarketUpdated = function() {
+  return this.setMarketUpdated(undefined);
 };
 
 
@@ -4202,8 +4236,82 @@ proto.vega.BusEvent.prototype.clearMarketupdated = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasMarketupdated = function() {
+proto.vega.BusEvent.prototype.hasMarketUpdated = function() {
   return jspb.Message.getField(this, 125) != null;
+};
+
+
+/**
+ * optional oracles.v1.OracleSpec oracle_spec = 126;
+ * @return {?proto.oracles.v1.OracleSpec}
+ */
+proto.vega.BusEvent.prototype.getOracleSpec = function() {
+  return /** @type{?proto.oracles.v1.OracleSpec} */ (
+    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpec, 126));
+};
+
+
+/**
+ * @param {?proto.oracles.v1.OracleSpec|undefined} value
+ * @return {!proto.vega.BusEvent} returns this
+*/
+proto.vega.BusEvent.prototype.setOracleSpec = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 126, proto.vega.BusEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.BusEvent} returns this
+ */
+proto.vega.BusEvent.prototype.clearOracleSpec = function() {
+  return this.setOracleSpec(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.BusEvent.prototype.hasOracleSpec = function() {
+  return jspb.Message.getField(this, 126) != null;
+};
+
+
+/**
+ * optional oracles.v1.OracleData oracle_data = 127;
+ * @return {?proto.oracles.v1.OracleData}
+ */
+proto.vega.BusEvent.prototype.getOracleData = function() {
+  return /** @type{?proto.oracles.v1.OracleData} */ (
+    jspb.Message.getWrapperField(this, oracles_v1_oracle_data_pb.OracleData, 127));
+};
+
+
+/**
+ * @param {?proto.oracles.v1.OracleData|undefined} value
+ * @return {!proto.vega.BusEvent} returns this
+*/
+proto.vega.BusEvent.prototype.setOracleData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 127, proto.vega.BusEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.BusEvent} returns this
+ */
+proto.vega.BusEvent.prototype.clearOracleData = function() {
+  return this.setOracleData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.BusEvent.prototype.hasOracleData = function() {
+  return jspb.Message.getField(this, 127) != null;
 };
 
 
@@ -4245,10 +4353,10 @@ proto.vega.BusEvent.prototype.hasMarket = function() {
 
 
 /**
- * optional TxErrorEvent txErrEvent = 2001;
+ * optional TxErrorEvent tx_err_event = 2001;
  * @return {?proto.vega.TxErrorEvent}
  */
-proto.vega.BusEvent.prototype.getTxerrevent = function() {
+proto.vega.BusEvent.prototype.getTxErrEvent = function() {
   return /** @type{?proto.vega.TxErrorEvent} */ (
     jspb.Message.getWrapperField(this, proto.vega.TxErrorEvent, 2001));
 };
@@ -4258,7 +4366,7 @@ proto.vega.BusEvent.prototype.getTxerrevent = function() {
  * @param {?proto.vega.TxErrorEvent|undefined} value
  * @return {!proto.vega.BusEvent} returns this
 */
-proto.vega.BusEvent.prototype.setTxerrevent = function(value) {
+proto.vega.BusEvent.prototype.setTxErrEvent = function(value) {
   return jspb.Message.setOneofWrapperField(this, 2001, proto.vega.BusEvent.oneofGroups_[0], value);
 };
 
@@ -4267,8 +4375,8 @@ proto.vega.BusEvent.prototype.setTxerrevent = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.BusEvent} returns this
  */
-proto.vega.BusEvent.prototype.clearTxerrevent = function() {
-  return this.setTxerrevent(undefined);
+proto.vega.BusEvent.prototype.clearTxErrEvent = function() {
+  return this.setTxErrEvent(undefined);
 };
 
 
@@ -4276,7 +4384,7 @@ proto.vega.BusEvent.prototype.clearTxerrevent = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.BusEvent.prototype.hasTxerrevent = function() {
+proto.vega.BusEvent.prototype.hasTxErrEvent = function() {
   return jspb.Message.getField(this, 2001) != null;
 };
 
@@ -4312,6 +4420,8 @@ proto.vega.BusEventType = {
   BUS_EVENT_TYPE_NETWORK_PARAMETER: 24,
   BUS_EVENT_TYPE_LIQUIDITY_PROVISION: 25,
   BUS_EVENT_TYPE_MARKET_UPDATED: 26,
+  BUS_EVENT_TYPE_ORACLE_SPEC: 27,
+  BUS_EVENT_TYPE_ORACLE_DATA: 28,
   BUS_EVENT_TYPE_MARKET: 101,
   BUS_EVENT_TYPE_TX_ERROR: 201
 };

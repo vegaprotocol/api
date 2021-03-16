@@ -53,7 +53,7 @@ struct TableStruct_vega_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[53]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[55]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -97,6 +97,9 @@ extern LiquidityOrderDefaultTypeInternal _LiquidityOrder_default_instance_;
 class LiquidityOrderReference;
 class LiquidityOrderReferenceDefaultTypeInternal;
 extern LiquidityOrderReferenceDefaultTypeInternal _LiquidityOrderReference_default_instance_;
+class LiquidityProviderFeeShare;
+class LiquidityProviderFeeShareDefaultTypeInternal;
+extern LiquidityProviderFeeShareDefaultTypeInternal _LiquidityProviderFeeShare_default_instance_;
 class LiquidityProvision;
 class LiquidityProvisionDefaultTypeInternal;
 extern LiquidityProvisionDefaultTypeInternal _LiquidityProvision_default_instance_;
@@ -127,6 +130,9 @@ extern NodeSignatureDefaultTypeInternal _NodeSignature_default_instance_;
 class NodeVote;
 class NodeVoteDefaultTypeInternal;
 extern NodeVoteDefaultTypeInternal _NodeVote_default_instance_;
+class OracleDataSubmission;
+class OracleDataSubmissionDefaultTypeInternal;
+extern OracleDataSubmissionDefaultTypeInternal _OracleDataSubmission_default_instance_;
 class Order;
 class OrderDefaultTypeInternal;
 extern OrderDefaultTypeInternal _Order_default_instance_;
@@ -234,6 +240,7 @@ template<> ::vega::FinancialAmount* Arena::CreateMaybeMessage<::vega::FinancialA
 template<> ::vega::LedgerEntry* Arena::CreateMaybeMessage<::vega::LedgerEntry>(Arena*);
 template<> ::vega::LiquidityOrder* Arena::CreateMaybeMessage<::vega::LiquidityOrder>(Arena*);
 template<> ::vega::LiquidityOrderReference* Arena::CreateMaybeMessage<::vega::LiquidityOrderReference>(Arena*);
+template<> ::vega::LiquidityProviderFeeShare* Arena::CreateMaybeMessage<::vega::LiquidityProviderFeeShare>(Arena*);
 template<> ::vega::LiquidityProvision* Arena::CreateMaybeMessage<::vega::LiquidityProvision>(Arena*);
 template<> ::vega::LiquidityProvisionSubmission* Arena::CreateMaybeMessage<::vega::LiquidityProvisionSubmission>(Arena*);
 template<> ::vega::MarginLevels* Arena::CreateMaybeMessage<::vega::MarginLevels>(Arena*);
@@ -244,6 +251,7 @@ template<> ::vega::NetworkParameter* Arena::CreateMaybeMessage<::vega::NetworkPa
 template<> ::vega::NodeRegistration* Arena::CreateMaybeMessage<::vega::NodeRegistration>(Arena*);
 template<> ::vega::NodeSignature* Arena::CreateMaybeMessage<::vega::NodeSignature>(Arena*);
 template<> ::vega::NodeVote* Arena::CreateMaybeMessage<::vega::NodeVote>(Arena*);
+template<> ::vega::OracleDataSubmission* Arena::CreateMaybeMessage<::vega::OracleDataSubmission>(Arena*);
 template<> ::vega::Order* Arena::CreateMaybeMessage<::vega::Order>(Arena*);
 template<> ::vega::OrderAmendment* Arena::CreateMaybeMessage<::vega::OrderAmendment>(Arena*);
 template<> ::vega::OrderCancellation* Arena::CreateMaybeMessage<::vega::OrderCancellation>(Arena*);
@@ -279,19 +287,19 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace vega {
 
 enum Order_TimeInForce : int {
-  Order_TimeInForce_TIF_UNSPECIFIED = 0,
-  Order_TimeInForce_TIF_GTC = 1,
-  Order_TimeInForce_TIF_GTT = 2,
-  Order_TimeInForce_TIF_IOC = 3,
-  Order_TimeInForce_TIF_FOK = 4,
-  Order_TimeInForce_TIF_GFA = 5,
-  Order_TimeInForce_TIF_GFN = 6,
+  Order_TimeInForce_TIME_IN_FORCE_UNSPECIFIED = 0,
+  Order_TimeInForce_TIME_IN_FORCE_GTC = 1,
+  Order_TimeInForce_TIME_IN_FORCE_GTT = 2,
+  Order_TimeInForce_TIME_IN_FORCE_IOC = 3,
+  Order_TimeInForce_TIME_IN_FORCE_FOK = 4,
+  Order_TimeInForce_TIME_IN_FORCE_GFA = 5,
+  Order_TimeInForce_TIME_IN_FORCE_GFN = 6,
   Order_TimeInForce_Order_TimeInForce_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Order_TimeInForce_Order_TimeInForce_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Order_TimeInForce_IsValid(int value);
-constexpr Order_TimeInForce Order_TimeInForce_TimeInForce_MIN = Order_TimeInForce_TIF_UNSPECIFIED;
-constexpr Order_TimeInForce Order_TimeInForce_TimeInForce_MAX = Order_TimeInForce_TIF_GFN;
+constexpr Order_TimeInForce Order_TimeInForce_TimeInForce_MIN = Order_TimeInForce_TIME_IN_FORCE_UNSPECIFIED;
+constexpr Order_TimeInForce Order_TimeInForce_TimeInForce_MAX = Order_TimeInForce_TIME_IN_FORCE_GFN;
 constexpr int Order_TimeInForce_TimeInForce_ARRAYSIZE = Order_TimeInForce_TimeInForce_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Order_TimeInForce_descriptor();
@@ -336,7 +344,7 @@ inline bool Order_Type_Parse(
     Order_Type_descriptor(), name, value);
 }
 enum Order_Status : int {
-  Order_Status_STATUS_INVALID = 0,
+  Order_Status_STATUS_UNSPECIFIED = 0,
   Order_Status_STATUS_ACTIVE = 1,
   Order_Status_STATUS_EXPIRED = 2,
   Order_Status_STATUS_CANCELLED = 3,
@@ -349,7 +357,7 @@ enum Order_Status : int {
   Order_Status_Order_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Order_Status_IsValid(int value);
-constexpr Order_Status Order_Status_Status_MIN = Order_Status_STATUS_INVALID;
+constexpr Order_Status Order_Status_Status_MIN = Order_Status_STATUS_UNSPECIFIED;
 constexpr Order_Status Order_Status_Status_MAX = Order_Status_STATUS_PARKED;
 constexpr int Order_Status_Status_ARRAYSIZE = Order_Status_Status_MAX + 1;
 
@@ -395,16 +403,16 @@ inline bool Trade_Type_Parse(
     Trade_Type_descriptor(), name, value);
 }
 enum Deposit_Status : int {
-  Deposit_Status_DEPOSIT_STATUS_UNSPECIFIED = 0,
-  Deposit_Status_DEPOSIT_STATUS_OPEN = 1,
-  Deposit_Status_DEPOSIT_STATUS_CANCELLED = 2,
-  Deposit_Status_DEPOSIT_STATUS_FINALIZED = 3,
+  Deposit_Status_STATUS_UNSPECIFIED = 0,
+  Deposit_Status_STATUS_OPEN = 1,
+  Deposit_Status_STATUS_CANCELLED = 2,
+  Deposit_Status_STATUS_FINALIZED = 3,
   Deposit_Status_Deposit_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Deposit_Status_Deposit_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Deposit_Status_IsValid(int value);
-constexpr Deposit_Status Deposit_Status_Status_MIN = Deposit_Status_DEPOSIT_STATUS_UNSPECIFIED;
-constexpr Deposit_Status Deposit_Status_Status_MAX = Deposit_Status_DEPOSIT_STATUS_FINALIZED;
+constexpr Deposit_Status Deposit_Status_Status_MIN = Deposit_Status_STATUS_UNSPECIFIED;
+constexpr Deposit_Status Deposit_Status_Status_MAX = Deposit_Status_STATUS_FINALIZED;
 constexpr int Deposit_Status_Status_ARRAYSIZE = Deposit_Status_Status_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Deposit_Status_descriptor();
@@ -422,16 +430,16 @@ inline bool Deposit_Status_Parse(
     Deposit_Status_descriptor(), name, value);
 }
 enum Withdrawal_Status : int {
-  Withdrawal_Status_WITHDRAWAL_STATUS_UNSPECIFIED = 0,
-  Withdrawal_Status_WITHDRAWAL_STATUS_OPEN = 1,
-  Withdrawal_Status_WITHDRAWAL_STATUS_CANCELLED = 2,
-  Withdrawal_Status_WITHDRAWAL_STATUS_FINALIZED = 3,
+  Withdrawal_Status_STATUS_UNSPECIFIED = 0,
+  Withdrawal_Status_STATUS_OPEN = 1,
+  Withdrawal_Status_STATUS_CANCELLED = 2,
+  Withdrawal_Status_STATUS_FINALIZED = 3,
   Withdrawal_Status_Withdrawal_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   Withdrawal_Status_Withdrawal_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool Withdrawal_Status_IsValid(int value);
-constexpr Withdrawal_Status Withdrawal_Status_Status_MIN = Withdrawal_Status_WITHDRAWAL_STATUS_UNSPECIFIED;
-constexpr Withdrawal_Status Withdrawal_Status_Status_MAX = Withdrawal_Status_WITHDRAWAL_STATUS_FINALIZED;
+constexpr Withdrawal_Status Withdrawal_Status_Status_MIN = Withdrawal_Status_STATUS_UNSPECIFIED;
+constexpr Withdrawal_Status Withdrawal_Status_Status_MAX = Withdrawal_Status_STATUS_FINALIZED;
 constexpr int Withdrawal_Status_Status_ARRAYSIZE = Withdrawal_Status_Status_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Withdrawal_Status_descriptor();
@@ -449,17 +457,18 @@ inline bool Withdrawal_Status_Parse(
     Withdrawal_Status_descriptor(), name, value);
 }
 enum LiquidityProvision_Status : int {
-  LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_UNSPECIFIED = 0,
-  LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_ACTIVE = 1,
-  LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_STOPPED = 2,
-  LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_CANCELLED = 3,
-  LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_REJECTED = 4,
+  LiquidityProvision_Status_STATUS_UNSPECIFIED = 0,
+  LiquidityProvision_Status_STATUS_ACTIVE = 1,
+  LiquidityProvision_Status_STATUS_STOPPED = 2,
+  LiquidityProvision_Status_STATUS_CANCELLED = 3,
+  LiquidityProvision_Status_STATUS_REJECTED = 4,
+  LiquidityProvision_Status_STATUS_UNDEPLOYED = 5,
   LiquidityProvision_Status_LiquidityProvision_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   LiquidityProvision_Status_LiquidityProvision_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool LiquidityProvision_Status_IsValid(int value);
-constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MIN = LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_UNSPECIFIED;
-constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MAX = LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_REJECTED;
+constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MIN = LiquidityProvision_Status_STATUS_UNSPECIFIED;
+constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MAX = LiquidityProvision_Status_STATUS_UNDEPLOYED;
 constexpr int LiquidityProvision_Status_Status_ARRAYSIZE = LiquidityProvision_Status_Status_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LiquidityProvision_Status_descriptor();
@@ -475,6 +484,31 @@ inline bool LiquidityProvision_Status_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, LiquidityProvision_Status* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<LiquidityProvision_Status>(
     LiquidityProvision_Status_descriptor(), name, value);
+}
+enum OracleDataSubmission_OracleSource : int {
+  OracleDataSubmission_OracleSource_ORACLE_SOURCE_UNSPECIFIED = 0,
+  OracleDataSubmission_OracleSource_ORACLE_SOURCE_OPEN_ORACLE = 1,
+  OracleDataSubmission_OracleSource_OracleDataSubmission_OracleSource_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  OracleDataSubmission_OracleSource_OracleDataSubmission_OracleSource_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool OracleDataSubmission_OracleSource_IsValid(int value);
+constexpr OracleDataSubmission_OracleSource OracleDataSubmission_OracleSource_OracleSource_MIN = OracleDataSubmission_OracleSource_ORACLE_SOURCE_UNSPECIFIED;
+constexpr OracleDataSubmission_OracleSource OracleDataSubmission_OracleSource_OracleSource_MAX = OracleDataSubmission_OracleSource_ORACLE_SOURCE_OPEN_ORACLE;
+constexpr int OracleDataSubmission_OracleSource_OracleSource_ARRAYSIZE = OracleDataSubmission_OracleSource_OracleSource_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OracleDataSubmission_OracleSource_descriptor();
+template<typename T>
+inline const std::string& OracleDataSubmission_OracleSource_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, OracleDataSubmission_OracleSource>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function OracleDataSubmission_OracleSource_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    OracleDataSubmission_OracleSource_descriptor(), enum_t_value);
+}
+inline bool OracleDataSubmission_OracleSource_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, OracleDataSubmission_OracleSource* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OracleDataSubmission_OracleSource>(
+    OracleDataSubmission_OracleSource_descriptor(), name, value);
 }
 enum Side : int {
   SIDE_UNSPECIFIED = 0,
@@ -588,7 +622,7 @@ inline bool PeggedReference_Parse(
     PeggedReference_descriptor(), name, value);
 }
 enum OrderError : int {
-  ORDER_ERROR_NONE = 0,
+  ORDER_ERROR_UNSPECIFIED = 0,
   ORDER_ERROR_INVALID_MARKET_ID = 1,
   ORDER_ERROR_INVALID_ORDER_ID = 2,
   ORDER_ERROR_OUT_OF_SEQUENCE = 3,
@@ -639,7 +673,7 @@ enum OrderError : int {
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool OrderError_IsValid(int value);
-constexpr OrderError OrderError_MIN = ORDER_ERROR_NONE;
+constexpr OrderError OrderError_MIN = ORDER_ERROR_UNSPECIFIED;
 constexpr OrderError OrderError_MAX = ORDER_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORDER;
 constexpr int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
@@ -731,18 +765,21 @@ enum TransferType : int {
   TRANSFER_TYPE_MAKER_FEE_PAY = 9,
   TRANSFER_TYPE_MAKER_FEE_RECEIVE = 10,
   TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY = 11,
-  TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 12,
-  TRANSFER_TYPE_BOND_LOW = 13,
-  TRANSFER_TYPE_BOND_HIGH = 14,
-  TRANSFER_TYPE_WITHDRAW_LOCK = 15,
-  TRANSFER_TYPE_WITHDRAW = 16,
-  TRANSFER_TYPE_DEPOSIT = 17,
+  TRANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUTE = 12,
+  TRANSFER_TYPE_LIQUIDITY_FEE_PAY = 13,
+  TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE = 14,
+  TRANSFER_TYPE_BOND_LOW = 15,
+  TRANSFER_TYPE_BOND_HIGH = 16,
+  TRANSFER_TYPE_WITHDRAW_LOCK = 17,
+  TRANSFER_TYPE_WITHDRAW = 18,
+  TRANSFER_TYPE_DEPOSIT = 19,
+  TRANSFER_TYPE_BOND_SLASHING = 20,
   TransferType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   TransferType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool TransferType_IsValid(int value);
 constexpr TransferType TransferType_MIN = TRANSFER_TYPE_UNSPECIFIED;
-constexpr TransferType TransferType_MAX = TRANSFER_TYPE_DEPOSIT;
+constexpr TransferType TransferType_MAX = TRANSFER_TYPE_BOND_SLASHING;
 constexpr int TransferType_ARRAYSIZE = TransferType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TransferType_descriptor();
@@ -1545,56 +1582,56 @@ class RiskResult PROTOBUF_FINAL :
     kUpdatedTimestampFieldNumber = 1,
     kNextUpdateTimestampFieldNumber = 3,
   };
-  // map<string, .vega.RiskFactor> riskFactors = 2 [json_name = "riskFactors"];
-  int riskfactors_size() const;
+  // map<string, .vega.RiskFactor> risk_factors = 2 [json_name = "riskFactors"];
+  int risk_factors_size() const;
   private:
-  int _internal_riskfactors_size() const;
+  int _internal_risk_factors_size() const;
   public:
-  void clear_riskfactors();
+  void clear_risk_factors();
   private:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-      _internal_riskfactors() const;
+      _internal_risk_factors() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-      _internal_mutable_riskfactors();
+      _internal_mutable_risk_factors();
   public:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-      riskfactors() const;
+      risk_factors() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-      mutable_riskfactors();
+      mutable_risk_factors();
 
-  // map<string, .vega.RiskFactor> predictedNextRiskFactors = 4 [json_name = "predictedNextRiskFactors"];
-  int predictednextriskfactors_size() const;
+  // map<string, .vega.RiskFactor> predicted_next_risk_factors = 4 [json_name = "predictedNextRiskFactors"];
+  int predicted_next_risk_factors_size() const;
   private:
-  int _internal_predictednextriskfactors_size() const;
+  int _internal_predicted_next_risk_factors_size() const;
   public:
-  void clear_predictednextriskfactors();
+  void clear_predicted_next_risk_factors();
   private:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-      _internal_predictednextriskfactors() const;
+      _internal_predicted_next_risk_factors() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-      _internal_mutable_predictednextriskfactors();
+      _internal_mutable_predicted_next_risk_factors();
   public:
   const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-      predictednextriskfactors() const;
+      predicted_next_risk_factors() const;
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-      mutable_predictednextriskfactors();
+      mutable_predicted_next_risk_factors();
 
-  // int64 updatedTimestamp = 1 [json_name = "updatedTimestamp"];
-  void clear_updatedtimestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedtimestamp() const;
-  void set_updatedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 updated_timestamp = 1 [json_name = "updatedTimestamp"];
+  void clear_updated_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_timestamp() const;
+  void set_updated_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updatedtimestamp() const;
-  void _internal_set_updatedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updated_timestamp() const;
+  void _internal_set_updated_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 nextUpdateTimestamp = 3 [json_name = "nextUpdateTimestamp"];
-  void clear_nextupdatetimestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 nextupdatetimestamp() const;
-  void set_nextupdatetimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 next_update_timestamp = 3 [json_name = "nextUpdateTimestamp"];
+  void clear_next_update_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 next_update_timestamp() const;
+  void set_next_update_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_nextupdatetimestamp() const;
-  void _internal_set_nextupdatetimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_next_update_timestamp() const;
+  void _internal_set_next_update_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.RiskResult)
@@ -1608,14 +1645,14 @@ class RiskResult PROTOBUF_FINAL :
       RiskResult_RiskFactorsEntry_DoNotUse,
       std::string, ::vega::RiskFactor,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> riskfactors_;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> risk_factors_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       RiskResult_PredictedNextRiskFactorsEntry_DoNotUse,
       std::string, ::vega::RiskFactor,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> predictednextriskfactors_;
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedtimestamp_;
-  ::PROTOBUF_NAMESPACE_ID::int64 nextupdatetimestamp_;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> predicted_next_risk_factors_;
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::int64 next_update_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -1878,20 +1915,20 @@ class Order PROTOBUF_FINAL :
   // nested types ----------------------------------------------------
 
   typedef Order_TimeInForce TimeInForce;
-  static constexpr TimeInForce TIF_UNSPECIFIED =
-    Order_TimeInForce_TIF_UNSPECIFIED;
-  static constexpr TimeInForce TIF_GTC =
-    Order_TimeInForce_TIF_GTC;
-  static constexpr TimeInForce TIF_GTT =
-    Order_TimeInForce_TIF_GTT;
-  static constexpr TimeInForce TIF_IOC =
-    Order_TimeInForce_TIF_IOC;
-  static constexpr TimeInForce TIF_FOK =
-    Order_TimeInForce_TIF_FOK;
-  static constexpr TimeInForce TIF_GFA =
-    Order_TimeInForce_TIF_GFA;
-  static constexpr TimeInForce TIF_GFN =
-    Order_TimeInForce_TIF_GFN;
+  static constexpr TimeInForce TIME_IN_FORCE_UNSPECIFIED =
+    Order_TimeInForce_TIME_IN_FORCE_UNSPECIFIED;
+  static constexpr TimeInForce TIME_IN_FORCE_GTC =
+    Order_TimeInForce_TIME_IN_FORCE_GTC;
+  static constexpr TimeInForce TIME_IN_FORCE_GTT =
+    Order_TimeInForce_TIME_IN_FORCE_GTT;
+  static constexpr TimeInForce TIME_IN_FORCE_IOC =
+    Order_TimeInForce_TIME_IN_FORCE_IOC;
+  static constexpr TimeInForce TIME_IN_FORCE_FOK =
+    Order_TimeInForce_TIME_IN_FORCE_FOK;
+  static constexpr TimeInForce TIME_IN_FORCE_GFA =
+    Order_TimeInForce_TIME_IN_FORCE_GFA;
+  static constexpr TimeInForce TIME_IN_FORCE_GFN =
+    Order_TimeInForce_TIME_IN_FORCE_GFN;
   static inline bool TimeInForce_IsValid(int value) {
     return Order_TimeInForce_IsValid(value);
   }
@@ -1952,8 +1989,8 @@ class Order PROTOBUF_FINAL :
   }
 
   typedef Order_Status Status;
-  static constexpr Status STATUS_INVALID =
-    Order_Status_STATUS_INVALID;
+  static constexpr Status STATUS_UNSPECIFIED =
+    Order_Status_STATUS_UNSPECIFIED;
   static constexpr Status STATUS_ACTIVE =
     Order_Status_STATUS_ACTIVE;
   static constexpr Status STATUS_EXPIRED =
@@ -1999,8 +2036,8 @@ class Order PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kMarketIDFieldNumber = 2,
-    kPartyIDFieldNumber = 3,
+    kMarketIdFieldNumber = 2,
+    kPartyIdFieldNumber = 3,
     kReferenceFieldNumber = 13,
     kPeggedOrderFieldNumber = 18,
     kPriceFieldNumber = 5,
@@ -2014,7 +2051,7 @@ class Order PROTOBUF_FINAL :
     kExpiresAtFieldNumber = 12,
     kUpdatedAtFieldNumber = 15,
     kVersionFieldNumber = 16,
-    kBatchIDFieldNumber = 17,
+    kBatchIdFieldNumber = 17,
     kReasonFieldNumber = 14,
   };
   // string id = 1 [json_name = "id"];
@@ -2033,36 +2070,36 @@ class Order PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string marketID = 2 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 2 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // string partyID = 3 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 3 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // string reference = 13 [json_name = "reference"];
@@ -2081,23 +2118,23 @@ class Order PROTOBUF_FINAL :
   std::string* _internal_mutable_reference();
   public:
 
-  // .vega.PeggedOrder peggedOrder = 18 [json_name = "peggedOrder"];
-  bool has_peggedorder() const;
+  // .vega.PeggedOrder pegged_order = 18 [json_name = "peggedOrder"];
+  bool has_pegged_order() const;
   private:
-  bool _internal_has_peggedorder() const;
+  bool _internal_has_pegged_order() const;
   public:
-  void clear_peggedorder();
-  const ::vega::PeggedOrder& peggedorder() const;
-  ::vega::PeggedOrder* release_peggedorder();
-  ::vega::PeggedOrder* mutable_peggedorder();
-  void set_allocated_peggedorder(::vega::PeggedOrder* peggedorder);
+  void clear_pegged_order();
+  const ::vega::PeggedOrder& pegged_order() const;
+  ::vega::PeggedOrder* release_pegged_order();
+  ::vega::PeggedOrder* mutable_pegged_order();
+  void set_allocated_pegged_order(::vega::PeggedOrder* pegged_order);
   private:
-  const ::vega::PeggedOrder& _internal_peggedorder() const;
-  ::vega::PeggedOrder* _internal_mutable_peggedorder();
+  const ::vega::PeggedOrder& _internal_pegged_order() const;
+  ::vega::PeggedOrder* _internal_mutable_pegged_order();
   public:
-  void unsafe_arena_set_allocated_peggedorder(
-      ::vega::PeggedOrder* peggedorder);
-  ::vega::PeggedOrder* unsafe_arena_release_peggedorder();
+  void unsafe_arena_set_allocated_pegged_order(
+      ::vega::PeggedOrder* pegged_order);
+  ::vega::PeggedOrder* unsafe_arena_release_pegged_order();
 
   // uint64 price = 5 [json_name = "price"];
   void clear_price();
@@ -2126,13 +2163,13 @@ class Order PROTOBUF_FINAL :
   void _internal_set_side(::vega::Side value);
   public:
 
-  // .vega.Order.TimeInForce timeInForce = 8 [json_name = "timeInForce"];
-  void clear_timeinforce();
-  ::vega::Order_TimeInForce timeinforce() const;
-  void set_timeinforce(::vega::Order_TimeInForce value);
+  // .vega.Order.TimeInForce time_in_force = 8 [json_name = "timeInForce"];
+  void clear_time_in_force();
+  ::vega::Order_TimeInForce time_in_force() const;
+  void set_time_in_force(::vega::Order_TimeInForce value);
   private:
-  ::vega::Order_TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::vega::Order_TimeInForce value);
+  ::vega::Order_TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::vega::Order_TimeInForce value);
   public:
 
   // uint64 remaining = 7 [json_name = "remaining"];
@@ -2144,13 +2181,13 @@ class Order PROTOBUF_FINAL :
   void _internal_set_remaining(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // int64 createdAt = 10 [json_name = "createdAt"];
-  void clear_createdat();
-  ::PROTOBUF_NAMESPACE_ID::int64 createdat() const;
-  void set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 created_at = 10 [json_name = "createdAt"];
+  void clear_created_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 created_at() const;
+  void set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_createdat() const;
-  void _internal_set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_created_at() const;
+  void _internal_set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // .vega.Order.Type type = 9 [json_name = "type"];
@@ -2171,22 +2208,22 @@ class Order PROTOBUF_FINAL :
   void _internal_set_status(::vega::Order_Status value);
   public:
 
-  // int64 expiresAt = 12 [json_name = "expiresAt"];
-  void clear_expiresat();
-  ::PROTOBUF_NAMESPACE_ID::int64 expiresat() const;
-  void set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 expires_at = 12 [json_name = "expiresAt"];
+  void clear_expires_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 expires_at() const;
+  void set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_expiresat() const;
-  void _internal_set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_expires_at() const;
+  void _internal_set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 updatedAt = 15 [json_name = "updatedAt"];
-  void clear_updatedat();
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedat() const;
-  void set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 updated_at = 15 [json_name = "updatedAt"];
+  void clear_updated_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_at() const;
+  void set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updatedat() const;
-  void _internal_set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updated_at() const;
+  void _internal_set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // uint64 version = 16 [json_name = "version"];
@@ -2198,13 +2235,13 @@ class Order PROTOBUF_FINAL :
   void _internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 batchID = 17 [json_name = "batchID"];
-  void clear_batchid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 batchid() const;
-  void set_batchid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 batch_id = 17 [json_name = "batchId"];
+  void clear_batch_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 batch_id() const;
+  void set_batch_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_batchid() const;
-  void _internal_set_batchid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_batch_id() const;
+  void _internal_set_batch_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.OrderError reason = 14 [json_name = "reason"];
@@ -2224,22 +2261,22 @@ class Order PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
-  ::vega::PeggedOrder* peggedorder_;
+  ::vega::PeggedOrder* pegged_order_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 size_;
   int side_;
-  int timeinforce_;
+  int time_in_force_;
   ::PROTOBUF_NAMESPACE_ID::uint64 remaining_;
-  ::PROTOBUF_NAMESPACE_ID::int64 createdat_;
+  ::PROTOBUF_NAMESPACE_ID::int64 created_at_;
   int type_;
   int status_;
-  ::PROTOBUF_NAMESPACE_ID::int64 expiresat_;
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedat_;
+  ::PROTOBUF_NAMESPACE_ID::int64 expires_at_;
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_at_;
   ::PROTOBUF_NAMESPACE_ID::uint64 version_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 batchid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 batch_id_;
   int reason_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -2525,23 +2562,23 @@ class OrderConfirmation PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Trade >&
       trades() const;
 
-  // repeated .vega.Order passiveOrdersAffected = 3 [json_name = "passiveOrdersAffected"];
-  int passiveordersaffected_size() const;
+  // repeated .vega.Order passive_orders_affected = 3 [json_name = "passiveOrdersAffected"];
+  int passive_orders_affected_size() const;
   private:
-  int _internal_passiveordersaffected_size() const;
+  int _internal_passive_orders_affected_size() const;
   public:
-  void clear_passiveordersaffected();
-  ::vega::Order* mutable_passiveordersaffected(int index);
+  void clear_passive_orders_affected();
+  ::vega::Order* mutable_passive_orders_affected(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Order >*
-      mutable_passiveordersaffected();
+      mutable_passive_orders_affected();
   private:
-  const ::vega::Order& _internal_passiveordersaffected(int index) const;
-  ::vega::Order* _internal_add_passiveordersaffected();
+  const ::vega::Order& _internal_passive_orders_affected(int index) const;
+  ::vega::Order* _internal_add_passive_orders_affected();
   public:
-  const ::vega::Order& passiveordersaffected(int index) const;
-  ::vega::Order* add_passiveordersaffected();
+  const ::vega::Order& passive_orders_affected(int index) const;
+  ::vega::Order* add_passive_orders_affected();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Order >&
-      passiveordersaffected() const;
+      passive_orders_affected() const;
 
   // .vega.Order order = 1 [json_name = "order"];
   bool has_order() const;
@@ -2569,7 +2606,7 @@ class OrderConfirmation PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Trade > trades_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Order > passiveordersaffected_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Order > passive_orders_affected_;
   ::vega::Order* order_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -2688,62 +2725,62 @@ class AuctionIndicativeState PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMarketIDFieldNumber = 1,
+    kMarketIdFieldNumber = 1,
     kIndicativePriceFieldNumber = 2,
     kIndicativeVolumeFieldNumber = 3,
     kAuctionStartFieldNumber = 4,
     kAuctionEndFieldNumber = 5,
   };
-  // string marketID = 1 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 1 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // uint64 indicativePrice = 2 [json_name = "indicativePrice"];
-  void clear_indicativeprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativeprice() const;
-  void set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 indicative_price = 2 [json_name = "indicativePrice"];
+  void clear_indicative_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_price() const;
+  void set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicativeprice() const;
-  void _internal_set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicative_price() const;
+  void _internal_set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 indicativeVolume = 3 [json_name = "indicativeVolume"];
-  void clear_indicativevolume();
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativevolume() const;
-  void set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 indicative_volume = 3 [json_name = "indicativeVolume"];
+  void clear_indicative_volume();
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_volume() const;
+  void set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicativevolume() const;
-  void _internal_set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicative_volume() const;
+  void _internal_set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // int64 auctionStart = 4 [json_name = "auctionStart"];
-  void clear_auctionstart();
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionstart() const;
-  void set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 auction_start = 4 [json_name = "auctionStart"];
+  void clear_auction_start();
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_start() const;
+  void set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auctionstart() const;
-  void _internal_set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auction_start() const;
+  void _internal_set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 auctionEnd = 5 [json_name = "auctionEnd"];
-  void clear_auctionend();
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionend() const;
-  void set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 auction_end = 5 [json_name = "auctionEnd"];
+  void clear_auction_end();
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_end() const;
+  void set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auctionend() const;
-  void _internal_set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auction_end() const;
+  void _internal_set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.AuctionIndicativeState)
@@ -2753,11 +2790,11 @@ class AuctionIndicativeState PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativeprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativevolume_;
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionstart_;
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionend_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_volume_;
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_start_;
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_end_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -2910,7 +2947,7 @@ class Trade PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kMarketIDFieldNumber = 2,
+    kMarketIdFieldNumber = 2,
     kBuyerFieldNumber = 5,
     kSellerFieldNumber = 6,
     kBuyOrderFieldNumber = 8,
@@ -2941,20 +2978,20 @@ class Trade PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string marketID = 2 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 2 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
   // string buyer = 5 [json_name = "buyer"];
@@ -2989,73 +3026,73 @@ class Trade PROTOBUF_FINAL :
   std::string* _internal_mutable_seller();
   public:
 
-  // string buyOrder = 8 [json_name = "buyOrder"];
-  void clear_buyorder();
-  const std::string& buyorder() const;
-  void set_buyorder(const std::string& value);
-  void set_buyorder(std::string&& value);
-  void set_buyorder(const char* value);
-  void set_buyorder(const char* value, size_t size);
-  std::string* mutable_buyorder();
-  std::string* release_buyorder();
-  void set_allocated_buyorder(std::string* buyorder);
+  // string buy_order = 8 [json_name = "buyOrder"];
+  void clear_buy_order();
+  const std::string& buy_order() const;
+  void set_buy_order(const std::string& value);
+  void set_buy_order(std::string&& value);
+  void set_buy_order(const char* value);
+  void set_buy_order(const char* value, size_t size);
+  std::string* mutable_buy_order();
+  std::string* release_buy_order();
+  void set_allocated_buy_order(std::string* buy_order);
   private:
-  const std::string& _internal_buyorder() const;
-  void _internal_set_buyorder(const std::string& value);
-  std::string* _internal_mutable_buyorder();
+  const std::string& _internal_buy_order() const;
+  void _internal_set_buy_order(const std::string& value);
+  std::string* _internal_mutable_buy_order();
   public:
 
-  // string sellOrder = 9 [json_name = "sellOrder"];
-  void clear_sellorder();
-  const std::string& sellorder() const;
-  void set_sellorder(const std::string& value);
-  void set_sellorder(std::string&& value);
-  void set_sellorder(const char* value);
-  void set_sellorder(const char* value, size_t size);
-  std::string* mutable_sellorder();
-  std::string* release_sellorder();
-  void set_allocated_sellorder(std::string* sellorder);
+  // string sell_order = 9 [json_name = "sellOrder"];
+  void clear_sell_order();
+  const std::string& sell_order() const;
+  void set_sell_order(const std::string& value);
+  void set_sell_order(std::string&& value);
+  void set_sell_order(const char* value);
+  void set_sell_order(const char* value, size_t size);
+  std::string* mutable_sell_order();
+  std::string* release_sell_order();
+  void set_allocated_sell_order(std::string* sell_order);
   private:
-  const std::string& _internal_sellorder() const;
-  void _internal_set_sellorder(const std::string& value);
-  std::string* _internal_mutable_sellorder();
+  const std::string& _internal_sell_order() const;
+  void _internal_set_sell_order(const std::string& value);
+  std::string* _internal_mutable_sell_order();
   public:
 
-  // .vega.Fee buyerFee = 12 [json_name = "buyerFee"];
-  bool has_buyerfee() const;
+  // .vega.Fee buyer_fee = 12 [json_name = "buyerFee"];
+  bool has_buyer_fee() const;
   private:
-  bool _internal_has_buyerfee() const;
+  bool _internal_has_buyer_fee() const;
   public:
-  void clear_buyerfee();
-  const ::vega::Fee& buyerfee() const;
-  ::vega::Fee* release_buyerfee();
-  ::vega::Fee* mutable_buyerfee();
-  void set_allocated_buyerfee(::vega::Fee* buyerfee);
+  void clear_buyer_fee();
+  const ::vega::Fee& buyer_fee() const;
+  ::vega::Fee* release_buyer_fee();
+  ::vega::Fee* mutable_buyer_fee();
+  void set_allocated_buyer_fee(::vega::Fee* buyer_fee);
   private:
-  const ::vega::Fee& _internal_buyerfee() const;
-  ::vega::Fee* _internal_mutable_buyerfee();
+  const ::vega::Fee& _internal_buyer_fee() const;
+  ::vega::Fee* _internal_mutable_buyer_fee();
   public:
-  void unsafe_arena_set_allocated_buyerfee(
-      ::vega::Fee* buyerfee);
-  ::vega::Fee* unsafe_arena_release_buyerfee();
+  void unsafe_arena_set_allocated_buyer_fee(
+      ::vega::Fee* buyer_fee);
+  ::vega::Fee* unsafe_arena_release_buyer_fee();
 
-  // .vega.Fee sellerFee = 13 [json_name = "sellerFee"];
-  bool has_sellerfee() const;
+  // .vega.Fee seller_fee = 13 [json_name = "sellerFee"];
+  bool has_seller_fee() const;
   private:
-  bool _internal_has_sellerfee() const;
+  bool _internal_has_seller_fee() const;
   public:
-  void clear_sellerfee();
-  const ::vega::Fee& sellerfee() const;
-  ::vega::Fee* release_sellerfee();
-  ::vega::Fee* mutable_sellerfee();
-  void set_allocated_sellerfee(::vega::Fee* sellerfee);
+  void clear_seller_fee();
+  const ::vega::Fee& seller_fee() const;
+  ::vega::Fee* release_seller_fee();
+  ::vega::Fee* mutable_seller_fee();
+  void set_allocated_seller_fee(::vega::Fee* seller_fee);
   private:
-  const ::vega::Fee& _internal_sellerfee() const;
-  ::vega::Fee* _internal_mutable_sellerfee();
+  const ::vega::Fee& _internal_seller_fee() const;
+  ::vega::Fee* _internal_mutable_seller_fee();
   public:
-  void unsafe_arena_set_allocated_sellerfee(
-      ::vega::Fee* sellerfee);
-  ::vega::Fee* unsafe_arena_release_sellerfee();
+  void unsafe_arena_set_allocated_seller_fee(
+      ::vega::Fee* seller_fee);
+  ::vega::Fee* unsafe_arena_release_seller_fee();
 
   // uint64 price = 3 [json_name = "price"];
   void clear_price();
@@ -3102,22 +3139,22 @@ class Trade PROTOBUF_FINAL :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint64 buyerAuctionBatch = 14 [json_name = "buyerAuctionBatch"];
-  void clear_buyerauctionbatch();
-  ::PROTOBUF_NAMESPACE_ID::uint64 buyerauctionbatch() const;
-  void set_buyerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 buyer_auction_batch = 14 [json_name = "buyerAuctionBatch"];
+  void clear_buyer_auction_batch();
+  ::PROTOBUF_NAMESPACE_ID::uint64 buyer_auction_batch() const;
+  void set_buyer_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_buyerauctionbatch() const;
-  void _internal_set_buyerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_buyer_auction_batch() const;
+  void _internal_set_buyer_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 sellerAuctionBatch = 15 [json_name = "sellerAuctionBatch"];
-  void clear_sellerauctionbatch();
-  ::PROTOBUF_NAMESPACE_ID::uint64 sellerauctionbatch() const;
-  void set_sellerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 seller_auction_batch = 15 [json_name = "sellerAuctionBatch"];
+  void clear_seller_auction_batch();
+  ::PROTOBUF_NAMESPACE_ID::uint64 seller_auction_batch() const;
+  void set_seller_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_sellerauctionbatch() const;
-  void _internal_set_sellerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_seller_auction_batch() const;
+  void _internal_set_seller_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.Trade)
@@ -3128,20 +3165,20 @@ class Trade PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr buyer_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr seller_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr buyorder_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sellorder_;
-  ::vega::Fee* buyerfee_;
-  ::vega::Fee* sellerfee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr buy_order_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sell_order_;
+  ::vega::Fee* buyer_fee_;
+  ::vega::Fee* seller_fee_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 size_;
   int aggressor_;
   int type_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 buyerauctionbatch_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 sellerauctionbatch_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 buyer_auction_batch_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 seller_auction_batch_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -3263,31 +3300,31 @@ class Fee PROTOBUF_FINAL :
     kInfrastructureFeeFieldNumber = 2,
     kLiquidityFeeFieldNumber = 3,
   };
-  // uint64 makerFee = 1 [json_name = "makerFee"];
-  void clear_makerfee();
-  ::PROTOBUF_NAMESPACE_ID::uint64 makerfee() const;
-  void set_makerfee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 maker_fee = 1 [json_name = "makerFee"];
+  void clear_maker_fee();
+  ::PROTOBUF_NAMESPACE_ID::uint64 maker_fee() const;
+  void set_maker_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_makerfee() const;
-  void _internal_set_makerfee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_maker_fee() const;
+  void _internal_set_maker_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 infrastructureFee = 2 [json_name = "infrastructureFee"];
-  void clear_infrastructurefee();
-  ::PROTOBUF_NAMESPACE_ID::uint64 infrastructurefee() const;
-  void set_infrastructurefee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];
+  void clear_infrastructure_fee();
+  ::PROTOBUF_NAMESPACE_ID::uint64 infrastructure_fee() const;
+  void set_infrastructure_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_infrastructurefee() const;
-  void _internal_set_infrastructurefee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_infrastructure_fee() const;
+  void _internal_set_infrastructure_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 liquidityFee = 3 [json_name = "liquidityFee"];
-  void clear_liquidityfee();
-  ::PROTOBUF_NAMESPACE_ID::uint64 liquidityfee() const;
-  void set_liquidityfee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 liquidity_fee = 3 [json_name = "liquidityFee"];
+  void clear_liquidity_fee();
+  ::PROTOBUF_NAMESPACE_ID::uint64 liquidity_fee() const;
+  void set_liquidity_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_liquidityfee() const;
-  void _internal_set_liquidityfee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_liquidity_fee() const;
+  void _internal_set_liquidity_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.Fee)
@@ -3297,9 +3334,9 @@ class Fee PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 makerfee_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 infrastructurefee_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 liquidityfee_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 maker_fee_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 infrastructure_fee_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 liquidity_fee_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -3795,13 +3832,13 @@ class PriceLevel PROTOBUF_FINAL :
   void _internal_set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 numberOfOrders = 2 [json_name = "numberOfOrders"];
-  void clear_numberoforders();
-  ::PROTOBUF_NAMESPACE_ID::uint64 numberoforders() const;
-  void set_numberoforders(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 number_of_orders = 2 [json_name = "numberOfOrders"];
+  void clear_number_of_orders();
+  ::PROTOBUF_NAMESPACE_ID::uint64 number_of_orders() const;
+  void set_number_of_orders(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_numberoforders() const;
-  void _internal_set_numberoforders(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_number_of_orders() const;
+  void _internal_set_number_of_orders(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 volume = 3 [json_name = "volume"];
@@ -3821,7 +3858,7 @@ class PriceLevel PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 numberoforders_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 number_of_orders_;
   ::PROTOBUF_NAMESPACE_ID::uint64 volume_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -3942,7 +3979,7 @@ class MarketDepth PROTOBUF_FINAL :
   enum : int {
     kBuyFieldNumber = 2,
     kSellFieldNumber = 3,
-    kMarketIDFieldNumber = 1,
+    kMarketIdFieldNumber = 1,
     kSequenceNumberFieldNumber = 4,
   };
   // repeated .vega.PriceLevel buy = 2 [json_name = "buy"];
@@ -3981,29 +4018,29 @@ class MarketDepth PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceLevel >&
       sell() const;
 
-  // string marketID = 1 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 1 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // uint64 sequenceNumber = 4 [json_name = "sequenceNumber"];
-  void clear_sequencenumber();
-  ::PROTOBUF_NAMESPACE_ID::uint64 sequencenumber() const;
-  void set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 sequence_number = 4 [json_name = "sequenceNumber"];
+  void clear_sequence_number();
+  ::PROTOBUF_NAMESPACE_ID::uint64 sequence_number() const;
+  void set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_sequencenumber() const;
-  void _internal_set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_sequence_number() const;
+  void _internal_set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.MarketDepth)
@@ -4015,8 +4052,8 @@ class MarketDepth PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceLevel > buy_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceLevel > sell_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 sequencenumber_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 sequence_number_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -4136,7 +4173,7 @@ class MarketDepthUpdate PROTOBUF_FINAL :
   enum : int {
     kBuyFieldNumber = 2,
     kSellFieldNumber = 3,
-    kMarketIDFieldNumber = 1,
+    kMarketIdFieldNumber = 1,
     kSequenceNumberFieldNumber = 4,
   };
   // repeated .vega.PriceLevel buy = 2 [json_name = "buy"];
@@ -4175,29 +4212,29 @@ class MarketDepthUpdate PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceLevel >&
       sell() const;
 
-  // string marketID = 1 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 1 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // uint64 sequenceNumber = 4 [json_name = "sequenceNumber"];
-  void clear_sequencenumber();
-  ::PROTOBUF_NAMESPACE_ID::uint64 sequencenumber() const;
-  void set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 sequence_number = 4 [json_name = "sequenceNumber"];
+  void clear_sequence_number();
+  ::PROTOBUF_NAMESPACE_ID::uint64 sequence_number() const;
+  void set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_sequencenumber() const;
-  void _internal_set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_sequence_number() const;
+  void _internal_set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.MarketDepthUpdate)
@@ -4209,8 +4246,8 @@ class MarketDepthUpdate PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceLevel > buy_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceLevel > sell_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 sequencenumber_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 sequence_number_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -4328,89 +4365,89 @@ class Position PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMarketIDFieldNumber = 1,
-    kPartyIDFieldNumber = 2,
+    kMarketIdFieldNumber = 1,
+    kPartyIdFieldNumber = 2,
     kOpenVolumeFieldNumber = 3,
-    kRealisedPNLFieldNumber = 4,
-    kUnrealisedPNLFieldNumber = 5,
+    kRealisedPnlFieldNumber = 4,
+    kUnrealisedPnlFieldNumber = 5,
     kAverageEntryPriceFieldNumber = 6,
     kUpdatedAtFieldNumber = 7,
   };
-  // string marketID = 1 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 1 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // string partyID = 2 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 2 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
-  // int64 openVolume = 3 [json_name = "openVolume"];
-  void clear_openvolume();
-  ::PROTOBUF_NAMESPACE_ID::int64 openvolume() const;
-  void set_openvolume(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 open_volume = 3 [json_name = "openVolume"];
+  void clear_open_volume();
+  ::PROTOBUF_NAMESPACE_ID::int64 open_volume() const;
+  void set_open_volume(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_openvolume() const;
-  void _internal_set_openvolume(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_open_volume() const;
+  void _internal_set_open_volume(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 realisedPNL = 4 [json_name = "realisedPNL"];
-  void clear_realisedpnl();
-  ::PROTOBUF_NAMESPACE_ID::int64 realisedpnl() const;
-  void set_realisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 realised_pnl = 4 [json_name = "realisedPnl"];
+  void clear_realised_pnl();
+  ::PROTOBUF_NAMESPACE_ID::int64 realised_pnl() const;
+  void set_realised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_realisedpnl() const;
-  void _internal_set_realisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_realised_pnl() const;
+  void _internal_set_realised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 unrealisedPNL = 5 [json_name = "unrealisedPNL"];
-  void clear_unrealisedpnl();
-  ::PROTOBUF_NAMESPACE_ID::int64 unrealisedpnl() const;
-  void set_unrealisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];
+  void clear_unrealised_pnl();
+  ::PROTOBUF_NAMESPACE_ID::int64 unrealised_pnl() const;
+  void set_unrealised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_unrealisedpnl() const;
-  void _internal_set_unrealisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_unrealised_pnl() const;
+  void _internal_set_unrealised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint64 averageEntryPrice = 6 [json_name = "averageEntryPrice"];
-  void clear_averageentryprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 averageentryprice() const;
-  void set_averageentryprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];
+  void clear_average_entry_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 average_entry_price() const;
+  void set_average_entry_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_averageentryprice() const;
-  void _internal_set_averageentryprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_average_entry_price() const;
+  void _internal_set_average_entry_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // int64 updatedAt = 7 [json_name = "updatedAt"];
-  void clear_updatedat();
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedat() const;
-  void set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 updated_at = 7 [json_name = "updatedAt"];
+  void clear_updated_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_at() const;
+  void set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updatedat() const;
-  void _internal_set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updated_at() const;
+  void _internal_set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.Position)
@@ -4420,13 +4457,13 @@ class Position PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
-  ::PROTOBUF_NAMESPACE_ID::int64 openvolume_;
-  ::PROTOBUF_NAMESPACE_ID::int64 realisedpnl_;
-  ::PROTOBUF_NAMESPACE_ID::int64 unrealisedpnl_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 averageentryprice_;
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedat_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
+  ::PROTOBUF_NAMESPACE_ID::int64 open_volume_;
+  ::PROTOBUF_NAMESPACE_ID::int64 realised_pnl_;
+  ::PROTOBUF_NAMESPACE_ID::int64 unrealised_pnl_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 average_entry_price_;
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_at_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -4698,7 +4735,7 @@ class Statistics PROTOBUF_FINAL :
     kAppVersionFieldNumber = 29,
     kChainVersionFieldNumber = 30,
     kUptimeFieldNumber = 32,
-    kChainIDFieldNumber = 33,
+    kChainIdFieldNumber = 33,
     kBlockHeightFieldNumber = 1,
     kBacklogLengthFieldNumber = 2,
     kTotalPeersFieldNumber = 3,
@@ -4724,100 +4761,100 @@ class Statistics PROTOBUF_FINAL :
     kBlockDurationFieldNumber = 31,
     kMarketDepthUpdatesSubscriptionsFieldNumber = 34,
   };
-  // string genesisTime = 4 [json_name = "genesisTime"];
-  void clear_genesistime();
-  const std::string& genesistime() const;
-  void set_genesistime(const std::string& value);
-  void set_genesistime(std::string&& value);
-  void set_genesistime(const char* value);
-  void set_genesistime(const char* value, size_t size);
-  std::string* mutable_genesistime();
-  std::string* release_genesistime();
-  void set_allocated_genesistime(std::string* genesistime);
+  // string genesis_time = 4 [json_name = "genesisTime"];
+  void clear_genesis_time();
+  const std::string& genesis_time() const;
+  void set_genesis_time(const std::string& value);
+  void set_genesis_time(std::string&& value);
+  void set_genesis_time(const char* value);
+  void set_genesis_time(const char* value, size_t size);
+  std::string* mutable_genesis_time();
+  std::string* release_genesis_time();
+  void set_allocated_genesis_time(std::string* genesis_time);
   private:
-  const std::string& _internal_genesistime() const;
-  void _internal_set_genesistime(const std::string& value);
-  std::string* _internal_mutable_genesistime();
+  const std::string& _internal_genesis_time() const;
+  void _internal_set_genesis_time(const std::string& value);
+  std::string* _internal_mutable_genesis_time();
   public:
 
-  // string currentTime = 5 [json_name = "currentTime"];
-  void clear_currenttime();
-  const std::string& currenttime() const;
-  void set_currenttime(const std::string& value);
-  void set_currenttime(std::string&& value);
-  void set_currenttime(const char* value);
-  void set_currenttime(const char* value, size_t size);
-  std::string* mutable_currenttime();
-  std::string* release_currenttime();
-  void set_allocated_currenttime(std::string* currenttime);
+  // string current_time = 5 [json_name = "currentTime"];
+  void clear_current_time();
+  const std::string& current_time() const;
+  void set_current_time(const std::string& value);
+  void set_current_time(std::string&& value);
+  void set_current_time(const char* value);
+  void set_current_time(const char* value, size_t size);
+  std::string* mutable_current_time();
+  std::string* release_current_time();
+  void set_allocated_current_time(std::string* current_time);
   private:
-  const std::string& _internal_currenttime() const;
-  void _internal_set_currenttime(const std::string& value);
-  std::string* _internal_mutable_currenttime();
+  const std::string& _internal_current_time() const;
+  void _internal_set_current_time(const std::string& value);
+  std::string* _internal_mutable_current_time();
   public:
 
-  // string vegaTime = 6 [json_name = "vegaTime"];
-  void clear_vegatime();
-  const std::string& vegatime() const;
-  void set_vegatime(const std::string& value);
-  void set_vegatime(std::string&& value);
-  void set_vegatime(const char* value);
-  void set_vegatime(const char* value, size_t size);
-  std::string* mutable_vegatime();
-  std::string* release_vegatime();
-  void set_allocated_vegatime(std::string* vegatime);
+  // string vega_time = 6 [json_name = "vegaTime"];
+  void clear_vega_time();
+  const std::string& vega_time() const;
+  void set_vega_time(const std::string& value);
+  void set_vega_time(std::string&& value);
+  void set_vega_time(const char* value);
+  void set_vega_time(const char* value, size_t size);
+  std::string* mutable_vega_time();
+  std::string* release_vega_time();
+  void set_allocated_vega_time(std::string* vega_time);
   private:
-  const std::string& _internal_vegatime() const;
-  void _internal_set_vegatime(const std::string& value);
-  std::string* _internal_mutable_vegatime();
+  const std::string& _internal_vega_time() const;
+  void _internal_set_vega_time(const std::string& value);
+  std::string* _internal_mutable_vega_time();
   public:
 
-  // string appVersionHash = 28 [json_name = "appVersionHash"];
-  void clear_appversionhash();
-  const std::string& appversionhash() const;
-  void set_appversionhash(const std::string& value);
-  void set_appversionhash(std::string&& value);
-  void set_appversionhash(const char* value);
-  void set_appversionhash(const char* value, size_t size);
-  std::string* mutable_appversionhash();
-  std::string* release_appversionhash();
-  void set_allocated_appversionhash(std::string* appversionhash);
+  // string app_version_hash = 28 [json_name = "appVersionHash"];
+  void clear_app_version_hash();
+  const std::string& app_version_hash() const;
+  void set_app_version_hash(const std::string& value);
+  void set_app_version_hash(std::string&& value);
+  void set_app_version_hash(const char* value);
+  void set_app_version_hash(const char* value, size_t size);
+  std::string* mutable_app_version_hash();
+  std::string* release_app_version_hash();
+  void set_allocated_app_version_hash(std::string* app_version_hash);
   private:
-  const std::string& _internal_appversionhash() const;
-  void _internal_set_appversionhash(const std::string& value);
-  std::string* _internal_mutable_appversionhash();
+  const std::string& _internal_app_version_hash() const;
+  void _internal_set_app_version_hash(const std::string& value);
+  std::string* _internal_mutable_app_version_hash();
   public:
 
-  // string appVersion = 29 [json_name = "appVersion"];
-  void clear_appversion();
-  const std::string& appversion() const;
-  void set_appversion(const std::string& value);
-  void set_appversion(std::string&& value);
-  void set_appversion(const char* value);
-  void set_appversion(const char* value, size_t size);
-  std::string* mutable_appversion();
-  std::string* release_appversion();
-  void set_allocated_appversion(std::string* appversion);
+  // string app_version = 29 [json_name = "appVersion"];
+  void clear_app_version();
+  const std::string& app_version() const;
+  void set_app_version(const std::string& value);
+  void set_app_version(std::string&& value);
+  void set_app_version(const char* value);
+  void set_app_version(const char* value, size_t size);
+  std::string* mutable_app_version();
+  std::string* release_app_version();
+  void set_allocated_app_version(std::string* app_version);
   private:
-  const std::string& _internal_appversion() const;
-  void _internal_set_appversion(const std::string& value);
-  std::string* _internal_mutable_appversion();
+  const std::string& _internal_app_version() const;
+  void _internal_set_app_version(const std::string& value);
+  std::string* _internal_mutable_app_version();
   public:
 
-  // string chainVersion = 30 [json_name = "chainVersion"];
-  void clear_chainversion();
-  const std::string& chainversion() const;
-  void set_chainversion(const std::string& value);
-  void set_chainversion(std::string&& value);
-  void set_chainversion(const char* value);
-  void set_chainversion(const char* value, size_t size);
-  std::string* mutable_chainversion();
-  std::string* release_chainversion();
-  void set_allocated_chainversion(std::string* chainversion);
+  // string chain_version = 30 [json_name = "chainVersion"];
+  void clear_chain_version();
+  const std::string& chain_version() const;
+  void set_chain_version(const std::string& value);
+  void set_chain_version(std::string&& value);
+  void set_chain_version(const char* value);
+  void set_chain_version(const char* value, size_t size);
+  std::string* mutable_chain_version();
+  std::string* release_chain_version();
+  void set_allocated_chain_version(std::string* chain_version);
   private:
-  const std::string& _internal_chainversion() const;
-  void _internal_set_chainversion(const std::string& value);
-  std::string* _internal_mutable_chainversion();
+  const std::string& _internal_chain_version() const;
+  void _internal_set_chain_version(const std::string& value);
+  std::string* _internal_mutable_chain_version();
   public:
 
   // string uptime = 32 [json_name = "uptime"];
@@ -4836,101 +4873,101 @@ class Statistics PROTOBUF_FINAL :
   std::string* _internal_mutable_uptime();
   public:
 
-  // string chainID = 33 [json_name = "chainID"];
-  void clear_chainid();
-  const std::string& chainid() const;
-  void set_chainid(const std::string& value);
-  void set_chainid(std::string&& value);
-  void set_chainid(const char* value);
-  void set_chainid(const char* value, size_t size);
-  std::string* mutable_chainid();
-  std::string* release_chainid();
-  void set_allocated_chainid(std::string* chainid);
+  // string chain_id = 33 [json_name = "chainId"];
+  void clear_chain_id();
+  const std::string& chain_id() const;
+  void set_chain_id(const std::string& value);
+  void set_chain_id(std::string&& value);
+  void set_chain_id(const char* value);
+  void set_chain_id(const char* value, size_t size);
+  std::string* mutable_chain_id();
+  std::string* release_chain_id();
+  void set_allocated_chain_id(std::string* chain_id);
   private:
-  const std::string& _internal_chainid() const;
-  void _internal_set_chainid(const std::string& value);
-  std::string* _internal_mutable_chainid();
+  const std::string& _internal_chain_id() const;
+  void _internal_set_chain_id(const std::string& value);
+  std::string* _internal_mutable_chain_id();
   public:
 
-  // uint64 blockHeight = 1 [json_name = "blockHeight"];
-  void clear_blockheight();
-  ::PROTOBUF_NAMESPACE_ID::uint64 blockheight() const;
-  void set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 block_height = 1 [json_name = "blockHeight"];
+  void clear_block_height();
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_height() const;
+  void set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_blockheight() const;
-  void _internal_set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_block_height() const;
+  void _internal_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 backlogLength = 2 [json_name = "backlogLength"];
-  void clear_backloglength();
-  ::PROTOBUF_NAMESPACE_ID::uint64 backloglength() const;
-  void set_backloglength(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 backlog_length = 2 [json_name = "backlogLength"];
+  void clear_backlog_length();
+  ::PROTOBUF_NAMESPACE_ID::uint64 backlog_length() const;
+  void set_backlog_length(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_backloglength() const;
-  void _internal_set_backloglength(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_backlog_length() const;
+  void _internal_set_backlog_length(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 totalPeers = 3 [json_name = "totalPeers"];
-  void clear_totalpeers();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalpeers() const;
-  void set_totalpeers(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_peers = 3 [json_name = "totalPeers"];
+  void clear_total_peers();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_peers() const;
+  void set_total_peers(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totalpeers() const;
-  void _internal_set_totalpeers(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_peers() const;
+  void _internal_set_total_peers(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 txPerBlock = 8 [json_name = "txPerBlock"];
-  void clear_txperblock();
-  ::PROTOBUF_NAMESPACE_ID::uint64 txperblock() const;
-  void set_txperblock(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 tx_per_block = 8 [json_name = "txPerBlock"];
+  void clear_tx_per_block();
+  ::PROTOBUF_NAMESPACE_ID::uint64 tx_per_block() const;
+  void set_tx_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_txperblock() const;
-  void _internal_set_txperblock(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_tx_per_block() const;
+  void _internal_set_tx_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 averageTxBytes = 9 [json_name = "averageTxBytes"];
-  void clear_averagetxbytes();
-  ::PROTOBUF_NAMESPACE_ID::uint64 averagetxbytes() const;
-  void set_averagetxbytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];
+  void clear_average_tx_bytes();
+  ::PROTOBUF_NAMESPACE_ID::uint64 average_tx_bytes() const;
+  void set_average_tx_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_averagetxbytes() const;
-  void _internal_set_averagetxbytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_average_tx_bytes() const;
+  void _internal_set_average_tx_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 averageOrdersPerBlock = 10 [json_name = "averageOrdersPerBlock"];
-  void clear_averageordersperblock();
-  ::PROTOBUF_NAMESPACE_ID::uint64 averageordersperblock() const;
-  void set_averageordersperblock(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];
+  void clear_average_orders_per_block();
+  ::PROTOBUF_NAMESPACE_ID::uint64 average_orders_per_block() const;
+  void set_average_orders_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_averageordersperblock() const;
-  void _internal_set_averageordersperblock(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_average_orders_per_block() const;
+  void _internal_set_average_orders_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 tradesPerSecond = 11 [json_name = "tradesPerSecond"];
-  void clear_tradespersecond();
-  ::PROTOBUF_NAMESPACE_ID::uint64 tradespersecond() const;
-  void set_tradespersecond(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];
+  void clear_trades_per_second();
+  ::PROTOBUF_NAMESPACE_ID::uint64 trades_per_second() const;
+  void set_trades_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_tradespersecond() const;
-  void _internal_set_tradespersecond(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_trades_per_second() const;
+  void _internal_set_trades_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 ordersPerSecond = 12 [json_name = "ordersPerSecond"];
-  void clear_orderspersecond();
-  ::PROTOBUF_NAMESPACE_ID::uint64 orderspersecond() const;
-  void set_orderspersecond(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];
+  void clear_orders_per_second();
+  ::PROTOBUF_NAMESPACE_ID::uint64 orders_per_second() const;
+  void set_orders_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_orderspersecond() const;
-  void _internal_set_orderspersecond(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_orders_per_second() const;
+  void _internal_set_orders_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 totalMarkets = 13 [json_name = "totalMarkets"];
-  void clear_totalmarkets();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalmarkets() const;
-  void set_totalmarkets(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_markets = 13 [json_name = "totalMarkets"];
+  void clear_total_markets();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_markets() const;
+  void set_total_markets(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totalmarkets() const;
-  void _internal_set_totalmarkets(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_markets() const;
+  void _internal_set_total_markets(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.ChainStatus status = 7 [json_name = "status"];
@@ -4942,130 +4979,130 @@ class Statistics PROTOBUF_FINAL :
   void _internal_set_status(::vega::ChainStatus value);
   public:
 
-  // uint32 orderSubscriptions = 21 [json_name = "orderSubscriptions"];
-  void clear_ordersubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 ordersubscriptions() const;
-  void set_ordersubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];
+  void clear_order_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 order_subscriptions() const;
+  void set_order_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_ordersubscriptions() const;
-  void _internal_set_ordersubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_order_subscriptions() const;
+  void _internal_set_order_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 totalAmendOrder = 16 [json_name = "totalAmendOrder"];
-  void clear_totalamendorder();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalamendorder() const;
-  void set_totalamendorder(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];
+  void clear_total_amend_order();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_amend_order() const;
+  void set_total_amend_order(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totalamendorder() const;
-  void _internal_set_totalamendorder(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_amend_order() const;
+  void _internal_set_total_amend_order(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 totalCancelOrder = 17 [json_name = "totalCancelOrder"];
-  void clear_totalcancelorder();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalcancelorder() const;
-  void set_totalcancelorder(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];
+  void clear_total_cancel_order();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_cancel_order() const;
+  void set_total_cancel_order(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totalcancelorder() const;
-  void _internal_set_totalcancelorder(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_cancel_order() const;
+  void _internal_set_total_cancel_order(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 totalCreateOrder = 18 [json_name = "totalCreateOrder"];
-  void clear_totalcreateorder();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalcreateorder() const;
-  void set_totalcreateorder(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_create_order = 18 [json_name = "totalCreateOrder"];
+  void clear_total_create_order();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_create_order() const;
+  void set_total_create_order(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totalcreateorder() const;
-  void _internal_set_totalcreateorder(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_create_order() const;
+  void _internal_set_total_create_order(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 totalOrders = 19 [json_name = "totalOrders"];
-  void clear_totalorders();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalorders() const;
-  void set_totalorders(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_orders = 19 [json_name = "totalOrders"];
+  void clear_total_orders();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_orders() const;
+  void set_total_orders(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totalorders() const;
-  void _internal_set_totalorders(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_orders() const;
+  void _internal_set_total_orders(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 totalTrades = 20 [json_name = "totalTrades"];
-  void clear_totaltrades();
-  ::PROTOBUF_NAMESPACE_ID::uint64 totaltrades() const;
-  void set_totaltrades(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 total_trades = 20 [json_name = "totalTrades"];
+  void clear_total_trades();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_trades() const;
+  void set_total_trades(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_totaltrades() const;
-  void _internal_set_totaltrades(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_trades() const;
+  void _internal_set_total_trades(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint32 tradeSubscriptions = 22 [json_name = "tradeSubscriptions"];
-  void clear_tradesubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 tradesubscriptions() const;
-  void set_tradesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];
+  void clear_trade_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 trade_subscriptions() const;
+  void set_trade_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_tradesubscriptions() const;
-  void _internal_set_tradesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_trade_subscriptions() const;
+  void _internal_set_trade_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 candleSubscriptions = 23 [json_name = "candleSubscriptions"];
-  void clear_candlesubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 candlesubscriptions() const;
-  void set_candlesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];
+  void clear_candle_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 candle_subscriptions() const;
+  void set_candle_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_candlesubscriptions() const;
-  void _internal_set_candlesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_candle_subscriptions() const;
+  void _internal_set_candle_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 marketDepthSubscriptions = 24 [json_name = "marketDepthSubscriptions"];
-  void clear_marketdepthsubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 marketdepthsubscriptions() const;
-  void set_marketdepthsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];
+  void clear_market_depth_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 market_depth_subscriptions() const;
+  void set_market_depth_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_marketdepthsubscriptions() const;
-  void _internal_set_marketdepthsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_market_depth_subscriptions() const;
+  void _internal_set_market_depth_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 positionsSubscriptions = 25 [json_name = "positionsSubscriptions"];
-  void clear_positionssubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 positionssubscriptions() const;
-  void set_positionssubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];
+  void clear_positions_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 positions_subscriptions() const;
+  void set_positions_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_positionssubscriptions() const;
-  void _internal_set_positionssubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_positions_subscriptions() const;
+  void _internal_set_positions_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 accountSubscriptions = 26 [json_name = "accountSubscriptions"];
-  void clear_accountsubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 accountsubscriptions() const;
-  void set_accountsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];
+  void clear_account_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 account_subscriptions() const;
+  void set_account_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_accountsubscriptions() const;
-  void _internal_set_accountsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_account_subscriptions() const;
+  void _internal_set_account_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 marketDataSubscriptions = 27 [json_name = "marketDataSubscriptions"];
-  void clear_marketdatasubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 marketdatasubscriptions() const;
-  void set_marketdatasubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];
+  void clear_market_data_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 market_data_subscriptions() const;
+  void set_market_data_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_marketdatasubscriptions() const;
-  void _internal_set_marketdatasubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_market_data_subscriptions() const;
+  void _internal_set_market_data_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 blockDuration = 31 [json_name = "blockDuration"];
-  void clear_blockduration();
-  ::PROTOBUF_NAMESPACE_ID::uint64 blockduration() const;
-  void set_blockduration(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 block_duration = 31 [json_name = "blockDuration"];
+  void clear_block_duration();
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_duration() const;
+  void set_block_duration(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_blockduration() const;
-  void _internal_set_blockduration(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_block_duration() const;
+  void _internal_set_block_duration(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint32 marketDepthUpdatesSubscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];
-  void clear_marketdepthupdatessubscriptions();
-  ::PROTOBUF_NAMESPACE_ID::uint32 marketdepthupdatessubscriptions() const;
-  void set_marketdepthupdatessubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];
+  void clear_market_depth_updates_subscriptions();
+  ::PROTOBUF_NAMESPACE_ID::uint32 market_depth_updates_subscriptions() const;
+  void set_market_depth_updates_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_marketdepthupdatessubscriptions() const;
-  void _internal_set_marketdepthupdatessubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_market_depth_updates_subscriptions() const;
+  void _internal_set_market_depth_updates_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.Statistics)
@@ -5075,38 +5112,38 @@ class Statistics PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr genesistime_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currenttime_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vegatime_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr appversionhash_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr appversion_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chainversion_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr genesis_time_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr current_time_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr vega_time_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr app_version_hash_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr app_version_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_version_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uptime_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chainid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 blockheight_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 backloglength_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalpeers_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 txperblock_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 averagetxbytes_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 averageordersperblock_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 tradespersecond_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 orderspersecond_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalmarkets_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_height_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 backlog_length_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_peers_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 tx_per_block_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 average_tx_bytes_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 average_orders_per_block_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 trades_per_second_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 orders_per_second_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_markets_;
   int status_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 ordersubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalamendorder_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalcancelorder_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalcreateorder_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totalorders_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 totaltrades_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 tradesubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 candlesubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 marketdepthsubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 positionssubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 accountsubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 marketdatasubscriptions_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 blockduration_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 marketdepthupdatessubscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 order_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_amend_order_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_cancel_order_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_create_order_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_orders_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_trades_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 trade_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 candle_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 market_depth_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 positions_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 account_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 market_data_subscriptions_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_duration_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 market_depth_updates_subscriptions_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -5222,14 +5259,14 @@ class Deposit PROTOBUF_FINAL :
   // nested types ----------------------------------------------------
 
   typedef Deposit_Status Status;
-  static constexpr Status DEPOSIT_STATUS_UNSPECIFIED =
-    Deposit_Status_DEPOSIT_STATUS_UNSPECIFIED;
-  static constexpr Status DEPOSIT_STATUS_OPEN =
-    Deposit_Status_DEPOSIT_STATUS_OPEN;
-  static constexpr Status DEPOSIT_STATUS_CANCELLED =
-    Deposit_Status_DEPOSIT_STATUS_CANCELLED;
-  static constexpr Status DEPOSIT_STATUS_FINALIZED =
-    Deposit_Status_DEPOSIT_STATUS_FINALIZED;
+  static constexpr Status STATUS_UNSPECIFIED =
+    Deposit_Status_STATUS_UNSPECIFIED;
+  static constexpr Status STATUS_OPEN =
+    Deposit_Status_STATUS_OPEN;
+  static constexpr Status STATUS_CANCELLED =
+    Deposit_Status_STATUS_CANCELLED;
+  static constexpr Status STATUS_FINALIZED =
+    Deposit_Status_STATUS_FINALIZED;
   static inline bool Status_IsValid(int value) {
     return Deposit_Status_IsValid(value);
   }
@@ -5259,7 +5296,7 @@ class Deposit PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kPartyIDFieldNumber = 3,
+    kPartyIdFieldNumber = 3,
     kAssetFieldNumber = 4,
     kAmountFieldNumber = 5,
     kTxHashFieldNumber = 6,
@@ -5283,20 +5320,20 @@ class Deposit PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string partyID = 3 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 3 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // string asset = 4 [json_name = "asset"];
@@ -5331,38 +5368,38 @@ class Deposit PROTOBUF_FINAL :
   std::string* _internal_mutable_amount();
   public:
 
-  // string txHash = 6 [json_name = "txHash"];
-  void clear_txhash();
-  const std::string& txhash() const;
-  void set_txhash(const std::string& value);
-  void set_txhash(std::string&& value);
-  void set_txhash(const char* value);
-  void set_txhash(const char* value, size_t size);
-  std::string* mutable_txhash();
-  std::string* release_txhash();
-  void set_allocated_txhash(std::string* txhash);
+  // string tx_hash = 6 [json_name = "txHash"];
+  void clear_tx_hash();
+  const std::string& tx_hash() const;
+  void set_tx_hash(const std::string& value);
+  void set_tx_hash(std::string&& value);
+  void set_tx_hash(const char* value);
+  void set_tx_hash(const char* value, size_t size);
+  std::string* mutable_tx_hash();
+  std::string* release_tx_hash();
+  void set_allocated_tx_hash(std::string* tx_hash);
   private:
-  const std::string& _internal_txhash() const;
-  void _internal_set_txhash(const std::string& value);
-  std::string* _internal_mutable_txhash();
+  const std::string& _internal_tx_hash() const;
+  void _internal_set_tx_hash(const std::string& value);
+  std::string* _internal_mutable_tx_hash();
   public:
 
-  // int64 creditedTimestamp = 7 [json_name = "creditedTimestamp"];
-  void clear_creditedtimestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 creditedtimestamp() const;
-  void set_creditedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 credited_timestamp = 7 [json_name = "creditedTimestamp"];
+  void clear_credited_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 credited_timestamp() const;
+  void set_credited_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_creditedtimestamp() const;
-  void _internal_set_creditedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_credited_timestamp() const;
+  void _internal_set_credited_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 createdTimestamp = 8 [json_name = "createdTimestamp"];
-  void clear_createdtimestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 createdtimestamp() const;
-  void set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 created_timestamp = 8 [json_name = "createdTimestamp"];
+  void clear_created_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 created_timestamp() const;
+  void set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_createdtimestamp() const;
-  void _internal_set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_created_timestamp() const;
+  void _internal_set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // .vega.Deposit.Status status = 2 [json_name = "status"];
@@ -5382,12 +5419,12 @@ class Deposit PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr txhash_;
-  ::PROTOBUF_NAMESPACE_ID::int64 creditedtimestamp_;
-  ::PROTOBUF_NAMESPACE_ID::int64 createdtimestamp_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_hash_;
+  ::PROTOBUF_NAMESPACE_ID::int64 credited_timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::int64 created_timestamp_;
   int status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -5504,14 +5541,14 @@ class Withdrawal PROTOBUF_FINAL :
   // nested types ----------------------------------------------------
 
   typedef Withdrawal_Status Status;
-  static constexpr Status WITHDRAWAL_STATUS_UNSPECIFIED =
-    Withdrawal_Status_WITHDRAWAL_STATUS_UNSPECIFIED;
-  static constexpr Status WITHDRAWAL_STATUS_OPEN =
-    Withdrawal_Status_WITHDRAWAL_STATUS_OPEN;
-  static constexpr Status WITHDRAWAL_STATUS_CANCELLED =
-    Withdrawal_Status_WITHDRAWAL_STATUS_CANCELLED;
-  static constexpr Status WITHDRAWAL_STATUS_FINALIZED =
-    Withdrawal_Status_WITHDRAWAL_STATUS_FINALIZED;
+  static constexpr Status STATUS_UNSPECIFIED =
+    Withdrawal_Status_STATUS_UNSPECIFIED;
+  static constexpr Status STATUS_OPEN =
+    Withdrawal_Status_STATUS_OPEN;
+  static constexpr Status STATUS_CANCELLED =
+    Withdrawal_Status_STATUS_CANCELLED;
+  static constexpr Status STATUS_FINALIZED =
+    Withdrawal_Status_STATUS_FINALIZED;
   static inline bool Status_IsValid(int value) {
     return Withdrawal_Status_IsValid(value);
   }
@@ -5541,7 +5578,7 @@ class Withdrawal PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kPartyIDFieldNumber = 2,
+    kPartyIdFieldNumber = 2,
     kAssetFieldNumber = 4,
     kRefFieldNumber = 6,
     kTxHashFieldNumber = 8,
@@ -5568,20 +5605,20 @@ class Withdrawal PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string partyID = 2 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 2 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // string asset = 4 [json_name = "asset"];
@@ -5616,20 +5653,20 @@ class Withdrawal PROTOBUF_FINAL :
   std::string* _internal_mutable_ref();
   public:
 
-  // string txHash = 8 [json_name = "txHash"];
-  void clear_txhash();
-  const std::string& txhash() const;
-  void set_txhash(const std::string& value);
-  void set_txhash(std::string&& value);
-  void set_txhash(const char* value);
-  void set_txhash(const char* value, size_t size);
-  std::string* mutable_txhash();
-  std::string* release_txhash();
-  void set_allocated_txhash(std::string* txhash);
+  // string tx_hash = 8 [json_name = "txHash"];
+  void clear_tx_hash();
+  const std::string& tx_hash() const;
+  void set_tx_hash(const std::string& value);
+  void set_tx_hash(std::string&& value);
+  void set_tx_hash(const char* value);
+  void set_tx_hash(const char* value, size_t size);
+  std::string* mutable_tx_hash();
+  std::string* release_tx_hash();
+  void set_allocated_tx_hash(std::string* tx_hash);
   private:
-  const std::string& _internal_txhash() const;
-  void _internal_set_txhash(const std::string& value);
-  std::string* _internal_mutable_txhash();
+  const std::string& _internal_tx_hash() const;
+  void _internal_set_tx_hash(const std::string& value);
+  std::string* _internal_mutable_tx_hash();
   public:
 
   // .vega.WithdrawExt ext = 11 [json_name = "ext"];
@@ -5668,22 +5705,22 @@ class Withdrawal PROTOBUF_FINAL :
   void _internal_set_expiry(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 createdTimestamp = 9 [json_name = "createdTimestamp"];
-  void clear_createdtimestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 createdtimestamp() const;
-  void set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 created_timestamp = 9 [json_name = "createdTimestamp"];
+  void clear_created_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 created_timestamp() const;
+  void set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_createdtimestamp() const;
-  void _internal_set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_created_timestamp() const;
+  void _internal_set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 withdrawnTimestamp = 10 [json_name = "withdrawnTimestamp"];
-  void clear_withdrawntimestamp();
-  ::PROTOBUF_NAMESPACE_ID::int64 withdrawntimestamp() const;
-  void set_withdrawntimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 withdrawn_timestamp = 10 [json_name = "withdrawnTimestamp"];
+  void clear_withdrawn_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::int64 withdrawn_timestamp() const;
+  void set_withdrawn_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_withdrawntimestamp() const;
-  void _internal_set_withdrawntimestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_withdrawn_timestamp() const;
+  void _internal_set_withdrawn_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // .vega.Withdrawal.Status status = 5 [json_name = "status"];
@@ -5703,15 +5740,15 @@ class Withdrawal PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ref_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr txhash_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_hash_;
   ::vega::WithdrawExt* ext_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   ::PROTOBUF_NAMESPACE_ID::int64 expiry_;
-  ::PROTOBUF_NAMESPACE_ID::int64 createdtimestamp_;
-  ::PROTOBUF_NAMESPACE_ID::int64 withdrawntimestamp_;
+  ::PROTOBUF_NAMESPACE_ID::int64 created_timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::int64 withdrawn_timestamp_;
   int status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -5830,25 +5867,25 @@ class WithdrawSubmission PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPartyIDFieldNumber = 1,
+    kPartyIdFieldNumber = 1,
     kAssetFieldNumber = 3,
     kExtFieldNumber = 4,
     kAmountFieldNumber = 2,
   };
-  // string partyID = 1 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 1 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // string asset = 3 [json_name = "asset"];
@@ -5901,7 +5938,7 @@ class WithdrawSubmission PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
   ::vega::WithdrawExt* ext_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
@@ -6185,20 +6222,20 @@ class Erc20WithdrawExt PROTOBUF_FINAL :
   enum : int {
     kReceiverAddressFieldNumber = 1,
   };
-  // string receiverAddress = 1 [json_name = "receiverAddress"];
-  void clear_receiveraddress();
-  const std::string& receiveraddress() const;
-  void set_receiveraddress(const std::string& value);
-  void set_receiveraddress(std::string&& value);
-  void set_receiveraddress(const char* value);
-  void set_receiveraddress(const char* value, size_t size);
-  std::string* mutable_receiveraddress();
-  std::string* release_receiveraddress();
-  void set_allocated_receiveraddress(std::string* receiveraddress);
+  // string receiver_address = 1 [json_name = "receiverAddress"];
+  void clear_receiver_address();
+  const std::string& receiver_address() const;
+  void set_receiver_address(const std::string& value);
+  void set_receiver_address(std::string&& value);
+  void set_receiver_address(const char* value);
+  void set_receiver_address(const char* value, size_t size);
+  std::string* mutable_receiver_address();
+  std::string* release_receiver_address();
+  void set_allocated_receiver_address(std::string* receiver_address);
   private:
-  const std::string& _internal_receiveraddress() const;
-  void _internal_set_receiveraddress(const std::string& value);
-  std::string* _internal_mutable_receiveraddress();
+  const std::string& _internal_receiver_address() const;
+  void _internal_set_receiver_address(const std::string& value);
+  std::string* _internal_mutable_receiver_address();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.Erc20WithdrawExt)
@@ -6208,7 +6245,7 @@ class Erc20WithdrawExt PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr receiveraddress_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr receiver_address_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -6326,9 +6363,9 @@ class OrderAmendment PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrderIDFieldNumber = 1,
-    kPartyIDFieldNumber = 2,
-    kMarketIDFieldNumber = 3,
+    kOrderIdFieldNumber = 1,
+    kPartyIdFieldNumber = 2,
+    kMarketIdFieldNumber = 3,
     kPriceFieldNumber = 4,
     kExpiresAtFieldNumber = 6,
     kPeggedOffsetFieldNumber = 8,
@@ -6336,52 +6373,52 @@ class OrderAmendment PROTOBUF_FINAL :
     kTimeInForceFieldNumber = 7,
     kPeggedReferenceFieldNumber = 9,
   };
-  // string orderID = 1 [json_name = "orderID", (.validator.field) = {
-  void clear_orderid();
-  const std::string& orderid() const;
-  void set_orderid(const std::string& value);
-  void set_orderid(std::string&& value);
-  void set_orderid(const char* value);
-  void set_orderid(const char* value, size_t size);
-  std::string* mutable_orderid();
-  std::string* release_orderid();
-  void set_allocated_orderid(std::string* orderid);
+  // string order_id = 1 [json_name = "orderId", (.validator.field) = {
+  void clear_order_id();
+  const std::string& order_id() const;
+  void set_order_id(const std::string& value);
+  void set_order_id(std::string&& value);
+  void set_order_id(const char* value);
+  void set_order_id(const char* value, size_t size);
+  std::string* mutable_order_id();
+  std::string* release_order_id();
+  void set_allocated_order_id(std::string* order_id);
   private:
-  const std::string& _internal_orderid() const;
-  void _internal_set_orderid(const std::string& value);
-  std::string* _internal_mutable_orderid();
+  const std::string& _internal_order_id() const;
+  void _internal_set_order_id(const std::string& value);
+  std::string* _internal_mutable_order_id();
   public:
 
-  // string partyID = 2 [json_name = "partyID", (.validator.field) = {
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 2 [json_name = "partyId", (.validator.field) = {
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
-  // string marketID = 3 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 3 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
   // .vega.Price price = 4 [json_name = "price"];
@@ -6402,67 +6439,67 @@ class OrderAmendment PROTOBUF_FINAL :
       ::vega::Price* price);
   ::vega::Price* unsafe_arena_release_price();
 
-  // .vega.Timestamp expiresAt = 6 [json_name = "expiresAt"];
-  bool has_expiresat() const;
+  // .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
+  bool has_expires_at() const;
   private:
-  bool _internal_has_expiresat() const;
+  bool _internal_has_expires_at() const;
   public:
-  void clear_expiresat();
-  const ::vega::Timestamp& expiresat() const;
-  ::vega::Timestamp* release_expiresat();
-  ::vega::Timestamp* mutable_expiresat();
-  void set_allocated_expiresat(::vega::Timestamp* expiresat);
+  void clear_expires_at();
+  const ::vega::Timestamp& expires_at() const;
+  ::vega::Timestamp* release_expires_at();
+  ::vega::Timestamp* mutable_expires_at();
+  void set_allocated_expires_at(::vega::Timestamp* expires_at);
   private:
-  const ::vega::Timestamp& _internal_expiresat() const;
-  ::vega::Timestamp* _internal_mutable_expiresat();
+  const ::vega::Timestamp& _internal_expires_at() const;
+  ::vega::Timestamp* _internal_mutable_expires_at();
   public:
-  void unsafe_arena_set_allocated_expiresat(
-      ::vega::Timestamp* expiresat);
-  ::vega::Timestamp* unsafe_arena_release_expiresat();
+  void unsafe_arena_set_allocated_expires_at(
+      ::vega::Timestamp* expires_at);
+  ::vega::Timestamp* unsafe_arena_release_expires_at();
 
-  // .google.protobuf.Int64Value peggedOffset = 8 [json_name = "peggedOffset"];
-  bool has_peggedoffset() const;
+  // .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
+  bool has_pegged_offset() const;
   private:
-  bool _internal_has_peggedoffset() const;
+  bool _internal_has_pegged_offset() const;
   public:
-  void clear_peggedoffset();
-  const PROTOBUF_NAMESPACE_ID::Int64Value& peggedoffset() const;
-  PROTOBUF_NAMESPACE_ID::Int64Value* release_peggedoffset();
-  PROTOBUF_NAMESPACE_ID::Int64Value* mutable_peggedoffset();
-  void set_allocated_peggedoffset(PROTOBUF_NAMESPACE_ID::Int64Value* peggedoffset);
+  void clear_pegged_offset();
+  const PROTOBUF_NAMESPACE_ID::Int64Value& pegged_offset() const;
+  PROTOBUF_NAMESPACE_ID::Int64Value* release_pegged_offset();
+  PROTOBUF_NAMESPACE_ID::Int64Value* mutable_pegged_offset();
+  void set_allocated_pegged_offset(PROTOBUF_NAMESPACE_ID::Int64Value* pegged_offset);
   private:
-  const PROTOBUF_NAMESPACE_ID::Int64Value& _internal_peggedoffset() const;
-  PROTOBUF_NAMESPACE_ID::Int64Value* _internal_mutable_peggedoffset();
+  const PROTOBUF_NAMESPACE_ID::Int64Value& _internal_pegged_offset() const;
+  PROTOBUF_NAMESPACE_ID::Int64Value* _internal_mutable_pegged_offset();
   public:
-  void unsafe_arena_set_allocated_peggedoffset(
-      PROTOBUF_NAMESPACE_ID::Int64Value* peggedoffset);
-  PROTOBUF_NAMESPACE_ID::Int64Value* unsafe_arena_release_peggedoffset();
+  void unsafe_arena_set_allocated_pegged_offset(
+      PROTOBUF_NAMESPACE_ID::Int64Value* pegged_offset);
+  PROTOBUF_NAMESPACE_ID::Int64Value* unsafe_arena_release_pegged_offset();
 
-  // int64 sizeDelta = 5 [json_name = "sizeDelta"];
-  void clear_sizedelta();
-  ::PROTOBUF_NAMESPACE_ID::int64 sizedelta() const;
-  void set_sizedelta(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 size_delta = 5 [json_name = "sizeDelta"];
+  void clear_size_delta();
+  ::PROTOBUF_NAMESPACE_ID::int64 size_delta() const;
+  void set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_sizedelta() const;
-  void _internal_set_sizedelta(::PROTOBUF_NAMESPACE_ID::int64 value);
-  public:
-
-  // .vega.Order.TimeInForce timeInForce = 7 [json_name = "timeInForce"];
-  void clear_timeinforce();
-  ::vega::Order_TimeInForce timeinforce() const;
-  void set_timeinforce(::vega::Order_TimeInForce value);
-  private:
-  ::vega::Order_TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::vega::Order_TimeInForce value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_size_delta() const;
+  void _internal_set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // .vega.PeggedReference peggedReference = 9 [json_name = "peggedReference"];
-  void clear_peggedreference();
-  ::vega::PeggedReference peggedreference() const;
-  void set_peggedreference(::vega::PeggedReference value);
+  // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+  void clear_time_in_force();
+  ::vega::Order_TimeInForce time_in_force() const;
+  void set_time_in_force(::vega::Order_TimeInForce value);
   private:
-  ::vega::PeggedReference _internal_peggedreference() const;
-  void _internal_set_peggedreference(::vega::PeggedReference value);
+  ::vega::Order_TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::vega::Order_TimeInForce value);
+  public:
+
+  // .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
+  void clear_pegged_reference();
+  ::vega::PeggedReference pegged_reference() const;
+  void set_pegged_reference(::vega::PeggedReference value);
+  private:
+  ::vega::PeggedReference _internal_pegged_reference() const;
+  void _internal_set_pegged_reference(::vega::PeggedReference value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.OrderAmendment)
@@ -6472,15 +6509,15 @@ class OrderAmendment PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr orderid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr order_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::vega::Price* price_;
-  ::vega::Timestamp* expiresat_;
-  PROTOBUF_NAMESPACE_ID::Int64Value* peggedoffset_;
-  ::PROTOBUF_NAMESPACE_ID::int64 sizedelta_;
-  int timeinforce_;
-  int peggedreference_;
+  ::vega::Timestamp* expires_at_;
+  PROTOBUF_NAMESPACE_ID::Int64Value* pegged_offset_;
+  ::PROTOBUF_NAMESPACE_ID::int64 size_delta_;
+  int time_in_force_;
+  int pegged_reference_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -6599,8 +6636,8 @@ class OrderSubmission PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kMarketIDFieldNumber = 2,
-    kPartyIDFieldNumber = 3,
+    kMarketIdFieldNumber = 2,
+    kPartyIdFieldNumber = 3,
     kReferenceFieldNumber = 10,
     kPeggedOrderFieldNumber = 11,
     kPriceFieldNumber = 4,
@@ -6626,36 +6663,36 @@ class OrderSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string marketID = 2 [json_name = "marketID", (.validator.field) = {
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 2 [json_name = "marketId", (.validator.field) = {
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // string partyID = 3 [json_name = "partyID", (.validator.field) = {
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 3 [json_name = "partyId", (.validator.field) = {
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // string reference = 10 [json_name = "reference"];
@@ -6674,23 +6711,23 @@ class OrderSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_reference();
   public:
 
-  // .vega.PeggedOrder peggedOrder = 11 [json_name = "peggedOrder"];
-  bool has_peggedorder() const;
+  // .vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];
+  bool has_pegged_order() const;
   private:
-  bool _internal_has_peggedorder() const;
+  bool _internal_has_pegged_order() const;
   public:
-  void clear_peggedorder();
-  const ::vega::PeggedOrder& peggedorder() const;
-  ::vega::PeggedOrder* release_peggedorder();
-  ::vega::PeggedOrder* mutable_peggedorder();
-  void set_allocated_peggedorder(::vega::PeggedOrder* peggedorder);
+  void clear_pegged_order();
+  const ::vega::PeggedOrder& pegged_order() const;
+  ::vega::PeggedOrder* release_pegged_order();
+  ::vega::PeggedOrder* mutable_pegged_order();
+  void set_allocated_pegged_order(::vega::PeggedOrder* pegged_order);
   private:
-  const ::vega::PeggedOrder& _internal_peggedorder() const;
-  ::vega::PeggedOrder* _internal_mutable_peggedorder();
+  const ::vega::PeggedOrder& _internal_pegged_order() const;
+  ::vega::PeggedOrder* _internal_mutable_pegged_order();
   public:
-  void unsafe_arena_set_allocated_peggedorder(
-      ::vega::PeggedOrder* peggedorder);
-  ::vega::PeggedOrder* unsafe_arena_release_peggedorder();
+  void unsafe_arena_set_allocated_pegged_order(
+      ::vega::PeggedOrder* pegged_order);
+  ::vega::PeggedOrder* unsafe_arena_release_pegged_order();
 
   // uint64 price = 4 [json_name = "price"];
   void clear_price();
@@ -6719,22 +6756,22 @@ class OrderSubmission PROTOBUF_FINAL :
   void _internal_set_side(::vega::Side value);
   public:
 
-  // .vega.Order.TimeInForce timeInForce = 7 [json_name = "timeInForce", (.validator.field) = {
-  void clear_timeinforce();
-  ::vega::Order_TimeInForce timeinforce() const;
-  void set_timeinforce(::vega::Order_TimeInForce value);
+  // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce", (.validator.field) = {
+  void clear_time_in_force();
+  ::vega::Order_TimeInForce time_in_force() const;
+  void set_time_in_force(::vega::Order_TimeInForce value);
   private:
-  ::vega::Order_TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::vega::Order_TimeInForce value);
+  ::vega::Order_TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::vega::Order_TimeInForce value);
   public:
 
-  // int64 expiresAt = 8 [json_name = "expiresAt"];
-  void clear_expiresat();
-  ::PROTOBUF_NAMESPACE_ID::int64 expiresat() const;
-  void set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 expires_at = 8 [json_name = "expiresAt"];
+  void clear_expires_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 expires_at() const;
+  void set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_expiresat() const;
-  void _internal_set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_expires_at() const;
+  void _internal_set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // .vega.Order.Type type = 9 [json_name = "type", (.validator.field) = {
@@ -6754,15 +6791,15 @@ class OrderSubmission PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
-  ::vega::PeggedOrder* peggedorder_;
+  ::vega::PeggedOrder* pegged_order_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 size_;
   int side_;
-  int timeinforce_;
-  ::PROTOBUF_NAMESPACE_ID::int64 expiresat_;
+  int time_in_force_;
+  ::PROTOBUF_NAMESPACE_ID::int64 expires_at_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -6881,56 +6918,56 @@ class OrderCancellation PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrderIDFieldNumber = 1,
-    kMarketIDFieldNumber = 2,
-    kPartyIDFieldNumber = 3,
+    kOrderIdFieldNumber = 1,
+    kMarketIdFieldNumber = 2,
+    kPartyIdFieldNumber = 3,
   };
-  // string orderID = 1 [json_name = "orderID"];
-  void clear_orderid();
-  const std::string& orderid() const;
-  void set_orderid(const std::string& value);
-  void set_orderid(std::string&& value);
-  void set_orderid(const char* value);
-  void set_orderid(const char* value, size_t size);
-  std::string* mutable_orderid();
-  std::string* release_orderid();
-  void set_allocated_orderid(std::string* orderid);
+  // string order_id = 1 [json_name = "orderId"];
+  void clear_order_id();
+  const std::string& order_id() const;
+  void set_order_id(const std::string& value);
+  void set_order_id(std::string&& value);
+  void set_order_id(const char* value);
+  void set_order_id(const char* value, size_t size);
+  std::string* mutable_order_id();
+  std::string* release_order_id();
+  void set_allocated_order_id(std::string* order_id);
   private:
-  const std::string& _internal_orderid() const;
-  void _internal_set_orderid(const std::string& value);
-  std::string* _internal_mutable_orderid();
+  const std::string& _internal_order_id() const;
+  void _internal_set_order_id(const std::string& value);
+  std::string* _internal_mutable_order_id();
   public:
 
-  // string marketID = 2 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 2 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
-  // string partyID = 3 [json_name = "partyID", (.validator.field) = {
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 3 [json_name = "partyId", (.validator.field) = {
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.OrderCancellation)
@@ -6940,9 +6977,9 @@ class OrderCancellation PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr orderid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr order_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -7063,36 +7100,36 @@ class NodeRegistration PROTOBUF_FINAL :
     kPubKeyFieldNumber = 1,
     kChainPubKeyFieldNumber = 2,
   };
-  // bytes pubKey = 1 [json_name = "pubKey", (.validator.field) = {
-  void clear_pubkey();
-  const std::string& pubkey() const;
-  void set_pubkey(const std::string& value);
-  void set_pubkey(std::string&& value);
-  void set_pubkey(const char* value);
-  void set_pubkey(const void* value, size_t size);
-  std::string* mutable_pubkey();
-  std::string* release_pubkey();
-  void set_allocated_pubkey(std::string* pubkey);
+  // bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
+  void clear_pub_key();
+  const std::string& pub_key() const;
+  void set_pub_key(const std::string& value);
+  void set_pub_key(std::string&& value);
+  void set_pub_key(const char* value);
+  void set_pub_key(const void* value, size_t size);
+  std::string* mutable_pub_key();
+  std::string* release_pub_key();
+  void set_allocated_pub_key(std::string* pub_key);
   private:
-  const std::string& _internal_pubkey() const;
-  void _internal_set_pubkey(const std::string& value);
-  std::string* _internal_mutable_pubkey();
+  const std::string& _internal_pub_key() const;
+  void _internal_set_pub_key(const std::string& value);
+  std::string* _internal_mutable_pub_key();
   public:
 
-  // bytes chainPubKey = 2 [json_name = "chainPubKey", (.validator.field) = {
-  void clear_chainpubkey();
-  const std::string& chainpubkey() const;
-  void set_chainpubkey(const std::string& value);
-  void set_chainpubkey(std::string&& value);
-  void set_chainpubkey(const char* value);
-  void set_chainpubkey(const void* value, size_t size);
-  std::string* mutable_chainpubkey();
-  std::string* release_chainpubkey();
-  void set_allocated_chainpubkey(std::string* chainpubkey);
+  // bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = {
+  void clear_chain_pub_key();
+  const std::string& chain_pub_key() const;
+  void set_chain_pub_key(const std::string& value);
+  void set_chain_pub_key(std::string&& value);
+  void set_chain_pub_key(const char* value);
+  void set_chain_pub_key(const void* value, size_t size);
+  std::string* mutable_chain_pub_key();
+  std::string* release_chain_pub_key();
+  void set_allocated_chain_pub_key(std::string* chain_pub_key);
   private:
-  const std::string& _internal_chainpubkey() const;
-  void _internal_set_chainpubkey(const std::string& value);
-  std::string* _internal_mutable_chainpubkey();
+  const std::string& _internal_chain_pub_key() const;
+  void _internal_set_chain_pub_key(const std::string& value);
+  std::string* _internal_mutable_chain_pub_key();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.NodeRegistration)
@@ -7102,8 +7139,8 @@ class NodeRegistration PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pubkey_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chainpubkey_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pub_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_pub_key_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -7224,20 +7261,20 @@ class NodeVote PROTOBUF_FINAL :
     kPubKeyFieldNumber = 1,
     kReferenceFieldNumber = 2,
   };
-  // bytes pubKey = 1 [json_name = "pubKey", (.validator.field) = {
-  void clear_pubkey();
-  const std::string& pubkey() const;
-  void set_pubkey(const std::string& value);
-  void set_pubkey(std::string&& value);
-  void set_pubkey(const char* value);
-  void set_pubkey(const void* value, size_t size);
-  std::string* mutable_pubkey();
-  std::string* release_pubkey();
-  void set_allocated_pubkey(std::string* pubkey);
+  // bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
+  void clear_pub_key();
+  const std::string& pub_key() const;
+  void set_pub_key(const std::string& value);
+  void set_pub_key(std::string&& value);
+  void set_pub_key(const char* value);
+  void set_pub_key(const void* value, size_t size);
+  std::string* mutable_pub_key();
+  std::string* release_pub_key();
+  void set_allocated_pub_key(std::string* pub_key);
   private:
-  const std::string& _internal_pubkey() const;
-  void _internal_set_pubkey(const std::string& value);
-  std::string* _internal_mutable_pubkey();
+  const std::string& _internal_pub_key() const;
+  void _internal_set_pub_key(const std::string& value);
+  std::string* _internal_mutable_pub_key();
   public:
 
   // string reference = 2 [json_name = "reference", (.validator.field) = {
@@ -7263,7 +7300,7 @@ class NodeVote PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pubkey_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pub_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -7385,7 +7422,7 @@ class Account PROTOBUF_FINAL :
     kIdFieldNumber = 1,
     kOwnerFieldNumber = 2,
     kAssetFieldNumber = 4,
-    kMarketIDFieldNumber = 5,
+    kMarketIdFieldNumber = 5,
     kBalanceFieldNumber = 3,
     kTypeFieldNumber = 6,
   };
@@ -7437,20 +7474,20 @@ class Account PROTOBUF_FINAL :
   std::string* _internal_mutable_asset();
   public:
 
-  // string marketID = 5 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 5 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
   // uint64 balance = 3 [json_name = "balance"];
@@ -7481,7 +7518,7 @@ class Account PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 balance_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7620,13 +7657,13 @@ class FinancialAmount PROTOBUF_FINAL :
   std::string* _internal_mutable_asset();
   public:
 
-  // int64 amount = 1 [json_name = "amount"];
+  // uint64 amount = 1 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::int64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
+  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
+  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.FinancialAmount)
@@ -7637,7 +7674,7 @@ class FinancialAmount PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
-  ::PROTOBUF_NAMESPACE_ID::int64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -7794,13 +7831,13 @@ class Transfer PROTOBUF_FINAL :
       ::vega::FinancialAmount* amount);
   ::vega::FinancialAmount* unsafe_arena_release_amount();
 
-  // int64 minAmount = 4 [json_name = "minAmount"];
-  void clear_minamount();
-  ::PROTOBUF_NAMESPACE_ID::int64 minamount() const;
-  void set_minamount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // uint64 min_amount = 4 [json_name = "minAmount"];
+  void clear_min_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount() const;
+  void set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_minamount() const;
-  void _internal_set_minamount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_min_amount() const;
+  void _internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.TransferType type = 3 [json_name = "type"];
@@ -7821,7 +7858,7 @@ class Transfer PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::vega::FinancialAmount* amount_;
-  ::PROTOBUF_NAMESPACE_ID::int64 minamount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -7947,41 +7984,41 @@ class TransferRequest PROTOBUF_FINAL :
     kAmountFieldNumber = 3,
     kMinAmountFieldNumber = 4,
   };
-  // repeated .vega.Account fromAccount = 1 [json_name = "fromAccount"];
-  int fromaccount_size() const;
+  // repeated .vega.Account from_account = 1 [json_name = "fromAccount"];
+  int from_account_size() const;
   private:
-  int _internal_fromaccount_size() const;
+  int _internal_from_account_size() const;
   public:
-  void clear_fromaccount();
-  ::vega::Account* mutable_fromaccount(int index);
+  void clear_from_account();
+  ::vega::Account* mutable_from_account(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >*
-      mutable_fromaccount();
+      mutable_from_account();
   private:
-  const ::vega::Account& _internal_fromaccount(int index) const;
-  ::vega::Account* _internal_add_fromaccount();
+  const ::vega::Account& _internal_from_account(int index) const;
+  ::vega::Account* _internal_add_from_account();
   public:
-  const ::vega::Account& fromaccount(int index) const;
-  ::vega::Account* add_fromaccount();
+  const ::vega::Account& from_account(int index) const;
+  ::vega::Account* add_from_account();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >&
-      fromaccount() const;
+      from_account() const;
 
-  // repeated .vega.Account toAccount = 2 [json_name = "toAccount"];
-  int toaccount_size() const;
+  // repeated .vega.Account to_account = 2 [json_name = "toAccount"];
+  int to_account_size() const;
   private:
-  int _internal_toaccount_size() const;
+  int _internal_to_account_size() const;
   public:
-  void clear_toaccount();
-  ::vega::Account* mutable_toaccount(int index);
+  void clear_to_account();
+  ::vega::Account* mutable_to_account(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >*
-      mutable_toaccount();
+      mutable_to_account();
   private:
-  const ::vega::Account& _internal_toaccount(int index) const;
-  ::vega::Account* _internal_add_toaccount();
+  const ::vega::Account& _internal_to_account(int index) const;
+  ::vega::Account* _internal_add_to_account();
   public:
-  const ::vega::Account& toaccount(int index) const;
-  ::vega::Account* add_toaccount();
+  const ::vega::Account& to_account(int index) const;
+  ::vega::Account* add_to_account();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >&
-      toaccount() const;
+      to_account() const;
 
   // string asset = 5 [json_name = "asset"];
   void clear_asset();
@@ -8024,13 +8061,13 @@ class TransferRequest PROTOBUF_FINAL :
   void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 minAmount = 4 [json_name = "minAmount"];
-  void clear_minamount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 minamount() const;
-  void set_minamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 min_amount = 4 [json_name = "minAmount"];
+  void clear_min_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount() const;
+  void set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_minamount() const;
-  void _internal_set_minamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_min_amount() const;
+  void _internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.TransferRequest)
@@ -8040,12 +8077,12 @@ class TransferRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account > fromaccount_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account > toaccount_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account > from_account_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account > to_account_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 minamount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -8170,36 +8207,36 @@ class LedgerEntry PROTOBUF_FINAL :
     kAmountFieldNumber = 3,
     kTimestampFieldNumber = 6,
   };
-  // string fromAccount = 1 [json_name = "fromAccount"];
-  void clear_fromaccount();
-  const std::string& fromaccount() const;
-  void set_fromaccount(const std::string& value);
-  void set_fromaccount(std::string&& value);
-  void set_fromaccount(const char* value);
-  void set_fromaccount(const char* value, size_t size);
-  std::string* mutable_fromaccount();
-  std::string* release_fromaccount();
-  void set_allocated_fromaccount(std::string* fromaccount);
+  // string from_account = 1 [json_name = "fromAccount"];
+  void clear_from_account();
+  const std::string& from_account() const;
+  void set_from_account(const std::string& value);
+  void set_from_account(std::string&& value);
+  void set_from_account(const char* value);
+  void set_from_account(const char* value, size_t size);
+  std::string* mutable_from_account();
+  std::string* release_from_account();
+  void set_allocated_from_account(std::string* from_account);
   private:
-  const std::string& _internal_fromaccount() const;
-  void _internal_set_fromaccount(const std::string& value);
-  std::string* _internal_mutable_fromaccount();
+  const std::string& _internal_from_account() const;
+  void _internal_set_from_account(const std::string& value);
+  std::string* _internal_mutable_from_account();
   public:
 
-  // string toAccount = 2 [json_name = "toAccount"];
-  void clear_toaccount();
-  const std::string& toaccount() const;
-  void set_toaccount(const std::string& value);
-  void set_toaccount(std::string&& value);
-  void set_toaccount(const char* value);
-  void set_toaccount(const char* value, size_t size);
-  std::string* mutable_toaccount();
-  std::string* release_toaccount();
-  void set_allocated_toaccount(std::string* toaccount);
+  // string to_account = 2 [json_name = "toAccount"];
+  void clear_to_account();
+  const std::string& to_account() const;
+  void set_to_account(const std::string& value);
+  void set_to_account(std::string&& value);
+  void set_to_account(const char* value);
+  void set_to_account(const char* value, size_t size);
+  std::string* mutable_to_account();
+  std::string* release_to_account();
+  void set_allocated_to_account(std::string* to_account);
   private:
-  const std::string& _internal_toaccount() const;
-  void _internal_set_toaccount(const std::string& value);
-  std::string* _internal_mutable_toaccount();
+  const std::string& _internal_to_account() const;
+  void _internal_set_to_account(const std::string& value);
+  std::string* _internal_mutable_to_account();
   public:
 
   // string reference = 4 [json_name = "reference"];
@@ -8259,8 +8296,8 @@ class LedgerEntry PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fromaccount_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr toaccount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_account_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_account_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
@@ -8703,8 +8740,8 @@ class MarginLevels PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPartyIDFieldNumber = 5,
-    kMarketIDFieldNumber = 6,
+    kPartyIdFieldNumber = 5,
+    kMarketIdFieldNumber = 6,
     kAssetFieldNumber = 7,
     kMaintenanceMarginFieldNumber = 1,
     kSearchLevelFieldNumber = 2,
@@ -8712,36 +8749,36 @@ class MarginLevels PROTOBUF_FINAL :
     kCollateralReleaseLevelFieldNumber = 4,
     kTimestampFieldNumber = 8,
   };
-  // string partyID = 5 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 5 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
-  // string marketID = 6 [json_name = "marketID"];
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 6 [json_name = "marketId"];
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
   // string asset = 7 [json_name = "asset"];
@@ -8760,40 +8797,40 @@ class MarginLevels PROTOBUF_FINAL :
   std::string* _internal_mutable_asset();
   public:
 
-  // uint64 maintenanceMargin = 1 [json_name = "maintenanceMargin"];
-  void clear_maintenancemargin();
-  ::PROTOBUF_NAMESPACE_ID::uint64 maintenancemargin() const;
-  void set_maintenancemargin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];
+  void clear_maintenance_margin();
+  ::PROTOBUF_NAMESPACE_ID::uint64 maintenance_margin() const;
+  void set_maintenance_margin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_maintenancemargin() const;
-  void _internal_set_maintenancemargin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_maintenance_margin() const;
+  void _internal_set_maintenance_margin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 searchLevel = 2 [json_name = "searchLevel"];
-  void clear_searchlevel();
-  ::PROTOBUF_NAMESPACE_ID::uint64 searchlevel() const;
-  void set_searchlevel(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 search_level = 2 [json_name = "searchLevel"];
+  void clear_search_level();
+  ::PROTOBUF_NAMESPACE_ID::uint64 search_level() const;
+  void set_search_level(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_searchlevel() const;
-  void _internal_set_searchlevel(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_search_level() const;
+  void _internal_set_search_level(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 initialMargin = 3 [json_name = "initialMargin"];
-  void clear_initialmargin();
-  ::PROTOBUF_NAMESPACE_ID::uint64 initialmargin() const;
-  void set_initialmargin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 initial_margin = 3 [json_name = "initialMargin"];
+  void clear_initial_margin();
+  ::PROTOBUF_NAMESPACE_ID::uint64 initial_margin() const;
+  void set_initial_margin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_initialmargin() const;
-  void _internal_set_initialmargin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_initial_margin() const;
+  void _internal_set_initial_margin(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 collateralReleaseLevel = 4 [json_name = "collateralReleaseLevel"];
-  void clear_collateralreleaselevel();
-  ::PROTOBUF_NAMESPACE_ID::uint64 collateralreleaselevel() const;
-  void set_collateralreleaselevel(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];
+  void clear_collateral_release_level();
+  ::PROTOBUF_NAMESPACE_ID::uint64 collateral_release_level() const;
+  void set_collateral_release_level(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_collateralreleaselevel() const;
-  void _internal_set_collateralreleaselevel(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_collateral_release_level() const;
+  void _internal_set_collateral_release_level(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // int64 timestamp = 8 [json_name = "timestamp"];
@@ -8812,13 +8849,13 @@ class MarginLevels PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 maintenancemargin_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 searchlevel_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 initialmargin_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 collateralreleaselevel_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 maintenance_margin_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 search_level_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 initial_margin_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 collateral_release_level_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -8938,9 +8975,11 @@ class MarketData PROTOBUF_FINAL :
 
   enum : int {
     kPriceMonitoringBoundsFieldNumber = 23,
+    kLiquidityProviderFeeShareFieldNumber = 25,
     kMarketFieldNumber = 12,
     kTargetStakeFieldNumber = 21,
     kSuppliedStakeFieldNumber = 22,
+    kMarketValueProxyFieldNumber = 24,
     kMarkPriceFieldNumber = 1,
     kBestBidPriceFieldNumber = 2,
     kBestBidVolumeFieldNumber = 3,
@@ -8961,23 +9000,41 @@ class MarketData PROTOBUF_FINAL :
     kMarketTradingModeFieldNumber = 19,
     kTriggerFieldNumber = 20,
   };
-  // repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23 [json_name = "priceMonitoringBounds"];
-  int pricemonitoringbounds_size() const;
+  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
+  int price_monitoring_bounds_size() const;
   private:
-  int _internal_pricemonitoringbounds_size() const;
+  int _internal_price_monitoring_bounds_size() const;
   public:
-  void clear_pricemonitoringbounds();
-  ::vega::PriceMonitoringBounds* mutable_pricemonitoringbounds(int index);
+  void clear_price_monitoring_bounds();
+  ::vega::PriceMonitoringBounds* mutable_price_monitoring_bounds(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds >*
-      mutable_pricemonitoringbounds();
+      mutable_price_monitoring_bounds();
   private:
-  const ::vega::PriceMonitoringBounds& _internal_pricemonitoringbounds(int index) const;
-  ::vega::PriceMonitoringBounds* _internal_add_pricemonitoringbounds();
+  const ::vega::PriceMonitoringBounds& _internal_price_monitoring_bounds(int index) const;
+  ::vega::PriceMonitoringBounds* _internal_add_price_monitoring_bounds();
   public:
-  const ::vega::PriceMonitoringBounds& pricemonitoringbounds(int index) const;
-  ::vega::PriceMonitoringBounds* add_pricemonitoringbounds();
+  const ::vega::PriceMonitoringBounds& price_monitoring_bounds(int index) const;
+  ::vega::PriceMonitoringBounds* add_price_monitoring_bounds();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds >&
-      pricemonitoringbounds() const;
+      price_monitoring_bounds() const;
+
+  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
+  int liquidity_provider_fee_share_size() const;
+  private:
+  int _internal_liquidity_provider_fee_share_size() const;
+  public:
+  void clear_liquidity_provider_fee_share();
+  ::vega::LiquidityProviderFeeShare* mutable_liquidity_provider_fee_share(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityProviderFeeShare >*
+      mutable_liquidity_provider_fee_share();
+  private:
+  const ::vega::LiquidityProviderFeeShare& _internal_liquidity_provider_fee_share(int index) const;
+  ::vega::LiquidityProviderFeeShare* _internal_add_liquidity_provider_fee_share();
+  public:
+  const ::vega::LiquidityProviderFeeShare& liquidity_provider_fee_share(int index) const;
+  ::vega::LiquidityProviderFeeShare* add_liquidity_provider_fee_share();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityProviderFeeShare >&
+      liquidity_provider_fee_share() const;
 
   // string market = 12 [json_name = "market"];
   void clear_market();
@@ -8995,135 +9052,151 @@ class MarketData PROTOBUF_FINAL :
   std::string* _internal_mutable_market();
   public:
 
-  // string targetStake = 21 [json_name = "targetStake"];
-  void clear_targetstake();
-  const std::string& targetstake() const;
-  void set_targetstake(const std::string& value);
-  void set_targetstake(std::string&& value);
-  void set_targetstake(const char* value);
-  void set_targetstake(const char* value, size_t size);
-  std::string* mutable_targetstake();
-  std::string* release_targetstake();
-  void set_allocated_targetstake(std::string* targetstake);
+  // string target_stake = 21 [json_name = "targetStake"];
+  void clear_target_stake();
+  const std::string& target_stake() const;
+  void set_target_stake(const std::string& value);
+  void set_target_stake(std::string&& value);
+  void set_target_stake(const char* value);
+  void set_target_stake(const char* value, size_t size);
+  std::string* mutable_target_stake();
+  std::string* release_target_stake();
+  void set_allocated_target_stake(std::string* target_stake);
   private:
-  const std::string& _internal_targetstake() const;
-  void _internal_set_targetstake(const std::string& value);
-  std::string* _internal_mutable_targetstake();
+  const std::string& _internal_target_stake() const;
+  void _internal_set_target_stake(const std::string& value);
+  std::string* _internal_mutable_target_stake();
   public:
 
-  // string suppliedStake = 22 [json_name = "suppliedStake"];
-  void clear_suppliedstake();
-  const std::string& suppliedstake() const;
-  void set_suppliedstake(const std::string& value);
-  void set_suppliedstake(std::string&& value);
-  void set_suppliedstake(const char* value);
-  void set_suppliedstake(const char* value, size_t size);
-  std::string* mutable_suppliedstake();
-  std::string* release_suppliedstake();
-  void set_allocated_suppliedstake(std::string* suppliedstake);
+  // string supplied_stake = 22 [json_name = "suppliedStake"];
+  void clear_supplied_stake();
+  const std::string& supplied_stake() const;
+  void set_supplied_stake(const std::string& value);
+  void set_supplied_stake(std::string&& value);
+  void set_supplied_stake(const char* value);
+  void set_supplied_stake(const char* value, size_t size);
+  std::string* mutable_supplied_stake();
+  std::string* release_supplied_stake();
+  void set_allocated_supplied_stake(std::string* supplied_stake);
   private:
-  const std::string& _internal_suppliedstake() const;
-  void _internal_set_suppliedstake(const std::string& value);
-  std::string* _internal_mutable_suppliedstake();
+  const std::string& _internal_supplied_stake() const;
+  void _internal_set_supplied_stake(const std::string& value);
+  std::string* _internal_mutable_supplied_stake();
   public:
 
-  // uint64 markPrice = 1 [json_name = "markPrice"];
-  void clear_markprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 markprice() const;
-  void set_markprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // string market_value_proxy = 24 [json_name = "marketValueProxy"];
+  void clear_market_value_proxy();
+  const std::string& market_value_proxy() const;
+  void set_market_value_proxy(const std::string& value);
+  void set_market_value_proxy(std::string&& value);
+  void set_market_value_proxy(const char* value);
+  void set_market_value_proxy(const char* value, size_t size);
+  std::string* mutable_market_value_proxy();
+  std::string* release_market_value_proxy();
+  void set_allocated_market_value_proxy(std::string* market_value_proxy);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_markprice() const;
-  void _internal_set_markprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_market_value_proxy() const;
+  void _internal_set_market_value_proxy(const std::string& value);
+  std::string* _internal_mutable_market_value_proxy();
   public:
 
-  // uint64 bestBidPrice = 2 [json_name = "bestBidPrice"];
-  void clear_bestbidprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestbidprice() const;
-  void set_bestbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 mark_price = 1 [json_name = "markPrice"];
+  void clear_mark_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 mark_price() const;
+  void set_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_bestbidprice() const;
-  void _internal_set_bestbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_mark_price() const;
+  void _internal_set_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestBidVolume = 3 [json_name = "bestBidVolume"];
-  void clear_bestbidvolume();
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestbidvolume() const;
-  void set_bestbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_bid_price = 2 [json_name = "bestBidPrice"];
+  void clear_best_bid_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_bid_price() const;
+  void set_best_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_bestbidvolume() const;
-  void _internal_set_bestbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_bid_price() const;
+  void _internal_set_best_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestOfferPrice = 4 [json_name = "bestOfferPrice"];
-  void clear_bestofferprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestofferprice() const;
-  void set_bestofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_bid_volume = 3 [json_name = "bestBidVolume"];
+  void clear_best_bid_volume();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_bid_volume() const;
+  void set_best_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_bestofferprice() const;
-  void _internal_set_bestofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_bid_volume() const;
+  void _internal_set_best_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestOfferVolume = 5 [json_name = "bestOfferVolume"];
-  void clear_bestoffervolume();
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestoffervolume() const;
-  void set_bestoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];
+  void clear_best_offer_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_offer_price() const;
+  void set_best_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_bestoffervolume() const;
-  void _internal_set_bestoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_offer_price() const;
+  void _internal_set_best_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestStaticBidPrice = 6 [json_name = "bestStaticBidPrice"];
-  void clear_beststaticbidprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticbidprice() const;
-  void set_beststaticbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_offer_volume = 5 [json_name = "bestOfferVolume"];
+  void clear_best_offer_volume();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_offer_volume() const;
+  void set_best_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_beststaticbidprice() const;
-  void _internal_set_beststaticbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_offer_volume() const;
+  void _internal_set_best_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestStaticBidVolume = 7 [json_name = "bestStaticBidVolume"];
-  void clear_beststaticbidvolume();
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticbidvolume() const;
-  void set_beststaticbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];
+  void clear_best_static_bid_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_bid_price() const;
+  void set_best_static_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_beststaticbidvolume() const;
-  void _internal_set_beststaticbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_static_bid_price() const;
+  void _internal_set_best_static_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestStaticOfferPrice = 8 [json_name = "bestStaticOfferPrice"];
-  void clear_beststaticofferprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticofferprice() const;
-  void set_beststaticofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_static_bid_volume = 7 [json_name = "bestStaticBidVolume"];
+  void clear_best_static_bid_volume();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_bid_volume() const;
+  void set_best_static_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_beststaticofferprice() const;
-  void _internal_set_beststaticofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_static_bid_volume() const;
+  void _internal_set_best_static_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 bestStaticOfferVolume = 9 [json_name = "bestStaticOfferVolume"];
-  void clear_beststaticoffervolume();
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticoffervolume() const;
-  void set_beststaticoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];
+  void clear_best_static_offer_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_offer_price() const;
+  void set_best_static_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_beststaticoffervolume() const;
-  void _internal_set_beststaticoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_static_offer_price() const;
+  void _internal_set_best_static_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 midPrice = 10 [json_name = "midPrice"];
-  void clear_midprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 midprice() const;
-  void set_midprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 best_static_offer_volume = 9 [json_name = "bestStaticOfferVolume"];
+  void clear_best_static_offer_volume();
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_offer_volume() const;
+  void set_best_static_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_midprice() const;
-  void _internal_set_midprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_best_static_offer_volume() const;
+  void _internal_set_best_static_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 staticMidPrice = 11 [json_name = "staticMidPrice"];
-  void clear_staticmidprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 staticmidprice() const;
-  void set_staticmidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 mid_price = 10 [json_name = "midPrice"];
+  void clear_mid_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 mid_price() const;
+  void set_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_staticmidprice() const;
-  void _internal_set_staticmidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_mid_price() const;
+  void _internal_set_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 static_mid_price = 11 [json_name = "staticMidPrice"];
+  void clear_static_mid_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 static_mid_price() const;
+  void set_static_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_static_mid_price() const;
+  void _internal_set_static_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // int64 timestamp = 13 [json_name = "timestamp"];
@@ -9135,58 +9208,58 @@ class MarketData PROTOBUF_FINAL :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint64 openInterest = 14 [json_name = "openInterest"];
-  void clear_openinterest();
-  ::PROTOBUF_NAMESPACE_ID::uint64 openinterest() const;
-  void set_openinterest(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 open_interest = 14 [json_name = "openInterest"];
+  void clear_open_interest();
+  ::PROTOBUF_NAMESPACE_ID::uint64 open_interest() const;
+  void set_open_interest(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_openinterest() const;
-  void _internal_set_openinterest(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_open_interest() const;
+  void _internal_set_open_interest(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // int64 auctionEnd = 15 [json_name = "auctionEnd"];
-  void clear_auctionend();
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionend() const;
-  void set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 auction_end = 15 [json_name = "auctionEnd"];
+  void clear_auction_end();
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_end() const;
+  void set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auctionend() const;
-  void _internal_set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auction_end() const;
+  void _internal_set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // int64 auctionStart = 16 [json_name = "auctionStart"];
-  void clear_auctionstart();
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionstart() const;
-  void set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 auction_start = 16 [json_name = "auctionStart"];
+  void clear_auction_start();
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_start() const;
+  void set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auctionstart() const;
-  void _internal_set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auction_start() const;
+  void _internal_set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint64 indicativePrice = 17 [json_name = "indicativePrice"];
-  void clear_indicativeprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativeprice() const;
-  void set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 indicative_price = 17 [json_name = "indicativePrice"];
+  void clear_indicative_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_price() const;
+  void set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicativeprice() const;
-  void _internal_set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicative_price() const;
+  void _internal_set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 indicativeVolume = 18 [json_name = "indicativeVolume"];
-  void clear_indicativevolume();
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativevolume() const;
-  void set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 indicative_volume = 18 [json_name = "indicativeVolume"];
+  void clear_indicative_volume();
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_volume() const;
+  void set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicativevolume() const;
-  void _internal_set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_indicative_volume() const;
+  void _internal_set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .vega.Market.TradingMode marketTradingMode = 19 [json_name = "marketTradingMode"];
-  void clear_markettradingmode();
-  ::vega::Market_TradingMode markettradingmode() const;
-  void set_markettradingmode(::vega::Market_TradingMode value);
+  // .vega.Market.TradingMode market_trading_mode = 19 [json_name = "marketTradingMode"];
+  void clear_market_trading_mode();
+  ::vega::Market_TradingMode market_trading_mode() const;
+  void set_market_trading_mode(::vega::Market_TradingMode value);
   private:
-  ::vega::Market_TradingMode _internal_markettradingmode() const;
-  void _internal_set_markettradingmode(::vega::Market_TradingMode value);
+  ::vega::Market_TradingMode _internal_market_trading_mode() const;
+  void _internal_set_market_trading_mode(::vega::Market_TradingMode value);
   public:
 
   // .vega.AuctionTrigger trigger = 20 [json_name = "trigger"];
@@ -9205,29 +9278,210 @@ class MarketData PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds > pricemonitoringbounds_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds > price_monitoring_bounds_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityProviderFeeShare > liquidity_provider_fee_share_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetstake_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr suppliedstake_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 markprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestbidprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestbidvolume_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestofferprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 bestoffervolume_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticbidprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticbidvolume_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticofferprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 beststaticoffervolume_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 midprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 staticmidprice_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr target_stake_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr supplied_stake_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_value_proxy_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 mark_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_bid_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_bid_volume_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_offer_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_offer_volume_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_bid_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_bid_volume_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_offer_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 best_static_offer_volume_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 mid_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 static_mid_price_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 openinterest_;
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionend_;
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionstart_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativeprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 indicativevolume_;
-  int markettradingmode_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 open_interest_;
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_end_;
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_start_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 indicative_volume_;
+  int market_trading_mode_;
   int trigger_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LiquidityProviderFeeShare PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.LiquidityProviderFeeShare) */ {
+ public:
+  inline LiquidityProviderFeeShare() : LiquidityProviderFeeShare(nullptr) {}
+  virtual ~LiquidityProviderFeeShare();
+
+  LiquidityProviderFeeShare(const LiquidityProviderFeeShare& from);
+  LiquidityProviderFeeShare(LiquidityProviderFeeShare&& from) noexcept
+    : LiquidityProviderFeeShare() {
+    *this = ::std::move(from);
+  }
+
+  inline LiquidityProviderFeeShare& operator=(const LiquidityProviderFeeShare& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LiquidityProviderFeeShare& operator=(LiquidityProviderFeeShare&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LiquidityProviderFeeShare& default_instance();
+
+  static inline const LiquidityProviderFeeShare* internal_default_instance() {
+    return reinterpret_cast<const LiquidityProviderFeeShare*>(
+               &_LiquidityProviderFeeShare_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    41;
+
+  friend void swap(LiquidityProviderFeeShare& a, LiquidityProviderFeeShare& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LiquidityProviderFeeShare* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LiquidityProviderFeeShare* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LiquidityProviderFeeShare* New() const final {
+    return CreateMaybeMessage<LiquidityProviderFeeShare>(nullptr);
+  }
+
+  LiquidityProviderFeeShare* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LiquidityProviderFeeShare>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LiquidityProviderFeeShare& from);
+  void MergeFrom(const LiquidityProviderFeeShare& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LiquidityProviderFeeShare* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.LiquidityProviderFeeShare";
+  }
+  protected:
+  explicit LiquidityProviderFeeShare(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_vega_2eproto);
+    return ::descriptor_table_vega_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPartyFieldNumber = 1,
+    kEquityLikeShareFieldNumber = 2,
+    kAverageEntryValuationFieldNumber = 3,
+  };
+  // string party = 1 [json_name = "party"];
+  void clear_party();
+  const std::string& party() const;
+  void set_party(const std::string& value);
+  void set_party(std::string&& value);
+  void set_party(const char* value);
+  void set_party(const char* value, size_t size);
+  std::string* mutable_party();
+  std::string* release_party();
+  void set_allocated_party(std::string* party);
+  private:
+  const std::string& _internal_party() const;
+  void _internal_set_party(const std::string& value);
+  std::string* _internal_mutable_party();
+  public:
+
+  // string equity_like_share = 2 [json_name = "equityLikeShare"];
+  void clear_equity_like_share();
+  const std::string& equity_like_share() const;
+  void set_equity_like_share(const std::string& value);
+  void set_equity_like_share(std::string&& value);
+  void set_equity_like_share(const char* value);
+  void set_equity_like_share(const char* value, size_t size);
+  std::string* mutable_equity_like_share();
+  std::string* release_equity_like_share();
+  void set_allocated_equity_like_share(std::string* equity_like_share);
+  private:
+  const std::string& _internal_equity_like_share() const;
+  void _internal_set_equity_like_share(const std::string& value);
+  std::string* _internal_mutable_equity_like_share();
+  public:
+
+  // string average_entry_valuation = 3 [json_name = "averageEntryValuation"];
+  void clear_average_entry_valuation();
+  const std::string& average_entry_valuation() const;
+  void set_average_entry_valuation(const std::string& value);
+  void set_average_entry_valuation(std::string&& value);
+  void set_average_entry_valuation(const char* value);
+  void set_average_entry_valuation(const char* value, size_t size);
+  std::string* mutable_average_entry_valuation();
+  std::string* release_average_entry_valuation();
+  void set_allocated_average_entry_valuation(std::string* average_entry_valuation);
+  private:
+  const std::string& _internal_average_entry_valuation() const;
+  void _internal_set_average_entry_valuation(const std::string& value);
+  std::string* _internal_mutable_average_entry_valuation();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.LiquidityProviderFeeShare)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr equity_like_share_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr average_entry_valuation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -9274,7 +9528,7 @@ class PriceMonitoringBounds PROTOBUF_FINAL :
                &_PriceMonitoringBounds_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(PriceMonitoringBounds& a, PriceMonitoringBounds& b) {
     a.Swap(&b);
@@ -9368,31 +9622,31 @@ class PriceMonitoringBounds PROTOBUF_FINAL :
       ::vega::PriceMonitoringTrigger* trigger);
   ::vega::PriceMonitoringTrigger* unsafe_arena_release_trigger();
 
-  // uint64 minValidPrice = 1 [json_name = "minValidPrice"];
-  void clear_minvalidprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 minvalidprice() const;
-  void set_minvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 min_valid_price = 1 [json_name = "minValidPrice"];
+  void clear_min_valid_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_valid_price() const;
+  void set_min_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_minvalidprice() const;
-  void _internal_set_minvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_min_valid_price() const;
+  void _internal_set_min_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 maxValidPrice = 2 [json_name = "maxValidPrice"];
-  void clear_maxvalidprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 maxvalidprice() const;
-  void set_maxvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 max_valid_price = 2 [json_name = "maxValidPrice"];
+  void clear_max_valid_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 max_valid_price() const;
+  void set_max_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_maxvalidprice() const;
-  void _internal_set_maxvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_max_valid_price() const;
+  void _internal_set_max_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // double referencePrice = 4 [json_name = "referencePrice"];
-  void clear_referenceprice();
-  double referenceprice() const;
-  void set_referenceprice(double value);
+  // double reference_price = 4 [json_name = "referencePrice"];
+  void clear_reference_price();
+  double reference_price() const;
+  void set_reference_price(double value);
   private:
-  double _internal_referenceprice() const;
-  void _internal_set_referenceprice(double value);
+  double _internal_reference_price() const;
+  void _internal_set_reference_price(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.PriceMonitoringBounds)
@@ -9403,9 +9657,9 @@ class PriceMonitoringBounds PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::vega::PriceMonitoringTrigger* trigger_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 minvalidprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 maxvalidprice_;
-  double referenceprice_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_valid_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 max_valid_price_;
+  double reference_price_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -9452,7 +9706,7 @@ class ErrorDetail PROTOBUF_FINAL :
                &_ErrorDetail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(ErrorDetail& a, ErrorDetail& b) {
     a.Swap(&b);
@@ -9630,7 +9884,7 @@ class Transaction PROTOBUF_FINAL :
                &_Transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(Transaction& a, Transaction& b) {
     a.Swap(&b);
@@ -9707,20 +9961,20 @@ class Transaction PROTOBUF_FINAL :
     kAddressFieldNumber = 1001,
     kPubKeyFieldNumber = 1002,
   };
-  // bytes inputData = 1 [json_name = "inputData"];
-  void clear_inputdata();
-  const std::string& inputdata() const;
-  void set_inputdata(const std::string& value);
-  void set_inputdata(std::string&& value);
-  void set_inputdata(const char* value);
-  void set_inputdata(const void* value, size_t size);
-  std::string* mutable_inputdata();
-  std::string* release_inputdata();
-  void set_allocated_inputdata(std::string* inputdata);
+  // bytes input_data = 1 [json_name = "inputData"];
+  void clear_input_data();
+  const std::string& input_data() const;
+  void set_input_data(const std::string& value);
+  void set_input_data(std::string&& value);
+  void set_input_data(const char* value);
+  void set_input_data(const void* value, size_t size);
+  std::string* mutable_input_data();
+  std::string* release_input_data();
+  void set_allocated_input_data(std::string* input_data);
   private:
-  const std::string& _internal_inputdata() const;
-  void _internal_set_inputdata(const std::string& value);
-  std::string* _internal_mutable_inputdata();
+  const std::string& _internal_input_data() const;
+  void _internal_set_input_data(const std::string& value);
+  std::string* _internal_mutable_input_data();
   public:
 
   // uint64 nonce = 2 [json_name = "nonce"];
@@ -9732,13 +9986,13 @@ class Transaction PROTOBUF_FINAL :
   void _internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 blockHeight = 3 [json_name = "blockHeight"];
-  void clear_blockheight();
-  ::PROTOBUF_NAMESPACE_ID::uint64 blockheight() const;
-  void set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 block_height = 3 [json_name = "blockHeight"];
+  void clear_block_height();
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_height() const;
+  void set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_blockheight() const;
-  void _internal_set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_block_height() const;
+  void _internal_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // bytes address = 1001 [json_name = "address"];
@@ -9760,23 +10014,23 @@ class Transaction PROTOBUF_FINAL :
   std::string* _internal_mutable_address();
   public:
 
-  // bytes pubKey = 1002 [json_name = "pubKey"];
+  // bytes pub_key = 1002 [json_name = "pubKey"];
   private:
-  bool _internal_has_pubkey() const;
+  bool _internal_has_pub_key() const;
   public:
-  void clear_pubkey();
-  const std::string& pubkey() const;
-  void set_pubkey(const std::string& value);
-  void set_pubkey(std::string&& value);
-  void set_pubkey(const char* value);
-  void set_pubkey(const void* value, size_t size);
-  std::string* mutable_pubkey();
-  std::string* release_pubkey();
-  void set_allocated_pubkey(std::string* pubkey);
+  void clear_pub_key();
+  const std::string& pub_key() const;
+  void set_pub_key(const std::string& value);
+  void set_pub_key(std::string&& value);
+  void set_pub_key(const char* value);
+  void set_pub_key(const void* value, size_t size);
+  std::string* mutable_pub_key();
+  std::string* release_pub_key();
+  void set_allocated_pub_key(std::string* pub_key);
   private:
-  const std::string& _internal_pubkey() const;
-  void _internal_set_pubkey(const std::string& value);
-  std::string* _internal_mutable_pubkey();
+  const std::string& _internal_pub_key() const;
+  void _internal_set_pub_key(const std::string& value);
+  std::string* _internal_mutable_pub_key();
   public:
 
   void clear_from();
@@ -9785,7 +10039,7 @@ class Transaction PROTOBUF_FINAL :
  private:
   class _Internal;
   void set_has_address();
-  void set_has_pubkey();
+  void set_has_pub_key();
 
   inline bool has_from() const;
   inline void clear_has_from();
@@ -9793,13 +10047,13 @@ class Transaction PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputdata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr input_data_;
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 blockheight_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 block_height_;
   union FromUnion {
     FromUnion() {}
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pubkey_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pub_key_;
   } from_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -9849,7 +10103,7 @@ class Signature PROTOBUF_FINAL :
                &_Signature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(Signature& a, Signature& b) {
     a.Swap(&b);
@@ -10021,7 +10275,7 @@ class SignedBundle PROTOBUF_FINAL :
                &_SignedBundle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(SignedBundle& a, SignedBundle& b) {
     a.Swap(&b);
@@ -10184,7 +10438,7 @@ class NodeSignature PROTOBUF_FINAL :
                &_NodeSignature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(NodeSignature& a, NodeSignature& b) {
     a.Swap(&b);
@@ -10255,11 +10509,11 @@ class NodeSignature PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIDFieldNumber = 1,
+    kIdFieldNumber = 1,
     kSigFieldNumber = 2,
     kKindFieldNumber = 3,
   };
-  // string ID = 1 [json_name = "ID"];
+  // string id = 1 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
   void set_id(const std::string& value);
@@ -10356,7 +10610,7 @@ class NetworkParameter PROTOBUF_FINAL :
                &_NetworkParameter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(NetworkParameter& a, NetworkParameter& b) {
     a.Swap(&b);
@@ -10430,7 +10684,7 @@ class NetworkParameter PROTOBUF_FINAL :
     kKeyFieldNumber = 1,
     kValueFieldNumber = 2,
   };
-  // string Key = 1 [json_name = "Key"];
+  // string key = 1 [json_name = "key"];
   void clear_key();
   const std::string& key() const;
   void set_key(const std::string& value);
@@ -10446,7 +10700,7 @@ class NetworkParameter PROTOBUF_FINAL :
   std::string* _internal_mutable_key();
   public:
 
-  // string Value = 2 [json_name = "Value"];
+  // string value = 2 [json_name = "value"];
   void clear_value();
   const std::string& value() const;
   void set_value(const std::string& value);
@@ -10517,7 +10771,7 @@ class LiquidityOrder PROTOBUF_FINAL :
                &_LiquidityOrder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(LiquidityOrder& a, LiquidityOrder& b) {
     a.Swap(&b);
@@ -10675,7 +10929,7 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
                &_LiquidityProvisionSubmission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(LiquidityProvisionSubmission& a, LiquidityProvisionSubmission& b) {
     a.Swap(&b);
@@ -10748,11 +11002,12 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   enum : int {
     kSellsFieldNumber = 4,
     kBuysFieldNumber = 5,
-    kMarketIDFieldNumber = 1,
+    kMarketIdFieldNumber = 1,
     kFeeFieldNumber = 3,
+    kReferenceFieldNumber = 6,
     kCommitmentAmountFieldNumber = 2,
   };
-  // repeated .vega.LiquidityOrder Sells = 4 [json_name = "Sells"];
+  // repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];
   int sells_size() const;
   private:
   int _internal_sells_size() const;
@@ -10770,7 +11025,7 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
       sells() const;
 
-  // repeated .vega.LiquidityOrder Buys = 5 [json_name = "Buys"];
+  // repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];
   int buys_size() const;
   private:
   int _internal_buys_size() const;
@@ -10788,20 +11043,20 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
       buys() const;
 
-  // string marketID = 1 [json_name = "marketID", (.validator.field) = {
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 1 [json_name = "marketId", (.validator.field) = {
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
   // string fee = 3 [json_name = "fee"];
@@ -10820,13 +11075,29 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_fee();
   public:
 
-  // uint64 commitmentAmount = 2 [json_name = "commitmentAmount"];
-  void clear_commitmentamount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitmentamount() const;
-  void set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // string reference = 6 [json_name = "reference"];
+  void clear_reference();
+  const std::string& reference() const;
+  void set_reference(const std::string& value);
+  void set_reference(std::string&& value);
+  void set_reference(const char* value);
+  void set_reference(const char* value, size_t size);
+  std::string* mutable_reference();
+  std::string* release_reference();
+  void set_allocated_reference(std::string* reference);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitmentamount() const;
-  void _internal_set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_reference() const;
+  void _internal_set_reference(const std::string& value);
+  std::string* _internal_mutable_reference();
+  public:
+
+  // uint64 commitment_amount = 2 [json_name = "commitmentAmount"];
+  void clear_commitment_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount() const;
+  void set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitment_amount() const;
+  void _internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.LiquidityProvisionSubmission)
@@ -10838,9 +11109,10 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > sells_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > buys_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitmentamount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -10887,7 +11159,7 @@ class LiquidityOrderReference PROTOBUF_FINAL :
                &_LiquidityOrderReference_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(LiquidityOrderReference& a, LiquidityOrderReference& b) {
     a.Swap(&b);
@@ -10958,42 +11230,42 @@ class LiquidityOrderReference PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrderIDFieldNumber = 1,
+    kOrderIdFieldNumber = 1,
     kLiquidityOrderFieldNumber = 2,
   };
-  // string orderID = 1 [json_name = "orderID"];
-  void clear_orderid();
-  const std::string& orderid() const;
-  void set_orderid(const std::string& value);
-  void set_orderid(std::string&& value);
-  void set_orderid(const char* value);
-  void set_orderid(const char* value, size_t size);
-  std::string* mutable_orderid();
-  std::string* release_orderid();
-  void set_allocated_orderid(std::string* orderid);
+  // string order_id = 1 [json_name = "orderId"];
+  void clear_order_id();
+  const std::string& order_id() const;
+  void set_order_id(const std::string& value);
+  void set_order_id(std::string&& value);
+  void set_order_id(const char* value);
+  void set_order_id(const char* value, size_t size);
+  std::string* mutable_order_id();
+  std::string* release_order_id();
+  void set_allocated_order_id(std::string* order_id);
   private:
-  const std::string& _internal_orderid() const;
-  void _internal_set_orderid(const std::string& value);
-  std::string* _internal_mutable_orderid();
+  const std::string& _internal_order_id() const;
+  void _internal_set_order_id(const std::string& value);
+  std::string* _internal_mutable_order_id();
   public:
 
-  // .vega.LiquidityOrder liquidityOrder = 2 [json_name = "liquidityOrder"];
-  bool has_liquidityorder() const;
+  // .vega.LiquidityOrder liquidity_order = 2 [json_name = "liquidityOrder"];
+  bool has_liquidity_order() const;
   private:
-  bool _internal_has_liquidityorder() const;
+  bool _internal_has_liquidity_order() const;
   public:
-  void clear_liquidityorder();
-  const ::vega::LiquidityOrder& liquidityorder() const;
-  ::vega::LiquidityOrder* release_liquidityorder();
-  ::vega::LiquidityOrder* mutable_liquidityorder();
-  void set_allocated_liquidityorder(::vega::LiquidityOrder* liquidityorder);
+  void clear_liquidity_order();
+  const ::vega::LiquidityOrder& liquidity_order() const;
+  ::vega::LiquidityOrder* release_liquidity_order();
+  ::vega::LiquidityOrder* mutable_liquidity_order();
+  void set_allocated_liquidity_order(::vega::LiquidityOrder* liquidity_order);
   private:
-  const ::vega::LiquidityOrder& _internal_liquidityorder() const;
-  ::vega::LiquidityOrder* _internal_mutable_liquidityorder();
+  const ::vega::LiquidityOrder& _internal_liquidity_order() const;
+  ::vega::LiquidityOrder* _internal_mutable_liquidity_order();
   public:
-  void unsafe_arena_set_allocated_liquidityorder(
-      ::vega::LiquidityOrder* liquidityorder);
-  ::vega::LiquidityOrder* unsafe_arena_release_liquidityorder();
+  void unsafe_arena_set_allocated_liquidity_order(
+      ::vega::LiquidityOrder* liquidity_order);
+  ::vega::LiquidityOrder* unsafe_arena_release_liquidity_order();
 
   // @@protoc_insertion_point(class_scope:vega.LiquidityOrderReference)
  private:
@@ -11002,8 +11274,8 @@ class LiquidityOrderReference PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr orderid_;
-  ::vega::LiquidityOrder* liquidityorder_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr order_id_;
+  ::vega::LiquidityOrder* liquidity_order_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -11050,7 +11322,7 @@ class LiquidityProvision PROTOBUF_FINAL :
                &_LiquidityProvision_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(LiquidityProvision& a, LiquidityProvision& b) {
     a.Swap(&b);
@@ -11119,16 +11391,18 @@ class LiquidityProvision PROTOBUF_FINAL :
   // nested types ----------------------------------------------------
 
   typedef LiquidityProvision_Status Status;
-  static constexpr Status LIQUIDITY_PROVISION_STATUS_UNSPECIFIED =
-    LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_UNSPECIFIED;
-  static constexpr Status LIQUIDITY_PROVISION_STATUS_ACTIVE =
-    LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_ACTIVE;
-  static constexpr Status LIQUIDITY_PROVISION_STATUS_STOPPED =
-    LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_STOPPED;
-  static constexpr Status LIQUIDITY_PROVISION_STATUS_CANCELLED =
-    LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_CANCELLED;
-  static constexpr Status LIQUIDITY_PROVISION_STATUS_REJECTED =
-    LiquidityProvision_Status_LIQUIDITY_PROVISION_STATUS_REJECTED;
+  static constexpr Status STATUS_UNSPECIFIED =
+    LiquidityProvision_Status_STATUS_UNSPECIFIED;
+  static constexpr Status STATUS_ACTIVE =
+    LiquidityProvision_Status_STATUS_ACTIVE;
+  static constexpr Status STATUS_STOPPED =
+    LiquidityProvision_Status_STATUS_STOPPED;
+  static constexpr Status STATUS_CANCELLED =
+    LiquidityProvision_Status_STATUS_CANCELLED;
+  static constexpr Status STATUS_REJECTED =
+    LiquidityProvision_Status_STATUS_REJECTED;
+  static constexpr Status STATUS_UNDEPLOYED =
+    LiquidityProvision_Status_STATUS_UNDEPLOYED;
   static inline bool Status_IsValid(int value) {
     return LiquidityProvision_Status_IsValid(value);
   }
@@ -11160,10 +11434,11 @@ class LiquidityProvision PROTOBUF_FINAL :
     kSellsFieldNumber = 8,
     kBuysFieldNumber = 9,
     kIdFieldNumber = 1,
-    kPartyIDFieldNumber = 2,
-    kMarketIDFieldNumber = 5,
+    kPartyIdFieldNumber = 2,
+    kMarketIdFieldNumber = 5,
     kFeeFieldNumber = 7,
     kVersionFieldNumber = 10,
+    kReferenceFieldNumber = 12,
     kCreatedAtFieldNumber = 3,
     kUpdatedAtFieldNumber = 4,
     kCommitmentAmountFieldNumber = 6,
@@ -11221,36 +11496,36 @@ class LiquidityProvision PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string partyID = 2 [json_name = "partyID"];
-  void clear_partyid();
-  const std::string& partyid() const;
-  void set_partyid(const std::string& value);
-  void set_partyid(std::string&& value);
-  void set_partyid(const char* value);
-  void set_partyid(const char* value, size_t size);
-  std::string* mutable_partyid();
-  std::string* release_partyid();
-  void set_allocated_partyid(std::string* partyid);
+  // string party_id = 2 [json_name = "partyId"];
+  void clear_party_id();
+  const std::string& party_id() const;
+  void set_party_id(const std::string& value);
+  void set_party_id(std::string&& value);
+  void set_party_id(const char* value);
+  void set_party_id(const char* value, size_t size);
+  std::string* mutable_party_id();
+  std::string* release_party_id();
+  void set_allocated_party_id(std::string* party_id);
   private:
-  const std::string& _internal_partyid() const;
-  void _internal_set_partyid(const std::string& value);
-  std::string* _internal_mutable_partyid();
+  const std::string& _internal_party_id() const;
+  void _internal_set_party_id(const std::string& value);
+  std::string* _internal_mutable_party_id();
   public:
 
-  // string marketID = 5 [json_name = "marketID", (.validator.field) = {
-  void clear_marketid();
-  const std::string& marketid() const;
-  void set_marketid(const std::string& value);
-  void set_marketid(std::string&& value);
-  void set_marketid(const char* value);
-  void set_marketid(const char* value, size_t size);
-  std::string* mutable_marketid();
-  std::string* release_marketid();
-  void set_allocated_marketid(std::string* marketid);
+  // string market_id = 5 [json_name = "marketId", (.validator.field) = {
+  void clear_market_id();
+  const std::string& market_id() const;
+  void set_market_id(const std::string& value);
+  void set_market_id(std::string&& value);
+  void set_market_id(const char* value);
+  void set_market_id(const char* value, size_t size);
+  std::string* mutable_market_id();
+  std::string* release_market_id();
+  void set_allocated_market_id(std::string* market_id);
   private:
-  const std::string& _internal_marketid() const;
-  void _internal_set_marketid(const std::string& value);
-  std::string* _internal_mutable_marketid();
+  const std::string& _internal_market_id() const;
+  void _internal_set_market_id(const std::string& value);
+  std::string* _internal_mutable_market_id();
   public:
 
   // string fee = 7 [json_name = "fee"];
@@ -11285,31 +11560,47 @@ class LiquidityProvision PROTOBUF_FINAL :
   std::string* _internal_mutable_version();
   public:
 
-  // int64 createdAt = 3 [json_name = "createdAt"];
-  void clear_createdat();
-  ::PROTOBUF_NAMESPACE_ID::int64 createdat() const;
-  void set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // string reference = 12 [json_name = "reference"];
+  void clear_reference();
+  const std::string& reference() const;
+  void set_reference(const std::string& value);
+  void set_reference(std::string&& value);
+  void set_reference(const char* value);
+  void set_reference(const char* value, size_t size);
+  std::string* mutable_reference();
+  std::string* release_reference();
+  void set_allocated_reference(std::string* reference);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_createdat() const;
-  void _internal_set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  const std::string& _internal_reference() const;
+  void _internal_set_reference(const std::string& value);
+  std::string* _internal_mutable_reference();
   public:
 
-  // int64 updatedAt = 4 [json_name = "updatedAt"];
-  void clear_updatedat();
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedat() const;
-  void set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 created_at = 3 [json_name = "createdAt"];
+  void clear_created_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 created_at() const;
+  void set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updatedat() const;
-  void _internal_set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_created_at() const;
+  void _internal_set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint64 commitmentAmount = 6 [json_name = "commitmentAmount"];
-  void clear_commitmentamount();
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitmentamount() const;
-  void set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // int64 updated_at = 4 [json_name = "updatedAt"];
+  void clear_updated_at();
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_at() const;
+  void set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitmentamount() const;
-  void _internal_set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updated_at() const;
+  void _internal_set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // uint64 commitment_amount = 6 [json_name = "commitmentAmount"];
+  void clear_commitment_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount() const;
+  void set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_commitment_amount() const;
+  void _internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.LiquidityProvision.Status status = 11 [json_name = "status"];
@@ -11331,13 +11622,14 @@ class LiquidityProvision PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrderReference > sells_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrderReference > buys_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr partyid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr marketid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr version_;
-  ::PROTOBUF_NAMESPACE_ID::int64 createdat_;
-  ::PROTOBUF_NAMESPACE_ID::int64 updatedat_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 commitmentamount_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
+  ::PROTOBUF_NAMESPACE_ID::int64 created_at_;
+  ::PROTOBUF_NAMESPACE_ID::int64 updated_at_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
   int status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -11385,7 +11677,7 @@ class EthereumConfig PROTOBUF_FINAL :
                &_EthereumConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(EthereumConfig& a, EthereumConfig& b) {
     a.Swap(&b);
@@ -11461,52 +11753,52 @@ class EthereumConfig PROTOBUF_FINAL :
     kBridgeAddressFieldNumber = 3,
     kConfirmationsFieldNumber = 4,
   };
-  // string networkId = 1 [json_name = "networkId"];
-  void clear_networkid();
-  const std::string& networkid() const;
-  void set_networkid(const std::string& value);
-  void set_networkid(std::string&& value);
-  void set_networkid(const char* value);
-  void set_networkid(const char* value, size_t size);
-  std::string* mutable_networkid();
-  std::string* release_networkid();
-  void set_allocated_networkid(std::string* networkid);
+  // string network_id = 1 [json_name = "networkId"];
+  void clear_network_id();
+  const std::string& network_id() const;
+  void set_network_id(const std::string& value);
+  void set_network_id(std::string&& value);
+  void set_network_id(const char* value);
+  void set_network_id(const char* value, size_t size);
+  std::string* mutable_network_id();
+  std::string* release_network_id();
+  void set_allocated_network_id(std::string* network_id);
   private:
-  const std::string& _internal_networkid() const;
-  void _internal_set_networkid(const std::string& value);
-  std::string* _internal_mutable_networkid();
+  const std::string& _internal_network_id() const;
+  void _internal_set_network_id(const std::string& value);
+  std::string* _internal_mutable_network_id();
   public:
 
-  // string chainId = 2 [json_name = "chainId"];
-  void clear_chainid();
-  const std::string& chainid() const;
-  void set_chainid(const std::string& value);
-  void set_chainid(std::string&& value);
-  void set_chainid(const char* value);
-  void set_chainid(const char* value, size_t size);
-  std::string* mutable_chainid();
-  std::string* release_chainid();
-  void set_allocated_chainid(std::string* chainid);
+  // string chain_id = 2 [json_name = "chainId"];
+  void clear_chain_id();
+  const std::string& chain_id() const;
+  void set_chain_id(const std::string& value);
+  void set_chain_id(std::string&& value);
+  void set_chain_id(const char* value);
+  void set_chain_id(const char* value, size_t size);
+  std::string* mutable_chain_id();
+  std::string* release_chain_id();
+  void set_allocated_chain_id(std::string* chain_id);
   private:
-  const std::string& _internal_chainid() const;
-  void _internal_set_chainid(const std::string& value);
-  std::string* _internal_mutable_chainid();
+  const std::string& _internal_chain_id() const;
+  void _internal_set_chain_id(const std::string& value);
+  std::string* _internal_mutable_chain_id();
   public:
 
-  // string bridgeAddress = 3 [json_name = "bridgeAddress"];
-  void clear_bridgeaddress();
-  const std::string& bridgeaddress() const;
-  void set_bridgeaddress(const std::string& value);
-  void set_bridgeaddress(std::string&& value);
-  void set_bridgeaddress(const char* value);
-  void set_bridgeaddress(const char* value, size_t size);
-  std::string* mutable_bridgeaddress();
-  std::string* release_bridgeaddress();
-  void set_allocated_bridgeaddress(std::string* bridgeaddress);
+  // string bridge_address = 3 [json_name = "bridgeAddress"];
+  void clear_bridge_address();
+  const std::string& bridge_address() const;
+  void set_bridge_address(const std::string& value);
+  void set_bridge_address(std::string&& value);
+  void set_bridge_address(const char* value);
+  void set_bridge_address(const char* value, size_t size);
+  std::string* mutable_bridge_address();
+  std::string* release_bridge_address();
+  void set_allocated_bridge_address(std::string* bridge_address);
   private:
-  const std::string& _internal_bridgeaddress() const;
-  void _internal_set_bridgeaddress(const std::string& value);
-  std::string* _internal_mutable_bridgeaddress();
+  const std::string& _internal_bridge_address() const;
+  void _internal_set_bridge_address(const std::string& value);
+  std::string* _internal_mutable_bridge_address();
   public:
 
   // uint32 confirmations = 4 [json_name = "confirmations"];
@@ -11525,10 +11817,194 @@ class EthereumConfig PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr networkid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chainid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bridgeaddress_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bridge_address_;
   ::PROTOBUF_NAMESPACE_ID::uint32 confirmations_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_vega_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OracleDataSubmission PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.OracleDataSubmission) */ {
+ public:
+  inline OracleDataSubmission() : OracleDataSubmission(nullptr) {}
+  virtual ~OracleDataSubmission();
+
+  OracleDataSubmission(const OracleDataSubmission& from);
+  OracleDataSubmission(OracleDataSubmission&& from) noexcept
+    : OracleDataSubmission() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleDataSubmission& operator=(const OracleDataSubmission& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleDataSubmission& operator=(OracleDataSubmission&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleDataSubmission& default_instance();
+
+  static inline const OracleDataSubmission* internal_default_instance() {
+    return reinterpret_cast<const OracleDataSubmission*>(
+               &_OracleDataSubmission_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    54;
+
+  friend void swap(OracleDataSubmission& a, OracleDataSubmission& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleDataSubmission* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleDataSubmission* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleDataSubmission* New() const final {
+    return CreateMaybeMessage<OracleDataSubmission>(nullptr);
+  }
+
+  OracleDataSubmission* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleDataSubmission>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleDataSubmission& from);
+  void MergeFrom(const OracleDataSubmission& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleDataSubmission* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.OracleDataSubmission";
+  }
+  protected:
+  explicit OracleDataSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_vega_2eproto);
+    return ::descriptor_table_vega_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef OracleDataSubmission_OracleSource OracleSource;
+  static constexpr OracleSource ORACLE_SOURCE_UNSPECIFIED =
+    OracleDataSubmission_OracleSource_ORACLE_SOURCE_UNSPECIFIED;
+  static constexpr OracleSource ORACLE_SOURCE_OPEN_ORACLE =
+    OracleDataSubmission_OracleSource_ORACLE_SOURCE_OPEN_ORACLE;
+  static inline bool OracleSource_IsValid(int value) {
+    return OracleDataSubmission_OracleSource_IsValid(value);
+  }
+  static constexpr OracleSource OracleSource_MIN =
+    OracleDataSubmission_OracleSource_OracleSource_MIN;
+  static constexpr OracleSource OracleSource_MAX =
+    OracleDataSubmission_OracleSource_OracleSource_MAX;
+  static constexpr int OracleSource_ARRAYSIZE =
+    OracleDataSubmission_OracleSource_OracleSource_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  OracleSource_descriptor() {
+    return OracleDataSubmission_OracleSource_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& OracleSource_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, OracleSource>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function OracleSource_Name.");
+    return OracleDataSubmission_OracleSource_Name(enum_t_value);
+  }
+  static inline bool OracleSource_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      OracleSource* value) {
+    return OracleDataSubmission_OracleSource_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPayloadFieldNumber = 2,
+    kSourceFieldNumber = 1,
+  };
+  // bytes payload = 2 [json_name = "payload"];
+  void clear_payload();
+  const std::string& payload() const;
+  void set_payload(const std::string& value);
+  void set_payload(std::string&& value);
+  void set_payload(const char* value);
+  void set_payload(const void* value, size_t size);
+  std::string* mutable_payload();
+  std::string* release_payload();
+  void set_allocated_payload(std::string* payload);
+  private:
+  const std::string& _internal_payload() const;
+  void _internal_set_payload(const std::string& value);
+  std::string* _internal_mutable_payload();
+  public:
+
+  // .vega.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];
+  void clear_source();
+  ::vega::OracleDataSubmission_OracleSource source() const;
+  void set_source(::vega::OracleDataSubmission_OracleSource value);
+  private:
+  ::vega::OracleDataSubmission_OracleSource _internal_source() const;
+  void _internal_set_source(::vega::OracleDataSubmission_OracleSource value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.OracleDataSubmission)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payload_;
+  int source_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -11765,102 +12241,102 @@ inline void RiskFactor::set_long_(double value) {
 
 // RiskResult
 
-// int64 updatedTimestamp = 1 [json_name = "updatedTimestamp"];
-inline void RiskResult::clear_updatedtimestamp() {
-  updatedtimestamp_ = PROTOBUF_LONGLONG(0);
+// int64 updated_timestamp = 1 [json_name = "updatedTimestamp"];
+inline void RiskResult::clear_updated_timestamp() {
+  updated_timestamp_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::_internal_updatedtimestamp() const {
-  return updatedtimestamp_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::_internal_updated_timestamp() const {
+  return updated_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::updatedtimestamp() const {
-  // @@protoc_insertion_point(field_get:vega.RiskResult.updatedTimestamp)
-  return _internal_updatedtimestamp();
+inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::updated_timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.RiskResult.updated_timestamp)
+  return _internal_updated_timestamp();
 }
-inline void RiskResult::_internal_set_updatedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void RiskResult::_internal_set_updated_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  updatedtimestamp_ = value;
+  updated_timestamp_ = value;
 }
-inline void RiskResult::set_updatedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_updatedtimestamp(value);
-  // @@protoc_insertion_point(field_set:vega.RiskResult.updatedTimestamp)
+inline void RiskResult::set_updated_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_updated_timestamp(value);
+  // @@protoc_insertion_point(field_set:vega.RiskResult.updated_timestamp)
 }
 
-// map<string, .vega.RiskFactor> riskFactors = 2 [json_name = "riskFactors"];
-inline int RiskResult::_internal_riskfactors_size() const {
-  return riskfactors_.size();
+// map<string, .vega.RiskFactor> risk_factors = 2 [json_name = "riskFactors"];
+inline int RiskResult::_internal_risk_factors_size() const {
+  return risk_factors_.size();
 }
-inline int RiskResult::riskfactors_size() const {
-  return _internal_riskfactors_size();
+inline int RiskResult::risk_factors_size() const {
+  return _internal_risk_factors_size();
 }
-inline void RiskResult::clear_riskfactors() {
-  riskfactors_.Clear();
+inline void RiskResult::clear_risk_factors() {
+  risk_factors_.Clear();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-RiskResult::_internal_riskfactors() const {
-  return riskfactors_.GetMap();
+RiskResult::_internal_risk_factors() const {
+  return risk_factors_.GetMap();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-RiskResult::riskfactors() const {
-  // @@protoc_insertion_point(field_map:vega.RiskResult.riskFactors)
-  return _internal_riskfactors();
+RiskResult::risk_factors() const {
+  // @@protoc_insertion_point(field_map:vega.RiskResult.risk_factors)
+  return _internal_risk_factors();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-RiskResult::_internal_mutable_riskfactors() {
-  return riskfactors_.MutableMap();
+RiskResult::_internal_mutable_risk_factors() {
+  return risk_factors_.MutableMap();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-RiskResult::mutable_riskfactors() {
-  // @@protoc_insertion_point(field_mutable_map:vega.RiskResult.riskFactors)
-  return _internal_mutable_riskfactors();
+RiskResult::mutable_risk_factors() {
+  // @@protoc_insertion_point(field_mutable_map:vega.RiskResult.risk_factors)
+  return _internal_mutable_risk_factors();
 }
 
-// int64 nextUpdateTimestamp = 3 [json_name = "nextUpdateTimestamp"];
-inline void RiskResult::clear_nextupdatetimestamp() {
-  nextupdatetimestamp_ = PROTOBUF_LONGLONG(0);
+// int64 next_update_timestamp = 3 [json_name = "nextUpdateTimestamp"];
+inline void RiskResult::clear_next_update_timestamp() {
+  next_update_timestamp_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::_internal_nextupdatetimestamp() const {
-  return nextupdatetimestamp_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::_internal_next_update_timestamp() const {
+  return next_update_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::nextupdatetimestamp() const {
-  // @@protoc_insertion_point(field_get:vega.RiskResult.nextUpdateTimestamp)
-  return _internal_nextupdatetimestamp();
+inline ::PROTOBUF_NAMESPACE_ID::int64 RiskResult::next_update_timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.RiskResult.next_update_timestamp)
+  return _internal_next_update_timestamp();
 }
-inline void RiskResult::_internal_set_nextupdatetimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void RiskResult::_internal_set_next_update_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  nextupdatetimestamp_ = value;
+  next_update_timestamp_ = value;
 }
-inline void RiskResult::set_nextupdatetimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_nextupdatetimestamp(value);
-  // @@protoc_insertion_point(field_set:vega.RiskResult.nextUpdateTimestamp)
+inline void RiskResult::set_next_update_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_next_update_timestamp(value);
+  // @@protoc_insertion_point(field_set:vega.RiskResult.next_update_timestamp)
 }
 
-// map<string, .vega.RiskFactor> predictedNextRiskFactors = 4 [json_name = "predictedNextRiskFactors"];
-inline int RiskResult::_internal_predictednextriskfactors_size() const {
-  return predictednextriskfactors_.size();
+// map<string, .vega.RiskFactor> predicted_next_risk_factors = 4 [json_name = "predictedNextRiskFactors"];
+inline int RiskResult::_internal_predicted_next_risk_factors_size() const {
+  return predicted_next_risk_factors_.size();
 }
-inline int RiskResult::predictednextriskfactors_size() const {
-  return _internal_predictednextriskfactors_size();
+inline int RiskResult::predicted_next_risk_factors_size() const {
+  return _internal_predicted_next_risk_factors_size();
 }
-inline void RiskResult::clear_predictednextriskfactors() {
-  predictednextriskfactors_.Clear();
+inline void RiskResult::clear_predicted_next_risk_factors() {
+  predicted_next_risk_factors_.Clear();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-RiskResult::_internal_predictednextriskfactors() const {
-  return predictednextriskfactors_.GetMap();
+RiskResult::_internal_predicted_next_risk_factors() const {
+  return predicted_next_risk_factors_.GetMap();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >&
-RiskResult::predictednextriskfactors() const {
-  // @@protoc_insertion_point(field_map:vega.RiskResult.predictedNextRiskFactors)
-  return _internal_predictednextriskfactors();
+RiskResult::predicted_next_risk_factors() const {
+  // @@protoc_insertion_point(field_map:vega.RiskResult.predicted_next_risk_factors)
+  return _internal_predicted_next_risk_factors();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-RiskResult::_internal_mutable_predictednextriskfactors() {
-  return predictednextriskfactors_.MutableMap();
+RiskResult::_internal_mutable_predicted_next_risk_factors() {
+  return predicted_next_risk_factors_.MutableMap();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::vega::RiskFactor >*
-RiskResult::mutable_predictednextriskfactors() {
-  // @@protoc_insertion_point(field_mutable_map:vega.RiskResult.predictedNextRiskFactors)
-  return _internal_mutable_predictednextriskfactors();
+RiskResult::mutable_predicted_next_risk_factors() {
+  // @@protoc_insertion_point(field_mutable_map:vega.RiskResult.predicted_next_risk_factors)
+  return _internal_mutable_predicted_next_risk_factors();
 }
 
 // -------------------------------------------------------------------
@@ -11972,126 +12448,126 @@ inline void Order::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.Order.id)
 }
 
-// string marketID = 2 [json_name = "marketID"];
-inline void Order::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 2 [json_name = "marketId"];
+inline void Order::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& Order::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.Order.marketID)
-  return _internal_marketid();
+inline const std::string& Order::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.Order.market_id)
+  return _internal_market_id();
 }
-inline void Order::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.Order.marketID)
+inline void Order::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.Order.market_id)
 }
-inline std::string* Order::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.Order.marketID)
-  return _internal_mutable_marketid();
+inline std::string* Order::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Order.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& Order::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& Order::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void Order::_internal_set_marketid(const std::string& value) {
+inline void Order::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Order::set_marketid(std::string&& value) {
+inline void Order::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Order.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Order.market_id)
 }
-inline void Order::set_marketid(const char* value) {
+inline void Order::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Order.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Order.market_id)
 }
-inline void Order::set_marketid(const char* value,
+inline void Order::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Order.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Order.market_id)
 }
-inline std::string* Order::_internal_mutable_marketid() {
+inline std::string* Order::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Order::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.Order.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Order::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.Order.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Order::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void Order::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Order.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Order.market_id)
 }
 
-// string partyID = 3 [json_name = "partyID"];
-inline void Order::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 3 [json_name = "partyId"];
+inline void Order::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& Order::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.Order.partyID)
-  return _internal_partyid();
+inline const std::string& Order::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.Order.party_id)
+  return _internal_party_id();
 }
-inline void Order::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.Order.partyID)
+inline void Order::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.Order.party_id)
 }
-inline std::string* Order::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.Order.partyID)
-  return _internal_mutable_partyid();
+inline std::string* Order::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Order.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& Order::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& Order::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void Order::_internal_set_partyid(const std::string& value) {
+inline void Order::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Order::set_partyid(std::string&& value) {
+inline void Order::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Order.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Order.party_id)
 }
-inline void Order::set_partyid(const char* value) {
+inline void Order::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Order.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Order.party_id)
 }
-inline void Order::set_partyid(const char* value,
+inline void Order::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Order.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Order.party_id)
 }
-inline std::string* Order::_internal_mutable_partyid() {
+inline std::string* Order::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Order::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.Order.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Order::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.Order.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Order::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void Order::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Order.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Order.party_id)
 }
 
 // .vega.Side side = 4 [json_name = "side"];
@@ -12174,24 +12650,24 @@ inline void Order::set_remaining(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.Order.remaining)
 }
 
-// .vega.Order.TimeInForce timeInForce = 8 [json_name = "timeInForce"];
-inline void Order::clear_timeinforce() {
-  timeinforce_ = 0;
+// .vega.Order.TimeInForce time_in_force = 8 [json_name = "timeInForce"];
+inline void Order::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::vega::Order_TimeInForce Order::_internal_timeinforce() const {
-  return static_cast< ::vega::Order_TimeInForce >(timeinforce_);
+inline ::vega::Order_TimeInForce Order::_internal_time_in_force() const {
+  return static_cast< ::vega::Order_TimeInForce >(time_in_force_);
 }
-inline ::vega::Order_TimeInForce Order::timeinforce() const {
-  // @@protoc_insertion_point(field_get:vega.Order.timeInForce)
-  return _internal_timeinforce();
+inline ::vega::Order_TimeInForce Order::time_in_force() const {
+  // @@protoc_insertion_point(field_get:vega.Order.time_in_force)
+  return _internal_time_in_force();
 }
-inline void Order::_internal_set_timeinforce(::vega::Order_TimeInForce value) {
+inline void Order::_internal_set_time_in_force(::vega::Order_TimeInForce value) {
 
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void Order::set_timeinforce(::vega::Order_TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:vega.Order.timeInForce)
+inline void Order::set_time_in_force(::vega::Order_TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:vega.Order.time_in_force)
 }
 
 // .vega.Order.Type type = 9 [json_name = "type"];
@@ -12214,24 +12690,24 @@ inline void Order::set_type(::vega::Order_Type value) {
   // @@protoc_insertion_point(field_set:vega.Order.type)
 }
 
-// int64 createdAt = 10 [json_name = "createdAt"];
-inline void Order::clear_createdat() {
-  createdat_ = PROTOBUF_LONGLONG(0);
+// int64 created_at = 10 [json_name = "createdAt"];
+inline void Order::clear_created_at() {
+  created_at_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Order::_internal_createdat() const {
-  return createdat_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Order::_internal_created_at() const {
+  return created_at_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Order::createdat() const {
-  // @@protoc_insertion_point(field_get:vega.Order.createdAt)
-  return _internal_createdat();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Order::created_at() const {
+  // @@protoc_insertion_point(field_get:vega.Order.created_at)
+  return _internal_created_at();
 }
-inline void Order::_internal_set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Order::_internal_set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  createdat_ = value;
+  created_at_ = value;
 }
-inline void Order::set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_createdat(value);
-  // @@protoc_insertion_point(field_set:vega.Order.createdAt)
+inline void Order::set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_created_at(value);
+  // @@protoc_insertion_point(field_set:vega.Order.created_at)
 }
 
 // .vega.Order.Status status = 11 [json_name = "status"];
@@ -12254,24 +12730,24 @@ inline void Order::set_status(::vega::Order_Status value) {
   // @@protoc_insertion_point(field_set:vega.Order.status)
 }
 
-// int64 expiresAt = 12 [json_name = "expiresAt"];
-inline void Order::clear_expiresat() {
-  expiresat_ = PROTOBUF_LONGLONG(0);
+// int64 expires_at = 12 [json_name = "expiresAt"];
+inline void Order::clear_expires_at() {
+  expires_at_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Order::_internal_expiresat() const {
-  return expiresat_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Order::_internal_expires_at() const {
+  return expires_at_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Order::expiresat() const {
-  // @@protoc_insertion_point(field_get:vega.Order.expiresAt)
-  return _internal_expiresat();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Order::expires_at() const {
+  // @@protoc_insertion_point(field_get:vega.Order.expires_at)
+  return _internal_expires_at();
 }
-inline void Order::_internal_set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Order::_internal_set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  expiresat_ = value;
+  expires_at_ = value;
 }
-inline void Order::set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_expiresat(value);
-  // @@protoc_insertion_point(field_set:vega.Order.expiresAt)
+inline void Order::set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_expires_at(value);
+  // @@protoc_insertion_point(field_set:vega.Order.expires_at)
 }
 
 // string reference = 13 [json_name = "reference"];
@@ -12355,24 +12831,24 @@ inline void Order::set_reason(::vega::OrderError value) {
   // @@protoc_insertion_point(field_set:vega.Order.reason)
 }
 
-// int64 updatedAt = 15 [json_name = "updatedAt"];
-inline void Order::clear_updatedat() {
-  updatedat_ = PROTOBUF_LONGLONG(0);
+// int64 updated_at = 15 [json_name = "updatedAt"];
+inline void Order::clear_updated_at() {
+  updated_at_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Order::_internal_updatedat() const {
-  return updatedat_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Order::_internal_updated_at() const {
+  return updated_at_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Order::updatedat() const {
-  // @@protoc_insertion_point(field_get:vega.Order.updatedAt)
-  return _internal_updatedat();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Order::updated_at() const {
+  // @@protoc_insertion_point(field_get:vega.Order.updated_at)
+  return _internal_updated_at();
 }
-inline void Order::_internal_set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Order::_internal_set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  updatedat_ = value;
+  updated_at_ = value;
 }
-inline void Order::set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_updatedat(value);
-  // @@protoc_insertion_point(field_set:vega.Order.updatedAt)
+inline void Order::set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_updated_at(value);
+  // @@protoc_insertion_point(field_set:vega.Order.updated_at)
 }
 
 // uint64 version = 16 [json_name = "version"];
@@ -12395,107 +12871,107 @@ inline void Order::set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.Order.version)
 }
 
-// uint64 batchID = 17 [json_name = "batchID"];
-inline void Order::clear_batchid() {
-  batchid_ = PROTOBUF_ULONGLONG(0);
+// uint64 batch_id = 17 [json_name = "batchId"];
+inline void Order::clear_batch_id() {
+  batch_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Order::_internal_batchid() const {
-  return batchid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Order::_internal_batch_id() const {
+  return batch_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Order::batchid() const {
-  // @@protoc_insertion_point(field_get:vega.Order.batchID)
-  return _internal_batchid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Order::batch_id() const {
+  // @@protoc_insertion_point(field_get:vega.Order.batch_id)
+  return _internal_batch_id();
 }
-inline void Order::_internal_set_batchid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Order::_internal_set_batch_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  batchid_ = value;
+  batch_id_ = value;
 }
-inline void Order::set_batchid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_batchid(value);
-  // @@protoc_insertion_point(field_set:vega.Order.batchID)
+inline void Order::set_batch_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_batch_id(value);
+  // @@protoc_insertion_point(field_set:vega.Order.batch_id)
 }
 
-// .vega.PeggedOrder peggedOrder = 18 [json_name = "peggedOrder"];
-inline bool Order::_internal_has_peggedorder() const {
-  return this != internal_default_instance() && peggedorder_ != nullptr;
+// .vega.PeggedOrder pegged_order = 18 [json_name = "peggedOrder"];
+inline bool Order::_internal_has_pegged_order() const {
+  return this != internal_default_instance() && pegged_order_ != nullptr;
 }
-inline bool Order::has_peggedorder() const {
-  return _internal_has_peggedorder();
+inline bool Order::has_pegged_order() const {
+  return _internal_has_pegged_order();
 }
-inline void Order::clear_peggedorder() {
-  if (GetArena() == nullptr && peggedorder_ != nullptr) {
-    delete peggedorder_;
+inline void Order::clear_pegged_order() {
+  if (GetArena() == nullptr && pegged_order_ != nullptr) {
+    delete pegged_order_;
   }
-  peggedorder_ = nullptr;
+  pegged_order_ = nullptr;
 }
-inline const ::vega::PeggedOrder& Order::_internal_peggedorder() const {
-  const ::vega::PeggedOrder* p = peggedorder_;
+inline const ::vega::PeggedOrder& Order::_internal_pegged_order() const {
+  const ::vega::PeggedOrder* p = pegged_order_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::PeggedOrder&>(
       ::vega::_PeggedOrder_default_instance_);
 }
-inline const ::vega::PeggedOrder& Order::peggedorder() const {
-  // @@protoc_insertion_point(field_get:vega.Order.peggedOrder)
-  return _internal_peggedorder();
+inline const ::vega::PeggedOrder& Order::pegged_order() const {
+  // @@protoc_insertion_point(field_get:vega.Order.pegged_order)
+  return _internal_pegged_order();
 }
-inline void Order::unsafe_arena_set_allocated_peggedorder(
-    ::vega::PeggedOrder* peggedorder) {
+inline void Order::unsafe_arena_set_allocated_pegged_order(
+    ::vega::PeggedOrder* pegged_order) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(peggedorder_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pegged_order_);
   }
-  peggedorder_ = peggedorder;
-  if (peggedorder) {
+  pegged_order_ = pegged_order;
+  if (pegged_order) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Order.peggedOrder)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Order.pegged_order)
 }
-inline ::vega::PeggedOrder* Order::release_peggedorder() {
+inline ::vega::PeggedOrder* Order::release_pegged_order() {
 
-  ::vega::PeggedOrder* temp = peggedorder_;
-  peggedorder_ = nullptr;
+  ::vega::PeggedOrder* temp = pegged_order_;
+  pegged_order_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::PeggedOrder* Order::unsafe_arena_release_peggedorder() {
-  // @@protoc_insertion_point(field_release:vega.Order.peggedOrder)
+inline ::vega::PeggedOrder* Order::unsafe_arena_release_pegged_order() {
+  // @@protoc_insertion_point(field_release:vega.Order.pegged_order)
 
-  ::vega::PeggedOrder* temp = peggedorder_;
-  peggedorder_ = nullptr;
+  ::vega::PeggedOrder* temp = pegged_order_;
+  pegged_order_ = nullptr;
   return temp;
 }
-inline ::vega::PeggedOrder* Order::_internal_mutable_peggedorder() {
+inline ::vega::PeggedOrder* Order::_internal_mutable_pegged_order() {
 
-  if (peggedorder_ == nullptr) {
+  if (pegged_order_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::PeggedOrder>(GetArena());
-    peggedorder_ = p;
+    pegged_order_ = p;
   }
-  return peggedorder_;
+  return pegged_order_;
 }
-inline ::vega::PeggedOrder* Order::mutable_peggedorder() {
-  // @@protoc_insertion_point(field_mutable:vega.Order.peggedOrder)
-  return _internal_mutable_peggedorder();
+inline ::vega::PeggedOrder* Order::mutable_pegged_order() {
+  // @@protoc_insertion_point(field_mutable:vega.Order.pegged_order)
+  return _internal_mutable_pegged_order();
 }
-inline void Order::set_allocated_peggedorder(::vega::PeggedOrder* peggedorder) {
+inline void Order::set_allocated_pegged_order(::vega::PeggedOrder* pegged_order) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete peggedorder_;
+    delete pegged_order_;
   }
-  if (peggedorder) {
+  if (pegged_order) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(peggedorder);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(pegged_order);
     if (message_arena != submessage_arena) {
-      peggedorder = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, peggedorder, submessage_arena);
+      pegged_order = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pegged_order, submessage_arena);
     }
 
   } else {
 
   }
-  peggedorder_ = peggedorder;
-  // @@protoc_insertion_point(field_set_allocated:vega.Order.peggedOrder)
+  pegged_order_ = pegged_order;
+  // @@protoc_insertion_point(field_set_allocated:vega.Order.pegged_order)
 }
 
 // -------------------------------------------------------------------
@@ -12711,188 +13187,188 @@ OrderConfirmation::trades() const {
   return trades_;
 }
 
-// repeated .vega.Order passiveOrdersAffected = 3 [json_name = "passiveOrdersAffected"];
-inline int OrderConfirmation::_internal_passiveordersaffected_size() const {
-  return passiveordersaffected_.size();
+// repeated .vega.Order passive_orders_affected = 3 [json_name = "passiveOrdersAffected"];
+inline int OrderConfirmation::_internal_passive_orders_affected_size() const {
+  return passive_orders_affected_.size();
 }
-inline int OrderConfirmation::passiveordersaffected_size() const {
-  return _internal_passiveordersaffected_size();
+inline int OrderConfirmation::passive_orders_affected_size() const {
+  return _internal_passive_orders_affected_size();
 }
-inline void OrderConfirmation::clear_passiveordersaffected() {
-  passiveordersaffected_.Clear();
+inline void OrderConfirmation::clear_passive_orders_affected() {
+  passive_orders_affected_.Clear();
 }
-inline ::vega::Order* OrderConfirmation::mutable_passiveordersaffected(int index) {
-  // @@protoc_insertion_point(field_mutable:vega.OrderConfirmation.passiveOrdersAffected)
-  return passiveordersaffected_.Mutable(index);
+inline ::vega::Order* OrderConfirmation::mutable_passive_orders_affected(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.OrderConfirmation.passive_orders_affected)
+  return passive_orders_affected_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Order >*
-OrderConfirmation::mutable_passiveordersaffected() {
-  // @@protoc_insertion_point(field_mutable_list:vega.OrderConfirmation.passiveOrdersAffected)
-  return &passiveordersaffected_;
+OrderConfirmation::mutable_passive_orders_affected() {
+  // @@protoc_insertion_point(field_mutable_list:vega.OrderConfirmation.passive_orders_affected)
+  return &passive_orders_affected_;
 }
-inline const ::vega::Order& OrderConfirmation::_internal_passiveordersaffected(int index) const {
-  return passiveordersaffected_.Get(index);
+inline const ::vega::Order& OrderConfirmation::_internal_passive_orders_affected(int index) const {
+  return passive_orders_affected_.Get(index);
 }
-inline const ::vega::Order& OrderConfirmation::passiveordersaffected(int index) const {
-  // @@protoc_insertion_point(field_get:vega.OrderConfirmation.passiveOrdersAffected)
-  return _internal_passiveordersaffected(index);
+inline const ::vega::Order& OrderConfirmation::passive_orders_affected(int index) const {
+  // @@protoc_insertion_point(field_get:vega.OrderConfirmation.passive_orders_affected)
+  return _internal_passive_orders_affected(index);
 }
-inline ::vega::Order* OrderConfirmation::_internal_add_passiveordersaffected() {
-  return passiveordersaffected_.Add();
+inline ::vega::Order* OrderConfirmation::_internal_add_passive_orders_affected() {
+  return passive_orders_affected_.Add();
 }
-inline ::vega::Order* OrderConfirmation::add_passiveordersaffected() {
-  // @@protoc_insertion_point(field_add:vega.OrderConfirmation.passiveOrdersAffected)
-  return _internal_add_passiveordersaffected();
+inline ::vega::Order* OrderConfirmation::add_passive_orders_affected() {
+  // @@protoc_insertion_point(field_add:vega.OrderConfirmation.passive_orders_affected)
+  return _internal_add_passive_orders_affected();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Order >&
-OrderConfirmation::passiveordersaffected() const {
-  // @@protoc_insertion_point(field_list:vega.OrderConfirmation.passiveOrdersAffected)
-  return passiveordersaffected_;
+OrderConfirmation::passive_orders_affected() const {
+  // @@protoc_insertion_point(field_list:vega.OrderConfirmation.passive_orders_affected)
+  return passive_orders_affected_;
 }
 
 // -------------------------------------------------------------------
 
 // AuctionIndicativeState
 
-// string marketID = 1 [json_name = "marketID"];
-inline void AuctionIndicativeState::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 1 [json_name = "marketId"];
+inline void AuctionIndicativeState::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& AuctionIndicativeState::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.marketID)
-  return _internal_marketid();
+inline const std::string& AuctionIndicativeState::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.market_id)
+  return _internal_market_id();
 }
-inline void AuctionIndicativeState::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.marketID)
+inline void AuctionIndicativeState::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.market_id)
 }
-inline std::string* AuctionIndicativeState::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.AuctionIndicativeState.marketID)
-  return _internal_mutable_marketid();
+inline std::string* AuctionIndicativeState::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.AuctionIndicativeState.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& AuctionIndicativeState::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& AuctionIndicativeState::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void AuctionIndicativeState::_internal_set_marketid(const std::string& value) {
+inline void AuctionIndicativeState::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void AuctionIndicativeState::set_marketid(std::string&& value) {
+inline void AuctionIndicativeState::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.AuctionIndicativeState.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.AuctionIndicativeState.market_id)
 }
-inline void AuctionIndicativeState::set_marketid(const char* value) {
+inline void AuctionIndicativeState::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.AuctionIndicativeState.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.AuctionIndicativeState.market_id)
 }
-inline void AuctionIndicativeState::set_marketid(const char* value,
+inline void AuctionIndicativeState::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.AuctionIndicativeState.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.AuctionIndicativeState.market_id)
 }
-inline std::string* AuctionIndicativeState::_internal_mutable_marketid() {
+inline std::string* AuctionIndicativeState::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* AuctionIndicativeState::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.AuctionIndicativeState.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* AuctionIndicativeState::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.AuctionIndicativeState.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void AuctionIndicativeState::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void AuctionIndicativeState::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.AuctionIndicativeState.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.AuctionIndicativeState.market_id)
 }
 
-// uint64 indicativePrice = 2 [json_name = "indicativePrice"];
-inline void AuctionIndicativeState::clear_indicativeprice() {
-  indicativeprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 indicative_price = 2 [json_name = "indicativePrice"];
+inline void AuctionIndicativeState::clear_indicative_price() {
+  indicative_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::_internal_indicativeprice() const {
-  return indicativeprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::_internal_indicative_price() const {
+  return indicative_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::indicativeprice() const {
-  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.indicativePrice)
-  return _internal_indicativeprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::indicative_price() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.indicative_price)
+  return _internal_indicative_price();
 }
-inline void AuctionIndicativeState::_internal_set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void AuctionIndicativeState::_internal_set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  indicativeprice_ = value;
+  indicative_price_ = value;
 }
-inline void AuctionIndicativeState::set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_indicativeprice(value);
-  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.indicativePrice)
-}
-
-// uint64 indicativeVolume = 3 [json_name = "indicativeVolume"];
-inline void AuctionIndicativeState::clear_indicativevolume() {
-  indicativevolume_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::_internal_indicativevolume() const {
-  return indicativevolume_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::indicativevolume() const {
-  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.indicativeVolume)
-  return _internal_indicativevolume();
-}
-inline void AuctionIndicativeState::_internal_set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  indicativevolume_ = value;
-}
-inline void AuctionIndicativeState::set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_indicativevolume(value);
-  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.indicativeVolume)
+inline void AuctionIndicativeState::set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_indicative_price(value);
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.indicative_price)
 }
 
-// int64 auctionStart = 4 [json_name = "auctionStart"];
-inline void AuctionIndicativeState::clear_auctionstart() {
-  auctionstart_ = PROTOBUF_LONGLONG(0);
+// uint64 indicative_volume = 3 [json_name = "indicativeVolume"];
+inline void AuctionIndicativeState::clear_indicative_volume() {
+  indicative_volume_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::_internal_auctionstart() const {
-  return auctionstart_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::_internal_indicative_volume() const {
+  return indicative_volume_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::auctionstart() const {
-  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.auctionStart)
-  return _internal_auctionstart();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AuctionIndicativeState::indicative_volume() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.indicative_volume)
+  return _internal_indicative_volume();
 }
-inline void AuctionIndicativeState::_internal_set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void AuctionIndicativeState::_internal_set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  auctionstart_ = value;
+  indicative_volume_ = value;
 }
-inline void AuctionIndicativeState::set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_auctionstart(value);
-  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.auctionStart)
+inline void AuctionIndicativeState::set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_indicative_volume(value);
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.indicative_volume)
 }
 
-// int64 auctionEnd = 5 [json_name = "auctionEnd"];
-inline void AuctionIndicativeState::clear_auctionend() {
-  auctionend_ = PROTOBUF_LONGLONG(0);
+// int64 auction_start = 4 [json_name = "auctionStart"];
+inline void AuctionIndicativeState::clear_auction_start() {
+  auction_start_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::_internal_auctionend() const {
-  return auctionend_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::_internal_auction_start() const {
+  return auction_start_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::auctionend() const {
-  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.auctionEnd)
-  return _internal_auctionend();
+inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::auction_start() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.auction_start)
+  return _internal_auction_start();
 }
-inline void AuctionIndicativeState::_internal_set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void AuctionIndicativeState::_internal_set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  auctionend_ = value;
+  auction_start_ = value;
 }
-inline void AuctionIndicativeState::set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_auctionend(value);
-  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.auctionEnd)
+inline void AuctionIndicativeState::set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_auction_start(value);
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.auction_start)
+}
+
+// int64 auction_end = 5 [json_name = "auctionEnd"];
+inline void AuctionIndicativeState::clear_auction_end() {
+  auction_end_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::_internal_auction_end() const {
+  return auction_end_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 AuctionIndicativeState::auction_end() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionIndicativeState.auction_end)
+  return _internal_auction_end();
+}
+inline void AuctionIndicativeState::_internal_set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  auction_end_ = value;
+}
+inline void AuctionIndicativeState::set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_auction_end(value);
+  // @@protoc_insertion_point(field_set:vega.AuctionIndicativeState.auction_end)
 }
 
 // -------------------------------------------------------------------
@@ -12960,65 +13436,65 @@ inline void Trade::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.Trade.id)
 }
 
-// string marketID = 2 [json_name = "marketID"];
-inline void Trade::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 2 [json_name = "marketId"];
+inline void Trade::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& Trade::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.marketID)
-  return _internal_marketid();
+inline const std::string& Trade::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.market_id)
+  return _internal_market_id();
 }
-inline void Trade::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.Trade.marketID)
+inline void Trade::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.Trade.market_id)
 }
-inline std::string* Trade::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.Trade.marketID)
-  return _internal_mutable_marketid();
+inline std::string* Trade::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Trade.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& Trade::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& Trade::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void Trade::_internal_set_marketid(const std::string& value) {
+inline void Trade::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Trade::set_marketid(std::string&& value) {
+inline void Trade::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Trade.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Trade.market_id)
 }
-inline void Trade::set_marketid(const char* value) {
+inline void Trade::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Trade.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Trade.market_id)
 }
-inline void Trade::set_marketid(const char* value,
+inline void Trade::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Trade.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Trade.market_id)
 }
-inline std::string* Trade::_internal_mutable_marketid() {
+inline std::string* Trade::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Trade::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.Trade.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Trade::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.Trade.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Trade::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void Trade::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Trade.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.market_id)
 }
 
 // uint64 price = 3 [json_name = "price"];
@@ -13203,126 +13679,126 @@ inline void Trade::set_aggressor(::vega::Side value) {
   // @@protoc_insertion_point(field_set:vega.Trade.aggressor)
 }
 
-// string buyOrder = 8 [json_name = "buyOrder"];
-inline void Trade::clear_buyorder() {
-  buyorder_.ClearToEmpty();
+// string buy_order = 8 [json_name = "buyOrder"];
+inline void Trade::clear_buy_order() {
+  buy_order_.ClearToEmpty();
 }
-inline const std::string& Trade::buyorder() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.buyOrder)
-  return _internal_buyorder();
+inline const std::string& Trade::buy_order() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.buy_order)
+  return _internal_buy_order();
 }
-inline void Trade::set_buyorder(const std::string& value) {
-  _internal_set_buyorder(value);
-  // @@protoc_insertion_point(field_set:vega.Trade.buyOrder)
+inline void Trade::set_buy_order(const std::string& value) {
+  _internal_set_buy_order(value);
+  // @@protoc_insertion_point(field_set:vega.Trade.buy_order)
 }
-inline std::string* Trade::mutable_buyorder() {
-  // @@protoc_insertion_point(field_mutable:vega.Trade.buyOrder)
-  return _internal_mutable_buyorder();
+inline std::string* Trade::mutable_buy_order() {
+  // @@protoc_insertion_point(field_mutable:vega.Trade.buy_order)
+  return _internal_mutable_buy_order();
 }
-inline const std::string& Trade::_internal_buyorder() const {
-  return buyorder_.Get();
+inline const std::string& Trade::_internal_buy_order() const {
+  return buy_order_.Get();
 }
-inline void Trade::_internal_set_buyorder(const std::string& value) {
+inline void Trade::_internal_set_buy_order(const std::string& value) {
 
-  buyorder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  buy_order_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Trade::set_buyorder(std::string&& value) {
+inline void Trade::set_buy_order(std::string&& value) {
 
-  buyorder_.Set(
+  buy_order_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Trade.buyOrder)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Trade.buy_order)
 }
-inline void Trade::set_buyorder(const char* value) {
+inline void Trade::set_buy_order(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  buyorder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Trade.buyOrder)
+  buy_order_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Trade.buy_order)
 }
-inline void Trade::set_buyorder(const char* value,
+inline void Trade::set_buy_order(const char* value,
     size_t size) {
 
-  buyorder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  buy_order_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Trade.buyOrder)
+  // @@protoc_insertion_point(field_set_pointer:vega.Trade.buy_order)
 }
-inline std::string* Trade::_internal_mutable_buyorder() {
+inline std::string* Trade::_internal_mutable_buy_order() {
 
-  return buyorder_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return buy_order_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Trade::release_buyorder() {
-  // @@protoc_insertion_point(field_release:vega.Trade.buyOrder)
-  return buyorder_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Trade::release_buy_order() {
+  // @@protoc_insertion_point(field_release:vega.Trade.buy_order)
+  return buy_order_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Trade::set_allocated_buyorder(std::string* buyorder) {
-  if (buyorder != nullptr) {
+inline void Trade::set_allocated_buy_order(std::string* buy_order) {
+  if (buy_order != nullptr) {
 
   } else {
 
   }
-  buyorder_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), buyorder,
+  buy_order_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), buy_order,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Trade.buyOrder)
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.buy_order)
 }
 
-// string sellOrder = 9 [json_name = "sellOrder"];
-inline void Trade::clear_sellorder() {
-  sellorder_.ClearToEmpty();
+// string sell_order = 9 [json_name = "sellOrder"];
+inline void Trade::clear_sell_order() {
+  sell_order_.ClearToEmpty();
 }
-inline const std::string& Trade::sellorder() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.sellOrder)
-  return _internal_sellorder();
+inline const std::string& Trade::sell_order() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.sell_order)
+  return _internal_sell_order();
 }
-inline void Trade::set_sellorder(const std::string& value) {
-  _internal_set_sellorder(value);
-  // @@protoc_insertion_point(field_set:vega.Trade.sellOrder)
+inline void Trade::set_sell_order(const std::string& value) {
+  _internal_set_sell_order(value);
+  // @@protoc_insertion_point(field_set:vega.Trade.sell_order)
 }
-inline std::string* Trade::mutable_sellorder() {
-  // @@protoc_insertion_point(field_mutable:vega.Trade.sellOrder)
-  return _internal_mutable_sellorder();
+inline std::string* Trade::mutable_sell_order() {
+  // @@protoc_insertion_point(field_mutable:vega.Trade.sell_order)
+  return _internal_mutable_sell_order();
 }
-inline const std::string& Trade::_internal_sellorder() const {
-  return sellorder_.Get();
+inline const std::string& Trade::_internal_sell_order() const {
+  return sell_order_.Get();
 }
-inline void Trade::_internal_set_sellorder(const std::string& value) {
+inline void Trade::_internal_set_sell_order(const std::string& value) {
 
-  sellorder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  sell_order_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Trade::set_sellorder(std::string&& value) {
+inline void Trade::set_sell_order(std::string&& value) {
 
-  sellorder_.Set(
+  sell_order_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Trade.sellOrder)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Trade.sell_order)
 }
-inline void Trade::set_sellorder(const char* value) {
+inline void Trade::set_sell_order(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  sellorder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Trade.sellOrder)
+  sell_order_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Trade.sell_order)
 }
-inline void Trade::set_sellorder(const char* value,
+inline void Trade::set_sell_order(const char* value,
     size_t size) {
 
-  sellorder_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  sell_order_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Trade.sellOrder)
+  // @@protoc_insertion_point(field_set_pointer:vega.Trade.sell_order)
 }
-inline std::string* Trade::_internal_mutable_sellorder() {
+inline std::string* Trade::_internal_mutable_sell_order() {
 
-  return sellorder_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return sell_order_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Trade::release_sellorder() {
-  // @@protoc_insertion_point(field_release:vega.Trade.sellOrder)
-  return sellorder_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Trade::release_sell_order() {
+  // @@protoc_insertion_point(field_release:vega.Trade.sell_order)
+  return sell_order_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Trade::set_allocated_sellorder(std::string* sellorder) {
-  if (sellorder != nullptr) {
+inline void Trade::set_allocated_sell_order(std::string* sell_order) {
+  if (sell_order != nullptr) {
 
   } else {
 
   }
-  sellorder_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sellorder,
+  sell_order_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), sell_order,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Trade.sellOrder)
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.sell_order)
 }
 
 // int64 timestamp = 10 [json_name = "timestamp"];
@@ -13365,274 +13841,274 @@ inline void Trade::set_type(::vega::Trade_Type value) {
   // @@protoc_insertion_point(field_set:vega.Trade.type)
 }
 
-// .vega.Fee buyerFee = 12 [json_name = "buyerFee"];
-inline bool Trade::_internal_has_buyerfee() const {
-  return this != internal_default_instance() && buyerfee_ != nullptr;
+// .vega.Fee buyer_fee = 12 [json_name = "buyerFee"];
+inline bool Trade::_internal_has_buyer_fee() const {
+  return this != internal_default_instance() && buyer_fee_ != nullptr;
 }
-inline bool Trade::has_buyerfee() const {
-  return _internal_has_buyerfee();
+inline bool Trade::has_buyer_fee() const {
+  return _internal_has_buyer_fee();
 }
-inline void Trade::clear_buyerfee() {
-  if (GetArena() == nullptr && buyerfee_ != nullptr) {
-    delete buyerfee_;
+inline void Trade::clear_buyer_fee() {
+  if (GetArena() == nullptr && buyer_fee_ != nullptr) {
+    delete buyer_fee_;
   }
-  buyerfee_ = nullptr;
+  buyer_fee_ = nullptr;
 }
-inline const ::vega::Fee& Trade::_internal_buyerfee() const {
-  const ::vega::Fee* p = buyerfee_;
+inline const ::vega::Fee& Trade::_internal_buyer_fee() const {
+  const ::vega::Fee* p = buyer_fee_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::Fee&>(
       ::vega::_Fee_default_instance_);
 }
-inline const ::vega::Fee& Trade::buyerfee() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.buyerFee)
-  return _internal_buyerfee();
+inline const ::vega::Fee& Trade::buyer_fee() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.buyer_fee)
+  return _internal_buyer_fee();
 }
-inline void Trade::unsafe_arena_set_allocated_buyerfee(
-    ::vega::Fee* buyerfee) {
+inline void Trade::unsafe_arena_set_allocated_buyer_fee(
+    ::vega::Fee* buyer_fee) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(buyerfee_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(buyer_fee_);
   }
-  buyerfee_ = buyerfee;
-  if (buyerfee) {
+  buyer_fee_ = buyer_fee;
+  if (buyer_fee) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Trade.buyerFee)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Trade.buyer_fee)
 }
-inline ::vega::Fee* Trade::release_buyerfee() {
+inline ::vega::Fee* Trade::release_buyer_fee() {
 
-  ::vega::Fee* temp = buyerfee_;
-  buyerfee_ = nullptr;
+  ::vega::Fee* temp = buyer_fee_;
+  buyer_fee_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Fee* Trade::unsafe_arena_release_buyerfee() {
-  // @@protoc_insertion_point(field_release:vega.Trade.buyerFee)
+inline ::vega::Fee* Trade::unsafe_arena_release_buyer_fee() {
+  // @@protoc_insertion_point(field_release:vega.Trade.buyer_fee)
 
-  ::vega::Fee* temp = buyerfee_;
-  buyerfee_ = nullptr;
+  ::vega::Fee* temp = buyer_fee_;
+  buyer_fee_ = nullptr;
   return temp;
 }
-inline ::vega::Fee* Trade::_internal_mutable_buyerfee() {
+inline ::vega::Fee* Trade::_internal_mutable_buyer_fee() {
 
-  if (buyerfee_ == nullptr) {
+  if (buyer_fee_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Fee>(GetArena());
-    buyerfee_ = p;
+    buyer_fee_ = p;
   }
-  return buyerfee_;
+  return buyer_fee_;
 }
-inline ::vega::Fee* Trade::mutable_buyerfee() {
-  // @@protoc_insertion_point(field_mutable:vega.Trade.buyerFee)
-  return _internal_mutable_buyerfee();
+inline ::vega::Fee* Trade::mutable_buyer_fee() {
+  // @@protoc_insertion_point(field_mutable:vega.Trade.buyer_fee)
+  return _internal_mutable_buyer_fee();
 }
-inline void Trade::set_allocated_buyerfee(::vega::Fee* buyerfee) {
+inline void Trade::set_allocated_buyer_fee(::vega::Fee* buyer_fee) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete buyerfee_;
+    delete buyer_fee_;
   }
-  if (buyerfee) {
+  if (buyer_fee) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(buyerfee);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(buyer_fee);
     if (message_arena != submessage_arena) {
-      buyerfee = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, buyerfee, submessage_arena);
+      buyer_fee = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, buyer_fee, submessage_arena);
     }
 
   } else {
 
   }
-  buyerfee_ = buyerfee;
-  // @@protoc_insertion_point(field_set_allocated:vega.Trade.buyerFee)
+  buyer_fee_ = buyer_fee;
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.buyer_fee)
 }
 
-// .vega.Fee sellerFee = 13 [json_name = "sellerFee"];
-inline bool Trade::_internal_has_sellerfee() const {
-  return this != internal_default_instance() && sellerfee_ != nullptr;
+// .vega.Fee seller_fee = 13 [json_name = "sellerFee"];
+inline bool Trade::_internal_has_seller_fee() const {
+  return this != internal_default_instance() && seller_fee_ != nullptr;
 }
-inline bool Trade::has_sellerfee() const {
-  return _internal_has_sellerfee();
+inline bool Trade::has_seller_fee() const {
+  return _internal_has_seller_fee();
 }
-inline void Trade::clear_sellerfee() {
-  if (GetArena() == nullptr && sellerfee_ != nullptr) {
-    delete sellerfee_;
+inline void Trade::clear_seller_fee() {
+  if (GetArena() == nullptr && seller_fee_ != nullptr) {
+    delete seller_fee_;
   }
-  sellerfee_ = nullptr;
+  seller_fee_ = nullptr;
 }
-inline const ::vega::Fee& Trade::_internal_sellerfee() const {
-  const ::vega::Fee* p = sellerfee_;
+inline const ::vega::Fee& Trade::_internal_seller_fee() const {
+  const ::vega::Fee* p = seller_fee_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::Fee&>(
       ::vega::_Fee_default_instance_);
 }
-inline const ::vega::Fee& Trade::sellerfee() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.sellerFee)
-  return _internal_sellerfee();
+inline const ::vega::Fee& Trade::seller_fee() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.seller_fee)
+  return _internal_seller_fee();
 }
-inline void Trade::unsafe_arena_set_allocated_sellerfee(
-    ::vega::Fee* sellerfee) {
+inline void Trade::unsafe_arena_set_allocated_seller_fee(
+    ::vega::Fee* seller_fee) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(sellerfee_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(seller_fee_);
   }
-  sellerfee_ = sellerfee;
-  if (sellerfee) {
+  seller_fee_ = seller_fee;
+  if (seller_fee) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Trade.sellerFee)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Trade.seller_fee)
 }
-inline ::vega::Fee* Trade::release_sellerfee() {
+inline ::vega::Fee* Trade::release_seller_fee() {
 
-  ::vega::Fee* temp = sellerfee_;
-  sellerfee_ = nullptr;
+  ::vega::Fee* temp = seller_fee_;
+  seller_fee_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Fee* Trade::unsafe_arena_release_sellerfee() {
-  // @@protoc_insertion_point(field_release:vega.Trade.sellerFee)
+inline ::vega::Fee* Trade::unsafe_arena_release_seller_fee() {
+  // @@protoc_insertion_point(field_release:vega.Trade.seller_fee)
 
-  ::vega::Fee* temp = sellerfee_;
-  sellerfee_ = nullptr;
+  ::vega::Fee* temp = seller_fee_;
+  seller_fee_ = nullptr;
   return temp;
 }
-inline ::vega::Fee* Trade::_internal_mutable_sellerfee() {
+inline ::vega::Fee* Trade::_internal_mutable_seller_fee() {
 
-  if (sellerfee_ == nullptr) {
+  if (seller_fee_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Fee>(GetArena());
-    sellerfee_ = p;
+    seller_fee_ = p;
   }
-  return sellerfee_;
+  return seller_fee_;
 }
-inline ::vega::Fee* Trade::mutable_sellerfee() {
-  // @@protoc_insertion_point(field_mutable:vega.Trade.sellerFee)
-  return _internal_mutable_sellerfee();
+inline ::vega::Fee* Trade::mutable_seller_fee() {
+  // @@protoc_insertion_point(field_mutable:vega.Trade.seller_fee)
+  return _internal_mutable_seller_fee();
 }
-inline void Trade::set_allocated_sellerfee(::vega::Fee* sellerfee) {
+inline void Trade::set_allocated_seller_fee(::vega::Fee* seller_fee) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete sellerfee_;
+    delete seller_fee_;
   }
-  if (sellerfee) {
+  if (seller_fee) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(sellerfee);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(seller_fee);
     if (message_arena != submessage_arena) {
-      sellerfee = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, sellerfee, submessage_arena);
+      seller_fee = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, seller_fee, submessage_arena);
     }
 
   } else {
 
   }
-  sellerfee_ = sellerfee;
-  // @@protoc_insertion_point(field_set_allocated:vega.Trade.sellerFee)
+  seller_fee_ = seller_fee;
+  // @@protoc_insertion_point(field_set_allocated:vega.Trade.seller_fee)
 }
 
-// uint64 buyerAuctionBatch = 14 [json_name = "buyerAuctionBatch"];
-inline void Trade::clear_buyerauctionbatch() {
-  buyerauctionbatch_ = PROTOBUF_ULONGLONG(0);
+// uint64 buyer_auction_batch = 14 [json_name = "buyerAuctionBatch"];
+inline void Trade::clear_buyer_auction_batch() {
+  buyer_auction_batch_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::_internal_buyerauctionbatch() const {
-  return buyerauctionbatch_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::_internal_buyer_auction_batch() const {
+  return buyer_auction_batch_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::buyerauctionbatch() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.buyerAuctionBatch)
-  return _internal_buyerauctionbatch();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::buyer_auction_batch() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.buyer_auction_batch)
+  return _internal_buyer_auction_batch();
 }
-inline void Trade::_internal_set_buyerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Trade::_internal_set_buyer_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  buyerauctionbatch_ = value;
+  buyer_auction_batch_ = value;
 }
-inline void Trade::set_buyerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_buyerauctionbatch(value);
-  // @@protoc_insertion_point(field_set:vega.Trade.buyerAuctionBatch)
+inline void Trade::set_buyer_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_buyer_auction_batch(value);
+  // @@protoc_insertion_point(field_set:vega.Trade.buyer_auction_batch)
 }
 
-// uint64 sellerAuctionBatch = 15 [json_name = "sellerAuctionBatch"];
-inline void Trade::clear_sellerauctionbatch() {
-  sellerauctionbatch_ = PROTOBUF_ULONGLONG(0);
+// uint64 seller_auction_batch = 15 [json_name = "sellerAuctionBatch"];
+inline void Trade::clear_seller_auction_batch() {
+  seller_auction_batch_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::_internal_sellerauctionbatch() const {
-  return sellerauctionbatch_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::_internal_seller_auction_batch() const {
+  return seller_auction_batch_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::sellerauctionbatch() const {
-  // @@protoc_insertion_point(field_get:vega.Trade.sellerAuctionBatch)
-  return _internal_sellerauctionbatch();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Trade::seller_auction_batch() const {
+  // @@protoc_insertion_point(field_get:vega.Trade.seller_auction_batch)
+  return _internal_seller_auction_batch();
 }
-inline void Trade::_internal_set_sellerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Trade::_internal_set_seller_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  sellerauctionbatch_ = value;
+  seller_auction_batch_ = value;
 }
-inline void Trade::set_sellerauctionbatch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_sellerauctionbatch(value);
-  // @@protoc_insertion_point(field_set:vega.Trade.sellerAuctionBatch)
+inline void Trade::set_seller_auction_batch(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_seller_auction_batch(value);
+  // @@protoc_insertion_point(field_set:vega.Trade.seller_auction_batch)
 }
 
 // -------------------------------------------------------------------
 
 // Fee
 
-// uint64 makerFee = 1 [json_name = "makerFee"];
-inline void Fee::clear_makerfee() {
-  makerfee_ = PROTOBUF_ULONGLONG(0);
+// uint64 maker_fee = 1 [json_name = "makerFee"];
+inline void Fee::clear_maker_fee() {
+  maker_fee_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::_internal_makerfee() const {
-  return makerfee_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::_internal_maker_fee() const {
+  return maker_fee_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::makerfee() const {
-  // @@protoc_insertion_point(field_get:vega.Fee.makerFee)
-  return _internal_makerfee();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::maker_fee() const {
+  // @@protoc_insertion_point(field_get:vega.Fee.maker_fee)
+  return _internal_maker_fee();
 }
-inline void Fee::_internal_set_makerfee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fee::_internal_set_maker_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  makerfee_ = value;
+  maker_fee_ = value;
 }
-inline void Fee::set_makerfee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_makerfee(value);
-  // @@protoc_insertion_point(field_set:vega.Fee.makerFee)
-}
-
-// uint64 infrastructureFee = 2 [json_name = "infrastructureFee"];
-inline void Fee::clear_infrastructurefee() {
-  infrastructurefee_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::_internal_infrastructurefee() const {
-  return infrastructurefee_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::infrastructurefee() const {
-  // @@protoc_insertion_point(field_get:vega.Fee.infrastructureFee)
-  return _internal_infrastructurefee();
-}
-inline void Fee::_internal_set_infrastructurefee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  infrastructurefee_ = value;
-}
-inline void Fee::set_infrastructurefee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_infrastructurefee(value);
-  // @@protoc_insertion_point(field_set:vega.Fee.infrastructureFee)
+inline void Fee::set_maker_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_maker_fee(value);
+  // @@protoc_insertion_point(field_set:vega.Fee.maker_fee)
 }
 
-// uint64 liquidityFee = 3 [json_name = "liquidityFee"];
-inline void Fee::clear_liquidityfee() {
-  liquidityfee_ = PROTOBUF_ULONGLONG(0);
+// uint64 infrastructure_fee = 2 [json_name = "infrastructureFee"];
+inline void Fee::clear_infrastructure_fee() {
+  infrastructure_fee_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::_internal_liquidityfee() const {
-  return liquidityfee_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::_internal_infrastructure_fee() const {
+  return infrastructure_fee_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::liquidityfee() const {
-  // @@protoc_insertion_point(field_get:vega.Fee.liquidityFee)
-  return _internal_liquidityfee();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::infrastructure_fee() const {
+  // @@protoc_insertion_point(field_get:vega.Fee.infrastructure_fee)
+  return _internal_infrastructure_fee();
 }
-inline void Fee::_internal_set_liquidityfee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fee::_internal_set_infrastructure_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  liquidityfee_ = value;
+  infrastructure_fee_ = value;
 }
-inline void Fee::set_liquidityfee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_liquidityfee(value);
-  // @@protoc_insertion_point(field_set:vega.Fee.liquidityFee)
+inline void Fee::set_infrastructure_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_infrastructure_fee(value);
+  // @@protoc_insertion_point(field_set:vega.Fee.infrastructure_fee)
+}
+
+// uint64 liquidity_fee = 3 [json_name = "liquidityFee"];
+inline void Fee::clear_liquidity_fee() {
+  liquidity_fee_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::_internal_liquidity_fee() const {
+  return liquidity_fee_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fee::liquidity_fee() const {
+  // @@protoc_insertion_point(field_get:vega.Fee.liquidity_fee)
+  return _internal_liquidity_fee();
+}
+inline void Fee::_internal_set_liquidity_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  liquidity_fee_ = value;
+}
+inline void Fee::set_liquidity_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_liquidity_fee(value);
+  // @@protoc_insertion_point(field_set:vega.Fee.liquidity_fee)
 }
 
 // -------------------------------------------------------------------
@@ -13907,24 +14383,24 @@ inline void PriceLevel::set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.PriceLevel.price)
 }
 
-// uint64 numberOfOrders = 2 [json_name = "numberOfOrders"];
-inline void PriceLevel::clear_numberoforders() {
-  numberoforders_ = PROTOBUF_ULONGLONG(0);
+// uint64 number_of_orders = 2 [json_name = "numberOfOrders"];
+inline void PriceLevel::clear_number_of_orders() {
+  number_of_orders_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceLevel::_internal_numberoforders() const {
-  return numberoforders_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceLevel::_internal_number_of_orders() const {
+  return number_of_orders_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceLevel::numberoforders() const {
-  // @@protoc_insertion_point(field_get:vega.PriceLevel.numberOfOrders)
-  return _internal_numberoforders();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceLevel::number_of_orders() const {
+  // @@protoc_insertion_point(field_get:vega.PriceLevel.number_of_orders)
+  return _internal_number_of_orders();
 }
-inline void PriceLevel::_internal_set_numberoforders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void PriceLevel::_internal_set_number_of_orders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  numberoforders_ = value;
+  number_of_orders_ = value;
 }
-inline void PriceLevel::set_numberoforders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_numberoforders(value);
-  // @@protoc_insertion_point(field_set:vega.PriceLevel.numberOfOrders)
+inline void PriceLevel::set_number_of_orders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_number_of_orders(value);
+  // @@protoc_insertion_point(field_set:vega.PriceLevel.number_of_orders)
 }
 
 // uint64 volume = 3 [json_name = "volume"];
@@ -13951,65 +14427,65 @@ inline void PriceLevel::set_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // MarketDepth
 
-// string marketID = 1 [json_name = "marketID"];
-inline void MarketDepth::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 1 [json_name = "marketId"];
+inline void MarketDepth::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& MarketDepth::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.MarketDepth.marketID)
-  return _internal_marketid();
+inline const std::string& MarketDepth::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepth.market_id)
+  return _internal_market_id();
 }
-inline void MarketDepth::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.MarketDepth.marketID)
+inline void MarketDepth::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.MarketDepth.market_id)
 }
-inline std::string* MarketDepth::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.MarketDepth.marketID)
-  return _internal_mutable_marketid();
+inline std::string* MarketDepth::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.MarketDepth.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& MarketDepth::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& MarketDepth::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void MarketDepth::_internal_set_marketid(const std::string& value) {
+inline void MarketDepth::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void MarketDepth::set_marketid(std::string&& value) {
+inline void MarketDepth::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.MarketDepth.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarketDepth.market_id)
 }
-inline void MarketDepth::set_marketid(const char* value) {
+inline void MarketDepth::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.MarketDepth.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarketDepth.market_id)
 }
-inline void MarketDepth::set_marketid(const char* value,
+inline void MarketDepth::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.MarketDepth.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.MarketDepth.market_id)
 }
-inline std::string* MarketDepth::_internal_mutable_marketid() {
+inline std::string* MarketDepth::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* MarketDepth::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.MarketDepth.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* MarketDepth::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.MarketDepth.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void MarketDepth::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void MarketDepth::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.MarketDepth.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.MarketDepth.market_id)
 }
 
 // repeated .vega.PriceLevel buy = 2 [json_name = "buy"];
@@ -14090,89 +14566,89 @@ MarketDepth::sell() const {
   return sell_;
 }
 
-// uint64 sequenceNumber = 4 [json_name = "sequenceNumber"];
-inline void MarketDepth::clear_sequencenumber() {
-  sequencenumber_ = PROTOBUF_ULONGLONG(0);
+// uint64 sequence_number = 4 [json_name = "sequenceNumber"];
+inline void MarketDepth::clear_sequence_number() {
+  sequence_number_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepth::_internal_sequencenumber() const {
-  return sequencenumber_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepth::_internal_sequence_number() const {
+  return sequence_number_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepth::sequencenumber() const {
-  // @@protoc_insertion_point(field_get:vega.MarketDepth.sequenceNumber)
-  return _internal_sequencenumber();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepth::sequence_number() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepth.sequence_number)
+  return _internal_sequence_number();
 }
-inline void MarketDepth::_internal_set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketDepth::_internal_set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  sequencenumber_ = value;
+  sequence_number_ = value;
 }
-inline void MarketDepth::set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_sequencenumber(value);
-  // @@protoc_insertion_point(field_set:vega.MarketDepth.sequenceNumber)
+inline void MarketDepth::set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_sequence_number(value);
+  // @@protoc_insertion_point(field_set:vega.MarketDepth.sequence_number)
 }
 
 // -------------------------------------------------------------------
 
 // MarketDepthUpdate
 
-// string marketID = 1 [json_name = "marketID"];
-inline void MarketDepthUpdate::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 1 [json_name = "marketId"];
+inline void MarketDepthUpdate::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& MarketDepthUpdate::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.marketID)
-  return _internal_marketid();
+inline const std::string& MarketDepthUpdate::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.market_id)
+  return _internal_market_id();
 }
-inline void MarketDepthUpdate::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.MarketDepthUpdate.marketID)
+inline void MarketDepthUpdate::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.MarketDepthUpdate.market_id)
 }
-inline std::string* MarketDepthUpdate::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.MarketDepthUpdate.marketID)
-  return _internal_mutable_marketid();
+inline std::string* MarketDepthUpdate::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.MarketDepthUpdate.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& MarketDepthUpdate::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& MarketDepthUpdate::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void MarketDepthUpdate::_internal_set_marketid(const std::string& value) {
+inline void MarketDepthUpdate::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void MarketDepthUpdate::set_marketid(std::string&& value) {
+inline void MarketDepthUpdate::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.MarketDepthUpdate.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarketDepthUpdate.market_id)
 }
-inline void MarketDepthUpdate::set_marketid(const char* value) {
+inline void MarketDepthUpdate::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.MarketDepthUpdate.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarketDepthUpdate.market_id)
 }
-inline void MarketDepthUpdate::set_marketid(const char* value,
+inline void MarketDepthUpdate::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.MarketDepthUpdate.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.MarketDepthUpdate.market_id)
 }
-inline std::string* MarketDepthUpdate::_internal_mutable_marketid() {
+inline std::string* MarketDepthUpdate::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* MarketDepthUpdate::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.MarketDepthUpdate.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* MarketDepthUpdate::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.MarketDepthUpdate.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void MarketDepthUpdate::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void MarketDepthUpdate::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.MarketDepthUpdate.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.MarketDepthUpdate.market_id)
 }
 
 // repeated .vega.PriceLevel buy = 2 [json_name = "buy"];
@@ -14253,250 +14729,250 @@ MarketDepthUpdate::sell() const {
   return sell_;
 }
 
-// uint64 sequenceNumber = 4 [json_name = "sequenceNumber"];
-inline void MarketDepthUpdate::clear_sequencenumber() {
-  sequencenumber_ = PROTOBUF_ULONGLONG(0);
+// uint64 sequence_number = 4 [json_name = "sequenceNumber"];
+inline void MarketDepthUpdate::clear_sequence_number() {
+  sequence_number_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepthUpdate::_internal_sequencenumber() const {
-  return sequencenumber_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepthUpdate::_internal_sequence_number() const {
+  return sequence_number_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepthUpdate::sequencenumber() const {
-  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.sequenceNumber)
-  return _internal_sequencenumber();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketDepthUpdate::sequence_number() const {
+  // @@protoc_insertion_point(field_get:vega.MarketDepthUpdate.sequence_number)
+  return _internal_sequence_number();
 }
-inline void MarketDepthUpdate::_internal_set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketDepthUpdate::_internal_set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  sequencenumber_ = value;
+  sequence_number_ = value;
 }
-inline void MarketDepthUpdate::set_sequencenumber(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_sequencenumber(value);
-  // @@protoc_insertion_point(field_set:vega.MarketDepthUpdate.sequenceNumber)
+inline void MarketDepthUpdate::set_sequence_number(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_sequence_number(value);
+  // @@protoc_insertion_point(field_set:vega.MarketDepthUpdate.sequence_number)
 }
 
 // -------------------------------------------------------------------
 
 // Position
 
-// string marketID = 1 [json_name = "marketID"];
-inline void Position::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 1 [json_name = "marketId"];
+inline void Position::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& Position::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.Position.marketID)
-  return _internal_marketid();
+inline const std::string& Position::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.Position.market_id)
+  return _internal_market_id();
 }
-inline void Position::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.Position.marketID)
+inline void Position::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.Position.market_id)
 }
-inline std::string* Position::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.Position.marketID)
-  return _internal_mutable_marketid();
+inline std::string* Position::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Position.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& Position::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& Position::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void Position::_internal_set_marketid(const std::string& value) {
+inline void Position::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Position::set_marketid(std::string&& value) {
+inline void Position::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Position.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Position.market_id)
 }
-inline void Position::set_marketid(const char* value) {
+inline void Position::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Position.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Position.market_id)
 }
-inline void Position::set_marketid(const char* value,
+inline void Position::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Position.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Position.market_id)
 }
-inline std::string* Position::_internal_mutable_marketid() {
+inline std::string* Position::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Position::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.Position.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Position::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.Position.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Position::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void Position::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Position.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Position.market_id)
 }
 
-// string partyID = 2 [json_name = "partyID"];
-inline void Position::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 2 [json_name = "partyId"];
+inline void Position::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& Position::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.Position.partyID)
-  return _internal_partyid();
+inline const std::string& Position::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.Position.party_id)
+  return _internal_party_id();
 }
-inline void Position::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.Position.partyID)
+inline void Position::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.Position.party_id)
 }
-inline std::string* Position::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.Position.partyID)
-  return _internal_mutable_partyid();
+inline std::string* Position::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Position.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& Position::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& Position::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void Position::_internal_set_partyid(const std::string& value) {
+inline void Position::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Position::set_partyid(std::string&& value) {
+inline void Position::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Position.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Position.party_id)
 }
-inline void Position::set_partyid(const char* value) {
+inline void Position::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Position.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Position.party_id)
 }
-inline void Position::set_partyid(const char* value,
+inline void Position::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Position.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Position.party_id)
 }
-inline std::string* Position::_internal_mutable_partyid() {
+inline std::string* Position::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Position::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.Position.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Position::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.Position.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Position::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void Position::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Position.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Position.party_id)
 }
 
-// int64 openVolume = 3 [json_name = "openVolume"];
-inline void Position::clear_openvolume() {
-  openvolume_ = PROTOBUF_LONGLONG(0);
+// int64 open_volume = 3 [json_name = "openVolume"];
+inline void Position::clear_open_volume() {
+  open_volume_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_openvolume() const {
-  return openvolume_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_open_volume() const {
+  return open_volume_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::openvolume() const {
-  // @@protoc_insertion_point(field_get:vega.Position.openVolume)
-  return _internal_openvolume();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::open_volume() const {
+  // @@protoc_insertion_point(field_get:vega.Position.open_volume)
+  return _internal_open_volume();
 }
-inline void Position::_internal_set_openvolume(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Position::_internal_set_open_volume(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  openvolume_ = value;
+  open_volume_ = value;
 }
-inline void Position::set_openvolume(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_openvolume(value);
-  // @@protoc_insertion_point(field_set:vega.Position.openVolume)
-}
-
-// int64 realisedPNL = 4 [json_name = "realisedPNL"];
-inline void Position::clear_realisedpnl() {
-  realisedpnl_ = PROTOBUF_LONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_realisedpnl() const {
-  return realisedpnl_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::realisedpnl() const {
-  // @@protoc_insertion_point(field_get:vega.Position.realisedPNL)
-  return _internal_realisedpnl();
-}
-inline void Position::_internal_set_realisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
-
-  realisedpnl_ = value;
-}
-inline void Position::set_realisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_realisedpnl(value);
-  // @@protoc_insertion_point(field_set:vega.Position.realisedPNL)
+inline void Position::set_open_volume(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_open_volume(value);
+  // @@protoc_insertion_point(field_set:vega.Position.open_volume)
 }
 
-// int64 unrealisedPNL = 5 [json_name = "unrealisedPNL"];
-inline void Position::clear_unrealisedpnl() {
-  unrealisedpnl_ = PROTOBUF_LONGLONG(0);
+// int64 realised_pnl = 4 [json_name = "realisedPnl"];
+inline void Position::clear_realised_pnl() {
+  realised_pnl_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_unrealisedpnl() const {
-  return unrealisedpnl_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_realised_pnl() const {
+  return realised_pnl_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::unrealisedpnl() const {
-  // @@protoc_insertion_point(field_get:vega.Position.unrealisedPNL)
-  return _internal_unrealisedpnl();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::realised_pnl() const {
+  // @@protoc_insertion_point(field_get:vega.Position.realised_pnl)
+  return _internal_realised_pnl();
 }
-inline void Position::_internal_set_unrealisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Position::_internal_set_realised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  unrealisedpnl_ = value;
+  realised_pnl_ = value;
 }
-inline void Position::set_unrealisedpnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_unrealisedpnl(value);
-  // @@protoc_insertion_point(field_set:vega.Position.unrealisedPNL)
-}
-
-// uint64 averageEntryPrice = 6 [json_name = "averageEntryPrice"];
-inline void Position::clear_averageentryprice() {
-  averageentryprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Position::_internal_averageentryprice() const {
-  return averageentryprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Position::averageentryprice() const {
-  // @@protoc_insertion_point(field_get:vega.Position.averageEntryPrice)
-  return _internal_averageentryprice();
-}
-inline void Position::_internal_set_averageentryprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  averageentryprice_ = value;
-}
-inline void Position::set_averageentryprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_averageentryprice(value);
-  // @@protoc_insertion_point(field_set:vega.Position.averageEntryPrice)
+inline void Position::set_realised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_realised_pnl(value);
+  // @@protoc_insertion_point(field_set:vega.Position.realised_pnl)
 }
 
-// int64 updatedAt = 7 [json_name = "updatedAt"];
-inline void Position::clear_updatedat() {
-  updatedat_ = PROTOBUF_LONGLONG(0);
+// int64 unrealised_pnl = 5 [json_name = "unrealisedPnl"];
+inline void Position::clear_unrealised_pnl() {
+  unrealised_pnl_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_updatedat() const {
-  return updatedat_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_unrealised_pnl() const {
+  return unrealised_pnl_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Position::updatedat() const {
-  // @@protoc_insertion_point(field_get:vega.Position.updatedAt)
-  return _internal_updatedat();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::unrealised_pnl() const {
+  // @@protoc_insertion_point(field_get:vega.Position.unrealised_pnl)
+  return _internal_unrealised_pnl();
 }
-inline void Position::_internal_set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Position::_internal_set_unrealised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  updatedat_ = value;
+  unrealised_pnl_ = value;
 }
-inline void Position::set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_updatedat(value);
-  // @@protoc_insertion_point(field_set:vega.Position.updatedAt)
+inline void Position::set_unrealised_pnl(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_unrealised_pnl(value);
+  // @@protoc_insertion_point(field_set:vega.Position.unrealised_pnl)
+}
+
+// uint64 average_entry_price = 6 [json_name = "averageEntryPrice"];
+inline void Position::clear_average_entry_price() {
+  average_entry_price_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Position::_internal_average_entry_price() const {
+  return average_entry_price_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Position::average_entry_price() const {
+  // @@protoc_insertion_point(field_get:vega.Position.average_entry_price)
+  return _internal_average_entry_price();
+}
+inline void Position::_internal_set_average_entry_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  average_entry_price_ = value;
+}
+inline void Position::set_average_entry_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_average_entry_price(value);
+  // @@protoc_insertion_point(field_set:vega.Position.average_entry_price)
+}
+
+// int64 updated_at = 7 [json_name = "updatedAt"];
+inline void Position::clear_updated_at() {
+  updated_at_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::_internal_updated_at() const {
+  return updated_at_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 Position::updated_at() const {
+  // @@protoc_insertion_point(field_get:vega.Position.updated_at)
+  return _internal_updated_at();
+}
+inline void Position::_internal_set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  updated_at_ = value;
+}
+inline void Position::set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_updated_at(value);
+  // @@protoc_insertion_point(field_set:vega.Position.updated_at)
 }
 
 // -------------------------------------------------------------------
@@ -14547,247 +15023,247 @@ inline void PositionTrade::set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // Statistics
 
-// uint64 blockHeight = 1 [json_name = "blockHeight"];
-inline void Statistics::clear_blockheight() {
-  blockheight_ = PROTOBUF_ULONGLONG(0);
+// uint64 block_height = 1 [json_name = "blockHeight"];
+inline void Statistics::clear_block_height() {
+  block_height_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_blockheight() const {
-  return blockheight_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_block_height() const {
+  return block_height_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::blockheight() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.blockHeight)
-  return _internal_blockheight();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::block_height() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.block_height)
+  return _internal_block_height();
 }
-inline void Statistics::_internal_set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  blockheight_ = value;
+  block_height_ = value;
 }
-inline void Statistics::set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_blockheight(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.blockHeight)
-}
-
-// uint64 backlogLength = 2 [json_name = "backlogLength"];
-inline void Statistics::clear_backloglength() {
-  backloglength_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_backloglength() const {
-  return backloglength_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::backloglength() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.backlogLength)
-  return _internal_backloglength();
-}
-inline void Statistics::_internal_set_backloglength(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  backloglength_ = value;
-}
-inline void Statistics::set_backloglength(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_backloglength(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.backlogLength)
+inline void Statistics::set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_block_height(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.block_height)
 }
 
-// uint64 totalPeers = 3 [json_name = "totalPeers"];
-inline void Statistics::clear_totalpeers() {
-  totalpeers_ = PROTOBUF_ULONGLONG(0);
+// uint64 backlog_length = 2 [json_name = "backlogLength"];
+inline void Statistics::clear_backlog_length() {
+  backlog_length_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totalpeers() const {
-  return totalpeers_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_backlog_length() const {
+  return backlog_length_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totalpeers() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalPeers)
-  return _internal_totalpeers();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::backlog_length() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.backlog_length)
+  return _internal_backlog_length();
 }
-inline void Statistics::_internal_set_totalpeers(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_backlog_length(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  totalpeers_ = value;
+  backlog_length_ = value;
 }
-inline void Statistics::set_totalpeers(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totalpeers(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalPeers)
+inline void Statistics::set_backlog_length(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_backlog_length(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.backlog_length)
 }
 
-// string genesisTime = 4 [json_name = "genesisTime"];
-inline void Statistics::clear_genesistime() {
-  genesistime_.ClearToEmpty();
+// uint64 total_peers = 3 [json_name = "totalPeers"];
+inline void Statistics::clear_total_peers() {
+  total_peers_ = PROTOBUF_ULONGLONG(0);
 }
-inline const std::string& Statistics::genesistime() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.genesisTime)
-  return _internal_genesistime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_peers() const {
+  return total_peers_;
 }
-inline void Statistics::set_genesistime(const std::string& value) {
-  _internal_set_genesistime(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.genesisTime)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_peers() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_peers)
+  return _internal_total_peers();
 }
-inline std::string* Statistics::mutable_genesistime() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.genesisTime)
-  return _internal_mutable_genesistime();
-}
-inline const std::string& Statistics::_internal_genesistime() const {
-  return genesistime_.Get();
-}
-inline void Statistics::_internal_set_genesistime(const std::string& value) {
+inline void Statistics::_internal_set_total_peers(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  genesistime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  total_peers_ = value;
 }
-inline void Statistics::set_genesistime(std::string&& value) {
+inline void Statistics::set_total_peers(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_peers(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_peers)
+}
 
-  genesistime_.Set(
+// string genesis_time = 4 [json_name = "genesisTime"];
+inline void Statistics::clear_genesis_time() {
+  genesis_time_.ClearToEmpty();
+}
+inline const std::string& Statistics::genesis_time() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.genesis_time)
+  return _internal_genesis_time();
+}
+inline void Statistics::set_genesis_time(const std::string& value) {
+  _internal_set_genesis_time(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.genesis_time)
+}
+inline std::string* Statistics::mutable_genesis_time() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.genesis_time)
+  return _internal_mutable_genesis_time();
+}
+inline const std::string& Statistics::_internal_genesis_time() const {
+  return genesis_time_.Get();
+}
+inline void Statistics::_internal_set_genesis_time(const std::string& value) {
+
+  genesis_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Statistics::set_genesis_time(std::string&& value) {
+
+  genesis_time_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.genesisTime)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.genesis_time)
 }
-inline void Statistics::set_genesistime(const char* value) {
+inline void Statistics::set_genesis_time(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  genesistime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.genesisTime)
+  genesis_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.genesis_time)
 }
-inline void Statistics::set_genesistime(const char* value,
+inline void Statistics::set_genesis_time(const char* value,
     size_t size) {
 
-  genesistime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  genesis_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.genesisTime)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.genesis_time)
 }
-inline std::string* Statistics::_internal_mutable_genesistime() {
+inline std::string* Statistics::_internal_mutable_genesis_time() {
 
-  return genesistime_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return genesis_time_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_genesistime() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.genesisTime)
-  return genesistime_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_genesis_time() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.genesis_time)
+  return genesis_time_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_genesistime(std::string* genesistime) {
-  if (genesistime != nullptr) {
+inline void Statistics::set_allocated_genesis_time(std::string* genesis_time) {
+  if (genesis_time != nullptr) {
 
   } else {
 
   }
-  genesistime_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), genesistime,
+  genesis_time_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), genesis_time,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.genesisTime)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.genesis_time)
 }
 
-// string currentTime = 5 [json_name = "currentTime"];
-inline void Statistics::clear_currenttime() {
-  currenttime_.ClearToEmpty();
+// string current_time = 5 [json_name = "currentTime"];
+inline void Statistics::clear_current_time() {
+  current_time_.ClearToEmpty();
 }
-inline const std::string& Statistics::currenttime() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.currentTime)
-  return _internal_currenttime();
+inline const std::string& Statistics::current_time() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.current_time)
+  return _internal_current_time();
 }
-inline void Statistics::set_currenttime(const std::string& value) {
-  _internal_set_currenttime(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.currentTime)
+inline void Statistics::set_current_time(const std::string& value) {
+  _internal_set_current_time(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.current_time)
 }
-inline std::string* Statistics::mutable_currenttime() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.currentTime)
-  return _internal_mutable_currenttime();
+inline std::string* Statistics::mutable_current_time() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.current_time)
+  return _internal_mutable_current_time();
 }
-inline const std::string& Statistics::_internal_currenttime() const {
-  return currenttime_.Get();
+inline const std::string& Statistics::_internal_current_time() const {
+  return current_time_.Get();
 }
-inline void Statistics::_internal_set_currenttime(const std::string& value) {
+inline void Statistics::_internal_set_current_time(const std::string& value) {
 
-  currenttime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  current_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Statistics::set_currenttime(std::string&& value) {
+inline void Statistics::set_current_time(std::string&& value) {
 
-  currenttime_.Set(
+  current_time_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.currentTime)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.current_time)
 }
-inline void Statistics::set_currenttime(const char* value) {
+inline void Statistics::set_current_time(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  currenttime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.currentTime)
+  current_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.current_time)
 }
-inline void Statistics::set_currenttime(const char* value,
+inline void Statistics::set_current_time(const char* value,
     size_t size) {
 
-  currenttime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  current_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.currentTime)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.current_time)
 }
-inline std::string* Statistics::_internal_mutable_currenttime() {
+inline std::string* Statistics::_internal_mutable_current_time() {
 
-  return currenttime_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return current_time_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_currenttime() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.currentTime)
-  return currenttime_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_current_time() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.current_time)
+  return current_time_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_currenttime(std::string* currenttime) {
-  if (currenttime != nullptr) {
+inline void Statistics::set_allocated_current_time(std::string* current_time) {
+  if (current_time != nullptr) {
 
   } else {
 
   }
-  currenttime_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), currenttime,
+  current_time_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), current_time,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.currentTime)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.current_time)
 }
 
-// string vegaTime = 6 [json_name = "vegaTime"];
-inline void Statistics::clear_vegatime() {
-  vegatime_.ClearToEmpty();
+// string vega_time = 6 [json_name = "vegaTime"];
+inline void Statistics::clear_vega_time() {
+  vega_time_.ClearToEmpty();
 }
-inline const std::string& Statistics::vegatime() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.vegaTime)
-  return _internal_vegatime();
+inline const std::string& Statistics::vega_time() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.vega_time)
+  return _internal_vega_time();
 }
-inline void Statistics::set_vegatime(const std::string& value) {
-  _internal_set_vegatime(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.vegaTime)
+inline void Statistics::set_vega_time(const std::string& value) {
+  _internal_set_vega_time(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.vega_time)
 }
-inline std::string* Statistics::mutable_vegatime() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.vegaTime)
-  return _internal_mutable_vegatime();
+inline std::string* Statistics::mutable_vega_time() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.vega_time)
+  return _internal_mutable_vega_time();
 }
-inline const std::string& Statistics::_internal_vegatime() const {
-  return vegatime_.Get();
+inline const std::string& Statistics::_internal_vega_time() const {
+  return vega_time_.Get();
 }
-inline void Statistics::_internal_set_vegatime(const std::string& value) {
+inline void Statistics::_internal_set_vega_time(const std::string& value) {
 
-  vegatime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  vega_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Statistics::set_vegatime(std::string&& value) {
+inline void Statistics::set_vega_time(std::string&& value) {
 
-  vegatime_.Set(
+  vega_time_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.vegaTime)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.vega_time)
 }
-inline void Statistics::set_vegatime(const char* value) {
+inline void Statistics::set_vega_time(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  vegatime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.vegaTime)
+  vega_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.vega_time)
 }
-inline void Statistics::set_vegatime(const char* value,
+inline void Statistics::set_vega_time(const char* value,
     size_t size) {
 
-  vegatime_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  vega_time_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.vegaTime)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.vega_time)
 }
-inline std::string* Statistics::_internal_mutable_vegatime() {
+inline std::string* Statistics::_internal_mutable_vega_time() {
 
-  return vegatime_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return vega_time_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_vegatime() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.vegaTime)
-  return vegatime_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_vega_time() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.vega_time)
+  return vega_time_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_vegatime(std::string* vegatime) {
-  if (vegatime != nullptr) {
+inline void Statistics::set_allocated_vega_time(std::string* vega_time) {
+  if (vega_time != nullptr) {
 
   } else {
 
   }
-  vegatime_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vegatime,
+  vega_time_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), vega_time,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.vegaTime)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.vega_time)
 }
 
 // .vega.ChainStatus status = 7 [json_name = "status"];
@@ -14810,567 +15286,567 @@ inline void Statistics::set_status(::vega::ChainStatus value) {
   // @@protoc_insertion_point(field_set:vega.Statistics.status)
 }
 
-// uint64 txPerBlock = 8 [json_name = "txPerBlock"];
-inline void Statistics::clear_txperblock() {
-  txperblock_ = PROTOBUF_ULONGLONG(0);
+// uint64 tx_per_block = 8 [json_name = "txPerBlock"];
+inline void Statistics::clear_tx_per_block() {
+  tx_per_block_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_txperblock() const {
-  return txperblock_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_tx_per_block() const {
+  return tx_per_block_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::txperblock() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.txPerBlock)
-  return _internal_txperblock();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::tx_per_block() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.tx_per_block)
+  return _internal_tx_per_block();
 }
-inline void Statistics::_internal_set_txperblock(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_tx_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  txperblock_ = value;
+  tx_per_block_ = value;
 }
-inline void Statistics::set_txperblock(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_txperblock(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.txPerBlock)
-}
-
-// uint64 averageTxBytes = 9 [json_name = "averageTxBytes"];
-inline void Statistics::clear_averagetxbytes() {
-  averagetxbytes_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_averagetxbytes() const {
-  return averagetxbytes_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::averagetxbytes() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.averageTxBytes)
-  return _internal_averagetxbytes();
-}
-inline void Statistics::_internal_set_averagetxbytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  averagetxbytes_ = value;
-}
-inline void Statistics::set_averagetxbytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_averagetxbytes(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.averageTxBytes)
+inline void Statistics::set_tx_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_tx_per_block(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.tx_per_block)
 }
 
-// uint64 averageOrdersPerBlock = 10 [json_name = "averageOrdersPerBlock"];
-inline void Statistics::clear_averageordersperblock() {
-  averageordersperblock_ = PROTOBUF_ULONGLONG(0);
+// uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];
+inline void Statistics::clear_average_tx_bytes() {
+  average_tx_bytes_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_averageordersperblock() const {
-  return averageordersperblock_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_average_tx_bytes() const {
+  return average_tx_bytes_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::averageordersperblock() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.averageOrdersPerBlock)
-  return _internal_averageordersperblock();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::average_tx_bytes() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.average_tx_bytes)
+  return _internal_average_tx_bytes();
 }
-inline void Statistics::_internal_set_averageordersperblock(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_average_tx_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  averageordersperblock_ = value;
+  average_tx_bytes_ = value;
 }
-inline void Statistics::set_averageordersperblock(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_averageordersperblock(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.averageOrdersPerBlock)
-}
-
-// uint64 tradesPerSecond = 11 [json_name = "tradesPerSecond"];
-inline void Statistics::clear_tradespersecond() {
-  tradespersecond_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_tradespersecond() const {
-  return tradespersecond_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::tradespersecond() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.tradesPerSecond)
-  return _internal_tradespersecond();
-}
-inline void Statistics::_internal_set_tradespersecond(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  tradespersecond_ = value;
-}
-inline void Statistics::set_tradespersecond(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_tradespersecond(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.tradesPerSecond)
+inline void Statistics::set_average_tx_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_average_tx_bytes(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.average_tx_bytes)
 }
 
-// uint64 ordersPerSecond = 12 [json_name = "ordersPerSecond"];
-inline void Statistics::clear_orderspersecond() {
-  orderspersecond_ = PROTOBUF_ULONGLONG(0);
+// uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];
+inline void Statistics::clear_average_orders_per_block() {
+  average_orders_per_block_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_orderspersecond() const {
-  return orderspersecond_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_average_orders_per_block() const {
+  return average_orders_per_block_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::orderspersecond() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.ordersPerSecond)
-  return _internal_orderspersecond();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::average_orders_per_block() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.average_orders_per_block)
+  return _internal_average_orders_per_block();
 }
-inline void Statistics::_internal_set_orderspersecond(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_average_orders_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  orderspersecond_ = value;
+  average_orders_per_block_ = value;
 }
-inline void Statistics::set_orderspersecond(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_orderspersecond(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.ordersPerSecond)
-}
-
-// uint64 totalMarkets = 13 [json_name = "totalMarkets"];
-inline void Statistics::clear_totalmarkets() {
-  totalmarkets_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totalmarkets() const {
-  return totalmarkets_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totalmarkets() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalMarkets)
-  return _internal_totalmarkets();
-}
-inline void Statistics::_internal_set_totalmarkets(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  totalmarkets_ = value;
-}
-inline void Statistics::set_totalmarkets(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totalmarkets(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalMarkets)
+inline void Statistics::set_average_orders_per_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_average_orders_per_block(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.average_orders_per_block)
 }
 
-// uint64 totalAmendOrder = 16 [json_name = "totalAmendOrder"];
-inline void Statistics::clear_totalamendorder() {
-  totalamendorder_ = PROTOBUF_ULONGLONG(0);
+// uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];
+inline void Statistics::clear_trades_per_second() {
+  trades_per_second_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totalamendorder() const {
-  return totalamendorder_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_trades_per_second() const {
+  return trades_per_second_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totalamendorder() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalAmendOrder)
-  return _internal_totalamendorder();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::trades_per_second() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.trades_per_second)
+  return _internal_trades_per_second();
 }
-inline void Statistics::_internal_set_totalamendorder(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_trades_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  totalamendorder_ = value;
+  trades_per_second_ = value;
 }
-inline void Statistics::set_totalamendorder(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totalamendorder(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalAmendOrder)
-}
-
-// uint64 totalCancelOrder = 17 [json_name = "totalCancelOrder"];
-inline void Statistics::clear_totalcancelorder() {
-  totalcancelorder_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totalcancelorder() const {
-  return totalcancelorder_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totalcancelorder() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalCancelOrder)
-  return _internal_totalcancelorder();
-}
-inline void Statistics::_internal_set_totalcancelorder(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  totalcancelorder_ = value;
-}
-inline void Statistics::set_totalcancelorder(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totalcancelorder(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalCancelOrder)
+inline void Statistics::set_trades_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_trades_per_second(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.trades_per_second)
 }
 
-// uint64 totalCreateOrder = 18 [json_name = "totalCreateOrder"];
-inline void Statistics::clear_totalcreateorder() {
-  totalcreateorder_ = PROTOBUF_ULONGLONG(0);
+// uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];
+inline void Statistics::clear_orders_per_second() {
+  orders_per_second_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totalcreateorder() const {
-  return totalcreateorder_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_orders_per_second() const {
+  return orders_per_second_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totalcreateorder() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalCreateOrder)
-  return _internal_totalcreateorder();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::orders_per_second() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.orders_per_second)
+  return _internal_orders_per_second();
 }
-inline void Statistics::_internal_set_totalcreateorder(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_orders_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  totalcreateorder_ = value;
+  orders_per_second_ = value;
 }
-inline void Statistics::set_totalcreateorder(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totalcreateorder(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalCreateOrder)
-}
-
-// uint64 totalOrders = 19 [json_name = "totalOrders"];
-inline void Statistics::clear_totalorders() {
-  totalorders_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totalorders() const {
-  return totalorders_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totalorders() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalOrders)
-  return _internal_totalorders();
-}
-inline void Statistics::_internal_set_totalorders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  totalorders_ = value;
-}
-inline void Statistics::set_totalorders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totalorders(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalOrders)
+inline void Statistics::set_orders_per_second(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_orders_per_second(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.orders_per_second)
 }
 
-// uint64 totalTrades = 20 [json_name = "totalTrades"];
-inline void Statistics::clear_totaltrades() {
-  totaltrades_ = PROTOBUF_ULONGLONG(0);
+// uint64 total_markets = 13 [json_name = "totalMarkets"];
+inline void Statistics::clear_total_markets() {
+  total_markets_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_totaltrades() const {
-  return totaltrades_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_markets() const {
+  return total_markets_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::totaltrades() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.totalTrades)
-  return _internal_totaltrades();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_markets() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_markets)
+  return _internal_total_markets();
 }
-inline void Statistics::_internal_set_totaltrades(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_total_markets(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  totaltrades_ = value;
+  total_markets_ = value;
 }
-inline void Statistics::set_totaltrades(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_totaltrades(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.totalTrades)
-}
-
-// uint32 orderSubscriptions = 21 [json_name = "orderSubscriptions"];
-inline void Statistics::clear_ordersubscriptions() {
-  ordersubscriptions_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_ordersubscriptions() const {
-  return ordersubscriptions_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::ordersubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.orderSubscriptions)
-  return _internal_ordersubscriptions();
-}
-inline void Statistics::_internal_set_ordersubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-
-  ordersubscriptions_ = value;
-}
-inline void Statistics::set_ordersubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_ordersubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.orderSubscriptions)
+inline void Statistics::set_total_markets(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_markets(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_markets)
 }
 
-// uint32 tradeSubscriptions = 22 [json_name = "tradeSubscriptions"];
-inline void Statistics::clear_tradesubscriptions() {
-  tradesubscriptions_ = 0u;
+// uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];
+inline void Statistics::clear_total_amend_order() {
+  total_amend_order_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_tradesubscriptions() const {
-  return tradesubscriptions_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_amend_order() const {
+  return total_amend_order_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::tradesubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.tradeSubscriptions)
-  return _internal_tradesubscriptions();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_amend_order() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_amend_order)
+  return _internal_total_amend_order();
 }
-inline void Statistics::_internal_set_tradesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void Statistics::_internal_set_total_amend_order(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  tradesubscriptions_ = value;
+  total_amend_order_ = value;
 }
-inline void Statistics::set_tradesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_tradesubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.tradeSubscriptions)
-}
-
-// uint32 candleSubscriptions = 23 [json_name = "candleSubscriptions"];
-inline void Statistics::clear_candlesubscriptions() {
-  candlesubscriptions_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_candlesubscriptions() const {
-  return candlesubscriptions_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::candlesubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.candleSubscriptions)
-  return _internal_candlesubscriptions();
-}
-inline void Statistics::_internal_set_candlesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-
-  candlesubscriptions_ = value;
-}
-inline void Statistics::set_candlesubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_candlesubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.candleSubscriptions)
+inline void Statistics::set_total_amend_order(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_amend_order(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_amend_order)
 }
 
-// uint32 marketDepthSubscriptions = 24 [json_name = "marketDepthSubscriptions"];
-inline void Statistics::clear_marketdepthsubscriptions() {
-  marketdepthsubscriptions_ = 0u;
+// uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];
+inline void Statistics::clear_total_cancel_order() {
+  total_cancel_order_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_marketdepthsubscriptions() const {
-  return marketdepthsubscriptions_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_cancel_order() const {
+  return total_cancel_order_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::marketdepthsubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.marketDepthSubscriptions)
-  return _internal_marketdepthsubscriptions();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_cancel_order() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_cancel_order)
+  return _internal_total_cancel_order();
 }
-inline void Statistics::_internal_set_marketdepthsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void Statistics::_internal_set_total_cancel_order(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  marketdepthsubscriptions_ = value;
+  total_cancel_order_ = value;
 }
-inline void Statistics::set_marketdepthsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_marketdepthsubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.marketDepthSubscriptions)
-}
-
-// uint32 positionsSubscriptions = 25 [json_name = "positionsSubscriptions"];
-inline void Statistics::clear_positionssubscriptions() {
-  positionssubscriptions_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_positionssubscriptions() const {
-  return positionssubscriptions_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::positionssubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.positionsSubscriptions)
-  return _internal_positionssubscriptions();
-}
-inline void Statistics::_internal_set_positionssubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-
-  positionssubscriptions_ = value;
-}
-inline void Statistics::set_positionssubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_positionssubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.positionsSubscriptions)
+inline void Statistics::set_total_cancel_order(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_cancel_order(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_cancel_order)
 }
 
-// uint32 accountSubscriptions = 26 [json_name = "accountSubscriptions"];
-inline void Statistics::clear_accountsubscriptions() {
-  accountsubscriptions_ = 0u;
+// uint64 total_create_order = 18 [json_name = "totalCreateOrder"];
+inline void Statistics::clear_total_create_order() {
+  total_create_order_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_accountsubscriptions() const {
-  return accountsubscriptions_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_create_order() const {
+  return total_create_order_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::accountsubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.accountSubscriptions)
-  return _internal_accountsubscriptions();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_create_order() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_create_order)
+  return _internal_total_create_order();
 }
-inline void Statistics::_internal_set_accountsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void Statistics::_internal_set_total_create_order(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  accountsubscriptions_ = value;
+  total_create_order_ = value;
 }
-inline void Statistics::set_accountsubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_accountsubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.accountSubscriptions)
-}
-
-// uint32 marketDataSubscriptions = 27 [json_name = "marketDataSubscriptions"];
-inline void Statistics::clear_marketdatasubscriptions() {
-  marketdatasubscriptions_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_marketdatasubscriptions() const {
-  return marketdatasubscriptions_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::marketdatasubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.marketDataSubscriptions)
-  return _internal_marketdatasubscriptions();
-}
-inline void Statistics::_internal_set_marketdatasubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-
-  marketdatasubscriptions_ = value;
-}
-inline void Statistics::set_marketdatasubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_marketdatasubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.marketDataSubscriptions)
+inline void Statistics::set_total_create_order(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_create_order(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_create_order)
 }
 
-// string appVersionHash = 28 [json_name = "appVersionHash"];
-inline void Statistics::clear_appversionhash() {
-  appversionhash_.ClearToEmpty();
+// uint64 total_orders = 19 [json_name = "totalOrders"];
+inline void Statistics::clear_total_orders() {
+  total_orders_ = PROTOBUF_ULONGLONG(0);
 }
-inline const std::string& Statistics::appversionhash() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.appVersionHash)
-  return _internal_appversionhash();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_orders() const {
+  return total_orders_;
 }
-inline void Statistics::set_appversionhash(const std::string& value) {
-  _internal_set_appversionhash(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.appVersionHash)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_orders() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_orders)
+  return _internal_total_orders();
 }
-inline std::string* Statistics::mutable_appversionhash() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.appVersionHash)
-  return _internal_mutable_appversionhash();
-}
-inline const std::string& Statistics::_internal_appversionhash() const {
-  return appversionhash_.Get();
-}
-inline void Statistics::_internal_set_appversionhash(const std::string& value) {
+inline void Statistics::_internal_set_total_orders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  appversionhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  total_orders_ = value;
 }
-inline void Statistics::set_appversionhash(std::string&& value) {
+inline void Statistics::set_total_orders(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_orders(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_orders)
+}
 
-  appversionhash_.Set(
+// uint64 total_trades = 20 [json_name = "totalTrades"];
+inline void Statistics::clear_total_trades() {
+  total_trades_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_total_trades() const {
+  return total_trades_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::total_trades() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.total_trades)
+  return _internal_total_trades();
+}
+inline void Statistics::_internal_set_total_trades(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  total_trades_ = value;
+}
+inline void Statistics::set_total_trades(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_trades(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.total_trades)
+}
+
+// uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];
+inline void Statistics::clear_order_subscriptions() {
+  order_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_order_subscriptions() const {
+  return order_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::order_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.order_subscriptions)
+  return _internal_order_subscriptions();
+}
+inline void Statistics::_internal_set_order_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  order_subscriptions_ = value;
+}
+inline void Statistics::set_order_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_order_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.order_subscriptions)
+}
+
+// uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];
+inline void Statistics::clear_trade_subscriptions() {
+  trade_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_trade_subscriptions() const {
+  return trade_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::trade_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.trade_subscriptions)
+  return _internal_trade_subscriptions();
+}
+inline void Statistics::_internal_set_trade_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  trade_subscriptions_ = value;
+}
+inline void Statistics::set_trade_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_trade_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.trade_subscriptions)
+}
+
+// uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];
+inline void Statistics::clear_candle_subscriptions() {
+  candle_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_candle_subscriptions() const {
+  return candle_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::candle_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.candle_subscriptions)
+  return _internal_candle_subscriptions();
+}
+inline void Statistics::_internal_set_candle_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  candle_subscriptions_ = value;
+}
+inline void Statistics::set_candle_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_candle_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.candle_subscriptions)
+}
+
+// uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];
+inline void Statistics::clear_market_depth_subscriptions() {
+  market_depth_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_market_depth_subscriptions() const {
+  return market_depth_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::market_depth_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.market_depth_subscriptions)
+  return _internal_market_depth_subscriptions();
+}
+inline void Statistics::_internal_set_market_depth_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  market_depth_subscriptions_ = value;
+}
+inline void Statistics::set_market_depth_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_market_depth_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.market_depth_subscriptions)
+}
+
+// uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];
+inline void Statistics::clear_positions_subscriptions() {
+  positions_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_positions_subscriptions() const {
+  return positions_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::positions_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.positions_subscriptions)
+  return _internal_positions_subscriptions();
+}
+inline void Statistics::_internal_set_positions_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  positions_subscriptions_ = value;
+}
+inline void Statistics::set_positions_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_positions_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.positions_subscriptions)
+}
+
+// uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];
+inline void Statistics::clear_account_subscriptions() {
+  account_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_account_subscriptions() const {
+  return account_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::account_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.account_subscriptions)
+  return _internal_account_subscriptions();
+}
+inline void Statistics::_internal_set_account_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  account_subscriptions_ = value;
+}
+inline void Statistics::set_account_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_account_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.account_subscriptions)
+}
+
+// uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];
+inline void Statistics::clear_market_data_subscriptions() {
+  market_data_subscriptions_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_market_data_subscriptions() const {
+  return market_data_subscriptions_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::market_data_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.market_data_subscriptions)
+  return _internal_market_data_subscriptions();
+}
+inline void Statistics::_internal_set_market_data_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+
+  market_data_subscriptions_ = value;
+}
+inline void Statistics::set_market_data_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_market_data_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.market_data_subscriptions)
+}
+
+// string app_version_hash = 28 [json_name = "appVersionHash"];
+inline void Statistics::clear_app_version_hash() {
+  app_version_hash_.ClearToEmpty();
+}
+inline const std::string& Statistics::app_version_hash() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.app_version_hash)
+  return _internal_app_version_hash();
+}
+inline void Statistics::set_app_version_hash(const std::string& value) {
+  _internal_set_app_version_hash(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.app_version_hash)
+}
+inline std::string* Statistics::mutable_app_version_hash() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.app_version_hash)
+  return _internal_mutable_app_version_hash();
+}
+inline const std::string& Statistics::_internal_app_version_hash() const {
+  return app_version_hash_.Get();
+}
+inline void Statistics::_internal_set_app_version_hash(const std::string& value) {
+
+  app_version_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Statistics::set_app_version_hash(std::string&& value) {
+
+  app_version_hash_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.appVersionHash)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.app_version_hash)
 }
-inline void Statistics::set_appversionhash(const char* value) {
+inline void Statistics::set_app_version_hash(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  appversionhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.appVersionHash)
+  app_version_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.app_version_hash)
 }
-inline void Statistics::set_appversionhash(const char* value,
+inline void Statistics::set_app_version_hash(const char* value,
     size_t size) {
 
-  appversionhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  app_version_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.appVersionHash)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.app_version_hash)
 }
-inline std::string* Statistics::_internal_mutable_appversionhash() {
+inline std::string* Statistics::_internal_mutable_app_version_hash() {
 
-  return appversionhash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return app_version_hash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_appversionhash() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.appVersionHash)
-  return appversionhash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_app_version_hash() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.app_version_hash)
+  return app_version_hash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_appversionhash(std::string* appversionhash) {
-  if (appversionhash != nullptr) {
+inline void Statistics::set_allocated_app_version_hash(std::string* app_version_hash) {
+  if (app_version_hash != nullptr) {
 
   } else {
 
   }
-  appversionhash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), appversionhash,
+  app_version_hash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), app_version_hash,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.appVersionHash)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.app_version_hash)
 }
 
-// string appVersion = 29 [json_name = "appVersion"];
-inline void Statistics::clear_appversion() {
-  appversion_.ClearToEmpty();
+// string app_version = 29 [json_name = "appVersion"];
+inline void Statistics::clear_app_version() {
+  app_version_.ClearToEmpty();
 }
-inline const std::string& Statistics::appversion() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.appVersion)
-  return _internal_appversion();
+inline const std::string& Statistics::app_version() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.app_version)
+  return _internal_app_version();
 }
-inline void Statistics::set_appversion(const std::string& value) {
-  _internal_set_appversion(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.appVersion)
+inline void Statistics::set_app_version(const std::string& value) {
+  _internal_set_app_version(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.app_version)
 }
-inline std::string* Statistics::mutable_appversion() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.appVersion)
-  return _internal_mutable_appversion();
+inline std::string* Statistics::mutable_app_version() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.app_version)
+  return _internal_mutable_app_version();
 }
-inline const std::string& Statistics::_internal_appversion() const {
-  return appversion_.Get();
+inline const std::string& Statistics::_internal_app_version() const {
+  return app_version_.Get();
 }
-inline void Statistics::_internal_set_appversion(const std::string& value) {
+inline void Statistics::_internal_set_app_version(const std::string& value) {
 
-  appversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  app_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Statistics::set_appversion(std::string&& value) {
+inline void Statistics::set_app_version(std::string&& value) {
 
-  appversion_.Set(
+  app_version_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.appVersion)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.app_version)
 }
-inline void Statistics::set_appversion(const char* value) {
+inline void Statistics::set_app_version(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  appversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.appVersion)
+  app_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.app_version)
 }
-inline void Statistics::set_appversion(const char* value,
+inline void Statistics::set_app_version(const char* value,
     size_t size) {
 
-  appversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  app_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.appVersion)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.app_version)
 }
-inline std::string* Statistics::_internal_mutable_appversion() {
+inline std::string* Statistics::_internal_mutable_app_version() {
 
-  return appversion_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return app_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_appversion() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.appVersion)
-  return appversion_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_app_version() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.app_version)
+  return app_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_appversion(std::string* appversion) {
-  if (appversion != nullptr) {
+inline void Statistics::set_allocated_app_version(std::string* app_version) {
+  if (app_version != nullptr) {
 
   } else {
 
   }
-  appversion_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), appversion,
+  app_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), app_version,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.appVersion)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.app_version)
 }
 
-// string chainVersion = 30 [json_name = "chainVersion"];
-inline void Statistics::clear_chainversion() {
-  chainversion_.ClearToEmpty();
+// string chain_version = 30 [json_name = "chainVersion"];
+inline void Statistics::clear_chain_version() {
+  chain_version_.ClearToEmpty();
 }
-inline const std::string& Statistics::chainversion() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.chainVersion)
-  return _internal_chainversion();
+inline const std::string& Statistics::chain_version() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.chain_version)
+  return _internal_chain_version();
 }
-inline void Statistics::set_chainversion(const std::string& value) {
-  _internal_set_chainversion(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.chainVersion)
+inline void Statistics::set_chain_version(const std::string& value) {
+  _internal_set_chain_version(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.chain_version)
 }
-inline std::string* Statistics::mutable_chainversion() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.chainVersion)
-  return _internal_mutable_chainversion();
+inline std::string* Statistics::mutable_chain_version() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.chain_version)
+  return _internal_mutable_chain_version();
 }
-inline const std::string& Statistics::_internal_chainversion() const {
-  return chainversion_.Get();
+inline const std::string& Statistics::_internal_chain_version() const {
+  return chain_version_.Get();
 }
-inline void Statistics::_internal_set_chainversion(const std::string& value) {
+inline void Statistics::_internal_set_chain_version(const std::string& value) {
 
-  chainversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  chain_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Statistics::set_chainversion(std::string&& value) {
+inline void Statistics::set_chain_version(std::string&& value) {
 
-  chainversion_.Set(
+  chain_version_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.chainVersion)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.chain_version)
 }
-inline void Statistics::set_chainversion(const char* value) {
+inline void Statistics::set_chain_version(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  chainversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.chainVersion)
+  chain_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.chain_version)
 }
-inline void Statistics::set_chainversion(const char* value,
+inline void Statistics::set_chain_version(const char* value,
     size_t size) {
 
-  chainversion_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  chain_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.chainVersion)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.chain_version)
 }
-inline std::string* Statistics::_internal_mutable_chainversion() {
+inline std::string* Statistics::_internal_mutable_chain_version() {
 
-  return chainversion_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return chain_version_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_chainversion() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.chainVersion)
-  return chainversion_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_chain_version() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.chain_version)
+  return chain_version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_chainversion(std::string* chainversion) {
-  if (chainversion != nullptr) {
+inline void Statistics::set_allocated_chain_version(std::string* chain_version) {
+  if (chain_version != nullptr) {
 
   } else {
 
   }
-  chainversion_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chainversion,
+  chain_version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chain_version,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chainVersion)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chain_version)
 }
 
-// uint64 blockDuration = 31 [json_name = "blockDuration"];
-inline void Statistics::clear_blockduration() {
-  blockduration_ = PROTOBUF_ULONGLONG(0);
+// uint64 block_duration = 31 [json_name = "blockDuration"];
+inline void Statistics::clear_block_duration() {
+  block_duration_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_blockduration() const {
-  return blockduration_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::_internal_block_duration() const {
+  return block_duration_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::blockduration() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.blockDuration)
-  return _internal_blockduration();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Statistics::block_duration() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.block_duration)
+  return _internal_block_duration();
 }
-inline void Statistics::_internal_set_blockduration(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Statistics::_internal_set_block_duration(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  blockduration_ = value;
+  block_duration_ = value;
 }
-inline void Statistics::set_blockduration(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_blockduration(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.blockDuration)
+inline void Statistics::set_block_duration(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_block_duration(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.block_duration)
 }
 
 // string uptime = 32 [json_name = "uptime"];
@@ -15434,85 +15910,85 @@ inline void Statistics::set_allocated_uptime(std::string* uptime) {
   // @@protoc_insertion_point(field_set_allocated:vega.Statistics.uptime)
 }
 
-// string chainID = 33 [json_name = "chainID"];
-inline void Statistics::clear_chainid() {
-  chainid_.ClearToEmpty();
+// string chain_id = 33 [json_name = "chainId"];
+inline void Statistics::clear_chain_id() {
+  chain_id_.ClearToEmpty();
 }
-inline const std::string& Statistics::chainid() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.chainID)
-  return _internal_chainid();
+inline const std::string& Statistics::chain_id() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.chain_id)
+  return _internal_chain_id();
 }
-inline void Statistics::set_chainid(const std::string& value) {
-  _internal_set_chainid(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.chainID)
+inline void Statistics::set_chain_id(const std::string& value) {
+  _internal_set_chain_id(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.chain_id)
 }
-inline std::string* Statistics::mutable_chainid() {
-  // @@protoc_insertion_point(field_mutable:vega.Statistics.chainID)
-  return _internal_mutable_chainid();
+inline std::string* Statistics::mutable_chain_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Statistics.chain_id)
+  return _internal_mutable_chain_id();
 }
-inline const std::string& Statistics::_internal_chainid() const {
-  return chainid_.Get();
+inline const std::string& Statistics::_internal_chain_id() const {
+  return chain_id_.Get();
 }
-inline void Statistics::_internal_set_chainid(const std::string& value) {
+inline void Statistics::_internal_set_chain_id(const std::string& value) {
 
-  chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Statistics::set_chainid(std::string&& value) {
+inline void Statistics::set_chain_id(std::string&& value) {
 
-  chainid_.Set(
+  chain_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.chainID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Statistics.chain_id)
 }
-inline void Statistics::set_chainid(const char* value) {
+inline void Statistics::set_chain_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Statistics.chainID)
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Statistics.chain_id)
 }
-inline void Statistics::set_chainid(const char* value,
+inline void Statistics::set_chain_id(const char* value,
     size_t size) {
 
-  chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.chainID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Statistics.chain_id)
 }
-inline std::string* Statistics::_internal_mutable_chainid() {
+inline std::string* Statistics::_internal_mutable_chain_id() {
 
-  return chainid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return chain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Statistics::release_chainid() {
-  // @@protoc_insertion_point(field_release:vega.Statistics.chainID)
-  return chainid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Statistics::release_chain_id() {
+  // @@protoc_insertion_point(field_release:vega.Statistics.chain_id)
+  return chain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Statistics::set_allocated_chainid(std::string* chainid) {
-  if (chainid != nullptr) {
+inline void Statistics::set_allocated_chain_id(std::string* chain_id) {
+  if (chain_id != nullptr) {
 
   } else {
 
   }
-  chainid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chainid,
+  chain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chain_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chainID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Statistics.chain_id)
 }
 
-// uint32 marketDepthUpdatesSubscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];
-inline void Statistics::clear_marketdepthupdatessubscriptions() {
-  marketdepthupdatessubscriptions_ = 0u;
+// uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];
+inline void Statistics::clear_market_depth_updates_subscriptions() {
+  market_depth_updates_subscriptions_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_marketdepthupdatessubscriptions() const {
-  return marketdepthupdatessubscriptions_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::_internal_market_depth_updates_subscriptions() const {
+  return market_depth_updates_subscriptions_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::marketdepthupdatessubscriptions() const {
-  // @@protoc_insertion_point(field_get:vega.Statistics.marketDepthUpdatesSubscriptions)
-  return _internal_marketdepthupdatessubscriptions();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Statistics::market_depth_updates_subscriptions() const {
+  // @@protoc_insertion_point(field_get:vega.Statistics.market_depth_updates_subscriptions)
+  return _internal_market_depth_updates_subscriptions();
 }
-inline void Statistics::_internal_set_marketdepthupdatessubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void Statistics::_internal_set_market_depth_updates_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
-  marketdepthupdatessubscriptions_ = value;
+  market_depth_updates_subscriptions_ = value;
 }
-inline void Statistics::set_marketdepthupdatessubscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_marketdepthupdatessubscriptions(value);
-  // @@protoc_insertion_point(field_set:vega.Statistics.marketDepthUpdatesSubscriptions)
+inline void Statistics::set_market_depth_updates_subscriptions(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_market_depth_updates_subscriptions(value);
+  // @@protoc_insertion_point(field_set:vega.Statistics.market_depth_updates_subscriptions)
 }
 
 // -------------------------------------------------------------------
@@ -15600,65 +16076,65 @@ inline void Deposit::set_status(::vega::Deposit_Status value) {
   // @@protoc_insertion_point(field_set:vega.Deposit.status)
 }
 
-// string partyID = 3 [json_name = "partyID"];
-inline void Deposit::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 3 [json_name = "partyId"];
+inline void Deposit::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& Deposit::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.Deposit.partyID)
-  return _internal_partyid();
+inline const std::string& Deposit::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.party_id)
+  return _internal_party_id();
 }
-inline void Deposit::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.Deposit.partyID)
+inline void Deposit::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.party_id)
 }
-inline std::string* Deposit::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.Deposit.partyID)
-  return _internal_mutable_partyid();
+inline std::string* Deposit::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& Deposit::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& Deposit::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void Deposit::_internal_set_partyid(const std::string& value) {
+inline void Deposit::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Deposit::set_partyid(std::string&& value) {
+inline void Deposit::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.party_id)
 }
-inline void Deposit::set_partyid(const char* value) {
+inline void Deposit::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Deposit.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.party_id)
 }
-inline void Deposit::set_partyid(const char* value,
+inline void Deposit::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.party_id)
 }
-inline std::string* Deposit::_internal_mutable_partyid() {
+inline std::string* Deposit::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Deposit::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.Deposit.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Deposit::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Deposit::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void Deposit::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.party_id)
 }
 
 // string asset = 4 [json_name = "asset"];
@@ -15783,105 +16259,105 @@ inline void Deposit::set_allocated_amount(std::string* amount) {
   // @@protoc_insertion_point(field_set_allocated:vega.Deposit.amount)
 }
 
-// string txHash = 6 [json_name = "txHash"];
-inline void Deposit::clear_txhash() {
-  txhash_.ClearToEmpty();
+// string tx_hash = 6 [json_name = "txHash"];
+inline void Deposit::clear_tx_hash() {
+  tx_hash_.ClearToEmpty();
 }
-inline const std::string& Deposit::txhash() const {
-  // @@protoc_insertion_point(field_get:vega.Deposit.txHash)
-  return _internal_txhash();
+inline const std::string& Deposit::tx_hash() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.tx_hash)
+  return _internal_tx_hash();
 }
-inline void Deposit::set_txhash(const std::string& value) {
-  _internal_set_txhash(value);
-  // @@protoc_insertion_point(field_set:vega.Deposit.txHash)
+inline void Deposit::set_tx_hash(const std::string& value) {
+  _internal_set_tx_hash(value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.tx_hash)
 }
-inline std::string* Deposit::mutable_txhash() {
-  // @@protoc_insertion_point(field_mutable:vega.Deposit.txHash)
-  return _internal_mutable_txhash();
+inline std::string* Deposit::mutable_tx_hash() {
+  // @@protoc_insertion_point(field_mutable:vega.Deposit.tx_hash)
+  return _internal_mutable_tx_hash();
 }
-inline const std::string& Deposit::_internal_txhash() const {
-  return txhash_.Get();
+inline const std::string& Deposit::_internal_tx_hash() const {
+  return tx_hash_.Get();
 }
-inline void Deposit::_internal_set_txhash(const std::string& value) {
+inline void Deposit::_internal_set_tx_hash(const std::string& value) {
 
-  txhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  tx_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Deposit::set_txhash(std::string&& value) {
+inline void Deposit::set_tx_hash(std::string&& value) {
 
-  txhash_.Set(
+  tx_hash_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.txHash)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Deposit.tx_hash)
 }
-inline void Deposit::set_txhash(const char* value) {
+inline void Deposit::set_tx_hash(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  txhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Deposit.txHash)
+  tx_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Deposit.tx_hash)
 }
-inline void Deposit::set_txhash(const char* value,
+inline void Deposit::set_tx_hash(const char* value,
     size_t size) {
 
-  txhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  tx_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.txHash)
+  // @@protoc_insertion_point(field_set_pointer:vega.Deposit.tx_hash)
 }
-inline std::string* Deposit::_internal_mutable_txhash() {
+inline std::string* Deposit::_internal_mutable_tx_hash() {
 
-  return txhash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return tx_hash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Deposit::release_txhash() {
-  // @@protoc_insertion_point(field_release:vega.Deposit.txHash)
-  return txhash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Deposit::release_tx_hash() {
+  // @@protoc_insertion_point(field_release:vega.Deposit.tx_hash)
+  return tx_hash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Deposit::set_allocated_txhash(std::string* txhash) {
-  if (txhash != nullptr) {
+inline void Deposit::set_allocated_tx_hash(std::string* tx_hash) {
+  if (tx_hash != nullptr) {
 
   } else {
 
   }
-  txhash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), txhash,
+  tx_hash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_hash,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.txHash)
+  // @@protoc_insertion_point(field_set_allocated:vega.Deposit.tx_hash)
 }
 
-// int64 creditedTimestamp = 7 [json_name = "creditedTimestamp"];
-inline void Deposit::clear_creditedtimestamp() {
-  creditedtimestamp_ = PROTOBUF_LONGLONG(0);
+// int64 credited_timestamp = 7 [json_name = "creditedTimestamp"];
+inline void Deposit::clear_credited_timestamp() {
+  credited_timestamp_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::_internal_creditedtimestamp() const {
-  return creditedtimestamp_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::_internal_credited_timestamp() const {
+  return credited_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::creditedtimestamp() const {
-  // @@protoc_insertion_point(field_get:vega.Deposit.creditedTimestamp)
-  return _internal_creditedtimestamp();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::credited_timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.credited_timestamp)
+  return _internal_credited_timestamp();
 }
-inline void Deposit::_internal_set_creditedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Deposit::_internal_set_credited_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  creditedtimestamp_ = value;
+  credited_timestamp_ = value;
 }
-inline void Deposit::set_creditedtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_creditedtimestamp(value);
-  // @@protoc_insertion_point(field_set:vega.Deposit.creditedTimestamp)
+inline void Deposit::set_credited_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_credited_timestamp(value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.credited_timestamp)
 }
 
-// int64 createdTimestamp = 8 [json_name = "createdTimestamp"];
-inline void Deposit::clear_createdtimestamp() {
-  createdtimestamp_ = PROTOBUF_LONGLONG(0);
+// int64 created_timestamp = 8 [json_name = "createdTimestamp"];
+inline void Deposit::clear_created_timestamp() {
+  created_timestamp_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::_internal_createdtimestamp() const {
-  return createdtimestamp_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::_internal_created_timestamp() const {
+  return created_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::createdtimestamp() const {
-  // @@protoc_insertion_point(field_get:vega.Deposit.createdTimestamp)
-  return _internal_createdtimestamp();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Deposit::created_timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Deposit.created_timestamp)
+  return _internal_created_timestamp();
 }
-inline void Deposit::_internal_set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Deposit::_internal_set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  createdtimestamp_ = value;
+  created_timestamp_ = value;
 }
-inline void Deposit::set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_createdtimestamp(value);
-  // @@protoc_insertion_point(field_set:vega.Deposit.createdTimestamp)
+inline void Deposit::set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_created_timestamp(value);
+  // @@protoc_insertion_point(field_set:vega.Deposit.created_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -15949,65 +16425,65 @@ inline void Withdrawal::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.id)
 }
 
-// string partyID = 2 [json_name = "partyID"];
-inline void Withdrawal::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 2 [json_name = "partyId"];
+inline void Withdrawal::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& Withdrawal::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.Withdrawal.partyID)
-  return _internal_partyid();
+inline const std::string& Withdrawal::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.party_id)
+  return _internal_party_id();
 }
-inline void Withdrawal::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.Withdrawal.partyID)
+inline void Withdrawal::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.party_id)
 }
-inline std::string* Withdrawal::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.partyID)
-  return _internal_mutable_partyid();
+inline std::string* Withdrawal::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& Withdrawal::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& Withdrawal::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void Withdrawal::_internal_set_partyid(const std::string& value) {
+inline void Withdrawal::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Withdrawal::set_partyid(std::string&& value) {
+inline void Withdrawal::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.party_id)
 }
-inline void Withdrawal::set_partyid(const char* value) {
+inline void Withdrawal::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.party_id)
 }
-inline void Withdrawal::set_partyid(const char* value,
+inline void Withdrawal::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.party_id)
 }
-inline std::string* Withdrawal::_internal_mutable_partyid() {
+inline std::string* Withdrawal::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Withdrawal::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.Withdrawal.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Withdrawal::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Withdrawal::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void Withdrawal::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.party_id)
 }
 
 // uint64 amount = 3 [json_name = "amount"];
@@ -16192,105 +16668,105 @@ inline void Withdrawal::set_expiry(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:vega.Withdrawal.expiry)
 }
 
-// string txHash = 8 [json_name = "txHash"];
-inline void Withdrawal::clear_txhash() {
-  txhash_.ClearToEmpty();
+// string tx_hash = 8 [json_name = "txHash"];
+inline void Withdrawal::clear_tx_hash() {
+  tx_hash_.ClearToEmpty();
 }
-inline const std::string& Withdrawal::txhash() const {
-  // @@protoc_insertion_point(field_get:vega.Withdrawal.txHash)
-  return _internal_txhash();
+inline const std::string& Withdrawal::tx_hash() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.tx_hash)
+  return _internal_tx_hash();
 }
-inline void Withdrawal::set_txhash(const std::string& value) {
-  _internal_set_txhash(value);
-  // @@protoc_insertion_point(field_set:vega.Withdrawal.txHash)
+inline void Withdrawal::set_tx_hash(const std::string& value) {
+  _internal_set_tx_hash(value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.tx_hash)
 }
-inline std::string* Withdrawal::mutable_txhash() {
-  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.txHash)
-  return _internal_mutable_txhash();
+inline std::string* Withdrawal::mutable_tx_hash() {
+  // @@protoc_insertion_point(field_mutable:vega.Withdrawal.tx_hash)
+  return _internal_mutable_tx_hash();
 }
-inline const std::string& Withdrawal::_internal_txhash() const {
-  return txhash_.Get();
+inline const std::string& Withdrawal::_internal_tx_hash() const {
+  return tx_hash_.Get();
 }
-inline void Withdrawal::_internal_set_txhash(const std::string& value) {
+inline void Withdrawal::_internal_set_tx_hash(const std::string& value) {
 
-  txhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  tx_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Withdrawal::set_txhash(std::string&& value) {
+inline void Withdrawal::set_tx_hash(std::string&& value) {
 
-  txhash_.Set(
+  tx_hash_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.txHash)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Withdrawal.tx_hash)
 }
-inline void Withdrawal::set_txhash(const char* value) {
+inline void Withdrawal::set_tx_hash(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  txhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.txHash)
+  tx_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Withdrawal.tx_hash)
 }
-inline void Withdrawal::set_txhash(const char* value,
+inline void Withdrawal::set_tx_hash(const char* value,
     size_t size) {
 
-  txhash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  tx_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.txHash)
+  // @@protoc_insertion_point(field_set_pointer:vega.Withdrawal.tx_hash)
 }
-inline std::string* Withdrawal::_internal_mutable_txhash() {
+inline std::string* Withdrawal::_internal_mutable_tx_hash() {
 
-  return txhash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return tx_hash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Withdrawal::release_txhash() {
-  // @@protoc_insertion_point(field_release:vega.Withdrawal.txHash)
-  return txhash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Withdrawal::release_tx_hash() {
+  // @@protoc_insertion_point(field_release:vega.Withdrawal.tx_hash)
+  return tx_hash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Withdrawal::set_allocated_txhash(std::string* txhash) {
-  if (txhash != nullptr) {
+inline void Withdrawal::set_allocated_tx_hash(std::string* tx_hash) {
+  if (tx_hash != nullptr) {
 
   } else {
 
   }
-  txhash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), txhash,
+  tx_hash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_hash,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.txHash)
+  // @@protoc_insertion_point(field_set_allocated:vega.Withdrawal.tx_hash)
 }
 
-// int64 createdTimestamp = 9 [json_name = "createdTimestamp"];
-inline void Withdrawal::clear_createdtimestamp() {
-  createdtimestamp_ = PROTOBUF_LONGLONG(0);
+// int64 created_timestamp = 9 [json_name = "createdTimestamp"];
+inline void Withdrawal::clear_created_timestamp() {
+  created_timestamp_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::_internal_createdtimestamp() const {
-  return createdtimestamp_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::_internal_created_timestamp() const {
+  return created_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::createdtimestamp() const {
-  // @@protoc_insertion_point(field_get:vega.Withdrawal.createdTimestamp)
-  return _internal_createdtimestamp();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::created_timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.created_timestamp)
+  return _internal_created_timestamp();
 }
-inline void Withdrawal::_internal_set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Withdrawal::_internal_set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  createdtimestamp_ = value;
+  created_timestamp_ = value;
 }
-inline void Withdrawal::set_createdtimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_createdtimestamp(value);
-  // @@protoc_insertion_point(field_set:vega.Withdrawal.createdTimestamp)
+inline void Withdrawal::set_created_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_created_timestamp(value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.created_timestamp)
 }
 
-// int64 withdrawnTimestamp = 10 [json_name = "withdrawnTimestamp"];
-inline void Withdrawal::clear_withdrawntimestamp() {
-  withdrawntimestamp_ = PROTOBUF_LONGLONG(0);
+// int64 withdrawn_timestamp = 10 [json_name = "withdrawnTimestamp"];
+inline void Withdrawal::clear_withdrawn_timestamp() {
+  withdrawn_timestamp_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::_internal_withdrawntimestamp() const {
-  return withdrawntimestamp_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::_internal_withdrawn_timestamp() const {
+  return withdrawn_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::withdrawntimestamp() const {
-  // @@protoc_insertion_point(field_get:vega.Withdrawal.withdrawnTimestamp)
-  return _internal_withdrawntimestamp();
+inline ::PROTOBUF_NAMESPACE_ID::int64 Withdrawal::withdrawn_timestamp() const {
+  // @@protoc_insertion_point(field_get:vega.Withdrawal.withdrawn_timestamp)
+  return _internal_withdrawn_timestamp();
 }
-inline void Withdrawal::_internal_set_withdrawntimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Withdrawal::_internal_set_withdrawn_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  withdrawntimestamp_ = value;
+  withdrawn_timestamp_ = value;
 }
-inline void Withdrawal::set_withdrawntimestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_withdrawntimestamp(value);
-  // @@protoc_insertion_point(field_set:vega.Withdrawal.withdrawnTimestamp)
+inline void Withdrawal::set_withdrawn_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_withdrawn_timestamp(value);
+  // @@protoc_insertion_point(field_set:vega.Withdrawal.withdrawn_timestamp)
 }
 
 // .vega.WithdrawExt ext = 11 [json_name = "ext"];
@@ -16380,65 +16856,65 @@ inline void Withdrawal::set_allocated_ext(::vega::WithdrawExt* ext) {
 
 // WithdrawSubmission
 
-// string partyID = 1 [json_name = "partyID"];
-inline void WithdrawSubmission::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 1 [json_name = "partyId"];
+inline void WithdrawSubmission::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& WithdrawSubmission::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.WithdrawSubmission.partyID)
-  return _internal_partyid();
+inline const std::string& WithdrawSubmission::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.WithdrawSubmission.party_id)
+  return _internal_party_id();
 }
-inline void WithdrawSubmission::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.WithdrawSubmission.partyID)
+inline void WithdrawSubmission::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.WithdrawSubmission.party_id)
 }
-inline std::string* WithdrawSubmission::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.WithdrawSubmission.partyID)
-  return _internal_mutable_partyid();
+inline std::string* WithdrawSubmission::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.WithdrawSubmission.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& WithdrawSubmission::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& WithdrawSubmission::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void WithdrawSubmission::_internal_set_partyid(const std::string& value) {
+inline void WithdrawSubmission::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void WithdrawSubmission::set_partyid(std::string&& value) {
+inline void WithdrawSubmission::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.WithdrawSubmission.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.WithdrawSubmission.party_id)
 }
-inline void WithdrawSubmission::set_partyid(const char* value) {
+inline void WithdrawSubmission::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.WithdrawSubmission.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.WithdrawSubmission.party_id)
 }
-inline void WithdrawSubmission::set_partyid(const char* value,
+inline void WithdrawSubmission::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.WithdrawSubmission.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.WithdrawSubmission.party_id)
 }
-inline std::string* WithdrawSubmission::_internal_mutable_partyid() {
+inline std::string* WithdrawSubmission::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* WithdrawSubmission::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.WithdrawSubmission.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* WithdrawSubmission::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.WithdrawSubmission.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void WithdrawSubmission::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void WithdrawSubmission::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.WithdrawSubmission.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.WithdrawSubmission.party_id)
 }
 
 // uint64 amount = 2 [json_name = "amount"];
@@ -16695,252 +17171,252 @@ inline WithdrawExt::ExtCase WithdrawExt::ext_case() const {
 
 // Erc20WithdrawExt
 
-// string receiverAddress = 1 [json_name = "receiverAddress"];
-inline void Erc20WithdrawExt::clear_receiveraddress() {
-  receiveraddress_.ClearToEmpty();
+// string receiver_address = 1 [json_name = "receiverAddress"];
+inline void Erc20WithdrawExt::clear_receiver_address() {
+  receiver_address_.ClearToEmpty();
 }
-inline const std::string& Erc20WithdrawExt::receiveraddress() const {
-  // @@protoc_insertion_point(field_get:vega.Erc20WithdrawExt.receiverAddress)
-  return _internal_receiveraddress();
+inline const std::string& Erc20WithdrawExt::receiver_address() const {
+  // @@protoc_insertion_point(field_get:vega.Erc20WithdrawExt.receiver_address)
+  return _internal_receiver_address();
 }
-inline void Erc20WithdrawExt::set_receiveraddress(const std::string& value) {
-  _internal_set_receiveraddress(value);
-  // @@protoc_insertion_point(field_set:vega.Erc20WithdrawExt.receiverAddress)
+inline void Erc20WithdrawExt::set_receiver_address(const std::string& value) {
+  _internal_set_receiver_address(value);
+  // @@protoc_insertion_point(field_set:vega.Erc20WithdrawExt.receiver_address)
 }
-inline std::string* Erc20WithdrawExt::mutable_receiveraddress() {
-  // @@protoc_insertion_point(field_mutable:vega.Erc20WithdrawExt.receiverAddress)
-  return _internal_mutable_receiveraddress();
+inline std::string* Erc20WithdrawExt::mutable_receiver_address() {
+  // @@protoc_insertion_point(field_mutable:vega.Erc20WithdrawExt.receiver_address)
+  return _internal_mutable_receiver_address();
 }
-inline const std::string& Erc20WithdrawExt::_internal_receiveraddress() const {
-  return receiveraddress_.Get();
+inline const std::string& Erc20WithdrawExt::_internal_receiver_address() const {
+  return receiver_address_.Get();
 }
-inline void Erc20WithdrawExt::_internal_set_receiveraddress(const std::string& value) {
+inline void Erc20WithdrawExt::_internal_set_receiver_address(const std::string& value) {
 
-  receiveraddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  receiver_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Erc20WithdrawExt::set_receiveraddress(std::string&& value) {
+inline void Erc20WithdrawExt::set_receiver_address(std::string&& value) {
 
-  receiveraddress_.Set(
+  receiver_address_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Erc20WithdrawExt.receiverAddress)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Erc20WithdrawExt.receiver_address)
 }
-inline void Erc20WithdrawExt::set_receiveraddress(const char* value) {
+inline void Erc20WithdrawExt::set_receiver_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  receiveraddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Erc20WithdrawExt.receiverAddress)
+  receiver_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Erc20WithdrawExt.receiver_address)
 }
-inline void Erc20WithdrawExt::set_receiveraddress(const char* value,
+inline void Erc20WithdrawExt::set_receiver_address(const char* value,
     size_t size) {
 
-  receiveraddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  receiver_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Erc20WithdrawExt.receiverAddress)
+  // @@protoc_insertion_point(field_set_pointer:vega.Erc20WithdrawExt.receiver_address)
 }
-inline std::string* Erc20WithdrawExt::_internal_mutable_receiveraddress() {
+inline std::string* Erc20WithdrawExt::_internal_mutable_receiver_address() {
 
-  return receiveraddress_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return receiver_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Erc20WithdrawExt::release_receiveraddress() {
-  // @@protoc_insertion_point(field_release:vega.Erc20WithdrawExt.receiverAddress)
-  return receiveraddress_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Erc20WithdrawExt::release_receiver_address() {
+  // @@protoc_insertion_point(field_release:vega.Erc20WithdrawExt.receiver_address)
+  return receiver_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Erc20WithdrawExt::set_allocated_receiveraddress(std::string* receiveraddress) {
-  if (receiveraddress != nullptr) {
+inline void Erc20WithdrawExt::set_allocated_receiver_address(std::string* receiver_address) {
+  if (receiver_address != nullptr) {
 
   } else {
 
   }
-  receiveraddress_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), receiveraddress,
+  receiver_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), receiver_address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Erc20WithdrawExt.receiverAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.Erc20WithdrawExt.receiver_address)
 }
 
 // -------------------------------------------------------------------
 
 // OrderAmendment
 
-// string orderID = 1 [json_name = "orderID", (.validator.field) = {
-inline void OrderAmendment::clear_orderid() {
-  orderid_.ClearToEmpty();
+// string order_id = 1 [json_name = "orderId", (.validator.field) = {
+inline void OrderAmendment::clear_order_id() {
+  order_id_.ClearToEmpty();
 }
-inline const std::string& OrderAmendment::orderid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.orderID)
-  return _internal_orderid();
+inline const std::string& OrderAmendment::order_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.order_id)
+  return _internal_order_id();
 }
-inline void OrderAmendment::set_orderid(const std::string& value) {
-  _internal_set_orderid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderAmendment.orderID)
+inline void OrderAmendment::set_order_id(const std::string& value) {
+  _internal_set_order_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.order_id)
 }
-inline std::string* OrderAmendment::mutable_orderid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.orderID)
-  return _internal_mutable_orderid();
+inline std::string* OrderAmendment::mutable_order_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.order_id)
+  return _internal_mutable_order_id();
 }
-inline const std::string& OrderAmendment::_internal_orderid() const {
-  return orderid_.Get();
+inline const std::string& OrderAmendment::_internal_order_id() const {
+  return order_id_.Get();
 }
-inline void OrderAmendment::_internal_set_orderid(const std::string& value) {
+inline void OrderAmendment::_internal_set_order_id(const std::string& value) {
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderAmendment::set_orderid(std::string&& value) {
+inline void OrderAmendment::set_order_id(std::string&& value) {
 
-  orderid_.Set(
+  order_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderAmendment.orderID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderAmendment.order_id)
 }
-inline void OrderAmendment::set_orderid(const char* value) {
+inline void OrderAmendment::set_order_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderAmendment.orderID)
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderAmendment.order_id)
 }
-inline void OrderAmendment::set_orderid(const char* value,
+inline void OrderAmendment::set_order_id(const char* value,
     size_t size) {
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderAmendment.orderID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderAmendment.order_id)
 }
-inline std::string* OrderAmendment::_internal_mutable_orderid() {
+inline std::string* OrderAmendment::_internal_mutable_order_id() {
 
-  return orderid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return order_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderAmendment::release_orderid() {
-  // @@protoc_insertion_point(field_release:vega.OrderAmendment.orderID)
-  return orderid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderAmendment::release_order_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderAmendment.order_id)
+  return order_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderAmendment::set_allocated_orderid(std::string* orderid) {
-  if (orderid != nullptr) {
+inline void OrderAmendment::set_allocated_order_id(std::string* order_id) {
+  if (order_id != nullptr) {
 
   } else {
 
   }
-  orderid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), orderid,
+  order_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), order_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.orderID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.order_id)
 }
 
-// string partyID = 2 [json_name = "partyID", (.validator.field) = {
-inline void OrderAmendment::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 2 [json_name = "partyId", (.validator.field) = {
+inline void OrderAmendment::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& OrderAmendment::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.partyID)
-  return _internal_partyid();
+inline const std::string& OrderAmendment::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.party_id)
+  return _internal_party_id();
 }
-inline void OrderAmendment::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderAmendment.partyID)
+inline void OrderAmendment::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.party_id)
 }
-inline std::string* OrderAmendment::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.partyID)
-  return _internal_mutable_partyid();
+inline std::string* OrderAmendment::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& OrderAmendment::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& OrderAmendment::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void OrderAmendment::_internal_set_partyid(const std::string& value) {
+inline void OrderAmendment::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderAmendment::set_partyid(std::string&& value) {
+inline void OrderAmendment::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderAmendment.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderAmendment.party_id)
 }
-inline void OrderAmendment::set_partyid(const char* value) {
+inline void OrderAmendment::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderAmendment.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderAmendment.party_id)
 }
-inline void OrderAmendment::set_partyid(const char* value,
+inline void OrderAmendment::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderAmendment.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderAmendment.party_id)
 }
-inline std::string* OrderAmendment::_internal_mutable_partyid() {
+inline std::string* OrderAmendment::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderAmendment::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.OrderAmendment.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderAmendment::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderAmendment.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderAmendment::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void OrderAmendment::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.party_id)
 }
 
-// string marketID = 3 [json_name = "marketID"];
-inline void OrderAmendment::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 3 [json_name = "marketId"];
+inline void OrderAmendment::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& OrderAmendment::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.marketID)
-  return _internal_marketid();
+inline const std::string& OrderAmendment::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.market_id)
+  return _internal_market_id();
 }
-inline void OrderAmendment::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderAmendment.marketID)
+inline void OrderAmendment::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.market_id)
 }
-inline std::string* OrderAmendment::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.marketID)
-  return _internal_mutable_marketid();
+inline std::string* OrderAmendment::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& OrderAmendment::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& OrderAmendment::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void OrderAmendment::_internal_set_marketid(const std::string& value) {
+inline void OrderAmendment::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderAmendment::set_marketid(std::string&& value) {
+inline void OrderAmendment::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderAmendment.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderAmendment.market_id)
 }
-inline void OrderAmendment::set_marketid(const char* value) {
+inline void OrderAmendment::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderAmendment.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderAmendment.market_id)
 }
-inline void OrderAmendment::set_marketid(const char* value,
+inline void OrderAmendment::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderAmendment.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderAmendment.market_id)
 }
-inline std::string* OrderAmendment::_internal_mutable_marketid() {
+inline std::string* OrderAmendment::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderAmendment::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.OrderAmendment.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderAmendment::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderAmendment.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderAmendment::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void OrderAmendment::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.market_id)
 }
 
 // .vega.Price price = 4 [json_name = "price"];
@@ -17026,224 +17502,224 @@ inline void OrderAmendment::set_allocated_price(::vega::Price* price) {
   // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.price)
 }
 
-// int64 sizeDelta = 5 [json_name = "sizeDelta"];
-inline void OrderAmendment::clear_sizedelta() {
-  sizedelta_ = PROTOBUF_LONGLONG(0);
+// int64 size_delta = 5 [json_name = "sizeDelta"];
+inline void OrderAmendment::clear_size_delta() {
+  size_delta_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 OrderAmendment::_internal_sizedelta() const {
-  return sizedelta_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 OrderAmendment::_internal_size_delta() const {
+  return size_delta_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 OrderAmendment::sizedelta() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.sizeDelta)
-  return _internal_sizedelta();
+inline ::PROTOBUF_NAMESPACE_ID::int64 OrderAmendment::size_delta() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.size_delta)
+  return _internal_size_delta();
 }
-inline void OrderAmendment::_internal_set_sizedelta(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void OrderAmendment::_internal_set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  sizedelta_ = value;
+  size_delta_ = value;
 }
-inline void OrderAmendment::set_sizedelta(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_sizedelta(value);
-  // @@protoc_insertion_point(field_set:vega.OrderAmendment.sizeDelta)
+inline void OrderAmendment::set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_size_delta(value);
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.size_delta)
 }
 
-// .vega.Timestamp expiresAt = 6 [json_name = "expiresAt"];
-inline bool OrderAmendment::_internal_has_expiresat() const {
-  return this != internal_default_instance() && expiresat_ != nullptr;
+// .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
+inline bool OrderAmendment::_internal_has_expires_at() const {
+  return this != internal_default_instance() && expires_at_ != nullptr;
 }
-inline bool OrderAmendment::has_expiresat() const {
-  return _internal_has_expiresat();
+inline bool OrderAmendment::has_expires_at() const {
+  return _internal_has_expires_at();
 }
-inline void OrderAmendment::clear_expiresat() {
-  if (GetArena() == nullptr && expiresat_ != nullptr) {
-    delete expiresat_;
+inline void OrderAmendment::clear_expires_at() {
+  if (GetArena() == nullptr && expires_at_ != nullptr) {
+    delete expires_at_;
   }
-  expiresat_ = nullptr;
+  expires_at_ = nullptr;
 }
-inline const ::vega::Timestamp& OrderAmendment::_internal_expiresat() const {
-  const ::vega::Timestamp* p = expiresat_;
+inline const ::vega::Timestamp& OrderAmendment::_internal_expires_at() const {
+  const ::vega::Timestamp* p = expires_at_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::Timestamp&>(
       ::vega::_Timestamp_default_instance_);
 }
-inline const ::vega::Timestamp& OrderAmendment::expiresat() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.expiresAt)
-  return _internal_expiresat();
+inline const ::vega::Timestamp& OrderAmendment::expires_at() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.expires_at)
+  return _internal_expires_at();
 }
-inline void OrderAmendment::unsafe_arena_set_allocated_expiresat(
-    ::vega::Timestamp* expiresat) {
+inline void OrderAmendment::unsafe_arena_set_allocated_expires_at(
+    ::vega::Timestamp* expires_at) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(expiresat_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(expires_at_);
   }
-  expiresat_ = expiresat;
-  if (expiresat) {
+  expires_at_ = expires_at;
+  if (expires_at) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.OrderAmendment.expiresAt)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.OrderAmendment.expires_at)
 }
-inline ::vega::Timestamp* OrderAmendment::release_expiresat() {
+inline ::vega::Timestamp* OrderAmendment::release_expires_at() {
 
-  ::vega::Timestamp* temp = expiresat_;
-  expiresat_ = nullptr;
+  ::vega::Timestamp* temp = expires_at_;
+  expires_at_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Timestamp* OrderAmendment::unsafe_arena_release_expiresat() {
-  // @@protoc_insertion_point(field_release:vega.OrderAmendment.expiresAt)
+inline ::vega::Timestamp* OrderAmendment::unsafe_arena_release_expires_at() {
+  // @@protoc_insertion_point(field_release:vega.OrderAmendment.expires_at)
 
-  ::vega::Timestamp* temp = expiresat_;
-  expiresat_ = nullptr;
+  ::vega::Timestamp* temp = expires_at_;
+  expires_at_ = nullptr;
   return temp;
 }
-inline ::vega::Timestamp* OrderAmendment::_internal_mutable_expiresat() {
+inline ::vega::Timestamp* OrderAmendment::_internal_mutable_expires_at() {
 
-  if (expiresat_ == nullptr) {
+  if (expires_at_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::Timestamp>(GetArena());
-    expiresat_ = p;
+    expires_at_ = p;
   }
-  return expiresat_;
+  return expires_at_;
 }
-inline ::vega::Timestamp* OrderAmendment::mutable_expiresat() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.expiresAt)
-  return _internal_mutable_expiresat();
+inline ::vega::Timestamp* OrderAmendment::mutable_expires_at() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.expires_at)
+  return _internal_mutable_expires_at();
 }
-inline void OrderAmendment::set_allocated_expiresat(::vega::Timestamp* expiresat) {
+inline void OrderAmendment::set_allocated_expires_at(::vega::Timestamp* expires_at) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete expiresat_;
+    delete expires_at_;
   }
-  if (expiresat) {
+  if (expires_at) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(expiresat);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(expires_at);
     if (message_arena != submessage_arena) {
-      expiresat = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, expiresat, submessage_arena);
+      expires_at = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, expires_at, submessage_arena);
     }
 
   } else {
 
   }
-  expiresat_ = expiresat;
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.expiresAt)
+  expires_at_ = expires_at;
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.expires_at)
 }
 
-// .vega.Order.TimeInForce timeInForce = 7 [json_name = "timeInForce"];
-inline void OrderAmendment::clear_timeinforce() {
-  timeinforce_ = 0;
+// .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+inline void OrderAmendment::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::vega::Order_TimeInForce OrderAmendment::_internal_timeinforce() const {
-  return static_cast< ::vega::Order_TimeInForce >(timeinforce_);
+inline ::vega::Order_TimeInForce OrderAmendment::_internal_time_in_force() const {
+  return static_cast< ::vega::Order_TimeInForce >(time_in_force_);
 }
-inline ::vega::Order_TimeInForce OrderAmendment::timeinforce() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.timeInForce)
-  return _internal_timeinforce();
+inline ::vega::Order_TimeInForce OrderAmendment::time_in_force() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.time_in_force)
+  return _internal_time_in_force();
 }
-inline void OrderAmendment::_internal_set_timeinforce(::vega::Order_TimeInForce value) {
+inline void OrderAmendment::_internal_set_time_in_force(::vega::Order_TimeInForce value) {
 
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void OrderAmendment::set_timeinforce(::vega::Order_TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:vega.OrderAmendment.timeInForce)
+inline void OrderAmendment::set_time_in_force(::vega::Order_TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.time_in_force)
 }
 
-// .google.protobuf.Int64Value peggedOffset = 8 [json_name = "peggedOffset"];
-inline bool OrderAmendment::_internal_has_peggedoffset() const {
-  return this != internal_default_instance() && peggedoffset_ != nullptr;
+// .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
+inline bool OrderAmendment::_internal_has_pegged_offset() const {
+  return this != internal_default_instance() && pegged_offset_ != nullptr;
 }
-inline bool OrderAmendment::has_peggedoffset() const {
-  return _internal_has_peggedoffset();
+inline bool OrderAmendment::has_pegged_offset() const {
+  return _internal_has_pegged_offset();
 }
-inline const PROTOBUF_NAMESPACE_ID::Int64Value& OrderAmendment::_internal_peggedoffset() const {
-  const PROTOBUF_NAMESPACE_ID::Int64Value* p = peggedoffset_;
+inline const PROTOBUF_NAMESPACE_ID::Int64Value& OrderAmendment::_internal_pegged_offset() const {
+  const PROTOBUF_NAMESPACE_ID::Int64Value* p = pegged_offset_;
   return p != nullptr ? *p : reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Int64Value&>(
       PROTOBUF_NAMESPACE_ID::_Int64Value_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Int64Value& OrderAmendment::peggedoffset() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.peggedOffset)
-  return _internal_peggedoffset();
+inline const PROTOBUF_NAMESPACE_ID::Int64Value& OrderAmendment::pegged_offset() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.pegged_offset)
+  return _internal_pegged_offset();
 }
-inline void OrderAmendment::unsafe_arena_set_allocated_peggedoffset(
-    PROTOBUF_NAMESPACE_ID::Int64Value* peggedoffset) {
+inline void OrderAmendment::unsafe_arena_set_allocated_pegged_offset(
+    PROTOBUF_NAMESPACE_ID::Int64Value* pegged_offset) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(peggedoffset_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pegged_offset_);
   }
-  peggedoffset_ = peggedoffset;
-  if (peggedoffset) {
+  pegged_offset_ = pegged_offset;
+  if (pegged_offset) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.OrderAmendment.peggedOffset)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.OrderAmendment.pegged_offset)
 }
-inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::release_peggedoffset() {
+inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::release_pegged_offset() {
 
-  PROTOBUF_NAMESPACE_ID::Int64Value* temp = peggedoffset_;
-  peggedoffset_ = nullptr;
+  PROTOBUF_NAMESPACE_ID::Int64Value* temp = pegged_offset_;
+  pegged_offset_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::unsafe_arena_release_peggedoffset() {
-  // @@protoc_insertion_point(field_release:vega.OrderAmendment.peggedOffset)
+inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::unsafe_arena_release_pegged_offset() {
+  // @@protoc_insertion_point(field_release:vega.OrderAmendment.pegged_offset)
 
-  PROTOBUF_NAMESPACE_ID::Int64Value* temp = peggedoffset_;
-  peggedoffset_ = nullptr;
+  PROTOBUF_NAMESPACE_ID::Int64Value* temp = pegged_offset_;
+  pegged_offset_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::_internal_mutable_peggedoffset() {
+inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::_internal_mutable_pegged_offset() {
 
-  if (peggedoffset_ == nullptr) {
+  if (pegged_offset_ == nullptr) {
     auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Int64Value>(GetArena());
-    peggedoffset_ = p;
+    pegged_offset_ = p;
   }
-  return peggedoffset_;
+  return pegged_offset_;
 }
-inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::mutable_peggedoffset() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.peggedOffset)
-  return _internal_mutable_peggedoffset();
+inline PROTOBUF_NAMESPACE_ID::Int64Value* OrderAmendment::mutable_pegged_offset() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderAmendment.pegged_offset)
+  return _internal_mutable_pegged_offset();
 }
-inline void OrderAmendment::set_allocated_peggedoffset(PROTOBUF_NAMESPACE_ID::Int64Value* peggedoffset) {
+inline void OrderAmendment::set_allocated_pegged_offset(PROTOBUF_NAMESPACE_ID::Int64Value* pegged_offset) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(peggedoffset_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pegged_offset_);
   }
-  if (peggedoffset) {
+  if (pegged_offset) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(peggedoffset)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pegged_offset)->GetArena();
     if (message_arena != submessage_arena) {
-      peggedoffset = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, peggedoffset, submessage_arena);
+      pegged_offset = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pegged_offset, submessage_arena);
     }
 
   } else {
 
   }
-  peggedoffset_ = peggedoffset;
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.peggedOffset)
+  pegged_offset_ = pegged_offset;
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderAmendment.pegged_offset)
 }
 
-// .vega.PeggedReference peggedReference = 9 [json_name = "peggedReference"];
-inline void OrderAmendment::clear_peggedreference() {
-  peggedreference_ = 0;
+// .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
+inline void OrderAmendment::clear_pegged_reference() {
+  pegged_reference_ = 0;
 }
-inline ::vega::PeggedReference OrderAmendment::_internal_peggedreference() const {
-  return static_cast< ::vega::PeggedReference >(peggedreference_);
+inline ::vega::PeggedReference OrderAmendment::_internal_pegged_reference() const {
+  return static_cast< ::vega::PeggedReference >(pegged_reference_);
 }
-inline ::vega::PeggedReference OrderAmendment::peggedreference() const {
-  // @@protoc_insertion_point(field_get:vega.OrderAmendment.peggedReference)
-  return _internal_peggedreference();
+inline ::vega::PeggedReference OrderAmendment::pegged_reference() const {
+  // @@protoc_insertion_point(field_get:vega.OrderAmendment.pegged_reference)
+  return _internal_pegged_reference();
 }
-inline void OrderAmendment::_internal_set_peggedreference(::vega::PeggedReference value) {
+inline void OrderAmendment::_internal_set_pegged_reference(::vega::PeggedReference value) {
 
-  peggedreference_ = value;
+  pegged_reference_ = value;
 }
-inline void OrderAmendment::set_peggedreference(::vega::PeggedReference value) {
-  _internal_set_peggedreference(value);
-  // @@protoc_insertion_point(field_set:vega.OrderAmendment.peggedReference)
+inline void OrderAmendment::set_pegged_reference(::vega::PeggedReference value) {
+  _internal_set_pegged_reference(value);
+  // @@protoc_insertion_point(field_set:vega.OrderAmendment.pegged_reference)
 }
 
 // -------------------------------------------------------------------
@@ -17311,126 +17787,126 @@ inline void OrderSubmission::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.id)
 }
 
-// string marketID = 2 [json_name = "marketID", (.validator.field) = {
-inline void OrderSubmission::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 2 [json_name = "marketId", (.validator.field) = {
+inline void OrderSubmission::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& OrderSubmission::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderSubmission.marketID)
-  return _internal_marketid();
+inline const std::string& OrderSubmission::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderSubmission.market_id)
+  return _internal_market_id();
 }
-inline void OrderSubmission::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderSubmission.marketID)
+inline void OrderSubmission::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderSubmission.market_id)
 }
-inline std::string* OrderSubmission::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderSubmission.marketID)
-  return _internal_mutable_marketid();
+inline std::string* OrderSubmission::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderSubmission.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& OrderSubmission::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& OrderSubmission::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void OrderSubmission::_internal_set_marketid(const std::string& value) {
+inline void OrderSubmission::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderSubmission::set_marketid(std::string&& value) {
+inline void OrderSubmission::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderSubmission.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderSubmission.market_id)
 }
-inline void OrderSubmission::set_marketid(const char* value) {
+inline void OrderSubmission::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderSubmission.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderSubmission.market_id)
 }
-inline void OrderSubmission::set_marketid(const char* value,
+inline void OrderSubmission::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderSubmission.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderSubmission.market_id)
 }
-inline std::string* OrderSubmission::_internal_mutable_marketid() {
+inline std::string* OrderSubmission::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderSubmission::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.OrderSubmission.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderSubmission::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderSubmission.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderSubmission::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void OrderSubmission::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.market_id)
 }
 
-// string partyID = 3 [json_name = "partyID", (.validator.field) = {
-inline void OrderSubmission::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 3 [json_name = "partyId", (.validator.field) = {
+inline void OrderSubmission::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& OrderSubmission::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderSubmission.partyID)
-  return _internal_partyid();
+inline const std::string& OrderSubmission::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderSubmission.party_id)
+  return _internal_party_id();
 }
-inline void OrderSubmission::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderSubmission.partyID)
+inline void OrderSubmission::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderSubmission.party_id)
 }
-inline std::string* OrderSubmission::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderSubmission.partyID)
-  return _internal_mutable_partyid();
+inline std::string* OrderSubmission::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderSubmission.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& OrderSubmission::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& OrderSubmission::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void OrderSubmission::_internal_set_partyid(const std::string& value) {
+inline void OrderSubmission::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderSubmission::set_partyid(std::string&& value) {
+inline void OrderSubmission::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderSubmission.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderSubmission.party_id)
 }
-inline void OrderSubmission::set_partyid(const char* value) {
+inline void OrderSubmission::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderSubmission.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderSubmission.party_id)
 }
-inline void OrderSubmission::set_partyid(const char* value,
+inline void OrderSubmission::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderSubmission.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderSubmission.party_id)
 }
-inline std::string* OrderSubmission::_internal_mutable_partyid() {
+inline std::string* OrderSubmission::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderSubmission::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.OrderSubmission.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderSubmission::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderSubmission.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderSubmission::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void OrderSubmission::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.party_id)
 }
 
 // uint64 price = 4 [json_name = "price"];
@@ -17493,44 +17969,44 @@ inline void OrderSubmission::set_side(::vega::Side value) {
   // @@protoc_insertion_point(field_set:vega.OrderSubmission.side)
 }
 
-// .vega.Order.TimeInForce timeInForce = 7 [json_name = "timeInForce", (.validator.field) = {
-inline void OrderSubmission::clear_timeinforce() {
-  timeinforce_ = 0;
+// .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce", (.validator.field) = {
+inline void OrderSubmission::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::vega::Order_TimeInForce OrderSubmission::_internal_timeinforce() const {
-  return static_cast< ::vega::Order_TimeInForce >(timeinforce_);
+inline ::vega::Order_TimeInForce OrderSubmission::_internal_time_in_force() const {
+  return static_cast< ::vega::Order_TimeInForce >(time_in_force_);
 }
-inline ::vega::Order_TimeInForce OrderSubmission::timeinforce() const {
-  // @@protoc_insertion_point(field_get:vega.OrderSubmission.timeInForce)
-  return _internal_timeinforce();
+inline ::vega::Order_TimeInForce OrderSubmission::time_in_force() const {
+  // @@protoc_insertion_point(field_get:vega.OrderSubmission.time_in_force)
+  return _internal_time_in_force();
 }
-inline void OrderSubmission::_internal_set_timeinforce(::vega::Order_TimeInForce value) {
+inline void OrderSubmission::_internal_set_time_in_force(::vega::Order_TimeInForce value) {
 
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void OrderSubmission::set_timeinforce(::vega::Order_TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:vega.OrderSubmission.timeInForce)
+inline void OrderSubmission::set_time_in_force(::vega::Order_TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:vega.OrderSubmission.time_in_force)
 }
 
-// int64 expiresAt = 8 [json_name = "expiresAt"];
-inline void OrderSubmission::clear_expiresat() {
-  expiresat_ = PROTOBUF_LONGLONG(0);
+// int64 expires_at = 8 [json_name = "expiresAt"];
+inline void OrderSubmission::clear_expires_at() {
+  expires_at_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 OrderSubmission::_internal_expiresat() const {
-  return expiresat_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 OrderSubmission::_internal_expires_at() const {
+  return expires_at_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 OrderSubmission::expiresat() const {
-  // @@protoc_insertion_point(field_get:vega.OrderSubmission.expiresAt)
-  return _internal_expiresat();
+inline ::PROTOBUF_NAMESPACE_ID::int64 OrderSubmission::expires_at() const {
+  // @@protoc_insertion_point(field_get:vega.OrderSubmission.expires_at)
+  return _internal_expires_at();
 }
-inline void OrderSubmission::_internal_set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void OrderSubmission::_internal_set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  expiresat_ = value;
+  expires_at_ = value;
 }
-inline void OrderSubmission::set_expiresat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_expiresat(value);
-  // @@protoc_insertion_point(field_set:vega.OrderSubmission.expiresAt)
+inline void OrderSubmission::set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_expires_at(value);
+  // @@protoc_insertion_point(field_set:vega.OrderSubmission.expires_at)
 }
 
 // .vega.Order.Type type = 9 [json_name = "type", (.validator.field) = {
@@ -17614,465 +18090,465 @@ inline void OrderSubmission::set_allocated_reference(std::string* reference) {
   // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.reference)
 }
 
-// .vega.PeggedOrder peggedOrder = 11 [json_name = "peggedOrder"];
-inline bool OrderSubmission::_internal_has_peggedorder() const {
-  return this != internal_default_instance() && peggedorder_ != nullptr;
+// .vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];
+inline bool OrderSubmission::_internal_has_pegged_order() const {
+  return this != internal_default_instance() && pegged_order_ != nullptr;
 }
-inline bool OrderSubmission::has_peggedorder() const {
-  return _internal_has_peggedorder();
+inline bool OrderSubmission::has_pegged_order() const {
+  return _internal_has_pegged_order();
 }
-inline void OrderSubmission::clear_peggedorder() {
-  if (GetArena() == nullptr && peggedorder_ != nullptr) {
-    delete peggedorder_;
+inline void OrderSubmission::clear_pegged_order() {
+  if (GetArena() == nullptr && pegged_order_ != nullptr) {
+    delete pegged_order_;
   }
-  peggedorder_ = nullptr;
+  pegged_order_ = nullptr;
 }
-inline const ::vega::PeggedOrder& OrderSubmission::_internal_peggedorder() const {
-  const ::vega::PeggedOrder* p = peggedorder_;
+inline const ::vega::PeggedOrder& OrderSubmission::_internal_pegged_order() const {
+  const ::vega::PeggedOrder* p = pegged_order_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::PeggedOrder&>(
       ::vega::_PeggedOrder_default_instance_);
 }
-inline const ::vega::PeggedOrder& OrderSubmission::peggedorder() const {
-  // @@protoc_insertion_point(field_get:vega.OrderSubmission.peggedOrder)
-  return _internal_peggedorder();
+inline const ::vega::PeggedOrder& OrderSubmission::pegged_order() const {
+  // @@protoc_insertion_point(field_get:vega.OrderSubmission.pegged_order)
+  return _internal_pegged_order();
 }
-inline void OrderSubmission::unsafe_arena_set_allocated_peggedorder(
-    ::vega::PeggedOrder* peggedorder) {
+inline void OrderSubmission::unsafe_arena_set_allocated_pegged_order(
+    ::vega::PeggedOrder* pegged_order) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(peggedorder_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pegged_order_);
   }
-  peggedorder_ = peggedorder;
-  if (peggedorder) {
+  pegged_order_ = pegged_order;
+  if (pegged_order) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.OrderSubmission.peggedOrder)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.OrderSubmission.pegged_order)
 }
-inline ::vega::PeggedOrder* OrderSubmission::release_peggedorder() {
+inline ::vega::PeggedOrder* OrderSubmission::release_pegged_order() {
 
-  ::vega::PeggedOrder* temp = peggedorder_;
-  peggedorder_ = nullptr;
+  ::vega::PeggedOrder* temp = pegged_order_;
+  pegged_order_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::PeggedOrder* OrderSubmission::unsafe_arena_release_peggedorder() {
-  // @@protoc_insertion_point(field_release:vega.OrderSubmission.peggedOrder)
+inline ::vega::PeggedOrder* OrderSubmission::unsafe_arena_release_pegged_order() {
+  // @@protoc_insertion_point(field_release:vega.OrderSubmission.pegged_order)
 
-  ::vega::PeggedOrder* temp = peggedorder_;
-  peggedorder_ = nullptr;
+  ::vega::PeggedOrder* temp = pegged_order_;
+  pegged_order_ = nullptr;
   return temp;
 }
-inline ::vega::PeggedOrder* OrderSubmission::_internal_mutable_peggedorder() {
+inline ::vega::PeggedOrder* OrderSubmission::_internal_mutable_pegged_order() {
 
-  if (peggedorder_ == nullptr) {
+  if (pegged_order_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::PeggedOrder>(GetArena());
-    peggedorder_ = p;
+    pegged_order_ = p;
   }
-  return peggedorder_;
+  return pegged_order_;
 }
-inline ::vega::PeggedOrder* OrderSubmission::mutable_peggedorder() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderSubmission.peggedOrder)
-  return _internal_mutable_peggedorder();
+inline ::vega::PeggedOrder* OrderSubmission::mutable_pegged_order() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderSubmission.pegged_order)
+  return _internal_mutable_pegged_order();
 }
-inline void OrderSubmission::set_allocated_peggedorder(::vega::PeggedOrder* peggedorder) {
+inline void OrderSubmission::set_allocated_pegged_order(::vega::PeggedOrder* pegged_order) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete peggedorder_;
+    delete pegged_order_;
   }
-  if (peggedorder) {
+  if (pegged_order) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(peggedorder);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(pegged_order);
     if (message_arena != submessage_arena) {
-      peggedorder = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, peggedorder, submessage_arena);
+      pegged_order = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pegged_order, submessage_arena);
     }
 
   } else {
 
   }
-  peggedorder_ = peggedorder;
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.peggedOrder)
+  pegged_order_ = pegged_order;
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderSubmission.pegged_order)
 }
 
 // -------------------------------------------------------------------
 
 // OrderCancellation
 
-// string orderID = 1 [json_name = "orderID"];
-inline void OrderCancellation::clear_orderid() {
-  orderid_.ClearToEmpty();
+// string order_id = 1 [json_name = "orderId"];
+inline void OrderCancellation::clear_order_id() {
+  order_id_.ClearToEmpty();
 }
-inline const std::string& OrderCancellation::orderid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderCancellation.orderID)
-  return _internal_orderid();
+inline const std::string& OrderCancellation::order_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderCancellation.order_id)
+  return _internal_order_id();
 }
-inline void OrderCancellation::set_orderid(const std::string& value) {
-  _internal_set_orderid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderCancellation.orderID)
+inline void OrderCancellation::set_order_id(const std::string& value) {
+  _internal_set_order_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderCancellation.order_id)
 }
-inline std::string* OrderCancellation::mutable_orderid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderCancellation.orderID)
-  return _internal_mutable_orderid();
+inline std::string* OrderCancellation::mutable_order_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderCancellation.order_id)
+  return _internal_mutable_order_id();
 }
-inline const std::string& OrderCancellation::_internal_orderid() const {
-  return orderid_.Get();
+inline const std::string& OrderCancellation::_internal_order_id() const {
+  return order_id_.Get();
 }
-inline void OrderCancellation::_internal_set_orderid(const std::string& value) {
+inline void OrderCancellation::_internal_set_order_id(const std::string& value) {
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderCancellation::set_orderid(std::string&& value) {
+inline void OrderCancellation::set_order_id(std::string&& value) {
 
-  orderid_.Set(
+  order_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderCancellation.orderID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderCancellation.order_id)
 }
-inline void OrderCancellation::set_orderid(const char* value) {
+inline void OrderCancellation::set_order_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderCancellation.orderID)
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderCancellation.order_id)
 }
-inline void OrderCancellation::set_orderid(const char* value,
+inline void OrderCancellation::set_order_id(const char* value,
     size_t size) {
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderCancellation.orderID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderCancellation.order_id)
 }
-inline std::string* OrderCancellation::_internal_mutable_orderid() {
+inline std::string* OrderCancellation::_internal_mutable_order_id() {
 
-  return orderid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return order_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderCancellation::release_orderid() {
-  // @@protoc_insertion_point(field_release:vega.OrderCancellation.orderID)
-  return orderid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderCancellation::release_order_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderCancellation.order_id)
+  return order_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderCancellation::set_allocated_orderid(std::string* orderid) {
-  if (orderid != nullptr) {
+inline void OrderCancellation::set_allocated_order_id(std::string* order_id) {
+  if (order_id != nullptr) {
 
   } else {
 
   }
-  orderid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), orderid,
+  order_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), order_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.orderID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.order_id)
 }
 
-// string marketID = 2 [json_name = "marketID"];
-inline void OrderCancellation::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 2 [json_name = "marketId"];
+inline void OrderCancellation::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& OrderCancellation::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderCancellation.marketID)
-  return _internal_marketid();
+inline const std::string& OrderCancellation::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderCancellation.market_id)
+  return _internal_market_id();
 }
-inline void OrderCancellation::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderCancellation.marketID)
+inline void OrderCancellation::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderCancellation.market_id)
 }
-inline std::string* OrderCancellation::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderCancellation.marketID)
-  return _internal_mutable_marketid();
+inline std::string* OrderCancellation::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderCancellation.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& OrderCancellation::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& OrderCancellation::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void OrderCancellation::_internal_set_marketid(const std::string& value) {
+inline void OrderCancellation::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderCancellation::set_marketid(std::string&& value) {
+inline void OrderCancellation::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderCancellation.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderCancellation.market_id)
 }
-inline void OrderCancellation::set_marketid(const char* value) {
+inline void OrderCancellation::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderCancellation.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderCancellation.market_id)
 }
-inline void OrderCancellation::set_marketid(const char* value,
+inline void OrderCancellation::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderCancellation.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderCancellation.market_id)
 }
-inline std::string* OrderCancellation::_internal_mutable_marketid() {
+inline std::string* OrderCancellation::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderCancellation::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.OrderCancellation.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderCancellation::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderCancellation.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderCancellation::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void OrderCancellation::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.market_id)
 }
 
-// string partyID = 3 [json_name = "partyID", (.validator.field) = {
-inline void OrderCancellation::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 3 [json_name = "partyId", (.validator.field) = {
+inline void OrderCancellation::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& OrderCancellation::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.OrderCancellation.partyID)
-  return _internal_partyid();
+inline const std::string& OrderCancellation::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.OrderCancellation.party_id)
+  return _internal_party_id();
 }
-inline void OrderCancellation::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.OrderCancellation.partyID)
+inline void OrderCancellation::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.OrderCancellation.party_id)
 }
-inline std::string* OrderCancellation::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.OrderCancellation.partyID)
-  return _internal_mutable_partyid();
+inline std::string* OrderCancellation::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.OrderCancellation.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& OrderCancellation::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& OrderCancellation::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void OrderCancellation::_internal_set_partyid(const std::string& value) {
+inline void OrderCancellation::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void OrderCancellation::set_partyid(std::string&& value) {
+inline void OrderCancellation::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.OrderCancellation.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OrderCancellation.party_id)
 }
-inline void OrderCancellation::set_partyid(const char* value) {
+inline void OrderCancellation::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.OrderCancellation.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OrderCancellation.party_id)
 }
-inline void OrderCancellation::set_partyid(const char* value,
+inline void OrderCancellation::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.OrderCancellation.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OrderCancellation.party_id)
 }
-inline std::string* OrderCancellation::_internal_mutable_partyid() {
+inline std::string* OrderCancellation::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* OrderCancellation::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.OrderCancellation.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OrderCancellation::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.OrderCancellation.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void OrderCancellation::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void OrderCancellation::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.OrderCancellation.party_id)
 }
 
 // -------------------------------------------------------------------
 
 // NodeRegistration
 
-// bytes pubKey = 1 [json_name = "pubKey", (.validator.field) = {
-inline void NodeRegistration::clear_pubkey() {
-  pubkey_.ClearToEmpty();
+// bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
+inline void NodeRegistration::clear_pub_key() {
+  pub_key_.ClearToEmpty();
 }
-inline const std::string& NodeRegistration::pubkey() const {
-  // @@protoc_insertion_point(field_get:vega.NodeRegistration.pubKey)
-  return _internal_pubkey();
+inline const std::string& NodeRegistration::pub_key() const {
+  // @@protoc_insertion_point(field_get:vega.NodeRegistration.pub_key)
+  return _internal_pub_key();
 }
-inline void NodeRegistration::set_pubkey(const std::string& value) {
-  _internal_set_pubkey(value);
-  // @@protoc_insertion_point(field_set:vega.NodeRegistration.pubKey)
+inline void NodeRegistration::set_pub_key(const std::string& value) {
+  _internal_set_pub_key(value);
+  // @@protoc_insertion_point(field_set:vega.NodeRegistration.pub_key)
 }
-inline std::string* NodeRegistration::mutable_pubkey() {
-  // @@protoc_insertion_point(field_mutable:vega.NodeRegistration.pubKey)
-  return _internal_mutable_pubkey();
+inline std::string* NodeRegistration::mutable_pub_key() {
+  // @@protoc_insertion_point(field_mutable:vega.NodeRegistration.pub_key)
+  return _internal_mutable_pub_key();
 }
-inline const std::string& NodeRegistration::_internal_pubkey() const {
-  return pubkey_.Get();
+inline const std::string& NodeRegistration::_internal_pub_key() const {
+  return pub_key_.Get();
 }
-inline void NodeRegistration::_internal_set_pubkey(const std::string& value) {
+inline void NodeRegistration::_internal_set_pub_key(const std::string& value) {
 
-  pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void NodeRegistration::set_pubkey(std::string&& value) {
+inline void NodeRegistration::set_pub_key(std::string&& value) {
 
-  pubkey_.Set(
+  pub_key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.NodeRegistration.pubKey)
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeRegistration.pub_key)
 }
-inline void NodeRegistration::set_pubkey(const char* value) {
+inline void NodeRegistration::set_pub_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.NodeRegistration.pubKey)
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.NodeRegistration.pub_key)
 }
-inline void NodeRegistration::set_pubkey(const void* value,
+inline void NodeRegistration::set_pub_key(const void* value,
     size_t size) {
 
-  pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.NodeRegistration.pubKey)
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeRegistration.pub_key)
 }
-inline std::string* NodeRegistration::_internal_mutable_pubkey() {
+inline std::string* NodeRegistration::_internal_mutable_pub_key() {
 
-  return pubkey_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return pub_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* NodeRegistration::release_pubkey() {
-  // @@protoc_insertion_point(field_release:vega.NodeRegistration.pubKey)
-  return pubkey_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* NodeRegistration::release_pub_key() {
+  // @@protoc_insertion_point(field_release:vega.NodeRegistration.pub_key)
+  return pub_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void NodeRegistration::set_allocated_pubkey(std::string* pubkey) {
-  if (pubkey != nullptr) {
+inline void NodeRegistration::set_allocated_pub_key(std::string* pub_key) {
+  if (pub_key != nullptr) {
 
   } else {
 
   }
-  pubkey_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pubkey,
+  pub_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pub_key,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.NodeRegistration.pubKey)
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeRegistration.pub_key)
 }
 
-// bytes chainPubKey = 2 [json_name = "chainPubKey", (.validator.field) = {
-inline void NodeRegistration::clear_chainpubkey() {
-  chainpubkey_.ClearToEmpty();
+// bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = {
+inline void NodeRegistration::clear_chain_pub_key() {
+  chain_pub_key_.ClearToEmpty();
 }
-inline const std::string& NodeRegistration::chainpubkey() const {
-  // @@protoc_insertion_point(field_get:vega.NodeRegistration.chainPubKey)
-  return _internal_chainpubkey();
+inline const std::string& NodeRegistration::chain_pub_key() const {
+  // @@protoc_insertion_point(field_get:vega.NodeRegistration.chain_pub_key)
+  return _internal_chain_pub_key();
 }
-inline void NodeRegistration::set_chainpubkey(const std::string& value) {
-  _internal_set_chainpubkey(value);
-  // @@protoc_insertion_point(field_set:vega.NodeRegistration.chainPubKey)
+inline void NodeRegistration::set_chain_pub_key(const std::string& value) {
+  _internal_set_chain_pub_key(value);
+  // @@protoc_insertion_point(field_set:vega.NodeRegistration.chain_pub_key)
 }
-inline std::string* NodeRegistration::mutable_chainpubkey() {
-  // @@protoc_insertion_point(field_mutable:vega.NodeRegistration.chainPubKey)
-  return _internal_mutable_chainpubkey();
+inline std::string* NodeRegistration::mutable_chain_pub_key() {
+  // @@protoc_insertion_point(field_mutable:vega.NodeRegistration.chain_pub_key)
+  return _internal_mutable_chain_pub_key();
 }
-inline const std::string& NodeRegistration::_internal_chainpubkey() const {
-  return chainpubkey_.Get();
+inline const std::string& NodeRegistration::_internal_chain_pub_key() const {
+  return chain_pub_key_.Get();
 }
-inline void NodeRegistration::_internal_set_chainpubkey(const std::string& value) {
+inline void NodeRegistration::_internal_set_chain_pub_key(const std::string& value) {
 
-  chainpubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  chain_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void NodeRegistration::set_chainpubkey(std::string&& value) {
+inline void NodeRegistration::set_chain_pub_key(std::string&& value) {
 
-  chainpubkey_.Set(
+  chain_pub_key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.NodeRegistration.chainPubKey)
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeRegistration.chain_pub_key)
 }
-inline void NodeRegistration::set_chainpubkey(const char* value) {
+inline void NodeRegistration::set_chain_pub_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  chainpubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.NodeRegistration.chainPubKey)
+  chain_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.NodeRegistration.chain_pub_key)
 }
-inline void NodeRegistration::set_chainpubkey(const void* value,
+inline void NodeRegistration::set_chain_pub_key(const void* value,
     size_t size) {
 
-  chainpubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  chain_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.NodeRegistration.chainPubKey)
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeRegistration.chain_pub_key)
 }
-inline std::string* NodeRegistration::_internal_mutable_chainpubkey() {
+inline std::string* NodeRegistration::_internal_mutable_chain_pub_key() {
 
-  return chainpubkey_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return chain_pub_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* NodeRegistration::release_chainpubkey() {
-  // @@protoc_insertion_point(field_release:vega.NodeRegistration.chainPubKey)
-  return chainpubkey_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* NodeRegistration::release_chain_pub_key() {
+  // @@protoc_insertion_point(field_release:vega.NodeRegistration.chain_pub_key)
+  return chain_pub_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void NodeRegistration::set_allocated_chainpubkey(std::string* chainpubkey) {
-  if (chainpubkey != nullptr) {
+inline void NodeRegistration::set_allocated_chain_pub_key(std::string* chain_pub_key) {
+  if (chain_pub_key != nullptr) {
 
   } else {
 
   }
-  chainpubkey_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chainpubkey,
+  chain_pub_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chain_pub_key,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.NodeRegistration.chainPubKey)
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeRegistration.chain_pub_key)
 }
 
 // -------------------------------------------------------------------
 
 // NodeVote
 
-// bytes pubKey = 1 [json_name = "pubKey", (.validator.field) = {
-inline void NodeVote::clear_pubkey() {
-  pubkey_.ClearToEmpty();
+// bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
+inline void NodeVote::clear_pub_key() {
+  pub_key_.ClearToEmpty();
 }
-inline const std::string& NodeVote::pubkey() const {
-  // @@protoc_insertion_point(field_get:vega.NodeVote.pubKey)
-  return _internal_pubkey();
+inline const std::string& NodeVote::pub_key() const {
+  // @@protoc_insertion_point(field_get:vega.NodeVote.pub_key)
+  return _internal_pub_key();
 }
-inline void NodeVote::set_pubkey(const std::string& value) {
-  _internal_set_pubkey(value);
-  // @@protoc_insertion_point(field_set:vega.NodeVote.pubKey)
+inline void NodeVote::set_pub_key(const std::string& value) {
+  _internal_set_pub_key(value);
+  // @@protoc_insertion_point(field_set:vega.NodeVote.pub_key)
 }
-inline std::string* NodeVote::mutable_pubkey() {
-  // @@protoc_insertion_point(field_mutable:vega.NodeVote.pubKey)
-  return _internal_mutable_pubkey();
+inline std::string* NodeVote::mutable_pub_key() {
+  // @@protoc_insertion_point(field_mutable:vega.NodeVote.pub_key)
+  return _internal_mutable_pub_key();
 }
-inline const std::string& NodeVote::_internal_pubkey() const {
-  return pubkey_.Get();
+inline const std::string& NodeVote::_internal_pub_key() const {
+  return pub_key_.Get();
 }
-inline void NodeVote::_internal_set_pubkey(const std::string& value) {
+inline void NodeVote::_internal_set_pub_key(const std::string& value) {
 
-  pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void NodeVote::set_pubkey(std::string&& value) {
+inline void NodeVote::set_pub_key(std::string&& value) {
 
-  pubkey_.Set(
+  pub_key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.NodeVote.pubKey)
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeVote.pub_key)
 }
-inline void NodeVote::set_pubkey(const char* value) {
+inline void NodeVote::set_pub_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.NodeVote.pubKey)
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.NodeVote.pub_key)
 }
-inline void NodeVote::set_pubkey(const void* value,
+inline void NodeVote::set_pub_key(const void* value,
     size_t size) {
 
-  pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.NodeVote.pubKey)
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeVote.pub_key)
 }
-inline std::string* NodeVote::_internal_mutable_pubkey() {
+inline std::string* NodeVote::_internal_mutable_pub_key() {
 
-  return pubkey_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return pub_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* NodeVote::release_pubkey() {
-  // @@protoc_insertion_point(field_release:vega.NodeVote.pubKey)
-  return pubkey_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* NodeVote::release_pub_key() {
+  // @@protoc_insertion_point(field_release:vega.NodeVote.pub_key)
+  return pub_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void NodeVote::set_allocated_pubkey(std::string* pubkey) {
-  if (pubkey != nullptr) {
+inline void NodeVote::set_allocated_pub_key(std::string* pub_key) {
+  if (pub_key != nullptr) {
 
   } else {
 
   }
-  pubkey_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pubkey,
+  pub_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pub_key,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.NodeVote.pubKey)
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeVote.pub_key)
 }
 
 // string reference = 2 [json_name = "reference", (.validator.field) = {
@@ -18343,65 +18819,65 @@ inline void Account::set_allocated_asset(std::string* asset) {
   // @@protoc_insertion_point(field_set_allocated:vega.Account.asset)
 }
 
-// string marketID = 5 [json_name = "marketID"];
-inline void Account::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 5 [json_name = "marketId"];
+inline void Account::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& Account::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.Account.marketID)
-  return _internal_marketid();
+inline const std::string& Account::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.Account.market_id)
+  return _internal_market_id();
 }
-inline void Account::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.Account.marketID)
+inline void Account::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.Account.market_id)
 }
-inline std::string* Account::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.Account.marketID)
-  return _internal_mutable_marketid();
+inline std::string* Account::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Account.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& Account::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& Account::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void Account::_internal_set_marketid(const std::string& value) {
+inline void Account::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Account::set_marketid(std::string&& value) {
+inline void Account::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Account.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Account.market_id)
 }
-inline void Account::set_marketid(const char* value) {
+inline void Account::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Account.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Account.market_id)
 }
-inline void Account::set_marketid(const char* value,
+inline void Account::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Account.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.Account.market_id)
 }
-inline std::string* Account::_internal_mutable_marketid() {
+inline std::string* Account::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Account::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.Account.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Account::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.Account.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Account::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void Account::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Account.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.Account.market_id)
 }
 
 // .vega.AccountType type = 6 [json_name = "type"];
@@ -18428,22 +18904,22 @@ inline void Account::set_type(::vega::AccountType value) {
 
 // FinancialAmount
 
-// int64 amount = 1 [json_name = "amount"];
+// uint64 amount = 1 [json_name = "amount"];
 inline void FinancialAmount::clear_amount() {
-  amount_ = PROTOBUF_LONGLONG(0);
+  amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 FinancialAmount::_internal_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 FinancialAmount::_internal_amount() const {
   return amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 FinancialAmount::amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 FinancialAmount::amount() const {
   // @@protoc_insertion_point(field_get:vega.FinancialAmount.amount)
   return _internal_amount();
 }
-inline void FinancialAmount::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void FinancialAmount::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   amount_ = value;
 }
-inline void FinancialAmount::set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void FinancialAmount::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.FinancialAmount.amount)
 }
@@ -18677,106 +19153,106 @@ inline void Transfer::set_type(::vega::TransferType value) {
   // @@protoc_insertion_point(field_set:vega.Transfer.type)
 }
 
-// int64 minAmount = 4 [json_name = "minAmount"];
-inline void Transfer::clear_minamount() {
-  minamount_ = PROTOBUF_LONGLONG(0);
+// uint64 min_amount = 4 [json_name = "minAmount"];
+inline void Transfer::clear_min_amount() {
+  min_amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Transfer::_internal_minamount() const {
-  return minamount_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transfer::_internal_min_amount() const {
+  return min_amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Transfer::minamount() const {
-  // @@protoc_insertion_point(field_get:vega.Transfer.minAmount)
-  return _internal_minamount();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transfer::min_amount() const {
+  // @@protoc_insertion_point(field_get:vega.Transfer.min_amount)
+  return _internal_min_amount();
 }
-inline void Transfer::_internal_set_minamount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Transfer::_internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  minamount_ = value;
+  min_amount_ = value;
 }
-inline void Transfer::set_minamount(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_minamount(value);
-  // @@protoc_insertion_point(field_set:vega.Transfer.minAmount)
+inline void Transfer::set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_min_amount(value);
+  // @@protoc_insertion_point(field_set:vega.Transfer.min_amount)
 }
 
 // -------------------------------------------------------------------
 
 // TransferRequest
 
-// repeated .vega.Account fromAccount = 1 [json_name = "fromAccount"];
-inline int TransferRequest::_internal_fromaccount_size() const {
-  return fromaccount_.size();
+// repeated .vega.Account from_account = 1 [json_name = "fromAccount"];
+inline int TransferRequest::_internal_from_account_size() const {
+  return from_account_.size();
 }
-inline int TransferRequest::fromaccount_size() const {
-  return _internal_fromaccount_size();
+inline int TransferRequest::from_account_size() const {
+  return _internal_from_account_size();
 }
-inline void TransferRequest::clear_fromaccount() {
-  fromaccount_.Clear();
+inline void TransferRequest::clear_from_account() {
+  from_account_.Clear();
 }
-inline ::vega::Account* TransferRequest::mutable_fromaccount(int index) {
-  // @@protoc_insertion_point(field_mutable:vega.TransferRequest.fromAccount)
-  return fromaccount_.Mutable(index);
+inline ::vega::Account* TransferRequest::mutable_from_account(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.TransferRequest.from_account)
+  return from_account_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >*
-TransferRequest::mutable_fromaccount() {
-  // @@protoc_insertion_point(field_mutable_list:vega.TransferRequest.fromAccount)
-  return &fromaccount_;
+TransferRequest::mutable_from_account() {
+  // @@protoc_insertion_point(field_mutable_list:vega.TransferRequest.from_account)
+  return &from_account_;
 }
-inline const ::vega::Account& TransferRequest::_internal_fromaccount(int index) const {
-  return fromaccount_.Get(index);
+inline const ::vega::Account& TransferRequest::_internal_from_account(int index) const {
+  return from_account_.Get(index);
 }
-inline const ::vega::Account& TransferRequest::fromaccount(int index) const {
-  // @@protoc_insertion_point(field_get:vega.TransferRequest.fromAccount)
-  return _internal_fromaccount(index);
+inline const ::vega::Account& TransferRequest::from_account(int index) const {
+  // @@protoc_insertion_point(field_get:vega.TransferRequest.from_account)
+  return _internal_from_account(index);
 }
-inline ::vega::Account* TransferRequest::_internal_add_fromaccount() {
-  return fromaccount_.Add();
+inline ::vega::Account* TransferRequest::_internal_add_from_account() {
+  return from_account_.Add();
 }
-inline ::vega::Account* TransferRequest::add_fromaccount() {
-  // @@protoc_insertion_point(field_add:vega.TransferRequest.fromAccount)
-  return _internal_add_fromaccount();
+inline ::vega::Account* TransferRequest::add_from_account() {
+  // @@protoc_insertion_point(field_add:vega.TransferRequest.from_account)
+  return _internal_add_from_account();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >&
-TransferRequest::fromaccount() const {
-  // @@protoc_insertion_point(field_list:vega.TransferRequest.fromAccount)
-  return fromaccount_;
+TransferRequest::from_account() const {
+  // @@protoc_insertion_point(field_list:vega.TransferRequest.from_account)
+  return from_account_;
 }
 
-// repeated .vega.Account toAccount = 2 [json_name = "toAccount"];
-inline int TransferRequest::_internal_toaccount_size() const {
-  return toaccount_.size();
+// repeated .vega.Account to_account = 2 [json_name = "toAccount"];
+inline int TransferRequest::_internal_to_account_size() const {
+  return to_account_.size();
 }
-inline int TransferRequest::toaccount_size() const {
-  return _internal_toaccount_size();
+inline int TransferRequest::to_account_size() const {
+  return _internal_to_account_size();
 }
-inline void TransferRequest::clear_toaccount() {
-  toaccount_.Clear();
+inline void TransferRequest::clear_to_account() {
+  to_account_.Clear();
 }
-inline ::vega::Account* TransferRequest::mutable_toaccount(int index) {
-  // @@protoc_insertion_point(field_mutable:vega.TransferRequest.toAccount)
-  return toaccount_.Mutable(index);
+inline ::vega::Account* TransferRequest::mutable_to_account(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.TransferRequest.to_account)
+  return to_account_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >*
-TransferRequest::mutable_toaccount() {
-  // @@protoc_insertion_point(field_mutable_list:vega.TransferRequest.toAccount)
-  return &toaccount_;
+TransferRequest::mutable_to_account() {
+  // @@protoc_insertion_point(field_mutable_list:vega.TransferRequest.to_account)
+  return &to_account_;
 }
-inline const ::vega::Account& TransferRequest::_internal_toaccount(int index) const {
-  return toaccount_.Get(index);
+inline const ::vega::Account& TransferRequest::_internal_to_account(int index) const {
+  return to_account_.Get(index);
 }
-inline const ::vega::Account& TransferRequest::toaccount(int index) const {
-  // @@protoc_insertion_point(field_get:vega.TransferRequest.toAccount)
-  return _internal_toaccount(index);
+inline const ::vega::Account& TransferRequest::to_account(int index) const {
+  // @@protoc_insertion_point(field_get:vega.TransferRequest.to_account)
+  return _internal_to_account(index);
 }
-inline ::vega::Account* TransferRequest::_internal_add_toaccount() {
-  return toaccount_.Add();
+inline ::vega::Account* TransferRequest::_internal_add_to_account() {
+  return to_account_.Add();
 }
-inline ::vega::Account* TransferRequest::add_toaccount() {
-  // @@protoc_insertion_point(field_add:vega.TransferRequest.toAccount)
-  return _internal_add_toaccount();
+inline ::vega::Account* TransferRequest::add_to_account() {
+  // @@protoc_insertion_point(field_add:vega.TransferRequest.to_account)
+  return _internal_add_to_account();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Account >&
-TransferRequest::toaccount() const {
-  // @@protoc_insertion_point(field_list:vega.TransferRequest.toAccount)
-  return toaccount_;
+TransferRequest::to_account() const {
+  // @@protoc_insertion_point(field_list:vega.TransferRequest.to_account)
+  return to_account_;
 }
 
 // uint64 amount = 3 [json_name = "amount"];
@@ -18799,24 +19275,24 @@ inline void TransferRequest::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.TransferRequest.amount)
 }
 
-// uint64 minAmount = 4 [json_name = "minAmount"];
-inline void TransferRequest::clear_minamount() {
-  minamount_ = PROTOBUF_ULONGLONG(0);
+// uint64 min_amount = 4 [json_name = "minAmount"];
+inline void TransferRequest::clear_min_amount() {
+  min_amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TransferRequest::_internal_minamount() const {
-  return minamount_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TransferRequest::_internal_min_amount() const {
+  return min_amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TransferRequest::minamount() const {
-  // @@protoc_insertion_point(field_get:vega.TransferRequest.minAmount)
-  return _internal_minamount();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TransferRequest::min_amount() const {
+  // @@protoc_insertion_point(field_get:vega.TransferRequest.min_amount)
+  return _internal_min_amount();
 }
-inline void TransferRequest::_internal_set_minamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void TransferRequest::_internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  minamount_ = value;
+  min_amount_ = value;
 }
-inline void TransferRequest::set_minamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_minamount(value);
-  // @@protoc_insertion_point(field_set:vega.TransferRequest.minAmount)
+inline void TransferRequest::set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_min_amount(value);
+  // @@protoc_insertion_point(field_set:vega.TransferRequest.min_amount)
 }
 
 // string asset = 5 [json_name = "asset"];
@@ -18945,126 +19421,126 @@ inline void TransferRequest::set_allocated_reference(std::string* reference) {
 
 // LedgerEntry
 
-// string fromAccount = 1 [json_name = "fromAccount"];
-inline void LedgerEntry::clear_fromaccount() {
-  fromaccount_.ClearToEmpty();
+// string from_account = 1 [json_name = "fromAccount"];
+inline void LedgerEntry::clear_from_account() {
+  from_account_.ClearToEmpty();
 }
-inline const std::string& LedgerEntry::fromaccount() const {
-  // @@protoc_insertion_point(field_get:vega.LedgerEntry.fromAccount)
-  return _internal_fromaccount();
+inline const std::string& LedgerEntry::from_account() const {
+  // @@protoc_insertion_point(field_get:vega.LedgerEntry.from_account)
+  return _internal_from_account();
 }
-inline void LedgerEntry::set_fromaccount(const std::string& value) {
-  _internal_set_fromaccount(value);
-  // @@protoc_insertion_point(field_set:vega.LedgerEntry.fromAccount)
+inline void LedgerEntry::set_from_account(const std::string& value) {
+  _internal_set_from_account(value);
+  // @@protoc_insertion_point(field_set:vega.LedgerEntry.from_account)
 }
-inline std::string* LedgerEntry::mutable_fromaccount() {
-  // @@protoc_insertion_point(field_mutable:vega.LedgerEntry.fromAccount)
-  return _internal_mutable_fromaccount();
+inline std::string* LedgerEntry::mutable_from_account() {
+  // @@protoc_insertion_point(field_mutable:vega.LedgerEntry.from_account)
+  return _internal_mutable_from_account();
 }
-inline const std::string& LedgerEntry::_internal_fromaccount() const {
-  return fromaccount_.Get();
+inline const std::string& LedgerEntry::_internal_from_account() const {
+  return from_account_.Get();
 }
-inline void LedgerEntry::_internal_set_fromaccount(const std::string& value) {
+inline void LedgerEntry::_internal_set_from_account(const std::string& value) {
 
-  fromaccount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  from_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void LedgerEntry::set_fromaccount(std::string&& value) {
+inline void LedgerEntry::set_from_account(std::string&& value) {
 
-  fromaccount_.Set(
+  from_account_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.LedgerEntry.fromAccount)
+  // @@protoc_insertion_point(field_set_rvalue:vega.LedgerEntry.from_account)
 }
-inline void LedgerEntry::set_fromaccount(const char* value) {
+inline void LedgerEntry::set_from_account(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  fromaccount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.LedgerEntry.fromAccount)
+  from_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LedgerEntry.from_account)
 }
-inline void LedgerEntry::set_fromaccount(const char* value,
+inline void LedgerEntry::set_from_account(const char* value,
     size_t size) {
 
-  fromaccount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  from_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.LedgerEntry.fromAccount)
+  // @@protoc_insertion_point(field_set_pointer:vega.LedgerEntry.from_account)
 }
-inline std::string* LedgerEntry::_internal_mutable_fromaccount() {
+inline std::string* LedgerEntry::_internal_mutable_from_account() {
 
-  return fromaccount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return from_account_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* LedgerEntry::release_fromaccount() {
-  // @@protoc_insertion_point(field_release:vega.LedgerEntry.fromAccount)
-  return fromaccount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* LedgerEntry::release_from_account() {
+  // @@protoc_insertion_point(field_release:vega.LedgerEntry.from_account)
+  return from_account_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void LedgerEntry::set_allocated_fromaccount(std::string* fromaccount) {
-  if (fromaccount != nullptr) {
+inline void LedgerEntry::set_allocated_from_account(std::string* from_account) {
+  if (from_account != nullptr) {
 
   } else {
 
   }
-  fromaccount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), fromaccount,
+  from_account_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from_account,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.LedgerEntry.fromAccount)
+  // @@protoc_insertion_point(field_set_allocated:vega.LedgerEntry.from_account)
 }
 
-// string toAccount = 2 [json_name = "toAccount"];
-inline void LedgerEntry::clear_toaccount() {
-  toaccount_.ClearToEmpty();
+// string to_account = 2 [json_name = "toAccount"];
+inline void LedgerEntry::clear_to_account() {
+  to_account_.ClearToEmpty();
 }
-inline const std::string& LedgerEntry::toaccount() const {
-  // @@protoc_insertion_point(field_get:vega.LedgerEntry.toAccount)
-  return _internal_toaccount();
+inline const std::string& LedgerEntry::to_account() const {
+  // @@protoc_insertion_point(field_get:vega.LedgerEntry.to_account)
+  return _internal_to_account();
 }
-inline void LedgerEntry::set_toaccount(const std::string& value) {
-  _internal_set_toaccount(value);
-  // @@protoc_insertion_point(field_set:vega.LedgerEntry.toAccount)
+inline void LedgerEntry::set_to_account(const std::string& value) {
+  _internal_set_to_account(value);
+  // @@protoc_insertion_point(field_set:vega.LedgerEntry.to_account)
 }
-inline std::string* LedgerEntry::mutable_toaccount() {
-  // @@protoc_insertion_point(field_mutable:vega.LedgerEntry.toAccount)
-  return _internal_mutable_toaccount();
+inline std::string* LedgerEntry::mutable_to_account() {
+  // @@protoc_insertion_point(field_mutable:vega.LedgerEntry.to_account)
+  return _internal_mutable_to_account();
 }
-inline const std::string& LedgerEntry::_internal_toaccount() const {
-  return toaccount_.Get();
+inline const std::string& LedgerEntry::_internal_to_account() const {
+  return to_account_.Get();
 }
-inline void LedgerEntry::_internal_set_toaccount(const std::string& value) {
+inline void LedgerEntry::_internal_set_to_account(const std::string& value) {
 
-  toaccount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  to_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void LedgerEntry::set_toaccount(std::string&& value) {
+inline void LedgerEntry::set_to_account(std::string&& value) {
 
-  toaccount_.Set(
+  to_account_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.LedgerEntry.toAccount)
+  // @@protoc_insertion_point(field_set_rvalue:vega.LedgerEntry.to_account)
 }
-inline void LedgerEntry::set_toaccount(const char* value) {
+inline void LedgerEntry::set_to_account(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  toaccount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.LedgerEntry.toAccount)
+  to_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LedgerEntry.to_account)
 }
-inline void LedgerEntry::set_toaccount(const char* value,
+inline void LedgerEntry::set_to_account(const char* value,
     size_t size) {
 
-  toaccount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  to_account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.LedgerEntry.toAccount)
+  // @@protoc_insertion_point(field_set_pointer:vega.LedgerEntry.to_account)
 }
-inline std::string* LedgerEntry::_internal_mutable_toaccount() {
+inline std::string* LedgerEntry::_internal_mutable_to_account() {
 
-  return toaccount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return to_account_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* LedgerEntry::release_toaccount() {
-  // @@protoc_insertion_point(field_release:vega.LedgerEntry.toAccount)
-  return toaccount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* LedgerEntry::release_to_account() {
+  // @@protoc_insertion_point(field_release:vega.LedgerEntry.to_account)
+  return to_account_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void LedgerEntry::set_allocated_toaccount(std::string* toaccount) {
-  if (toaccount != nullptr) {
+inline void LedgerEntry::set_allocated_to_account(std::string* to_account) {
+  if (to_account != nullptr) {
 
   } else {
 
   }
-  toaccount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), toaccount,
+  to_account_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), to_account,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.LedgerEntry.toAccount)
+  // @@protoc_insertion_point(field_set_allocated:vega.LedgerEntry.to_account)
 }
 
 // uint64 amount = 3 [json_name = "amount"];
@@ -19422,206 +19898,206 @@ TransferResponse::balances() const {
 
 // MarginLevels
 
-// uint64 maintenanceMargin = 1 [json_name = "maintenanceMargin"];
-inline void MarginLevels::clear_maintenancemargin() {
-  maintenancemargin_ = PROTOBUF_ULONGLONG(0);
+// uint64 maintenance_margin = 1 [json_name = "maintenanceMargin"];
+inline void MarginLevels::clear_maintenance_margin() {
+  maintenance_margin_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_maintenancemargin() const {
-  return maintenancemargin_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_maintenance_margin() const {
+  return maintenance_margin_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::maintenancemargin() const {
-  // @@protoc_insertion_point(field_get:vega.MarginLevels.maintenanceMargin)
-  return _internal_maintenancemargin();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::maintenance_margin() const {
+  // @@protoc_insertion_point(field_get:vega.MarginLevels.maintenance_margin)
+  return _internal_maintenance_margin();
 }
-inline void MarginLevels::_internal_set_maintenancemargin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarginLevels::_internal_set_maintenance_margin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  maintenancemargin_ = value;
+  maintenance_margin_ = value;
 }
-inline void MarginLevels::set_maintenancemargin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_maintenancemargin(value);
-  // @@protoc_insertion_point(field_set:vega.MarginLevels.maintenanceMargin)
-}
-
-// uint64 searchLevel = 2 [json_name = "searchLevel"];
-inline void MarginLevels::clear_searchlevel() {
-  searchlevel_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_searchlevel() const {
-  return searchlevel_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::searchlevel() const {
-  // @@protoc_insertion_point(field_get:vega.MarginLevels.searchLevel)
-  return _internal_searchlevel();
-}
-inline void MarginLevels::_internal_set_searchlevel(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  searchlevel_ = value;
-}
-inline void MarginLevels::set_searchlevel(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_searchlevel(value);
-  // @@protoc_insertion_point(field_set:vega.MarginLevels.searchLevel)
+inline void MarginLevels::set_maintenance_margin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_maintenance_margin(value);
+  // @@protoc_insertion_point(field_set:vega.MarginLevels.maintenance_margin)
 }
 
-// uint64 initialMargin = 3 [json_name = "initialMargin"];
-inline void MarginLevels::clear_initialmargin() {
-  initialmargin_ = PROTOBUF_ULONGLONG(0);
+// uint64 search_level = 2 [json_name = "searchLevel"];
+inline void MarginLevels::clear_search_level() {
+  search_level_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_initialmargin() const {
-  return initialmargin_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_search_level() const {
+  return search_level_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::initialmargin() const {
-  // @@protoc_insertion_point(field_get:vega.MarginLevels.initialMargin)
-  return _internal_initialmargin();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::search_level() const {
+  // @@protoc_insertion_point(field_get:vega.MarginLevels.search_level)
+  return _internal_search_level();
 }
-inline void MarginLevels::_internal_set_initialmargin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarginLevels::_internal_set_search_level(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  initialmargin_ = value;
+  search_level_ = value;
 }
-inline void MarginLevels::set_initialmargin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_initialmargin(value);
-  // @@protoc_insertion_point(field_set:vega.MarginLevels.initialMargin)
-}
-
-// uint64 collateralReleaseLevel = 4 [json_name = "collateralReleaseLevel"];
-inline void MarginLevels::clear_collateralreleaselevel() {
-  collateralreleaselevel_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_collateralreleaselevel() const {
-  return collateralreleaselevel_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::collateralreleaselevel() const {
-  // @@protoc_insertion_point(field_get:vega.MarginLevels.collateralReleaseLevel)
-  return _internal_collateralreleaselevel();
-}
-inline void MarginLevels::_internal_set_collateralreleaselevel(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  collateralreleaselevel_ = value;
-}
-inline void MarginLevels::set_collateralreleaselevel(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_collateralreleaselevel(value);
-  // @@protoc_insertion_point(field_set:vega.MarginLevels.collateralReleaseLevel)
+inline void MarginLevels::set_search_level(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_search_level(value);
+  // @@protoc_insertion_point(field_set:vega.MarginLevels.search_level)
 }
 
-// string partyID = 5 [json_name = "partyID"];
-inline void MarginLevels::clear_partyid() {
-  partyid_.ClearToEmpty();
+// uint64 initial_margin = 3 [json_name = "initialMargin"];
+inline void MarginLevels::clear_initial_margin() {
+  initial_margin_ = PROTOBUF_ULONGLONG(0);
 }
-inline const std::string& MarginLevels::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.MarginLevels.partyID)
-  return _internal_partyid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_initial_margin() const {
+  return initial_margin_;
 }
-inline void MarginLevels::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.MarginLevels.partyID)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::initial_margin() const {
+  // @@protoc_insertion_point(field_get:vega.MarginLevels.initial_margin)
+  return _internal_initial_margin();
 }
-inline std::string* MarginLevels::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.MarginLevels.partyID)
-  return _internal_mutable_partyid();
-}
-inline const std::string& MarginLevels::_internal_partyid() const {
-  return partyid_.Get();
-}
-inline void MarginLevels::_internal_set_partyid(const std::string& value) {
+inline void MarginLevels::_internal_set_initial_margin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  initial_margin_ = value;
 }
-inline void MarginLevels::set_partyid(std::string&& value) {
+inline void MarginLevels::set_initial_margin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_initial_margin(value);
+  // @@protoc_insertion_point(field_set:vega.MarginLevels.initial_margin)
+}
 
-  partyid_.Set(
+// uint64 collateral_release_level = 4 [json_name = "collateralReleaseLevel"];
+inline void MarginLevels::clear_collateral_release_level() {
+  collateral_release_level_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::_internal_collateral_release_level() const {
+  return collateral_release_level_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarginLevels::collateral_release_level() const {
+  // @@protoc_insertion_point(field_get:vega.MarginLevels.collateral_release_level)
+  return _internal_collateral_release_level();
+}
+inline void MarginLevels::_internal_set_collateral_release_level(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  collateral_release_level_ = value;
+}
+inline void MarginLevels::set_collateral_release_level(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_collateral_release_level(value);
+  // @@protoc_insertion_point(field_set:vega.MarginLevels.collateral_release_level)
+}
+
+// string party_id = 5 [json_name = "partyId"];
+inline void MarginLevels::clear_party_id() {
+  party_id_.ClearToEmpty();
+}
+inline const std::string& MarginLevels::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.MarginLevels.party_id)
+  return _internal_party_id();
+}
+inline void MarginLevels::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.MarginLevels.party_id)
+}
+inline std::string* MarginLevels::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.MarginLevels.party_id)
+  return _internal_mutable_party_id();
+}
+inline const std::string& MarginLevels::_internal_party_id() const {
+  return party_id_.Get();
+}
+inline void MarginLevels::_internal_set_party_id(const std::string& value) {
+
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void MarginLevels::set_party_id(std::string&& value) {
+
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.MarginLevels.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarginLevels.party_id)
 }
-inline void MarginLevels::set_partyid(const char* value) {
+inline void MarginLevels::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.MarginLevels.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarginLevels.party_id)
 }
-inline void MarginLevels::set_partyid(const char* value,
+inline void MarginLevels::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.MarginLevels.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.MarginLevels.party_id)
 }
-inline std::string* MarginLevels::_internal_mutable_partyid() {
+inline std::string* MarginLevels::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* MarginLevels::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.MarginLevels.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* MarginLevels::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.MarginLevels.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void MarginLevels::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void MarginLevels::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.MarginLevels.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.MarginLevels.party_id)
 }
 
-// string marketID = 6 [json_name = "marketID"];
-inline void MarginLevels::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 6 [json_name = "marketId"];
+inline void MarginLevels::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& MarginLevels::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.MarginLevels.marketID)
-  return _internal_marketid();
+inline const std::string& MarginLevels::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.MarginLevels.market_id)
+  return _internal_market_id();
 }
-inline void MarginLevels::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.MarginLevels.marketID)
+inline void MarginLevels::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.MarginLevels.market_id)
 }
-inline std::string* MarginLevels::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.MarginLevels.marketID)
-  return _internal_mutable_marketid();
+inline std::string* MarginLevels::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.MarginLevels.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& MarginLevels::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& MarginLevels::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void MarginLevels::_internal_set_marketid(const std::string& value) {
+inline void MarginLevels::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void MarginLevels::set_marketid(std::string&& value) {
+inline void MarginLevels::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.MarginLevels.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarginLevels.market_id)
 }
-inline void MarginLevels::set_marketid(const char* value) {
+inline void MarginLevels::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.MarginLevels.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarginLevels.market_id)
 }
-inline void MarginLevels::set_marketid(const char* value,
+inline void MarginLevels::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.MarginLevels.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.MarginLevels.market_id)
 }
-inline std::string* MarginLevels::_internal_mutable_marketid() {
+inline std::string* MarginLevels::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* MarginLevels::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.MarginLevels.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* MarginLevels::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.MarginLevels.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void MarginLevels::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void MarginLevels::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.MarginLevels.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.MarginLevels.market_id)
 }
 
 // string asset = 7 [json_name = "asset"];
@@ -19709,224 +20185,224 @@ inline void MarginLevels::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
 // MarketData
 
-// uint64 markPrice = 1 [json_name = "markPrice"];
-inline void MarketData::clear_markprice() {
-  markprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 mark_price = 1 [json_name = "markPrice"];
+inline void MarketData::clear_mark_price() {
+  mark_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_markprice() const {
-  return markprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_mark_price() const {
+  return mark_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::markprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.markPrice)
-  return _internal_markprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::mark_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.mark_price)
+  return _internal_mark_price();
 }
-inline void MarketData::_internal_set_markprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  markprice_ = value;
+  mark_price_ = value;
 }
-inline void MarketData::set_markprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_markprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.markPrice)
-}
-
-// uint64 bestBidPrice = 2 [json_name = "bestBidPrice"];
-inline void MarketData::clear_bestbidprice() {
-  bestbidprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_bestbidprice() const {
-  return bestbidprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::bestbidprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestBidPrice)
-  return _internal_bestbidprice();
-}
-inline void MarketData::_internal_set_bestbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  bestbidprice_ = value;
-}
-inline void MarketData::set_bestbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_bestbidprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestBidPrice)
+inline void MarketData::set_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_mark_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.mark_price)
 }
 
-// uint64 bestBidVolume = 3 [json_name = "bestBidVolume"];
-inline void MarketData::clear_bestbidvolume() {
-  bestbidvolume_ = PROTOBUF_ULONGLONG(0);
+// uint64 best_bid_price = 2 [json_name = "bestBidPrice"];
+inline void MarketData::clear_best_bid_price() {
+  best_bid_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_bestbidvolume() const {
-  return bestbidvolume_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_bid_price() const {
+  return best_bid_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::bestbidvolume() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestBidVolume)
-  return _internal_bestbidvolume();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_bid_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_bid_price)
+  return _internal_best_bid_price();
 }
-inline void MarketData::_internal_set_bestbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_best_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  bestbidvolume_ = value;
+  best_bid_price_ = value;
 }
-inline void MarketData::set_bestbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_bestbidvolume(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestBidVolume)
-}
-
-// uint64 bestOfferPrice = 4 [json_name = "bestOfferPrice"];
-inline void MarketData::clear_bestofferprice() {
-  bestofferprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_bestofferprice() const {
-  return bestofferprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::bestofferprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestOfferPrice)
-  return _internal_bestofferprice();
-}
-inline void MarketData::_internal_set_bestofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  bestofferprice_ = value;
-}
-inline void MarketData::set_bestofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_bestofferprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestOfferPrice)
+inline void MarketData::set_best_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_bid_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_bid_price)
 }
 
-// uint64 bestOfferVolume = 5 [json_name = "bestOfferVolume"];
-inline void MarketData::clear_bestoffervolume() {
-  bestoffervolume_ = PROTOBUF_ULONGLONG(0);
+// uint64 best_bid_volume = 3 [json_name = "bestBidVolume"];
+inline void MarketData::clear_best_bid_volume() {
+  best_bid_volume_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_bestoffervolume() const {
-  return bestoffervolume_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_bid_volume() const {
+  return best_bid_volume_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::bestoffervolume() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestOfferVolume)
-  return _internal_bestoffervolume();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_bid_volume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_bid_volume)
+  return _internal_best_bid_volume();
 }
-inline void MarketData::_internal_set_bestoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_best_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  bestoffervolume_ = value;
+  best_bid_volume_ = value;
 }
-inline void MarketData::set_bestoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_bestoffervolume(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestOfferVolume)
-}
-
-// uint64 bestStaticBidPrice = 6 [json_name = "bestStaticBidPrice"];
-inline void MarketData::clear_beststaticbidprice() {
-  beststaticbidprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_beststaticbidprice() const {
-  return beststaticbidprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::beststaticbidprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticBidPrice)
-  return _internal_beststaticbidprice();
-}
-inline void MarketData::_internal_set_beststaticbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  beststaticbidprice_ = value;
-}
-inline void MarketData::set_beststaticbidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_beststaticbidprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticBidPrice)
+inline void MarketData::set_best_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_bid_volume(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_bid_volume)
 }
 
-// uint64 bestStaticBidVolume = 7 [json_name = "bestStaticBidVolume"];
-inline void MarketData::clear_beststaticbidvolume() {
-  beststaticbidvolume_ = PROTOBUF_ULONGLONG(0);
+// uint64 best_offer_price = 4 [json_name = "bestOfferPrice"];
+inline void MarketData::clear_best_offer_price() {
+  best_offer_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_beststaticbidvolume() const {
-  return beststaticbidvolume_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_offer_price() const {
+  return best_offer_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::beststaticbidvolume() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticBidVolume)
-  return _internal_beststaticbidvolume();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_offer_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_offer_price)
+  return _internal_best_offer_price();
 }
-inline void MarketData::_internal_set_beststaticbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_best_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  beststaticbidvolume_ = value;
+  best_offer_price_ = value;
 }
-inline void MarketData::set_beststaticbidvolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_beststaticbidvolume(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticBidVolume)
-}
-
-// uint64 bestStaticOfferPrice = 8 [json_name = "bestStaticOfferPrice"];
-inline void MarketData::clear_beststaticofferprice() {
-  beststaticofferprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_beststaticofferprice() const {
-  return beststaticofferprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::beststaticofferprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticOfferPrice)
-  return _internal_beststaticofferprice();
-}
-inline void MarketData::_internal_set_beststaticofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  beststaticofferprice_ = value;
-}
-inline void MarketData::set_beststaticofferprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_beststaticofferprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticOfferPrice)
+inline void MarketData::set_best_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_offer_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_offer_price)
 }
 
-// uint64 bestStaticOfferVolume = 9 [json_name = "bestStaticOfferVolume"];
-inline void MarketData::clear_beststaticoffervolume() {
-  beststaticoffervolume_ = PROTOBUF_ULONGLONG(0);
+// uint64 best_offer_volume = 5 [json_name = "bestOfferVolume"];
+inline void MarketData::clear_best_offer_volume() {
+  best_offer_volume_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_beststaticoffervolume() const {
-  return beststaticoffervolume_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_offer_volume() const {
+  return best_offer_volume_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::beststaticoffervolume() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.bestStaticOfferVolume)
-  return _internal_beststaticoffervolume();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_offer_volume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_offer_volume)
+  return _internal_best_offer_volume();
 }
-inline void MarketData::_internal_set_beststaticoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_best_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  beststaticoffervolume_ = value;
+  best_offer_volume_ = value;
 }
-inline void MarketData::set_beststaticoffervolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_beststaticoffervolume(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.bestStaticOfferVolume)
-}
-
-// uint64 midPrice = 10 [json_name = "midPrice"];
-inline void MarketData::clear_midprice() {
-  midprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_midprice() const {
-  return midprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::midprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.midPrice)
-  return _internal_midprice();
-}
-inline void MarketData::_internal_set_midprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  midprice_ = value;
-}
-inline void MarketData::set_midprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_midprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.midPrice)
+inline void MarketData::set_best_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_offer_volume(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_offer_volume)
 }
 
-// uint64 staticMidPrice = 11 [json_name = "staticMidPrice"];
-inline void MarketData::clear_staticmidprice() {
-  staticmidprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 best_static_bid_price = 6 [json_name = "bestStaticBidPrice"];
+inline void MarketData::clear_best_static_bid_price() {
+  best_static_bid_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_staticmidprice() const {
-  return staticmidprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_static_bid_price() const {
+  return best_static_bid_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::staticmidprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.staticMidPrice)
-  return _internal_staticmidprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_static_bid_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_static_bid_price)
+  return _internal_best_static_bid_price();
 }
-inline void MarketData::_internal_set_staticmidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_best_static_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  staticmidprice_ = value;
+  best_static_bid_price_ = value;
 }
-inline void MarketData::set_staticmidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_staticmidprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.staticMidPrice)
+inline void MarketData::set_best_static_bid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_static_bid_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_static_bid_price)
+}
+
+// uint64 best_static_bid_volume = 7 [json_name = "bestStaticBidVolume"];
+inline void MarketData::clear_best_static_bid_volume() {
+  best_static_bid_volume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_static_bid_volume() const {
+  return best_static_bid_volume_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_static_bid_volume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_static_bid_volume)
+  return _internal_best_static_bid_volume();
+}
+inline void MarketData::_internal_set_best_static_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  best_static_bid_volume_ = value;
+}
+inline void MarketData::set_best_static_bid_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_static_bid_volume(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_static_bid_volume)
+}
+
+// uint64 best_static_offer_price = 8 [json_name = "bestStaticOfferPrice"];
+inline void MarketData::clear_best_static_offer_price() {
+  best_static_offer_price_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_static_offer_price() const {
+  return best_static_offer_price_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_static_offer_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_static_offer_price)
+  return _internal_best_static_offer_price();
+}
+inline void MarketData::_internal_set_best_static_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  best_static_offer_price_ = value;
+}
+inline void MarketData::set_best_static_offer_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_static_offer_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_static_offer_price)
+}
+
+// uint64 best_static_offer_volume = 9 [json_name = "bestStaticOfferVolume"];
+inline void MarketData::clear_best_static_offer_volume() {
+  best_static_offer_volume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_best_static_offer_volume() const {
+  return best_static_offer_volume_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::best_static_offer_volume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.best_static_offer_volume)
+  return _internal_best_static_offer_volume();
+}
+inline void MarketData::_internal_set_best_static_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  best_static_offer_volume_ = value;
+}
+inline void MarketData::set_best_static_offer_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_best_static_offer_volume(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.best_static_offer_volume)
+}
+
+// uint64 mid_price = 10 [json_name = "midPrice"];
+inline void MarketData::clear_mid_price() {
+  mid_price_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_mid_price() const {
+  return mid_price_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::mid_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.mid_price)
+  return _internal_mid_price();
+}
+inline void MarketData::_internal_set_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  mid_price_ = value;
+}
+inline void MarketData::set_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_mid_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.mid_price)
+}
+
+// uint64 static_mid_price = 11 [json_name = "staticMidPrice"];
+inline void MarketData::clear_static_mid_price() {
+  static_mid_price_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_static_mid_price() const {
+  return static_mid_price_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::static_mid_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.static_mid_price)
+  return _internal_static_mid_price();
+}
+inline void MarketData::_internal_set_static_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  static_mid_price_ = value;
+}
+inline void MarketData::set_static_mid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_static_mid_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.static_mid_price)
 }
 
 // string market = 12 [json_name = "market"];
@@ -20010,124 +20486,124 @@ inline void MarketData::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.timestamp)
 }
 
-// uint64 openInterest = 14 [json_name = "openInterest"];
-inline void MarketData::clear_openinterest() {
-  openinterest_ = PROTOBUF_ULONGLONG(0);
+// uint64 open_interest = 14 [json_name = "openInterest"];
+inline void MarketData::clear_open_interest() {
+  open_interest_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_openinterest() const {
-  return openinterest_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_open_interest() const {
+  return open_interest_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::openinterest() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.openInterest)
-  return _internal_openinterest();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::open_interest() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.open_interest)
+  return _internal_open_interest();
 }
-inline void MarketData::_internal_set_openinterest(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_open_interest(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  openinterest_ = value;
+  open_interest_ = value;
 }
-inline void MarketData::set_openinterest(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_openinterest(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.openInterest)
-}
-
-// int64 auctionEnd = 15 [json_name = "auctionEnd"];
-inline void MarketData::clear_auctionend() {
-  auctionend_ = PROTOBUF_LONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::_internal_auctionend() const {
-  return auctionend_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::auctionend() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.auctionEnd)
-  return _internal_auctionend();
-}
-inline void MarketData::_internal_set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value) {
-
-  auctionend_ = value;
-}
-inline void MarketData::set_auctionend(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_auctionend(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.auctionEnd)
+inline void MarketData::set_open_interest(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_open_interest(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.open_interest)
 }
 
-// int64 auctionStart = 16 [json_name = "auctionStart"];
-inline void MarketData::clear_auctionstart() {
-  auctionstart_ = PROTOBUF_LONGLONG(0);
+// int64 auction_end = 15 [json_name = "auctionEnd"];
+inline void MarketData::clear_auction_end() {
+  auction_end_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::_internal_auctionstart() const {
-  return auctionstart_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::_internal_auction_end() const {
+  return auction_end_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::auctionstart() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.auctionStart)
-  return _internal_auctionstart();
+inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::auction_end() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.auction_end)
+  return _internal_auction_end();
 }
-inline void MarketData::_internal_set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void MarketData::_internal_set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  auctionstart_ = value;
+  auction_end_ = value;
 }
-inline void MarketData::set_auctionstart(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_auctionstart(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.auctionStart)
-}
-
-// uint64 indicativePrice = 17 [json_name = "indicativePrice"];
-inline void MarketData::clear_indicativeprice() {
-  indicativeprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_indicativeprice() const {
-  return indicativeprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::indicativeprice() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.indicativePrice)
-  return _internal_indicativeprice();
-}
-inline void MarketData::_internal_set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  indicativeprice_ = value;
-}
-inline void MarketData::set_indicativeprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_indicativeprice(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.indicativePrice)
+inline void MarketData::set_auction_end(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_auction_end(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.auction_end)
 }
 
-// uint64 indicativeVolume = 18 [json_name = "indicativeVolume"];
-inline void MarketData::clear_indicativevolume() {
-  indicativevolume_ = PROTOBUF_ULONGLONG(0);
+// int64 auction_start = 16 [json_name = "auctionStart"];
+inline void MarketData::clear_auction_start() {
+  auction_start_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_indicativevolume() const {
-  return indicativevolume_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::_internal_auction_start() const {
+  return auction_start_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::indicativevolume() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.indicativeVolume)
-  return _internal_indicativevolume();
+inline ::PROTOBUF_NAMESPACE_ID::int64 MarketData::auction_start() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.auction_start)
+  return _internal_auction_start();
 }
-inline void MarketData::_internal_set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MarketData::_internal_set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  indicativevolume_ = value;
+  auction_start_ = value;
 }
-inline void MarketData::set_indicativevolume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_indicativevolume(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.indicativeVolume)
+inline void MarketData::set_auction_start(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_auction_start(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.auction_start)
 }
 
-// .vega.Market.TradingMode marketTradingMode = 19 [json_name = "marketTradingMode"];
-inline void MarketData::clear_markettradingmode() {
-  markettradingmode_ = 0;
+// uint64 indicative_price = 17 [json_name = "indicativePrice"];
+inline void MarketData::clear_indicative_price() {
+  indicative_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::vega::Market_TradingMode MarketData::_internal_markettradingmode() const {
-  return static_cast< ::vega::Market_TradingMode >(markettradingmode_);
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_indicative_price() const {
+  return indicative_price_;
 }
-inline ::vega::Market_TradingMode MarketData::markettradingmode() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.marketTradingMode)
-  return _internal_markettradingmode();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::indicative_price() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.indicative_price)
+  return _internal_indicative_price();
 }
-inline void MarketData::_internal_set_markettradingmode(::vega::Market_TradingMode value) {
+inline void MarketData::_internal_set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  markettradingmode_ = value;
+  indicative_price_ = value;
 }
-inline void MarketData::set_markettradingmode(::vega::Market_TradingMode value) {
-  _internal_set_markettradingmode(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.marketTradingMode)
+inline void MarketData::set_indicative_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_indicative_price(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.indicative_price)
+}
+
+// uint64 indicative_volume = 18 [json_name = "indicativeVolume"];
+inline void MarketData::clear_indicative_volume() {
+  indicative_volume_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::_internal_indicative_volume() const {
+  return indicative_volume_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MarketData::indicative_volume() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.indicative_volume)
+  return _internal_indicative_volume();
+}
+inline void MarketData::_internal_set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  indicative_volume_ = value;
+}
+inline void MarketData::set_indicative_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_indicative_volume(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.indicative_volume)
+}
+
+// .vega.Market.TradingMode market_trading_mode = 19 [json_name = "marketTradingMode"];
+inline void MarketData::clear_market_trading_mode() {
+  market_trading_mode_ = 0;
+}
+inline ::vega::Market_TradingMode MarketData::_internal_market_trading_mode() const {
+  return static_cast< ::vega::Market_TradingMode >(market_trading_mode_);
+}
+inline ::vega::Market_TradingMode MarketData::market_trading_mode() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.market_trading_mode)
+  return _internal_market_trading_mode();
+}
+inline void MarketData::_internal_set_market_trading_mode(::vega::Market_TradingMode value) {
+
+  market_trading_mode_ = value;
+}
+inline void MarketData::set_market_trading_mode(::vega::Market_TradingMode value) {
+  _internal_set_market_trading_mode(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.market_trading_mode)
 }
 
 // .vega.AuctionTrigger trigger = 20 [json_name = "trigger"];
@@ -20150,209 +20626,496 @@ inline void MarketData::set_trigger(::vega::AuctionTrigger value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.trigger)
 }
 
-// string targetStake = 21 [json_name = "targetStake"];
-inline void MarketData::clear_targetstake() {
-  targetstake_.ClearToEmpty();
+// string target_stake = 21 [json_name = "targetStake"];
+inline void MarketData::clear_target_stake() {
+  target_stake_.ClearToEmpty();
 }
-inline const std::string& MarketData::targetstake() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.targetStake)
-  return _internal_targetstake();
+inline const std::string& MarketData::target_stake() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.target_stake)
+  return _internal_target_stake();
 }
-inline void MarketData::set_targetstake(const std::string& value) {
-  _internal_set_targetstake(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.targetStake)
+inline void MarketData::set_target_stake(const std::string& value) {
+  _internal_set_target_stake(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.target_stake)
 }
-inline std::string* MarketData::mutable_targetstake() {
-  // @@protoc_insertion_point(field_mutable:vega.MarketData.targetStake)
-  return _internal_mutable_targetstake();
+inline std::string* MarketData::mutable_target_stake() {
+  // @@protoc_insertion_point(field_mutable:vega.MarketData.target_stake)
+  return _internal_mutable_target_stake();
 }
-inline const std::string& MarketData::_internal_targetstake() const {
-  return targetstake_.Get();
+inline const std::string& MarketData::_internal_target_stake() const {
+  return target_stake_.Get();
 }
-inline void MarketData::_internal_set_targetstake(const std::string& value) {
+inline void MarketData::_internal_set_target_stake(const std::string& value) {
 
-  targetstake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  target_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void MarketData::set_targetstake(std::string&& value) {
+inline void MarketData::set_target_stake(std::string&& value) {
 
-  targetstake_.Set(
+  target_stake_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.MarketData.targetStake)
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarketData.target_stake)
 }
-inline void MarketData::set_targetstake(const char* value) {
+inline void MarketData::set_target_stake(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  targetstake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.MarketData.targetStake)
+  target_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarketData.target_stake)
 }
-inline void MarketData::set_targetstake(const char* value,
+inline void MarketData::set_target_stake(const char* value,
     size_t size) {
 
-  targetstake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  target_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.MarketData.targetStake)
+  // @@protoc_insertion_point(field_set_pointer:vega.MarketData.target_stake)
 }
-inline std::string* MarketData::_internal_mutable_targetstake() {
+inline std::string* MarketData::_internal_mutable_target_stake() {
 
-  return targetstake_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return target_stake_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* MarketData::release_targetstake() {
-  // @@protoc_insertion_point(field_release:vega.MarketData.targetStake)
-  return targetstake_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* MarketData::release_target_stake() {
+  // @@protoc_insertion_point(field_release:vega.MarketData.target_stake)
+  return target_stake_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void MarketData::set_allocated_targetstake(std::string* targetstake) {
-  if (targetstake != nullptr) {
+inline void MarketData::set_allocated_target_stake(std::string* target_stake) {
+  if (target_stake != nullptr) {
 
   } else {
 
   }
-  targetstake_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), targetstake,
+  target_stake_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), target_stake,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.MarketData.targetStake)
+  // @@protoc_insertion_point(field_set_allocated:vega.MarketData.target_stake)
 }
 
-// string suppliedStake = 22 [json_name = "suppliedStake"];
-inline void MarketData::clear_suppliedstake() {
-  suppliedstake_.ClearToEmpty();
+// string supplied_stake = 22 [json_name = "suppliedStake"];
+inline void MarketData::clear_supplied_stake() {
+  supplied_stake_.ClearToEmpty();
 }
-inline const std::string& MarketData::suppliedstake() const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.suppliedStake)
-  return _internal_suppliedstake();
+inline const std::string& MarketData::supplied_stake() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.supplied_stake)
+  return _internal_supplied_stake();
 }
-inline void MarketData::set_suppliedstake(const std::string& value) {
-  _internal_set_suppliedstake(value);
-  // @@protoc_insertion_point(field_set:vega.MarketData.suppliedStake)
+inline void MarketData::set_supplied_stake(const std::string& value) {
+  _internal_set_supplied_stake(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.supplied_stake)
 }
-inline std::string* MarketData::mutable_suppliedstake() {
-  // @@protoc_insertion_point(field_mutable:vega.MarketData.suppliedStake)
-  return _internal_mutable_suppliedstake();
+inline std::string* MarketData::mutable_supplied_stake() {
+  // @@protoc_insertion_point(field_mutable:vega.MarketData.supplied_stake)
+  return _internal_mutable_supplied_stake();
 }
-inline const std::string& MarketData::_internal_suppliedstake() const {
-  return suppliedstake_.Get();
+inline const std::string& MarketData::_internal_supplied_stake() const {
+  return supplied_stake_.Get();
 }
-inline void MarketData::_internal_set_suppliedstake(const std::string& value) {
+inline void MarketData::_internal_set_supplied_stake(const std::string& value) {
 
-  suppliedstake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  supplied_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void MarketData::set_suppliedstake(std::string&& value) {
+inline void MarketData::set_supplied_stake(std::string&& value) {
 
-  suppliedstake_.Set(
+  supplied_stake_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.MarketData.suppliedStake)
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarketData.supplied_stake)
 }
-inline void MarketData::set_suppliedstake(const char* value) {
+inline void MarketData::set_supplied_stake(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  suppliedstake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.MarketData.suppliedStake)
+  supplied_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarketData.supplied_stake)
 }
-inline void MarketData::set_suppliedstake(const char* value,
+inline void MarketData::set_supplied_stake(const char* value,
     size_t size) {
 
-  suppliedstake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  supplied_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.MarketData.suppliedStake)
+  // @@protoc_insertion_point(field_set_pointer:vega.MarketData.supplied_stake)
 }
-inline std::string* MarketData::_internal_mutable_suppliedstake() {
+inline std::string* MarketData::_internal_mutable_supplied_stake() {
 
-  return suppliedstake_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return supplied_stake_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* MarketData::release_suppliedstake() {
-  // @@protoc_insertion_point(field_release:vega.MarketData.suppliedStake)
-  return suppliedstake_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* MarketData::release_supplied_stake() {
+  // @@protoc_insertion_point(field_release:vega.MarketData.supplied_stake)
+  return supplied_stake_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void MarketData::set_allocated_suppliedstake(std::string* suppliedstake) {
-  if (suppliedstake != nullptr) {
+inline void MarketData::set_allocated_supplied_stake(std::string* supplied_stake) {
+  if (supplied_stake != nullptr) {
 
   } else {
 
   }
-  suppliedstake_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), suppliedstake,
+  supplied_stake_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), supplied_stake,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.MarketData.suppliedStake)
+  // @@protoc_insertion_point(field_set_allocated:vega.MarketData.supplied_stake)
 }
 
-// repeated .vega.PriceMonitoringBounds priceMonitoringBounds = 23 [json_name = "priceMonitoringBounds"];
-inline int MarketData::_internal_pricemonitoringbounds_size() const {
-  return pricemonitoringbounds_.size();
+// repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
+inline int MarketData::_internal_price_monitoring_bounds_size() const {
+  return price_monitoring_bounds_.size();
 }
-inline int MarketData::pricemonitoringbounds_size() const {
-  return _internal_pricemonitoringbounds_size();
+inline int MarketData::price_monitoring_bounds_size() const {
+  return _internal_price_monitoring_bounds_size();
 }
-inline void MarketData::clear_pricemonitoringbounds() {
-  pricemonitoringbounds_.Clear();
+inline void MarketData::clear_price_monitoring_bounds() {
+  price_monitoring_bounds_.Clear();
 }
-inline ::vega::PriceMonitoringBounds* MarketData::mutable_pricemonitoringbounds(int index) {
-  // @@protoc_insertion_point(field_mutable:vega.MarketData.priceMonitoringBounds)
-  return pricemonitoringbounds_.Mutable(index);
+inline ::vega::PriceMonitoringBounds* MarketData::mutable_price_monitoring_bounds(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.MarketData.price_monitoring_bounds)
+  return price_monitoring_bounds_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds >*
-MarketData::mutable_pricemonitoringbounds() {
-  // @@protoc_insertion_point(field_mutable_list:vega.MarketData.priceMonitoringBounds)
-  return &pricemonitoringbounds_;
+MarketData::mutable_price_monitoring_bounds() {
+  // @@protoc_insertion_point(field_mutable_list:vega.MarketData.price_monitoring_bounds)
+  return &price_monitoring_bounds_;
 }
-inline const ::vega::PriceMonitoringBounds& MarketData::_internal_pricemonitoringbounds(int index) const {
-  return pricemonitoringbounds_.Get(index);
+inline const ::vega::PriceMonitoringBounds& MarketData::_internal_price_monitoring_bounds(int index) const {
+  return price_monitoring_bounds_.Get(index);
 }
-inline const ::vega::PriceMonitoringBounds& MarketData::pricemonitoringbounds(int index) const {
-  // @@protoc_insertion_point(field_get:vega.MarketData.priceMonitoringBounds)
-  return _internal_pricemonitoringbounds(index);
+inline const ::vega::PriceMonitoringBounds& MarketData::price_monitoring_bounds(int index) const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.price_monitoring_bounds)
+  return _internal_price_monitoring_bounds(index);
 }
-inline ::vega::PriceMonitoringBounds* MarketData::_internal_add_pricemonitoringbounds() {
-  return pricemonitoringbounds_.Add();
+inline ::vega::PriceMonitoringBounds* MarketData::_internal_add_price_monitoring_bounds() {
+  return price_monitoring_bounds_.Add();
 }
-inline ::vega::PriceMonitoringBounds* MarketData::add_pricemonitoringbounds() {
-  // @@protoc_insertion_point(field_add:vega.MarketData.priceMonitoringBounds)
-  return _internal_add_pricemonitoringbounds();
+inline ::vega::PriceMonitoringBounds* MarketData::add_price_monitoring_bounds() {
+  // @@protoc_insertion_point(field_add:vega.MarketData.price_monitoring_bounds)
+  return _internal_add_price_monitoring_bounds();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds >&
-MarketData::pricemonitoringbounds() const {
-  // @@protoc_insertion_point(field_list:vega.MarketData.priceMonitoringBounds)
-  return pricemonitoringbounds_;
+MarketData::price_monitoring_bounds() const {
+  // @@protoc_insertion_point(field_list:vega.MarketData.price_monitoring_bounds)
+  return price_monitoring_bounds_;
+}
+
+// string market_value_proxy = 24 [json_name = "marketValueProxy"];
+inline void MarketData::clear_market_value_proxy() {
+  market_value_proxy_.ClearToEmpty();
+}
+inline const std::string& MarketData::market_value_proxy() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.market_value_proxy)
+  return _internal_market_value_proxy();
+}
+inline void MarketData::set_market_value_proxy(const std::string& value) {
+  _internal_set_market_value_proxy(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.market_value_proxy)
+}
+inline std::string* MarketData::mutable_market_value_proxy() {
+  // @@protoc_insertion_point(field_mutable:vega.MarketData.market_value_proxy)
+  return _internal_mutable_market_value_proxy();
+}
+inline const std::string& MarketData::_internal_market_value_proxy() const {
+  return market_value_proxy_.Get();
+}
+inline void MarketData::_internal_set_market_value_proxy(const std::string& value) {
+
+  market_value_proxy_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void MarketData::set_market_value_proxy(std::string&& value) {
+
+  market_value_proxy_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.MarketData.market_value_proxy)
+}
+inline void MarketData::set_market_value_proxy(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  market_value_proxy_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.MarketData.market_value_proxy)
+}
+inline void MarketData::set_market_value_proxy(const char* value,
+    size_t size) {
+
+  market_value_proxy_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.MarketData.market_value_proxy)
+}
+inline std::string* MarketData::_internal_mutable_market_value_proxy() {
+
+  return market_value_proxy_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* MarketData::release_market_value_proxy() {
+  // @@protoc_insertion_point(field_release:vega.MarketData.market_value_proxy)
+  return market_value_proxy_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void MarketData::set_allocated_market_value_proxy(std::string* market_value_proxy) {
+  if (market_value_proxy != nullptr) {
+
+  } else {
+
+  }
+  market_value_proxy_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_value_proxy,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.MarketData.market_value_proxy)
+}
+
+// repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
+inline int MarketData::_internal_liquidity_provider_fee_share_size() const {
+  return liquidity_provider_fee_share_.size();
+}
+inline int MarketData::liquidity_provider_fee_share_size() const {
+  return _internal_liquidity_provider_fee_share_size();
+}
+inline void MarketData::clear_liquidity_provider_fee_share() {
+  liquidity_provider_fee_share_.Clear();
+}
+inline ::vega::LiquidityProviderFeeShare* MarketData::mutable_liquidity_provider_fee_share(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.MarketData.liquidity_provider_fee_share)
+  return liquidity_provider_fee_share_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityProviderFeeShare >*
+MarketData::mutable_liquidity_provider_fee_share() {
+  // @@protoc_insertion_point(field_mutable_list:vega.MarketData.liquidity_provider_fee_share)
+  return &liquidity_provider_fee_share_;
+}
+inline const ::vega::LiquidityProviderFeeShare& MarketData::_internal_liquidity_provider_fee_share(int index) const {
+  return liquidity_provider_fee_share_.Get(index);
+}
+inline const ::vega::LiquidityProviderFeeShare& MarketData::liquidity_provider_fee_share(int index) const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.liquidity_provider_fee_share)
+  return _internal_liquidity_provider_fee_share(index);
+}
+inline ::vega::LiquidityProviderFeeShare* MarketData::_internal_add_liquidity_provider_fee_share() {
+  return liquidity_provider_fee_share_.Add();
+}
+inline ::vega::LiquidityProviderFeeShare* MarketData::add_liquidity_provider_fee_share() {
+  // @@protoc_insertion_point(field_add:vega.MarketData.liquidity_provider_fee_share)
+  return _internal_add_liquidity_provider_fee_share();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityProviderFeeShare >&
+MarketData::liquidity_provider_fee_share() const {
+  // @@protoc_insertion_point(field_list:vega.MarketData.liquidity_provider_fee_share)
+  return liquidity_provider_fee_share_;
+}
+
+// -------------------------------------------------------------------
+
+// LiquidityProviderFeeShare
+
+// string party = 1 [json_name = "party"];
+inline void LiquidityProviderFeeShare::clear_party() {
+  party_.ClearToEmpty();
+}
+inline const std::string& LiquidityProviderFeeShare::party() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProviderFeeShare.party)
+  return _internal_party();
+}
+inline void LiquidityProviderFeeShare::set_party(const std::string& value) {
+  _internal_set_party(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProviderFeeShare.party)
+}
+inline std::string* LiquidityProviderFeeShare::mutable_party() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProviderFeeShare.party)
+  return _internal_mutable_party();
+}
+inline const std::string& LiquidityProviderFeeShare::_internal_party() const {
+  return party_.Get();
+}
+inline void LiquidityProviderFeeShare::_internal_set_party(const std::string& value) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProviderFeeShare::set_party(std::string&& value) {
+
+  party_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProviderFeeShare.party)
+}
+inline void LiquidityProviderFeeShare::set_party(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProviderFeeShare.party)
+}
+inline void LiquidityProviderFeeShare::set_party(const char* value,
+    size_t size) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProviderFeeShare.party)
+}
+inline std::string* LiquidityProviderFeeShare::_internal_mutable_party() {
+
+  return party_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProviderFeeShare::release_party() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProviderFeeShare.party)
+  return party_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProviderFeeShare::set_allocated_party(std::string* party) {
+  if (party != nullptr) {
+
+  } else {
+
+  }
+  party_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProviderFeeShare.party)
+}
+
+// string equity_like_share = 2 [json_name = "equityLikeShare"];
+inline void LiquidityProviderFeeShare::clear_equity_like_share() {
+  equity_like_share_.ClearToEmpty();
+}
+inline const std::string& LiquidityProviderFeeShare::equity_like_share() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProviderFeeShare.equity_like_share)
+  return _internal_equity_like_share();
+}
+inline void LiquidityProviderFeeShare::set_equity_like_share(const std::string& value) {
+  _internal_set_equity_like_share(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProviderFeeShare.equity_like_share)
+}
+inline std::string* LiquidityProviderFeeShare::mutable_equity_like_share() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProviderFeeShare.equity_like_share)
+  return _internal_mutable_equity_like_share();
+}
+inline const std::string& LiquidityProviderFeeShare::_internal_equity_like_share() const {
+  return equity_like_share_.Get();
+}
+inline void LiquidityProviderFeeShare::_internal_set_equity_like_share(const std::string& value) {
+
+  equity_like_share_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProviderFeeShare::set_equity_like_share(std::string&& value) {
+
+  equity_like_share_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProviderFeeShare.equity_like_share)
+}
+inline void LiquidityProviderFeeShare::set_equity_like_share(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  equity_like_share_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProviderFeeShare.equity_like_share)
+}
+inline void LiquidityProviderFeeShare::set_equity_like_share(const char* value,
+    size_t size) {
+
+  equity_like_share_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProviderFeeShare.equity_like_share)
+}
+inline std::string* LiquidityProviderFeeShare::_internal_mutable_equity_like_share() {
+
+  return equity_like_share_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProviderFeeShare::release_equity_like_share() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProviderFeeShare.equity_like_share)
+  return equity_like_share_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProviderFeeShare::set_allocated_equity_like_share(std::string* equity_like_share) {
+  if (equity_like_share != nullptr) {
+
+  } else {
+
+  }
+  equity_like_share_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), equity_like_share,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProviderFeeShare.equity_like_share)
+}
+
+// string average_entry_valuation = 3 [json_name = "averageEntryValuation"];
+inline void LiquidityProviderFeeShare::clear_average_entry_valuation() {
+  average_entry_valuation_.ClearToEmpty();
+}
+inline const std::string& LiquidityProviderFeeShare::average_entry_valuation() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProviderFeeShare.average_entry_valuation)
+  return _internal_average_entry_valuation();
+}
+inline void LiquidityProviderFeeShare::set_average_entry_valuation(const std::string& value) {
+  _internal_set_average_entry_valuation(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProviderFeeShare.average_entry_valuation)
+}
+inline std::string* LiquidityProviderFeeShare::mutable_average_entry_valuation() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProviderFeeShare.average_entry_valuation)
+  return _internal_mutable_average_entry_valuation();
+}
+inline const std::string& LiquidityProviderFeeShare::_internal_average_entry_valuation() const {
+  return average_entry_valuation_.Get();
+}
+inline void LiquidityProviderFeeShare::_internal_set_average_entry_valuation(const std::string& value) {
+
+  average_entry_valuation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProviderFeeShare::set_average_entry_valuation(std::string&& value) {
+
+  average_entry_valuation_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProviderFeeShare.average_entry_valuation)
+}
+inline void LiquidityProviderFeeShare::set_average_entry_valuation(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  average_entry_valuation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProviderFeeShare.average_entry_valuation)
+}
+inline void LiquidityProviderFeeShare::set_average_entry_valuation(const char* value,
+    size_t size) {
+
+  average_entry_valuation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProviderFeeShare.average_entry_valuation)
+}
+inline std::string* LiquidityProviderFeeShare::_internal_mutable_average_entry_valuation() {
+
+  return average_entry_valuation_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProviderFeeShare::release_average_entry_valuation() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProviderFeeShare.average_entry_valuation)
+  return average_entry_valuation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProviderFeeShare::set_allocated_average_entry_valuation(std::string* average_entry_valuation) {
+  if (average_entry_valuation != nullptr) {
+
+  } else {
+
+  }
+  average_entry_valuation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), average_entry_valuation,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProviderFeeShare.average_entry_valuation)
 }
 
 // -------------------------------------------------------------------
 
 // PriceMonitoringBounds
 
-// uint64 minValidPrice = 1 [json_name = "minValidPrice"];
-inline void PriceMonitoringBounds::clear_minvalidprice() {
-  minvalidprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 min_valid_price = 1 [json_name = "minValidPrice"];
+inline void PriceMonitoringBounds::clear_min_valid_price() {
+  min_valid_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::_internal_minvalidprice() const {
-  return minvalidprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::_internal_min_valid_price() const {
+  return min_valid_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::minvalidprice() const {
-  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.minValidPrice)
-  return _internal_minvalidprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::min_valid_price() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.min_valid_price)
+  return _internal_min_valid_price();
 }
-inline void PriceMonitoringBounds::_internal_set_minvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void PriceMonitoringBounds::_internal_set_min_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  minvalidprice_ = value;
+  min_valid_price_ = value;
 }
-inline void PriceMonitoringBounds::set_minvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_minvalidprice(value);
-  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.minValidPrice)
+inline void PriceMonitoringBounds::set_min_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_min_valid_price(value);
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.min_valid_price)
 }
 
-// uint64 maxValidPrice = 2 [json_name = "maxValidPrice"];
-inline void PriceMonitoringBounds::clear_maxvalidprice() {
-  maxvalidprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 max_valid_price = 2 [json_name = "maxValidPrice"];
+inline void PriceMonitoringBounds::clear_max_valid_price() {
+  max_valid_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::_internal_maxvalidprice() const {
-  return maxvalidprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::_internal_max_valid_price() const {
+  return max_valid_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::maxvalidprice() const {
-  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.maxValidPrice)
-  return _internal_maxvalidprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PriceMonitoringBounds::max_valid_price() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.max_valid_price)
+  return _internal_max_valid_price();
 }
-inline void PriceMonitoringBounds::_internal_set_maxvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void PriceMonitoringBounds::_internal_set_max_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  maxvalidprice_ = value;
+  max_valid_price_ = value;
 }
-inline void PriceMonitoringBounds::set_maxvalidprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_maxvalidprice(value);
-  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.maxValidPrice)
+inline void PriceMonitoringBounds::set_max_valid_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_max_valid_price(value);
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.max_valid_price)
 }
 
 // .vega.PriceMonitoringTrigger trigger = 3 [json_name = "trigger"];
@@ -20432,24 +21195,24 @@ inline void PriceMonitoringBounds::set_allocated_trigger(::vega::PriceMonitoring
   // @@protoc_insertion_point(field_set_allocated:vega.PriceMonitoringBounds.trigger)
 }
 
-// double referencePrice = 4 [json_name = "referencePrice"];
-inline void PriceMonitoringBounds::clear_referenceprice() {
-  referenceprice_ = 0;
+// double reference_price = 4 [json_name = "referencePrice"];
+inline void PriceMonitoringBounds::clear_reference_price() {
+  reference_price_ = 0;
 }
-inline double PriceMonitoringBounds::_internal_referenceprice() const {
-  return referenceprice_;
+inline double PriceMonitoringBounds::_internal_reference_price() const {
+  return reference_price_;
 }
-inline double PriceMonitoringBounds::referenceprice() const {
-  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.referencePrice)
-  return _internal_referenceprice();
+inline double PriceMonitoringBounds::reference_price() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringBounds.reference_price)
+  return _internal_reference_price();
 }
-inline void PriceMonitoringBounds::_internal_set_referenceprice(double value) {
+inline void PriceMonitoringBounds::_internal_set_reference_price(double value) {
 
-  referenceprice_ = value;
+  reference_price_ = value;
 }
-inline void PriceMonitoringBounds::set_referenceprice(double value) {
-  _internal_set_referenceprice(value);
-  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.referencePrice)
+inline void PriceMonitoringBounds::set_reference_price(double value) {
+  _internal_set_reference_price(value);
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringBounds.reference_price)
 }
 
 // -------------------------------------------------------------------
@@ -20602,65 +21365,65 @@ inline void ErrorDetail::set_allocated_inner(std::string* inner) {
 
 // Transaction
 
-// bytes inputData = 1 [json_name = "inputData"];
-inline void Transaction::clear_inputdata() {
-  inputdata_.ClearToEmpty();
+// bytes input_data = 1 [json_name = "inputData"];
+inline void Transaction::clear_input_data() {
+  input_data_.ClearToEmpty();
 }
-inline const std::string& Transaction::inputdata() const {
-  // @@protoc_insertion_point(field_get:vega.Transaction.inputData)
-  return _internal_inputdata();
+inline const std::string& Transaction::input_data() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.input_data)
+  return _internal_input_data();
 }
-inline void Transaction::set_inputdata(const std::string& value) {
-  _internal_set_inputdata(value);
-  // @@protoc_insertion_point(field_set:vega.Transaction.inputData)
+inline void Transaction::set_input_data(const std::string& value) {
+  _internal_set_input_data(value);
+  // @@protoc_insertion_point(field_set:vega.Transaction.input_data)
 }
-inline std::string* Transaction::mutable_inputdata() {
-  // @@protoc_insertion_point(field_mutable:vega.Transaction.inputData)
-  return _internal_mutable_inputdata();
+inline std::string* Transaction::mutable_input_data() {
+  // @@protoc_insertion_point(field_mutable:vega.Transaction.input_data)
+  return _internal_mutable_input_data();
 }
-inline const std::string& Transaction::_internal_inputdata() const {
-  return inputdata_.Get();
+inline const std::string& Transaction::_internal_input_data() const {
+  return input_data_.Get();
 }
-inline void Transaction::_internal_set_inputdata(const std::string& value) {
+inline void Transaction::_internal_set_input_data(const std::string& value) {
 
-  inputdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  input_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Transaction::set_inputdata(std::string&& value) {
+inline void Transaction::set_input_data(std::string&& value) {
 
-  inputdata_.Set(
+  input_data_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.inputData)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.input_data)
 }
-inline void Transaction::set_inputdata(const char* value) {
+inline void Transaction::set_input_data(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  inputdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Transaction.inputData)
+  input_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Transaction.input_data)
 }
-inline void Transaction::set_inputdata(const void* value,
+inline void Transaction::set_input_data(const void* value,
     size_t size) {
 
-  inputdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  input_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.inputData)
+  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.input_data)
 }
-inline std::string* Transaction::_internal_mutable_inputdata() {
+inline std::string* Transaction::_internal_mutable_input_data() {
 
-  return inputdata_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return input_data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Transaction::release_inputdata() {
-  // @@protoc_insertion_point(field_release:vega.Transaction.inputData)
-  return inputdata_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Transaction::release_input_data() {
+  // @@protoc_insertion_point(field_release:vega.Transaction.input_data)
+  return input_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Transaction::set_allocated_inputdata(std::string* inputdata) {
-  if (inputdata != nullptr) {
+inline void Transaction::set_allocated_input_data(std::string* input_data) {
+  if (input_data != nullptr) {
 
   } else {
 
   }
-  inputdata_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), inputdata,
+  input_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), input_data,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.inputData)
+  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.input_data)
 }
 
 // uint64 nonce = 2 [json_name = "nonce"];
@@ -20683,24 +21446,24 @@ inline void Transaction::set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.Transaction.nonce)
 }
 
-// uint64 blockHeight = 3 [json_name = "blockHeight"];
-inline void Transaction::clear_blockheight() {
-  blockheight_ = PROTOBUF_ULONGLONG(0);
+// uint64 block_height = 3 [json_name = "blockHeight"];
+inline void Transaction::clear_block_height() {
+  block_height_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Transaction::_internal_blockheight() const {
-  return blockheight_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transaction::_internal_block_height() const {
+  return block_height_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Transaction::blockheight() const {
-  // @@protoc_insertion_point(field_get:vega.Transaction.blockHeight)
-  return _internal_blockheight();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transaction::block_height() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.block_height)
+  return _internal_block_height();
 }
-inline void Transaction::_internal_set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Transaction::_internal_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  blockheight_ = value;
+  block_height_ = value;
 }
-inline void Transaction::set_blockheight(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_blockheight(value);
-  // @@protoc_insertion_point(field_set:vega.Transaction.blockHeight)
+inline void Transaction::set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_block_height(value);
+  // @@protoc_insertion_point(field_set:vega.Transaction.block_height)
 }
 
 // bytes address = 1001 [json_name = "address"];
@@ -20810,111 +21573,111 @@ inline void Transaction::set_allocated_address(std::string* address) {
   // @@protoc_insertion_point(field_set_allocated:vega.Transaction.address)
 }
 
-// bytes pubKey = 1002 [json_name = "pubKey"];
-inline bool Transaction::_internal_has_pubkey() const {
+// bytes pub_key = 1002 [json_name = "pubKey"];
+inline bool Transaction::_internal_has_pub_key() const {
   return from_case() == kPubKey;
 }
-inline void Transaction::set_has_pubkey() {
+inline void Transaction::set_has_pub_key() {
   _oneof_case_[0] = kPubKey;
 }
-inline void Transaction::clear_pubkey() {
-  if (_internal_has_pubkey()) {
-    from_.pubkey_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+inline void Transaction::clear_pub_key() {
+  if (_internal_has_pub_key()) {
+    from_.pub_key_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
     clear_has_from();
   }
 }
-inline const std::string& Transaction::pubkey() const {
-  // @@protoc_insertion_point(field_get:vega.Transaction.pubKey)
-  return _internal_pubkey();
+inline const std::string& Transaction::pub_key() const {
+  // @@protoc_insertion_point(field_get:vega.Transaction.pub_key)
+  return _internal_pub_key();
 }
-inline void Transaction::set_pubkey(const std::string& value) {
-  _internal_set_pubkey(value);
-  // @@protoc_insertion_point(field_set:vega.Transaction.pubKey)
+inline void Transaction::set_pub_key(const std::string& value) {
+  _internal_set_pub_key(value);
+  // @@protoc_insertion_point(field_set:vega.Transaction.pub_key)
 }
-inline std::string* Transaction::mutable_pubkey() {
-  // @@protoc_insertion_point(field_mutable:vega.Transaction.pubKey)
-  return _internal_mutable_pubkey();
+inline std::string* Transaction::mutable_pub_key() {
+  // @@protoc_insertion_point(field_mutable:vega.Transaction.pub_key)
+  return _internal_mutable_pub_key();
 }
-inline const std::string& Transaction::_internal_pubkey() const {
-  if (_internal_has_pubkey()) {
-    return from_.pubkey_.Get();
+inline const std::string& Transaction::_internal_pub_key() const {
+  if (_internal_has_pub_key()) {
+    return from_.pub_key_.Get();
   }
   return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
 }
-inline void Transaction::_internal_set_pubkey(const std::string& value) {
-  if (!_internal_has_pubkey()) {
+inline void Transaction::_internal_set_pub_key(const std::string& value) {
+  if (!_internal_has_pub_key()) {
     clear_from();
-    set_has_pubkey();
-    from_.pubkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    set_has_pub_key();
+    from_.pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  from_.pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  from_.pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Transaction::set_pubkey(std::string&& value) {
-  // @@protoc_insertion_point(field_set:vega.Transaction.pubKey)
-  if (!_internal_has_pubkey()) {
+inline void Transaction::set_pub_key(std::string&& value) {
+  // @@protoc_insertion_point(field_set:vega.Transaction.pub_key)
+  if (!_internal_has_pub_key()) {
     clear_from();
-    set_has_pubkey();
-    from_.pubkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    set_has_pub_key();
+    from_.pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  from_.pubkey_.Set(
+  from_.pub_key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.pubKey)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Transaction.pub_key)
 }
-inline void Transaction::set_pubkey(const char* value) {
+inline void Transaction::set_pub_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  if (!_internal_has_pubkey()) {
+  if (!_internal_has_pub_key()) {
     clear_from();
-    set_has_pubkey();
-    from_.pubkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    set_has_pub_key();
+    from_.pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  from_.pubkey_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{},
+  from_.pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{},
       ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Transaction.pubKey)
+  // @@protoc_insertion_point(field_set_char:vega.Transaction.pub_key)
 }
-inline void Transaction::set_pubkey(const void* value,
+inline void Transaction::set_pub_key(const void* value,
                              size_t size) {
-  if (!_internal_has_pubkey()) {
+  if (!_internal_has_pub_key()) {
     clear_from();
-    set_has_pubkey();
-    from_.pubkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    set_has_pub_key();
+    from_.pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  from_.pubkey_.Set(
+  from_.pub_key_.Set(
       ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size),
       GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.pubKey)
+  // @@protoc_insertion_point(field_set_pointer:vega.Transaction.pub_key)
 }
-inline std::string* Transaction::_internal_mutable_pubkey() {
-  if (!_internal_has_pubkey()) {
+inline std::string* Transaction::_internal_mutable_pub_key() {
+  if (!_internal_has_pub_key()) {
     clear_from();
-    set_has_pubkey();
-    from_.pubkey_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    set_has_pub_key();
+    from_.pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
-  return from_.pubkey_.Mutable(
+  return from_.pub_key_.Mutable(
       ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Transaction::release_pubkey() {
-  // @@protoc_insertion_point(field_release:vega.Transaction.pubKey)
-  if (_internal_has_pubkey()) {
+inline std::string* Transaction::release_pub_key() {
+  // @@protoc_insertion_point(field_release:vega.Transaction.pub_key)
+  if (_internal_has_pub_key()) {
     clear_has_from();
-    return from_.pubkey_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+    return from_.pub_key_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   } else {
     return nullptr;
   }
 }
-inline void Transaction::set_allocated_pubkey(std::string* pubkey) {
+inline void Transaction::set_allocated_pub_key(std::string* pub_key) {
   if (has_from()) {
     clear_from();
   }
-  if (pubkey != nullptr) {
-    set_has_pubkey();
-    from_.pubkey_.UnsafeSetDefault(pubkey);
+  if (pub_key != nullptr) {
+    set_has_pub_key();
+    from_.pub_key_.UnsafeSetDefault(pub_key);
     ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena();
     if (arena != nullptr) {
-      arena->Own(pubkey);
+      arena->Own(pub_key);
     }
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.pubKey)
+  // @@protoc_insertion_point(field_set_allocated:vega.Transaction.pub_key)
 }
 
 inline bool Transaction::has_from() const {
@@ -21224,20 +21987,20 @@ inline void SignedBundle::set_allocated_sig(::vega::Signature* sig) {
 
 // NodeSignature
 
-// string ID = 1 [json_name = "ID"];
+// string id = 1 [json_name = "id"];
 inline void NodeSignature::clear_id() {
   id_.ClearToEmpty();
 }
 inline const std::string& NodeSignature::id() const {
-  // @@protoc_insertion_point(field_get:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_get:vega.NodeSignature.id)
   return _internal_id();
 }
 inline void NodeSignature::set_id(const std::string& value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_set:vega.NodeSignature.id)
 }
 inline std::string* NodeSignature::mutable_id() {
-  // @@protoc_insertion_point(field_mutable:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_mutable:vega.NodeSignature.id)
   return _internal_mutable_id();
 }
 inline const std::string& NodeSignature::_internal_id() const {
@@ -21251,27 +22014,27 @@ inline void NodeSignature::set_id(std::string&& value) {
 
   id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.NodeSignature.id)
 }
 inline void NodeSignature::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_set_char:vega.NodeSignature.id)
 }
 inline void NodeSignature::set_id(const char* value,
     size_t size) {
 
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_set_pointer:vega.NodeSignature.id)
 }
 inline std::string* NodeSignature::_internal_mutable_id() {
 
   return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
 inline std::string* NodeSignature::release_id() {
-  // @@protoc_insertion_point(field_release:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_release:vega.NodeSignature.id)
   return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void NodeSignature::set_allocated_id(std::string* id) {
@@ -21282,7 +22045,7 @@ inline void NodeSignature::set_allocated_id(std::string* id) {
   }
   id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.NodeSignature.ID)
+  // @@protoc_insertion_point(field_set_allocated:vega.NodeSignature.id)
 }
 
 // bytes sig = 2 [json_name = "sig"];
@@ -21370,20 +22133,20 @@ inline void NodeSignature::set_kind(::vega::NodeSignatureKind value) {
 
 // NetworkParameter
 
-// string Key = 1 [json_name = "Key"];
+// string key = 1 [json_name = "key"];
 inline void NetworkParameter::clear_key() {
   key_.ClearToEmpty();
 }
 inline const std::string& NetworkParameter::key() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_get:vega.NetworkParameter.key)
   return _internal_key();
 }
 inline void NetworkParameter::set_key(const std::string& value) {
   _internal_set_key(value);
-  // @@protoc_insertion_point(field_set:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_set:vega.NetworkParameter.key)
 }
 inline std::string* NetworkParameter::mutable_key() {
-  // @@protoc_insertion_point(field_mutable:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_mutable:vega.NetworkParameter.key)
   return _internal_mutable_key();
 }
 inline const std::string& NetworkParameter::_internal_key() const {
@@ -21397,27 +22160,27 @@ inline void NetworkParameter::set_key(std::string&& value) {
 
   key_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_set_rvalue:vega.NetworkParameter.key)
 }
 inline void NetworkParameter::set_key(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_set_char:vega.NetworkParameter.key)
 }
 inline void NetworkParameter::set_key(const char* value,
     size_t size) {
 
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_set_pointer:vega.NetworkParameter.key)
 }
 inline std::string* NetworkParameter::_internal_mutable_key() {
 
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
 inline std::string* NetworkParameter::release_key() {
-  // @@protoc_insertion_point(field_release:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_release:vega.NetworkParameter.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void NetworkParameter::set_allocated_key(std::string* key) {
@@ -21428,23 +22191,23 @@ inline void NetworkParameter::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.NetworkParameter.Key)
+  // @@protoc_insertion_point(field_set_allocated:vega.NetworkParameter.key)
 }
 
-// string Value = 2 [json_name = "Value"];
+// string value = 2 [json_name = "value"];
 inline void NetworkParameter::clear_value() {
   value_.ClearToEmpty();
 }
 inline const std::string& NetworkParameter::value() const {
-  // @@protoc_insertion_point(field_get:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_get:vega.NetworkParameter.value)
   return _internal_value();
 }
 inline void NetworkParameter::set_value(const std::string& value) {
   _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_set:vega.NetworkParameter.value)
 }
 inline std::string* NetworkParameter::mutable_value() {
-  // @@protoc_insertion_point(field_mutable:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_mutable:vega.NetworkParameter.value)
   return _internal_mutable_value();
 }
 inline const std::string& NetworkParameter::_internal_value() const {
@@ -21458,27 +22221,27 @@ inline void NetworkParameter::set_value(std::string&& value) {
 
   value_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_set_rvalue:vega.NetworkParameter.value)
 }
 inline void NetworkParameter::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_set_char:vega.NetworkParameter.value)
 }
 inline void NetworkParameter::set_value(const char* value,
     size_t size) {
 
   value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_set_pointer:vega.NetworkParameter.value)
 }
 inline std::string* NetworkParameter::_internal_mutable_value() {
 
   return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
 inline std::string* NetworkParameter::release_value() {
-  // @@protoc_insertion_point(field_release:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_release:vega.NetworkParameter.value)
   return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void NetworkParameter::set_allocated_value(std::string* value) {
@@ -21489,7 +22252,7 @@ inline void NetworkParameter::set_allocated_value(std::string* value) {
   }
   value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.NetworkParameter.Value)
+  // @@protoc_insertion_point(field_set_allocated:vega.NetworkParameter.value)
 }
 
 // -------------------------------------------------------------------
@@ -21560,85 +22323,85 @@ inline void LiquidityOrder::set_offset(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
 // LiquidityProvisionSubmission
 
-// string marketID = 1 [json_name = "marketID", (.validator.field) = {
-inline void LiquidityProvisionSubmission::clear_marketid() {
-  marketid_.ClearToEmpty();
+// string market_id = 1 [json_name = "marketId", (.validator.field) = {
+inline void LiquidityProvisionSubmission::clear_market_id() {
+  market_id_.ClearToEmpty();
 }
-inline const std::string& LiquidityProvisionSubmission::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.marketID)
-  return _internal_marketid();
+inline const std::string& LiquidityProvisionSubmission::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.market_id)
+  return _internal_market_id();
 }
-inline void LiquidityProvisionSubmission::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvisionSubmission.marketID)
+inline void LiquidityProvisionSubmission::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvisionSubmission.market_id)
 }
-inline std::string* LiquidityProvisionSubmission::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.marketID)
-  return _internal_mutable_marketid();
+inline std::string* LiquidityProvisionSubmission::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.market_id)
+  return _internal_mutable_market_id();
 }
-inline const std::string& LiquidityProvisionSubmission::_internal_marketid() const {
-  return marketid_.Get();
+inline const std::string& LiquidityProvisionSubmission::_internal_market_id() const {
+  return market_id_.Get();
 }
-inline void LiquidityProvisionSubmission::_internal_set_marketid(const std::string& value) {
+inline void LiquidityProvisionSubmission::_internal_set_market_id(const std::string& value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void LiquidityProvisionSubmission::set_marketid(std::string&& value) {
+inline void LiquidityProvisionSubmission::set_market_id(std::string&& value) {
 
-  marketid_.Set(
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvisionSubmission.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvisionSubmission.market_id)
 }
-inline void LiquidityProvisionSubmission::set_marketid(const char* value) {
+inline void LiquidityProvisionSubmission::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvisionSubmission.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvisionSubmission.market_id)
 }
-inline void LiquidityProvisionSubmission::set_marketid(const char* value,
+inline void LiquidityProvisionSubmission::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvisionSubmission.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvisionSubmission.market_id)
 }
-inline std::string* LiquidityProvisionSubmission::_internal_mutable_marketid() {
+inline std::string* LiquidityProvisionSubmission::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* LiquidityProvisionSubmission::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.LiquidityProvisionSubmission.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* LiquidityProvisionSubmission::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvisionSubmission.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void LiquidityProvisionSubmission::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void LiquidityProvisionSubmission::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvisionSubmission.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvisionSubmission.market_id)
 }
 
-// uint64 commitmentAmount = 2 [json_name = "commitmentAmount"];
-inline void LiquidityProvisionSubmission::clear_commitmentamount() {
-  commitmentamount_ = PROTOBUF_ULONGLONG(0);
+// uint64 commitment_amount = 2 [json_name = "commitmentAmount"];
+inline void LiquidityProvisionSubmission::clear_commitment_amount() {
+  commitment_amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvisionSubmission::_internal_commitmentamount() const {
-  return commitmentamount_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvisionSubmission::_internal_commitment_amount() const {
+  return commitment_amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvisionSubmission::commitmentamount() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.commitmentAmount)
-  return _internal_commitmentamount();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvisionSubmission::commitment_amount() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.commitment_amount)
+  return _internal_commitment_amount();
 }
-inline void LiquidityProvisionSubmission::_internal_set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void LiquidityProvisionSubmission::_internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  commitmentamount_ = value;
+  commitment_amount_ = value;
 }
-inline void LiquidityProvisionSubmission::set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_commitmentamount(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvisionSubmission.commitmentAmount)
+inline void LiquidityProvisionSubmission::set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_commitment_amount(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvisionSubmission.commitment_amount)
 }
 
 // string fee = 3 [json_name = "fee"];
@@ -21702,7 +22465,7 @@ inline void LiquidityProvisionSubmission::set_allocated_fee(std::string* fee) {
   // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvisionSubmission.fee)
 }
 
-// repeated .vega.LiquidityOrder Sells = 4 [json_name = "Sells"];
+// repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];
 inline int LiquidityProvisionSubmission::_internal_sells_size() const {
   return sells_.size();
 }
@@ -21713,35 +22476,35 @@ inline void LiquidityProvisionSubmission::clear_sells() {
   sells_.Clear();
 }
 inline ::vega::LiquidityOrder* LiquidityProvisionSubmission::mutable_sells(int index) {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.Sells)
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.sells)
   return sells_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >*
 LiquidityProvisionSubmission::mutable_sells() {
-  // @@protoc_insertion_point(field_mutable_list:vega.LiquidityProvisionSubmission.Sells)
+  // @@protoc_insertion_point(field_mutable_list:vega.LiquidityProvisionSubmission.sells)
   return &sells_;
 }
 inline const ::vega::LiquidityOrder& LiquidityProvisionSubmission::_internal_sells(int index) const {
   return sells_.Get(index);
 }
 inline const ::vega::LiquidityOrder& LiquidityProvisionSubmission::sells(int index) const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.Sells)
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.sells)
   return _internal_sells(index);
 }
 inline ::vega::LiquidityOrder* LiquidityProvisionSubmission::_internal_add_sells() {
   return sells_.Add();
 }
 inline ::vega::LiquidityOrder* LiquidityProvisionSubmission::add_sells() {
-  // @@protoc_insertion_point(field_add:vega.LiquidityProvisionSubmission.Sells)
+  // @@protoc_insertion_point(field_add:vega.LiquidityProvisionSubmission.sells)
   return _internal_add_sells();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
 LiquidityProvisionSubmission::sells() const {
-  // @@protoc_insertion_point(field_list:vega.LiquidityProvisionSubmission.Sells)
+  // @@protoc_insertion_point(field_list:vega.LiquidityProvisionSubmission.sells)
   return sells_;
 }
 
-// repeated .vega.LiquidityOrder Buys = 5 [json_name = "Buys"];
+// repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];
 inline int LiquidityProvisionSubmission::_internal_buys_size() const {
   return buys_.size();
 }
@@ -21752,180 +22515,241 @@ inline void LiquidityProvisionSubmission::clear_buys() {
   buys_.Clear();
 }
 inline ::vega::LiquidityOrder* LiquidityProvisionSubmission::mutable_buys(int index) {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.Buys)
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.buys)
   return buys_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >*
 LiquidityProvisionSubmission::mutable_buys() {
-  // @@protoc_insertion_point(field_mutable_list:vega.LiquidityProvisionSubmission.Buys)
+  // @@protoc_insertion_point(field_mutable_list:vega.LiquidityProvisionSubmission.buys)
   return &buys_;
 }
 inline const ::vega::LiquidityOrder& LiquidityProvisionSubmission::_internal_buys(int index) const {
   return buys_.Get(index);
 }
 inline const ::vega::LiquidityOrder& LiquidityProvisionSubmission::buys(int index) const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.Buys)
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.buys)
   return _internal_buys(index);
 }
 inline ::vega::LiquidityOrder* LiquidityProvisionSubmission::_internal_add_buys() {
   return buys_.Add();
 }
 inline ::vega::LiquidityOrder* LiquidityProvisionSubmission::add_buys() {
-  // @@protoc_insertion_point(field_add:vega.LiquidityProvisionSubmission.Buys)
+  // @@protoc_insertion_point(field_add:vega.LiquidityProvisionSubmission.buys)
   return _internal_add_buys();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder >&
 LiquidityProvisionSubmission::buys() const {
-  // @@protoc_insertion_point(field_list:vega.LiquidityProvisionSubmission.Buys)
+  // @@protoc_insertion_point(field_list:vega.LiquidityProvisionSubmission.buys)
   return buys_;
+}
+
+// string reference = 6 [json_name = "reference"];
+inline void LiquidityProvisionSubmission::clear_reference() {
+  reference_.ClearToEmpty();
+}
+inline const std::string& LiquidityProvisionSubmission::reference() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.reference)
+  return _internal_reference();
+}
+inline void LiquidityProvisionSubmission::set_reference(const std::string& value) {
+  _internal_set_reference(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvisionSubmission.reference)
+}
+inline std::string* LiquidityProvisionSubmission::mutable_reference() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.reference)
+  return _internal_mutable_reference();
+}
+inline const std::string& LiquidityProvisionSubmission::_internal_reference() const {
+  return reference_.Get();
+}
+inline void LiquidityProvisionSubmission::_internal_set_reference(const std::string& value) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProvisionSubmission::set_reference(std::string&& value) {
+
+  reference_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvisionSubmission.reference)
+}
+inline void LiquidityProvisionSubmission::set_reference(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvisionSubmission.reference)
+}
+inline void LiquidityProvisionSubmission::set_reference(const char* value,
+    size_t size) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvisionSubmission.reference)
+}
+inline std::string* LiquidityProvisionSubmission::_internal_mutable_reference() {
+
+  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProvisionSubmission::release_reference() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvisionSubmission.reference)
+  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProvisionSubmission::set_allocated_reference(std::string* reference) {
+  if (reference != nullptr) {
+
+  } else {
+
+  }
+  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvisionSubmission.reference)
 }
 
 // -------------------------------------------------------------------
 
 // LiquidityOrderReference
 
-// string orderID = 1 [json_name = "orderID"];
-inline void LiquidityOrderReference::clear_orderid() {
-  orderid_.ClearToEmpty();
+// string order_id = 1 [json_name = "orderId"];
+inline void LiquidityOrderReference::clear_order_id() {
+  order_id_.ClearToEmpty();
 }
-inline const std::string& LiquidityOrderReference::orderid() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityOrderReference.orderID)
-  return _internal_orderid();
+inline const std::string& LiquidityOrderReference::order_id() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityOrderReference.order_id)
+  return _internal_order_id();
 }
-inline void LiquidityOrderReference::set_orderid(const std::string& value) {
-  _internal_set_orderid(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityOrderReference.orderID)
+inline void LiquidityOrderReference::set_order_id(const std::string& value) {
+  _internal_set_order_id(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityOrderReference.order_id)
 }
-inline std::string* LiquidityOrderReference::mutable_orderid() {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityOrderReference.orderID)
-  return _internal_mutable_orderid();
+inline std::string* LiquidityOrderReference::mutable_order_id() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityOrderReference.order_id)
+  return _internal_mutable_order_id();
 }
-inline const std::string& LiquidityOrderReference::_internal_orderid() const {
-  return orderid_.Get();
+inline const std::string& LiquidityOrderReference::_internal_order_id() const {
+  return order_id_.Get();
 }
-inline void LiquidityOrderReference::_internal_set_orderid(const std::string& value) {
+inline void LiquidityOrderReference::_internal_set_order_id(const std::string& value) {
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void LiquidityOrderReference::set_orderid(std::string&& value) {
+inline void LiquidityOrderReference::set_order_id(std::string&& value) {
 
-  orderid_.Set(
+  order_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityOrderReference.orderID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityOrderReference.order_id)
 }
-inline void LiquidityOrderReference::set_orderid(const char* value) {
+inline void LiquidityOrderReference::set_order_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.LiquidityOrderReference.orderID)
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityOrderReference.order_id)
 }
-inline void LiquidityOrderReference::set_orderid(const char* value,
+inline void LiquidityOrderReference::set_order_id(const char* value,
     size_t size) {
 
-  orderid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityOrderReference.orderID)
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityOrderReference.order_id)
 }
-inline std::string* LiquidityOrderReference::_internal_mutable_orderid() {
+inline std::string* LiquidityOrderReference::_internal_mutable_order_id() {
 
-  return orderid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return order_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* LiquidityOrderReference::release_orderid() {
-  // @@protoc_insertion_point(field_release:vega.LiquidityOrderReference.orderID)
-  return orderid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* LiquidityOrderReference::release_order_id() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityOrderReference.order_id)
+  return order_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void LiquidityOrderReference::set_allocated_orderid(std::string* orderid) {
-  if (orderid != nullptr) {
+inline void LiquidityOrderReference::set_allocated_order_id(std::string* order_id) {
+  if (order_id != nullptr) {
 
   } else {
 
   }
-  orderid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), orderid,
+  order_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), order_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityOrderReference.orderID)
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityOrderReference.order_id)
 }
 
-// .vega.LiquidityOrder liquidityOrder = 2 [json_name = "liquidityOrder"];
-inline bool LiquidityOrderReference::_internal_has_liquidityorder() const {
-  return this != internal_default_instance() && liquidityorder_ != nullptr;
+// .vega.LiquidityOrder liquidity_order = 2 [json_name = "liquidityOrder"];
+inline bool LiquidityOrderReference::_internal_has_liquidity_order() const {
+  return this != internal_default_instance() && liquidity_order_ != nullptr;
 }
-inline bool LiquidityOrderReference::has_liquidityorder() const {
-  return _internal_has_liquidityorder();
+inline bool LiquidityOrderReference::has_liquidity_order() const {
+  return _internal_has_liquidity_order();
 }
-inline void LiquidityOrderReference::clear_liquidityorder() {
-  if (GetArena() == nullptr && liquidityorder_ != nullptr) {
-    delete liquidityorder_;
+inline void LiquidityOrderReference::clear_liquidity_order() {
+  if (GetArena() == nullptr && liquidity_order_ != nullptr) {
+    delete liquidity_order_;
   }
-  liquidityorder_ = nullptr;
+  liquidity_order_ = nullptr;
 }
-inline const ::vega::LiquidityOrder& LiquidityOrderReference::_internal_liquidityorder() const {
-  const ::vega::LiquidityOrder* p = liquidityorder_;
+inline const ::vega::LiquidityOrder& LiquidityOrderReference::_internal_liquidity_order() const {
+  const ::vega::LiquidityOrder* p = liquidity_order_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::LiquidityOrder&>(
       ::vega::_LiquidityOrder_default_instance_);
 }
-inline const ::vega::LiquidityOrder& LiquidityOrderReference::liquidityorder() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityOrderReference.liquidityOrder)
-  return _internal_liquidityorder();
+inline const ::vega::LiquidityOrder& LiquidityOrderReference::liquidity_order() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityOrderReference.liquidity_order)
+  return _internal_liquidity_order();
 }
-inline void LiquidityOrderReference::unsafe_arena_set_allocated_liquidityorder(
-    ::vega::LiquidityOrder* liquidityorder) {
+inline void LiquidityOrderReference::unsafe_arena_set_allocated_liquidity_order(
+    ::vega::LiquidityOrder* liquidity_order) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquidityorder_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquidity_order_);
   }
-  liquidityorder_ = liquidityorder;
-  if (liquidityorder) {
+  liquidity_order_ = liquidity_order;
+  if (liquidity_order) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.LiquidityOrderReference.liquidityOrder)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.LiquidityOrderReference.liquidity_order)
 }
-inline ::vega::LiquidityOrder* LiquidityOrderReference::release_liquidityorder() {
+inline ::vega::LiquidityOrder* LiquidityOrderReference::release_liquidity_order() {
 
-  ::vega::LiquidityOrder* temp = liquidityorder_;
-  liquidityorder_ = nullptr;
+  ::vega::LiquidityOrder* temp = liquidity_order_;
+  liquidity_order_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::LiquidityOrder* LiquidityOrderReference::unsafe_arena_release_liquidityorder() {
-  // @@protoc_insertion_point(field_release:vega.LiquidityOrderReference.liquidityOrder)
+inline ::vega::LiquidityOrder* LiquidityOrderReference::unsafe_arena_release_liquidity_order() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityOrderReference.liquidity_order)
 
-  ::vega::LiquidityOrder* temp = liquidityorder_;
-  liquidityorder_ = nullptr;
+  ::vega::LiquidityOrder* temp = liquidity_order_;
+  liquidity_order_ = nullptr;
   return temp;
 }
-inline ::vega::LiquidityOrder* LiquidityOrderReference::_internal_mutable_liquidityorder() {
+inline ::vega::LiquidityOrder* LiquidityOrderReference::_internal_mutable_liquidity_order() {
 
-  if (liquidityorder_ == nullptr) {
+  if (liquidity_order_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::LiquidityOrder>(GetArena());
-    liquidityorder_ = p;
+    liquidity_order_ = p;
   }
-  return liquidityorder_;
+  return liquidity_order_;
 }
-inline ::vega::LiquidityOrder* LiquidityOrderReference::mutable_liquidityorder() {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityOrderReference.liquidityOrder)
-  return _internal_mutable_liquidityorder();
+inline ::vega::LiquidityOrder* LiquidityOrderReference::mutable_liquidity_order() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityOrderReference.liquidity_order)
+  return _internal_mutable_liquidity_order();
 }
-inline void LiquidityOrderReference::set_allocated_liquidityorder(::vega::LiquidityOrder* liquidityorder) {
+inline void LiquidityOrderReference::set_allocated_liquidity_order(::vega::LiquidityOrder* liquidity_order) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete liquidityorder_;
+    delete liquidity_order_;
   }
-  if (liquidityorder) {
+  if (liquidity_order) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(liquidityorder);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(liquidity_order);
     if (message_arena != submessage_arena) {
-      liquidityorder = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, liquidityorder, submessage_arena);
+      liquidity_order = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, liquidity_order, submessage_arena);
     }
 
   } else {
 
   }
-  liquidityorder_ = liquidityorder;
-  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityOrderReference.liquidityOrder)
+  liquidity_order_ = liquidity_order;
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityOrderReference.liquidity_order)
 }
 
 // -------------------------------------------------------------------
@@ -21993,186 +22817,186 @@ inline void LiquidityProvision::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.id)
 }
 
-// string partyID = 2 [json_name = "partyID"];
-inline void LiquidityProvision::clear_partyid() {
-  partyid_.ClearToEmpty();
+// string party_id = 2 [json_name = "partyId"];
+inline void LiquidityProvision::clear_party_id() {
+  party_id_.ClearToEmpty();
 }
-inline const std::string& LiquidityProvision::partyid() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.partyID)
-  return _internal_partyid();
+inline const std::string& LiquidityProvision::party_id() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.party_id)
+  return _internal_party_id();
 }
-inline void LiquidityProvision::set_partyid(const std::string& value) {
-  _internal_set_partyid(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.partyID)
+inline void LiquidityProvision::set_party_id(const std::string& value) {
+  _internal_set_party_id(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.party_id)
 }
-inline std::string* LiquidityProvision::mutable_partyid() {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvision.partyID)
-  return _internal_mutable_partyid();
+inline std::string* LiquidityProvision::mutable_party_id() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvision.party_id)
+  return _internal_mutable_party_id();
 }
-inline const std::string& LiquidityProvision::_internal_partyid() const {
-  return partyid_.Get();
+inline const std::string& LiquidityProvision::_internal_party_id() const {
+  return party_id_.Get();
 }
-inline void LiquidityProvision::_internal_set_partyid(const std::string& value) {
+inline void LiquidityProvision::_internal_set_party_id(const std::string& value) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void LiquidityProvision::set_partyid(std::string&& value) {
+inline void LiquidityProvision::set_party_id(std::string&& value) {
 
-  partyid_.Set(
+  party_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvision.partyID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvision.party_id)
 }
-inline void LiquidityProvision::set_partyid(const char* value) {
+inline void LiquidityProvision::set_party_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvision.partyID)
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvision.party_id)
 }
-inline void LiquidityProvision::set_partyid(const char* value,
+inline void LiquidityProvision::set_party_id(const char* value,
     size_t size) {
 
-  partyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvision.partyID)
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvision.party_id)
 }
-inline std::string* LiquidityProvision::_internal_mutable_partyid() {
+inline std::string* LiquidityProvision::_internal_mutable_party_id() {
 
-  return partyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* LiquidityProvision::release_partyid() {
-  // @@protoc_insertion_point(field_release:vega.LiquidityProvision.partyID)
-  return partyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* LiquidityProvision::release_party_id() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvision.party_id)
+  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void LiquidityProvision::set_allocated_partyid(std::string* partyid) {
-  if (partyid != nullptr) {
+inline void LiquidityProvision::set_allocated_party_id(std::string* party_id) {
+  if (party_id != nullptr) {
 
   } else {
 
   }
-  partyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), partyid,
+  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.partyID)
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.party_id)
 }
 
-// int64 createdAt = 3 [json_name = "createdAt"];
-inline void LiquidityProvision::clear_createdat() {
-  createdat_ = PROTOBUF_LONGLONG(0);
+// int64 created_at = 3 [json_name = "createdAt"];
+inline void LiquidityProvision::clear_created_at() {
+  created_at_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::_internal_createdat() const {
-  return createdat_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::_internal_created_at() const {
+  return created_at_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::createdat() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.createdAt)
-  return _internal_createdat();
+inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::created_at() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.created_at)
+  return _internal_created_at();
 }
-inline void LiquidityProvision::_internal_set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void LiquidityProvision::_internal_set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  createdat_ = value;
+  created_at_ = value;
 }
-inline void LiquidityProvision::set_createdat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_createdat(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.createdAt)
-}
-
-// int64 updatedAt = 4 [json_name = "updatedAt"];
-inline void LiquidityProvision::clear_updatedat() {
-  updatedat_ = PROTOBUF_LONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::_internal_updatedat() const {
-  return updatedat_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::updatedat() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.updatedAt)
-  return _internal_updatedat();
-}
-inline void LiquidityProvision::_internal_set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-
-  updatedat_ = value;
-}
-inline void LiquidityProvision::set_updatedat(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_updatedat(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.updatedAt)
+inline void LiquidityProvision::set_created_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_created_at(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.created_at)
 }
 
-// string marketID = 5 [json_name = "marketID", (.validator.field) = {
-inline void LiquidityProvision::clear_marketid() {
-  marketid_.ClearToEmpty();
+// int64 updated_at = 4 [json_name = "updatedAt"];
+inline void LiquidityProvision::clear_updated_at() {
+  updated_at_ = PROTOBUF_LONGLONG(0);
 }
-inline const std::string& LiquidityProvision::marketid() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.marketID)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::_internal_updated_at() const {
+  return updated_at_;
 }
-inline void LiquidityProvision::set_marketid(const std::string& value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.marketID)
+inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityProvision::updated_at() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.updated_at)
+  return _internal_updated_at();
 }
-inline std::string* LiquidityProvision::mutable_marketid() {
-  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvision.marketID)
-  return _internal_mutable_marketid();
-}
-inline const std::string& LiquidityProvision::_internal_marketid() const {
-  return marketid_.Get();
-}
-inline void LiquidityProvision::_internal_set_marketid(const std::string& value) {
+inline void LiquidityProvision::_internal_set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  updated_at_ = value;
 }
-inline void LiquidityProvision::set_marketid(std::string&& value) {
+inline void LiquidityProvision::set_updated_at(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_updated_at(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.updated_at)
+}
 
-  marketid_.Set(
+// string market_id = 5 [json_name = "marketId", (.validator.field) = {
+inline void LiquidityProvision::clear_market_id() {
+  market_id_.ClearToEmpty();
+}
+inline const std::string& LiquidityProvision::market_id() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.market_id)
+  return _internal_market_id();
+}
+inline void LiquidityProvision::set_market_id(const std::string& value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.market_id)
+}
+inline std::string* LiquidityProvision::mutable_market_id() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvision.market_id)
+  return _internal_mutable_market_id();
+}
+inline const std::string& LiquidityProvision::_internal_market_id() const {
+  return market_id_.Get();
+}
+inline void LiquidityProvision::_internal_set_market_id(const std::string& value) {
+
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProvision::set_market_id(std::string&& value) {
+
+  market_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvision.marketID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvision.market_id)
 }
-inline void LiquidityProvision::set_marketid(const char* value) {
+inline void LiquidityProvision::set_market_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvision.marketID)
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvision.market_id)
 }
-inline void LiquidityProvision::set_marketid(const char* value,
+inline void LiquidityProvision::set_market_id(const char* value,
     size_t size) {
 
-  marketid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvision.marketID)
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvision.market_id)
 }
-inline std::string* LiquidityProvision::_internal_mutable_marketid() {
+inline std::string* LiquidityProvision::_internal_mutable_market_id() {
 
-  return marketid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return market_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* LiquidityProvision::release_marketid() {
-  // @@protoc_insertion_point(field_release:vega.LiquidityProvision.marketID)
-  return marketid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* LiquidityProvision::release_market_id() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvision.market_id)
+  return market_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void LiquidityProvision::set_allocated_marketid(std::string* marketid) {
-  if (marketid != nullptr) {
+inline void LiquidityProvision::set_allocated_market_id(std::string* market_id) {
+  if (market_id != nullptr) {
 
   } else {
 
   }
-  marketid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), marketid,
+  market_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.marketID)
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.market_id)
 }
 
-// uint64 commitmentAmount = 6 [json_name = "commitmentAmount"];
-inline void LiquidityProvision::clear_commitmentamount() {
-  commitmentamount_ = PROTOBUF_ULONGLONG(0);
+// uint64 commitment_amount = 6 [json_name = "commitmentAmount"];
+inline void LiquidityProvision::clear_commitment_amount() {
+  commitment_amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvision::_internal_commitmentamount() const {
-  return commitmentamount_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvision::_internal_commitment_amount() const {
+  return commitment_amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvision::commitmentamount() const {
-  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.commitmentAmount)
-  return _internal_commitmentamount();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LiquidityProvision::commitment_amount() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.commitment_amount)
+  return _internal_commitment_amount();
 }
-inline void LiquidityProvision::_internal_set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void LiquidityProvision::_internal_set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  commitmentamount_ = value;
+  commitment_amount_ = value;
 }
-inline void LiquidityProvision::set_commitmentamount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_commitmentamount(value);
-  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.commitmentAmount)
+inline void LiquidityProvision::set_commitment_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_commitment_amount(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.commitment_amount)
 }
 
 // string fee = 7 [json_name = "fee"];
@@ -22395,191 +23219,252 @@ inline void LiquidityProvision::set_status(::vega::LiquidityProvision_Status val
   // @@protoc_insertion_point(field_set:vega.LiquidityProvision.status)
 }
 
+// string reference = 12 [json_name = "reference"];
+inline void LiquidityProvision::clear_reference() {
+  reference_.ClearToEmpty();
+}
+inline const std::string& LiquidityProvision::reference() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.reference)
+  return _internal_reference();
+}
+inline void LiquidityProvision::set_reference(const std::string& value) {
+  _internal_set_reference(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.reference)
+}
+inline std::string* LiquidityProvision::mutable_reference() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvision.reference)
+  return _internal_mutable_reference();
+}
+inline const std::string& LiquidityProvision::_internal_reference() const {
+  return reference_.Get();
+}
+inline void LiquidityProvision::_internal_set_reference(const std::string& value) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProvision::set_reference(std::string&& value) {
+
+  reference_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvision.reference)
+}
+inline void LiquidityProvision::set_reference(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvision.reference)
+}
+inline void LiquidityProvision::set_reference(const char* value,
+    size_t size) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvision.reference)
+}
+inline std::string* LiquidityProvision::_internal_mutable_reference() {
+
+  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProvision::release_reference() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvision.reference)
+  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProvision::set_allocated_reference(std::string* reference) {
+  if (reference != nullptr) {
+
+  } else {
+
+  }
+  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.reference)
+}
+
 // -------------------------------------------------------------------
 
 // EthereumConfig
 
-// string networkId = 1 [json_name = "networkId"];
-inline void EthereumConfig::clear_networkid() {
-  networkid_.ClearToEmpty();
+// string network_id = 1 [json_name = "networkId"];
+inline void EthereumConfig::clear_network_id() {
+  network_id_.ClearToEmpty();
 }
-inline const std::string& EthereumConfig::networkid() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumConfig.networkId)
-  return _internal_networkid();
+inline const std::string& EthereumConfig::network_id() const {
+  // @@protoc_insertion_point(field_get:vega.EthereumConfig.network_id)
+  return _internal_network_id();
 }
-inline void EthereumConfig::set_networkid(const std::string& value) {
-  _internal_set_networkid(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumConfig.networkId)
+inline void EthereumConfig::set_network_id(const std::string& value) {
+  _internal_set_network_id(value);
+  // @@protoc_insertion_point(field_set:vega.EthereumConfig.network_id)
 }
-inline std::string* EthereumConfig::mutable_networkid() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumConfig.networkId)
-  return _internal_mutable_networkid();
+inline std::string* EthereumConfig::mutable_network_id() {
+  // @@protoc_insertion_point(field_mutable:vega.EthereumConfig.network_id)
+  return _internal_mutable_network_id();
 }
-inline const std::string& EthereumConfig::_internal_networkid() const {
-  return networkid_.Get();
+inline const std::string& EthereumConfig::_internal_network_id() const {
+  return network_id_.Get();
 }
-inline void EthereumConfig::_internal_set_networkid(const std::string& value) {
+inline void EthereumConfig::_internal_set_network_id(const std::string& value) {
 
-  networkid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void EthereumConfig::set_networkid(std::string&& value) {
+inline void EthereumConfig::set_network_id(std::string&& value) {
 
-  networkid_.Set(
+  network_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumConfig.networkId)
+  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumConfig.network_id)
 }
-inline void EthereumConfig::set_networkid(const char* value) {
+inline void EthereumConfig::set_network_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  networkid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumConfig.networkId)
+  network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.EthereumConfig.network_id)
 }
-inline void EthereumConfig::set_networkid(const char* value,
+inline void EthereumConfig::set_network_id(const char* value,
     size_t size) {
 
-  networkid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  network_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumConfig.networkId)
+  // @@protoc_insertion_point(field_set_pointer:vega.EthereumConfig.network_id)
 }
-inline std::string* EthereumConfig::_internal_mutable_networkid() {
+inline std::string* EthereumConfig::_internal_mutable_network_id() {
 
-  return networkid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return network_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* EthereumConfig::release_networkid() {
-  // @@protoc_insertion_point(field_release:vega.EthereumConfig.networkId)
-  return networkid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* EthereumConfig::release_network_id() {
+  // @@protoc_insertion_point(field_release:vega.EthereumConfig.network_id)
+  return network_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void EthereumConfig::set_allocated_networkid(std::string* networkid) {
-  if (networkid != nullptr) {
+inline void EthereumConfig::set_allocated_network_id(std::string* network_id) {
+  if (network_id != nullptr) {
 
   } else {
 
   }
-  networkid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), networkid,
+  network_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumConfig.networkId)
+  // @@protoc_insertion_point(field_set_allocated:vega.EthereumConfig.network_id)
 }
 
-// string chainId = 2 [json_name = "chainId"];
-inline void EthereumConfig::clear_chainid() {
-  chainid_.ClearToEmpty();
+// string chain_id = 2 [json_name = "chainId"];
+inline void EthereumConfig::clear_chain_id() {
+  chain_id_.ClearToEmpty();
 }
-inline const std::string& EthereumConfig::chainid() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumConfig.chainId)
-  return _internal_chainid();
+inline const std::string& EthereumConfig::chain_id() const {
+  // @@protoc_insertion_point(field_get:vega.EthereumConfig.chain_id)
+  return _internal_chain_id();
 }
-inline void EthereumConfig::set_chainid(const std::string& value) {
-  _internal_set_chainid(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumConfig.chainId)
+inline void EthereumConfig::set_chain_id(const std::string& value) {
+  _internal_set_chain_id(value);
+  // @@protoc_insertion_point(field_set:vega.EthereumConfig.chain_id)
 }
-inline std::string* EthereumConfig::mutable_chainid() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumConfig.chainId)
-  return _internal_mutable_chainid();
+inline std::string* EthereumConfig::mutable_chain_id() {
+  // @@protoc_insertion_point(field_mutable:vega.EthereumConfig.chain_id)
+  return _internal_mutable_chain_id();
 }
-inline const std::string& EthereumConfig::_internal_chainid() const {
-  return chainid_.Get();
+inline const std::string& EthereumConfig::_internal_chain_id() const {
+  return chain_id_.Get();
 }
-inline void EthereumConfig::_internal_set_chainid(const std::string& value) {
+inline void EthereumConfig::_internal_set_chain_id(const std::string& value) {
 
-  chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void EthereumConfig::set_chainid(std::string&& value) {
+inline void EthereumConfig::set_chain_id(std::string&& value) {
 
-  chainid_.Set(
+  chain_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumConfig.chainId)
+  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumConfig.chain_id)
 }
-inline void EthereumConfig::set_chainid(const char* value) {
+inline void EthereumConfig::set_chain_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumConfig.chainId)
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.EthereumConfig.chain_id)
 }
-inline void EthereumConfig::set_chainid(const char* value,
+inline void EthereumConfig::set_chain_id(const char* value,
     size_t size) {
 
-  chainid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumConfig.chainId)
+  // @@protoc_insertion_point(field_set_pointer:vega.EthereumConfig.chain_id)
 }
-inline std::string* EthereumConfig::_internal_mutable_chainid() {
+inline std::string* EthereumConfig::_internal_mutable_chain_id() {
 
-  return chainid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return chain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* EthereumConfig::release_chainid() {
-  // @@protoc_insertion_point(field_release:vega.EthereumConfig.chainId)
-  return chainid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* EthereumConfig::release_chain_id() {
+  // @@protoc_insertion_point(field_release:vega.EthereumConfig.chain_id)
+  return chain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void EthereumConfig::set_allocated_chainid(std::string* chainid) {
-  if (chainid != nullptr) {
+inline void EthereumConfig::set_allocated_chain_id(std::string* chain_id) {
+  if (chain_id != nullptr) {
 
   } else {
 
   }
-  chainid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chainid,
+  chain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chain_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumConfig.chainId)
+  // @@protoc_insertion_point(field_set_allocated:vega.EthereumConfig.chain_id)
 }
 
-// string bridgeAddress = 3 [json_name = "bridgeAddress"];
-inline void EthereumConfig::clear_bridgeaddress() {
-  bridgeaddress_.ClearToEmpty();
+// string bridge_address = 3 [json_name = "bridgeAddress"];
+inline void EthereumConfig::clear_bridge_address() {
+  bridge_address_.ClearToEmpty();
 }
-inline const std::string& EthereumConfig::bridgeaddress() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumConfig.bridgeAddress)
-  return _internal_bridgeaddress();
+inline const std::string& EthereumConfig::bridge_address() const {
+  // @@protoc_insertion_point(field_get:vega.EthereumConfig.bridge_address)
+  return _internal_bridge_address();
 }
-inline void EthereumConfig::set_bridgeaddress(const std::string& value) {
-  _internal_set_bridgeaddress(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumConfig.bridgeAddress)
+inline void EthereumConfig::set_bridge_address(const std::string& value) {
+  _internal_set_bridge_address(value);
+  // @@protoc_insertion_point(field_set:vega.EthereumConfig.bridge_address)
 }
-inline std::string* EthereumConfig::mutable_bridgeaddress() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumConfig.bridgeAddress)
-  return _internal_mutable_bridgeaddress();
+inline std::string* EthereumConfig::mutable_bridge_address() {
+  // @@protoc_insertion_point(field_mutable:vega.EthereumConfig.bridge_address)
+  return _internal_mutable_bridge_address();
 }
-inline const std::string& EthereumConfig::_internal_bridgeaddress() const {
-  return bridgeaddress_.Get();
+inline const std::string& EthereumConfig::_internal_bridge_address() const {
+  return bridge_address_.Get();
 }
-inline void EthereumConfig::_internal_set_bridgeaddress(const std::string& value) {
+inline void EthereumConfig::_internal_set_bridge_address(const std::string& value) {
 
-  bridgeaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  bridge_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void EthereumConfig::set_bridgeaddress(std::string&& value) {
+inline void EthereumConfig::set_bridge_address(std::string&& value) {
 
-  bridgeaddress_.Set(
+  bridge_address_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumConfig.bridgeAddress)
+  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumConfig.bridge_address)
 }
-inline void EthereumConfig::set_bridgeaddress(const char* value) {
+inline void EthereumConfig::set_bridge_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  bridgeaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumConfig.bridgeAddress)
+  bridge_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.EthereumConfig.bridge_address)
 }
-inline void EthereumConfig::set_bridgeaddress(const char* value,
+inline void EthereumConfig::set_bridge_address(const char* value,
     size_t size) {
 
-  bridgeaddress_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  bridge_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumConfig.bridgeAddress)
+  // @@protoc_insertion_point(field_set_pointer:vega.EthereumConfig.bridge_address)
 }
-inline std::string* EthereumConfig::_internal_mutable_bridgeaddress() {
+inline std::string* EthereumConfig::_internal_mutable_bridge_address() {
 
-  return bridgeaddress_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return bridge_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* EthereumConfig::release_bridgeaddress() {
-  // @@protoc_insertion_point(field_release:vega.EthereumConfig.bridgeAddress)
-  return bridgeaddress_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* EthereumConfig::release_bridge_address() {
+  // @@protoc_insertion_point(field_release:vega.EthereumConfig.bridge_address)
+  return bridge_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void EthereumConfig::set_allocated_bridgeaddress(std::string* bridgeaddress) {
-  if (bridgeaddress != nullptr) {
+inline void EthereumConfig::set_allocated_bridge_address(std::string* bridge_address) {
+  if (bridge_address != nullptr) {
 
   } else {
 
   }
-  bridgeaddress_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bridgeaddress,
+  bridge_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bridge_address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumConfig.bridgeAddress)
+  // @@protoc_insertion_point(field_set_allocated:vega.EthereumConfig.bridge_address)
 }
 
 // uint32 confirmations = 4 [json_name = "confirmations"];
@@ -22602,9 +23487,98 @@ inline void EthereumConfig::set_confirmations(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:vega.EthereumConfig.confirmations)
 }
 
+// -------------------------------------------------------------------
+
+// OracleDataSubmission
+
+// .vega.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];
+inline void OracleDataSubmission::clear_source() {
+  source_ = 0;
+}
+inline ::vega::OracleDataSubmission_OracleSource OracleDataSubmission::_internal_source() const {
+  return static_cast< ::vega::OracleDataSubmission_OracleSource >(source_);
+}
+inline ::vega::OracleDataSubmission_OracleSource OracleDataSubmission::source() const {
+  // @@protoc_insertion_point(field_get:vega.OracleDataSubmission.source)
+  return _internal_source();
+}
+inline void OracleDataSubmission::_internal_set_source(::vega::OracleDataSubmission_OracleSource value) {
+
+  source_ = value;
+}
+inline void OracleDataSubmission::set_source(::vega::OracleDataSubmission_OracleSource value) {
+  _internal_set_source(value);
+  // @@protoc_insertion_point(field_set:vega.OracleDataSubmission.source)
+}
+
+// bytes payload = 2 [json_name = "payload"];
+inline void OracleDataSubmission::clear_payload() {
+  payload_.ClearToEmpty();
+}
+inline const std::string& OracleDataSubmission::payload() const {
+  // @@protoc_insertion_point(field_get:vega.OracleDataSubmission.payload)
+  return _internal_payload();
+}
+inline void OracleDataSubmission::set_payload(const std::string& value) {
+  _internal_set_payload(value);
+  // @@protoc_insertion_point(field_set:vega.OracleDataSubmission.payload)
+}
+inline std::string* OracleDataSubmission::mutable_payload() {
+  // @@protoc_insertion_point(field_mutable:vega.OracleDataSubmission.payload)
+  return _internal_mutable_payload();
+}
+inline const std::string& OracleDataSubmission::_internal_payload() const {
+  return payload_.Get();
+}
+inline void OracleDataSubmission::_internal_set_payload(const std::string& value) {
+
+  payload_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OracleDataSubmission::set_payload(std::string&& value) {
+
+  payload_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.OracleDataSubmission.payload)
+}
+inline void OracleDataSubmission::set_payload(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  payload_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OracleDataSubmission.payload)
+}
+inline void OracleDataSubmission::set_payload(const void* value,
+    size_t size) {
+
+  payload_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.OracleDataSubmission.payload)
+}
+inline std::string* OracleDataSubmission::_internal_mutable_payload() {
+
+  return payload_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OracleDataSubmission::release_payload() {
+  // @@protoc_insertion_point(field_release:vega.OracleDataSubmission.payload)
+  return payload_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OracleDataSubmission::set_allocated_payload(std::string* payload) {
+  if (payload != nullptr) {
+
+  } else {
+
+  }
+  payload_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), payload,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.OracleDataSubmission.payload)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -22750,6 +23724,11 @@ template <> struct is_proto_enum< ::vega::LiquidityProvision_Status> : ::std::tr
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::vega::LiquidityProvision_Status>() {
   return ::vega::LiquidityProvision_Status_descriptor();
+}
+template <> struct is_proto_enum< ::vega::OracleDataSubmission_OracleSource> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::OracleDataSubmission_OracleSource>() {
+  return ::vega::OracleDataSubmission_OracleSource_descriptor();
 }
 template <> struct is_proto_enum< ::vega::Side> : ::std::true_type {};
 template <>

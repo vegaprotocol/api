@@ -27,7 +27,7 @@ class VegaTradingClient(object):
             channel = grpc.insecure_channel(self.url)
             grpc.channel_ready_future(channel).result(timeout=10)
 
-        self._trading = trading_grpc.tradingStub(channel)
+        self._trading = trading_grpc.TradingServiceStub(channel)
 
     def PrepareSubmitOrder(self, request: Any, contact_node=True) -> Any:
         """
@@ -55,7 +55,7 @@ class VegaTradingClient(object):
         blob += request.SerializeToString()
         return trading.PrepareSubmitOrderResponse(
             blob=blob,
-            submitID=request.submission.reference,
+            submit_id=request.submission.reference,
         )
 
     def prepare_sign_submit_tx(

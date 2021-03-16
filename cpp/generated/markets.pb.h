@@ -33,6 +33,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
+#include "oracles/v1/oracle_spec.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_markets_2eproto
@@ -65,9 +66,6 @@ extern ContinuousTradingDefaultTypeInternal _ContinuousTrading_default_instance_
 class DiscreteTrading;
 class DiscreteTradingDefaultTypeInternal;
 extern DiscreteTradingDefaultTypeInternal _DiscreteTrading_default_instance_;
-class EthereumEvent;
-class EthereumEventDefaultTypeInternal;
-extern EthereumEventDefaultTypeInternal _EthereumEvent_default_instance_;
 class FeeFactors;
 class FeeFactorsDefaultTypeInternal;
 extern FeeFactorsDefaultTypeInternal _FeeFactors_default_instance_;
@@ -95,6 +93,9 @@ extern MarginCalculatorDefaultTypeInternal _MarginCalculator_default_instance_;
 class Market;
 class MarketDefaultTypeInternal;
 extern MarketDefaultTypeInternal _Market_default_instance_;
+class OracleSpecToFutureBinding;
+class OracleSpecToFutureBindingDefaultTypeInternal;
+extern OracleSpecToFutureBindingDefaultTypeInternal _OracleSpecToFutureBinding_default_instance_;
 class PriceMonitoringParameters;
 class PriceMonitoringParametersDefaultTypeInternal;
 extern PriceMonitoringParametersDefaultTypeInternal _PriceMonitoringParameters_default_instance_;
@@ -124,7 +125,6 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::vega::AuctionDuration* Arena::CreateMaybeMessage<::vega::AuctionDuration>(Arena*);
 template<> ::vega::ContinuousTrading* Arena::CreateMaybeMessage<::vega::ContinuousTrading>(Arena*);
 template<> ::vega::DiscreteTrading* Arena::CreateMaybeMessage<::vega::DiscreteTrading>(Arena*);
-template<> ::vega::EthereumEvent* Arena::CreateMaybeMessage<::vega::EthereumEvent>(Arena*);
 template<> ::vega::FeeFactors* Arena::CreateMaybeMessage<::vega::FeeFactors>(Arena*);
 template<> ::vega::Fees* Arena::CreateMaybeMessage<::vega::Fees>(Arena*);
 template<> ::vega::Future* Arena::CreateMaybeMessage<::vega::Future>(Arena*);
@@ -134,6 +134,7 @@ template<> ::vega::LogNormalModelParams* Arena::CreateMaybeMessage<::vega::LogNo
 template<> ::vega::LogNormalRiskModel* Arena::CreateMaybeMessage<::vega::LogNormalRiskModel>(Arena*);
 template<> ::vega::MarginCalculator* Arena::CreateMaybeMessage<::vega::MarginCalculator>(Arena*);
 template<> ::vega::Market* Arena::CreateMaybeMessage<::vega::Market>(Arena*);
+template<> ::vega::OracleSpecToFutureBinding* Arena::CreateMaybeMessage<::vega::OracleSpecToFutureBinding>(Arena*);
 template<> ::vega::PriceMonitoringParameters* Arena::CreateMaybeMessage<::vega::PriceMonitoringParameters>(Arena*);
 template<> ::vega::PriceMonitoringSettings* Arena::CreateMaybeMessage<::vega::PriceMonitoringSettings>(Arena*);
 template<> ::vega::PriceMonitoringTrigger* Arena::CreateMaybeMessage<::vega::PriceMonitoringTrigger>(Arena*);
@@ -469,20 +470,20 @@ class ContinuousTrading PROTOBUF_FINAL :
   enum : int {
     kTickSizeFieldNumber = 1,
   };
-  // string tickSize = 1 [json_name = "tickSize"];
-  void clear_ticksize();
-  const std::string& ticksize() const;
-  void set_ticksize(const std::string& value);
-  void set_ticksize(std::string&& value);
-  void set_ticksize(const char* value);
-  void set_ticksize(const char* value, size_t size);
-  std::string* mutable_ticksize();
-  std::string* release_ticksize();
-  void set_allocated_ticksize(std::string* ticksize);
+  // string tick_size = 1 [json_name = "tickSize"];
+  void clear_tick_size();
+  const std::string& tick_size() const;
+  void set_tick_size(const std::string& value);
+  void set_tick_size(std::string&& value);
+  void set_tick_size(const char* value);
+  void set_tick_size(const char* value, size_t size);
+  std::string* mutable_tick_size();
+  std::string* release_tick_size();
+  void set_allocated_tick_size(std::string* tick_size);
   private:
-  const std::string& _internal_ticksize() const;
-  void _internal_set_ticksize(const std::string& value);
-  std::string* _internal_mutable_ticksize();
+  const std::string& _internal_tick_size() const;
+  void _internal_set_tick_size(const std::string& value);
+  std::string* _internal_mutable_tick_size();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.ContinuousTrading)
@@ -492,7 +493,7 @@ class ContinuousTrading PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ticksize_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tick_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -613,29 +614,29 @@ class DiscreteTrading PROTOBUF_FINAL :
     kTickSizeFieldNumber = 2,
     kDurationNsFieldNumber = 1,
   };
-  // string tickSize = 2 [json_name = "tickSize"];
-  void clear_ticksize();
-  const std::string& ticksize() const;
-  void set_ticksize(const std::string& value);
-  void set_ticksize(std::string&& value);
-  void set_ticksize(const char* value);
-  void set_ticksize(const char* value, size_t size);
-  std::string* mutable_ticksize();
-  std::string* release_ticksize();
-  void set_allocated_ticksize(std::string* ticksize);
+  // string tick_size = 2 [json_name = "tickSize"];
+  void clear_tick_size();
+  const std::string& tick_size() const;
+  void set_tick_size(const std::string& value);
+  void set_tick_size(std::string&& value);
+  void set_tick_size(const char* value);
+  void set_tick_size(const char* value, size_t size);
+  std::string* mutable_tick_size();
+  std::string* release_tick_size();
+  void set_allocated_tick_size(std::string* tick_size);
   private:
-  const std::string& _internal_ticksize() const;
-  void _internal_set_ticksize(const std::string& value);
-  std::string* _internal_mutable_ticksize();
+  const std::string& _internal_tick_size() const;
+  void _internal_set_tick_size(const std::string& value);
+  std::string* _internal_mutable_tick_size();
   public:
 
-  // int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = {
-  void clear_durationns();
-  ::PROTOBUF_NAMESPACE_ID::int64 durationns() const;
-  void set_durationns(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = {
+  void clear_duration_ns();
+  ::PROTOBUF_NAMESPACE_ID::int64 duration_ns() const;
+  void set_duration_ns(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_durationns() const;
-  void _internal_set_durationns(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_duration_ns() const;
+  void _internal_set_duration_ns(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.DiscreteTrading)
@@ -645,8 +646,8 @@ class DiscreteTrading PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ticksize_;
-  ::PROTOBUF_NAMESPACE_ID::int64 durationns_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tick_size_;
+  ::PROTOBUF_NAMESPACE_ID::int64 duration_ns_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -687,11 +688,6 @@ class Future PROTOBUF_FINAL :
     return GetMetadataStatic().reflection;
   }
   static const Future& default_instance();
-
-  enum OracleCase {
-    kEthereumEvent = 100,
-    ORACLE_NOT_SET = 0,
-  };
 
   static inline const Future* internal_default_instance() {
     return reinterpret_cast<const Future*>(
@@ -772,7 +768,8 @@ class Future PROTOBUF_FINAL :
     kMaturityFieldNumber = 1,
     kSettlementAssetFieldNumber = 2,
     kQuoteNameFieldNumber = 4,
-    kEthereumEventFieldNumber = 100,
+    kOracleSpecFieldNumber = 5,
+    kOracleSpecBindingFieldNumber = 6,
   };
   // string maturity = 1 [json_name = "maturity"];
   void clear_maturity();
@@ -790,100 +787,108 @@ class Future PROTOBUF_FINAL :
   std::string* _internal_mutable_maturity();
   public:
 
-  // string settlementAsset = 2 [json_name = "settlementAsset"];
-  void clear_settlementasset();
-  const std::string& settlementasset() const;
-  void set_settlementasset(const std::string& value);
-  void set_settlementasset(std::string&& value);
-  void set_settlementasset(const char* value);
-  void set_settlementasset(const char* value, size_t size);
-  std::string* mutable_settlementasset();
-  std::string* release_settlementasset();
-  void set_allocated_settlementasset(std::string* settlementasset);
+  // string settlement_asset = 2 [json_name = "settlementAsset"];
+  void clear_settlement_asset();
+  const std::string& settlement_asset() const;
+  void set_settlement_asset(const std::string& value);
+  void set_settlement_asset(std::string&& value);
+  void set_settlement_asset(const char* value);
+  void set_settlement_asset(const char* value, size_t size);
+  std::string* mutable_settlement_asset();
+  std::string* release_settlement_asset();
+  void set_allocated_settlement_asset(std::string* settlement_asset);
   private:
-  const std::string& _internal_settlementasset() const;
-  void _internal_set_settlementasset(const std::string& value);
-  std::string* _internal_mutable_settlementasset();
+  const std::string& _internal_settlement_asset() const;
+  void _internal_set_settlement_asset(const std::string& value);
+  std::string* _internal_mutable_settlement_asset();
   public:
 
-  // string quoteName = 4 [json_name = "quoteName"];
-  void clear_quotename();
-  const std::string& quotename() const;
-  void set_quotename(const std::string& value);
-  void set_quotename(std::string&& value);
-  void set_quotename(const char* value);
-  void set_quotename(const char* value, size_t size);
-  std::string* mutable_quotename();
-  std::string* release_quotename();
-  void set_allocated_quotename(std::string* quotename);
+  // string quote_name = 4 [json_name = "quoteName"];
+  void clear_quote_name();
+  const std::string& quote_name() const;
+  void set_quote_name(const std::string& value);
+  void set_quote_name(std::string&& value);
+  void set_quote_name(const char* value);
+  void set_quote_name(const char* value, size_t size);
+  std::string* mutable_quote_name();
+  std::string* release_quote_name();
+  void set_allocated_quote_name(std::string* quote_name);
   private:
-  const std::string& _internal_quotename() const;
-  void _internal_set_quotename(const std::string& value);
-  std::string* _internal_mutable_quotename();
+  const std::string& _internal_quote_name() const;
+  void _internal_set_quote_name(const std::string& value);
+  std::string* _internal_mutable_quote_name();
   public:
 
-  // .vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];
-  bool has_ethereumevent() const;
+  // .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+  bool has_oracle_spec() const;
   private:
-  bool _internal_has_ethereumevent() const;
+  bool _internal_has_oracle_spec() const;
   public:
-  void clear_ethereumevent();
-  const ::vega::EthereumEvent& ethereumevent() const;
-  ::vega::EthereumEvent* release_ethereumevent();
-  ::vega::EthereumEvent* mutable_ethereumevent();
-  void set_allocated_ethereumevent(::vega::EthereumEvent* ethereumevent);
+  void clear_oracle_spec();
+  const ::oracles::v1::OracleSpec& oracle_spec() const;
+  ::oracles::v1::OracleSpec* release_oracle_spec();
+  ::oracles::v1::OracleSpec* mutable_oracle_spec();
+  void set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec);
   private:
-  const ::vega::EthereumEvent& _internal_ethereumevent() const;
-  ::vega::EthereumEvent* _internal_mutable_ethereumevent();
+  const ::oracles::v1::OracleSpec& _internal_oracle_spec() const;
+  ::oracles::v1::OracleSpec* _internal_mutable_oracle_spec();
   public:
-  void unsafe_arena_set_allocated_ethereumevent(
-      ::vega::EthereumEvent* ethereumevent);
-  ::vega::EthereumEvent* unsafe_arena_release_ethereumevent();
+  void unsafe_arena_set_allocated_oracle_spec(
+      ::oracles::v1::OracleSpec* oracle_spec);
+  ::oracles::v1::OracleSpec* unsafe_arena_release_oracle_spec();
 
-  void clear_oracle();
-  OracleCase oracle_case() const;
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  bool has_oracle_spec_binding() const;
+  private:
+  bool _internal_has_oracle_spec_binding() const;
+  public:
+  void clear_oracle_spec_binding();
+  const ::vega::OracleSpecToFutureBinding& oracle_spec_binding() const;
+  ::vega::OracleSpecToFutureBinding* release_oracle_spec_binding();
+  ::vega::OracleSpecToFutureBinding* mutable_oracle_spec_binding();
+  void set_allocated_oracle_spec_binding(::vega::OracleSpecToFutureBinding* oracle_spec_binding);
+  private:
+  const ::vega::OracleSpecToFutureBinding& _internal_oracle_spec_binding() const;
+  ::vega::OracleSpecToFutureBinding* _internal_mutable_oracle_spec_binding();
+  public:
+  void unsafe_arena_set_allocated_oracle_spec_binding(
+      ::vega::OracleSpecToFutureBinding* oracle_spec_binding);
+  ::vega::OracleSpecToFutureBinding* unsafe_arena_release_oracle_spec_binding();
+
   // @@protoc_insertion_point(class_scope:vega.Future)
  private:
   class _Internal;
-  void set_has_ethereumevent();
-
-  inline bool has_oracle() const;
-  inline void clear_has_oracle();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr maturity_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr settlementasset_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quotename_;
-  union OracleUnion {
-    OracleUnion() {}
-    ::vega::EthereumEvent* ethereumevent_;
-  } oracle_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr settlement_asset_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_name_;
+  ::oracles::v1::OracleSpec* oracle_spec_;
+  ::vega::OracleSpecToFutureBinding* oracle_spec_binding_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_markets_2eproto;
 };
 // -------------------------------------------------------------------
 
-class EthereumEvent PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.EthereumEvent) */ {
+class OracleSpecToFutureBinding PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.OracleSpecToFutureBinding) */ {
  public:
-  inline EthereumEvent() : EthereumEvent(nullptr) {}
-  virtual ~EthereumEvent();
+  inline OracleSpecToFutureBinding() : OracleSpecToFutureBinding(nullptr) {}
+  virtual ~OracleSpecToFutureBinding();
 
-  EthereumEvent(const EthereumEvent& from);
-  EthereumEvent(EthereumEvent&& from) noexcept
-    : EthereumEvent() {
+  OracleSpecToFutureBinding(const OracleSpecToFutureBinding& from);
+  OracleSpecToFutureBinding(OracleSpecToFutureBinding&& from) noexcept
+    : OracleSpecToFutureBinding() {
     *this = ::std::move(from);
   }
 
-  inline EthereumEvent& operator=(const EthereumEvent& from) {
+  inline OracleSpecToFutureBinding& operator=(const OracleSpecToFutureBinding& from) {
     CopyFrom(from);
     return *this;
   }
-  inline EthereumEvent& operator=(EthereumEvent&& from) noexcept {
+  inline OracleSpecToFutureBinding& operator=(OracleSpecToFutureBinding&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -901,19 +906,19 @@ class EthereumEvent PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const EthereumEvent& default_instance();
+  static const OracleSpecToFutureBinding& default_instance();
 
-  static inline const EthereumEvent* internal_default_instance() {
-    return reinterpret_cast<const EthereumEvent*>(
-               &_EthereumEvent_default_instance_);
+  static inline const OracleSpecToFutureBinding* internal_default_instance() {
+    return reinterpret_cast<const OracleSpecToFutureBinding*>(
+               &_OracleSpecToFutureBinding_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  friend void swap(EthereumEvent& a, EthereumEvent& b) {
+  friend void swap(OracleSpecToFutureBinding& a, OracleSpecToFutureBinding& b) {
     a.Swap(&b);
   }
-  inline void Swap(EthereumEvent* other) {
+  inline void Swap(OracleSpecToFutureBinding* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -921,7 +926,7 @@ class EthereumEvent PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(EthereumEvent* other) {
+  void UnsafeArenaSwap(OracleSpecToFutureBinding* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -929,17 +934,17 @@ class EthereumEvent PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline EthereumEvent* New() const final {
-    return CreateMaybeMessage<EthereumEvent>(nullptr);
+  inline OracleSpecToFutureBinding* New() const final {
+    return CreateMaybeMessage<OracleSpecToFutureBinding>(nullptr);
   }
 
-  EthereumEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<EthereumEvent>(arena);
+  OracleSpecToFutureBinding* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleSpecToFutureBinding>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const EthereumEvent& from);
-  void MergeFrom(const EthereumEvent& from);
+  void CopyFrom(const OracleSpecToFutureBinding& from);
+  void MergeFrom(const OracleSpecToFutureBinding& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -953,13 +958,13 @@ class EthereumEvent PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EthereumEvent* other);
+  void InternalSwap(OracleSpecToFutureBinding* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "vega.EthereumEvent";
+    return "vega.OracleSpecToFutureBinding";
   }
   protected:
-  explicit EthereumEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit OracleSpecToFutureBinding(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -979,61 +984,32 @@ class EthereumEvent PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kContractIDFieldNumber = 1,
-    kEventFieldNumber = 2,
-    kValueFieldNumber = 3,
+    kSettlementPricePropertyFieldNumber = 1,
   };
-  // string contractID = 1 [json_name = "contractID"];
-  void clear_contractid();
-  const std::string& contractid() const;
-  void set_contractid(const std::string& value);
-  void set_contractid(std::string&& value);
-  void set_contractid(const char* value);
-  void set_contractid(const char* value, size_t size);
-  std::string* mutable_contractid();
-  std::string* release_contractid();
-  void set_allocated_contractid(std::string* contractid);
+  // string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
+  void clear_settlement_price_property();
+  const std::string& settlement_price_property() const;
+  void set_settlement_price_property(const std::string& value);
+  void set_settlement_price_property(std::string&& value);
+  void set_settlement_price_property(const char* value);
+  void set_settlement_price_property(const char* value, size_t size);
+  std::string* mutable_settlement_price_property();
+  std::string* release_settlement_price_property();
+  void set_allocated_settlement_price_property(std::string* settlement_price_property);
   private:
-  const std::string& _internal_contractid() const;
-  void _internal_set_contractid(const std::string& value);
-  std::string* _internal_mutable_contractid();
+  const std::string& _internal_settlement_price_property() const;
+  void _internal_set_settlement_price_property(const std::string& value);
+  std::string* _internal_mutable_settlement_price_property();
   public:
 
-  // string event = 2 [json_name = "event"];
-  void clear_event();
-  const std::string& event() const;
-  void set_event(const std::string& value);
-  void set_event(std::string&& value);
-  void set_event(const char* value);
-  void set_event(const char* value, size_t size);
-  std::string* mutable_event();
-  std::string* release_event();
-  void set_allocated_event(std::string* event);
-  private:
-  const std::string& _internal_event() const;
-  void _internal_set_event(const std::string& value);
-  std::string* _internal_mutable_event();
-  public:
-
-  // uint64 value = 3 [json_name = "value"];
-  void clear_value();
-  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
-  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
-  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:vega.EthereumEvent)
+  // @@protoc_insertion_point(class_scope:vega.OracleSpecToFutureBinding)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contractid_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr event_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr settlement_price_property_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -1311,7 +1287,6 @@ class Instrument PROTOBUF_FINAL :
     kCodeFieldNumber = 2,
     kNameFieldNumber = 3,
     kMetadataFieldNumber = 4,
-    kInitialMarkPriceFieldNumber = 5,
     kFutureFieldNumber = 100,
   };
   // string id = 1 [json_name = "id"];
@@ -1380,15 +1355,6 @@ class Instrument PROTOBUF_FINAL :
       ::vega::InstrumentMetadata* metadata);
   ::vega::InstrumentMetadata* unsafe_arena_release_metadata();
 
-  // uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];
-  void clear_initialmarkprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 initialmarkprice() const;
-  void set_initialmarkprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_initialmarkprice() const;
-  void _internal_set_initialmarkprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // .vega.Future future = 100 [json_name = "future"];
   bool has_future() const;
   private:
@@ -1424,7 +1390,6 @@ class Instrument PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::vega::InstrumentMetadata* metadata_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 initialmarkprice_;
   union ProductUnion {
     ProductUnion() {}
     ::vega::Future* future_;
@@ -1570,13 +1535,13 @@ class LogNormalRiskModel PROTOBUF_FINAL :
       ::vega::LogNormalModelParams* params);
   ::vega::LogNormalModelParams* unsafe_arena_release_params();
 
-  // double riskAversionParameter = 1 [json_name = "riskAversionParameter"];
-  void clear_riskaversionparameter();
-  double riskaversionparameter() const;
-  void set_riskaversionparameter(double value);
+  // double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];
+  void clear_risk_aversion_parameter();
+  double risk_aversion_parameter() const;
+  void set_risk_aversion_parameter(double value);
   private:
-  double _internal_riskaversionparameter() const;
-  void _internal_set_riskaversionparameter(double value);
+  double _internal_risk_aversion_parameter() const;
+  void _internal_set_risk_aversion_parameter(double value);
   public:
 
   // double tau = 2 [json_name = "tau"];
@@ -1596,7 +1561,7 @@ class LogNormalRiskModel PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::vega::LogNormalModelParams* params_;
-  double riskaversionparameter_;
+  double risk_aversion_parameter_;
   double tau_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
@@ -2024,49 +1989,49 @@ class SimpleModelParams PROTOBUF_FINAL :
     kMinMoveDownFieldNumber = 4,
     kProbabilityOfTradingFieldNumber = 5,
   };
-  // double factorLong = 1 [json_name = "factorLong"];
-  void clear_factorlong();
-  double factorlong() const;
-  void set_factorlong(double value);
+  // double factor_long = 1 [json_name = "factorLong"];
+  void clear_factor_long();
+  double factor_long() const;
+  void set_factor_long(double value);
   private:
-  double _internal_factorlong() const;
-  void _internal_set_factorlong(double value);
+  double _internal_factor_long() const;
+  void _internal_set_factor_long(double value);
   public:
 
-  // double factorShort = 2 [json_name = "factorShort"];
-  void clear_factorshort();
-  double factorshort() const;
-  void set_factorshort(double value);
+  // double factor_short = 2 [json_name = "factorShort"];
+  void clear_factor_short();
+  double factor_short() const;
+  void set_factor_short(double value);
   private:
-  double _internal_factorshort() const;
-  void _internal_set_factorshort(double value);
+  double _internal_factor_short() const;
+  void _internal_set_factor_short(double value);
   public:
 
-  // double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = {
-  void clear_maxmoveup();
-  double maxmoveup() const;
-  void set_maxmoveup(double value);
+  // double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = {
+  void clear_max_move_up();
+  double max_move_up() const;
+  void set_max_move_up(double value);
   private:
-  double _internal_maxmoveup() const;
-  void _internal_set_maxmoveup(double value);
+  double _internal_max_move_up() const;
+  void _internal_set_max_move_up(double value);
   public:
 
-  // double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = {
-  void clear_minmovedown();
-  double minmovedown() const;
-  void set_minmovedown(double value);
+  // double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = {
+  void clear_min_move_down();
+  double min_move_down() const;
+  void set_min_move_down(double value);
   private:
-  double _internal_minmovedown() const;
-  void _internal_set_minmovedown(double value);
+  double _internal_min_move_down() const;
+  void _internal_set_min_move_down(double value);
   public:
 
-  // double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
-  void clear_probabilityoftrading();
-  double probabilityoftrading() const;
-  void set_probabilityoftrading(double value);
+  // double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
+  void clear_probability_of_trading();
+  double probability_of_trading() const;
+  void set_probability_of_trading(double value);
   private:
-  double _internal_probabilityoftrading() const;
-  void _internal_set_probabilityoftrading(double value);
+  double _internal_probability_of_trading() const;
+  void _internal_set_probability_of_trading(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.SimpleModelParams)
@@ -2076,11 +2041,11 @@ class SimpleModelParams PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  double factorlong_;
-  double factorshort_;
-  double maxmoveup_;
-  double minmovedown_;
-  double probabilityoftrading_;
+  double factor_long_;
+  double factor_short_;
+  double max_move_up_;
+  double min_move_down_;
+  double probability_of_trading_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -2202,31 +2167,31 @@ class ScalingFactors PROTOBUF_FINAL :
     kInitialMarginFieldNumber = 2,
     kCollateralReleaseFieldNumber = 3,
   };
-  // double searchLevel = 1 [json_name = "searchLevel"];
-  void clear_searchlevel();
-  double searchlevel() const;
-  void set_searchlevel(double value);
+  // double search_level = 1 [json_name = "searchLevel"];
+  void clear_search_level();
+  double search_level() const;
+  void set_search_level(double value);
   private:
-  double _internal_searchlevel() const;
-  void _internal_set_searchlevel(double value);
+  double _internal_search_level() const;
+  void _internal_set_search_level(double value);
   public:
 
-  // double initialMargin = 2 [json_name = "initialMargin"];
-  void clear_initialmargin();
-  double initialmargin() const;
-  void set_initialmargin(double value);
+  // double initial_margin = 2 [json_name = "initialMargin"];
+  void clear_initial_margin();
+  double initial_margin() const;
+  void set_initial_margin(double value);
   private:
-  double _internal_initialmargin() const;
-  void _internal_set_initialmargin(double value);
+  double _internal_initial_margin() const;
+  void _internal_set_initial_margin(double value);
   public:
 
-  // double collateralRelease = 3 [json_name = "collateralRelease"];
-  void clear_collateralrelease();
-  double collateralrelease() const;
-  void set_collateralrelease(double value);
+  // double collateral_release = 3 [json_name = "collateralRelease"];
+  void clear_collateral_release();
+  double collateral_release() const;
+  void set_collateral_release(double value);
   private:
-  double _internal_collateralrelease() const;
-  void _internal_set_collateralrelease(double value);
+  double _internal_collateral_release() const;
+  void _internal_set_collateral_release(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.ScalingFactors)
@@ -2236,9 +2201,9 @@ class ScalingFactors PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  double searchlevel_;
-  double initialmargin_;
-  double collateralrelease_;
+  double search_level_;
+  double initial_margin_;
+  double collateral_release_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -2358,23 +2323,23 @@ class MarginCalculator PROTOBUF_FINAL :
   enum : int {
     kScalingFactorsFieldNumber = 1,
   };
-  // .vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];
-  bool has_scalingfactors() const;
+  // .vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];
+  bool has_scaling_factors() const;
   private:
-  bool _internal_has_scalingfactors() const;
+  bool _internal_has_scaling_factors() const;
   public:
-  void clear_scalingfactors();
-  const ::vega::ScalingFactors& scalingfactors() const;
-  ::vega::ScalingFactors* release_scalingfactors();
-  ::vega::ScalingFactors* mutable_scalingfactors();
-  void set_allocated_scalingfactors(::vega::ScalingFactors* scalingfactors);
+  void clear_scaling_factors();
+  const ::vega::ScalingFactors& scaling_factors() const;
+  ::vega::ScalingFactors* release_scaling_factors();
+  ::vega::ScalingFactors* mutable_scaling_factors();
+  void set_allocated_scaling_factors(::vega::ScalingFactors* scaling_factors);
   private:
-  const ::vega::ScalingFactors& _internal_scalingfactors() const;
-  ::vega::ScalingFactors* _internal_mutable_scalingfactors();
+  const ::vega::ScalingFactors& _internal_scaling_factors() const;
+  ::vega::ScalingFactors* _internal_mutable_scaling_factors();
   public:
-  void unsafe_arena_set_allocated_scalingfactors(
-      ::vega::ScalingFactors* scalingfactors);
-  ::vega::ScalingFactors* unsafe_arena_release_scalingfactors();
+  void unsafe_arena_set_allocated_scaling_factors(
+      ::vega::ScalingFactors* scaling_factors);
+  ::vega::ScalingFactors* unsafe_arena_release_scaling_factors();
 
   // @@protoc_insertion_point(class_scope:vega.MarginCalculator)
  private:
@@ -2383,7 +2348,7 @@ class MarginCalculator PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::ScalingFactors* scalingfactors_;
+  ::vega::ScalingFactors* scaling_factors_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -2428,7 +2393,7 @@ class TradableInstrument PROTOBUF_FINAL :
   enum RiskModelCase {
     kLogNormalRiskModel = 100,
     kSimpleRiskModel = 101,
-    RISKMODEL_NOT_SET = 0,
+    RISK_MODEL_NOT_SET = 0,
   };
 
   static inline const TradableInstrument* internal_default_instance() {
@@ -2530,81 +2495,81 @@ class TradableInstrument PROTOBUF_FINAL :
       ::vega::Instrument* instrument);
   ::vega::Instrument* unsafe_arena_release_instrument();
 
-  // .vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];
-  bool has_margincalculator() const;
+  // .vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];
+  bool has_margin_calculator() const;
   private:
-  bool _internal_has_margincalculator() const;
+  bool _internal_has_margin_calculator() const;
   public:
-  void clear_margincalculator();
-  const ::vega::MarginCalculator& margincalculator() const;
-  ::vega::MarginCalculator* release_margincalculator();
-  ::vega::MarginCalculator* mutable_margincalculator();
-  void set_allocated_margincalculator(::vega::MarginCalculator* margincalculator);
+  void clear_margin_calculator();
+  const ::vega::MarginCalculator& margin_calculator() const;
+  ::vega::MarginCalculator* release_margin_calculator();
+  ::vega::MarginCalculator* mutable_margin_calculator();
+  void set_allocated_margin_calculator(::vega::MarginCalculator* margin_calculator);
   private:
-  const ::vega::MarginCalculator& _internal_margincalculator() const;
-  ::vega::MarginCalculator* _internal_mutable_margincalculator();
+  const ::vega::MarginCalculator& _internal_margin_calculator() const;
+  ::vega::MarginCalculator* _internal_mutable_margin_calculator();
   public:
-  void unsafe_arena_set_allocated_margincalculator(
-      ::vega::MarginCalculator* margincalculator);
-  ::vega::MarginCalculator* unsafe_arena_release_margincalculator();
+  void unsafe_arena_set_allocated_margin_calculator(
+      ::vega::MarginCalculator* margin_calculator);
+  ::vega::MarginCalculator* unsafe_arena_release_margin_calculator();
 
-  // .vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];
-  bool has_lognormalriskmodel() const;
+  // .vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];
+  bool has_log_normal_risk_model() const;
   private:
-  bool _internal_has_lognormalriskmodel() const;
+  bool _internal_has_log_normal_risk_model() const;
   public:
-  void clear_lognormalriskmodel();
-  const ::vega::LogNormalRiskModel& lognormalriskmodel() const;
-  ::vega::LogNormalRiskModel* release_lognormalriskmodel();
-  ::vega::LogNormalRiskModel* mutable_lognormalriskmodel();
-  void set_allocated_lognormalriskmodel(::vega::LogNormalRiskModel* lognormalriskmodel);
+  void clear_log_normal_risk_model();
+  const ::vega::LogNormalRiskModel& log_normal_risk_model() const;
+  ::vega::LogNormalRiskModel* release_log_normal_risk_model();
+  ::vega::LogNormalRiskModel* mutable_log_normal_risk_model();
+  void set_allocated_log_normal_risk_model(::vega::LogNormalRiskModel* log_normal_risk_model);
   private:
-  const ::vega::LogNormalRiskModel& _internal_lognormalriskmodel() const;
-  ::vega::LogNormalRiskModel* _internal_mutable_lognormalriskmodel();
+  const ::vega::LogNormalRiskModel& _internal_log_normal_risk_model() const;
+  ::vega::LogNormalRiskModel* _internal_mutable_log_normal_risk_model();
   public:
-  void unsafe_arena_set_allocated_lognormalriskmodel(
-      ::vega::LogNormalRiskModel* lognormalriskmodel);
-  ::vega::LogNormalRiskModel* unsafe_arena_release_lognormalriskmodel();
+  void unsafe_arena_set_allocated_log_normal_risk_model(
+      ::vega::LogNormalRiskModel* log_normal_risk_model);
+  ::vega::LogNormalRiskModel* unsafe_arena_release_log_normal_risk_model();
 
-  // .vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];
-  bool has_simpleriskmodel() const;
+  // .vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];
+  bool has_simple_risk_model() const;
   private:
-  bool _internal_has_simpleriskmodel() const;
+  bool _internal_has_simple_risk_model() const;
   public:
-  void clear_simpleriskmodel();
-  const ::vega::SimpleRiskModel& simpleriskmodel() const;
-  ::vega::SimpleRiskModel* release_simpleriskmodel();
-  ::vega::SimpleRiskModel* mutable_simpleriskmodel();
-  void set_allocated_simpleriskmodel(::vega::SimpleRiskModel* simpleriskmodel);
+  void clear_simple_risk_model();
+  const ::vega::SimpleRiskModel& simple_risk_model() const;
+  ::vega::SimpleRiskModel* release_simple_risk_model();
+  ::vega::SimpleRiskModel* mutable_simple_risk_model();
+  void set_allocated_simple_risk_model(::vega::SimpleRiskModel* simple_risk_model);
   private:
-  const ::vega::SimpleRiskModel& _internal_simpleriskmodel() const;
-  ::vega::SimpleRiskModel* _internal_mutable_simpleriskmodel();
+  const ::vega::SimpleRiskModel& _internal_simple_risk_model() const;
+  ::vega::SimpleRiskModel* _internal_mutable_simple_risk_model();
   public:
-  void unsafe_arena_set_allocated_simpleriskmodel(
-      ::vega::SimpleRiskModel* simpleriskmodel);
-  ::vega::SimpleRiskModel* unsafe_arena_release_simpleriskmodel();
+  void unsafe_arena_set_allocated_simple_risk_model(
+      ::vega::SimpleRiskModel* simple_risk_model);
+  ::vega::SimpleRiskModel* unsafe_arena_release_simple_risk_model();
 
-  void clear_riskModel();
-  RiskModelCase riskModel_case() const;
+  void clear_risk_model();
+  RiskModelCase risk_model_case() const;
   // @@protoc_insertion_point(class_scope:vega.TradableInstrument)
  private:
   class _Internal;
-  void set_has_lognormalriskmodel();
-  void set_has_simpleriskmodel();
+  void set_has_log_normal_risk_model();
+  void set_has_simple_risk_model();
 
-  inline bool has_riskModel() const;
-  inline void clear_has_riskModel();
+  inline bool has_risk_model() const;
+  inline void clear_has_risk_model();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::vega::Instrument* instrument_;
-  ::vega::MarginCalculator* margincalculator_;
+  ::vega::MarginCalculator* margin_calculator_;
   union RiskModelUnion {
     RiskModelUnion() {}
-    ::vega::LogNormalRiskModel* lognormalriskmodel_;
-    ::vega::SimpleRiskModel* simpleriskmodel_;
-  } riskModel_;
+    ::vega::LogNormalRiskModel* log_normal_risk_model_;
+    ::vega::SimpleRiskModel* simple_risk_model_;
+  } risk_model_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
 
@@ -2728,52 +2693,52 @@ class FeeFactors PROTOBUF_FINAL :
     kInfrastructureFeeFieldNumber = 2,
     kLiquidityFeeFieldNumber = 3,
   };
-  // string makerFee = 1 [json_name = "makerFee"];
-  void clear_makerfee();
-  const std::string& makerfee() const;
-  void set_makerfee(const std::string& value);
-  void set_makerfee(std::string&& value);
-  void set_makerfee(const char* value);
-  void set_makerfee(const char* value, size_t size);
-  std::string* mutable_makerfee();
-  std::string* release_makerfee();
-  void set_allocated_makerfee(std::string* makerfee);
+  // string maker_fee = 1 [json_name = "makerFee"];
+  void clear_maker_fee();
+  const std::string& maker_fee() const;
+  void set_maker_fee(const std::string& value);
+  void set_maker_fee(std::string&& value);
+  void set_maker_fee(const char* value);
+  void set_maker_fee(const char* value, size_t size);
+  std::string* mutable_maker_fee();
+  std::string* release_maker_fee();
+  void set_allocated_maker_fee(std::string* maker_fee);
   private:
-  const std::string& _internal_makerfee() const;
-  void _internal_set_makerfee(const std::string& value);
-  std::string* _internal_mutable_makerfee();
+  const std::string& _internal_maker_fee() const;
+  void _internal_set_maker_fee(const std::string& value);
+  std::string* _internal_mutable_maker_fee();
   public:
 
-  // string infrastructureFee = 2 [json_name = "infrastructureFee"];
-  void clear_infrastructurefee();
-  const std::string& infrastructurefee() const;
-  void set_infrastructurefee(const std::string& value);
-  void set_infrastructurefee(std::string&& value);
-  void set_infrastructurefee(const char* value);
-  void set_infrastructurefee(const char* value, size_t size);
-  std::string* mutable_infrastructurefee();
-  std::string* release_infrastructurefee();
-  void set_allocated_infrastructurefee(std::string* infrastructurefee);
+  // string infrastructure_fee = 2 [json_name = "infrastructureFee"];
+  void clear_infrastructure_fee();
+  const std::string& infrastructure_fee() const;
+  void set_infrastructure_fee(const std::string& value);
+  void set_infrastructure_fee(std::string&& value);
+  void set_infrastructure_fee(const char* value);
+  void set_infrastructure_fee(const char* value, size_t size);
+  std::string* mutable_infrastructure_fee();
+  std::string* release_infrastructure_fee();
+  void set_allocated_infrastructure_fee(std::string* infrastructure_fee);
   private:
-  const std::string& _internal_infrastructurefee() const;
-  void _internal_set_infrastructurefee(const std::string& value);
-  std::string* _internal_mutable_infrastructurefee();
+  const std::string& _internal_infrastructure_fee() const;
+  void _internal_set_infrastructure_fee(const std::string& value);
+  std::string* _internal_mutable_infrastructure_fee();
   public:
 
-  // string liquidityFee = 3 [json_name = "liquidityFee"];
-  void clear_liquidityfee();
-  const std::string& liquidityfee() const;
-  void set_liquidityfee(const std::string& value);
-  void set_liquidityfee(std::string&& value);
-  void set_liquidityfee(const char* value);
-  void set_liquidityfee(const char* value, size_t size);
-  std::string* mutable_liquidityfee();
-  std::string* release_liquidityfee();
-  void set_allocated_liquidityfee(std::string* liquidityfee);
+  // string liquidity_fee = 3 [json_name = "liquidityFee"];
+  void clear_liquidity_fee();
+  const std::string& liquidity_fee() const;
+  void set_liquidity_fee(const std::string& value);
+  void set_liquidity_fee(std::string&& value);
+  void set_liquidity_fee(const char* value);
+  void set_liquidity_fee(const char* value, size_t size);
+  std::string* mutable_liquidity_fee();
+  std::string* release_liquidity_fee();
+  void set_allocated_liquidity_fee(std::string* liquidity_fee);
   private:
-  const std::string& _internal_liquidityfee() const;
-  void _internal_set_liquidityfee(const std::string& value);
-  std::string* _internal_mutable_liquidityfee();
+  const std::string& _internal_liquidity_fee() const;
+  void _internal_set_liquidity_fee(const std::string& value);
+  std::string* _internal_mutable_liquidity_fee();
   public:
 
   // @@protoc_insertion_point(class_scope:vega.FeeFactors)
@@ -2783,9 +2748,9 @@ class FeeFactors PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr makerfee_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr infrastructurefee_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr liquidityfee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr maker_fee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr infrastructure_fee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr liquidity_fee_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -3070,13 +3035,13 @@ class PriceMonitoringTrigger PROTOBUF_FINAL :
   void _internal_set_probability(double value);
   public:
 
-  // int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = {
-  void clear_auctionextension();
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionextension() const;
-  void set_auctionextension(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = {
+  void clear_auction_extension();
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_extension() const;
+  void set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auctionextension() const;
-  void _internal_set_auctionextension(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auction_extension() const;
+  void _internal_set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.PriceMonitoringTrigger)
@@ -3088,7 +3053,7 @@ class PriceMonitoringTrigger PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::int64 horizon_;
   double probability_;
-  ::PROTOBUF_NAMESPACE_ID::int64 auctionextension_;
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_extension_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -3372,13 +3337,13 @@ class PriceMonitoringSettings PROTOBUF_FINAL :
       ::vega::PriceMonitoringParameters* parameters);
   ::vega::PriceMonitoringParameters* unsafe_arena_release_parameters();
 
-  // int64 updateFrequency = 2 [json_name = "updateFrequency"];
-  void clear_updatefrequency();
-  ::PROTOBUF_NAMESPACE_ID::int64 updatefrequency() const;
-  void set_updatefrequency(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 update_frequency = 2 [json_name = "updateFrequency"];
+  void clear_update_frequency();
+  ::PROTOBUF_NAMESPACE_ID::int64 update_frequency() const;
+  void set_update_frequency(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_updatefrequency() const;
-  void _internal_set_updatefrequency(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_update_frequency() const;
+  void _internal_set_update_frequency(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.PriceMonitoringSettings)
@@ -3389,7 +3354,7 @@ class PriceMonitoringSettings PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::vega::PriceMonitoringParameters* parameters_;
-  ::PROTOBUF_NAMESPACE_ID::int64 updatefrequency_;
+  ::PROTOBUF_NAMESPACE_ID::int64 update_frequency_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -3510,22 +3475,22 @@ class TargetStakeParameters PROTOBUF_FINAL :
     kTimeWindowFieldNumber = 1,
     kScalingFactorFieldNumber = 2,
   };
-  // int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = {
-  void clear_timewindow();
-  ::PROTOBUF_NAMESPACE_ID::int64 timewindow() const;
-  void set_timewindow(::PROTOBUF_NAMESPACE_ID::int64 value);
+  // int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = {
+  void clear_time_window();
+  ::PROTOBUF_NAMESPACE_ID::int64 time_window() const;
+  void set_time_window(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_timewindow() const;
-  void _internal_set_timewindow(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_time_window() const;
+  void _internal_set_time_window(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = {
-  void clear_scalingfactor();
-  double scalingfactor() const;
-  void set_scalingfactor(double value);
+  // double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = {
+  void clear_scaling_factor();
+  double scaling_factor() const;
+  void set_scaling_factor(double value);
   private:
-  double _internal_scalingfactor() const;
-  void _internal_set_scalingfactor(double value);
+  double _internal_scaling_factor() const;
+  void _internal_set_scaling_factor(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.TargetStakeParameters)
@@ -3535,8 +3500,8 @@ class TargetStakeParameters PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int64 timewindow_;
-  double scalingfactor_;
+  ::PROTOBUF_NAMESPACE_ID::int64 time_window_;
+  double scaling_factor_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -3581,7 +3546,7 @@ class Market PROTOBUF_FINAL :
   enum TradingModeConfigCase {
     kContinuous = 100,
     kDiscrete = 101,
-    TRADINGMODECONFIG_NOT_SET = 0,
+    TRADING_MODE_CONFIG_NOT_SET = 0,
   };
 
   static inline const Market* internal_default_instance() {
@@ -3770,23 +3735,23 @@ class Market PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // .vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];
-  bool has_tradableinstrument() const;
+  // .vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];
+  bool has_tradable_instrument() const;
   private:
-  bool _internal_has_tradableinstrument() const;
+  bool _internal_has_tradable_instrument() const;
   public:
-  void clear_tradableinstrument();
-  const ::vega::TradableInstrument& tradableinstrument() const;
-  ::vega::TradableInstrument* release_tradableinstrument();
-  ::vega::TradableInstrument* mutable_tradableinstrument();
-  void set_allocated_tradableinstrument(::vega::TradableInstrument* tradableinstrument);
+  void clear_tradable_instrument();
+  const ::vega::TradableInstrument& tradable_instrument() const;
+  ::vega::TradableInstrument* release_tradable_instrument();
+  ::vega::TradableInstrument* mutable_tradable_instrument();
+  void set_allocated_tradable_instrument(::vega::TradableInstrument* tradable_instrument);
   private:
-  const ::vega::TradableInstrument& _internal_tradableinstrument() const;
-  ::vega::TradableInstrument* _internal_mutable_tradableinstrument();
+  const ::vega::TradableInstrument& _internal_tradable_instrument() const;
+  ::vega::TradableInstrument* _internal_mutable_tradable_instrument();
   public:
-  void unsafe_arena_set_allocated_tradableinstrument(
-      ::vega::TradableInstrument* tradableinstrument);
-  ::vega::TradableInstrument* unsafe_arena_release_tradableinstrument();
+  void unsafe_arena_set_allocated_tradable_instrument(
+      ::vega::TradableInstrument* tradable_instrument);
+  ::vega::TradableInstrument* unsafe_arena_release_tradable_instrument();
 
   // .vega.Fees fees = 4 [json_name = "fees"];
   bool has_fees() const;
@@ -3806,76 +3771,76 @@ class Market PROTOBUF_FINAL :
       ::vega::Fees* fees);
   ::vega::Fees* unsafe_arena_release_fees();
 
-  // .vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];
-  bool has_openingauction() const;
+  // .vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];
+  bool has_opening_auction() const;
   private:
-  bool _internal_has_openingauction() const;
+  bool _internal_has_opening_auction() const;
   public:
-  void clear_openingauction();
-  const ::vega::AuctionDuration& openingauction() const;
-  ::vega::AuctionDuration* release_openingauction();
-  ::vega::AuctionDuration* mutable_openingauction();
-  void set_allocated_openingauction(::vega::AuctionDuration* openingauction);
+  void clear_opening_auction();
+  const ::vega::AuctionDuration& opening_auction() const;
+  ::vega::AuctionDuration* release_opening_auction();
+  ::vega::AuctionDuration* mutable_opening_auction();
+  void set_allocated_opening_auction(::vega::AuctionDuration* opening_auction);
   private:
-  const ::vega::AuctionDuration& _internal_openingauction() const;
-  ::vega::AuctionDuration* _internal_mutable_openingauction();
+  const ::vega::AuctionDuration& _internal_opening_auction() const;
+  ::vega::AuctionDuration* _internal_mutable_opening_auction();
   public:
-  void unsafe_arena_set_allocated_openingauction(
-      ::vega::AuctionDuration* openingauction);
-  ::vega::AuctionDuration* unsafe_arena_release_openingauction();
+  void unsafe_arena_set_allocated_opening_auction(
+      ::vega::AuctionDuration* opening_auction);
+  ::vega::AuctionDuration* unsafe_arena_release_opening_auction();
 
-  // .vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];
-  bool has_pricemonitoringsettings() const;
+  // .vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];
+  bool has_price_monitoring_settings() const;
   private:
-  bool _internal_has_pricemonitoringsettings() const;
+  bool _internal_has_price_monitoring_settings() const;
   public:
-  void clear_pricemonitoringsettings();
-  const ::vega::PriceMonitoringSettings& pricemonitoringsettings() const;
-  ::vega::PriceMonitoringSettings* release_pricemonitoringsettings();
-  ::vega::PriceMonitoringSettings* mutable_pricemonitoringsettings();
-  void set_allocated_pricemonitoringsettings(::vega::PriceMonitoringSettings* pricemonitoringsettings);
+  void clear_price_monitoring_settings();
+  const ::vega::PriceMonitoringSettings& price_monitoring_settings() const;
+  ::vega::PriceMonitoringSettings* release_price_monitoring_settings();
+  ::vega::PriceMonitoringSettings* mutable_price_monitoring_settings();
+  void set_allocated_price_monitoring_settings(::vega::PriceMonitoringSettings* price_monitoring_settings);
   private:
-  const ::vega::PriceMonitoringSettings& _internal_pricemonitoringsettings() const;
-  ::vega::PriceMonitoringSettings* _internal_mutable_pricemonitoringsettings();
+  const ::vega::PriceMonitoringSettings& _internal_price_monitoring_settings() const;
+  ::vega::PriceMonitoringSettings* _internal_mutable_price_monitoring_settings();
   public:
-  void unsafe_arena_set_allocated_pricemonitoringsettings(
-      ::vega::PriceMonitoringSettings* pricemonitoringsettings);
-  ::vega::PriceMonitoringSettings* unsafe_arena_release_pricemonitoringsettings();
+  void unsafe_arena_set_allocated_price_monitoring_settings(
+      ::vega::PriceMonitoringSettings* price_monitoring_settings);
+  ::vega::PriceMonitoringSettings* unsafe_arena_release_price_monitoring_settings();
 
-  // .vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];
-  bool has_targetstakeparameters() const;
+  // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
+  bool has_target_stake_parameters() const;
   private:
-  bool _internal_has_targetstakeparameters() const;
+  bool _internal_has_target_stake_parameters() const;
   public:
-  void clear_targetstakeparameters();
-  const ::vega::TargetStakeParameters& targetstakeparameters() const;
-  ::vega::TargetStakeParameters* release_targetstakeparameters();
-  ::vega::TargetStakeParameters* mutable_targetstakeparameters();
-  void set_allocated_targetstakeparameters(::vega::TargetStakeParameters* targetstakeparameters);
+  void clear_target_stake_parameters();
+  const ::vega::TargetStakeParameters& target_stake_parameters() const;
+  ::vega::TargetStakeParameters* release_target_stake_parameters();
+  ::vega::TargetStakeParameters* mutable_target_stake_parameters();
+  void set_allocated_target_stake_parameters(::vega::TargetStakeParameters* target_stake_parameters);
   private:
-  const ::vega::TargetStakeParameters& _internal_targetstakeparameters() const;
-  ::vega::TargetStakeParameters* _internal_mutable_targetstakeparameters();
+  const ::vega::TargetStakeParameters& _internal_target_stake_parameters() const;
+  ::vega::TargetStakeParameters* _internal_mutable_target_stake_parameters();
   public:
-  void unsafe_arena_set_allocated_targetstakeparameters(
-      ::vega::TargetStakeParameters* targetstakeparameters);
-  ::vega::TargetStakeParameters* unsafe_arena_release_targetstakeparameters();
+  void unsafe_arena_set_allocated_target_stake_parameters(
+      ::vega::TargetStakeParameters* target_stake_parameters);
+  ::vega::TargetStakeParameters* unsafe_arena_release_target_stake_parameters();
 
-  // uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];
-  void clear_decimalplaces();
-  ::PROTOBUF_NAMESPACE_ID::uint64 decimalplaces() const;
-  void set_decimalplaces(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 decimal_places = 3 [json_name = "decimalPlaces"];
+  void clear_decimal_places();
+  ::PROTOBUF_NAMESPACE_ID::uint64 decimal_places() const;
+  void set_decimal_places(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_decimalplaces() const;
-  void _internal_set_decimalplaces(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_decimal_places() const;
+  void _internal_set_decimal_places(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];
-  void clear_tradingmode();
-  ::vega::Market_TradingMode tradingmode() const;
-  void set_tradingmode(::vega::Market_TradingMode value);
+  // .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
+  void clear_trading_mode();
+  ::vega::Market_TradingMode trading_mode() const;
+  void set_trading_mode(::vega::Market_TradingMode value);
   private:
-  ::vega::Market_TradingMode _internal_tradingmode() const;
-  void _internal_set_tradingmode(::vega::Market_TradingMode value);
+  ::vega::Market_TradingMode _internal_trading_mode() const;
+  void _internal_set_trading_mode(::vega::Market_TradingMode value);
   public:
 
   // .vega.Market.State state = 9 [json_name = "state"];
@@ -3923,34 +3888,34 @@ class Market PROTOBUF_FINAL :
       ::vega::DiscreteTrading* discrete);
   ::vega::DiscreteTrading* unsafe_arena_release_discrete();
 
-  void clear_tradingModeConfig();
-  TradingModeConfigCase tradingModeConfig_case() const;
+  void clear_trading_mode_config();
+  TradingModeConfigCase trading_mode_config_case() const;
   // @@protoc_insertion_point(class_scope:vega.Market)
  private:
   class _Internal;
   void set_has_continuous();
   void set_has_discrete();
 
-  inline bool has_tradingModeConfig() const;
-  inline void clear_has_tradingModeConfig();
+  inline bool has_trading_mode_config() const;
+  inline void clear_has_trading_mode_config();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::vega::TradableInstrument* tradableinstrument_;
+  ::vega::TradableInstrument* tradable_instrument_;
   ::vega::Fees* fees_;
-  ::vega::AuctionDuration* openingauction_;
-  ::vega::PriceMonitoringSettings* pricemonitoringsettings_;
-  ::vega::TargetStakeParameters* targetstakeparameters_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 decimalplaces_;
-  int tradingmode_;
+  ::vega::AuctionDuration* opening_auction_;
+  ::vega::PriceMonitoringSettings* price_monitoring_settings_;
+  ::vega::TargetStakeParameters* target_stake_parameters_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 decimal_places_;
+  int trading_mode_;
   int state_;
   union TradingModeConfigUnion {
     TradingModeConfigUnion() {}
     ::vega::ContinuousTrading* continuous_;
     ::vega::DiscreteTrading* discrete_;
-  } tradingModeConfig_;
+  } trading_mode_config_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
 
@@ -4011,150 +3976,150 @@ inline void AuctionDuration::set_volume(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // ContinuousTrading
 
-// string tickSize = 1 [json_name = "tickSize"];
-inline void ContinuousTrading::clear_ticksize() {
-  ticksize_.ClearToEmpty();
+// string tick_size = 1 [json_name = "tickSize"];
+inline void ContinuousTrading::clear_tick_size() {
+  tick_size_.ClearToEmpty();
 }
-inline const std::string& ContinuousTrading::ticksize() const {
-  // @@protoc_insertion_point(field_get:vega.ContinuousTrading.tickSize)
-  return _internal_ticksize();
+inline const std::string& ContinuousTrading::tick_size() const {
+  // @@protoc_insertion_point(field_get:vega.ContinuousTrading.tick_size)
+  return _internal_tick_size();
 }
-inline void ContinuousTrading::set_ticksize(const std::string& value) {
-  _internal_set_ticksize(value);
-  // @@protoc_insertion_point(field_set:vega.ContinuousTrading.tickSize)
+inline void ContinuousTrading::set_tick_size(const std::string& value) {
+  _internal_set_tick_size(value);
+  // @@protoc_insertion_point(field_set:vega.ContinuousTrading.tick_size)
 }
-inline std::string* ContinuousTrading::mutable_ticksize() {
-  // @@protoc_insertion_point(field_mutable:vega.ContinuousTrading.tickSize)
-  return _internal_mutable_ticksize();
+inline std::string* ContinuousTrading::mutable_tick_size() {
+  // @@protoc_insertion_point(field_mutable:vega.ContinuousTrading.tick_size)
+  return _internal_mutable_tick_size();
 }
-inline const std::string& ContinuousTrading::_internal_ticksize() const {
-  return ticksize_.Get();
+inline const std::string& ContinuousTrading::_internal_tick_size() const {
+  return tick_size_.Get();
 }
-inline void ContinuousTrading::_internal_set_ticksize(const std::string& value) {
+inline void ContinuousTrading::_internal_set_tick_size(const std::string& value) {
 
-  ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void ContinuousTrading::set_ticksize(std::string&& value) {
+inline void ContinuousTrading::set_tick_size(std::string&& value) {
 
-  ticksize_.Set(
+  tick_size_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.ContinuousTrading.tickSize)
+  // @@protoc_insertion_point(field_set_rvalue:vega.ContinuousTrading.tick_size)
 }
-inline void ContinuousTrading::set_ticksize(const char* value) {
+inline void ContinuousTrading::set_tick_size(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.ContinuousTrading.tickSize)
+  tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.ContinuousTrading.tick_size)
 }
-inline void ContinuousTrading::set_ticksize(const char* value,
+inline void ContinuousTrading::set_tick_size(const char* value,
     size_t size) {
 
-  ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.ContinuousTrading.tickSize)
+  // @@protoc_insertion_point(field_set_pointer:vega.ContinuousTrading.tick_size)
 }
-inline std::string* ContinuousTrading::_internal_mutable_ticksize() {
+inline std::string* ContinuousTrading::_internal_mutable_tick_size() {
 
-  return ticksize_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return tick_size_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* ContinuousTrading::release_ticksize() {
-  // @@protoc_insertion_point(field_release:vega.ContinuousTrading.tickSize)
-  return ticksize_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* ContinuousTrading::release_tick_size() {
+  // @@protoc_insertion_point(field_release:vega.ContinuousTrading.tick_size)
+  return tick_size_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void ContinuousTrading::set_allocated_ticksize(std::string* ticksize) {
-  if (ticksize != nullptr) {
+inline void ContinuousTrading::set_allocated_tick_size(std::string* tick_size) {
+  if (tick_size != nullptr) {
 
   } else {
 
   }
-  ticksize_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ticksize,
+  tick_size_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tick_size,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.ContinuousTrading.tickSize)
+  // @@protoc_insertion_point(field_set_allocated:vega.ContinuousTrading.tick_size)
 }
 
 // -------------------------------------------------------------------
 
 // DiscreteTrading
 
-// int64 durationNs = 1 [json_name = "durationNs", (.validator.field) = {
-inline void DiscreteTrading::clear_durationns() {
-  durationns_ = PROTOBUF_LONGLONG(0);
+// int64 duration_ns = 1 [json_name = "durationNs", (.validator.field) = {
+inline void DiscreteTrading::clear_duration_ns() {
+  duration_ns_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 DiscreteTrading::_internal_durationns() const {
-  return durationns_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 DiscreteTrading::_internal_duration_ns() const {
+  return duration_ns_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 DiscreteTrading::durationns() const {
-  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.durationNs)
-  return _internal_durationns();
+inline ::PROTOBUF_NAMESPACE_ID::int64 DiscreteTrading::duration_ns() const {
+  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.duration_ns)
+  return _internal_duration_ns();
 }
-inline void DiscreteTrading::_internal_set_durationns(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void DiscreteTrading::_internal_set_duration_ns(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  durationns_ = value;
+  duration_ns_ = value;
 }
-inline void DiscreteTrading::set_durationns(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_durationns(value);
-  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.durationNs)
+inline void DiscreteTrading::set_duration_ns(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_duration_ns(value);
+  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.duration_ns)
 }
 
-// string tickSize = 2 [json_name = "tickSize"];
-inline void DiscreteTrading::clear_ticksize() {
-  ticksize_.ClearToEmpty();
+// string tick_size = 2 [json_name = "tickSize"];
+inline void DiscreteTrading::clear_tick_size() {
+  tick_size_.ClearToEmpty();
 }
-inline const std::string& DiscreteTrading::ticksize() const {
-  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.tickSize)
-  return _internal_ticksize();
+inline const std::string& DiscreteTrading::tick_size() const {
+  // @@protoc_insertion_point(field_get:vega.DiscreteTrading.tick_size)
+  return _internal_tick_size();
 }
-inline void DiscreteTrading::set_ticksize(const std::string& value) {
-  _internal_set_ticksize(value);
-  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.tickSize)
+inline void DiscreteTrading::set_tick_size(const std::string& value) {
+  _internal_set_tick_size(value);
+  // @@protoc_insertion_point(field_set:vega.DiscreteTrading.tick_size)
 }
-inline std::string* DiscreteTrading::mutable_ticksize() {
-  // @@protoc_insertion_point(field_mutable:vega.DiscreteTrading.tickSize)
-  return _internal_mutable_ticksize();
+inline std::string* DiscreteTrading::mutable_tick_size() {
+  // @@protoc_insertion_point(field_mutable:vega.DiscreteTrading.tick_size)
+  return _internal_mutable_tick_size();
 }
-inline const std::string& DiscreteTrading::_internal_ticksize() const {
-  return ticksize_.Get();
+inline const std::string& DiscreteTrading::_internal_tick_size() const {
+  return tick_size_.Get();
 }
-inline void DiscreteTrading::_internal_set_ticksize(const std::string& value) {
+inline void DiscreteTrading::_internal_set_tick_size(const std::string& value) {
 
-  ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void DiscreteTrading::set_ticksize(std::string&& value) {
+inline void DiscreteTrading::set_tick_size(std::string&& value) {
 
-  ticksize_.Set(
+  tick_size_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.DiscreteTrading.tickSize)
+  // @@protoc_insertion_point(field_set_rvalue:vega.DiscreteTrading.tick_size)
 }
-inline void DiscreteTrading::set_ticksize(const char* value) {
+inline void DiscreteTrading::set_tick_size(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.DiscreteTrading.tickSize)
+  tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.DiscreteTrading.tick_size)
 }
-inline void DiscreteTrading::set_ticksize(const char* value,
+inline void DiscreteTrading::set_tick_size(const char* value,
     size_t size) {
 
-  ticksize_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  tick_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.DiscreteTrading.tickSize)
+  // @@protoc_insertion_point(field_set_pointer:vega.DiscreteTrading.tick_size)
 }
-inline std::string* DiscreteTrading::_internal_mutable_ticksize() {
+inline std::string* DiscreteTrading::_internal_mutable_tick_size() {
 
-  return ticksize_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return tick_size_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* DiscreteTrading::release_ticksize() {
-  // @@protoc_insertion_point(field_release:vega.DiscreteTrading.tickSize)
-  return ticksize_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* DiscreteTrading::release_tick_size() {
+  // @@protoc_insertion_point(field_release:vega.DiscreteTrading.tick_size)
+  return tick_size_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void DiscreteTrading::set_allocated_ticksize(std::string* ticksize) {
-  if (ticksize != nullptr) {
+inline void DiscreteTrading::set_allocated_tick_size(std::string* tick_size) {
+  if (tick_size != nullptr) {
 
   } else {
 
   }
-  ticksize_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ticksize,
+  tick_size_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tick_size,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.DiscreteTrading.tickSize)
+  // @@protoc_insertion_point(field_set_allocated:vega.DiscreteTrading.tick_size)
 }
 
 // -------------------------------------------------------------------
@@ -4222,354 +4187,351 @@ inline void Future::set_allocated_maturity(std::string* maturity) {
   // @@protoc_insertion_point(field_set_allocated:vega.Future.maturity)
 }
 
-// string settlementAsset = 2 [json_name = "settlementAsset"];
-inline void Future::clear_settlementasset() {
-  settlementasset_.ClearToEmpty();
+// string settlement_asset = 2 [json_name = "settlementAsset"];
+inline void Future::clear_settlement_asset() {
+  settlement_asset_.ClearToEmpty();
 }
-inline const std::string& Future::settlementasset() const {
-  // @@protoc_insertion_point(field_get:vega.Future.settlementAsset)
-  return _internal_settlementasset();
+inline const std::string& Future::settlement_asset() const {
+  // @@protoc_insertion_point(field_get:vega.Future.settlement_asset)
+  return _internal_settlement_asset();
 }
-inline void Future::set_settlementasset(const std::string& value) {
-  _internal_set_settlementasset(value);
-  // @@protoc_insertion_point(field_set:vega.Future.settlementAsset)
+inline void Future::set_settlement_asset(const std::string& value) {
+  _internal_set_settlement_asset(value);
+  // @@protoc_insertion_point(field_set:vega.Future.settlement_asset)
 }
-inline std::string* Future::mutable_settlementasset() {
-  // @@protoc_insertion_point(field_mutable:vega.Future.settlementAsset)
-  return _internal_mutable_settlementasset();
+inline std::string* Future::mutable_settlement_asset() {
+  // @@protoc_insertion_point(field_mutable:vega.Future.settlement_asset)
+  return _internal_mutable_settlement_asset();
 }
-inline const std::string& Future::_internal_settlementasset() const {
-  return settlementasset_.Get();
+inline const std::string& Future::_internal_settlement_asset() const {
+  return settlement_asset_.Get();
 }
-inline void Future::_internal_set_settlementasset(const std::string& value) {
+inline void Future::_internal_set_settlement_asset(const std::string& value) {
 
-  settlementasset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  settlement_asset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Future::set_settlementasset(std::string&& value) {
+inline void Future::set_settlement_asset(std::string&& value) {
 
-  settlementasset_.Set(
+  settlement_asset_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Future.settlementAsset)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Future.settlement_asset)
 }
-inline void Future::set_settlementasset(const char* value) {
+inline void Future::set_settlement_asset(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  settlementasset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Future.settlementAsset)
+  settlement_asset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Future.settlement_asset)
 }
-inline void Future::set_settlementasset(const char* value,
+inline void Future::set_settlement_asset(const char* value,
     size_t size) {
 
-  settlementasset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  settlement_asset_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Future.settlementAsset)
+  // @@protoc_insertion_point(field_set_pointer:vega.Future.settlement_asset)
 }
-inline std::string* Future::_internal_mutable_settlementasset() {
+inline std::string* Future::_internal_mutable_settlement_asset() {
 
-  return settlementasset_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return settlement_asset_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Future::release_settlementasset() {
-  // @@protoc_insertion_point(field_release:vega.Future.settlementAsset)
-  return settlementasset_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Future::release_settlement_asset() {
+  // @@protoc_insertion_point(field_release:vega.Future.settlement_asset)
+  return settlement_asset_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Future::set_allocated_settlementasset(std::string* settlementasset) {
-  if (settlementasset != nullptr) {
+inline void Future::set_allocated_settlement_asset(std::string* settlement_asset) {
+  if (settlement_asset != nullptr) {
 
   } else {
 
   }
-  settlementasset_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), settlementasset,
+  settlement_asset_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), settlement_asset,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Future.settlementAsset)
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.settlement_asset)
 }
 
-// string quoteName = 4 [json_name = "quoteName"];
-inline void Future::clear_quotename() {
-  quotename_.ClearToEmpty();
+// string quote_name = 4 [json_name = "quoteName"];
+inline void Future::clear_quote_name() {
+  quote_name_.ClearToEmpty();
 }
-inline const std::string& Future::quotename() const {
-  // @@protoc_insertion_point(field_get:vega.Future.quoteName)
-  return _internal_quotename();
+inline const std::string& Future::quote_name() const {
+  // @@protoc_insertion_point(field_get:vega.Future.quote_name)
+  return _internal_quote_name();
 }
-inline void Future::set_quotename(const std::string& value) {
-  _internal_set_quotename(value);
-  // @@protoc_insertion_point(field_set:vega.Future.quoteName)
+inline void Future::set_quote_name(const std::string& value) {
+  _internal_set_quote_name(value);
+  // @@protoc_insertion_point(field_set:vega.Future.quote_name)
 }
-inline std::string* Future::mutable_quotename() {
-  // @@protoc_insertion_point(field_mutable:vega.Future.quoteName)
-  return _internal_mutable_quotename();
+inline std::string* Future::mutable_quote_name() {
+  // @@protoc_insertion_point(field_mutable:vega.Future.quote_name)
+  return _internal_mutable_quote_name();
 }
-inline const std::string& Future::_internal_quotename() const {
-  return quotename_.Get();
+inline const std::string& Future::_internal_quote_name() const {
+  return quote_name_.Get();
 }
-inline void Future::_internal_set_quotename(const std::string& value) {
+inline void Future::_internal_set_quote_name(const std::string& value) {
 
-  quotename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Future::set_quotename(std::string&& value) {
+inline void Future::set_quote_name(std::string&& value) {
 
-  quotename_.Set(
+  quote_name_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Future.quoteName)
+  // @@protoc_insertion_point(field_set_rvalue:vega.Future.quote_name)
 }
-inline void Future::set_quotename(const char* value) {
+inline void Future::set_quote_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  quotename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Future.quoteName)
+  quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Future.quote_name)
 }
-inline void Future::set_quotename(const char* value,
+inline void Future::set_quote_name(const char* value,
     size_t size) {
 
-  quotename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Future.quoteName)
+  // @@protoc_insertion_point(field_set_pointer:vega.Future.quote_name)
 }
-inline std::string* Future::_internal_mutable_quotename() {
+inline std::string* Future::_internal_mutable_quote_name() {
 
-  return quotename_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return quote_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Future::release_quotename() {
-  // @@protoc_insertion_point(field_release:vega.Future.quoteName)
-  return quotename_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Future::release_quote_name() {
+  // @@protoc_insertion_point(field_release:vega.Future.quote_name)
+  return quote_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Future::set_allocated_quotename(std::string* quotename) {
-  if (quotename != nullptr) {
+inline void Future::set_allocated_quote_name(std::string* quote_name) {
+  if (quote_name != nullptr) {
 
   } else {
 
   }
-  quotename_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quotename,
+  quote_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), quote_name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Future.quoteName)
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.quote_name)
 }
 
-// .vega.EthereumEvent ethereumEvent = 100 [json_name = "ethereumEvent"];
-inline bool Future::_internal_has_ethereumevent() const {
-  return oracle_case() == kEthereumEvent;
+// .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+inline bool Future::_internal_has_oracle_spec() const {
+  return this != internal_default_instance() && oracle_spec_ != nullptr;
 }
-inline bool Future::has_ethereumevent() const {
-  return _internal_has_ethereumevent();
+inline bool Future::has_oracle_spec() const {
+  return _internal_has_oracle_spec();
 }
-inline void Future::set_has_ethereumevent() {
-  _oneof_case_[0] = kEthereumEvent;
+inline const ::oracles::v1::OracleSpec& Future::_internal_oracle_spec() const {
+  const ::oracles::v1::OracleSpec* p = oracle_spec_;
+  return p != nullptr ? *p : reinterpret_cast<const ::oracles::v1::OracleSpec&>(
+      ::oracles::v1::_OracleSpec_default_instance_);
 }
-inline void Future::clear_ethereumevent() {
-  if (_internal_has_ethereumevent()) {
-    if (GetArena() == nullptr) {
-      delete oracle_.ethereumevent_;
-    }
-    clear_has_oracle();
+inline const ::oracles::v1::OracleSpec& Future::oracle_spec() const {
+  // @@protoc_insertion_point(field_get:vega.Future.oracle_spec)
+  return _internal_oracle_spec();
+}
+inline void Future::unsafe_arena_set_allocated_oracle_spec(
+    ::oracles::v1::OracleSpec* oracle_spec) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
   }
-}
-inline ::vega::EthereumEvent* Future::release_ethereumevent() {
-  // @@protoc_insertion_point(field_release:vega.Future.ethereumEvent)
-  if (_internal_has_ethereumevent()) {
-    clear_has_oracle();
-      ::vega::EthereumEvent* temp = oracle_.ethereumevent_;
-    if (GetArena() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    oracle_.ethereumevent_ = nullptr;
-    return temp;
+  oracle_spec_ = oracle_spec;
+  if (oracle_spec) {
+
   } else {
-    return nullptr;
+
   }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Future.oracle_spec)
 }
-inline const ::vega::EthereumEvent& Future::_internal_ethereumevent() const {
-  return _internal_has_ethereumevent()
-      ? *oracle_.ethereumevent_
-      : reinterpret_cast< ::vega::EthereumEvent&>(::vega::_EthereumEvent_default_instance_);
+inline ::oracles::v1::OracleSpec* Future::release_oracle_spec() {
+
+  ::oracles::v1::OracleSpec* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
 }
-inline const ::vega::EthereumEvent& Future::ethereumevent() const {
-  // @@protoc_insertion_point(field_get:vega.Future.ethereumEvent)
-  return _internal_ethereumevent();
+inline ::oracles::v1::OracleSpec* Future::unsafe_arena_release_oracle_spec() {
+  // @@protoc_insertion_point(field_release:vega.Future.oracle_spec)
+
+  ::oracles::v1::OracleSpec* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  return temp;
 }
-inline ::vega::EthereumEvent* Future::unsafe_arena_release_ethereumevent() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.Future.ethereumEvent)
-  if (_internal_has_ethereumevent()) {
-    clear_has_oracle();
-    ::vega::EthereumEvent* temp = oracle_.ethereumevent_;
-    oracle_.ethereumevent_ = nullptr;
-    return temp;
+inline ::oracles::v1::OracleSpec* Future::_internal_mutable_oracle_spec() {
+
+  if (oracle_spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::oracles::v1::OracleSpec>(GetArena());
+    oracle_spec_ = p;
+  }
+  return oracle_spec_;
+}
+inline ::oracles::v1::OracleSpec* Future::mutable_oracle_spec() {
+  // @@protoc_insertion_point(field_mutable:vega.Future.oracle_spec)
+  return _internal_mutable_oracle_spec();
+}
+inline void Future::set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
+  }
+  if (oracle_spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec, submessage_arena);
+    }
+
   } else {
-    return nullptr;
+
   }
-}
-inline void Future::unsafe_arena_set_allocated_ethereumevent(::vega::EthereumEvent* ethereumevent) {
-  clear_oracle();
-  if (ethereumevent) {
-    set_has_ethereumevent();
-    oracle_.ethereumevent_ = ethereumevent;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Future.ethereumEvent)
-}
-inline ::vega::EthereumEvent* Future::_internal_mutable_ethereumevent() {
-  if (!_internal_has_ethereumevent()) {
-    clear_oracle();
-    set_has_ethereumevent();
-    oracle_.ethereumevent_ = CreateMaybeMessage< ::vega::EthereumEvent >(GetArena());
-  }
-  return oracle_.ethereumevent_;
-}
-inline ::vega::EthereumEvent* Future::mutable_ethereumevent() {
-  // @@protoc_insertion_point(field_mutable:vega.Future.ethereumEvent)
-  return _internal_mutable_ethereumevent();
+  oracle_spec_ = oracle_spec;
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.oracle_spec)
 }
 
-inline bool Future::has_oracle() const {
-  return oracle_case() != ORACLE_NOT_SET;
+// .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+inline bool Future::_internal_has_oracle_spec_binding() const {
+  return this != internal_default_instance() && oracle_spec_binding_ != nullptr;
 }
-inline void Future::clear_has_oracle() {
-  _oneof_case_[0] = ORACLE_NOT_SET;
+inline bool Future::has_oracle_spec_binding() const {
+  return _internal_has_oracle_spec_binding();
 }
-inline Future::OracleCase Future::oracle_case() const {
-  return Future::OracleCase(_oneof_case_[0]);
+inline void Future::clear_oracle_spec_binding() {
+  if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
+    delete oracle_spec_binding_;
+  }
+  oracle_spec_binding_ = nullptr;
 }
+inline const ::vega::OracleSpecToFutureBinding& Future::_internal_oracle_spec_binding() const {
+  const ::vega::OracleSpecToFutureBinding* p = oracle_spec_binding_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::OracleSpecToFutureBinding&>(
+      ::vega::_OracleSpecToFutureBinding_default_instance_);
+}
+inline const ::vega::OracleSpecToFutureBinding& Future::oracle_spec_binding() const {
+  // @@protoc_insertion_point(field_get:vega.Future.oracle_spec_binding)
+  return _internal_oracle_spec_binding();
+}
+inline void Future::unsafe_arena_set_allocated_oracle_spec_binding(
+    ::vega::OracleSpecToFutureBinding* oracle_spec_binding) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_binding_);
+  }
+  oracle_spec_binding_ = oracle_spec_binding;
+  if (oracle_spec_binding) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Future.oracle_spec_binding)
+}
+inline ::vega::OracleSpecToFutureBinding* Future::release_oracle_spec_binding() {
+
+  ::vega::OracleSpecToFutureBinding* temp = oracle_spec_binding_;
+  oracle_spec_binding_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::OracleSpecToFutureBinding* Future::unsafe_arena_release_oracle_spec_binding() {
+  // @@protoc_insertion_point(field_release:vega.Future.oracle_spec_binding)
+
+  ::vega::OracleSpecToFutureBinding* temp = oracle_spec_binding_;
+  oracle_spec_binding_ = nullptr;
+  return temp;
+}
+inline ::vega::OracleSpecToFutureBinding* Future::_internal_mutable_oracle_spec_binding() {
+
+  if (oracle_spec_binding_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::OracleSpecToFutureBinding>(GetArena());
+    oracle_spec_binding_ = p;
+  }
+  return oracle_spec_binding_;
+}
+inline ::vega::OracleSpecToFutureBinding* Future::mutable_oracle_spec_binding() {
+  // @@protoc_insertion_point(field_mutable:vega.Future.oracle_spec_binding)
+  return _internal_mutable_oracle_spec_binding();
+}
+inline void Future::set_allocated_oracle_spec_binding(::vega::OracleSpecToFutureBinding* oracle_spec_binding) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete oracle_spec_binding_;
+  }
+  if (oracle_spec_binding) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(oracle_spec_binding);
+    if (message_arena != submessage_arena) {
+      oracle_spec_binding = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec_binding, submessage_arena);
+    }
+
+  } else {
+
+  }
+  oracle_spec_binding_ = oracle_spec_binding;
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.oracle_spec_binding)
+}
+
 // -------------------------------------------------------------------
 
-// EthereumEvent
+// OracleSpecToFutureBinding
 
-// string contractID = 1 [json_name = "contractID"];
-inline void EthereumEvent::clear_contractid() {
-  contractid_.ClearToEmpty();
+// string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
+inline void OracleSpecToFutureBinding::clear_settlement_price_property() {
+  settlement_price_property_.ClearToEmpty();
 }
-inline const std::string& EthereumEvent::contractid() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumEvent.contractID)
-  return _internal_contractid();
+inline const std::string& OracleSpecToFutureBinding::settlement_price_property() const {
+  // @@protoc_insertion_point(field_get:vega.OracleSpecToFutureBinding.settlement_price_property)
+  return _internal_settlement_price_property();
 }
-inline void EthereumEvent::set_contractid(const std::string& value) {
-  _internal_set_contractid(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumEvent.contractID)
+inline void OracleSpecToFutureBinding::set_settlement_price_property(const std::string& value) {
+  _internal_set_settlement_price_property(value);
+  // @@protoc_insertion_point(field_set:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline std::string* EthereumEvent::mutable_contractid() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumEvent.contractID)
-  return _internal_mutable_contractid();
+inline std::string* OracleSpecToFutureBinding::mutable_settlement_price_property() {
+  // @@protoc_insertion_point(field_mutable:vega.OracleSpecToFutureBinding.settlement_price_property)
+  return _internal_mutable_settlement_price_property();
 }
-inline const std::string& EthereumEvent::_internal_contractid() const {
-  return contractid_.Get();
+inline const std::string& OracleSpecToFutureBinding::_internal_settlement_price_property() const {
+  return settlement_price_property_.Get();
 }
-inline void EthereumEvent::_internal_set_contractid(const std::string& value) {
+inline void OracleSpecToFutureBinding::_internal_set_settlement_price_property(const std::string& value) {
 
-  contractid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void EthereumEvent::set_contractid(std::string&& value) {
+inline void OracleSpecToFutureBinding::set_settlement_price_property(std::string&& value) {
 
-  contractid_.Set(
+  settlement_price_property_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumEvent.contractID)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline void EthereumEvent::set_contractid(const char* value) {
+inline void OracleSpecToFutureBinding::set_settlement_price_property(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  contractid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumEvent.contractID)
+  settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline void EthereumEvent::set_contractid(const char* value,
+inline void OracleSpecToFutureBinding::set_settlement_price_property(const char* value,
     size_t size) {
 
-  contractid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumEvent.contractID)
+  // @@protoc_insertion_point(field_set_pointer:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline std::string* EthereumEvent::_internal_mutable_contractid() {
+inline std::string* OracleSpecToFutureBinding::_internal_mutable_settlement_price_property() {
 
-  return contractid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return settlement_price_property_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* EthereumEvent::release_contractid() {
-  // @@protoc_insertion_point(field_release:vega.EthereumEvent.contractID)
-  return contractid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OracleSpecToFutureBinding::release_settlement_price_property() {
+  // @@protoc_insertion_point(field_release:vega.OracleSpecToFutureBinding.settlement_price_property)
+  return settlement_price_property_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void EthereumEvent::set_allocated_contractid(std::string* contractid) {
-  if (contractid != nullptr) {
+inline void OracleSpecToFutureBinding::set_allocated_settlement_price_property(std::string* settlement_price_property) {
+  if (settlement_price_property != nullptr) {
 
   } else {
 
   }
-  contractid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), contractid,
+  settlement_price_property_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), settlement_price_property,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumEvent.contractID)
-}
-
-// string event = 2 [json_name = "event"];
-inline void EthereumEvent::clear_event() {
-  event_.ClearToEmpty();
-}
-inline const std::string& EthereumEvent::event() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumEvent.event)
-  return _internal_event();
-}
-inline void EthereumEvent::set_event(const std::string& value) {
-  _internal_set_event(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumEvent.event)
-}
-inline std::string* EthereumEvent::mutable_event() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumEvent.event)
-  return _internal_mutable_event();
-}
-inline const std::string& EthereumEvent::_internal_event() const {
-  return event_.Get();
-}
-inline void EthereumEvent::_internal_set_event(const std::string& value) {
-
-  event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void EthereumEvent::set_event(std::string&& value) {
-
-  event_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumEvent.event)
-}
-inline void EthereumEvent::set_event(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumEvent.event)
-}
-inline void EthereumEvent::set_event(const char* value,
-    size_t size) {
-
-  event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumEvent.event)
-}
-inline std::string* EthereumEvent::_internal_mutable_event() {
-
-  return event_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* EthereumEvent::release_event() {
-  // @@protoc_insertion_point(field_release:vega.EthereumEvent.event)
-  return event_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void EthereumEvent::set_allocated_event(std::string* event) {
-  if (event != nullptr) {
-
-  } else {
-
-  }
-  event_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), event,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumEvent.event)
-}
-
-// uint64 value = 3 [json_name = "value"];
-inline void EthereumEvent::clear_value() {
-  value_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 EthereumEvent::_internal_value() const {
-  return value_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 EthereumEvent::value() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumEvent.value)
-  return _internal_value();
-}
-inline void EthereumEvent::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  value_ = value;
-}
-inline void EthereumEvent::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumEvent.value)
+  // @@protoc_insertion_point(field_set_allocated:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
 
 // -------------------------------------------------------------------
@@ -4920,26 +4882,6 @@ inline void Instrument::set_allocated_metadata(::vega::InstrumentMetadata* metad
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.metadata)
 }
 
-// uint64 initialMarkPrice = 5 [json_name = "initialMarkPrice"];
-inline void Instrument::clear_initialmarkprice() {
-  initialmarkprice_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instrument::_internal_initialmarkprice() const {
-  return initialmarkprice_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instrument::initialmarkprice() const {
-  // @@protoc_insertion_point(field_get:vega.Instrument.initialMarkPrice)
-  return _internal_initialmarkprice();
-}
-inline void Instrument::_internal_set_initialmarkprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  initialmarkprice_ = value;
-}
-inline void Instrument::set_initialmarkprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_initialmarkprice(value);
-  // @@protoc_insertion_point(field_set:vega.Instrument.initialMarkPrice)
-}
-
 // .vega.Future future = 100 [json_name = "future"];
 inline bool Instrument::_internal_has_future() const {
   return product_case() == kFuture;
@@ -5026,24 +4968,24 @@ inline Instrument::ProductCase Instrument::product_case() const {
 
 // LogNormalRiskModel
 
-// double riskAversionParameter = 1 [json_name = "riskAversionParameter"];
-inline void LogNormalRiskModel::clear_riskaversionparameter() {
-  riskaversionparameter_ = 0;
+// double risk_aversion_parameter = 1 [json_name = "riskAversionParameter"];
+inline void LogNormalRiskModel::clear_risk_aversion_parameter() {
+  risk_aversion_parameter_ = 0;
 }
-inline double LogNormalRiskModel::_internal_riskaversionparameter() const {
-  return riskaversionparameter_;
+inline double LogNormalRiskModel::_internal_risk_aversion_parameter() const {
+  return risk_aversion_parameter_;
 }
-inline double LogNormalRiskModel::riskaversionparameter() const {
-  // @@protoc_insertion_point(field_get:vega.LogNormalRiskModel.riskAversionParameter)
-  return _internal_riskaversionparameter();
+inline double LogNormalRiskModel::risk_aversion_parameter() const {
+  // @@protoc_insertion_point(field_get:vega.LogNormalRiskModel.risk_aversion_parameter)
+  return _internal_risk_aversion_parameter();
 }
-inline void LogNormalRiskModel::_internal_set_riskaversionparameter(double value) {
+inline void LogNormalRiskModel::_internal_set_risk_aversion_parameter(double value) {
 
-  riskaversionparameter_ = value;
+  risk_aversion_parameter_ = value;
 }
-inline void LogNormalRiskModel::set_riskaversionparameter(double value) {
-  _internal_set_riskaversionparameter(value);
-  // @@protoc_insertion_point(field_set:vega.LogNormalRiskModel.riskAversionParameter)
+inline void LogNormalRiskModel::set_risk_aversion_parameter(double value) {
+  _internal_set_risk_aversion_parameter(value);
+  // @@protoc_insertion_point(field_set:vega.LogNormalRiskModel.risk_aversion_parameter)
 }
 
 // double tau = 2 [json_name = "tau"];
@@ -5304,255 +5246,255 @@ inline void SimpleRiskModel::set_allocated_params(::vega::SimpleModelParams* par
 
 // SimpleModelParams
 
-// double factorLong = 1 [json_name = "factorLong"];
-inline void SimpleModelParams::clear_factorlong() {
-  factorlong_ = 0;
+// double factor_long = 1 [json_name = "factorLong"];
+inline void SimpleModelParams::clear_factor_long() {
+  factor_long_ = 0;
 }
-inline double SimpleModelParams::_internal_factorlong() const {
-  return factorlong_;
+inline double SimpleModelParams::_internal_factor_long() const {
+  return factor_long_;
 }
-inline double SimpleModelParams::factorlong() const {
-  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.factorLong)
-  return _internal_factorlong();
+inline double SimpleModelParams::factor_long() const {
+  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.factor_long)
+  return _internal_factor_long();
 }
-inline void SimpleModelParams::_internal_set_factorlong(double value) {
+inline void SimpleModelParams::_internal_set_factor_long(double value) {
 
-  factorlong_ = value;
+  factor_long_ = value;
 }
-inline void SimpleModelParams::set_factorlong(double value) {
-  _internal_set_factorlong(value);
-  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.factorLong)
-}
-
-// double factorShort = 2 [json_name = "factorShort"];
-inline void SimpleModelParams::clear_factorshort() {
-  factorshort_ = 0;
-}
-inline double SimpleModelParams::_internal_factorshort() const {
-  return factorshort_;
-}
-inline double SimpleModelParams::factorshort() const {
-  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.factorShort)
-  return _internal_factorshort();
-}
-inline void SimpleModelParams::_internal_set_factorshort(double value) {
-
-  factorshort_ = value;
-}
-inline void SimpleModelParams::set_factorshort(double value) {
-  _internal_set_factorshort(value);
-  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.factorShort)
+inline void SimpleModelParams::set_factor_long(double value) {
+  _internal_set_factor_long(value);
+  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.factor_long)
 }
 
-// double maxMoveUp = 3 [json_name = "maxMoveUp", (.validator.field) = {
-inline void SimpleModelParams::clear_maxmoveup() {
-  maxmoveup_ = 0;
+// double factor_short = 2 [json_name = "factorShort"];
+inline void SimpleModelParams::clear_factor_short() {
+  factor_short_ = 0;
 }
-inline double SimpleModelParams::_internal_maxmoveup() const {
-  return maxmoveup_;
+inline double SimpleModelParams::_internal_factor_short() const {
+  return factor_short_;
 }
-inline double SimpleModelParams::maxmoveup() const {
-  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.maxMoveUp)
-  return _internal_maxmoveup();
+inline double SimpleModelParams::factor_short() const {
+  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.factor_short)
+  return _internal_factor_short();
 }
-inline void SimpleModelParams::_internal_set_maxmoveup(double value) {
+inline void SimpleModelParams::_internal_set_factor_short(double value) {
 
-  maxmoveup_ = value;
+  factor_short_ = value;
 }
-inline void SimpleModelParams::set_maxmoveup(double value) {
-  _internal_set_maxmoveup(value);
-  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.maxMoveUp)
-}
-
-// double minMoveDown = 4 [json_name = "minMoveDown", (.validator.field) = {
-inline void SimpleModelParams::clear_minmovedown() {
-  minmovedown_ = 0;
-}
-inline double SimpleModelParams::_internal_minmovedown() const {
-  return minmovedown_;
-}
-inline double SimpleModelParams::minmovedown() const {
-  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.minMoveDown)
-  return _internal_minmovedown();
-}
-inline void SimpleModelParams::_internal_set_minmovedown(double value) {
-
-  minmovedown_ = value;
-}
-inline void SimpleModelParams::set_minmovedown(double value) {
-  _internal_set_minmovedown(value);
-  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.minMoveDown)
+inline void SimpleModelParams::set_factor_short(double value) {
+  _internal_set_factor_short(value);
+  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.factor_short)
 }
 
-// double probabilityOfTrading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
-inline void SimpleModelParams::clear_probabilityoftrading() {
-  probabilityoftrading_ = 0;
+// double max_move_up = 3 [json_name = "maxMoveUp", (.validator.field) = {
+inline void SimpleModelParams::clear_max_move_up() {
+  max_move_up_ = 0;
 }
-inline double SimpleModelParams::_internal_probabilityoftrading() const {
-  return probabilityoftrading_;
+inline double SimpleModelParams::_internal_max_move_up() const {
+  return max_move_up_;
 }
-inline double SimpleModelParams::probabilityoftrading() const {
-  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.probabilityOfTrading)
-  return _internal_probabilityoftrading();
+inline double SimpleModelParams::max_move_up() const {
+  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.max_move_up)
+  return _internal_max_move_up();
 }
-inline void SimpleModelParams::_internal_set_probabilityoftrading(double value) {
+inline void SimpleModelParams::_internal_set_max_move_up(double value) {
 
-  probabilityoftrading_ = value;
+  max_move_up_ = value;
 }
-inline void SimpleModelParams::set_probabilityoftrading(double value) {
-  _internal_set_probabilityoftrading(value);
-  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.probabilityOfTrading)
+inline void SimpleModelParams::set_max_move_up(double value) {
+  _internal_set_max_move_up(value);
+  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.max_move_up)
+}
+
+// double min_move_down = 4 [json_name = "minMoveDown", (.validator.field) = {
+inline void SimpleModelParams::clear_min_move_down() {
+  min_move_down_ = 0;
+}
+inline double SimpleModelParams::_internal_min_move_down() const {
+  return min_move_down_;
+}
+inline double SimpleModelParams::min_move_down() const {
+  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.min_move_down)
+  return _internal_min_move_down();
+}
+inline void SimpleModelParams::_internal_set_min_move_down(double value) {
+
+  min_move_down_ = value;
+}
+inline void SimpleModelParams::set_min_move_down(double value) {
+  _internal_set_min_move_down(value);
+  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.min_move_down)
+}
+
+// double probability_of_trading = 5 [json_name = "probabilityOfTrading", (.validator.field) = {
+inline void SimpleModelParams::clear_probability_of_trading() {
+  probability_of_trading_ = 0;
+}
+inline double SimpleModelParams::_internal_probability_of_trading() const {
+  return probability_of_trading_;
+}
+inline double SimpleModelParams::probability_of_trading() const {
+  // @@protoc_insertion_point(field_get:vega.SimpleModelParams.probability_of_trading)
+  return _internal_probability_of_trading();
+}
+inline void SimpleModelParams::_internal_set_probability_of_trading(double value) {
+
+  probability_of_trading_ = value;
+}
+inline void SimpleModelParams::set_probability_of_trading(double value) {
+  _internal_set_probability_of_trading(value);
+  // @@protoc_insertion_point(field_set:vega.SimpleModelParams.probability_of_trading)
 }
 
 // -------------------------------------------------------------------
 
 // ScalingFactors
 
-// double searchLevel = 1 [json_name = "searchLevel"];
-inline void ScalingFactors::clear_searchlevel() {
-  searchlevel_ = 0;
+// double search_level = 1 [json_name = "searchLevel"];
+inline void ScalingFactors::clear_search_level() {
+  search_level_ = 0;
 }
-inline double ScalingFactors::_internal_searchlevel() const {
-  return searchlevel_;
+inline double ScalingFactors::_internal_search_level() const {
+  return search_level_;
 }
-inline double ScalingFactors::searchlevel() const {
-  // @@protoc_insertion_point(field_get:vega.ScalingFactors.searchLevel)
-  return _internal_searchlevel();
+inline double ScalingFactors::search_level() const {
+  // @@protoc_insertion_point(field_get:vega.ScalingFactors.search_level)
+  return _internal_search_level();
 }
-inline void ScalingFactors::_internal_set_searchlevel(double value) {
+inline void ScalingFactors::_internal_set_search_level(double value) {
 
-  searchlevel_ = value;
+  search_level_ = value;
 }
-inline void ScalingFactors::set_searchlevel(double value) {
-  _internal_set_searchlevel(value);
-  // @@protoc_insertion_point(field_set:vega.ScalingFactors.searchLevel)
-}
-
-// double initialMargin = 2 [json_name = "initialMargin"];
-inline void ScalingFactors::clear_initialmargin() {
-  initialmargin_ = 0;
-}
-inline double ScalingFactors::_internal_initialmargin() const {
-  return initialmargin_;
-}
-inline double ScalingFactors::initialmargin() const {
-  // @@protoc_insertion_point(field_get:vega.ScalingFactors.initialMargin)
-  return _internal_initialmargin();
-}
-inline void ScalingFactors::_internal_set_initialmargin(double value) {
-
-  initialmargin_ = value;
-}
-inline void ScalingFactors::set_initialmargin(double value) {
-  _internal_set_initialmargin(value);
-  // @@protoc_insertion_point(field_set:vega.ScalingFactors.initialMargin)
+inline void ScalingFactors::set_search_level(double value) {
+  _internal_set_search_level(value);
+  // @@protoc_insertion_point(field_set:vega.ScalingFactors.search_level)
 }
 
-// double collateralRelease = 3 [json_name = "collateralRelease"];
-inline void ScalingFactors::clear_collateralrelease() {
-  collateralrelease_ = 0;
+// double initial_margin = 2 [json_name = "initialMargin"];
+inline void ScalingFactors::clear_initial_margin() {
+  initial_margin_ = 0;
 }
-inline double ScalingFactors::_internal_collateralrelease() const {
-  return collateralrelease_;
+inline double ScalingFactors::_internal_initial_margin() const {
+  return initial_margin_;
 }
-inline double ScalingFactors::collateralrelease() const {
-  // @@protoc_insertion_point(field_get:vega.ScalingFactors.collateralRelease)
-  return _internal_collateralrelease();
+inline double ScalingFactors::initial_margin() const {
+  // @@protoc_insertion_point(field_get:vega.ScalingFactors.initial_margin)
+  return _internal_initial_margin();
 }
-inline void ScalingFactors::_internal_set_collateralrelease(double value) {
+inline void ScalingFactors::_internal_set_initial_margin(double value) {
 
-  collateralrelease_ = value;
+  initial_margin_ = value;
 }
-inline void ScalingFactors::set_collateralrelease(double value) {
-  _internal_set_collateralrelease(value);
-  // @@protoc_insertion_point(field_set:vega.ScalingFactors.collateralRelease)
+inline void ScalingFactors::set_initial_margin(double value) {
+  _internal_set_initial_margin(value);
+  // @@protoc_insertion_point(field_set:vega.ScalingFactors.initial_margin)
+}
+
+// double collateral_release = 3 [json_name = "collateralRelease"];
+inline void ScalingFactors::clear_collateral_release() {
+  collateral_release_ = 0;
+}
+inline double ScalingFactors::_internal_collateral_release() const {
+  return collateral_release_;
+}
+inline double ScalingFactors::collateral_release() const {
+  // @@protoc_insertion_point(field_get:vega.ScalingFactors.collateral_release)
+  return _internal_collateral_release();
+}
+inline void ScalingFactors::_internal_set_collateral_release(double value) {
+
+  collateral_release_ = value;
+}
+inline void ScalingFactors::set_collateral_release(double value) {
+  _internal_set_collateral_release(value);
+  // @@protoc_insertion_point(field_set:vega.ScalingFactors.collateral_release)
 }
 
 // -------------------------------------------------------------------
 
 // MarginCalculator
 
-// .vega.ScalingFactors scalingFactors = 1 [json_name = "scalingFactors"];
-inline bool MarginCalculator::_internal_has_scalingfactors() const {
-  return this != internal_default_instance() && scalingfactors_ != nullptr;
+// .vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];
+inline bool MarginCalculator::_internal_has_scaling_factors() const {
+  return this != internal_default_instance() && scaling_factors_ != nullptr;
 }
-inline bool MarginCalculator::has_scalingfactors() const {
-  return _internal_has_scalingfactors();
+inline bool MarginCalculator::has_scaling_factors() const {
+  return _internal_has_scaling_factors();
 }
-inline void MarginCalculator::clear_scalingfactors() {
-  if (GetArena() == nullptr && scalingfactors_ != nullptr) {
-    delete scalingfactors_;
+inline void MarginCalculator::clear_scaling_factors() {
+  if (GetArena() == nullptr && scaling_factors_ != nullptr) {
+    delete scaling_factors_;
   }
-  scalingfactors_ = nullptr;
+  scaling_factors_ = nullptr;
 }
-inline const ::vega::ScalingFactors& MarginCalculator::_internal_scalingfactors() const {
-  const ::vega::ScalingFactors* p = scalingfactors_;
+inline const ::vega::ScalingFactors& MarginCalculator::_internal_scaling_factors() const {
+  const ::vega::ScalingFactors* p = scaling_factors_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::ScalingFactors&>(
       ::vega::_ScalingFactors_default_instance_);
 }
-inline const ::vega::ScalingFactors& MarginCalculator::scalingfactors() const {
-  // @@protoc_insertion_point(field_get:vega.MarginCalculator.scalingFactors)
-  return _internal_scalingfactors();
+inline const ::vega::ScalingFactors& MarginCalculator::scaling_factors() const {
+  // @@protoc_insertion_point(field_get:vega.MarginCalculator.scaling_factors)
+  return _internal_scaling_factors();
 }
-inline void MarginCalculator::unsafe_arena_set_allocated_scalingfactors(
-    ::vega::ScalingFactors* scalingfactors) {
+inline void MarginCalculator::unsafe_arena_set_allocated_scaling_factors(
+    ::vega::ScalingFactors* scaling_factors) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scalingfactors_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(scaling_factors_);
   }
-  scalingfactors_ = scalingfactors;
-  if (scalingfactors) {
+  scaling_factors_ = scaling_factors;
+  if (scaling_factors) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.MarginCalculator.scalingFactors)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.MarginCalculator.scaling_factors)
 }
-inline ::vega::ScalingFactors* MarginCalculator::release_scalingfactors() {
+inline ::vega::ScalingFactors* MarginCalculator::release_scaling_factors() {
 
-  ::vega::ScalingFactors* temp = scalingfactors_;
-  scalingfactors_ = nullptr;
+  ::vega::ScalingFactors* temp = scaling_factors_;
+  scaling_factors_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::ScalingFactors* MarginCalculator::unsafe_arena_release_scalingfactors() {
-  // @@protoc_insertion_point(field_release:vega.MarginCalculator.scalingFactors)
+inline ::vega::ScalingFactors* MarginCalculator::unsafe_arena_release_scaling_factors() {
+  // @@protoc_insertion_point(field_release:vega.MarginCalculator.scaling_factors)
 
-  ::vega::ScalingFactors* temp = scalingfactors_;
-  scalingfactors_ = nullptr;
+  ::vega::ScalingFactors* temp = scaling_factors_;
+  scaling_factors_ = nullptr;
   return temp;
 }
-inline ::vega::ScalingFactors* MarginCalculator::_internal_mutable_scalingfactors() {
+inline ::vega::ScalingFactors* MarginCalculator::_internal_mutable_scaling_factors() {
 
-  if (scalingfactors_ == nullptr) {
+  if (scaling_factors_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::ScalingFactors>(GetArena());
-    scalingfactors_ = p;
+    scaling_factors_ = p;
   }
-  return scalingfactors_;
+  return scaling_factors_;
 }
-inline ::vega::ScalingFactors* MarginCalculator::mutable_scalingfactors() {
-  // @@protoc_insertion_point(field_mutable:vega.MarginCalculator.scalingFactors)
-  return _internal_mutable_scalingfactors();
+inline ::vega::ScalingFactors* MarginCalculator::mutable_scaling_factors() {
+  // @@protoc_insertion_point(field_mutable:vega.MarginCalculator.scaling_factors)
+  return _internal_mutable_scaling_factors();
 }
-inline void MarginCalculator::set_allocated_scalingfactors(::vega::ScalingFactors* scalingfactors) {
+inline void MarginCalculator::set_allocated_scaling_factors(::vega::ScalingFactors* scaling_factors) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete scalingfactors_;
+    delete scaling_factors_;
   }
-  if (scalingfactors) {
+  if (scaling_factors) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(scalingfactors);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(scaling_factors);
     if (message_arena != submessage_arena) {
-      scalingfactors = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, scalingfactors, submessage_arena);
+      scaling_factors = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, scaling_factors, submessage_arena);
     }
 
   } else {
 
   }
-  scalingfactors_ = scalingfactors;
-  // @@protoc_insertion_point(field_set_allocated:vega.MarginCalculator.scalingFactors)
+  scaling_factors_ = scaling_factors;
+  // @@protoc_insertion_point(field_set_allocated:vega.MarginCalculator.scaling_factors)
 }
 
 // -------------------------------------------------------------------
@@ -5642,429 +5584,429 @@ inline void TradableInstrument::set_allocated_instrument(::vega::Instrument* ins
   // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.instrument)
 }
 
-// .vega.MarginCalculator marginCalculator = 2 [json_name = "marginCalculator"];
-inline bool TradableInstrument::_internal_has_margincalculator() const {
-  return this != internal_default_instance() && margincalculator_ != nullptr;
+// .vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];
+inline bool TradableInstrument::_internal_has_margin_calculator() const {
+  return this != internal_default_instance() && margin_calculator_ != nullptr;
 }
-inline bool TradableInstrument::has_margincalculator() const {
-  return _internal_has_margincalculator();
+inline bool TradableInstrument::has_margin_calculator() const {
+  return _internal_has_margin_calculator();
 }
-inline void TradableInstrument::clear_margincalculator() {
-  if (GetArena() == nullptr && margincalculator_ != nullptr) {
-    delete margincalculator_;
+inline void TradableInstrument::clear_margin_calculator() {
+  if (GetArena() == nullptr && margin_calculator_ != nullptr) {
+    delete margin_calculator_;
   }
-  margincalculator_ = nullptr;
+  margin_calculator_ = nullptr;
 }
-inline const ::vega::MarginCalculator& TradableInstrument::_internal_margincalculator() const {
-  const ::vega::MarginCalculator* p = margincalculator_;
+inline const ::vega::MarginCalculator& TradableInstrument::_internal_margin_calculator() const {
+  const ::vega::MarginCalculator* p = margin_calculator_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::MarginCalculator&>(
       ::vega::_MarginCalculator_default_instance_);
 }
-inline const ::vega::MarginCalculator& TradableInstrument::margincalculator() const {
-  // @@protoc_insertion_point(field_get:vega.TradableInstrument.marginCalculator)
-  return _internal_margincalculator();
+inline const ::vega::MarginCalculator& TradableInstrument::margin_calculator() const {
+  // @@protoc_insertion_point(field_get:vega.TradableInstrument.margin_calculator)
+  return _internal_margin_calculator();
 }
-inline void TradableInstrument::unsafe_arena_set_allocated_margincalculator(
-    ::vega::MarginCalculator* margincalculator) {
+inline void TradableInstrument::unsafe_arena_set_allocated_margin_calculator(
+    ::vega::MarginCalculator* margin_calculator) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(margincalculator_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(margin_calculator_);
   }
-  margincalculator_ = margincalculator;
-  if (margincalculator) {
+  margin_calculator_ = margin_calculator;
+  if (margin_calculator) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TradableInstrument.marginCalculator)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TradableInstrument.margin_calculator)
 }
-inline ::vega::MarginCalculator* TradableInstrument::release_margincalculator() {
+inline ::vega::MarginCalculator* TradableInstrument::release_margin_calculator() {
 
-  ::vega::MarginCalculator* temp = margincalculator_;
-  margincalculator_ = nullptr;
+  ::vega::MarginCalculator* temp = margin_calculator_;
+  margin_calculator_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::MarginCalculator* TradableInstrument::unsafe_arena_release_margincalculator() {
-  // @@protoc_insertion_point(field_release:vega.TradableInstrument.marginCalculator)
+inline ::vega::MarginCalculator* TradableInstrument::unsafe_arena_release_margin_calculator() {
+  // @@protoc_insertion_point(field_release:vega.TradableInstrument.margin_calculator)
 
-  ::vega::MarginCalculator* temp = margincalculator_;
-  margincalculator_ = nullptr;
+  ::vega::MarginCalculator* temp = margin_calculator_;
+  margin_calculator_ = nullptr;
   return temp;
 }
-inline ::vega::MarginCalculator* TradableInstrument::_internal_mutable_margincalculator() {
+inline ::vega::MarginCalculator* TradableInstrument::_internal_mutable_margin_calculator() {
 
-  if (margincalculator_ == nullptr) {
+  if (margin_calculator_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::MarginCalculator>(GetArena());
-    margincalculator_ = p;
+    margin_calculator_ = p;
   }
-  return margincalculator_;
+  return margin_calculator_;
 }
-inline ::vega::MarginCalculator* TradableInstrument::mutable_margincalculator() {
-  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.marginCalculator)
-  return _internal_mutable_margincalculator();
+inline ::vega::MarginCalculator* TradableInstrument::mutable_margin_calculator() {
+  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.margin_calculator)
+  return _internal_mutable_margin_calculator();
 }
-inline void TradableInstrument::set_allocated_margincalculator(::vega::MarginCalculator* margincalculator) {
+inline void TradableInstrument::set_allocated_margin_calculator(::vega::MarginCalculator* margin_calculator) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete margincalculator_;
+    delete margin_calculator_;
   }
-  if (margincalculator) {
+  if (margin_calculator) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(margincalculator);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(margin_calculator);
     if (message_arena != submessage_arena) {
-      margincalculator = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, margincalculator, submessage_arena);
+      margin_calculator = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, margin_calculator, submessage_arena);
     }
 
   } else {
 
   }
-  margincalculator_ = margincalculator;
-  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.marginCalculator)
+  margin_calculator_ = margin_calculator;
+  // @@protoc_insertion_point(field_set_allocated:vega.TradableInstrument.margin_calculator)
 }
 
-// .vega.LogNormalRiskModel logNormalRiskModel = 100 [json_name = "logNormalRiskModel"];
-inline bool TradableInstrument::_internal_has_lognormalriskmodel() const {
-  return riskModel_case() == kLogNormalRiskModel;
+// .vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];
+inline bool TradableInstrument::_internal_has_log_normal_risk_model() const {
+  return risk_model_case() == kLogNormalRiskModel;
 }
-inline bool TradableInstrument::has_lognormalriskmodel() const {
-  return _internal_has_lognormalriskmodel();
+inline bool TradableInstrument::has_log_normal_risk_model() const {
+  return _internal_has_log_normal_risk_model();
 }
-inline void TradableInstrument::set_has_lognormalriskmodel() {
+inline void TradableInstrument::set_has_log_normal_risk_model() {
   _oneof_case_[0] = kLogNormalRiskModel;
 }
-inline void TradableInstrument::clear_lognormalriskmodel() {
-  if (_internal_has_lognormalriskmodel()) {
+inline void TradableInstrument::clear_log_normal_risk_model() {
+  if (_internal_has_log_normal_risk_model()) {
     if (GetArena() == nullptr) {
-      delete riskModel_.lognormalriskmodel_;
+      delete risk_model_.log_normal_risk_model_;
     }
-    clear_has_riskModel();
+    clear_has_risk_model();
   }
 }
-inline ::vega::LogNormalRiskModel* TradableInstrument::release_lognormalriskmodel() {
-  // @@protoc_insertion_point(field_release:vega.TradableInstrument.logNormalRiskModel)
-  if (_internal_has_lognormalriskmodel()) {
-    clear_has_riskModel();
-      ::vega::LogNormalRiskModel* temp = riskModel_.lognormalriskmodel_;
+inline ::vega::LogNormalRiskModel* TradableInstrument::release_log_normal_risk_model() {
+  // @@protoc_insertion_point(field_release:vega.TradableInstrument.log_normal_risk_model)
+  if (_internal_has_log_normal_risk_model()) {
+    clear_has_risk_model();
+      ::vega::LogNormalRiskModel* temp = risk_model_.log_normal_risk_model_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    riskModel_.lognormalriskmodel_ = nullptr;
+    risk_model_.log_normal_risk_model_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::LogNormalRiskModel& TradableInstrument::_internal_lognormalriskmodel() const {
-  return _internal_has_lognormalriskmodel()
-      ? *riskModel_.lognormalriskmodel_
+inline const ::vega::LogNormalRiskModel& TradableInstrument::_internal_log_normal_risk_model() const {
+  return _internal_has_log_normal_risk_model()
+      ? *risk_model_.log_normal_risk_model_
       : reinterpret_cast< ::vega::LogNormalRiskModel&>(::vega::_LogNormalRiskModel_default_instance_);
 }
-inline const ::vega::LogNormalRiskModel& TradableInstrument::lognormalriskmodel() const {
-  // @@protoc_insertion_point(field_get:vega.TradableInstrument.logNormalRiskModel)
-  return _internal_lognormalriskmodel();
+inline const ::vega::LogNormalRiskModel& TradableInstrument::log_normal_risk_model() const {
+  // @@protoc_insertion_point(field_get:vega.TradableInstrument.log_normal_risk_model)
+  return _internal_log_normal_risk_model();
 }
-inline ::vega::LogNormalRiskModel* TradableInstrument::unsafe_arena_release_lognormalriskmodel() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TradableInstrument.logNormalRiskModel)
-  if (_internal_has_lognormalriskmodel()) {
-    clear_has_riskModel();
-    ::vega::LogNormalRiskModel* temp = riskModel_.lognormalriskmodel_;
-    riskModel_.lognormalriskmodel_ = nullptr;
+inline ::vega::LogNormalRiskModel* TradableInstrument::unsafe_arena_release_log_normal_risk_model() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TradableInstrument.log_normal_risk_model)
+  if (_internal_has_log_normal_risk_model()) {
+    clear_has_risk_model();
+    ::vega::LogNormalRiskModel* temp = risk_model_.log_normal_risk_model_;
+    risk_model_.log_normal_risk_model_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void TradableInstrument::unsafe_arena_set_allocated_lognormalriskmodel(::vega::LogNormalRiskModel* lognormalriskmodel) {
-  clear_riskModel();
-  if (lognormalriskmodel) {
-    set_has_lognormalriskmodel();
-    riskModel_.lognormalriskmodel_ = lognormalriskmodel;
+inline void TradableInstrument::unsafe_arena_set_allocated_log_normal_risk_model(::vega::LogNormalRiskModel* log_normal_risk_model) {
+  clear_risk_model();
+  if (log_normal_risk_model) {
+    set_has_log_normal_risk_model();
+    risk_model_.log_normal_risk_model_ = log_normal_risk_model;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TradableInstrument.logNormalRiskModel)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TradableInstrument.log_normal_risk_model)
 }
-inline ::vega::LogNormalRiskModel* TradableInstrument::_internal_mutable_lognormalriskmodel() {
-  if (!_internal_has_lognormalriskmodel()) {
-    clear_riskModel();
-    set_has_lognormalriskmodel();
-    riskModel_.lognormalriskmodel_ = CreateMaybeMessage< ::vega::LogNormalRiskModel >(GetArena());
+inline ::vega::LogNormalRiskModel* TradableInstrument::_internal_mutable_log_normal_risk_model() {
+  if (!_internal_has_log_normal_risk_model()) {
+    clear_risk_model();
+    set_has_log_normal_risk_model();
+    risk_model_.log_normal_risk_model_ = CreateMaybeMessage< ::vega::LogNormalRiskModel >(GetArena());
   }
-  return riskModel_.lognormalriskmodel_;
+  return risk_model_.log_normal_risk_model_;
 }
-inline ::vega::LogNormalRiskModel* TradableInstrument::mutable_lognormalriskmodel() {
-  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.logNormalRiskModel)
-  return _internal_mutable_lognormalriskmodel();
+inline ::vega::LogNormalRiskModel* TradableInstrument::mutable_log_normal_risk_model() {
+  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.log_normal_risk_model)
+  return _internal_mutable_log_normal_risk_model();
 }
 
-// .vega.SimpleRiskModel simpleRiskModel = 101 [json_name = "simpleRiskModel"];
-inline bool TradableInstrument::_internal_has_simpleriskmodel() const {
-  return riskModel_case() == kSimpleRiskModel;
+// .vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];
+inline bool TradableInstrument::_internal_has_simple_risk_model() const {
+  return risk_model_case() == kSimpleRiskModel;
 }
-inline bool TradableInstrument::has_simpleriskmodel() const {
-  return _internal_has_simpleriskmodel();
+inline bool TradableInstrument::has_simple_risk_model() const {
+  return _internal_has_simple_risk_model();
 }
-inline void TradableInstrument::set_has_simpleriskmodel() {
+inline void TradableInstrument::set_has_simple_risk_model() {
   _oneof_case_[0] = kSimpleRiskModel;
 }
-inline void TradableInstrument::clear_simpleriskmodel() {
-  if (_internal_has_simpleriskmodel()) {
+inline void TradableInstrument::clear_simple_risk_model() {
+  if (_internal_has_simple_risk_model()) {
     if (GetArena() == nullptr) {
-      delete riskModel_.simpleriskmodel_;
+      delete risk_model_.simple_risk_model_;
     }
-    clear_has_riskModel();
+    clear_has_risk_model();
   }
 }
-inline ::vega::SimpleRiskModel* TradableInstrument::release_simpleriskmodel() {
-  // @@protoc_insertion_point(field_release:vega.TradableInstrument.simpleRiskModel)
-  if (_internal_has_simpleriskmodel()) {
-    clear_has_riskModel();
-      ::vega::SimpleRiskModel* temp = riskModel_.simpleriskmodel_;
+inline ::vega::SimpleRiskModel* TradableInstrument::release_simple_risk_model() {
+  // @@protoc_insertion_point(field_release:vega.TradableInstrument.simple_risk_model)
+  if (_internal_has_simple_risk_model()) {
+    clear_has_risk_model();
+      ::vega::SimpleRiskModel* temp = risk_model_.simple_risk_model_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    riskModel_.simpleriskmodel_ = nullptr;
+    risk_model_.simple_risk_model_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::SimpleRiskModel& TradableInstrument::_internal_simpleriskmodel() const {
-  return _internal_has_simpleriskmodel()
-      ? *riskModel_.simpleriskmodel_
+inline const ::vega::SimpleRiskModel& TradableInstrument::_internal_simple_risk_model() const {
+  return _internal_has_simple_risk_model()
+      ? *risk_model_.simple_risk_model_
       : reinterpret_cast< ::vega::SimpleRiskModel&>(::vega::_SimpleRiskModel_default_instance_);
 }
-inline const ::vega::SimpleRiskModel& TradableInstrument::simpleriskmodel() const {
-  // @@protoc_insertion_point(field_get:vega.TradableInstrument.simpleRiskModel)
-  return _internal_simpleriskmodel();
+inline const ::vega::SimpleRiskModel& TradableInstrument::simple_risk_model() const {
+  // @@protoc_insertion_point(field_get:vega.TradableInstrument.simple_risk_model)
+  return _internal_simple_risk_model();
 }
-inline ::vega::SimpleRiskModel* TradableInstrument::unsafe_arena_release_simpleriskmodel() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TradableInstrument.simpleRiskModel)
-  if (_internal_has_simpleriskmodel()) {
-    clear_has_riskModel();
-    ::vega::SimpleRiskModel* temp = riskModel_.simpleriskmodel_;
-    riskModel_.simpleriskmodel_ = nullptr;
+inline ::vega::SimpleRiskModel* TradableInstrument::unsafe_arena_release_simple_risk_model() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TradableInstrument.simple_risk_model)
+  if (_internal_has_simple_risk_model()) {
+    clear_has_risk_model();
+    ::vega::SimpleRiskModel* temp = risk_model_.simple_risk_model_;
+    risk_model_.simple_risk_model_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void TradableInstrument::unsafe_arena_set_allocated_simpleriskmodel(::vega::SimpleRiskModel* simpleriskmodel) {
-  clear_riskModel();
-  if (simpleriskmodel) {
-    set_has_simpleriskmodel();
-    riskModel_.simpleriskmodel_ = simpleriskmodel;
+inline void TradableInstrument::unsafe_arena_set_allocated_simple_risk_model(::vega::SimpleRiskModel* simple_risk_model) {
+  clear_risk_model();
+  if (simple_risk_model) {
+    set_has_simple_risk_model();
+    risk_model_.simple_risk_model_ = simple_risk_model;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TradableInstrument.simpleRiskModel)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TradableInstrument.simple_risk_model)
 }
-inline ::vega::SimpleRiskModel* TradableInstrument::_internal_mutable_simpleriskmodel() {
-  if (!_internal_has_simpleriskmodel()) {
-    clear_riskModel();
-    set_has_simpleriskmodel();
-    riskModel_.simpleriskmodel_ = CreateMaybeMessage< ::vega::SimpleRiskModel >(GetArena());
+inline ::vega::SimpleRiskModel* TradableInstrument::_internal_mutable_simple_risk_model() {
+  if (!_internal_has_simple_risk_model()) {
+    clear_risk_model();
+    set_has_simple_risk_model();
+    risk_model_.simple_risk_model_ = CreateMaybeMessage< ::vega::SimpleRiskModel >(GetArena());
   }
-  return riskModel_.simpleriskmodel_;
+  return risk_model_.simple_risk_model_;
 }
-inline ::vega::SimpleRiskModel* TradableInstrument::mutable_simpleriskmodel() {
-  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.simpleRiskModel)
-  return _internal_mutable_simpleriskmodel();
+inline ::vega::SimpleRiskModel* TradableInstrument::mutable_simple_risk_model() {
+  // @@protoc_insertion_point(field_mutable:vega.TradableInstrument.simple_risk_model)
+  return _internal_mutable_simple_risk_model();
 }
 
-inline bool TradableInstrument::has_riskModel() const {
-  return riskModel_case() != RISKMODEL_NOT_SET;
+inline bool TradableInstrument::has_risk_model() const {
+  return risk_model_case() != RISK_MODEL_NOT_SET;
 }
-inline void TradableInstrument::clear_has_riskModel() {
-  _oneof_case_[0] = RISKMODEL_NOT_SET;
+inline void TradableInstrument::clear_has_risk_model() {
+  _oneof_case_[0] = RISK_MODEL_NOT_SET;
 }
-inline TradableInstrument::RiskModelCase TradableInstrument::riskModel_case() const {
+inline TradableInstrument::RiskModelCase TradableInstrument::risk_model_case() const {
   return TradableInstrument::RiskModelCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
 // FeeFactors
 
-// string makerFee = 1 [json_name = "makerFee"];
-inline void FeeFactors::clear_makerfee() {
-  makerfee_.ClearToEmpty();
+// string maker_fee = 1 [json_name = "makerFee"];
+inline void FeeFactors::clear_maker_fee() {
+  maker_fee_.ClearToEmpty();
 }
-inline const std::string& FeeFactors::makerfee() const {
-  // @@protoc_insertion_point(field_get:vega.FeeFactors.makerFee)
-  return _internal_makerfee();
+inline const std::string& FeeFactors::maker_fee() const {
+  // @@protoc_insertion_point(field_get:vega.FeeFactors.maker_fee)
+  return _internal_maker_fee();
 }
-inline void FeeFactors::set_makerfee(const std::string& value) {
-  _internal_set_makerfee(value);
-  // @@protoc_insertion_point(field_set:vega.FeeFactors.makerFee)
+inline void FeeFactors::set_maker_fee(const std::string& value) {
+  _internal_set_maker_fee(value);
+  // @@protoc_insertion_point(field_set:vega.FeeFactors.maker_fee)
 }
-inline std::string* FeeFactors::mutable_makerfee() {
-  // @@protoc_insertion_point(field_mutable:vega.FeeFactors.makerFee)
-  return _internal_mutable_makerfee();
+inline std::string* FeeFactors::mutable_maker_fee() {
+  // @@protoc_insertion_point(field_mutable:vega.FeeFactors.maker_fee)
+  return _internal_mutable_maker_fee();
 }
-inline const std::string& FeeFactors::_internal_makerfee() const {
-  return makerfee_.Get();
+inline const std::string& FeeFactors::_internal_maker_fee() const {
+  return maker_fee_.Get();
 }
-inline void FeeFactors::_internal_set_makerfee(const std::string& value) {
+inline void FeeFactors::_internal_set_maker_fee(const std::string& value) {
 
-  makerfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  maker_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void FeeFactors::set_makerfee(std::string&& value) {
+inline void FeeFactors::set_maker_fee(std::string&& value) {
 
-  makerfee_.Set(
+  maker_fee_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactors.makerFee)
+  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactors.maker_fee)
 }
-inline void FeeFactors::set_makerfee(const char* value) {
+inline void FeeFactors::set_maker_fee(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  makerfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.FeeFactors.makerFee)
+  maker_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.FeeFactors.maker_fee)
 }
-inline void FeeFactors::set_makerfee(const char* value,
+inline void FeeFactors::set_maker_fee(const char* value,
     size_t size) {
 
-  makerfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  maker_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactors.makerFee)
+  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactors.maker_fee)
 }
-inline std::string* FeeFactors::_internal_mutable_makerfee() {
+inline std::string* FeeFactors::_internal_mutable_maker_fee() {
 
-  return makerfee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return maker_fee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* FeeFactors::release_makerfee() {
-  // @@protoc_insertion_point(field_release:vega.FeeFactors.makerFee)
-  return makerfee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* FeeFactors::release_maker_fee() {
+  // @@protoc_insertion_point(field_release:vega.FeeFactors.maker_fee)
+  return maker_fee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void FeeFactors::set_allocated_makerfee(std::string* makerfee) {
-  if (makerfee != nullptr) {
+inline void FeeFactors::set_allocated_maker_fee(std::string* maker_fee) {
+  if (maker_fee != nullptr) {
 
   } else {
 
   }
-  makerfee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), makerfee,
+  maker_fee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), maker_fee,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactors.makerFee)
+  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactors.maker_fee)
 }
 
-// string infrastructureFee = 2 [json_name = "infrastructureFee"];
-inline void FeeFactors::clear_infrastructurefee() {
-  infrastructurefee_.ClearToEmpty();
+// string infrastructure_fee = 2 [json_name = "infrastructureFee"];
+inline void FeeFactors::clear_infrastructure_fee() {
+  infrastructure_fee_.ClearToEmpty();
 }
-inline const std::string& FeeFactors::infrastructurefee() const {
-  // @@protoc_insertion_point(field_get:vega.FeeFactors.infrastructureFee)
-  return _internal_infrastructurefee();
+inline const std::string& FeeFactors::infrastructure_fee() const {
+  // @@protoc_insertion_point(field_get:vega.FeeFactors.infrastructure_fee)
+  return _internal_infrastructure_fee();
 }
-inline void FeeFactors::set_infrastructurefee(const std::string& value) {
-  _internal_set_infrastructurefee(value);
-  // @@protoc_insertion_point(field_set:vega.FeeFactors.infrastructureFee)
+inline void FeeFactors::set_infrastructure_fee(const std::string& value) {
+  _internal_set_infrastructure_fee(value);
+  // @@protoc_insertion_point(field_set:vega.FeeFactors.infrastructure_fee)
 }
-inline std::string* FeeFactors::mutable_infrastructurefee() {
-  // @@protoc_insertion_point(field_mutable:vega.FeeFactors.infrastructureFee)
-  return _internal_mutable_infrastructurefee();
+inline std::string* FeeFactors::mutable_infrastructure_fee() {
+  // @@protoc_insertion_point(field_mutable:vega.FeeFactors.infrastructure_fee)
+  return _internal_mutable_infrastructure_fee();
 }
-inline const std::string& FeeFactors::_internal_infrastructurefee() const {
-  return infrastructurefee_.Get();
+inline const std::string& FeeFactors::_internal_infrastructure_fee() const {
+  return infrastructure_fee_.Get();
 }
-inline void FeeFactors::_internal_set_infrastructurefee(const std::string& value) {
+inline void FeeFactors::_internal_set_infrastructure_fee(const std::string& value) {
 
-  infrastructurefee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  infrastructure_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void FeeFactors::set_infrastructurefee(std::string&& value) {
+inline void FeeFactors::set_infrastructure_fee(std::string&& value) {
 
-  infrastructurefee_.Set(
+  infrastructure_fee_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactors.infrastructureFee)
+  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactors.infrastructure_fee)
 }
-inline void FeeFactors::set_infrastructurefee(const char* value) {
+inline void FeeFactors::set_infrastructure_fee(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  infrastructurefee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.FeeFactors.infrastructureFee)
+  infrastructure_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.FeeFactors.infrastructure_fee)
 }
-inline void FeeFactors::set_infrastructurefee(const char* value,
+inline void FeeFactors::set_infrastructure_fee(const char* value,
     size_t size) {
 
-  infrastructurefee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  infrastructure_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactors.infrastructureFee)
+  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactors.infrastructure_fee)
 }
-inline std::string* FeeFactors::_internal_mutable_infrastructurefee() {
+inline std::string* FeeFactors::_internal_mutable_infrastructure_fee() {
 
-  return infrastructurefee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return infrastructure_fee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* FeeFactors::release_infrastructurefee() {
-  // @@protoc_insertion_point(field_release:vega.FeeFactors.infrastructureFee)
-  return infrastructurefee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* FeeFactors::release_infrastructure_fee() {
+  // @@protoc_insertion_point(field_release:vega.FeeFactors.infrastructure_fee)
+  return infrastructure_fee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void FeeFactors::set_allocated_infrastructurefee(std::string* infrastructurefee) {
-  if (infrastructurefee != nullptr) {
+inline void FeeFactors::set_allocated_infrastructure_fee(std::string* infrastructure_fee) {
+  if (infrastructure_fee != nullptr) {
 
   } else {
 
   }
-  infrastructurefee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), infrastructurefee,
+  infrastructure_fee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), infrastructure_fee,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactors.infrastructureFee)
+  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactors.infrastructure_fee)
 }
 
-// string liquidityFee = 3 [json_name = "liquidityFee"];
-inline void FeeFactors::clear_liquidityfee() {
-  liquidityfee_.ClearToEmpty();
+// string liquidity_fee = 3 [json_name = "liquidityFee"];
+inline void FeeFactors::clear_liquidity_fee() {
+  liquidity_fee_.ClearToEmpty();
 }
-inline const std::string& FeeFactors::liquidityfee() const {
-  // @@protoc_insertion_point(field_get:vega.FeeFactors.liquidityFee)
-  return _internal_liquidityfee();
+inline const std::string& FeeFactors::liquidity_fee() const {
+  // @@protoc_insertion_point(field_get:vega.FeeFactors.liquidity_fee)
+  return _internal_liquidity_fee();
 }
-inline void FeeFactors::set_liquidityfee(const std::string& value) {
-  _internal_set_liquidityfee(value);
-  // @@protoc_insertion_point(field_set:vega.FeeFactors.liquidityFee)
+inline void FeeFactors::set_liquidity_fee(const std::string& value) {
+  _internal_set_liquidity_fee(value);
+  // @@protoc_insertion_point(field_set:vega.FeeFactors.liquidity_fee)
 }
-inline std::string* FeeFactors::mutable_liquidityfee() {
-  // @@protoc_insertion_point(field_mutable:vega.FeeFactors.liquidityFee)
-  return _internal_mutable_liquidityfee();
+inline std::string* FeeFactors::mutable_liquidity_fee() {
+  // @@protoc_insertion_point(field_mutable:vega.FeeFactors.liquidity_fee)
+  return _internal_mutable_liquidity_fee();
 }
-inline const std::string& FeeFactors::_internal_liquidityfee() const {
-  return liquidityfee_.Get();
+inline const std::string& FeeFactors::_internal_liquidity_fee() const {
+  return liquidity_fee_.Get();
 }
-inline void FeeFactors::_internal_set_liquidityfee(const std::string& value) {
+inline void FeeFactors::_internal_set_liquidity_fee(const std::string& value) {
 
-  liquidityfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  liquidity_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void FeeFactors::set_liquidityfee(std::string&& value) {
+inline void FeeFactors::set_liquidity_fee(std::string&& value) {
 
-  liquidityfee_.Set(
+  liquidity_fee_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactors.liquidityFee)
+  // @@protoc_insertion_point(field_set_rvalue:vega.FeeFactors.liquidity_fee)
 }
-inline void FeeFactors::set_liquidityfee(const char* value) {
+inline void FeeFactors::set_liquidity_fee(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  liquidityfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.FeeFactors.liquidityFee)
+  liquidity_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.FeeFactors.liquidity_fee)
 }
-inline void FeeFactors::set_liquidityfee(const char* value,
+inline void FeeFactors::set_liquidity_fee(const char* value,
     size_t size) {
 
-  liquidityfee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  liquidity_fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactors.liquidityFee)
+  // @@protoc_insertion_point(field_set_pointer:vega.FeeFactors.liquidity_fee)
 }
-inline std::string* FeeFactors::_internal_mutable_liquidityfee() {
+inline std::string* FeeFactors::_internal_mutable_liquidity_fee() {
 
-  return liquidityfee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return liquidity_fee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* FeeFactors::release_liquidityfee() {
-  // @@protoc_insertion_point(field_release:vega.FeeFactors.liquidityFee)
-  return liquidityfee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* FeeFactors::release_liquidity_fee() {
+  // @@protoc_insertion_point(field_release:vega.FeeFactors.liquidity_fee)
+  return liquidity_fee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void FeeFactors::set_allocated_liquidityfee(std::string* liquidityfee) {
-  if (liquidityfee != nullptr) {
+inline void FeeFactors::set_allocated_liquidity_fee(std::string* liquidity_fee) {
+  if (liquidity_fee != nullptr) {
 
   } else {
 
   }
-  liquidityfee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), liquidityfee,
+  liquidity_fee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), liquidity_fee,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactors.liquidityFee)
+  // @@protoc_insertion_point(field_set_allocated:vega.FeeFactors.liquidity_fee)
 }
 
 // -------------------------------------------------------------------
@@ -6198,24 +6140,24 @@ inline void PriceMonitoringTrigger::set_probability(double value) {
   // @@protoc_insertion_point(field_set:vega.PriceMonitoringTrigger.probability)
 }
 
-// int64 auctionExtension = 3 [json_name = "auctionExtension", (.validator.field) = {
-inline void PriceMonitoringTrigger::clear_auctionextension() {
-  auctionextension_ = PROTOBUF_LONGLONG(0);
+// int64 auction_extension = 3 [json_name = "auctionExtension", (.validator.field) = {
+inline void PriceMonitoringTrigger::clear_auction_extension() {
+  auction_extension_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringTrigger::_internal_auctionextension() const {
-  return auctionextension_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringTrigger::_internal_auction_extension() const {
+  return auction_extension_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringTrigger::auctionextension() const {
-  // @@protoc_insertion_point(field_get:vega.PriceMonitoringTrigger.auctionExtension)
-  return _internal_auctionextension();
+inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringTrigger::auction_extension() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringTrigger.auction_extension)
+  return _internal_auction_extension();
 }
-inline void PriceMonitoringTrigger::_internal_set_auctionextension(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void PriceMonitoringTrigger::_internal_set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  auctionextension_ = value;
+  auction_extension_ = value;
 }
-inline void PriceMonitoringTrigger::set_auctionextension(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_auctionextension(value);
-  // @@protoc_insertion_point(field_set:vega.PriceMonitoringTrigger.auctionExtension)
+inline void PriceMonitoringTrigger::set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_auction_extension(value);
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringTrigger.auction_extension)
 }
 
 // -------------------------------------------------------------------
@@ -6348,68 +6290,68 @@ inline void PriceMonitoringSettings::set_allocated_parameters(::vega::PriceMonit
   // @@protoc_insertion_point(field_set_allocated:vega.PriceMonitoringSettings.parameters)
 }
 
-// int64 updateFrequency = 2 [json_name = "updateFrequency"];
-inline void PriceMonitoringSettings::clear_updatefrequency() {
-  updatefrequency_ = PROTOBUF_LONGLONG(0);
+// int64 update_frequency = 2 [json_name = "updateFrequency"];
+inline void PriceMonitoringSettings::clear_update_frequency() {
+  update_frequency_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringSettings::_internal_updatefrequency() const {
-  return updatefrequency_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringSettings::_internal_update_frequency() const {
+  return update_frequency_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringSettings::updatefrequency() const {
-  // @@protoc_insertion_point(field_get:vega.PriceMonitoringSettings.updateFrequency)
-  return _internal_updatefrequency();
+inline ::PROTOBUF_NAMESPACE_ID::int64 PriceMonitoringSettings::update_frequency() const {
+  // @@protoc_insertion_point(field_get:vega.PriceMonitoringSettings.update_frequency)
+  return _internal_update_frequency();
 }
-inline void PriceMonitoringSettings::_internal_set_updatefrequency(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void PriceMonitoringSettings::_internal_set_update_frequency(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  updatefrequency_ = value;
+  update_frequency_ = value;
 }
-inline void PriceMonitoringSettings::set_updatefrequency(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_updatefrequency(value);
-  // @@protoc_insertion_point(field_set:vega.PriceMonitoringSettings.updateFrequency)
+inline void PriceMonitoringSettings::set_update_frequency(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_update_frequency(value);
+  // @@protoc_insertion_point(field_set:vega.PriceMonitoringSettings.update_frequency)
 }
 
 // -------------------------------------------------------------------
 
 // TargetStakeParameters
 
-// int64 timeWindow = 1 [json_name = "timeWindow", (.validator.field) = {
-inline void TargetStakeParameters::clear_timewindow() {
-  timewindow_ = PROTOBUF_LONGLONG(0);
+// int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = {
+inline void TargetStakeParameters::clear_time_window() {
+  time_window_ = PROTOBUF_LONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 TargetStakeParameters::_internal_timewindow() const {
-  return timewindow_;
+inline ::PROTOBUF_NAMESPACE_ID::int64 TargetStakeParameters::_internal_time_window() const {
+  return time_window_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 TargetStakeParameters::timewindow() const {
-  // @@protoc_insertion_point(field_get:vega.TargetStakeParameters.timeWindow)
-  return _internal_timewindow();
+inline ::PROTOBUF_NAMESPACE_ID::int64 TargetStakeParameters::time_window() const {
+  // @@protoc_insertion_point(field_get:vega.TargetStakeParameters.time_window)
+  return _internal_time_window();
 }
-inline void TargetStakeParameters::_internal_set_timewindow(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void TargetStakeParameters::_internal_set_time_window(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
-  timewindow_ = value;
+  time_window_ = value;
 }
-inline void TargetStakeParameters::set_timewindow(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_timewindow(value);
-  // @@protoc_insertion_point(field_set:vega.TargetStakeParameters.timeWindow)
+inline void TargetStakeParameters::set_time_window(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_time_window(value);
+  // @@protoc_insertion_point(field_set:vega.TargetStakeParameters.time_window)
 }
 
-// double scalingFactor = 2 [json_name = "scalingFactor", (.validator.field) = {
-inline void TargetStakeParameters::clear_scalingfactor() {
-  scalingfactor_ = 0;
+// double scaling_factor = 2 [json_name = "scalingFactor", (.validator.field) = {
+inline void TargetStakeParameters::clear_scaling_factor() {
+  scaling_factor_ = 0;
 }
-inline double TargetStakeParameters::_internal_scalingfactor() const {
-  return scalingfactor_;
+inline double TargetStakeParameters::_internal_scaling_factor() const {
+  return scaling_factor_;
 }
-inline double TargetStakeParameters::scalingfactor() const {
-  // @@protoc_insertion_point(field_get:vega.TargetStakeParameters.scalingFactor)
-  return _internal_scalingfactor();
+inline double TargetStakeParameters::scaling_factor() const {
+  // @@protoc_insertion_point(field_get:vega.TargetStakeParameters.scaling_factor)
+  return _internal_scaling_factor();
 }
-inline void TargetStakeParameters::_internal_set_scalingfactor(double value) {
+inline void TargetStakeParameters::_internal_set_scaling_factor(double value) {
 
-  scalingfactor_ = value;
+  scaling_factor_ = value;
 }
-inline void TargetStakeParameters::set_scalingfactor(double value) {
-  _internal_set_scalingfactor(value);
-  // @@protoc_insertion_point(field_set:vega.TargetStakeParameters.scalingFactor)
+inline void TargetStakeParameters::set_scaling_factor(double value) {
+  _internal_set_scaling_factor(value);
+  // @@protoc_insertion_point(field_set:vega.TargetStakeParameters.scaling_factor)
 }
 
 // -------------------------------------------------------------------
@@ -6477,107 +6419,107 @@ inline void Market::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.Market.id)
 }
 
-// .vega.TradableInstrument tradableInstrument = 2 [json_name = "tradableInstrument"];
-inline bool Market::_internal_has_tradableinstrument() const {
-  return this != internal_default_instance() && tradableinstrument_ != nullptr;
+// .vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];
+inline bool Market::_internal_has_tradable_instrument() const {
+  return this != internal_default_instance() && tradable_instrument_ != nullptr;
 }
-inline bool Market::has_tradableinstrument() const {
-  return _internal_has_tradableinstrument();
+inline bool Market::has_tradable_instrument() const {
+  return _internal_has_tradable_instrument();
 }
-inline void Market::clear_tradableinstrument() {
-  if (GetArena() == nullptr && tradableinstrument_ != nullptr) {
-    delete tradableinstrument_;
+inline void Market::clear_tradable_instrument() {
+  if (GetArena() == nullptr && tradable_instrument_ != nullptr) {
+    delete tradable_instrument_;
   }
-  tradableinstrument_ = nullptr;
+  tradable_instrument_ = nullptr;
 }
-inline const ::vega::TradableInstrument& Market::_internal_tradableinstrument() const {
-  const ::vega::TradableInstrument* p = tradableinstrument_;
+inline const ::vega::TradableInstrument& Market::_internal_tradable_instrument() const {
+  const ::vega::TradableInstrument* p = tradable_instrument_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::TradableInstrument&>(
       ::vega::_TradableInstrument_default_instance_);
 }
-inline const ::vega::TradableInstrument& Market::tradableinstrument() const {
-  // @@protoc_insertion_point(field_get:vega.Market.tradableInstrument)
-  return _internal_tradableinstrument();
+inline const ::vega::TradableInstrument& Market::tradable_instrument() const {
+  // @@protoc_insertion_point(field_get:vega.Market.tradable_instrument)
+  return _internal_tradable_instrument();
 }
-inline void Market::unsafe_arena_set_allocated_tradableinstrument(
-    ::vega::TradableInstrument* tradableinstrument) {
+inline void Market::unsafe_arena_set_allocated_tradable_instrument(
+    ::vega::TradableInstrument* tradable_instrument) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tradableinstrument_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tradable_instrument_);
   }
-  tradableinstrument_ = tradableinstrument;
-  if (tradableinstrument) {
+  tradable_instrument_ = tradable_instrument;
+  if (tradable_instrument) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.tradableInstrument)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.tradable_instrument)
 }
-inline ::vega::TradableInstrument* Market::release_tradableinstrument() {
+inline ::vega::TradableInstrument* Market::release_tradable_instrument() {
 
-  ::vega::TradableInstrument* temp = tradableinstrument_;
-  tradableinstrument_ = nullptr;
+  ::vega::TradableInstrument* temp = tradable_instrument_;
+  tradable_instrument_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::TradableInstrument* Market::unsafe_arena_release_tradableinstrument() {
-  // @@protoc_insertion_point(field_release:vega.Market.tradableInstrument)
+inline ::vega::TradableInstrument* Market::unsafe_arena_release_tradable_instrument() {
+  // @@protoc_insertion_point(field_release:vega.Market.tradable_instrument)
 
-  ::vega::TradableInstrument* temp = tradableinstrument_;
-  tradableinstrument_ = nullptr;
+  ::vega::TradableInstrument* temp = tradable_instrument_;
+  tradable_instrument_ = nullptr;
   return temp;
 }
-inline ::vega::TradableInstrument* Market::_internal_mutable_tradableinstrument() {
+inline ::vega::TradableInstrument* Market::_internal_mutable_tradable_instrument() {
 
-  if (tradableinstrument_ == nullptr) {
+  if (tradable_instrument_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::TradableInstrument>(GetArena());
-    tradableinstrument_ = p;
+    tradable_instrument_ = p;
   }
-  return tradableinstrument_;
+  return tradable_instrument_;
 }
-inline ::vega::TradableInstrument* Market::mutable_tradableinstrument() {
-  // @@protoc_insertion_point(field_mutable:vega.Market.tradableInstrument)
-  return _internal_mutable_tradableinstrument();
+inline ::vega::TradableInstrument* Market::mutable_tradable_instrument() {
+  // @@protoc_insertion_point(field_mutable:vega.Market.tradable_instrument)
+  return _internal_mutable_tradable_instrument();
 }
-inline void Market::set_allocated_tradableinstrument(::vega::TradableInstrument* tradableinstrument) {
+inline void Market::set_allocated_tradable_instrument(::vega::TradableInstrument* tradable_instrument) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete tradableinstrument_;
+    delete tradable_instrument_;
   }
-  if (tradableinstrument) {
+  if (tradable_instrument) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(tradableinstrument);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(tradable_instrument);
     if (message_arena != submessage_arena) {
-      tradableinstrument = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, tradableinstrument, submessage_arena);
+      tradable_instrument = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tradable_instrument, submessage_arena);
     }
 
   } else {
 
   }
-  tradableinstrument_ = tradableinstrument;
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.tradableInstrument)
+  tradable_instrument_ = tradable_instrument;
+  // @@protoc_insertion_point(field_set_allocated:vega.Market.tradable_instrument)
 }
 
-// uint64 decimalPlaces = 3 [json_name = "decimalPlaces"];
-inline void Market::clear_decimalplaces() {
-  decimalplaces_ = PROTOBUF_ULONGLONG(0);
+// uint64 decimal_places = 3 [json_name = "decimalPlaces"];
+inline void Market::clear_decimal_places() {
+  decimal_places_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Market::_internal_decimalplaces() const {
-  return decimalplaces_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Market::_internal_decimal_places() const {
+  return decimal_places_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Market::decimalplaces() const {
-  // @@protoc_insertion_point(field_get:vega.Market.decimalPlaces)
-  return _internal_decimalplaces();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Market::decimal_places() const {
+  // @@protoc_insertion_point(field_get:vega.Market.decimal_places)
+  return _internal_decimal_places();
 }
-inline void Market::_internal_set_decimalplaces(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Market::_internal_set_decimal_places(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
-  decimalplaces_ = value;
+  decimal_places_ = value;
 }
-inline void Market::set_decimalplaces(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_decimalplaces(value);
-  // @@protoc_insertion_point(field_set:vega.Market.decimalPlaces)
+inline void Market::set_decimal_places(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_decimal_places(value);
+  // @@protoc_insertion_point(field_set:vega.Market.decimal_places)
 }
 
 // .vega.Fees fees = 4 [json_name = "fees"];
@@ -6663,92 +6605,92 @@ inline void Market::set_allocated_fees(::vega::Fees* fees) {
   // @@protoc_insertion_point(field_set_allocated:vega.Market.fees)
 }
 
-// .vega.AuctionDuration openingAuction = 5 [json_name = "openingAuction"];
-inline bool Market::_internal_has_openingauction() const {
-  return this != internal_default_instance() && openingauction_ != nullptr;
+// .vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];
+inline bool Market::_internal_has_opening_auction() const {
+  return this != internal_default_instance() && opening_auction_ != nullptr;
 }
-inline bool Market::has_openingauction() const {
-  return _internal_has_openingauction();
+inline bool Market::has_opening_auction() const {
+  return _internal_has_opening_auction();
 }
-inline void Market::clear_openingauction() {
-  if (GetArena() == nullptr && openingauction_ != nullptr) {
-    delete openingauction_;
+inline void Market::clear_opening_auction() {
+  if (GetArena() == nullptr && opening_auction_ != nullptr) {
+    delete opening_auction_;
   }
-  openingauction_ = nullptr;
+  opening_auction_ = nullptr;
 }
-inline const ::vega::AuctionDuration& Market::_internal_openingauction() const {
-  const ::vega::AuctionDuration* p = openingauction_;
+inline const ::vega::AuctionDuration& Market::_internal_opening_auction() const {
+  const ::vega::AuctionDuration* p = opening_auction_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::AuctionDuration&>(
       ::vega::_AuctionDuration_default_instance_);
 }
-inline const ::vega::AuctionDuration& Market::openingauction() const {
-  // @@protoc_insertion_point(field_get:vega.Market.openingAuction)
-  return _internal_openingauction();
+inline const ::vega::AuctionDuration& Market::opening_auction() const {
+  // @@protoc_insertion_point(field_get:vega.Market.opening_auction)
+  return _internal_opening_auction();
 }
-inline void Market::unsafe_arena_set_allocated_openingauction(
-    ::vega::AuctionDuration* openingauction) {
+inline void Market::unsafe_arena_set_allocated_opening_auction(
+    ::vega::AuctionDuration* opening_auction) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(openingauction_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(opening_auction_);
   }
-  openingauction_ = openingauction;
-  if (openingauction) {
+  opening_auction_ = opening_auction;
+  if (opening_auction) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.openingAuction)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.opening_auction)
 }
-inline ::vega::AuctionDuration* Market::release_openingauction() {
+inline ::vega::AuctionDuration* Market::release_opening_auction() {
 
-  ::vega::AuctionDuration* temp = openingauction_;
-  openingauction_ = nullptr;
+  ::vega::AuctionDuration* temp = opening_auction_;
+  opening_auction_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::AuctionDuration* Market::unsafe_arena_release_openingauction() {
-  // @@protoc_insertion_point(field_release:vega.Market.openingAuction)
+inline ::vega::AuctionDuration* Market::unsafe_arena_release_opening_auction() {
+  // @@protoc_insertion_point(field_release:vega.Market.opening_auction)
 
-  ::vega::AuctionDuration* temp = openingauction_;
-  openingauction_ = nullptr;
+  ::vega::AuctionDuration* temp = opening_auction_;
+  opening_auction_ = nullptr;
   return temp;
 }
-inline ::vega::AuctionDuration* Market::_internal_mutable_openingauction() {
+inline ::vega::AuctionDuration* Market::_internal_mutable_opening_auction() {
 
-  if (openingauction_ == nullptr) {
+  if (opening_auction_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::AuctionDuration>(GetArena());
-    openingauction_ = p;
+    opening_auction_ = p;
   }
-  return openingauction_;
+  return opening_auction_;
 }
-inline ::vega::AuctionDuration* Market::mutable_openingauction() {
-  // @@protoc_insertion_point(field_mutable:vega.Market.openingAuction)
-  return _internal_mutable_openingauction();
+inline ::vega::AuctionDuration* Market::mutable_opening_auction() {
+  // @@protoc_insertion_point(field_mutable:vega.Market.opening_auction)
+  return _internal_mutable_opening_auction();
 }
-inline void Market::set_allocated_openingauction(::vega::AuctionDuration* openingauction) {
+inline void Market::set_allocated_opening_auction(::vega::AuctionDuration* opening_auction) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete openingauction_;
+    delete opening_auction_;
   }
-  if (openingauction) {
+  if (opening_auction) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(openingauction);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(opening_auction);
     if (message_arena != submessage_arena) {
-      openingauction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, openingauction, submessage_arena);
+      opening_auction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, opening_auction, submessage_arena);
     }
 
   } else {
 
   }
-  openingauction_ = openingauction;
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.openingAuction)
+  opening_auction_ = opening_auction;
+  // @@protoc_insertion_point(field_set_allocated:vega.Market.opening_auction)
 }
 
 // .vega.ContinuousTrading continuous = 100 [json_name = "continuous"];
 inline bool Market::_internal_has_continuous() const {
-  return tradingModeConfig_case() == kContinuous;
+  return trading_mode_config_case() == kContinuous;
 }
 inline bool Market::has_continuous() const {
   return _internal_has_continuous();
@@ -6759,20 +6701,20 @@ inline void Market::set_has_continuous() {
 inline void Market::clear_continuous() {
   if (_internal_has_continuous()) {
     if (GetArena() == nullptr) {
-      delete tradingModeConfig_.continuous_;
+      delete trading_mode_config_.continuous_;
     }
-    clear_has_tradingModeConfig();
+    clear_has_trading_mode_config();
   }
 }
 inline ::vega::ContinuousTrading* Market::release_continuous() {
   // @@protoc_insertion_point(field_release:vega.Market.continuous)
   if (_internal_has_continuous()) {
-    clear_has_tradingModeConfig();
-      ::vega::ContinuousTrading* temp = tradingModeConfig_.continuous_;
+    clear_has_trading_mode_config();
+      ::vega::ContinuousTrading* temp = trading_mode_config_.continuous_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    tradingModeConfig_.continuous_ = nullptr;
+    trading_mode_config_.continuous_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -6780,7 +6722,7 @@ inline ::vega::ContinuousTrading* Market::release_continuous() {
 }
 inline const ::vega::ContinuousTrading& Market::_internal_continuous() const {
   return _internal_has_continuous()
-      ? *tradingModeConfig_.continuous_
+      ? *trading_mode_config_.continuous_
       : reinterpret_cast< ::vega::ContinuousTrading&>(::vega::_ContinuousTrading_default_instance_);
 }
 inline const ::vega::ContinuousTrading& Market::continuous() const {
@@ -6790,29 +6732,29 @@ inline const ::vega::ContinuousTrading& Market::continuous() const {
 inline ::vega::ContinuousTrading* Market::unsafe_arena_release_continuous() {
   // @@protoc_insertion_point(field_unsafe_arena_release:vega.Market.continuous)
   if (_internal_has_continuous()) {
-    clear_has_tradingModeConfig();
-    ::vega::ContinuousTrading* temp = tradingModeConfig_.continuous_;
-    tradingModeConfig_.continuous_ = nullptr;
+    clear_has_trading_mode_config();
+    ::vega::ContinuousTrading* temp = trading_mode_config_.continuous_;
+    trading_mode_config_.continuous_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void Market::unsafe_arena_set_allocated_continuous(::vega::ContinuousTrading* continuous) {
-  clear_tradingModeConfig();
+  clear_trading_mode_config();
   if (continuous) {
     set_has_continuous();
-    tradingModeConfig_.continuous_ = continuous;
+    trading_mode_config_.continuous_ = continuous;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.continuous)
 }
 inline ::vega::ContinuousTrading* Market::_internal_mutable_continuous() {
   if (!_internal_has_continuous()) {
-    clear_tradingModeConfig();
+    clear_trading_mode_config();
     set_has_continuous();
-    tradingModeConfig_.continuous_ = CreateMaybeMessage< ::vega::ContinuousTrading >(GetArena());
+    trading_mode_config_.continuous_ = CreateMaybeMessage< ::vega::ContinuousTrading >(GetArena());
   }
-  return tradingModeConfig_.continuous_;
+  return trading_mode_config_.continuous_;
 }
 inline ::vega::ContinuousTrading* Market::mutable_continuous() {
   // @@protoc_insertion_point(field_mutable:vega.Market.continuous)
@@ -6821,7 +6763,7 @@ inline ::vega::ContinuousTrading* Market::mutable_continuous() {
 
 // .vega.DiscreteTrading discrete = 101 [json_name = "discrete"];
 inline bool Market::_internal_has_discrete() const {
-  return tradingModeConfig_case() == kDiscrete;
+  return trading_mode_config_case() == kDiscrete;
 }
 inline bool Market::has_discrete() const {
   return _internal_has_discrete();
@@ -6832,20 +6774,20 @@ inline void Market::set_has_discrete() {
 inline void Market::clear_discrete() {
   if (_internal_has_discrete()) {
     if (GetArena() == nullptr) {
-      delete tradingModeConfig_.discrete_;
+      delete trading_mode_config_.discrete_;
     }
-    clear_has_tradingModeConfig();
+    clear_has_trading_mode_config();
   }
 }
 inline ::vega::DiscreteTrading* Market::release_discrete() {
   // @@protoc_insertion_point(field_release:vega.Market.discrete)
   if (_internal_has_discrete()) {
-    clear_has_tradingModeConfig();
-      ::vega::DiscreteTrading* temp = tradingModeConfig_.discrete_;
+    clear_has_trading_mode_config();
+      ::vega::DiscreteTrading* temp = trading_mode_config_.discrete_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    tradingModeConfig_.discrete_ = nullptr;
+    trading_mode_config_.discrete_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -6853,7 +6795,7 @@ inline ::vega::DiscreteTrading* Market::release_discrete() {
 }
 inline const ::vega::DiscreteTrading& Market::_internal_discrete() const {
   return _internal_has_discrete()
-      ? *tradingModeConfig_.discrete_
+      ? *trading_mode_config_.discrete_
       : reinterpret_cast< ::vega::DiscreteTrading&>(::vega::_DiscreteTrading_default_instance_);
 }
 inline const ::vega::DiscreteTrading& Market::discrete() const {
@@ -6863,219 +6805,219 @@ inline const ::vega::DiscreteTrading& Market::discrete() const {
 inline ::vega::DiscreteTrading* Market::unsafe_arena_release_discrete() {
   // @@protoc_insertion_point(field_unsafe_arena_release:vega.Market.discrete)
   if (_internal_has_discrete()) {
-    clear_has_tradingModeConfig();
-    ::vega::DiscreteTrading* temp = tradingModeConfig_.discrete_;
-    tradingModeConfig_.discrete_ = nullptr;
+    clear_has_trading_mode_config();
+    ::vega::DiscreteTrading* temp = trading_mode_config_.discrete_;
+    trading_mode_config_.discrete_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void Market::unsafe_arena_set_allocated_discrete(::vega::DiscreteTrading* discrete) {
-  clear_tradingModeConfig();
+  clear_trading_mode_config();
   if (discrete) {
     set_has_discrete();
-    tradingModeConfig_.discrete_ = discrete;
+    trading_mode_config_.discrete_ = discrete;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.discrete)
 }
 inline ::vega::DiscreteTrading* Market::_internal_mutable_discrete() {
   if (!_internal_has_discrete()) {
-    clear_tradingModeConfig();
+    clear_trading_mode_config();
     set_has_discrete();
-    tradingModeConfig_.discrete_ = CreateMaybeMessage< ::vega::DiscreteTrading >(GetArena());
+    trading_mode_config_.discrete_ = CreateMaybeMessage< ::vega::DiscreteTrading >(GetArena());
   }
-  return tradingModeConfig_.discrete_;
+  return trading_mode_config_.discrete_;
 }
 inline ::vega::DiscreteTrading* Market::mutable_discrete() {
   // @@protoc_insertion_point(field_mutable:vega.Market.discrete)
   return _internal_mutable_discrete();
 }
 
-// .vega.PriceMonitoringSettings priceMonitoringSettings = 6 [json_name = "priceMonitoringSettings"];
-inline bool Market::_internal_has_pricemonitoringsettings() const {
-  return this != internal_default_instance() && pricemonitoringsettings_ != nullptr;
+// .vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];
+inline bool Market::_internal_has_price_monitoring_settings() const {
+  return this != internal_default_instance() && price_monitoring_settings_ != nullptr;
 }
-inline bool Market::has_pricemonitoringsettings() const {
-  return _internal_has_pricemonitoringsettings();
+inline bool Market::has_price_monitoring_settings() const {
+  return _internal_has_price_monitoring_settings();
 }
-inline void Market::clear_pricemonitoringsettings() {
-  if (GetArena() == nullptr && pricemonitoringsettings_ != nullptr) {
-    delete pricemonitoringsettings_;
+inline void Market::clear_price_monitoring_settings() {
+  if (GetArena() == nullptr && price_monitoring_settings_ != nullptr) {
+    delete price_monitoring_settings_;
   }
-  pricemonitoringsettings_ = nullptr;
+  price_monitoring_settings_ = nullptr;
 }
-inline const ::vega::PriceMonitoringSettings& Market::_internal_pricemonitoringsettings() const {
-  const ::vega::PriceMonitoringSettings* p = pricemonitoringsettings_;
+inline const ::vega::PriceMonitoringSettings& Market::_internal_price_monitoring_settings() const {
+  const ::vega::PriceMonitoringSettings* p = price_monitoring_settings_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::PriceMonitoringSettings&>(
       ::vega::_PriceMonitoringSettings_default_instance_);
 }
-inline const ::vega::PriceMonitoringSettings& Market::pricemonitoringsettings() const {
-  // @@protoc_insertion_point(field_get:vega.Market.priceMonitoringSettings)
-  return _internal_pricemonitoringsettings();
+inline const ::vega::PriceMonitoringSettings& Market::price_monitoring_settings() const {
+  // @@protoc_insertion_point(field_get:vega.Market.price_monitoring_settings)
+  return _internal_price_monitoring_settings();
 }
-inline void Market::unsafe_arena_set_allocated_pricemonitoringsettings(
-    ::vega::PriceMonitoringSettings* pricemonitoringsettings) {
+inline void Market::unsafe_arena_set_allocated_price_monitoring_settings(
+    ::vega::PriceMonitoringSettings* price_monitoring_settings) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pricemonitoringsettings_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(price_monitoring_settings_);
   }
-  pricemonitoringsettings_ = pricemonitoringsettings;
-  if (pricemonitoringsettings) {
+  price_monitoring_settings_ = price_monitoring_settings;
+  if (price_monitoring_settings) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.priceMonitoringSettings)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.price_monitoring_settings)
 }
-inline ::vega::PriceMonitoringSettings* Market::release_pricemonitoringsettings() {
+inline ::vega::PriceMonitoringSettings* Market::release_price_monitoring_settings() {
 
-  ::vega::PriceMonitoringSettings* temp = pricemonitoringsettings_;
-  pricemonitoringsettings_ = nullptr;
+  ::vega::PriceMonitoringSettings* temp = price_monitoring_settings_;
+  price_monitoring_settings_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::PriceMonitoringSettings* Market::unsafe_arena_release_pricemonitoringsettings() {
-  // @@protoc_insertion_point(field_release:vega.Market.priceMonitoringSettings)
+inline ::vega::PriceMonitoringSettings* Market::unsafe_arena_release_price_monitoring_settings() {
+  // @@protoc_insertion_point(field_release:vega.Market.price_monitoring_settings)
 
-  ::vega::PriceMonitoringSettings* temp = pricemonitoringsettings_;
-  pricemonitoringsettings_ = nullptr;
+  ::vega::PriceMonitoringSettings* temp = price_monitoring_settings_;
+  price_monitoring_settings_ = nullptr;
   return temp;
 }
-inline ::vega::PriceMonitoringSettings* Market::_internal_mutable_pricemonitoringsettings() {
+inline ::vega::PriceMonitoringSettings* Market::_internal_mutable_price_monitoring_settings() {
 
-  if (pricemonitoringsettings_ == nullptr) {
+  if (price_monitoring_settings_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::PriceMonitoringSettings>(GetArena());
-    pricemonitoringsettings_ = p;
+    price_monitoring_settings_ = p;
   }
-  return pricemonitoringsettings_;
+  return price_monitoring_settings_;
 }
-inline ::vega::PriceMonitoringSettings* Market::mutable_pricemonitoringsettings() {
-  // @@protoc_insertion_point(field_mutable:vega.Market.priceMonitoringSettings)
-  return _internal_mutable_pricemonitoringsettings();
+inline ::vega::PriceMonitoringSettings* Market::mutable_price_monitoring_settings() {
+  // @@protoc_insertion_point(field_mutable:vega.Market.price_monitoring_settings)
+  return _internal_mutable_price_monitoring_settings();
 }
-inline void Market::set_allocated_pricemonitoringsettings(::vega::PriceMonitoringSettings* pricemonitoringsettings) {
+inline void Market::set_allocated_price_monitoring_settings(::vega::PriceMonitoringSettings* price_monitoring_settings) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete pricemonitoringsettings_;
+    delete price_monitoring_settings_;
   }
-  if (pricemonitoringsettings) {
+  if (price_monitoring_settings) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(pricemonitoringsettings);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(price_monitoring_settings);
     if (message_arena != submessage_arena) {
-      pricemonitoringsettings = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, pricemonitoringsettings, submessage_arena);
+      price_monitoring_settings = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, price_monitoring_settings, submessage_arena);
     }
 
   } else {
 
   }
-  pricemonitoringsettings_ = pricemonitoringsettings;
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.priceMonitoringSettings)
+  price_monitoring_settings_ = price_monitoring_settings;
+  // @@protoc_insertion_point(field_set_allocated:vega.Market.price_monitoring_settings)
 }
 
-// .vega.TargetStakeParameters targetStakeParameters = 7 [json_name = "targetStakeParameters"];
-inline bool Market::_internal_has_targetstakeparameters() const {
-  return this != internal_default_instance() && targetstakeparameters_ != nullptr;
+// .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
+inline bool Market::_internal_has_target_stake_parameters() const {
+  return this != internal_default_instance() && target_stake_parameters_ != nullptr;
 }
-inline bool Market::has_targetstakeparameters() const {
-  return _internal_has_targetstakeparameters();
+inline bool Market::has_target_stake_parameters() const {
+  return _internal_has_target_stake_parameters();
 }
-inline void Market::clear_targetstakeparameters() {
-  if (GetArena() == nullptr && targetstakeparameters_ != nullptr) {
-    delete targetstakeparameters_;
+inline void Market::clear_target_stake_parameters() {
+  if (GetArena() == nullptr && target_stake_parameters_ != nullptr) {
+    delete target_stake_parameters_;
   }
-  targetstakeparameters_ = nullptr;
+  target_stake_parameters_ = nullptr;
 }
-inline const ::vega::TargetStakeParameters& Market::_internal_targetstakeparameters() const {
-  const ::vega::TargetStakeParameters* p = targetstakeparameters_;
+inline const ::vega::TargetStakeParameters& Market::_internal_target_stake_parameters() const {
+  const ::vega::TargetStakeParameters* p = target_stake_parameters_;
   return p != nullptr ? *p : reinterpret_cast<const ::vega::TargetStakeParameters&>(
       ::vega::_TargetStakeParameters_default_instance_);
 }
-inline const ::vega::TargetStakeParameters& Market::targetstakeparameters() const {
-  // @@protoc_insertion_point(field_get:vega.Market.targetStakeParameters)
-  return _internal_targetstakeparameters();
+inline const ::vega::TargetStakeParameters& Market::target_stake_parameters() const {
+  // @@protoc_insertion_point(field_get:vega.Market.target_stake_parameters)
+  return _internal_target_stake_parameters();
 }
-inline void Market::unsafe_arena_set_allocated_targetstakeparameters(
-    ::vega::TargetStakeParameters* targetstakeparameters) {
+inline void Market::unsafe_arena_set_allocated_target_stake_parameters(
+    ::vega::TargetStakeParameters* target_stake_parameters) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(targetstakeparameters_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(target_stake_parameters_);
   }
-  targetstakeparameters_ = targetstakeparameters;
-  if (targetstakeparameters) {
+  target_stake_parameters_ = target_stake_parameters;
+  if (target_stake_parameters) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.targetStakeParameters)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.target_stake_parameters)
 }
-inline ::vega::TargetStakeParameters* Market::release_targetstakeparameters() {
+inline ::vega::TargetStakeParameters* Market::release_target_stake_parameters() {
 
-  ::vega::TargetStakeParameters* temp = targetstakeparameters_;
-  targetstakeparameters_ = nullptr;
+  ::vega::TargetStakeParameters* temp = target_stake_parameters_;
+  target_stake_parameters_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::TargetStakeParameters* Market::unsafe_arena_release_targetstakeparameters() {
-  // @@protoc_insertion_point(field_release:vega.Market.targetStakeParameters)
+inline ::vega::TargetStakeParameters* Market::unsafe_arena_release_target_stake_parameters() {
+  // @@protoc_insertion_point(field_release:vega.Market.target_stake_parameters)
 
-  ::vega::TargetStakeParameters* temp = targetstakeparameters_;
-  targetstakeparameters_ = nullptr;
+  ::vega::TargetStakeParameters* temp = target_stake_parameters_;
+  target_stake_parameters_ = nullptr;
   return temp;
 }
-inline ::vega::TargetStakeParameters* Market::_internal_mutable_targetstakeparameters() {
+inline ::vega::TargetStakeParameters* Market::_internal_mutable_target_stake_parameters() {
 
-  if (targetstakeparameters_ == nullptr) {
+  if (target_stake_parameters_ == nullptr) {
     auto* p = CreateMaybeMessage<::vega::TargetStakeParameters>(GetArena());
-    targetstakeparameters_ = p;
+    target_stake_parameters_ = p;
   }
-  return targetstakeparameters_;
+  return target_stake_parameters_;
 }
-inline ::vega::TargetStakeParameters* Market::mutable_targetstakeparameters() {
-  // @@protoc_insertion_point(field_mutable:vega.Market.targetStakeParameters)
-  return _internal_mutable_targetstakeparameters();
+inline ::vega::TargetStakeParameters* Market::mutable_target_stake_parameters() {
+  // @@protoc_insertion_point(field_mutable:vega.Market.target_stake_parameters)
+  return _internal_mutable_target_stake_parameters();
 }
-inline void Market::set_allocated_targetstakeparameters(::vega::TargetStakeParameters* targetstakeparameters) {
+inline void Market::set_allocated_target_stake_parameters(::vega::TargetStakeParameters* target_stake_parameters) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete targetstakeparameters_;
+    delete target_stake_parameters_;
   }
-  if (targetstakeparameters) {
+  if (target_stake_parameters) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(targetstakeparameters);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(target_stake_parameters);
     if (message_arena != submessage_arena) {
-      targetstakeparameters = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, targetstakeparameters, submessage_arena);
+      target_stake_parameters = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, target_stake_parameters, submessage_arena);
     }
 
   } else {
 
   }
-  targetstakeparameters_ = targetstakeparameters;
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.targetStakeParameters)
+  target_stake_parameters_ = target_stake_parameters;
+  // @@protoc_insertion_point(field_set_allocated:vega.Market.target_stake_parameters)
 }
 
-// .vega.Market.TradingMode tradingMode = 8 [json_name = "tradingMode"];
-inline void Market::clear_tradingmode() {
-  tradingmode_ = 0;
+// .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
+inline void Market::clear_trading_mode() {
+  trading_mode_ = 0;
 }
-inline ::vega::Market_TradingMode Market::_internal_tradingmode() const {
-  return static_cast< ::vega::Market_TradingMode >(tradingmode_);
+inline ::vega::Market_TradingMode Market::_internal_trading_mode() const {
+  return static_cast< ::vega::Market_TradingMode >(trading_mode_);
 }
-inline ::vega::Market_TradingMode Market::tradingmode() const {
-  // @@protoc_insertion_point(field_get:vega.Market.tradingMode)
-  return _internal_tradingmode();
+inline ::vega::Market_TradingMode Market::trading_mode() const {
+  // @@protoc_insertion_point(field_get:vega.Market.trading_mode)
+  return _internal_trading_mode();
 }
-inline void Market::_internal_set_tradingmode(::vega::Market_TradingMode value) {
+inline void Market::_internal_set_trading_mode(::vega::Market_TradingMode value) {
 
-  tradingmode_ = value;
+  trading_mode_ = value;
 }
-inline void Market::set_tradingmode(::vega::Market_TradingMode value) {
-  _internal_set_tradingmode(value);
-  // @@protoc_insertion_point(field_set:vega.Market.tradingMode)
+inline void Market::set_trading_mode(::vega::Market_TradingMode value) {
+  _internal_set_trading_mode(value);
+  // @@protoc_insertion_point(field_set:vega.Market.trading_mode)
 }
 
 // .vega.Market.State state = 9 [json_name = "state"];
@@ -7098,13 +7040,13 @@ inline void Market::set_state(::vega::Market_State value) {
   // @@protoc_insertion_point(field_set:vega.Market.state)
 }
 
-inline bool Market::has_tradingModeConfig() const {
-  return tradingModeConfig_case() != TRADINGMODECONFIG_NOT_SET;
+inline bool Market::has_trading_mode_config() const {
+  return trading_mode_config_case() != TRADING_MODE_CONFIG_NOT_SET;
 }
-inline void Market::clear_has_tradingModeConfig() {
-  _oneof_case_[0] = TRADINGMODECONFIG_NOT_SET;
+inline void Market::clear_has_trading_mode_config() {
+  _oneof_case_[0] = TRADING_MODE_CONFIG_NOT_SET;
 }
-inline Market::TradingModeConfigCase Market::tradingModeConfig_case() const {
+inline Market::TradingModeConfigCase Market::trading_mode_config_case() const {
   return Market::TradingModeConfigCase(_oneof_case_[0]);
 }
 #ifdef __GNUC__

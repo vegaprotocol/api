@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x61ssets.proto\x12\x04vega\"\xac\x01\n\x05\x41sset\x12\x0e\n\x02ID\x18\x01 \x01(\tR\x02ID\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x03 \x01(\tR\x06symbol\x12 \n\x0btotalSupply\x18\x04 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x05 \x01(\x04R\x08\x64\x65\x63imals\x12)\n\x06source\x18\x07 \x01(\x0b\x32\x11.vega.AssetSourceR\x06source\"v\n\x0b\x41ssetSource\x12\x38\n\x0c\x62uiltinAsset\x18\x01 \x01(\x0b\x32\x12.vega.BuiltinAssetH\x00R\x0c\x62uiltinAsset\x12#\n\x05\x65rc20\x18\x02 \x01(\x0b\x32\x0b.vega.ERC20H\x00R\x05\x65rc20B\x08\n\x06source\"\xaa\x01\n\x0c\x42uiltinAsset\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x02 \x01(\tR\x06symbol\x12 \n\x0btotalSupply\x18\x03 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x04 \x01(\x04R\x08\x64\x65\x63imals\x12\x30\n\x13maxFaucetAmountMint\x18\x05 \x01(\tR\x13maxFaucetAmountMint\"1\n\x05\x45RC20\x12(\n\x0f\x63ontractAddress\x18\x01 \x01(\tR\x0f\x63ontractAddress\"8\n\tDevAssets\x12+\n\x07sources\x18\x01 \x03(\x0b\x32\x11.vega.AssetSourceR\x07sourcesB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x0c\x61ssets.proto\x12\x04vega\"\xad\x01\n\x05\x41sset\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x03 \x01(\tR\x06symbol\x12!\n\x0ctotal_supply\x18\x04 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x05 \x01(\x04R\x08\x64\x65\x63imals\x12)\n\x06source\x18\x07 \x01(\x0b\x32\x11.vega.AssetSourceR\x06source\"w\n\x0b\x41ssetSource\x12\x39\n\rbuiltin_asset\x18\x01 \x01(\x0b\x32\x12.vega.BuiltinAssetH\x00R\x0c\x62uiltinAsset\x12#\n\x05\x65rc20\x18\x02 \x01(\x0b\x32\x0b.vega.ERC20H\x00R\x05\x65rc20B\x08\n\x06source\"\xae\x01\n\x0c\x42uiltinAsset\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x02 \x01(\tR\x06symbol\x12!\n\x0ctotal_supply\x18\x03 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x04 \x01(\x04R\x08\x64\x65\x63imals\x12\x33\n\x16max_faucet_amount_mint\x18\x05 \x01(\tR\x13maxFaucetAmountMint\"2\n\x05\x45RC20\x12)\n\x10\x63ontract_address\x18\x01 \x01(\tR\x0f\x63ontractAddress\"8\n\tDevAssets\x12+\n\x07sources\x18\x01 \x03(\x0b\x32\x11.vega.AssetSourceR\x07sourcesB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
 )
 
 
@@ -34,12 +34,12 @@ _ASSET = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ID', full_name='vega.Asset.ID', index=0,
+      name='id', full_name='vega.Asset.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='ID', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='vega.Asset.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -55,7 +55,7 @@ _ASSET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='symbol', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalSupply', full_name='vega.Asset.totalSupply', index=3,
+      name='total_supply', full_name='vega.Asset.total_supply', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -88,7 +88,7 @@ _ASSET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=23,
-  serialized_end=195,
+  serialized_end=196,
 )
 
 
@@ -101,7 +101,7 @@ _ASSETSOURCE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='builtinAsset', full_name='vega.AssetSource.builtinAsset', index=0,
+      name='builtin_asset', full_name='vega.AssetSource.builtin_asset', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -131,8 +131,8 @@ _ASSETSOURCE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=197,
-  serialized_end=315,
+  serialized_start=198,
+  serialized_end=317,
 )
 
 
@@ -159,7 +159,7 @@ _BUILTINASSET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='symbol', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalSupply', full_name='vega.BuiltinAsset.totalSupply', index=2,
+      name='total_supply', full_name='vega.BuiltinAsset.total_supply', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -173,7 +173,7 @@ _BUILTINASSET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='decimals', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maxFaucetAmountMint', full_name='vega.BuiltinAsset.maxFaucetAmountMint', index=4,
+      name='max_faucet_amount_mint', full_name='vega.BuiltinAsset.max_faucet_amount_mint', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -191,8 +191,8 @@ _BUILTINASSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=318,
-  serialized_end=488,
+  serialized_start=320,
+  serialized_end=494,
 )
 
 
@@ -205,7 +205,7 @@ _ERC20 = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='contractAddress', full_name='vega.ERC20.contractAddress', index=0,
+      name='contract_address', full_name='vega.ERC20.contract_address', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -223,8 +223,8 @@ _ERC20 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=490,
-  serialized_end=539,
+  serialized_start=496,
+  serialized_end=546,
 )
 
 
@@ -255,16 +255,16 @@ _DEVASSETS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=541,
-  serialized_end=597,
+  serialized_start=548,
+  serialized_end=604,
 )
 
 _ASSET.fields_by_name['source'].message_type = _ASSETSOURCE
-_ASSETSOURCE.fields_by_name['builtinAsset'].message_type = _BUILTINASSET
+_ASSETSOURCE.fields_by_name['builtin_asset'].message_type = _BUILTINASSET
 _ASSETSOURCE.fields_by_name['erc20'].message_type = _ERC20
 _ASSETSOURCE.oneofs_by_name['source'].fields.append(
-  _ASSETSOURCE.fields_by_name['builtinAsset'])
-_ASSETSOURCE.fields_by_name['builtinAsset'].containing_oneof = _ASSETSOURCE.oneofs_by_name['source']
+  _ASSETSOURCE.fields_by_name['builtin_asset'])
+_ASSETSOURCE.fields_by_name['builtin_asset'].containing_oneof = _ASSETSOURCE.oneofs_by_name['source']
 _ASSETSOURCE.oneofs_by_name['source'].fields.append(
   _ASSETSOURCE.fields_by_name['erc20'])
 _ASSETSOURCE.fields_by_name['erc20'].containing_oneof = _ASSETSOURCE.oneofs_by_name['source']
