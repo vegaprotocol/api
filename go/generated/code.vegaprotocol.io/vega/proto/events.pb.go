@@ -10,8 +10,8 @@ import (
 	reflect "reflect"
 	sync "sync"
 
-	v1 "code.vegaprotocol.io/vega/proto/oracles/v1"
 	proto "github.com/golang/protobuf/proto"
+	v1 "github.com/vegaprotocol/api/go/generated/code.vegaprotocol.io/vega/proto/oracles/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )

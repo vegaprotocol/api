@@ -7,9 +7,9 @@ import (
 	fmt "fmt"
 	math "math"
 
-	_ "code.vegaprotocol.io/vega/proto/oracles/v1"
 	proto "github.com/golang/protobuf/proto"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	_ "github.com/vegaprotocol/api/go/generated/code.vegaprotocol.io/vega/proto/oracles/v1"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
