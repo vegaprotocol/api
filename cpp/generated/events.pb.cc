@@ -14,6 +14,8 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fdata_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleData_oracles_2fv1_2foracle_5fdata_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fspec_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_assets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Asset_assets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_events_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AuctionEvent_events_2eproto;
@@ -118,8 +120,8 @@ static void InitDefaultsscc_info_BusEvent_events_2eproto() {
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<26> scc_info_BusEvent_events_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 26, 0, InitDefaultsscc_info_BusEvent_events_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_BusEvent_events_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 28, 0, InitDefaultsscc_info_BusEvent_events_2eproto}, {
       &scc_info_TimeUpdate_events_2eproto.base,
       &scc_info_TransferResponses_events_2eproto.base,
       &scc_info_PositionResolution_events_2eproto.base,
@@ -144,6 +146,8 @@ static void InitDefaultsscc_info_BusEvent_events_2eproto() {
       &scc_info_RiskFactor_vega_2eproto.base,
       &scc_info_NetworkParameter_vega_2eproto.base,
       &scc_info_LiquidityProvision_vega_2eproto.base,
+      &scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto.base,
+      &scc_info_OracleData_oracles_2fv1_2foracle_5fdata_2eproto.base,
       &scc_info_MarketEvent_events_2eproto.base,
       &scc_info_TxErrorEvent_events_2eproto.base,}};
 
@@ -416,6 +420,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_events_2eproto::offsets[] PROT
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::BusEvent, event_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -450,112 +456,120 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_events_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014events.proto\022\004vega\032\rmarkets.proto\032\014ass"
-  "ets.proto\032\020governance.proto\032\nvega.proto\""
-  "D\n\013MarketEvent\022\033\n\tmarket_id\030\001 \001(\tR\010marke"
-  "tId\022\030\n\007payload\030\002 \001(\tR\007payload\"\360\002\n\014TxErro"
-  "rEvent\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\027\n\007err"
-  "_msg\030\002 \001(\tR\006errMsg\022B\n\020order_submission\030e"
-  " \001(\0132\025.vega.OrderSubmissionH\000R\017orderSubm"
-  "ission\022\?\n\017order_amendment\030f \001(\0132\024.vega.O"
-  "rderAmendmentH\000R\016orderAmendment\022H\n\022order"
-  "_cancellation\030g \001(\0132\027.vega.OrderCancella"
-  "tionH\000R\021orderCancellation\022,\n\010proposal\030h "
-  "\001(\0132\016.vega.ProposalH\000R\010proposal\022 \n\004vote\030"
-  "i \001(\0132\n.vega.VoteH\000R\004voteB\r\n\013transaction"
-  "\"*\n\nTimeUpdate\022\034\n\ttimestamp\030\001 \001(\003R\ttimes"
-  "tamp\"I\n\021TransferResponses\0224\n\tresponses\030\001"
-  " \003(\0132\026.vega.TransferResponseR\tresponses\""
-  "\210\001\n\022PositionResolution\022\033\n\tmarket_id\030\001 \001("
-  "\tR\010marketId\022\036\n\ndistressed\030\002 \001(\003R\ndistres"
-  "sed\022\026\n\006closed\030\003 \001(\003R\006closed\022\035\n\nmark_pric"
-  "e\030\004 \001(\004R\tmarkPrice\"c\n\021LossSocialization\022"
-  "\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id"
-  "\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\003R\006amount\""
-  ";\n\017TradeSettlement\022\022\n\004size\030\001 \001(\003R\004size\022\024"
-  "\n\005price\030\002 \001(\004R\005price\"\242\001\n\016SettlePosition\022"
-  "\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id"
-  "\030\002 \001(\tR\007partyId\022\024\n\005price\030\003 \001(\004R\005price\022B\n"
-  "\021trade_settlements\030\004 \003(\0132\025.vega.TradeSet"
-  "tlementR\020tradeSettlements\"x\n\020SettleDistr"
-  "essed\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010pa"
-  "rty_id\030\002 \001(\tR\007partyId\022\026\n\006margin\030\003 \001(\004R\006m"
-  "argin\022\024\n\005price\030\004 \001(\004R\005price\"0\n\nMarketTic"
-  "k\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004time\030\002 \001(\003R\004time\"\302\001"
-  "\n\014AuctionEvent\022\033\n\tmarket_id\030\001 \001(\tR\010marke"
-  "tId\022\'\n\017opening_auction\030\002 \001(\010R\016openingAuc"
-  "tion\022\024\n\005leave\030\003 \001(\010R\005leave\022\024\n\005start\030\004 \001("
-  "\003R\005start\022\020\n\003end\030\005 \001(\003R\003end\022.\n\007trigger\030\006 "
-  "\001(\0162\024.vega.AuctionTriggerR\007trigger\"\236\014\n\010B"
-  "usEvent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005block\030\002 \001(\tR\005"
-  "block\022&\n\004type\030\003 \001(\0162\022.vega.BusEventTypeR"
-  "\004type\0223\n\013time_update\030e \001(\0132\020.vega.TimeUp"
-  "dateH\000R\ntimeUpdate\022H\n\022transfer_responses"
-  "\030f \001(\0132\027.vega.TransferResponsesH\000R\021trans"
-  "ferResponses\022K\n\023position_resolution\030g \001("
-  "\0132\030.vega.PositionResolutionH\000R\022positionR"
-  "esolution\022#\n\005order\030h \001(\0132\013.vega.OrderH\000R"
-  "\005order\022)\n\007account\030i \001(\0132\r.vega.AccountH\000"
-  "R\007account\022#\n\005party\030j \001(\0132\013.vega.PartyH\000R"
-  "\005party\022#\n\005trade\030k \001(\0132\013.vega.TradeH\000R\005tr"
-  "ade\0229\n\rmargin_levels\030l \001(\0132\022.vega.Margin"
-  "LevelsH\000R\014marginLevels\022,\n\010proposal\030m \001(\013"
-  "2\016.vega.ProposalH\000R\010proposal\022 \n\004vote\030n \001"
-  "(\0132\n.vega.VoteH\000R\004vote\0223\n\013market_data\030o "
-  "\001(\0132\020.vega.MarketDataH\000R\nmarketData\022<\n\016n"
-  "ode_signature\030p \001(\0132\023.vega.NodeSignature"
-  "H\000R\rnodeSignature\022H\n\022loss_socialization\030"
-  "q \001(\0132\027.vega.LossSocializationH\000R\021lossSo"
-  "cialization\022\?\n\017settle_position\030r \001(\0132\024.v"
-  "ega.SettlePositionH\000R\016settlePosition\022E\n\021"
-  "settle_distressed\030s \001(\0132\026.vega.SettleDis"
-  "tressedH\000R\020settleDistressed\0225\n\016market_cr"
-  "eated\030t \001(\0132\014.vega.MarketH\000R\rmarketCreat"
-  "ed\022#\n\005asset\030u \001(\0132\013.vega.AssetH\000R\005asset\022"
-  "3\n\013market_tick\030v \001(\0132\020.vega.MarketTickH\000"
-  "R\nmarketTick\0222\n\nwithdrawal\030w \001(\0132\020.vega."
-  "WithdrawalH\000R\nwithdrawal\022)\n\007deposit\030x \001("
-  "\0132\r.vega.DepositH\000R\007deposit\022.\n\007auction\030y"
-  " \001(\0132\022.vega.AuctionEventH\000R\007auction\0223\n\013r"
-  "isk_factor\030z \001(\0132\020.vega.RiskFactorH\000R\nri"
-  "skFactor\022E\n\021network_parameter\030{ \001(\0132\026.ve"
-  "ga.NetworkParameterH\000R\020networkParameter\022"
-  "K\n\023liquidity_provision\030| \001(\0132\030.vega.Liqu"
-  "idityProvisionH\000R\022liquidityProvision\0225\n\016"
-  "market_updated\030} \001(\0132\014.vega.MarketH\000R\rma"
-  "rketUpdated\022,\n\006market\030\351\007 \001(\0132\021.vega.Mark"
-  "etEventH\000R\006market\0227\n\014tx_err_event\030\321\017 \001(\013"
-  "2\022.vega.TxErrorEventH\000R\ntxErrEventB\007\n\005ev"
-  "ent*\251\007\n\014BusEventType\022\036\n\032BUS_EVENT_TYPE_U"
-  "NSPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032"
-  "BUS_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS_EVEN"
-  "T_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_EVENT"
-  "_TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_EVENT"
-  "_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020"
-  "\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT"
-  "_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_L"
-  "EVELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023"
-  "BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_"
-  "MARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIG"
-  "NATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZ"
-  "ATION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_POSITIO"
-  "N\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\020"
-  "\020\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020\021\022\030\n\024"
-  "BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE"
-  "_MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRA"
-  "WAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS"
-  "_EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_"
-  "RISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NETWORK_"
-  "PARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDITY_"
-  "PROVISION\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_UPD"
-  "ATED\020\032\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034\n\027BUS"
-  "_EVENT_TYPE_TX_ERROR\020\311\001B7\n\024io.vegaprotoc"
-  "ol.vegaZ\037code.vegaprotocol.io/vega/proto"
-  "b\006proto3"
+  "ets.proto\032\020governance.proto\032\nvega.proto\032"
+  "\034oracles/v1/oracle_spec.proto\032\034oracles/v"
+  "1/oracle_data.proto\"D\n\013MarketEvent\022\033\n\tma"
+  "rket_id\030\001 \001(\tR\010marketId\022\030\n\007payload\030\002 \001(\t"
+  "R\007payload\"\360\002\n\014TxErrorEvent\022\031\n\010party_id\030\001"
+  " \001(\tR\007partyId\022\027\n\007err_msg\030\002 \001(\tR\006errMsg\022B"
+  "\n\020order_submission\030e \001(\0132\025.vega.OrderSub"
+  "missionH\000R\017orderSubmission\022\?\n\017order_amen"
+  "dment\030f \001(\0132\024.vega.OrderAmendmentH\000R\016ord"
+  "erAmendment\022H\n\022order_cancellation\030g \001(\0132"
+  "\027.vega.OrderCancellationH\000R\021orderCancell"
+  "ation\022,\n\010proposal\030h \001(\0132\016.vega.ProposalH"
+  "\000R\010proposal\022 \n\004vote\030i \001(\0132\n.vega.VoteH\000R"
+  "\004voteB\r\n\013transaction\"*\n\nTimeUpdate\022\034\n\tti"
+  "mestamp\030\001 \001(\003R\ttimestamp\"I\n\021TransferResp"
+  "onses\0224\n\tresponses\030\001 \003(\0132\026.vega.Transfer"
+  "ResponseR\tresponses\"\210\001\n\022PositionResoluti"
+  "on\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\036\n\ndistr"
+  "essed\030\002 \001(\003R\ndistressed\022\026\n\006closed\030\003 \001(\003R"
+  "\006closed\022\035\n\nmark_price\030\004 \001(\004R\tmarkPrice\"c"
+  "\n\021LossSocialization\022\033\n\tmarket_id\030\001 \001(\tR\010"
+  "marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006a"
+  "mount\030\003 \001(\003R\006amount\";\n\017TradeSettlement\022\022"
+  "\n\004size\030\001 \001(\003R\004size\022\024\n\005price\030\002 \001(\004R\005price"
+  "\"\242\001\n\016SettlePosition\022\033\n\tmarket_id\030\001 \001(\tR\010"
+  "marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005p"
+  "rice\030\003 \001(\004R\005price\022B\n\021trade_settlements\030\004"
+  " \003(\0132\025.vega.TradeSettlementR\020tradeSettle"
+  "ments\"x\n\020SettleDistressed\022\033\n\tmarket_id\030\001"
+  " \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007partyI"
+  "d\022\026\n\006margin\030\003 \001(\004R\006margin\022\024\n\005price\030\004 \001(\004"
+  "R\005price\"0\n\nMarketTick\022\016\n\002id\030\001 \001(\tR\002id\022\022\n"
+  "\004time\030\002 \001(\003R\004time\"\302\001\n\014AuctionEvent\022\033\n\tma"
+  "rket_id\030\001 \001(\tR\010marketId\022\'\n\017opening_aucti"
+  "on\030\002 \001(\010R\016openingAuction\022\024\n\005leave\030\003 \001(\010R"
+  "\005leave\022\024\n\005start\030\004 \001(\003R\005start\022\020\n\003end\030\005 \001("
+  "\003R\003end\022.\n\007trigger\030\006 \001(\0162\024.vega.AuctionTr"
+  "iggerR\007trigger\"\224\r\n\010BusEvent\022\016\n\002id\030\001 \001(\tR"
+  "\002id\022\024\n\005block\030\002 \001(\tR\005block\022&\n\004type\030\003 \001(\0162"
+  "\022.vega.BusEventTypeR\004type\0223\n\013time_update"
+  "\030e \001(\0132\020.vega.TimeUpdateH\000R\ntimeUpdate\022H"
+  "\n\022transfer_responses\030f \001(\0132\027.vega.Transf"
+  "erResponsesH\000R\021transferResponses\022K\n\023posi"
+  "tion_resolution\030g \001(\0132\030.vega.PositionRes"
+  "olutionH\000R\022positionResolution\022#\n\005order\030h"
+  " \001(\0132\013.vega.OrderH\000R\005order\022)\n\007account\030i "
+  "\001(\0132\r.vega.AccountH\000R\007account\022#\n\005party\030j"
+  " \001(\0132\013.vega.PartyH\000R\005party\022#\n\005trade\030k \001("
+  "\0132\013.vega.TradeH\000R\005trade\0229\n\rmargin_levels"
+  "\030l \001(\0132\022.vega.MarginLevelsH\000R\014marginLeve"
+  "ls\022,\n\010proposal\030m \001(\0132\016.vega.ProposalH\000R\010"
+  "proposal\022 \n\004vote\030n \001(\0132\n.vega.VoteH\000R\004vo"
+  "te\0223\n\013market_data\030o \001(\0132\020.vega.MarketDat"
+  "aH\000R\nmarketData\022<\n\016node_signature\030p \001(\0132"
+  "\023.vega.NodeSignatureH\000R\rnodeSignature\022H\n"
+  "\022loss_socialization\030q \001(\0132\027.vega.LossSoc"
+  "ializationH\000R\021lossSocialization\022\?\n\017settl"
+  "e_position\030r \001(\0132\024.vega.SettlePositionH\000"
+  "R\016settlePosition\022E\n\021settle_distressed\030s "
+  "\001(\0132\026.vega.SettleDistressedH\000R\020settleDis"
+  "tressed\0225\n\016market_created\030t \001(\0132\014.vega.M"
+  "arketH\000R\rmarketCreated\022#\n\005asset\030u \001(\0132\013."
+  "vega.AssetH\000R\005asset\0223\n\013market_tick\030v \001(\013"
+  "2\020.vega.MarketTickH\000R\nmarketTick\0222\n\nwith"
+  "drawal\030w \001(\0132\020.vega.WithdrawalH\000R\nwithdr"
+  "awal\022)\n\007deposit\030x \001(\0132\r.vega.DepositH\000R\007"
+  "deposit\022.\n\007auction\030y \001(\0132\022.vega.AuctionE"
+  "ventH\000R\007auction\0223\n\013risk_factor\030z \001(\0132\020.v"
+  "ega.RiskFactorH\000R\nriskFactor\022E\n\021network_"
+  "parameter\030{ \001(\0132\026.vega.NetworkParameterH"
+  "\000R\020networkParameter\022K\n\023liquidity_provisi"
+  "on\030| \001(\0132\030.vega.LiquidityProvisionH\000R\022li"
+  "quidityProvision\0225\n\016market_updated\030} \001(\013"
+  "2\014.vega.MarketH\000R\rmarketUpdated\0229\n\013oracl"
+  "e_spec\030~ \001(\0132\026.oracles.v1.OracleSpecH\000R\n"
+  "oracleSpec\0229\n\013oracle_data\030\177 \001(\0132\026.oracle"
+  "s.v1.OracleDataH\000R\noracleData\022,\n\006market\030"
+  "\351\007 \001(\0132\021.vega.MarketEventH\000R\006market\0227\n\014t"
+  "x_err_event\030\321\017 \001(\0132\022.vega.TxErrorEventH\000"
+  "R\ntxErrEventB\007\n\005event*\351\007\n\014BusEventType\022\036"
+  "\n\032BUS_EVENT_TYPE_UNSPECIFIED\020\000\022\026\n\022BUS_EV"
+  "ENT_TYPE_ALL\020\001\022\036\n\032BUS_EVENT_TYPE_TIME_UP"
+  "DATE\020\002\022%\n!BUS_EVENT_TYPE_TRANSFER_RESPON"
+  "SES\020\003\022&\n\"BUS_EVENT_TYPE_POSITION_RESOLUT"
+  "ION\020\004\022\030\n\024BUS_EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_E"
+  "VENT_TYPE_ACCOUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PA"
+  "RTY\020\007\022\030\n\024BUS_EVENT_TYPE_TRADE\020\010\022 \n\034BUS_E"
+  "VENT_TYPE_MARGIN_LEVELS\020\t\022\033\n\027BUS_EVENT_T"
+  "YPE_PROPOSAL\020\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022"
+  "\036\n\032BUS_EVENT_TYPE_MARKET_DATA\020\014\022!\n\035BUS_E"
+  "VENT_TYPE_NODE_SIGNATURE\020\r\022%\n!BUS_EVENT_"
+  "TYPE_LOSS_SOCIALIZATION\020\016\022\"\n\036BUS_EVENT_T"
+  "YPE_SETTLE_POSITION\020\017\022$\n BUS_EVENT_TYPE_"
+  "SETTLE_DISTRESSED\020\020\022!\n\035BUS_EVENT_TYPE_MA"
+  "RKET_CREATED\020\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022"
+  "\022\036\n\032BUS_EVENT_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_"
+  "EVENT_TYPE_WITHDRAWAL\020\024\022\032\n\026BUS_EVENT_TYP"
+  "E_DEPOSIT\020\025\022\032\n\026BUS_EVENT_TYPE_AUCTION\020\026\022"
+  "\036\n\032BUS_EVENT_TYPE_RISK_FACTOR\020\027\022$\n BUS_E"
+  "VENT_TYPE_NETWORK_PARAMETER\020\030\022&\n\"BUS_EVE"
+  "NT_TYPE_LIQUIDITY_PROVISION\020\031\022!\n\035BUS_EVE"
+  "NT_TYPE_MARKET_UPDATED\020\032\022\036\n\032BUS_EVENT_TY"
+  "PE_ORACLE_SPEC\020\033\022\036\n\032BUS_EVENT_TYPE_ORACL"
+  "E_DATA\020\034\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034\n\027B"
+  "US_EVENT_TYPE_TX_ERROR\020\311\001B7\n\024io.vegaprot"
+  "ocol.vegaZ\037code.vegaprotocol.io/vega/pro"
+  "tob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_events_2eproto_deps[4] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_events_2eproto_deps[6] = {
   &::descriptor_table_assets_2eproto,
   &::descriptor_table_governance_2eproto,
   &::descriptor_table_markets_2eproto,
+  &::descriptor_table_oracles_2fv1_2foracle_5fdata_2eproto,
+  &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
   &::descriptor_table_vega_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_events_2eproto_sccs[12] = {
@@ -574,8 +588,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_eve
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_events_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_events_2eproto = {
-  false, false, descriptor_table_protodef_events_2eproto, "events.proto", 4048,
-  &descriptor_table_events_2eproto_once, descriptor_table_events_2eproto_sccs, descriptor_table_events_2eproto_deps, 12, 4,
+  false, false, descriptor_table_protodef_events_2eproto, "events.proto", 4290,
+  &descriptor_table_events_2eproto_once, descriptor_table_events_2eproto_sccs, descriptor_table_events_2eproto_deps, 12, 6,
   schemas, file_default_instances, TableStruct_events_2eproto::offsets,
   file_level_metadata_events_2eproto, 12, file_level_enum_descriptors_events_2eproto, file_level_service_descriptors_events_2eproto,
 };
@@ -616,6 +630,8 @@ bool BusEventType_IsValid(int value) {
     case 24:
     case 25:
     case 26:
+    case 27:
+    case 28:
     case 101:
     case 201:
       return true;
@@ -3860,6 +3876,8 @@ class BusEvent::_Internal {
   static const ::vega::NetworkParameter& network_parameter(const BusEvent* msg);
   static const ::vega::LiquidityProvision& liquidity_provision(const BusEvent* msg);
   static const ::vega::Market& market_updated(const BusEvent* msg);
+  static const ::oracles::v1::OracleSpec& oracle_spec(const BusEvent* msg);
+  static const ::oracles::v1::OracleData& oracle_data(const BusEvent* msg);
   static const ::vega::MarketEvent& market(const BusEvent* msg);
   static const ::vega::TxErrorEvent& tx_err_event(const BusEvent* msg);
 };
@@ -3963,6 +3981,14 @@ BusEvent::_Internal::liquidity_provision(const BusEvent* msg) {
 const ::vega::Market&
 BusEvent::_Internal::market_updated(const BusEvent* msg) {
   return *msg->event_.market_updated_;
+}
+const ::oracles::v1::OracleSpec&
+BusEvent::_Internal::oracle_spec(const BusEvent* msg) {
+  return *msg->event_.oracle_spec_;
+}
+const ::oracles::v1::OracleData&
+BusEvent::_Internal::oracle_data(const BusEvent* msg) {
+  return *msg->event_.oracle_data_;
 }
 const ::vega::MarketEvent&
 BusEvent::_Internal::market(const BusEvent* msg) {
@@ -4483,6 +4509,52 @@ void BusEvent::clear_market_updated() {
     clear_has_event();
   }
 }
+void BusEvent::set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_event();
+  if (oracle_spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec, submessage_arena);
+    }
+    set_has_oracle_spec();
+    event_.oracle_spec_ = oracle_spec;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.BusEvent.oracle_spec)
+}
+void BusEvent::clear_oracle_spec() {
+  if (_internal_has_oracle_spec()) {
+    if (GetArena() == nullptr) {
+      delete event_.oracle_spec_;
+    }
+    clear_has_event();
+  }
+}
+void BusEvent::set_allocated_oracle_data(::oracles::v1::OracleData* oracle_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_event();
+  if (oracle_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_data)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_data, submessage_arena);
+    }
+    set_has_oracle_data();
+    event_.oracle_data_ = oracle_data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.BusEvent.oracle_data)
+}
+void BusEvent::clear_oracle_data() {
+  if (_internal_has_oracle_data()) {
+    if (GetArena() == nullptr) {
+      delete event_.oracle_data_;
+    }
+    clear_has_event();
+  }
+}
 void BusEvent::set_allocated_market(::vega::MarketEvent* market) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_event();
@@ -4633,6 +4705,14 @@ BusEvent::BusEvent(const BusEvent& from)
     }
     case kMarketUpdated: {
       _internal_mutable_market_updated()->::vega::Market::MergeFrom(from._internal_market_updated());
+      break;
+    }
+    case kOracleSpec: {
+      _internal_mutable_oracle_spec()->::oracles::v1::OracleSpec::MergeFrom(from._internal_oracle_spec());
+      break;
+    }
+    case kOracleData: {
+      _internal_mutable_oracle_data()->::oracles::v1::OracleData::MergeFrom(from._internal_oracle_data());
       break;
     }
     case kMarket: {
@@ -4838,6 +4918,18 @@ void BusEvent::clear_event() {
     case kMarketUpdated: {
       if (GetArena() == nullptr) {
         delete event_.market_updated_;
+      }
+      break;
+    }
+    case kOracleSpec: {
+      if (GetArena() == nullptr) {
+        delete event_.oracle_spec_;
+      }
+      break;
+    }
+    case kOracleData: {
+      if (GetArena() == nullptr) {
+        delete event_.oracle_data_;
       }
       break;
     }
@@ -5079,6 +5171,20 @@ const char* BusEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 125:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 234)) {
           ptr = ctx->ParseMessage(_internal_mutable_market_updated(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];
+      case 126:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 242)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];
+      case 127:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 250)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_data(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5351,6 +5457,22 @@ failure:
         125, _Internal::market_updated(this), target, stream);
   }
 
+  // .oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];
+  if (_internal_has_oracle_spec()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        126, _Internal::oracle_spec(this), target, stream);
+  }
+
+  // .oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];
+  if (_internal_has_oracle_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        127, _Internal::oracle_data(this), target, stream);
+  }
+
   // .vega.MarketEvent market = 1001 [json_name = "market"];
   if (_internal_has_market()) {
     target = stream->EnsureSpace(target);
@@ -5579,6 +5701,20 @@ size_t BusEvent::ByteSizeLong() const {
           *event_.market_updated_);
       break;
     }
+    // .oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];
+    case kOracleSpec: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *event_.oracle_spec_);
+      break;
+    }
+    // .oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];
+    case kOracleData: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *event_.oracle_data_);
+      break;
+    }
     // .vega.MarketEvent market = 1001 [json_name = "market"];
     case kMarket: {
       total_size += 2 +
@@ -5736,6 +5872,14 @@ void BusEvent::MergeFrom(const BusEvent& from) {
     }
     case kMarketUpdated: {
       _internal_mutable_market_updated()->::vega::Market::MergeFrom(from._internal_market_updated());
+      break;
+    }
+    case kOracleSpec: {
+      _internal_mutable_oracle_spec()->::oracles::v1::OracleSpec::MergeFrom(from._internal_oracle_spec());
+      break;
+    }
+    case kOracleData: {
+      _internal_mutable_oracle_data()->::oracles::v1::OracleData::MergeFrom(from._internal_oracle_data());
       break;
     }
     case kMarket: {

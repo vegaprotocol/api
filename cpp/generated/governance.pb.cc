@@ -14,10 +14,11 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fspec_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpecConfiguration_oracles_2fv1_2foracle_5fspec_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_assets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_AssetSource_assets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ContinuousTrading_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DiscreteTrading_markets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FutureProduct_governance_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_FutureProduct_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GovernanceData_NoPartyEntry_DoNotUse_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GovernanceData_YesPartyEntry_DoNotUse_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_InstrumentConfiguration_governance_2eproto;
@@ -28,6 +29,7 @@ extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::inte
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_NewMarket_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_NewMarketCommitment_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<6> scc_info_NewMarketConfiguration_governance_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleSpecToFutureBinding_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PriceMonitoringParameters_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Proposal_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ProposalTerms_governance_2eproto;
@@ -103,8 +105,10 @@ static void InitDefaultsscc_info_FutureProduct_governance_2eproto() {
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FutureProduct_governance_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FutureProduct_governance_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_FutureProduct_governance_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_FutureProduct_governance_2eproto}, {
+      &scc_info_OracleSpecConfiguration_oracles_2fv1_2foracle_5fspec_2eproto.base,
+      &scc_info_OracleSpecToFutureBinding_markets_2eproto.base,}};
 
 static void InitDefaultsscc_info_GovernanceData_governance_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -309,6 +313,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_governance_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, maturity_),
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, settlement_asset_),
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, quote_name_),
+  PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, oracle_spec_),
+  PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, oracle_spec_binding_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -342,6 +348,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_governance_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::NewMarketCommitment, fee_),
   PROTOBUF_FIELD_OFFSET(::vega::NewMarketCommitment, sells_),
   PROTOBUF_FIELD_OFFSET(::vega::NewMarketCommitment, buys_),
+  PROTOBUF_FIELD_OFFSET(::vega::NewMarketCommitment, reference_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::NewMarket, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -431,19 +438,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_governance_2eproto::offsets[] 
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::FutureProduct)},
-  { 8, -1, sizeof(::vega::InstrumentConfiguration)},
-  { 17, -1, sizeof(::vega::NewMarketConfiguration)},
-  { 32, -1, sizeof(::vega::NewMarketCommitment)},
-  { 41, -1, sizeof(::vega::NewMarket)},
-  { 48, -1, sizeof(::vega::UpdateMarket)},
-  { 53, -1, sizeof(::vega::UpdateNetworkParameter)},
-  { 59, -1, sizeof(::vega::NewAsset)},
-  { 65, -1, sizeof(::vega::ProposalTerms)},
-  { 78, 85, sizeof(::vega::GovernanceData_YesPartyEntry_DoNotUse)},
-  { 87, 94, sizeof(::vega::GovernanceData_NoPartyEntry_DoNotUse)},
-  { 96, -1, sizeof(::vega::GovernanceData)},
-  { 106, -1, sizeof(::vega::Proposal)},
-  { 118, -1, sizeof(::vega::Vote)},
+  { 10, -1, sizeof(::vega::InstrumentConfiguration)},
+  { 19, -1, sizeof(::vega::NewMarketConfiguration)},
+  { 34, -1, sizeof(::vega::NewMarketCommitment)},
+  { 44, -1, sizeof(::vega::NewMarket)},
+  { 51, -1, sizeof(::vega::UpdateMarket)},
+  { 56, -1, sizeof(::vega::UpdateNetworkParameter)},
+  { 62, -1, sizeof(::vega::NewAsset)},
+  { 68, -1, sizeof(::vega::ProposalTerms)},
+  { 81, 88, sizeof(::vega::GovernanceData_YesPartyEntry_DoNotUse)},
+  { 90, 97, sizeof(::vega::GovernanceData_NoPartyEntry_DoNotUse)},
+  { 99, -1, sizeof(::vega::GovernanceData)},
+  { 109, -1, sizeof(::vega::Proposal)},
+  { 121, -1, sizeof(::vega::Vote)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -467,113 +474,120 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "\n\020governance.proto\022\004vega\0326github.com/mwi"
   "tkow/go-proto-validators/validator.proto"
   "\032\rmarkets.proto\032\nvega.proto\032\014assets.prot"
-  "o\"\215\001\n\rFutureProduct\022\"\n\010maturity\030\001 \001(\tB\006\342"
-  "\337\037\002X\001R\010maturity\0221\n\020settlement_asset\030\002 \001("
-  "\tB\006\342\337\037\002X\001R\017settlementAsset\022%\n\nquote_name"
-  "\030\003 \001(\tB\006\342\337\037\002X\001R\tquoteName\"\213\001\n\027Instrument"
-  "Configuration\022\032\n\004name\030\001 \001(\tB\006\342\337\037\002X\001R\004nam"
-  "e\022\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004code\022-\n\006future\030"
-  "d \001(\0132\023.vega.FutureProductH\000R\006futureB\t\n\007"
-  "product\"\217\004\n\026NewMarketConfiguration\022E\n\nin"
-  "strument\030\001 \001(\0132\035.vega.InstrumentConfigur"
-  "ationB\006\342\337\037\002 \001R\ninstrument\022.\n\016decimal_pla"
-  "ces\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecimalPlaces\022\032\n\010met"
-  "adata\030\003 \003(\tR\010metadata\022_\n\033price_monitorin"
-  "g_parameters\030\004 \001(\0132\037.vega.PriceMonitorin"
-  "gParametersR\031priceMonitoringParameters\0221"
-  "\n\006simple\030d \001(\0132\027.vega.SimpleModelParamsH"
-  "\000R\006simple\0229\n\nlog_normal\030e \001(\0132\030.vega.Log"
-  "NormalRiskModelH\000R\tlogNormal\022:\n\ncontinuo"
-  "us\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001R\nco"
-  "ntinuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Discr"
-  "eteTradingH\001R\010discreteB\021\n\017risk_parameter"
-  "sB\016\n\014trading_mode\"\252\001\n\023NewMarketCommitmen"
-  "t\022+\n\021commitment_amount\030\001 \001(\004R\020commitment"
-  "Amount\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003(\0132"
-  "\024.vega.LiquidityOrderR\005sells\022(\n\004buys\030\004 \003"
-  "(\0132\024.vega.LiquidityOrderR\004buys\"\231\001\n\tNewMa"
-  "rket\022>\n\007changes\030\001 \001(\0132\034.vega.NewMarketCo"
-  "nfigurationB\006\342\337\037\002 \001R\007changes\022L\n\024liquidit"
-  "y_commitment\030\002 \001(\0132\031.vega.NewMarketCommi"
-  "tmentR\023liquidityCommitment\"\016\n\014UpdateMark"
-  "et\"R\n\026UpdateNetworkParameter\0228\n\007changes\030"
-  "\001 \001(\0132\026.vega.NetworkParameterB\006\342\337\037\002 \001R\007c"
-  "hanges\"\?\n\010NewAsset\0223\n\007changes\030\001 \001(\0132\021.ve"
-  "ga.AssetSourceB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProp"
-  "osalTerms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337"
-  "\037\002\020\000R\020closingTimestamp\0227\n\023enactment_time"
-  "stamp\030\002 \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\022"
-  "1\n\024validation_timestamp\030\003 \001(\003R\023validatio"
-  "nTimestamp\0229\n\rupdate_market\030e \001(\0132\022.vega"
-  ".UpdateMarketH\000R\014updateMarket\0220\n\nnew_mar"
-  "ket\030f \001(\0132\017.vega.NewMarketH\000R\tnewMarket\022"
-  "X\n\030update_network_parameter\030g \001(\0132\034.vega"
-  ".UpdateNetworkParameterH\000R\026updateNetwork"
-  "Parameter\022-\n\tnew_asset\030h \001(\0132\016.vega.NewA"
-  "ssetH\000R\010newAssetB\010\n\006change\"\206\003\n\016Governanc"
-  "eData\022*\n\010proposal\030\001 \001(\0132\016.vega.ProposalR"
-  "\010proposal\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022"
-  "\032\n\002no\030\003 \003(\0132\n.vega.VoteR\002no\022\?\n\tyes_party"
-  "\030\004 \003(\0132\".vega.GovernanceData.YesPartyEnt"
-  "ryR\010yesParty\022<\n\010no_party\030\005 \003(\0132!.vega.Go"
-  "vernanceData.NoPartyEntryR\007noParty\032G\n\rYe"
-  "sPartyEntry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002"
-  " \001(\0132\n.vega.VoteR\005value:\0028\001\032F\n\014NoPartyEn"
-  "try\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.v"
-  "ega.VoteR\005value:\0028\001\"\277\003\n\010Proposal\022\016\n\002id\030\001"
-  " \001(\tR\002id\022\034\n\treference\030\002 \001(\tR\treference\022!"
-  "\n\010party_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005sta"
-  "te\030\004 \001(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R"
-  "\005state\022\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005"
-  "terms\030\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001"
-  "R\005terms\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalE"
-  "rrorR\006reason\"\256\001\n\005State\022\025\n\021STATE_UNSPECIF"
-  "IED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022"
-  "\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n"
-  "\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033"
-  "STATE_WAITING_FOR_NODE_VOTE\020\007\"\336\001\n\004Vote\022!"
-  "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005val"
-  "ue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005val"
-  "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa"
-  "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val"
-  "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022"
-  "\r\n\tVALUE_YES\020\002*\233\t\n\rProposalError\022\036\n\032PROP"
-  "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR"
-  "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR"
-  "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR"
-  "OR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ERR"
-  "OR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ERR"
-  "OR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ERR"
-  "OR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PROP"
-  "OSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERRO"
-  "R_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERRO"
-  "R_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n)"
-  "PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSE"
-  "D\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013\022"
-  "+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MO"
-  "DE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_F"
-  "AILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILTI"
-  "N_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSIN"
-  "G_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_E"
-  "RROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_I"
-  "NCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ERR"
-  "OR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERRO"
-  "R_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PRO"
-  "POSAL_ERROR_NETWORK_PARAMETER_INVALID_VA"
-  "LUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMETE"
-  "R_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR_"
-  "OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n1"
-  "PROPOSAL_ERROR_OPENING_AUCTION_DURATION_"
-  "TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MIS"
-  "SING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL_"
-  "ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031B7\n\024"
-  "io.vegaprotocol.vegaZ\037code.vegaprotocol."
-  "io/vega/protob\006proto3"
+  "o\032\034oracles/v1/oracle_spec.proto\"\244\002\n\rFutu"
+  "reProduct\022\"\n\010maturity\030\001 \001(\tB\006\342\337\037\002X\001R\010mat"
+  "urity\0221\n\020settlement_asset\030\002 \001(\tB\006\342\337\037\002X\001R"
+  "\017settlementAsset\022%\n\nquote_name\030\003 \001(\tB\006\342\337"
+  "\037\002X\001R\tquoteName\022D\n\013oracle_spec\030\005 \001(\0132#.o"
+  "racles.v1.OracleSpecConfigurationR\noracl"
+  "eSpec\022O\n\023oracle_spec_binding\030\006 \001(\0132\037.veg"
+  "a.OracleSpecToFutureBindingR\021oracleSpecB"
+  "inding\"\213\001\n\027InstrumentConfiguration\022\032\n\004na"
+  "me\030\001 \001(\tB\006\342\337\037\002X\001R\004name\022\032\n\004code\030\002 \001(\tB\006\342\337"
+  "\037\002X\001R\004code\022-\n\006future\030d \001(\0132\023.vega.Future"
+  "ProductH\000R\006futureB\t\n\007product\"\217\004\n\026NewMark"
+  "etConfiguration\022E\n\ninstrument\030\001 \001(\0132\035.ve"
+  "ga.InstrumentConfigurationB\006\342\337\037\002 \001R\ninst"
+  "rument\022.\n\016decimal_places\030\002 \001(\004B\007\342\337\037\003\030\226\001R"
+  "\rdecimalPlaces\022\032\n\010metadata\030\003 \003(\tR\010metada"
+  "ta\022_\n\033price_monitoring_parameters\030\004 \001(\0132"
+  "\037.vega.PriceMonitoringParametersR\031priceM"
+  "onitoringParameters\0221\n\006simple\030d \001(\0132\027.ve"
+  "ga.SimpleModelParamsH\000R\006simple\0229\n\nlog_no"
+  "rmal\030e \001(\0132\030.vega.LogNormalRiskModelH\000R\t"
+  "logNormal\022:\n\ncontinuous\030\310\001 \001(\0132\027.vega.Co"
+  "ntinuousTradingH\001R\ncontinuous\0224\n\010discret"
+  "e\030\311\001 \001(\0132\025.vega.DiscreteTradingH\001R\010discr"
+  "eteB\021\n\017risk_parametersB\016\n\014trading_mode\"\310"
+  "\001\n\023NewMarketCommitment\022+\n\021commitment_amo"
+  "unt\030\001 \001(\004R\020commitmentAmount\022\020\n\003fee\030\002 \001(\t"
+  "R\003fee\022*\n\005sells\030\003 \003(\0132\024.vega.LiquidityOrd"
+  "erR\005sells\022(\n\004buys\030\004 \003(\0132\024.vega.Liquidity"
+  "OrderR\004buys\022\034\n\treference\030\005 \001(\tR\treferenc"
+  "e\"\231\001\n\tNewMarket\022>\n\007changes\030\001 \001(\0132\034.vega."
+  "NewMarketConfigurationB\006\342\337\037\002 \001R\007changes\022"
+  "L\n\024liquidity_commitment\030\002 \001(\0132\031.vega.New"
+  "MarketCommitmentR\023liquidityCommitment\"\016\n"
+  "\014UpdateMarket\"R\n\026UpdateNetworkParameter\022"
+  "8\n\007changes\030\001 \001(\0132\026.vega.NetworkParameter"
+  "B\006\342\337\037\002 \001R\007changes\"\?\n\010NewAsset\0223\n\007changes"
+  "\030\001 \001(\0132\021.vega.AssetSourceB\006\342\337\037\002 \001R\007chang"
+  "es\"\260\003\n\rProposalTerms\0223\n\021closing_timestam"
+  "p\030\001 \001(\003B\006\342\337\037\002\020\000R\020closingTimestamp\0227\n\023ena"
+  "ctment_timestamp\030\002 \001(\003B\006\342\337\037\002\020\000R\022enactmen"
+  "tTimestamp\0221\n\024validation_timestamp\030\003 \001(\003"
+  "R\023validationTimestamp\0229\n\rupdate_market\030e"
+  " \001(\0132\022.vega.UpdateMarketH\000R\014updateMarket"
+  "\0220\n\nnew_market\030f \001(\0132\017.vega.NewMarketH\000R"
+  "\tnewMarket\022X\n\030update_network_parameter\030g"
+  " \001(\0132\034.vega.UpdateNetworkParameterH\000R\026up"
+  "dateNetworkParameter\022-\n\tnew_asset\030h \001(\0132"
+  "\016.vega.NewAssetH\000R\010newAssetB\010\n\006change\"\206\003"
+  "\n\016GovernanceData\022*\n\010proposal\030\001 \001(\0132\016.veg"
+  "a.ProposalR\010proposal\022\034\n\003yes\030\002 \003(\0132\n.vega"
+  ".VoteR\003yes\022\032\n\002no\030\003 \003(\0132\n.vega.VoteR\002no\022\?"
+  "\n\tyes_party\030\004 \003(\0132\".vega.GovernanceData."
+  "YesPartyEntryR\010yesParty\022<\n\010no_party\030\005 \003("
+  "\0132!.vega.GovernanceData.NoPartyEntryR\007no"
+  "Party\032G\n\rYesPartyEntry\022\020\n\003key\030\001 \001(\tR\003key"
+  "\022 \n\005value\030\002 \001(\0132\n.vega.VoteR\005value:\0028\001\032F"
+  "\n\014NoPartyEntry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005valu"
+  "e\030\002 \001(\0132\n.vega.VoteR\005value:\0028\001\"\277\003\n\010Propo"
+  "sal\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\treference\030\002 \001(\tR\t"
+  "reference\022!\n\010party_id\030\003 \001(\tB\006\342\337\037\002X\001R\007par"
+  "tyId\0223\n\005state\030\004 \001(\0162\024.vega.Proposal.Stat"
+  "eB\007\342\337\037\003\210\001\001R\005state\022\034\n\ttimestamp\030\005 \001(\003R\tti"
+  "mestamp\0221\n\005terms\030\006 \001(\0132\023.vega.ProposalTe"
+  "rmsB\006\342\337\037\002 \001R\005terms\022+\n\006reason\030\007 \001(\0162\023.veg"
+  "a.ProposalErrorR\006reason\"\256\001\n\005State\022\025\n\021STA"
+  "TE_UNSPECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nST"
+  "ATE_OPEN\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_RE"
+  "JECTED\020\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_EN"
+  "ACTED\020\006\022\037\n\033STATE_WAITING_FOR_NODE_VOTE\020\007"
+  "\"\336\001\n\004Vote\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007par"
+  "tyId\022/\n\005value\030\002 \001(\0162\020.vega.Vote.ValueB\007\342"
+  "\337\037\003\210\001\001R\005value\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002"
+  "X\001R\nproposalId\022\034\n\ttimestamp\030\004 \001(\003R\ttimes"
+  "tamp\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010"
+  "VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\306\t\n\rProposalEr"
+  "ror\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"P"
+  "ROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"P"
+  "ROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"P"
+  "ROPOSAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"P"
+  "ROPOSAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"P"
+  "ROPOSAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*P"
+  "ROPOSAL_ERROR_INVALID_INSTRUMENT_SECURIT"
+  "Y\020\006\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PR"
+  "OPOSAL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PR"
+  "OPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIME"
+  "STAMP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURI"
+  "TY_IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRAD"
+  "ING_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED"
+  "_TRADING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_V"
+  "ALIDATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MIS"
+  "SING_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_E"
+  "RROR_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n"
+  "\034PROPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPO"
+  "SAL_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!P"
+  "ROPOSAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PR"
+  "OPOSAL_ERROR_NETWORK_PARAMETER_INVALID_K"
+  "EY\020\023\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER"
+  "_INVALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWO"
+  "RK_PARAMETER_VALIDATION_FAILED\020\025\0225\n1PROP"
+  "OSAL_ERROR_OPENING_AUCTION_DURATION_TOO_"
+  "SMALL\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTIO"
+  "N_DURATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR"
+  "_MARKET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/"
+  "\n+PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_M"
+  "ARKET\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE"
+  "_PRODUCT\020\032B7\n\024io.vegaprotocol.vegaZ\037code"
+  ".vegaprotocol.io/vega/protob\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_governance_2eproto_deps[4] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_governance_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
   &::descriptor_table_markets_2eproto,
+  &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
   &::descriptor_table_vega_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_governance_2eproto_sccs[14] = {
@@ -594,8 +608,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gov
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_governance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_governance_2eproto = {
-  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4181,
-  &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 14, 4,
+  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4435,
+  &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 14, 5,
   schemas, file_default_instances, TableStruct_governance_2eproto::offsets,
   file_level_metadata_governance_2eproto, 14, file_level_enum_descriptors_governance_2eproto, file_level_service_descriptors_governance_2eproto,
 };
@@ -691,6 +705,7 @@ bool ProposalError_IsValid(int value) {
     case 23:
     case 24:
     case 25:
+    case 26:
       return true;
     default:
       return false;
@@ -702,8 +717,30 @@ bool ProposalError_IsValid(int value) {
 
 class FutureProduct::_Internal {
  public:
+  static const ::oracles::v1::OracleSpecConfiguration& oracle_spec(const FutureProduct* msg);
+  static const ::vega::OracleSpecToFutureBinding& oracle_spec_binding(const FutureProduct* msg);
 };
 
+const ::oracles::v1::OracleSpecConfiguration&
+FutureProduct::_Internal::oracle_spec(const FutureProduct* msg) {
+  return *msg->oracle_spec_;
+}
+const ::vega::OracleSpecToFutureBinding&
+FutureProduct::_Internal::oracle_spec_binding(const FutureProduct* msg) {
+  return *msg->oracle_spec_binding_;
+}
+void FutureProduct::clear_oracle_spec() {
+  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
+    delete oracle_spec_;
+  }
+  oracle_spec_ = nullptr;
+}
+void FutureProduct::clear_oracle_spec_binding() {
+  if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
+    delete oracle_spec_binding_;
+  }
+  oracle_spec_binding_ = nullptr;
+}
 FutureProduct::FutureProduct(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -728,6 +765,16 @@ FutureProduct::FutureProduct(const FutureProduct& from)
     quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_quote_name(),
       GetArena());
   }
+  if (from._internal_has_oracle_spec()) {
+    oracle_spec_ = new ::oracles::v1::OracleSpecConfiguration(*from.oracle_spec_);
+  } else {
+    oracle_spec_ = nullptr;
+  }
+  if (from._internal_has_oracle_spec_binding()) {
+    oracle_spec_binding_ = new ::vega::OracleSpecToFutureBinding(*from.oracle_spec_binding_);
+  } else {
+    oracle_spec_binding_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:vega.FutureProduct)
 }
 
@@ -736,6 +783,10 @@ void FutureProduct::SharedCtor() {
   maturity_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   settlement_asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quote_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&oracle_spec_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&oracle_spec_binding_) -
+      reinterpret_cast<char*>(&oracle_spec_)) + sizeof(oracle_spec_binding_));
 }
 
 FutureProduct::~FutureProduct() {
@@ -749,6 +800,8 @@ void FutureProduct::SharedDtor() {
   maturity_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   settlement_asset_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quote_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete oracle_spec_;
+  if (this != internal_default_instance()) delete oracle_spec_binding_;
 }
 
 void FutureProduct::ArenaDtor(void* object) {
@@ -775,6 +828,14 @@ void FutureProduct::Clear() {
   maturity_.ClearToEmpty();
   settlement_asset_.ClearToEmpty();
   quote_name_.ClearToEmpty();
+  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
+    delete oracle_spec_;
+  }
+  oracle_spec_ = nullptr;
+  if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
+    delete oracle_spec_binding_;
+  }
+  oracle_spec_binding_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -809,6 +870,20 @@ const char* FutureProduct::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           auto str = _internal_mutable_quote_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.FutureProduct.quote_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec_binding(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -870,6 +945,22 @@ failure:
         3, this->_internal_quote_name(), target);
   }
 
+  // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
+  if (this->has_oracle_spec()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::oracle_spec(this), target, stream);
+  }
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  if (this->has_oracle_spec_binding()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::oracle_spec_binding(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -905,6 +996,20 @@ size_t FutureProduct::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_quote_name());
+  }
+
+  // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
+  if (this->has_oracle_spec()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *oracle_spec_);
+  }
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  if (this->has_oracle_spec_binding()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *oracle_spec_binding_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -947,6 +1052,12 @@ void FutureProduct::MergeFrom(const FutureProduct& from) {
   if (from.quote_name().size() > 0) {
     _internal_set_quote_name(from._internal_quote_name());
   }
+  if (from.has_oracle_spec()) {
+    _internal_mutable_oracle_spec()->::oracles::v1::OracleSpecConfiguration::MergeFrom(from._internal_oracle_spec());
+  }
+  if (from.has_oracle_spec_binding()) {
+    _internal_mutable_oracle_spec_binding()->::vega::OracleSpecToFutureBinding::MergeFrom(from._internal_oracle_spec_binding());
+  }
 }
 
 void FutureProduct::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -973,6 +1084,12 @@ void FutureProduct::InternalSwap(FutureProduct* other) {
   maturity_.Swap(&other->maturity_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   settlement_asset_.Swap(&other->settlement_asset_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   quote_name_.Swap(&other->quote_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(FutureProduct, oracle_spec_binding_)
+      + sizeof(FutureProduct::oracle_spec_binding_)
+      - PROTOBUF_FIELD_OFFSET(FutureProduct, oracle_spec_)>(
+          reinterpret_cast<char*>(&oracle_spec_),
+          reinterpret_cast<char*>(&other->oracle_spec_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FutureProduct::GetMetadata() const {
@@ -1993,6 +2110,11 @@ NewMarketCommitment::NewMarketCommitment(const NewMarketCommitment& from)
     fee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fee(),
       GetArena());
   }
+  reference_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reference().empty()) {
+    reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reference(),
+      GetArena());
+  }
   commitment_amount_ = from.commitment_amount_;
   // @@protoc_insertion_point(copy_constructor:vega.NewMarketCommitment)
 }
@@ -2000,6 +2122,7 @@ NewMarketCommitment::NewMarketCommitment(const NewMarketCommitment& from)
 void NewMarketCommitment::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NewMarketCommitment_governance_2eproto.base);
   fee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reference_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   commitment_amount_ = PROTOBUF_ULONGLONG(0);
 }
 
@@ -2012,6 +2135,7 @@ NewMarketCommitment::~NewMarketCommitment() {
 void NewMarketCommitment::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   fee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reference_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void NewMarketCommitment::ArenaDtor(void* object) {
@@ -2038,6 +2162,7 @@ void NewMarketCommitment::Clear() {
   sells_.Clear();
   buys_.Clear();
   fee_.ClearToEmpty();
+  reference_.ClearToEmpty();
   commitment_amount_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2087,6 +2212,15 @@ const char* NewMarketCommitment::_InternalParse(const char* ptr, ::PROTOBUF_NAME
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string reference = 5 [json_name = "reference"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_reference();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.NewMarketCommitment.reference"));
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2149,6 +2283,16 @@ failure:
       InternalWriteMessage(4, this->_internal_buys(i), target, stream);
   }
 
+  // string reference = 5 [json_name = "reference"];
+  if (this->reference().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reference().data(), static_cast<int>(this->_internal_reference().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.NewMarketCommitment.reference");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_reference(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2184,6 +2328,13 @@ size_t NewMarketCommitment::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_fee());
+  }
+
+  // string reference = 5 [json_name = "reference"];
+  if (this->reference().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reference());
   }
 
   // uint64 commitment_amount = 1 [json_name = "commitmentAmount"];
@@ -2229,6 +2380,9 @@ void NewMarketCommitment::MergeFrom(const NewMarketCommitment& from) {
   if (from.fee().size() > 0) {
     _internal_set_fee(from._internal_fee());
   }
+  if (from.reference().size() > 0) {
+    _internal_set_reference(from._internal_reference());
+  }
   if (from.commitment_amount() != 0) {
     _internal_set_commitment_amount(from._internal_commitment_amount());
   }
@@ -2258,6 +2412,7 @@ void NewMarketCommitment::InternalSwap(NewMarketCommitment* other) {
   sells_.InternalSwap(&other->sells_);
   buys_.InternalSwap(&other->buys_);
   fee_.Swap(&other->fee_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  reference_.Swap(&other->reference_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(commitment_amount_, other->commitment_amount_);
 }
 

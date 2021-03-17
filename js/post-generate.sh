@@ -3,7 +3,7 @@
 javascript_generated_dir="${JAVASCRIPT_GENERATED_DIR:?}"
 
 pushd js 1>/dev/null || exit 1
-./.generate_indexjs.sh
+python3 .generate_index_js_ts.py
 popd 1>/dev/null || exit 1
 
 find "$javascript_generated_dir" -name '*.js' -print0 | xargs -0r sed --in-place -re 's#[ \t]+$##'

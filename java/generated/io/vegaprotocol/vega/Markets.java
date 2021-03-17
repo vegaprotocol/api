@@ -2015,32 +2015,57 @@ public final class Markets {
 
     /**
      * <pre>
-     * Ethereum events
+     * The oracle spec describing the oracle data of interest
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
-     * @return Whether the ethereumEvent field is set.
+     * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
+     * @return Whether the oracleSpec field is set.
      */
-    boolean hasEthereumEvent();
+    boolean hasOracleSpec();
     /**
      * <pre>
-     * Ethereum events
+     * The oracle spec describing the oracle data of interest
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
-     * @return The ethereumEvent.
+     * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
+     * @return The oracleSpec.
      */
-    io.vegaprotocol.vega.Markets.EthereumEvent getEthereumEvent();
+    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec();
     /**
      * <pre>
-     * Ethereum events
+     * The oracle spec describing the oracle data of interest
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
      */
-    io.vegaprotocol.vega.Markets.EthereumEventOrBuilder getEthereumEventOrBuilder();
+    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder();
 
-    public io.vegaprotocol.vega.Markets.Future.OracleCase getOracleCase();
+    /**
+     * <pre>
+     * The binding between the oracle spec and the settlement price
+     * </pre>
+     *
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * @return Whether the oracleSpecBinding field is set.
+     */
+    boolean hasOracleSpecBinding();
+    /**
+     * <pre>
+     * The binding between the oracle spec and the settlement price
+     * </pre>
+     *
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * @return The oracleSpecBinding.
+     */
+    io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getOracleSpecBinding();
+    /**
+     * <pre>
+     * The binding between the oracle spec and the settlement price
+     * </pre>
+     *
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     */
+    io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder getOracleSpecBindingOrBuilder();
   }
   /**
    * <pre>
@@ -2112,18 +2137,30 @@ public final class Markets {
               quoteName_ = s;
               break;
             }
-            case 802: {
-              io.vegaprotocol.vega.Markets.EthereumEvent.Builder subBuilder = null;
-              if (oracleCase_ == 100) {
-                subBuilder = ((io.vegaprotocol.vega.Markets.EthereumEvent) oracle_).toBuilder();
+            case 42: {
+              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder subBuilder = null;
+              if (oracleSpec_ != null) {
+                subBuilder = oracleSpec_.toBuilder();
               }
-              oracle_ =
-                  input.readMessage(io.vegaprotocol.vega.Markets.EthereumEvent.parser(), extensionRegistry);
+              oracleSpec_ = input.readMessage(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((io.vegaprotocol.vega.Markets.EthereumEvent) oracle_);
-                oracle_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(oracleSpec_);
+                oracleSpec_ = subBuilder.buildPartial();
               }
-              oracleCase_ = 100;
+
+              break;
+            }
+            case 50: {
+              io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder subBuilder = null;
+              if (oracleSpecBinding_ != null) {
+                subBuilder = oracleSpecBinding_.toBuilder();
+              }
+              oracleSpecBinding_ = input.readMessage(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(oracleSpecBinding_);
+                oracleSpecBinding_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -2156,45 +2193,6 @@ public final class Markets {
       return io.vegaprotocol.vega.Markets.internal_static_vega_Future_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.vegaprotocol.vega.Markets.Future.class, io.vegaprotocol.vega.Markets.Future.Builder.class);
-    }
-
-    private int oracleCase_ = 0;
-    private java.lang.Object oracle_;
-    public enum OracleCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ETHEREUM_EVENT(100),
-      ORACLE_NOT_SET(0);
-      private final int value;
-      private OracleCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OracleCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static OracleCase forNumber(int value) {
-        switch (value) {
-          case 100: return ETHEREUM_EVENT;
-          case 0: return ORACLE_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public OracleCase
-    getOracleCase() {
-      return OracleCase.forNumber(
-          oracleCase_);
     }
 
     public static final int MATURITY_FIELD_NUMBER = 1;
@@ -2335,47 +2333,80 @@ public final class Markets {
       }
     }
 
-    public static final int ETHEREUM_EVENT_FIELD_NUMBER = 100;
+    public static final int ORACLE_SPEC_FIELD_NUMBER = 5;
+    private io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec oracleSpec_;
     /**
      * <pre>
-     * Ethereum events
+     * The oracle spec describing the oracle data of interest
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
-     * @return Whether the ethereumEvent field is set.
+     * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
+     * @return Whether the oracleSpec field is set.
      */
     @java.lang.Override
-    public boolean hasEthereumEvent() {
-      return oracleCase_ == 100;
+    public boolean hasOracleSpec() {
+      return oracleSpec_ != null;
     }
     /**
      * <pre>
-     * Ethereum events
+     * The oracle spec describing the oracle data of interest
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
-     * @return The ethereumEvent.
+     * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
+     * @return The oracleSpec.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Markets.EthereumEvent getEthereumEvent() {
-      if (oracleCase_ == 100) {
-         return (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_;
-      }
-      return io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
+    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec() {
+      return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance() : oracleSpec_;
     }
     /**
      * <pre>
-     * Ethereum events
+     * The oracle spec describing the oracle data of interest
      * </pre>
      *
-     * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+     * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Markets.EthereumEventOrBuilder getEthereumEventOrBuilder() {
-      if (oracleCase_ == 100) {
-         return (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_;
-      }
-      return io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
+    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder() {
+      return getOracleSpec();
+    }
+
+    public static final int ORACLE_SPEC_BINDING_FIELD_NUMBER = 6;
+    private io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding oracleSpecBinding_;
+    /**
+     * <pre>
+     * The binding between the oracle spec and the settlement price
+     * </pre>
+     *
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * @return Whether the oracleSpecBinding field is set.
+     */
+    @java.lang.Override
+    public boolean hasOracleSpecBinding() {
+      return oracleSpecBinding_ != null;
+    }
+    /**
+     * <pre>
+     * The binding between the oracle spec and the settlement price
+     * </pre>
+     *
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * @return The oracleSpecBinding.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getOracleSpecBinding() {
+      return oracleSpecBinding_ == null ? io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.getDefaultInstance() : oracleSpecBinding_;
+    }
+    /**
+     * <pre>
+     * The binding between the oracle spec and the settlement price
+     * </pre>
+     *
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder getOracleSpecBindingOrBuilder() {
+      return getOracleSpecBinding();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2401,8 +2432,11 @@ public final class Markets {
       if (!getQuoteNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, quoteName_);
       }
-      if (oracleCase_ == 100) {
-        output.writeMessage(100, (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_);
+      if (oracleSpec_ != null) {
+        output.writeMessage(5, getOracleSpec());
+      }
+      if (oracleSpecBinding_ != null) {
+        output.writeMessage(6, getOracleSpecBinding());
       }
       unknownFields.writeTo(output);
     }
@@ -2422,9 +2456,13 @@ public final class Markets {
       if (!getQuoteNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, quoteName_);
       }
-      if (oracleCase_ == 100) {
+      if (oracleSpec_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(100, (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_);
+          .computeMessageSize(5, getOracleSpec());
+      }
+      if (oracleSpecBinding_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getOracleSpecBinding());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2447,14 +2485,15 @@ public final class Markets {
           .equals(other.getSettlementAsset())) return false;
       if (!getQuoteName()
           .equals(other.getQuoteName())) return false;
-      if (!getOracleCase().equals(other.getOracleCase())) return false;
-      switch (oracleCase_) {
-        case 100:
-          if (!getEthereumEvent()
-              .equals(other.getEthereumEvent())) return false;
-          break;
-        case 0:
-        default:
+      if (hasOracleSpec() != other.hasOracleSpec()) return false;
+      if (hasOracleSpec()) {
+        if (!getOracleSpec()
+            .equals(other.getOracleSpec())) return false;
+      }
+      if (hasOracleSpecBinding() != other.hasOracleSpecBinding()) return false;
+      if (hasOracleSpecBinding()) {
+        if (!getOracleSpecBinding()
+            .equals(other.getOracleSpecBinding())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -2473,13 +2512,13 @@ public final class Markets {
       hash = (53 * hash) + getSettlementAsset().hashCode();
       hash = (37 * hash) + QUOTE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteName().hashCode();
-      switch (oracleCase_) {
-        case 100:
-          hash = (37 * hash) + ETHEREUM_EVENT_FIELD_NUMBER;
-          hash = (53 * hash) + getEthereumEvent().hashCode();
-          break;
-        case 0:
-        default:
+      if (hasOracleSpec()) {
+        hash = (37 * hash) + ORACLE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSpec().hashCode();
+      }
+      if (hasOracleSpecBinding()) {
+        hash = (37 * hash) + ORACLE_SPEC_BINDING_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSpecBinding().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2624,8 +2663,18 @@ public final class Markets {
 
         quoteName_ = "";
 
-        oracleCase_ = 0;
-        oracle_ = null;
+        if (oracleSpecBuilder_ == null) {
+          oracleSpec_ = null;
+        } else {
+          oracleSpec_ = null;
+          oracleSpecBuilder_ = null;
+        }
+        if (oracleSpecBindingBuilder_ == null) {
+          oracleSpecBinding_ = null;
+        } else {
+          oracleSpecBinding_ = null;
+          oracleSpecBindingBuilder_ = null;
+        }
         return this;
       }
 
@@ -2655,14 +2704,16 @@ public final class Markets {
         result.maturity_ = maturity_;
         result.settlementAsset_ = settlementAsset_;
         result.quoteName_ = quoteName_;
-        if (oracleCase_ == 100) {
-          if (ethereumEventBuilder_ == null) {
-            result.oracle_ = oracle_;
-          } else {
-            result.oracle_ = ethereumEventBuilder_.build();
-          }
+        if (oracleSpecBuilder_ == null) {
+          result.oracleSpec_ = oracleSpec_;
+        } else {
+          result.oracleSpec_ = oracleSpecBuilder_.build();
         }
-        result.oracleCase_ = oracleCase_;
+        if (oracleSpecBindingBuilder_ == null) {
+          result.oracleSpecBinding_ = oracleSpecBinding_;
+        } else {
+          result.oracleSpecBinding_ = oracleSpecBindingBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -2723,14 +2774,11 @@ public final class Markets {
           quoteName_ = other.quoteName_;
           onChanged();
         }
-        switch (other.getOracleCase()) {
-          case ETHEREUM_EVENT: {
-            mergeEthereumEvent(other.getEthereumEvent());
-            break;
-          }
-          case ORACLE_NOT_SET: {
-            break;
-          }
+        if (other.hasOracleSpec()) {
+          mergeOracleSpec(other.getOracleSpec());
+        }
+        if (other.hasOracleSpecBinding()) {
+          mergeOracleSpecBinding(other.getOracleSpecBinding());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2760,21 +2808,6 @@ public final class Markets {
         }
         return this;
       }
-      private int oracleCase_ = 0;
-      private java.lang.Object oracle_;
-      public OracleCase
-          getOracleCase() {
-        return OracleCase.forNumber(
-            oracleCase_);
-      }
-
-      public Builder clearOracle() {
-        oracleCase_ = 0;
-        oracle_ = null;
-        onChanged();
-        return this;
-      }
-
 
       private java.lang.Object maturity_ = "";
       /**
@@ -3064,181 +3097,314 @@ public final class Markets {
         return this;
       }
 
+      private io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec oracleSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.EthereumEvent, io.vegaprotocol.vega.Markets.EthereumEvent.Builder, io.vegaprotocol.vega.Markets.EthereumEventOrBuilder> ethereumEventBuilder_;
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder> oracleSpecBuilder_;
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
-       * @return Whether the ethereumEvent field is set.
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * @return Whether the oracleSpec field is set.
        */
-      @java.lang.Override
-      public boolean hasEthereumEvent() {
-        return oracleCase_ == 100;
+      public boolean hasOracleSpec() {
+        return oracleSpecBuilder_ != null || oracleSpec_ != null;
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
-       * @return The ethereumEvent.
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * @return The oracleSpec.
        */
-      @java.lang.Override
-      public io.vegaprotocol.vega.Markets.EthereumEvent getEthereumEvent() {
-        if (ethereumEventBuilder_ == null) {
-          if (oracleCase_ == 100) {
-            return (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_;
-          }
-          return io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
+      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec() {
+        if (oracleSpecBuilder_ == null) {
+          return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance() : oracleSpec_;
         } else {
-          if (oracleCase_ == 100) {
-            return ethereumEventBuilder_.getMessage();
-          }
-          return io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
+          return oracleSpecBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
-      public Builder setEthereumEvent(io.vegaprotocol.vega.Markets.EthereumEvent value) {
-        if (ethereumEventBuilder_ == null) {
+      public Builder setOracleSpec(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+        if (oracleSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          oracle_ = value;
+          oracleSpec_ = value;
           onChanged();
         } else {
-          ethereumEventBuilder_.setMessage(value);
+          oracleSpecBuilder_.setMessage(value);
         }
-        oracleCase_ = 100;
+
         return this;
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
-      public Builder setEthereumEvent(
-          io.vegaprotocol.vega.Markets.EthereumEvent.Builder builderForValue) {
-        if (ethereumEventBuilder_ == null) {
-          oracle_ = builderForValue.build();
+      public Builder setOracleSpec(
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder builderForValue) {
+        if (oracleSpecBuilder_ == null) {
+          oracleSpec_ = builderForValue.build();
           onChanged();
         } else {
-          ethereumEventBuilder_.setMessage(builderForValue.build());
+          oracleSpecBuilder_.setMessage(builderForValue.build());
         }
-        oracleCase_ = 100;
+
         return this;
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
-      public Builder mergeEthereumEvent(io.vegaprotocol.vega.Markets.EthereumEvent value) {
-        if (ethereumEventBuilder_ == null) {
-          if (oracleCase_ == 100 &&
-              oracle_ != io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance()) {
-            oracle_ = io.vegaprotocol.vega.Markets.EthereumEvent.newBuilder((io.vegaprotocol.vega.Markets.EthereumEvent) oracle_)
-                .mergeFrom(value).buildPartial();
+      public Builder mergeOracleSpec(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+        if (oracleSpecBuilder_ == null) {
+          if (oracleSpec_ != null) {
+            oracleSpec_ =
+              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.newBuilder(oracleSpec_).mergeFrom(value).buildPartial();
           } else {
-            oracle_ = value;
+            oracleSpec_ = value;
           }
           onChanged();
         } else {
-          if (oracleCase_ == 100) {
-            ethereumEventBuilder_.mergeFrom(value);
-          }
-          ethereumEventBuilder_.setMessage(value);
+          oracleSpecBuilder_.mergeFrom(value);
         }
-        oracleCase_ = 100;
+
         return this;
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
-      public Builder clearEthereumEvent() {
-        if (ethereumEventBuilder_ == null) {
-          if (oracleCase_ == 100) {
-            oracleCase_ = 0;
-            oracle_ = null;
-            onChanged();
-          }
+      public Builder clearOracleSpec() {
+        if (oracleSpecBuilder_ == null) {
+          oracleSpec_ = null;
+          onChanged();
         } else {
-          if (oracleCase_ == 100) {
-            oracleCase_ = 0;
-            oracle_ = null;
-          }
-          ethereumEventBuilder_.clear();
+          oracleSpec_ = null;
+          oracleSpecBuilder_ = null;
         }
+
         return this;
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
-      public io.vegaprotocol.vega.Markets.EthereumEvent.Builder getEthereumEventBuilder() {
-        return getEthereumEventFieldBuilder().getBuilder();
+      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder getOracleSpecBuilder() {
+
+        onChanged();
+        return getOracleSpecFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
-      @java.lang.Override
-      public io.vegaprotocol.vega.Markets.EthereumEventOrBuilder getEthereumEventOrBuilder() {
-        if ((oracleCase_ == 100) && (ethereumEventBuilder_ != null)) {
-          return ethereumEventBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder() {
+        if (oracleSpecBuilder_ != null) {
+          return oracleSpecBuilder_.getMessageOrBuilder();
         } else {
-          if (oracleCase_ == 100) {
-            return (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_;
-          }
-          return io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
+          return oracleSpec_ == null ?
+              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance() : oracleSpec_;
         }
       }
       /**
        * <pre>
-       * Ethereum events
+       * The oracle spec describing the oracle data of interest
        * </pre>
        *
-       * <code>.vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];</code>
+       * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.EthereumEvent, io.vegaprotocol.vega.Markets.EthereumEvent.Builder, io.vegaprotocol.vega.Markets.EthereumEventOrBuilder>
-          getEthereumEventFieldBuilder() {
-        if (ethereumEventBuilder_ == null) {
-          if (!(oracleCase_ == 100)) {
-            oracle_ = io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
-          }
-          ethereumEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Markets.EthereumEvent, io.vegaprotocol.vega.Markets.EthereumEvent.Builder, io.vegaprotocol.vega.Markets.EthereumEventOrBuilder>(
-                  (io.vegaprotocol.vega.Markets.EthereumEvent) oracle_,
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+          getOracleSpecFieldBuilder() {
+        if (oracleSpecBuilder_ == null) {
+          oracleSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>(
+                  getOracleSpec(),
                   getParentForChildren(),
                   isClean());
-          oracle_ = null;
+          oracleSpec_ = null;
         }
-        oracleCase_ = 100;
-        onChanged();;
-        return ethereumEventBuilder_;
+        return oracleSpecBuilder_;
+      }
+
+      private io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding oracleSpecBinding_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder> oracleSpecBindingBuilder_;
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * @return Whether the oracleSpecBinding field is set.
+       */
+      public boolean hasOracleSpecBinding() {
+        return oracleSpecBindingBuilder_ != null || oracleSpecBinding_ != null;
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * @return The oracleSpecBinding.
+       */
+      public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getOracleSpecBinding() {
+        if (oracleSpecBindingBuilder_ == null) {
+          return oracleSpecBinding_ == null ? io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.getDefaultInstance() : oracleSpecBinding_;
+        } else {
+          return oracleSpecBindingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      public Builder setOracleSpecBinding(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding value) {
+        if (oracleSpecBindingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oracleSpecBinding_ = value;
+          onChanged();
+        } else {
+          oracleSpecBindingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      public Builder setOracleSpecBinding(
+          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder builderForValue) {
+        if (oracleSpecBindingBuilder_ == null) {
+          oracleSpecBinding_ = builderForValue.build();
+          onChanged();
+        } else {
+          oracleSpecBindingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      public Builder mergeOracleSpecBinding(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding value) {
+        if (oracleSpecBindingBuilder_ == null) {
+          if (oracleSpecBinding_ != null) {
+            oracleSpecBinding_ =
+              io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.newBuilder(oracleSpecBinding_).mergeFrom(value).buildPartial();
+          } else {
+            oracleSpecBinding_ = value;
+          }
+          onChanged();
+        } else {
+          oracleSpecBindingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      public Builder clearOracleSpecBinding() {
+        if (oracleSpecBindingBuilder_ == null) {
+          oracleSpecBinding_ = null;
+          onChanged();
+        } else {
+          oracleSpecBinding_ = null;
+          oracleSpecBindingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder getOracleSpecBindingBuilder() {
+
+        onChanged();
+        return getOracleSpecBindingFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder getOracleSpecBindingOrBuilder() {
+        if (oracleSpecBindingBuilder_ != null) {
+          return oracleSpecBindingBuilder_.getMessageOrBuilder();
+        } else {
+          return oracleSpecBinding_ == null ?
+              io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.getDefaultInstance() : oracleSpecBinding_;
+        }
+      }
+      /**
+       * <pre>
+       * The binding between the oracle spec and the settlement price
+       * </pre>
+       *
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder>
+          getOracleSpecBindingFieldBuilder() {
+        if (oracleSpecBindingBuilder_ == null) {
+          oracleSpecBindingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder>(
+                  getOracleSpecBinding(),
+                  getParentForChildren(),
+                  isClean());
+          oracleSpecBinding_ = null;
+        }
+        return oracleSpecBindingBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3293,86 +3459,62 @@ public final class Markets {
 
   }
 
-  public interface EthereumEventOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.EthereumEvent)
+  public interface OracleSpecToFutureBindingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.OracleSpecToFutureBinding)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <pre>
-     * Ethereum contract identifier
+     * settlement_price_property holds the name of the property in the oracle data
+     * that should be used as settlement price.
+     * If it is set to "prices.BTC.value", then the Future will use the value of
+     * this property as settlement price.
      * </pre>
      *
-     * <code>string contract_id = 1 [json_name = "contractId"];</code>
-     * @return The contractId.
+     * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+     * @return The settlementPriceProperty.
      */
-    java.lang.String getContractId();
+    java.lang.String getSettlementPriceProperty();
     /**
      * <pre>
-     * Ethereum contract identifier
+     * settlement_price_property holds the name of the property in the oracle data
+     * that should be used as settlement price.
+     * If it is set to "prices.BTC.value", then the Future will use the value of
+     * this property as settlement price.
      * </pre>
      *
-     * <code>string contract_id = 1 [json_name = "contractId"];</code>
-     * @return The bytes for contractId.
+     * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+     * @return The bytes for settlementPriceProperty.
      */
     com.google.protobuf.ByteString
-        getContractIdBytes();
-
-    /**
-     * <pre>
-     * Event
-     * </pre>
-     *
-     * <code>string event = 2 [json_name = "event"];</code>
-     * @return The event.
-     */
-    java.lang.String getEvent();
-    /**
-     * <pre>
-     * Event
-     * </pre>
-     *
-     * <code>string event = 2 [json_name = "event"];</code>
-     * @return The bytes for event.
-     */
-    com.google.protobuf.ByteString
-        getEventBytes();
-
-    /**
-     * <pre>
-     * Value
-     * </pre>
-     *
-     * <code>uint64 value = 3 [json_name = "value"];</code>
-     * @return The value.
-     */
-    long getValue();
+        getSettlementPricePropertyBytes();
   }
   /**
    * <pre>
-   * Ethereum event (for oracles)
+   * OracleSpecToFutureBinding tells on which property oracle data should be
+   * used as settlement price.
    * </pre>
    *
-   * Protobuf type {@code vega.EthereumEvent}
+   * Protobuf type {@code vega.OracleSpecToFutureBinding}
    */
-  public static final class EthereumEvent extends
+  public static final class OracleSpecToFutureBinding extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.EthereumEvent)
-      EthereumEventOrBuilder {
+      // @@protoc_insertion_point(message_implements:vega.OracleSpecToFutureBinding)
+      OracleSpecToFutureBindingOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use EthereumEvent.newBuilder() to construct.
-    private EthereumEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use OracleSpecToFutureBinding.newBuilder() to construct.
+    private OracleSpecToFutureBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private EthereumEvent() {
-      contractId_ = "";
-      event_ = "";
+    private OracleSpecToFutureBinding() {
+      settlementPriceProperty_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new EthereumEvent();
+      return new OracleSpecToFutureBinding();
     }
 
     @java.lang.Override
@@ -3380,7 +3522,7 @@ public final class Markets {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EthereumEvent(
+    private OracleSpecToFutureBinding(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3401,18 +3543,7 @@ public final class Markets {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              contractId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              event_ = s;
-              break;
-            }
-            case 24: {
-
-              value_ = input.readUInt64();
+              settlementPriceProperty_ = s;
               break;
             }
             default: {
@@ -3436,122 +3567,67 @@ public final class Markets {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.Markets.internal_static_vega_EthereumEvent_descriptor;
+      return io.vegaprotocol.vega.Markets.internal_static_vega_OracleSpecToFutureBinding_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Markets.internal_static_vega_EthereumEvent_fieldAccessorTable
+      return io.vegaprotocol.vega.Markets.internal_static_vega_OracleSpecToFutureBinding_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Markets.EthereumEvent.class, io.vegaprotocol.vega.Markets.EthereumEvent.Builder.class);
+              io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.class, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder.class);
     }
 
-    public static final int CONTRACT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object contractId_;
+    public static final int SETTLEMENT_PRICE_PROPERTY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object settlementPriceProperty_;
     /**
      * <pre>
-     * Ethereum contract identifier
+     * settlement_price_property holds the name of the property in the oracle data
+     * that should be used as settlement price.
+     * If it is set to "prices.BTC.value", then the Future will use the value of
+     * this property as settlement price.
      * </pre>
      *
-     * <code>string contract_id = 1 [json_name = "contractId"];</code>
-     * @return The contractId.
+     * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+     * @return The settlementPriceProperty.
      */
     @java.lang.Override
-    public java.lang.String getContractId() {
-      java.lang.Object ref = contractId_;
+    public java.lang.String getSettlementPriceProperty() {
+      java.lang.Object ref = settlementPriceProperty_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        contractId_ = s;
+        settlementPriceProperty_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * Ethereum contract identifier
+     * settlement_price_property holds the name of the property in the oracle data
+     * that should be used as settlement price.
+     * If it is set to "prices.BTC.value", then the Future will use the value of
+     * this property as settlement price.
      * </pre>
      *
-     * <code>string contract_id = 1 [json_name = "contractId"];</code>
-     * @return The bytes for contractId.
+     * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+     * @return The bytes for settlementPriceProperty.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getContractIdBytes() {
-      java.lang.Object ref = contractId_;
+        getSettlementPricePropertyBytes() {
+      java.lang.Object ref = settlementPriceProperty_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        contractId_ = b;
+        settlementPriceProperty_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int EVENT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object event_;
-    /**
-     * <pre>
-     * Event
-     * </pre>
-     *
-     * <code>string event = 2 [json_name = "event"];</code>
-     * @return The event.
-     */
-    @java.lang.Override
-    public java.lang.String getEvent() {
-      java.lang.Object ref = event_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        event_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Event
-     * </pre>
-     *
-     * <code>string event = 2 [json_name = "event"];</code>
-     * @return The bytes for event.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEventBytes() {
-      java.lang.Object ref = event_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        event_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 3;
-    private long value_;
-    /**
-     * <pre>
-     * Value
-     * </pre>
-     *
-     * <code>uint64 value = 3 [json_name = "value"];</code>
-     * @return The value.
-     */
-    @java.lang.Override
-    public long getValue() {
-      return value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3568,14 +3644,8 @@ public final class Markets {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getContractIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contractId_);
-      }
-      if (!getEventBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, event_);
-      }
-      if (value_ != 0L) {
-        output.writeUInt64(3, value_);
+      if (!getSettlementPricePropertyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, settlementPriceProperty_);
       }
       unknownFields.writeTo(output);
     }
@@ -3586,15 +3656,8 @@ public final class Markets {
       if (size != -1) return size;
 
       size = 0;
-      if (!getContractIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contractId_);
-      }
-      if (!getEventBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, event_);
-      }
-      if (value_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, value_);
+      if (!getSettlementPricePropertyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, settlementPriceProperty_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3606,17 +3669,13 @@ public final class Markets {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.vegaprotocol.vega.Markets.EthereumEvent)) {
+      if (!(obj instanceof io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding)) {
         return super.equals(obj);
       }
-      io.vegaprotocol.vega.Markets.EthereumEvent other = (io.vegaprotocol.vega.Markets.EthereumEvent) obj;
+      io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding other = (io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding) obj;
 
-      if (!getContractId()
-          .equals(other.getContractId())) return false;
-      if (!getEvent()
-          .equals(other.getEvent())) return false;
-      if (getValue()
-          != other.getValue()) return false;
+      if (!getSettlementPriceProperty()
+          .equals(other.getSettlementPriceProperty())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3628,81 +3687,76 @@ public final class Markets {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CONTRACT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getContractId().hashCode();
-      hash = (37 * hash) + EVENT_FIELD_NUMBER;
-      hash = (53 * hash) + getEvent().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getValue());
+      hash = (37 * hash) + SETTLEMENT_PRICE_PROPERTY_FIELD_NUMBER;
+      hash = (53 * hash) + getSettlementPriceProperty().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(byte[] data)
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseDelimitedFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseDelimitedFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.Markets.EthereumEvent parseFrom(
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3715,7 +3769,7 @@ public final class Markets {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.vegaprotocol.vega.Markets.EthereumEvent prototype) {
+    public static Builder newBuilder(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3732,29 +3786,30 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Ethereum event (for oracles)
+     * OracleSpecToFutureBinding tells on which property oracle data should be
+     * used as settlement price.
      * </pre>
      *
-     * Protobuf type {@code vega.EthereumEvent}
+     * Protobuf type {@code vega.OracleSpecToFutureBinding}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.EthereumEvent)
-        io.vegaprotocol.vega.Markets.EthereumEventOrBuilder {
+        // @@protoc_insertion_point(builder_implements:vega.OracleSpecToFutureBinding)
+        io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_EthereumEvent_descriptor;
+        return io.vegaprotocol.vega.Markets.internal_static_vega_OracleSpecToFutureBinding_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_EthereumEvent_fieldAccessorTable
+        return io.vegaprotocol.vega.Markets.internal_static_vega_OracleSpecToFutureBinding_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Markets.EthereumEvent.class, io.vegaprotocol.vega.Markets.EthereumEvent.Builder.class);
+                io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.class, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder.class);
       }
 
-      // Construct using io.vegaprotocol.vega.Markets.EthereumEvent.newBuilder()
+      // Construct using io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3772,11 +3827,7 @@ public final class Markets {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        contractId_ = "";
-
-        event_ = "";
-
-        value_ = 0L;
+        settlementPriceProperty_ = "";
 
         return this;
       }
@@ -3784,17 +3835,17 @@ public final class Markets {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.vegaprotocol.vega.Markets.internal_static_vega_EthereumEvent_descriptor;
+        return io.vegaprotocol.vega.Markets.internal_static_vega_OracleSpecToFutureBinding_descriptor;
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Markets.EthereumEvent getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance();
+      public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Markets.EthereumEvent build() {
-        io.vegaprotocol.vega.Markets.EthereumEvent result = buildPartial();
+      public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding build() {
+        io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3802,11 +3853,9 @@ public final class Markets {
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.Markets.EthereumEvent buildPartial() {
-        io.vegaprotocol.vega.Markets.EthereumEvent result = new io.vegaprotocol.vega.Markets.EthereumEvent(this);
-        result.contractId_ = contractId_;
-        result.event_ = event_;
-        result.value_ = value_;
+      public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding buildPartial() {
+        io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding result = new io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding(this);
+        result.settlementPriceProperty_ = settlementPriceProperty_;
         onBuilt();
         return result;
       }
@@ -3845,26 +3894,19 @@ public final class Markets {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Markets.EthereumEvent) {
-          return mergeFrom((io.vegaprotocol.vega.Markets.EthereumEvent)other);
+        if (other instanceof io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding) {
+          return mergeFrom((io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.vegaprotocol.vega.Markets.EthereumEvent other) {
-        if (other == io.vegaprotocol.vega.Markets.EthereumEvent.getDefaultInstance()) return this;
-        if (!other.getContractId().isEmpty()) {
-          contractId_ = other.contractId_;
+      public Builder mergeFrom(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding other) {
+        if (other == io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.getDefaultInstance()) return this;
+        if (!other.getSettlementPriceProperty().isEmpty()) {
+          settlementPriceProperty_ = other.settlementPriceProperty_;
           onChanged();
-        }
-        if (!other.getEvent().isEmpty()) {
-          event_ = other.event_;
-          onChanged();
-        }
-        if (other.getValue() != 0L) {
-          setValue(other.getValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3881,11 +3923,11 @@ public final class Markets {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.vegaprotocol.vega.Markets.EthereumEvent parsedMessage = null;
+        io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Markets.EthereumEvent) e.getUnfinishedMessage();
+          parsedMessage = (io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3895,22 +3937,25 @@ public final class Markets {
         return this;
       }
 
-      private java.lang.Object contractId_ = "";
+      private java.lang.Object settlementPriceProperty_ = "";
       /**
        * <pre>
-       * Ethereum contract identifier
+       * settlement_price_property holds the name of the property in the oracle data
+       * that should be used as settlement price.
+       * If it is set to "prices.BTC.value", then the Future will use the value of
+       * this property as settlement price.
        * </pre>
        *
-       * <code>string contract_id = 1 [json_name = "contractId"];</code>
-       * @return The contractId.
+       * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+       * @return The settlementPriceProperty.
        */
-      public java.lang.String getContractId() {
-        java.lang.Object ref = contractId_;
+      public java.lang.String getSettlementPriceProperty() {
+        java.lang.Object ref = settlementPriceProperty_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          contractId_ = s;
+          settlementPriceProperty_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3918,20 +3963,23 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum contract identifier
+       * settlement_price_property holds the name of the property in the oracle data
+       * that should be used as settlement price.
+       * If it is set to "prices.BTC.value", then the Future will use the value of
+       * this property as settlement price.
        * </pre>
        *
-       * <code>string contract_id = 1 [json_name = "contractId"];</code>
-       * @return The bytes for contractId.
+       * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+       * @return The bytes for settlementPriceProperty.
        */
       public com.google.protobuf.ByteString
-          getContractIdBytes() {
-        java.lang.Object ref = contractId_;
+          getSettlementPricePropertyBytes() {
+        java.lang.Object ref = settlementPriceProperty_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          contractId_ = b;
+          settlementPriceProperty_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3939,193 +3987,63 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Ethereum contract identifier
+       * settlement_price_property holds the name of the property in the oracle data
+       * that should be used as settlement price.
+       * If it is set to "prices.BTC.value", then the Future will use the value of
+       * this property as settlement price.
        * </pre>
        *
-       * <code>string contract_id = 1 [json_name = "contractId"];</code>
-       * @param value The contractId to set.
+       * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+       * @param value The settlementPriceProperty to set.
        * @return This builder for chaining.
        */
-      public Builder setContractId(
+      public Builder setSettlementPriceProperty(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        contractId_ = value;
+        settlementPriceProperty_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Ethereum contract identifier
+       * settlement_price_property holds the name of the property in the oracle data
+       * that should be used as settlement price.
+       * If it is set to "prices.BTC.value", then the Future will use the value of
+       * this property as settlement price.
        * </pre>
        *
-       * <code>string contract_id = 1 [json_name = "contractId"];</code>
+       * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearContractId() {
+      public Builder clearSettlementPriceProperty() {
 
-        contractId_ = getDefaultInstance().getContractId();
+        settlementPriceProperty_ = getDefaultInstance().getSettlementPriceProperty();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Ethereum contract identifier
+       * settlement_price_property holds the name of the property in the oracle data
+       * that should be used as settlement price.
+       * If it is set to "prices.BTC.value", then the Future will use the value of
+       * this property as settlement price.
        * </pre>
        *
-       * <code>string contract_id = 1 [json_name = "contractId"];</code>
-       * @param value The bytes for contractId to set.
+       * <code>string settlement_price_property = 1 [json_name = "settlementPriceProperty"];</code>
+       * @param value The bytes for settlementPriceProperty to set.
        * @return This builder for chaining.
        */
-      public Builder setContractIdBytes(
+      public Builder setSettlementPricePropertyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
 
-        contractId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object event_ = "";
-      /**
-       * <pre>
-       * Event
-       * </pre>
-       *
-       * <code>string event = 2 [json_name = "event"];</code>
-       * @return The event.
-       */
-      public java.lang.String getEvent() {
-        java.lang.Object ref = event_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          event_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Event
-       * </pre>
-       *
-       * <code>string event = 2 [json_name = "event"];</code>
-       * @return The bytes for event.
-       */
-      public com.google.protobuf.ByteString
-          getEventBytes() {
-        java.lang.Object ref = event_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          event_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Event
-       * </pre>
-       *
-       * <code>string event = 2 [json_name = "event"];</code>
-       * @param value The event to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEvent(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        event_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Event
-       * </pre>
-       *
-       * <code>string event = 2 [json_name = "event"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEvent() {
-
-        event_ = getDefaultInstance().getEvent();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Event
-       * </pre>
-       *
-       * <code>string event = 2 [json_name = "event"];</code>
-       * @param value The bytes for event to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEventBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        event_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long value_ ;
-      /**
-       * <pre>
-       * Value
-       * </pre>
-       *
-       * <code>uint64 value = 3 [json_name = "value"];</code>
-       * @return The value.
-       */
-      @java.lang.Override
-      public long getValue() {
-        return value_;
-      }
-      /**
-       * <pre>
-       * Value
-       * </pre>
-       *
-       * <code>uint64 value = 3 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValue(long value) {
-
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Value
-       * </pre>
-       *
-       * <code>uint64 value = 3 [json_name = "value"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-
-        value_ = 0L;
+        settlementPriceProperty_ = value;
         onChanged();
         return this;
       }
@@ -4142,41 +4060,41 @@ public final class Markets {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:vega.EthereumEvent)
+      // @@protoc_insertion_point(builder_scope:vega.OracleSpecToFutureBinding)
     }
 
-    // @@protoc_insertion_point(class_scope:vega.EthereumEvent)
-    private static final io.vegaprotocol.vega.Markets.EthereumEvent DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:vega.OracleSpecToFutureBinding)
+    private static final io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.EthereumEvent();
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding();
     }
 
-    public static io.vegaprotocol.vega.Markets.EthereumEvent getDefaultInstance() {
+    public static io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<EthereumEvent>
-        PARSER = new com.google.protobuf.AbstractParser<EthereumEvent>() {
+    private static final com.google.protobuf.Parser<OracleSpecToFutureBinding>
+        PARSER = new com.google.protobuf.AbstractParser<OracleSpecToFutureBinding>() {
       @java.lang.Override
-      public EthereumEvent parsePartialFrom(
+      public OracleSpecToFutureBinding parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EthereumEvent(input, extensionRegistry);
+        return new OracleSpecToFutureBinding(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<EthereumEvent> parser() {
+    public static com.google.protobuf.Parser<OracleSpecToFutureBinding> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<EthereumEvent> getParserForType() {
+    public com.google.protobuf.Parser<OracleSpecToFutureBinding> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public io.vegaprotocol.vega.Markets.EthereumEvent getDefaultInstanceForType() {
+    public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4989,16 +4907,6 @@ public final class Markets {
 
     /**
      * <pre>
-     * An initial mark price for the instrument
-     * </pre>
-     *
-     * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
-     * @return The initialMarkPrice.
-     */
-    long getInitialMarkPrice();
-
-    /**
-     * <pre>
      * Future
      * </pre>
      *
@@ -5107,11 +5015,6 @@ public final class Markets {
                 metadata_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 40: {
-
-              initialMarkPrice_ = input.readUInt64();
               break;
             }
             case 802: {
@@ -5375,21 +5278,6 @@ public final class Markets {
       return getMetadata();
     }
 
-    public static final int INITIAL_MARK_PRICE_FIELD_NUMBER = 5;
-    private long initialMarkPrice_;
-    /**
-     * <pre>
-     * An initial mark price for the instrument
-     * </pre>
-     *
-     * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
-     * @return The initialMarkPrice.
-     */
-    @java.lang.Override
-    public long getInitialMarkPrice() {
-      return initialMarkPrice_;
-    }
-
     public static final int FUTURE_FIELD_NUMBER = 100;
     /**
      * <pre>
@@ -5459,9 +5347,6 @@ public final class Markets {
       if (metadata_ != null) {
         output.writeMessage(4, getMetadata());
       }
-      if (initialMarkPrice_ != 0L) {
-        output.writeUInt64(5, initialMarkPrice_);
-      }
       if (productCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.Future) product_);
       }
@@ -5486,10 +5371,6 @@ public final class Markets {
       if (metadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getMetadata());
-      }
-      if (initialMarkPrice_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, initialMarkPrice_);
       }
       if (productCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -5521,8 +5402,6 @@ public final class Markets {
         if (!getMetadata()
             .equals(other.getMetadata())) return false;
       }
-      if (getInitialMarkPrice()
-          != other.getInitialMarkPrice()) return false;
       if (!getProductCase().equals(other.getProductCase())) return false;
       switch (productCase_) {
         case 100:
@@ -5553,9 +5432,6 @@ public final class Markets {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
       }
-      hash = (37 * hash) + INITIAL_MARK_PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getInitialMarkPrice());
       switch (productCase_) {
         case 100:
           hash = (37 * hash) + FUTURE_FIELD_NUMBER;
@@ -5713,8 +5589,6 @@ public final class Markets {
           metadata_ = null;
           metadataBuilder_ = null;
         }
-        initialMarkPrice_ = 0L;
-
         productCase_ = 0;
         product_ = null;
         return this;
@@ -5751,7 +5625,6 @@ public final class Markets {
         } else {
           result.metadata_ = metadataBuilder_.build();
         }
-        result.initialMarkPrice_ = initialMarkPrice_;
         if (productCase_ == 100) {
           if (futureBuilder_ == null) {
             result.product_ = product_;
@@ -5822,9 +5695,6 @@ public final class Markets {
         }
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
-        }
-        if (other.getInitialMarkPrice() != 0L) {
-          setInitialMarkPrice(other.getInitialMarkPrice());
         }
         switch (other.getProductCase()) {
           case FUTURE: {
@@ -6320,49 +6190,6 @@ public final class Markets {
           metadata_ = null;
         }
         return metadataBuilder_;
-      }
-
-      private long initialMarkPrice_ ;
-      /**
-       * <pre>
-       * An initial mark price for the instrument
-       * </pre>
-       *
-       * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
-       * @return The initialMarkPrice.
-       */
-      @java.lang.Override
-      public long getInitialMarkPrice() {
-        return initialMarkPrice_;
-      }
-      /**
-       * <pre>
-       * An initial mark price for the instrument
-       * </pre>
-       *
-       * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
-       * @param value The initialMarkPrice to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInitialMarkPrice(long value) {
-
-        initialMarkPrice_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * An initial mark price for the instrument
-       * </pre>
-       *
-       * <code>uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInitialMarkPrice() {
-
-        initialMarkPrice_ = 0L;
-        onChanged();
-        return this;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -20755,10 +20582,10 @@ public final class Markets {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Future_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_EthereumEvent_descriptor;
+    internal_static_vega_OracleSpecToFutureBinding_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_EthereumEvent_fieldAccessorTable;
+      internal_static_vega_OracleSpecToFutureBinding_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_InstrumentMetadata_descriptor;
   private static final
@@ -20849,104 +20676,106 @@ public final class Markets {
   static {
     java.lang.String[] descriptorData = {
       "\n\rmarkets.proto\022\004vega\0326github.com/mwitko" +
-      "w/go-proto-validators/validator.proto\"E\n" +
-      "\017AuctionDuration\022\032\n\010duration\030\001 \001(\003R\010dura" +
-      "tion\022\026\n\006volume\030\002 \001(\004R\006volume\"0\n\021Continuo" +
-      "usTrading\022\033\n\ttick_size\030\001 \001(\tR\010tickSize\"`" +
-      "\n\017DiscreteTrading\0220\n\013duration_ns\030\001 \001(\003B\017" +
-      "\342\337\037\013\020\000\030\200\200\210\272\220\255\315\004R\ndurationNs\022\033\n\ttick_size" +
-      "\030\002 \001(\tR\010tickSize\"\266\001\n\006Future\022\032\n\010maturity\030" +
-      "\001 \001(\tR\010maturity\022)\n\020settlement_asset\030\002 \001(" +
-      "\tR\017settlementAsset\022\035\n\nquote_name\030\004 \001(\tR\t" +
-      "quoteName\022<\n\016ethereum_event\030d \001(\0132\023.vega" +
-      ".EthereumEventH\000R\rethereumEventB\010\n\006oracl" +
-      "e\"\\\n\rEthereumEvent\022\037\n\013contract_id\030\001 \001(\tR" +
-      "\ncontractId\022\024\n\005event\030\002 \001(\tR\005event\022\024\n\005val" +
-      "ue\030\003 \001(\004R\005value\"(\n\022InstrumentMetadata\022\022\n" +
-      "\004tags\030\001 \003(\tR\004tags\"\333\001\n\nInstrument\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\022\n\004code\030\002 \001(\tR\004code\022\022\n\004name\030\003 \001" +
-      "(\tR\004name\0224\n\010metadata\030\004 \001(\0132\030.vega.Instru" +
-      "mentMetadataR\010metadata\022,\n\022initial_mark_p" +
-      "rice\030\005 \001(\004R\020initialMarkPrice\022&\n\006future\030d" +
-      " \001(\0132\014.vega.FutureH\000R\006futureB\t\n\007product\"" +
-      "\222\001\n\022LogNormalRiskModel\0226\n\027risk_aversion_" +
-      "parameter\030\001 \001(\001R\025riskAversionParameter\022\020" +
-      "\n\003tau\030\002 \001(\001R\003tau\0222\n\006params\030\003 \001(\0132\032.vega." +
-      "LogNormalModelParamsR\006params\"J\n\024LogNorma" +
-      "lModelParams\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002 \001(\001R" +
-      "\001r\022\024\n\005sigma\030\003 \001(\001R\005sigma\"B\n\017SimpleRiskMo" +
-      "del\022/\n\006params\030\001 \001(\0132\027.vega.SimpleModelPa" +
-      "ramsR\006params\"\207\002\n\021SimpleModelParams\022\037\n\013fa" +
-      "ctor_long\030\001 \001(\001R\nfactorLong\022!\n\014factor_sh" +
-      "ort\030\002 \001(\001R\013factorShort\022-\n\013max_move_up\030\003 " +
-      "\001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000R\tmaxMoveUp\0221\n\rmin_mov" +
-      "e_down\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000R\013minMoveDown" +
-      "\022L\n\026probability_of_trading\030\005 \001(\001B\026\342\337\037\022I\000" +
-      "\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360?R\024probabilityOfTrading\"\211" +
-      "\001\n\016ScalingFactors\022!\n\014search_level\030\001 \001(\001R" +
-      "\013searchLevel\022%\n\016initial_margin\030\002 \001(\001R\rin" +
-      "itialMargin\022-\n\022collateral_release\030\003 \001(\001R" +
-      "\021collateralRelease\"Q\n\020MarginCalculator\022=" +
-      "\n\017scaling_factors\030\001 \001(\0132\024.vega.ScalingFa" +
-      "ctorsR\016scalingFactors\"\255\002\n\022TradableInstru" +
-      "ment\0220\n\ninstrument\030\001 \001(\0132\020.vega.Instrume" +
-      "ntR\ninstrument\022C\n\021margin_calculator\030\002 \001(" +
-      "\0132\026.vega.MarginCalculatorR\020marginCalcula" +
-      "tor\022M\n\025log_normal_risk_model\030d \001(\0132\030.veg" +
-      "a.LogNormalRiskModelH\000R\022logNormalRiskMod" +
-      "el\022C\n\021simple_risk_model\030e \001(\0132\025.vega.Sim" +
-      "pleRiskModelH\000R\017simpleRiskModelB\014\n\nrisk_" +
-      "model\"}\n\nFeeFactors\022\033\n\tmaker_fee\030\001 \001(\tR\010" +
-      "makerFee\022-\n\022infrastructure_fee\030\002 \001(\tR\021in" +
-      "frastructureFee\022#\n\rliquidity_fee\030\003 \001(\tR\014" +
-      "liquidityFee\"2\n\004Fees\022*\n\007factors\030\001 \001(\0132\020." +
-      "vega.FeeFactorsR\007factors\"\251\001\n\026PriceMonito" +
-      "ringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037\002\020\000R\007ho" +
-      "rizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221\000\000\000\000\000\000\000" +
-      "\0009\000\000\000\000\000\000\360?R\013probability\0223\n\021auction_exten" +
-      "sion\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtension\"U\n\031" +
-      "PriceMonitoringParameters\0228\n\010triggers\030\001 " +
-      "\003(\0132\034.vega.PriceMonitoringTriggerR\010trigg" +
-      "ers\"\205\001\n\027PriceMonitoringSettings\022?\n\nparam" +
-      "eters\030\001 \001(\0132\037.vega.PriceMonitoringParame" +
-      "tersR\nparameters\022)\n\020update_frequency\030\002 \001" +
-      "(\003R\017updateFrequency\"v\n\025TargetStakeParame" +
-      "ters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\ntimeW" +
-      "indow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t1\000\000\000\000" +
-      "\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002id\030\001 \001" +
-      "(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\0132\030.ve" +
-      "ga.TradableInstrumentR\022tradableInstrumen" +
-      "t\022%\n\016decimal_places\030\003 \001(\004R\rdecimalPlaces" +
-      "\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n\017open" +
-      "ing_auction\030\005 \001(\0132\025.vega.AuctionDuration" +
-      "R\016openingAuction\0229\n\ncontinuous\030d \001(\0132\027.v" +
-      "ega.ContinuousTradingH\000R\ncontinuous\0223\n\010d" +
-      "iscrete\030e \001(\0132\025.vega.DiscreteTradingH\000R\010" +
-      "discrete\022Y\n\031price_monitoring_settings\030\006 " +
-      "\001(\0132\035.vega.PriceMonitoringSettingsR\027pric" +
-      "eMonitoringSettings\022S\n\027target_stake_para" +
-      "meters\030\007 \001(\0132\033.vega.TargetStakeParameter" +
-      "sR\025targetStakeParameters\022;\n\014trading_mode" +
-      "\030\010 \001(\0162\030.vega.Market.TradingModeR\013tradin" +
-      "gMode\022(\n\005state\030\t \001(\0162\022.vega.Market.State" +
-      "R\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000" +
-      "\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002" +
-      "\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004" +
-      "\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022" +
-      "\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMI" +
-      "NATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMo" +
-      "de\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRAD" +
-      "ING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BA" +
-      "TCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENING_AU" +
-      "CTION\020\003\022#\n\037TRADING_MODE_MONITORING_AUCTI" +
-      "ON\020\004B\025\n\023trading_mode_configB7\n\024io.vegapr" +
-      "otocol.vegaZ\037code.vegaprotocol.io/vega/p" +
-      "rotob\006proto3"
+      "w/go-proto-validators/validator.proto\032\034o" +
+      "racles/v1/oracle_spec.proto\"E\n\017AuctionDu" +
+      "ration\022\032\n\010duration\030\001 \001(\003R\010duration\022\026\n\006vo" +
+      "lume\030\002 \001(\004R\006volume\"0\n\021ContinuousTrading\022" +
+      "\033\n\ttick_size\030\001 \001(\tR\010tickSize\"`\n\017Discrete" +
+      "Trading\0220\n\013duration_ns\030\001 \001(\003B\017\342\337\037\013\020\000\030\200\200\210" +
+      "\272\220\255\315\004R\ndurationNs\022\033\n\ttick_size\030\002 \001(\tR\010ti" +
+      "ckSize\"\370\001\n\006Future\022\032\n\010maturity\030\001 \001(\tR\010mat" +
+      "urity\022)\n\020settlement_asset\030\002 \001(\tR\017settlem" +
+      "entAsset\022\035\n\nquote_name\030\004 \001(\tR\tquoteName\022" +
+      "7\n\013oracle_spec\030\005 \001(\0132\026.oracles.v1.Oracle" +
+      "SpecR\noracleSpec\022O\n\023oracle_spec_binding\030" +
+      "\006 \001(\0132\037.vega.OracleSpecToFutureBindingR\021" +
+      "oracleSpecBinding\"W\n\031OracleSpecToFutureB" +
+      "inding\022:\n\031settlement_price_property\030\001 \001(" +
+      "\tR\027settlementPriceProperty\"(\n\022Instrument" +
+      "Metadata\022\022\n\004tags\030\001 \003(\tR\004tags\"\255\001\n\nInstrum" +
+      "ent\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004code\030\002 \001(\tR\004code\022" +
+      "\022\n\004name\030\003 \001(\tR\004name\0224\n\010metadata\030\004 \001(\0132\030." +
+      "vega.InstrumentMetadataR\010metadata\022&\n\006fut" +
+      "ure\030d \001(\0132\014.vega.FutureH\000R\006futureB\t\n\007pro" +
+      "duct\"\222\001\n\022LogNormalRiskModel\0226\n\027risk_aver" +
+      "sion_parameter\030\001 \001(\001R\025riskAversionParame" +
+      "ter\022\020\n\003tau\030\002 \001(\001R\003tau\0222\n\006params\030\003 \001(\0132\032." +
+      "vega.LogNormalModelParamsR\006params\"J\n\024Log" +
+      "NormalModelParams\022\016\n\002mu\030\001 \001(\001R\002mu\022\014\n\001r\030\002" +
+      " \001(\001R\001r\022\024\n\005sigma\030\003 \001(\001R\005sigma\"B\n\017SimpleR" +
+      "iskModel\022/\n\006params\030\001 \001(\0132\027.vega.SimpleMo" +
+      "delParamsR\006params\"\207\002\n\021SimpleModelParams\022" +
+      "\037\n\013factor_long\030\001 \001(\001R\nfactorLong\022!\n\014fact" +
+      "or_short\030\002 \001(\001R\013factorShort\022-\n\013max_move_" +
+      "up\030\003 \001(\001B\r\342\337\037\tI\000\000\000\000\000\000\000\000R\tmaxMoveUp\0221\n\rmi" +
+      "n_move_down\030\004 \001(\001B\r\342\337\037\tQ\000\000\000\000\000\000\000\000R\013minMov" +
+      "eDown\022L\n\026probability_of_trading\030\005 \001(\001B\026\342" +
+      "\337\037\022I\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360?R\024probabilityOfTrad" +
+      "ing\"\211\001\n\016ScalingFactors\022!\n\014search_level\030\001" +
+      " \001(\001R\013searchLevel\022%\n\016initial_margin\030\002 \001(" +
+      "\001R\rinitialMargin\022-\n\022collateral_release\030\003" +
+      " \001(\001R\021collateralRelease\"Q\n\020MarginCalcula" +
+      "tor\022=\n\017scaling_factors\030\001 \001(\0132\024.vega.Scal" +
+      "ingFactorsR\016scalingFactors\"\255\002\n\022TradableI" +
+      "nstrument\0220\n\ninstrument\030\001 \001(\0132\020.vega.Ins" +
+      "trumentR\ninstrument\022C\n\021margin_calculator" +
+      "\030\002 \001(\0132\026.vega.MarginCalculatorR\020marginCa" +
+      "lculator\022M\n\025log_normal_risk_model\030d \001(\0132" +
+      "\030.vega.LogNormalRiskModelH\000R\022logNormalRi" +
+      "skModel\022C\n\021simple_risk_model\030e \001(\0132\025.veg" +
+      "a.SimpleRiskModelH\000R\017simpleRiskModelB\014\n\n" +
+      "risk_model\"}\n\nFeeFactors\022\033\n\tmaker_fee\030\001 " +
+      "\001(\tR\010makerFee\022-\n\022infrastructure_fee\030\002 \001(" +
+      "\tR\021infrastructureFee\022#\n\rliquidity_fee\030\003 " +
+      "\001(\tR\014liquidityFee\"2\n\004Fees\022*\n\007factors\030\001 \001" +
+      "(\0132\020.vega.FeeFactorsR\007factors\"\251\001\n\026PriceM" +
+      "onitoringTrigger\022 \n\007horizon\030\001 \001(\003B\006\342\337\037\002\020" +
+      "\000R\007horizon\0228\n\013probability\030\002 \001(\001B\026\342\337\037\0221\000\000" +
+      "\000\000\000\000\000\0009\000\000\000\000\000\000\360?R\013probability\0223\n\021auction_" +
+      "extension\030\003 \001(\003B\006\342\337\037\002\020\000R\020auctionExtensio" +
+      "n\"U\n\031PriceMonitoringParameters\0228\n\010trigge" +
+      "rs\030\001 \003(\0132\034.vega.PriceMonitoringTriggerR\010" +
+      "triggers\"\205\001\n\027PriceMonitoringSettings\022?\n\n" +
+      "parameters\030\001 \001(\0132\037.vega.PriceMonitoringP" +
+      "arametersR\nparameters\022)\n\020update_frequenc" +
+      "y\030\002 \001(\003R\017updateFrequency\"v\n\025TargetStakeP" +
+      "arameters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\n" +
+      "timeWindow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t" +
+      "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\013" +
+      "2\030.vega.TradableInstrumentR\022tradableInst" +
+      "rument\022%\n\016decimal_places\030\003 \001(\004R\rdecimalP" +
+      "laces\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n" +
+      "\017opening_auction\030\005 \001(\0132\025.vega.AuctionDur" +
+      "ationR\016openingAuction\0229\n\ncontinuous\030d \001(" +
+      "\0132\027.vega.ContinuousTradingH\000R\ncontinuous" +
+      "\0223\n\010discrete\030e \001(\0132\025.vega.DiscreteTradin" +
+      "gH\000R\010discrete\022Y\n\031price_monitoring_settin" +
+      "gs\030\006 \001(\0132\035.vega.PriceMonitoringSettingsR" +
+      "\027priceMonitoringSettings\022S\n\027target_stake" +
+      "_parameters\030\007 \001(\0132\033.vega.TargetStakePara" +
+      "metersR\025targetStakeParameters\022;\n\014trading" +
+      "_mode\030\010 \001(\0162\030.vega.Market.TradingModeR\013t" +
+      "radingMode\022(\n\005state\030\t \001(\0162\022.vega.Market." +
+      "StateR\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIF" +
+      "IED\020\000\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJEC" +
+      "TED\020\002\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCEL" +
+      "LED\020\004\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPEND" +
+      "ED\020\006\022\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_" +
+      "TERMINATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013Trad" +
+      "ingMode\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n" +
+      "\027TRADING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MO" +
+      "DE_BATCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENI" +
+      "NG_AUCTION\020\003\022#\n\037TRADING_MODE_MONITORING_" +
+      "AUCTION\020\004B\025\n\023trading_mode_configB7\n\024io.v" +
+      "egaprotocol.vegaZ\037code.vegaprotocol.io/v" +
+      "ega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.getDescriptor(),
         });
     internal_static_vega_AuctionDuration_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -20971,13 +20800,13 @@ public final class Markets {
     internal_static_vega_Future_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Future_descriptor,
-        new java.lang.String[] { "Maturity", "SettlementAsset", "QuoteName", "EthereumEvent", "Oracle", });
-    internal_static_vega_EthereumEvent_descriptor =
+        new java.lang.String[] { "Maturity", "SettlementAsset", "QuoteName", "OracleSpec", "OracleSpecBinding", });
+    internal_static_vega_OracleSpecToFutureBinding_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_vega_EthereumEvent_fieldAccessorTable = new
+    internal_static_vega_OracleSpecToFutureBinding_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_EthereumEvent_descriptor,
-        new java.lang.String[] { "ContractId", "Event", "Value", });
+        internal_static_vega_OracleSpecToFutureBinding_descriptor,
+        new java.lang.String[] { "SettlementPriceProperty", });
     internal_static_vega_InstrumentMetadata_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_vega_InstrumentMetadata_fieldAccessorTable = new
@@ -20989,7 +20818,7 @@ public final class Markets {
     internal_static_vega_Instrument_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Instrument_descriptor,
-        new java.lang.String[] { "Id", "Code", "Name", "Metadata", "InitialMarkPrice", "Future", "Product", });
+        new java.lang.String[] { "Id", "Code", "Name", "Metadata", "Future", "Product", });
     internal_static_vega_LogNormalRiskModel_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_vega_LogNormalRiskModel_fieldAccessorTable = new
@@ -21080,6 +20909,7 @@ public final class Markets {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.github.mwitkow.go_proto_validators.Validator.getDescriptor();
+    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

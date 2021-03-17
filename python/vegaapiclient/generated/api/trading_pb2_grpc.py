@@ -653,6 +653,21 @@ class TradingDataServiceStub(object):
                 request_serializer=api_dot_trading__pb2.LiquidityProvisionsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.LiquidityProvisionsResponse.FromString,
                 )
+        self.OracleSpec = channel.unary_unary(
+                '/api.v1.TradingDataService/OracleSpec',
+                request_serializer=api_dot_trading__pb2.OracleSpecRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.OracleSpecResponse.FromString,
+                )
+        self.OracleSpecs = channel.unary_unary(
+                '/api.v1.TradingDataService/OracleSpecs',
+                request_serializer=api_dot_trading__pb2.OracleSpecsRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.OracleSpecsResponse.FromString,
+                )
+        self.OracleDataBySpec = channel.unary_unary(
+                '/api.v1.TradingDataService/OracleDataBySpec',
+                request_serializer=api_dot_trading__pb2.OracleDataBySpecRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.OracleDataBySpecResponse.FromString,
+                )
 
 
 class TradingDataServiceServicer(object):
@@ -675,7 +690,9 @@ class TradingDataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def FeeInfrastructureAccounts(self, request, context):
-        """Get a list of infrastructure fees accounts filter eventually by assets
+        """Get a list of accounts holding infrastructure fees.
+        Can be filtered by asset, there will be 1 infrastructure fee account per
+        asset in the network.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1106,6 +1123,27 @@ class TradingDataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def OracleSpec(self, request, context):
+        """Get an oracle spec by ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def OracleSpecs(self, request, context):
+        """Get the oracle specs
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def OracleDataBySpec(self, request, context):
+        """Get all oracle data
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TradingDataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1413,6 +1451,21 @@ def add_TradingDataServiceServicer_to_server(servicer, server):
                     servicer.LiquidityProvisions,
                     request_deserializer=api_dot_trading__pb2.LiquidityProvisionsRequest.FromString,
                     response_serializer=api_dot_trading__pb2.LiquidityProvisionsResponse.SerializeToString,
+            ),
+            'OracleSpec': grpc.unary_unary_rpc_method_handler(
+                    servicer.OracleSpec,
+                    request_deserializer=api_dot_trading__pb2.OracleSpecRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.OracleSpecResponse.SerializeToString,
+            ),
+            'OracleSpecs': grpc.unary_unary_rpc_method_handler(
+                    servicer.OracleSpecs,
+                    request_deserializer=api_dot_trading__pb2.OracleSpecsRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.OracleSpecsResponse.SerializeToString,
+            ),
+            'OracleDataBySpec': grpc.unary_unary_rpc_method_handler(
+                    servicer.OracleDataBySpec,
+                    request_deserializer=api_dot_trading__pb2.OracleDataBySpecRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.OracleDataBySpecResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2458,5 +2511,56 @@ class TradingDataService(object):
         return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/LiquidityProvisions',
             api_dot_trading__pb2.LiquidityProvisionsRequest.SerializeToString,
             api_dot_trading__pb2.LiquidityProvisionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OracleSpec(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OracleSpec',
+            api_dot_trading__pb2.OracleSpecRequest.SerializeToString,
+            api_dot_trading__pb2.OracleSpecResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OracleSpecs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OracleSpecs',
+            api_dot_trading__pb2.OracleSpecsRequest.SerializeToString,
+            api_dot_trading__pb2.OracleSpecsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OracleDataBySpec(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/OracleDataBySpec',
+            api_dot_trading__pb2.OracleDataBySpecRequest.SerializeToString,
+            api_dot_trading__pb2.OracleDataBySpecResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

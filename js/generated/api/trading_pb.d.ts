@@ -8,6 +8,8 @@ import * as governance_pb from "../governance_pb";
 import * as chain_events_pb from "../chain_events_pb";
 import * as assets_pb from "../assets_pb";
 import * as events_pb from "../events_pb";
+import * as oracles_v1_oracle_spec_pb from "../oracles/v1/oracle_spec_pb";
+import * as oracles_v1_oracle_data_pb from "../oracles/v1/oracle_data_pb";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "../github.com/mwitkow/go-proto-validators/validator_pb";
 
 export class PropagateChainEventRequest extends jspb.Message {
@@ -3204,6 +3206,128 @@ export class LiquidityProvisionsResponse extends jspb.Message {
 export namespace LiquidityProvisionsResponse {
   export type AsObject = {
     liquidityProvisionsList: Array<vega_pb.LiquidityProvision.AsObject>,
+  }
+}
+
+export class OracleSpecRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleSpecRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleSpecRequest): OracleSpecRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleSpecRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleSpecRequest;
+  static deserializeBinaryFromReader(message: OracleSpecRequest, reader: jspb.BinaryReader): OracleSpecRequest;
+}
+
+export namespace OracleSpecRequest {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class OracleSpecResponse extends jspb.Message {
+  hasOracleSpec(): boolean;
+  clearOracleSpec(): void;
+  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleSpecResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleSpecResponse): OracleSpecResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleSpecResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleSpecResponse;
+  static deserializeBinaryFromReader(message: OracleSpecResponse, reader: jspb.BinaryReader): OracleSpecResponse;
+}
+
+export namespace OracleSpecResponse {
+  export type AsObject = {
+    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
+  }
+}
+
+export class OracleSpecsRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleSpecsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleSpecsRequest): OracleSpecsRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleSpecsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleSpecsRequest;
+  static deserializeBinaryFromReader(message: OracleSpecsRequest, reader: jspb.BinaryReader): OracleSpecsRequest;
+}
+
+export namespace OracleSpecsRequest {
+  export type AsObject = {
+  }
+}
+
+export class OracleSpecsResponse extends jspb.Message {
+  clearOracleSpecsList(): void;
+  getOracleSpecsList(): Array<oracles_v1_oracle_spec_pb.OracleSpec>;
+  setOracleSpecsList(value: Array<oracles_v1_oracle_spec_pb.OracleSpec>): void;
+  addOracleSpecs(value?: oracles_v1_oracle_spec_pb.OracleSpec, index?: number): oracles_v1_oracle_spec_pb.OracleSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleSpecsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleSpecsResponse): OracleSpecsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleSpecsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleSpecsResponse;
+  static deserializeBinaryFromReader(message: OracleSpecsResponse, reader: jspb.BinaryReader): OracleSpecsResponse;
+}
+
+export namespace OracleSpecsResponse {
+  export type AsObject = {
+    oracleSpecsList: Array<oracles_v1_oracle_spec_pb.OracleSpec.AsObject>,
+  }
+}
+
+export class OracleDataBySpecRequest extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleDataBySpecRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleDataBySpecRequest): OracleDataBySpecRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleDataBySpecRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleDataBySpecRequest;
+  static deserializeBinaryFromReader(message: OracleDataBySpecRequest, reader: jspb.BinaryReader): OracleDataBySpecRequest;
+}
+
+export namespace OracleDataBySpecRequest {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class OracleDataBySpecResponse extends jspb.Message {
+  clearOracleDataList(): void;
+  getOracleDataList(): Array<oracles_v1_oracle_data_pb.OracleData>;
+  setOracleDataList(value: Array<oracles_v1_oracle_data_pb.OracleData>): void;
+  addOracleData(value?: oracles_v1_oracle_data_pb.OracleData, index?: number): oracles_v1_oracle_data_pb.OracleData;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OracleDataBySpecResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: OracleDataBySpecResponse): OracleDataBySpecResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OracleDataBySpecResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OracleDataBySpecResponse;
+  static deserializeBinaryFromReader(message: OracleDataBySpecResponse, reader: jspb.BinaryReader): OracleDataBySpecResponse;
+}
+
+export namespace OracleDataBySpecResponse {
+  export type AsObject = {
+    oracleDataList: Array<oracles_v1_oracle_data_pb.OracleData.AsObject>,
   }
 }
 

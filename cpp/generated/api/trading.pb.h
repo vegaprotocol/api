@@ -38,6 +38,8 @@
 #include "chain_events.pb.h"
 #include "assets.pb.h"
 #include "events.pb.h"
+#include "oracles/v1/oracle_spec.pb.h"
+#include "oracles/v1/oracle_data.pb.h"
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -54,7 +56,7 @@ struct TableStruct_api_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[142]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[148]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -312,6 +314,24 @@ extern ObserveProposalVotesResponseDefaultTypeInternal _ObserveProposalVotesResp
 class OptionalProposalState;
 class OptionalProposalStateDefaultTypeInternal;
 extern OptionalProposalStateDefaultTypeInternal _OptionalProposalState_default_instance_;
+class OracleDataBySpecRequest;
+class OracleDataBySpecRequestDefaultTypeInternal;
+extern OracleDataBySpecRequestDefaultTypeInternal _OracleDataBySpecRequest_default_instance_;
+class OracleDataBySpecResponse;
+class OracleDataBySpecResponseDefaultTypeInternal;
+extern OracleDataBySpecResponseDefaultTypeInternal _OracleDataBySpecResponse_default_instance_;
+class OracleSpecRequest;
+class OracleSpecRequestDefaultTypeInternal;
+extern OracleSpecRequestDefaultTypeInternal _OracleSpecRequest_default_instance_;
+class OracleSpecResponse;
+class OracleSpecResponseDefaultTypeInternal;
+extern OracleSpecResponseDefaultTypeInternal _OracleSpecResponse_default_instance_;
+class OracleSpecsRequest;
+class OracleSpecsRequestDefaultTypeInternal;
+extern OracleSpecsRequestDefaultTypeInternal _OracleSpecsRequest_default_instance_;
+class OracleSpecsResponse;
+class OracleSpecsResponseDefaultTypeInternal;
+extern OracleSpecsResponseDefaultTypeInternal _OracleSpecsResponse_default_instance_;
 class OrderByIDRequest;
 class OrderByIDRequestDefaultTypeInternal;
 extern OrderByIDRequestDefaultTypeInternal _OrderByIDRequest_default_instance_;
@@ -575,6 +595,12 @@ template<> ::api::v1::ObservePartyVotesResponse* Arena::CreateMaybeMessage<::api
 template<> ::api::v1::ObserveProposalVotesRequest* Arena::CreateMaybeMessage<::api::v1::ObserveProposalVotesRequest>(Arena*);
 template<> ::api::v1::ObserveProposalVotesResponse* Arena::CreateMaybeMessage<::api::v1::ObserveProposalVotesResponse>(Arena*);
 template<> ::api::v1::OptionalProposalState* Arena::CreateMaybeMessage<::api::v1::OptionalProposalState>(Arena*);
+template<> ::api::v1::OracleDataBySpecRequest* Arena::CreateMaybeMessage<::api::v1::OracleDataBySpecRequest>(Arena*);
+template<> ::api::v1::OracleDataBySpecResponse* Arena::CreateMaybeMessage<::api::v1::OracleDataBySpecResponse>(Arena*);
+template<> ::api::v1::OracleSpecRequest* Arena::CreateMaybeMessage<::api::v1::OracleSpecRequest>(Arena*);
+template<> ::api::v1::OracleSpecResponse* Arena::CreateMaybeMessage<::api::v1::OracleSpecResponse>(Arena*);
+template<> ::api::v1::OracleSpecsRequest* Arena::CreateMaybeMessage<::api::v1::OracleSpecsRequest>(Arena*);
+template<> ::api::v1::OracleSpecsResponse* Arena::CreateMaybeMessage<::api::v1::OracleSpecsResponse>(Arena*);
 template<> ::api::v1::OrderByIDRequest* Arena::CreateMaybeMessage<::api::v1::OrderByIDRequest>(Arena*);
 template<> ::api::v1::OrderByIDResponse* Arena::CreateMaybeMessage<::api::v1::OrderByIDResponse>(Arena*);
 template<> ::api::v1::OrderByMarketAndIDRequest* Arena::CreateMaybeMessage<::api::v1::OrderByMarketAndIDRequest>(Arena*);
@@ -21753,6 +21779,850 @@ class LiquidityProvisionsResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
+// -------------------------------------------------------------------
+
+class OracleSpecRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.OracleSpecRequest) */ {
+ public:
+  inline OracleSpecRequest() : OracleSpecRequest(nullptr) {}
+  virtual ~OracleSpecRequest();
+
+  OracleSpecRequest(const OracleSpecRequest& from);
+  OracleSpecRequest(OracleSpecRequest&& from) noexcept
+    : OracleSpecRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleSpecRequest& operator=(const OracleSpecRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleSpecRequest& operator=(OracleSpecRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleSpecRequest& default_instance();
+
+  static inline const OracleSpecRequest* internal_default_instance() {
+    return reinterpret_cast<const OracleSpecRequest*>(
+               &_OracleSpecRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    142;
+
+  friend void swap(OracleSpecRequest& a, OracleSpecRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleSpecRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleSpecRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleSpecRequest* New() const final {
+    return CreateMaybeMessage<OracleSpecRequest>(nullptr);
+  }
+
+  OracleSpecRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleSpecRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleSpecRequest& from);
+  void MergeFrom(const OracleSpecRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleSpecRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.OracleSpecRequest";
+  }
+  protected:
+  explicit OracleSpecRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // string id = 1 [json_name = "id", (.validator.field) = {
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:api.v1.OracleSpecRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OracleSpecResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.OracleSpecResponse) */ {
+ public:
+  inline OracleSpecResponse() : OracleSpecResponse(nullptr) {}
+  virtual ~OracleSpecResponse();
+
+  OracleSpecResponse(const OracleSpecResponse& from);
+  OracleSpecResponse(OracleSpecResponse&& from) noexcept
+    : OracleSpecResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleSpecResponse& operator=(const OracleSpecResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleSpecResponse& operator=(OracleSpecResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleSpecResponse& default_instance();
+
+  static inline const OracleSpecResponse* internal_default_instance() {
+    return reinterpret_cast<const OracleSpecResponse*>(
+               &_OracleSpecResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    143;
+
+  friend void swap(OracleSpecResponse& a, OracleSpecResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleSpecResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleSpecResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleSpecResponse* New() const final {
+    return CreateMaybeMessage<OracleSpecResponse>(nullptr);
+  }
+
+  OracleSpecResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleSpecResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleSpecResponse& from);
+  void MergeFrom(const OracleSpecResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleSpecResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.OracleSpecResponse";
+  }
+  protected:
+  explicit OracleSpecResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOracleSpecFieldNumber = 1,
+  };
+  // .oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];
+  bool has_oracle_spec() const;
+  private:
+  bool _internal_has_oracle_spec() const;
+  public:
+  void clear_oracle_spec();
+  const ::oracles::v1::OracleSpec& oracle_spec() const;
+  ::oracles::v1::OracleSpec* release_oracle_spec();
+  ::oracles::v1::OracleSpec* mutable_oracle_spec();
+  void set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec);
+  private:
+  const ::oracles::v1::OracleSpec& _internal_oracle_spec() const;
+  ::oracles::v1::OracleSpec* _internal_mutable_oracle_spec();
+  public:
+  void unsafe_arena_set_allocated_oracle_spec(
+      ::oracles::v1::OracleSpec* oracle_spec);
+  ::oracles::v1::OracleSpec* unsafe_arena_release_oracle_spec();
+
+  // @@protoc_insertion_point(class_scope:api.v1.OracleSpecResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::oracles::v1::OracleSpec* oracle_spec_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OracleSpecsRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.OracleSpecsRequest) */ {
+ public:
+  inline OracleSpecsRequest() : OracleSpecsRequest(nullptr) {}
+  virtual ~OracleSpecsRequest();
+
+  OracleSpecsRequest(const OracleSpecsRequest& from);
+  OracleSpecsRequest(OracleSpecsRequest&& from) noexcept
+    : OracleSpecsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleSpecsRequest& operator=(const OracleSpecsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleSpecsRequest& operator=(OracleSpecsRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleSpecsRequest& default_instance();
+
+  static inline const OracleSpecsRequest* internal_default_instance() {
+    return reinterpret_cast<const OracleSpecsRequest*>(
+               &_OracleSpecsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    144;
+
+  friend void swap(OracleSpecsRequest& a, OracleSpecsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleSpecsRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleSpecsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleSpecsRequest* New() const final {
+    return CreateMaybeMessage<OracleSpecsRequest>(nullptr);
+  }
+
+  OracleSpecsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleSpecsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleSpecsRequest& from);
+  void MergeFrom(const OracleSpecsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleSpecsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.OracleSpecsRequest";
+  }
+  protected:
+  explicit OracleSpecsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:api.v1.OracleSpecsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OracleSpecsResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.OracleSpecsResponse) */ {
+ public:
+  inline OracleSpecsResponse() : OracleSpecsResponse(nullptr) {}
+  virtual ~OracleSpecsResponse();
+
+  OracleSpecsResponse(const OracleSpecsResponse& from);
+  OracleSpecsResponse(OracleSpecsResponse&& from) noexcept
+    : OracleSpecsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleSpecsResponse& operator=(const OracleSpecsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleSpecsResponse& operator=(OracleSpecsResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleSpecsResponse& default_instance();
+
+  static inline const OracleSpecsResponse* internal_default_instance() {
+    return reinterpret_cast<const OracleSpecsResponse*>(
+               &_OracleSpecsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    145;
+
+  friend void swap(OracleSpecsResponse& a, OracleSpecsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleSpecsResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleSpecsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleSpecsResponse* New() const final {
+    return CreateMaybeMessage<OracleSpecsResponse>(nullptr);
+  }
+
+  OracleSpecsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleSpecsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleSpecsResponse& from);
+  void MergeFrom(const OracleSpecsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleSpecsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.OracleSpecsResponse";
+  }
+  protected:
+  explicit OracleSpecsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOracleSpecsFieldNumber = 1,
+  };
+  // repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];
+  int oracle_specs_size() const;
+  private:
+  int _internal_oracle_specs_size() const;
+  public:
+  void clear_oracle_specs();
+  ::oracles::v1::OracleSpec* mutable_oracle_specs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleSpec >*
+      mutable_oracle_specs();
+  private:
+  const ::oracles::v1::OracleSpec& _internal_oracle_specs(int index) const;
+  ::oracles::v1::OracleSpec* _internal_add_oracle_specs();
+  public:
+  const ::oracles::v1::OracleSpec& oracle_specs(int index) const;
+  ::oracles::v1::OracleSpec* add_oracle_specs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleSpec >&
+      oracle_specs() const;
+
+  // @@protoc_insertion_point(class_scope:api.v1.OracleSpecsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleSpec > oracle_specs_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OracleDataBySpecRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.OracleDataBySpecRequest) */ {
+ public:
+  inline OracleDataBySpecRequest() : OracleDataBySpecRequest(nullptr) {}
+  virtual ~OracleDataBySpecRequest();
+
+  OracleDataBySpecRequest(const OracleDataBySpecRequest& from);
+  OracleDataBySpecRequest(OracleDataBySpecRequest&& from) noexcept
+    : OracleDataBySpecRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleDataBySpecRequest& operator=(const OracleDataBySpecRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleDataBySpecRequest& operator=(OracleDataBySpecRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleDataBySpecRequest& default_instance();
+
+  static inline const OracleDataBySpecRequest* internal_default_instance() {
+    return reinterpret_cast<const OracleDataBySpecRequest*>(
+               &_OracleDataBySpecRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    146;
+
+  friend void swap(OracleDataBySpecRequest& a, OracleDataBySpecRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleDataBySpecRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleDataBySpecRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleDataBySpecRequest* New() const final {
+    return CreateMaybeMessage<OracleDataBySpecRequest>(nullptr);
+  }
+
+  OracleDataBySpecRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleDataBySpecRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleDataBySpecRequest& from);
+  void MergeFrom(const OracleDataBySpecRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleDataBySpecRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.OracleDataBySpecRequest";
+  }
+  protected:
+  explicit OracleDataBySpecRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // string id = 1 [json_name = "id", (.validator.field) = {
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:api.v1.OracleDataBySpecRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OracleDataBySpecResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.OracleDataBySpecResponse) */ {
+ public:
+  inline OracleDataBySpecResponse() : OracleDataBySpecResponse(nullptr) {}
+  virtual ~OracleDataBySpecResponse();
+
+  OracleDataBySpecResponse(const OracleDataBySpecResponse& from);
+  OracleDataBySpecResponse(OracleDataBySpecResponse&& from) noexcept
+    : OracleDataBySpecResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline OracleDataBySpecResponse& operator=(const OracleDataBySpecResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OracleDataBySpecResponse& operator=(OracleDataBySpecResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OracleDataBySpecResponse& default_instance();
+
+  static inline const OracleDataBySpecResponse* internal_default_instance() {
+    return reinterpret_cast<const OracleDataBySpecResponse*>(
+               &_OracleDataBySpecResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    147;
+
+  friend void swap(OracleDataBySpecResponse& a, OracleDataBySpecResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OracleDataBySpecResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OracleDataBySpecResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OracleDataBySpecResponse* New() const final {
+    return CreateMaybeMessage<OracleDataBySpecResponse>(nullptr);
+  }
+
+  OracleDataBySpecResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleDataBySpecResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OracleDataBySpecResponse& from);
+  void MergeFrom(const OracleDataBySpecResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OracleDataBySpecResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.OracleDataBySpecResponse";
+  }
+  protected:
+  explicit OracleDataBySpecResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOracleDataFieldNumber = 1,
+  };
+  // repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];
+  int oracle_data_size() const;
+  private:
+  int _internal_oracle_data_size() const;
+  public:
+  void clear_oracle_data();
+  ::oracles::v1::OracleData* mutable_oracle_data(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleData >*
+      mutable_oracle_data();
+  private:
+  const ::oracles::v1::OracleData& _internal_oracle_data(int index) const;
+  ::oracles::v1::OracleData* _internal_add_oracle_data();
+  public:
+  const ::oracles::v1::OracleData& oracle_data(int index) const;
+  ::oracles::v1::OracleData* add_oracle_data();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleData >&
+      oracle_data() const;
+
+  // @@protoc_insertion_point(class_scope:api.v1.OracleDataBySpecResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleData > oracle_data_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
 // ===================================================================
 
 
@@ -32747,9 +33617,316 @@ LiquidityProvisionsResponse::liquidity_provisions() const {
   return liquidity_provisions_;
 }
 
+// -------------------------------------------------------------------
+
+// OracleSpecRequest
+
+// string id = 1 [json_name = "id", (.validator.field) = {
+inline void OracleSpecRequest::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& OracleSpecRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.v1.OracleSpecRequest.id)
+  return _internal_id();
+}
+inline void OracleSpecRequest::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:api.v1.OracleSpecRequest.id)
+}
+inline std::string* OracleSpecRequest::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:api.v1.OracleSpecRequest.id)
+  return _internal_mutable_id();
+}
+inline const std::string& OracleSpecRequest::_internal_id() const {
+  return id_.Get();
+}
+inline void OracleSpecRequest::_internal_set_id(const std::string& value) {
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OracleSpecRequest::set_id(std::string&& value) {
+
+  id_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:api.v1.OracleSpecRequest.id)
+}
+inline void OracleSpecRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:api.v1.OracleSpecRequest.id)
+}
+inline void OracleSpecRequest::set_id(const char* value,
+    size_t size) {
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:api.v1.OracleSpecRequest.id)
+}
+inline std::string* OracleSpecRequest::_internal_mutable_id() {
+
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OracleSpecRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.v1.OracleSpecRequest.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OracleSpecRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:api.v1.OracleSpecRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// OracleSpecResponse
+
+// .oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];
+inline bool OracleSpecResponse::_internal_has_oracle_spec() const {
+  return this != internal_default_instance() && oracle_spec_ != nullptr;
+}
+inline bool OracleSpecResponse::has_oracle_spec() const {
+  return _internal_has_oracle_spec();
+}
+inline const ::oracles::v1::OracleSpec& OracleSpecResponse::_internal_oracle_spec() const {
+  const ::oracles::v1::OracleSpec* p = oracle_spec_;
+  return p != nullptr ? *p : reinterpret_cast<const ::oracles::v1::OracleSpec&>(
+      ::oracles::v1::_OracleSpec_default_instance_);
+}
+inline const ::oracles::v1::OracleSpec& OracleSpecResponse::oracle_spec() const {
+  // @@protoc_insertion_point(field_get:api.v1.OracleSpecResponse.oracle_spec)
+  return _internal_oracle_spec();
+}
+inline void OracleSpecResponse::unsafe_arena_set_allocated_oracle_spec(
+    ::oracles::v1::OracleSpec* oracle_spec) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
+  }
+  oracle_spec_ = oracle_spec;
+  if (oracle_spec) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.OracleSpecResponse.oracle_spec)
+}
+inline ::oracles::v1::OracleSpec* OracleSpecResponse::release_oracle_spec() {
+
+  ::oracles::v1::OracleSpec* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::oracles::v1::OracleSpec* OracleSpecResponse::unsafe_arena_release_oracle_spec() {
+  // @@protoc_insertion_point(field_release:api.v1.OracleSpecResponse.oracle_spec)
+
+  ::oracles::v1::OracleSpec* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  return temp;
+}
+inline ::oracles::v1::OracleSpec* OracleSpecResponse::_internal_mutable_oracle_spec() {
+
+  if (oracle_spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::oracles::v1::OracleSpec>(GetArena());
+    oracle_spec_ = p;
+  }
+  return oracle_spec_;
+}
+inline ::oracles::v1::OracleSpec* OracleSpecResponse::mutable_oracle_spec() {
+  // @@protoc_insertion_point(field_mutable:api.v1.OracleSpecResponse.oracle_spec)
+  return _internal_mutable_oracle_spec();
+}
+inline void OracleSpecResponse::set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
+  }
+  if (oracle_spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec, submessage_arena);
+    }
+
+  } else {
+
+  }
+  oracle_spec_ = oracle_spec;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.OracleSpecResponse.oracle_spec)
+}
+
+// -------------------------------------------------------------------
+
+// OracleSpecsRequest
+
+// -------------------------------------------------------------------
+
+// OracleSpecsResponse
+
+// repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];
+inline int OracleSpecsResponse::_internal_oracle_specs_size() const {
+  return oracle_specs_.size();
+}
+inline int OracleSpecsResponse::oracle_specs_size() const {
+  return _internal_oracle_specs_size();
+}
+inline ::oracles::v1::OracleSpec* OracleSpecsResponse::mutable_oracle_specs(int index) {
+  // @@protoc_insertion_point(field_mutable:api.v1.OracleSpecsResponse.oracle_specs)
+  return oracle_specs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleSpec >*
+OracleSpecsResponse::mutable_oracle_specs() {
+  // @@protoc_insertion_point(field_mutable_list:api.v1.OracleSpecsResponse.oracle_specs)
+  return &oracle_specs_;
+}
+inline const ::oracles::v1::OracleSpec& OracleSpecsResponse::_internal_oracle_specs(int index) const {
+  return oracle_specs_.Get(index);
+}
+inline const ::oracles::v1::OracleSpec& OracleSpecsResponse::oracle_specs(int index) const {
+  // @@protoc_insertion_point(field_get:api.v1.OracleSpecsResponse.oracle_specs)
+  return _internal_oracle_specs(index);
+}
+inline ::oracles::v1::OracleSpec* OracleSpecsResponse::_internal_add_oracle_specs() {
+  return oracle_specs_.Add();
+}
+inline ::oracles::v1::OracleSpec* OracleSpecsResponse::add_oracle_specs() {
+  // @@protoc_insertion_point(field_add:api.v1.OracleSpecsResponse.oracle_specs)
+  return _internal_add_oracle_specs();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleSpec >&
+OracleSpecsResponse::oracle_specs() const {
+  // @@protoc_insertion_point(field_list:api.v1.OracleSpecsResponse.oracle_specs)
+  return oracle_specs_;
+}
+
+// -------------------------------------------------------------------
+
+// OracleDataBySpecRequest
+
+// string id = 1 [json_name = "id", (.validator.field) = {
+inline void OracleDataBySpecRequest::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& OracleDataBySpecRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.v1.OracleDataBySpecRequest.id)
+  return _internal_id();
+}
+inline void OracleDataBySpecRequest::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:api.v1.OracleDataBySpecRequest.id)
+}
+inline std::string* OracleDataBySpecRequest::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:api.v1.OracleDataBySpecRequest.id)
+  return _internal_mutable_id();
+}
+inline const std::string& OracleDataBySpecRequest::_internal_id() const {
+  return id_.Get();
+}
+inline void OracleDataBySpecRequest::_internal_set_id(const std::string& value) {
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OracleDataBySpecRequest::set_id(std::string&& value) {
+
+  id_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:api.v1.OracleDataBySpecRequest.id)
+}
+inline void OracleDataBySpecRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:api.v1.OracleDataBySpecRequest.id)
+}
+inline void OracleDataBySpecRequest::set_id(const char* value,
+    size_t size) {
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:api.v1.OracleDataBySpecRequest.id)
+}
+inline std::string* OracleDataBySpecRequest::_internal_mutable_id() {
+
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OracleDataBySpecRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.v1.OracleDataBySpecRequest.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OracleDataBySpecRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:api.v1.OracleDataBySpecRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// OracleDataBySpecResponse
+
+// repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];
+inline int OracleDataBySpecResponse::_internal_oracle_data_size() const {
+  return oracle_data_.size();
+}
+inline int OracleDataBySpecResponse::oracle_data_size() const {
+  return _internal_oracle_data_size();
+}
+inline ::oracles::v1::OracleData* OracleDataBySpecResponse::mutable_oracle_data(int index) {
+  // @@protoc_insertion_point(field_mutable:api.v1.OracleDataBySpecResponse.oracle_data)
+  return oracle_data_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleData >*
+OracleDataBySpecResponse::mutable_oracle_data() {
+  // @@protoc_insertion_point(field_mutable_list:api.v1.OracleDataBySpecResponse.oracle_data)
+  return &oracle_data_;
+}
+inline const ::oracles::v1::OracleData& OracleDataBySpecResponse::_internal_oracle_data(int index) const {
+  return oracle_data_.Get(index);
+}
+inline const ::oracles::v1::OracleData& OracleDataBySpecResponse::oracle_data(int index) const {
+  // @@protoc_insertion_point(field_get:api.v1.OracleDataBySpecResponse.oracle_data)
+  return _internal_oracle_data(index);
+}
+inline ::oracles::v1::OracleData* OracleDataBySpecResponse::_internal_add_oracle_data() {
+  return oracle_data_.Add();
+}
+inline ::oracles::v1::OracleData* OracleDataBySpecResponse::add_oracle_data() {
+  // @@protoc_insertion_point(field_add:api.v1.OracleDataBySpecResponse.oracle_data)
+  return _internal_add_oracle_data();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::oracles::v1::OracleData >&
+OracleDataBySpecResponse::oracle_data() const {
+  // @@protoc_insertion_point(field_list:api.v1.OracleDataBySpecResponse.oracle_data)
+  return oracle_data_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

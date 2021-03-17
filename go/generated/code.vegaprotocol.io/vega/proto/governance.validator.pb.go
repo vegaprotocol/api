@@ -10,6 +10,7 @@ import (
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	_ "github.com/vegaprotocol/api/go/generated/code.vegaprotocol.io/vega/proto/oracles/v1"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -26,6 +27,16 @@ func (this *FutureProduct) Validate() error {
 	}
 	if this.QuoteName == "" {
 		return github_com_mwitkow_go_proto_validators.FieldError("QuoteName", fmt.Errorf(`value '%v' must not be an empty string`, this.QuoteName))
+	}
+	if this.OracleSpec != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.OracleSpec); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("OracleSpec", err)
+		}
+	}
+	if this.OracleSpecBinding != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.OracleSpecBinding); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("OracleSpecBinding", err)
+		}
 	}
 	return nil
 }

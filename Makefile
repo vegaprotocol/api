@@ -5,8 +5,24 @@ SHELL := /usr/bin/env bash
 .PHONY: default
 default:
 	@echo "Please select a target:"
-	@echo "- preproto:  copy *.proto from vega core repository"
-	@echo "- proto:     Run buf to auto-generate API clients"
+	@echo "- pregraphql:  Copy schema.graphql from vega core repository."
+	@echo "- graphql:     Build GraphQL documentation."
+	@echo "- preproto:    Copy *.proto from vega core repository."
+	@echo "- proto:       Run buf to auto-generate API clients and gRPC documentation."
+
+.PHONY: pregraphql
+pregraphql:
+	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
+	@cp -a "$(VEGACORE)/gateway/graphql/schema.graphql" graphql/
+
+.PHONY: graphql
+graphql:
+	@cd graphql && \
+	gd=./node_modules/.bin/graphqldoc && \
+	if ! test -x "$$gd" ; then \
+		npm install || exit 1 ; \
+	fi && \
+	"$$gd" -f -s schema.graphql -o doc/
 
 .PHONY: preproto
 preproto:
@@ -14,11 +30,13 @@ preproto:
 	@rm -rf proto && mkdir proto
 	@mkdir -p proto && find "$(VEGACORE)"/proto -maxdepth 1 -name '*.proto' -exec cp '{}' proto/ ';'
 	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
+	@mkdir -p proto/oracles/v1 && find "$(VEGACORE)"/proto/oracles/v1 -maxdepth 1 -name '*.proto' -exec cp '{}' proto/oracles/v1/ ';'
 	@mkdir -p proto/tm && find "$(VEGACORE)"/proto/tm -maxdepth 1 -name '*.proto' -exec cp '{}' proto/tm/ ';'
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 	@find proto -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega";' # \n// option java_outer_classname = "tbd";\noption java_multiple_files = true;
 	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
+	@find proto/oracles/v1 -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.oracles.v1";'
 	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
 
 .PHONY: buf-build

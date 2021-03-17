@@ -33,6 +33,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
+#include "oracles/v1/oracle_spec.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_markets_2eproto
@@ -65,9 +66,6 @@ extern ContinuousTradingDefaultTypeInternal _ContinuousTrading_default_instance_
 class DiscreteTrading;
 class DiscreteTradingDefaultTypeInternal;
 extern DiscreteTradingDefaultTypeInternal _DiscreteTrading_default_instance_;
-class EthereumEvent;
-class EthereumEventDefaultTypeInternal;
-extern EthereumEventDefaultTypeInternal _EthereumEvent_default_instance_;
 class FeeFactors;
 class FeeFactorsDefaultTypeInternal;
 extern FeeFactorsDefaultTypeInternal _FeeFactors_default_instance_;
@@ -95,6 +93,9 @@ extern MarginCalculatorDefaultTypeInternal _MarginCalculator_default_instance_;
 class Market;
 class MarketDefaultTypeInternal;
 extern MarketDefaultTypeInternal _Market_default_instance_;
+class OracleSpecToFutureBinding;
+class OracleSpecToFutureBindingDefaultTypeInternal;
+extern OracleSpecToFutureBindingDefaultTypeInternal _OracleSpecToFutureBinding_default_instance_;
 class PriceMonitoringParameters;
 class PriceMonitoringParametersDefaultTypeInternal;
 extern PriceMonitoringParametersDefaultTypeInternal _PriceMonitoringParameters_default_instance_;
@@ -124,7 +125,6 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::vega::AuctionDuration* Arena::CreateMaybeMessage<::vega::AuctionDuration>(Arena*);
 template<> ::vega::ContinuousTrading* Arena::CreateMaybeMessage<::vega::ContinuousTrading>(Arena*);
 template<> ::vega::DiscreteTrading* Arena::CreateMaybeMessage<::vega::DiscreteTrading>(Arena*);
-template<> ::vega::EthereumEvent* Arena::CreateMaybeMessage<::vega::EthereumEvent>(Arena*);
 template<> ::vega::FeeFactors* Arena::CreateMaybeMessage<::vega::FeeFactors>(Arena*);
 template<> ::vega::Fees* Arena::CreateMaybeMessage<::vega::Fees>(Arena*);
 template<> ::vega::Future* Arena::CreateMaybeMessage<::vega::Future>(Arena*);
@@ -134,6 +134,7 @@ template<> ::vega::LogNormalModelParams* Arena::CreateMaybeMessage<::vega::LogNo
 template<> ::vega::LogNormalRiskModel* Arena::CreateMaybeMessage<::vega::LogNormalRiskModel>(Arena*);
 template<> ::vega::MarginCalculator* Arena::CreateMaybeMessage<::vega::MarginCalculator>(Arena*);
 template<> ::vega::Market* Arena::CreateMaybeMessage<::vega::Market>(Arena*);
+template<> ::vega::OracleSpecToFutureBinding* Arena::CreateMaybeMessage<::vega::OracleSpecToFutureBinding>(Arena*);
 template<> ::vega::PriceMonitoringParameters* Arena::CreateMaybeMessage<::vega::PriceMonitoringParameters>(Arena*);
 template<> ::vega::PriceMonitoringSettings* Arena::CreateMaybeMessage<::vega::PriceMonitoringSettings>(Arena*);
 template<> ::vega::PriceMonitoringTrigger* Arena::CreateMaybeMessage<::vega::PriceMonitoringTrigger>(Arena*);
@@ -688,11 +689,6 @@ class Future PROTOBUF_FINAL :
   }
   static const Future& default_instance();
 
-  enum OracleCase {
-    kEthereumEvent = 100,
-    ORACLE_NOT_SET = 0,
-  };
-
   static inline const Future* internal_default_instance() {
     return reinterpret_cast<const Future*>(
                &_Future_default_instance_);
@@ -772,7 +768,8 @@ class Future PROTOBUF_FINAL :
     kMaturityFieldNumber = 1,
     kSettlementAssetFieldNumber = 2,
     kQuoteNameFieldNumber = 4,
-    kEthereumEventFieldNumber = 100,
+    kOracleSpecFieldNumber = 5,
+    kOracleSpecBindingFieldNumber = 6,
   };
   // string maturity = 1 [json_name = "maturity"];
   void clear_maturity();
@@ -822,33 +819,45 @@ class Future PROTOBUF_FINAL :
   std::string* _internal_mutable_quote_name();
   public:
 
-  // .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
-  bool has_ethereum_event() const;
+  // .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+  bool has_oracle_spec() const;
   private:
-  bool _internal_has_ethereum_event() const;
+  bool _internal_has_oracle_spec() const;
   public:
-  void clear_ethereum_event();
-  const ::vega::EthereumEvent& ethereum_event() const;
-  ::vega::EthereumEvent* release_ethereum_event();
-  ::vega::EthereumEvent* mutable_ethereum_event();
-  void set_allocated_ethereum_event(::vega::EthereumEvent* ethereum_event);
+  void clear_oracle_spec();
+  const ::oracles::v1::OracleSpec& oracle_spec() const;
+  ::oracles::v1::OracleSpec* release_oracle_spec();
+  ::oracles::v1::OracleSpec* mutable_oracle_spec();
+  void set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec);
   private:
-  const ::vega::EthereumEvent& _internal_ethereum_event() const;
-  ::vega::EthereumEvent* _internal_mutable_ethereum_event();
+  const ::oracles::v1::OracleSpec& _internal_oracle_spec() const;
+  ::oracles::v1::OracleSpec* _internal_mutable_oracle_spec();
   public:
-  void unsafe_arena_set_allocated_ethereum_event(
-      ::vega::EthereumEvent* ethereum_event);
-  ::vega::EthereumEvent* unsafe_arena_release_ethereum_event();
+  void unsafe_arena_set_allocated_oracle_spec(
+      ::oracles::v1::OracleSpec* oracle_spec);
+  ::oracles::v1::OracleSpec* unsafe_arena_release_oracle_spec();
 
-  void clear_oracle();
-  OracleCase oracle_case() const;
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  bool has_oracle_spec_binding() const;
+  private:
+  bool _internal_has_oracle_spec_binding() const;
+  public:
+  void clear_oracle_spec_binding();
+  const ::vega::OracleSpecToFutureBinding& oracle_spec_binding() const;
+  ::vega::OracleSpecToFutureBinding* release_oracle_spec_binding();
+  ::vega::OracleSpecToFutureBinding* mutable_oracle_spec_binding();
+  void set_allocated_oracle_spec_binding(::vega::OracleSpecToFutureBinding* oracle_spec_binding);
+  private:
+  const ::vega::OracleSpecToFutureBinding& _internal_oracle_spec_binding() const;
+  ::vega::OracleSpecToFutureBinding* _internal_mutable_oracle_spec_binding();
+  public:
+  void unsafe_arena_set_allocated_oracle_spec_binding(
+      ::vega::OracleSpecToFutureBinding* oracle_spec_binding);
+  ::vega::OracleSpecToFutureBinding* unsafe_arena_release_oracle_spec_binding();
+
   // @@protoc_insertion_point(class_scope:vega.Future)
  private:
   class _Internal;
-  void set_has_ethereum_event();
-
-  inline bool has_oracle() const;
-  inline void clear_has_oracle();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -856,34 +865,30 @@ class Future PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr maturity_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr settlement_asset_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr quote_name_;
-  union OracleUnion {
-    OracleUnion() {}
-    ::vega::EthereumEvent* ethereum_event_;
-  } oracle_;
+  ::oracles::v1::OracleSpec* oracle_spec_;
+  ::vega::OracleSpecToFutureBinding* oracle_spec_binding_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_markets_2eproto;
 };
 // -------------------------------------------------------------------
 
-class EthereumEvent PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.EthereumEvent) */ {
+class OracleSpecToFutureBinding PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.OracleSpecToFutureBinding) */ {
  public:
-  inline EthereumEvent() : EthereumEvent(nullptr) {}
-  virtual ~EthereumEvent();
+  inline OracleSpecToFutureBinding() : OracleSpecToFutureBinding(nullptr) {}
+  virtual ~OracleSpecToFutureBinding();
 
-  EthereumEvent(const EthereumEvent& from);
-  EthereumEvent(EthereumEvent&& from) noexcept
-    : EthereumEvent() {
+  OracleSpecToFutureBinding(const OracleSpecToFutureBinding& from);
+  OracleSpecToFutureBinding(OracleSpecToFutureBinding&& from) noexcept
+    : OracleSpecToFutureBinding() {
     *this = ::std::move(from);
   }
 
-  inline EthereumEvent& operator=(const EthereumEvent& from) {
+  inline OracleSpecToFutureBinding& operator=(const OracleSpecToFutureBinding& from) {
     CopyFrom(from);
     return *this;
   }
-  inline EthereumEvent& operator=(EthereumEvent&& from) noexcept {
+  inline OracleSpecToFutureBinding& operator=(OracleSpecToFutureBinding&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -901,19 +906,19 @@ class EthereumEvent PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const EthereumEvent& default_instance();
+  static const OracleSpecToFutureBinding& default_instance();
 
-  static inline const EthereumEvent* internal_default_instance() {
-    return reinterpret_cast<const EthereumEvent*>(
-               &_EthereumEvent_default_instance_);
+  static inline const OracleSpecToFutureBinding* internal_default_instance() {
+    return reinterpret_cast<const OracleSpecToFutureBinding*>(
+               &_OracleSpecToFutureBinding_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  friend void swap(EthereumEvent& a, EthereumEvent& b) {
+  friend void swap(OracleSpecToFutureBinding& a, OracleSpecToFutureBinding& b) {
     a.Swap(&b);
   }
-  inline void Swap(EthereumEvent* other) {
+  inline void Swap(OracleSpecToFutureBinding* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -921,7 +926,7 @@ class EthereumEvent PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(EthereumEvent* other) {
+  void UnsafeArenaSwap(OracleSpecToFutureBinding* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -929,17 +934,17 @@ class EthereumEvent PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline EthereumEvent* New() const final {
-    return CreateMaybeMessage<EthereumEvent>(nullptr);
+  inline OracleSpecToFutureBinding* New() const final {
+    return CreateMaybeMessage<OracleSpecToFutureBinding>(nullptr);
   }
 
-  EthereumEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<EthereumEvent>(arena);
+  OracleSpecToFutureBinding* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OracleSpecToFutureBinding>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const EthereumEvent& from);
-  void MergeFrom(const EthereumEvent& from);
+  void CopyFrom(const OracleSpecToFutureBinding& from);
+  void MergeFrom(const OracleSpecToFutureBinding& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -953,13 +958,13 @@ class EthereumEvent PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EthereumEvent* other);
+  void InternalSwap(OracleSpecToFutureBinding* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "vega.EthereumEvent";
+    return "vega.OracleSpecToFutureBinding";
   }
   protected:
-  explicit EthereumEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit OracleSpecToFutureBinding(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -979,61 +984,32 @@ class EthereumEvent PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kContractIdFieldNumber = 1,
-    kEventFieldNumber = 2,
-    kValueFieldNumber = 3,
+    kSettlementPricePropertyFieldNumber = 1,
   };
-  // string contract_id = 1 [json_name = "contractId"];
-  void clear_contract_id();
-  const std::string& contract_id() const;
-  void set_contract_id(const std::string& value);
-  void set_contract_id(std::string&& value);
-  void set_contract_id(const char* value);
-  void set_contract_id(const char* value, size_t size);
-  std::string* mutable_contract_id();
-  std::string* release_contract_id();
-  void set_allocated_contract_id(std::string* contract_id);
+  // string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
+  void clear_settlement_price_property();
+  const std::string& settlement_price_property() const;
+  void set_settlement_price_property(const std::string& value);
+  void set_settlement_price_property(std::string&& value);
+  void set_settlement_price_property(const char* value);
+  void set_settlement_price_property(const char* value, size_t size);
+  std::string* mutable_settlement_price_property();
+  std::string* release_settlement_price_property();
+  void set_allocated_settlement_price_property(std::string* settlement_price_property);
   private:
-  const std::string& _internal_contract_id() const;
-  void _internal_set_contract_id(const std::string& value);
-  std::string* _internal_mutable_contract_id();
+  const std::string& _internal_settlement_price_property() const;
+  void _internal_set_settlement_price_property(const std::string& value);
+  std::string* _internal_mutable_settlement_price_property();
   public:
 
-  // string event = 2 [json_name = "event"];
-  void clear_event();
-  const std::string& event() const;
-  void set_event(const std::string& value);
-  void set_event(std::string&& value);
-  void set_event(const char* value);
-  void set_event(const char* value, size_t size);
-  std::string* mutable_event();
-  std::string* release_event();
-  void set_allocated_event(std::string* event);
-  private:
-  const std::string& _internal_event() const;
-  void _internal_set_event(const std::string& value);
-  std::string* _internal_mutable_event();
-  public:
-
-  // uint64 value = 3 [json_name = "value"];
-  void clear_value();
-  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
-  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
-  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:vega.EthereumEvent)
+  // @@protoc_insertion_point(class_scope:vega.OracleSpecToFutureBinding)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contract_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr event_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr settlement_price_property_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_markets_2eproto;
 };
@@ -1311,7 +1287,6 @@ class Instrument PROTOBUF_FINAL :
     kCodeFieldNumber = 2,
     kNameFieldNumber = 3,
     kMetadataFieldNumber = 4,
-    kInitialMarkPriceFieldNumber = 5,
     kFutureFieldNumber = 100,
   };
   // string id = 1 [json_name = "id"];
@@ -1380,15 +1355,6 @@ class Instrument PROTOBUF_FINAL :
       ::vega::InstrumentMetadata* metadata);
   ::vega::InstrumentMetadata* unsafe_arena_release_metadata();
 
-  // uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
-  void clear_initial_mark_price();
-  ::PROTOBUF_NAMESPACE_ID::uint64 initial_mark_price() const;
-  void set_initial_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_initial_mark_price() const;
-  void _internal_set_initial_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // .vega.Future future = 100 [json_name = "future"];
   bool has_future() const;
   private:
@@ -1424,7 +1390,6 @@ class Instrument PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::vega::InstrumentMetadata* metadata_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 initial_mark_price_;
   union ProductUnion {
     ProductUnion() {}
     ::vega::Future* future_;
@@ -4344,232 +4309,229 @@ inline void Future::set_allocated_quote_name(std::string* quote_name) {
   // @@protoc_insertion_point(field_set_allocated:vega.Future.quote_name)
 }
 
-// .vega.EthereumEvent ethereum_event = 100 [json_name = "ethereumEvent"];
-inline bool Future::_internal_has_ethereum_event() const {
-  return oracle_case() == kEthereumEvent;
+// .oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];
+inline bool Future::_internal_has_oracle_spec() const {
+  return this != internal_default_instance() && oracle_spec_ != nullptr;
 }
-inline bool Future::has_ethereum_event() const {
-  return _internal_has_ethereum_event();
+inline bool Future::has_oracle_spec() const {
+  return _internal_has_oracle_spec();
 }
-inline void Future::set_has_ethereum_event() {
-  _oneof_case_[0] = kEthereumEvent;
+inline const ::oracles::v1::OracleSpec& Future::_internal_oracle_spec() const {
+  const ::oracles::v1::OracleSpec* p = oracle_spec_;
+  return p != nullptr ? *p : reinterpret_cast<const ::oracles::v1::OracleSpec&>(
+      ::oracles::v1::_OracleSpec_default_instance_);
 }
-inline void Future::clear_ethereum_event() {
-  if (_internal_has_ethereum_event()) {
-    if (GetArena() == nullptr) {
-      delete oracle_.ethereum_event_;
-    }
-    clear_has_oracle();
+inline const ::oracles::v1::OracleSpec& Future::oracle_spec() const {
+  // @@protoc_insertion_point(field_get:vega.Future.oracle_spec)
+  return _internal_oracle_spec();
+}
+inline void Future::unsafe_arena_set_allocated_oracle_spec(
+    ::oracles::v1::OracleSpec* oracle_spec) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
   }
-}
-inline ::vega::EthereumEvent* Future::release_ethereum_event() {
-  // @@protoc_insertion_point(field_release:vega.Future.ethereum_event)
-  if (_internal_has_ethereum_event()) {
-    clear_has_oracle();
-      ::vega::EthereumEvent* temp = oracle_.ethereum_event_;
-    if (GetArena() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    oracle_.ethereum_event_ = nullptr;
-    return temp;
+  oracle_spec_ = oracle_spec;
+  if (oracle_spec) {
+
   } else {
-    return nullptr;
+
   }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Future.oracle_spec)
 }
-inline const ::vega::EthereumEvent& Future::_internal_ethereum_event() const {
-  return _internal_has_ethereum_event()
-      ? *oracle_.ethereum_event_
-      : reinterpret_cast< ::vega::EthereumEvent&>(::vega::_EthereumEvent_default_instance_);
+inline ::oracles::v1::OracleSpec* Future::release_oracle_spec() {
+
+  ::oracles::v1::OracleSpec* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
 }
-inline const ::vega::EthereumEvent& Future::ethereum_event() const {
-  // @@protoc_insertion_point(field_get:vega.Future.ethereum_event)
-  return _internal_ethereum_event();
+inline ::oracles::v1::OracleSpec* Future::unsafe_arena_release_oracle_spec() {
+  // @@protoc_insertion_point(field_release:vega.Future.oracle_spec)
+
+  ::oracles::v1::OracleSpec* temp = oracle_spec_;
+  oracle_spec_ = nullptr;
+  return temp;
 }
-inline ::vega::EthereumEvent* Future::unsafe_arena_release_ethereum_event() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.Future.ethereum_event)
-  if (_internal_has_ethereum_event()) {
-    clear_has_oracle();
-    ::vega::EthereumEvent* temp = oracle_.ethereum_event_;
-    oracle_.ethereum_event_ = nullptr;
-    return temp;
+inline ::oracles::v1::OracleSpec* Future::_internal_mutable_oracle_spec() {
+
+  if (oracle_spec_ == nullptr) {
+    auto* p = CreateMaybeMessage<::oracles::v1::OracleSpec>(GetArena());
+    oracle_spec_ = p;
+  }
+  return oracle_spec_;
+}
+inline ::oracles::v1::OracleSpec* Future::mutable_oracle_spec() {
+  // @@protoc_insertion_point(field_mutable:vega.Future.oracle_spec)
+  return _internal_mutable_oracle_spec();
+}
+inline void Future::set_allocated_oracle_spec(::oracles::v1::OracleSpec* oracle_spec) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_);
+  }
+  if (oracle_spec) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec)->GetArena();
+    if (message_arena != submessage_arena) {
+      oracle_spec = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec, submessage_arena);
+    }
+
   } else {
-    return nullptr;
+
   }
-}
-inline void Future::unsafe_arena_set_allocated_ethereum_event(::vega::EthereumEvent* ethereum_event) {
-  clear_oracle();
-  if (ethereum_event) {
-    set_has_ethereum_event();
-    oracle_.ethereum_event_ = ethereum_event;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Future.ethereum_event)
-}
-inline ::vega::EthereumEvent* Future::_internal_mutable_ethereum_event() {
-  if (!_internal_has_ethereum_event()) {
-    clear_oracle();
-    set_has_ethereum_event();
-    oracle_.ethereum_event_ = CreateMaybeMessage< ::vega::EthereumEvent >(GetArena());
-  }
-  return oracle_.ethereum_event_;
-}
-inline ::vega::EthereumEvent* Future::mutable_ethereum_event() {
-  // @@protoc_insertion_point(field_mutable:vega.Future.ethereum_event)
-  return _internal_mutable_ethereum_event();
+  oracle_spec_ = oracle_spec;
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.oracle_spec)
 }
 
-inline bool Future::has_oracle() const {
-  return oracle_case() != ORACLE_NOT_SET;
+// .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+inline bool Future::_internal_has_oracle_spec_binding() const {
+  return this != internal_default_instance() && oracle_spec_binding_ != nullptr;
 }
-inline void Future::clear_has_oracle() {
-  _oneof_case_[0] = ORACLE_NOT_SET;
+inline bool Future::has_oracle_spec_binding() const {
+  return _internal_has_oracle_spec_binding();
 }
-inline Future::OracleCase Future::oracle_case() const {
-  return Future::OracleCase(_oneof_case_[0]);
+inline void Future::clear_oracle_spec_binding() {
+  if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
+    delete oracle_spec_binding_;
+  }
+  oracle_spec_binding_ = nullptr;
 }
+inline const ::vega::OracleSpecToFutureBinding& Future::_internal_oracle_spec_binding() const {
+  const ::vega::OracleSpecToFutureBinding* p = oracle_spec_binding_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::OracleSpecToFutureBinding&>(
+      ::vega::_OracleSpecToFutureBinding_default_instance_);
+}
+inline const ::vega::OracleSpecToFutureBinding& Future::oracle_spec_binding() const {
+  // @@protoc_insertion_point(field_get:vega.Future.oracle_spec_binding)
+  return _internal_oracle_spec_binding();
+}
+inline void Future::unsafe_arena_set_allocated_oracle_spec_binding(
+    ::vega::OracleSpecToFutureBinding* oracle_spec_binding) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(oracle_spec_binding_);
+  }
+  oracle_spec_binding_ = oracle_spec_binding;
+  if (oracle_spec_binding) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Future.oracle_spec_binding)
+}
+inline ::vega::OracleSpecToFutureBinding* Future::release_oracle_spec_binding() {
+
+  ::vega::OracleSpecToFutureBinding* temp = oracle_spec_binding_;
+  oracle_spec_binding_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::OracleSpecToFutureBinding* Future::unsafe_arena_release_oracle_spec_binding() {
+  // @@protoc_insertion_point(field_release:vega.Future.oracle_spec_binding)
+
+  ::vega::OracleSpecToFutureBinding* temp = oracle_spec_binding_;
+  oracle_spec_binding_ = nullptr;
+  return temp;
+}
+inline ::vega::OracleSpecToFutureBinding* Future::_internal_mutable_oracle_spec_binding() {
+
+  if (oracle_spec_binding_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::OracleSpecToFutureBinding>(GetArena());
+    oracle_spec_binding_ = p;
+  }
+  return oracle_spec_binding_;
+}
+inline ::vega::OracleSpecToFutureBinding* Future::mutable_oracle_spec_binding() {
+  // @@protoc_insertion_point(field_mutable:vega.Future.oracle_spec_binding)
+  return _internal_mutable_oracle_spec_binding();
+}
+inline void Future::set_allocated_oracle_spec_binding(::vega::OracleSpecToFutureBinding* oracle_spec_binding) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete oracle_spec_binding_;
+  }
+  if (oracle_spec_binding) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(oracle_spec_binding);
+    if (message_arena != submessage_arena) {
+      oracle_spec_binding = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, oracle_spec_binding, submessage_arena);
+    }
+
+  } else {
+
+  }
+  oracle_spec_binding_ = oracle_spec_binding;
+  // @@protoc_insertion_point(field_set_allocated:vega.Future.oracle_spec_binding)
+}
+
 // -------------------------------------------------------------------
 
-// EthereumEvent
+// OracleSpecToFutureBinding
 
-// string contract_id = 1 [json_name = "contractId"];
-inline void EthereumEvent::clear_contract_id() {
-  contract_id_.ClearToEmpty();
+// string settlement_price_property = 1 [json_name = "settlementPriceProperty"];
+inline void OracleSpecToFutureBinding::clear_settlement_price_property() {
+  settlement_price_property_.ClearToEmpty();
 }
-inline const std::string& EthereumEvent::contract_id() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumEvent.contract_id)
-  return _internal_contract_id();
+inline const std::string& OracleSpecToFutureBinding::settlement_price_property() const {
+  // @@protoc_insertion_point(field_get:vega.OracleSpecToFutureBinding.settlement_price_property)
+  return _internal_settlement_price_property();
 }
-inline void EthereumEvent::set_contract_id(const std::string& value) {
-  _internal_set_contract_id(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumEvent.contract_id)
+inline void OracleSpecToFutureBinding::set_settlement_price_property(const std::string& value) {
+  _internal_set_settlement_price_property(value);
+  // @@protoc_insertion_point(field_set:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline std::string* EthereumEvent::mutable_contract_id() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumEvent.contract_id)
-  return _internal_mutable_contract_id();
+inline std::string* OracleSpecToFutureBinding::mutable_settlement_price_property() {
+  // @@protoc_insertion_point(field_mutable:vega.OracleSpecToFutureBinding.settlement_price_property)
+  return _internal_mutable_settlement_price_property();
 }
-inline const std::string& EthereumEvent::_internal_contract_id() const {
-  return contract_id_.Get();
+inline const std::string& OracleSpecToFutureBinding::_internal_settlement_price_property() const {
+  return settlement_price_property_.Get();
 }
-inline void EthereumEvent::_internal_set_contract_id(const std::string& value) {
+inline void OracleSpecToFutureBinding::_internal_set_settlement_price_property(const std::string& value) {
 
-  contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void EthereumEvent::set_contract_id(std::string&& value) {
+inline void OracleSpecToFutureBinding::set_settlement_price_property(std::string&& value) {
 
-  contract_id_.Set(
+  settlement_price_property_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumEvent.contract_id)
+  // @@protoc_insertion_point(field_set_rvalue:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline void EthereumEvent::set_contract_id(const char* value) {
+inline void OracleSpecToFutureBinding::set_settlement_price_property(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumEvent.contract_id)
+  settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline void EthereumEvent::set_contract_id(const char* value,
+inline void OracleSpecToFutureBinding::set_settlement_price_property(const char* value,
     size_t size) {
 
-  contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  settlement_price_property_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumEvent.contract_id)
+  // @@protoc_insertion_point(field_set_pointer:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
-inline std::string* EthereumEvent::_internal_mutable_contract_id() {
+inline std::string* OracleSpecToFutureBinding::_internal_mutable_settlement_price_property() {
 
-  return contract_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return settlement_price_property_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* EthereumEvent::release_contract_id() {
-  // @@protoc_insertion_point(field_release:vega.EthereumEvent.contract_id)
-  return contract_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* OracleSpecToFutureBinding::release_settlement_price_property() {
+  // @@protoc_insertion_point(field_release:vega.OracleSpecToFutureBinding.settlement_price_property)
+  return settlement_price_property_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void EthereumEvent::set_allocated_contract_id(std::string* contract_id) {
-  if (contract_id != nullptr) {
+inline void OracleSpecToFutureBinding::set_allocated_settlement_price_property(std::string* settlement_price_property) {
+  if (settlement_price_property != nullptr) {
 
   } else {
 
   }
-  contract_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), contract_id,
+  settlement_price_property_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), settlement_price_property,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumEvent.contract_id)
-}
-
-// string event = 2 [json_name = "event"];
-inline void EthereumEvent::clear_event() {
-  event_.ClearToEmpty();
-}
-inline const std::string& EthereumEvent::event() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumEvent.event)
-  return _internal_event();
-}
-inline void EthereumEvent::set_event(const std::string& value) {
-  _internal_set_event(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumEvent.event)
-}
-inline std::string* EthereumEvent::mutable_event() {
-  // @@protoc_insertion_point(field_mutable:vega.EthereumEvent.event)
-  return _internal_mutable_event();
-}
-inline const std::string& EthereumEvent::_internal_event() const {
-  return event_.Get();
-}
-inline void EthereumEvent::_internal_set_event(const std::string& value) {
-
-  event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void EthereumEvent::set_event(std::string&& value) {
-
-  event_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.EthereumEvent.event)
-}
-inline void EthereumEvent::set_event(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.EthereumEvent.event)
-}
-inline void EthereumEvent::set_event(const char* value,
-    size_t size) {
-
-  event_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.EthereumEvent.event)
-}
-inline std::string* EthereumEvent::_internal_mutable_event() {
-
-  return event_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* EthereumEvent::release_event() {
-  // @@protoc_insertion_point(field_release:vega.EthereumEvent.event)
-  return event_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void EthereumEvent::set_allocated_event(std::string* event) {
-  if (event != nullptr) {
-
-  } else {
-
-  }
-  event_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), event,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.EthereumEvent.event)
-}
-
-// uint64 value = 3 [json_name = "value"];
-inline void EthereumEvent::clear_value() {
-  value_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 EthereumEvent::_internal_value() const {
-  return value_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 EthereumEvent::value() const {
-  // @@protoc_insertion_point(field_get:vega.EthereumEvent.value)
-  return _internal_value();
-}
-inline void EthereumEvent::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  value_ = value;
-}
-inline void EthereumEvent::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:vega.EthereumEvent.value)
+  // @@protoc_insertion_point(field_set_allocated:vega.OracleSpecToFutureBinding.settlement_price_property)
 }
 
 // -------------------------------------------------------------------
@@ -4918,26 +4880,6 @@ inline void Instrument::set_allocated_metadata(::vega::InstrumentMetadata* metad
   }
   metadata_ = metadata;
   // @@protoc_insertion_point(field_set_allocated:vega.Instrument.metadata)
-}
-
-// uint64 initial_mark_price = 5 [json_name = "initialMarkPrice"];
-inline void Instrument::clear_initial_mark_price() {
-  initial_mark_price_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instrument::_internal_initial_mark_price() const {
-  return initial_mark_price_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instrument::initial_mark_price() const {
-  // @@protoc_insertion_point(field_get:vega.Instrument.initial_mark_price)
-  return _internal_initial_mark_price();
-}
-inline void Instrument::_internal_set_initial_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  initial_mark_price_ = value;
-}
-inline void Instrument::set_initial_mark_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_initial_mark_price(value);
-  // @@protoc_insertion_point(field_set:vega.Instrument.initial_mark_price)
 }
 
 // .vega.Future future = 100 [json_name = "future"];

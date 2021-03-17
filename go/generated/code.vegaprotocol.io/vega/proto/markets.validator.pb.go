@@ -10,6 +10,7 @@ import (
 	proto "github.com/golang/protobuf/proto"
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
+	_ "github.com/vegaprotocol/api/go/generated/code.vegaprotocol.io/vega/proto/oracles/v1"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -33,16 +34,19 @@ func (this *DiscreteTrading) Validate() error {
 	return nil
 }
 func (this *Future) Validate() error {
-	if oneOfNester, ok := this.GetOracle().(*Future_EthereumEvent); ok {
-		if oneOfNester.EthereumEvent != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.EthereumEvent); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("EthereumEvent", err)
-			}
+	if this.OracleSpec != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.OracleSpec); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("OracleSpec", err)
+		}
+	}
+	if this.OracleSpecBinding != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.OracleSpecBinding); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("OracleSpecBinding", err)
 		}
 	}
 	return nil
 }
-func (this *EthereumEvent) Validate() error {
+func (this *OracleSpecToFutureBinding) Validate() error {
 	return nil
 }
 func (this *InstrumentMetadata) Validate() error {

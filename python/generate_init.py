@@ -11,6 +11,7 @@ from .helpers import grpc_error_detail
 from .walletclient import WalletClient
 from .generated import (
     api,
+    oracles,
     tm,
 {%- for i in imports %}
     {{ i }},
@@ -24,6 +25,7 @@ __all__ = [
     "WalletClient",
     "grpc_error_detail",
     "api",
+    "oracles",
     "tm",
 {%- for a in all_list %}
     "{{ a }}",

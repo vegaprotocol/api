@@ -10,11 +10,21 @@
     - [File-level Extensions](#github.com/mwitkow/go-proto-validators/validator.proto-extensions)
     - [File-level Extensions](#github.com/mwitkow/go-proto-validators/validator.proto-extensions)
   
+- [oracles/v1/oracle_spec.proto](#oracles/v1/oracle_spec.proto)
+    - [Condition](#oracles.v1.Condition)
+    - [Filter](#oracles.v1.Filter)
+    - [OracleSpec](#oracles.v1.OracleSpec)
+    - [OracleSpecConfiguration](#oracles.v1.OracleSpecConfiguration)
+    - [PropertyKey](#oracles.v1.PropertyKey)
+  
+    - [Condition.Operator](#oracles.v1.Condition.Operator)
+    - [OracleSpec.Status](#oracles.v1.OracleSpec.Status)
+    - [PropertyKey.Type](#oracles.v1.PropertyKey.Type)
+  
 - [markets.proto](#markets.proto)
     - [AuctionDuration](#vega.AuctionDuration)
     - [ContinuousTrading](#vega.ContinuousTrading)
     - [DiscreteTrading](#vega.DiscreteTrading)
-    - [EthereumEvent](#vega.EthereumEvent)
     - [FeeFactors](#vega.FeeFactors)
     - [Fees](#vega.Fees)
     - [Future](#vega.Future)
@@ -24,6 +34,7 @@
     - [LogNormalRiskModel](#vega.LogNormalRiskModel)
     - [MarginCalculator](#vega.MarginCalculator)
     - [Market](#vega.Market)
+    - [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding)
     - [PriceMonitoringParameters](#vega.PriceMonitoringParameters)
     - [PriceMonitoringSettings](#vega.PriceMonitoringSettings)
     - [PriceMonitoringTrigger](#vega.PriceMonitoringTrigger)
@@ -158,6 +169,10 @@
     - [RemoveValidator](#vega.RemoveValidator)
     - [ValidatorEvent](#vega.ValidatorEvent)
   
+- [oracles/v1/oracle_data.proto](#oracles/v1/oracle_data.proto)
+    - [OracleData](#oracles.v1.OracleData)
+    - [Property](#oracles.v1.Property)
+  
 - [events.proto](#events.proto)
     - [AuctionEvent](#vega.AuctionEvent)
     - [BusEvent](#vega.BusEvent)
@@ -258,6 +273,12 @@
     - [ObserveProposalVotesRequest](#api.v1.ObserveProposalVotesRequest)
     - [ObserveProposalVotesResponse](#api.v1.ObserveProposalVotesResponse)
     - [OptionalProposalState](#api.v1.OptionalProposalState)
+    - [OracleDataBySpecRequest](#api.v1.OracleDataBySpecRequest)
+    - [OracleDataBySpecResponse](#api.v1.OracleDataBySpecResponse)
+    - [OracleSpecRequest](#api.v1.OracleSpecRequest)
+    - [OracleSpecResponse](#api.v1.OracleSpecResponse)
+    - [OracleSpecsRequest](#api.v1.OracleSpecsRequest)
+    - [OracleSpecsResponse](#api.v1.OracleSpecsResponse)
     - [OrderByIDRequest](#api.v1.OrderByIDRequest)
     - [OrderByIDResponse](#api.v1.OrderByIDResponse)
     - [OrderByMarketAndIDRequest](#api.v1.OrderByMarketAndIDRequest)
@@ -424,6 +445,157 @@
 
 
 
+<a name="oracles/v1/oracle_spec.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## oracles/v1/oracle_spec.proto
+
+
+
+<a name="oracles.v1.Condition"></a>
+
+### Condition
+Condition describes the condition that must be validated by the
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| operator | [Condition.Operator](#oracles.v1.Condition.Operator) |  | comparator is the type of comparison to make on the value. |
+| value | [string](#string) |  | value is used by the comparator. |
+
+
+
+
+
+
+<a name="oracles.v1.Filter"></a>
+
+### Filter
+Filter describes the conditions under which an oracle data is considered of
+interest or not.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [PropertyKey](#oracles.v1.PropertyKey) |  | key is the oracle data property key targeted by the filter. |
+| conditions | [Condition](#oracles.v1.Condition) | repeated | conditions are the conditions that should be matched by the data to be considered of interest. |
+
+
+
+
+
+
+<a name="oracles.v1.OracleSpec"></a>
+
+### OracleSpec
+An oracle spec describe the oracle data that a product (or a risk model)
+wants to get from the oracle engine.
+This message contains additional information used by the API.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | id is a hash generated from the OracleSpec data. |
+| created_at | [int64](#int64) |  | Creation Date time |
+| updated_at | [int64](#int64) |  | Last Updated timestamp |
+| pub_keys | [string](#string) | repeated | pubKeys is the list of authorized public keys that signed the data for this oracle. All the public keys in the oracle data should be contained in these public keys. |
+| filters | [Filter](#oracles.v1.Filter) | repeated | filters describes which oracle data are considered of interest or not for the product (or the risk model). |
+| status | [OracleSpec.Status](#oracles.v1.OracleSpec.Status) |  | status describes the status of the oracle spec |
+
+
+
+
+
+
+<a name="oracles.v1.OracleSpecConfiguration"></a>
+
+### OracleSpecConfiguration
+An oracle spec describe the oracle data that a product (or a risk model)
+wants to get from the oracle engine.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pub_keys | [string](#string) | repeated | pubKeys is the list of authorized public keys that signed the data for this oracle. All the public keys in the oracle data should be contained in these public keys. |
+| filters | [Filter](#oracles.v1.Filter) | repeated | filters describes which oracle data are considered of interest or not for the product (or the risk model). |
+
+
+
+
+
+
+<a name="oracles.v1.PropertyKey"></a>
+
+### PropertyKey
+PropertyKey describes the property key contained in an oracle data.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | name is the name of the property. |
+| type | [PropertyKey.Type](#oracles.v1.PropertyKey.Type) |  | type is the type of the property. |
+
+
+
+
+
+ 
+
+
+<a name="oracles.v1.Condition.Operator"></a>
+
+### Condition.Operator
+Comparator describes the type of comparison.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| OPERATOR_UNSPECIFIED | 0 | The default value |
+| OPERATOR_EQUALS | 1 | Verify if the property values are strictly equal or not. |
+| OPERATOR_GREATER_THAN | 2 | Verify if the oracle data value is greater than the Condition value. |
+| OPERATOR_GREATER_THAN_OR_EQUAL | 3 | Verify if the oracle data value is greater than or equal to the Condition value. |
+| OPERATOR_LESS_THAN | 4 | Verify if the oracle data value is less than the Condition value. |
+| OPERATOR_LESS_THAN_OR_EQUAL | 5 | Verify if the oracle data value is less or equal to than the Condition value. |
+
+
+
+<a name="oracles.v1.OracleSpec.Status"></a>
+
+### OracleSpec.Status
+Status describe the status of the oracle spec
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| STATUS_UNSPECIFIED | 0 | The default value. |
+| STATUS_ACTIVE | 1 | STATUS_ACTIVE describes an active oracle spec. |
+| STATUS_DEACTIVATED | 2 | STATUS_DEACTIVATED describes an oracle spec that is not listening to data anymore. |
+
+
+
+<a name="oracles.v1.PropertyKey.Type"></a>
+
+### PropertyKey.Type
+Type describes the type of properties that are supported by the oracle
+engine.
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TYPE_UNSPECIFIED | 0 | The default value. |
+| TYPE_EMPTY | 1 | Any type. |
+| TYPE_INTEGER | 2 | Integer type. |
+| TYPE_STRING | 3 | String type. |
+| TYPE_BOOLEAN | 4 | Boolean type. |
+| TYPE_DECIMAL | 5 | Any floating point decimal type. |
+| TYPE_TIMESTAMP | 6 | Timestamp date type. |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="markets.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -484,23 +656,6 @@ Discrete trading
 
 
 
-<a name="vega.EthereumEvent"></a>
-
-### EthereumEvent
-Ethereum event (for oracles)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| contract_id | [string](#string) |  | Ethereum contract identifier |
-| event | [string](#string) |  | Event |
-| value | [uint64](#uint64) |  | Value |
-
-
-
-
-
-
 <a name="vega.FeeFactors"></a>
 
 ### FeeFactors
@@ -544,7 +699,8 @@ Future product definition
 | maturity | [string](#string) |  | The maturity for the future |
 | settlement_asset | [string](#string) |  | The asset for the future |
 | quote_name | [string](#string) |  | Quote name of the instrument |
-| ethereum_event | [EthereumEvent](#vega.EthereumEvent) |  | Ethereum events |
+| oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | The oracle spec describing the oracle data of interest |
+| oracle_spec_binding | [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding) |  | The binding between the oracle spec and the settlement price |
 
 
 
@@ -563,7 +719,6 @@ Instrument definition
 | code | [string](#string) |  | Code for the instrument |
 | name | [string](#string) |  | Name of the instrument |
 | metadata | [InstrumentMetadata](#vega.InstrumentMetadata) |  | A collection of instrument meta-data |
-| initial_mark_price | [uint64](#uint64) |  | An initial mark price for the instrument |
 | future | [Future](#vega.Future) |  | Future |
 
 
@@ -654,6 +809,22 @@ Market definition
 | target_stake_parameters | [TargetStakeParameters](#vega.TargetStakeParameters) |  | TargetStakeParameters for the market |
 | trading_mode | [Market.TradingMode](#vega.Market.TradingMode) |  | Current mode of execution of the market |
 | state | [Market.State](#vega.Market.State) |  | Current state of the market |
+
+
+
+
+
+
+<a name="vega.OracleSpecToFutureBinding"></a>
+
+### OracleSpecToFutureBinding
+OracleSpecToFutureBinding tells on which property oracle data should be
+used as settlement price.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| settlement_price_property | [string](#string) |  | settlement_price_property holds the name of the property in the oracle data that should be used as settlement price. If it is set to &#34;prices.BTC.value&#34;, then the Future will use the value of this property as settlement price. |
 
 
 
@@ -1003,7 +1174,7 @@ Asset value information used within a transfer
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| amount | [int64](#int64) |  | A signed integer amount of asset |
+| amount | [uint64](#uint64) |  | A signed integer amount of asset |
 | asset | [string](#string) |  | Asset identifier |
 
 
@@ -1100,6 +1271,7 @@ An Liquidity provider commitment
 | buys | [LiquidityOrderReference](#vega.LiquidityOrderReference) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
 | version | [string](#string) |  | Version of this liquidity provision order |
 | status | [LiquidityProvision.Status](#vega.LiquidityProvision.Status) |  | Status of this liquidity provision order |
+| reference | [string](#string) |  | A reference shared between this liquidity provision and all it&#39;s orders |
 
 
 
@@ -1119,6 +1291,7 @@ An Liquidity provider commitment
 | fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
 | sells | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
 | buys | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
+| reference | [string](#string) |  | A reference to be added to every order created out of this liquidityProvisionSubmission |
 
 
 
@@ -1789,7 +1962,7 @@ Represents a financial transfer within Vega
 | owner | [string](#string) |  | Party identifier for the owner of the transfer |
 | amount | [FinancialAmount](#vega.FinancialAmount) |  | A financial amount (of an asset) to transfer |
 | type | [TransferType](#vega.TransferType) |  | The type of transfer, gives the reason for the transfer |
-| min_amount | [int64](#int64) |  | A minimum amount |
+| min_amount | [uint64](#uint64) |  | A minimum amount |
 
 
 
@@ -2357,6 +2530,8 @@ Future product configuration
 | maturity | [string](#string) |  | Future product maturity (ISO8601/RFC3339 timestamp) |
 | settlement_asset | [string](#string) |  | Product settlement asset identifier |
 | quote_name | [string](#string) |  | Product quote name |
+| oracle_spec | [oracles.v1.OracleSpecConfiguration](#oracles.v1.OracleSpecConfiguration) |  | The oracle spec describing the oracle data of interest |
+| oracle_spec_binding | [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding) |  | The binding between the oracle spec and the settlement price |
 
 
 
@@ -2474,6 +2649,7 @@ A commitment of liquidity to be made by the party which proposes a market
 | fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
 | sells | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
 | buys | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
+| reference | [string](#string) |  | A reference to be associated to all orders created from this commitment |
 
 
 
@@ -2646,6 +2822,7 @@ A list of possible errors that can cause a proposal to be in state rejected or f
 | PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE | 23 | Opening auction duration is more than the network minimum opening auction time |
 | PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT | 24 | Market proposal is missing a liquidity commitment |
 | PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET | 25 | Market proposal market could not be instantiate in execution |
+| PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT | 26 | Market proposal market contained invalid product definition |
 
 
 
@@ -2986,6 +3163,56 @@ An event related to validator management with foreign networks
 
 
 
+<a name="oracles/v1/oracle_data.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## oracles/v1/oracle_data.proto
+
+
+
+<a name="oracles.v1.OracleData"></a>
+
+### OracleData
+OracleData describes an oracle data that has been broadcast.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pub_keys | [string](#string) | repeated | pubKeys is the list of authorized public keys that signed the data for this oracle. All the public keys in the oracle data should be contained in these public keys. |
+| data | [Property](#oracles.v1.Property) | repeated | data holds all the properties of the oracle data |
+| matched_spec_ids | [string](#string) | repeated | matched_specs_ids lists all the oracle specs that matched this oracle data. |
+| broadcast_at | [int64](#int64) |  | broadcast_at is the time at which the data was broadcast for the first time. |
+
+
+
+
+
+
+<a name="oracles.v1.Property"></a>
+
+### Property
+Property describes one property of an oracle spec with a key with its value.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | name is the name of the property. |
+| value | [string](#string) |  | value is the value of the property. |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="events.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -3049,6 +3276,8 @@ A bus event is a container for event bus events emitted by Vega
 | network_parameter | [NetworkParameter](#vega.NetworkParameter) |  | Network parameter events |
 | liquidity_provision | [LiquidityProvision](#vega.LiquidityProvision) |  | LiquidityProvision events |
 | market_updated | [Market](#vega.Market) |  | Market created events |
+| oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | OracleSpec events |
+| oracle_data | [oracles.v1.OracleData](#oracles.v1.OracleData) |  | OracleData events |
 | market | [MarketEvent](#vega.MarketEvent) |  | Market tick events - See [MarketEvent](#vega.MarketEvent) |
 | tx_err_event | [TxErrorEvent](#vega.TxErrorEvent) |  | Transaction error events, not included in the ALL event type |
 
@@ -3267,6 +3496,8 @@ Group values (e.g. BUS_EVENT_TYPE_AUCTION) where they represent a group of data 
 | BUS_EVENT_TYPE_NETWORK_PARAMETER | 24 | Event indicating a network parameter has been added or updated |
 | BUS_EVENT_TYPE_LIQUIDITY_PROVISION | 25 | Event indicating a liquidity provision has been created or updated |
 | BUS_EVENT_TYPE_MARKET_UPDATED | 26 | Event indicating a new market was created |
+| BUS_EVENT_TYPE_ORACLE_SPEC | 27 | Event indicating an oracle spec has been created or updated |
+| BUS_EVENT_TYPE_ORACLE_DATA | 28 | Event indicating that an oracle data has been broadcast |
 | BUS_EVENT_TYPE_MARKET | 101 | Event indicating a market related event, for example when a market opens |
 | BUS_EVENT_TYPE_TX_ERROR | 201 | Event used to report failed transactions back to a user, this is excluded from the ALL type |
 
@@ -4530,6 +4761,91 @@ Optional proposal state
 
 
 
+<a name="api.v1.OracleDataBySpecRequest"></a>
+
+### OracleDataBySpecRequest
+A request to all oracle data broadcast to a given spec
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | The id to get the oracle spec for |
+
+
+
+
+
+
+<a name="api.v1.OracleDataBySpecResponse"></a>
+
+### OracleDataBySpecResponse
+The response for a list of all oracle data broadcast to a given spec
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| oracle_data | [oracles.v1.OracleData](#oracles.v1.OracleData) | repeated | The list of oracle data broadcast to a given spec |
+
+
+
+
+
+
+<a name="api.v1.OracleSpecRequest"></a>
+
+### OracleSpecRequest
+A request to get a specific oracle spec by identifier
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | The id to get the oracle spec for |
+
+
+
+
+
+
+<a name="api.v1.OracleSpecResponse"></a>
+
+### OracleSpecResponse
+A response for a oracle spec
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | The withdrawal matching the identifier from the request |
+
+
+
+
+
+
+<a name="api.v1.OracleSpecsRequest"></a>
+
+### OracleSpecsRequest
+A request to get a specific oracle spec by identifier
+
+
+
+
+
+
+<a name="api.v1.OracleSpecsResponse"></a>
+
+### OracleSpecsResponse
+The response for a list of withdrawals
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| oracle_specs | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) | repeated | The list of oracle specs |
+
+
+
+
+
+
 <a name="api.v1.OrderByIDRequest"></a>
 
 ### OrderByIDRequest
@@ -5457,7 +5773,7 @@ Blockchain transaction type
 | ----------- | ------------ | ------------- | ------------|
 | MarketAccounts | [MarketAccountsRequest](#api.v1.MarketAccountsRequest) | [MarketAccountsResponse](#api.v1.MarketAccountsResponse) | Get a list of Accounts by Market |
 | PartyAccounts | [PartyAccountsRequest](#api.v1.PartyAccountsRequest) | [PartyAccountsResponse](#api.v1.PartyAccountsResponse) | Get a list of Accounts by Party |
-| FeeInfrastructureAccounts | [FeeInfrastructureAccountsRequest](#api.v1.FeeInfrastructureAccountsRequest) | [FeeInfrastructureAccountsResponse](#api.v1.FeeInfrastructureAccountsResponse) | Get a list of infrastructure fees accounts filter eventually by assets |
+| FeeInfrastructureAccounts | [FeeInfrastructureAccountsRequest](#api.v1.FeeInfrastructureAccountsRequest) | [FeeInfrastructureAccountsResponse](#api.v1.FeeInfrastructureAccountsResponse) | Get a list of accounts holding infrastructure fees. Can be filtered by asset, there will be 1 infrastructure fee account per asset in the network. |
 | Candles | [CandlesRequest](#api.v1.CandlesRequest) | [CandlesResponse](#api.v1.CandlesResponse) | Get a list of Candles by Market |
 | MarketDataByID | [MarketDataByIDRequest](#api.v1.MarketDataByIDRequest) | [MarketDataByIDResponse](#api.v1.MarketDataByIDResponse) | Get Market Data by Market ID |
 | MarketsData | [MarketsDataRequest](#api.v1.MarketsDataRequest) | [MarketsDataResponse](#api.v1.MarketsDataResponse) | Get a list of Market Data |
@@ -5516,6 +5832,9 @@ Blockchain transaction type
 | Deposits | [DepositsRequest](#api.v1.DepositsRequest) | [DepositsResponse](#api.v1.DepositsResponse) | Get deposits for a party |
 | NetworkParameters | [NetworkParametersRequest](#api.v1.NetworkParametersRequest) | [NetworkParametersResponse](#api.v1.NetworkParametersResponse) | Get the network parameters |
 | LiquidityProvisions | [LiquidityProvisionsRequest](#api.v1.LiquidityProvisionsRequest) | [LiquidityProvisionsResponse](#api.v1.LiquidityProvisionsResponse) | Get the liquidity provision orders |
+| OracleSpec | [OracleSpecRequest](#api.v1.OracleSpecRequest) | [OracleSpecResponse](#api.v1.OracleSpecResponse) | Get an oracle spec by ID |
+| OracleSpecs | [OracleSpecsRequest](#api.v1.OracleSpecsRequest) | [OracleSpecsResponse](#api.v1.OracleSpecsResponse) | Get the oracle specs |
+| OracleDataBySpec | [OracleDataBySpecRequest](#api.v1.OracleDataBySpecRequest) | [OracleDataBySpecResponse](#api.v1.OracleDataBySpecResponse) | Get all oracle data |
 
 
 <a name="api.v1.TradingService"></a>

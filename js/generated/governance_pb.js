@@ -22,6 +22,8 @@ var vega_pb = require('./vega_pb.js');
 goog.object.extend(proto, vega_pb);
 var assets_pb = require('./assets_pb.js');
 goog.object.extend(proto, assets_pb);
+var oracles_v1_oracle_spec_pb = require('./oracles/v1/oracle_spec_pb.js');
+goog.object.extend(proto, oracles_v1_oracle_spec_pb);
 goog.exportSymbol('proto.vega.FutureProduct', null, global);
 goog.exportSymbol('proto.vega.GovernanceData', null, global);
 goog.exportSymbol('proto.vega.InstrumentConfiguration', null, global);
@@ -327,7 +329,9 @@ proto.vega.FutureProduct.toObject = function(includeInstance, msg) {
   var f, obj = {
     maturity: jspb.Message.getFieldWithDefault(msg, 1, ""),
     settlementAsset: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    quoteName: jspb.Message.getFieldWithDefault(msg, 3, "")
+    quoteName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpecConfiguration.toObject(includeInstance, f),
+    oracleSpecBinding: (f = msg.getOracleSpecBinding()) && markets_pb.OracleSpecToFutureBinding.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -375,6 +379,16 @@ proto.vega.FutureProduct.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setQuoteName(value);
+      break;
+    case 5:
+      var value = new oracles_v1_oracle_spec_pb.OracleSpecConfiguration;
+      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpecConfiguration.deserializeBinaryFromReader);
+      msg.setOracleSpec(value);
+      break;
+    case 6:
+      var value = new markets_pb.OracleSpecToFutureBinding;
+      reader.readMessage(value,markets_pb.OracleSpecToFutureBinding.deserializeBinaryFromReader);
+      msg.setOracleSpecBinding(value);
       break;
     default:
       reader.skipField();
@@ -424,6 +438,22 @@ proto.vega.FutureProduct.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getOracleSpec();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      oracles_v1_oracle_spec_pb.OracleSpecConfiguration.serializeBinaryToWriter
+    );
+  }
+  f = message.getOracleSpecBinding();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      markets_pb.OracleSpecToFutureBinding.serializeBinaryToWriter
     );
   }
 };
@@ -480,6 +510,80 @@ proto.vega.FutureProduct.prototype.getQuoteName = function() {
  */
 proto.vega.FutureProduct.prototype.setQuoteName = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional oracles.v1.OracleSpecConfiguration oracle_spec = 5;
+ * @return {?proto.oracles.v1.OracleSpecConfiguration}
+ */
+proto.vega.FutureProduct.prototype.getOracleSpec = function() {
+  return /** @type{?proto.oracles.v1.OracleSpecConfiguration} */ (
+    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpecConfiguration, 5));
+};
+
+
+/**
+ * @param {?proto.oracles.v1.OracleSpecConfiguration|undefined} value
+ * @return {!proto.vega.FutureProduct} returns this
+*/
+proto.vega.FutureProduct.prototype.setOracleSpec = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.FutureProduct} returns this
+ */
+proto.vega.FutureProduct.prototype.clearOracleSpec = function() {
+  return this.setOracleSpec(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.FutureProduct.prototype.hasOracleSpec = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional OracleSpecToFutureBinding oracle_spec_binding = 6;
+ * @return {?proto.vega.OracleSpecToFutureBinding}
+ */
+proto.vega.FutureProduct.prototype.getOracleSpecBinding = function() {
+  return /** @type{?proto.vega.OracleSpecToFutureBinding} */ (
+    jspb.Message.getWrapperField(this, markets_pb.OracleSpecToFutureBinding, 6));
+};
+
+
+/**
+ * @param {?proto.vega.OracleSpecToFutureBinding|undefined} value
+ * @return {!proto.vega.FutureProduct} returns this
+*/
+proto.vega.FutureProduct.prototype.setOracleSpecBinding = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.FutureProduct} returns this
+ */
+proto.vega.FutureProduct.prototype.clearOracleSpecBinding = function() {
+  return this.setOracleSpecBinding(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.FutureProduct.prototype.hasOracleSpecBinding = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -1297,7 +1401,8 @@ proto.vega.NewMarketCommitment.toObject = function(includeInstance, msg) {
     sellsList: jspb.Message.toObjectList(msg.getSellsList(),
     vega_pb.LiquidityOrder.toObject, includeInstance),
     buysList: jspb.Message.toObjectList(msg.getBuysList(),
-    vega_pb.LiquidityOrder.toObject, includeInstance)
+    vega_pb.LiquidityOrder.toObject, includeInstance),
+    reference: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1351,6 +1456,10 @@ proto.vega.NewMarketCommitment.deserializeBinaryFromReader = function(msg, reade
       var value = new vega_pb.LiquidityOrder;
       reader.readMessage(value,vega_pb.LiquidityOrder.deserializeBinaryFromReader);
       msg.addBuys(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReference(value);
       break;
     default:
       reader.skipField();
@@ -1409,6 +1518,13 @@ proto.vega.NewMarketCommitment.serializeBinaryToWriter = function(message, write
       4,
       f,
       vega_pb.LiquidityOrder.serializeBinaryToWriter
+    );
+  }
+  f = message.getReference();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -1523,6 +1639,24 @@ proto.vega.NewMarketCommitment.prototype.addBuys = function(opt_value, opt_index
  */
 proto.vega.NewMarketCommitment.prototype.clearBuysList = function() {
   return this.setBuysList([]);
+};
+
+
+/**
+ * optional string reference = 5;
+ * @return {string}
+ */
+proto.vega.NewMarketCommitment.prototype.getReference = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.NewMarketCommitment} returns this
+ */
+proto.vega.NewMarketCommitment.prototype.setReference = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -3486,7 +3620,8 @@ proto.vega.ProposalError = {
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL: 22,
   PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE: 23,
   PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT: 24,
-  PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET: 25
+  PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET: 25,
+  PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT: 26
 };
 
 goog.object.extend(exports, proto.vega);

@@ -7657,13 +7657,13 @@ class FinancialAmount PROTOBUF_FINAL :
   std::string* _internal_mutable_asset();
   public:
 
-  // int64 amount = 1 [json_name = "amount"];
+  // uint64 amount = 1 [json_name = "amount"];
   void clear_amount();
-  ::PROTOBUF_NAMESPACE_ID::int64 amount() const;
-  void set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
+  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_amount() const;
-  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
+  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.FinancialAmount)
@@ -7674,7 +7674,7 @@ class FinancialAmount PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr asset_;
-  ::PROTOBUF_NAMESPACE_ID::int64 amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -7831,13 +7831,13 @@ class Transfer PROTOBUF_FINAL :
       ::vega::FinancialAmount* amount);
   ::vega::FinancialAmount* unsafe_arena_release_amount();
 
-  // int64 min_amount = 4 [json_name = "minAmount"];
+  // uint64 min_amount = 4 [json_name = "minAmount"];
   void clear_min_amount();
-  ::PROTOBUF_NAMESPACE_ID::int64 min_amount() const;
-  void set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount() const;
+  void set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_min_amount() const;
-  void _internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_min_amount() const;
+  void _internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.TransferType type = 3 [json_name = "type"];
@@ -7858,7 +7858,7 @@ class Transfer PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::vega::FinancialAmount* amount_;
-  ::PROTOBUF_NAMESPACE_ID::int64 min_amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 min_amount_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -11004,6 +11004,7 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
     kBuysFieldNumber = 5,
     kMarketIdFieldNumber = 1,
     kFeeFieldNumber = 3,
+    kReferenceFieldNumber = 6,
     kCommitmentAmountFieldNumber = 2,
   };
   // repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];
@@ -11074,6 +11075,22 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_fee();
   public:
 
+  // string reference = 6 [json_name = "reference"];
+  void clear_reference();
+  const std::string& reference() const;
+  void set_reference(const std::string& value);
+  void set_reference(std::string&& value);
+  void set_reference(const char* value);
+  void set_reference(const char* value, size_t size);
+  std::string* mutable_reference();
+  std::string* release_reference();
+  void set_allocated_reference(std::string* reference);
+  private:
+  const std::string& _internal_reference() const;
+  void _internal_set_reference(const std::string& value);
+  std::string* _internal_mutable_reference();
+  public:
+
   // uint64 commitment_amount = 2 [json_name = "commitmentAmount"];
   void clear_commitment_amount();
   ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount() const;
@@ -11094,6 +11111,7 @@ class LiquidityProvisionSubmission PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::LiquidityOrder > buys_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -11420,6 +11438,7 @@ class LiquidityProvision PROTOBUF_FINAL :
     kMarketIdFieldNumber = 5,
     kFeeFieldNumber = 7,
     kVersionFieldNumber = 10,
+    kReferenceFieldNumber = 12,
     kCreatedAtFieldNumber = 3,
     kUpdatedAtFieldNumber = 4,
     kCommitmentAmountFieldNumber = 6,
@@ -11541,6 +11560,22 @@ class LiquidityProvision PROTOBUF_FINAL :
   std::string* _internal_mutable_version();
   public:
 
+  // string reference = 12 [json_name = "reference"];
+  void clear_reference();
+  const std::string& reference() const;
+  void set_reference(const std::string& value);
+  void set_reference(std::string&& value);
+  void set_reference(const char* value);
+  void set_reference(const char* value, size_t size);
+  std::string* mutable_reference();
+  std::string* release_reference();
+  void set_allocated_reference(std::string* reference);
+  private:
+  const std::string& _internal_reference() const;
+  void _internal_set_reference(const std::string& value);
+  std::string* _internal_mutable_reference();
+  public:
+
   // int64 created_at = 3 [json_name = "createdAt"];
   void clear_created_at();
   ::PROTOBUF_NAMESPACE_ID::int64 created_at() const;
@@ -11591,6 +11626,7 @@ class LiquidityProvision PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fee_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr version_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::int64 created_at_;
   ::PROTOBUF_NAMESPACE_ID::int64 updated_at_;
   ::PROTOBUF_NAMESPACE_ID::uint64 commitment_amount_;
@@ -18868,22 +18904,22 @@ inline void Account::set_type(::vega::AccountType value) {
 
 // FinancialAmount
 
-// int64 amount = 1 [json_name = "amount"];
+// uint64 amount = 1 [json_name = "amount"];
 inline void FinancialAmount::clear_amount() {
-  amount_ = PROTOBUF_LONGLONG(0);
+  amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 FinancialAmount::_internal_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 FinancialAmount::_internal_amount() const {
   return amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 FinancialAmount::amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 FinancialAmount::amount() const {
   // @@protoc_insertion_point(field_get:vega.FinancialAmount.amount)
   return _internal_amount();
 }
-inline void FinancialAmount::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void FinancialAmount::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   amount_ = value;
 }
-inline void FinancialAmount::set_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void FinancialAmount::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_amount(value);
   // @@protoc_insertion_point(field_set:vega.FinancialAmount.amount)
 }
@@ -19117,22 +19153,22 @@ inline void Transfer::set_type(::vega::TransferType value) {
   // @@protoc_insertion_point(field_set:vega.Transfer.type)
 }
 
-// int64 min_amount = 4 [json_name = "minAmount"];
+// uint64 min_amount = 4 [json_name = "minAmount"];
 inline void Transfer::clear_min_amount() {
-  min_amount_ = PROTOBUF_LONGLONG(0);
+  min_amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Transfer::_internal_min_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transfer::_internal_min_amount() const {
   return min_amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 Transfer::min_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Transfer::min_amount() const {
   // @@protoc_insertion_point(field_get:vega.Transfer.min_amount)
   return _internal_min_amount();
 }
-inline void Transfer::_internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Transfer::_internal_set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   min_amount_ = value;
 }
-inline void Transfer::set_min_amount(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void Transfer::set_min_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_min_amount(value);
   // @@protoc_insertion_point(field_set:vega.Transfer.min_amount)
 }
@@ -22507,6 +22543,67 @@ LiquidityProvisionSubmission::buys() const {
   return buys_;
 }
 
+// string reference = 6 [json_name = "reference"];
+inline void LiquidityProvisionSubmission::clear_reference() {
+  reference_.ClearToEmpty();
+}
+inline const std::string& LiquidityProvisionSubmission::reference() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvisionSubmission.reference)
+  return _internal_reference();
+}
+inline void LiquidityProvisionSubmission::set_reference(const std::string& value) {
+  _internal_set_reference(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvisionSubmission.reference)
+}
+inline std::string* LiquidityProvisionSubmission::mutable_reference() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvisionSubmission.reference)
+  return _internal_mutable_reference();
+}
+inline const std::string& LiquidityProvisionSubmission::_internal_reference() const {
+  return reference_.Get();
+}
+inline void LiquidityProvisionSubmission::_internal_set_reference(const std::string& value) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProvisionSubmission::set_reference(std::string&& value) {
+
+  reference_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvisionSubmission.reference)
+}
+inline void LiquidityProvisionSubmission::set_reference(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvisionSubmission.reference)
+}
+inline void LiquidityProvisionSubmission::set_reference(const char* value,
+    size_t size) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvisionSubmission.reference)
+}
+inline std::string* LiquidityProvisionSubmission::_internal_mutable_reference() {
+
+  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProvisionSubmission::release_reference() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvisionSubmission.reference)
+  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProvisionSubmission::set_allocated_reference(std::string* reference) {
+  if (reference != nullptr) {
+
+  } else {
+
+  }
+  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvisionSubmission.reference)
+}
+
 // -------------------------------------------------------------------
 
 // LiquidityOrderReference
@@ -23120,6 +23217,67 @@ inline void LiquidityProvision::_internal_set_status(::vega::LiquidityProvision_
 inline void LiquidityProvision::set_status(::vega::LiquidityProvision_Status value) {
   _internal_set_status(value);
   // @@protoc_insertion_point(field_set:vega.LiquidityProvision.status)
+}
+
+// string reference = 12 [json_name = "reference"];
+inline void LiquidityProvision::clear_reference() {
+  reference_.ClearToEmpty();
+}
+inline const std::string& LiquidityProvision::reference() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityProvision.reference)
+  return _internal_reference();
+}
+inline void LiquidityProvision::set_reference(const std::string& value) {
+  _internal_set_reference(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityProvision.reference)
+}
+inline std::string* LiquidityProvision::mutable_reference() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityProvision.reference)
+  return _internal_mutable_reference();
+}
+inline const std::string& LiquidityProvision::_internal_reference() const {
+  return reference_.Get();
+}
+inline void LiquidityProvision::_internal_set_reference(const std::string& value) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void LiquidityProvision::set_reference(std::string&& value) {
+
+  reference_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.LiquidityProvision.reference)
+}
+inline void LiquidityProvision::set_reference(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.LiquidityProvision.reference)
+}
+inline void LiquidityProvision::set_reference(const char* value,
+    size_t size) {
+
+  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.LiquidityProvision.reference)
+}
+inline std::string* LiquidityProvision::_internal_mutable_reference() {
+
+  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* LiquidityProvision::release_reference() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityProvision.reference)
+  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void LiquidityProvision::set_allocated_reference(std::string* reference) {
+  if (reference != nullptr) {
+
+  } else {
+
+  }
+  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityProvision.reference)
 }
 
 // -------------------------------------------------------------------

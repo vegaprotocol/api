@@ -125,6 +125,9 @@ interface ITradingDataServiceService extends grpc.ServiceDefinition<grpc.Untyped
   deposits: grpc.MethodDefinition<api_trading_pb.DepositsRequest, api_trading_pb.DepositsResponse>;
   networkParameters: grpc.MethodDefinition<api_trading_pb.NetworkParametersRequest, api_trading_pb.NetworkParametersResponse>;
   liquidityProvisions: grpc.MethodDefinition<api_trading_pb.LiquidityProvisionsRequest, api_trading_pb.LiquidityProvisionsResponse>;
+  oracleSpec: grpc.MethodDefinition<api_trading_pb.OracleSpecRequest, api_trading_pb.OracleSpecResponse>;
+  oracleSpecs: grpc.MethodDefinition<api_trading_pb.OracleSpecsRequest, api_trading_pb.OracleSpecsResponse>;
+  oracleDataBySpec: grpc.MethodDefinition<api_trading_pb.OracleDataBySpecRequest, api_trading_pb.OracleDataBySpecResponse>;
 }
 
 export const TradingDataServiceService: ITradingDataServiceService;
@@ -191,6 +194,9 @@ export interface ITradingDataServiceServer extends grpc.UntypedServiceImplementa
   deposits: grpc.handleUnaryCall<api_trading_pb.DepositsRequest, api_trading_pb.DepositsResponse>;
   networkParameters: grpc.handleUnaryCall<api_trading_pb.NetworkParametersRequest, api_trading_pb.NetworkParametersResponse>;
   liquidityProvisions: grpc.handleUnaryCall<api_trading_pb.LiquidityProvisionsRequest, api_trading_pb.LiquidityProvisionsResponse>;
+  oracleSpec: grpc.handleUnaryCall<api_trading_pb.OracleSpecRequest, api_trading_pb.OracleSpecResponse>;
+  oracleSpecs: grpc.handleUnaryCall<api_trading_pb.OracleSpecsRequest, api_trading_pb.OracleSpecsResponse>;
+  oracleDataBySpec: grpc.handleUnaryCall<api_trading_pb.OracleDataBySpecRequest, api_trading_pb.OracleDataBySpecResponse>;
 }
 
 export class TradingDataServiceClient extends grpc.Client {
@@ -363,4 +369,13 @@ export class TradingDataServiceClient extends grpc.Client {
   liquidityProvisions(argument: api_trading_pb.LiquidityProvisionsRequest, callback: grpc.requestCallback<api_trading_pb.LiquidityProvisionsResponse>): grpc.ClientUnaryCall;
   liquidityProvisions(argument: api_trading_pb.LiquidityProvisionsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.LiquidityProvisionsResponse>): grpc.ClientUnaryCall;
   liquidityProvisions(argument: api_trading_pb.LiquidityProvisionsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.LiquidityProvisionsResponse>): grpc.ClientUnaryCall;
+  oracleSpec(argument: api_trading_pb.OracleSpecRequest, callback: grpc.requestCallback<api_trading_pb.OracleSpecResponse>): grpc.ClientUnaryCall;
+  oracleSpec(argument: api_trading_pb.OracleSpecRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OracleSpecResponse>): grpc.ClientUnaryCall;
+  oracleSpec(argument: api_trading_pb.OracleSpecRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OracleSpecResponse>): grpc.ClientUnaryCall;
+  oracleSpecs(argument: api_trading_pb.OracleSpecsRequest, callback: grpc.requestCallback<api_trading_pb.OracleSpecsResponse>): grpc.ClientUnaryCall;
+  oracleSpecs(argument: api_trading_pb.OracleSpecsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OracleSpecsResponse>): grpc.ClientUnaryCall;
+  oracleSpecs(argument: api_trading_pb.OracleSpecsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OracleSpecsResponse>): grpc.ClientUnaryCall;
+  oracleDataBySpec(argument: api_trading_pb.OracleDataBySpecRequest, callback: grpc.requestCallback<api_trading_pb.OracleDataBySpecResponse>): grpc.ClientUnaryCall;
+  oracleDataBySpec(argument: api_trading_pb.OracleDataBySpecRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OracleDataBySpecResponse>): grpc.ClientUnaryCall;
+  oracleDataBySpec(argument: api_trading_pb.OracleDataBySpecRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.OracleDataBySpecResponse>): grpc.ClientUnaryCall;
 }
