@@ -27,11 +27,11 @@ checkfile README.md '^Version: '"$version"'$'
 # to be done
 
 # Javascript
-sed --in-place -e 's#"version": "[^"]*"#"version": "'"$version"'"#' js/package.json
-checkfile js/package.json '"version": "'"$version"'",'
-sed --in-place -e 's#^  "version": "[^"]*"#  "version": "'"$version"'"#' js/package-lock.json
-checkfile js/package-lock.json '^  "version": "'"$version"'",'
+sed --in-place -e 's#"version": "[^"]*"#"version": "'"$version"'"#' grpc/js/package.json
+checkfile grpc/js/package.json '"version": "'"$version"'",'
+sed --in-place -e 's#^  "version": "[^"]*"#  "version": "'"$version"'"#' grpc/js/package-lock.json
+checkfile grpc/js/package-lock.json '^  "version": "'"$version"'",'
 
 # Python
-sed --in-place -e 's#^VERSION = "[^"]*"#VERSION = "'"$version"'"#' python/setup.py
-checkfile python/setup.py '^VERSION = "'"$version"'"'
+sed --in-place -e 's#^VERSION = "[^"]*"#VERSION = "'"$version"'"#' grpc/python/setup.py
+checkfile grpc/python/setup.py '^VERSION = "'"$version"'"'

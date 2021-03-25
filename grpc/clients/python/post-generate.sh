@@ -63,7 +63,7 @@ find "$python_generated_dir/api" -maxdepth 1 -name '*.py' -print0 | xargs -0r se
 	-e 's#^import ([a-z_]*)_pb2 as #from .. import \1_pb2 as #' \
 	-e 's#^from api import #from . import #'
 
-pushd python 1>/dev/null || exit 1
+pushd clients/python 1>/dev/null || exit 1
 python3 generate_init.py >"vegaapiclient/__init__.py"
 popd 1>/dev/null || exit 1
 

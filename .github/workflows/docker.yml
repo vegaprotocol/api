@@ -8,11 +8,7 @@ name: Docker tests
       - develop
       - master
     paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "js/**"
-      - "python/**"
+      - "grpc/clients/**"
 
 jobs:
 
