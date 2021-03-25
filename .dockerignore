@@ -1,6 +1,5 @@
-# Exclude auto-generated code, avoid sending it all to the Docker daemon during image build.
-cpp
-go
-java
-js
-python
+# Avoid sending unnecessary data to the Docker daemon during image build.
+.git
+graphql
+grpc/clients
+grpc/doc
