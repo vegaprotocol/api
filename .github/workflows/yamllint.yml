@@ -8,7 +8,7 @@ name: YAML lint
       - develop
       - master
     paths-ignore:
-      - "grpc/clients/"
+      - "grpc/clients/**"
 
 jobs:
 

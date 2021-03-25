@@ -12,6 +12,7 @@ name: Python tests
       - "grpc/clients/go/**"
       - "grpc/clients/java/**"
       - "grpc/clients/js/**"
+      # do not ignore grpc/clients/python/
   pull_request:
     branches:
       - develop
@@ -21,6 +22,7 @@ name: Python tests
       - "grpc/clients/go/**"
       - "grpc/clients/java/**"
       - "grpc/clients/js/**"
+      # do not ignore grpc/clients/python/
 
 jobs:
 
