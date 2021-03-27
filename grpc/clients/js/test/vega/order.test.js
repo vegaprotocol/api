@@ -121,7 +121,7 @@ test('Order can be a pegged order when an order peg is provided', t => {
 
 test('Submit Order', t => {
     // Log in to wallet server
-    const walletName = "de3mo";
+    const walletName = "demo";
     const walletPass = "123";
     const walletServer = process.env.WALLETSERVER;
     let token
@@ -132,7 +132,7 @@ test('Submit Order', t => {
     }
 
     try {
-        token = wallet_server_login(t, walletServer, walletName, walletPass);
+        token = wallet_server_login(walletServer, walletName, walletPass);
     } catch (e) {
         t.fail("Failed to log in to waller server: " + e);
         return t.end()
