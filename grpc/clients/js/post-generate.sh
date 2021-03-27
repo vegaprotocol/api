@@ -2,7 +2,7 @@
 
 javascript_generated_dir="${JAVASCRIPT_GENERATED_DIR:?}"
 
-pushd js 1>/dev/null || exit 1
+pushd clients/js 1>/dev/null || exit 1
 python3 .generate_index_js_ts.py
 popd 1>/dev/null || exit 1
 

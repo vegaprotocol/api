@@ -24,7 +24,7 @@ jobs:
 
       - name: Install
         run: |
-          cd js
+          cd grpc/clients/js
           npm ci
 
       - name: Test
@@ -33,12 +33,12 @@ jobs:
           GRPC_NODE: ${{ secrets.GRPC_NODE }}
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
-          cd js
+          cd grpc/clients/js
           npm test
 
       - name: Push release to npm (public)
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
-          cd js
+          cd grpc/clients/js
           npm publish --access public .

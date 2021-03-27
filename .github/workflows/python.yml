@@ -8,19 +8,21 @@ name: Python tests
       - develop
       - master
     paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "js/**"
+      - "grpc/clients/cpp/**"
+      - "grpc/clients/go/**"
+      - "grpc/clients/java/**"
+      - "grpc/clients/js/**"
+      # do not ignore grpc/clients/python/
   pull_request:
     branches:
       - develop
       - master
     paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "js/**"
+      - "grpc/clients/cpp/**"
+      - "grpc/clients/go/**"
+      - "grpc/clients/java/**"
+      - "grpc/clients/js/**"
+      # do not ignore grpc/clients/python/
 
 jobs:
 
@@ -40,13 +42,13 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          cd python
+          cd grpc/clients/python
           command -v flake8 1>/dev/null || pip install flake8
           make flake8
 
       - name: Lint with black
         run: |
-          cd python
+          cd grpc/clients/python
           command -v black 1>/dev/null || pip install black
           make black
 
@@ -56,7 +58,7 @@ jobs:
           FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
-          cd python
+          cd grpc/clients/python
           command -v pipenv 1>/dev/null || pip install pipenv
           make test
 
@@ -66,17 +68,17 @@ jobs:
           FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
-          cd python
+          cd grpc/clients/python
           make coverage
 
       - name: Type-check with mypy
         run: |
-          cd python
+          cd grpc/clients/python
           command -v mypy 1>/dev/null || pip install mypy
           make mypy
 
       - name: Check archive file counts
         run: |
-          cd python
+          cd grpc/clients/python
           python3 setup.py sdist bdist_wheel
           make check_dist
