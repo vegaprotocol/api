@@ -22,6 +22,7 @@ preproto:
 	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
 	@find proto/oracles/v1 -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.oracles.v1";'
 	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
+	@cp -a "$(VEGACORE)/gateway/rest/grpc-rest-bindings.yml" ./rest/
 
 .PHONY: buf-build
 buf-build:
@@ -46,6 +47,9 @@ buf-generate: buf-build
 	fi
 	@if ! command -v protoc-gen-govalidators 1>/dev/null ; then \
 		go get github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@v0.3.2 || exit 1 ; \
+	fi
+	@if ! command -v protoc-gen-swagger 1>/dev/null ; then \
+		go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger@v1.8.5 || exit 1 ; \
 	fi
 	@for cmd in grpc_cpp_plugin grpc_python_plugin ; do \
 		if ! command -v "$$cmd" 1>/dev/null ; then \
@@ -74,6 +78,7 @@ buf-generate: buf-build
 		rm -rf "$$d" && mkdir -p "$$d" || exit 1 ; \
 	done
 	@buf generate
+	@buf generate --path=./proto/api --template=./rest/buf.gen.yaml
 
 .PHONY: proto
 proto: buf-generate
@@ -82,6 +87,7 @@ proto: buf-generate
 	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./grpc/clients/java/post-generate.sh
 	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./grpc/clients/js/post-generate.sh
 	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./grpc/clients/python/post-generate.sh
+	@./rest/post-generate.sh
 
 # Test
 
