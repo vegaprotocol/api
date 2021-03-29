@@ -3513,7 +3513,7 @@
         },
         "horizon": {
           "format": "int64",
-          "title": "Price monitoring projection horizon \u03c4 in seconds",
+          "title": "Price monitoring projection horizon τ in seconds",
           "type": "string"
         },
         "probability": {
@@ -3522,7 +3522,7 @@
           "type": "number"
         }
       },
-      "title": "PriceMonitoringTrigger holds together price projection horizon \u03c4, probability level p, and auction extension duration",
+      "title": "PriceMonitoringTrigger holds together price projection horizon τ, probability level p, and auction extension duration",
       "type": "object"
     },
     "vegaProposal": {
