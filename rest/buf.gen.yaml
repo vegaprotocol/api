@@ -1,0 +1,9 @@
+---
+version: v1beta1
+
+plugins:
+
+  # OpenAPI/Swagger
+  - name: swagger
+    out: rest
+    opt: logtostderr=true,grpc_api_configuration=./rest/grpc-rest-bindings.yml

@@ -1,0 +1,65 @@
+---
+version: v1beta1
+
+plugins:
+
+  # Documentation
+  - name: doc
+    out: grpc/doc
+    opt: html,index.html
+    strategy: all
+
+  - name: doc
+    out: grpc/doc
+    opt: markdown,index.md
+    strategy: all
+
+  # C++
+  - name: cpp
+    out: grpc/clients/cpp/generated
+
+  - name: cpp-grpc
+    out: grpc/clients/cpp/generated
+    path: grpc_cpp_plugin
+
+  # Go
+  - name: go
+    out: grpc/clients/go/generated
+
+  - name: go-grpc
+    out: grpc/clients/go/generated
+
+  - name: govalidators
+    out: grpc/clients/go/generated
+    # opt: paths=source_relative
+
+  # Java
+  - name: java
+    out: grpc/clients/java/generated
+
+  # JavaScript and TypeScript
+  - name: js
+    out: grpc/clients/js/generated
+    opt: import_style=commonjs,binary
+
+  - name: ts
+    out: grpc/clients/js/generated  # not a typo: ts files go in the js dir.
+    path: ./grpc/clients/js/node_modules/.bin/protoc-gen-ts
+
+  - name: ts-grpc-node
+    out: grpc/clients/js/generated  # not a typo: ts files go in the js dir.
+    opt: service=grpc-node
+    path: ./grpc/clients/js/node_modules/.bin/protoc-gen-ts
+
+  - name: ts-grpc-web
+    out: grpc/clients/js/generated  # not a typo: ts files go in the js dir.
+    opt: service=grpc-web
+    path: ./grpc/clients/js/node_modules/.bin/protoc-gen-ts
+
+  # Python
+  - name: python
+    out: grpc/clients/python/vegaapiclient/generated
+
+  - name: python-grpc
+    out: grpc/clients/python/vegaapiclient/generated
+    path: grpc_python_plugin

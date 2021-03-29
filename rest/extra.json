@@ -1,0 +1,8 @@
+{
+  "servers": [
+    {
+      "url": "https://lb.testnet.vega.xyz",
+      "description": "Testnet"
+    }
+  ]
+}
