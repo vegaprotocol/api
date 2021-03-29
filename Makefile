@@ -27,11 +27,11 @@ preproto:
 buf-build:
 	@buf build
 
-CPP_GENERATED_DIR := clients/cpp/generated
-GO_GENERATED_DIR := clients/go/generated
-JAVA_GENERATED_DIR := clients/java/generated
-JAVASCRIPT_GENERATED_DIR := clients/js/generated
-PYTHON_GENERATED_DIR := clients/python/vegaapiclient/generated
+CPP_GENERATED_DIR := grpc/clients/cpp/generated
+GO_GENERATED_DIR := grpc/clients/go/generated
+JAVA_GENERATED_DIR := grpc/clients/java/generated
+JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
+PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
 
 .PHONY: buf-generate
 buf-generate: buf-build
@@ -54,9 +54,9 @@ buf-generate: buf-build
 			exit 1 ; \
 		fi ; \
 	done
-	@proto_gen_ts=./clients/js/node_modules/.bin/protoc-gen-ts && \
+	@proto_gen_ts=./grpc/clients/js/node_modules/.bin/protoc-gen-ts && \
 	if ! test -r "$$proto_gen_ts" -a -x "$$proto_gen_ts" ; then \
-		pushd clients/js 1>/dev/null && \
+		pushd grpc/clients/js 1>/dev/null && \
 		npm install && \
 		popd 1>/dev/null && \
 		if ! test -r "$$proto_gen_ts" -a -x "$$proto_gen_ts" ; then \
@@ -77,11 +77,11 @@ buf-generate: buf-build
 
 .PHONY: proto
 proto: buf-generate
-	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./clients/cpp/post-generate.sh
-	@env GO_GENERATED_DIR="$(GO_GENERATED_DIR)" ./clients/go/post-generate.sh
-	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./clients/java/post-generate.sh
-	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./clients/js/post-generate.sh
-	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./clients/python/post-generate.sh
+	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./grpc/clients/cpp/post-generate.sh
+	@env GO_GENERATED_DIR="$(GO_GENERATED_DIR)" ./grpc/clients/go/post-generate.sh
+	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./grpc/clients/java/post-generate.sh
+	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./grpc/clients/js/post-generate.sh
+	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./grpc/clients/python/post-generate.sh
 
 # Test
 
