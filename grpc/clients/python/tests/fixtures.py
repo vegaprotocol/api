@@ -10,7 +10,7 @@ import vegaapiclient as vac
 @pytest.fixture(scope="module")
 def trading():
     """
-    Provide a VegaTradingClient, connected to $GRPC_NODE.
+    Provide a `VegaTradingClient`, connected to $GRPC_NODE.
     """
     grpc_node = os.getenv("GRPC_NODE")
     assert grpc_node is not None and grpc_node != ""
@@ -20,7 +20,7 @@ def trading():
 @pytest.fixture(scope="module")
 def tradingdata():
     """
-    Provide a VegaTradingDataClient, connected to $GRPC_NODE.
+    Provide a `VegaTradingDataClient`, connected to $GRPC_NODE.
     """
     grpc_node = os.getenv("GRPC_NODE")
     assert grpc_node is not None and grpc_node != ""
@@ -30,7 +30,7 @@ def tradingdata():
 @pytest.fixture(scope="module")
 def walletclient():
     """
-    Provide a WalletClient, connected to $WALLETSERVER.
+    Provide a `WalletClient`, connected to `$WALLETSERVER`.
     """
     walletserver = os.getenv("WALLETSERVER")
     assert walletserver is not None and walletserver != ""
@@ -65,10 +65,10 @@ def walletpassphrase() -> str:
 @pytest.fixture(scope="module")
 def walletClientWalletKeypair(walletclient) -> Tuple[Any, str, str, str]:
     """
-    Provide a WalletClient that has had a wallet and keypair added.
+    Provide a `WalletClient` that has had a wallet and keypair added.
 
     Returns:
-    * a WalletClient
+    * a `WalletClient`
     * a random wallet name
     * a random passphrase
     * a public key

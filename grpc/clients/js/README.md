@@ -1,6 +1,6 @@
 # Vega API client
 
-This is the Vega API client, which can be used to produce transactions for the Vega GRPC API.
+This is the Vega API client, which can be used to produce transactions for the Vega gRPC API.
 
 ## Usage
 
@@ -10,7 +10,7 @@ For examples, see the [sample API scripts](https://github.com/vegaprotocol/sampl
 
 These transactions can be sent over [REST](https://docs.testnet.vega.xyz/docs/apis/rest/) or [GraphQL](https://docs.testnet.vega.xyz/docs/apis/graphql/) from a browser context. To sign these transactions with your keys, you will first need to sign the transaction with your Vega key, for which you will need [go-wallet](https://github.com/vegaprotocol/go-wallet).
 
-As browsers don't support GRPC natively, to send transactions over GRPC you would need [grpc-web](https://github.com/grpc/grpc-web) or another solution.
+As browsers don't support gRPC natively, to send transactions over gRPC you would need [`grpc-web`](https://github.com/grpc/grpc-web) or another solution.
 
 ## Tests
 

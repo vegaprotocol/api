@@ -114,6 +114,12 @@ test-javascript:
 test-python:
 	@cd clients/python && make test
 
+# Misc
+
+.PHONY: spellcheck
+spellcheck:
+	@pyspelling -c spellcheck.yaml
+
 # Clean
 
 .PHONY: clean

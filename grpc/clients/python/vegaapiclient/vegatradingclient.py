@@ -31,15 +31,16 @@ class VegaTradingClient(object):
 
     def PrepareSubmitOrder(self, request: Any, contact_node=True) -> Any:
         """
-        PrepareSubmitOrder prepares the SubmitOrder request in one of two ways:
+        `PrepareSubmitOrder` prepares the `SubmitOrder` request in one of two
+        ways:
 
         - contact_node=True (default)
-            Use the Vega node's PrepareSubmitOrder gRPC endpoint.
+            Use the Vega node's `PrepareSubmitOrder` gRPC endpoint.
             Latency is higher due to the network round trip.
             Some validation is done by the Vega node.
 
         - contact_node=False:
-            Prepare the SubmitOrder request in Python.
+            Prepare the `SubmitOrder` request in Python.
             Latency is lower due to the lack of network round trip.
             Only very simple validation is done (e.g. data types).
         """
@@ -66,9 +67,9 @@ class VegaTradingClient(object):
         prepare_func: Callable[[Any], Any],
     ) -> None:
         """
-        submit_signed_tx is a convenience function that:
+        This is a convenience function that:
         * prepares the transaction, using the provided function
-        * signs the prepared transaction, using the provided WalletClient
+        * signs the prepared transaction, using the provided `WalletClient`
         * submits the signed transaction.
         """
 
