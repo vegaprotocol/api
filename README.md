@@ -36,32 +36,7 @@ Vega provides a fully-featured GraphQL API. For the complete schema, see [`graph
 
 The GraphQL Playground is enabled for convenience on Testnet non-validator nodes: https://lb.testnet.vega.xyz/playground.
 
-It is possible to use nested queries that return only the desired information, for example:
-
-```graphql
-query {
-  party(
-    id: "66393702d112ea4a849e8b471f3c6819c2075bd60bbb8da46d4734a7f86da734"
-  ) {
-    accounts {
-      balance
-      type
-    }
-    orders(last: 5) {
-      price
-      side
-      market {
-        id
-        tradableInstrument {
-          instrument {
-            code
-          }
-        }
-      }
-    }
-  }
-}
-```
+It is possible to use nested queries that return only the desired information.
 
 ## REST
 
