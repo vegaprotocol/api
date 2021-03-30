@@ -9,7 +9,7 @@ class FaucetClient(object):
 
     def mint(self, amount: int, asset: str, party: str) -> requests.Response:
         """
-        Mint tokens and allocate them to a party (pubkey).
+        Mint tokens and allocate them to a party (pubKey).
         """
         req = {"amount": amount, "asset": asset, "party": party}
         url = f"{self.url}/api/v1/mint"

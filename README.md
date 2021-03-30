@@ -69,6 +69,7 @@ GRPC_NODE=veganode.example.com:1234 WALLETSERVER=https://vegawallet.example.com 
 ```
 
 ## Update process - GraphQL
+
 ```bash
 # Copy schema.graphql from Core
 cd .../api/graphql

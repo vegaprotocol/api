@@ -33,7 +33,7 @@ class WalletClient(object):
     def login(self, walletname: str, passphrase: str) -> requests.Response:
         """
         Log in to an existing wallet. If the wallet does not exist, or if the
-        passphrase is incorrect, the action fails. Otherwise, a JWN (json web
+        passphrase is incorrect, the action fails. Otherwise, a JWT (json web
         token) is returned.
         """
         req = {"wallet": walletname, "passphrase": passphrase}
@@ -47,7 +47,7 @@ class WalletClient(object):
 
     def logout(self) -> requests.Response:
         """
-        Log out from a wallet. The token is deleted from the WalletClient
+        Log out from a wallet. The token is deleted from the `WalletClient`
         object.
         """
         url = "{}/api/v1/auth/token".format(self.url)
@@ -60,7 +60,7 @@ class WalletClient(object):
         """
         Get keypair information (excluding private key).
 
-        pubKey must be a hex-encoded string.
+        `pubKey` must be a hex-encoded string.
         """
         url = "{}/api/v1/keys/{}".format(self.url, pubKey)
         return self._httpsession.get(url, headers=self._header())
@@ -96,8 +96,10 @@ class WalletClient(object):
         """
         Sign a transaction.
 
-        tx must be a base64-encoded string, e.g.
+        `tx` must be a base64-encoded string, e.g.
+        ```
         tx = base64.b64encode(b"someblob").decode("ascii")
+        ```
 
         pubKey must be a hex-encoded string.
         """
@@ -109,10 +111,10 @@ class WalletClient(object):
         self, pubKey: str, passphrase: str, metadata: List[Dict[str, str]]
     ) -> requests.Response:
         """
-        Update the metadata for a keypair. Any existing metadata is removed,
+        Update the metadata for a key pair. Any existing metadata is removed,
         and replaced with the supplied metadata.
 
-        pubKey must be a hex-encoded string.
+        `pubKey` must be a hex-encoded string.
         """
         req = {"passphrase": passphrase, "meta": metadata}
         url = "{}/api/v1/keys/{}/metadata".format(self.url, pubKey)

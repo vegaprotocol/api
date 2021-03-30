@@ -18,11 +18,12 @@ def remove_control_chars(s: str) -> str:
 
 def grpc_error_detail(err: grpc.RpcError) -> Dict[str, Any]:
     """
-    grpc_error_detail takes a grpc.RpcError and returns a dict containing the
+    This function takes a `grpc.RpcError` and returns a dict containing the
     error details.
 
     Usage example:
 
+    ```python
     import vegaapiclient as vac
     grpc_client = vac.VegaTradingClient(node_grpc_url)
     grpc_request = ...
@@ -31,6 +32,7 @@ def grpc_error_detail(err: grpc.RpcError) -> Dict[str, Any]:
     except grpc.RpcError as exc:
         print(json.dumps(vac.grpc_error_detail(exc), indent=2, sort_keys=True))
         exit(1)
+    ```
     """
 
     if not isinstance(err, grpc.RpcError):
