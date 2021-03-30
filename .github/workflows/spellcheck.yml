@@ -1,6 +1,6 @@
 ---
 
-name: Shell script tests
+name: Spellcheck
 
 "on":
   pull_request:
@@ -16,11 +16,11 @@ name: Shell script tests
 
 jobs:
 
-  shellcheck:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@master
+      - name: Spellcheck
+        uses: igsekor/pyspelling-any@v1.0.4
