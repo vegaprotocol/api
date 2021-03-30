@@ -17,7 +17,7 @@ Vega provides a rich gRPC API. For a complete list of endpoints, see [`proto/api
 
 * Use `TradingService` for:
   * `Prepare*` endpoints are there for convenience, and will be removed in the near future
-  * `SubmitTransaction` receives and executes a signed transaction
+  * `SubmitTransaction` receives and executes a signed transaction. For transaction signing, see [go-wallet](https://github.com/vegaprotocol/go-wallet/).
 * Use `TradingDataService` for public information on:
   * assets, e.g. Ethereum ERC20 tokens
   * balances for accounts: general, margin
