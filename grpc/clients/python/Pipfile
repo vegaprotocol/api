@@ -9,7 +9,7 @@ pytest = "*"
 pytest-cov = "*"
 requests = "*"
 importlib-metadata = "*"
-jinja2 = "*"
+jinja2 = ">=2.11.3"
 googleapis-common-protos = "*"
 
 [dev-packages]
