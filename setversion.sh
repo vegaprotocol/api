@@ -27,11 +27,12 @@ checkfile README.md '^Version: '"$version"'$'
 # to be done
 
 # Javascript
-sed --in-place -e 's#"version": "[^"]*"#"version": "'"$version"'"#' grpc/js/package.json
-checkfile grpc/js/package.json '"version": "'"$version"'",'
-sed --in-place -e 's#^  "version": "[^"]*"#  "version": "'"$version"'"#' grpc/js/package-lock.json
-checkfile grpc/js/package-lock.json '^  "version": "'"$version"'",'
+sed --in-place -e 's#"version": "[^"]*"#"version": "'"$version"'"#' grpc/clients/js/package.json
+checkfile grpc/clients/js/package.json '"version": "'"$version"'",'
+sed --in-place -e 's#^  "version": "[^"]*"#  "version": "'"$version"'"#' grpc/clients/js/package-lock.json
+checkfile grpc/clients/js/package-lock.json '^  "version": "'"$version"'",'
+(cd grpc/clients/js && npm install)
 
 # Python
-sed --in-place -e 's#^VERSION = "[^"]*"#VERSION = "'"$version"'"#' grpc/python/setup.py
-checkfile grpc/python/setup.py '^VERSION = "'"$version"'"'
+sed --in-place -e 's#^VERSION = "[^"]*"#VERSION = "'"$version"'"#' grpc/clients/python/setup.py
+checkfile grpc/clients/python/setup.py '^VERSION = "'"$version"'"'
