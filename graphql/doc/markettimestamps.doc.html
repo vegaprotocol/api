@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
-    <title>FutureProductInput</title>
+    <title>MarketTimestamps</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -455,7 +455,7 @@
                             MarketTick
                         </a>
                     </li>
-                    <li  title="MarketTimestamps">
+                    <li class="slds-is-active" title="MarketTimestamps">
                         <a href="markettimestamps.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                             MarketTimestamps
                         </a>
@@ -795,7 +795,7 @@
                             FilterInput
                         </a>
                     </li>
-                    <li class="slds-is-active" title="FutureProductInput">
+                    <li  title="FutureProductInput">
                         <a href="futureproductinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                             FutureProductInput
                         </a>
@@ -940,9 +940,9 @@
                   </div>
               </div>
               <div class="container">
-                  <p class="slds-text-title--caps slds-text-color--weak">INPUT_OBJECT</p>
-                  <h1 class="slds-text-heading--large">FutureProductInput</h1>
-                  <div class="slds-text-body--regular"><p>Future product configuration</p>
+                  <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+                  <h1 class="slds-text-heading--large">MarketTimestamps</h1>
+                  <div class="slds-text-body--regular"><p>timestamps for when the market changes state</p>
 </div>
               </div>
           </section>
@@ -954,7 +954,7 @@
                       </a>
                       GraphQL Schema definition
                   </h2>
-                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">input</span> <span class="identifier">FutureProductInput</span> {</td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"><span class="tab"><span class="comment line">#   Future product maturity (ISO8601/RFC3339 timestamp)</span></span></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="meta">maturity</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="comment line">#   Product asset name</span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="meta">settlementAsset</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line">#   String representing the quote (e.g. BTCUSD -> USD is quote)</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="meta">quoteName</span>: <a class="support type" href="string.doc.html">String</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="comment line">#   The oracle spec describing the oracle data of interest.</span></span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="meta">oracleSpec</span>: <a class="support type" href="oraclespecconfigurationinput.doc.html">OracleSpecConfigurationInput</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><span class="comment line">#   The binding between the oracle spec and the settlement price</span></span></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="meta">oracleSpecBinding</span>: <a class="support type" href="oraclespectofuturebindinginput.doc.html">OracleSpecToFutureBindingInput</a>!</span></td></tr></span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code">}</td></tr></tbody></table></code>
+                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">MarketTimestamps</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Time when the market is first proposed</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">proposed</span>: <a class="support type" href="string.doc.html">String</a> </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   Time when the market has been voted in and waiting to be created</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">pending</span>: <a class="support type" href="string.doc.html">String</a> </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   Time when the market is open and ready to accept trades</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">open</span>: <a class="support type" href="string.doc.html">String</a> </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   Time when the market is closed</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">close</span>: <a class="support type" href="string.doc.html">String</a> </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code">}</td></tr></tbody></table></code>
               </div>
           </section>
           <section>
@@ -965,7 +965,7 @@
                       </a>
                       Required by
                   </h2>
-                  <ul class="require-by"><li><a href="instrumentconfigurationinput.doc.html" title="InstrumentConfigurationInput - ">InstrumentConfigurationInput<em></em></a><li></ul>
+                  <ul class="require-by"><li><a href="market.doc.html" title="Market - Represents a product & associated parameters that can be traded on Vega, has an associated OrderBook and Trade history">Market<em>Represents a product & associated parameters that can be traded on Vega, has an associated OrderBook and Trade history</em></a><li></ul>
               </div>
           </section>
           <footer>

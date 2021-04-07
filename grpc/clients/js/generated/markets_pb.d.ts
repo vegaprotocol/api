@@ -612,6 +612,11 @@ export class Market extends jspb.Message {
   getState(): Market.StateMap[keyof Market.StateMap];
   setState(value: Market.StateMap[keyof Market.StateMap]): void;
 
+  hasMarketTimestamps(): boolean;
+  clearMarketTimestamps(): void;
+  getMarketTimestamps(): MarketTimestamps | undefined;
+  setMarketTimestamps(value?: MarketTimestamps): void;
+
   getTradingModeConfigCase(): Market.TradingModeConfigCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Market.AsObject;
@@ -636,6 +641,7 @@ export namespace Market {
     targetStakeParameters?: TargetStakeParameters.AsObject,
     tradingMode: Market.TradingModeMap[keyof Market.TradingModeMap],
     state: Market.StateMap[keyof Market.StateMap],
+    marketTimestamps?: MarketTimestamps.AsObject,
   }
 
   export interface StateMap {
@@ -667,6 +673,38 @@ export namespace Market {
     TRADING_MODE_CONFIG_NOT_SET = 0,
     CONTINUOUS = 100,
     DISCRETE = 101,
+  }
+}
+
+export class MarketTimestamps extends jspb.Message {
+  getProposed(): number;
+  setProposed(value: number): void;
+
+  getPending(): number;
+  setPending(value: number): void;
+
+  getOpen(): number;
+  setOpen(value: number): void;
+
+  getClose(): number;
+  setClose(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MarketTimestamps.AsObject;
+  static toObject(includeInstance: boolean, msg: MarketTimestamps): MarketTimestamps.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MarketTimestamps, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MarketTimestamps;
+  static deserializeBinaryFromReader(message: MarketTimestamps, reader: jspb.BinaryReader): MarketTimestamps;
+}
+
+export namespace MarketTimestamps {
+  export type AsObject = {
+    proposed: number,
+    pending: number,
+    open: number,
+    close: number,
   }
 }
 

@@ -6,21 +6,21 @@
 - [github.com/mwitkow/go-proto-validators/validator.proto](#github.com/mwitkow/go-proto-validators/validator.proto)
     - [FieldValidator](#validator.FieldValidator)
     - [OneofValidator](#validator.OneofValidator)
-  
+
     - [File-level Extensions](#github.com/mwitkow/go-proto-validators/validator.proto-extensions)
     - [File-level Extensions](#github.com/mwitkow/go-proto-validators/validator.proto-extensions)
-  
+
 - [oracles/v1/oracle_spec.proto](#oracles/v1/oracle_spec.proto)
     - [Condition](#oracles.v1.Condition)
     - [Filter](#oracles.v1.Filter)
     - [OracleSpec](#oracles.v1.OracleSpec)
     - [OracleSpecConfiguration](#oracles.v1.OracleSpecConfiguration)
     - [PropertyKey](#oracles.v1.PropertyKey)
-  
+
     - [Condition.Operator](#oracles.v1.Condition.Operator)
     - [OracleSpec.Status](#oracles.v1.OracleSpec.Status)
     - [PropertyKey.Type](#oracles.v1.PropertyKey.Type)
-  
+
 - [markets.proto](#markets.proto)
     - [AuctionDuration](#vega.AuctionDuration)
     - [ContinuousTrading](#vega.ContinuousTrading)
@@ -34,6 +34,7 @@
     - [LogNormalRiskModel](#vega.LogNormalRiskModel)
     - [MarginCalculator](#vega.MarginCalculator)
     - [Market](#vega.Market)
+    - [MarketTimestamps](#vega.MarketTimestamps)
     - [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding)
     - [PriceMonitoringParameters](#vega.PriceMonitoringParameters)
     - [PriceMonitoringSettings](#vega.PriceMonitoringSettings)
@@ -43,10 +44,10 @@
     - [SimpleRiskModel](#vega.SimpleRiskModel)
     - [TargetStakeParameters](#vega.TargetStakeParameters)
     - [TradableInstrument](#vega.TradableInstrument)
-  
+
     - [Market.State](#vega.Market.State)
     - [Market.TradingMode](#vega.Market.TradingMode)
-  
+
 - [vega.proto](#vega.proto)
     - [Account](#vega.Account)
     - [AuctionIndicativeState](#vega.AuctionIndicativeState)
@@ -103,7 +104,7 @@
     - [WithdrawExt](#vega.WithdrawExt)
     - [WithdrawSubmission](#vega.WithdrawSubmission)
     - [Withdrawal](#vega.Withdrawal)
-  
+
     - [AccountType](#vega.AccountType)
     - [AuctionTrigger](#vega.AuctionTrigger)
     - [ChainStatus](#vega.ChainStatus)
@@ -121,14 +122,14 @@
     - [Trade.Type](#vega.Trade.Type)
     - [TransferType](#vega.TransferType)
     - [Withdrawal.Status](#vega.Withdrawal.Status)
-  
+
 - [assets.proto](#assets.proto)
     - [Asset](#vega.Asset)
     - [AssetSource](#vega.AssetSource)
     - [BuiltinAsset](#vega.BuiltinAsset)
     - [DevAssets](#vega.DevAssets)
     - [ERC20](#vega.ERC20)
-  
+
 - [governance.proto](#governance.proto)
     - [FutureProduct](#vega.FutureProduct)
     - [GovernanceData](#vega.GovernanceData)
@@ -144,11 +145,11 @@
     - [UpdateMarket](#vega.UpdateMarket)
     - [UpdateNetworkParameter](#vega.UpdateNetworkParameter)
     - [Vote](#vega.Vote)
-  
+
     - [Proposal.State](#vega.Proposal.State)
     - [ProposalError](#vega.ProposalError)
     - [Vote.Value](#vega.Vote.Value)
-  
+
 - [chain_events.proto](#chain_events.proto)
     - [AddValidator](#vega.AddValidator)
     - [BTCDeposit](#vega.BTCDeposit)
@@ -168,11 +169,11 @@
     - [Identifier](#vega.Identifier)
     - [RemoveValidator](#vega.RemoveValidator)
     - [ValidatorEvent](#vega.ValidatorEvent)
-  
+
 - [oracles/v1/oracle_data.proto](#oracles/v1/oracle_data.proto)
     - [OracleData](#oracles.v1.OracleData)
     - [Property](#oracles.v1.Property)
-  
+
 - [events.proto](#events.proto)
     - [AuctionEvent](#vega.AuctionEvent)
     - [BusEvent](#vega.BusEvent)
@@ -186,9 +187,9 @@
     - [TradeSettlement](#vega.TradeSettlement)
     - [TransferResponses](#vega.TransferResponses)
     - [TxErrorEvent](#vega.TxErrorEvent)
-  
+
     - [BusEventType](#vega.BusEventType)
-  
+
 - [api/trading.proto](#api/trading.proto)
     - [AccountsSubscribeRequest](#api.v1.AccountsSubscribeRequest)
     - [AccountsSubscribeResponse](#api.v1.AccountsSubscribeResponse)
@@ -338,12 +339,12 @@
     - [WithdrawalResponse](#api.v1.WithdrawalResponse)
     - [WithdrawalsRequest](#api.v1.WithdrawalsRequest)
     - [WithdrawalsResponse](#api.v1.WithdrawalsResponse)
-  
+
     - [SubmitTransactionRequest.Type](#api.v1.SubmitTransactionRequest.Type)
-  
+
     - [TradingDataService](#api.v1.TradingDataService)
     - [TradingService](#api.v1.TradingService)
-  
+
 - [tm/replay.proto](#tm/replay.proto)
     - [BlockParams](#tm.BlockParams)
     - [ConsensusParams](#tm.ConsensusParams)
@@ -366,9 +367,9 @@
     - [ValidatorUpdate](#tm.ValidatorUpdate)
     - [VersionParams](#tm.VersionParams)
     - [VoteInfo](#tm.VoteInfo)
-  
+
     - [EvidenceType](#tm.EvidenceType)
-  
+
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -426,9 +427,9 @@
 
 
 
- 
 
- 
+
+
 
 
 <a name="github.com/mwitkow/go-proto-validators/validator.proto-extensions"></a>
@@ -439,9 +440,9 @@
 | field | FieldValidator | .google.protobuf.FieldOptions | 65020 |  |
 | oneof | OneofValidator | .google.protobuf.OneofOptions | 65021 |  |
 
- 
 
- 
+
+
 
 
 
@@ -539,7 +540,7 @@ PropertyKey describes the property key contained in an oracle data.
 
 
 
- 
+
 
 
 <a name="oracles.v1.Condition.Operator"></a>
@@ -588,11 +589,11 @@ engine.
 | TYPE_TIMESTAMP | 6 | Timestamp date type. |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -809,6 +810,25 @@ Market definition
 | target_stake_parameters | [TargetStakeParameters](#vega.TargetStakeParameters) |  | TargetStakeParameters for the market |
 | trading_mode | [Market.TradingMode](#vega.Market.TradingMode) |  | Current mode of execution of the market |
 | state | [Market.State](#vega.Market.State) |  | Current state of the market |
+| market_timestamps | [MarketTimestamps](#vega.MarketTimestamps) |  | Timestamps for when the market staye changes |
+
+
+
+
+
+
+<a name="vega.MarketTimestamps"></a>
+
+### MarketTimestamps
+Time stamps for important times about creating, enacting etc the market
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposed | [int64](#int64) |  | Time when the market is first proposed |
+| pending | [int64](#int64) |  | Time when the market has been voted in and is created into an opening auction |
+| open | [int64](#int64) |  | Time when the market has left the opening auction and is ready to accept trades |
+| close | [int64](#int64) |  | Time when the market is closed |
 
 
 
@@ -963,7 +983,7 @@ Tradable Instrument definition
 
 
 
- 
+
 
 
 <a name="vega.Market.State"></a>
@@ -1000,11 +1020,11 @@ The trading mode the market is currently running, also referred to as &#39;marke
 | TRADING_MODE_MONITORING_AUCTION | 4 | Auction triggered by monitoring |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -2078,7 +2098,7 @@ A withdrawal from the Vega network
 
 
 
- 
+
 
 
 <a name="vega.AccountType"></a>
@@ -2403,11 +2423,11 @@ The status of the withdrawal
 | STATUS_FINALIZED | 3 | The withdrawal went through and is fully finalised, the funds are removed from the Vega network and are unlocked on the foreign chain bridge, for example, on the Ethereum network |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -2502,13 +2522,13 @@ An ERC20 token based asset, living on the ethereum network
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -2762,7 +2782,7 @@ Governance vote
 
 
 
- 
+
 
 
 <a name="vega.Proposal.State"></a>
@@ -2838,11 +2858,11 @@ Vote value
 | VALUE_YES | 2 | A vote in favour of the proposal |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -3153,13 +3173,13 @@ An event related to validator management with foreign networks
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -3203,13 +3223,13 @@ Property describes one property of an oracle spec with a key with its value.
 
 
 
- 
 
- 
 
- 
 
- 
+
+
+
+
 
 
 
@@ -3456,7 +3476,7 @@ A transfer responses event contains a collection of transfer information
 
 
 
- 
+
 
 
 <a name="vega.BusEventType"></a>
@@ -3502,11 +3522,11 @@ Group values (e.g. BUS_EVENT_TYPE_AUCTION) where they represent a group of data 
 | BUS_EVENT_TYPE_TX_ERROR | 201 | Event used to report failed transactions back to a user, this is excluded from the ALL type |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 
@@ -5743,7 +5763,7 @@ The response for a list of withdrawals
 
 
 
- 
+
 
 
 <a name="api.v1.SubmitTransactionRequest.Type"></a>
@@ -5759,9 +5779,9 @@ Blockchain transaction type
 | TYPE_COMMIT | 3 | The transaction will submitted, and blocking until the tendermint network will have committed it into a block |
 
 
- 
 
- 
+
+
 
 
 <a name="api.v1.TradingDataService"></a>
@@ -5854,7 +5874,7 @@ Blockchain transaction type
 | PropagateChainEvent | [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest) | [PropagateChainEventResponse](#api.v1.PropagateChainEventResponse) | Propagate a chain event |
 | PrepareLiquidityProvision | [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest) | [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse) | Prepare a liquidity provision request |
 
- 
+
 
 
 
@@ -6220,7 +6240,7 @@ Blockchain transaction type
 
 
 
- 
+
 
 
 <a name="tm.EvidenceType"></a>
@@ -6235,11 +6255,11 @@ Blockchain transaction type
 | LIGHT_CLIENT_ATTACK | 2 |  |
 
 
- 
 
- 
 
- 
+
+
+
 
 
 

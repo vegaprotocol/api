@@ -26,6 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::interna
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LogNormalModelParams_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LogNormalRiskModel_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MarginCalculator_markets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MarketTimestamps_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OracleSpecToFutureBinding_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PriceMonitoringParameters_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PriceMonitoringSettings_markets_2eproto;
@@ -120,6 +121,10 @@ class MarketDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Market> _instance;
 } _Market_default_instance_;
+class MarketTimestampsDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MarketTimestamps> _instance;
+} _MarketTimestamps_default_instance_;
 }  // namespace vega
 static void InitDefaultsscc_info_AuctionDuration_markets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -281,15 +286,29 @@ static void InitDefaultsscc_info_Market_markets_2eproto() {
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<7> scc_info_Market_markets_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 7, 0, InitDefaultsscc_info_Market_markets_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<8> scc_info_Market_markets_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 8, 0, InitDefaultsscc_info_Market_markets_2eproto}, {
       &scc_info_TradableInstrument_markets_2eproto.base,
       &scc_info_Fees_markets_2eproto.base,
       &scc_info_AuctionDuration_markets_2eproto.base,
       &scc_info_ContinuousTrading_markets_2eproto.base,
       &scc_info_DiscreteTrading_markets_2eproto.base,
       &scc_info_PriceMonitoringSettings_markets_2eproto.base,
-      &scc_info_TargetStakeParameters_markets_2eproto.base,}};
+      &scc_info_TargetStakeParameters_markets_2eproto.base,
+      &scc_info_MarketTimestamps_markets_2eproto.base,}};
+
+static void InitDefaultsscc_info_MarketTimestamps_markets_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::_MarketTimestamps_default_instance_;
+    new (ptr) ::vega::MarketTimestamps();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MarketTimestamps_markets_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MarketTimestamps_markets_2eproto}, {}};
 
 static void InitDefaultsscc_info_OracleSpecToFutureBinding_markets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -415,7 +434,7 @@ static void InitDefaultsscc_info_TradableInstrument_markets_2eproto() {
       &scc_info_LogNormalRiskModel_markets_2eproto.base,
       &scc_info_SimpleRiskModel_markets_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_markets_2eproto[21];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_markets_2eproto[22];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_markets_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_markets_2eproto = nullptr;
 
@@ -587,7 +606,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::vega::Market, target_stake_parameters_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, trading_mode_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, state_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, market_timestamps_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, trading_mode_config_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::MarketTimestamps, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::MarketTimestamps, proposed_),
+  PROTOBUF_FIELD_OFFSET(::vega::MarketTimestamps, pending_),
+  PROTOBUF_FIELD_OFFSET(::vega::MarketTimestamps, open_),
+  PROTOBUF_FIELD_OFFSET(::vega::MarketTimestamps, close_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::AuctionDuration)},
@@ -611,6 +640,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 137, -1, sizeof(::vega::PriceMonitoringSettings)},
   { 144, -1, sizeof(::vega::TargetStakeParameters)},
   { 151, -1, sizeof(::vega::Market)},
+  { 169, -1, sizeof(::vega::MarketTimestamps)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -635,6 +665,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_PriceMonitoringSettings_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_TargetStakeParameters_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Market_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_MarketTimestamps_default_instance_),
 };
 
 const char descriptor_table_protodef_markets_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -704,7 +735,7 @@ const char descriptor_table_protodef_markets_2eproto[] PROTOBUF_SECTION_VARIABLE
   "y\030\002 \001(\003R\017updateFrequency\"v\n\025TargetStakeP"
   "arameters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\n"
   "timeWindow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t"
-  "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002i"
+  "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\332\010\n\006Market\022\016\n\002i"
   "d\030\001 \001(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\013"
   "2\030.vega.TradableInstrumentR\022tradableInst"
   "rument\022%\n\016decimal_places\030\003 \001(\004R\rdecimalP"
@@ -720,25 +751,30 @@ const char descriptor_table_protodef_markets_2eproto[] PROTOBUF_SECTION_VARIABLE
   "metersR\025targetStakeParameters\022;\n\014trading"
   "_mode\030\010 \001(\0162\030.vega.Market.TradingModeR\013t"
   "radingMode\022(\n\005state\030\t \001(\0162\022.vega.Market."
-  "StateR\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIF"
-  "IED\020\000\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJEC"
-  "TED\020\002\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCEL"
-  "LED\020\004\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPEND"
-  "ED\020\006\022\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_"
-  "TERMINATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013Trad"
-  "ingMode\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n"
-  "\027TRADING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MO"
-  "DE_BATCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENI"
-  "NG_AUCTION\020\003\022#\n\037TRADING_MODE_MONITORING_"
-  "AUCTION\020\004B\025\n\023trading_mode_configB7\n\024io.v"
-  "egaprotocol.vegaZ\037code.vegaprotocol.io/v"
-  "ega/protob\006proto3"
+  "StateR\005state\022C\n\021market_timestamps\030\n \001(\0132"
+  "\026.vega.MarketTimestampsR\020marketTimestamp"
+  "s\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022\n\016ST"
+  "ATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002\022\021\n\rST"
+  "ATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004\022\020\n\014ST"
+  "ATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022\020\n\014STA"
+  "TE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMINATED\020"
+  "\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMode\022\034\n\030"
+  "TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRADING_MO"
+  "DE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BATCH_AU"
+  "CTION\020\002\022 \n\034TRADING_MODE_OPENING_AUCTION\020"
+  "\003\022#\n\037TRADING_MODE_MONITORING_AUCTION\020\004B\025"
+  "\n\023trading_mode_config\"r\n\020MarketTimestamp"
+  "s\022\032\n\010proposed\030\001 \001(\003R\010proposed\022\030\n\007pending"
+  "\030\002 \001(\003R\007pending\022\022\n\004open\030\003 \001(\003R\004open\022\024\n\005c"
+  "lose\030\004 \001(\003R\005closeB7\n\024io.vegaprotocol.veg"
+  "aZ\037code.vegaprotocol.io/vega/protob\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_markets_2eproto_deps[2] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
   &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_markets_2eproto_sccs[21] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_markets_2eproto_sccs[22] = {
   &scc_info_AuctionDuration_markets_2eproto.base,
   &scc_info_ContinuousTrading_markets_2eproto.base,
   &scc_info_DiscreteTrading_markets_2eproto.base,
@@ -751,6 +787,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
   &scc_info_LogNormalRiskModel_markets_2eproto.base,
   &scc_info_MarginCalculator_markets_2eproto.base,
   &scc_info_Market_markets_2eproto.base,
+  &scc_info_MarketTimestamps_markets_2eproto.base,
   &scc_info_OracleSpecToFutureBinding_markets_2eproto.base,
   &scc_info_PriceMonitoringParameters_markets_2eproto.base,
   &scc_info_PriceMonitoringSettings_markets_2eproto.base,
@@ -763,10 +800,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_markets_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_markets_2eproto = {
-  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3777,
-  &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 21, 2,
+  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3962,
+  &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 22, 2,
   schemas, file_default_instances, TableStruct_markets_2eproto::offsets,
-  file_level_metadata_markets_2eproto, 21, file_level_enum_descriptors_markets_2eproto, file_level_service_descriptors_markets_2eproto,
+  file_level_metadata_markets_2eproto, 22, file_level_enum_descriptors_markets_2eproto, file_level_service_descriptors_markets_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -6001,6 +6038,7 @@ class Market::_Internal {
   static const ::vega::DiscreteTrading& discrete(const Market* msg);
   static const ::vega::PriceMonitoringSettings& price_monitoring_settings(const Market* msg);
   static const ::vega::TargetStakeParameters& target_stake_parameters(const Market* msg);
+  static const ::vega::MarketTimestamps& market_timestamps(const Market* msg);
 };
 
 const ::vega::TradableInstrument&
@@ -6030,6 +6068,10 @@ Market::_Internal::price_monitoring_settings(const Market* msg) {
 const ::vega::TargetStakeParameters&
 Market::_Internal::target_stake_parameters(const Market* msg) {
   return *msg->target_stake_parameters_;
+}
+const ::vega::MarketTimestamps&
+Market::_Internal::market_timestamps(const Market* msg) {
+  return *msg->market_timestamps_;
 }
 void Market::set_allocated_continuous(::vega::ContinuousTrading* continuous) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -6100,6 +6142,11 @@ Market::Market(const Market& from)
   } else {
     target_stake_parameters_ = nullptr;
   }
+  if (from._internal_has_market_timestamps()) {
+    market_timestamps_ = new ::vega::MarketTimestamps(*from.market_timestamps_);
+  } else {
+    market_timestamps_ = nullptr;
+  }
   ::memcpy(&decimal_places_, &from.decimal_places_,
     static_cast<size_t>(reinterpret_cast<char*>(&state_) -
     reinterpret_cast<char*>(&decimal_places_)) + sizeof(state_));
@@ -6144,6 +6191,7 @@ void Market::SharedDtor() {
   if (this != internal_default_instance()) delete opening_auction_;
   if (this != internal_default_instance()) delete price_monitoring_settings_;
   if (this != internal_default_instance()) delete target_stake_parameters_;
+  if (this != internal_default_instance()) delete market_timestamps_;
   if (has_trading_mode_config()) {
     clear_trading_mode_config();
   }
@@ -6214,6 +6262,10 @@ void Market::Clear() {
     delete target_stake_parameters_;
   }
   target_stake_parameters_ = nullptr;
+  if (GetArena() == nullptr && market_timestamps_ != nullptr) {
+    delete market_timestamps_;
+  }
+  market_timestamps_ = nullptr;
   ::memset(&decimal_places_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&state_) -
       reinterpret_cast<char*>(&decimal_places_)) + sizeof(state_));
@@ -6293,6 +6345,13 @@ const char* Market::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_state(static_cast<::vega::Market_State>(val));
+        } else goto handle_unusual;
+        continue;
+      // .vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr = ctx->ParseMessage(_internal_mutable_market_timestamps(), ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .vega.ContinuousTrading continuous = 100 [json_name = "continuous"];
@@ -6407,6 +6466,14 @@ failure:
       9, this->_internal_state(), target);
   }
 
+  // .vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];
+  if (this->has_market_timestamps()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        10, _Internal::market_timestamps(this), target, stream);
+  }
+
   // .vega.ContinuousTrading continuous = 100 [json_name = "continuous"];
   if (_internal_has_continuous()) {
     target = stream->EnsureSpace(target);
@@ -6479,6 +6546,13 @@ size_t Market::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *target_stake_parameters_);
+  }
+
+  // .vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];
+  if (this->has_market_timestamps()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *market_timestamps_);
   }
 
   // uint64 decimal_places = 3 [json_name = "decimalPlaces"];
@@ -6568,6 +6642,9 @@ void Market::MergeFrom(const Market& from) {
   if (from.has_target_stake_parameters()) {
     _internal_mutable_target_stake_parameters()->::vega::TargetStakeParameters::MergeFrom(from._internal_target_stake_parameters());
   }
+  if (from.has_market_timestamps()) {
+    _internal_mutable_market_timestamps()->::vega::MarketTimestamps::MergeFrom(from._internal_market_timestamps());
+  }
   if (from.decimal_places() != 0) {
     _internal_set_decimal_places(from._internal_decimal_places());
   }
@@ -6625,6 +6702,281 @@ void Market::InternalSwap(Market* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Market::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class MarketTimestamps::_Internal {
+ public:
+};
+
+MarketTimestamps::MarketTimestamps(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.MarketTimestamps)
+}
+MarketTimestamps::MarketTimestamps(const MarketTimestamps& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&proposed_, &from.proposed_,
+    static_cast<size_t>(reinterpret_cast<char*>(&close_) -
+    reinterpret_cast<char*>(&proposed_)) + sizeof(close_));
+  // @@protoc_insertion_point(copy_constructor:vega.MarketTimestamps)
+}
+
+void MarketTimestamps::SharedCtor() {
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&proposed_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&close_) -
+      reinterpret_cast<char*>(&proposed_)) + sizeof(close_));
+}
+
+MarketTimestamps::~MarketTimestamps() {
+  // @@protoc_insertion_point(destructor:vega.MarketTimestamps)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void MarketTimestamps::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void MarketTimestamps::ArenaDtor(void* object) {
+  MarketTimestamps* _this = reinterpret_cast< MarketTimestamps* >(object);
+  (void)_this;
+}
+void MarketTimestamps::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void MarketTimestamps::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const MarketTimestamps& MarketTimestamps::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MarketTimestamps_markets_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void MarketTimestamps::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.MarketTimestamps)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&proposed_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&close_) -
+      reinterpret_cast<char*>(&proposed_)) + sizeof(close_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* MarketTimestamps::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int64 proposed = 1 [json_name = "proposed"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          proposed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 pending = 2 [json_name = "pending"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          pending_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 open = 3 [json_name = "open"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          open_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 close = 4 [json_name = "close"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          close_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* MarketTimestamps::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.MarketTimestamps)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 proposed = 1 [json_name = "proposed"];
+  if (this->proposed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_proposed(), target);
+  }
+
+  // int64 pending = 2 [json_name = "pending"];
+  if (this->pending() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_pending(), target);
+  }
+
+  // int64 open = 3 [json_name = "open"];
+  if (this->open() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_open(), target);
+  }
+
+  // int64 close = 4 [json_name = "close"];
+  if (this->close() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_close(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.MarketTimestamps)
+  return target;
+}
+
+size_t MarketTimestamps::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.MarketTimestamps)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int64 proposed = 1 [json_name = "proposed"];
+  if (this->proposed() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_proposed());
+  }
+
+  // int64 pending = 2 [json_name = "pending"];
+  if (this->pending() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_pending());
+  }
+
+  // int64 open = 3 [json_name = "open"];
+  if (this->open() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_open());
+  }
+
+  // int64 close = 4 [json_name = "close"];
+  if (this->close() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_close());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void MarketTimestamps::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.MarketTimestamps)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MarketTimestamps* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MarketTimestamps>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.MarketTimestamps)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.MarketTimestamps)
+    MergeFrom(*source);
+  }
+}
+
+void MarketTimestamps::MergeFrom(const MarketTimestamps& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.MarketTimestamps)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.proposed() != 0) {
+    _internal_set_proposed(from._internal_proposed());
+  }
+  if (from.pending() != 0) {
+    _internal_set_pending(from._internal_pending());
+  }
+  if (from.open() != 0) {
+    _internal_set_open(from._internal_open());
+  }
+  if (from.close() != 0) {
+    _internal_set_close(from._internal_close());
+  }
+}
+
+void MarketTimestamps::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.MarketTimestamps)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MarketTimestamps::CopyFrom(const MarketTimestamps& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.MarketTimestamps)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MarketTimestamps::IsInitialized() const {
+  return true;
+}
+
+void MarketTimestamps::InternalSwap(MarketTimestamps* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MarketTimestamps, close_)
+      + sizeof(MarketTimestamps::close_)
+      - PROTOBUF_FIELD_OFFSET(MarketTimestamps, proposed_)>(
+          reinterpret_cast<char*>(&proposed_),
+          reinterpret_cast<char*>(&other->proposed_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MarketTimestamps::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6694,6 +7046,9 @@ template<> PROTOBUF_NOINLINE ::vega::TargetStakeParameters* Arena::CreateMaybeMe
 }
 template<> PROTOBUF_NOINLINE ::vega::Market* Arena::CreateMaybeMessage< ::vega::Market >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::Market >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::MarketTimestamps* Arena::CreateMaybeMessage< ::vega::MarketTimestamps >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::MarketTimestamps >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

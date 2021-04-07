@@ -17402,6 +17402,33 @@ public final class Markets {
      */
     io.vegaprotocol.vega.Markets.Market.State getState();
 
+    /**
+     * <pre>
+     * Timestamps for when the market staye changes
+     * </pre>
+     *
+     * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+     * @return Whether the marketTimestamps field is set.
+     */
+    boolean hasMarketTimestamps();
+    /**
+     * <pre>
+     * Timestamps for when the market staye changes
+     * </pre>
+     *
+     * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+     * @return The marketTimestamps.
+     */
+    io.vegaprotocol.vega.Markets.MarketTimestamps getMarketTimestamps();
+    /**
+     * <pre>
+     * Timestamps for when the market staye changes
+     * </pre>
+     *
+     * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+     */
+    io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder getMarketTimestampsOrBuilder();
+
     public io.vegaprotocol.vega.Markets.Market.TradingModeConfigCase getTradingModeConfigCase();
   }
   /**
@@ -17542,6 +17569,19 @@ public final class Markets {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
+              break;
+            }
+            case 82: {
+              io.vegaprotocol.vega.Markets.MarketTimestamps.Builder subBuilder = null;
+              if (marketTimestamps_ != null) {
+                subBuilder = marketTimestamps_.toBuilder();
+              }
+              marketTimestamps_ = input.readMessage(io.vegaprotocol.vega.Markets.MarketTimestamps.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(marketTimestamps_);
+                marketTimestamps_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             case 802: {
@@ -18488,6 +18528,44 @@ public final class Markets {
       return result == null ? io.vegaprotocol.vega.Markets.Market.State.UNRECOGNIZED : result;
     }
 
+    public static final int MARKET_TIMESTAMPS_FIELD_NUMBER = 10;
+    private io.vegaprotocol.vega.Markets.MarketTimestamps marketTimestamps_;
+    /**
+     * <pre>
+     * Timestamps for when the market staye changes
+     * </pre>
+     *
+     * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+     * @return Whether the marketTimestamps field is set.
+     */
+    @java.lang.Override
+    public boolean hasMarketTimestamps() {
+      return marketTimestamps_ != null;
+    }
+    /**
+     * <pre>
+     * Timestamps for when the market staye changes
+     * </pre>
+     *
+     * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+     * @return The marketTimestamps.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.MarketTimestamps getMarketTimestamps() {
+      return marketTimestamps_ == null ? io.vegaprotocol.vega.Markets.MarketTimestamps.getDefaultInstance() : marketTimestamps_;
+    }
+    /**
+     * <pre>
+     * Timestamps for when the market staye changes
+     * </pre>
+     *
+     * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder getMarketTimestampsOrBuilder() {
+      return getMarketTimestamps();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -18528,6 +18606,9 @@ public final class Markets {
       }
       if (state_ != io.vegaprotocol.vega.Markets.Market.State.STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(9, state_);
+      }
+      if (marketTimestamps_ != null) {
+        output.writeMessage(10, getMarketTimestamps());
       }
       if (tradingModeConfigCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.ContinuousTrading) tradingModeConfig_);
@@ -18578,6 +18659,10 @@ public final class Markets {
       if (state_ != io.vegaprotocol.vega.Markets.Market.State.STATE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, state_);
+      }
+      if (marketTimestamps_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getMarketTimestamps());
       }
       if (tradingModeConfigCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -18633,6 +18718,11 @@ public final class Markets {
       }
       if (tradingMode_ != other.tradingMode_) return false;
       if (state_ != other.state_) return false;
+      if (hasMarketTimestamps() != other.hasMarketTimestamps()) return false;
+      if (hasMarketTimestamps()) {
+        if (!getMarketTimestamps()
+            .equals(other.getMarketTimestamps())) return false;
+      }
       if (!getTradingModeConfigCase().equals(other.getTradingModeConfigCase())) return false;
       switch (tradingModeConfigCase_) {
         case 100:
@@ -18686,6 +18776,10 @@ public final class Markets {
       hash = (53 * hash) + tradingMode_;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      if (hasMarketTimestamps()) {
+        hash = (37 * hash) + MARKET_TIMESTAMPS_FIELD_NUMBER;
+        hash = (53 * hash) + getMarketTimestamps().hashCode();
+      }
       switch (tradingModeConfigCase_) {
         case 100:
           hash = (37 * hash) + CONTINUOUS_FIELD_NUMBER;
@@ -18873,6 +18967,12 @@ public final class Markets {
 
         state_ = 0;
 
+        if (marketTimestampsBuilder_ == null) {
+          marketTimestamps_ = null;
+        } else {
+          marketTimestamps_ = null;
+          marketTimestampsBuilder_ = null;
+        }
         tradingModeConfigCase_ = 0;
         tradingModeConfig_ = null;
         return this;
@@ -18944,6 +19044,11 @@ public final class Markets {
         }
         result.tradingMode_ = tradingMode_;
         result.state_ = state_;
+        if (marketTimestampsBuilder_ == null) {
+          result.marketTimestamps_ = marketTimestamps_;
+        } else {
+          result.marketTimestamps_ = marketTimestampsBuilder_.build();
+        }
         result.tradingModeConfigCase_ = tradingModeConfigCase_;
         onBuilt();
         return result;
@@ -19020,6 +19125,9 @@ public final class Markets {
         }
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.hasMarketTimestamps()) {
+          mergeMarketTimestamps(other.getMarketTimestamps());
         }
         switch (other.getTradingModeConfigCase()) {
           case CONTINUOUS: {
@@ -20508,6 +20616,161 @@ public final class Markets {
         onChanged();
         return this;
       }
+
+      private io.vegaprotocol.vega.Markets.MarketTimestamps marketTimestamps_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder> marketTimestampsBuilder_;
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       * @return Whether the marketTimestamps field is set.
+       */
+      public boolean hasMarketTimestamps() {
+        return marketTimestampsBuilder_ != null || marketTimestamps_ != null;
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       * @return The marketTimestamps.
+       */
+      public io.vegaprotocol.vega.Markets.MarketTimestamps getMarketTimestamps() {
+        if (marketTimestampsBuilder_ == null) {
+          return marketTimestamps_ == null ? io.vegaprotocol.vega.Markets.MarketTimestamps.getDefaultInstance() : marketTimestamps_;
+        } else {
+          return marketTimestampsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      public Builder setMarketTimestamps(io.vegaprotocol.vega.Markets.MarketTimestamps value) {
+        if (marketTimestampsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          marketTimestamps_ = value;
+          onChanged();
+        } else {
+          marketTimestampsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      public Builder setMarketTimestamps(
+          io.vegaprotocol.vega.Markets.MarketTimestamps.Builder builderForValue) {
+        if (marketTimestampsBuilder_ == null) {
+          marketTimestamps_ = builderForValue.build();
+          onChanged();
+        } else {
+          marketTimestampsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      public Builder mergeMarketTimestamps(io.vegaprotocol.vega.Markets.MarketTimestamps value) {
+        if (marketTimestampsBuilder_ == null) {
+          if (marketTimestamps_ != null) {
+            marketTimestamps_ =
+              io.vegaprotocol.vega.Markets.MarketTimestamps.newBuilder(marketTimestamps_).mergeFrom(value).buildPartial();
+          } else {
+            marketTimestamps_ = value;
+          }
+          onChanged();
+        } else {
+          marketTimestampsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      public Builder clearMarketTimestamps() {
+        if (marketTimestampsBuilder_ == null) {
+          marketTimestamps_ = null;
+          onChanged();
+        } else {
+          marketTimestamps_ = null;
+          marketTimestampsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.MarketTimestamps.Builder getMarketTimestampsBuilder() {
+
+        onChanged();
+        return getMarketTimestampsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder getMarketTimestampsOrBuilder() {
+        if (marketTimestampsBuilder_ != null) {
+          return marketTimestampsBuilder_.getMessageOrBuilder();
+        } else {
+          return marketTimestamps_ == null ?
+              io.vegaprotocol.vega.Markets.MarketTimestamps.getDefaultInstance() : marketTimestamps_;
+        }
+      }
+      /**
+       * <pre>
+       * Timestamps for when the market staye changes
+       * </pre>
+       *
+       * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder>
+          getMarketTimestampsFieldBuilder() {
+        if (marketTimestampsBuilder_ == null) {
+          marketTimestampsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder>(
+                  getMarketTimestamps(),
+                  getParentForChildren(),
+                  isClean());
+          marketTimestamps_ = null;
+        }
+        return marketTimestampsBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -20556,6 +20819,796 @@ public final class Markets {
 
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.Market getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MarketTimestampsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.MarketTimestamps)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Time when the market is first proposed
+     * </pre>
+     *
+     * <code>int64 proposed = 1 [json_name = "proposed"];</code>
+     * @return The proposed.
+     */
+    long getProposed();
+
+    /**
+     * <pre>
+     * Time when the market has been voted in and is created into an opening auction
+     * </pre>
+     *
+     * <code>int64 pending = 2 [json_name = "pending"];</code>
+     * @return The pending.
+     */
+    long getPending();
+
+    /**
+     * <pre>
+     * Time when the market has left the opening auction and is ready to accept trades
+     * </pre>
+     *
+     * <code>int64 open = 3 [json_name = "open"];</code>
+     * @return The open.
+     */
+    long getOpen();
+
+    /**
+     * <pre>
+     * Time when the market is closed
+     * </pre>
+     *
+     * <code>int64 close = 4 [json_name = "close"];</code>
+     * @return The close.
+     */
+    long getClose();
+  }
+  /**
+   * <pre>
+   * Time stamps for important times about creating, enacting etc the market
+   * </pre>
+   *
+   * Protobuf type {@code vega.MarketTimestamps}
+   */
+  public static final class MarketTimestamps extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.MarketTimestamps)
+      MarketTimestampsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MarketTimestamps.newBuilder() to construct.
+    private MarketTimestamps(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MarketTimestamps() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MarketTimestamps();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MarketTimestamps(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              proposed_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              pending_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              open_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              close_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_MarketTimestamps_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_MarketTimestamps_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Markets.MarketTimestamps.class, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder.class);
+    }
+
+    public static final int PROPOSED_FIELD_NUMBER = 1;
+    private long proposed_;
+    /**
+     * <pre>
+     * Time when the market is first proposed
+     * </pre>
+     *
+     * <code>int64 proposed = 1 [json_name = "proposed"];</code>
+     * @return The proposed.
+     */
+    @java.lang.Override
+    public long getProposed() {
+      return proposed_;
+    }
+
+    public static final int PENDING_FIELD_NUMBER = 2;
+    private long pending_;
+    /**
+     * <pre>
+     * Time when the market has been voted in and is created into an opening auction
+     * </pre>
+     *
+     * <code>int64 pending = 2 [json_name = "pending"];</code>
+     * @return The pending.
+     */
+    @java.lang.Override
+    public long getPending() {
+      return pending_;
+    }
+
+    public static final int OPEN_FIELD_NUMBER = 3;
+    private long open_;
+    /**
+     * <pre>
+     * Time when the market has left the opening auction and is ready to accept trades
+     * </pre>
+     *
+     * <code>int64 open = 3 [json_name = "open"];</code>
+     * @return The open.
+     */
+    @java.lang.Override
+    public long getOpen() {
+      return open_;
+    }
+
+    public static final int CLOSE_FIELD_NUMBER = 4;
+    private long close_;
+    /**
+     * <pre>
+     * Time when the market is closed
+     * </pre>
+     *
+     * <code>int64 close = 4 [json_name = "close"];</code>
+     * @return The close.
+     */
+    @java.lang.Override
+    public long getClose() {
+      return close_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (proposed_ != 0L) {
+        output.writeInt64(1, proposed_);
+      }
+      if (pending_ != 0L) {
+        output.writeInt64(2, pending_);
+      }
+      if (open_ != 0L) {
+        output.writeInt64(3, open_);
+      }
+      if (close_ != 0L) {
+        output.writeInt64(4, close_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (proposed_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, proposed_);
+      }
+      if (pending_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, pending_);
+      }
+      if (open_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, open_);
+      }
+      if (close_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, close_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Markets.MarketTimestamps)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Markets.MarketTimestamps other = (io.vegaprotocol.vega.Markets.MarketTimestamps) obj;
+
+      if (getProposed()
+          != other.getProposed()) return false;
+      if (getPending()
+          != other.getPending()) return false;
+      if (getOpen()
+          != other.getOpen()) return false;
+      if (getClose()
+          != other.getClose()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROPOSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getProposed());
+      hash = (37 * hash) + PENDING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPending());
+      hash = (37 * hash) + OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOpen());
+      hash = (37 * hash) + CLOSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getClose());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Markets.MarketTimestamps prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Time stamps for important times about creating, enacting etc the market
+     * </pre>
+     *
+     * Protobuf type {@code vega.MarketTimestamps}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.MarketTimestamps)
+        io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_MarketTimestamps_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_MarketTimestamps_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Markets.MarketTimestamps.class, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Markets.MarketTimestamps.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        proposed_ = 0L;
+
+        pending_ = 0L;
+
+        open_ = 0L;
+
+        close_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_MarketTimestamps_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.MarketTimestamps getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Markets.MarketTimestamps.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.MarketTimestamps build() {
+        io.vegaprotocol.vega.Markets.MarketTimestamps result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.MarketTimestamps buildPartial() {
+        io.vegaprotocol.vega.Markets.MarketTimestamps result = new io.vegaprotocol.vega.Markets.MarketTimestamps(this);
+        result.proposed_ = proposed_;
+        result.pending_ = pending_;
+        result.open_ = open_;
+        result.close_ = close_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Markets.MarketTimestamps) {
+          return mergeFrom((io.vegaprotocol.vega.Markets.MarketTimestamps)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Markets.MarketTimestamps other) {
+        if (other == io.vegaprotocol.vega.Markets.MarketTimestamps.getDefaultInstance()) return this;
+        if (other.getProposed() != 0L) {
+          setProposed(other.getProposed());
+        }
+        if (other.getPending() != 0L) {
+          setPending(other.getPending());
+        }
+        if (other.getOpen() != 0L) {
+          setOpen(other.getOpen());
+        }
+        if (other.getClose() != 0L) {
+          setClose(other.getClose());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Markets.MarketTimestamps parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Markets.MarketTimestamps) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long proposed_ ;
+      /**
+       * <pre>
+       * Time when the market is first proposed
+       * </pre>
+       *
+       * <code>int64 proposed = 1 [json_name = "proposed"];</code>
+       * @return The proposed.
+       */
+      @java.lang.Override
+      public long getProposed() {
+        return proposed_;
+      }
+      /**
+       * <pre>
+       * Time when the market is first proposed
+       * </pre>
+       *
+       * <code>int64 proposed = 1 [json_name = "proposed"];</code>
+       * @param value The proposed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposed(long value) {
+
+        proposed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Time when the market is first proposed
+       * </pre>
+       *
+       * <code>int64 proposed = 1 [json_name = "proposed"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProposed() {
+
+        proposed_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long pending_ ;
+      /**
+       * <pre>
+       * Time when the market has been voted in and is created into an opening auction
+       * </pre>
+       *
+       * <code>int64 pending = 2 [json_name = "pending"];</code>
+       * @return The pending.
+       */
+      @java.lang.Override
+      public long getPending() {
+        return pending_;
+      }
+      /**
+       * <pre>
+       * Time when the market has been voted in and is created into an opening auction
+       * </pre>
+       *
+       * <code>int64 pending = 2 [json_name = "pending"];</code>
+       * @param value The pending to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPending(long value) {
+
+        pending_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Time when the market has been voted in and is created into an opening auction
+       * </pre>
+       *
+       * <code>int64 pending = 2 [json_name = "pending"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPending() {
+
+        pending_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long open_ ;
+      /**
+       * <pre>
+       * Time when the market has left the opening auction and is ready to accept trades
+       * </pre>
+       *
+       * <code>int64 open = 3 [json_name = "open"];</code>
+       * @return The open.
+       */
+      @java.lang.Override
+      public long getOpen() {
+        return open_;
+      }
+      /**
+       * <pre>
+       * Time when the market has left the opening auction and is ready to accept trades
+       * </pre>
+       *
+       * <code>int64 open = 3 [json_name = "open"];</code>
+       * @param value The open to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpen(long value) {
+
+        open_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Time when the market has left the opening auction and is ready to accept trades
+       * </pre>
+       *
+       * <code>int64 open = 3 [json_name = "open"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOpen() {
+
+        open_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long close_ ;
+      /**
+       * <pre>
+       * Time when the market is closed
+       * </pre>
+       *
+       * <code>int64 close = 4 [json_name = "close"];</code>
+       * @return The close.
+       */
+      @java.lang.Override
+      public long getClose() {
+        return close_;
+      }
+      /**
+       * <pre>
+       * Time when the market is closed
+       * </pre>
+       *
+       * <code>int64 close = 4 [json_name = "close"];</code>
+       * @param value The close to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClose(long value) {
+
+        close_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Time when the market is closed
+       * </pre>
+       *
+       * <code>int64 close = 4 [json_name = "close"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClose() {
+
+        close_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.MarketTimestamps)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.MarketTimestamps)
+    private static final io.vegaprotocol.vega.Markets.MarketTimestamps DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.MarketTimestamps();
+    }
+
+    public static io.vegaprotocol.vega.Markets.MarketTimestamps getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MarketTimestamps>
+        PARSER = new com.google.protobuf.AbstractParser<MarketTimestamps>() {
+      @java.lang.Override
+      public MarketTimestamps parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MarketTimestamps(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MarketTimestamps> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MarketTimestamps> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.MarketTimestamps getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -20666,6 +21719,11 @@ public final class Markets {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Market_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_MarketTimestamps_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_MarketTimestamps_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20741,7 +21799,7 @@ public final class Markets {
       "y\030\002 \001(\003R\017updateFrequency\"v\n\025TargetStakeP" +
       "arameters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\n" +
       "timeWindow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t" +
-      "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\225\010\n\006Market\022\016\n\002i" +
+      "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\332\010\n\006Market\022\016\n\002i" +
       "d\030\001 \001(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\013" +
       "2\030.vega.TradableInstrumentR\022tradableInst" +
       "rument\022%\n\016decimal_places\030\003 \001(\004R\rdecimalP" +
@@ -20757,19 +21815,24 @@ public final class Markets {
       "metersR\025targetStakeParameters\022;\n\014trading" +
       "_mode\030\010 \001(\0162\030.vega.Market.TradingModeR\013t" +
       "radingMode\022(\n\005state\030\t \001(\0162\022.vega.Market." +
-      "StateR\005state\"\330\001\n\005State\022\025\n\021STATE_UNSPECIF" +
-      "IED\020\000\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_REJEC" +
-      "TED\020\002\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CANCEL" +
-      "LED\020\004\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUSPEND" +
-      "ED\020\006\022\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRADING_" +
-      "TERMINATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013Trad" +
-      "ingMode\022\034\n\030TRADING_MODE_UNSPECIFIED\020\000\022\033\n" +
-      "\027TRADING_MODE_CONTINUOUS\020\001\022\036\n\032TRADING_MO" +
-      "DE_BATCH_AUCTION\020\002\022 \n\034TRADING_MODE_OPENI" +
-      "NG_AUCTION\020\003\022#\n\037TRADING_MODE_MONITORING_" +
-      "AUCTION\020\004B\025\n\023trading_mode_configB7\n\024io.v" +
-      "egaprotocol.vegaZ\037code.vegaprotocol.io/v" +
-      "ega/protob\006proto3"
+      "StateR\005state\022C\n\021market_timestamps\030\n \001(\0132" +
+      "\026.vega.MarketTimestampsR\020marketTimestamp" +
+      "s\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022\n\016ST" +
+      "ATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002\022\021\n\rST" +
+      "ATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004\022\020\n\014ST" +
+      "ATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022\020\n\014STA" +
+      "TE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMINATED\020" +
+      "\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMode\022\034\n\030" +
+      "TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRADING_MO" +
+      "DE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BATCH_AU" +
+      "CTION\020\002\022 \n\034TRADING_MODE_OPENING_AUCTION\020" +
+      "\003\022#\n\037TRADING_MODE_MONITORING_AUCTION\020\004B\025" +
+      "\n\023trading_mode_config\"r\n\020MarketTimestamp" +
+      "s\022\032\n\010proposed\030\001 \001(\003R\010proposed\022\030\n\007pending" +
+      "\030\002 \001(\003R\007pending\022\022\n\004open\030\003 \001(\003R\004open\022\024\n\005c" +
+      "lose\030\004 \001(\003R\005closeB7\n\024io.vegaprotocol.veg" +
+      "aZ\037code.vegaprotocol.io/vega/protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20902,7 +21965,13 @@ public final class Markets {
     internal_static_vega_Market_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Market_descriptor,
-        new java.lang.String[] { "Id", "TradableInstrument", "DecimalPlaces", "Fees", "OpeningAuction", "Continuous", "Discrete", "PriceMonitoringSettings", "TargetStakeParameters", "TradingMode", "State", "TradingModeConfig", });
+        new java.lang.String[] { "Id", "TradableInstrument", "DecimalPlaces", "Fees", "OpeningAuction", "Continuous", "Discrete", "PriceMonitoringSettings", "TargetStakeParameters", "TradingMode", "State", "MarketTimestamps", "TradingModeConfig", });
+    internal_static_vega_MarketTimestamps_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_vega_MarketTimestamps_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_MarketTimestamps_descriptor,
+        new java.lang.String[] { "Proposed", "Pending", "Open", "Close", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

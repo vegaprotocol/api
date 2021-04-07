@@ -2621,6 +2621,10 @@
           "title": "Unique identifier",
           "type": "string"
         },
+        "market_timestamps": {
+          "$ref": "#/definitions/vegaMarketTimestamps",
+          "title": "Timestamps for when the market staye changes"
+        },
         "opening_auction": {
           "$ref": "#/definitions/vegaAuctionDuration",
           "title": "Auction duration specifies how long the opening auction will run (minimum\nduration and optionally a minimum traded volume)"
@@ -2881,6 +2885,32 @@
         }
       },
       "title": "A market ticket event contains the time value for when a particular market was last processed on Vega",
+      "type": "object"
+    },
+    "vegaMarketTimestamps": {
+      "properties": {
+        "close": {
+          "format": "int64",
+          "title": "Time when the market is closed",
+          "type": "string"
+        },
+        "open": {
+          "format": "int64",
+          "title": "Time when the market has left the opening auction and is ready to accept trades",
+          "type": "string"
+        },
+        "pending": {
+          "format": "int64",
+          "title": "Time when the market has been voted in and is created into an opening auction",
+          "type": "string"
+        },
+        "proposed": {
+          "format": "int64",
+          "title": "Time when the market is first proposed",
+          "type": "string"
+        }
+      },
+      "title": "Time stamps for important times about creating, enacting etc the market",
       "type": "object"
     },
     "vegaNetworkParameter": {

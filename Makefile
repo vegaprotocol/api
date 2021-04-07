@@ -28,6 +28,8 @@ preproto:
 buf-build:
 	@buf build
 
+DOC_GENERATED_DIR := grpc/doc
+
 CPP_GENERATED_DIR := grpc/clients/cpp/generated
 GO_GENERATED_DIR := grpc/clients/go/generated
 JAVA_GENERATED_DIR := grpc/clients/java/generated
@@ -82,6 +84,7 @@ buf-generate: buf-build
 
 .PHONY: proto
 proto: buf-generate
+	@env DOC_GENERATED_DIR="$(DOC_GENERATED_DIR)" ./grpc/doc/post-generate.sh
 	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./grpc/clients/cpp/post-generate.sh
 	@env GO_GENERATED_DIR="$(GO_GENERATED_DIR)" ./grpc/clients/go/post-generate.sh
 	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./grpc/clients/java/post-generate.sh
