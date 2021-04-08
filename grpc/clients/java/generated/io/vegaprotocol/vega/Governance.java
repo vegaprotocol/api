@@ -3346,6 +3346,33 @@ public final class Governance {
 
     /**
      * <pre>
+     * Liquidity monitoring parameters
+     * </pre>
+     *
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return Whether the liquidityMonitoringParameters field is set.
+     */
+    boolean hasLiquidityMonitoringParameters();
+    /**
+     * <pre>
+     * Liquidity monitoring parameters
+     * </pre>
+     *
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return The liquidityMonitoringParameters.
+     */
+    io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getLiquidityMonitoringParameters();
+    /**
+     * <pre>
+     * Liquidity monitoring parameters
+     * </pre>
+     *
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+     */
+    io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder getLiquidityMonitoringParametersOrBuilder();
+
+    /**
+     * <pre>
      * Simple risk model parameters, valid only if MODEL_SIMPLE is selected
      * </pre>
      *
@@ -3543,6 +3570,19 @@ public final class Governance {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(priceMonitoringParameters_);
                 priceMonitoringParameters_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder subBuilder = null;
+              if (liquidityMonitoringParameters_ != null) {
+                subBuilder = liquidityMonitoringParameters_.toBuilder();
+              }
+              liquidityMonitoringParameters_ = input.readMessage(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(liquidityMonitoringParameters_);
+                liquidityMonitoringParameters_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3862,6 +3902,44 @@ public final class Governance {
       return getPriceMonitoringParameters();
     }
 
+    public static final int LIQUIDITY_MONITORING_PARAMETERS_FIELD_NUMBER = 5;
+    private io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters liquidityMonitoringParameters_;
+    /**
+     * <pre>
+     * Liquidity monitoring parameters
+     * </pre>
+     *
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return Whether the liquidityMonitoringParameters field is set.
+     */
+    @java.lang.Override
+    public boolean hasLiquidityMonitoringParameters() {
+      return liquidityMonitoringParameters_ != null;
+    }
+    /**
+     * <pre>
+     * Liquidity monitoring parameters
+     * </pre>
+     *
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return The liquidityMonitoringParameters.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getLiquidityMonitoringParameters() {
+      return liquidityMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance() : liquidityMonitoringParameters_;
+    }
+    /**
+     * <pre>
+     * Liquidity monitoring parameters
+     * </pre>
+     *
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder getLiquidityMonitoringParametersOrBuilder() {
+      return getLiquidityMonitoringParameters();
+    }
+
     public static final int SIMPLE_FIELD_NUMBER = 100;
     /**
      * <pre>
@@ -4060,6 +4138,9 @@ public final class Governance {
       if (priceMonitoringParameters_ != null) {
         output.writeMessage(4, getPriceMonitoringParameters());
       }
+      if (liquidityMonitoringParameters_ != null) {
+        output.writeMessage(5, getLiquidityMonitoringParameters());
+      }
       if (riskParametersCase_ == 100) {
         output.writeMessage(100, (io.vegaprotocol.vega.Markets.SimpleModelParams) riskParameters_);
       }
@@ -4100,6 +4181,10 @@ public final class Governance {
       if (priceMonitoringParameters_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getPriceMonitoringParameters());
+      }
+      if (liquidityMonitoringParameters_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getLiquidityMonitoringParameters());
       }
       if (riskParametersCase_ == 100) {
         size += com.google.protobuf.CodedOutputStream
@@ -4145,6 +4230,11 @@ public final class Governance {
       if (hasPriceMonitoringParameters()) {
         if (!getPriceMonitoringParameters()
             .equals(other.getPriceMonitoringParameters())) return false;
+      }
+      if (hasLiquidityMonitoringParameters() != other.hasLiquidityMonitoringParameters()) return false;
+      if (hasLiquidityMonitoringParameters()) {
+        if (!getLiquidityMonitoringParameters()
+            .equals(other.getLiquidityMonitoringParameters())) return false;
       }
       if (!getRiskParametersCase().equals(other.getRiskParametersCase())) return false;
       switch (riskParametersCase_) {
@@ -4197,6 +4287,10 @@ public final class Governance {
       if (hasPriceMonitoringParameters()) {
         hash = (37 * hash) + PRICE_MONITORING_PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + getPriceMonitoringParameters().hashCode();
+      }
+      if (hasLiquidityMonitoringParameters()) {
+        hash = (37 * hash) + LIQUIDITY_MONITORING_PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getLiquidityMonitoringParameters().hashCode();
       }
       switch (riskParametersCase_) {
         case 100:
@@ -4375,6 +4469,12 @@ public final class Governance {
           priceMonitoringParameters_ = null;
           priceMonitoringParametersBuilder_ = null;
         }
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParameters_ = null;
+        } else {
+          liquidityMonitoringParameters_ = null;
+          liquidityMonitoringParametersBuilder_ = null;
+        }
         riskParametersCase_ = 0;
         riskParameters_ = null;
         tradingModeCase_ = 0;
@@ -4421,6 +4521,11 @@ public final class Governance {
           result.priceMonitoringParameters_ = priceMonitoringParameters_;
         } else {
           result.priceMonitoringParameters_ = priceMonitoringParametersBuilder_.build();
+        }
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          result.liquidityMonitoringParameters_ = liquidityMonitoringParameters_;
+        } else {
+          result.liquidityMonitoringParameters_ = liquidityMonitoringParametersBuilder_.build();
         }
         if (riskParametersCase_ == 100) {
           if (simpleBuilder_ == null) {
@@ -4518,6 +4623,9 @@ public final class Governance {
         }
         if (other.hasPriceMonitoringParameters()) {
           mergePriceMonitoringParameters(other.getPriceMonitoringParameters());
+        }
+        if (other.hasLiquidityMonitoringParameters()) {
+          mergeLiquidityMonitoringParameters(other.getLiquidityMonitoringParameters());
         }
         switch (other.getRiskParametersCase()) {
           case SIMPLE: {
@@ -5102,6 +5210,161 @@ public final class Governance {
           priceMonitoringParameters_ = null;
         }
         return priceMonitoringParametersBuilder_;
+      }
+
+      private io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters liquidityMonitoringParameters_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder> liquidityMonitoringParametersBuilder_;
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       * @return Whether the liquidityMonitoringParameters field is set.
+       */
+      public boolean hasLiquidityMonitoringParameters() {
+        return liquidityMonitoringParametersBuilder_ != null || liquidityMonitoringParameters_ != null;
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       * @return The liquidityMonitoringParameters.
+       */
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getLiquidityMonitoringParameters() {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          return liquidityMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance() : liquidityMonitoringParameters_;
+        } else {
+          return liquidityMonitoringParametersBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      public Builder setLiquidityMonitoringParameters(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters value) {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          liquidityMonitoringParameters_ = value;
+          onChanged();
+        } else {
+          liquidityMonitoringParametersBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      public Builder setLiquidityMonitoringParameters(
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder builderForValue) {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParameters_ = builderForValue.build();
+          onChanged();
+        } else {
+          liquidityMonitoringParametersBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      public Builder mergeLiquidityMonitoringParameters(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters value) {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          if (liquidityMonitoringParameters_ != null) {
+            liquidityMonitoringParameters_ =
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.newBuilder(liquidityMonitoringParameters_).mergeFrom(value).buildPartial();
+          } else {
+            liquidityMonitoringParameters_ = value;
+          }
+          onChanged();
+        } else {
+          liquidityMonitoringParametersBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      public Builder clearLiquidityMonitoringParameters() {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParameters_ = null;
+          onChanged();
+        } else {
+          liquidityMonitoringParameters_ = null;
+          liquidityMonitoringParametersBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder getLiquidityMonitoringParametersBuilder() {
+
+        onChanged();
+        return getLiquidityMonitoringParametersFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder getLiquidityMonitoringParametersOrBuilder() {
+        if (liquidityMonitoringParametersBuilder_ != null) {
+          return liquidityMonitoringParametersBuilder_.getMessageOrBuilder();
+        } else {
+          return liquidityMonitoringParameters_ == null ?
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance() : liquidityMonitoringParameters_;
+        }
+      }
+      /**
+       * <pre>
+       * Liquidity monitoring parameters
+       * </pre>
+       *
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder>
+          getLiquidityMonitoringParametersFieldBuilder() {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder>(
+                  getLiquidityMonitoringParameters(),
+                  getParentForChildren(),
+                  isClean());
+          liquidityMonitoringParameters_ = null;
+        }
+        return liquidityMonitoringParametersBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -18004,103 +18267,106 @@ public final class Governance {
       "inding\"\213\001\n\027InstrumentConfiguration\022\032\n\004na" +
       "me\030\001 \001(\tB\006\342\337\037\002X\001R\004name\022\032\n\004code\030\002 \001(\tB\006\342\337" +
       "\037\002X\001R\004code\022-\n\006future\030d \001(\0132\023.vega.Future" +
-      "ProductH\000R\006futureB\t\n\007product\"\217\004\n\026NewMark" +
+      "ProductH\000R\006futureB\t\n\007product\"\374\004\n\026NewMark" +
       "etConfiguration\022E\n\ninstrument\030\001 \001(\0132\035.ve" +
       "ga.InstrumentConfigurationB\006\342\337\037\002 \001R\ninst" +
       "rument\022.\n\016decimal_places\030\002 \001(\004B\007\342\337\037\003\030\226\001R" +
       "\rdecimalPlaces\022\032\n\010metadata\030\003 \003(\tR\010metada" +
       "ta\022_\n\033price_monitoring_parameters\030\004 \001(\0132" +
       "\037.vega.PriceMonitoringParametersR\031priceM" +
-      "onitoringParameters\0221\n\006simple\030d \001(\0132\027.ve" +
-      "ga.SimpleModelParamsH\000R\006simple\0229\n\nlog_no" +
-      "rmal\030e \001(\0132\030.vega.LogNormalRiskModelH\000R\t" +
-      "logNormal\022:\n\ncontinuous\030\310\001 \001(\0132\027.vega.Co" +
-      "ntinuousTradingH\001R\ncontinuous\0224\n\010discret" +
-      "e\030\311\001 \001(\0132\025.vega.DiscreteTradingH\001R\010discr" +
-      "eteB\021\n\017risk_parametersB\016\n\014trading_mode\"\310" +
-      "\001\n\023NewMarketCommitment\022+\n\021commitment_amo" +
-      "unt\030\001 \001(\004R\020commitmentAmount\022\020\n\003fee\030\002 \001(\t" +
-      "R\003fee\022*\n\005sells\030\003 \003(\0132\024.vega.LiquidityOrd" +
-      "erR\005sells\022(\n\004buys\030\004 \003(\0132\024.vega.Liquidity" +
-      "OrderR\004buys\022\034\n\treference\030\005 \001(\tR\treferenc" +
-      "e\"\231\001\n\tNewMarket\022>\n\007changes\030\001 \001(\0132\034.vega." +
-      "NewMarketConfigurationB\006\342\337\037\002 \001R\007changes\022" +
-      "L\n\024liquidity_commitment\030\002 \001(\0132\031.vega.New" +
-      "MarketCommitmentR\023liquidityCommitment\"\016\n" +
-      "\014UpdateMarket\"R\n\026UpdateNetworkParameter\022" +
-      "8\n\007changes\030\001 \001(\0132\026.vega.NetworkParameter" +
-      "B\006\342\337\037\002 \001R\007changes\"?\n\010NewAsset\0223\n\007changes" +
-      "\030\001 \001(\0132\021.vega.AssetSourceB\006\342\337\037\002 \001R\007chang" +
-      "es\"\260\003\n\rProposalTerms\0223\n\021closing_timestam" +
-      "p\030\001 \001(\003B\006\342\337\037\002\020\000R\020closingTimestamp\0227\n\023ena" +
-      "ctment_timestamp\030\002 \001(\003B\006\342\337\037\002\020\000R\022enactmen" +
-      "tTimestamp\0221\n\024validation_timestamp\030\003 \001(\003" +
-      "R\023validationTimestamp\0229\n\rupdate_market\030e" +
-      " \001(\0132\022.vega.UpdateMarketH\000R\014updateMarket" +
-      "\0220\n\nnew_market\030f \001(\0132\017.vega.NewMarketH\000R" +
-      "\tnewMarket\022X\n\030update_network_parameter\030g" +
-      " \001(\0132\034.vega.UpdateNetworkParameterH\000R\026up" +
-      "dateNetworkParameter\022-\n\tnew_asset\030h \001(\0132" +
-      "\016.vega.NewAssetH\000R\010newAssetB\010\n\006change\"\206\003" +
-      "\n\016GovernanceData\022*\n\010proposal\030\001 \001(\0132\016.veg" +
-      "a.ProposalR\010proposal\022\034\n\003yes\030\002 \003(\0132\n.vega" +
-      ".VoteR\003yes\022\032\n\002no\030\003 \003(\0132\n.vega.VoteR\002no\022?" +
-      "\n\tyes_party\030\004 \003(\0132\".vega.GovernanceData." +
-      "YesPartyEntryR\010yesParty\022<\n\010no_party\030\005 \003(" +
-      "\0132!.vega.GovernanceData.NoPartyEntryR\007no" +
-      "Party\032G\n\rYesPartyEntry\022\020\n\003key\030\001 \001(\tR\003key" +
-      "\022 \n\005value\030\002 \001(\0132\n.vega.VoteR\005value:\0028\001\032F" +
-      "\n\014NoPartyEntry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005valu" +
-      "e\030\002 \001(\0132\n.vega.VoteR\005value:\0028\001\"\277\003\n\010Propo" +
-      "sal\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\treference\030\002 \001(\tR\t" +
-      "reference\022!\n\010party_id\030\003 \001(\tB\006\342\337\037\002X\001R\007par" +
-      "tyId\0223\n\005state\030\004 \001(\0162\024.vega.Proposal.Stat" +
-      "eB\007\342\337\037\003\210\001\001R\005state\022\034\n\ttimestamp\030\005 \001(\003R\tti" +
-      "mestamp\0221\n\005terms\030\006 \001(\0132\023.vega.ProposalTe" +
-      "rmsB\006\342\337\037\002 \001R\005terms\022+\n\006reason\030\007 \001(\0162\023.veg" +
-      "a.ProposalErrorR\006reason\"\256\001\n\005State\022\025\n\021STA" +
-      "TE_UNSPECIFIED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nST" +
-      "ATE_OPEN\020\002\022\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_RE" +
-      "JECTED\020\004\022\022\n\016STATE_DECLINED\020\005\022\021\n\rSTATE_EN" +
-      "ACTED\020\006\022\037\n\033STATE_WAITING_FOR_NODE_VOTE\020\007" +
-      "\"\336\001\n\004Vote\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007par" +
-      "tyId\022/\n\005value\030\002 \001(\0162\020.vega.Vote.ValueB\007\342" +
-      "\337\037\003\210\001\001R\005value\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002" +
-      "X\001R\nproposalId\022\034\n\ttimestamp\030\004 \001(\003R\ttimes" +
-      "tamp\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010" +
-      "VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\306\t\n\rProposalEr" +
-      "ror\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"P" +
-      "ROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"P" +
-      "ROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"P" +
-      "ROPOSAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"P" +
-      "ROPOSAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"P" +
-      "ROPOSAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*P" +
-      "ROPOSAL_ERROR_INVALID_INSTRUMENT_SECURIT" +
-      "Y\020\006\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PR" +
-      "OPOSAL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PR" +
-      "OPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIME" +
-      "STAMP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURI" +
-      "TY_IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRAD" +
-      "ING_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED" +
-      "_TRADING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_V" +
-      "ALIDATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MIS" +
-      "SING_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_E" +
-      "RROR_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n" +
-      "\034PROPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPO" +
-      "SAL_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!P" +
-      "ROPOSAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PR" +
-      "OPOSAL_ERROR_NETWORK_PARAMETER_INVALID_K" +
-      "EY\020\023\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER" +
-      "_INVALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWO" +
-      "RK_PARAMETER_VALIDATION_FAILED\020\025\0225\n1PROP" +
-      "OSAL_ERROR_OPENING_AUCTION_DURATION_TOO_" +
-      "SMALL\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTIO" +
-      "N_DURATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR" +
-      "_MARKET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/" +
-      "\n+PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_M" +
-      "ARKET\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE" +
-      "_PRODUCT\020\032B7\n\024io.vegaprotocol.vegaZ\037code" +
-      ".vegaprotocol.io/vega/protob\006proto3"
+      "onitoringParameters\022k\n\037liquidity_monitor" +
+      "ing_parameters\030\005 \001(\0132#.vega.LiquidityMon" +
+      "itoringParametersR\035liquidityMonitoringPa" +
+      "rameters\0221\n\006simple\030d \001(\0132\027.vega.SimpleMo" +
+      "delParamsH\000R\006simple\0229\n\nlog_normal\030e \001(\0132" +
+      "\030.vega.LogNormalRiskModelH\000R\tlogNormal\022:" +
+      "\n\ncontinuous\030\310\001 \001(\0132\027.vega.ContinuousTra" +
+      "dingH\001R\ncontinuous\0224\n\010discrete\030\311\001 \001(\0132\025." +
+      "vega.DiscreteTradingH\001R\010discreteB\021\n\017risk" +
+      "_parametersB\016\n\014trading_mode\"\310\001\n\023NewMarke" +
+      "tCommitment\022+\n\021commitment_amount\030\001 \001(\004R\020" +
+      "commitmentAmount\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005se" +
+      "lls\030\003 \003(\0132\024.vega.LiquidityOrderR\005sells\022(" +
+      "\n\004buys\030\004 \003(\0132\024.vega.LiquidityOrderR\004buys" +
+      "\022\034\n\treference\030\005 \001(\tR\treference\"\231\001\n\tNewMa" +
+      "rket\022>\n\007changes\030\001 \001(\0132\034.vega.NewMarketCo" +
+      "nfigurationB\006\342\337\037\002 \001R\007changes\022L\n\024liquidit" +
+      "y_commitment\030\002 \001(\0132\031.vega.NewMarketCommi" +
+      "tmentR\023liquidityCommitment\"\016\n\014UpdateMark" +
+      "et\"R\n\026UpdateNetworkParameter\0228\n\007changes\030" +
+      "\001 \001(\0132\026.vega.NetworkParameterB\006\342\337\037\002 \001R\007c" +
+      "hanges\"?\n\010NewAsset\0223\n\007changes\030\001 \001(\0132\021.ve" +
+      "ga.AssetSourceB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProp" +
+      "osalTerms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337" +
+      "\037\002\020\000R\020closingTimestamp\0227\n\023enactment_time" +
+      "stamp\030\002 \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\022" +
+      "1\n\024validation_timestamp\030\003 \001(\003R\023validatio" +
+      "nTimestamp\0229\n\rupdate_market\030e \001(\0132\022.vega" +
+      ".UpdateMarketH\000R\014updateMarket\0220\n\nnew_mar" +
+      "ket\030f \001(\0132\017.vega.NewMarketH\000R\tnewMarket\022" +
+      "X\n\030update_network_parameter\030g \001(\0132\034.vega" +
+      ".UpdateNetworkParameterH\000R\026updateNetwork" +
+      "Parameter\022-\n\tnew_asset\030h \001(\0132\016.vega.NewA" +
+      "ssetH\000R\010newAssetB\010\n\006change\"\206\003\n\016Governanc" +
+      "eData\022*\n\010proposal\030\001 \001(\0132\016.vega.ProposalR" +
+      "\010proposal\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022" +
+      "\032\n\002no\030\003 \003(\0132\n.vega.VoteR\002no\022?\n\tyes_party" +
+      "\030\004 \003(\0132\".vega.GovernanceData.YesPartyEnt" +
+      "ryR\010yesParty\022<\n\010no_party\030\005 \003(\0132!.vega.Go" +
+      "vernanceData.NoPartyEntryR\007noParty\032G\n\rYe" +
+      "sPartyEntry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002" +
+      " \001(\0132\n.vega.VoteR\005value:\0028\001\032F\n\014NoPartyEn" +
+      "try\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.v" +
+      "ega.VoteR\005value:\0028\001\"\277\003\n\010Proposal\022\016\n\002id\030\001" +
+      " \001(\tR\002id\022\034\n\treference\030\002 \001(\tR\treference\022!" +
+      "\n\010party_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005sta" +
+      "te\030\004 \001(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R" +
+      "\005state\022\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005" +
+      "terms\030\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001" +
+      "R\005terms\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalE" +
+      "rrorR\006reason\"\256\001\n\005State\022\025\n\021STATE_UNSPECIF" +
+      "IED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022" +
+      "\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n" +
+      "\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033" +
+      "STATE_WAITING_FOR_NODE_VOTE\020\007\"\336\001\n\004Vote\022!" +
+      "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005val" +
+      "ue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005val" +
+      "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa" +
+      "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val" +
+      "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022" +
+      "\r\n\tVALUE_YES\020\002*\306\t\n\rProposalError\022\036\n\032PROP" +
+      "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR" +
+      "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR" +
+      "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR" +
+      "OR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ERR" +
+      "OR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ERR" +
+      "OR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ERR" +
+      "OR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PROP" +
+      "OSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERRO" +
+      "R_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERRO" +
+      "R_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n)" +
+      "PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSE" +
+      "D\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013\022" +
+      "+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MO" +
+      "DE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_F" +
+      "AILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILTI" +
+      "N_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSIN" +
+      "G_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_E" +
+      "RROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_I" +
+      "NCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ERR" +
+      "OR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERRO" +
+      "R_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PRO" +
+      "POSAL_ERROR_NETWORK_PARAMETER_INVALID_VA" +
+      "LUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMETE" +
+      "R_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR_" +
+      "OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n1" +
+      "PROPOSAL_ERROR_OPENING_AUCTION_DURATION_" +
+      "TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MIS" +
+      "SING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL_" +
+      "ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031\022)\n%" +
+      "PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032B" +
+      "7\n\024io.vegaprotocol.vegaZ\037code.vegaprotoc" +
+      "ol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18128,7 +18394,7 @@ public final class Governance {
     internal_static_vega_NewMarketConfiguration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NewMarketConfiguration_descriptor,
-        new java.lang.String[] { "Instrument", "DecimalPlaces", "Metadata", "PriceMonitoringParameters", "Simple", "LogNormal", "Continuous", "Discrete", "RiskParameters", "TradingMode", });
+        new java.lang.String[] { "Instrument", "DecimalPlaces", "Metadata", "PriceMonitoringParameters", "LiquidityMonitoringParameters", "Simple", "LogNormal", "Continuous", "Discrete", "RiskParameters", "TradingMode", });
     internal_static_vega_NewMarketCommitment_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_vega_NewMarketCommitment_fieldAccessorTable = new

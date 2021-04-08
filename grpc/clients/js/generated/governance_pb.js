@@ -908,6 +908,7 @@ proto.vega.NewMarketConfiguration.toObject = function(includeInstance, msg) {
     decimalPlaces: jspb.Message.getFieldWithDefault(msg, 2, 0),
     metadataList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     priceMonitoringParameters: (f = msg.getPriceMonitoringParameters()) && markets_pb.PriceMonitoringParameters.toObject(includeInstance, f),
+    liquidityMonitoringParameters: (f = msg.getLiquidityMonitoringParameters()) && markets_pb.LiquidityMonitoringParameters.toObject(includeInstance, f),
     simple: (f = msg.getSimple()) && markets_pb.SimpleModelParams.toObject(includeInstance, f),
     logNormal: (f = msg.getLogNormal()) && markets_pb.LogNormalRiskModel.toObject(includeInstance, f),
     continuous: (f = msg.getContinuous()) && markets_pb.ContinuousTrading.toObject(includeInstance, f),
@@ -965,6 +966,11 @@ proto.vega.NewMarketConfiguration.deserializeBinaryFromReader = function(msg, re
       var value = new markets_pb.PriceMonitoringParameters;
       reader.readMessage(value,markets_pb.PriceMonitoringParameters.deserializeBinaryFromReader);
       msg.setPriceMonitoringParameters(value);
+      break;
+    case 5:
+      var value = new markets_pb.LiquidityMonitoringParameters;
+      reader.readMessage(value,markets_pb.LiquidityMonitoringParameters.deserializeBinaryFromReader);
+      msg.setLiquidityMonitoringParameters(value);
       break;
     case 100:
       var value = new markets_pb.SimpleModelParams;
@@ -1043,6 +1049,14 @@ proto.vega.NewMarketConfiguration.serializeBinaryToWriter = function(message, wr
       4,
       f,
       markets_pb.PriceMonitoringParameters.serializeBinaryToWriter
+    );
+  }
+  f = message.getLiquidityMonitoringParameters();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      markets_pb.LiquidityMonitoringParameters.serializeBinaryToWriter
     );
   }
   f = message.getSimple();
@@ -1206,6 +1220,43 @@ proto.vega.NewMarketConfiguration.prototype.clearPriceMonitoringParameters = fun
  */
 proto.vega.NewMarketConfiguration.prototype.hasPriceMonitoringParameters = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional LiquidityMonitoringParameters liquidity_monitoring_parameters = 5;
+ * @return {?proto.vega.LiquidityMonitoringParameters}
+ */
+proto.vega.NewMarketConfiguration.prototype.getLiquidityMonitoringParameters = function() {
+  return /** @type{?proto.vega.LiquidityMonitoringParameters} */ (
+    jspb.Message.getWrapperField(this, markets_pb.LiquidityMonitoringParameters, 5));
+};
+
+
+/**
+ * @param {?proto.vega.LiquidityMonitoringParameters|undefined} value
+ * @return {!proto.vega.NewMarketConfiguration} returns this
+*/
+proto.vega.NewMarketConfiguration.prototype.setLiquidityMonitoringParameters = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.NewMarketConfiguration} returns this
+ */
+proto.vega.NewMarketConfiguration.prototype.clearLiquidityMonitoringParameters = function() {
+  return this.setLiquidityMonitoringParameters(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.NewMarketConfiguration.prototype.hasLiquidityMonitoringParameters = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

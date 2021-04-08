@@ -463,12 +463,13 @@ enum LiquidityProvision_Status : int {
   LiquidityProvision_Status_STATUS_CANCELLED = 3,
   LiquidityProvision_Status_STATUS_REJECTED = 4,
   LiquidityProvision_Status_STATUS_UNDEPLOYED = 5,
+  LiquidityProvision_Status_STATUS_PENDING = 6,
   LiquidityProvision_Status_LiquidityProvision_Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   LiquidityProvision_Status_LiquidityProvision_Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool LiquidityProvision_Status_IsValid(int value);
 constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MIN = LiquidityProvision_Status_STATUS_UNSPECIFIED;
-constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MAX = LiquidityProvision_Status_STATUS_UNDEPLOYED;
+constexpr LiquidityProvision_Status LiquidityProvision_Status_Status_MAX = LiquidityProvision_Status_STATUS_PENDING;
 constexpr int LiquidityProvision_Status_Status_ARRAYSIZE = LiquidityProvision_Status_Status_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LiquidityProvision_Status_descriptor();
@@ -2039,6 +2040,7 @@ class Order PROTOBUF_FINAL :
     kMarketIdFieldNumber = 2,
     kPartyIdFieldNumber = 3,
     kReferenceFieldNumber = 13,
+    kLiquidityProvisionIdFieldNumber = 19,
     kPeggedOrderFieldNumber = 18,
     kPriceFieldNumber = 5,
     kSizeFieldNumber = 6,
@@ -2116,6 +2118,22 @@ class Order PROTOBUF_FINAL :
   const std::string& _internal_reference() const;
   void _internal_set_reference(const std::string& value);
   std::string* _internal_mutable_reference();
+  public:
+
+  // string liquidity_provision_id = 19 [json_name = "liquidityProvisionId"];
+  void clear_liquidity_provision_id();
+  const std::string& liquidity_provision_id() const;
+  void set_liquidity_provision_id(const std::string& value);
+  void set_liquidity_provision_id(std::string&& value);
+  void set_liquidity_provision_id(const char* value);
+  void set_liquidity_provision_id(const char* value, size_t size);
+  std::string* mutable_liquidity_provision_id();
+  std::string* release_liquidity_provision_id();
+  void set_allocated_liquidity_provision_id(std::string* liquidity_provision_id);
+  private:
+  const std::string& _internal_liquidity_provision_id() const;
+  void _internal_set_liquidity_provision_id(const std::string& value);
+  std::string* _internal_mutable_liquidity_provision_id();
   public:
 
   // .vega.PeggedOrder pegged_order = 18 [json_name = "peggedOrder"];
@@ -2264,6 +2282,7 @@ class Order PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr liquidity_provision_id_;
   ::vega::PeggedOrder* pegged_order_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 size_;
@@ -11403,6 +11422,8 @@ class LiquidityProvision PROTOBUF_FINAL :
     LiquidityProvision_Status_STATUS_REJECTED;
   static constexpr Status STATUS_UNDEPLOYED =
     LiquidityProvision_Status_STATUS_UNDEPLOYED;
+  static constexpr Status STATUS_PENDING =
+    LiquidityProvision_Status_STATUS_PENDING;
   static inline bool Status_IsValid(int value) {
     return LiquidityProvision_Status_IsValid(value);
   }
@@ -12972,6 +12993,67 @@ inline void Order::set_allocated_pegged_order(::vega::PeggedOrder* pegged_order)
   }
   pegged_order_ = pegged_order;
   // @@protoc_insertion_point(field_set_allocated:vega.Order.pegged_order)
+}
+
+// string liquidity_provision_id = 19 [json_name = "liquidityProvisionId"];
+inline void Order::clear_liquidity_provision_id() {
+  liquidity_provision_id_.ClearToEmpty();
+}
+inline const std::string& Order::liquidity_provision_id() const {
+  // @@protoc_insertion_point(field_get:vega.Order.liquidity_provision_id)
+  return _internal_liquidity_provision_id();
+}
+inline void Order::set_liquidity_provision_id(const std::string& value) {
+  _internal_set_liquidity_provision_id(value);
+  // @@protoc_insertion_point(field_set:vega.Order.liquidity_provision_id)
+}
+inline std::string* Order::mutable_liquidity_provision_id() {
+  // @@protoc_insertion_point(field_mutable:vega.Order.liquidity_provision_id)
+  return _internal_mutable_liquidity_provision_id();
+}
+inline const std::string& Order::_internal_liquidity_provision_id() const {
+  return liquidity_provision_id_.Get();
+}
+inline void Order::_internal_set_liquidity_provision_id(const std::string& value) {
+
+  liquidity_provision_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Order::set_liquidity_provision_id(std::string&& value) {
+
+  liquidity_provision_id_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.Order.liquidity_provision_id)
+}
+inline void Order::set_liquidity_provision_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  liquidity_provision_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Order.liquidity_provision_id)
+}
+inline void Order::set_liquidity_provision_id(const char* value,
+    size_t size) {
+
+  liquidity_provision_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.Order.liquidity_provision_id)
+}
+inline std::string* Order::_internal_mutable_liquidity_provision_id() {
+
+  return liquidity_provision_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* Order::release_liquidity_provision_id() {
+  // @@protoc_insertion_point(field_release:vega.Order.liquidity_provision_id)
+  return liquidity_provision_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Order::set_allocated_liquidity_provision_id(std::string* liquidity_provision_id) {
+  if (liquidity_provision_id != nullptr) {
+
+  } else {
+
+  }
+  liquidity_provision_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), liquidity_provision_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.Order.liquidity_provision_id)
 }
 
 // -------------------------------------------------------------------

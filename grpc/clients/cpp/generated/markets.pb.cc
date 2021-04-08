@@ -23,6 +23,7 @@ extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::interna
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Future_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Instrument_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_InstrumentMetadata_markets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityMonitoringParameters_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LogNormalModelParams_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LogNormalRiskModel_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MarginCalculator_markets_2eproto;
@@ -113,6 +114,10 @@ class PriceMonitoringSettingsDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PriceMonitoringSettings> _instance;
 } _PriceMonitoringSettings_default_instance_;
+class LiquidityMonitoringParametersDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LiquidityMonitoringParameters> _instance;
+} _LiquidityMonitoringParameters_default_instance_;
 class TargetStakeParametersDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TargetStakeParameters> _instance;
@@ -235,6 +240,20 @@ static void InitDefaultsscc_info_InstrumentMetadata_markets_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_InstrumentMetadata_markets_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_InstrumentMetadata_markets_2eproto}, {}};
 
+static void InitDefaultsscc_info_LiquidityMonitoringParameters_markets_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::_LiquidityMonitoringParameters_default_instance_;
+    new (ptr) ::vega::LiquidityMonitoringParameters();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityMonitoringParameters_markets_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_LiquidityMonitoringParameters_markets_2eproto}, {
+      &scc_info_TargetStakeParameters_markets_2eproto.base,}};
+
 static void InitDefaultsscc_info_LogNormalModelParams_markets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -294,7 +313,7 @@ static void InitDefaultsscc_info_Market_markets_2eproto() {
       &scc_info_ContinuousTrading_markets_2eproto.base,
       &scc_info_DiscreteTrading_markets_2eproto.base,
       &scc_info_PriceMonitoringSettings_markets_2eproto.base,
-      &scc_info_TargetStakeParameters_markets_2eproto.base,
+      &scc_info_LiquidityMonitoringParameters_markets_2eproto.base,
       &scc_info_MarketTimestamps_markets_2eproto.base,}};
 
 static void InitDefaultsscc_info_MarketTimestamps_markets_2eproto() {
@@ -434,7 +453,7 @@ static void InitDefaultsscc_info_TradableInstrument_markets_2eproto() {
       &scc_info_LogNormalRiskModel_markets_2eproto.base,
       &scc_info_SimpleRiskModel_markets_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_markets_2eproto[22];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_markets_2eproto[23];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_markets_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_markets_2eproto = nullptr;
 
@@ -584,6 +603,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, parameters_),
   PROTOBUF_FIELD_OFFSET(::vega::PriceMonitoringSettings, update_frequency_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::LiquidityMonitoringParameters, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::LiquidityMonitoringParameters, target_stake_parameters_),
+  PROTOBUF_FIELD_OFFSET(::vega::LiquidityMonitoringParameters, triggering_ratio_),
+  PROTOBUF_FIELD_OFFSET(::vega::LiquidityMonitoringParameters, auction_extension_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::TargetStakeParameters, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -603,7 +630,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_markets_2eproto::offsets[] PRO
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::Market, price_monitoring_settings_),
-  PROTOBUF_FIELD_OFFSET(::vega::Market, target_stake_parameters_),
+  PROTOBUF_FIELD_OFFSET(::vega::Market, liquidity_monitoring_parameters_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, trading_mode_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, state_),
   PROTOBUF_FIELD_OFFSET(::vega::Market, market_timestamps_),
@@ -638,9 +665,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 123, -1, sizeof(::vega::PriceMonitoringTrigger)},
   { 131, -1, sizeof(::vega::PriceMonitoringParameters)},
   { 137, -1, sizeof(::vega::PriceMonitoringSettings)},
-  { 144, -1, sizeof(::vega::TargetStakeParameters)},
-  { 151, -1, sizeof(::vega::Market)},
-  { 169, -1, sizeof(::vega::MarketTimestamps)},
+  { 144, -1, sizeof(::vega::LiquidityMonitoringParameters)},
+  { 152, -1, sizeof(::vega::TargetStakeParameters)},
+  { 159, -1, sizeof(::vega::Market)},
+  { 177, -1, sizeof(::vega::MarketTimestamps)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -663,6 +691,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_PriceMonitoringTrigger_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_PriceMonitoringParameters_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_PriceMonitoringSettings_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_LiquidityMonitoringParameters_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_TargetStakeParameters_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Market_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_MarketTimestamps_default_instance_),
@@ -732,49 +761,55 @@ const char descriptor_table_protodef_markets_2eproto[] PROTOBUF_SECTION_VARIABLE
   "triggers\"\205\001\n\027PriceMonitoringSettings\022\?\n\n"
   "parameters\030\001 \001(\0132\037.vega.PriceMonitoringP"
   "arametersR\nparameters\022)\n\020update_frequenc"
-  "y\030\002 \001(\003R\017updateFrequency\"v\n\025TargetStakeP"
-  "arameters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\n"
-  "timeWindow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t"
-  "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\332\010\n\006Market\022\016\n\002i"
-  "d\030\001 \001(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\013"
-  "2\030.vega.TradableInstrumentR\022tradableInst"
-  "rument\022%\n\016decimal_places\030\003 \001(\004R\rdecimalP"
-  "laces\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n"
-  "\017opening_auction\030\005 \001(\0132\025.vega.AuctionDur"
-  "ationR\016openingAuction\0229\n\ncontinuous\030d \001("
-  "\0132\027.vega.ContinuousTradingH\000R\ncontinuous"
-  "\0223\n\010discrete\030e \001(\0132\025.vega.DiscreteTradin"
-  "gH\000R\010discrete\022Y\n\031price_monitoring_settin"
-  "gs\030\006 \001(\0132\035.vega.PriceMonitoringSettingsR"
-  "\027priceMonitoringSettings\022S\n\027target_stake"
-  "_parameters\030\007 \001(\0132\033.vega.TargetStakePara"
-  "metersR\025targetStakeParameters\022;\n\014trading"
-  "_mode\030\010 \001(\0162\030.vega.Market.TradingModeR\013t"
-  "radingMode\022(\n\005state\030\t \001(\0162\022.vega.Market."
-  "StateR\005state\022C\n\021market_timestamps\030\n \001(\0132"
-  "\026.vega.MarketTimestampsR\020marketTimestamp"
-  "s\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022\n\016ST"
-  "ATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002\022\021\n\rST"
-  "ATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004\022\020\n\014ST"
-  "ATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022\020\n\014STA"
-  "TE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMINATED\020"
-  "\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMode\022\034\n\030"
-  "TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRADING_MO"
-  "DE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BATCH_AU"
-  "CTION\020\002\022 \n\034TRADING_MODE_OPENING_AUCTION\020"
-  "\003\022#\n\037TRADING_MODE_MONITORING_AUCTION\020\004B\025"
-  "\n\023trading_mode_config\"r\n\020MarketTimestamp"
-  "s\022\032\n\010proposed\030\001 \001(\003R\010proposed\022\030\n\007pending"
-  "\030\002 \001(\003R\007pending\022\022\n\004open\030\003 \001(\003R\004open\022\024\n\005c"
-  "lose\030\004 \001(\003R\005closeB7\n\024io.vegaprotocol.veg"
-  "aZ\037code.vegaprotocol.io/vega/protob\006prot"
-  "o3"
+  "y\030\002 \001(\003R\017updateFrequency\"\344\001\n\035LiquidityMo"
+  "nitoringParameters\022S\n\027target_stake_param"
+  "eters\030\001 \001(\0132\033.vega.TargetStakeParameters"
+  "R\025targetStakeParameters\022A\n\020triggering_ra"
+  "tio\030\002 \001(\001B\026\342\337\037\022I\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360\?R\017trigg"
+  "eringRatio\022+\n\021auction_extension\030\003 \001(\003R\020a"
+  "uctionExtension\"v\n\025TargetStakeParameters"
+  "\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\ntimeWindo"
+  "w\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t1\000\000\000\000\000\000\000\000"
+  "R\rscalingFactor\"\362\010\n\006Market\022\016\n\002id\030\001 \001(\tR\002"
+  "id\022I\n\023tradable_instrument\030\002 \001(\0132\030.vega.T"
+  "radableInstrumentR\022tradableInstrument\022%\n"
+  "\016decimal_places\030\003 \001(\004R\rdecimalPlaces\022\036\n\004"
+  "fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n\017opening_"
+  "auction\030\005 \001(\0132\025.vega.AuctionDurationR\016op"
+  "eningAuction\0229\n\ncontinuous\030d \001(\0132\027.vega."
+  "ContinuousTradingH\000R\ncontinuous\0223\n\010discr"
+  "ete\030e \001(\0132\025.vega.DiscreteTradingH\000R\010disc"
+  "rete\022Y\n\031price_monitoring_settings\030\006 \001(\0132"
+  "\035.vega.PriceMonitoringSettingsR\027priceMon"
+  "itoringSettings\022k\n\037liquidity_monitoring_"
+  "parameters\030\007 \001(\0132#.vega.LiquidityMonitor"
+  "ingParametersR\035liquidityMonitoringParame"
+  "ters\022;\n\014trading_mode\030\010 \001(\0162\030.vega.Market"
+  ".TradingModeR\013tradingMode\022(\n\005state\030\t \001(\016"
+  "2\022.vega.Market.StateR\005state\022C\n\021market_ti"
+  "mestamps\030\n \001(\0132\026.vega.MarketTimestampsR\020"
+  "marketTimestamps\"\330\001\n\005State\022\025\n\021STATE_UNSP"
+  "ECIFIED\020\000\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_R"
+  "EJECTED\020\002\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CA"
+  "NCELLED\020\004\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUS"
+  "PENDED\020\006\022\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRAD"
+  "ING_TERMINATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013"
+  "TradingMode\022\034\n\030TRADING_MODE_UNSPECIFIED\020"
+  "\000\022\033\n\027TRADING_MODE_CONTINUOUS\020\001\022\036\n\032TRADIN"
+  "G_MODE_BATCH_AUCTION\020\002\022 \n\034TRADING_MODE_O"
+  "PENING_AUCTION\020\003\022#\n\037TRADING_MODE_MONITOR"
+  "ING_AUCTION\020\004B\025\n\023trading_mode_config\"r\n\020"
+  "MarketTimestamps\022\032\n\010proposed\030\001 \001(\003R\010prop"
+  "osed\022\030\n\007pending\030\002 \001(\003R\007pending\022\022\n\004open\030\003"
+  " \001(\003R\004open\022\024\n\005close\030\004 \001(\003R\005closeB7\n\024io.v"
+  "egaprotocol.vegaZ\037code.vegaprotocol.io/v"
+  "ega/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_markets_2eproto_deps[2] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
   &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_markets_2eproto_sccs[22] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_markets_2eproto_sccs[23] = {
   &scc_info_AuctionDuration_markets_2eproto.base,
   &scc_info_ContinuousTrading_markets_2eproto.base,
   &scc_info_DiscreteTrading_markets_2eproto.base,
@@ -783,6 +818,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
   &scc_info_Future_markets_2eproto.base,
   &scc_info_Instrument_markets_2eproto.base,
   &scc_info_InstrumentMetadata_markets_2eproto.base,
+  &scc_info_LiquidityMonitoringParameters_markets_2eproto.base,
   &scc_info_LogNormalModelParams_markets_2eproto.base,
   &scc_info_LogNormalRiskModel_markets_2eproto.base,
   &scc_info_MarginCalculator_markets_2eproto.base,
@@ -800,10 +836,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_mar
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_markets_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_markets_2eproto = {
-  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 3962,
-  &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 22, 2,
+  false, false, descriptor_table_protodef_markets_2eproto, "markets.proto", 4217,
+  &descriptor_table_markets_2eproto_once, descriptor_table_markets_2eproto_sccs, descriptor_table_markets_2eproto_deps, 23, 2,
   schemas, file_default_instances, TableStruct_markets_2eproto::offsets,
-  file_level_metadata_markets_2eproto, 22, file_level_enum_descriptors_markets_2eproto, file_level_service_descriptors_markets_2eproto,
+  file_level_metadata_markets_2eproto, 23, file_level_enum_descriptors_markets_2eproto, file_level_service_descriptors_markets_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -5802,6 +5838,274 @@ void PriceMonitoringSettings::InternalSwap(PriceMonitoringSettings* other) {
 
 // ===================================================================
 
+class LiquidityMonitoringParameters::_Internal {
+ public:
+  static const ::vega::TargetStakeParameters& target_stake_parameters(const LiquidityMonitoringParameters* msg);
+};
+
+const ::vega::TargetStakeParameters&
+LiquidityMonitoringParameters::_Internal::target_stake_parameters(const LiquidityMonitoringParameters* msg) {
+  return *msg->target_stake_parameters_;
+}
+LiquidityMonitoringParameters::LiquidityMonitoringParameters(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.LiquidityMonitoringParameters)
+}
+LiquidityMonitoringParameters::LiquidityMonitoringParameters(const LiquidityMonitoringParameters& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_target_stake_parameters()) {
+    target_stake_parameters_ = new ::vega::TargetStakeParameters(*from.target_stake_parameters_);
+  } else {
+    target_stake_parameters_ = nullptr;
+  }
+  ::memcpy(&triggering_ratio_, &from.triggering_ratio_,
+    static_cast<size_t>(reinterpret_cast<char*>(&auction_extension_) -
+    reinterpret_cast<char*>(&triggering_ratio_)) + sizeof(auction_extension_));
+  // @@protoc_insertion_point(copy_constructor:vega.LiquidityMonitoringParameters)
+}
+
+void LiquidityMonitoringParameters::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LiquidityMonitoringParameters_markets_2eproto.base);
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&target_stake_parameters_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&auction_extension_) -
+      reinterpret_cast<char*>(&target_stake_parameters_)) + sizeof(auction_extension_));
+}
+
+LiquidityMonitoringParameters::~LiquidityMonitoringParameters() {
+  // @@protoc_insertion_point(destructor:vega.LiquidityMonitoringParameters)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void LiquidityMonitoringParameters::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete target_stake_parameters_;
+}
+
+void LiquidityMonitoringParameters::ArenaDtor(void* object) {
+  LiquidityMonitoringParameters* _this = reinterpret_cast< LiquidityMonitoringParameters* >(object);
+  (void)_this;
+}
+void LiquidityMonitoringParameters::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void LiquidityMonitoringParameters::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const LiquidityMonitoringParameters& LiquidityMonitoringParameters::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LiquidityMonitoringParameters_markets_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void LiquidityMonitoringParameters::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.LiquidityMonitoringParameters)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArena() == nullptr && target_stake_parameters_ != nullptr) {
+    delete target_stake_parameters_;
+  }
+  target_stake_parameters_ = nullptr;
+  ::memset(&triggering_ratio_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&auction_extension_) -
+      reinterpret_cast<char*>(&triggering_ratio_)) + sizeof(auction_extension_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LiquidityMonitoringParameters::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_target_stake_parameters(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = {
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
+          triggering_ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      // int64 auction_extension = 3 [json_name = "auctionExtension"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          auction_extension_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* LiquidityMonitoringParameters::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.LiquidityMonitoringParameters)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];
+  if (this->has_target_stake_parameters()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::target_stake_parameters(this), target, stream);
+  }
+
+  // double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = {
+  if (!(this->triggering_ratio() <= 0 && this->triggering_ratio() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_triggering_ratio(), target);
+  }
+
+  // int64 auction_extension = 3 [json_name = "auctionExtension"];
+  if (this->auction_extension() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_auction_extension(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.LiquidityMonitoringParameters)
+  return target;
+}
+
+size_t LiquidityMonitoringParameters::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.LiquidityMonitoringParameters)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];
+  if (this->has_target_stake_parameters()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *target_stake_parameters_);
+  }
+
+  // double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = {
+  if (!(this->triggering_ratio() <= 0 && this->triggering_ratio() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  // int64 auction_extension = 3 [json_name = "auctionExtension"];
+  if (this->auction_extension() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_auction_extension());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void LiquidityMonitoringParameters::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.LiquidityMonitoringParameters)
+  GOOGLE_DCHECK_NE(&from, this);
+  const LiquidityMonitoringParameters* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<LiquidityMonitoringParameters>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.LiquidityMonitoringParameters)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.LiquidityMonitoringParameters)
+    MergeFrom(*source);
+  }
+}
+
+void LiquidityMonitoringParameters::MergeFrom(const LiquidityMonitoringParameters& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.LiquidityMonitoringParameters)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_target_stake_parameters()) {
+    _internal_mutable_target_stake_parameters()->::vega::TargetStakeParameters::MergeFrom(from._internal_target_stake_parameters());
+  }
+  if (!(from.triggering_ratio() <= 0 && from.triggering_ratio() >= 0)) {
+    _internal_set_triggering_ratio(from._internal_triggering_ratio());
+  }
+  if (from.auction_extension() != 0) {
+    _internal_set_auction_extension(from._internal_auction_extension());
+  }
+}
+
+void LiquidityMonitoringParameters::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.LiquidityMonitoringParameters)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LiquidityMonitoringParameters::CopyFrom(const LiquidityMonitoringParameters& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.LiquidityMonitoringParameters)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LiquidityMonitoringParameters::IsInitialized() const {
+  return true;
+}
+
+void LiquidityMonitoringParameters::InternalSwap(LiquidityMonitoringParameters* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(LiquidityMonitoringParameters, auction_extension_)
+      + sizeof(LiquidityMonitoringParameters::auction_extension_)
+      - PROTOBUF_FIELD_OFFSET(LiquidityMonitoringParameters, target_stake_parameters_)>(
+          reinterpret_cast<char*>(&target_stake_parameters_),
+          reinterpret_cast<char*>(&other->target_stake_parameters_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LiquidityMonitoringParameters::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 class TargetStakeParameters::_Internal {
  public:
 };
@@ -6037,7 +6341,7 @@ class Market::_Internal {
   static const ::vega::ContinuousTrading& continuous(const Market* msg);
   static const ::vega::DiscreteTrading& discrete(const Market* msg);
   static const ::vega::PriceMonitoringSettings& price_monitoring_settings(const Market* msg);
-  static const ::vega::TargetStakeParameters& target_stake_parameters(const Market* msg);
+  static const ::vega::LiquidityMonitoringParameters& liquidity_monitoring_parameters(const Market* msg);
   static const ::vega::MarketTimestamps& market_timestamps(const Market* msg);
 };
 
@@ -6065,9 +6369,9 @@ const ::vega::PriceMonitoringSettings&
 Market::_Internal::price_monitoring_settings(const Market* msg) {
   return *msg->price_monitoring_settings_;
 }
-const ::vega::TargetStakeParameters&
-Market::_Internal::target_stake_parameters(const Market* msg) {
-  return *msg->target_stake_parameters_;
+const ::vega::LiquidityMonitoringParameters&
+Market::_Internal::liquidity_monitoring_parameters(const Market* msg) {
+  return *msg->liquidity_monitoring_parameters_;
 }
 const ::vega::MarketTimestamps&
 Market::_Internal::market_timestamps(const Market* msg) {
@@ -6137,10 +6441,10 @@ Market::Market(const Market& from)
   } else {
     price_monitoring_settings_ = nullptr;
   }
-  if (from._internal_has_target_stake_parameters()) {
-    target_stake_parameters_ = new ::vega::TargetStakeParameters(*from.target_stake_parameters_);
+  if (from._internal_has_liquidity_monitoring_parameters()) {
+    liquidity_monitoring_parameters_ = new ::vega::LiquidityMonitoringParameters(*from.liquidity_monitoring_parameters_);
   } else {
-    target_stake_parameters_ = nullptr;
+    liquidity_monitoring_parameters_ = nullptr;
   }
   if (from._internal_has_market_timestamps()) {
     market_timestamps_ = new ::vega::MarketTimestamps(*from.market_timestamps_);
@@ -6190,7 +6494,7 @@ void Market::SharedDtor() {
   if (this != internal_default_instance()) delete fees_;
   if (this != internal_default_instance()) delete opening_auction_;
   if (this != internal_default_instance()) delete price_monitoring_settings_;
-  if (this != internal_default_instance()) delete target_stake_parameters_;
+  if (this != internal_default_instance()) delete liquidity_monitoring_parameters_;
   if (this != internal_default_instance()) delete market_timestamps_;
   if (has_trading_mode_config()) {
     clear_trading_mode_config();
@@ -6258,10 +6562,10 @@ void Market::Clear() {
     delete price_monitoring_settings_;
   }
   price_monitoring_settings_ = nullptr;
-  if (GetArena() == nullptr && target_stake_parameters_ != nullptr) {
-    delete target_stake_parameters_;
+  if (GetArena() == nullptr && liquidity_monitoring_parameters_ != nullptr) {
+    delete liquidity_monitoring_parameters_;
   }
-  target_stake_parameters_ = nullptr;
+  liquidity_monitoring_parameters_ = nullptr;
   if (GetArena() == nullptr && market_timestamps_ != nullptr) {
     delete market_timestamps_;
   }
@@ -6324,10 +6628,10 @@ const char* Market::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
+      // .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_target_stake_parameters(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_liquidity_monitoring_parameters(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6444,12 +6748,12 @@ failure:
         6, _Internal::price_monitoring_settings(this), target, stream);
   }
 
-  // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
-  if (this->has_target_stake_parameters()) {
+  // .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];
+  if (this->has_liquidity_monitoring_parameters()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        7, _Internal::target_stake_parameters(this), target, stream);
+        7, _Internal::liquidity_monitoring_parameters(this), target, stream);
   }
 
   // .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
@@ -6541,11 +6845,11 @@ size_t Market::ByteSizeLong() const {
         *price_monitoring_settings_);
   }
 
-  // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
-  if (this->has_target_stake_parameters()) {
+  // .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];
+  if (this->has_liquidity_monitoring_parameters()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *target_stake_parameters_);
+        *liquidity_monitoring_parameters_);
   }
 
   // .vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];
@@ -6639,8 +6943,8 @@ void Market::MergeFrom(const Market& from) {
   if (from.has_price_monitoring_settings()) {
     _internal_mutable_price_monitoring_settings()->::vega::PriceMonitoringSettings::MergeFrom(from._internal_price_monitoring_settings());
   }
-  if (from.has_target_stake_parameters()) {
-    _internal_mutable_target_stake_parameters()->::vega::TargetStakeParameters::MergeFrom(from._internal_target_stake_parameters());
+  if (from.has_liquidity_monitoring_parameters()) {
+    _internal_mutable_liquidity_monitoring_parameters()->::vega::LiquidityMonitoringParameters::MergeFrom(from._internal_liquidity_monitoring_parameters());
   }
   if (from.has_market_timestamps()) {
     _internal_mutable_market_timestamps()->::vega::MarketTimestamps::MergeFrom(from._internal_market_timestamps());
@@ -7040,6 +7344,9 @@ template<> PROTOBUF_NOINLINE ::vega::PriceMonitoringParameters* Arena::CreateMay
 }
 template<> PROTOBUF_NOINLINE ::vega::PriceMonitoringSettings* Arena::CreateMaybeMessage< ::vega::PriceMonitoringSettings >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::PriceMonitoringSettings >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::LiquidityMonitoringParameters* Arena::CreateMaybeMessage< ::vega::LiquidityMonitoringParameters >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::LiquidityMonitoringParameters >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vega::TargetStakeParameters* Arena::CreateMaybeMessage< ::vega::TargetStakeParameters >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::TargetStakeParameters >(arena);

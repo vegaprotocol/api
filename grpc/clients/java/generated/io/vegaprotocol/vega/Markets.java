@@ -16527,6 +16527,878 @@ public final class Markets {
 
   }
 
+  public interface LiquidityMonitoringParametersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.LiquidityMonitoringParameters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Specifies parameters related to target stake calculation
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+     * @return Whether the targetStakeParameters field is set.
+     */
+    boolean hasTargetStakeParameters();
+    /**
+     * <pre>
+     * Specifies parameters related to target stake calculation
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+     * @return The targetStakeParameters.
+     */
+    io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters();
+    /**
+     * <pre>
+     * Specifies parameters related to target stake calculation
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+     */
+    io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder();
+
+    /**
+     * <pre>
+     * Specifies the triggering ratio for entering liquidity auction
+     * </pre>
+     *
+     * <code>double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = { ... }</code>
+     * @return The triggeringRatio.
+     */
+    double getTriggeringRatio();
+
+    /**
+     * <pre>
+     * Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction
+     * </pre>
+     *
+     * <code>int64 auction_extension = 3 [json_name = "auctionExtension"];</code>
+     * @return The auctionExtension.
+     */
+    long getAuctionExtension();
+  }
+  /**
+   * <pre>
+   * LiquidityMonitoringParameters contains settings used for liquidity monitoring
+   * </pre>
+   *
+   * Protobuf type {@code vega.LiquidityMonitoringParameters}
+   */
+  public static final class LiquidityMonitoringParameters extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.LiquidityMonitoringParameters)
+      LiquidityMonitoringParametersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LiquidityMonitoringParameters.newBuilder() to construct.
+    private LiquidityMonitoringParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LiquidityMonitoringParameters() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LiquidityMonitoringParameters();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LiquidityMonitoringParameters(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder subBuilder = null;
+              if (targetStakeParameters_ != null) {
+                subBuilder = targetStakeParameters_.toBuilder();
+              }
+              targetStakeParameters_ = input.readMessage(io.vegaprotocol.vega.Markets.TargetStakeParameters.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetStakeParameters_);
+                targetStakeParameters_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 17: {
+
+              triggeringRatio_ = input.readDouble();
+              break;
+            }
+            case 24: {
+
+              auctionExtension_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_LiquidityMonitoringParameters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Markets.internal_static_vega_LiquidityMonitoringParameters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.class, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder.class);
+    }
+
+    public static final int TARGET_STAKE_PARAMETERS_FIELD_NUMBER = 1;
+    private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
+    /**
+     * <pre>
+     * Specifies parameters related to target stake calculation
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+     * @return Whether the targetStakeParameters field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetStakeParameters() {
+      return targetStakeParameters_ != null;
+    }
+    /**
+     * <pre>
+     * Specifies parameters related to target stake calculation
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+     * @return The targetStakeParameters.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
+      return targetStakeParameters_ == null ? io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+    }
+    /**
+     * <pre>
+     * Specifies parameters related to target stake calculation
+     * </pre>
+     *
+     * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
+      return getTargetStakeParameters();
+    }
+
+    public static final int TRIGGERING_RATIO_FIELD_NUMBER = 2;
+    private double triggeringRatio_;
+    /**
+     * <pre>
+     * Specifies the triggering ratio for entering liquidity auction
+     * </pre>
+     *
+     * <code>double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = { ... }</code>
+     * @return The triggeringRatio.
+     */
+    @java.lang.Override
+    public double getTriggeringRatio() {
+      return triggeringRatio_;
+    }
+
+    public static final int AUCTION_EXTENSION_FIELD_NUMBER = 3;
+    private long auctionExtension_;
+    /**
+     * <pre>
+     * Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction
+     * </pre>
+     *
+     * <code>int64 auction_extension = 3 [json_name = "auctionExtension"];</code>
+     * @return The auctionExtension.
+     */
+    @java.lang.Override
+    public long getAuctionExtension() {
+      return auctionExtension_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (targetStakeParameters_ != null) {
+        output.writeMessage(1, getTargetStakeParameters());
+      }
+      if (triggeringRatio_ != 0D) {
+        output.writeDouble(2, triggeringRatio_);
+      }
+      if (auctionExtension_ != 0L) {
+        output.writeInt64(3, auctionExtension_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (targetStakeParameters_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTargetStakeParameters());
+      }
+      if (triggeringRatio_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, triggeringRatio_);
+      }
+      if (auctionExtension_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, auctionExtension_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters other = (io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters) obj;
+
+      if (hasTargetStakeParameters() != other.hasTargetStakeParameters()) return false;
+      if (hasTargetStakeParameters()) {
+        if (!getTargetStakeParameters()
+            .equals(other.getTargetStakeParameters())) return false;
+      }
+      if (java.lang.Double.doubleToLongBits(getTriggeringRatio())
+          != java.lang.Double.doubleToLongBits(
+              other.getTriggeringRatio())) return false;
+      if (getAuctionExtension()
+          != other.getAuctionExtension()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTargetStakeParameters()) {
+        hash = (37 * hash) + TARGET_STAKE_PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetStakeParameters().hashCode();
+      }
+      hash = (37 * hash) + TRIGGERING_RATIO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTriggeringRatio()));
+      hash = (37 * hash) + AUCTION_EXTENSION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAuctionExtension());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * LiquidityMonitoringParameters contains settings used for liquidity monitoring
+     * </pre>
+     *
+     * Protobuf type {@code vega.LiquidityMonitoringParameters}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.LiquidityMonitoringParameters)
+        io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_LiquidityMonitoringParameters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_LiquidityMonitoringParameters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.class, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParameters_ = null;
+        } else {
+          targetStakeParameters_ = null;
+          targetStakeParametersBuilder_ = null;
+        }
+        triggeringRatio_ = 0D;
+
+        auctionExtension_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Markets.internal_static_vega_LiquidityMonitoringParameters_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters build() {
+        io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters buildPartial() {
+        io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters result = new io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters(this);
+        if (targetStakeParametersBuilder_ == null) {
+          result.targetStakeParameters_ = targetStakeParameters_;
+        } else {
+          result.targetStakeParameters_ = targetStakeParametersBuilder_.build();
+        }
+        result.triggeringRatio_ = triggeringRatio_;
+        result.auctionExtension_ = auctionExtension_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters) {
+          return mergeFrom((io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters other) {
+        if (other == io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance()) return this;
+        if (other.hasTargetStakeParameters()) {
+          mergeTargetStakeParameters(other.getTargetStakeParameters());
+        }
+        if (other.getTriggeringRatio() != 0D) {
+          setTriggeringRatio(other.getTriggeringRatio());
+        }
+        if (other.getAuctionExtension() != 0L) {
+          setAuctionExtension(other.getAuctionExtension());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder> targetStakeParametersBuilder_;
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       * @return Whether the targetStakeParameters field is set.
+       */
+      public boolean hasTargetStakeParameters() {
+        return targetStakeParametersBuilder_ != null || targetStakeParameters_ != null;
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       * @return The targetStakeParameters.
+       */
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
+        if (targetStakeParametersBuilder_ == null) {
+          return targetStakeParameters_ == null ? io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+        } else {
+          return targetStakeParametersBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      public Builder setTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
+        if (targetStakeParametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetStakeParameters_ = value;
+          onChanged();
+        } else {
+          targetStakeParametersBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      public Builder setTargetStakeParameters(
+          io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder builderForValue) {
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParameters_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetStakeParametersBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      public Builder mergeTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
+        if (targetStakeParametersBuilder_ == null) {
+          if (targetStakeParameters_ != null) {
+            targetStakeParameters_ =
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.newBuilder(targetStakeParameters_).mergeFrom(value).buildPartial();
+          } else {
+            targetStakeParameters_ = value;
+          }
+          onChanged();
+        } else {
+          targetStakeParametersBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      public Builder clearTargetStakeParameters() {
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParameters_ = null;
+          onChanged();
+        } else {
+          targetStakeParameters_ = null;
+          targetStakeParametersBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder getTargetStakeParametersBuilder() {
+
+        onChanged();
+        return getTargetStakeParametersFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
+        if (targetStakeParametersBuilder_ != null) {
+          return targetStakeParametersBuilder_.getMessageOrBuilder();
+        } else {
+          return targetStakeParameters_ == null ?
+              io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+        }
+      }
+      /**
+       * <pre>
+       * Specifies parameters related to target stake calculation
+       * </pre>
+       *
+       * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>
+          getTargetStakeParametersFieldBuilder() {
+        if (targetStakeParametersBuilder_ == null) {
+          targetStakeParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>(
+                  getTargetStakeParameters(),
+                  getParentForChildren(),
+                  isClean());
+          targetStakeParameters_ = null;
+        }
+        return targetStakeParametersBuilder_;
+      }
+
+      private double triggeringRatio_ ;
+      /**
+       * <pre>
+       * Specifies the triggering ratio for entering liquidity auction
+       * </pre>
+       *
+       * <code>double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = { ... }</code>
+       * @return The triggeringRatio.
+       */
+      @java.lang.Override
+      public double getTriggeringRatio() {
+        return triggeringRatio_;
+      }
+      /**
+       * <pre>
+       * Specifies the triggering ratio for entering liquidity auction
+       * </pre>
+       *
+       * <code>double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = { ... }</code>
+       * @param value The triggeringRatio to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTriggeringRatio(double value) {
+
+        triggeringRatio_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies the triggering ratio for entering liquidity auction
+       * </pre>
+       *
+       * <code>double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTriggeringRatio() {
+
+        triggeringRatio_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long auctionExtension_ ;
+      /**
+       * <pre>
+       * Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction
+       * </pre>
+       *
+       * <code>int64 auction_extension = 3 [json_name = "auctionExtension"];</code>
+       * @return The auctionExtension.
+       */
+      @java.lang.Override
+      public long getAuctionExtension() {
+        return auctionExtension_;
+      }
+      /**
+       * <pre>
+       * Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction
+       * </pre>
+       *
+       * <code>int64 auction_extension = 3 [json_name = "auctionExtension"];</code>
+       * @param value The auctionExtension to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuctionExtension(long value) {
+
+        auctionExtension_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction
+       * </pre>
+       *
+       * <code>int64 auction_extension = 3 [json_name = "auctionExtension"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuctionExtension() {
+
+        auctionExtension_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.LiquidityMonitoringParameters)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.LiquidityMonitoringParameters)
+    private static final io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters();
+    }
+
+    public static io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LiquidityMonitoringParameters>
+        PARSER = new com.google.protobuf.AbstractParser<LiquidityMonitoringParameters>() {
+      @java.lang.Override
+      public LiquidityMonitoringParameters parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LiquidityMonitoringParameters(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LiquidityMonitoringParameters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LiquidityMonitoringParameters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TargetStakeParametersOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.TargetStakeParameters)
       com.google.protobuf.MessageOrBuilder {
@@ -17339,30 +18211,30 @@ public final class Markets {
 
     /**
      * <pre>
-     * TargetStakeParameters for the market
+     * LiquidityMonitoringParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
-     * @return Whether the targetStakeParameters field is set.
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return Whether the liquidityMonitoringParameters field is set.
      */
-    boolean hasTargetStakeParameters();
+    boolean hasLiquidityMonitoringParameters();
     /**
      * <pre>
-     * TargetStakeParameters for the market
+     * LiquidityMonitoringParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
-     * @return The targetStakeParameters.
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return The liquidityMonitoringParameters.
      */
-    io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters();
+    io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getLiquidityMonitoringParameters();
     /**
      * <pre>
-     * TargetStakeParameters for the market
+     * LiquidityMonitoringParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
      */
-    io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder();
+    io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder getLiquidityMonitoringParametersOrBuilder();
 
     /**
      * <pre>
@@ -17547,14 +18419,14 @@ public final class Markets {
               break;
             }
             case 58: {
-              io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder subBuilder = null;
-              if (targetStakeParameters_ != null) {
-                subBuilder = targetStakeParameters_.toBuilder();
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder subBuilder = null;
+              if (liquidityMonitoringParameters_ != null) {
+                subBuilder = liquidityMonitoringParameters_.toBuilder();
               }
-              targetStakeParameters_ = input.readMessage(io.vegaprotocol.vega.Markets.TargetStakeParameters.parser(), extensionRegistry);
+              liquidityMonitoringParameters_ = input.readMessage(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(targetStakeParameters_);
-                targetStakeParameters_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(liquidityMonitoringParameters_);
+                liquidityMonitoringParameters_ = subBuilder.buildPartial();
               }
 
               break;
@@ -18436,42 +19308,42 @@ public final class Markets {
       return getPriceMonitoringSettings();
     }
 
-    public static final int TARGET_STAKE_PARAMETERS_FIELD_NUMBER = 7;
-    private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
+    public static final int LIQUIDITY_MONITORING_PARAMETERS_FIELD_NUMBER = 7;
+    private io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters liquidityMonitoringParameters_;
     /**
      * <pre>
-     * TargetStakeParameters for the market
+     * LiquidityMonitoringParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
-     * @return Whether the targetStakeParameters field is set.
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return Whether the liquidityMonitoringParameters field is set.
      */
     @java.lang.Override
-    public boolean hasTargetStakeParameters() {
-      return targetStakeParameters_ != null;
+    public boolean hasLiquidityMonitoringParameters() {
+      return liquidityMonitoringParameters_ != null;
     }
     /**
      * <pre>
-     * TargetStakeParameters for the market
+     * LiquidityMonitoringParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
-     * @return The targetStakeParameters.
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
+     * @return The liquidityMonitoringParameters.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
-      return targetStakeParameters_ == null ? io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+    public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getLiquidityMonitoringParameters() {
+      return liquidityMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance() : liquidityMonitoringParameters_;
     }
     /**
      * <pre>
-     * TargetStakeParameters for the market
+     * LiquidityMonitoringParameters for the market
      * </pre>
      *
-     * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+     * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
-      return getTargetStakeParameters();
+    public io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder getLiquidityMonitoringParametersOrBuilder() {
+      return getLiquidityMonitoringParameters();
     }
 
     public static final int TRADING_MODE_FIELD_NUMBER = 8;
@@ -18598,8 +19470,8 @@ public final class Markets {
       if (priceMonitoringSettings_ != null) {
         output.writeMessage(6, getPriceMonitoringSettings());
       }
-      if (targetStakeParameters_ != null) {
-        output.writeMessage(7, getTargetStakeParameters());
+      if (liquidityMonitoringParameters_ != null) {
+        output.writeMessage(7, getLiquidityMonitoringParameters());
       }
       if (tradingMode_ != io.vegaprotocol.vega.Markets.Market.TradingMode.TRADING_MODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(8, tradingMode_);
@@ -18648,9 +19520,9 @@ public final class Markets {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getPriceMonitoringSettings());
       }
-      if (targetStakeParameters_ != null) {
+      if (liquidityMonitoringParameters_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getTargetStakeParameters());
+          .computeMessageSize(7, getLiquidityMonitoringParameters());
       }
       if (tradingMode_ != io.vegaprotocol.vega.Markets.Market.TradingMode.TRADING_MODE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -18711,10 +19583,10 @@ public final class Markets {
         if (!getPriceMonitoringSettings()
             .equals(other.getPriceMonitoringSettings())) return false;
       }
-      if (hasTargetStakeParameters() != other.hasTargetStakeParameters()) return false;
-      if (hasTargetStakeParameters()) {
-        if (!getTargetStakeParameters()
-            .equals(other.getTargetStakeParameters())) return false;
+      if (hasLiquidityMonitoringParameters() != other.hasLiquidityMonitoringParameters()) return false;
+      if (hasLiquidityMonitoringParameters()) {
+        if (!getLiquidityMonitoringParameters()
+            .equals(other.getLiquidityMonitoringParameters())) return false;
       }
       if (tradingMode_ != other.tradingMode_) return false;
       if (state_ != other.state_) return false;
@@ -18768,9 +19640,9 @@ public final class Markets {
         hash = (37 * hash) + PRICE_MONITORING_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getPriceMonitoringSettings().hashCode();
       }
-      if (hasTargetStakeParameters()) {
-        hash = (37 * hash) + TARGET_STAKE_PARAMETERS_FIELD_NUMBER;
-        hash = (53 * hash) + getTargetStakeParameters().hashCode();
+      if (hasLiquidityMonitoringParameters()) {
+        hash = (37 * hash) + LIQUIDITY_MONITORING_PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getLiquidityMonitoringParameters().hashCode();
       }
       hash = (37 * hash) + TRADING_MODE_FIELD_NUMBER;
       hash = (53 * hash) + tradingMode_;
@@ -18957,11 +19829,11 @@ public final class Markets {
           priceMonitoringSettings_ = null;
           priceMonitoringSettingsBuilder_ = null;
         }
-        if (targetStakeParametersBuilder_ == null) {
-          targetStakeParameters_ = null;
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParameters_ = null;
         } else {
-          targetStakeParameters_ = null;
-          targetStakeParametersBuilder_ = null;
+          liquidityMonitoringParameters_ = null;
+          liquidityMonitoringParametersBuilder_ = null;
         }
         tradingMode_ = 0;
 
@@ -19037,10 +19909,10 @@ public final class Markets {
         } else {
           result.priceMonitoringSettings_ = priceMonitoringSettingsBuilder_.build();
         }
-        if (targetStakeParametersBuilder_ == null) {
-          result.targetStakeParameters_ = targetStakeParameters_;
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          result.liquidityMonitoringParameters_ = liquidityMonitoringParameters_;
         } else {
-          result.targetStakeParameters_ = targetStakeParametersBuilder_.build();
+          result.liquidityMonitoringParameters_ = liquidityMonitoringParametersBuilder_.build();
         }
         result.tradingMode_ = tradingMode_;
         result.state_ = state_;
@@ -19117,8 +19989,8 @@ public final class Markets {
         if (other.hasPriceMonitoringSettings()) {
           mergePriceMonitoringSettings(other.getPriceMonitoringSettings());
         }
-        if (other.hasTargetStakeParameters()) {
-          mergeTargetStakeParameters(other.getTargetStakeParameters());
+        if (other.hasLiquidityMonitoringParameters()) {
+          mergeLiquidityMonitoringParameters(other.getLiquidityMonitoringParameters());
         }
         if (other.tradingMode_ != 0) {
           setTradingModeValue(other.getTradingModeValue());
@@ -20314,159 +21186,159 @@ public final class Markets {
         return priceMonitoringSettingsBuilder_;
       }
 
-      private io.vegaprotocol.vega.Markets.TargetStakeParameters targetStakeParameters_;
+      private io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters liquidityMonitoringParameters_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder> targetStakeParametersBuilder_;
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder> liquidityMonitoringParametersBuilder_;
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
-       * @return Whether the targetStakeParameters field is set.
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
+       * @return Whether the liquidityMonitoringParameters field is set.
        */
-      public boolean hasTargetStakeParameters() {
-        return targetStakeParametersBuilder_ != null || targetStakeParameters_ != null;
+      public boolean hasLiquidityMonitoringParameters() {
+        return liquidityMonitoringParametersBuilder_ != null || liquidityMonitoringParameters_ != null;
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
-       * @return The targetStakeParameters.
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
+       * @return The liquidityMonitoringParameters.
        */
-      public io.vegaprotocol.vega.Markets.TargetStakeParameters getTargetStakeParameters() {
-        if (targetStakeParametersBuilder_ == null) {
-          return targetStakeParameters_ == null ? io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters getLiquidityMonitoringParameters() {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          return liquidityMonitoringParameters_ == null ? io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance() : liquidityMonitoringParameters_;
         } else {
-          return targetStakeParametersBuilder_.getMessage();
+          return liquidityMonitoringParametersBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
-      public Builder setTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
-        if (targetStakeParametersBuilder_ == null) {
+      public Builder setLiquidityMonitoringParameters(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters value) {
+        if (liquidityMonitoringParametersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          targetStakeParameters_ = value;
+          liquidityMonitoringParameters_ = value;
           onChanged();
         } else {
-          targetStakeParametersBuilder_.setMessage(value);
+          liquidityMonitoringParametersBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
-      public Builder setTargetStakeParameters(
-          io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder builderForValue) {
-        if (targetStakeParametersBuilder_ == null) {
-          targetStakeParameters_ = builderForValue.build();
+      public Builder setLiquidityMonitoringParameters(
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder builderForValue) {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParameters_ = builderForValue.build();
           onChanged();
         } else {
-          targetStakeParametersBuilder_.setMessage(builderForValue.build());
+          liquidityMonitoringParametersBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
-      public Builder mergeTargetStakeParameters(io.vegaprotocol.vega.Markets.TargetStakeParameters value) {
-        if (targetStakeParametersBuilder_ == null) {
-          if (targetStakeParameters_ != null) {
-            targetStakeParameters_ =
-              io.vegaprotocol.vega.Markets.TargetStakeParameters.newBuilder(targetStakeParameters_).mergeFrom(value).buildPartial();
+      public Builder mergeLiquidityMonitoringParameters(io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters value) {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          if (liquidityMonitoringParameters_ != null) {
+            liquidityMonitoringParameters_ =
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.newBuilder(liquidityMonitoringParameters_).mergeFrom(value).buildPartial();
           } else {
-            targetStakeParameters_ = value;
+            liquidityMonitoringParameters_ = value;
           }
           onChanged();
         } else {
-          targetStakeParametersBuilder_.mergeFrom(value);
+          liquidityMonitoringParametersBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
-      public Builder clearTargetStakeParameters() {
-        if (targetStakeParametersBuilder_ == null) {
-          targetStakeParameters_ = null;
+      public Builder clearLiquidityMonitoringParameters() {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParameters_ = null;
           onChanged();
         } else {
-          targetStakeParameters_ = null;
-          targetStakeParametersBuilder_ = null;
+          liquidityMonitoringParameters_ = null;
+          liquidityMonitoringParametersBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
-      public io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder getTargetStakeParametersBuilder() {
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder getLiquidityMonitoringParametersBuilder() {
 
         onChanged();
-        return getTargetStakeParametersFieldBuilder().getBuilder();
+        return getLiquidityMonitoringParametersFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
-      public io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder getTargetStakeParametersOrBuilder() {
-        if (targetStakeParametersBuilder_ != null) {
-          return targetStakeParametersBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder getLiquidityMonitoringParametersOrBuilder() {
+        if (liquidityMonitoringParametersBuilder_ != null) {
+          return liquidityMonitoringParametersBuilder_.getMessageOrBuilder();
         } else {
-          return targetStakeParameters_ == null ?
-              io.vegaprotocol.vega.Markets.TargetStakeParameters.getDefaultInstance() : targetStakeParameters_;
+          return liquidityMonitoringParameters_ == null ?
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.getDefaultInstance() : liquidityMonitoringParameters_;
         }
       }
       /**
        * <pre>
-       * TargetStakeParameters for the market
+       * LiquidityMonitoringParameters for the market
        * </pre>
        *
-       * <code>.vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];</code>
+       * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>
-          getTargetStakeParametersFieldBuilder() {
-        if (targetStakeParametersBuilder_ == null) {
-          targetStakeParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>(
-                  getTargetStakeParameters(),
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder>
+          getLiquidityMonitoringParametersFieldBuilder() {
+        if (liquidityMonitoringParametersBuilder_ == null) {
+          liquidityMonitoringParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder>(
+                  getLiquidityMonitoringParameters(),
                   getParentForChildren(),
                   isClean());
-          targetStakeParameters_ = null;
+          liquidityMonitoringParameters_ = null;
         }
-        return targetStakeParametersBuilder_;
+        return liquidityMonitoringParametersBuilder_;
       }
 
       private int tradingMode_ = 0;
@@ -21710,6 +22582,11 @@ public final class Markets {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PriceMonitoringSettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_LiquidityMonitoringParameters_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_LiquidityMonitoringParameters_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TargetStakeParameters_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21796,43 +22673,49 @@ public final class Markets {
       "triggers\"\205\001\n\027PriceMonitoringSettings\022?\n\n" +
       "parameters\030\001 \001(\0132\037.vega.PriceMonitoringP" +
       "arametersR\nparameters\022)\n\020update_frequenc" +
-      "y\030\002 \001(\003R\017updateFrequency\"v\n\025TargetStakeP" +
-      "arameters\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\n" +
-      "timeWindow\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t" +
-      "1\000\000\000\000\000\000\000\000R\rscalingFactor\"\332\010\n\006Market\022\016\n\002i" +
-      "d\030\001 \001(\tR\002id\022I\n\023tradable_instrument\030\002 \001(\013" +
-      "2\030.vega.TradableInstrumentR\022tradableInst" +
-      "rument\022%\n\016decimal_places\030\003 \001(\004R\rdecimalP" +
-      "laces\022\036\n\004fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n" +
-      "\017opening_auction\030\005 \001(\0132\025.vega.AuctionDur" +
-      "ationR\016openingAuction\0229\n\ncontinuous\030d \001(" +
-      "\0132\027.vega.ContinuousTradingH\000R\ncontinuous" +
-      "\0223\n\010discrete\030e \001(\0132\025.vega.DiscreteTradin" +
-      "gH\000R\010discrete\022Y\n\031price_monitoring_settin" +
-      "gs\030\006 \001(\0132\035.vega.PriceMonitoringSettingsR" +
-      "\027priceMonitoringSettings\022S\n\027target_stake" +
-      "_parameters\030\007 \001(\0132\033.vega.TargetStakePara" +
-      "metersR\025targetStakeParameters\022;\n\014trading" +
-      "_mode\030\010 \001(\0162\030.vega.Market.TradingModeR\013t" +
-      "radingMode\022(\n\005state\030\t \001(\0162\022.vega.Market." +
-      "StateR\005state\022C\n\021market_timestamps\030\n \001(\0132" +
-      "\026.vega.MarketTimestampsR\020marketTimestamp" +
-      "s\"\330\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022\n\016ST" +
-      "ATE_PROPOSED\020\001\022\022\n\016STATE_REJECTED\020\002\022\021\n\rST" +
-      "ATE_PENDING\020\003\022\023\n\017STATE_CANCELLED\020\004\022\020\n\014ST" +
-      "ATE_ACTIVE\020\005\022\023\n\017STATE_SUSPENDED\020\006\022\020\n\014STA" +
-      "TE_CLOSED\020\007\022\034\n\030STATE_TRADING_TERMINATED\020" +
-      "\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013TradingMode\022\034\n\030" +
-      "TRADING_MODE_UNSPECIFIED\020\000\022\033\n\027TRADING_MO" +
-      "DE_CONTINUOUS\020\001\022\036\n\032TRADING_MODE_BATCH_AU" +
-      "CTION\020\002\022 \n\034TRADING_MODE_OPENING_AUCTION\020" +
-      "\003\022#\n\037TRADING_MODE_MONITORING_AUCTION\020\004B\025" +
-      "\n\023trading_mode_config\"r\n\020MarketTimestamp" +
-      "s\022\032\n\010proposed\030\001 \001(\003R\010proposed\022\030\n\007pending" +
-      "\030\002 \001(\003R\007pending\022\022\n\004open\030\003 \001(\003R\004open\022\024\n\005c" +
-      "lose\030\004 \001(\003R\005closeB7\n\024io.vegaprotocol.veg" +
-      "aZ\037code.vegaprotocol.io/vega/protob\006prot" +
-      "o3"
+      "y\030\002 \001(\003R\017updateFrequency\"\344\001\n\035LiquidityMo" +
+      "nitoringParameters\022S\n\027target_stake_param" +
+      "eters\030\001 \001(\0132\033.vega.TargetStakeParameters" +
+      "R\025targetStakeParameters\022A\n\020triggering_ra" +
+      "tio\030\002 \001(\001B\026\342\337\037\022I\000\000\000\000\000\000\000\000Q\000\000\000\000\000\000\360?R\017trigg" +
+      "eringRatio\022+\n\021auction_extension\030\003 \001(\003R\020a" +
+      "uctionExtension\"v\n\025TargetStakeParameters" +
+      "\022\'\n\013time_window\030\001 \001(\003B\006\342\337\037\002\020\000R\ntimeWindo" +
+      "w\0224\n\016scaling_factor\030\002 \001(\001B\r\342\337\037\t1\000\000\000\000\000\000\000\000" +
+      "R\rscalingFactor\"\362\010\n\006Market\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022I\n\023tradable_instrument\030\002 \001(\0132\030.vega.T" +
+      "radableInstrumentR\022tradableInstrument\022%\n" +
+      "\016decimal_places\030\003 \001(\004R\rdecimalPlaces\022\036\n\004" +
+      "fees\030\004 \001(\0132\n.vega.FeesR\004fees\022>\n\017opening_" +
+      "auction\030\005 \001(\0132\025.vega.AuctionDurationR\016op" +
+      "eningAuction\0229\n\ncontinuous\030d \001(\0132\027.vega." +
+      "ContinuousTradingH\000R\ncontinuous\0223\n\010discr" +
+      "ete\030e \001(\0132\025.vega.DiscreteTradingH\000R\010disc" +
+      "rete\022Y\n\031price_monitoring_settings\030\006 \001(\0132" +
+      "\035.vega.PriceMonitoringSettingsR\027priceMon" +
+      "itoringSettings\022k\n\037liquidity_monitoring_" +
+      "parameters\030\007 \001(\0132#.vega.LiquidityMonitor" +
+      "ingParametersR\035liquidityMonitoringParame" +
+      "ters\022;\n\014trading_mode\030\010 \001(\0162\030.vega.Market" +
+      ".TradingModeR\013tradingMode\022(\n\005state\030\t \001(\016" +
+      "2\022.vega.Market.StateR\005state\022C\n\021market_ti" +
+      "mestamps\030\n \001(\0132\026.vega.MarketTimestampsR\020" +
+      "marketTimestamps\"\330\001\n\005State\022\025\n\021STATE_UNSP" +
+      "ECIFIED\020\000\022\022\n\016STATE_PROPOSED\020\001\022\022\n\016STATE_R" +
+      "EJECTED\020\002\022\021\n\rSTATE_PENDING\020\003\022\023\n\017STATE_CA" +
+      "NCELLED\020\004\022\020\n\014STATE_ACTIVE\020\005\022\023\n\017STATE_SUS" +
+      "PENDED\020\006\022\020\n\014STATE_CLOSED\020\007\022\034\n\030STATE_TRAD" +
+      "ING_TERMINATED\020\010\022\021\n\rSTATE_SETTLED\020\t\"\257\001\n\013" +
+      "TradingMode\022\034\n\030TRADING_MODE_UNSPECIFIED\020" +
+      "\000\022\033\n\027TRADING_MODE_CONTINUOUS\020\001\022\036\n\032TRADIN" +
+      "G_MODE_BATCH_AUCTION\020\002\022 \n\034TRADING_MODE_O" +
+      "PENING_AUCTION\020\003\022#\n\037TRADING_MODE_MONITOR" +
+      "ING_AUCTION\020\004B\025\n\023trading_mode_config\"r\n\020" +
+      "MarketTimestamps\022\032\n\010proposed\030\001 \001(\003R\010prop" +
+      "osed\022\030\n\007pending\030\002 \001(\003R\007pending\022\022\n\004open\030\003" +
+      " \001(\003R\004open\022\024\n\005close\030\004 \001(\003R\005closeB7\n\024io.v" +
+      "egaprotocol.vegaZ\037code.vegaprotocol.io/v" +
+      "ega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21954,20 +22837,26 @@ public final class Markets {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringSettings_descriptor,
         new java.lang.String[] { "Parameters", "UpdateFrequency", });
-    internal_static_vega_TargetStakeParameters_descriptor =
+    internal_static_vega_LiquidityMonitoringParameters_descriptor =
       getDescriptor().getMessageTypes().get(19);
+    internal_static_vega_LiquidityMonitoringParameters_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_LiquidityMonitoringParameters_descriptor,
+        new java.lang.String[] { "TargetStakeParameters", "TriggeringRatio", "AuctionExtension", });
+    internal_static_vega_TargetStakeParameters_descriptor =
+      getDescriptor().getMessageTypes().get(20);
     internal_static_vega_TargetStakeParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TargetStakeParameters_descriptor,
         new java.lang.String[] { "TimeWindow", "ScalingFactor", });
     internal_static_vega_Market_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_vega_Market_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Market_descriptor,
-        new java.lang.String[] { "Id", "TradableInstrument", "DecimalPlaces", "Fees", "OpeningAuction", "Continuous", "Discrete", "PriceMonitoringSettings", "TargetStakeParameters", "TradingMode", "State", "MarketTimestamps", "TradingModeConfig", });
+        new java.lang.String[] { "Id", "TradableInstrument", "DecimalPlaces", "Fees", "OpeningAuction", "Continuous", "Discrete", "PriceMonitoringSettings", "LiquidityMonitoringParameters", "TradingMode", "State", "MarketTimestamps", "TradingModeConfig", });
     internal_static_vega_MarketTimestamps_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_vega_MarketTimestamps_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketTimestamps_descriptor,

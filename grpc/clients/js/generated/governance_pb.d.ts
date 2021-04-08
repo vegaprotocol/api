@@ -103,6 +103,11 @@ export class NewMarketConfiguration extends jspb.Message {
   getPriceMonitoringParameters(): markets_pb.PriceMonitoringParameters | undefined;
   setPriceMonitoringParameters(value?: markets_pb.PriceMonitoringParameters): void;
 
+  hasLiquidityMonitoringParameters(): boolean;
+  clearLiquidityMonitoringParameters(): void;
+  getLiquidityMonitoringParameters(): markets_pb.LiquidityMonitoringParameters | undefined;
+  setLiquidityMonitoringParameters(value?: markets_pb.LiquidityMonitoringParameters): void;
+
   hasSimple(): boolean;
   clearSimple(): void;
   getSimple(): markets_pb.SimpleModelParams | undefined;
@@ -141,6 +146,7 @@ export namespace NewMarketConfiguration {
     decimalPlaces: number,
     metadataList: Array<string>,
     priceMonitoringParameters?: markets_pb.PriceMonitoringParameters.AsObject,
+    liquidityMonitoringParameters?: markets_pb.LiquidityMonitoringParameters.AsObject,
     simple?: markets_pb.SimpleModelParams.AsObject,
     logNormal?: markets_pb.LogNormalRiskModel.AsObject,
     continuous?: markets_pb.ContinuousTrading.AsObject,

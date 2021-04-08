@@ -49,7 +49,7 @@ struct TableStruct_markets_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -81,6 +81,9 @@ extern InstrumentDefaultTypeInternal _Instrument_default_instance_;
 class InstrumentMetadata;
 class InstrumentMetadataDefaultTypeInternal;
 extern InstrumentMetadataDefaultTypeInternal _InstrumentMetadata_default_instance_;
+class LiquidityMonitoringParameters;
+class LiquidityMonitoringParametersDefaultTypeInternal;
+extern LiquidityMonitoringParametersDefaultTypeInternal _LiquidityMonitoringParameters_default_instance_;
 class LogNormalModelParams;
 class LogNormalModelParamsDefaultTypeInternal;
 extern LogNormalModelParamsDefaultTypeInternal _LogNormalModelParams_default_instance_;
@@ -133,6 +136,7 @@ template<> ::vega::Fees* Arena::CreateMaybeMessage<::vega::Fees>(Arena*);
 template<> ::vega::Future* Arena::CreateMaybeMessage<::vega::Future>(Arena*);
 template<> ::vega::Instrument* Arena::CreateMaybeMessage<::vega::Instrument>(Arena*);
 template<> ::vega::InstrumentMetadata* Arena::CreateMaybeMessage<::vega::InstrumentMetadata>(Arena*);
+template<> ::vega::LiquidityMonitoringParameters* Arena::CreateMaybeMessage<::vega::LiquidityMonitoringParameters>(Arena*);
 template<> ::vega::LogNormalModelParams* Arena::CreateMaybeMessage<::vega::LogNormalModelParams>(Arena*);
 template<> ::vega::LogNormalRiskModel* Arena::CreateMaybeMessage<::vega::LogNormalRiskModel>(Arena*);
 template<> ::vega::MarginCalculator* Arena::CreateMaybeMessage<::vega::MarginCalculator>(Arena*);
@@ -3364,6 +3368,173 @@ class PriceMonitoringSettings PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class LiquidityMonitoringParameters PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.LiquidityMonitoringParameters) */ {
+ public:
+  inline LiquidityMonitoringParameters() : LiquidityMonitoringParameters(nullptr) {}
+  virtual ~LiquidityMonitoringParameters();
+
+  LiquidityMonitoringParameters(const LiquidityMonitoringParameters& from);
+  LiquidityMonitoringParameters(LiquidityMonitoringParameters&& from) noexcept
+    : LiquidityMonitoringParameters() {
+    *this = ::std::move(from);
+  }
+
+  inline LiquidityMonitoringParameters& operator=(const LiquidityMonitoringParameters& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LiquidityMonitoringParameters& operator=(LiquidityMonitoringParameters&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LiquidityMonitoringParameters& default_instance();
+
+  static inline const LiquidityMonitoringParameters* internal_default_instance() {
+    return reinterpret_cast<const LiquidityMonitoringParameters*>(
+               &_LiquidityMonitoringParameters_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(LiquidityMonitoringParameters& a, LiquidityMonitoringParameters& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LiquidityMonitoringParameters* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LiquidityMonitoringParameters* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LiquidityMonitoringParameters* New() const final {
+    return CreateMaybeMessage<LiquidityMonitoringParameters>(nullptr);
+  }
+
+  LiquidityMonitoringParameters* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LiquidityMonitoringParameters>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LiquidityMonitoringParameters& from);
+  void MergeFrom(const LiquidityMonitoringParameters& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LiquidityMonitoringParameters* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.LiquidityMonitoringParameters";
+  }
+  protected:
+  explicit LiquidityMonitoringParameters(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_markets_2eproto);
+    return ::descriptor_table_markets_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTargetStakeParametersFieldNumber = 1,
+    kTriggeringRatioFieldNumber = 2,
+    kAuctionExtensionFieldNumber = 3,
+  };
+  // .vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];
+  bool has_target_stake_parameters() const;
+  private:
+  bool _internal_has_target_stake_parameters() const;
+  public:
+  void clear_target_stake_parameters();
+  const ::vega::TargetStakeParameters& target_stake_parameters() const;
+  ::vega::TargetStakeParameters* release_target_stake_parameters();
+  ::vega::TargetStakeParameters* mutable_target_stake_parameters();
+  void set_allocated_target_stake_parameters(::vega::TargetStakeParameters* target_stake_parameters);
+  private:
+  const ::vega::TargetStakeParameters& _internal_target_stake_parameters() const;
+  ::vega::TargetStakeParameters* _internal_mutable_target_stake_parameters();
+  public:
+  void unsafe_arena_set_allocated_target_stake_parameters(
+      ::vega::TargetStakeParameters* target_stake_parameters);
+  ::vega::TargetStakeParameters* unsafe_arena_release_target_stake_parameters();
+
+  // double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = {
+  void clear_triggering_ratio();
+  double triggering_ratio() const;
+  void set_triggering_ratio(double value);
+  private:
+  double _internal_triggering_ratio() const;
+  void _internal_set_triggering_ratio(double value);
+  public:
+
+  // int64 auction_extension = 3 [json_name = "auctionExtension"];
+  void clear_auction_extension();
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_extension() const;
+  void set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_auction_extension() const;
+  void _internal_set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.LiquidityMonitoringParameters)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::vega::TargetStakeParameters* target_stake_parameters_;
+  double triggering_ratio_;
+  ::PROTOBUF_NAMESPACE_ID::int64 auction_extension_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_markets_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TargetStakeParameters PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.TargetStakeParameters) */ {
  public:
@@ -3405,7 +3576,7 @@ class TargetStakeParameters PROTOBUF_FINAL :
                &_TargetStakeParameters_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(TargetStakeParameters& a, TargetStakeParameters& b) {
     a.Swap(&b);
@@ -3558,7 +3729,7 @@ class Market PROTOBUF_FINAL :
                &_Market_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(Market& a, Market& b) {
     a.Swap(&b);
@@ -3716,7 +3887,7 @@ class Market PROTOBUF_FINAL :
     kFeesFieldNumber = 4,
     kOpeningAuctionFieldNumber = 5,
     kPriceMonitoringSettingsFieldNumber = 6,
-    kTargetStakeParametersFieldNumber = 7,
+    kLiquidityMonitoringParametersFieldNumber = 7,
     kMarketTimestampsFieldNumber = 10,
     kDecimalPlacesFieldNumber = 3,
     kTradingModeFieldNumber = 8,
@@ -3812,23 +3983,23 @@ class Market PROTOBUF_FINAL :
       ::vega::PriceMonitoringSettings* price_monitoring_settings);
   ::vega::PriceMonitoringSettings* unsafe_arena_release_price_monitoring_settings();
 
-  // .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
-  bool has_target_stake_parameters() const;
+  // .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];
+  bool has_liquidity_monitoring_parameters() const;
   private:
-  bool _internal_has_target_stake_parameters() const;
+  bool _internal_has_liquidity_monitoring_parameters() const;
   public:
-  void clear_target_stake_parameters();
-  const ::vega::TargetStakeParameters& target_stake_parameters() const;
-  ::vega::TargetStakeParameters* release_target_stake_parameters();
-  ::vega::TargetStakeParameters* mutable_target_stake_parameters();
-  void set_allocated_target_stake_parameters(::vega::TargetStakeParameters* target_stake_parameters);
+  void clear_liquidity_monitoring_parameters();
+  const ::vega::LiquidityMonitoringParameters& liquidity_monitoring_parameters() const;
+  ::vega::LiquidityMonitoringParameters* release_liquidity_monitoring_parameters();
+  ::vega::LiquidityMonitoringParameters* mutable_liquidity_monitoring_parameters();
+  void set_allocated_liquidity_monitoring_parameters(::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters);
   private:
-  const ::vega::TargetStakeParameters& _internal_target_stake_parameters() const;
-  ::vega::TargetStakeParameters* _internal_mutable_target_stake_parameters();
+  const ::vega::LiquidityMonitoringParameters& _internal_liquidity_monitoring_parameters() const;
+  ::vega::LiquidityMonitoringParameters* _internal_mutable_liquidity_monitoring_parameters();
   public:
-  void unsafe_arena_set_allocated_target_stake_parameters(
-      ::vega::TargetStakeParameters* target_stake_parameters);
-  ::vega::TargetStakeParameters* unsafe_arena_release_target_stake_parameters();
+  void unsafe_arena_set_allocated_liquidity_monitoring_parameters(
+      ::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters);
+  ::vega::LiquidityMonitoringParameters* unsafe_arena_release_liquidity_monitoring_parameters();
 
   // .vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];
   bool has_market_timestamps() const;
@@ -3930,7 +4101,7 @@ class Market PROTOBUF_FINAL :
   ::vega::Fees* fees_;
   ::vega::AuctionDuration* opening_auction_;
   ::vega::PriceMonitoringSettings* price_monitoring_settings_;
-  ::vega::TargetStakeParameters* target_stake_parameters_;
+  ::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters_;
   ::vega::MarketTimestamps* market_timestamps_;
   ::PROTOBUF_NAMESPACE_ID::uint64 decimal_places_;
   int trading_mode_;
@@ -3988,7 +4159,7 @@ class MarketTimestamps PROTOBUF_FINAL :
                &_MarketTimestamps_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(MarketTimestamps& a, MarketTimestamps& b) {
     a.Swap(&b);
@@ -6505,6 +6676,133 @@ inline void PriceMonitoringSettings::set_update_frequency(::PROTOBUF_NAMESPACE_I
 
 // -------------------------------------------------------------------
 
+// LiquidityMonitoringParameters
+
+// .vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];
+inline bool LiquidityMonitoringParameters::_internal_has_target_stake_parameters() const {
+  return this != internal_default_instance() && target_stake_parameters_ != nullptr;
+}
+inline bool LiquidityMonitoringParameters::has_target_stake_parameters() const {
+  return _internal_has_target_stake_parameters();
+}
+inline void LiquidityMonitoringParameters::clear_target_stake_parameters() {
+  if (GetArena() == nullptr && target_stake_parameters_ != nullptr) {
+    delete target_stake_parameters_;
+  }
+  target_stake_parameters_ = nullptr;
+}
+inline const ::vega::TargetStakeParameters& LiquidityMonitoringParameters::_internal_target_stake_parameters() const {
+  const ::vega::TargetStakeParameters* p = target_stake_parameters_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::TargetStakeParameters&>(
+      ::vega::_TargetStakeParameters_default_instance_);
+}
+inline const ::vega::TargetStakeParameters& LiquidityMonitoringParameters::target_stake_parameters() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityMonitoringParameters.target_stake_parameters)
+  return _internal_target_stake_parameters();
+}
+inline void LiquidityMonitoringParameters::unsafe_arena_set_allocated_target_stake_parameters(
+    ::vega::TargetStakeParameters* target_stake_parameters) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(target_stake_parameters_);
+  }
+  target_stake_parameters_ = target_stake_parameters;
+  if (target_stake_parameters) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.LiquidityMonitoringParameters.target_stake_parameters)
+}
+inline ::vega::TargetStakeParameters* LiquidityMonitoringParameters::release_target_stake_parameters() {
+
+  ::vega::TargetStakeParameters* temp = target_stake_parameters_;
+  target_stake_parameters_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::TargetStakeParameters* LiquidityMonitoringParameters::unsafe_arena_release_target_stake_parameters() {
+  // @@protoc_insertion_point(field_release:vega.LiquidityMonitoringParameters.target_stake_parameters)
+
+  ::vega::TargetStakeParameters* temp = target_stake_parameters_;
+  target_stake_parameters_ = nullptr;
+  return temp;
+}
+inline ::vega::TargetStakeParameters* LiquidityMonitoringParameters::_internal_mutable_target_stake_parameters() {
+
+  if (target_stake_parameters_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::TargetStakeParameters>(GetArena());
+    target_stake_parameters_ = p;
+  }
+  return target_stake_parameters_;
+}
+inline ::vega::TargetStakeParameters* LiquidityMonitoringParameters::mutable_target_stake_parameters() {
+  // @@protoc_insertion_point(field_mutable:vega.LiquidityMonitoringParameters.target_stake_parameters)
+  return _internal_mutable_target_stake_parameters();
+}
+inline void LiquidityMonitoringParameters::set_allocated_target_stake_parameters(::vega::TargetStakeParameters* target_stake_parameters) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete target_stake_parameters_;
+  }
+  if (target_stake_parameters) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(target_stake_parameters);
+    if (message_arena != submessage_arena) {
+      target_stake_parameters = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, target_stake_parameters, submessage_arena);
+    }
+
+  } else {
+
+  }
+  target_stake_parameters_ = target_stake_parameters;
+  // @@protoc_insertion_point(field_set_allocated:vega.LiquidityMonitoringParameters.target_stake_parameters)
+}
+
+// double triggering_ratio = 2 [json_name = "triggeringRatio", (.validator.field) = {
+inline void LiquidityMonitoringParameters::clear_triggering_ratio() {
+  triggering_ratio_ = 0;
+}
+inline double LiquidityMonitoringParameters::_internal_triggering_ratio() const {
+  return triggering_ratio_;
+}
+inline double LiquidityMonitoringParameters::triggering_ratio() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityMonitoringParameters.triggering_ratio)
+  return _internal_triggering_ratio();
+}
+inline void LiquidityMonitoringParameters::_internal_set_triggering_ratio(double value) {
+
+  triggering_ratio_ = value;
+}
+inline void LiquidityMonitoringParameters::set_triggering_ratio(double value) {
+  _internal_set_triggering_ratio(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityMonitoringParameters.triggering_ratio)
+}
+
+// int64 auction_extension = 3 [json_name = "auctionExtension"];
+inline void LiquidityMonitoringParameters::clear_auction_extension() {
+  auction_extension_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityMonitoringParameters::_internal_auction_extension() const {
+  return auction_extension_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 LiquidityMonitoringParameters::auction_extension() const {
+  // @@protoc_insertion_point(field_get:vega.LiquidityMonitoringParameters.auction_extension)
+  return _internal_auction_extension();
+}
+inline void LiquidityMonitoringParameters::_internal_set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  auction_extension_ = value;
+}
+inline void LiquidityMonitoringParameters::set_auction_extension(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_auction_extension(value);
+  // @@protoc_insertion_point(field_set:vega.LiquidityMonitoringParameters.auction_extension)
+}
+
+// -------------------------------------------------------------------
+
 // TargetStakeParameters
 
 // int64 time_window = 1 [json_name = "timeWindow", (.validator.field) = {
@@ -7110,87 +7408,87 @@ inline void Market::set_allocated_price_monitoring_settings(::vega::PriceMonitor
   // @@protoc_insertion_point(field_set_allocated:vega.Market.price_monitoring_settings)
 }
 
-// .vega.TargetStakeParameters target_stake_parameters = 7 [json_name = "targetStakeParameters"];
-inline bool Market::_internal_has_target_stake_parameters() const {
-  return this != internal_default_instance() && target_stake_parameters_ != nullptr;
+// .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];
+inline bool Market::_internal_has_liquidity_monitoring_parameters() const {
+  return this != internal_default_instance() && liquidity_monitoring_parameters_ != nullptr;
 }
-inline bool Market::has_target_stake_parameters() const {
-  return _internal_has_target_stake_parameters();
+inline bool Market::has_liquidity_monitoring_parameters() const {
+  return _internal_has_liquidity_monitoring_parameters();
 }
-inline void Market::clear_target_stake_parameters() {
-  if (GetArena() == nullptr && target_stake_parameters_ != nullptr) {
-    delete target_stake_parameters_;
+inline void Market::clear_liquidity_monitoring_parameters() {
+  if (GetArena() == nullptr && liquidity_monitoring_parameters_ != nullptr) {
+    delete liquidity_monitoring_parameters_;
   }
-  target_stake_parameters_ = nullptr;
+  liquidity_monitoring_parameters_ = nullptr;
 }
-inline const ::vega::TargetStakeParameters& Market::_internal_target_stake_parameters() const {
-  const ::vega::TargetStakeParameters* p = target_stake_parameters_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::TargetStakeParameters&>(
-      ::vega::_TargetStakeParameters_default_instance_);
+inline const ::vega::LiquidityMonitoringParameters& Market::_internal_liquidity_monitoring_parameters() const {
+  const ::vega::LiquidityMonitoringParameters* p = liquidity_monitoring_parameters_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::LiquidityMonitoringParameters&>(
+      ::vega::_LiquidityMonitoringParameters_default_instance_);
 }
-inline const ::vega::TargetStakeParameters& Market::target_stake_parameters() const {
-  // @@protoc_insertion_point(field_get:vega.Market.target_stake_parameters)
-  return _internal_target_stake_parameters();
+inline const ::vega::LiquidityMonitoringParameters& Market::liquidity_monitoring_parameters() const {
+  // @@protoc_insertion_point(field_get:vega.Market.liquidity_monitoring_parameters)
+  return _internal_liquidity_monitoring_parameters();
 }
-inline void Market::unsafe_arena_set_allocated_target_stake_parameters(
-    ::vega::TargetStakeParameters* target_stake_parameters) {
+inline void Market::unsafe_arena_set_allocated_liquidity_monitoring_parameters(
+    ::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(target_stake_parameters_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquidity_monitoring_parameters_);
   }
-  target_stake_parameters_ = target_stake_parameters;
-  if (target_stake_parameters) {
+  liquidity_monitoring_parameters_ = liquidity_monitoring_parameters;
+  if (liquidity_monitoring_parameters) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.target_stake_parameters)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Market.liquidity_monitoring_parameters)
 }
-inline ::vega::TargetStakeParameters* Market::release_target_stake_parameters() {
+inline ::vega::LiquidityMonitoringParameters* Market::release_liquidity_monitoring_parameters() {
 
-  ::vega::TargetStakeParameters* temp = target_stake_parameters_;
-  target_stake_parameters_ = nullptr;
+  ::vega::LiquidityMonitoringParameters* temp = liquidity_monitoring_parameters_;
+  liquidity_monitoring_parameters_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::TargetStakeParameters* Market::unsafe_arena_release_target_stake_parameters() {
-  // @@protoc_insertion_point(field_release:vega.Market.target_stake_parameters)
+inline ::vega::LiquidityMonitoringParameters* Market::unsafe_arena_release_liquidity_monitoring_parameters() {
+  // @@protoc_insertion_point(field_release:vega.Market.liquidity_monitoring_parameters)
 
-  ::vega::TargetStakeParameters* temp = target_stake_parameters_;
-  target_stake_parameters_ = nullptr;
+  ::vega::LiquidityMonitoringParameters* temp = liquidity_monitoring_parameters_;
+  liquidity_monitoring_parameters_ = nullptr;
   return temp;
 }
-inline ::vega::TargetStakeParameters* Market::_internal_mutable_target_stake_parameters() {
+inline ::vega::LiquidityMonitoringParameters* Market::_internal_mutable_liquidity_monitoring_parameters() {
 
-  if (target_stake_parameters_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::TargetStakeParameters>(GetArena());
-    target_stake_parameters_ = p;
+  if (liquidity_monitoring_parameters_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::LiquidityMonitoringParameters>(GetArena());
+    liquidity_monitoring_parameters_ = p;
   }
-  return target_stake_parameters_;
+  return liquidity_monitoring_parameters_;
 }
-inline ::vega::TargetStakeParameters* Market::mutable_target_stake_parameters() {
-  // @@protoc_insertion_point(field_mutable:vega.Market.target_stake_parameters)
-  return _internal_mutable_target_stake_parameters();
+inline ::vega::LiquidityMonitoringParameters* Market::mutable_liquidity_monitoring_parameters() {
+  // @@protoc_insertion_point(field_mutable:vega.Market.liquidity_monitoring_parameters)
+  return _internal_mutable_liquidity_monitoring_parameters();
 }
-inline void Market::set_allocated_target_stake_parameters(::vega::TargetStakeParameters* target_stake_parameters) {
+inline void Market::set_allocated_liquidity_monitoring_parameters(::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete target_stake_parameters_;
+    delete liquidity_monitoring_parameters_;
   }
-  if (target_stake_parameters) {
+  if (liquidity_monitoring_parameters) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(target_stake_parameters);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(liquidity_monitoring_parameters);
     if (message_arena != submessage_arena) {
-      target_stake_parameters = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, target_stake_parameters, submessage_arena);
+      liquidity_monitoring_parameters = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, liquidity_monitoring_parameters, submessage_arena);
     }
 
   } else {
 
   }
-  target_stake_parameters_ = target_stake_parameters;
-  // @@protoc_insertion_point(field_set_allocated:vega.Market.target_stake_parameters)
+  liquidity_monitoring_parameters_ = liquidity_monitoring_parameters;
+  // @@protoc_insertion_point(field_set_allocated:vega.Market.liquidity_monitoring_parameters)
 }
 
 // .vega.Market.TradingMode trading_mode = 8 [json_name = "tradingMode"];
@@ -7412,6 +7710,8 @@ inline void MarketTimestamps::set_close(::PROTOBUF_NAMESPACE_ID::int64 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

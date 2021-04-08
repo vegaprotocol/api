@@ -205,6 +205,9 @@ export class Order extends jspb.Message {
   getPeggedOrder(): PeggedOrder | undefined;
   setPeggedOrder(value?: PeggedOrder): void;
 
+  getLiquidityProvisionId(): string;
+  setLiquidityProvisionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Order.AsObject;
   static toObject(includeInstance: boolean, msg: Order): Order.AsObject;
@@ -235,6 +238,7 @@ export namespace Order {
     version: number,
     batchId: number,
     peggedOrder?: PeggedOrder.AsObject,
+    liquidityProvisionId: string,
   }
 
   export interface TimeInForceMap {
@@ -2107,6 +2111,7 @@ export namespace LiquidityProvision {
     STATUS_CANCELLED: 3;
     STATUS_REJECTED: 4;
     STATUS_UNDEPLOYED: 5;
+    STATUS_PENDING: 6;
   }
 
   export const Status: StatusMap;

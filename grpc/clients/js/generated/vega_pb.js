@@ -2220,7 +2220,8 @@ proto.vega.Order.toObject = function(includeInstance, msg) {
     updatedAt: jspb.Message.getFieldWithDefault(msg, 15, 0),
     version: jspb.Message.getFieldWithDefault(msg, 16, 0),
     batchId: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    peggedOrder: (f = msg.getPeggedOrder()) && proto.vega.PeggedOrder.toObject(includeInstance, f)
+    peggedOrder: (f = msg.getPeggedOrder()) && proto.vega.PeggedOrder.toObject(includeInstance, f),
+    liquidityProvisionId: jspb.Message.getFieldWithDefault(msg, 19, "")
   };
 
   if (includeInstance) {
@@ -2329,6 +2330,10 @@ proto.vega.Order.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.vega.PeggedOrder;
       reader.readMessage(value,proto.vega.PeggedOrder.deserializeBinaryFromReader);
       msg.setPeggedOrder(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLiquidityProvisionId(value);
       break;
     default:
       reader.skipField();
@@ -2484,6 +2489,13 @@ proto.vega.Order.serializeBinaryToWriter = function(message, writer) {
       18,
       f,
       proto.vega.PeggedOrder.serializeBinaryToWriter
+    );
+  }
+  f = message.getLiquidityProvisionId();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
+      f
     );
   }
 };
@@ -2867,6 +2879,24 @@ proto.vega.Order.prototype.clearPeggedOrder = function() {
  */
 proto.vega.Order.prototype.hasPeggedOrder = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional string liquidity_provision_id = 19;
+ * @return {string}
+ */
+proto.vega.Order.prototype.getLiquidityProvisionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.Order} returns this
+ */
+proto.vega.Order.prototype.setLiquidityProvisionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 
@@ -15616,7 +15646,8 @@ proto.vega.LiquidityProvision.Status = {
   STATUS_STOPPED: 2,
   STATUS_CANCELLED: 3,
   STATUS_REJECTED: 4,
-  STATUS_UNDEPLOYED: 5
+  STATUS_UNDEPLOYED: 5,
+  STATUS_PENDING: 6
 };
 
 /**

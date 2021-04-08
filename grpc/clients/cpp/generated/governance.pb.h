@@ -776,6 +776,7 @@ class NewMarketConfiguration PROTOBUF_FINAL :
     kMetadataFieldNumber = 3,
     kInstrumentFieldNumber = 1,
     kPriceMonitoringParametersFieldNumber = 4,
+    kLiquidityMonitoringParametersFieldNumber = 5,
     kDecimalPlacesFieldNumber = 2,
     kSimpleFieldNumber = 100,
     kLogNormalFieldNumber = 101,
@@ -841,6 +842,24 @@ class NewMarketConfiguration PROTOBUF_FINAL :
   void unsafe_arena_set_allocated_price_monitoring_parameters(
       ::vega::PriceMonitoringParameters* price_monitoring_parameters);
   ::vega::PriceMonitoringParameters* unsafe_arena_release_price_monitoring_parameters();
+
+  // .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];
+  bool has_liquidity_monitoring_parameters() const;
+  private:
+  bool _internal_has_liquidity_monitoring_parameters() const;
+  public:
+  void clear_liquidity_monitoring_parameters();
+  const ::vega::LiquidityMonitoringParameters& liquidity_monitoring_parameters() const;
+  ::vega::LiquidityMonitoringParameters* release_liquidity_monitoring_parameters();
+  ::vega::LiquidityMonitoringParameters* mutable_liquidity_monitoring_parameters();
+  void set_allocated_liquidity_monitoring_parameters(::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters);
+  private:
+  const ::vega::LiquidityMonitoringParameters& _internal_liquidity_monitoring_parameters() const;
+  ::vega::LiquidityMonitoringParameters* _internal_mutable_liquidity_monitoring_parameters();
+  public:
+  void unsafe_arena_set_allocated_liquidity_monitoring_parameters(
+      ::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters);
+  ::vega::LiquidityMonitoringParameters* unsafe_arena_release_liquidity_monitoring_parameters();
 
   // uint64 decimal_places = 2 [json_name = "decimalPlaces", (.validator.field) = {
   void clear_decimal_places();
@@ -947,6 +966,7 @@ class NewMarketConfiguration PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> metadata_;
   ::vega::InstrumentConfiguration* instrument_;
   ::vega::PriceMonitoringParameters* price_monitoring_parameters_;
+  ::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters_;
   ::PROTOBUF_NAMESPACE_ID::uint64 decimal_places_;
   union RiskParametersUnion {
     RiskParametersUnion() {}
@@ -3606,6 +3626,83 @@ inline void NewMarketConfiguration::set_allocated_price_monitoring_parameters(::
   }
   price_monitoring_parameters_ = price_monitoring_parameters;
   // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.price_monitoring_parameters)
+}
+
+// .vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];
+inline bool NewMarketConfiguration::_internal_has_liquidity_monitoring_parameters() const {
+  return this != internal_default_instance() && liquidity_monitoring_parameters_ != nullptr;
+}
+inline bool NewMarketConfiguration::has_liquidity_monitoring_parameters() const {
+  return _internal_has_liquidity_monitoring_parameters();
+}
+inline const ::vega::LiquidityMonitoringParameters& NewMarketConfiguration::_internal_liquidity_monitoring_parameters() const {
+  const ::vega::LiquidityMonitoringParameters* p = liquidity_monitoring_parameters_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::LiquidityMonitoringParameters&>(
+      ::vega::_LiquidityMonitoringParameters_default_instance_);
+}
+inline const ::vega::LiquidityMonitoringParameters& NewMarketConfiguration::liquidity_monitoring_parameters() const {
+  // @@protoc_insertion_point(field_get:vega.NewMarketConfiguration.liquidity_monitoring_parameters)
+  return _internal_liquidity_monitoring_parameters();
+}
+inline void NewMarketConfiguration::unsafe_arena_set_allocated_liquidity_monitoring_parameters(
+    ::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquidity_monitoring_parameters_);
+  }
+  liquidity_monitoring_parameters_ = liquidity_monitoring_parameters;
+  if (liquidity_monitoring_parameters) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.NewMarketConfiguration.liquidity_monitoring_parameters)
+}
+inline ::vega::LiquidityMonitoringParameters* NewMarketConfiguration::release_liquidity_monitoring_parameters() {
+
+  ::vega::LiquidityMonitoringParameters* temp = liquidity_monitoring_parameters_;
+  liquidity_monitoring_parameters_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::LiquidityMonitoringParameters* NewMarketConfiguration::unsafe_arena_release_liquidity_monitoring_parameters() {
+  // @@protoc_insertion_point(field_release:vega.NewMarketConfiguration.liquidity_monitoring_parameters)
+
+  ::vega::LiquidityMonitoringParameters* temp = liquidity_monitoring_parameters_;
+  liquidity_monitoring_parameters_ = nullptr;
+  return temp;
+}
+inline ::vega::LiquidityMonitoringParameters* NewMarketConfiguration::_internal_mutable_liquidity_monitoring_parameters() {
+
+  if (liquidity_monitoring_parameters_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::LiquidityMonitoringParameters>(GetArena());
+    liquidity_monitoring_parameters_ = p;
+  }
+  return liquidity_monitoring_parameters_;
+}
+inline ::vega::LiquidityMonitoringParameters* NewMarketConfiguration::mutable_liquidity_monitoring_parameters() {
+  // @@protoc_insertion_point(field_mutable:vega.NewMarketConfiguration.liquidity_monitoring_parameters)
+  return _internal_mutable_liquidity_monitoring_parameters();
+}
+inline void NewMarketConfiguration::set_allocated_liquidity_monitoring_parameters(::vega::LiquidityMonitoringParameters* liquidity_monitoring_parameters) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquidity_monitoring_parameters_);
+  }
+  if (liquidity_monitoring_parameters) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(liquidity_monitoring_parameters)->GetArena();
+    if (message_arena != submessage_arena) {
+      liquidity_monitoring_parameters = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, liquidity_monitoring_parameters, submessage_arena);
+    }
+
+  } else {
+
+  }
+  liquidity_monitoring_parameters_ = liquidity_monitoring_parameters;
+  // @@protoc_insertion_point(field_set_allocated:vega.NewMarketConfiguration.liquidity_monitoring_parameters)
 }
 
 // .vega.SimpleModelParams simple = 100 [json_name = "simple"];

@@ -30,6 +30,7 @@
     - [Future](#vega.Future)
     - [Instrument](#vega.Instrument)
     - [InstrumentMetadata](#vega.InstrumentMetadata)
+    - [LiquidityMonitoringParameters](#vega.LiquidityMonitoringParameters)
     - [LogNormalModelParams](#vega.LogNormalModelParams)
     - [LogNormalRiskModel](#vega.LogNormalRiskModel)
     - [MarginCalculator](#vega.MarginCalculator)
@@ -742,6 +743,23 @@ Instrument metadata definition
 
 
 
+<a name="vega.LiquidityMonitoringParameters"></a>
+
+### LiquidityMonitoringParameters
+LiquidityMonitoringParameters contains settings used for liquidity monitoring
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| target_stake_parameters | [TargetStakeParameters](#vega.TargetStakeParameters) |  | Specifies parameters related to target stake calculation |
+| triggering_ratio | [double](#double) |  | Specifies the triggering ratio for entering liquidity auction |
+| auction_extension | [int64](#int64) |  | Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction |
+
+
+
+
+
+
 <a name="vega.LogNormalModelParams"></a>
 
 ### LogNormalModelParams
@@ -807,7 +825,7 @@ Market definition
 | continuous | [ContinuousTrading](#vega.ContinuousTrading) |  | Continuous |
 | discrete | [DiscreteTrading](#vega.DiscreteTrading) |  | Discrete |
 | price_monitoring_settings | [PriceMonitoringSettings](#vega.PriceMonitoringSettings) |  | PriceMonitoringSettings for the market |
-| target_stake_parameters | [TargetStakeParameters](#vega.TargetStakeParameters) |  | TargetStakeParameters for the market |
+| liquidity_monitoring_parameters | [LiquidityMonitoringParameters](#vega.LiquidityMonitoringParameters) |  | LiquidityMonitoringParameters for the market |
 | trading_mode | [Market.TradingMode](#vega.Market.TradingMode) |  | Current mode of execution of the market |
 | state | [Market.State](#vega.Market.State) |  | Current state of the market |
 | market_timestamps | [MarketTimestamps](#vega.MarketTimestamps) |  | Timestamps for when the market staye changes |
@@ -1523,6 +1541,7 @@ An order can be submitted, amended and cancelled on Vega in an attempt to make t
 | version | [uint64](#uint64) |  | The version for the order, initial value is version 1 and is incremented after each successful amend |
 | batch_id | [uint64](#uint64) |  | Batch identifier for the order, used internally for orders submitted during auctions to keep track of the auction batch this order falls under (required for fees calculation) |
 | pegged_order | [PeggedOrder](#vega.PeggedOrder) |  | Pegged order details, used only if the order represents a pegged order. |
+| liquidity_provision_id | [string](#string) |  | Is this order created as part of a liquidity provision, will be empty if not. |
 
 
 
@@ -2198,7 +2217,8 @@ Status of a liquidity provision order
 | STATUS_STOPPED | 2 | The liquidity provision was stopped by the network |
 | STATUS_CANCELLED | 3 | The liquidity provision was cancelled by the liquidity provider |
 | STATUS_REJECTED | 4 | The liquidity provision was invalid and got rejected |
-| STATUS_UNDEPLOYED | 5 | The liquidity provision is valid and accepted by network, but oreders aren&#39;t deployed |
+| STATUS_UNDEPLOYED | 5 | The liquidity provision is valid and accepted by network, but orders aren&#39;t deployed |
+| STATUS_PENDING | 6 | The liquidity provision is valid and accepted by network but have never been deployed. I when it&#39;s possible to deploy them for the first time margin check fails, then they will be cancelled without any penalties. |
 
 
 
@@ -2688,6 +2708,7 @@ Configuration for a new market on Vega
 | decimal_places | [uint64](#uint64) |  | Decimal places used for the new market |
 | metadata | [string](#string) | repeated | Optional new market meta data, tags |
 | price_monitoring_parameters | [PriceMonitoringParameters](#vega.PriceMonitoringParameters) |  | Price monitoring parameters |
+| liquidity_monitoring_parameters | [LiquidityMonitoringParameters](#vega.LiquidityMonitoringParameters) |  | Liquidity monitoring parameters |
 | simple | [SimpleModelParams](#vega.SimpleModelParams) |  | Simple risk model parameters, valid only if MODEL_SIMPLE is selected |
 | log_normal | [LogNormalRiskModel](#vega.LogNormalRiskModel) |  | Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected |
 | continuous | [ContinuousTrading](#vega.ContinuousTrading) |  | Continuous trading |

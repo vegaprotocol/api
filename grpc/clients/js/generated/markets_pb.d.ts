@@ -540,6 +540,36 @@ export namespace PriceMonitoringSettings {
   }
 }
 
+export class LiquidityMonitoringParameters extends jspb.Message {
+  hasTargetStakeParameters(): boolean;
+  clearTargetStakeParameters(): void;
+  getTargetStakeParameters(): TargetStakeParameters | undefined;
+  setTargetStakeParameters(value?: TargetStakeParameters): void;
+
+  getTriggeringRatio(): number;
+  setTriggeringRatio(value: number): void;
+
+  getAuctionExtension(): number;
+  setAuctionExtension(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LiquidityMonitoringParameters.AsObject;
+  static toObject(includeInstance: boolean, msg: LiquidityMonitoringParameters): LiquidityMonitoringParameters.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LiquidityMonitoringParameters, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LiquidityMonitoringParameters;
+  static deserializeBinaryFromReader(message: LiquidityMonitoringParameters, reader: jspb.BinaryReader): LiquidityMonitoringParameters;
+}
+
+export namespace LiquidityMonitoringParameters {
+  export type AsObject = {
+    targetStakeParameters?: TargetStakeParameters.AsObject,
+    triggeringRatio: number,
+    auctionExtension: number,
+  }
+}
+
 export class TargetStakeParameters extends jspb.Message {
   getTimeWindow(): number;
   setTimeWindow(value: number): void;
@@ -601,10 +631,10 @@ export class Market extends jspb.Message {
   getPriceMonitoringSettings(): PriceMonitoringSettings | undefined;
   setPriceMonitoringSettings(value?: PriceMonitoringSettings): void;
 
-  hasTargetStakeParameters(): boolean;
-  clearTargetStakeParameters(): void;
-  getTargetStakeParameters(): TargetStakeParameters | undefined;
-  setTargetStakeParameters(value?: TargetStakeParameters): void;
+  hasLiquidityMonitoringParameters(): boolean;
+  clearLiquidityMonitoringParameters(): void;
+  getLiquidityMonitoringParameters(): LiquidityMonitoringParameters | undefined;
+  setLiquidityMonitoringParameters(value?: LiquidityMonitoringParameters): void;
 
   getTradingMode(): Market.TradingModeMap[keyof Market.TradingModeMap];
   setTradingMode(value: Market.TradingModeMap[keyof Market.TradingModeMap]): void;
@@ -638,7 +668,7 @@ export namespace Market {
     continuous?: ContinuousTrading.AsObject,
     discrete?: DiscreteTrading.AsObject,
     priceMonitoringSettings?: PriceMonitoringSettings.AsObject,
-    targetStakeParameters?: TargetStakeParameters.AsObject,
+    liquidityMonitoringParameters?: LiquidityMonitoringParameters.AsObject,
     tradingMode: Market.TradingModeMap[keyof Market.TradingModeMap],
     state: Market.StateMap[keyof Market.StateMap],
     marketTimestamps?: MarketTimestamps.AsObject,

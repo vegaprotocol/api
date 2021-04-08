@@ -281,6 +281,10 @@
                 </li>
 
                 <li>
+                  <a href="#vega.LiquidityMonitoringParameters"><span class="badge">M</span>LiquidityMonitoringParameters</a>
+                </li>
+
+                <li>
                   <a href="#vega.LogNormalModelParams"><span class="badge">M</span>LogNormalModelParams</a>
                 </li>
 
@@ -2510,6 +2514,73 @@ anymore.</p></td>
 
 
 
+        <h3 id="vega.LiquidityMonitoringParameters">LiquidityMonitoringParameters</h3>
+        <p>LiquidityMonitoringParameters contains settings used for liquidity monitoring</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>target_stake_parameters</td>
+                  <td><a href="#vega.TargetStakeParameters">TargetStakeParameters</a></td>
+                  <td></td>
+                  <td><p>Specifies parameters related to target stake calculation </p></td>
+                </tr>
+
+                <tr>
+                  <td>triggering_ratio</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>Specifies the triggering ratio for entering liquidity auction </p></td>
+                </tr>
+
+                <tr>
+                  <td>auction_extension</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+            <h4>Validated Fields</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Field</td>
+                  <td>Validations</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>triggering_ratio</td>
+                  <td>
+                    <ul>
+
+                      <li>float_gte: 0</li>
+
+                      <li>float_lte: 1</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+
+
+
         <h3 id="vega.LogNormalModelParams">LogNormalModelParams</h3>
         <p>Risk model parameters for log normal</p>
 
@@ -2680,10 +2751,10 @@ duration and optionally a minimum traded volume) </p></td>
                 </tr>
 
                 <tr>
-                  <td>target_stake_parameters</td>
-                  <td><a href="#vega.TargetStakeParameters">TargetStakeParameters</a></td>
+                  <td>liquidity_monitoring_parameters</td>
+                  <td><a href="#vega.LiquidityMonitoringParameters">LiquidityMonitoringParameters</a></td>
                   <td></td>
-                  <td><p>TargetStakeParameters for the market </p></td>
+                  <td><p>LiquidityMonitoringParameters for the market </p></td>
                 </tr>
 
                 <tr>
@@ -4903,6 +4974,13 @@ to keep track of the auction batch this order falls under (required for fees cal
                   <td><p>Pegged order details, used only if the order represents a pegged order. </p></td>
                 </tr>
 
+                <tr>
+                  <td>liquidity_provision_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Is this order created as part of a liquidity provision, will be empty if not. </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -6945,7 +7023,15 @@ who provide the best priced liquidity that actually allows trading to take place
               <tr>
                 <td>STATUS_UNDEPLOYED</td>
                 <td>5</td>
-                <td><p>The liquidity provision is valid and accepted by network, but oreders aren&#39;t deployed</p></td>
+                <td><p>The liquidity provision is valid and accepted by network, but orders aren&#39;t deployed</p></td>
+              </tr>
+
+              <tr>
+                <td>STATUS_PENDING</td>
+                <td>6</td>
+                <td><p>The liquidity provision is valid and accepted by network
+but have never been deployed. I when it&#39;s possible to deploy them for the first time
+margin check fails, then they will be cancelled without any penalties.</p></td>
               </tr>
 
           </tbody>
@@ -8434,6 +8520,13 @@ value (Vote) is the vote cast by the given party </p></td>
                   <td><a href="#vega.PriceMonitoringParameters">PriceMonitoringParameters</a></td>
                   <td></td>
                   <td><p>Price monitoring parameters </p></td>
+                </tr>
+
+                <tr>
+                  <td>liquidity_monitoring_parameters</td>
+                  <td><a href="#vega.LiquidityMonitoringParameters">LiquidityMonitoringParameters</a></td>
+                  <td></td>
+                  <td><p>Liquidity monitoring parameters </p></td>
                 </tr>
 
                 <tr>

@@ -2320,6 +2320,26 @@
       "title": "Represents a ledger entry on Vega",
       "type": "object"
     },
+    "vegaLiquidityMonitoringParameters": {
+      "properties": {
+        "auction_extension": {
+          "format": "int64",
+          "title": "Specifies by how many seconds an auction should be extended if leaving the auction were to trigger a liquidity auction",
+          "type": "string"
+        },
+        "target_stake_parameters": {
+          "$ref": "#/definitions/vegaTargetStakeParameters",
+          "title": "Specifies parameters related to target stake calculation"
+        },
+        "triggering_ratio": {
+          "format": "double",
+          "title": "Specifies the triggering ratio for entering liquidity auction",
+          "type": "number"
+        }
+      },
+      "title": "LiquidityMonitoringParameters contains settings used for liquidity monitoring",
+      "type": "object"
+    },
     "vegaLiquidityOrder": {
       "properties": {
         "offset": {
@@ -2437,14 +2457,15 @@
     },
     "vegaLiquidityProvisionStatus": {
       "default": "STATUS_UNSPECIFIED",
-      "description": "- STATUS_UNSPECIFIED: The default value\n - STATUS_ACTIVE: The liquidity provision is active\n - STATUS_STOPPED: The liquidity provision was stopped by the network\n - STATUS_CANCELLED: The liquidity provision was cancelled by the liquidity provider\n - STATUS_REJECTED: The liquidity provision was invalid and got rejected\n - STATUS_UNDEPLOYED: The liquidity provision is valid and accepted by network, but oreders aren't deployed",
+      "description": "- STATUS_UNSPECIFIED: The default value\n - STATUS_ACTIVE: The liquidity provision is active\n - STATUS_STOPPED: The liquidity provision was stopped by the network\n - STATUS_CANCELLED: The liquidity provision was cancelled by the liquidity provider\n - STATUS_REJECTED: The liquidity provision was invalid and got rejected\n - STATUS_UNDEPLOYED: The liquidity provision is valid and accepted by network, but orders aren't deployed\n - STATUS_PENDING: The liquidity provision is valid and accepted by network\nbut have never been deployed. I when it's possible to deploy them for the first time\nmargin check fails, then they will be cancelled without any penalties.",
       "enum": [
         "STATUS_UNSPECIFIED",
         "STATUS_ACTIVE",
         "STATUS_STOPPED",
         "STATUS_CANCELLED",
         "STATUS_REJECTED",
-        "STATUS_UNDEPLOYED"
+        "STATUS_UNDEPLOYED",
+        "STATUS_PENDING"
       ],
       "title": "Status of a liquidity provision order",
       "type": "string"
@@ -2621,6 +2642,10 @@
           "title": "Unique identifier",
           "type": "string"
         },
+        "liquidity_monitoring_parameters": {
+          "$ref": "#/definitions/vegaLiquidityMonitoringParameters",
+          "title": "LiquidityMonitoringParameters for the market"
+        },
         "market_timestamps": {
           "$ref": "#/definitions/vegaMarketTimestamps",
           "title": "Timestamps for when the market staye changes"
@@ -2636,10 +2661,6 @@
         "state": {
           "$ref": "#/definitions/vegaMarketState",
           "title": "Current state of the market"
-        },
-        "target_stake_parameters": {
-          "$ref": "#/definitions/vegaTargetStakeParameters",
-          "title": "TargetStakeParameters for the market"
         },
         "tradable_instrument": {
           "$ref": "#/definitions/vegaTradableInstrument",
@@ -3003,6 +3024,10 @@
           "$ref": "#/definitions/vegaInstrumentConfiguration",
           "title": "New market instrument configuration"
         },
+        "liquidity_monitoring_parameters": {
+          "$ref": "#/definitions/vegaLiquidityMonitoringParameters",
+          "title": "Liquidity monitoring parameters"
+        },
         "log_normal": {
           "$ref": "#/definitions/vegaLogNormalRiskModel",
           "title": "Log normal risk model parameters, valid only if MODEL_LOG_NORMAL is selected"
@@ -3085,6 +3110,10 @@
         },
         "id": {
           "title": "Unique identifier for the order (set by the system after consensus)",
+          "type": "string"
+        },
+        "liquidity_provision_id": {
+          "description": "Is this order created as part of a liquidity provision, will be empty if not.",
           "type": "string"
         },
         "market_id": {
