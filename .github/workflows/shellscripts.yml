@@ -3,14 +3,16 @@
 name: Shell script tests
 
 "on":
-  push:
-    branches:
-      - develop
-      - master
   pull_request:
     branches:
       - develop
       - master
+    paths-ignore:
+      - grpc/clients/cpp/generated
+      - grpc/clients/go/generated
+      - grpc/clients/java/generated
+      - grpc/clients/js/generated
+      - grpc/clients/python/vegaapiclient/generated
 
 jobs:
 

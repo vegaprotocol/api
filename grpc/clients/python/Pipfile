@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+grpcio-tools = "*"
+pytest = "*"
+pytest-cov = "*"
+requests = "*"
+importlib-metadata = "*"
+jinja2 = ">=2.11.3"
+googleapis-common-protos = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3"

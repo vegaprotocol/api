@@ -5,61 +5,61 @@ plugins:
 
   # Documentation
   - name: doc
-    out: doc
+    out: grpc/doc
     opt: html,index.html
     strategy: all
 
   - name: doc
-    out: doc
+    out: grpc/doc
     opt: markdown,index.md
     strategy: all
 
   # C++
   - name: cpp
-    out: cpp/generated
+    out: grpc/clients/cpp/generated
 
   - name: cpp-grpc
-    out: cpp/generated
+    out: grpc/clients/cpp/generated
     path: grpc_cpp_plugin
 
   # Go
   - name: go
-    out: go/generated
+    out: grpc/clients/go/generated
 
   - name: go-grpc
-    out: go/generated
+    out: grpc/clients/go/generated
 
   - name: govalidators
-    out: go/generated
+    out: grpc/clients/go/generated
     # opt: paths=source_relative
 
   # Java
   - name: java
-    out: java/generated
+    out: grpc/clients/java/generated
 
   # JavaScript and TypeScript
   - name: js
-    out: js/generated
+    out: grpc/clients/js/generated
     opt: import_style=commonjs,binary
 
   - name: ts
-    out: js/generated  # not a typo: ts files go in the js dir.
-    path: ./js/node_modules/.bin/protoc-gen-ts
+    out: grpc/clients/js/generated  # not a typo: ts files go in the js dir.
+    path: ./grpc/clients/js/node_modules/.bin/protoc-gen-ts
 
   - name: ts-grpc-node
-    out: js/generated  # not a typo: ts files go in the js dir.
+    out: grpc/clients/js/generated  # not a typo: ts files go in the js dir.
     opt: service=grpc-node
-    path: ./js/node_modules/.bin/protoc-gen-ts
+    path: ./grpc/clients/js/node_modules/.bin/protoc-gen-ts
 
   - name: ts-grpc-web
-    out: js/generated  # not a typo: ts files go in the js dir.
+    out: grpc/clients/js/generated  # not a typo: ts files go in the js dir.
     opt: service=grpc-web
-    path: ./js/node_modules/.bin/protoc-gen-ts
+    path: ./grpc/clients/js/node_modules/.bin/protoc-gen-ts
 
   # Python
   - name: python
-    out: python/vegaapiclient/generated
+    out: grpc/clients/python/vegaapiclient/generated
 
   - name: python-grpc
-    out: python/vegaapiclient/generated
+    out: grpc/clients/python/vegaapiclient/generated
     path: grpc_python_plugin

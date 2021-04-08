@@ -8,11 +8,7 @@ name: YAML lint
       - develop
       - master
     paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "js/**"
-      - "python/**"
+      - "grpc/clients/**"
 
 jobs:
 

@@ -25,7 +25,7 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TWINE_TEST_PASSWORD }}
         run: |
-          cd python
+          cd grpc/clients/python
           github_tag="${GITHUB_REF/refs\/tags\/v/}"
           sed --in-place -e 's#^VERSION.*$#VERSION = "'"$github_tag"'"#' setup.py
           setuppy_tag="$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"

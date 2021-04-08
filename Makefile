@@ -5,24 +5,8 @@ SHELL := /usr/bin/env bash
 .PHONY: default
 default:
 	@echo "Please select a target:"
-	@echo "- pregraphql:  Copy schema.graphql from vega core repository."
-	@echo "- graphql:     Build GraphQL documentation."
 	@echo "- preproto:    Copy *.proto from vega core repository."
 	@echo "- proto:       Run buf to auto-generate API clients and gRPC documentation."
-
-.PHONY: pregraphql
-pregraphql:
-	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
-	@cp -a "$(VEGACORE)/gateway/graphql/schema.graphql" graphql/
-
-.PHONY: graphql
-graphql:
-	@cd graphql && \
-	gd=./node_modules/.bin/graphqldoc && \
-	if ! test -x "$$gd" ; then \
-		npm install || exit 1 ; \
-	fi && \
-	"$$gd" -f -s schema.graphql -o doc/
 
 .PHONY: preproto
 preproto:
@@ -38,16 +22,19 @@ preproto:
 	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
 	@find proto/oracles/v1 -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.oracles.v1";'
 	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
+	@cp -a "$(VEGACORE)/gateway/rest/grpc-rest-bindings.yml" ./rest/
 
 .PHONY: buf-build
 buf-build:
 	@buf build
 
-CPP_GENERATED_DIR := cpp/generated
-GO_GENERATED_DIR := go/generated
-JAVA_GENERATED_DIR := java/generated
-JAVASCRIPT_GENERATED_DIR := js/generated
-PYTHON_GENERATED_DIR := python/vegaapiclient/generated
+DOC_GENERATED_DIR := grpc/doc
+
+CPP_GENERATED_DIR := grpc/clients/cpp/generated
+GO_GENERATED_DIR := grpc/clients/go/generated
+JAVA_GENERATED_DIR := grpc/clients/java/generated
+JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
+PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
 
 .PHONY: buf-generate
 buf-generate: buf-build
@@ -63,6 +50,9 @@ buf-generate: buf-build
 	@if ! command -v protoc-gen-govalidators 1>/dev/null ; then \
 		go get github.com/mwitkow/go-proto-validators/protoc-gen-govalidators@v0.3.2 || exit 1 ; \
 	fi
+	@if ! command -v protoc-gen-swagger 1>/dev/null ; then \
+		go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger@v1.8.5 || exit 1 ; \
+	fi
 	@for cmd in grpc_cpp_plugin grpc_python_plugin ; do \
 		if ! command -v "$$cmd" 1>/dev/null ; then \
 			echo "Not found/executable: $$cmd" ; \
@@ -70,9 +60,9 @@ buf-generate: buf-build
 			exit 1 ; \
 		fi ; \
 	done
-	@proto_gen_ts=./js/node_modules/.bin/protoc-gen-ts && \
+	@proto_gen_ts=./grpc/clients/js/node_modules/.bin/protoc-gen-ts && \
 	if ! test -r "$$proto_gen_ts" -a -x "$$proto_gen_ts" ; then \
-		pushd js 1>/dev/null && \
+		pushd grpc/clients/js 1>/dev/null && \
 		npm install && \
 		popd 1>/dev/null && \
 		if ! test -r "$$proto_gen_ts" -a -x "$$proto_gen_ts" ; then \
@@ -90,14 +80,17 @@ buf-generate: buf-build
 		rm -rf "$$d" && mkdir -p "$$d" || exit 1 ; \
 	done
 	@buf generate
+	@buf generate --path=./proto/api --template=./rest/buf.gen.yaml
 
 .PHONY: proto
 proto: buf-generate
-	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./cpp/post-generate.sh
-	@env GO_GENERATED_DIR="$(GO_GENERATED_DIR)" ./go/post-generate.sh
-	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./java/post-generate.sh
-	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./js/post-generate.sh
-	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./python/post-generate.sh
+	@env DOC_GENERATED_DIR="$(DOC_GENERATED_DIR)" ./grpc/doc/post-generate.sh
+	@env CPP_GENERATED_DIR="$(CPP_GENERATED_DIR)" ./grpc/clients/cpp/post-generate.sh
+	@env GO_GENERATED_DIR="$(GO_GENERATED_DIR)" ./grpc/clients/go/post-generate.sh
+	@env JAVA_GENERATED_DIR="$(JAVA_GENERATED_DIR)" ./grpc/clients/java/post-generate.sh
+	@env JAVASCRIPT_GENERATED_DIR="$(JAVASCRIPT_GENERATED_DIR)" ./grpc/clients/js/post-generate.sh
+	@env PYTHON_GENERATED_DIR="$(PYTHON_GENERATED_DIR)" ./grpc/clients/python/post-generate.sh
+	@./rest/post-generate.sh
 
 # Test
 
@@ -118,11 +111,23 @@ test-java:
 
 .PHONY: test-javascript
 test-javascript:
-	@cd js && npm install && npm test
+	@cd grpc/clients/js && npm install && npm test
 
 .PHONY: test
 test-python:
-	@cd python && make test
+	@cd grpc/clients/python && make test
+
+# Misc
+
+.PHONY: spellcheck
+spellcheck:
+	@if ! test -d "/tmp/venv-pyspelling" ; then \
+		virtualenv /tmp/venv-pyspelling || exit 1 ; \
+	fi && \
+	source /tmp/venv-pyspelling/bin/activate && \
+	pip install -q --upgrade pyspelling && \
+	pyspelling -c spellcheck.yaml && \
+	deactivate
 
 # Clean
 

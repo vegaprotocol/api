@@ -1,0 +1,26 @@
+---
+
+name: Spellcheck
+
+"on":
+  pull_request:
+    branches:
+      - develop
+      - master
+    paths-ignore:
+      - grpc/clients/cpp/generated
+      - grpc/clients/go/generated
+      - grpc/clients/java/generated
+      - grpc/clients/js/generated
+      - grpc/clients/python/vegaapiclient/generated
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Spellcheck
+        uses: igsekor/pyspelling-any@v1.0.4

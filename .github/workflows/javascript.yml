@@ -8,19 +8,21 @@ name: Javascript tests
       - develop
       - master
     paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "python/**"
+      - "grpc/clients/cpp/**"
+      - "grpc/clients/go/**"
+      - "grpc/clients/java/**"
+      # do not ignore grpc/clients/js/
+      - "grpc/clients/python/**"
   pull_request:
     branches:
       - develop
       - master
     paths-ignore:
-      - "cpp/**"
-      - "go/**"
-      - "java/**"
-      - "python/**"
+      - "grpc/clients/cpp/**"
+      - "grpc/clients/go/**"
+      - "grpc/clients/java/**"
+      # do not ignore grpc/clients/js/
+      - "grpc/clients/python/**"
 
 jobs:
 
@@ -40,12 +42,12 @@ jobs:
 
       - name: Install
         run: |
-          cd js
+          cd grpc/clients/js
           npm ci
 
       - name: Lint
         run: |
-          cd js
+          cd grpc/clients/js
           npm run lint
 
       - name: Test
@@ -54,5 +56,5 @@ jobs:
           GRPC_NODE: ${{ secrets.GRPC_NODE }}
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
-          cd js
+          cd grpc/clients/js
           npm test
