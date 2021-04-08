@@ -111,17 +111,23 @@ test-java:
 
 .PHONY: test-javascript
 test-javascript:
-	@cd clients/js && npm install && npm test
+	@cd grpc/clients/js && npm install && npm test
 
 .PHONY: test
 test-python:
-	@cd clients/python && make test
+	@cd grpc/clients/python && make test
 
 # Misc
 
 .PHONY: spellcheck
 spellcheck:
-	@pyspelling -c spellcheck.yaml
+	@if ! test -d "/tmp/venv-pyspelling" ; then \
+		virtualenv /tmp/venv-pyspelling || exit 1 ; \
+	fi && \
+	source /tmp/venv-pyspelling/bin/activate && \
+	pip install -q --upgrade pyspelling && \
+	pyspelling -c spellcheck.yaml && \
+	deactivate
 
 # Clean
 
