@@ -1,6 +1,9 @@
 package txn
 
 import (
+	"errors"
+	"fmt"
+
 	protobufproto "github.com/golang/protobuf/proto"
 	uuid "github.com/satori/go.uuid"
 	"github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/api"
