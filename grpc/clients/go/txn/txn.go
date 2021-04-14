@@ -44,7 +44,7 @@ const (
 func marshalEncode(submission protobufproto.Message, cmd Command) (encoded []byte, err error) {
 	raw, err := protobufproto.Marshal(submission)
 	if err != nil {
-		return nil, fmt.Errorf("failed to marshal request", err)
+		return nil, fmt.Errorf("failed to marshal request: %w", err)
 	}
 
 	prefixBytes := []byte(uuid.NewV4().String())
