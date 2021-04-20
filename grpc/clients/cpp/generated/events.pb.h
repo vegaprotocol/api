@@ -373,6 +373,7 @@ class TxErrorEvent PROTOBUF_FINAL :
     kOrderCancellation = 103,
     kProposal = 104,
     kVote = 105,
+    kLiquidityProvisionSubmission = 106,
     TRANSACTION_NOT_SET = 0,
   };
 
@@ -459,6 +460,7 @@ class TxErrorEvent PROTOBUF_FINAL :
     kOrderCancellationFieldNumber = 103,
     kProposalFieldNumber = 104,
     kVoteFieldNumber = 105,
+    kLiquidityProvisionSubmissionFieldNumber = 106,
   };
   // string party_id = 1 [json_name = "partyId"];
   void clear_party_id();
@@ -582,6 +584,24 @@ class TxErrorEvent PROTOBUF_FINAL :
       ::vega::Vote* vote);
   ::vega::Vote* unsafe_arena_release_vote();
 
+  // .vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];
+  bool has_liquidity_provision_submission() const;
+  private:
+  bool _internal_has_liquidity_provision_submission() const;
+  public:
+  void clear_liquidity_provision_submission();
+  const ::vega::LiquidityProvisionSubmission& liquidity_provision_submission() const;
+  ::vega::LiquidityProvisionSubmission* release_liquidity_provision_submission();
+  ::vega::LiquidityProvisionSubmission* mutable_liquidity_provision_submission();
+  void set_allocated_liquidity_provision_submission(::vega::LiquidityProvisionSubmission* liquidity_provision_submission);
+  private:
+  const ::vega::LiquidityProvisionSubmission& _internal_liquidity_provision_submission() const;
+  ::vega::LiquidityProvisionSubmission* _internal_mutable_liquidity_provision_submission();
+  public:
+  void unsafe_arena_set_allocated_liquidity_provision_submission(
+      ::vega::LiquidityProvisionSubmission* liquidity_provision_submission);
+  ::vega::LiquidityProvisionSubmission* unsafe_arena_release_liquidity_provision_submission();
+
   void clear_transaction();
   TransactionCase transaction_case() const;
   // @@protoc_insertion_point(class_scope:vega.TxErrorEvent)
@@ -592,6 +612,7 @@ class TxErrorEvent PROTOBUF_FINAL :
   void set_has_order_cancellation();
   void set_has_proposal();
   void set_has_vote();
+  void set_has_liquidity_provision_submission();
 
   inline bool has_transaction() const;
   inline void clear_has_transaction();
@@ -608,6 +629,7 @@ class TxErrorEvent PROTOBUF_FINAL :
     ::vega::OrderCancellation* order_cancellation_;
     ::vega::Proposal* proposal_;
     ::vega::Vote* vote_;
+    ::vega::LiquidityProvisionSubmission* liquidity_provision_submission_;
   } transaction_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2039,6 +2061,7 @@ class AuctionEvent PROTOBUF_FINAL :
     kTriggerFieldNumber = 6,
     kStartFieldNumber = 4,
     kEndFieldNumber = 5,
+    kExtensionTriggerFieldNumber = 7,
   };
   // string market_id = 1 [json_name = "marketId"];
   void clear_market_id();
@@ -2101,6 +2124,15 @@ class AuctionEvent PROTOBUF_FINAL :
   void _internal_set_end(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
+  // .vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];
+  void clear_extension_trigger();
+  ::vega::AuctionTrigger extension_trigger() const;
+  void set_extension_trigger(::vega::AuctionTrigger value);
+  private:
+  ::vega::AuctionTrigger _internal_extension_trigger() const;
+  void _internal_set_extension_trigger(::vega::AuctionTrigger value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vega.AuctionEvent)
  private:
   class _Internal;
@@ -2114,6 +2146,7 @@ class AuctionEvent PROTOBUF_FINAL :
   int trigger_;
   ::PROTOBUF_NAMESPACE_ID::int64 start_;
   ::PROTOBUF_NAMESPACE_ID::int64 end_;
+  int extension_trigger_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_events_2eproto;
 };
@@ -3525,6 +3558,71 @@ inline ::vega::Vote* TxErrorEvent::mutable_vote() {
   return _internal_mutable_vote();
 }
 
+// .vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];
+inline bool TxErrorEvent::_internal_has_liquidity_provision_submission() const {
+  return transaction_case() == kLiquidityProvisionSubmission;
+}
+inline bool TxErrorEvent::has_liquidity_provision_submission() const {
+  return _internal_has_liquidity_provision_submission();
+}
+inline void TxErrorEvent::set_has_liquidity_provision_submission() {
+  _oneof_case_[0] = kLiquidityProvisionSubmission;
+}
+inline ::vega::LiquidityProvisionSubmission* TxErrorEvent::release_liquidity_provision_submission() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.liquidity_provision_submission)
+  if (_internal_has_liquidity_provision_submission()) {
+    clear_has_transaction();
+      ::vega::LiquidityProvisionSubmission* temp = transaction_.liquidity_provision_submission_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transaction_.liquidity_provision_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::LiquidityProvisionSubmission& TxErrorEvent::_internal_liquidity_provision_submission() const {
+  return _internal_has_liquidity_provision_submission()
+      ? *transaction_.liquidity_provision_submission_
+      : reinterpret_cast< ::vega::LiquidityProvisionSubmission&>(::vega::_LiquidityProvisionSubmission_default_instance_);
+}
+inline const ::vega::LiquidityProvisionSubmission& TxErrorEvent::liquidity_provision_submission() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.liquidity_provision_submission)
+  return _internal_liquidity_provision_submission();
+}
+inline ::vega::LiquidityProvisionSubmission* TxErrorEvent::unsafe_arena_release_liquidity_provision_submission() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TxErrorEvent.liquidity_provision_submission)
+  if (_internal_has_liquidity_provision_submission()) {
+    clear_has_transaction();
+    ::vega::LiquidityProvisionSubmission* temp = transaction_.liquidity_provision_submission_;
+    transaction_.liquidity_provision_submission_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TxErrorEvent::unsafe_arena_set_allocated_liquidity_provision_submission(::vega::LiquidityProvisionSubmission* liquidity_provision_submission) {
+  clear_transaction();
+  if (liquidity_provision_submission) {
+    set_has_liquidity_provision_submission();
+    transaction_.liquidity_provision_submission_ = liquidity_provision_submission;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TxErrorEvent.liquidity_provision_submission)
+}
+inline ::vega::LiquidityProvisionSubmission* TxErrorEvent::_internal_mutable_liquidity_provision_submission() {
+  if (!_internal_has_liquidity_provision_submission()) {
+    clear_transaction();
+    set_has_liquidity_provision_submission();
+    transaction_.liquidity_provision_submission_ = CreateMaybeMessage< ::vega::LiquidityProvisionSubmission >(GetArena());
+  }
+  return transaction_.liquidity_provision_submission_;
+}
+inline ::vega::LiquidityProvisionSubmission* TxErrorEvent::mutable_liquidity_provision_submission() {
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.liquidity_provision_submission)
+  return _internal_mutable_liquidity_provision_submission();
+}
+
 inline bool TxErrorEvent::has_transaction() const {
   return transaction_case() != TRANSACTION_NOT_SET;
 }
@@ -4512,6 +4610,26 @@ inline void AuctionEvent::_internal_set_trigger(::vega::AuctionTrigger value) {
 inline void AuctionEvent::set_trigger(::vega::AuctionTrigger value) {
   _internal_set_trigger(value);
   // @@protoc_insertion_point(field_set:vega.AuctionEvent.trigger)
+}
+
+// .vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];
+inline void AuctionEvent::clear_extension_trigger() {
+  extension_trigger_ = 0;
+}
+inline ::vega::AuctionTrigger AuctionEvent::_internal_extension_trigger() const {
+  return static_cast< ::vega::AuctionTrigger >(extension_trigger_);
+}
+inline ::vega::AuctionTrigger AuctionEvent::extension_trigger() const {
+  // @@protoc_insertion_point(field_get:vega.AuctionEvent.extension_trigger)
+  return _internal_extension_trigger();
+}
+inline void AuctionEvent::_internal_set_extension_trigger(::vega::AuctionTrigger value) {
+
+  extension_trigger_ = value;
+}
+inline void AuctionEvent::set_extension_trigger(::vega::AuctionTrigger value) {
+  _internal_set_extension_trigger(value);
+  // @@protoc_insertion_point(field_set:vega.AuctionEvent.extension_trigger)
 }
 
 // -------------------------------------------------------------------

@@ -9202,6 +9202,24 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
                 <td><p>Market proposal market contained invalid product definition</p></td>
               </tr>
 
+              <tr>
+                <td>PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT</td>
+                <td>27</td>
+                <td><p>Market proposal is missing commitment amount</p></td>
+              </tr>
+
+              <tr>
+                <td>PROPOSAL_ERROR_INVALID_FEE_AMOUNT</td>
+                <td>28</td>
+                <td><p>Market proposal have invalid fee</p></td>
+              </tr>
+
+              <tr>
+                <td>PROPOSAL_ERROR_INVALID_SHAPE</td>
+                <td>29</td>
+                <td><p>Market proposal have invalid shape</p></td>
+              </tr>
+
           </tbody>
         </table>
 
@@ -10054,6 +10072,14 @@ time. </p></td>
                   <td><p>the reason this market is/was in auction </p></td>
                 </tr>
 
+                <tr>
+                  <td>extension_trigger</td>
+                  <td><a href="#vega.AuctionTrigger">AuctionTrigger</a></td>
+                  <td></td>
+                  <td><p>If an auction was ongoing, but was extended for whatever reason, this field will
+be set to the trigger type indicating which component extended the auction </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -10676,6 +10702,13 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                 <tr>
                   <td>vote</td>
                   <td><a href="#vega.Vote">Vote</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>liquidity_provision_submission</td>
+                  <td><a href="#vega.LiquidityProvisionSubmission">LiquidityProvisionSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

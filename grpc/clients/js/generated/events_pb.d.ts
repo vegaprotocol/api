@@ -65,6 +65,11 @@ export class TxErrorEvent extends jspb.Message {
   getVote(): governance_pb.Vote | undefined;
   setVote(value?: governance_pb.Vote): void;
 
+  hasLiquidityProvisionSubmission(): boolean;
+  clearLiquidityProvisionSubmission(): void;
+  getLiquidityProvisionSubmission(): vega_pb.LiquidityProvisionSubmission | undefined;
+  setLiquidityProvisionSubmission(value?: vega_pb.LiquidityProvisionSubmission): void;
+
   getTransactionCase(): TxErrorEvent.TransactionCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TxErrorEvent.AsObject;
@@ -85,6 +90,7 @@ export namespace TxErrorEvent {
     orderCancellation?: vega_pb.OrderCancellation.AsObject,
     proposal?: governance_pb.Proposal.AsObject,
     vote?: governance_pb.Vote.AsObject,
+    liquidityProvisionSubmission?: vega_pb.LiquidityProvisionSubmission.AsObject,
   }
 
   export enum TransactionCase {
@@ -94,6 +100,7 @@ export namespace TxErrorEvent {
     ORDER_CANCELLATION = 103,
     PROPOSAL = 104,
     VOTE = 105,
+    LIQUIDITY_PROVISION_SUBMISSION = 106,
   }
 }
 
@@ -332,6 +339,9 @@ export class AuctionEvent extends jspb.Message {
   getTrigger(): vega_pb.AuctionTriggerMap[keyof vega_pb.AuctionTriggerMap];
   setTrigger(value: vega_pb.AuctionTriggerMap[keyof vega_pb.AuctionTriggerMap]): void;
 
+  getExtensionTrigger(): vega_pb.AuctionTriggerMap[keyof vega_pb.AuctionTriggerMap];
+  setExtensionTrigger(value: vega_pb.AuctionTriggerMap[keyof vega_pb.AuctionTriggerMap]): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AuctionEvent.AsObject;
   static toObject(includeInstance: boolean, msg: AuctionEvent): AuctionEvent.AsObject;
@@ -350,6 +360,7 @@ export namespace AuctionEvent {
     start: number,
     end: number,
     trigger: vega_pb.AuctionTriggerMap[keyof vega_pb.AuctionTriggerMap],
+    extensionTrigger: vega_pb.AuctionTriggerMap[keyof vega_pb.AuctionTriggerMap],
   }
 }
 

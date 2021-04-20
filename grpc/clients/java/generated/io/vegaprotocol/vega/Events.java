@@ -1557,6 +1557,21 @@ public final class Events {
      */
     io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder();
 
+    /**
+     * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+     * @return Whether the liquidityProvisionSubmission field is set.
+     */
+    boolean hasLiquidityProvisionSubmission();
+    /**
+     * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+     * @return The liquidityProvisionSubmission.
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getLiquidityProvisionSubmission();
+    /**
+     * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+     */
+    io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder getLiquidityProvisionSubmissionOrBuilder();
+
     public io.vegaprotocol.vega.Events.TxErrorEvent.TransactionCase getTransactionCase();
   }
   /**
@@ -1688,6 +1703,20 @@ public final class Events {
               transactionCase_ = 105;
               break;
             }
+            case 850: {
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder subBuilder = null;
+              if (transactionCase_ == 106) {
+                subBuilder = ((io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_).toBuilder();
+              }
+              transaction_ =
+                  input.readMessage(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_);
+                transaction_ = subBuilder.buildPartial();
+              }
+              transactionCase_ = 106;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1730,6 +1759,7 @@ public final class Events {
       ORDER_CANCELLATION(103),
       PROPOSAL(104),
       VOTE(105),
+      LIQUIDITY_PROVISION_SUBMISSION(106),
       TRANSACTION_NOT_SET(0);
       private final int value;
       private TransactionCase(int value) {
@@ -1752,6 +1782,7 @@ public final class Events {
           case 103: return ORDER_CANCELLATION;
           case 104: return PROPOSAL;
           case 105: return VOTE;
+          case 106: return LIQUIDITY_PROVISION_SUBMISSION;
           case 0: return TRANSACTION_NOT_SET;
           default: return null;
         }
@@ -2014,6 +2045,37 @@ public final class Events {
       return io.vegaprotocol.vega.Governance.Vote.getDefaultInstance();
     }
 
+    public static final int LIQUIDITY_PROVISION_SUBMISSION_FIELD_NUMBER = 106;
+    /**
+     * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+     * @return Whether the liquidityProvisionSubmission field is set.
+     */
+    @java.lang.Override
+    public boolean hasLiquidityProvisionSubmission() {
+      return transactionCase_ == 106;
+    }
+    /**
+     * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+     * @return The liquidityProvisionSubmission.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getLiquidityProvisionSubmission() {
+      if (transactionCase_ == 106) {
+         return (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+    }
+    /**
+     * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder getLiquidityProvisionSubmissionOrBuilder() {
+      if (transactionCase_ == 106) {
+         return (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_;
+      }
+      return io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2049,6 +2111,9 @@ public final class Events {
       if (transactionCase_ == 105) {
         output.writeMessage(105, (io.vegaprotocol.vega.Governance.Vote) transaction_);
       }
+      if (transactionCase_ == 106) {
+        output.writeMessage(106, (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2083,6 +2148,10 @@ public final class Events {
       if (transactionCase_ == 105) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(105, (io.vegaprotocol.vega.Governance.Vote) transaction_);
+      }
+      if (transactionCase_ == 106) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(106, (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2125,6 +2194,10 @@ public final class Events {
           if (!getVote()
               .equals(other.getVote())) return false;
           break;
+        case 106:
+          if (!getLiquidityProvisionSubmission()
+              .equals(other.getLiquidityProvisionSubmission())) return false;
+          break;
         case 0:
         default:
       }
@@ -2163,6 +2236,10 @@ public final class Events {
         case 105:
           hash = (37 * hash) + VOTE_FIELD_NUMBER;
           hash = (53 * hash) + getVote().hashCode();
+          break;
+        case 106:
+          hash = (37 * hash) + LIQUIDITY_PROVISION_SUBMISSION_FIELD_NUMBER;
+          hash = (53 * hash) + getLiquidityProvisionSubmission().hashCode();
           break;
         case 0:
         default:
@@ -2369,6 +2446,13 @@ public final class Events {
             result.transaction_ = voteBuilder_.build();
           }
         }
+        if (transactionCase_ == 106) {
+          if (liquidityProvisionSubmissionBuilder_ == null) {
+            result.transaction_ = transaction_;
+          } else {
+            result.transaction_ = liquidityProvisionSubmissionBuilder_.build();
+          }
+        }
         result.transactionCase_ = transactionCase_;
         onBuilt();
         return result;
@@ -2445,6 +2529,10 @@ public final class Events {
           }
           case VOTE: {
             mergeVote(other.getVote());
+            break;
+          }
+          case LIQUIDITY_PROVISION_SUBMISSION: {
+            mergeLiquidityProvisionSubmission(other.getLiquidityProvisionSubmission());
             break;
           }
           case TRANSACTION_NOT_SET: {
@@ -3390,6 +3478,147 @@ public final class Events {
         transactionCase_ = 105;
         onChanged();;
         return voteBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder> liquidityProvisionSubmissionBuilder_;
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       * @return Whether the liquidityProvisionSubmission field is set.
+       */
+      @java.lang.Override
+      public boolean hasLiquidityProvisionSubmission() {
+        return transactionCase_ == 106;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       * @return The liquidityProvisionSubmission.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission getLiquidityProvisionSubmission() {
+        if (liquidityProvisionSubmissionBuilder_ == null) {
+          if (transactionCase_ == 106) {
+            return (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+        } else {
+          if (transactionCase_ == 106) {
+            return liquidityProvisionSubmissionBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      public Builder setLiquidityProvisionSubmission(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission value) {
+        if (liquidityProvisionSubmissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transaction_ = value;
+          onChanged();
+        } else {
+          liquidityProvisionSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 106;
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      public Builder setLiquidityProvisionSubmission(
+          io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder builderForValue) {
+        if (liquidityProvisionSubmissionBuilder_ == null) {
+          transaction_ = builderForValue.build();
+          onChanged();
+        } else {
+          liquidityProvisionSubmissionBuilder_.setMessage(builderForValue.build());
+        }
+        transactionCase_ = 106;
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      public Builder mergeLiquidityProvisionSubmission(io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission value) {
+        if (liquidityProvisionSubmissionBuilder_ == null) {
+          if (transactionCase_ == 106 &&
+              transaction_ != io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance()) {
+            transaction_ = io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.newBuilder((io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            transaction_ = value;
+          }
+          onChanged();
+        } else {
+          if (transactionCase_ == 106) {
+            liquidityProvisionSubmissionBuilder_.mergeFrom(value);
+          }
+          liquidityProvisionSubmissionBuilder_.setMessage(value);
+        }
+        transactionCase_ = 106;
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      public Builder clearLiquidityProvisionSubmission() {
+        if (liquidityProvisionSubmissionBuilder_ == null) {
+          if (transactionCase_ == 106) {
+            transactionCase_ = 0;
+            transaction_ = null;
+            onChanged();
+          }
+        } else {
+          if (transactionCase_ == 106) {
+            transactionCase_ = 0;
+            transaction_ = null;
+          }
+          liquidityProvisionSubmissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder getLiquidityProvisionSubmissionBuilder() {
+        return getLiquidityProvisionSubmissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder getLiquidityProvisionSubmissionOrBuilder() {
+        if ((transactionCase_ == 106) && (liquidityProvisionSubmissionBuilder_ != null)) {
+          return liquidityProvisionSubmissionBuilder_.getMessageOrBuilder();
+        } else {
+          if (transactionCase_ == 106) {
+            return (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_;
+          }
+          return io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder>
+          getLiquidityProvisionSubmissionFieldBuilder() {
+        if (liquidityProvisionSubmissionBuilder_ == null) {
+          if (!(transactionCase_ == 106)) {
+            transaction_ = io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.getDefaultInstance();
+          }
+          liquidityProvisionSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission.Builder, io.vegaprotocol.vega.Vega.LiquidityProvisionSubmissionOrBuilder>(
+                  (io.vegaprotocol.vega.Vega.LiquidityProvisionSubmission) transaction_,
+                  getParentForChildren(),
+                  isClean());
+          transaction_ = null;
+        }
+        transactionCase_ = 106;
+        onChanged();;
+        return liquidityProvisionSubmissionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10422,6 +10651,27 @@ public final class Events {
      * @return The trigger.
      */
     io.vegaprotocol.vega.Vega.AuctionTrigger getTrigger();
+
+    /**
+     * <pre>
+     * If an auction was ongoing, but was extended for whatever reason, this field will
+     * be set to the trigger type indicating which component extended the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+     * @return The enum numeric value on the wire for extensionTrigger.
+     */
+    int getExtensionTriggerValue();
+    /**
+     * <pre>
+     * If an auction was ongoing, but was extended for whatever reason, this field will
+     * be set to the trigger type indicating which component extended the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+     * @return The extensionTrigger.
+     */
+    io.vegaprotocol.vega.Vega.AuctionTrigger getExtensionTrigger();
   }
   /**
    * <pre>
@@ -10442,6 +10692,7 @@ public final class Events {
     private AuctionEvent() {
       marketId_ = "";
       trigger_ = 0;
+      extensionTrigger_ = 0;
     }
 
     @java.lang.Override
@@ -10504,6 +10755,12 @@ public final class Events {
               int rawValue = input.readEnum();
 
               trigger_ = rawValue;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              extensionTrigger_ = rawValue;
               break;
             }
             default: {
@@ -10671,6 +10928,35 @@ public final class Events {
       return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
     }
 
+    public static final int EXTENSION_TRIGGER_FIELD_NUMBER = 7;
+    private int extensionTrigger_;
+    /**
+     * <pre>
+     * If an auction was ongoing, but was extended for whatever reason, this field will
+     * be set to the trigger type indicating which component extended the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+     * @return The enum numeric value on the wire for extensionTrigger.
+     */
+    @java.lang.Override public int getExtensionTriggerValue() {
+      return extensionTrigger_;
+    }
+    /**
+     * <pre>
+     * If an auction was ongoing, but was extended for whatever reason, this field will
+     * be set to the trigger type indicating which component extended the auction
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+     * @return The extensionTrigger.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.Vega.AuctionTrigger getExtensionTrigger() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.AuctionTrigger result = io.vegaprotocol.vega.Vega.AuctionTrigger.valueOf(extensionTrigger_);
+      return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10702,6 +10988,9 @@ public final class Events {
       }
       if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
         output.writeEnum(6, trigger_);
+      }
+      if (extensionTrigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
+        output.writeEnum(7, extensionTrigger_);
       }
       unknownFields.writeTo(output);
     }
@@ -10735,6 +11024,10 @@ public final class Events {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, trigger_);
       }
+      if (extensionTrigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, extensionTrigger_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10761,6 +11054,7 @@ public final class Events {
       if (getEnd()
           != other.getEnd()) return false;
       if (trigger_ != other.trigger_) return false;
+      if (extensionTrigger_ != other.extensionTrigger_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10788,6 +11082,8 @@ public final class Events {
           getEnd());
       hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
       hash = (53 * hash) + trigger_;
+      hash = (37 * hash) + EXTENSION_TRIGGER_FIELD_NUMBER;
+      hash = (53 * hash) + extensionTrigger_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10937,6 +11233,8 @@ public final class Events {
 
         trigger_ = 0;
 
+        extensionTrigger_ = 0;
+
         return this;
       }
 
@@ -10969,6 +11267,7 @@ public final class Events {
         result.start_ = start_;
         result.end_ = end_;
         result.trigger_ = trigger_;
+        result.extensionTrigger_ = extensionTrigger_;
         onBuilt();
         return result;
       }
@@ -11035,6 +11334,9 @@ public final class Events {
         }
         if (other.trigger_ != 0) {
           setTriggerValue(other.getTriggerValue());
+        }
+        if (other.extensionTrigger_ != 0) {
+          setExtensionTriggerValue(other.getExtensionTriggerValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11403,6 +11705,85 @@ public final class Events {
       public Builder clearTrigger() {
 
         trigger_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int extensionTrigger_ = 0;
+      /**
+       * <pre>
+       * If an auction was ongoing, but was extended for whatever reason, this field will
+       * be set to the trigger type indicating which component extended the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+       * @return The enum numeric value on the wire for extensionTrigger.
+       */
+      @java.lang.Override public int getExtensionTriggerValue() {
+        return extensionTrigger_;
+      }
+      /**
+       * <pre>
+       * If an auction was ongoing, but was extended for whatever reason, this field will
+       * be set to the trigger type indicating which component extended the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+       * @param value The enum numeric value on the wire for extensionTrigger to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtensionTriggerValue(int value) {
+
+        extensionTrigger_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If an auction was ongoing, but was extended for whatever reason, this field will
+       * be set to the trigger type indicating which component extended the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+       * @return The extensionTrigger.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.AuctionTrigger getExtensionTrigger() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.AuctionTrigger result = io.vegaprotocol.vega.Vega.AuctionTrigger.valueOf(extensionTrigger_);
+        return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * If an auction was ongoing, but was extended for whatever reason, this field will
+       * be set to the trigger type indicating which component extended the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+       * @param value The extensionTrigger to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtensionTrigger(io.vegaprotocol.vega.Vega.AuctionTrigger value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        extensionTrigger_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If an auction was ongoing, but was extended for whatever reason, this field will
+       * be set to the trigger type indicating which component extended the auction
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 7 [json_name = "extensionTrigger"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExtensionTrigger() {
+
+        extensionTrigger_ = 0;
         onChanged();
         return this;
       }
@@ -20926,7 +21307,7 @@ public final class Events {
       "\034oracles/v1/oracle_spec.proto\032\034oracles/v" +
       "1/oracle_data.proto\"D\n\013MarketEvent\022\033\n\tma" +
       "rket_id\030\001 \001(\tR\010marketId\022\030\n\007payload\030\002 \001(\t" +
-      "R\007payload\"\360\002\n\014TxErrorEvent\022\031\n\010party_id\030\001" +
+      "R\007payload\"\334\003\n\014TxErrorEvent\022\031\n\010party_id\030\001" +
       " \001(\tR\007partyId\022\027\n\007err_msg\030\002 \001(\tR\006errMsg\022B" +
       "\n\020order_submission\030e \001(\0132\025.vega.OrderSub" +
       "missionH\000R\017orderSubmission\022?\n\017order_amen" +
@@ -20935,100 +21316,104 @@ public final class Events {
       "\027.vega.OrderCancellationH\000R\021orderCancell" +
       "ation\022,\n\010proposal\030h \001(\0132\016.vega.ProposalH" +
       "\000R\010proposal\022 \n\004vote\030i \001(\0132\n.vega.VoteH\000R" +
-      "\004voteB\r\n\013transaction\"*\n\nTimeUpdate\022\034\n\tti" +
-      "mestamp\030\001 \001(\003R\ttimestamp\"I\n\021TransferResp" +
-      "onses\0224\n\tresponses\030\001 \003(\0132\026.vega.Transfer" +
-      "ResponseR\tresponses\"\210\001\n\022PositionResoluti" +
-      "on\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\036\n\ndistr" +
-      "essed\030\002 \001(\003R\ndistressed\022\026\n\006closed\030\003 \001(\003R" +
-      "\006closed\022\035\n\nmark_price\030\004 \001(\004R\tmarkPrice\"c" +
-      "\n\021LossSocialization\022\033\n\tmarket_id\030\001 \001(\tR\010" +
-      "marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006a" +
-      "mount\030\003 \001(\003R\006amount\";\n\017TradeSettlement\022\022" +
-      "\n\004size\030\001 \001(\003R\004size\022\024\n\005price\030\002 \001(\004R\005price" +
-      "\"\242\001\n\016SettlePosition\022\033\n\tmarket_id\030\001 \001(\tR\010" +
-      "marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005p" +
-      "rice\030\003 \001(\004R\005price\022B\n\021trade_settlements\030\004" +
-      " \003(\0132\025.vega.TradeSettlementR\020tradeSettle" +
-      "ments\"x\n\020SettleDistressed\022\033\n\tmarket_id\030\001" +
-      " \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007partyI" +
-      "d\022\026\n\006margin\030\003 \001(\004R\006margin\022\024\n\005price\030\004 \001(\004" +
-      "R\005price\"0\n\nMarketTick\022\016\n\002id\030\001 \001(\tR\002id\022\022\n" +
-      "\004time\030\002 \001(\003R\004time\"\302\001\n\014AuctionEvent\022\033\n\tma" +
-      "rket_id\030\001 \001(\tR\010marketId\022\'\n\017opening_aucti" +
-      "on\030\002 \001(\010R\016openingAuction\022\024\n\005leave\030\003 \001(\010R" +
-      "\005leave\022\024\n\005start\030\004 \001(\003R\005start\022\020\n\003end\030\005 \001(" +
-      "\003R\003end\022.\n\007trigger\030\006 \001(\0162\024.vega.AuctionTr" +
-      "iggerR\007trigger\"\224\r\n\010BusEvent\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022\024\n\005block\030\002 \001(\tR\005block\022&\n\004type\030\003 \001(\0162" +
-      "\022.vega.BusEventTypeR\004type\0223\n\013time_update" +
-      "\030e \001(\0132\020.vega.TimeUpdateH\000R\ntimeUpdate\022H" +
-      "\n\022transfer_responses\030f \001(\0132\027.vega.Transf" +
-      "erResponsesH\000R\021transferResponses\022K\n\023posi" +
-      "tion_resolution\030g \001(\0132\030.vega.PositionRes" +
-      "olutionH\000R\022positionResolution\022#\n\005order\030h" +
-      " \001(\0132\013.vega.OrderH\000R\005order\022)\n\007account\030i " +
-      "\001(\0132\r.vega.AccountH\000R\007account\022#\n\005party\030j" +
-      " \001(\0132\013.vega.PartyH\000R\005party\022#\n\005trade\030k \001(" +
-      "\0132\013.vega.TradeH\000R\005trade\0229\n\rmargin_levels" +
-      "\030l \001(\0132\022.vega.MarginLevelsH\000R\014marginLeve" +
-      "ls\022,\n\010proposal\030m \001(\0132\016.vega.ProposalH\000R\010" +
-      "proposal\022 \n\004vote\030n \001(\0132\n.vega.VoteH\000R\004vo" +
-      "te\0223\n\013market_data\030o \001(\0132\020.vega.MarketDat" +
-      "aH\000R\nmarketData\022<\n\016node_signature\030p \001(\0132" +
-      "\023.vega.NodeSignatureH\000R\rnodeSignature\022H\n" +
-      "\022loss_socialization\030q \001(\0132\027.vega.LossSoc" +
-      "ializationH\000R\021lossSocialization\022?\n\017settl" +
-      "e_position\030r \001(\0132\024.vega.SettlePositionH\000" +
-      "R\016settlePosition\022E\n\021settle_distressed\030s " +
-      "\001(\0132\026.vega.SettleDistressedH\000R\020settleDis" +
-      "tressed\0225\n\016market_created\030t \001(\0132\014.vega.M" +
-      "arketH\000R\rmarketCreated\022#\n\005asset\030u \001(\0132\013." +
-      "vega.AssetH\000R\005asset\0223\n\013market_tick\030v \001(\013" +
-      "2\020.vega.MarketTickH\000R\nmarketTick\0222\n\nwith" +
-      "drawal\030w \001(\0132\020.vega.WithdrawalH\000R\nwithdr" +
-      "awal\022)\n\007deposit\030x \001(\0132\r.vega.DepositH\000R\007" +
-      "deposit\022.\n\007auction\030y \001(\0132\022.vega.AuctionE" +
-      "ventH\000R\007auction\0223\n\013risk_factor\030z \001(\0132\020.v" +
-      "ega.RiskFactorH\000R\nriskFactor\022E\n\021network_" +
-      "parameter\030{ \001(\0132\026.vega.NetworkParameterH" +
-      "\000R\020networkParameter\022K\n\023liquidity_provisi" +
-      "on\030| \001(\0132\030.vega.LiquidityProvisionH\000R\022li" +
-      "quidityProvision\0225\n\016market_updated\030} \001(\013" +
-      "2\014.vega.MarketH\000R\rmarketUpdated\0229\n\013oracl" +
-      "e_spec\030~ \001(\0132\026.oracles.v1.OracleSpecH\000R\n" +
-      "oracleSpec\0229\n\013oracle_data\030\177 \001(\0132\026.oracle" +
-      "s.v1.OracleDataH\000R\noracleData\022,\n\006market\030" +
-      "\351\007 \001(\0132\021.vega.MarketEventH\000R\006market\0227\n\014t" +
-      "x_err_event\030\321\017 \001(\0132\022.vega.TxErrorEventH\000" +
-      "R\ntxErrEventB\007\n\005event*\351\007\n\014BusEventType\022\036" +
-      "\n\032BUS_EVENT_TYPE_UNSPECIFIED\020\000\022\026\n\022BUS_EV" +
-      "ENT_TYPE_ALL\020\001\022\036\n\032BUS_EVENT_TYPE_TIME_UP" +
-      "DATE\020\002\022%\n!BUS_EVENT_TYPE_TRANSFER_RESPON" +
-      "SES\020\003\022&\n\"BUS_EVENT_TYPE_POSITION_RESOLUT" +
-      "ION\020\004\022\030\n\024BUS_EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_E" +
-      "VENT_TYPE_ACCOUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PA" +
-      "RTY\020\007\022\030\n\024BUS_EVENT_TYPE_TRADE\020\010\022 \n\034BUS_E" +
-      "VENT_TYPE_MARGIN_LEVELS\020\t\022\033\n\027BUS_EVENT_T" +
-      "YPE_PROPOSAL\020\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022" +
-      "\036\n\032BUS_EVENT_TYPE_MARKET_DATA\020\014\022!\n\035BUS_E" +
-      "VENT_TYPE_NODE_SIGNATURE\020\r\022%\n!BUS_EVENT_" +
-      "TYPE_LOSS_SOCIALIZATION\020\016\022\"\n\036BUS_EVENT_T" +
-      "YPE_SETTLE_POSITION\020\017\022$\n BUS_EVENT_TYPE_" +
-      "SETTLE_DISTRESSED\020\020\022!\n\035BUS_EVENT_TYPE_MA" +
-      "RKET_CREATED\020\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022" +
-      "\022\036\n\032BUS_EVENT_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_" +
-      "EVENT_TYPE_WITHDRAWAL\020\024\022\032\n\026BUS_EVENT_TYP" +
-      "E_DEPOSIT\020\025\022\032\n\026BUS_EVENT_TYPE_AUCTION\020\026\022" +
-      "\036\n\032BUS_EVENT_TYPE_RISK_FACTOR\020\027\022$\n BUS_E" +
-      "VENT_TYPE_NETWORK_PARAMETER\020\030\022&\n\"BUS_EVE" +
-      "NT_TYPE_LIQUIDITY_PROVISION\020\031\022!\n\035BUS_EVE" +
-      "NT_TYPE_MARKET_UPDATED\020\032\022\036\n\032BUS_EVENT_TY" +
-      "PE_ORACLE_SPEC\020\033\022\036\n\032BUS_EVENT_TYPE_ORACL" +
-      "E_DATA\020\034\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034\n\027B" +
-      "US_EVENT_TYPE_TX_ERROR\020\311\001B7\n\024io.vegaprot" +
-      "ocol.vegaZ\037code.vegaprotocol.io/vega/pro" +
-      "tob\006proto3"
+      "\004vote\022j\n\036liquidity_provision_submission\030" +
+      "j \001(\0132\".vega.LiquidityProvisionSubmissio" +
+      "nH\000R\034liquidityProvisionSubmissionB\r\n\013tra" +
+      "nsaction\"*\n\nTimeUpdate\022\034\n\ttimestamp\030\001 \001(" +
+      "\003R\ttimestamp\"I\n\021TransferResponses\0224\n\tres" +
+      "ponses\030\001 \003(\0132\026.vega.TransferResponseR\tre" +
+      "sponses\"\210\001\n\022PositionResolution\022\033\n\tmarket" +
+      "_id\030\001 \001(\tR\010marketId\022\036\n\ndistressed\030\002 \001(\003R" +
+      "\ndistressed\022\026\n\006closed\030\003 \001(\003R\006closed\022\035\n\nm" +
+      "ark_price\030\004 \001(\004R\tmarkPrice\"c\n\021LossSocial" +
+      "ization\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010" +
+      "party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\003R" +
+      "\006amount\";\n\017TradeSettlement\022\022\n\004size\030\001 \001(\003" +
+      "R\004size\022\024\n\005price\030\002 \001(\004R\005price\"\242\001\n\016SettleP" +
+      "osition\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010" +
+      "party_id\030\002 \001(\tR\007partyId\022\024\n\005price\030\003 \001(\004R\005" +
+      "price\022B\n\021trade_settlements\030\004 \003(\0132\025.vega." +
+      "TradeSettlementR\020tradeSettlements\"x\n\020Set" +
+      "tleDistressed\022\033\n\tmarket_id\030\001 \001(\tR\010market" +
+      "Id\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006margin\030" +
+      "\003 \001(\004R\006margin\022\024\n\005price\030\004 \001(\004R\005price\"0\n\nM" +
+      "arketTick\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004time\030\002 \001(\003R" +
+      "\004time\"\205\002\n\014AuctionEvent\022\033\n\tmarket_id\030\001 \001(" +
+      "\tR\010marketId\022\'\n\017opening_auction\030\002 \001(\010R\016op" +
+      "eningAuction\022\024\n\005leave\030\003 \001(\010R\005leave\022\024\n\005st" +
+      "art\030\004 \001(\003R\005start\022\020\n\003end\030\005 \001(\003R\003end\022.\n\007tr" +
+      "igger\030\006 \001(\0162\024.vega.AuctionTriggerR\007trigg" +
+      "er\022A\n\021extension_trigger\030\007 \001(\0162\024.vega.Auc" +
+      "tionTriggerR\020extensionTrigger\"\224\r\n\010BusEve" +
+      "nt\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005block\030\002 \001(\tR\005block" +
+      "\022&\n\004type\030\003 \001(\0162\022.vega.BusEventTypeR\004type" +
+      "\0223\n\013time_update\030e \001(\0132\020.vega.TimeUpdateH" +
+      "\000R\ntimeUpdate\022H\n\022transfer_responses\030f \001(" +
+      "\0132\027.vega.TransferResponsesH\000R\021transferRe" +
+      "sponses\022K\n\023position_resolution\030g \001(\0132\030.v" +
+      "ega.PositionResolutionH\000R\022positionResolu" +
+      "tion\022#\n\005order\030h \001(\0132\013.vega.OrderH\000R\005orde" +
+      "r\022)\n\007account\030i \001(\0132\r.vega.AccountH\000R\007acc" +
+      "ount\022#\n\005party\030j \001(\0132\013.vega.PartyH\000R\005part" +
+      "y\022#\n\005trade\030k \001(\0132\013.vega.TradeH\000R\005trade\0229" +
+      "\n\rmargin_levels\030l \001(\0132\022.vega.MarginLevel" +
+      "sH\000R\014marginLevels\022,\n\010proposal\030m \001(\0132\016.ve" +
+      "ga.ProposalH\000R\010proposal\022 \n\004vote\030n \001(\0132\n." +
+      "vega.VoteH\000R\004vote\0223\n\013market_data\030o \001(\0132\020" +
+      ".vega.MarketDataH\000R\nmarketData\022<\n\016node_s" +
+      "ignature\030p \001(\0132\023.vega.NodeSignatureH\000R\rn" +
+      "odeSignature\022H\n\022loss_socialization\030q \001(\013" +
+      "2\027.vega.LossSocializationH\000R\021lossSociali" +
+      "zation\022?\n\017settle_position\030r \001(\0132\024.vega.S" +
+      "ettlePositionH\000R\016settlePosition\022E\n\021settl" +
+      "e_distressed\030s \001(\0132\026.vega.SettleDistress" +
+      "edH\000R\020settleDistressed\0225\n\016market_created" +
+      "\030t \001(\0132\014.vega.MarketH\000R\rmarketCreated\022#\n" +
+      "\005asset\030u \001(\0132\013.vega.AssetH\000R\005asset\0223\n\013ma" +
+      "rket_tick\030v \001(\0132\020.vega.MarketTickH\000R\nmar" +
+      "ketTick\0222\n\nwithdrawal\030w \001(\0132\020.vega.Withd" +
+      "rawalH\000R\nwithdrawal\022)\n\007deposit\030x \001(\0132\r.v" +
+      "ega.DepositH\000R\007deposit\022.\n\007auction\030y \001(\0132" +
+      "\022.vega.AuctionEventH\000R\007auction\0223\n\013risk_f" +
+      "actor\030z \001(\0132\020.vega.RiskFactorH\000R\nriskFac" +
+      "tor\022E\n\021network_parameter\030{ \001(\0132\026.vega.Ne" +
+      "tworkParameterH\000R\020networkParameter\022K\n\023li" +
+      "quidity_provision\030| \001(\0132\030.vega.Liquidity" +
+      "ProvisionH\000R\022liquidityProvision\0225\n\016marke" +
+      "t_updated\030} \001(\0132\014.vega.MarketH\000R\rmarketU" +
+      "pdated\0229\n\013oracle_spec\030~ \001(\0132\026.oracles.v1" +
+      ".OracleSpecH\000R\noracleSpec\0229\n\013oracle_data" +
+      "\030\177 \001(\0132\026.oracles.v1.OracleDataH\000R\noracle" +
+      "Data\022,\n\006market\030\351\007 \001(\0132\021.vega.MarketEvent" +
+      "H\000R\006market\0227\n\014tx_err_event\030\321\017 \001(\0132\022.vega" +
+      ".TxErrorEventH\000R\ntxErrEventB\007\n\005event*\351\007\n" +
+      "\014BusEventType\022\036\n\032BUS_EVENT_TYPE_UNSPECIF" +
+      "IED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032BUS_EVE" +
+      "NT_TYPE_TIME_UPDATE\020\002\022%\n!BUS_EVENT_TYPE_" +
+      "TRANSFER_RESPONSES\020\003\022&\n\"BUS_EVENT_TYPE_P" +
+      "OSITION_RESOLUTION\020\004\022\030\n\024BUS_EVENT_TYPE_O" +
+      "RDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020\006\022\030\n\024BU" +
+      "S_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT_TYPE_T" +
+      "RADE\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_LEVELS\020\t" +
+      "\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023BUS_EVE" +
+      "NT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_MARKET_" +
+      "DATA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIGNATURE\020" +
+      "\r\022%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\020\016" +
+      "\022\"\n\036BUS_EVENT_TYPE_SETTLE_POSITION\020\017\022$\n " +
+      "BUS_EVENT_TYPE_SETTLE_DISTRESSED\020\020\022!\n\035BU" +
+      "S_EVENT_TYPE_MARKET_CREATED\020\021\022\030\n\024BUS_EVE" +
+      "NT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE_MARKET" +
+      "_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRAWAL\020\024\022\032" +
+      "\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS_EVENT_" +
+      "TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_RISK_FA" +
+      "CTOR\020\027\022$\n BUS_EVENT_TYPE_NETWORK_PARAMET" +
+      "ER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISI" +
+      "ON\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_UPDATED\020\032\022" +
+      "\036\n\032BUS_EVENT_TYPE_ORACLE_SPEC\020\033\022\036\n\032BUS_E" +
+      "VENT_TYPE_ORACLE_DATA\020\034\022\031\n\025BUS_EVENT_TYP" +
+      "E_MARKET\020e\022\034\n\027BUS_EVENT_TYPE_TX_ERROR\020\311\001" +
+      "B7\n\024io.vegaprotocol.vegaZ\037code.vegaproto" +
+      "col.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21051,7 +21436,7 @@ public final class Events {
     internal_static_vega_TxErrorEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TxErrorEvent_descriptor,
-        new java.lang.String[] { "PartyId", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "Vote", "Transaction", });
+        new java.lang.String[] { "PartyId", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "Vote", "LiquidityProvisionSubmission", "Transaction", });
     internal_static_vega_TimeUpdate_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_vega_TimeUpdate_fieldAccessorTable = new
@@ -21105,7 +21490,7 @@ public final class Events {
     internal_static_vega_AuctionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_AuctionEvent_descriptor,
-        new java.lang.String[] { "MarketId", "OpeningAuction", "Leave", "Start", "End", "Trigger", });
+        new java.lang.String[] { "MarketId", "OpeningAuction", "Leave", "Start", "End", "Trigger", "ExtensionTrigger", });
     internal_static_vega_BusEvent_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_vega_BusEvent_fieldAccessorTable = new
