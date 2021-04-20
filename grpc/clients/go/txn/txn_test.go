@@ -9,9 +9,6 @@ import (
 )
 
 func TestPrepareLiquidityProvision(t *testing.T) {
-	// in: *api.PrepareLiquidityProvisionRequest
-	// out: *api.PrepareLiquidityProvisionResponse, error
-
 	response, err := txn.PrepareLiquidityProvision(nil)
 	require.Nil(t, response)
 	require.Error(t, err)
@@ -20,9 +17,6 @@ func TestPrepareLiquidityProvision(t *testing.T) {
 
 // PrepareSubmitOrder prepares an API request. Code copied from Core.
 func TestPrepareSubmitOrder(t *testing.T) {
-	// in: *api.PrepareSubmitOrderRequest
-	// out: *api.PrepareSubmitOrderResponse, error
-
 	response, err := txn.PrepareSubmitOrder(nil)
 	require.Nil(t, response)
 	require.Error(t, err)
