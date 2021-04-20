@@ -209,12 +209,15 @@ enum ProposalError : int {
   PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT = 24,
   PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET = 25,
   PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT = 26,
+  PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT = 27,
+  PROPOSAL_ERROR_INVALID_FEE_AMOUNT = 28,
+  PROPOSAL_ERROR_INVALID_SHAPE = 29,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 constexpr ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT;
+constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_SHAPE;
 constexpr int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProposalError_descriptor();

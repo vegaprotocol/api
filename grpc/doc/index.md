@@ -2864,6 +2864,9 @@ A list of possible errors that can cause a proposal to be in state rejected or f
 | PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT | 24 | Market proposal is missing a liquidity commitment |
 | PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET | 25 | Market proposal market could not be instantiate in execution |
 | PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT | 26 | Market proposal market contained invalid product definition |
+| PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT | 27 | Market proposal is missing commitment amount |
+| PROPOSAL_ERROR_INVALID_FEE_AMOUNT | 28 | Market proposal have invalid fee |
+| PROPOSAL_ERROR_INVALID_SHAPE | 29 | Market proposal have invalid shape |
 
 
 
@@ -3275,6 +3278,7 @@ An auction event indicating a change in auction state, for example starting or e
 | start | [int64](#int64) |  | Timestamp containing the start time for an auction |
 | end | [int64](#int64) |  | Timestamp containing the end time for an auction |
 | trigger | [AuctionTrigger](#vega.AuctionTrigger) |  | the reason this market is/was in auction |
+| extension_trigger | [AuctionTrigger](#vega.AuctionTrigger) |  | If an auction was ongoing, but was extended for whatever reason, this field will be set to the trigger type indicating which component extended the auction |
 
 
 
@@ -3492,6 +3496,7 @@ A transfer responses event contains a collection of transfer information
 | order_cancellation | [OrderCancellation](#vega.OrderCancellation) |  |  |
 | proposal | [Proposal](#vega.Proposal) |  |  |
 | vote | [Vote](#vega.Vote) |  |  |
+| liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.LiquidityProvisionSubmission) |  |  |
 
 
 

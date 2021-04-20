@@ -462,7 +462,7 @@ proto.vega.MarketEvent.prototype.setPayload = function(value) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.TxErrorEvent.oneofGroups_ = [[101,102,103,104,105]];
+proto.vega.TxErrorEvent.oneofGroups_ = [[101,102,103,104,105,106]];
 
 /**
  * @enum {number}
@@ -473,7 +473,8 @@ proto.vega.TxErrorEvent.TransactionCase = {
   ORDER_AMENDMENT: 102,
   ORDER_CANCELLATION: 103,
   PROPOSAL: 104,
-  VOTE: 105
+  VOTE: 105,
+  LIQUIDITY_PROVISION_SUBMISSION: 106
 };
 
 /**
@@ -520,7 +521,8 @@ proto.vega.TxErrorEvent.toObject = function(includeInstance, msg) {
     orderAmendment: (f = msg.getOrderAmendment()) && vega_pb.OrderAmendment.toObject(includeInstance, f),
     orderCancellation: (f = msg.getOrderCancellation()) && vega_pb.OrderCancellation.toObject(includeInstance, f),
     proposal: (f = msg.getProposal()) && governance_pb.Proposal.toObject(includeInstance, f),
-    vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f)
+    vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f),
+    liquidityProvisionSubmission: (f = msg.getLiquidityProvisionSubmission()) && vega_pb.LiquidityProvisionSubmission.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -589,6 +591,11 @@ proto.vega.TxErrorEvent.deserializeBinaryFromReader = function(msg, reader) {
       var value = new governance_pb.Vote;
       reader.readMessage(value,governance_pb.Vote.deserializeBinaryFromReader);
       msg.setVote(value);
+      break;
+    case 106:
+      var value = new vega_pb.LiquidityProvisionSubmission;
+      reader.readMessage(value,vega_pb.LiquidityProvisionSubmission.deserializeBinaryFromReader);
+      msg.setLiquidityProvisionSubmission(value);
       break;
     default:
       reader.skipField();
@@ -671,6 +678,14 @@ proto.vega.TxErrorEvent.serializeBinaryToWriter = function(message, writer) {
       105,
       f,
       governance_pb.Vote.serializeBinaryToWriter
+    );
+  }
+  f = message.getLiquidityProvisionSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      106,
+      f,
+      vega_pb.LiquidityProvisionSubmission.serializeBinaryToWriter
     );
   }
 };
@@ -894,6 +909,43 @@ proto.vega.TxErrorEvent.prototype.clearVote = function() {
  */
 proto.vega.TxErrorEvent.prototype.hasVote = function() {
   return jspb.Message.getField(this, 105) != null;
+};
+
+
+/**
+ * optional LiquidityProvisionSubmission liquidity_provision_submission = 106;
+ * @return {?proto.vega.LiquidityProvisionSubmission}
+ */
+proto.vega.TxErrorEvent.prototype.getLiquidityProvisionSubmission = function() {
+  return /** @type{?proto.vega.LiquidityProvisionSubmission} */ (
+    jspb.Message.getWrapperField(this, vega_pb.LiquidityProvisionSubmission, 106));
+};
+
+
+/**
+ * @param {?proto.vega.LiquidityProvisionSubmission|undefined} value
+ * @return {!proto.vega.TxErrorEvent} returns this
+*/
+proto.vega.TxErrorEvent.prototype.setLiquidityProvisionSubmission = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 106, proto.vega.TxErrorEvent.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.TxErrorEvent} returns this
+ */
+proto.vega.TxErrorEvent.prototype.clearLiquidityProvisionSubmission = function() {
+  return this.setLiquidityProvisionSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.TxErrorEvent.prototype.hasLiquidityProvisionSubmission = function() {
+  return jspb.Message.getField(this, 106) != null;
 };
 
 
@@ -2424,7 +2476,8 @@ proto.vega.AuctionEvent.toObject = function(includeInstance, msg) {
     leave: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     start: jspb.Message.getFieldWithDefault(msg, 4, 0),
     end: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    trigger: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    trigger: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    extensionTrigger: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -2484,6 +2537,10 @@ proto.vega.AuctionEvent.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = /** @type {!proto.vega.AuctionTrigger} */ (reader.readEnum());
       msg.setTrigger(value);
+      break;
+    case 7:
+      var value = /** @type {!proto.vega.AuctionTrigger} */ (reader.readEnum());
+      msg.setExtensionTrigger(value);
       break;
     default:
       reader.skipField();
@@ -2553,6 +2610,13 @@ proto.vega.AuctionEvent.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       6,
+      f
+    );
+  }
+  f = message.getExtensionTrigger();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      7,
       f
     );
   }
@@ -2664,6 +2728,24 @@ proto.vega.AuctionEvent.prototype.getTrigger = function() {
  */
 proto.vega.AuctionEvent.prototype.setTrigger = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional AuctionTrigger extension_trigger = 7;
+ * @return {!proto.vega.AuctionTrigger}
+ */
+proto.vega.AuctionEvent.prototype.getExtensionTrigger = function() {
+  return /** @type {!proto.vega.AuctionTrigger} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {!proto.vega.AuctionTrigger} value
+ * @return {!proto.vega.AuctionEvent} returns this
+ */
+proto.vega.AuctionEvent.prototype.setExtensionTrigger = function(value) {
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 

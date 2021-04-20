@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x65vents.proto\x12\x04vega\x1a\rmarkets.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\nvega.proto\x1a\x1coracles/v1/oracle_spec.proto\x1a\x1coracles/v1/oracle_data.proto\"D\n\x0bMarketEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x18\n\x07payload\x18\x02 \x01(\tR\x07payload\"\xf0\x02\n\x0cTxErrorEvent\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x17\n\x07\x65rr_msg\x18\x02 \x01(\tR\x06\x65rrMsg\x12\x42\n\x10order_submission\x18\x65 \x01(\x0b\x32\x15.vega.OrderSubmissionH\x00R\x0forderSubmission\x12?\n\x0forder_amendment\x18\x66 \x01(\x0b\x32\x14.vega.OrderAmendmentH\x00R\x0eorderAmendment\x12H\n\x12order_cancellation\x18g \x01(\x0b\x32\x17.vega.OrderCancellationH\x00R\x11orderCancellation\x12,\n\x08proposal\x18h \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18i \x01(\x0b\x32\n.vega.VoteH\x00R\x04voteB\r\n\x0btransaction\"*\n\nTimeUpdate\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"I\n\x11TransferResponses\x12\x34\n\tresponses\x18\x01 \x03(\x0b\x32\x16.vega.TransferResponseR\tresponses\"\x88\x01\n\x12PositionResolution\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x1e\n\ndistressed\x18\x02 \x01(\x03R\ndistressed\x12\x16\n\x06\x63losed\x18\x03 \x01(\x03R\x06\x63losed\x12\x1d\n\nmark_price\x18\x04 \x01(\x04R\tmarkPrice\"c\n\x11LossSocialization\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x03R\x06\x61mount\";\n\x0fTradeSettlement\x12\x12\n\x04size\x18\x01 \x01(\x03R\x04size\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\"\xa2\x01\n\x0eSettlePosition\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x14\n\x05price\x18\x03 \x01(\x04R\x05price\x12\x42\n\x11trade_settlements\x18\x04 \x03(\x0b\x32\x15.vega.TradeSettlementR\x10tradeSettlements\"x\n\x10SettleDistressed\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06margin\x18\x03 \x01(\x04R\x06margin\x12\x14\n\x05price\x18\x04 \x01(\x04R\x05price\"0\n\nMarketTick\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04time\x18\x02 \x01(\x03R\x04time\"\xc2\x01\n\x0c\x41uctionEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\'\n\x0fopening_auction\x18\x02 \x01(\x08R\x0eopeningAuction\x12\x14\n\x05leave\x18\x03 \x01(\x08R\x05leave\x12\x14\n\x05start\x18\x04 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x05 \x01(\x03R\x03\x65nd\x12.\n\x07trigger\x18\x06 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x07trigger\"\x94\r\n\x08\x42usEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05\x62lock\x18\x02 \x01(\tR\x05\x62lock\x12&\n\x04type\x18\x03 \x01(\x0e\x32\x12.vega.BusEventTypeR\x04type\x12\x33\n\x0btime_update\x18\x65 \x01(\x0b\x32\x10.vega.TimeUpdateH\x00R\ntimeUpdate\x12H\n\x12transfer_responses\x18\x66 \x01(\x0b\x32\x17.vega.TransferResponsesH\x00R\x11transferResponses\x12K\n\x13position_resolution\x18g \x01(\x0b\x32\x18.vega.PositionResolutionH\x00R\x12positionResolution\x12#\n\x05order\x18h \x01(\x0b\x32\x0b.vega.OrderH\x00R\x05order\x12)\n\x07\x61\x63\x63ount\x18i \x01(\x0b\x32\r.vega.AccountH\x00R\x07\x61\x63\x63ount\x12#\n\x05party\x18j \x01(\x0b\x32\x0b.vega.PartyH\x00R\x05party\x12#\n\x05trade\x18k \x01(\x0b\x32\x0b.vega.TradeH\x00R\x05trade\x12\x39\n\rmargin_levels\x18l \x01(\x0b\x32\x12.vega.MarginLevelsH\x00R\x0cmarginLevels\x12,\n\x08proposal\x18m \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18n \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12\x33\n\x0bmarket_data\x18o \x01(\x0b\x32\x10.vega.MarketDataH\x00R\nmarketData\x12<\n\x0enode_signature\x18p \x01(\x0b\x32\x13.vega.NodeSignatureH\x00R\rnodeSignature\x12H\n\x12loss_socialization\x18q \x01(\x0b\x32\x17.vega.LossSocializationH\x00R\x11lossSocialization\x12?\n\x0fsettle_position\x18r \x01(\x0b\x32\x14.vega.SettlePositionH\x00R\x0esettlePosition\x12\x45\n\x11settle_distressed\x18s \x01(\x0b\x32\x16.vega.SettleDistressedH\x00R\x10settleDistressed\x12\x35\n\x0emarket_created\x18t \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketCreated\x12#\n\x05\x61sset\x18u \x01(\x0b\x32\x0b.vega.AssetH\x00R\x05\x61sset\x12\x33\n\x0bmarket_tick\x18v \x01(\x0b\x32\x10.vega.MarketTickH\x00R\nmarketTick\x12\x32\n\nwithdrawal\x18w \x01(\x0b\x32\x10.vega.WithdrawalH\x00R\nwithdrawal\x12)\n\x07\x64\x65posit\x18x \x01(\x0b\x32\r.vega.DepositH\x00R\x07\x64\x65posit\x12.\n\x07\x61uction\x18y \x01(\x0b\x32\x12.vega.AuctionEventH\x00R\x07\x61uction\x12\x33\n\x0brisk_factor\x18z \x01(\x0b\x32\x10.vega.RiskFactorH\x00R\nriskFactor\x12\x45\n\x11network_parameter\x18{ \x01(\x0b\x32\x16.vega.NetworkParameterH\x00R\x10networkParameter\x12K\n\x13liquidity_provision\x18| \x01(\x0b\x32\x18.vega.LiquidityProvisionH\x00R\x12liquidityProvision\x12\x35\n\x0emarket_updated\x18} \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketUpdated\x12\x39\n\x0boracle_spec\x18~ \x01(\x0b\x32\x16.oracles.v1.OracleSpecH\x00R\noracleSpec\x12\x39\n\x0boracle_data\x18\x7f \x01(\x0b\x32\x16.oracles.v1.OracleDataH\x00R\noracleData\x12,\n\x06market\x18\xe9\x07 \x01(\x0b\x32\x11.vega.MarketEventH\x00R\x06market\x12\x37\n\x0ctx_err_event\x18\xd1\x0f \x01(\x0b\x32\x12.vega.TxErrorEventH\x00R\ntxErrEventB\x07\n\x05\x65vent*\xe9\x07\n\x0c\x42usEventType\x12\x1e\n\x1a\x42US_EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42US_EVENT_TYPE_ALL\x10\x01\x12\x1e\n\x1a\x42US_EVENT_TYPE_TIME_UPDATE\x10\x02\x12%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\x10\x03\x12&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\x10\x04\x12\x18\n\x14\x42US_EVENT_TYPE_ORDER\x10\x05\x12\x1a\n\x16\x42US_EVENT_TYPE_ACCOUNT\x10\x06\x12\x18\n\x14\x42US_EVENT_TYPE_PARTY\x10\x07\x12\x18\n\x14\x42US_EVENT_TYPE_TRADE\x10\x08\x12 \n\x1c\x42US_EVENT_TYPE_MARGIN_LEVELS\x10\t\x12\x1b\n\x17\x42US_EVENT_TYPE_PROPOSAL\x10\n\x12\x17\n\x13\x42US_EVENT_TYPE_VOTE\x10\x0b\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_DATA\x10\x0c\x12!\n\x1d\x42US_EVENT_TYPE_NODE_SIGNATURE\x10\r\x12%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\x10\x0e\x12\"\n\x1e\x42US_EVENT_TYPE_SETTLE_POSITION\x10\x0f\x12$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\x10\x10\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_CREATED\x10\x11\x12\x18\n\x14\x42US_EVENT_TYPE_ASSET\x10\x12\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_TICK\x10\x13\x12\x1d\n\x19\x42US_EVENT_TYPE_WITHDRAWAL\x10\x14\x12\x1a\n\x16\x42US_EVENT_TYPE_DEPOSIT\x10\x15\x12\x1a\n\x16\x42US_EVENT_TYPE_AUCTION\x10\x16\x12\x1e\n\x1a\x42US_EVENT_TYPE_RISK_FACTOR\x10\x17\x12$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\x10\x18\x12&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION\x10\x19\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_UPDATED\x10\x1a\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_SPEC\x10\x1b\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_DATA\x10\x1c\x12\x19\n\x15\x42US_EVENT_TYPE_MARKET\x10\x65\x12\x1c\n\x17\x42US_EVENT_TYPE_TX_ERROR\x10\xc9\x01\x42\x37\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x0c\x65vents.proto\x12\x04vega\x1a\rmarkets.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\nvega.proto\x1a\x1coracles/v1/oracle_spec.proto\x1a\x1coracles/v1/oracle_data.proto\"D\n\x0bMarketEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x18\n\x07payload\x18\x02 \x01(\tR\x07payload\"\xdc\x03\n\x0cTxErrorEvent\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x17\n\x07\x65rr_msg\x18\x02 \x01(\tR\x06\x65rrMsg\x12\x42\n\x10order_submission\x18\x65 \x01(\x0b\x32\x15.vega.OrderSubmissionH\x00R\x0forderSubmission\x12?\n\x0forder_amendment\x18\x66 \x01(\x0b\x32\x14.vega.OrderAmendmentH\x00R\x0eorderAmendment\x12H\n\x12order_cancellation\x18g \x01(\x0b\x32\x17.vega.OrderCancellationH\x00R\x11orderCancellation\x12,\n\x08proposal\x18h \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18i \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12j\n\x1eliquidity_provision_submission\x18j \x01(\x0b\x32\".vega.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmissionB\r\n\x0btransaction\"*\n\nTimeUpdate\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"I\n\x11TransferResponses\x12\x34\n\tresponses\x18\x01 \x03(\x0b\x32\x16.vega.TransferResponseR\tresponses\"\x88\x01\n\x12PositionResolution\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x1e\n\ndistressed\x18\x02 \x01(\x03R\ndistressed\x12\x16\n\x06\x63losed\x18\x03 \x01(\x03R\x06\x63losed\x12\x1d\n\nmark_price\x18\x04 \x01(\x04R\tmarkPrice\"c\n\x11LossSocialization\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x03R\x06\x61mount\";\n\x0fTradeSettlement\x12\x12\n\x04size\x18\x01 \x01(\x03R\x04size\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\"\xa2\x01\n\x0eSettlePosition\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x14\n\x05price\x18\x03 \x01(\x04R\x05price\x12\x42\n\x11trade_settlements\x18\x04 \x03(\x0b\x32\x15.vega.TradeSettlementR\x10tradeSettlements\"x\n\x10SettleDistressed\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06margin\x18\x03 \x01(\x04R\x06margin\x12\x14\n\x05price\x18\x04 \x01(\x04R\x05price\"0\n\nMarketTick\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04time\x18\x02 \x01(\x03R\x04time\"\x85\x02\n\x0c\x41uctionEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\'\n\x0fopening_auction\x18\x02 \x01(\x08R\x0eopeningAuction\x12\x14\n\x05leave\x18\x03 \x01(\x08R\x05leave\x12\x14\n\x05start\x18\x04 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x05 \x01(\x03R\x03\x65nd\x12.\n\x07trigger\x18\x06 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x07trigger\x12\x41\n\x11\x65xtension_trigger\x18\x07 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x10\x65xtensionTrigger\"\x94\r\n\x08\x42usEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05\x62lock\x18\x02 \x01(\tR\x05\x62lock\x12&\n\x04type\x18\x03 \x01(\x0e\x32\x12.vega.BusEventTypeR\x04type\x12\x33\n\x0btime_update\x18\x65 \x01(\x0b\x32\x10.vega.TimeUpdateH\x00R\ntimeUpdate\x12H\n\x12transfer_responses\x18\x66 \x01(\x0b\x32\x17.vega.TransferResponsesH\x00R\x11transferResponses\x12K\n\x13position_resolution\x18g \x01(\x0b\x32\x18.vega.PositionResolutionH\x00R\x12positionResolution\x12#\n\x05order\x18h \x01(\x0b\x32\x0b.vega.OrderH\x00R\x05order\x12)\n\x07\x61\x63\x63ount\x18i \x01(\x0b\x32\r.vega.AccountH\x00R\x07\x61\x63\x63ount\x12#\n\x05party\x18j \x01(\x0b\x32\x0b.vega.PartyH\x00R\x05party\x12#\n\x05trade\x18k \x01(\x0b\x32\x0b.vega.TradeH\x00R\x05trade\x12\x39\n\rmargin_levels\x18l \x01(\x0b\x32\x12.vega.MarginLevelsH\x00R\x0cmarginLevels\x12,\n\x08proposal\x18m \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18n \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12\x33\n\x0bmarket_data\x18o \x01(\x0b\x32\x10.vega.MarketDataH\x00R\nmarketData\x12<\n\x0enode_signature\x18p \x01(\x0b\x32\x13.vega.NodeSignatureH\x00R\rnodeSignature\x12H\n\x12loss_socialization\x18q \x01(\x0b\x32\x17.vega.LossSocializationH\x00R\x11lossSocialization\x12?\n\x0fsettle_position\x18r \x01(\x0b\x32\x14.vega.SettlePositionH\x00R\x0esettlePosition\x12\x45\n\x11settle_distressed\x18s \x01(\x0b\x32\x16.vega.SettleDistressedH\x00R\x10settleDistressed\x12\x35\n\x0emarket_created\x18t \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketCreated\x12#\n\x05\x61sset\x18u \x01(\x0b\x32\x0b.vega.AssetH\x00R\x05\x61sset\x12\x33\n\x0bmarket_tick\x18v \x01(\x0b\x32\x10.vega.MarketTickH\x00R\nmarketTick\x12\x32\n\nwithdrawal\x18w \x01(\x0b\x32\x10.vega.WithdrawalH\x00R\nwithdrawal\x12)\n\x07\x64\x65posit\x18x \x01(\x0b\x32\r.vega.DepositH\x00R\x07\x64\x65posit\x12.\n\x07\x61uction\x18y \x01(\x0b\x32\x12.vega.AuctionEventH\x00R\x07\x61uction\x12\x33\n\x0brisk_factor\x18z \x01(\x0b\x32\x10.vega.RiskFactorH\x00R\nriskFactor\x12\x45\n\x11network_parameter\x18{ \x01(\x0b\x32\x16.vega.NetworkParameterH\x00R\x10networkParameter\x12K\n\x13liquidity_provision\x18| \x01(\x0b\x32\x18.vega.LiquidityProvisionH\x00R\x12liquidityProvision\x12\x35\n\x0emarket_updated\x18} \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketUpdated\x12\x39\n\x0boracle_spec\x18~ \x01(\x0b\x32\x16.oracles.v1.OracleSpecH\x00R\noracleSpec\x12\x39\n\x0boracle_data\x18\x7f \x01(\x0b\x32\x16.oracles.v1.OracleDataH\x00R\noracleData\x12,\n\x06market\x18\xe9\x07 \x01(\x0b\x32\x11.vega.MarketEventH\x00R\x06market\x12\x37\n\x0ctx_err_event\x18\xd1\x0f \x01(\x0b\x32\x12.vega.TxErrorEventH\x00R\ntxErrEventB\x07\n\x05\x65vent*\xe9\x07\n\x0c\x42usEventType\x12\x1e\n\x1a\x42US_EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42US_EVENT_TYPE_ALL\x10\x01\x12\x1e\n\x1a\x42US_EVENT_TYPE_TIME_UPDATE\x10\x02\x12%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\x10\x03\x12&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\x10\x04\x12\x18\n\x14\x42US_EVENT_TYPE_ORDER\x10\x05\x12\x1a\n\x16\x42US_EVENT_TYPE_ACCOUNT\x10\x06\x12\x18\n\x14\x42US_EVENT_TYPE_PARTY\x10\x07\x12\x18\n\x14\x42US_EVENT_TYPE_TRADE\x10\x08\x12 \n\x1c\x42US_EVENT_TYPE_MARGIN_LEVELS\x10\t\x12\x1b\n\x17\x42US_EVENT_TYPE_PROPOSAL\x10\n\x12\x17\n\x13\x42US_EVENT_TYPE_VOTE\x10\x0b\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_DATA\x10\x0c\x12!\n\x1d\x42US_EVENT_TYPE_NODE_SIGNATURE\x10\r\x12%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\x10\x0e\x12\"\n\x1e\x42US_EVENT_TYPE_SETTLE_POSITION\x10\x0f\x12$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\x10\x10\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_CREATED\x10\x11\x12\x18\n\x14\x42US_EVENT_TYPE_ASSET\x10\x12\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_TICK\x10\x13\x12\x1d\n\x19\x42US_EVENT_TYPE_WITHDRAWAL\x10\x14\x12\x1a\n\x16\x42US_EVENT_TYPE_DEPOSIT\x10\x15\x12\x1a\n\x16\x42US_EVENT_TYPE_AUCTION\x10\x16\x12\x1e\n\x1a\x42US_EVENT_TYPE_RISK_FACTOR\x10\x17\x12$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\x10\x18\x12&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION\x10\x19\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_UPDATED\x10\x1a\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_SPEC\x10\x1b\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_DATA\x10\x1c\x12\x19\n\x15\x42US_EVENT_TYPE_MARKET\x10\x65\x12\x1c\n\x17\x42US_EVENT_TYPE_TX_ERROR\x10\xc9\x01\x42\x37\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
   dependencies=[markets__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,oracles_dot_v1_dot_oracle__spec__pb2.DESCRIPTOR,oracles_dot_v1_dot_oracle__data__pb2.DESCRIPTOR,])
 
@@ -195,8 +195,8 @@ _BUSEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3224,
-  serialized_end=4225,
+  serialized_start=3399,
+  serialized_end=4400,
 )
 _sym_db.RegisterEnumDescriptor(_BUSEVENTTYPE)
 
@@ -331,6 +331,13 @@ _TXERROREVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='vote', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='liquidity_provision_submission', full_name='vega.TxErrorEvent.liquidity_provision_submission', index=7,
+      number=106, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='liquidityProvisionSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -349,7 +356,7 @@ _TXERROREVENT = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=212,
-  serialized_end=580,
+  serialized_end=688,
 )
 
 
@@ -380,8 +387,8 @@ _TIMEUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=582,
-  serialized_end=624,
+  serialized_start=690,
+  serialized_end=732,
 )
 
 
@@ -412,8 +419,8 @@ _TRANSFERRESPONSES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=626,
-  serialized_end=699,
+  serialized_start=734,
+  serialized_end=807,
 )
 
 
@@ -465,8 +472,8 @@ _POSITIONRESOLUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=702,
-  serialized_end=838,
+  serialized_start=810,
+  serialized_end=946,
 )
 
 
@@ -511,8 +518,8 @@ _LOSSSOCIALIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=939,
+  serialized_start=948,
+  serialized_end=1047,
 )
 
 
@@ -550,8 +557,8 @@ _TRADESETTLEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=941,
-  serialized_end=1000,
+  serialized_start=1049,
+  serialized_end=1108,
 )
 
 
@@ -603,8 +610,8 @@ _SETTLEPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1003,
-  serialized_end=1165,
+  serialized_start=1111,
+  serialized_end=1273,
 )
 
 
@@ -656,8 +663,8 @@ _SETTLEDISTRESSED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1167,
-  serialized_end=1287,
+  serialized_start=1275,
+  serialized_end=1395,
 )
 
 
@@ -695,8 +702,8 @@ _MARKETTICK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1289,
-  serialized_end=1337,
+  serialized_start=1397,
+  serialized_end=1445,
 )
 
 
@@ -750,6 +757,13 @@ _AUCTIONEVENT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='trigger', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extension_trigger', full_name='vega.AuctionEvent.extension_trigger', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='extensionTrigger', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -762,8 +776,8 @@ _AUCTIONEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1340,
-  serialized_end=1534,
+  serialized_start=1448,
+  serialized_end=1709,
 )
 
 
@@ -1016,8 +1030,8 @@ _BUSEVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1537,
-  serialized_end=3221,
+  serialized_start=1712,
+  serialized_end=3396,
 )
 
 _TXERROREVENT.fields_by_name['order_submission'].message_type = vega__pb2._ORDERSUBMISSION
@@ -1025,6 +1039,7 @@ _TXERROREVENT.fields_by_name['order_amendment'].message_type = vega__pb2._ORDERA
 _TXERROREVENT.fields_by_name['order_cancellation'].message_type = vega__pb2._ORDERCANCELLATION
 _TXERROREVENT.fields_by_name['proposal'].message_type = governance__pb2._PROPOSAL
 _TXERROREVENT.fields_by_name['vote'].message_type = governance__pb2._VOTE
+_TXERROREVENT.fields_by_name['liquidity_provision_submission'].message_type = vega__pb2._LIQUIDITYPROVISIONSUBMISSION
 _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
   _TXERROREVENT.fields_by_name['order_submission'])
 _TXERROREVENT.fields_by_name['order_submission'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
@@ -1040,9 +1055,13 @@ _TXERROREVENT.fields_by_name['proposal'].containing_oneof = _TXERROREVENT.oneofs
 _TXERROREVENT.oneofs_by_name['transaction'].fields.append(
   _TXERROREVENT.fields_by_name['vote'])
 _TXERROREVENT.fields_by_name['vote'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
+_TXERROREVENT.oneofs_by_name['transaction'].fields.append(
+  _TXERROREVENT.fields_by_name['liquidity_provision_submission'])
+_TXERROREVENT.fields_by_name['liquidity_provision_submission'].containing_oneof = _TXERROREVENT.oneofs_by_name['transaction']
 _TRANSFERRESPONSES.fields_by_name['responses'].message_type = vega__pb2._TRANSFERRESPONSE
 _SETTLEPOSITION.fields_by_name['trade_settlements'].message_type = _TRADESETTLEMENT
 _AUCTIONEVENT.fields_by_name['trigger'].enum_type = vega__pb2._AUCTIONTRIGGER
+_AUCTIONEVENT.fields_by_name['extension_trigger'].enum_type = vega__pb2._AUCTIONTRIGGER
 _BUSEVENT.fields_by_name['type'].enum_type = _BUSEVENTTYPE
 _BUSEVENT.fields_by_name['time_update'].message_type = _TIMEUPDATE
 _BUSEVENT.fields_by_name['transfer_responses'].message_type = _TRANSFERRESPONSES
