@@ -263,6 +263,14 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_INVALID_SHAPE = 29;</code>
      */
     PROPOSAL_ERROR_INVALID_SHAPE(29),
+    /**
+     * <pre>
+     * Market proposal invalid risk parameter
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30;</code>
+     */
+    PROPOSAL_ERROR_INVALID_RISK_PARAMETER(30),
     UNRECOGNIZED(-1),
     ;
 
@@ -506,6 +514,14 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_INVALID_SHAPE = 29;</code>
      */
     public static final int PROPOSAL_ERROR_INVALID_SHAPE_VALUE = 29;
+    /**
+     * <pre>
+     * Market proposal invalid risk parameter
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30;</code>
+     */
+    public static final int PROPOSAL_ERROR_INVALID_RISK_PARAMETER_VALUE = 30;
 
 
     public final int getNumber() {
@@ -562,6 +578,7 @@ public final class Governance {
         case 27: return PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT;
         case 28: return PROPOSAL_ERROR_INVALID_FEE_AMOUNT;
         case 29: return PROPOSAL_ERROR_INVALID_SHAPE;
+        case 30: return PROPOSAL_ERROR_INVALID_RISK_PARAMETER;
         default: return null;
       }
     }
@@ -18385,7 +18402,7 @@ public final class Governance {
       "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa" +
       "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val" +
       "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022" +
-      "\r\n\tVALUE_YES\020\002*\275\n\n\rProposalError\022\036\n\032PROP" +
+      "\r\n\tVALUE_YES\020\002*\350\n\n\rProposalError\022\036\n\032PROP" +
       "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR" +
       "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR" +
       "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR" +
@@ -18418,9 +18435,10 @@ public final class Governance {
       "PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032\022" +
       ",\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AMO" +
       "UNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_AMOU" +
-      "NT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035B7" +
-      "\n\024io.vegaprotocol.vegaZ\037code.vegaprotoco" +
-      "l.io/vega/protob\006proto3"
+      "NT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035\022)" +
+      "\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER\020" +
+      "\036B7\n\024io.vegaprotocol.vegaZ\037code.vegaprot" +
+      "ocol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

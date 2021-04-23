@@ -2867,6 +2867,7 @@ A list of possible errors that can cause a proposal to be in state rejected or f
 | PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT | 27 | Market proposal is missing commitment amount |
 | PROPOSAL_ERROR_INVALID_FEE_AMOUNT | 28 | Market proposal have invalid fee |
 | PROPOSAL_ERROR_INVALID_SHAPE | 29 | Market proposal have invalid shape |
+| PROPOSAL_ERROR_INVALID_RISK_PARAMETER | 30 | Market proposal invalid risk parameter |
 
 
 
