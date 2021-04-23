@@ -555,7 +555,7 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa"
   "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val"
   "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022"
-  "\r\n\tVALUE_YES\020\002*\275\n\n\rProposalError\022\036\n\032PROP"
+  "\r\n\tVALUE_YES\020\002*\350\n\n\rProposalError\022\036\n\032PROP"
   "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR"
   "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR"
   "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR"
@@ -588,9 +588,10 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032\022"
   ",\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AMO"
   "UNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_AMOU"
-  "NT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035B7"
-  "\n\024io.vegaprotocol.vegaZ\037code.vegaprotoco"
-  "l.io/vega/protob\006proto3"
+  "NT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035\022)"
+  "\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER\020"
+  "\036B7\n\024io.vegaprotocol.vegaZ\037code.vegaprot"
+  "ocol.io/vega/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_governance_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
@@ -617,7 +618,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gov
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_governance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_governance_2eproto = {
-  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4663,
+  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4706,
   &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 14, 5,
   schemas, file_default_instances, TableStruct_governance_2eproto::offsets,
   file_level_metadata_governance_2eproto, 14, file_level_enum_descriptors_governance_2eproto, file_level_service_descriptors_governance_2eproto,
@@ -718,6 +719,7 @@ bool ProposalError_IsValid(int value) {
     case 27:
     case 28:
     case 29:
+    case 30:
       return true;
     default:
       return false;
