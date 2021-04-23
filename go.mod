@@ -1,4 +1,4 @@
-module github.com/vegaprotocol/api/grpc/clients/go
+module github.com/vegaprotocol/api
 
 go 1.16
 
