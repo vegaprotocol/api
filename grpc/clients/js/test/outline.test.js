@@ -4,7 +4,7 @@ var test = require('tape');
 
 var Vega = require('../index')
 
-test('Voting: PrepareVoteRequest exists', t => {
-  t.equal(typeof Vega.api.trading.PrepareVoteRequest, 'function');
+test('Voting: PrepareVoteSubmissionRequest exists', t => {
+  t.equal(typeof Vega.api.trading.PrepareVoteSubmissionRequest, 'function');
   t.end()
 });
