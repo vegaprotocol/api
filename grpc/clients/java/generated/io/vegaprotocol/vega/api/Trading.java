@@ -83258,8 +83258,8 @@ public final class Trading {
 
   }
 
-  public interface PrepareVoteRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.v1.PrepareVoteRequest)
+  public interface PrepareVoteSubmissionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.v1.PrepareVoteSubmissionRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -83267,52 +83267,52 @@ public final class Trading {
      * Vote, required field
      * </pre>
      *
-     * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
-     * @return Whether the vote field is set.
+     * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
+     * @return Whether the submission field is set.
      */
-    boolean hasVote();
+    boolean hasSubmission();
     /**
      * <pre>
      * Vote, required field
      * </pre>
      *
-     * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
-     * @return The vote.
+     * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
+     * @return The submission.
      */
-    io.vegaprotocol.vega.Governance.Vote getVote();
+    io.vegaprotocol.vega.Governance.VoteSubmission getSubmission();
     /**
      * <pre>
      * Vote, required field
      * </pre>
      *
-     * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+     * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
      */
-    io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder();
+    io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder getSubmissionOrBuilder();
   }
   /**
    * <pre>
    * Request to prepare a governance vote
    * </pre>
    *
-   * Protobuf type {@code api.v1.PrepareVoteRequest}
+   * Protobuf type {@code api.v1.PrepareVoteSubmissionRequest}
    */
-  public static final class PrepareVoteRequest extends
+  public static final class PrepareVoteSubmissionRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.v1.PrepareVoteRequest)
-      PrepareVoteRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.v1.PrepareVoteSubmissionRequest)
+      PrepareVoteSubmissionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PrepareVoteRequest.newBuilder() to construct.
-    private PrepareVoteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PrepareVoteSubmissionRequest.newBuilder() to construct.
+    private PrepareVoteSubmissionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PrepareVoteRequest() {
+    private PrepareVoteSubmissionRequest() {
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PrepareVoteRequest();
+      return new PrepareVoteSubmissionRequest();
     }
 
     @java.lang.Override
@@ -83320,7 +83320,7 @@ public final class Trading {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PrepareVoteRequest(
+    private PrepareVoteSubmissionRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -83339,14 +83339,14 @@ public final class Trading {
               done = true;
               break;
             case 10: {
-              io.vegaprotocol.vega.Governance.Vote.Builder subBuilder = null;
-              if (vote_ != null) {
-                subBuilder = vote_.toBuilder();
+              io.vegaprotocol.vega.Governance.VoteSubmission.Builder subBuilder = null;
+              if (submission_ != null) {
+                subBuilder = submission_.toBuilder();
               }
-              vote_ = input.readMessage(io.vegaprotocol.vega.Governance.Vote.parser(), extensionRegistry);
+              submission_ = input.readMessage(io.vegaprotocol.vega.Governance.VoteSubmission.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(vote_);
-                vote_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(submission_);
+                submission_ = subBuilder.buildPartial();
               }
 
               break;
@@ -83372,53 +83372,53 @@ public final class Trading {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteRequest_descriptor;
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteRequest_fieldAccessorTable
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.class, io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.Builder.class);
+              io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.class, io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.Builder.class);
     }
 
-    public static final int VOTE_FIELD_NUMBER = 1;
-    private io.vegaprotocol.vega.Governance.Vote vote_;
+    public static final int SUBMISSION_FIELD_NUMBER = 1;
+    private io.vegaprotocol.vega.Governance.VoteSubmission submission_;
     /**
      * <pre>
      * Vote, required field
      * </pre>
      *
-     * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
-     * @return Whether the vote field is set.
+     * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
+     * @return Whether the submission field is set.
      */
     @java.lang.Override
-    public boolean hasVote() {
-      return vote_ != null;
+    public boolean hasSubmission() {
+      return submission_ != null;
     }
     /**
      * <pre>
      * Vote, required field
      * </pre>
      *
-     * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
-     * @return The vote.
+     * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
+     * @return The submission.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Governance.Vote getVote() {
-      return vote_ == null ? io.vegaprotocol.vega.Governance.Vote.getDefaultInstance() : vote_;
+    public io.vegaprotocol.vega.Governance.VoteSubmission getSubmission() {
+      return submission_ == null ? io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance() : submission_;
     }
     /**
      * <pre>
      * Vote, required field
      * </pre>
      *
-     * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+     * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder() {
-      return getVote();
+    public io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder getSubmissionOrBuilder() {
+      return getSubmission();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -83435,8 +83435,8 @@ public final class Trading {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (vote_ != null) {
-        output.writeMessage(1, getVote());
+      if (submission_ != null) {
+        output.writeMessage(1, getSubmission());
       }
       unknownFields.writeTo(output);
     }
@@ -83447,9 +83447,9 @@ public final class Trading {
       if (size != -1) return size;
 
       size = 0;
-      if (vote_ != null) {
+      if (submission_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getVote());
+          .computeMessageSize(1, getSubmission());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -83461,15 +83461,15 @@ public final class Trading {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteRequest)) {
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest)) {
         return super.equals(obj);
       }
-      io.vegaprotocol.vega.api.Trading.PrepareVoteRequest other = (io.vegaprotocol.vega.api.Trading.PrepareVoteRequest) obj;
+      io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest other = (io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest) obj;
 
-      if (hasVote() != other.hasVote()) return false;
-      if (hasVote()) {
-        if (!getVote()
-            .equals(other.getVote())) return false;
+      if (hasSubmission() != other.hasSubmission()) return false;
+      if (hasSubmission()) {
+        if (!getSubmission()
+            .equals(other.getSubmission())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -83482,78 +83482,78 @@ public final class Trading {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasVote()) {
-        hash = (37 * hash) + VOTE_FIELD_NUMBER;
-        hash = (53 * hash) + getVote().hashCode();
+      if (hasSubmission()) {
+        hash = (37 * hash) + SUBMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getSubmission().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(byte[] data)
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseDelimitedFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseDelimitedFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -83566,7 +83566,7 @@ public final class Trading {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.PrepareVoteRequest prototype) {
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -83586,26 +83586,26 @@ public final class Trading {
      * Request to prepare a governance vote
      * </pre>
      *
-     * Protobuf type {@code api.v1.PrepareVoteRequest}
+     * Protobuf type {@code api.v1.PrepareVoteSubmissionRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.v1.PrepareVoteRequest)
-        io.vegaprotocol.vega.api.Trading.PrepareVoteRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.v1.PrepareVoteSubmissionRequest)
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteRequest_descriptor;
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteRequest_fieldAccessorTable
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.class, io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.Builder.class);
+                io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.class, io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.Builder.class);
       }
 
-      // Construct using io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.newBuilder()
+      // Construct using io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -83623,11 +83623,11 @@ public final class Trading {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (voteBuilder_ == null) {
-          vote_ = null;
+        if (submissionBuilder_ == null) {
+          submission_ = null;
         } else {
-          vote_ = null;
-          voteBuilder_ = null;
+          submission_ = null;
+          submissionBuilder_ = null;
         }
         return this;
       }
@@ -83635,17 +83635,17 @@ public final class Trading {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteRequest_descriptor;
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor;
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.api.Trading.PrepareVoteRequest getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.getDefaultInstance();
+      public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.api.Trading.PrepareVoteRequest build() {
-        io.vegaprotocol.vega.api.Trading.PrepareVoteRequest result = buildPartial();
+      public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest build() {
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -83653,12 +83653,12 @@ public final class Trading {
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.api.Trading.PrepareVoteRequest buildPartial() {
-        io.vegaprotocol.vega.api.Trading.PrepareVoteRequest result = new io.vegaprotocol.vega.api.Trading.PrepareVoteRequest(this);
-        if (voteBuilder_ == null) {
-          result.vote_ = vote_;
+      public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest buildPartial() {
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest result = new io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest(this);
+        if (submissionBuilder_ == null) {
+          result.submission_ = submission_;
         } else {
-          result.vote_ = voteBuilder_.build();
+          result.submission_ = submissionBuilder_.build();
         }
         onBuilt();
         return result;
@@ -83698,18 +83698,18 @@ public final class Trading {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteRequest) {
-          return mergeFrom((io.vegaprotocol.vega.api.Trading.PrepareVoteRequest)other);
+        if (other instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.PrepareVoteRequest other) {
-        if (other == io.vegaprotocol.vega.api.Trading.PrepareVoteRequest.getDefaultInstance()) return this;
-        if (other.hasVote()) {
-          mergeVote(other.getVote());
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest other) {
+        if (other == io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest.getDefaultInstance()) return this;
+        if (other.hasSubmission()) {
+          mergeSubmission(other.getSubmission());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -83726,11 +83726,11 @@ public final class Trading {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.vegaprotocol.vega.api.Trading.PrepareVoteRequest parsedMessage = null;
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.api.Trading.PrepareVoteRequest) e.getUnfinishedMessage();
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -83740,33 +83740,33 @@ public final class Trading {
         return this;
       }
 
-      private io.vegaprotocol.vega.Governance.Vote vote_;
+      private io.vegaprotocol.vega.Governance.VoteSubmission submission_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> voteBuilder_;
+          io.vegaprotocol.vega.Governance.VoteSubmission, io.vegaprotocol.vega.Governance.VoteSubmission.Builder, io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder> submissionBuilder_;
       /**
        * <pre>
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
-       * @return Whether the vote field is set.
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
+       * @return Whether the submission field is set.
        */
-      public boolean hasVote() {
-        return voteBuilder_ != null || vote_ != null;
+      public boolean hasSubmission() {
+        return submissionBuilder_ != null || submission_ != null;
       }
       /**
        * <pre>
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
-       * @return The vote.
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
+       * @return The submission.
        */
-      public io.vegaprotocol.vega.Governance.Vote getVote() {
-        if (voteBuilder_ == null) {
-          return vote_ == null ? io.vegaprotocol.vega.Governance.Vote.getDefaultInstance() : vote_;
+      public io.vegaprotocol.vega.Governance.VoteSubmission getSubmission() {
+        if (submissionBuilder_ == null) {
+          return submission_ == null ? io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance() : submission_;
         } else {
-          return voteBuilder_.getMessage();
+          return submissionBuilder_.getMessage();
         }
       }
       /**
@@ -83774,17 +83774,17 @@ public final class Trading {
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
-      public Builder setVote(io.vegaprotocol.vega.Governance.Vote value) {
-        if (voteBuilder_ == null) {
+      public Builder setSubmission(io.vegaprotocol.vega.Governance.VoteSubmission value) {
+        if (submissionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          vote_ = value;
+          submission_ = value;
           onChanged();
         } else {
-          voteBuilder_.setMessage(value);
+          submissionBuilder_.setMessage(value);
         }
 
         return this;
@@ -83794,15 +83794,15 @@ public final class Trading {
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
-      public Builder setVote(
-          io.vegaprotocol.vega.Governance.Vote.Builder builderForValue) {
-        if (voteBuilder_ == null) {
-          vote_ = builderForValue.build();
+      public Builder setSubmission(
+          io.vegaprotocol.vega.Governance.VoteSubmission.Builder builderForValue) {
+        if (submissionBuilder_ == null) {
+          submission_ = builderForValue.build();
           onChanged();
         } else {
-          voteBuilder_.setMessage(builderForValue.build());
+          submissionBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -83812,19 +83812,19 @@ public final class Trading {
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
-      public Builder mergeVote(io.vegaprotocol.vega.Governance.Vote value) {
-        if (voteBuilder_ == null) {
-          if (vote_ != null) {
-            vote_ =
-              io.vegaprotocol.vega.Governance.Vote.newBuilder(vote_).mergeFrom(value).buildPartial();
+      public Builder mergeSubmission(io.vegaprotocol.vega.Governance.VoteSubmission value) {
+        if (submissionBuilder_ == null) {
+          if (submission_ != null) {
+            submission_ =
+              io.vegaprotocol.vega.Governance.VoteSubmission.newBuilder(submission_).mergeFrom(value).buildPartial();
           } else {
-            vote_ = value;
+            submission_ = value;
           }
           onChanged();
         } else {
-          voteBuilder_.mergeFrom(value);
+          submissionBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -83834,15 +83834,15 @@ public final class Trading {
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
-      public Builder clearVote() {
-        if (voteBuilder_ == null) {
-          vote_ = null;
+      public Builder clearSubmission() {
+        if (submissionBuilder_ == null) {
+          submission_ = null;
           onChanged();
         } else {
-          vote_ = null;
-          voteBuilder_ = null;
+          submission_ = null;
+          submissionBuilder_ = null;
         }
 
         return this;
@@ -83852,26 +83852,26 @@ public final class Trading {
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Governance.Vote.Builder getVoteBuilder() {
+      public io.vegaprotocol.vega.Governance.VoteSubmission.Builder getSubmissionBuilder() {
 
         onChanged();
-        return getVoteFieldBuilder().getBuilder();
+        return getSubmissionFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder() {
-        if (voteBuilder_ != null) {
-          return voteBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder getSubmissionOrBuilder() {
+        if (submissionBuilder_ != null) {
+          return submissionBuilder_.getMessageOrBuilder();
         } else {
-          return vote_ == null ?
-              io.vegaprotocol.vega.Governance.Vote.getDefaultInstance() : vote_;
+          return submission_ == null ?
+              io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance() : submission_;
         }
       }
       /**
@@ -83879,20 +83879,20 @@ public final class Trading {
        * Vote, required field
        * </pre>
        *
-       * <code>.vega.Vote vote = 1 [json_name = "vote", (.validator.field) = { ... }</code>
+       * <code>.vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
-          getVoteFieldBuilder() {
-        if (voteBuilder_ == null) {
-          voteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>(
-                  getVote(),
+          io.vegaprotocol.vega.Governance.VoteSubmission, io.vegaprotocol.vega.Governance.VoteSubmission.Builder, io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder>
+          getSubmissionFieldBuilder() {
+        if (submissionBuilder_ == null) {
+          submissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Governance.VoteSubmission, io.vegaprotocol.vega.Governance.VoteSubmission.Builder, io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder>(
+                  getSubmission(),
                   getParentForChildren(),
                   isClean());
-          vote_ = null;
+          submission_ = null;
         }
-        return voteBuilder_;
+        return submissionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -83907,48 +83907,48 @@ public final class Trading {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.v1.PrepareVoteRequest)
+      // @@protoc_insertion_point(builder_scope:api.v1.PrepareVoteSubmissionRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteRequest)
-    private static final io.vegaprotocol.vega.api.Trading.PrepareVoteRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteSubmissionRequest)
+    private static final io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.PrepareVoteRequest();
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest();
     }
 
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteRequest getDefaultInstance() {
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PrepareVoteRequest>
-        PARSER = new com.google.protobuf.AbstractParser<PrepareVoteRequest>() {
+    private static final com.google.protobuf.Parser<PrepareVoteSubmissionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PrepareVoteSubmissionRequest>() {
       @java.lang.Override
-      public PrepareVoteRequest parsePartialFrom(
+      public PrepareVoteSubmissionRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PrepareVoteRequest(input, extensionRegistry);
+        return new PrepareVoteSubmissionRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PrepareVoteRequest> parser() {
+    public static com.google.protobuf.Parser<PrepareVoteSubmissionRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PrepareVoteRequest> getParserForType() {
+    public com.google.protobuf.Parser<PrepareVoteSubmissionRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public io.vegaprotocol.vega.api.Trading.PrepareVoteRequest getDefaultInstanceForType() {
+    public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface PrepareVoteResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.v1.PrepareVoteResponse)
+  public interface PrepareVoteSubmissionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.v1.PrepareVoteSubmissionResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -83966,45 +83966,45 @@ public final class Trading {
      * A copy of the prepared vote
      * </pre>
      *
-     * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
-     * @return Whether the vote field is set.
+     * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
+     * @return Whether the submission field is set.
      */
-    boolean hasVote();
+    boolean hasSubmission();
     /**
      * <pre>
      * A copy of the prepared vote
      * </pre>
      *
-     * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
-     * @return The vote.
+     * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
+     * @return The submission.
      */
-    io.vegaprotocol.vega.Governance.Vote getVote();
+    io.vegaprotocol.vega.Governance.VoteSubmission getSubmission();
     /**
      * <pre>
      * A copy of the prepared vote
      * </pre>
      *
-     * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+     * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
      */
-    io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder();
+    io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder getSubmissionOrBuilder();
   }
   /**
    * <pre>
    * Response to prepare a governance vote
    * </pre>
    *
-   * Protobuf type {@code api.v1.PrepareVoteResponse}
+   * Protobuf type {@code api.v1.PrepareVoteSubmissionResponse}
    */
-  public static final class PrepareVoteResponse extends
+  public static final class PrepareVoteSubmissionResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.v1.PrepareVoteResponse)
-      PrepareVoteResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.v1.PrepareVoteSubmissionResponse)
+      PrepareVoteSubmissionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PrepareVoteResponse.newBuilder() to construct.
-    private PrepareVoteResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PrepareVoteSubmissionResponse.newBuilder() to construct.
+    private PrepareVoteSubmissionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PrepareVoteResponse() {
+    private PrepareVoteSubmissionResponse() {
       blob_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -84012,7 +84012,7 @@ public final class Trading {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PrepareVoteResponse();
+      return new PrepareVoteSubmissionResponse();
     }
 
     @java.lang.Override
@@ -84020,7 +84020,7 @@ public final class Trading {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PrepareVoteResponse(
+    private PrepareVoteSubmissionResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -84044,14 +84044,14 @@ public final class Trading {
               break;
             }
             case 18: {
-              io.vegaprotocol.vega.Governance.Vote.Builder subBuilder = null;
-              if (vote_ != null) {
-                subBuilder = vote_.toBuilder();
+              io.vegaprotocol.vega.Governance.VoteSubmission.Builder subBuilder = null;
+              if (submission_ != null) {
+                subBuilder = submission_.toBuilder();
               }
-              vote_ = input.readMessage(io.vegaprotocol.vega.Governance.Vote.parser(), extensionRegistry);
+              submission_ = input.readMessage(io.vegaprotocol.vega.Governance.VoteSubmission.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(vote_);
-                vote_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(submission_);
+                submission_ = subBuilder.buildPartial();
               }
 
               break;
@@ -84077,15 +84077,15 @@ public final class Trading {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteResponse_descriptor;
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteResponse_fieldAccessorTable
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.class, io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.Builder.class);
+              io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.class, io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.Builder.class);
     }
 
     public static final int BLOB_FIELD_NUMBER = 1;
@@ -84103,42 +84103,42 @@ public final class Trading {
       return blob_;
     }
 
-    public static final int VOTE_FIELD_NUMBER = 2;
-    private io.vegaprotocol.vega.Governance.Vote vote_;
+    public static final int SUBMISSION_FIELD_NUMBER = 2;
+    private io.vegaprotocol.vega.Governance.VoteSubmission submission_;
     /**
      * <pre>
      * A copy of the prepared vote
      * </pre>
      *
-     * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
-     * @return Whether the vote field is set.
+     * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
+     * @return Whether the submission field is set.
      */
     @java.lang.Override
-    public boolean hasVote() {
-      return vote_ != null;
+    public boolean hasSubmission() {
+      return submission_ != null;
     }
     /**
      * <pre>
      * A copy of the prepared vote
      * </pre>
      *
-     * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
-     * @return The vote.
+     * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
+     * @return The submission.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Governance.Vote getVote() {
-      return vote_ == null ? io.vegaprotocol.vega.Governance.Vote.getDefaultInstance() : vote_;
+    public io.vegaprotocol.vega.Governance.VoteSubmission getSubmission() {
+      return submission_ == null ? io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance() : submission_;
     }
     /**
      * <pre>
      * A copy of the prepared vote
      * </pre>
      *
-     * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+     * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder() {
-      return getVote();
+    public io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder getSubmissionOrBuilder() {
+      return getSubmission();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -84158,8 +84158,8 @@ public final class Trading {
       if (!blob_.isEmpty()) {
         output.writeBytes(1, blob_);
       }
-      if (vote_ != null) {
-        output.writeMessage(2, getVote());
+      if (submission_ != null) {
+        output.writeMessage(2, getSubmission());
       }
       unknownFields.writeTo(output);
     }
@@ -84174,9 +84174,9 @@ public final class Trading {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, blob_);
       }
-      if (vote_ != null) {
+      if (submission_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getVote());
+          .computeMessageSize(2, getSubmission());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -84188,17 +84188,17 @@ public final class Trading {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteResponse)) {
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse)) {
         return super.equals(obj);
       }
-      io.vegaprotocol.vega.api.Trading.PrepareVoteResponse other = (io.vegaprotocol.vega.api.Trading.PrepareVoteResponse) obj;
+      io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse other = (io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse) obj;
 
       if (!getBlob()
           .equals(other.getBlob())) return false;
-      if (hasVote() != other.hasVote()) return false;
-      if (hasVote()) {
-        if (!getVote()
-            .equals(other.getVote())) return false;
+      if (hasSubmission() != other.hasSubmission()) return false;
+      if (hasSubmission()) {
+        if (!getSubmission()
+            .equals(other.getSubmission())) return false;
       }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -84213,78 +84213,78 @@ public final class Trading {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BLOB_FIELD_NUMBER;
       hash = (53 * hash) + getBlob().hashCode();
-      if (hasVote()) {
-        hash = (37 * hash) + VOTE_FIELD_NUMBER;
-        hash = (53 * hash) + getVote().hashCode();
+      if (hasSubmission()) {
+        hash = (37 * hash) + SUBMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getSubmission().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(byte[] data)
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseDelimitedFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseDelimitedFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parseFrom(
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -84297,7 +84297,7 @@ public final class Trading {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.PrepareVoteResponse prototype) {
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -84317,26 +84317,26 @@ public final class Trading {
      * Response to prepare a governance vote
      * </pre>
      *
-     * Protobuf type {@code api.v1.PrepareVoteResponse}
+     * Protobuf type {@code api.v1.PrepareVoteSubmissionResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.v1.PrepareVoteResponse)
-        io.vegaprotocol.vega.api.Trading.PrepareVoteResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.v1.PrepareVoteSubmissionResponse)
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteResponse_descriptor;
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteResponse_fieldAccessorTable
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.class, io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.Builder.class);
+                io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.class, io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.Builder.class);
       }
 
-      // Construct using io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.newBuilder()
+      // Construct using io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -84356,11 +84356,11 @@ public final class Trading {
         super.clear();
         blob_ = com.google.protobuf.ByteString.EMPTY;
 
-        if (voteBuilder_ == null) {
-          vote_ = null;
+        if (submissionBuilder_ == null) {
+          submission_ = null;
         } else {
-          vote_ = null;
-          voteBuilder_ = null;
+          submission_ = null;
+          submissionBuilder_ = null;
         }
         return this;
       }
@@ -84368,17 +84368,17 @@ public final class Trading {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteResponse_descriptor;
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor;
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.api.Trading.PrepareVoteResponse getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.getDefaultInstance();
+      public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.api.Trading.PrepareVoteResponse build() {
-        io.vegaprotocol.vega.api.Trading.PrepareVoteResponse result = buildPartial();
+      public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse build() {
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -84386,13 +84386,13 @@ public final class Trading {
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.api.Trading.PrepareVoteResponse buildPartial() {
-        io.vegaprotocol.vega.api.Trading.PrepareVoteResponse result = new io.vegaprotocol.vega.api.Trading.PrepareVoteResponse(this);
+      public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse buildPartial() {
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse result = new io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse(this);
         result.blob_ = blob_;
-        if (voteBuilder_ == null) {
-          result.vote_ = vote_;
+        if (submissionBuilder_ == null) {
+          result.submission_ = submission_;
         } else {
-          result.vote_ = voteBuilder_.build();
+          result.submission_ = submissionBuilder_.build();
         }
         onBuilt();
         return result;
@@ -84432,21 +84432,21 @@ public final class Trading {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteResponse) {
-          return mergeFrom((io.vegaprotocol.vega.api.Trading.PrepareVoteResponse)other);
+        if (other instanceof io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.PrepareVoteResponse other) {
-        if (other == io.vegaprotocol.vega.api.Trading.PrepareVoteResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse other) {
+        if (other == io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse.getDefaultInstance()) return this;
         if (other.getBlob() != com.google.protobuf.ByteString.EMPTY) {
           setBlob(other.getBlob());
         }
-        if (other.hasVote()) {
-          mergeVote(other.getVote());
+        if (other.hasSubmission()) {
+          mergeSubmission(other.getSubmission());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -84463,11 +84463,11 @@ public final class Trading {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.vegaprotocol.vega.api.Trading.PrepareVoteResponse parsedMessage = null;
+        io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.api.Trading.PrepareVoteResponse) e.getUnfinishedMessage();
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -84523,33 +84523,33 @@ public final class Trading {
         return this;
       }
 
-      private io.vegaprotocol.vega.Governance.Vote vote_;
+      private io.vegaprotocol.vega.Governance.VoteSubmission submission_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> voteBuilder_;
+          io.vegaprotocol.vega.Governance.VoteSubmission, io.vegaprotocol.vega.Governance.VoteSubmission.Builder, io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder> submissionBuilder_;
       /**
        * <pre>
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
-       * @return Whether the vote field is set.
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
+       * @return Whether the submission field is set.
        */
-      public boolean hasVote() {
-        return voteBuilder_ != null || vote_ != null;
+      public boolean hasSubmission() {
+        return submissionBuilder_ != null || submission_ != null;
       }
       /**
        * <pre>
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
-       * @return The vote.
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
+       * @return The submission.
        */
-      public io.vegaprotocol.vega.Governance.Vote getVote() {
-        if (voteBuilder_ == null) {
-          return vote_ == null ? io.vegaprotocol.vega.Governance.Vote.getDefaultInstance() : vote_;
+      public io.vegaprotocol.vega.Governance.VoteSubmission getSubmission() {
+        if (submissionBuilder_ == null) {
+          return submission_ == null ? io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance() : submission_;
         } else {
-          return voteBuilder_.getMessage();
+          return submissionBuilder_.getMessage();
         }
       }
       /**
@@ -84557,17 +84557,17 @@ public final class Trading {
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
-      public Builder setVote(io.vegaprotocol.vega.Governance.Vote value) {
-        if (voteBuilder_ == null) {
+      public Builder setSubmission(io.vegaprotocol.vega.Governance.VoteSubmission value) {
+        if (submissionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          vote_ = value;
+          submission_ = value;
           onChanged();
         } else {
-          voteBuilder_.setMessage(value);
+          submissionBuilder_.setMessage(value);
         }
 
         return this;
@@ -84577,15 +84577,15 @@ public final class Trading {
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
-      public Builder setVote(
-          io.vegaprotocol.vega.Governance.Vote.Builder builderForValue) {
-        if (voteBuilder_ == null) {
-          vote_ = builderForValue.build();
+      public Builder setSubmission(
+          io.vegaprotocol.vega.Governance.VoteSubmission.Builder builderForValue) {
+        if (submissionBuilder_ == null) {
+          submission_ = builderForValue.build();
           onChanged();
         } else {
-          voteBuilder_.setMessage(builderForValue.build());
+          submissionBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -84595,19 +84595,19 @@ public final class Trading {
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
-      public Builder mergeVote(io.vegaprotocol.vega.Governance.Vote value) {
-        if (voteBuilder_ == null) {
-          if (vote_ != null) {
-            vote_ =
-              io.vegaprotocol.vega.Governance.Vote.newBuilder(vote_).mergeFrom(value).buildPartial();
+      public Builder mergeSubmission(io.vegaprotocol.vega.Governance.VoteSubmission value) {
+        if (submissionBuilder_ == null) {
+          if (submission_ != null) {
+            submission_ =
+              io.vegaprotocol.vega.Governance.VoteSubmission.newBuilder(submission_).mergeFrom(value).buildPartial();
           } else {
-            vote_ = value;
+            submission_ = value;
           }
           onChanged();
         } else {
-          voteBuilder_.mergeFrom(value);
+          submissionBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -84617,15 +84617,15 @@ public final class Trading {
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
-      public Builder clearVote() {
-        if (voteBuilder_ == null) {
-          vote_ = null;
+      public Builder clearSubmission() {
+        if (submissionBuilder_ == null) {
+          submission_ = null;
           onChanged();
         } else {
-          vote_ = null;
-          voteBuilder_ = null;
+          submission_ = null;
+          submissionBuilder_ = null;
         }
 
         return this;
@@ -84635,26 +84635,26 @@ public final class Trading {
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
-      public io.vegaprotocol.vega.Governance.Vote.Builder getVoteBuilder() {
+      public io.vegaprotocol.vega.Governance.VoteSubmission.Builder getSubmissionBuilder() {
 
         onChanged();
-        return getVoteFieldBuilder().getBuilder();
+        return getSubmissionFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
-      public io.vegaprotocol.vega.Governance.VoteOrBuilder getVoteOrBuilder() {
-        if (voteBuilder_ != null) {
-          return voteBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder getSubmissionOrBuilder() {
+        if (submissionBuilder_ != null) {
+          return submissionBuilder_.getMessageOrBuilder();
         } else {
-          return vote_ == null ?
-              io.vegaprotocol.vega.Governance.Vote.getDefaultInstance() : vote_;
+          return submission_ == null ?
+              io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance() : submission_;
         }
       }
       /**
@@ -84662,20 +84662,20 @@ public final class Trading {
        * A copy of the prepared vote
        * </pre>
        *
-       * <code>.vega.Vote vote = 2 [json_name = "vote"];</code>
+       * <code>.vega.VoteSubmission submission = 2 [json_name = "submission"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
-          getVoteFieldBuilder() {
-        if (voteBuilder_ == null) {
-          voteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>(
-                  getVote(),
+          io.vegaprotocol.vega.Governance.VoteSubmission, io.vegaprotocol.vega.Governance.VoteSubmission.Builder, io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder>
+          getSubmissionFieldBuilder() {
+        if (submissionBuilder_ == null) {
+          submissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Governance.VoteSubmission, io.vegaprotocol.vega.Governance.VoteSubmission.Builder, io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder>(
+                  getSubmission(),
                   getParentForChildren(),
                   isClean());
-          vote_ = null;
+          submission_ = null;
         }
-        return voteBuilder_;
+        return submissionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -84690,41 +84690,41 @@ public final class Trading {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.v1.PrepareVoteResponse)
+      // @@protoc_insertion_point(builder_scope:api.v1.PrepareVoteSubmissionResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteResponse)
-    private static final io.vegaprotocol.vega.api.Trading.PrepareVoteResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteSubmissionResponse)
+    private static final io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.PrepareVoteResponse();
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse();
     }
 
-    public static io.vegaprotocol.vega.api.Trading.PrepareVoteResponse getDefaultInstance() {
+    public static io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PrepareVoteResponse>
-        PARSER = new com.google.protobuf.AbstractParser<PrepareVoteResponse>() {
+    private static final com.google.protobuf.Parser<PrepareVoteSubmissionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PrepareVoteSubmissionResponse>() {
       @java.lang.Override
-      public PrepareVoteResponse parsePartialFrom(
+      public PrepareVoteSubmissionResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PrepareVoteResponse(input, extensionRegistry);
+        return new PrepareVoteSubmissionResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PrepareVoteResponse> parser() {
+    public static com.google.protobuf.Parser<PrepareVoteSubmissionResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PrepareVoteResponse> getParserForType() {
+    public com.google.protobuf.Parser<PrepareVoteSubmissionResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public io.vegaprotocol.vega.api.Trading.PrepareVoteResponse getDefaultInstanceForType() {
+    public io.vegaprotocol.vega.api.Trading.PrepareVoteSubmissionResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -110240,15 +110240,15 @@ public final class Trading {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_v1_PrepareProposalResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_v1_PrepareVoteRequest_descriptor;
+    internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_v1_PrepareVoteRequest_fieldAccessorTable;
+      internal_static_api_v1_PrepareVoteSubmissionRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_v1_PrepareVoteResponse_descriptor;
+    internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_v1_PrepareVoteResponse_fieldAccessorTable;
+      internal_static_api_v1_PrepareVoteSubmissionResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_v1_PrepareLiquidityProvisionRequest_descriptor;
   private static final
@@ -110650,231 +110650,233 @@ public final class Trading {
       "roposalTermsB\006\342\337\037\002 \001R\010proposal\"h\n\027Prepar" +
       "eProposalResponse\022\022\n\004blob\030\001 \001(\014R\004blob\0229\n" +
       "\020pending_proposal\030\002 \001(\0132\016.vega.ProposalR" +
-      "\017pendingProposal\"<\n\022PrepareVoteRequest\022&" +
-      "\n\004vote\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001R\004vote\"I" +
-      "\n\023PrepareVoteResponse\022\022\n\004blob\030\001 \001(\014R\004blo" +
-      "b\022\036\n\004vote\030\002 \001(\0132\n.vega.VoteR\004vote\"n\n Pre" +
-      "pareLiquidityProvisionRequest\022J\n\nsubmiss" +
-      "ion\030\001 \001(\0132\".vega.LiquidityProvisionSubmi" +
-      "ssionB\006\342\337\037\002 \001R\nsubmission\"7\n!PrepareLiqu" +
-      "idityProvisionResponse\022\022\n\004blob\030\001 \001(\014R\004bl" +
-      "ob\"O\n\020OrderByIDRequest\022!\n\010order_id\030\001 \001(\t" +
-      "B\006\342\337\037\002 \001R\007orderId\022\030\n\007version\030\002 \001(\004R\007vers" +
-      "ion\"6\n\021OrderByIDResponse\022!\n\005order\030\001 \001(\0132" +
-      "\013.vega.OrderR\005order\"q\n\030OrderVersionsByID" +
-      "Request\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007order" +
-      "Id\0222\n\npagination\030\002 \001(\0132\022.api.v1.Paginati" +
-      "onR\npagination\"@\n\031OrderVersionsByIDRespo" +
-      "nse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders" +
-      "\"7\n\022EstimateFeeRequest\022!\n\005order\030\001 \001(\0132\013." +
-      "vega.OrderR\005order\"2\n\023EstimateFeeResponse" +
-      "\022\033\n\003fee\030\002 \001(\0132\t.vega.FeeR\003fee\":\n\025Estimat" +
-      "eMarginRequest\022!\n\005order\030\001 \001(\0132\013.vega.Ord" +
-      "erR\005order\"Q\n\026EstimateMarginResponse\0227\n\rm" +
-      "argin_levels\030\002 \001(\0132\022.vega.MarginLevelsR\014" +
-      "marginLevels\"\227\001\n\026ObserveEventBusRequest\022" +
-      "&\n\004type\030\001 \003(\0162\022.vega.BusEventTypeR\004type\022" +
-      "\033\n\tmarket_id\030\002 \001(\tR\010marketId\022\031\n\010party_id" +
-      "\030\003 \001(\tR\007partyId\022\035\n\nbatch_size\030\004 \001(\003R\tbat" +
-      "chSize\"A\n\027ObserveEventBusResponse\022&\n\006eve" +
-      "nts\030\001 \003(\0132\016.vega.BusEventR\006events\"\023\n\021Sta" +
-      "tisticsRequest\"F\n\022StatisticsResponse\0220\n\n" +
-      "statistics\030\001 \001(\0132\020.vega.StatisticsR\nstat" +
-      "istics\"7\n\022WithdrawalsRequest\022!\n\010party_id" +
-      "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\023WithdrawalsRe" +
-      "sponse\0222\n\013withdrawals\030\001 \003(\0132\020.vega.Withd" +
-      "rawalR\013withdrawals\"+\n\021WithdrawalRequest\022" +
-      "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"F\n\022WithdrawalRes" +
-      "ponse\0220\n\nwithdrawal\030\001 \001(\0132\020.vega.Withdra" +
-      "walR\nwithdrawal\"M\n\036ERC20WithdrawalApprov" +
-      "alRequest\022+\n\rwithdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001" +
-      "R\014withdrawalId\"\252\001\n\037ERC20WithdrawalApprov" +
-      "alResponse\022!\n\014asset_source\030\001 \001(\tR\013assetS" +
-      "ource\022\026\n\006amount\030\002 \001(\tR\006amount\022\026\n\006expiry\030" +
-      "\003 \001(\003R\006expiry\022\024\n\005nonce\030\004 \001(\tR\005nonce\022\036\n\ns" +
-      "ignatures\030\005 \001(\tR\nsignatures\"4\n\017DepositsR" +
-      "equest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyI" +
-      "d\"=\n\020DepositsResponse\022)\n\010deposits\030\001 \003(\0132" +
-      "\r.vega.DepositR\010deposits\"(\n\016DepositReque" +
-      "st\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\":\n\017DepositRes" +
-      "ponse\022\'\n\007deposit\030\001 \001(\0132\r.vega.DepositR\007d" +
-      "eposit\"\032\n\030NetworkParametersRequest\"b\n\031Ne" +
-      "tworkParametersResponse\022E\n\022network_param" +
-      "eters\030\001 \003(\0132\026.vega.NetworkParameterR\021net" +
-      "workParameters\"J\n\032LiquidityProvisionsReq" +
-      "uest\022\026\n\006market\030\001 \001(\tR\006market\022\024\n\005party\030\002 " +
-      "\001(\tR\005party\"j\n\033LiquidityProvisionsRespons" +
-      "e\022K\n\024liquidity_provisions\030\001 \003(\0132\030.vega.L" +
-      "iquidityProvisionR\023liquidityProvisions\"+" +
-      "\n\021OracleSpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R" +
-      "\002id\"M\n\022OracleSpecResponse\0227\n\013oracle_spec" +
-      "\030\001 \001(\0132\026.oracles.v1.OracleSpecR\noracleSp" +
-      "ec\"\024\n\022OracleSpecsRequest\"P\n\023OracleSpecsR" +
-      "esponse\0229\n\014oracle_specs\030\001 \003(\0132\026.oracles." +
-      "v1.OracleSpecR\013oracleSpecs\"1\n\027OracleData" +
-      "BySpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n" +
-      "\030OracleDataBySpecResponse\0227\n\013oracle_data" +
-      "\030\001 \003(\0132\026.oracles.v1.OracleDataR\noracleDa" +
-      "ta2\300\006\n\016TradingService\022[\n\022PrepareSubmitOr" +
-      "der\022!.api.v1.PrepareSubmitOrderRequest\032\"" +
-      ".api.v1.PrepareSubmitOrderResponse\022[\n\022Pr" +
-      "epareCancelOrder\022!.api.v1.PrepareCancelO" +
-      "rderRequest\032\".api.v1.PrepareCancelOrderR" +
-      "esponse\022X\n\021PrepareAmendOrder\022 .api.v1.Pr" +
-      "epareAmendOrderRequest\032!.api.v1.PrepareA" +
-      "mendOrderResponse\022R\n\017PrepareWithdraw\022\036.a" +
-      "pi.v1.PrepareWithdrawRequest\032\037.api.v1.Pr" +
-      "epareWithdrawResponse\022X\n\021SubmitTransacti" +
-      "on\022 .api.v1.SubmitTransactionRequest\032!.a" +
-      "pi.v1.SubmitTransactionResponse\022R\n\017Prepa" +
-      "reProposal\022\036.api.v1.PrepareProposalReque" +
-      "st\032\037.api.v1.PrepareProposalResponse\022F\n\013P" +
-      "repareVote\022\032.api.v1.PrepareVoteRequest\032\033" +
-      ".api.v1.PrepareVoteResponse\022^\n\023Propagate" +
-      "ChainEvent\022\".api.v1.PropagateChainEventR" +
-      "equest\032#.api.v1.PropagateChainEventRespo" +
-      "nse\022p\n\031PrepareLiquidityProvision\022(.api.v" +
-      "1.PrepareLiquidityProvisionRequest\032).api" +
-      ".v1.PrepareLiquidityProvisionResponse2\333*" +
-      "\n\022TradingDataService\022O\n\016MarketAccounts\022\035" +
-      ".api.v1.MarketAccountsRequest\032\036.api.v1.M" +
-      "arketAccountsResponse\022L\n\rPartyAccounts\022\034" +
-      ".api.v1.PartyAccountsRequest\032\035.api.v1.Pa" +
-      "rtyAccountsResponse\022p\n\031FeeInfrastructure" +
-      "Accounts\022(.api.v1.FeeInfrastructureAccou" +
-      "ntsRequest\032).api.v1.FeeInfrastructureAcc" +
-      "ountsResponse\022:\n\007Candles\022\026.api.v1.Candle" +
-      "sRequest\032\027.api.v1.CandlesResponse\022O\n\016Mar" +
-      "ketDataByID\022\035.api.v1.MarketDataByIDReque" +
-      "st\032\036.api.v1.MarketDataByIDResponse\022F\n\013Ma" +
-      "rketsData\022\032.api.v1.MarketsDataRequest\032\033." +
-      "api.v1.MarketsDataResponse\022C\n\nMarketByID" +
-      "\022\031.api.v1.MarketByIDRequest\032\032.api.v1.Mar" +
-      "ketByIDResponse\022F\n\013MarketDepth\022\032.api.v1." +
-      "MarketDepthRequest\032\033.api.v1.MarketDepthR" +
-      "esponse\022:\n\007Markets\022\026.api.v1.MarketsReque" +
-      "st\032\027.api.v1.MarketsResponse\022[\n\022OrderByMa" +
-      "rketAndID\022!.api.v1.OrderByMarketAndIDReq" +
-      "uest\032\".api.v1.OrderByMarketAndIDResponse" +
-      "\022U\n\020OrderByReference\022\037.api.v1.OrderByRef" +
-      "erenceRequest\032 .api.v1.OrderByReferenceR" +
-      "esponse\022O\n\016OrdersByMarket\022\035.api.v1.Order" +
-      "sByMarketRequest\032\036.api.v1.OrdersByMarket" +
-      "Response\022L\n\rOrdersByParty\022\034.api.v1.Order" +
-      "sByPartyRequest\032\035.api.v1.OrdersByPartyRe" +
-      "sponse\022@\n\tOrderByID\022\030.api.v1.OrderByIDRe" +
-      "quest\032\031.api.v1.OrderByIDResponse\022X\n\021Orde" +
-      "rVersionsByID\022 .api.v1.OrderVersionsByID" +
-      "Request\032!.api.v1.OrderVersionsByIDRespon" +
-      "se\022I\n\014MarginLevels\022\033.api.v1.MarginLevels" +
-      "Request\032\034.api.v1.MarginLevelsResponse\022:\n" +
-      "\007Parties\022\026.api.v1.PartiesRequest\032\027.api.v" +
-      "1.PartiesResponse\022@\n\tPartyByID\022\030.api.v1." +
-      "PartyByIDRequest\032\031.api.v1.PartyByIDRespo" +
-      "nse\022U\n\020PositionsByParty\022\037.api.v1.Positio" +
-      "nsByPartyRequest\032 .api.v1.PositionsByPar" +
-      "tyResponse\022@\n\tLastTrade\022\030.api.v1.LastTra" +
-      "deRequest\032\031.api.v1.LastTradeResponse\022O\n\016" +
-      "TradesByMarket\022\035.api.v1.TradesByMarketRe" +
-      "quest\032\036.api.v1.TradesByMarketResponse\022L\n" +
-      "\rTradesByOrder\022\034.api.v1.TradesByOrderReq" +
-      "uest\032\035.api.v1.TradesByOrderResponse\022L\n\rT" +
-      "radesByParty\022\034.api.v1.TradesByPartyReque" +
-      "st\032\035.api.v1.TradesByPartyResponse\022I\n\014Get" +
-      "Proposals\022\033.api.v1.GetProposalsRequest\032\034" +
-      ".api.v1.GetProposalsResponse\022^\n\023GetPropo" +
-      "salsByParty\022\".api.v1.GetProposalsByParty" +
-      "Request\032#.api.v1.GetProposalsByPartyResp" +
-      "onse\022R\n\017GetVotesByParty\022\036.api.v1.GetVote" +
-      "sByPartyRequest\032\037.api.v1.GetVotesByParty" +
-      "Response\022d\n\025GetNewMarketProposals\022$.api." +
-      "v1.GetNewMarketProposalsRequest\032%.api.v1" +
-      ".GetNewMarketProposalsResponse\022m\n\030GetUpd" +
-      "ateMarketProposals\022\'.api.v1.GetUpdateMar" +
-      "ketProposalsRequest\032(.api.v1.GetUpdateMa" +
-      "rketProposalsResponse\022|\n\035GetNetworkParam" +
-      "etersProposals\022,.api.v1.GetNetworkParame" +
-      "tersProposalsRequest\032-.api.v1.GetNetwork" +
-      "ParametersProposalsResponse\022a\n\024GetNewAss" +
-      "etProposals\022#.api.v1.GetNewAssetProposal" +
-      "sRequest\032$.api.v1.GetNewAssetProposalsRe" +
-      "sponse\022R\n\017GetProposalByID\022\036.api.v1.GetPr" +
-      "oposalByIDRequest\032\037.api.v1.GetProposalBy" +
-      "IDResponse\022g\n\026GetProposalByReference\022%.a" +
-      "pi.v1.GetProposalByReferenceRequest\032&.ap" +
-      "i.v1.GetProposalByReferenceResponse\022Z\n\021O" +
-      "bserveGovernance\022 .api.v1.ObserveGoverna" +
-      "nceRequest\032!.api.v1.ObserveGovernanceRes" +
-      "ponse0\001\022f\n\025ObservePartyProposals\022$.api.v" +
-      "1.ObservePartyProposalsRequest\032%.api.v1." +
-      "ObservePartyProposalsResponse0\001\022Z\n\021Obser" +
-      "vePartyVotes\022 .api.v1.ObservePartyVotesR" +
-      "equest\032!.api.v1.ObservePartyVotesRespons" +
-      "e0\001\022c\n\024ObserveProposalVotes\022#.api.v1.Obs" +
-      "erveProposalVotesRequest\032$.api.v1.Observ" +
-      "eProposalVotesResponse0\001\022V\n\017ObserveEvent" +
-      "Bus\022\036.api.v1.ObserveEventBusRequest\032\037.ap" +
-      "i.v1.ObserveEventBusResponse(\0010\001\022C\n\nStat" +
-      "istics\022\031.api.v1.StatisticsRequest\032\032.api." +
-      "v1.StatisticsResponse\022F\n\013GetVegaTime\022\032.a" +
-      "pi.v1.GetVegaTimeRequest\032\033.api.v1.GetVeg" +
-      "aTimeResponse\022Z\n\021AccountsSubscribe\022 .api" +
-      ".v1.AccountsSubscribeRequest\032!.api.v1.Ac" +
-      "countsSubscribeResponse0\001\022W\n\020CandlesSubs" +
-      "cribe\022\037.api.v1.CandlesSubscribeRequest\032 " +
-      ".api.v1.CandlesSubscribeResponse0\001\022f\n\025Ma" +
-      "rginLevelsSubscribe\022$.api.v1.MarginLevel" +
-      "sSubscribeRequest\032%.api.v1.MarginLevelsS" +
-      "ubscribeResponse0\001\022c\n\024MarketDepthSubscri" +
-      "be\022#.api.v1.MarketDepthSubscribeRequest\032" +
-      "$.api.v1.MarketDepthSubscribeResponse0\001\022",
-      "x\n\033MarketDepthUpdatesSubscribe\022*.api.v1." +
-      "MarketDepthUpdatesSubscribeRequest\032+.api" +
-      ".v1.MarketDepthUpdatesSubscribeResponse0" +
-      "\001\022c\n\024MarketsDataSubscribe\022#.api.v1.Marke" +
-      "tsDataSubscribeRequest\032$.api.v1.MarketsD" +
-      "ataSubscribeResponse0\001\022T\n\017OrdersSubscrib" +
-      "e\022\036.api.v1.OrdersSubscribeRequest\032\037.api." +
-      "v1.OrdersSubscribeResponse0\001\022]\n\022Position" +
-      "sSubscribe\022!.api.v1.PositionsSubscribeRe" +
-      "quest\032\".api.v1.PositionsSubscribeRespons" +
-      "e0\001\022T\n\017TradesSubscribe\022\036.api.v1.TradesSu" +
-      "bscribeRequest\032\037.api.v1.TradesSubscribeR" +
-      "esponse0\001\022u\n\032TransferResponsesSubscribe\022" +
-      ").api.v1.TransferResponsesSubscribeReque" +
-      "st\032*.api.v1.TransferResponsesSubscribeRe" +
-      "sponse0\001\022s\n\032GetNodeSignaturesAggregate\022)" +
-      ".api.v1.GetNodeSignaturesAggregateReques" +
-      "t\032*.api.v1.GetNodeSignaturesAggregateRes" +
-      "ponse\022@\n\tAssetByID\022\030.api.v1.AssetByIDReq" +
-      "uest\032\031.api.v1.AssetByIDResponse\0227\n\006Asset" +
-      "s\022\025.api.v1.AssetsRequest\032\026.api.v1.Assets" +
-      "Response\022F\n\013EstimateFee\022\032.api.v1.Estimat" +
-      "eFeeRequest\032\033.api.v1.EstimateFeeResponse" +
-      "\022O\n\016EstimateMargin\022\035.api.v1.EstimateMarg" +
-      "inRequest\032\036.api.v1.EstimateMarginRespons" +
-      "e\022j\n\027ERC20WithdrawalApproval\022&.api.v1.ER" +
-      "C20WithdrawalApprovalRequest\032\'.api.v1.ER" +
-      "C20WithdrawalApprovalResponse\022C\n\nWithdra" +
-      "wal\022\031.api.v1.WithdrawalRequest\032\032.api.v1." +
-      "WithdrawalResponse\022F\n\013Withdrawals\022\032.api." +
-      "v1.WithdrawalsRequest\032\033.api.v1.Withdrawa" +
-      "lsResponse\022:\n\007Deposit\022\026.api.v1.DepositRe" +
-      "quest\032\027.api.v1.DepositResponse\022=\n\010Deposi" +
-      "ts\022\027.api.v1.DepositsRequest\032\030.api.v1.Dep" +
-      "ositsResponse\022X\n\021NetworkParameters\022 .api" +
-      ".v1.NetworkParametersRequest\032!.api.v1.Ne" +
-      "tworkParametersResponse\022^\n\023LiquidityProv" +
-      "isions\022\".api.v1.LiquidityProvisionsReque" +
-      "st\032#.api.v1.LiquidityProvisionsResponse\022" +
-      "C\n\nOracleSpec\022\031.api.v1.OracleSpecRequest" +
-      "\032\032.api.v1.OracleSpecResponse\022F\n\013OracleSp" +
-      "ecs\022\032.api.v1.OracleSpecsRequest\032\033.api.v1" +
-      ".OracleSpecsResponse\022U\n\020OracleDataBySpec" +
-      "\022\037.api.v1.OracleDataBySpecRequest\032 .api." +
-      "v1.OracleDataBySpecResponseB?\n\030io.vegapr" +
-      "otocol.vega.apiZ#code.vegaprotocol.io/ve" +
-      "ga/proto/apib\006proto3"
+      "\017pendingProposal\"\\\n\034PrepareVoteSubmissio" +
+      "nRequest\022<\n\nsubmission\030\001 \001(\0132\024.vega.Vote" +
+      "SubmissionB\006\342\337\037\002 \001R\nsubmission\"i\n\035Prepar" +
+      "eVoteSubmissionResponse\022\022\n\004blob\030\001 \001(\014R\004b" +
+      "lob\0224\n\nsubmission\030\002 \001(\0132\024.vega.VoteSubmi" +
+      "ssionR\nsubmission\"n\n PrepareLiquidityPro" +
+      "visionRequest\022J\n\nsubmission\030\001 \001(\0132\".vega" +
+      ".LiquidityProvisionSubmissionB\006\342\337\037\002 \001R\ns" +
+      "ubmission\"7\n!PrepareLiquidityProvisionRe" +
+      "sponse\022\022\n\004blob\030\001 \001(\014R\004blob\"O\n\020OrderByIDR" +
+      "equest\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderI" +
+      "d\022\030\n\007version\030\002 \001(\004R\007version\"6\n\021OrderByID" +
+      "Response\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005or" +
+      "der\"q\n\030OrderVersionsByIDRequest\022!\n\010order" +
+      "_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\0222\n\npagination" +
+      "\030\002 \001(\0132\022.api.v1.PaginationR\npagination\"@" +
+      "\n\031OrderVersionsByIDResponse\022#\n\006orders\030\001 " +
+      "\003(\0132\013.vega.OrderR\006orders\"7\n\022EstimateFeeR" +
+      "equest\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005orde" +
+      "r\"2\n\023EstimateFeeResponse\022\033\n\003fee\030\002 \001(\0132\t." +
+      "vega.FeeR\003fee\":\n\025EstimateMarginRequest\022!" +
+      "\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"Q\n\026Est" +
+      "imateMarginResponse\0227\n\rmargin_levels\030\002 \001" +
+      "(\0132\022.vega.MarginLevelsR\014marginLevels\"\227\001\n" +
+      "\026ObserveEventBusRequest\022&\n\004type\030\001 \003(\0162\022." +
+      "vega.BusEventTypeR\004type\022\033\n\tmarket_id\030\002 \001" +
+      "(\tR\010marketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022" +
+      "\035\n\nbatch_size\030\004 \001(\003R\tbatchSize\"A\n\027Observ" +
+      "eEventBusResponse\022&\n\006events\030\001 \003(\0132\016.vega" +
+      ".BusEventR\006events\"\023\n\021StatisticsRequest\"F" +
+      "\n\022StatisticsResponse\0220\n\nstatistics\030\001 \001(\013" +
+      "2\020.vega.StatisticsR\nstatistics\"7\n\022Withdr" +
+      "awalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007" +
+      "partyId\"I\n\023WithdrawalsResponse\0222\n\013withdr" +
+      "awals\030\001 \003(\0132\020.vega.WithdrawalR\013withdrawa" +
+      "ls\"+\n\021WithdrawalRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037" +
+      "\002X\001R\002id\"F\n\022WithdrawalResponse\0220\n\nwithdra" +
+      "wal\030\001 \001(\0132\020.vega.WithdrawalR\nwithdrawal\"" +
+      "M\n\036ERC20WithdrawalApprovalRequest\022+\n\rwit" +
+      "hdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014withdrawalId\"\252" +
+      "\001\n\037ERC20WithdrawalApprovalResponse\022!\n\014as" +
+      "set_source\030\001 \001(\tR\013assetSource\022\026\n\006amount\030" +
+      "\002 \001(\tR\006amount\022\026\n\006expiry\030\003 \001(\003R\006expiry\022\024\n" +
+      "\005nonce\030\004 \001(\tR\005nonce\022\036\n\nsignatures\030\005 \001(\tR" +
+      "\nsignatures\"4\n\017DepositsRequest\022!\n\010party_" +
+      "id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"=\n\020DepositsRes" +
+      "ponse\022)\n\010deposits\030\001 \003(\0132\r.vega.DepositR\010" +
+      "deposits\"(\n\016DepositRequest\022\026\n\002id\030\001 \001(\tB\006" +
+      "\342\337\037\002X\001R\002id\":\n\017DepositResponse\022\'\n\007deposit" +
+      "\030\001 \001(\0132\r.vega.DepositR\007deposit\"\032\n\030Networ" +
+      "kParametersRequest\"b\n\031NetworkParametersR" +
+      "esponse\022E\n\022network_parameters\030\001 \003(\0132\026.ve" +
+      "ga.NetworkParameterR\021networkParameters\"J" +
+      "\n\032LiquidityProvisionsRequest\022\026\n\006market\030\001" +
+      " \001(\tR\006market\022\024\n\005party\030\002 \001(\tR\005party\"j\n\033Li" +
+      "quidityProvisionsResponse\022K\n\024liquidity_p" +
+      "rovisions\030\001 \003(\0132\030.vega.LiquidityProvisio" +
+      "nR\023liquidityProvisions\"+\n\021OracleSpecRequ" +
+      "est\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"M\n\022OracleSpe" +
+      "cResponse\0227\n\013oracle_spec\030\001 \001(\0132\026.oracles" +
+      ".v1.OracleSpecR\noracleSpec\"\024\n\022OracleSpec" +
+      "sRequest\"P\n\023OracleSpecsResponse\0229\n\014oracl" +
+      "e_specs\030\001 \003(\0132\026.oracles.v1.OracleSpecR\013o" +
+      "racleSpecs\"1\n\027OracleDataBySpecRequest\022\026\n" +
+      "\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030OracleDataBySpe" +
+      "cResponse\0227\n\013oracle_data\030\001 \003(\0132\026.oracles" +
+      ".v1.OracleDataR\noracleData2\336\006\n\016TradingSe" +
+      "rvice\022[\n\022PrepareSubmitOrder\022!.api.v1.Pre" +
+      "pareSubmitOrderRequest\032\".api.v1.PrepareS" +
+      "ubmitOrderResponse\022[\n\022PrepareCancelOrder" +
+      "\022!.api.v1.PrepareCancelOrderRequest\032\".ap" +
+      "i.v1.PrepareCancelOrderResponse\022X\n\021Prepa" +
+      "reAmendOrder\022 .api.v1.PrepareAmendOrderR" +
+      "equest\032!.api.v1.PrepareAmendOrderRespons" +
+      "e\022R\n\017PrepareWithdraw\022\036.api.v1.PrepareWit" +
+      "hdrawRequest\032\037.api.v1.PrepareWithdrawRes" +
+      "ponse\022X\n\021SubmitTransaction\022 .api.v1.Subm" +
+      "itTransactionRequest\032!.api.v1.SubmitTran" +
+      "sactionResponse\022R\n\017PrepareProposal\022\036.api" +
+      ".v1.PrepareProposalRequest\032\037.api.v1.Prep" +
+      "areProposalResponse\022d\n\025PrepareVoteSubmis" +
+      "sion\022$.api.v1.PrepareVoteSubmissionReque" +
+      "st\032%.api.v1.PrepareVoteSubmissionRespons" +
+      "e\022^\n\023PropagateChainEvent\022\".api.v1.Propag" +
+      "ateChainEventRequest\032#.api.v1.PropagateC" +
+      "hainEventResponse\022p\n\031PrepareLiquidityPro" +
+      "vision\022(.api.v1.PrepareLiquidityProvisio" +
+      "nRequest\032).api.v1.PrepareLiquidityProvis" +
+      "ionResponse2\333*\n\022TradingDataService\022O\n\016Ma" +
+      "rketAccounts\022\035.api.v1.MarketAccountsRequ" +
+      "est\032\036.api.v1.MarketAccountsResponse\022L\n\rP" +
+      "artyAccounts\022\034.api.v1.PartyAccountsReque" +
+      "st\032\035.api.v1.PartyAccountsResponse\022p\n\031Fee" +
+      "InfrastructureAccounts\022(.api.v1.FeeInfra" +
+      "structureAccountsRequest\032).api.v1.FeeInf" +
+      "rastructureAccountsResponse\022:\n\007Candles\022\026" +
+      ".api.v1.CandlesRequest\032\027.api.v1.CandlesR" +
+      "esponse\022O\n\016MarketDataByID\022\035.api.v1.Marke" +
+      "tDataByIDRequest\032\036.api.v1.MarketDataByID" +
+      "Response\022F\n\013MarketsData\022\032.api.v1.Markets" +
+      "DataRequest\032\033.api.v1.MarketsDataResponse" +
+      "\022C\n\nMarketByID\022\031.api.v1.MarketByIDReques" +
+      "t\032\032.api.v1.MarketByIDResponse\022F\n\013MarketD" +
+      "epth\022\032.api.v1.MarketDepthRequest\032\033.api.v" +
+      "1.MarketDepthResponse\022:\n\007Markets\022\026.api.v" +
+      "1.MarketsRequest\032\027.api.v1.MarketsRespons" +
+      "e\022[\n\022OrderByMarketAndID\022!.api.v1.OrderBy" +
+      "MarketAndIDRequest\032\".api.v1.OrderByMarke" +
+      "tAndIDResponse\022U\n\020OrderByReference\022\037.api" +
+      ".v1.OrderByReferenceRequest\032 .api.v1.Ord" +
+      "erByReferenceResponse\022O\n\016OrdersByMarket\022" +
+      "\035.api.v1.OrdersByMarketRequest\032\036.api.v1." +
+      "OrdersByMarketResponse\022L\n\rOrdersByParty\022" +
+      "\034.api.v1.OrdersByPartyRequest\032\035.api.v1.O" +
+      "rdersByPartyResponse\022@\n\tOrderByID\022\030.api." +
+      "v1.OrderByIDRequest\032\031.api.v1.OrderByIDRe" +
+      "sponse\022X\n\021OrderVersionsByID\022 .api.v1.Ord" +
+      "erVersionsByIDRequest\032!.api.v1.OrderVers" +
+      "ionsByIDResponse\022I\n\014MarginLevels\022\033.api.v" +
+      "1.MarginLevelsRequest\032\034.api.v1.MarginLev" +
+      "elsResponse\022:\n\007Parties\022\026.api.v1.PartiesR" +
+      "equest\032\027.api.v1.PartiesResponse\022@\n\tParty" +
+      "ByID\022\030.api.v1.PartyByIDRequest\032\031.api.v1." +
+      "PartyByIDResponse\022U\n\020PositionsByParty\022\037." +
+      "api.v1.PositionsByPartyRequest\032 .api.v1." +
+      "PositionsByPartyResponse\022@\n\tLastTrade\022\030." +
+      "api.v1.LastTradeRequest\032\031.api.v1.LastTra" +
+      "deResponse\022O\n\016TradesByMarket\022\035.api.v1.Tr" +
+      "adesByMarketRequest\032\036.api.v1.TradesByMar" +
+      "ketResponse\022L\n\rTradesByOrder\022\034.api.v1.Tr" +
+      "adesByOrderRequest\032\035.api.v1.TradesByOrde" +
+      "rResponse\022L\n\rTradesByParty\022\034.api.v1.Trad" +
+      "esByPartyRequest\032\035.api.v1.TradesByPartyR" +
+      "esponse\022I\n\014GetProposals\022\033.api.v1.GetProp" +
+      "osalsRequest\032\034.api.v1.GetProposalsRespon" +
+      "se\022^\n\023GetProposalsByParty\022\".api.v1.GetPr" +
+      "oposalsByPartyRequest\032#.api.v1.GetPropos" +
+      "alsByPartyResponse\022R\n\017GetVotesByParty\022\036." +
+      "api.v1.GetVotesByPartyRequest\032\037.api.v1.G" +
+      "etVotesByPartyResponse\022d\n\025GetNewMarketPr" +
+      "oposals\022$.api.v1.GetNewMarketProposalsRe" +
+      "quest\032%.api.v1.GetNewMarketProposalsResp" +
+      "onse\022m\n\030GetUpdateMarketProposals\022\'.api.v" +
+      "1.GetUpdateMarketProposalsRequest\032(.api." +
+      "v1.GetUpdateMarketProposalsResponse\022|\n\035G" +
+      "etNetworkParametersProposals\022,.api.v1.Ge" +
+      "tNetworkParametersProposalsRequest\032-.api" +
+      ".v1.GetNetworkParametersProposalsRespons" +
+      "e\022a\n\024GetNewAssetProposals\022#.api.v1.GetNe" +
+      "wAssetProposalsRequest\032$.api.v1.GetNewAs" +
+      "setProposalsResponse\022R\n\017GetProposalByID\022" +
+      "\036.api.v1.GetProposalByIDRequest\032\037.api.v1" +
+      ".GetProposalByIDResponse\022g\n\026GetProposalB" +
+      "yReference\022%.api.v1.GetProposalByReferen" +
+      "ceRequest\032&.api.v1.GetProposalByReferenc" +
+      "eResponse\022Z\n\021ObserveGovernance\022 .api.v1." +
+      "ObserveGovernanceRequest\032!.api.v1.Observ" +
+      "eGovernanceResponse0\001\022f\n\025ObservePartyPro" +
+      "posals\022$.api.v1.ObservePartyProposalsReq" +
+      "uest\032%.api.v1.ObservePartyProposalsRespo" +
+      "nse0\001\022Z\n\021ObservePartyVotes\022 .api.v1.Obse" +
+      "rvePartyVotesRequest\032!.api.v1.ObservePar" +
+      "tyVotesResponse0\001\022c\n\024ObserveProposalVote" +
+      "s\022#.api.v1.ObserveProposalVotesRequest\032$" +
+      ".api.v1.ObserveProposalVotesResponse0\001\022V" +
+      "\n\017ObserveEventBus\022\036.api.v1.ObserveEventB" +
+      "usRequest\032\037.api.v1.ObserveEventBusRespon" +
+      "se(\0010\001\022C\n\nStatistics\022\031.api.v1.Statistics" +
+      "Request\032\032.api.v1.StatisticsResponse\022F\n\013G" +
+      "etVegaTime\022\032.api.v1.GetVegaTimeRequest\032\033" +
+      ".api.v1.GetVegaTimeResponse\022Z\n\021AccountsS" +
+      "ubscribe\022 .api.v1.AccountsSubscribeReque" +
+      "st\032!.api.v1.AccountsSubscribeResponse0\001\022" +
+      "W\n\020CandlesSubscribe\022\037.api.v1.CandlesSubs" +
+      "cribeRequest\032 .api.v1.CandlesSubscribeRe" +
+      "sponse0\001\022f\n\025MarginLevelsSubscribe\022$.api." +
+      "v1.MarginLevelsSubscribeRequest\032%.api.v1" +
+      ".MarginLevelsSubscribeResponse0\001\022c\n\024Mark",
+      "etDepthSubscribe\022#.api.v1.MarketDepthSub" +
+      "scribeRequest\032$.api.v1.MarketDepthSubscr" +
+      "ibeResponse0\001\022x\n\033MarketDepthUpdatesSubsc" +
+      "ribe\022*.api.v1.MarketDepthUpdatesSubscrib" +
+      "eRequest\032+.api.v1.MarketDepthUpdatesSubs" +
+      "cribeResponse0\001\022c\n\024MarketsDataSubscribe\022" +
+      "#.api.v1.MarketsDataSubscribeRequest\032$.a" +
+      "pi.v1.MarketsDataSubscribeResponse0\001\022T\n\017" +
+      "OrdersSubscribe\022\036.api.v1.OrdersSubscribe" +
+      "Request\032\037.api.v1.OrdersSubscribeResponse" +
+      "0\001\022]\n\022PositionsSubscribe\022!.api.v1.Positi" +
+      "onsSubscribeRequest\032\".api.v1.PositionsSu" +
+      "bscribeResponse0\001\022T\n\017TradesSubscribe\022\036.a" +
+      "pi.v1.TradesSubscribeRequest\032\037.api.v1.Tr" +
+      "adesSubscribeResponse0\001\022u\n\032TransferRespo" +
+      "nsesSubscribe\022).api.v1.TransferResponses" +
+      "SubscribeRequest\032*.api.v1.TransferRespon" +
+      "sesSubscribeResponse0\001\022s\n\032GetNodeSignatu" +
+      "resAggregate\022).api.v1.GetNodeSignaturesA" +
+      "ggregateRequest\032*.api.v1.GetNodeSignatur" +
+      "esAggregateResponse\022@\n\tAssetByID\022\030.api.v" +
+      "1.AssetByIDRequest\032\031.api.v1.AssetByIDRes" +
+      "ponse\0227\n\006Assets\022\025.api.v1.AssetsRequest\032\026" +
+      ".api.v1.AssetsResponse\022F\n\013EstimateFee\022\032." +
+      "api.v1.EstimateFeeRequest\032\033.api.v1.Estim" +
+      "ateFeeResponse\022O\n\016EstimateMargin\022\035.api.v" +
+      "1.EstimateMarginRequest\032\036.api.v1.Estimat" +
+      "eMarginResponse\022j\n\027ERC20WithdrawalApprov" +
+      "al\022&.api.v1.ERC20WithdrawalApprovalReque" +
+      "st\032\'.api.v1.ERC20WithdrawalApprovalRespo" +
+      "nse\022C\n\nWithdrawal\022\031.api.v1.WithdrawalReq" +
+      "uest\032\032.api.v1.WithdrawalResponse\022F\n\013With" +
+      "drawals\022\032.api.v1.WithdrawalsRequest\032\033.ap" +
+      "i.v1.WithdrawalsResponse\022:\n\007Deposit\022\026.ap" +
+      "i.v1.DepositRequest\032\027.api.v1.DepositResp" +
+      "onse\022=\n\010Deposits\022\027.api.v1.DepositsReques" +
+      "t\032\030.api.v1.DepositsResponse\022X\n\021NetworkPa" +
+      "rameters\022 .api.v1.NetworkParametersReque" +
+      "st\032!.api.v1.NetworkParametersResponse\022^\n" +
+      "\023LiquidityProvisions\022\".api.v1.LiquidityP" +
+      "rovisionsRequest\032#.api.v1.LiquidityProvi" +
+      "sionsResponse\022C\n\nOracleSpec\022\031.api.v1.Ora" +
+      "cleSpecRequest\032\032.api.v1.OracleSpecRespon" +
+      "se\022F\n\013OracleSpecs\022\032.api.v1.OracleSpecsRe" +
+      "quest\032\033.api.v1.OracleSpecsResponse\022U\n\020Or" +
+      "acleDataBySpec\022\037.api.v1.OracleDataBySpec" +
+      "Request\032 .api.v1.OracleDataBySpecRespons" +
+      "eB?\n\030io.vegaprotocol.vega.apiZ#code.vega" +
+      "protocol.io/vega/proto/apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -111561,18 +111563,18 @@ public final class Trading {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareProposalResponse_descriptor,
         new java.lang.String[] { "Blob", "PendingProposal", });
-    internal_static_api_v1_PrepareVoteRequest_descriptor =
+    internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor =
       getDescriptor().getMessageTypes().get(112);
-    internal_static_api_v1_PrepareVoteRequest_fieldAccessorTable = new
+    internal_static_api_v1_PrepareVoteSubmissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_v1_PrepareVoteRequest_descriptor,
-        new java.lang.String[] { "Vote", });
-    internal_static_api_v1_PrepareVoteResponse_descriptor =
+        internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor,
+        new java.lang.String[] { "Submission", });
+    internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor =
       getDescriptor().getMessageTypes().get(113);
-    internal_static_api_v1_PrepareVoteResponse_fieldAccessorTable = new
+    internal_static_api_v1_PrepareVoteSubmissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_v1_PrepareVoteResponse_descriptor,
-        new java.lang.String[] { "Blob", "Vote", });
+        internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor,
+        new java.lang.String[] { "Blob", "Submission", });
     internal_static_api_v1_PrepareLiquidityProvisionRequest_descriptor =
       getDescriptor().getMessageTypes().get(114);
     internal_static_api_v1_PrepareLiquidityProvisionRequest_fieldAccessorTable = new

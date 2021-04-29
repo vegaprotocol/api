@@ -671,10 +671,6 @@
                 </li>
 
                 <li>
-                  <a href="#vega.DevAssets"><span class="badge">M</span>DevAssets</a>
-                </li>
-
-                <li>
                   <a href="#vega.ERC20"><span class="badge">M</span>ERC20</a>
                 </li>
 
@@ -743,6 +739,10 @@
 
                 <li>
                   <a href="#vega.Vote"><span class="badge">M</span>Vote</a>
+                </li>
+
+                <li>
+                  <a href="#vega.VoteSubmission"><span class="badge">M</span>VoteSubmission</a>
                 </li>
 
 
@@ -1430,11 +1430,11 @@
                 </li>
 
                 <li>
-                  <a href="#api.v1.PrepareVoteRequest"><span class="badge">M</span>PrepareVoteRequest</a>
+                  <a href="#api.v1.PrepareVoteSubmissionRequest"><span class="badge">M</span>PrepareVoteSubmissionRequest</a>
                 </li>
 
                 <li>
-                  <a href="#api.v1.PrepareVoteResponse"><span class="badge">M</span>PrepareVoteResponse</a>
+                  <a href="#api.v1.PrepareVoteSubmissionResponse"><span class="badge">M</span>PrepareVoteSubmissionResponse</a>
                 </li>
 
                 <li>
@@ -7966,30 +7966,6 @@ Vega network and are unlocked on the foreign chain bridge, for example, on the E
 
 
 
-        <h3 id="vega.DevAssets">DevAssets</h3>
-        <p>Dev assets are for use in development networks only</p>
-
-
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                  <td>sources</td>
-                  <td><a href="#vega.AssetSource">AssetSource</a></td>
-                  <td>repeated</td>
-                  <td><p>Asset sources for development networks </p></td>
-                </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
         <h3 id="vega.ERC20">ERC20</h3>
         <p>An ERC20 token based asset, living on the ethereum network</p>
 
@@ -8917,6 +8893,20 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
                   <td><p>Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network </p></td>
                 </tr>
 
+                <tr>
+                  <td>total_governance_token_balance</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Total number of governance token for the party that casted the vote </p></td>
+                </tr>
+
+                <tr>
+                  <td>total_governance_token_weight</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The weight of this vote based on the total of governance token </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -8959,6 +8949,73 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
                     <ul>
 
                       <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+
+
+
+        <h3 id="vega.VoteSubmission">VoteSubmission</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>proposal_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>value</td>
+                  <td><a href="#vega.Vote.Value">Vote.Value</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+            <h4>Validated Fields</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Field</td>
+                  <td>Validations</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>proposal_id</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>value</td>
+                  <td>
+                    <ul>
 
                     </ul>
                   </td>
@@ -10706,8 +10763,8 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                 </tr>
 
                 <tr>
-                  <td>vote</td>
-                  <td><a href="#vega.Vote">Vote</a></td>
+                  <td>vote_submission</td>
+                  <td><a href="#vega.VoteSubmission">VoteSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -15061,7 +15118,7 @@ default is true, if false the results will be returned in ascending order </p></
 
 
 
-        <h3 id="api.v1.PrepareVoteRequest">PrepareVoteRequest</h3>
+        <h3 id="api.v1.PrepareVoteSubmissionRequest">PrepareVoteSubmissionRequest</h3>
         <p>Request to prepare a governance vote</p>
 
 
@@ -15072,8 +15129,8 @@ default is true, if false the results will be returned in ascending order </p></
             <tbody>
 
                 <tr>
-                  <td>vote</td>
-                  <td><a href="#vega.Vote">vega.Vote</a></td>
+                  <td>submission</td>
+                  <td><a href="#vega.VoteSubmission">vega.VoteSubmission</a></td>
                   <td></td>
                   <td><p>Vote, required field </p></td>
                 </tr>
@@ -15095,7 +15152,7 @@ default is true, if false the results will be returned in ascending order </p></
               <tbody>
 
                 <tr>
-                  <td>vote</td>
+                  <td>submission</td>
                   <td>
                     <ul>
 
@@ -15112,7 +15169,7 @@ default is true, if false the results will be returned in ascending order </p></
 
 
 
-        <h3 id="api.v1.PrepareVoteResponse">PrepareVoteResponse</h3>
+        <h3 id="api.v1.PrepareVoteSubmissionResponse">PrepareVoteSubmissionResponse</h3>
         <p>Response to prepare a governance vote</p>
 
 
@@ -15130,8 +15187,8 @@ default is true, if false the results will be returned in ascending order </p></
                 </tr>
 
                 <tr>
-                  <td>vote</td>
-                  <td><a href="#vega.Vote">vega.Vote</a></td>
+                  <td>submission</td>
+                  <td><a href="#vega.VoteSubmission">vega.VoteSubmission</a></td>
                   <td></td>
                   <td><p>A copy of the prepared vote </p></td>
                 </tr>
@@ -16326,9 +16383,9 @@ these data are being used to bundle the call to the smart contract on the ethere
               </tr>
 
               <tr>
-                <td>PrepareVote</td>
-                <td><a href="#api.v1.PrepareVoteRequest">PrepareVoteRequest</a></td>
-                <td><a href="#api.v1.PrepareVoteResponse">PrepareVoteResponse</a></td>
+                <td>PrepareVoteSubmission</td>
+                <td><a href="#api.v1.PrepareVoteSubmissionRequest">PrepareVoteSubmissionRequest</a></td>
+                <td><a href="#api.v1.PrepareVoteSubmissionResponse">PrepareVoteSubmissionResponse</a></td>
                 <td><p>Prepare a governance vote</p></td>
               </tr>
 

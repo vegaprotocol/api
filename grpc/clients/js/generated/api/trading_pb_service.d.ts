@@ -58,13 +58,13 @@ type TradingServicePrepareProposal = {
   readonly responseType: typeof api_trading_pb.PrepareProposalResponse;
 };
 
-type TradingServicePrepareVote = {
+type TradingServicePrepareVoteSubmission = {
   readonly methodName: string;
   readonly service: typeof TradingService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof api_trading_pb.PrepareVoteRequest;
-  readonly responseType: typeof api_trading_pb.PrepareVoteResponse;
+  readonly requestType: typeof api_trading_pb.PrepareVoteSubmissionRequest;
+  readonly responseType: typeof api_trading_pb.PrepareVoteSubmissionResponse;
 };
 
 type TradingServicePropagateChainEvent = {
@@ -93,7 +93,7 @@ export class TradingService {
   static readonly PrepareWithdraw: TradingServicePrepareWithdraw;
   static readonly SubmitTransaction: TradingServiceSubmitTransaction;
   static readonly PrepareProposal: TradingServicePrepareProposal;
-  static readonly PrepareVote: TradingServicePrepareVote;
+  static readonly PrepareVoteSubmission: TradingServicePrepareVoteSubmission;
   static readonly PropagateChainEvent: TradingServicePropagateChainEvent;
   static readonly PrepareLiquidityProvision: TradingServicePrepareLiquidityProvision;
 }
@@ -828,14 +828,14 @@ export class TradingServiceClient {
     requestMessage: api_trading_pb.PrepareProposalRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareProposalResponse|null) => void
   ): UnaryResponse;
-  prepareVote(
-    requestMessage: api_trading_pb.PrepareVoteRequest,
+  prepareVoteSubmission(
+    requestMessage: api_trading_pb.PrepareVoteSubmissionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareVoteResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareVoteSubmissionResponse|null) => void
   ): UnaryResponse;
-  prepareVote(
-    requestMessage: api_trading_pb.PrepareVoteRequest,
-    callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareVoteResponse|null) => void
+  prepareVoteSubmission(
+    requestMessage: api_trading_pb.PrepareVoteSubmissionRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.PrepareVoteSubmissionResponse|null) => void
   ): UnaryResponse;
   propagateChainEvent(
     requestMessage: api_trading_pb.PropagateChainEventRequest,

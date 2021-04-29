@@ -64,13 +64,13 @@ TradingService.PrepareProposal = {
   responseType: api_trading_pb.PrepareProposalResponse
 };
 
-TradingService.PrepareVote = {
-  methodName: "PrepareVote",
+TradingService.PrepareVoteSubmission = {
+  methodName: "PrepareVoteSubmission",
   service: TradingService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.PrepareVoteRequest,
-  responseType: api_trading_pb.PrepareVoteResponse
+  requestType: api_trading_pb.PrepareVoteSubmissionRequest,
+  responseType: api_trading_pb.PrepareVoteSubmissionResponse
 };
 
 TradingService.PropagateChainEvent = {
@@ -284,11 +284,11 @@ TradingServiceClient.prototype.prepareProposal = function prepareProposal(reques
   };
 };
 
-TradingServiceClient.prototype.prepareVote = function prepareVote(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareVoteSubmission = function prepareVoteSubmission(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(TradingService.PrepareVote, {
+  var client = grpc.unary(TradingService.PrepareVoteSubmission, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

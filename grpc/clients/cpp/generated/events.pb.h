@@ -372,7 +372,7 @@ class TxErrorEvent PROTOBUF_FINAL :
     kOrderAmendment = 102,
     kOrderCancellation = 103,
     kProposal = 104,
-    kVote = 105,
+    kVoteSubmission = 105,
     kLiquidityProvisionSubmission = 106,
     TRANSACTION_NOT_SET = 0,
   };
@@ -459,7 +459,7 @@ class TxErrorEvent PROTOBUF_FINAL :
     kOrderAmendmentFieldNumber = 102,
     kOrderCancellationFieldNumber = 103,
     kProposalFieldNumber = 104,
-    kVoteFieldNumber = 105,
+    kVoteSubmissionFieldNumber = 105,
     kLiquidityProvisionSubmissionFieldNumber = 106,
   };
   // string party_id = 1 [json_name = "partyId"];
@@ -566,23 +566,23 @@ class TxErrorEvent PROTOBUF_FINAL :
       ::vega::Proposal* proposal);
   ::vega::Proposal* unsafe_arena_release_proposal();
 
-  // .vega.Vote vote = 105 [json_name = "vote"];
-  bool has_vote() const;
+  // .vega.VoteSubmission vote_submission = 105 [json_name = "voteSubmission"];
+  bool has_vote_submission() const;
   private:
-  bool _internal_has_vote() const;
+  bool _internal_has_vote_submission() const;
   public:
-  void clear_vote();
-  const ::vega::Vote& vote() const;
-  ::vega::Vote* release_vote();
-  ::vega::Vote* mutable_vote();
-  void set_allocated_vote(::vega::Vote* vote);
+  void clear_vote_submission();
+  const ::vega::VoteSubmission& vote_submission() const;
+  ::vega::VoteSubmission* release_vote_submission();
+  ::vega::VoteSubmission* mutable_vote_submission();
+  void set_allocated_vote_submission(::vega::VoteSubmission* vote_submission);
   private:
-  const ::vega::Vote& _internal_vote() const;
-  ::vega::Vote* _internal_mutable_vote();
+  const ::vega::VoteSubmission& _internal_vote_submission() const;
+  ::vega::VoteSubmission* _internal_mutable_vote_submission();
   public:
-  void unsafe_arena_set_allocated_vote(
-      ::vega::Vote* vote);
-  ::vega::Vote* unsafe_arena_release_vote();
+  void unsafe_arena_set_allocated_vote_submission(
+      ::vega::VoteSubmission* vote_submission);
+  ::vega::VoteSubmission* unsafe_arena_release_vote_submission();
 
   // .vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];
   bool has_liquidity_provision_submission() const;
@@ -611,7 +611,7 @@ class TxErrorEvent PROTOBUF_FINAL :
   void set_has_order_amendment();
   void set_has_order_cancellation();
   void set_has_proposal();
-  void set_has_vote();
+  void set_has_vote_submission();
   void set_has_liquidity_provision_submission();
 
   inline bool has_transaction() const;
@@ -628,7 +628,7 @@ class TxErrorEvent PROTOBUF_FINAL :
     ::vega::OrderAmendment* order_amendment_;
     ::vega::OrderCancellation* order_cancellation_;
     ::vega::Proposal* proposal_;
-    ::vega::Vote* vote_;
+    ::vega::VoteSubmission* vote_submission_;
     ::vega::LiquidityProvisionSubmission* liquidity_provision_submission_;
   } transaction_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3493,69 +3493,69 @@ inline ::vega::Proposal* TxErrorEvent::mutable_proposal() {
   return _internal_mutable_proposal();
 }
 
-// .vega.Vote vote = 105 [json_name = "vote"];
-inline bool TxErrorEvent::_internal_has_vote() const {
-  return transaction_case() == kVote;
+// .vega.VoteSubmission vote_submission = 105 [json_name = "voteSubmission"];
+inline bool TxErrorEvent::_internal_has_vote_submission() const {
+  return transaction_case() == kVoteSubmission;
 }
-inline bool TxErrorEvent::has_vote() const {
-  return _internal_has_vote();
+inline bool TxErrorEvent::has_vote_submission() const {
+  return _internal_has_vote_submission();
 }
-inline void TxErrorEvent::set_has_vote() {
-  _oneof_case_[0] = kVote;
+inline void TxErrorEvent::set_has_vote_submission() {
+  _oneof_case_[0] = kVoteSubmission;
 }
-inline ::vega::Vote* TxErrorEvent::release_vote() {
-  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.vote)
-  if (_internal_has_vote()) {
+inline ::vega::VoteSubmission* TxErrorEvent::release_vote_submission() {
+  // @@protoc_insertion_point(field_release:vega.TxErrorEvent.vote_submission)
+  if (_internal_has_vote_submission()) {
     clear_has_transaction();
-      ::vega::Vote* temp = transaction_.vote_;
+      ::vega::VoteSubmission* temp = transaction_.vote_submission_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    transaction_.vote_ = nullptr;
+    transaction_.vote_submission_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::vega::Vote& TxErrorEvent::_internal_vote() const {
-  return _internal_has_vote()
-      ? *transaction_.vote_
-      : reinterpret_cast< ::vega::Vote&>(::vega::_Vote_default_instance_);
+inline const ::vega::VoteSubmission& TxErrorEvent::_internal_vote_submission() const {
+  return _internal_has_vote_submission()
+      ? *transaction_.vote_submission_
+      : reinterpret_cast< ::vega::VoteSubmission&>(::vega::_VoteSubmission_default_instance_);
 }
-inline const ::vega::Vote& TxErrorEvent::vote() const {
-  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.vote)
-  return _internal_vote();
+inline const ::vega::VoteSubmission& TxErrorEvent::vote_submission() const {
+  // @@protoc_insertion_point(field_get:vega.TxErrorEvent.vote_submission)
+  return _internal_vote_submission();
 }
-inline ::vega::Vote* TxErrorEvent::unsafe_arena_release_vote() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TxErrorEvent.vote)
-  if (_internal_has_vote()) {
+inline ::vega::VoteSubmission* TxErrorEvent::unsafe_arena_release_vote_submission() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.TxErrorEvent.vote_submission)
+  if (_internal_has_vote_submission()) {
     clear_has_transaction();
-    ::vega::Vote* temp = transaction_.vote_;
-    transaction_.vote_ = nullptr;
+    ::vega::VoteSubmission* temp = transaction_.vote_submission_;
+    transaction_.vote_submission_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void TxErrorEvent::unsafe_arena_set_allocated_vote(::vega::Vote* vote) {
+inline void TxErrorEvent::unsafe_arena_set_allocated_vote_submission(::vega::VoteSubmission* vote_submission) {
   clear_transaction();
-  if (vote) {
-    set_has_vote();
-    transaction_.vote_ = vote;
+  if (vote_submission) {
+    set_has_vote_submission();
+    transaction_.vote_submission_ = vote_submission;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TxErrorEvent.vote)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.TxErrorEvent.vote_submission)
 }
-inline ::vega::Vote* TxErrorEvent::_internal_mutable_vote() {
-  if (!_internal_has_vote()) {
+inline ::vega::VoteSubmission* TxErrorEvent::_internal_mutable_vote_submission() {
+  if (!_internal_has_vote_submission()) {
     clear_transaction();
-    set_has_vote();
-    transaction_.vote_ = CreateMaybeMessage< ::vega::Vote >(GetArena());
+    set_has_vote_submission();
+    transaction_.vote_submission_ = CreateMaybeMessage< ::vega::VoteSubmission >(GetArena());
   }
-  return transaction_.vote_;
+  return transaction_.vote_submission_;
 }
-inline ::vega::Vote* TxErrorEvent::mutable_vote() {
-  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.vote)
-  return _internal_mutable_vote();
+inline ::vega::VoteSubmission* TxErrorEvent::mutable_vote_submission() {
+  // @@protoc_insertion_point(field_mutable:vega.TxErrorEvent.vote_submission)
+  return _internal_mutable_vote_submission();
 }
 
 // .vega.LiquidityProvisionSubmission liquidity_provision_submission = 106 [json_name = "liquidityProvisionSubmission"];

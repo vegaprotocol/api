@@ -2531,53 +2531,53 @@ export namespace PrepareProposalResponse {
   }
 }
 
-export class PrepareVoteRequest extends jspb.Message {
-  hasVote(): boolean;
-  clearVote(): void;
-  getVote(): governance_pb.Vote | undefined;
-  setVote(value?: governance_pb.Vote): void;
+export class PrepareVoteSubmissionRequest extends jspb.Message {
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): governance_pb.VoteSubmission | undefined;
+  setSubmission(value?: governance_pb.VoteSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareVoteRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareVoteRequest): PrepareVoteRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareVoteSubmissionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareVoteSubmissionRequest): PrepareVoteSubmissionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareVoteRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareVoteRequest;
-  static deserializeBinaryFromReader(message: PrepareVoteRequest, reader: jspb.BinaryReader): PrepareVoteRequest;
+  static serializeBinaryToWriter(message: PrepareVoteSubmissionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareVoteSubmissionRequest;
+  static deserializeBinaryFromReader(message: PrepareVoteSubmissionRequest, reader: jspb.BinaryReader): PrepareVoteSubmissionRequest;
 }
 
-export namespace PrepareVoteRequest {
+export namespace PrepareVoteSubmissionRequest {
   export type AsObject = {
-    vote?: governance_pb.Vote.AsObject,
+    submission?: governance_pb.VoteSubmission.AsObject,
   }
 }
 
-export class PrepareVoteResponse extends jspb.Message {
+export class PrepareVoteSubmissionResponse extends jspb.Message {
   getBlob(): Uint8Array | string;
   getBlob_asU8(): Uint8Array;
   getBlob_asB64(): string;
   setBlob(value: Uint8Array | string): void;
 
-  hasVote(): boolean;
-  clearVote(): void;
-  getVote(): governance_pb.Vote | undefined;
-  setVote(value?: governance_pb.Vote): void;
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): governance_pb.VoteSubmission | undefined;
+  setSubmission(value?: governance_pb.VoteSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareVoteResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareVoteResponse): PrepareVoteResponse.AsObject;
+  toObject(includeInstance?: boolean): PrepareVoteSubmissionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareVoteSubmissionResponse): PrepareVoteSubmissionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareVoteResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareVoteResponse;
-  static deserializeBinaryFromReader(message: PrepareVoteResponse, reader: jspb.BinaryReader): PrepareVoteResponse;
+  static serializeBinaryToWriter(message: PrepareVoteSubmissionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareVoteSubmissionResponse;
+  static deserializeBinaryFromReader(message: PrepareVoteSubmissionResponse, reader: jspb.BinaryReader): PrepareVoteSubmissionResponse;
 }
 
-export namespace PrepareVoteResponse {
+export namespace PrepareVoteSubmissionResponse {
   export type AsObject = {
     blob: Uint8Array | string,
-    vote?: governance_pb.Vote.AsObject,
+    submission?: governance_pb.VoteSubmission.AsObject,
   }
 }
 

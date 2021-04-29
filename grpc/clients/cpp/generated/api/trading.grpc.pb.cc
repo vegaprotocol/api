@@ -29,7 +29,7 @@ static const char* TradingService_method_names[] = {
   "/api.v1.TradingService/PrepareWithdraw",
   "/api.v1.TradingService/SubmitTransaction",
   "/api.v1.TradingService/PrepareProposal",
-  "/api.v1.TradingService/PrepareVote",
+  "/api.v1.TradingService/PrepareVoteSubmission",
   "/api.v1.TradingService/PropagateChainEvent",
   "/api.v1.TradingService/PrepareLiquidityProvision",
 };
@@ -47,7 +47,7 @@ TradingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_PrepareWithdraw_(TradingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SubmitTransaction_(TradingService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PrepareProposal_(TradingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareVote_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareVoteSubmission_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PropagateChainEvent_(TradingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PrepareLiquidityProvision_(TradingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
@@ -190,25 +190,25 @@ void TradingService::Stub::experimental_async::PrepareProposal(::grpc::ClientCon
   return result;
 }
 
-::grpc::Status TradingService::Stub::PrepareVote(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest& request, ::api::v1::PrepareVoteResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareVoteRequest, ::api::v1::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareVote_, context, request, response);
+::grpc::Status TradingService::Stub::PrepareVoteSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest& request, ::api::v1::PrepareVoteSubmissionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_PrepareVoteSubmission_, context, request, response);
 }
 
-void TradingService::Stub::experimental_async::PrepareVote(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest* request, ::api::v1::PrepareVoteResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareVoteRequest, ::api::v1::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVote_, context, request, response, std::move(f));
+void TradingService::Stub::experimental_async::PrepareVoteSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest* request, ::api::v1::PrepareVoteSubmissionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVoteSubmission_, context, request, response, std::move(f));
 }
 
-void TradingService::Stub::experimental_async::PrepareVote(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest* request, ::api::v1::PrepareVoteResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVote_, context, request, response, reactor);
+void TradingService::Stub::experimental_async::PrepareVoteSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest* request, ::api::v1::PrepareVoteSubmissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_PrepareVoteSubmission_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteResponse>* TradingService::Stub::PrepareAsyncPrepareVoteRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareVoteResponse, ::api::v1::PrepareVoteRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareVote_, context, request);
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteSubmissionResponse>* TradingService::Stub::PrepareAsyncPrepareVoteSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::PrepareVoteSubmissionResponse, ::api::v1::PrepareVoteSubmissionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_PrepareVoteSubmission_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteResponse>* TradingService::Stub::AsyncPrepareVoteRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteSubmissionResponse>* TradingService::Stub::AsyncPrepareVoteSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncPrepareVoteRaw(context, request, cq);
+    this->PrepareAsyncPrepareVoteSubmissionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -323,12 +323,12 @@ TradingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TradingService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareVoteRequest, ::api::v1::PrepareVoteResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::api::v1::PrepareVoteRequest* req,
-             ::api::v1::PrepareVoteResponse* resp) {
-               return service->PrepareVote(ctx, req, resp);
+             const ::api::v1::PrepareVoteSubmissionRequest* req,
+             ::api::v1::PrepareVoteSubmissionResponse* resp) {
+               return service->PrepareVoteSubmission(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TradingService_method_names[7],
@@ -397,7 +397,7 @@ TradingService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TradingService::Service::PrepareVote(::grpc::ServerContext* context, const ::api::v1::PrepareVoteRequest* request, ::api::v1::PrepareVoteResponse* response) {
+::grpc::Status TradingService::Service::PrepareVoteSubmission(::grpc::ServerContext* context, const ::api::v1::PrepareVoteSubmissionRequest* request, ::api::v1::PrepareVoteSubmissionResponse* response) {
   (void) context;
   (void) request;
   (void) response;

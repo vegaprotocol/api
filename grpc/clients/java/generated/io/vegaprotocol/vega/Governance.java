@@ -17137,6 +17137,36 @@ public final class Governance {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     * Total number of governance token for the party that casted the vote
+     * </pre>
+     *
+     * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * @return The totalGovernanceTokenBalance.
+     */
+    long getTotalGovernanceTokenBalance();
+
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The totalGovernanceTokenWeight.
+     */
+    java.lang.String getTotalGovernanceTokenWeight();
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The bytes for totalGovernanceTokenWeight.
+     */
+    com.google.protobuf.ByteString
+        getTotalGovernanceTokenWeightBytes();
   }
   /**
    * <pre>
@@ -17158,6 +17188,7 @@ public final class Governance {
       partyId_ = "";
       value_ = 0;
       proposalId_ = "";
+      totalGovernanceTokenWeight_ = "";
     }
 
     @java.lang.Override
@@ -17211,6 +17242,17 @@ public final class Governance {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              totalGovernanceTokenBalance_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              totalGovernanceTokenWeight_ = s;
               break;
             }
             default: {
@@ -17524,6 +17566,67 @@ public final class Governance {
       return timestamp_;
     }
 
+    public static final int TOTAL_GOVERNANCE_TOKEN_BALANCE_FIELD_NUMBER = 5;
+    private long totalGovernanceTokenBalance_;
+    /**
+     * <pre>
+     * Total number of governance token for the party that casted the vote
+     * </pre>
+     *
+     * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * @return The totalGovernanceTokenBalance.
+     */
+    @java.lang.Override
+    public long getTotalGovernanceTokenBalance() {
+      return totalGovernanceTokenBalance_;
+    }
+
+    public static final int TOTAL_GOVERNANCE_TOKEN_WEIGHT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object totalGovernanceTokenWeight_;
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The totalGovernanceTokenWeight.
+     */
+    @java.lang.Override
+    public java.lang.String getTotalGovernanceTokenWeight() {
+      java.lang.Object ref = totalGovernanceTokenWeight_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        totalGovernanceTokenWeight_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The bytes for totalGovernanceTokenWeight.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTotalGovernanceTokenWeightBytes() {
+      java.lang.Object ref = totalGovernanceTokenWeight_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        totalGovernanceTokenWeight_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17550,6 +17653,12 @@ public final class Governance {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (totalGovernanceTokenBalance_ != 0L) {
+        output.writeUInt64(5, totalGovernanceTokenBalance_);
+      }
+      if (!getTotalGovernanceTokenWeightBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalGovernanceTokenWeight_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17573,6 +17682,13 @@ public final class Governance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
       }
+      if (totalGovernanceTokenBalance_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, totalGovernanceTokenBalance_);
+      }
+      if (!getTotalGovernanceTokenWeightBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalGovernanceTokenWeight_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17595,6 +17711,10 @@ public final class Governance {
           .equals(other.getProposalId())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTotalGovernanceTokenBalance()
+          != other.getTotalGovernanceTokenBalance()) return false;
+      if (!getTotalGovernanceTokenWeight()
+          .equals(other.getTotalGovernanceTokenWeight())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17615,6 +17735,11 @@ public final class Governance {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TOTAL_GOVERNANCE_TOKEN_BALANCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalGovernanceTokenBalance());
+      hash = (37 * hash) + TOTAL_GOVERNANCE_TOKEN_WEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalGovernanceTokenWeight().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17760,6 +17885,10 @@ public final class Governance {
 
         timestamp_ = 0L;
 
+        totalGovernanceTokenBalance_ = 0L;
+
+        totalGovernanceTokenWeight_ = "";
+
         return this;
       }
 
@@ -17790,6 +17919,8 @@ public final class Governance {
         result.value_ = value_;
         result.proposalId_ = proposalId_;
         result.timestamp_ = timestamp_;
+        result.totalGovernanceTokenBalance_ = totalGovernanceTokenBalance_;
+        result.totalGovernanceTokenWeight_ = totalGovernanceTokenWeight_;
         onBuilt();
         return result;
       }
@@ -17851,6 +17982,13 @@ public final class Governance {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTotalGovernanceTokenBalance() != 0L) {
+          setTotalGovernanceTokenBalance(other.getTotalGovernanceTokenBalance());
+        }
+        if (!other.getTotalGovernanceTokenWeight().isEmpty()) {
+          totalGovernanceTokenWeight_ = other.totalGovernanceTokenWeight_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18189,6 +18327,145 @@ public final class Governance {
         onChanged();
         return this;
       }
+
+      private long totalGovernanceTokenBalance_ ;
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @return The totalGovernanceTokenBalance.
+       */
+      @java.lang.Override
+      public long getTotalGovernanceTokenBalance() {
+        return totalGovernanceTokenBalance_;
+      }
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @param value The totalGovernanceTokenBalance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenBalance(long value) {
+
+        totalGovernanceTokenBalance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalGovernanceTokenBalance() {
+
+        totalGovernanceTokenBalance_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object totalGovernanceTokenWeight_ = "";
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @return The totalGovernanceTokenWeight.
+       */
+      public java.lang.String getTotalGovernanceTokenWeight() {
+        java.lang.Object ref = totalGovernanceTokenWeight_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          totalGovernanceTokenWeight_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @return The bytes for totalGovernanceTokenWeight.
+       */
+      public com.google.protobuf.ByteString
+          getTotalGovernanceTokenWeightBytes() {
+        java.lang.Object ref = totalGovernanceTokenWeight_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          totalGovernanceTokenWeight_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @param value The totalGovernanceTokenWeight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenWeight(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        totalGovernanceTokenWeight_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalGovernanceTokenWeight() {
+
+        totalGovernanceTokenWeight_ = getDefaultInstance().getTotalGovernanceTokenWeight();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @param value The bytes for totalGovernanceTokenWeight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenWeightBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        totalGovernanceTokenWeight_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18237,6 +18514,681 @@ public final class Governance {
 
     @java.lang.Override
     public io.vegaprotocol.vega.Governance.Vote getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface VoteSubmissionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.VoteSubmission)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The proposalId.
+     */
+    java.lang.String getProposalId();
+    /**
+     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The bytes for proposalId.
+     */
+    com.google.protobuf.ByteString
+        getProposalIdBytes();
+
+    /**
+     * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for value.
+     */
+    int getValueValue();
+    /**
+     * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+     * @return The value.
+     */
+    io.vegaprotocol.vega.Governance.Vote.Value getValue();
+  }
+  /**
+   * Protobuf type {@code vega.VoteSubmission}
+   */
+  public static final class VoteSubmission extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.VoteSubmission)
+      VoteSubmissionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use VoteSubmission.newBuilder() to construct.
+    private VoteSubmission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private VoteSubmission() {
+      proposalId_ = "";
+      value_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new VoteSubmission();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private VoteSubmission(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proposalId_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              value_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Governance.internal_static_vega_VoteSubmission_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Governance.internal_static_vega_VoteSubmission_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Governance.VoteSubmission.class, io.vegaprotocol.vega.Governance.VoteSubmission.Builder.class);
+    }
+
+    public static final int PROPOSAL_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object proposalId_;
+    /**
+     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The proposalId.
+     */
+    @java.lang.Override
+    public java.lang.String getProposalId() {
+      java.lang.Object ref = proposalId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proposalId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+     * @return The bytes for proposalId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProposalIdBytes() {
+      java.lang.Object ref = proposalId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proposalId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private int value_;
+    /**
+     * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for value.
+     */
+    @java.lang.Override public int getValueValue() {
+      return value_;
+    }
+    /**
+     * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+     * @return The value.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.Governance.Vote.Value getValue() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Governance.Vote.Value result = io.vegaprotocol.vega.Governance.Vote.Value.valueOf(value_);
+      return result == null ? io.vegaprotocol.vega.Governance.Vote.Value.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getProposalIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, proposalId_);
+      }
+      if (value_ != io.vegaprotocol.vega.Governance.Vote.Value.VALUE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getProposalIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, proposalId_);
+      }
+      if (value_ != io.vegaprotocol.vega.Governance.Vote.Value.VALUE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Governance.VoteSubmission)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Governance.VoteSubmission other = (io.vegaprotocol.vega.Governance.VoteSubmission) obj;
+
+      if (!getProposalId()
+          .equals(other.getProposalId())) return false;
+      if (value_ != other.value_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROPOSAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProposalId().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + value_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Governance.VoteSubmission parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Governance.VoteSubmission prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.VoteSubmission}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.VoteSubmission)
+        io.vegaprotocol.vega.Governance.VoteSubmissionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Governance.internal_static_vega_VoteSubmission_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Governance.internal_static_vega_VoteSubmission_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Governance.VoteSubmission.class, io.vegaprotocol.vega.Governance.VoteSubmission.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Governance.VoteSubmission.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        proposalId_ = "";
+
+        value_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Governance.internal_static_vega_VoteSubmission_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Governance.VoteSubmission getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Governance.VoteSubmission build() {
+        io.vegaprotocol.vega.Governance.VoteSubmission result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Governance.VoteSubmission buildPartial() {
+        io.vegaprotocol.vega.Governance.VoteSubmission result = new io.vegaprotocol.vega.Governance.VoteSubmission(this);
+        result.proposalId_ = proposalId_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Governance.VoteSubmission) {
+          return mergeFrom((io.vegaprotocol.vega.Governance.VoteSubmission)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Governance.VoteSubmission other) {
+        if (other == io.vegaprotocol.vega.Governance.VoteSubmission.getDefaultInstance()) return this;
+        if (!other.getProposalId().isEmpty()) {
+          proposalId_ = other.proposalId_;
+          onChanged();
+        }
+        if (other.value_ != 0) {
+          setValueValue(other.getValueValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Governance.VoteSubmission parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Governance.VoteSubmission) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object proposalId_ = "";
+      /**
+       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @return The proposalId.
+       */
+      public java.lang.String getProposalId() {
+        java.lang.Object ref = proposalId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          proposalId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @return The bytes for proposalId.
+       */
+      public com.google.protobuf.ByteString
+          getProposalIdBytes() {
+        java.lang.Object ref = proposalId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          proposalId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @param value The proposalId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposalId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        proposalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProposalId() {
+
+        proposalId_ = getDefaultInstance().getProposalId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
+       * @param value The bytes for proposalId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposalIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        proposalId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int value_ = 0;
+      /**
+       * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for value.
+       */
+      @java.lang.Override public int getValueValue() {
+        return value_;
+      }
+      /**
+       * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueValue(int value) {
+
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.Governance.Vote.Value getValue() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Governance.Vote.Value result = io.vegaprotocol.vega.Governance.Vote.Value.valueOf(value_);
+        return result == null ? io.vegaprotocol.vega.Governance.Vote.Value.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(io.vegaprotocol.vega.Governance.Vote.Value value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        value_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+
+        value_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.VoteSubmission)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.VoteSubmission)
+    private static final io.vegaprotocol.vega.Governance.VoteSubmission DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Governance.VoteSubmission();
+    }
+
+    public static io.vegaprotocol.vega.Governance.VoteSubmission getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VoteSubmission>
+        PARSER = new com.google.protobuf.AbstractParser<VoteSubmission>() {
+      @java.lang.Override
+      public VoteSubmission parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new VoteSubmission(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<VoteSubmission> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VoteSubmission> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Governance.VoteSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -18312,6 +19264,11 @@ public final class Governance {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Vote_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_VoteSubmission_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_VoteSubmission_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -18396,49 +19353,55 @@ public final class Governance {
       "IED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022" +
       "\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n" +
       "\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033" +
-      "STATE_WAITING_FOR_NODE_VOTE\020\007\"\336\001\n\004Vote\022!" +
+      "STATE_WAITING_FOR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!" +
       "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005val" +
       "ue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005val" +
       "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa" +
-      "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val" +
-      "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022" +
-      "\r\n\tVALUE_YES\020\002*\350\n\n\rProposalError\022\036\n\032PROP" +
-      "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR" +
-      "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR" +
-      "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR" +
-      "OR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ERR" +
-      "OR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ERR" +
-      "OR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ERR" +
-      "OR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PROP" +
-      "OSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERRO" +
-      "R_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERRO" +
-      "R_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n)" +
-      "PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSE" +
-      "D\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013\022" +
-      "+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MO" +
-      "DE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_F" +
-      "AILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILTI" +
-      "N_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSIN" +
-      "G_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_E" +
-      "RROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_I" +
-      "NCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ERR" +
-      "OR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERRO" +
-      "R_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PRO" +
-      "POSAL_ERROR_NETWORK_PARAMETER_INVALID_VA" +
-      "LUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMETE" +
-      "R_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR_" +
-      "OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n1" +
-      "PROPOSAL_ERROR_OPENING_AUCTION_DURATION_" +
-      "TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MIS" +
-      "SING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL_" +
-      "ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031\022)\n%" +
-      "PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032\022" +
-      ",\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AMO" +
-      "UNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_AMOU" +
-      "NT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035\022)" +
-      "\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER\020" +
-      "\036B7\n\024io.vegaprotocol.vegaZ\037code.vegaprot" +
-      "ocol.io/vega/protob\006proto3"
+      "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\022C\n\036tot" +
+      "al_governance_token_balance\030\005 \001(\004R\033total" +
+      "GovernanceTokenBalance\022A\n\035total_governan" +
+      "ce_token_weight\030\006 \001(\tR\032totalGovernanceTo" +
+      "kenWeight\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020" +
+      "\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002\"j\n\016VoteSu" +
+      "bmission\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\np" +
+      "roposalId\022/\n\005value\030\002 \001(\0162\020.vega.Vote.Val" +
+      "ueB\007\342\337\037\003\210\001\001R\005value*\350\n\n\rProposalError\022\036\n\032" +
+      "PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL" +
+      "_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL" +
+      "_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL" +
+      "_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL" +
+      "_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL" +
+      "_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL" +
+      "_ERROR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031" +
+      "PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_" +
+      "ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_" +
+      "ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t" +
+      "\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_IS_P" +
+      "ASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MOD" +
+      "E\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADIN" +
+      "G_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATI" +
+      "ON_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BU" +
+      "ILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MI" +
+      "SSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOS" +
+      "AL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERR" +
+      "OR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL" +
+      "_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_" +
+      "ERROR_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n" +
+      ".PROPOSAL_ERROR_NETWORK_PARAMETER_INVALI" +
+      "D_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARA" +
+      "METER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ER" +
+      "ROR_OPENING_AUCTION_DURATION_TOO_SMALL\020\026" +
+      "\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_DURAT" +
+      "ION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET" +
+      "_MISSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPO" +
+      "SAL_ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031" +
+      "\022)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRODUC" +
+      "T\020\032\022,\n(PROPOSAL_ERROR_MISSING_COMMITMENT" +
+      "_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_" +
+      "AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE" +
+      "\020\035\022)\n%PROPOSAL_ERROR_INVALID_RISK_PARAME" +
+      "TER\020\036B7\n\024io.vegaprotocol.vegaZ\037code.vega" +
+      "protocol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18532,7 +19495,13 @@ public final class Governance {
     internal_static_vega_Vote_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Vote_descriptor,
-        new java.lang.String[] { "PartyId", "Value", "ProposalId", "Timestamp", });
+        new java.lang.String[] { "PartyId", "Value", "ProposalId", "Timestamp", "TotalGovernanceTokenBalance", "TotalGovernanceTokenWeight", });
+    internal_static_vega_VoteSubmission_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_vega_VoteSubmission_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_VoteSubmission_descriptor,
+        new java.lang.String[] { "ProposalId", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

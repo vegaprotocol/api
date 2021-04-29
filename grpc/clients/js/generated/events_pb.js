@@ -473,7 +473,7 @@ proto.vega.TxErrorEvent.TransactionCase = {
   ORDER_AMENDMENT: 102,
   ORDER_CANCELLATION: 103,
   PROPOSAL: 104,
-  VOTE: 105,
+  VOTE_SUBMISSION: 105,
   LIQUIDITY_PROVISION_SUBMISSION: 106
 };
 
@@ -521,7 +521,7 @@ proto.vega.TxErrorEvent.toObject = function(includeInstance, msg) {
     orderAmendment: (f = msg.getOrderAmendment()) && vega_pb.OrderAmendment.toObject(includeInstance, f),
     orderCancellation: (f = msg.getOrderCancellation()) && vega_pb.OrderCancellation.toObject(includeInstance, f),
     proposal: (f = msg.getProposal()) && governance_pb.Proposal.toObject(includeInstance, f),
-    vote: (f = msg.getVote()) && governance_pb.Vote.toObject(includeInstance, f),
+    voteSubmission: (f = msg.getVoteSubmission()) && governance_pb.VoteSubmission.toObject(includeInstance, f),
     liquidityProvisionSubmission: (f = msg.getLiquidityProvisionSubmission()) && vega_pb.LiquidityProvisionSubmission.toObject(includeInstance, f)
   };
 
@@ -588,9 +588,9 @@ proto.vega.TxErrorEvent.deserializeBinaryFromReader = function(msg, reader) {
       msg.setProposal(value);
       break;
     case 105:
-      var value = new governance_pb.Vote;
-      reader.readMessage(value,governance_pb.Vote.deserializeBinaryFromReader);
-      msg.setVote(value);
+      var value = new governance_pb.VoteSubmission;
+      reader.readMessage(value,governance_pb.VoteSubmission.deserializeBinaryFromReader);
+      msg.setVoteSubmission(value);
       break;
     case 106:
       var value = new vega_pb.LiquidityProvisionSubmission;
@@ -672,12 +672,12 @@ proto.vega.TxErrorEvent.serializeBinaryToWriter = function(message, writer) {
       governance_pb.Proposal.serializeBinaryToWriter
     );
   }
-  f = message.getVote();
+  f = message.getVoteSubmission();
   if (f != null) {
     writer.writeMessage(
       105,
       f,
-      governance_pb.Vote.serializeBinaryToWriter
+      governance_pb.VoteSubmission.serializeBinaryToWriter
     );
   }
   f = message.getLiquidityProvisionSubmission();
@@ -876,20 +876,20 @@ proto.vega.TxErrorEvent.prototype.hasProposal = function() {
 
 
 /**
- * optional Vote vote = 105;
- * @return {?proto.vega.Vote}
+ * optional VoteSubmission vote_submission = 105;
+ * @return {?proto.vega.VoteSubmission}
  */
-proto.vega.TxErrorEvent.prototype.getVote = function() {
-  return /** @type{?proto.vega.Vote} */ (
-    jspb.Message.getWrapperField(this, governance_pb.Vote, 105));
+proto.vega.TxErrorEvent.prototype.getVoteSubmission = function() {
+  return /** @type{?proto.vega.VoteSubmission} */ (
+    jspb.Message.getWrapperField(this, governance_pb.VoteSubmission, 105));
 };
 
 
 /**
- * @param {?proto.vega.Vote|undefined} value
+ * @param {?proto.vega.VoteSubmission|undefined} value
  * @return {!proto.vega.TxErrorEvent} returns this
 */
-proto.vega.TxErrorEvent.prototype.setVote = function(value) {
+proto.vega.TxErrorEvent.prototype.setVoteSubmission = function(value) {
   return jspb.Message.setOneofWrapperField(this, 105, proto.vega.TxErrorEvent.oneofGroups_[0], value);
 };
 
@@ -898,8 +898,8 @@ proto.vega.TxErrorEvent.prototype.setVote = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.TxErrorEvent} returns this
  */
-proto.vega.TxErrorEvent.prototype.clearVote = function() {
-  return this.setVote(undefined);
+proto.vega.TxErrorEvent.prototype.clearVoteSubmission = function() {
+  return this.setVoteSubmission(undefined);
 };
 
 
@@ -907,7 +907,7 @@ proto.vega.TxErrorEvent.prototype.clearVote = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.TxErrorEvent.prototype.hasVote = function() {
+proto.vega.TxErrorEvent.prototype.hasVoteSubmission = function() {
   return jspb.Message.getField(this, 105) != null;
 };
 

@@ -437,12 +437,12 @@ extern PrepareSubmitOrderRequestDefaultTypeInternal _PrepareSubmitOrderRequest_d
 class PrepareSubmitOrderResponse;
 class PrepareSubmitOrderResponseDefaultTypeInternal;
 extern PrepareSubmitOrderResponseDefaultTypeInternal _PrepareSubmitOrderResponse_default_instance_;
-class PrepareVoteRequest;
-class PrepareVoteRequestDefaultTypeInternal;
-extern PrepareVoteRequestDefaultTypeInternal _PrepareVoteRequest_default_instance_;
-class PrepareVoteResponse;
-class PrepareVoteResponseDefaultTypeInternal;
-extern PrepareVoteResponseDefaultTypeInternal _PrepareVoteResponse_default_instance_;
+class PrepareVoteSubmissionRequest;
+class PrepareVoteSubmissionRequestDefaultTypeInternal;
+extern PrepareVoteSubmissionRequestDefaultTypeInternal _PrepareVoteSubmissionRequest_default_instance_;
+class PrepareVoteSubmissionResponse;
+class PrepareVoteSubmissionResponseDefaultTypeInternal;
+extern PrepareVoteSubmissionResponseDefaultTypeInternal _PrepareVoteSubmissionResponse_default_instance_;
 class PrepareWithdrawRequest;
 class PrepareWithdrawRequestDefaultTypeInternal;
 extern PrepareWithdrawRequestDefaultTypeInternal _PrepareWithdrawRequest_default_instance_;
@@ -636,8 +636,8 @@ template<> ::api::v1::PrepareProposalRequest* Arena::CreateMaybeMessage<::api::v
 template<> ::api::v1::PrepareProposalResponse* Arena::CreateMaybeMessage<::api::v1::PrepareProposalResponse>(Arena*);
 template<> ::api::v1::PrepareSubmitOrderRequest* Arena::CreateMaybeMessage<::api::v1::PrepareSubmitOrderRequest>(Arena*);
 template<> ::api::v1::PrepareSubmitOrderResponse* Arena::CreateMaybeMessage<::api::v1::PrepareSubmitOrderResponse>(Arena*);
-template<> ::api::v1::PrepareVoteRequest* Arena::CreateMaybeMessage<::api::v1::PrepareVoteRequest>(Arena*);
-template<> ::api::v1::PrepareVoteResponse* Arena::CreateMaybeMessage<::api::v1::PrepareVoteResponse>(Arena*);
+template<> ::api::v1::PrepareVoteSubmissionRequest* Arena::CreateMaybeMessage<::api::v1::PrepareVoteSubmissionRequest>(Arena*);
+template<> ::api::v1::PrepareVoteSubmissionResponse* Arena::CreateMaybeMessage<::api::v1::PrepareVoteSubmissionResponse>(Arena*);
 template<> ::api::v1::PrepareWithdrawRequest* Arena::CreateMaybeMessage<::api::v1::PrepareWithdrawRequest>(Arena*);
 template<> ::api::v1::PrepareWithdrawResponse* Arena::CreateMaybeMessage<::api::v1::PrepareWithdrawResponse>(Arena*);
 template<> ::api::v1::PropagateChainEventRequest* Arena::CreateMaybeMessage<::api::v1::PropagateChainEventRequest>(Arena*);
@@ -17316,23 +17316,23 @@ class PrepareProposalResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class PrepareVoteRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteRequest) */ {
+class PrepareVoteSubmissionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteSubmissionRequest) */ {
  public:
-  inline PrepareVoteRequest() : PrepareVoteRequest(nullptr) {}
-  virtual ~PrepareVoteRequest();
+  inline PrepareVoteSubmissionRequest() : PrepareVoteSubmissionRequest(nullptr) {}
+  virtual ~PrepareVoteSubmissionRequest();
 
-  PrepareVoteRequest(const PrepareVoteRequest& from);
-  PrepareVoteRequest(PrepareVoteRequest&& from) noexcept
-    : PrepareVoteRequest() {
+  PrepareVoteSubmissionRequest(const PrepareVoteSubmissionRequest& from);
+  PrepareVoteSubmissionRequest(PrepareVoteSubmissionRequest&& from) noexcept
+    : PrepareVoteSubmissionRequest() {
     *this = ::std::move(from);
   }
 
-  inline PrepareVoteRequest& operator=(const PrepareVoteRequest& from) {
+  inline PrepareVoteSubmissionRequest& operator=(const PrepareVoteSubmissionRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline PrepareVoteRequest& operator=(PrepareVoteRequest&& from) noexcept {
+  inline PrepareVoteSubmissionRequest& operator=(PrepareVoteSubmissionRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -17350,19 +17350,19 @@ class PrepareVoteRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const PrepareVoteRequest& default_instance();
+  static const PrepareVoteSubmissionRequest& default_instance();
 
-  static inline const PrepareVoteRequest* internal_default_instance() {
-    return reinterpret_cast<const PrepareVoteRequest*>(
-               &_PrepareVoteRequest_default_instance_);
+  static inline const PrepareVoteSubmissionRequest* internal_default_instance() {
+    return reinterpret_cast<const PrepareVoteSubmissionRequest*>(
+               &_PrepareVoteSubmissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     112;
 
-  friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
+  friend void swap(PrepareVoteSubmissionRequest& a, PrepareVoteSubmissionRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(PrepareVoteRequest* other) {
+  inline void Swap(PrepareVoteSubmissionRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -17370,7 +17370,7 @@ class PrepareVoteRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(PrepareVoteRequest* other) {
+  void UnsafeArenaSwap(PrepareVoteSubmissionRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -17378,17 +17378,17 @@ class PrepareVoteRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline PrepareVoteRequest* New() const final {
-    return CreateMaybeMessage<PrepareVoteRequest>(nullptr);
+  inline PrepareVoteSubmissionRequest* New() const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionRequest>(nullptr);
   }
 
-  PrepareVoteRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<PrepareVoteRequest>(arena);
+  PrepareVoteSubmissionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const PrepareVoteRequest& from);
-  void MergeFrom(const PrepareVoteRequest& from);
+  void CopyFrom(const PrepareVoteSubmissionRequest& from);
+  void MergeFrom(const PrepareVoteSubmissionRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -17402,13 +17402,13 @@ class PrepareVoteRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PrepareVoteRequest* other);
+  void InternalSwap(PrepareVoteSubmissionRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "api.v1.PrepareVoteRequest";
+    return "api.v1.PrepareVoteSubmissionRequest";
   }
   protected:
-  explicit PrepareVoteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PrepareVoteSubmissionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -17428,56 +17428,56 @@ class PrepareVoteRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVoteFieldNumber = 1,
+    kSubmissionFieldNumber = 1,
   };
-  // .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
-  bool has_vote() const;
+  // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  bool has_submission() const;
   private:
-  bool _internal_has_vote() const;
+  bool _internal_has_submission() const;
   public:
-  void clear_vote();
-  const ::vega::Vote& vote() const;
-  ::vega::Vote* release_vote();
-  ::vega::Vote* mutable_vote();
-  void set_allocated_vote(::vega::Vote* vote);
+  void clear_submission();
+  const ::vega::VoteSubmission& submission() const;
+  ::vega::VoteSubmission* release_submission();
+  ::vega::VoteSubmission* mutable_submission();
+  void set_allocated_submission(::vega::VoteSubmission* submission);
   private:
-  const ::vega::Vote& _internal_vote() const;
-  ::vega::Vote* _internal_mutable_vote();
+  const ::vega::VoteSubmission& _internal_submission() const;
+  ::vega::VoteSubmission* _internal_mutable_submission();
   public:
-  void unsafe_arena_set_allocated_vote(
-      ::vega::Vote* vote);
-  ::vega::Vote* unsafe_arena_release_vote();
+  void unsafe_arena_set_allocated_submission(
+      ::vega::VoteSubmission* submission);
+  ::vega::VoteSubmission* unsafe_arena_release_submission();
 
-  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteSubmissionRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::Vote* vote_;
+  ::vega::VoteSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
 // -------------------------------------------------------------------
 
-class PrepareVoteResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteResponse) */ {
+class PrepareVoteSubmissionResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteSubmissionResponse) */ {
  public:
-  inline PrepareVoteResponse() : PrepareVoteResponse(nullptr) {}
-  virtual ~PrepareVoteResponse();
+  inline PrepareVoteSubmissionResponse() : PrepareVoteSubmissionResponse(nullptr) {}
+  virtual ~PrepareVoteSubmissionResponse();
 
-  PrepareVoteResponse(const PrepareVoteResponse& from);
-  PrepareVoteResponse(PrepareVoteResponse&& from) noexcept
-    : PrepareVoteResponse() {
+  PrepareVoteSubmissionResponse(const PrepareVoteSubmissionResponse& from);
+  PrepareVoteSubmissionResponse(PrepareVoteSubmissionResponse&& from) noexcept
+    : PrepareVoteSubmissionResponse() {
     *this = ::std::move(from);
   }
 
-  inline PrepareVoteResponse& operator=(const PrepareVoteResponse& from) {
+  inline PrepareVoteSubmissionResponse& operator=(const PrepareVoteSubmissionResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline PrepareVoteResponse& operator=(PrepareVoteResponse&& from) noexcept {
+  inline PrepareVoteSubmissionResponse& operator=(PrepareVoteSubmissionResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -17495,19 +17495,19 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const PrepareVoteResponse& default_instance();
+  static const PrepareVoteSubmissionResponse& default_instance();
 
-  static inline const PrepareVoteResponse* internal_default_instance() {
-    return reinterpret_cast<const PrepareVoteResponse*>(
-               &_PrepareVoteResponse_default_instance_);
+  static inline const PrepareVoteSubmissionResponse* internal_default_instance() {
+    return reinterpret_cast<const PrepareVoteSubmissionResponse*>(
+               &_PrepareVoteSubmissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     113;
 
-  friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
+  friend void swap(PrepareVoteSubmissionResponse& a, PrepareVoteSubmissionResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(PrepareVoteResponse* other) {
+  inline void Swap(PrepareVoteSubmissionResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -17515,7 +17515,7 @@ class PrepareVoteResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(PrepareVoteResponse* other) {
+  void UnsafeArenaSwap(PrepareVoteSubmissionResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -17523,17 +17523,17 @@ class PrepareVoteResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline PrepareVoteResponse* New() const final {
-    return CreateMaybeMessage<PrepareVoteResponse>(nullptr);
+  inline PrepareVoteSubmissionResponse* New() const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionResponse>(nullptr);
   }
 
-  PrepareVoteResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<PrepareVoteResponse>(arena);
+  PrepareVoteSubmissionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const PrepareVoteResponse& from);
-  void MergeFrom(const PrepareVoteResponse& from);
+  void CopyFrom(const PrepareVoteSubmissionResponse& from);
+  void MergeFrom(const PrepareVoteSubmissionResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -17547,13 +17547,13 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PrepareVoteResponse* other);
+  void InternalSwap(PrepareVoteSubmissionResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "api.v1.PrepareVoteResponse";
+    return "api.v1.PrepareVoteSubmissionResponse";
   }
   protected:
-  explicit PrepareVoteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PrepareVoteSubmissionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -17574,7 +17574,7 @@ class PrepareVoteResponse PROTOBUF_FINAL :
 
   enum : int {
     kBlobFieldNumber = 1,
-    kVoteFieldNumber = 2,
+    kSubmissionFieldNumber = 2,
   };
   // bytes blob = 1 [json_name = "blob"];
   void clear_blob();
@@ -17592,25 +17592,25 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_blob();
   public:
 
-  // .vega.Vote vote = 2 [json_name = "vote"];
-  bool has_vote() const;
+  // .vega.VoteSubmission submission = 2 [json_name = "submission"];
+  bool has_submission() const;
   private:
-  bool _internal_has_vote() const;
+  bool _internal_has_submission() const;
   public:
-  void clear_vote();
-  const ::vega::Vote& vote() const;
-  ::vega::Vote* release_vote();
-  ::vega::Vote* mutable_vote();
-  void set_allocated_vote(::vega::Vote* vote);
+  void clear_submission();
+  const ::vega::VoteSubmission& submission() const;
+  ::vega::VoteSubmission* release_submission();
+  ::vega::VoteSubmission* mutable_submission();
+  void set_allocated_submission(::vega::VoteSubmission* submission);
   private:
-  const ::vega::Vote& _internal_vote() const;
-  ::vega::Vote* _internal_mutable_vote();
+  const ::vega::VoteSubmission& _internal_submission() const;
+  ::vega::VoteSubmission* _internal_mutable_submission();
   public:
-  void unsafe_arena_set_allocated_vote(
-      ::vega::Vote* vote);
-  ::vega::Vote* unsafe_arena_release_vote();
+  void unsafe_arena_set_allocated_submission(
+      ::vega::VoteSubmission* submission);
+  ::vega::VoteSubmission* unsafe_arena_release_submission();
 
-  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteSubmissionResponse)
  private:
   class _Internal;
 
@@ -17618,7 +17618,7 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  ::vega::Vote* vote_;
+  ::vega::VoteSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -31213,140 +31213,140 @@ inline void PrepareProposalResponse::set_allocated_pending_proposal(::vega::Prop
 
 // -------------------------------------------------------------------
 
-// PrepareVoteRequest
+// PrepareVoteSubmissionRequest
 
-// .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
-inline bool PrepareVoteRequest::_internal_has_vote() const {
-  return this != internal_default_instance() && vote_ != nullptr;
+// .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+inline bool PrepareVoteSubmissionRequest::_internal_has_submission() const {
+  return this != internal_default_instance() && submission_ != nullptr;
 }
-inline bool PrepareVoteRequest::has_vote() const {
-  return _internal_has_vote();
+inline bool PrepareVoteSubmissionRequest::has_submission() const {
+  return _internal_has_submission();
 }
-inline const ::vega::Vote& PrepareVoteRequest::_internal_vote() const {
-  const ::vega::Vote* p = vote_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::Vote&>(
-      ::vega::_Vote_default_instance_);
+inline const ::vega::VoteSubmission& PrepareVoteSubmissionRequest::_internal_submission() const {
+  const ::vega::VoteSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::VoteSubmission&>(
+      ::vega::_VoteSubmission_default_instance_);
 }
-inline const ::vega::Vote& PrepareVoteRequest::vote() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteRequest.vote)
-  return _internal_vote();
+inline const ::vega::VoteSubmission& PrepareVoteSubmissionRequest::submission() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteSubmissionRequest.submission)
+  return _internal_submission();
 }
-inline void PrepareVoteRequest::unsafe_arena_set_allocated_vote(
-    ::vega::Vote* vote) {
+inline void PrepareVoteSubmissionRequest::unsafe_arena_set_allocated_submission(
+    ::vega::VoteSubmission* submission) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  vote_ = vote;
-  if (vote) {
+  submission_ = submission;
+  if (submission) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteRequest.vote)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteSubmissionRequest.submission)
 }
-inline ::vega::Vote* PrepareVoteRequest::release_vote() {
+inline ::vega::VoteSubmission* PrepareVoteSubmissionRequest::release_submission() {
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Vote* PrepareVoteRequest::unsafe_arena_release_vote() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteRequest.vote)
+inline ::vega::VoteSubmission* PrepareVoteSubmissionRequest::unsafe_arena_release_submission() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteSubmissionRequest.submission)
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   return temp;
 }
-inline ::vega::Vote* PrepareVoteRequest::_internal_mutable_vote() {
+inline ::vega::VoteSubmission* PrepareVoteSubmissionRequest::_internal_mutable_submission() {
 
-  if (vote_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::Vote>(GetArena());
-    vote_ = p;
+  if (submission_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::VoteSubmission>(GetArena());
+    submission_ = p;
   }
-  return vote_;
+  return submission_;
 }
-inline ::vega::Vote* PrepareVoteRequest::mutable_vote() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteRequest.vote)
-  return _internal_mutable_vote();
+inline ::vega::VoteSubmission* PrepareVoteSubmissionRequest::mutable_submission() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteSubmissionRequest.submission)
+  return _internal_mutable_submission();
 }
-inline void PrepareVoteRequest::set_allocated_vote(::vega::Vote* vote) {
+inline void PrepareVoteSubmissionRequest::set_allocated_submission(::vega::VoteSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  if (vote) {
+  if (submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission)->GetArena();
     if (message_arena != submessage_arena) {
-      vote = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vote, submessage_arena);
+      submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submission, submessage_arena);
     }
 
   } else {
 
   }
-  vote_ = vote;
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteRequest.vote)
+  submission_ = submission;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteSubmissionRequest.submission)
 }
 
 // -------------------------------------------------------------------
 
-// PrepareVoteResponse
+// PrepareVoteSubmissionResponse
 
 // bytes blob = 1 [json_name = "blob"];
-inline void PrepareVoteResponse::clear_blob() {
+inline void PrepareVoteSubmissionResponse::clear_blob() {
   blob_.ClearToEmpty();
 }
-inline const std::string& PrepareVoteResponse::blob() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteResponse.blob)
+inline const std::string& PrepareVoteSubmissionResponse::blob() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteSubmissionResponse.blob)
   return _internal_blob();
 }
-inline void PrepareVoteResponse::set_blob(const std::string& value) {
+inline void PrepareVoteSubmissionResponse::set_blob(const std::string& value) {
   _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline std::string* PrepareVoteResponse::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteResponse.blob)
+inline std::string* PrepareVoteSubmissionResponse::mutable_blob() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteSubmissionResponse.blob)
   return _internal_mutable_blob();
 }
-inline const std::string& PrepareVoteResponse::_internal_blob() const {
+inline const std::string& PrepareVoteSubmissionResponse::_internal_blob() const {
   return blob_.Get();
 }
-inline void PrepareVoteResponse::_internal_set_blob(const std::string& value) {
+inline void PrepareVoteSubmissionResponse::_internal_set_blob(const std::string& value) {
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void PrepareVoteResponse::set_blob(std::string&& value) {
+inline void PrepareVoteSubmissionResponse::set_blob(std::string&& value) {
 
   blob_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline void PrepareVoteResponse::set_blob(const char* value) {
+inline void PrepareVoteSubmissionResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_char:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline void PrepareVoteResponse::set_blob(const void* value,
+inline void PrepareVoteSubmissionResponse::set_blob(const void* value,
     size_t size) {
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline std::string* PrepareVoteResponse::_internal_mutable_blob() {
+inline std::string* PrepareVoteSubmissionResponse::_internal_mutable_blob() {
 
   return blob_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* PrepareVoteResponse::release_blob() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteResponse.blob)
+inline std::string* PrepareVoteSubmissionResponse::release_blob() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteSubmissionResponse.blob)
   return blob_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void PrepareVoteResponse::set_allocated_blob(std::string* blob) {
+inline void PrepareVoteSubmissionResponse::set_allocated_blob(std::string* blob) {
   if (blob != nullptr) {
 
   } else {
@@ -31354,84 +31354,84 @@ inline void PrepareVoteResponse::set_allocated_blob(std::string* blob) {
   }
   blob_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blob,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteSubmissionResponse.blob)
 }
 
-// .vega.Vote vote = 2 [json_name = "vote"];
-inline bool PrepareVoteResponse::_internal_has_vote() const {
-  return this != internal_default_instance() && vote_ != nullptr;
+// .vega.VoteSubmission submission = 2 [json_name = "submission"];
+inline bool PrepareVoteSubmissionResponse::_internal_has_submission() const {
+  return this != internal_default_instance() && submission_ != nullptr;
 }
-inline bool PrepareVoteResponse::has_vote() const {
-  return _internal_has_vote();
+inline bool PrepareVoteSubmissionResponse::has_submission() const {
+  return _internal_has_submission();
 }
-inline const ::vega::Vote& PrepareVoteResponse::_internal_vote() const {
-  const ::vega::Vote* p = vote_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::Vote&>(
-      ::vega::_Vote_default_instance_);
+inline const ::vega::VoteSubmission& PrepareVoteSubmissionResponse::_internal_submission() const {
+  const ::vega::VoteSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::VoteSubmission&>(
+      ::vega::_VoteSubmission_default_instance_);
 }
-inline const ::vega::Vote& PrepareVoteResponse::vote() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteResponse.vote)
-  return _internal_vote();
+inline const ::vega::VoteSubmission& PrepareVoteSubmissionResponse::submission() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteSubmissionResponse.submission)
+  return _internal_submission();
 }
-inline void PrepareVoteResponse::unsafe_arena_set_allocated_vote(
-    ::vega::Vote* vote) {
+inline void PrepareVoteSubmissionResponse::unsafe_arena_set_allocated_submission(
+    ::vega::VoteSubmission* submission) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  vote_ = vote;
-  if (vote) {
+  submission_ = submission;
+  if (submission) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteResponse.vote)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteSubmissionResponse.submission)
 }
-inline ::vega::Vote* PrepareVoteResponse::release_vote() {
+inline ::vega::VoteSubmission* PrepareVoteSubmissionResponse::release_submission() {
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Vote* PrepareVoteResponse::unsafe_arena_release_vote() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteResponse.vote)
+inline ::vega::VoteSubmission* PrepareVoteSubmissionResponse::unsafe_arena_release_submission() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteSubmissionResponse.submission)
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   return temp;
 }
-inline ::vega::Vote* PrepareVoteResponse::_internal_mutable_vote() {
+inline ::vega::VoteSubmission* PrepareVoteSubmissionResponse::_internal_mutable_submission() {
 
-  if (vote_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::Vote>(GetArena());
-    vote_ = p;
+  if (submission_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::VoteSubmission>(GetArena());
+    submission_ = p;
   }
-  return vote_;
+  return submission_;
 }
-inline ::vega::Vote* PrepareVoteResponse::mutable_vote() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteResponse.vote)
-  return _internal_mutable_vote();
+inline ::vega::VoteSubmission* PrepareVoteSubmissionResponse::mutable_submission() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteSubmissionResponse.submission)
+  return _internal_mutable_submission();
 }
-inline void PrepareVoteResponse::set_allocated_vote(::vega::Vote* vote) {
+inline void PrepareVoteSubmissionResponse::set_allocated_submission(::vega::VoteSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  if (vote) {
+  if (submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission)->GetArena();
     if (message_arena != submessage_arena) {
-      vote = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vote, submessage_arena);
+      submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submission, submessage_arena);
     }
 
   } else {
 
   }
-  vote_ = vote;
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteResponse.vote)
+  submission_ = submission;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteSubmissionResponse.submission)
 }
 
 // -------------------------------------------------------------------

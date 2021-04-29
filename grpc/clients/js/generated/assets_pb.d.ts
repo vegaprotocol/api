@@ -136,25 +136,3 @@ export namespace ERC20 {
   }
 }
 
-export class DevAssets extends jspb.Message {
-  clearSourcesList(): void;
-  getSourcesList(): Array<AssetSource>;
-  setSourcesList(value: Array<AssetSource>): void;
-  addSources(value?: AssetSource, index?: number): AssetSource;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DevAssets.AsObject;
-  static toObject(includeInstance: boolean, msg: DevAssets): DevAssets.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DevAssets, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DevAssets;
-  static deserializeBinaryFromReader(message: DevAssets, reader: jspb.BinaryReader): DevAssets;
-}
-
-export namespace DevAssets {
-  export type AsObject = {
-    sourcesList: Array<AssetSource.AsObject>,
-  }
-}
-

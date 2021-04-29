@@ -1056,25 +1056,25 @@
       "title": "Response for preparing an order submission",
       "type": "object"
     },
-    "v1PrepareVoteRequest": {
+    "v1PrepareVoteSubmissionRequest": {
       "properties": {
-        "vote": {
-          "$ref": "#/definitions/vegaVote",
+        "submission": {
+          "$ref": "#/definitions/vegaVoteSubmission",
           "title": "Vote, required field"
         }
       },
       "title": "Request to prepare a governance vote",
       "type": "object"
     },
-    "v1PrepareVoteResponse": {
+    "v1PrepareVoteSubmissionResponse": {
       "properties": {
         "blob": {
           "format": "byte",
           "title": "A blob is an encoded representation of the vote ready to sign using the Vega Wallet and then submit as a transaction",
           "type": "string"
         },
-        "vote": {
-          "$ref": "#/definitions/vegaVote",
+        "submission": {
+          "$ref": "#/definitions/vegaVoteSubmission",
           "title": "A copy of the prepared vote"
         }
       },
@@ -4292,8 +4292,8 @@
         "proposal": {
           "$ref": "#/definitions/vegaProposal"
         },
-        "vote": {
-          "$ref": "#/definitions/vegaVote"
+        "vote_submission": {
+          "$ref": "#/definitions/vegaVoteSubmission"
         }
       },
       "type": "object"
@@ -4345,12 +4345,32 @@
           "title": "Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network",
           "type": "string"
         },
+        "total_governance_token_balance": {
+          "format": "uint64",
+          "title": "Total number of governance token for the party that casted the vote",
+          "type": "string"
+        },
+        "total_governance_token_weight": {
+          "title": "The weight of this vote based on the total of governance token",
+          "type": "string"
+        },
         "value": {
           "$ref": "#/definitions/VoteValue",
           "title": "Actual vote"
         }
       },
       "title": "Governance vote",
+      "type": "object"
+    },
+    "vegaVoteSubmission": {
+      "properties": {
+        "proposal_id": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/VoteValue"
+        }
+      },
       "type": "object"
     },
     "vegaWithdrawExt": {
@@ -4527,32 +4547,6 @@
         ]
       }
     },
-    "/deposits/party/{party_id}": {
-      "get": {
-        "operationId": "Deposits",
-        "parameters": [
-          {
-            "description": "The party to get the deposits for",
-            "in": "path",
-            "name": "party_id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1DepositsResponse"
-            }
-          }
-        },
-        "summary": "Get deposits for a party",
-        "tags": [
-          "TradingDataService"
-        ]
-      }
-    },
     "/deposits/{id}": {
       "get": {
         "operationId": "Deposit",
@@ -4682,14 +4676,14 @@
     },
     "/governance/prepare/vote": {
       "post": {
-        "operationId": "PrepareVote",
+        "operationId": "PrepareVoteSubmission",
         "parameters": [
           {
             "in": "body",
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1PrepareVoteRequest"
+              "$ref": "#/definitions/v1PrepareVoteSubmissionRequest"
             }
           }
         ],
@@ -4697,7 +4691,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1PrepareVoteResponse"
+              "$ref": "#/definitions/v1PrepareVoteSubmissionResponse"
             }
           }
         },
@@ -5668,6 +5662,32 @@
           }
         },
         "summary": "Get a list of Accounts by Party",
+        "tags": [
+          "TradingDataService"
+        ]
+      }
+    },
+    "/parties/{party_id}/deposits": {
+      "get": {
+        "operationId": "Deposits",
+        "parameters": [
+          {
+            "description": "The party to get the deposits for",
+            "in": "path",
+            "name": "party_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DepositsResponse"
+            }
+          }
+        },
+        "summary": "Get deposits for a party",
         "tags": [
           "TradingDataService"
         ]

@@ -128,7 +128,6 @@
     - [Asset](#vega.Asset)
     - [AssetSource](#vega.AssetSource)
     - [BuiltinAsset](#vega.BuiltinAsset)
-    - [DevAssets](#vega.DevAssets)
     - [ERC20](#vega.ERC20)
 
 - [governance.proto](#governance.proto)
@@ -146,6 +145,7 @@
     - [UpdateMarket](#vega.UpdateMarket)
     - [UpdateNetworkParameter](#vega.UpdateNetworkParameter)
     - [Vote](#vega.Vote)
+    - [VoteSubmission](#vega.VoteSubmission)
 
     - [Proposal.State](#vega.Proposal.State)
     - [ProposalError](#vega.ProposalError)
@@ -316,8 +316,8 @@
     - [PrepareProposalResponse](#api.v1.PrepareProposalResponse)
     - [PrepareSubmitOrderRequest](#api.v1.PrepareSubmitOrderRequest)
     - [PrepareSubmitOrderResponse](#api.v1.PrepareSubmitOrderResponse)
-    - [PrepareVoteRequest](#api.v1.PrepareVoteRequest)
-    - [PrepareVoteResponse](#api.v1.PrepareVoteResponse)
+    - [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest)
+    - [PrepareVoteSubmissionResponse](#api.v1.PrepareVoteSubmissionResponse)
     - [PrepareWithdrawRequest](#api.v1.PrepareWithdrawRequest)
     - [PrepareWithdrawResponse](#api.v1.PrepareWithdrawResponse)
     - [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest)
@@ -2513,21 +2513,6 @@ A Vega internal asset
 
 
 
-<a name="vega.DevAssets"></a>
-
-### DevAssets
-Dev assets are for use in development networks only
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sources | [AssetSource](#vega.AssetSource) | repeated | Asset sources for development networks |
-
-
-
-
-
-
 <a name="vega.ERC20"></a>
 
 ### ERC20
@@ -2798,6 +2783,24 @@ Governance vote
 | value | [Vote.Value](#vega.Vote.Value) |  | Actual vote |
 | proposal_id | [string](#string) |  | Identifier of the proposal being voted on |
 | timestamp | [int64](#int64) |  | Vote timestamp for date and time (in nanoseconds) when vote was submitted to the network |
+| total_governance_token_balance | [uint64](#uint64) |  | Total number of governance token for the party that casted the vote |
+| total_governance_token_weight | [string](#string) |  | The weight of this vote based on the total of governance token |
+
+
+
+
+
+
+<a name="vega.VoteSubmission"></a>
+
+### VoteSubmission
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposal_id | [string](#string) |  |  |
+| value | [Vote.Value](#vega.Vote.Value) |  |  |
 
 
 
@@ -3496,7 +3499,7 @@ A transfer responses event contains a collection of transfer information
 | order_amendment | [OrderAmendment](#vega.OrderAmendment) |  |  |
 | order_cancellation | [OrderCancellation](#vega.OrderCancellation) |  |  |
 | proposal | [Proposal](#vega.Proposal) |  |  |
-| vote | [Vote](#vega.Vote) |  |  |
+| vote_submission | [VoteSubmission](#vega.VoteSubmission) |  |  |
 | liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.LiquidityProvisionSubmission) |  |  |
 
 
@@ -5432,31 +5435,31 @@ Response for preparing an order submission
 
 
 
-<a name="api.v1.PrepareVoteRequest"></a>
+<a name="api.v1.PrepareVoteSubmissionRequest"></a>
 
-### PrepareVoteRequest
+### PrepareVoteSubmissionRequest
 Request to prepare a governance vote
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| vote | [vega.Vote](#vega.Vote) |  | Vote, required field |
+| submission | [vega.VoteSubmission](#vega.VoteSubmission) |  | Vote, required field |
 
 
 
 
 
 
-<a name="api.v1.PrepareVoteResponse"></a>
+<a name="api.v1.PrepareVoteSubmissionResponse"></a>
 
-### PrepareVoteResponse
+### PrepareVoteSubmissionResponse
 Response to prepare a governance vote
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | blob | [bytes](#bytes) |  | A blob is an encoded representation of the vote ready to sign using the Vega Wallet and then submit as a transaction |
-| vote | [vega.Vote](#vega.Vote) |  | A copy of the prepared vote |
+| submission | [vega.VoteSubmission](#vega.VoteSubmission) |  | A copy of the prepared vote |
 
 
 
@@ -5897,7 +5900,7 @@ Blockchain transaction type
 | PrepareWithdraw | [PrepareWithdrawRequest](#api.v1.PrepareWithdrawRequest) | [PrepareWithdrawResponse](#api.v1.PrepareWithdrawResponse) | Request a withdrawal |
 | SubmitTransaction | [SubmitTransactionRequest](#api.v1.SubmitTransactionRequest) | [SubmitTransactionResponse](#api.v1.SubmitTransactionResponse) | Submit a signed transaction |
 | PrepareProposal | [PrepareProposalRequest](#api.v1.PrepareProposalRequest) | [PrepareProposalResponse](#api.v1.PrepareProposalResponse) | Prepare a governance proposal |
-| PrepareVote | [PrepareVoteRequest](#api.v1.PrepareVoteRequest) | [PrepareVoteResponse](#api.v1.PrepareVoteResponse) | Prepare a governance vote |
+| PrepareVoteSubmission | [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest) | [PrepareVoteSubmissionResponse](#api.v1.PrepareVoteSubmissionResponse) | Prepare a governance vote |
 | PropagateChainEvent | [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest) | [PropagateChainEventResponse](#api.v1.PropagateChainEventResponse) | Propagate a chain event |
 | PrepareLiquidityProvision | [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest) | [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse) | Prepare a liquidity provision request |
 

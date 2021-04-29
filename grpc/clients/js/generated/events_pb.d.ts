@@ -60,10 +60,10 @@ export class TxErrorEvent extends jspb.Message {
   getProposal(): governance_pb.Proposal | undefined;
   setProposal(value?: governance_pb.Proposal): void;
 
-  hasVote(): boolean;
-  clearVote(): void;
-  getVote(): governance_pb.Vote | undefined;
-  setVote(value?: governance_pb.Vote): void;
+  hasVoteSubmission(): boolean;
+  clearVoteSubmission(): void;
+  getVoteSubmission(): governance_pb.VoteSubmission | undefined;
+  setVoteSubmission(value?: governance_pb.VoteSubmission): void;
 
   hasLiquidityProvisionSubmission(): boolean;
   clearLiquidityProvisionSubmission(): void;
@@ -89,7 +89,7 @@ export namespace TxErrorEvent {
     orderAmendment?: vega_pb.OrderAmendment.AsObject,
     orderCancellation?: vega_pb.OrderCancellation.AsObject,
     proposal?: governance_pb.Proposal.AsObject,
-    vote?: governance_pb.Vote.AsObject,
+    voteSubmission?: governance_pb.VoteSubmission.AsObject,
     liquidityProvisionSubmission?: vega_pb.LiquidityProvisionSubmission.AsObject,
   }
 
@@ -99,7 +99,7 @@ export namespace TxErrorEvent {
     ORDER_AMENDMENT = 102,
     ORDER_CANCELLATION = 103,
     PROPOSAL = 104,
-    VOTE = 105,
+    VOTE_SUBMISSION = 105,
     LIQUIDITY_PROVISION_SUBMISSION = 106,
   }
 }

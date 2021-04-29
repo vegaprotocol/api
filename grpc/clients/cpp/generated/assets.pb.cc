@@ -34,10 +34,6 @@ class ERC20DefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ERC20> _instance;
 } _ERC20_default_instance_;
-class DevAssetsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DevAssets> _instance;
-} _DevAssets_default_instance_;
 }  // namespace vega
 static void InitDefaultsscc_info_Asset_assets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -81,20 +77,6 @@ static void InitDefaultsscc_info_BuiltinAsset_assets_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BuiltinAsset_assets_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BuiltinAsset_assets_2eproto}, {}};
 
-static void InitDefaultsscc_info_DevAssets_assets_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_DevAssets_default_instance_;
-    new (ptr) ::vega::DevAssets();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DevAssets_assets_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DevAssets_assets_2eproto}, {
-      &scc_info_AssetSource_assets_2eproto.base,}};
-
 static void InitDefaultsscc_info_ERC20_assets_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -108,7 +90,7 @@ static void InitDefaultsscc_info_ERC20_assets_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ERC20_assets_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ERC20_assets_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_assets_2eproto[5];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_assets_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_assets_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_assets_2eproto = nullptr;
 
@@ -148,19 +130,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_assets_2eproto::offsets[] PROT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::ERC20, contract_address_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::DevAssets, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::DevAssets, sources_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::Asset)},
   { 11, -1, sizeof(::vega::AssetSource)},
   { 19, -1, sizeof(::vega::BuiltinAsset)},
   { 29, -1, sizeof(::vega::ERC20)},
-  { 35, -1, sizeof(::vega::DevAssets)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -168,7 +143,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_AssetSource_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_BuiltinAsset_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ERC20_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_DevAssets_default_instance_),
 };
 
 const char descriptor_table_protodef_assets_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -185,26 +159,24 @@ const char descriptor_table_protodef_assets_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "R\013totalSupply\022\032\n\010decimals\030\004 \001(\004R\010decimal"
   "s\0223\n\026max_faucet_amount_mint\030\005 \001(\tR\023maxFa"
   "ucetAmountMint\"2\n\005ERC20\022)\n\020contract_addr"
-  "ess\030\001 \001(\tR\017contractAddress\"8\n\tDevAssets\022"
-  "+\n\007sources\030\001 \003(\0132\021.vega.AssetSourceR\007sou"
-  "rcesB7\n\024io.vegaprotocol.vegaZ\037code.vegap"
-  "rotocol.io/vega/protob\006proto3"
+  "ess\030\001 \001(\tR\017contractAddressB7\n\024io.vegapro"
+  "tocol.vegaZ\037code.vegaprotocol.io/vega/pr"
+  "otob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_assets_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_assets_2eproto_sccs[5] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_assets_2eproto_sccs[4] = {
   &scc_info_Asset_assets_2eproto.base,
   &scc_info_AssetSource_assets_2eproto.base,
   &scc_info_BuiltinAsset_assets_2eproto.base,
-  &scc_info_DevAssets_assets_2eproto.base,
   &scc_info_ERC20_assets_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_assets_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_assets_2eproto = {
-  false, false, descriptor_table_protodef_assets_2eproto, "assets.proto", 669,
-  &descriptor_table_assets_2eproto_once, descriptor_table_assets_2eproto_sccs, descriptor_table_assets_2eproto_deps, 5, 0,
+  false, false, descriptor_table_protodef_assets_2eproto, "assets.proto", 611,
+  &descriptor_table_assets_2eproto_once, descriptor_table_assets_2eproto_sccs, descriptor_table_assets_2eproto_deps, 4, 0,
   schemas, file_default_instances, TableStruct_assets_2eproto::offsets,
-  file_level_metadata_assets_2eproto, 5, file_level_enum_descriptors_assets_2eproto, file_level_service_descriptors_assets_2eproto,
+  file_level_metadata_assets_2eproto, 4, file_level_enum_descriptors_assets_2eproto, file_level_service_descriptors_assets_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1473,206 +1445,6 @@ void ERC20::InternalSwap(ERC20* other) {
 }
 
 
-// ===================================================================
-
-class DevAssets::_Internal {
- public:
-};
-
-DevAssets::DevAssets(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  sources_(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.DevAssets)
-}
-DevAssets::DevAssets(const DevAssets& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      sources_(from.sources_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:vega.DevAssets)
-}
-
-void DevAssets::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DevAssets_assets_2eproto.base);
-}
-
-DevAssets::~DevAssets() {
-  // @@protoc_insertion_point(destructor:vega.DevAssets)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void DevAssets::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void DevAssets::ArenaDtor(void* object) {
-  DevAssets* _this = reinterpret_cast< DevAssets* >(object);
-  (void)_this;
-}
-void DevAssets::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void DevAssets::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const DevAssets& DevAssets::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DevAssets_assets_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void DevAssets::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.DevAssets)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  sources_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* DevAssets::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // repeated .vega.AssetSource sources = 1 [json_name = "sources"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_sources(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* DevAssets::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.DevAssets)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .vega.AssetSource sources = 1 [json_name = "sources"];
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_sources_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_sources(i), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.DevAssets)
-  return target;
-}
-
-size_t DevAssets::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.DevAssets)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .vega.AssetSource sources = 1 [json_name = "sources"];
-  total_size += 1UL * this->_internal_sources_size();
-  for (const auto& msg : this->sources_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void DevAssets::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.DevAssets)
-  GOOGLE_DCHECK_NE(&from, this);
-  const DevAssets* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DevAssets>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.DevAssets)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.DevAssets)
-    MergeFrom(*source);
-  }
-}
-
-void DevAssets::MergeFrom(const DevAssets& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.DevAssets)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  sources_.MergeFrom(from.sources_);
-}
-
-void DevAssets::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.DevAssets)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void DevAssets::CopyFrom(const DevAssets& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.DevAssets)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool DevAssets::IsInitialized() const {
-  return true;
-}
-
-void DevAssets::InternalSwap(DevAssets* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  sources_.InternalSwap(&other->sources_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata DevAssets::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace vega
 PROTOBUF_NAMESPACE_OPEN
@@ -1687,9 +1459,6 @@ template<> PROTOBUF_NOINLINE ::vega::BuiltinAsset* Arena::CreateMaybeMessage< ::
 }
 template<> PROTOBUF_NOINLINE ::vega::ERC20* Arena::CreateMaybeMessage< ::vega::ERC20 >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::ERC20 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vega::DevAssets* Arena::CreateMaybeMessage< ::vega::DevAssets >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::DevAssets >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -49,6 +49,7 @@ extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Trade_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_TransferResponse_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vote_governance_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_WithdrawSubmission_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Withdrawal_vega_2eproto;
 namespace api {
@@ -501,14 +502,14 @@ class PrepareProposalResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareProposalResponse> _instance;
 } _PrepareProposalResponse_default_instance_;
-class PrepareVoteRequestDefaultTypeInternal {
+class PrepareVoteSubmissionRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareVoteRequest> _instance;
-} _PrepareVoteRequest_default_instance_;
-class PrepareVoteResponseDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareVoteSubmissionRequest> _instance;
+} _PrepareVoteSubmissionRequest_default_instance_;
+class PrepareVoteSubmissionResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareVoteResponse> _instance;
-} _PrepareVoteResponse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareVoteSubmissionResponse> _instance;
+} _PrepareVoteSubmissionResponse_default_instance_;
 class PrepareLiquidityProvisionRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareLiquidityProvisionRequest> _instance;
@@ -2331,33 +2332,33 @@ static void InitDefaultsscc_info_PrepareSubmitOrderResponse_api_2ftrading_2eprot
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PrepareSubmitOrderResponse_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PrepareSubmitOrderResponse_api_2ftrading_2eproto}, {}};
 
-static void InitDefaultsscc_info_PrepareVoteRequest_api_2ftrading_2eproto() {
+static void InitDefaultsscc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::v1::_PrepareVoteRequest_default_instance_;
-    new (ptr) ::api::v1::PrepareVoteRequest();
+    void* ptr = &::api::v1::_PrepareVoteSubmissionRequest_default_instance_;
+    new (ptr) ::api::v1::PrepareVoteSubmissionRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareVoteRequest_api_2ftrading_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareVoteRequest_api_2ftrading_2eproto}, {
-      &scc_info_Vote_governance_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto}, {
+      &scc_info_VoteSubmission_governance_2eproto.base,}};
 
-static void InitDefaultsscc_info_PrepareVoteResponse_api_2ftrading_2eproto() {
+static void InitDefaultsscc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::v1::_PrepareVoteResponse_default_instance_;
-    new (ptr) ::api::v1::PrepareVoteResponse();
+    void* ptr = &::api::v1::_PrepareVoteSubmissionResponse_default_instance_;
+    new (ptr) ::api::v1::PrepareVoteSubmissionResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareVoteResponse_api_2ftrading_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareVoteResponse_api_2ftrading_2eproto}, {
-      &scc_info_Vote_governance_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto}, {
+      &scc_info_VoteSubmission_governance_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareWithdrawRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -3367,18 +3368,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_api_2ftrading_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalResponse, blob_),
   PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalResponse, pending_proposal_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteSubmissionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteRequest, vote_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteSubmissionRequest, submission_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteSubmissionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteResponse, blob_),
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteResponse, vote_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteSubmissionResponse, blob_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteSubmissionResponse, submission_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::api::v1::PrepareLiquidityProvisionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -3704,8 +3705,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 682, -1, sizeof(::api::v1::FeeInfrastructureAccountsResponse)},
   { 688, -1, sizeof(::api::v1::PrepareProposalRequest)},
   { 696, -1, sizeof(::api::v1::PrepareProposalResponse)},
-  { 703, -1, sizeof(::api::v1::PrepareVoteRequest)},
-  { 709, -1, sizeof(::api::v1::PrepareVoteResponse)},
+  { 703, -1, sizeof(::api::v1::PrepareVoteSubmissionRequest)},
+  { 709, -1, sizeof(::api::v1::PrepareVoteSubmissionResponse)},
   { 716, -1, sizeof(::api::v1::PrepareLiquidityProvisionRequest)},
   { 722, -1, sizeof(::api::v1::PrepareLiquidityProvisionResponse)},
   { 728, -1, sizeof(::api::v1::OrderByIDRequest)},
@@ -3855,8 +3856,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_FeeInfrastructureAccountsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareProposalRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareProposalResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareVoteRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareVoteResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareVoteSubmissionRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareVoteSubmissionResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareLiquidityProvisionRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareLiquidityProvisionResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OrderByIDRequest_default_instance_),
@@ -4116,231 +4117,233 @@ const char descriptor_table_protodef_api_2ftrading_2eproto[] PROTOBUF_SECTION_VA
   "roposalTermsB\006\342\337\037\002 \001R\010proposal\"h\n\027Prepar"
   "eProposalResponse\022\022\n\004blob\030\001 \001(\014R\004blob\0229\n"
   "\020pending_proposal\030\002 \001(\0132\016.vega.ProposalR"
-  "\017pendingProposal\"<\n\022PrepareVoteRequest\022&"
-  "\n\004vote\030\001 \001(\0132\n.vega.VoteB\006\342\337\037\002 \001R\004vote\"I"
-  "\n\023PrepareVoteResponse\022\022\n\004blob\030\001 \001(\014R\004blo"
-  "b\022\036\n\004vote\030\002 \001(\0132\n.vega.VoteR\004vote\"n\n Pre"
-  "pareLiquidityProvisionRequest\022J\n\nsubmiss"
-  "ion\030\001 \001(\0132\".vega.LiquidityProvisionSubmi"
-  "ssionB\006\342\337\037\002 \001R\nsubmission\"7\n!PrepareLiqu"
-  "idityProvisionResponse\022\022\n\004blob\030\001 \001(\014R\004bl"
-  "ob\"O\n\020OrderByIDRequest\022!\n\010order_id\030\001 \001(\t"
-  "B\006\342\337\037\002 \001R\007orderId\022\030\n\007version\030\002 \001(\004R\007vers"
-  "ion\"6\n\021OrderByIDResponse\022!\n\005order\030\001 \001(\0132"
-  "\013.vega.OrderR\005order\"q\n\030OrderVersionsByID"
-  "Request\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007order"
-  "Id\0222\n\npagination\030\002 \001(\0132\022.api.v1.Paginati"
-  "onR\npagination\"@\n\031OrderVersionsByIDRespo"
-  "nse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders"
-  "\"7\n\022EstimateFeeRequest\022!\n\005order\030\001 \001(\0132\013."
-  "vega.OrderR\005order\"2\n\023EstimateFeeResponse"
-  "\022\033\n\003fee\030\002 \001(\0132\t.vega.FeeR\003fee\":\n\025Estimat"
-  "eMarginRequest\022!\n\005order\030\001 \001(\0132\013.vega.Ord"
-  "erR\005order\"Q\n\026EstimateMarginResponse\0227\n\rm"
-  "argin_levels\030\002 \001(\0132\022.vega.MarginLevelsR\014"
-  "marginLevels\"\227\001\n\026ObserveEventBusRequest\022"
-  "&\n\004type\030\001 \003(\0162\022.vega.BusEventTypeR\004type\022"
-  "\033\n\tmarket_id\030\002 \001(\tR\010marketId\022\031\n\010party_id"
-  "\030\003 \001(\tR\007partyId\022\035\n\nbatch_size\030\004 \001(\003R\tbat"
-  "chSize\"A\n\027ObserveEventBusResponse\022&\n\006eve"
-  "nts\030\001 \003(\0132\016.vega.BusEventR\006events\"\023\n\021Sta"
-  "tisticsRequest\"F\n\022StatisticsResponse\0220\n\n"
-  "statistics\030\001 \001(\0132\020.vega.StatisticsR\nstat"
-  "istics\"7\n\022WithdrawalsRequest\022!\n\010party_id"
-  "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\023WithdrawalsRe"
-  "sponse\0222\n\013withdrawals\030\001 \003(\0132\020.vega.Withd"
-  "rawalR\013withdrawals\"+\n\021WithdrawalRequest\022"
-  "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"F\n\022WithdrawalRes"
-  "ponse\0220\n\nwithdrawal\030\001 \001(\0132\020.vega.Withdra"
-  "walR\nwithdrawal\"M\n\036ERC20WithdrawalApprov"
-  "alRequest\022+\n\rwithdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001"
-  "R\014withdrawalId\"\252\001\n\037ERC20WithdrawalApprov"
-  "alResponse\022!\n\014asset_source\030\001 \001(\tR\013assetS"
-  "ource\022\026\n\006amount\030\002 \001(\tR\006amount\022\026\n\006expiry\030"
-  "\003 \001(\003R\006expiry\022\024\n\005nonce\030\004 \001(\tR\005nonce\022\036\n\ns"
-  "ignatures\030\005 \001(\tR\nsignatures\"4\n\017DepositsR"
-  "equest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyI"
-  "d\"=\n\020DepositsResponse\022)\n\010deposits\030\001 \003(\0132"
-  "\r.vega.DepositR\010deposits\"(\n\016DepositReque"
-  "st\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\":\n\017DepositRes"
-  "ponse\022\'\n\007deposit\030\001 \001(\0132\r.vega.DepositR\007d"
-  "eposit\"\032\n\030NetworkParametersRequest\"b\n\031Ne"
-  "tworkParametersResponse\022E\n\022network_param"
-  "eters\030\001 \003(\0132\026.vega.NetworkParameterR\021net"
-  "workParameters\"J\n\032LiquidityProvisionsReq"
-  "uest\022\026\n\006market\030\001 \001(\tR\006market\022\024\n\005party\030\002 "
-  "\001(\tR\005party\"j\n\033LiquidityProvisionsRespons"
-  "e\022K\n\024liquidity_provisions\030\001 \003(\0132\030.vega.L"
-  "iquidityProvisionR\023liquidityProvisions\"+"
-  "\n\021OracleSpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R"
-  "\002id\"M\n\022OracleSpecResponse\0227\n\013oracle_spec"
-  "\030\001 \001(\0132\026.oracles.v1.OracleSpecR\noracleSp"
-  "ec\"\024\n\022OracleSpecsRequest\"P\n\023OracleSpecsR"
-  "esponse\0229\n\014oracle_specs\030\001 \003(\0132\026.oracles."
-  "v1.OracleSpecR\013oracleSpecs\"1\n\027OracleData"
-  "BySpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n"
-  "\030OracleDataBySpecResponse\0227\n\013oracle_data"
-  "\030\001 \003(\0132\026.oracles.v1.OracleDataR\noracleDa"
-  "ta2\300\006\n\016TradingService\022[\n\022PrepareSubmitOr"
-  "der\022!.api.v1.PrepareSubmitOrderRequest\032\""
-  ".api.v1.PrepareSubmitOrderResponse\022[\n\022Pr"
-  "epareCancelOrder\022!.api.v1.PrepareCancelO"
-  "rderRequest\032\".api.v1.PrepareCancelOrderR"
-  "esponse\022X\n\021PrepareAmendOrder\022 .api.v1.Pr"
-  "epareAmendOrderRequest\032!.api.v1.PrepareA"
-  "mendOrderResponse\022R\n\017PrepareWithdraw\022\036.a"
-  "pi.v1.PrepareWithdrawRequest\032\037.api.v1.Pr"
-  "epareWithdrawResponse\022X\n\021SubmitTransacti"
-  "on\022 .api.v1.SubmitTransactionRequest\032!.a"
-  "pi.v1.SubmitTransactionResponse\022R\n\017Prepa"
-  "reProposal\022\036.api.v1.PrepareProposalReque"
-  "st\032\037.api.v1.PrepareProposalResponse\022F\n\013P"
-  "repareVote\022\032.api.v1.PrepareVoteRequest\032\033"
-  ".api.v1.PrepareVoteResponse\022^\n\023Propagate"
-  "ChainEvent\022\".api.v1.PropagateChainEventR"
-  "equest\032#.api.v1.PropagateChainEventRespo"
-  "nse\022p\n\031PrepareLiquidityProvision\022(.api.v"
-  "1.PrepareLiquidityProvisionRequest\032).api"
-  ".v1.PrepareLiquidityProvisionResponse2\333*"
-  "\n\022TradingDataService\022O\n\016MarketAccounts\022\035"
-  ".api.v1.MarketAccountsRequest\032\036.api.v1.M"
-  "arketAccountsResponse\022L\n\rPartyAccounts\022\034"
-  ".api.v1.PartyAccountsRequest\032\035.api.v1.Pa"
-  "rtyAccountsResponse\022p\n\031FeeInfrastructure"
-  "Accounts\022(.api.v1.FeeInfrastructureAccou"
-  "ntsRequest\032).api.v1.FeeInfrastructureAcc"
-  "ountsResponse\022:\n\007Candles\022\026.api.v1.Candle"
-  "sRequest\032\027.api.v1.CandlesResponse\022O\n\016Mar"
-  "ketDataByID\022\035.api.v1.MarketDataByIDReque"
-  "st\032\036.api.v1.MarketDataByIDResponse\022F\n\013Ma"
-  "rketsData\022\032.api.v1.MarketsDataRequest\032\033."
-  "api.v1.MarketsDataResponse\022C\n\nMarketByID"
-  "\022\031.api.v1.MarketByIDRequest\032\032.api.v1.Mar"
-  "ketByIDResponse\022F\n\013MarketDepth\022\032.api.v1."
-  "MarketDepthRequest\032\033.api.v1.MarketDepthR"
-  "esponse\022:\n\007Markets\022\026.api.v1.MarketsReque"
-  "st\032\027.api.v1.MarketsResponse\022[\n\022OrderByMa"
-  "rketAndID\022!.api.v1.OrderByMarketAndIDReq"
-  "uest\032\".api.v1.OrderByMarketAndIDResponse"
-  "\022U\n\020OrderByReference\022\037.api.v1.OrderByRef"
-  "erenceRequest\032 .api.v1.OrderByReferenceR"
-  "esponse\022O\n\016OrdersByMarket\022\035.api.v1.Order"
-  "sByMarketRequest\032\036.api.v1.OrdersByMarket"
-  "Response\022L\n\rOrdersByParty\022\034.api.v1.Order"
-  "sByPartyRequest\032\035.api.v1.OrdersByPartyRe"
-  "sponse\022@\n\tOrderByID\022\030.api.v1.OrderByIDRe"
-  "quest\032\031.api.v1.OrderByIDResponse\022X\n\021Orde"
-  "rVersionsByID\022 .api.v1.OrderVersionsByID"
-  "Request\032!.api.v1.OrderVersionsByIDRespon"
-  "se\022I\n\014MarginLevels\022\033.api.v1.MarginLevels"
-  "Request\032\034.api.v1.MarginLevelsResponse\022:\n"
-  "\007Parties\022\026.api.v1.PartiesRequest\032\027.api.v"
-  "1.PartiesResponse\022@\n\tPartyByID\022\030.api.v1."
-  "PartyByIDRequest\032\031.api.v1.PartyByIDRespo"
-  "nse\022U\n\020PositionsByParty\022\037.api.v1.Positio"
-  "nsByPartyRequest\032 .api.v1.PositionsByPar"
-  "tyResponse\022@\n\tLastTrade\022\030.api.v1.LastTra"
-  "deRequest\032\031.api.v1.LastTradeResponse\022O\n\016"
-  "TradesByMarket\022\035.api.v1.TradesByMarketRe"
-  "quest\032\036.api.v1.TradesByMarketResponse\022L\n"
-  "\rTradesByOrder\022\034.api.v1.TradesByOrderReq"
-  "uest\032\035.api.v1.TradesByOrderResponse\022L\n\rT"
-  "radesByParty\022\034.api.v1.TradesByPartyReque"
-  "st\032\035.api.v1.TradesByPartyResponse\022I\n\014Get"
-  "Proposals\022\033.api.v1.GetProposalsRequest\032\034"
-  ".api.v1.GetProposalsResponse\022^\n\023GetPropo"
-  "salsByParty\022\".api.v1.GetProposalsByParty"
-  "Request\032#.api.v1.GetProposalsByPartyResp"
-  "onse\022R\n\017GetVotesByParty\022\036.api.v1.GetVote"
-  "sByPartyRequest\032\037.api.v1.GetVotesByParty"
-  "Response\022d\n\025GetNewMarketProposals\022$.api."
-  "v1.GetNewMarketProposalsRequest\032%.api.v1"
-  ".GetNewMarketProposalsResponse\022m\n\030GetUpd"
-  "ateMarketProposals\022\'.api.v1.GetUpdateMar"
-  "ketProposalsRequest\032(.api.v1.GetUpdateMa"
-  "rketProposalsResponse\022|\n\035GetNetworkParam"
-  "etersProposals\022,.api.v1.GetNetworkParame"
-  "tersProposalsRequest\032-.api.v1.GetNetwork"
-  "ParametersProposalsResponse\022a\n\024GetNewAss"
-  "etProposals\022#.api.v1.GetNewAssetProposal"
-  "sRequest\032$.api.v1.GetNewAssetProposalsRe"
-  "sponse\022R\n\017GetProposalByID\022\036.api.v1.GetPr"
-  "oposalByIDRequest\032\037.api.v1.GetProposalBy"
-  "IDResponse\022g\n\026GetProposalByReference\022%.a"
-  "pi.v1.GetProposalByReferenceRequest\032&.ap"
-  "i.v1.GetProposalByReferenceResponse\022Z\n\021O"
-  "bserveGovernance\022 .api.v1.ObserveGoverna"
-  "nceRequest\032!.api.v1.ObserveGovernanceRes"
-  "ponse0\001\022f\n\025ObservePartyProposals\022$.api.v"
-  "1.ObservePartyProposalsRequest\032%.api.v1."
-  "ObservePartyProposalsResponse0\001\022Z\n\021Obser"
-  "vePartyVotes\022 .api.v1.ObservePartyVotesR"
-  "equest\032!.api.v1.ObservePartyVotesRespons"
-  "e0\001\022c\n\024ObserveProposalVotes\022#.api.v1.Obs"
-  "erveProposalVotesRequest\032$.api.v1.Observ"
-  "eProposalVotesResponse0\001\022V\n\017ObserveEvent"
-  "Bus\022\036.api.v1.ObserveEventBusRequest\032\037.ap"
-  "i.v1.ObserveEventBusResponse(\0010\001\022C\n\nStat"
-  "istics\022\031.api.v1.StatisticsRequest\032\032.api."
-  "v1.StatisticsResponse\022F\n\013GetVegaTime\022\032.a"
-  "pi.v1.GetVegaTimeRequest\032\033.api.v1.GetVeg"
-  "aTimeResponse\022Z\n\021AccountsSubscribe\022 .api"
-  ".v1.AccountsSubscribeRequest\032!.api.v1.Ac"
-  "countsSubscribeResponse0\001\022W\n\020CandlesSubs"
-  "cribe\022\037.api.v1.CandlesSubscribeRequest\032 "
-  ".api.v1.CandlesSubscribeResponse0\001\022f\n\025Ma"
-  "rginLevelsSubscribe\022$.api.v1.MarginLevel"
-  "sSubscribeRequest\032%.api.v1.MarginLevelsS"
-  "ubscribeResponse0\001\022c\n\024MarketDepthSubscri"
-  "be\022#.api.v1.MarketDepthSubscribeRequest\032"
-  "$.api.v1.MarketDepthSubscribeResponse0\001\022"
-  "x\n\033MarketDepthUpdatesSubscribe\022*.api.v1."
-  "MarketDepthUpdatesSubscribeRequest\032+.api"
-  ".v1.MarketDepthUpdatesSubscribeResponse0"
-  "\001\022c\n\024MarketsDataSubscribe\022#.api.v1.Marke"
-  "tsDataSubscribeRequest\032$.api.v1.MarketsD"
-  "ataSubscribeResponse0\001\022T\n\017OrdersSubscrib"
-  "e\022\036.api.v1.OrdersSubscribeRequest\032\037.api."
-  "v1.OrdersSubscribeResponse0\001\022]\n\022Position"
-  "sSubscribe\022!.api.v1.PositionsSubscribeRe"
-  "quest\032\".api.v1.PositionsSubscribeRespons"
-  "e0\001\022T\n\017TradesSubscribe\022\036.api.v1.TradesSu"
-  "bscribeRequest\032\037.api.v1.TradesSubscribeR"
-  "esponse0\001\022u\n\032TransferResponsesSubscribe\022"
-  ").api.v1.TransferResponsesSubscribeReque"
-  "st\032*.api.v1.TransferResponsesSubscribeRe"
-  "sponse0\001\022s\n\032GetNodeSignaturesAggregate\022)"
-  ".api.v1.GetNodeSignaturesAggregateReques"
-  "t\032*.api.v1.GetNodeSignaturesAggregateRes"
-  "ponse\022@\n\tAssetByID\022\030.api.v1.AssetByIDReq"
-  "uest\032\031.api.v1.AssetByIDResponse\0227\n\006Asset"
-  "s\022\025.api.v1.AssetsRequest\032\026.api.v1.Assets"
-  "Response\022F\n\013EstimateFee\022\032.api.v1.Estimat"
-  "eFeeRequest\032\033.api.v1.EstimateFeeResponse"
-  "\022O\n\016EstimateMargin\022\035.api.v1.EstimateMarg"
-  "inRequest\032\036.api.v1.EstimateMarginRespons"
-  "e\022j\n\027ERC20WithdrawalApproval\022&.api.v1.ER"
-  "C20WithdrawalApprovalRequest\032\'.api.v1.ER"
-  "C20WithdrawalApprovalResponse\022C\n\nWithdra"
-  "wal\022\031.api.v1.WithdrawalRequest\032\032.api.v1."
-  "WithdrawalResponse\022F\n\013Withdrawals\022\032.api."
-  "v1.WithdrawalsRequest\032\033.api.v1.Withdrawa"
-  "lsResponse\022:\n\007Deposit\022\026.api.v1.DepositRe"
-  "quest\032\027.api.v1.DepositResponse\022=\n\010Deposi"
-  "ts\022\027.api.v1.DepositsRequest\032\030.api.v1.Dep"
-  "ositsResponse\022X\n\021NetworkParameters\022 .api"
-  ".v1.NetworkParametersRequest\032!.api.v1.Ne"
-  "tworkParametersResponse\022^\n\023LiquidityProv"
-  "isions\022\".api.v1.LiquidityProvisionsReque"
-  "st\032#.api.v1.LiquidityProvisionsResponse\022"
-  "C\n\nOracleSpec\022\031.api.v1.OracleSpecRequest"
-  "\032\032.api.v1.OracleSpecResponse\022F\n\013OracleSp"
-  "ecs\022\032.api.v1.OracleSpecsRequest\032\033.api.v1"
-  ".OracleSpecsResponse\022U\n\020OracleDataBySpec"
-  "\022\037.api.v1.OracleDataBySpecRequest\032 .api."
-  "v1.OracleDataBySpecResponseB\?\n\030io.vegapr"
-  "otocol.vega.apiZ#code.vegaprotocol.io/ve"
-  "ga/proto/apib\006proto3"
+  "\017pendingProposal\"\\\n\034PrepareVoteSubmissio"
+  "nRequest\022<\n\nsubmission\030\001 \001(\0132\024.vega.Vote"
+  "SubmissionB\006\342\337\037\002 \001R\nsubmission\"i\n\035Prepar"
+  "eVoteSubmissionResponse\022\022\n\004blob\030\001 \001(\014R\004b"
+  "lob\0224\n\nsubmission\030\002 \001(\0132\024.vega.VoteSubmi"
+  "ssionR\nsubmission\"n\n PrepareLiquidityPro"
+  "visionRequest\022J\n\nsubmission\030\001 \001(\0132\".vega"
+  ".LiquidityProvisionSubmissionB\006\342\337\037\002 \001R\ns"
+  "ubmission\"7\n!PrepareLiquidityProvisionRe"
+  "sponse\022\022\n\004blob\030\001 \001(\014R\004blob\"O\n\020OrderByIDR"
+  "equest\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderI"
+  "d\022\030\n\007version\030\002 \001(\004R\007version\"6\n\021OrderByID"
+  "Response\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005or"
+  "der\"q\n\030OrderVersionsByIDRequest\022!\n\010order"
+  "_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\0222\n\npagination"
+  "\030\002 \001(\0132\022.api.v1.PaginationR\npagination\"@"
+  "\n\031OrderVersionsByIDResponse\022#\n\006orders\030\001 "
+  "\003(\0132\013.vega.OrderR\006orders\"7\n\022EstimateFeeR"
+  "equest\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005orde"
+  "r\"2\n\023EstimateFeeResponse\022\033\n\003fee\030\002 \001(\0132\t."
+  "vega.FeeR\003fee\":\n\025EstimateMarginRequest\022!"
+  "\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"Q\n\026Est"
+  "imateMarginResponse\0227\n\rmargin_levels\030\002 \001"
+  "(\0132\022.vega.MarginLevelsR\014marginLevels\"\227\001\n"
+  "\026ObserveEventBusRequest\022&\n\004type\030\001 \003(\0162\022."
+  "vega.BusEventTypeR\004type\022\033\n\tmarket_id\030\002 \001"
+  "(\tR\010marketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022"
+  "\035\n\nbatch_size\030\004 \001(\003R\tbatchSize\"A\n\027Observ"
+  "eEventBusResponse\022&\n\006events\030\001 \003(\0132\016.vega"
+  ".BusEventR\006events\"\023\n\021StatisticsRequest\"F"
+  "\n\022StatisticsResponse\0220\n\nstatistics\030\001 \001(\013"
+  "2\020.vega.StatisticsR\nstatistics\"7\n\022Withdr"
+  "awalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007"
+  "partyId\"I\n\023WithdrawalsResponse\0222\n\013withdr"
+  "awals\030\001 \003(\0132\020.vega.WithdrawalR\013withdrawa"
+  "ls\"+\n\021WithdrawalRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037"
+  "\002X\001R\002id\"F\n\022WithdrawalResponse\0220\n\nwithdra"
+  "wal\030\001 \001(\0132\020.vega.WithdrawalR\nwithdrawal\""
+  "M\n\036ERC20WithdrawalApprovalRequest\022+\n\rwit"
+  "hdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014withdrawalId\"\252"
+  "\001\n\037ERC20WithdrawalApprovalResponse\022!\n\014as"
+  "set_source\030\001 \001(\tR\013assetSource\022\026\n\006amount\030"
+  "\002 \001(\tR\006amount\022\026\n\006expiry\030\003 \001(\003R\006expiry\022\024\n"
+  "\005nonce\030\004 \001(\tR\005nonce\022\036\n\nsignatures\030\005 \001(\tR"
+  "\nsignatures\"4\n\017DepositsRequest\022!\n\010party_"
+  "id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"=\n\020DepositsRes"
+  "ponse\022)\n\010deposits\030\001 \003(\0132\r.vega.DepositR\010"
+  "deposits\"(\n\016DepositRequest\022\026\n\002id\030\001 \001(\tB\006"
+  "\342\337\037\002X\001R\002id\":\n\017DepositResponse\022\'\n\007deposit"
+  "\030\001 \001(\0132\r.vega.DepositR\007deposit\"\032\n\030Networ"
+  "kParametersRequest\"b\n\031NetworkParametersR"
+  "esponse\022E\n\022network_parameters\030\001 \003(\0132\026.ve"
+  "ga.NetworkParameterR\021networkParameters\"J"
+  "\n\032LiquidityProvisionsRequest\022\026\n\006market\030\001"
+  " \001(\tR\006market\022\024\n\005party\030\002 \001(\tR\005party\"j\n\033Li"
+  "quidityProvisionsResponse\022K\n\024liquidity_p"
+  "rovisions\030\001 \003(\0132\030.vega.LiquidityProvisio"
+  "nR\023liquidityProvisions\"+\n\021OracleSpecRequ"
+  "est\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"M\n\022OracleSpe"
+  "cResponse\0227\n\013oracle_spec\030\001 \001(\0132\026.oracles"
+  ".v1.OracleSpecR\noracleSpec\"\024\n\022OracleSpec"
+  "sRequest\"P\n\023OracleSpecsResponse\0229\n\014oracl"
+  "e_specs\030\001 \003(\0132\026.oracles.v1.OracleSpecR\013o"
+  "racleSpecs\"1\n\027OracleDataBySpecRequest\022\026\n"
+  "\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030OracleDataBySpe"
+  "cResponse\0227\n\013oracle_data\030\001 \003(\0132\026.oracles"
+  ".v1.OracleDataR\noracleData2\336\006\n\016TradingSe"
+  "rvice\022[\n\022PrepareSubmitOrder\022!.api.v1.Pre"
+  "pareSubmitOrderRequest\032\".api.v1.PrepareS"
+  "ubmitOrderResponse\022[\n\022PrepareCancelOrder"
+  "\022!.api.v1.PrepareCancelOrderRequest\032\".ap"
+  "i.v1.PrepareCancelOrderResponse\022X\n\021Prepa"
+  "reAmendOrder\022 .api.v1.PrepareAmendOrderR"
+  "equest\032!.api.v1.PrepareAmendOrderRespons"
+  "e\022R\n\017PrepareWithdraw\022\036.api.v1.PrepareWit"
+  "hdrawRequest\032\037.api.v1.PrepareWithdrawRes"
+  "ponse\022X\n\021SubmitTransaction\022 .api.v1.Subm"
+  "itTransactionRequest\032!.api.v1.SubmitTran"
+  "sactionResponse\022R\n\017PrepareProposal\022\036.api"
+  ".v1.PrepareProposalRequest\032\037.api.v1.Prep"
+  "areProposalResponse\022d\n\025PrepareVoteSubmis"
+  "sion\022$.api.v1.PrepareVoteSubmissionReque"
+  "st\032%.api.v1.PrepareVoteSubmissionRespons"
+  "e\022^\n\023PropagateChainEvent\022\".api.v1.Propag"
+  "ateChainEventRequest\032#.api.v1.PropagateC"
+  "hainEventResponse\022p\n\031PrepareLiquidityPro"
+  "vision\022(.api.v1.PrepareLiquidityProvisio"
+  "nRequest\032).api.v1.PrepareLiquidityProvis"
+  "ionResponse2\333*\n\022TradingDataService\022O\n\016Ma"
+  "rketAccounts\022\035.api.v1.MarketAccountsRequ"
+  "est\032\036.api.v1.MarketAccountsResponse\022L\n\rP"
+  "artyAccounts\022\034.api.v1.PartyAccountsReque"
+  "st\032\035.api.v1.PartyAccountsResponse\022p\n\031Fee"
+  "InfrastructureAccounts\022(.api.v1.FeeInfra"
+  "structureAccountsRequest\032).api.v1.FeeInf"
+  "rastructureAccountsResponse\022:\n\007Candles\022\026"
+  ".api.v1.CandlesRequest\032\027.api.v1.CandlesR"
+  "esponse\022O\n\016MarketDataByID\022\035.api.v1.Marke"
+  "tDataByIDRequest\032\036.api.v1.MarketDataByID"
+  "Response\022F\n\013MarketsData\022\032.api.v1.Markets"
+  "DataRequest\032\033.api.v1.MarketsDataResponse"
+  "\022C\n\nMarketByID\022\031.api.v1.MarketByIDReques"
+  "t\032\032.api.v1.MarketByIDResponse\022F\n\013MarketD"
+  "epth\022\032.api.v1.MarketDepthRequest\032\033.api.v"
+  "1.MarketDepthResponse\022:\n\007Markets\022\026.api.v"
+  "1.MarketsRequest\032\027.api.v1.MarketsRespons"
+  "e\022[\n\022OrderByMarketAndID\022!.api.v1.OrderBy"
+  "MarketAndIDRequest\032\".api.v1.OrderByMarke"
+  "tAndIDResponse\022U\n\020OrderByReference\022\037.api"
+  ".v1.OrderByReferenceRequest\032 .api.v1.Ord"
+  "erByReferenceResponse\022O\n\016OrdersByMarket\022"
+  "\035.api.v1.OrdersByMarketRequest\032\036.api.v1."
+  "OrdersByMarketResponse\022L\n\rOrdersByParty\022"
+  "\034.api.v1.OrdersByPartyRequest\032\035.api.v1.O"
+  "rdersByPartyResponse\022@\n\tOrderByID\022\030.api."
+  "v1.OrderByIDRequest\032\031.api.v1.OrderByIDRe"
+  "sponse\022X\n\021OrderVersionsByID\022 .api.v1.Ord"
+  "erVersionsByIDRequest\032!.api.v1.OrderVers"
+  "ionsByIDResponse\022I\n\014MarginLevels\022\033.api.v"
+  "1.MarginLevelsRequest\032\034.api.v1.MarginLev"
+  "elsResponse\022:\n\007Parties\022\026.api.v1.PartiesR"
+  "equest\032\027.api.v1.PartiesResponse\022@\n\tParty"
+  "ByID\022\030.api.v1.PartyByIDRequest\032\031.api.v1."
+  "PartyByIDResponse\022U\n\020PositionsByParty\022\037."
+  "api.v1.PositionsByPartyRequest\032 .api.v1."
+  "PositionsByPartyResponse\022@\n\tLastTrade\022\030."
+  "api.v1.LastTradeRequest\032\031.api.v1.LastTra"
+  "deResponse\022O\n\016TradesByMarket\022\035.api.v1.Tr"
+  "adesByMarketRequest\032\036.api.v1.TradesByMar"
+  "ketResponse\022L\n\rTradesByOrder\022\034.api.v1.Tr"
+  "adesByOrderRequest\032\035.api.v1.TradesByOrde"
+  "rResponse\022L\n\rTradesByParty\022\034.api.v1.Trad"
+  "esByPartyRequest\032\035.api.v1.TradesByPartyR"
+  "esponse\022I\n\014GetProposals\022\033.api.v1.GetProp"
+  "osalsRequest\032\034.api.v1.GetProposalsRespon"
+  "se\022^\n\023GetProposalsByParty\022\".api.v1.GetPr"
+  "oposalsByPartyRequest\032#.api.v1.GetPropos"
+  "alsByPartyResponse\022R\n\017GetVotesByParty\022\036."
+  "api.v1.GetVotesByPartyRequest\032\037.api.v1.G"
+  "etVotesByPartyResponse\022d\n\025GetNewMarketPr"
+  "oposals\022$.api.v1.GetNewMarketProposalsRe"
+  "quest\032%.api.v1.GetNewMarketProposalsResp"
+  "onse\022m\n\030GetUpdateMarketProposals\022\'.api.v"
+  "1.GetUpdateMarketProposalsRequest\032(.api."
+  "v1.GetUpdateMarketProposalsResponse\022|\n\035G"
+  "etNetworkParametersProposals\022,.api.v1.Ge"
+  "tNetworkParametersProposalsRequest\032-.api"
+  ".v1.GetNetworkParametersProposalsRespons"
+  "e\022a\n\024GetNewAssetProposals\022#.api.v1.GetNe"
+  "wAssetProposalsRequest\032$.api.v1.GetNewAs"
+  "setProposalsResponse\022R\n\017GetProposalByID\022"
+  "\036.api.v1.GetProposalByIDRequest\032\037.api.v1"
+  ".GetProposalByIDResponse\022g\n\026GetProposalB"
+  "yReference\022%.api.v1.GetProposalByReferen"
+  "ceRequest\032&.api.v1.GetProposalByReferenc"
+  "eResponse\022Z\n\021ObserveGovernance\022 .api.v1."
+  "ObserveGovernanceRequest\032!.api.v1.Observ"
+  "eGovernanceResponse0\001\022f\n\025ObservePartyPro"
+  "posals\022$.api.v1.ObservePartyProposalsReq"
+  "uest\032%.api.v1.ObservePartyProposalsRespo"
+  "nse0\001\022Z\n\021ObservePartyVotes\022 .api.v1.Obse"
+  "rvePartyVotesRequest\032!.api.v1.ObservePar"
+  "tyVotesResponse0\001\022c\n\024ObserveProposalVote"
+  "s\022#.api.v1.ObserveProposalVotesRequest\032$"
+  ".api.v1.ObserveProposalVotesResponse0\001\022V"
+  "\n\017ObserveEventBus\022\036.api.v1.ObserveEventB"
+  "usRequest\032\037.api.v1.ObserveEventBusRespon"
+  "se(\0010\001\022C\n\nStatistics\022\031.api.v1.Statistics"
+  "Request\032\032.api.v1.StatisticsResponse\022F\n\013G"
+  "etVegaTime\022\032.api.v1.GetVegaTimeRequest\032\033"
+  ".api.v1.GetVegaTimeResponse\022Z\n\021AccountsS"
+  "ubscribe\022 .api.v1.AccountsSubscribeReque"
+  "st\032!.api.v1.AccountsSubscribeResponse0\001\022"
+  "W\n\020CandlesSubscribe\022\037.api.v1.CandlesSubs"
+  "cribeRequest\032 .api.v1.CandlesSubscribeRe"
+  "sponse0\001\022f\n\025MarginLevelsSubscribe\022$.api."
+  "v1.MarginLevelsSubscribeRequest\032%.api.v1"
+  ".MarginLevelsSubscribeResponse0\001\022c\n\024Mark"
+  "etDepthSubscribe\022#.api.v1.MarketDepthSub"
+  "scribeRequest\032$.api.v1.MarketDepthSubscr"
+  "ibeResponse0\001\022x\n\033MarketDepthUpdatesSubsc"
+  "ribe\022*.api.v1.MarketDepthUpdatesSubscrib"
+  "eRequest\032+.api.v1.MarketDepthUpdatesSubs"
+  "cribeResponse0\001\022c\n\024MarketsDataSubscribe\022"
+  "#.api.v1.MarketsDataSubscribeRequest\032$.a"
+  "pi.v1.MarketsDataSubscribeResponse0\001\022T\n\017"
+  "OrdersSubscribe\022\036.api.v1.OrdersSubscribe"
+  "Request\032\037.api.v1.OrdersSubscribeResponse"
+  "0\001\022]\n\022PositionsSubscribe\022!.api.v1.Positi"
+  "onsSubscribeRequest\032\".api.v1.PositionsSu"
+  "bscribeResponse0\001\022T\n\017TradesSubscribe\022\036.a"
+  "pi.v1.TradesSubscribeRequest\032\037.api.v1.Tr"
+  "adesSubscribeResponse0\001\022u\n\032TransferRespo"
+  "nsesSubscribe\022).api.v1.TransferResponses"
+  "SubscribeRequest\032*.api.v1.TransferRespon"
+  "sesSubscribeResponse0\001\022s\n\032GetNodeSignatu"
+  "resAggregate\022).api.v1.GetNodeSignaturesA"
+  "ggregateRequest\032*.api.v1.GetNodeSignatur"
+  "esAggregateResponse\022@\n\tAssetByID\022\030.api.v"
+  "1.AssetByIDRequest\032\031.api.v1.AssetByIDRes"
+  "ponse\0227\n\006Assets\022\025.api.v1.AssetsRequest\032\026"
+  ".api.v1.AssetsResponse\022F\n\013EstimateFee\022\032."
+  "api.v1.EstimateFeeRequest\032\033.api.v1.Estim"
+  "ateFeeResponse\022O\n\016EstimateMargin\022\035.api.v"
+  "1.EstimateMarginRequest\032\036.api.v1.Estimat"
+  "eMarginResponse\022j\n\027ERC20WithdrawalApprov"
+  "al\022&.api.v1.ERC20WithdrawalApprovalReque"
+  "st\032\'.api.v1.ERC20WithdrawalApprovalRespo"
+  "nse\022C\n\nWithdrawal\022\031.api.v1.WithdrawalReq"
+  "uest\032\032.api.v1.WithdrawalResponse\022F\n\013With"
+  "drawals\022\032.api.v1.WithdrawalsRequest\032\033.ap"
+  "i.v1.WithdrawalsResponse\022:\n\007Deposit\022\026.ap"
+  "i.v1.DepositRequest\032\027.api.v1.DepositResp"
+  "onse\022=\n\010Deposits\022\027.api.v1.DepositsReques"
+  "t\032\030.api.v1.DepositsResponse\022X\n\021NetworkPa"
+  "rameters\022 .api.v1.NetworkParametersReque"
+  "st\032!.api.v1.NetworkParametersResponse\022^\n"
+  "\023LiquidityProvisions\022\".api.v1.LiquidityP"
+  "rovisionsRequest\032#.api.v1.LiquidityProvi"
+  "sionsResponse\022C\n\nOracleSpec\022\031.api.v1.Ora"
+  "cleSpecRequest\032\032.api.v1.OracleSpecRespon"
+  "se\022F\n\013OracleSpecs\022\032.api.v1.OracleSpecsRe"
+  "quest\032\033.api.v1.OracleSpecsResponse\022U\n\020Or"
+  "acleDataBySpec\022\037.api.v1.OracleDataBySpec"
+  "Request\032 .api.v1.OracleDataBySpecRespons"
+  "eB\?\n\030io.vegaprotocol.vega.apiZ#code.vega"
+  "protocol.io/vega/proto/apib\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_api_2ftrading_2eproto_deps[9] = {
   &::descriptor_table_assets_2eproto,
@@ -4478,8 +4481,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
   &scc_info_PrepareProposalResponse_api_2ftrading_2eproto.base,
   &scc_info_PrepareSubmitOrderRequest_api_2ftrading_2eproto.base,
   &scc_info_PrepareSubmitOrderResponse_api_2ftrading_2eproto.base,
-  &scc_info_PrepareVoteRequest_api_2ftrading_2eproto.base,
-  &scc_info_PrepareVoteResponse_api_2ftrading_2eproto.base,
+  &scc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto.base,
+  &scc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto.base,
   &scc_info_PrepareWithdrawRequest_api_2ftrading_2eproto.base,
   &scc_info_PrepareWithdrawResponse_api_2ftrading_2eproto.base,
   &scc_info_PropagateChainEventRequest_api_2ftrading_2eproto.base,
@@ -4505,7 +4508,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_api_2ftrading_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_api_2ftrading_2eproto = {
-  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 17860,
+  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 17954,
   &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 148, 9,
   schemas, file_default_instances, TableStruct_api_2ftrading_2eproto::offsets,
   file_level_metadata_api_2ftrading_2eproto, 148, file_level_enum_descriptors_api_2ftrading_2eproto, file_level_service_descriptors_api_2ftrading_2eproto,
@@ -28834,93 +28837,93 @@ void PrepareProposalResponse::InternalSwap(PrepareProposalResponse* other) {
 
 // ===================================================================
 
-class PrepareVoteRequest::_Internal {
+class PrepareVoteSubmissionRequest::_Internal {
  public:
-  static const ::vega::Vote& vote(const PrepareVoteRequest* msg);
+  static const ::vega::VoteSubmission& submission(const PrepareVoteSubmissionRequest* msg);
 };
 
-const ::vega::Vote&
-PrepareVoteRequest::_Internal::vote(const PrepareVoteRequest* msg) {
-  return *msg->vote_;
+const ::vega::VoteSubmission&
+PrepareVoteSubmissionRequest::_Internal::submission(const PrepareVoteSubmissionRequest* msg) {
+  return *msg->submission_;
 }
-void PrepareVoteRequest::clear_vote() {
-  if (GetArena() == nullptr && vote_ != nullptr) {
-    delete vote_;
+void PrepareVoteSubmissionRequest::clear_submission() {
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  vote_ = nullptr;
+  submission_ = nullptr;
 }
-PrepareVoteRequest::PrepareVoteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+PrepareVoteSubmissionRequest::PrepareVoteSubmissionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareVoteSubmissionRequest)
 }
-PrepareVoteRequest::PrepareVoteRequest(const PrepareVoteRequest& from)
+PrepareVoteSubmissionRequest::PrepareVoteSubmissionRequest(const PrepareVoteSubmissionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_vote()) {
-    vote_ = new ::vega::Vote(*from.vote_);
+  if (from._internal_has_submission()) {
+    submission_ = new ::vega::VoteSubmission(*from.submission_);
   } else {
-    vote_ = nullptr;
+    submission_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareVoteSubmissionRequest)
 }
 
-void PrepareVoteRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareVoteRequest_api_2ftrading_2eproto.base);
-  vote_ = nullptr;
+void PrepareVoteSubmissionRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto.base);
+  submission_ = nullptr;
 }
 
-PrepareVoteRequest::~PrepareVoteRequest() {
-  // @@protoc_insertion_point(destructor:api.v1.PrepareVoteRequest)
+PrepareVoteSubmissionRequest::~PrepareVoteSubmissionRequest() {
+  // @@protoc_insertion_point(destructor:api.v1.PrepareVoteSubmissionRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PrepareVoteRequest::SharedDtor() {
+void PrepareVoteSubmissionRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  if (this != internal_default_instance()) delete vote_;
+  if (this != internal_default_instance()) delete submission_;
 }
 
-void PrepareVoteRequest::ArenaDtor(void* object) {
-  PrepareVoteRequest* _this = reinterpret_cast< PrepareVoteRequest* >(object);
+void PrepareVoteSubmissionRequest::ArenaDtor(void* object) {
+  PrepareVoteSubmissionRequest* _this = reinterpret_cast< PrepareVoteSubmissionRequest* >(object);
   (void)_this;
 }
-void PrepareVoteRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void PrepareVoteSubmissionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void PrepareVoteRequest::SetCachedSize(int size) const {
+void PrepareVoteSubmissionRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrepareVoteRequest& PrepareVoteRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareVoteRequest_api_2ftrading_2eproto.base);
+const PrepareVoteSubmissionRequest& PrepareVoteSubmissionRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PrepareVoteRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.v1.PrepareVoteRequest)
+void PrepareVoteSubmissionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.PrepareVoteSubmissionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && vote_ != nullptr) {
-    delete vote_;
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  vote_ = nullptr;
+  submission_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PrepareVoteRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PrepareVoteSubmissionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
+      // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vote(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -28946,41 +28949,41 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PrepareVoteRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* PrepareVoteSubmissionRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareVoteSubmissionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
-  if (this->has_vote()) {
+  // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::vote(this), target, stream);
+        1, _Internal::submission(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareVoteSubmissionRequest)
   return target;
 }
 
-size_t PrepareVoteRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareVoteRequest)
+size_t PrepareVoteSubmissionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareVoteSubmissionRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
-  if (this->has_vote()) {
+  // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vote_);
+        *submission_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -28992,86 +28995,86 @@ size_t PrepareVoteRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void PrepareVoteRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareVoteRequest)
+void PrepareVoteSubmissionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareVoteSubmissionRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const PrepareVoteRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareVoteRequest>(
+  const PrepareVoteSubmissionRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareVoteSubmissionRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareVoteSubmissionRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareVoteSubmissionRequest)
     MergeFrom(*source);
   }
 }
 
-void PrepareVoteRequest::MergeFrom(const PrepareVoteRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareVoteRequest)
+void PrepareVoteSubmissionRequest::MergeFrom(const PrepareVoteSubmissionRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareVoteSubmissionRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_vote()) {
-    _internal_mutable_vote()->::vega::Vote::MergeFrom(from._internal_vote());
+  if (from.has_submission()) {
+    _internal_mutable_submission()->::vega::VoteSubmission::MergeFrom(from._internal_submission());
   }
 }
 
-void PrepareVoteRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareVoteRequest)
+void PrepareVoteSubmissionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareVoteSubmissionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PrepareVoteRequest::CopyFrom(const PrepareVoteRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareVoteRequest)
+void PrepareVoteSubmissionRequest::CopyFrom(const PrepareVoteSubmissionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareVoteSubmissionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PrepareVoteRequest::IsInitialized() const {
+bool PrepareVoteSubmissionRequest::IsInitialized() const {
   return true;
 }
 
-void PrepareVoteRequest::InternalSwap(PrepareVoteRequest* other) {
+void PrepareVoteSubmissionRequest::InternalSwap(PrepareVoteSubmissionRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(vote_, other->vote_);
+  swap(submission_, other->submission_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PrepareVoteRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PrepareVoteSubmissionRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-class PrepareVoteResponse::_Internal {
+class PrepareVoteSubmissionResponse::_Internal {
  public:
-  static const ::vega::Vote& vote(const PrepareVoteResponse* msg);
+  static const ::vega::VoteSubmission& submission(const PrepareVoteSubmissionResponse* msg);
 };
 
-const ::vega::Vote&
-PrepareVoteResponse::_Internal::vote(const PrepareVoteResponse* msg) {
-  return *msg->vote_;
+const ::vega::VoteSubmission&
+PrepareVoteSubmissionResponse::_Internal::submission(const PrepareVoteSubmissionResponse* msg) {
+  return *msg->submission_;
 }
-void PrepareVoteResponse::clear_vote() {
-  if (GetArena() == nullptr && vote_ != nullptr) {
-    delete vote_;
+void PrepareVoteSubmissionResponse::clear_submission() {
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  vote_ = nullptr;
+  submission_ = nullptr;
 }
-PrepareVoteResponse::PrepareVoteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+PrepareVoteSubmissionResponse::PrepareVoteSubmissionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareVoteSubmissionResponse)
 }
-PrepareVoteResponse::PrepareVoteResponse(const PrepareVoteResponse& from)
+PrepareVoteSubmissionResponse::PrepareVoteSubmissionResponse(const PrepareVoteSubmissionResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -29079,62 +29082,62 @@ PrepareVoteResponse::PrepareVoteResponse(const PrepareVoteResponse& from)
     blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blob(),
       GetArena());
   }
-  if (from._internal_has_vote()) {
-    vote_ = new ::vega::Vote(*from.vote_);
+  if (from._internal_has_submission()) {
+    submission_ = new ::vega::VoteSubmission(*from.submission_);
   } else {
-    vote_ = nullptr;
+    submission_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareVoteSubmissionResponse)
 }
 
-void PrepareVoteResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareVoteResponse_api_2ftrading_2eproto.base);
+void PrepareVoteSubmissionResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto.base);
   blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  vote_ = nullptr;
+  submission_ = nullptr;
 }
 
-PrepareVoteResponse::~PrepareVoteResponse() {
-  // @@protoc_insertion_point(destructor:api.v1.PrepareVoteResponse)
+PrepareVoteSubmissionResponse::~PrepareVoteSubmissionResponse() {
+  // @@protoc_insertion_point(destructor:api.v1.PrepareVoteSubmissionResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PrepareVoteResponse::SharedDtor() {
+void PrepareVoteSubmissionResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   blob_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete vote_;
+  if (this != internal_default_instance()) delete submission_;
 }
 
-void PrepareVoteResponse::ArenaDtor(void* object) {
-  PrepareVoteResponse* _this = reinterpret_cast< PrepareVoteResponse* >(object);
+void PrepareVoteSubmissionResponse::ArenaDtor(void* object) {
+  PrepareVoteSubmissionResponse* _this = reinterpret_cast< PrepareVoteSubmissionResponse* >(object);
   (void)_this;
 }
-void PrepareVoteResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void PrepareVoteSubmissionResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void PrepareVoteResponse::SetCachedSize(int size) const {
+void PrepareVoteSubmissionResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrepareVoteResponse& PrepareVoteResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareVoteResponse_api_2ftrading_2eproto.base);
+const PrepareVoteSubmissionResponse& PrepareVoteSubmissionResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PrepareVoteResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.v1.PrepareVoteResponse)
+void PrepareVoteSubmissionResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.PrepareVoteSubmissionResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   blob_.ClearToEmpty();
-  if (GetArena() == nullptr && vote_ != nullptr) {
-    delete vote_;
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  vote_ = nullptr;
+  submission_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PrepareVoteResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PrepareVoteSubmissionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -29149,10 +29152,10 @@ const char* PrepareVoteResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Vote vote = 2 [json_name = "vote"];
+      // .vega.VoteSubmission submission = 2 [json_name = "submission"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_vote(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -29178,9 +29181,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PrepareVoteResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* PrepareVoteSubmissionResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareVoteSubmissionResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -29190,24 +29193,24 @@ failure:
         1, this->_internal_blob(), target);
   }
 
-  // .vega.Vote vote = 2 [json_name = "vote"];
-  if (this->has_vote()) {
+  // .vega.VoteSubmission submission = 2 [json_name = "submission"];
+  if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::vote(this), target, stream);
+        2, _Internal::submission(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareVoteSubmissionResponse)
   return target;
 }
 
-size_t PrepareVoteResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareVoteResponse)
+size_t PrepareVoteSubmissionResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareVoteSubmissionResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -29221,11 +29224,11 @@ size_t PrepareVoteResponse::ByteSizeLong() const {
         this->_internal_blob());
   }
 
-  // .vega.Vote vote = 2 [json_name = "vote"];
-  if (this->has_vote()) {
+  // .vega.VoteSubmission submission = 2 [json_name = "submission"];
+  if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *vote_);
+        *submission_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -29237,23 +29240,23 @@ size_t PrepareVoteResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void PrepareVoteResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareVoteResponse)
+void PrepareVoteSubmissionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareVoteSubmissionResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const PrepareVoteResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareVoteResponse>(
+  const PrepareVoteSubmissionResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareVoteSubmissionResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareVoteSubmissionResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareVoteSubmissionResponse)
     MergeFrom(*source);
   }
 }
 
-void PrepareVoteResponse::MergeFrom(const PrepareVoteResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareVoteResponse)
+void PrepareVoteSubmissionResponse::MergeFrom(const PrepareVoteSubmissionResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareVoteSubmissionResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -29262,37 +29265,37 @@ void PrepareVoteResponse::MergeFrom(const PrepareVoteResponse& from) {
   if (from.blob().size() > 0) {
     _internal_set_blob(from._internal_blob());
   }
-  if (from.has_vote()) {
-    _internal_mutable_vote()->::vega::Vote::MergeFrom(from._internal_vote());
+  if (from.has_submission()) {
+    _internal_mutable_submission()->::vega::VoteSubmission::MergeFrom(from._internal_submission());
   }
 }
 
-void PrepareVoteResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareVoteResponse)
+void PrepareVoteSubmissionResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareVoteSubmissionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PrepareVoteResponse::CopyFrom(const PrepareVoteResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareVoteResponse)
+void PrepareVoteSubmissionResponse::CopyFrom(const PrepareVoteSubmissionResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareVoteSubmissionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PrepareVoteResponse::IsInitialized() const {
+bool PrepareVoteSubmissionResponse::IsInitialized() const {
   return true;
 }
 
-void PrepareVoteResponse::InternalSwap(PrepareVoteResponse* other) {
+void PrepareVoteSubmissionResponse::InternalSwap(PrepareVoteSubmissionResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   blob_.Swap(&other->blob_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(vote_, other->vote_);
+  swap(submission_, other->submission_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PrepareVoteResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PrepareVoteSubmissionResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -36936,11 +36939,11 @@ template<> PROTOBUF_NOINLINE ::api::v1::PrepareProposalRequest* Arena::CreateMay
 template<> PROTOBUF_NOINLINE ::api::v1::PrepareProposalResponse* Arena::CreateMaybeMessage< ::api::v1::PrepareProposalResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::api::v1::PrepareProposalResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::api::v1::PrepareVoteRequest* Arena::CreateMaybeMessage< ::api::v1::PrepareVoteRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::api::v1::PrepareVoteRequest >(arena);
+template<> PROTOBUF_NOINLINE ::api::v1::PrepareVoteSubmissionRequest* Arena::CreateMaybeMessage< ::api::v1::PrepareVoteSubmissionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::PrepareVoteSubmissionRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::api::v1::PrepareVoteResponse* Arena::CreateMaybeMessage< ::api::v1::PrepareVoteResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::api::v1::PrepareVoteResponse >(arena);
+template<> PROTOBUF_NOINLINE ::api::v1::PrepareVoteSubmissionResponse* Arena::CreateMaybeMessage< ::api::v1::PrepareVoteSubmissionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::PrepareVoteSubmissionResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::api::v1::PrepareLiquidityProvisionRequest* Arena::CreateMaybeMessage< ::api::v1::PrepareLiquidityProvisionRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::api::v1::PrepareLiquidityProvisionRequest >(arena);
