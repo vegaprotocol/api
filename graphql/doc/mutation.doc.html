@@ -8,7 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <title>Mutation</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="./assets/code.css" />
+<script src="./assets/line-link.js">
+</script>
+<link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
     <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
@@ -16,7 +20,9 @@
             <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
                 <i class="material-icons">close</i>
             </button>
-                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+                <h3 class="slds-text-heading--medium">
+<a href="./">GraphQL Schema</a>
+</h3>
             <div class="slds-p-top--small">
                 <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
             </div>
@@ -944,7 +950,8 @@
             </div>
         </div>
     </nav>
-    <main><section class="title slds-theme--inverse">
+    <main>
+<section class="title slds-theme--inverse">
               <div class="container slds-grid">
                   <div>
                   <button class="slds-button js-toggle-navigation less-than-medium">
@@ -957,7 +964,8 @@
               <div class="container">
                   <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
                   <h1 class="slds-text-heading--large">Mutation</h1>
-                  <div class="slds-text-body--regular"><p>Mutations are similar to GraphQL queries, however they allow a caller to change or mutate data.</p>
+                  <div class="slds-text-body--regular">
+<p>Mutations are similar to GraphQL queries, however they allow a caller to change or mutate data.</p>
 </div>
               </div>
           </section>
@@ -969,7 +977,1164 @@
                       </a>
                       GraphQL Schema definition
                   </h2>
-                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">Mutation</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Send a submit order request to be prepared, and returns a blob of the </span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="comment line">#   transaction to submit.</span></span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"><span class="tab"><span class="comment line">#   The OrderSubmit data is validated. Price and expiration will be converted to </span></span></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   uint64 internally.</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   <strong>marketId</strong>: ID of the market to place the order</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="comment line">#   <strong>partyId</strong>: ID of the party placing the order</span></span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"><span class="tab"><span class="comment line">#   <strong>price</strong>: Price of the asset</span></span></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   <strong>size</strong>: Size of the order</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="comment line">#   <strong>side</strong>: Side of the order (Buy or Sell)</span></span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"><span class="tab"><span class="comment line">#   <strong>timeInForce</strong>: TimeInForce of the order</span></span></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   <strong>expiration</strong>: exiration of the the order</span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="comment line">#   <strong>type</strong>: type of the order</span></span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"><span class="tab"><span class="comment line">#   <strong>reference</strong>: client reference for the order</span></span></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="comment line">#   <strong>peggedOrder</strong>: pegged order details</span></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><span class="meta">prepareOrderSubmit</span>(</span></td></tr><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"><span class="tab"><span class="tab"><span class="meta">marketId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code"><span class="tab"><span class="tab"><span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></td></tr><tr class="row"><td id="L22" class="td-index">22</td><td id="LC22" class="td-code"><span class="tab"><span class="tab"><span class="meta">price</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></td></tr><tr class="row"><td id="L23" class="td-index">23</td><td id="LC23" class="td-code"><span class="tab"><span class="tab"><span class="meta">size</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L24" class="td-index">24</td><td id="LC24" class="td-code"><span class="tab"><span class="tab"><span class="meta">side</span>: <a class="support type" href="side.doc.html">Side</a>!,</span></span></td></tr><tr class="row"><td id="L25" class="td-index">25</td><td id="LC25" class="td-code"><span class="tab"><span class="tab"><span class="meta">timeInForce</span>: <a class="support type" href="ordertimeinforce.doc.html">OrderTimeInForce</a>!,</span></span></td></tr><tr class="row"><td id="L26" class="td-index">26</td><td id="LC26" class="td-code"><span class="tab"><span class="tab"><span class="meta">expiration</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></td></tr><tr class="row"><td id="L27" class="td-index">27</td><td id="LC27" class="td-code"><span class="tab"><span class="tab"><span class="meta">type</span>: <a class="support type" href="ordertype.doc.html">OrderType</a>!,</span></span></td></tr><tr class="row"><td id="L28" class="td-index">28</td><td id="LC28" class="td-code"><span class="tab"><span class="tab"><span class="meta">reference</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></td></tr><tr class="row"><td id="L29" class="td-index">29</td><td id="LC29" class="td-code"><span class="tab"><span class="tab"><span class="meta">peggedOrder</span>: <a class="support type" href="peggedorderinput.doc.html">PeggedOrderInput</a></span></span></td></tr><tr class="row"><td id="L30" class="td-index">30</td><td id="LC30" class="td-code"><span class="tab">): <a class="support type" href="preparedsubmitorder.doc.html">PreparedSubmitOrder</a>! </span></td></tr><tr class="row"><td id="L31" class="td-index">31</td><td id="LC31" class="td-code"></td></tr><tr class="row"><td id="L32" class="td-index">32</td><td id="LC32" class="td-code"><span class="tab"><span class="comment line">#   Send a cancel order request to be prepared. Returns a pending order + blob of </span></span></td></tr><tr class="row"><td id="L33" class="td-index">33</td><td id="LC33" class="td-code"><span class="tab"><span class="comment line">#   the transaction to submit.</span></span></td></tr><tr class="row"><td id="L34" class="td-index">34</td><td id="LC34" class="td-code"><span class="tab"><span class="comment line">#   The data is verified. The response can be signed and submitted through the </span></span></td></tr><tr class="row"><td id="L35" class="td-index">35</td><td id="LC35" class="td-code"><span class="tab"><span class="comment line">#   submitTransaction mutation.</span></span></td></tr><tr class="row"><td id="L36" class="td-index">36</td><td id="LC36" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L37" class="td-index">37</td><td id="LC37" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L38" class="td-index">38</td><td id="LC38" class="td-code"><span class="tab"><span class="comment line">#   <strong>id</strong>: ID of the order to cancel</span></span></td></tr><tr class="row"><td id="L39" class="td-index">39</td><td id="LC39" class="td-code"><span class="tab"><span class="comment line">#   <strong>marketId</strong>: ID of the market where to find the order</span></span></td></tr><tr class="row"><td id="L40" class="td-index">40</td><td id="LC40" class="td-code"><span class="tab"><span class="meta">prepareOrderCancel</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>, <span class="meta">marketId</span>: <a class="support type" href="id.doc.html">ID</a>): <a class="support type" href="preparedcancelorder.doc.html">PreparedCancelOrder</a>! </span></td></tr><tr class="row"><td id="L41" class="td-index">41</td><td id="LC41" class="td-code"></td></tr><tr class="row"><td id="L42" class="td-index">42</td><td id="LC42" class="td-code"><span class="tab"><span class="comment line">#   Send an amend order request to be prepared. Returns a pending order + blob of </span></span></td></tr><tr class="row"><td id="L43" class="td-index">43</td><td id="LC43" class="td-code"><span class="tab"><span class="comment line">#   the transaction to submit.</span></span></td></tr><tr class="row"><td id="L44" class="td-index">44</td><td id="LC44" class="td-code"><span class="tab"><span class="comment line">#   The data is verified. The response can be signed and submitted through the </span></span></td></tr><tr class="row"><td id="L45" class="td-index">45</td><td id="LC45" class="td-code"><span class="tab"><span class="comment line">#   submitTransaction mutation.</span></span></td></tr><tr class="row"><td id="L46" class="td-index">46</td><td id="LC46" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L47" class="td-index">47</td><td id="LC47" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L48" class="td-index">48</td><td id="LC48" class="td-code"><span class="tab"><span class="comment line">#   <strong>id</strong>: ID of the order to amend</span></span></td></tr><tr class="row"><td id="L49" class="td-index">49</td><td id="LC49" class="td-code"><span class="tab"><span class="comment line">#   <strong>partyId</strong>: ID of the party which created the order</span></span></td></tr><tr class="row"><td id="L50" class="td-index">50</td><td id="LC50" class="td-code"><span class="tab"><span class="comment line">#   <strong>price</strong>: New price for this order</span></span></td></tr><tr class="row"><td id="L51" class="td-index">51</td><td id="LC51" class="td-code"><span class="tab"><span class="comment line">#   <strong>sizeDelta</strong>: New size for this order</span></span></td></tr><tr class="row"><td id="L52" class="td-index">52</td><td id="LC52" class="td-code"><span class="tab"><span class="comment line">#   <strong>expiration</strong>: New expiration time</span></span></td></tr><tr class="row"><td id="L53" class="td-index">53</td><td id="LC53" class="td-code"><span class="tab"><span class="comment line">#   <strong>timeInForce</strong>: Time in force</span></span></td></tr><tr class="row"><td id="L54" class="td-index">54</td><td id="LC54" class="td-code"><span class="tab"><span class="comment line">#   <strong>peggedReference</strong>: The reference point for pegged orders</span></span></td></tr><tr class="row"><td id="L55" class="td-index">55</td><td id="LC55" class="td-code"><span class="tab"><span class="comment line">#   <strong>peggedOffset</strong>: The offset from the reference price for pegged </span></span></td></tr><tr class="row"><td id="L56" class="td-index">56</td><td id="LC56" class="td-code"><span class="tab"><span class="comment line">#   orders</span></span></td></tr><tr class="row"><td id="L57" class="td-index">57</td><td id="LC57" class="td-code"><span class="tab"><span class="meta">prepareOrderAmend</span>(</span></td></tr><tr class="row"><td id="L58" class="td-index">58</td><td id="LC58" class="td-code"><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></td></tr><tr class="row"><td id="L59" class="td-index">59</td><td id="LC59" class="td-code"><span class="tab"><span class="tab"><span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></td></tr><tr class="row"><td id="L60" class="td-index">60</td><td id="LC60" class="td-code"><span class="tab"><span class="tab"><span class="meta">price</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L61" class="td-index">61</td><td id="LC61" class="td-code"><span class="tab"><span class="tab"><span class="meta">sizeDelta</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L62" class="td-index">62</td><td id="LC62" class="td-code"><span class="tab"><span class="tab"><span class="meta">expiration</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></td></tr><tr class="row"><td id="L63" class="td-index">63</td><td id="LC63" class="td-code"><span class="tab"><span class="tab"><span class="meta">timeInForce</span>: <a class="support type" href="ordertimeinforce.doc.html">OrderTimeInForce</a>!,</span></span></td></tr><tr class="row"><td id="L64" class="td-index">64</td><td id="LC64" class="td-code"><span class="tab"><span class="tab"><span class="meta">peggedReference</span>: <a class="support type" href="peggedreference.doc.html">PeggedReference</a>,</span></span></td></tr><tr class="row"><td id="L65" class="td-index">65</td><td id="LC65" class="td-code"><span class="tab"><span class="tab"><span class="meta">peggedOffset</span>: <a class="support type" href="string.doc.html">String</a></span></span></td></tr><tr class="row"><td id="L66" class="td-index">66</td><td id="LC66" class="td-code"><span class="tab">): <a class="support type" href="preparedamendorder.doc.html">PreparedAmendOrder</a>! </span></td></tr><tr class="row"><td id="L67" class="td-index">67</td><td id="LC67" class="td-code"></td></tr><tr class="row"><td id="L68" class="td-index">68</td><td id="LC68" class="td-code"><span class="tab"><span class="comment line">#   Prepare a proposal so it can be sent into the network.</span></span></td></tr><tr class="row"><td id="L69" class="td-index">69</td><td id="LC69" class="td-code"><span class="tab"><span class="comment line">#   Returns a pending proposal along with a transaction blob ready for submission.</span></span></td></tr><tr class="row"><td id="L70" class="td-index">70</td><td id="LC70" class="td-code"><span class="tab"><span class="comment line">#   The data is verified. The response can be signed and submitted through the </span></span></td></tr><tr class="row"><td id="L71" class="td-index">71</td><td id="LC71" class="td-code"><span class="tab"><span class="comment line">#   submitTransaction mutation.</span></span></td></tr><tr class="row"><td id="L72" class="td-index">72</td><td id="LC72" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L73" class="td-index">73</td><td id="LC73" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L74" class="td-index">74</td><td id="LC74" class="td-code"><span class="tab"><span class="comment line">#   <strong>partyId</strong>: ID of the party which created this proposal</span></span></td></tr><tr class="row"><td id="L75" class="td-index">75</td><td id="LC75" class="td-code"><span class="tab"><span class="comment line">#   <strong>reference</strong>: A UUID reference for the caller to aid in tracking </span></span></td></tr><tr class="row"><td id="L76" class="td-index">76</td><td id="LC76" class="td-code"><span class="tab"><span class="comment line">#   operations on VEGA</span></span></td></tr><tr class="row"><td id="L77" class="td-index">77</td><td id="LC77" class="td-code"><span class="tab"><span class="comment line">#   <strong>proposalTerms</strong>: Terms of the proposal</span></span></td></tr><tr class="row"><td id="L78" class="td-index">78</td><td id="LC78" class="td-code"><span class="tab"><span class="meta">prepareProposal</span>(</span></td></tr><tr class="row"><td id="L79" class="td-index">79</td><td id="LC79" class="td-code"><span class="tab"><span class="tab"><span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></td></tr><tr class="row"><td id="L80" class="td-index">80</td><td id="LC80" class="td-code"><span class="tab"><span class="tab"><span class="meta">reference</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></td></tr><tr class="row"><td id="L81" class="td-index">81</td><td id="LC81" class="td-code"><span class="tab"><span class="tab"><span class="meta">proposalTerms</span>: <a class="support type" href="proposaltermsinput.doc.html">ProposalTermsInput</a>!</span></span></td></tr><tr class="row"><td id="L82" class="td-index">82</td><td id="LC82" class="td-code"><span class="tab">): <a class="support type" href="preparedproposal.doc.html">PreparedProposal</a>! </span></td></tr><tr class="row"><td id="L83" class="td-index">83</td><td id="LC83" class="td-code"></td></tr><tr class="row"><td id="L84" class="td-index">84</td><td id="LC84" class="td-code"><span class="tab"><span class="comment line">#   Prepare a vote so it can be signed and submitted.</span></span></td></tr><tr class="row"><td id="L85" class="td-index">85</td><td id="LC85" class="td-code"><span class="tab"><span class="comment line">#   Returns a pending vote with a transaction blob for signing.</span></span></td></tr><tr class="row"><td id="L86" class="td-index">86</td><td id="LC86" class="td-code"><span class="tab"><span class="comment line">#   No validation other than the vote value being correct is done.</span></span></td></tr><tr class="row"><td id="L87" class="td-index">87</td><td id="LC87" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L88" class="td-index">88</td><td id="LC88" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L89" class="td-index">89</td><td id="LC89" class="td-code"><span class="tab"><span class="comment line">#   <strong>value</strong>: vote value</span></span></td></tr><tr class="row"><td id="L90" class="td-index">90</td><td id="LC90" class="td-code"><span class="tab"><span class="comment line">#   <strong>partyId</strong>: the party casting the vote</span></span></td></tr><tr class="row"><td id="L91" class="td-index">91</td><td id="LC91" class="td-code"><span class="tab"><span class="comment line">#   <strong>proposalId</strong>: the proposal voted on</span></span></td></tr><tr class="row"><td id="L92" class="td-index">92</td><td id="LC92" class="td-code"><span class="tab"><span class="meta">prepareVote</span>(<span class="meta">value</span>: <a class="support type" href="votevalue.doc.html">VoteValue</a>!, <span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">proposalId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="preparedvote.doc.html">PreparedVote</a>! </span></td></tr><tr class="row"><td id="L93" class="td-index">93</td><td id="LC93" class="td-code"></td></tr><tr class="row"><td id="L94" class="td-index">94</td><td id="LC94" class="td-code"><span class="tab"><span class="comment line">#   Prepare a withdrawal so it can be signed and submitted.</span></span></td></tr><tr class="row"><td id="L95" class="td-index">95</td><td id="LC95" class="td-code"><span class="tab"><span class="comment line">#   Returns a pending withdrawSubmission with a transaction blob for signing.</span></span></td></tr><tr class="row"><td id="L96" class="td-index">96</td><td id="LC96" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L97" class="td-index">97</td><td id="LC97" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L98" class="td-index">98</td><td id="LC98" class="td-code"><span class="tab"><span class="comment line">#   <strong>amount</strong>: The amount to be withdrawn</span></span></td></tr><tr class="row"><td id="L99" class="td-index">99</td><td id="LC99" class="td-code"><span class="tab"><span class="comment line">#   <strong>asset</strong>: The asset from which we want to withdraw funds</span></span></td></tr><tr class="row"><td id="L100" class="td-index">100</td><td id="LC100" class="td-code"><span class="tab"><span class="comment line">#   <strong>erc20Details</strong>: ERC20 specific details to process the withdrawal</span></span></td></tr><tr class="row"><td id="L101" class="td-index">101</td><td id="LC101" class="td-code"><span class="tab"><span class="comment line">#   nullable as not required by all kind of withdrawals</span></span></td></tr><tr class="row"><td id="L102" class="td-index">102</td><td id="LC102" class="td-code"><span class="tab"><span class="meta">prepareWithdrawal</span>(</span></td></tr><tr class="row"><td id="L103" class="td-index">103</td><td id="LC103" class="td-code"><span class="tab"><span class="tab"><span class="meta">amount</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L104" class="td-index">104</td><td id="LC104" class="td-code"><span class="tab"><span class="tab"><span class="meta">asset</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L105" class="td-index">105</td><td id="LC105" class="td-code"><span class="tab"><span class="tab"><span class="meta">erc20Details</span>: <a class="support type" href="erc20withdrawaldetailsinput.doc.html">Erc20WithdrawalDetailsInput</a></span></span></td></tr><tr class="row"><td id="L106" class="td-index">106</td><td id="LC106" class="td-code"><span class="tab">): <a class="support type" href="preparedwithdrawal.doc.html">PreparedWithdrawal</a>! </span></td></tr><tr class="row"><td id="L107" class="td-index">107</td><td id="LC107" class="td-code"></td></tr><tr class="row"><td id="L108" class="td-index">108</td><td id="LC108" class="td-code"><span class="tab"><span class="comment line">#   Submit a new, signed, transaction to the VEGA network. This transaction will not </span></span></td></tr><tr class="row"><td id="L109" class="td-index">109</td><td id="LC109" class="td-code"><span class="tab"><span class="comment line">#   be executed immediately.</span></span></td></tr><tr class="row"><td id="L110" class="td-index">110</td><td id="LC110" class="td-code"><span class="tab"><span class="comment line">#   It validates the signature, and sends the transaction out for consensus</span></span></td></tr><tr class="row"><td id="L111" class="td-index">111</td><td id="LC111" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L112" class="td-index">112</td><td id="LC112" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L113" class="td-index">113</td><td id="LC113" class="td-code"><span class="tab"><span class="comment line">#   <strong>data</strong>: The signed transaction</span></span></td></tr><tr class="row"><td id="L114" class="td-index">114</td><td id="LC114" class="td-code"><span class="tab"><span class="comment line">#   <strong>sig</strong>: The signature</span></span></td></tr><tr class="row"><td id="L115" class="td-index">115</td><td id="LC115" class="td-code"><span class="tab"><span class="comment line">#   <strong>type</strong>: The way to send the transaction</span></span></td></tr><tr class="row"><td id="L116" class="td-index">116</td><td id="LC116" class="td-code"><span class="tab"><span class="meta">submitTransaction</span>(</span></td></tr><tr class="row"><td id="L117" class="td-index">117</td><td id="LC117" class="td-code"><span class="tab"><span class="tab"><span class="meta">data</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L118" class="td-index">118</td><td id="LC118" class="td-code"><span class="tab"><span class="tab"><span class="meta">sig</span>: <a class="support type" href="signatureinput.doc.html">SignatureInput</a>!,</span></span></td></tr><tr class="row"><td id="L119" class="td-index">119</td><td id="LC119" class="td-code"><span class="tab"><span class="tab"><span class="meta">type</span>: <a class="support type" href="submittransactiontype.doc.html">SubmitTransactionType</a></span></span></td></tr><tr class="row"><td id="L120" class="td-index">120</td><td id="LC120" class="td-code"><span class="tab">): <a class="support type" href="transactionsubmitted.doc.html">TransactionSubmitted</a>! </span></td></tr><tr class="row"><td id="L121" class="td-index">121</td><td id="LC121" class="td-code"></td></tr><tr class="row"><td id="L122" class="td-index">122</td><td id="LC122" class="td-code"><span class="tab"><span class="comment line">#   Prepare a Liquidity provision order so it can be signed and submitted</span></span></td></tr><tr class="row"><td id="L123" class="td-index">123</td><td id="LC123" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L124" class="td-index">124</td><td id="LC124" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L125" class="td-index">125</td><td id="LC125" class="td-code"><span class="tab"><span class="comment line">#   <strong>marketId</strong>: Market identifier for the order</span></span></td></tr><tr class="row"><td id="L126" class="td-index">126</td><td id="LC126" class="td-code"><span class="tab"><span class="comment line">#   <strong>commitmentAmount</strong>: Specified as a unitless number that </span></span></td></tr><tr class="row"><td id="L127" class="td-index">127</td><td id="LC127" class="td-code"><span class="tab"><span class="comment line">#   represents the amount of settlement asset of the market.</span></span></td></tr><tr class="row"><td id="L128" class="td-index">128</td><td id="LC128" class="td-code"><span class="tab"><span class="comment line">#   <strong>fee</strong>: nominated liquidity fee factor, which is an input to the </span></span></td></tr><tr class="row"><td id="L129" class="td-index">129</td><td id="LC129" class="td-code"><span class="tab"><span class="comment line">#   calculation of taker fees on the market, as per setting fees and rewarding </span></span></td></tr><tr class="row"><td id="L130" class="td-index">130</td><td id="LC130" class="td-code"><span class="tab"><span class="comment line">#   liquidity providers.</span></span></td></tr><tr class="row"><td id="L131" class="td-index">131</td><td id="LC131" class="td-code"><span class="tab"><span class="comment line">#   <strong>sells</strong>: a set of liquidity sell orders to meet the liquidity </span></span></td></tr><tr class="row"><td id="L132" class="td-index">132</td><td id="LC132" class="td-code"><span class="tab"><span class="comment line">#   provision obligation, see MM orders spec.</span></span></td></tr><tr class="row"><td id="L133" class="td-index">133</td><td id="LC133" class="td-code"><span class="tab"><span class="comment line">#   <strong>buys</strong>: a set of liquidity buy orders to meet the liquidity </span></span></td></tr><tr class="row"><td id="L134" class="td-index">134</td><td id="LC134" class="td-code"><span class="tab"><span class="comment line">#   provision obligation, see MM orders spec.</span></span></td></tr><tr class="row"><td id="L135" class="td-index">135</td><td id="LC135" class="td-code"><span class="tab"><span class="comment line">#   <strong>reference</strong>: A reference for the order created from this </span></span></td></tr><tr class="row"><td id="L136" class="td-index">136</td><td id="LC136" class="td-code"><span class="tab"><span class="comment line">#   liquidity provision</span></span></td></tr><tr class="row"><td id="L137" class="td-index">137</td><td id="LC137" class="td-code"><span class="tab"><span class="meta">prepareLiquidityProvision</span>(</span></td></tr><tr class="row"><td id="L138" class="td-index">138</td><td id="LC138" class="td-code"><span class="tab"><span class="tab"><span class="meta">marketId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></td></tr><tr class="row"><td id="L139" class="td-index">139</td><td id="LC139" class="td-code"><span class="tab"><span class="tab"><span class="meta">commitmentAmount</span>: <a class="support type" href="int.doc.html">Int</a>!,</span></span></td></tr><tr class="row"><td id="L140" class="td-index">140</td><td id="LC140" class="td-code"><span class="tab"><span class="tab"><span class="meta">fee</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></td></tr><tr class="row"><td id="L141" class="td-index">141</td><td id="LC141" class="td-code"><span class="tab"><span class="tab"><span class="meta">sells</span>: [<a class="support type" href="liquidityorderinput.doc.html">LiquidityOrderInput</a>!]!,</span></span></td></tr><tr class="row"><td id="L142" class="td-index">142</td><td id="LC142" class="td-code"><span class="tab"><span class="tab"><span class="meta">buys</span>: [<a class="support type" href="liquidityorderinput.doc.html">LiquidityOrderInput</a>!]!,</span></span></td></tr><tr class="row"><td id="L143" class="td-index">143</td><td id="LC143" class="td-code"><span class="tab"><span class="tab"><span class="meta">reference</span>: <a class="support type" href="string.doc.html">String</a></span></span></td></tr><tr class="row"><td id="L144" class="td-index">144</td><td id="LC144" class="td-code"><span class="tab">): <a class="support type" href="preparedliquidityprovision.doc.html">PreparedLiquidityProvision</a>! </span></td></tr><tr class="row"><td id="L145" class="td-index">145</td><td id="LC145" class="td-code"></td></tr><tr class="row"><td id="L146" class="td-index">146</td><td id="LC146" class="td-code">}</td></tr></tbody></table></code>
+                  <code class="highlight">
+<table class="code">
+<tbody>
+<tr class="row">
+<td id="L1" class="td-index">1</td>
+<td id="LC1" class="td-code">
+<span class="keyword operator ts">type</span> <span class="identifier">Mutation</span> {</td>
+</tr>
+<tr class="row">
+<td id="L2" class="td-index">2</td>
+<td id="LC2" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L3" class="td-index">3</td>
+<td id="LC3" class="td-code">
+<span class="tab">
+<span class="comment line">#   Send a submit order request to be prepared, and returns a blob of the </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L4" class="td-index">4</td>
+<td id="LC4" class="td-code">
+<span class="tab">
+<span class="comment line">#   transaction to submit.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L5" class="td-index">5</td>
+<td id="LC5" class="td-code">
+<span class="tab">
+<span class="comment line">#   The OrderSubmit data is validated. Price and expiration will be converted to </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L6" class="td-index">6</td>
+<td id="LC6" class="td-code">
+<span class="tab">
+<span class="comment line">#   uint64 internally.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L7" class="td-index">7</td>
+<td id="LC7" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L8" class="td-index">8</td>
+<td id="LC8" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L9" class="td-index">9</td>
+<td id="LC9" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>marketId</strong>: ID of the market to place the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L10" class="td-index">10</td>
+<td id="LC10" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>partyId</strong>: ID of the party placing the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L11" class="td-index">11</td>
+<td id="LC11" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>price</strong>: Price of the asset</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L12" class="td-index">12</td>
+<td id="LC12" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>size</strong>: Size of the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L13" class="td-index">13</td>
+<td id="LC13" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>side</strong>: Side of the order (Buy or Sell)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L14" class="td-index">14</td>
+<td id="LC14" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>timeInForce</strong>: TimeInForce of the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L15" class="td-index">15</td>
+<td id="LC15" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>expiration</strong>: exiration of the the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L16" class="td-index">16</td>
+<td id="LC16" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>type</strong>: type of the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L17" class="td-index">17</td>
+<td id="LC17" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>reference</strong>: client reference for the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L18" class="td-index">18</td>
+<td id="LC18" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>peggedOrder</strong>: pegged order details</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L19" class="td-index">19</td>
+<td id="LC19" class="td-code">
+<span class="tab">
+<span class="meta">prepareOrderSubmit</span>(</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L20" class="td-index">20</td>
+<td id="LC20" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">marketId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L21" class="td-index">21</td>
+<td id="LC21" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L22" class="td-index">22</td>
+<td id="LC22" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">price</span>: <a class="support type" href="string.doc.html">String</a>,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L23" class="td-index">23</td>
+<td id="LC23" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">size</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L24" class="td-index">24</td>
+<td id="LC24" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">side</span>: <a class="support type" href="side.doc.html">Side</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L25" class="td-index">25</td>
+<td id="LC25" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">timeInForce</span>: <a class="support type" href="ordertimeinforce.doc.html">OrderTimeInForce</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L26" class="td-index">26</td>
+<td id="LC26" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">expiration</span>: <a class="support type" href="string.doc.html">String</a>,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L27" class="td-index">27</td>
+<td id="LC27" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">type</span>: <a class="support type" href="ordertype.doc.html">OrderType</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L28" class="td-index">28</td>
+<td id="LC28" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">reference</span>: <a class="support type" href="string.doc.html">String</a>,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L29" class="td-index">29</td>
+<td id="LC29" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">peggedOrder</span>: <a class="support type" href="peggedorderinput.doc.html">PeggedOrderInput</a>
+</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L30" class="td-index">30</td>
+<td id="LC30" class="td-code">
+<span class="tab">): <a class="support type" href="preparedsubmitorder.doc.html">PreparedSubmitOrder</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L31" class="td-index">31</td>
+<td id="LC31" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L32" class="td-index">32</td>
+<td id="LC32" class="td-code">
+<span class="tab">
+<span class="comment line">#   Send a cancel order request to be prepared. Returns a pending order + blob of </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L33" class="td-index">33</td>
+<td id="LC33" class="td-code">
+<span class="tab">
+<span class="comment line">#   the transaction to submit.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L34" class="td-index">34</td>
+<td id="LC34" class="td-code">
+<span class="tab">
+<span class="comment line">#   The data is verified. The response can be signed and submitted through the </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L35" class="td-index">35</td>
+<td id="LC35" class="td-code">
+<span class="tab">
+<span class="comment line">#   submitTransaction mutation.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L36" class="td-index">36</td>
+<td id="LC36" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L37" class="td-index">37</td>
+<td id="LC37" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L38" class="td-index">38</td>
+<td id="LC38" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>id</strong>: ID of the order to cancel</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L39" class="td-index">39</td>
+<td id="LC39" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>marketId</strong>: ID of the market where to find the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L40" class="td-index">40</td>
+<td id="LC40" class="td-code">
+<span class="tab">
+<span class="meta">prepareOrderCancel</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>, <span class="meta">marketId</span>: <a class="support type" href="id.doc.html">ID</a>): <a class="support type" href="preparedcancelorder.doc.html">PreparedCancelOrder</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L41" class="td-index">41</td>
+<td id="LC41" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L42" class="td-index">42</td>
+<td id="LC42" class="td-code">
+<span class="tab">
+<span class="comment line">#   Send an amend order request to be prepared. Returns a pending order + blob of </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L43" class="td-index">43</td>
+<td id="LC43" class="td-code">
+<span class="tab">
+<span class="comment line">#   the transaction to submit.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L44" class="td-index">44</td>
+<td id="LC44" class="td-code">
+<span class="tab">
+<span class="comment line">#   The data is verified. The response can be signed and submitted through the </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L45" class="td-index">45</td>
+<td id="LC45" class="td-code">
+<span class="tab">
+<span class="comment line">#   submitTransaction mutation.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L46" class="td-index">46</td>
+<td id="LC46" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L47" class="td-index">47</td>
+<td id="LC47" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L48" class="td-index">48</td>
+<td id="LC48" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>id</strong>: ID of the order to amend</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L49" class="td-index">49</td>
+<td id="LC49" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>partyId</strong>: ID of the party which created the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L50" class="td-index">50</td>
+<td id="LC50" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>price</strong>: New price for this order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L51" class="td-index">51</td>
+<td id="LC51" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>sizeDelta</strong>: New size for this order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L52" class="td-index">52</td>
+<td id="LC52" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>expiration</strong>: New expiration time</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L53" class="td-index">53</td>
+<td id="LC53" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>timeInForce</strong>: Time in force</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L54" class="td-index">54</td>
+<td id="LC54" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>peggedReference</strong>: The reference point for pegged orders</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L55" class="td-index">55</td>
+<td id="LC55" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>peggedOffset</strong>: The offset from the reference price for pegged </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L56" class="td-index">56</td>
+<td id="LC56" class="td-code">
+<span class="tab">
+<span class="comment line">#   orders</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L57" class="td-index">57</td>
+<td id="LC57" class="td-code">
+<span class="tab">
+<span class="meta">prepareOrderAmend</span>(</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L58" class="td-index">58</td>
+<td id="LC58" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L59" class="td-index">59</td>
+<td id="LC59" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L60" class="td-index">60</td>
+<td id="LC60" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">price</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L61" class="td-index">61</td>
+<td id="LC61" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">sizeDelta</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L62" class="td-index">62</td>
+<td id="LC62" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">expiration</span>: <a class="support type" href="string.doc.html">String</a>,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L63" class="td-index">63</td>
+<td id="LC63" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">timeInForce</span>: <a class="support type" href="ordertimeinforce.doc.html">OrderTimeInForce</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L64" class="td-index">64</td>
+<td id="LC64" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">peggedReference</span>: <a class="support type" href="peggedreference.doc.html">PeggedReference</a>,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L65" class="td-index">65</td>
+<td id="LC65" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">peggedOffset</span>: <a class="support type" href="string.doc.html">String</a>
+</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L66" class="td-index">66</td>
+<td id="LC66" class="td-code">
+<span class="tab">): <a class="support type" href="preparedamendorder.doc.html">PreparedAmendOrder</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L67" class="td-index">67</td>
+<td id="LC67" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L68" class="td-index">68</td>
+<td id="LC68" class="td-code">
+<span class="tab">
+<span class="comment line">#   Prepare a proposal so it can be sent into the network.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L69" class="td-index">69</td>
+<td id="LC69" class="td-code">
+<span class="tab">
+<span class="comment line">#   Returns a pending proposal along with a transaction blob ready for submission.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L70" class="td-index">70</td>
+<td id="LC70" class="td-code">
+<span class="tab">
+<span class="comment line">#   The data is verified. The response can be signed and submitted through the </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L71" class="td-index">71</td>
+<td id="LC71" class="td-code">
+<span class="tab">
+<span class="comment line">#   submitTransaction mutation.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L72" class="td-index">72</td>
+<td id="LC72" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L73" class="td-index">73</td>
+<td id="LC73" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L74" class="td-index">74</td>
+<td id="LC74" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>partyId</strong>: ID of the party which created this proposal</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L75" class="td-index">75</td>
+<td id="LC75" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>reference</strong>: A UUID reference for the caller to aid in tracking </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L76" class="td-index">76</td>
+<td id="LC76" class="td-code">
+<span class="tab">
+<span class="comment line">#   operations on VEGA</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L77" class="td-index">77</td>
+<td id="LC77" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>proposalTerms</strong>: Terms of the proposal</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L78" class="td-index">78</td>
+<td id="LC78" class="td-code">
+<span class="tab">
+<span class="meta">prepareProposal</span>(</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L79" class="td-index">79</td>
+<td id="LC79" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L80" class="td-index">80</td>
+<td id="LC80" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">reference</span>: <a class="support type" href="string.doc.html">String</a>,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L81" class="td-index">81</td>
+<td id="LC81" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">proposalTerms</span>: <a class="support type" href="proposaltermsinput.doc.html">ProposalTermsInput</a>!</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L82" class="td-index">82</td>
+<td id="LC82" class="td-code">
+<span class="tab">): <a class="support type" href="preparedproposal.doc.html">PreparedProposal</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L83" class="td-index">83</td>
+<td id="LC83" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L84" class="td-index">84</td>
+<td id="LC84" class="td-code">
+<span class="tab">
+<span class="comment line">#   Prepare a vote so it can be signed and submitted.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L85" class="td-index">85</td>
+<td id="LC85" class="td-code">
+<span class="tab">
+<span class="comment line">#   Returns a pending vote with a transaction blob for signing.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L86" class="td-index">86</td>
+<td id="LC86" class="td-code">
+<span class="tab">
+<span class="comment line">#   No validation other than the vote value being correct is done.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L87" class="td-index">87</td>
+<td id="LC87" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L88" class="td-index">88</td>
+<td id="LC88" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L89" class="td-index">89</td>
+<td id="LC89" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>value</strong>: vote value</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L90" class="td-index">90</td>
+<td id="LC90" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>partyId</strong>: the party casting the vote</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L91" class="td-index">91</td>
+<td id="LC91" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>proposalId</strong>: the proposal voted on</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L92" class="td-index">92</td>
+<td id="LC92" class="td-code">
+<span class="tab">
+<span class="meta">prepareVote</span>(<span class="meta">value</span>: <a class="support type" href="votevalue.doc.html">VoteValue</a>!, <span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">proposalId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="preparedvote.doc.html">PreparedVote</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L93" class="td-index">93</td>
+<td id="LC93" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L94" class="td-index">94</td>
+<td id="LC94" class="td-code">
+<span class="tab">
+<span class="comment line">#   Prepare a withdrawal so it can be signed and submitted.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L95" class="td-index">95</td>
+<td id="LC95" class="td-code">
+<span class="tab">
+<span class="comment line">#   Returns a pending withdrawSubmission with a transaction blob for signing.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L96" class="td-index">96</td>
+<td id="LC96" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L97" class="td-index">97</td>
+<td id="LC97" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L98" class="td-index">98</td>
+<td id="LC98" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>amount</strong>: The amount to be withdrawn</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L99" class="td-index">99</td>
+<td id="LC99" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>asset</strong>: The asset from which we want to withdraw funds</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L100" class="td-index">100</td>
+<td id="LC100" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>erc20Details</strong>: ERC20 specific details to process the withdrawal</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L101" class="td-index">101</td>
+<td id="LC101" class="td-code">
+<span class="tab">
+<span class="comment line">#   nullable as not required by all kind of withdrawals</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L102" class="td-index">102</td>
+<td id="LC102" class="td-code">
+<span class="tab">
+<span class="meta">prepareWithdrawal</span>(</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L103" class="td-index">103</td>
+<td id="LC103" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">amount</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L104" class="td-index">104</td>
+<td id="LC104" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">asset</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L105" class="td-index">105</td>
+<td id="LC105" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">erc20Details</span>: <a class="support type" href="erc20withdrawaldetailsinput.doc.html">Erc20WithdrawalDetailsInput</a>
+</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L106" class="td-index">106</td>
+<td id="LC106" class="td-code">
+<span class="tab">): <a class="support type" href="preparedwithdrawal.doc.html">PreparedWithdrawal</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L107" class="td-index">107</td>
+<td id="LC107" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L108" class="td-index">108</td>
+<td id="LC108" class="td-code">
+<span class="tab">
+<span class="comment line">#   Submit a new, signed, transaction to the VEGA network. This transaction will not </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L109" class="td-index">109</td>
+<td id="LC109" class="td-code">
+<span class="tab">
+<span class="comment line">#   be executed immediately.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L110" class="td-index">110</td>
+<td id="LC110" class="td-code">
+<span class="tab">
+<span class="comment line">#   It validates the signature, and sends the transaction out for consensus</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L111" class="td-index">111</td>
+<td id="LC111" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L112" class="td-index">112</td>
+<td id="LC112" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L113" class="td-index">113</td>
+<td id="LC113" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>data</strong>: The signed transaction</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L114" class="td-index">114</td>
+<td id="LC114" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>sig</strong>: The signature</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L115" class="td-index">115</td>
+<td id="LC115" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>type</strong>: The way to send the transaction</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L116" class="td-index">116</td>
+<td id="LC116" class="td-code">
+<span class="tab">
+<span class="meta">submitTransaction</span>(</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L117" class="td-index">117</td>
+<td id="LC117" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">data</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L118" class="td-index">118</td>
+<td id="LC118" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">sig</span>: <a class="support type" href="signatureinput.doc.html">SignatureInput</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L119" class="td-index">119</td>
+<td id="LC119" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">type</span>: <a class="support type" href="submittransactiontype.doc.html">SubmitTransactionType</a>
+</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L120" class="td-index">120</td>
+<td id="LC120" class="td-code">
+<span class="tab">): <a class="support type" href="transactionsubmitted.doc.html">TransactionSubmitted</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L121" class="td-index">121</td>
+<td id="LC121" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L122" class="td-index">122</td>
+<td id="LC122" class="td-code">
+<span class="tab">
+<span class="comment line">#   Prepare a Liquidity provision order so it can be signed and submitted</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L123" class="td-index">123</td>
+<td id="LC123" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L124" class="td-index">124</td>
+<td id="LC124" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L125" class="td-index">125</td>
+<td id="LC125" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>marketId</strong>: Market identifier for the order</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L126" class="td-index">126</td>
+<td id="LC126" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>commitmentAmount</strong>: Specified as a unitless number that </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L127" class="td-index">127</td>
+<td id="LC127" class="td-code">
+<span class="tab">
+<span class="comment line">#   represents the amount of settlement asset of the market.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L128" class="td-index">128</td>
+<td id="LC128" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>fee</strong>: nominated liquidity fee factor, which is an input to the </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L129" class="td-index">129</td>
+<td id="LC129" class="td-code">
+<span class="tab">
+<span class="comment line">#   calculation of taker fees on the market, as per setting fees and rewarding </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L130" class="td-index">130</td>
+<td id="LC130" class="td-code">
+<span class="tab">
+<span class="comment line">#   liquidity providers.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L131" class="td-index">131</td>
+<td id="LC131" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>sells</strong>: a set of liquidity sell orders to meet the liquidity </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L132" class="td-index">132</td>
+<td id="LC132" class="td-code">
+<span class="tab">
+<span class="comment line">#   provision obligation, see MM orders spec.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L133" class="td-index">133</td>
+<td id="LC133" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>buys</strong>: a set of liquidity buy orders to meet the liquidity </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L134" class="td-index">134</td>
+<td id="LC134" class="td-code">
+<span class="tab">
+<span class="comment line">#   provision obligation, see MM orders spec.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L135" class="td-index">135</td>
+<td id="LC135" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>reference</strong>: A reference for the order created from this </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L136" class="td-index">136</td>
+<td id="LC136" class="td-code">
+<span class="tab">
+<span class="comment line">#   liquidity provision</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L137" class="td-index">137</td>
+<td id="LC137" class="td-code">
+<span class="tab">
+<span class="meta">prepareLiquidityProvision</span>(</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L138" class="td-index">138</td>
+<td id="LC138" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">marketId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L139" class="td-index">139</td>
+<td id="LC139" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">commitmentAmount</span>: <a class="support type" href="int.doc.html">Int</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L140" class="td-index">140</td>
+<td id="LC140" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">fee</span>: <a class="support type" href="string.doc.html">String</a>!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L141" class="td-index">141</td>
+<td id="LC141" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">sells</span>: [<a class="support type" href="liquidityorderinput.doc.html">LiquidityOrderInput</a>!]!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L142" class="td-index">142</td>
+<td id="LC142" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">buys</span>: [<a class="support type" href="liquidityorderinput.doc.html">LiquidityOrderInput</a>!]!,</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L143" class="td-index">143</td>
+<td id="LC143" class="td-code">
+<span class="tab">
+<span class="tab">
+<span class="meta">reference</span>: <a class="support type" href="string.doc.html">String</a>
+</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L144" class="td-index">144</td>
+<td id="LC144" class="td-code">
+<span class="tab">): <a class="support type" href="preparedliquidityprovision.doc.html">PreparedLiquidityProvision</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L145" class="td-index">145</td>
+<td id="LC145" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L146" class="td-index">146</td>
+<td id="LC146" class="td-code">}</td>
+</tr>
+</tbody>
+</table>
+</code>
               </div>
           </section>
           <section>
@@ -991,7 +2156,10 @@
           </div>
           </footer>
 </main>
-    <script src="./scripts/focus-active.js"></script>
-    <script src="./scripts/filter-types.js"></script>
-    <script src="./scripts/toggle-navigation.js"></script>
+    <script src="./scripts/focus-active.js">
+</script>
+    <script src="./scripts/filter-types.js">
+</script>
+    <script src="./scripts/toggle-navigation.js">
+</script>
 </body>

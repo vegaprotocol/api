@@ -8,7 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <title>Market</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="./assets/code.css" />
+<script src="./assets/line-link.js">
+</script>
+<link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
     <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
@@ -16,7 +20,9 @@
             <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
                 <i class="material-icons">close</i>
             </button>
-                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+                <h3 class="slds-text-heading--medium">
+<a href="./">GraphQL Schema</a>
+</h3>
             <div class="slds-p-top--small">
                 <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
             </div>
@@ -944,7 +950,8 @@
             </div>
         </div>
     </nav>
-    <main><section class="title slds-theme--inverse">
+    <main>
+<section class="title slds-theme--inverse">
               <div class="container slds-grid">
                   <div>
                   <button class="slds-button js-toggle-navigation less-than-medium">
@@ -957,7 +964,8 @@
               <div class="container">
                   <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
                   <h1 class="slds-text-heading--large">Market</h1>
-                  <div class="slds-text-body--regular"><p>Represents a product &amp; associated parameters that can be traded on Vega, has an associated OrderBook and Trade history</p>
+                  <div class="slds-text-body--regular">
+<p>Represents a product &amp; associated parameters that can be traded on Vega, has an associated OrderBook and Trade history</p>
 </div>
               </div>
           </section>
@@ -969,7 +977,746 @@
                       </a>
                       GraphQL Schema definition
                   </h2>
-                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">Market</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Market ID</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   Market full name</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   Fees related data</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">fees</span>: <a class="support type" href="fees.doc.html">Fees</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   An instance of or reference to a tradable instrument.</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">tradableInstrument</span>: <a class="support type" href="tradableinstrument.doc.html">TradableInstrument</a>! </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   Definitions and required configuration for the trading mode</span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="meta">tradingModeConfig</span>: <a class="support type" href="tradingmode.doc.html">TradingMode</a>! </span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="comment line">#   decimalPlaces indicates the number of decimal places that an integer must be </span></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><span class="comment line">#   shifted by in order to get a correct</span></span></td></tr><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"><span class="tab"><span class="comment line">#   number denominated in the currency of the Market. (uint64)</span></span></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L22" class="td-index">22</td><td id="LC22" class="td-code"><span class="tab"><span class="comment line">#   Examples:</span></span></td></tr><tr class="row"><td id="L23" class="td-index">23</td><td id="LC23" class="td-code"><span class="tab"><span class="comment line">#   Currency     Balance  decimalPlaces  Real Balance</span></span></td></tr><tr class="row"><td id="L24" class="td-index">24</td><td id="LC24" class="td-code"><span class="tab"><span class="comment line">#   GBP              100              0       GBP 100</span></span></td></tr><tr class="row"><td id="L25" class="td-index">25</td><td id="LC25" class="td-code"><span class="tab"><span class="comment line">#   GBP              100              2       GBP   1.00</span></span></td></tr><tr class="row"><td id="L26" class="td-index">26</td><td id="LC26" class="td-code"><span class="tab"><span class="comment line">#   GBP              100              4       GBP   0.01</span></span></td></tr><tr class="row"><td id="L27" class="td-index">27</td><td id="LC27" class="td-code"><span class="tab"><span class="comment line">#   GBP                1              4       GBP   0.0001   (  0.01p  )</span></span></td></tr><tr class="row"><td id="L28" class="td-index">28</td><td id="LC28" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L29" class="td-index">29</td><td id="LC29" class="td-code"><span class="tab"><span class="comment line">#   GBX (pence)      100              0       GBP   1.00     (100p     )</span></span></td></tr><tr class="row"><td id="L30" class="td-index">30</td><td id="LC30" class="td-code"><span class="tab"><span class="comment line">#   GBX (pence)      100              2       GBP   0.01     (  1p     )</span></span></td></tr><tr class="row"><td id="L31" class="td-index">31</td><td id="LC31" class="td-code"><span class="tab"><span class="comment line">#   GBX (pence)      100              4       GBP   0.0001   (  0.01p  )</span></span></td></tr><tr class="row"><td id="L32" class="td-index">32</td><td id="LC32" class="td-code"><span class="tab"><span class="comment line">#   GBX (pence)        1              4       GBP   0.000001 (  0.0001p)</span></span></td></tr><tr class="row"><td id="L33" class="td-index">33</td><td id="LC33" class="td-code"><span class="tab"><span class="meta">decimalPlaces</span>: <a class="support type" href="int.doc.html">Int</a>! </span></td></tr><tr class="row"><td id="L34" class="td-index">34</td><td id="LC34" class="td-code"></td></tr><tr class="row"><td id="L35" class="td-index">35</td><td id="LC35" class="td-code"><span class="tab"><span class="comment line">#   Auction duration specifies how long the opening auction will run (minimum</span></span></td></tr><tr class="row"><td id="L36" class="td-index">36</td><td id="LC36" class="td-code"><span class="tab"><span class="comment line">#   duration and optionally a minimum traded volume).</span></span></td></tr><tr class="row"><td id="L37" class="td-index">37</td><td id="LC37" class="td-code"><span class="tab"><span class="meta">openingAuction</span>: <a class="support type" href="auctionduration.doc.html">AuctionDuration</a>! </span></td></tr><tr class="row"><td id="L38" class="td-index">38</td><td id="LC38" class="td-code"></td></tr><tr class="row"><td id="L39" class="td-index">39</td><td id="LC39" class="td-code"><span class="tab"><span class="comment line">#   Price monitoring settings for the market</span></span></td></tr><tr class="row"><td id="L40" class="td-index">40</td><td id="LC40" class="td-code"><span class="tab"><span class="meta">priceMonitoringSettings</span>: <a class="support type" href="pricemonitoringsettings.doc.html">PriceMonitoringSettings</a>! </span></td></tr><tr class="row"><td id="L41" class="td-index">41</td><td id="LC41" class="td-code"></td></tr><tr class="row"><td id="L42" class="td-index">42</td><td id="LC42" class="td-code"><span class="tab"><span class="comment line">#   Liquidity monitoring parameters for the market</span></span></td></tr><tr class="row"><td id="L43" class="td-index">43</td><td id="LC43" class="td-code"><span class="tab"><span class="meta">liquidityMonitoringParameters</span>: <a class="support type" href="liquiditymonitoringparameters.doc.html">LiquidityMonitoringParameters</a>! </span></td></tr><tr class="row"><td id="L44" class="td-index">44</td><td id="LC44" class="td-code"></td></tr><tr class="row"><td id="L45" class="td-index">45</td><td id="LC45" class="td-code"><span class="tab"><span class="comment line">#   Current mode of execution of the market</span></span></td></tr><tr class="row"><td id="L46" class="td-index">46</td><td id="LC46" class="td-code"><span class="tab"><span class="meta">tradingMode</span>: <a class="support type" href="markettradingmode.doc.html">MarketTradingMode</a>! </span></td></tr><tr class="row"><td id="L47" class="td-index">47</td><td id="LC47" class="td-code"></td></tr><tr class="row"><td id="L48" class="td-index">48</td><td id="LC48" class="td-code"><span class="tab"><span class="comment line">#   Current state of the market</span></span></td></tr><tr class="row"><td id="L49" class="td-index">49</td><td id="LC49" class="td-code"><span class="tab"><span class="meta">state</span>: <a class="support type" href="marketstate.doc.html">MarketState</a>! </span></td></tr><tr class="row"><td id="L50" class="td-index">50</td><td id="LC50" class="td-code"></td></tr><tr class="row"><td id="L51" class="td-index">51</td><td id="LC51" class="td-code"><span class="tab"><span class="comment line">#   The proposal which initiated this market</span></span></td></tr><tr class="row"><td id="L52" class="td-index">52</td><td id="LC52" class="td-code"><span class="tab"><span class="meta">proposal</span>: <a class="support type" href="proposal.doc.html">Proposal</a> </span></td></tr><tr class="row"><td id="L53" class="td-index">53</td><td id="LC53" class="td-code"></td></tr><tr class="row"><td id="L54" class="td-index">54</td><td id="LC54" class="td-code"><span class="tab"><span class="comment line">#   Orders on a market</span></span></td></tr><tr class="row"><td id="L55" class="td-index">55</td><td id="LC55" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L56" class="td-index">56</td><td id="LC56" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L57" class="td-index">57</td><td id="LC57" class="td-code"><span class="tab"><span class="comment line">#   <strong>skip</strong>: Pagination skip</span></span></td></tr><tr class="row"><td id="L58" class="td-index">58</td><td id="LC58" class="td-code"><span class="tab"><span class="comment line">#   <strong>first</strong>: Pagination first element</span></span></td></tr><tr class="row"><td id="L59" class="td-index">59</td><td id="LC59" class="td-code"><span class="tab"><span class="comment line">#   <strong>last</strong>: Pagination last element</span></span></td></tr><tr class="row"><td id="L60" class="td-index">60</td><td id="LC60" class="td-code"><span class="tab"><span class="meta">orders</span>(<span class="meta">skip</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): [<a class="support type" href="order.doc.html">Order</a>!] </span></td></tr><tr class="row"><td id="L61" class="td-index">61</td><td id="LC61" class="td-code"></td></tr><tr class="row"><td id="L62" class="td-index">62</td><td id="LC62" class="td-code"><span class="tab"><span class="comment line">#   Get account for a party or market</span></span></td></tr><tr class="row"><td id="L63" class="td-index">63</td><td id="LC63" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L64" class="td-index">64</td><td id="LC64" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L65" class="td-index">65</td><td id="LC65" class="td-code"><span class="tab"><span class="comment line">#   <strong>partyId</strong>: Id of the party to get the margin account for</span></span></td></tr><tr class="row"><td id="L66" class="td-index">66</td><td id="LC66" class="td-code"><span class="tab"><span class="meta">accounts</span>(<span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>): [<a class="support type" href="account.doc.html">Account</a>!] </span></td></tr><tr class="row"><td id="L67" class="td-index">67</td><td id="LC67" class="td-code"></td></tr><tr class="row"><td id="L68" class="td-index">68</td><td id="LC68" class="td-code"><span class="tab"><span class="comment line">#   Trades on a market</span></span></td></tr><tr class="row"><td id="L69" class="td-index">69</td><td id="LC69" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L70" class="td-index">70</td><td id="LC70" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L71" class="td-index">71</td><td id="LC71" class="td-code"><span class="tab"><span class="comment line">#   <strong>skip</strong>: Pagination skip</span></span></td></tr><tr class="row"><td id="L72" class="td-index">72</td><td id="LC72" class="td-code"><span class="tab"><span class="comment line">#   <strong>first</strong>: Pagination first element</span></span></td></tr><tr class="row"><td id="L73" class="td-index">73</td><td id="LC73" class="td-code"><span class="tab"><span class="comment line">#   <strong>last</strong>: Pagination last element</span></span></td></tr><tr class="row"><td id="L74" class="td-index">74</td><td id="LC74" class="td-code"><span class="tab"><span class="meta">trades</span>(<span class="meta">skip</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): [<a class="support type" href="trade.doc.html">Trade</a>!] </span></td></tr><tr class="row"><td id="L75" class="td-index">75</td><td id="LC75" class="td-code"></td></tr><tr class="row"><td id="L76" class="td-index">76</td><td id="LC76" class="td-code"><span class="tab"><span class="comment line">#   Current depth on the orderbook for this market</span></span></td></tr><tr class="row"><td id="L77" class="td-index">77</td><td id="LC77" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L78" class="td-index">78</td><td id="LC78" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L79" class="td-index">79</td><td id="LC79" class="td-code"><span class="tab"><span class="comment line">#   <strong>maxDepth</strong>: Maximum market order book depth (returns whole order </span></span></td></tr><tr class="row"><td id="L80" class="td-index">80</td><td id="LC80" class="td-code"><span class="tab"><span class="comment line">#   book if omitted)</span></span></td></tr><tr class="row"><td id="L81" class="td-index">81</td><td id="LC81" class="td-code"><span class="tab"><span class="meta">depth</span>(<span class="meta">maxDepth</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="marketdepth.doc.html">MarketDepth</a>! </span></td></tr><tr class="row"><td id="L82" class="td-index">82</td><td id="LC82" class="td-code"></td></tr><tr class="row"><td id="L83" class="td-index">83</td><td id="LC83" class="td-code"><span class="tab"><span class="comment line">#   Candles on a market, for the 'last' n candles, at 'interval' seconds as </span></span></td></tr><tr class="row"><td id="L84" class="td-index">84</td><td id="LC84" class="td-code"><span class="tab"><span class="comment line">#   specified by params</span></span></td></tr><tr class="row"><td id="L85" class="td-index">85</td><td id="LC85" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L86" class="td-index">86</td><td id="LC86" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L87" class="td-index">87</td><td id="LC87" class="td-code"><span class="tab"><span class="comment line">#   <strong>since</strong>: RFC3339Nano encoded time from when to get candles</span></span></td></tr><tr class="row"><td id="L88" class="td-index">88</td><td id="LC88" class="td-code"><span class="tab"><span class="comment line">#   <strong>interval</strong>: Interval of the candles</span></span></td></tr><tr class="row"><td id="L89" class="td-index">89</td><td id="LC89" class="td-code"><span class="tab"><span class="meta">candles</span>(<span class="meta">since</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">interval</span>: <a class="support type" href="interval.doc.html">Interval</a>!): [<a class="support type" href="candle.doc.html">Candle</a>] </span></td></tr><tr class="row"><td id="L90" class="td-index">90</td><td id="LC90" class="td-code"></td></tr><tr class="row"><td id="L91" class="td-index">91</td><td id="LC91" class="td-code"><span class="tab"><span class="comment line">#   marketData for the given market</span></span></td></tr><tr class="row"><td id="L92" class="td-index">92</td><td id="LC92" class="td-code"><span class="tab"><span class="meta">data</span>: <a class="support type" href="marketdata.doc.html">MarketData</a>! </span></td></tr><tr class="row"><td id="L93" class="td-index">93</td><td id="LC93" class="td-code"></td></tr><tr class="row"><td id="L94" class="td-index">94</td><td id="LC94" class="td-code"><span class="tab"><span class="comment line">#   The list of the liquidity provision commitment for this market</span></span></td></tr><tr class="row"><td id="L95" class="td-index">95</td><td id="LC95" class="td-code"><span class="tab"><span class="comment line"># </span></span></td></tr><tr class="row"><td id="L96" class="td-index">96</td><td id="LC96" class="td-code"><span class="tab"><span class="comment line"># Arguments</span></span></td></tr><tr class="row"><td id="L97" class="td-index">97</td><td id="LC97" class="td-code"><span class="tab"><span class="comment line">#   <strong>party</strong>: An optional party id</span></span></td></tr><tr class="row"><td id="L98" class="td-index">98</td><td id="LC98" class="td-code"><span class="tab"><span class="meta">liquidityProvisions</span>(<span class="meta">party</span>: <a class="support type" href="string.doc.html">String</a>): [<a class="support type" href="liquidityprovision.doc.html">LiquidityProvision</a>!] </span></td></tr><tr class="row"><td id="L99" class="td-index">99</td><td id="LC99" class="td-code"></td></tr><tr class="row"><td id="L100" class="td-index">100</td><td id="LC100" class="td-code"><span class="tab"><span class="comment line">#   timestamps for state changes in the market</span></span></td></tr><tr class="row"><td id="L101" class="td-index">101</td><td id="LC101" class="td-code"><span class="tab"><span class="meta">marketTimestamps</span>: <a class="support type" href="markettimestamps.doc.html">MarketTimestamps</a>! </span></td></tr><tr class="row"><td id="L102" class="td-index">102</td><td id="LC102" class="td-code"></td></tr><tr class="row"><td id="L103" class="td-index">103</td><td id="LC103" class="td-code">}</td></tr></tbody></table></code>
+                  <code class="highlight">
+<table class="code">
+<tbody>
+<tr class="row">
+<td id="L1" class="td-index">1</td>
+<td id="LC1" class="td-code">
+<span class="keyword operator ts">type</span> <span class="identifier">Market</span> {</td>
+</tr>
+<tr class="row">
+<td id="L2" class="td-index">2</td>
+<td id="LC2" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L3" class="td-index">3</td>
+<td id="LC3" class="td-code">
+<span class="tab">
+<span class="comment line">#   Market ID</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L4" class="td-index">4</td>
+<td id="LC4" class="td-code">
+<span class="tab">
+<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L5" class="td-index">5</td>
+<td id="LC5" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L6" class="td-index">6</td>
+<td id="LC6" class="td-code">
+<span class="tab">
+<span class="comment line">#   Market full name</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L7" class="td-index">7</td>
+<td id="LC7" class="td-code">
+<span class="tab">
+<span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L8" class="td-index">8</td>
+<td id="LC8" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L9" class="td-index">9</td>
+<td id="LC9" class="td-code">
+<span class="tab">
+<span class="comment line">#   Fees related data</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L10" class="td-index">10</td>
+<td id="LC10" class="td-code">
+<span class="tab">
+<span class="meta">fees</span>: <a class="support type" href="fees.doc.html">Fees</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L11" class="td-index">11</td>
+<td id="LC11" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L12" class="td-index">12</td>
+<td id="LC12" class="td-code">
+<span class="tab">
+<span class="comment line">#   An instance of or reference to a tradable instrument.</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L13" class="td-index">13</td>
+<td id="LC13" class="td-code">
+<span class="tab">
+<span class="meta">tradableInstrument</span>: <a class="support type" href="tradableinstrument.doc.html">TradableInstrument</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L14" class="td-index">14</td>
+<td id="LC14" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L15" class="td-index">15</td>
+<td id="LC15" class="td-code">
+<span class="tab">
+<span class="comment line">#   Definitions and required configuration for the trading mode</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L16" class="td-index">16</td>
+<td id="LC16" class="td-code">
+<span class="tab">
+<span class="meta">tradingModeConfig</span>: <a class="support type" href="tradingmode.doc.html">TradingMode</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L17" class="td-index">17</td>
+<td id="LC17" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L18" class="td-index">18</td>
+<td id="LC18" class="td-code">
+<span class="tab">
+<span class="comment line">#   decimalPlaces indicates the number of decimal places that an integer must be </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L19" class="td-index">19</td>
+<td id="LC19" class="td-code">
+<span class="tab">
+<span class="comment line">#   shifted by in order to get a correct</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L20" class="td-index">20</td>
+<td id="LC20" class="td-code">
+<span class="tab">
+<span class="comment line">#   number denominated in the currency of the Market. (uint64)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L21" class="td-index">21</td>
+<td id="LC21" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L22" class="td-index">22</td>
+<td id="LC22" class="td-code">
+<span class="tab">
+<span class="comment line">#   Examples:</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L23" class="td-index">23</td>
+<td id="LC23" class="td-code">
+<span class="tab">
+<span class="comment line">#   Currency     Balance  decimalPlaces  Real Balance</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L24" class="td-index">24</td>
+<td id="LC24" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBP              100              0       GBP 100</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L25" class="td-index">25</td>
+<td id="LC25" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBP              100              2       GBP   1.00</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L26" class="td-index">26</td>
+<td id="LC26" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBP              100              4       GBP   0.01</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L27" class="td-index">27</td>
+<td id="LC27" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBP                1              4       GBP   0.0001   (  0.01p  )</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L28" class="td-index">28</td>
+<td id="LC28" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L29" class="td-index">29</td>
+<td id="LC29" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBX (pence)      100              0       GBP   1.00     (100p     )</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L30" class="td-index">30</td>
+<td id="LC30" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBX (pence)      100              2       GBP   0.01     (  1p     )</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L31" class="td-index">31</td>
+<td id="LC31" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBX (pence)      100              4       GBP   0.0001   (  0.01p  )</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L32" class="td-index">32</td>
+<td id="LC32" class="td-code">
+<span class="tab">
+<span class="comment line">#   GBX (pence)        1              4       GBP   0.000001 (  0.0001p)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L33" class="td-index">33</td>
+<td id="LC33" class="td-code">
+<span class="tab">
+<span class="meta">decimalPlaces</span>: <a class="support type" href="int.doc.html">Int</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L34" class="td-index">34</td>
+<td id="LC34" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L35" class="td-index">35</td>
+<td id="LC35" class="td-code">
+<span class="tab">
+<span class="comment line">#   Auction duration specifies how long the opening auction will run (minimum</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L36" class="td-index">36</td>
+<td id="LC36" class="td-code">
+<span class="tab">
+<span class="comment line">#   duration and optionally a minimum traded volume).</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L37" class="td-index">37</td>
+<td id="LC37" class="td-code">
+<span class="tab">
+<span class="meta">openingAuction</span>: <a class="support type" href="auctionduration.doc.html">AuctionDuration</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L38" class="td-index">38</td>
+<td id="LC38" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L39" class="td-index">39</td>
+<td id="LC39" class="td-code">
+<span class="tab">
+<span class="comment line">#   Price monitoring settings for the market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L40" class="td-index">40</td>
+<td id="LC40" class="td-code">
+<span class="tab">
+<span class="meta">priceMonitoringSettings</span>: <a class="support type" href="pricemonitoringsettings.doc.html">PriceMonitoringSettings</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L41" class="td-index">41</td>
+<td id="LC41" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L42" class="td-index">42</td>
+<td id="LC42" class="td-code">
+<span class="tab">
+<span class="comment line">#   Liquidity monitoring parameters for the market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L43" class="td-index">43</td>
+<td id="LC43" class="td-code">
+<span class="tab">
+<span class="meta">liquidityMonitoringParameters</span>: <a class="support type" href="liquiditymonitoringparameters.doc.html">LiquidityMonitoringParameters</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L44" class="td-index">44</td>
+<td id="LC44" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L45" class="td-index">45</td>
+<td id="LC45" class="td-code">
+<span class="tab">
+<span class="comment line">#   Current mode of execution of the market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L46" class="td-index">46</td>
+<td id="LC46" class="td-code">
+<span class="tab">
+<span class="meta">tradingMode</span>: <a class="support type" href="markettradingmode.doc.html">MarketTradingMode</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L47" class="td-index">47</td>
+<td id="LC47" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L48" class="td-index">48</td>
+<td id="LC48" class="td-code">
+<span class="tab">
+<span class="comment line">#   Current state of the market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L49" class="td-index">49</td>
+<td id="LC49" class="td-code">
+<span class="tab">
+<span class="meta">state</span>: <a class="support type" href="marketstate.doc.html">MarketState</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L50" class="td-index">50</td>
+<td id="LC50" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L51" class="td-index">51</td>
+<td id="LC51" class="td-code">
+<span class="tab">
+<span class="comment line">#   The proposal which initiated this market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L52" class="td-index">52</td>
+<td id="LC52" class="td-code">
+<span class="tab">
+<span class="meta">proposal</span>: <a class="support type" href="proposal.doc.html">Proposal</a> </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L53" class="td-index">53</td>
+<td id="LC53" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L54" class="td-index">54</td>
+<td id="LC54" class="td-code">
+<span class="tab">
+<span class="comment line">#   Orders on a market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L55" class="td-index">55</td>
+<td id="LC55" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L56" class="td-index">56</td>
+<td id="LC56" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L57" class="td-index">57</td>
+<td id="LC57" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>skip</strong>: Pagination skip</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L58" class="td-index">58</td>
+<td id="LC58" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>first</strong>: Pagination first element</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L59" class="td-index">59</td>
+<td id="LC59" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>last</strong>: Pagination last element</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L60" class="td-index">60</td>
+<td id="LC60" class="td-code">
+<span class="tab">
+<span class="meta">orders</span>(<span class="meta">skip</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): [<a class="support type" href="order.doc.html">Order</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L61" class="td-index">61</td>
+<td id="LC61" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L62" class="td-index">62</td>
+<td id="LC62" class="td-code">
+<span class="tab">
+<span class="comment line">#   Get account for a party or market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L63" class="td-index">63</td>
+<td id="LC63" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L64" class="td-index">64</td>
+<td id="LC64" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L65" class="td-index">65</td>
+<td id="LC65" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>partyId</strong>: Id of the party to get the margin account for</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L66" class="td-index">66</td>
+<td id="LC66" class="td-code">
+<span class="tab">
+<span class="meta">accounts</span>(<span class="meta">partyId</span>: <a class="support type" href="id.doc.html">ID</a>): [<a class="support type" href="account.doc.html">Account</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L67" class="td-index">67</td>
+<td id="LC67" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L68" class="td-index">68</td>
+<td id="LC68" class="td-code">
+<span class="tab">
+<span class="comment line">#   Trades on a market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L69" class="td-index">69</td>
+<td id="LC69" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L70" class="td-index">70</td>
+<td id="LC70" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L71" class="td-index">71</td>
+<td id="LC71" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>skip</strong>: Pagination skip</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L72" class="td-index">72</td>
+<td id="LC72" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>first</strong>: Pagination first element</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L73" class="td-index">73</td>
+<td id="LC73" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>last</strong>: Pagination last element</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L74" class="td-index">74</td>
+<td id="LC74" class="td-code">
+<span class="tab">
+<span class="meta">trades</span>(<span class="meta">skip</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): [<a class="support type" href="trade.doc.html">Trade</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L75" class="td-index">75</td>
+<td id="LC75" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L76" class="td-index">76</td>
+<td id="LC76" class="td-code">
+<span class="tab">
+<span class="comment line">#   Current depth on the orderbook for this market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L77" class="td-index">77</td>
+<td id="LC77" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L78" class="td-index">78</td>
+<td id="LC78" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L79" class="td-index">79</td>
+<td id="LC79" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>maxDepth</strong>: Maximum market order book depth (returns whole order </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L80" class="td-index">80</td>
+<td id="LC80" class="td-code">
+<span class="tab">
+<span class="comment line">#   book if omitted)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L81" class="td-index">81</td>
+<td id="LC81" class="td-code">
+<span class="tab">
+<span class="meta">depth</span>(<span class="meta">maxDepth</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="marketdepth.doc.html">MarketDepth</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L82" class="td-index">82</td>
+<td id="LC82" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L83" class="td-index">83</td>
+<td id="LC83" class="td-code">
+<span class="tab">
+<span class="comment line">#   Candles on a market, for the 'last' n candles, at 'interval' seconds as </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L84" class="td-index">84</td>
+<td id="LC84" class="td-code">
+<span class="tab">
+<span class="comment line">#   specified by params</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L85" class="td-index">85</td>
+<td id="LC85" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L86" class="td-index">86</td>
+<td id="LC86" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L87" class="td-index">87</td>
+<td id="LC87" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>since</strong>: RFC3339Nano encoded time from when to get candles</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L88" class="td-index">88</td>
+<td id="LC88" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>interval</strong>: Interval of the candles</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L89" class="td-index">89</td>
+<td id="LC89" class="td-code">
+<span class="tab">
+<span class="meta">candles</span>(<span class="meta">since</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">interval</span>: <a class="support type" href="interval.doc.html">Interval</a>!): [<a class="support type" href="candle.doc.html">Candle</a>] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L90" class="td-index">90</td>
+<td id="LC90" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L91" class="td-index">91</td>
+<td id="LC91" class="td-code">
+<span class="tab">
+<span class="comment line">#   marketData for the given market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L92" class="td-index">92</td>
+<td id="LC92" class="td-code">
+<span class="tab">
+<span class="meta">data</span>: <a class="support type" href="marketdata.doc.html">MarketData</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L93" class="td-index">93</td>
+<td id="LC93" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L94" class="td-index">94</td>
+<td id="LC94" class="td-code">
+<span class="tab">
+<span class="comment line">#   The list of the liquidity provision commitment for this market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L95" class="td-index">95</td>
+<td id="LC95" class="td-code">
+<span class="tab">
+<span class="comment line"># </span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L96" class="td-index">96</td>
+<td id="LC96" class="td-code">
+<span class="tab">
+<span class="comment line"># Arguments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L97" class="td-index">97</td>
+<td id="LC97" class="td-code">
+<span class="tab">
+<span class="comment line">#   <strong>party</strong>: An optional party id</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L98" class="td-index">98</td>
+<td id="LC98" class="td-code">
+<span class="tab">
+<span class="meta">liquidityProvisions</span>(<span class="meta">party</span>: <a class="support type" href="string.doc.html">String</a>): [<a class="support type" href="liquidityprovision.doc.html">LiquidityProvision</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L99" class="td-index">99</td>
+<td id="LC99" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L100" class="td-index">100</td>
+<td id="LC100" class="td-code">
+<span class="tab">
+<span class="comment line">#   timestamps for state changes in the market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L101" class="td-index">101</td>
+<td id="LC101" class="td-code">
+<span class="tab">
+<span class="meta">marketTimestamps</span>: <a class="support type" href="markettimestamps.doc.html">MarketTimestamps</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L102" class="td-index">102</td>
+<td id="LC102" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L103" class="td-index">103</td>
+<td id="LC103" class="td-code">}</td>
+</tr>
+</tbody>
+</table>
+</code>
               </div>
           </section>
           <section>
@@ -980,17 +1727,62 @@
                       </a>
                       Required by
                   </h2>
-                  <ul class="require-by"><li><a href="account.doc.html" title="Account - An account record">Account<em>An account record</em></a><li><li><a href="event.doc.html" title="Event - union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind">Event<em>union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind</em></a><li><li><a href="liquidityprovision.doc.html" title="LiquidityProvision - The command to be sent to the chain for a liquidity provision submission">LiquidityProvision<em>The command to be sent to the chain for a liquidity provision submission</em></a><li><li><a href="marginlevels.doc.html" title="MarginLevels - Margins for a given a trader">MarginLevels<em>Margins for a given a trader</em></a><li><li><a href="marketdata.doc.html" title="MarketData - Live data of a Market">MarketData<em>Live data of a Market</em></a><li><li><a href="marketdepth.doc.html" title="MarketDepth - Market Depth is a measure of the number of open buy and sell orders for a security or currency at different prices.
+                  <ul class="require-by">
+<li>
+<a href="account.doc.html" title="Account - An account record">Account<em>An account record</em>
+</a>
+<li>
+<li>
+<a href="event.doc.html" title="Event - union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind">Event<em>union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind</em>
+</a>
+<li>
+<li>
+<a href="liquidityprovision.doc.html" title="LiquidityProvision - The command to be sent to the chain for a liquidity provision submission">LiquidityProvision<em>The command to be sent to the chain for a liquidity provision submission</em>
+</a>
+<li>
+<li>
+<a href="marginlevels.doc.html" title="MarginLevels - Margins for a given a trader">MarginLevels<em>Margins for a given a trader</em>
+</a>
+<li>
+<li>
+<a href="marketdata.doc.html" title="MarketData - Live data of a Market">MarketData<em>Live data of a Market</em>
+</a>
+<li>
+<li>
+<a href="marketdepth.doc.html" title="MarketDepth - Market Depth is a measure of the number of open buy and sell orders for a security or currency at different prices.
 The depth of market measure provides an indication of the liquidity and depth for the instrument.">MarketDepth<em>Market Depth is a measure of the number of open buy and sell orders for a security or currency at different prices.
-The depth of market measure provides an indication of the liquidity and depth for the instrument.</em></a><li><li><a href="marketdepthupdate.doc.html" title="MarketDepthUpdate - Market Depth Update is a delta to the current market depth which can be used to update the
+The depth of market measure provides an indication of the liquidity and depth for the instrument.</em>
+</a>
+<li>
+<li>
+<a href="marketdepthupdate.doc.html" title="MarketDepthUpdate - Market Depth Update is a delta to the current market depth which can be used to update the
 market depth structure to keep it correct">MarketDepthUpdate<em>Market Depth Update is a delta to the current market depth which can be used to update the
-market depth structure to keep it correct</em></a><li><li><a href="order.doc.html" title="Order - An order in Vega, if active it will be on the OrderBook for the market">Order<em>An order in Vega, if active it will be on the OrderBook for the market</em></a><li><li><a href="position.doc.html" title="Position - An individual trader at any point in time is considered net long or net short. This refers to their Open Volume,
+market depth structure to keep it correct</em>
+</a>
+<li>
+<li>
+<a href="order.doc.html" title="Order - An order in Vega, if active it will be on the OrderBook for the market">Order<em>An order in Vega, if active it will be on the OrderBook for the market</em>
+</a>
+<li>
+<li>
+<a href="position.doc.html" title="Position - An individual trader at any point in time is considered net long or net short. This refers to their Open Volume,
 calculated using FIFO. This volume is signed as either negative for LONG positions and positive for SHORT positions. A
 single trade may end up &quot;splitting&quot; with some of its volume matched into closed volume and some of its volume
 remaining as open volume. This is why we don't refer to positions being comprised of trades, rather of volume.">Position<em>An individual trader at any point in time is considered net long or net short. This refers to their Open Volume,
 calculated using FIFO. This volume is signed as either negative for LONG positions and positive for SHORT positions. A
 single trade may end up "splitting" with some of its volume matched into closed volume and some of its volume
-remaining as open volume. This is why we don't refer to positions being comprised of trades, rather of volume.</em></a><li><li><a href="query.doc.html" title="Query - Queries allow a caller to read data and filter data via GraphQL.">Query<em>Queries allow a caller to read data and filter data via GraphQL.</em></a><li><li><a href="trade.doc.html" title="Trade - A trade on Vega, the result of two orders being 'matched' in the market">Trade<em>A trade on Vega, the result of two orders being 'matched' in the market</em></a><li></ul>
+remaining as open volume. This is why we don't refer to positions being comprised of trades, rather of volume.</em>
+</a>
+<li>
+<li>
+<a href="query.doc.html" title="Query - Queries allow a caller to read data and filter data via GraphQL.">Query<em>Queries allow a caller to read data and filter data via GraphQL.</em>
+</a>
+<li>
+<li>
+<a href="trade.doc.html" title="Trade - A trade on Vega, the result of two orders being 'matched' in the market">Trade<em>A trade on Vega, the result of two orders being 'matched' in the market</em>
+</a>
+<li>
+</ul>
               </div>
           </section>
           <footer>
@@ -1001,7 +1793,10 @@ remaining as open volume. This is why we don't refer to positions being comprise
           </div>
           </footer>
 </main>
-    <script src="./scripts/focus-active.js"></script>
-    <script src="./scripts/filter-types.js"></script>
-    <script src="./scripts/toggle-navigation.js"></script>
+    <script src="./scripts/focus-active.js">
+</script>
+    <script src="./scripts/filter-types.js">
+</script>
+    <script src="./scripts/toggle-navigation.js">
+</script>
 </body>

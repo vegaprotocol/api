@@ -8,7 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <title>Asset</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="./assets/code.css" />
+<script src="./assets/line-link.js">
+</script>
+<link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
     <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
@@ -16,7 +20,9 @@
             <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
                 <i class="material-icons">close</i>
             </button>
-                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+                <h3 class="slds-text-heading--medium">
+<a href="./">GraphQL Schema</a>
+</h3>
             <div class="slds-p-top--small">
                 <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
             </div>
@@ -944,7 +950,8 @@
             </div>
         </div>
     </nav>
-    <main><section class="title slds-theme--inverse">
+    <main>
+<section class="title slds-theme--inverse">
               <div class="container slds-grid">
                   <div>
                   <button class="slds-button js-toggle-navigation less-than-medium">
@@ -957,7 +964,8 @@
               <div class="container">
                   <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
                   <h1 class="slds-text-heading--large">Asset</h1>
-                  <div class="slds-text-body--regular"><p>Represents an asset in vega</p>
+                  <div class="slds-text-body--regular">
+<p>Represents an asset in vega</p>
 </div>
               </div>
           </section>
@@ -969,7 +977,166 @@
                       </a>
                       GraphQL Schema definition
                   </h2>
-                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">Asset</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   The id of the asset</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   The full name of the asset (e.g: Great British Pound)</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   The symbol of the asset (e.g: GBP)</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">symbol</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   The total supply of the market</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">totalSupply</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code"><span class="tab"><span class="comment line">#   The precision of the asset</span></span></td></tr><tr class="row"><td id="L16" class="td-index">16</td><td id="LC16" class="td-code"><span class="tab"><span class="meta">decimals</span>: <a class="support type" href="int.doc.html">Int</a>! </span></td></tr><tr class="row"><td id="L17" class="td-index">17</td><td id="LC17" class="td-code"></td></tr><tr class="row"><td id="L18" class="td-index">18</td><td id="LC18" class="td-code"><span class="tab"><span class="comment line">#   The origin source of the asset (e.g: an erc20 asset)</span></span></td></tr><tr class="row"><td id="L19" class="td-index">19</td><td id="LC19" class="td-code"><span class="tab"><span class="meta">source</span>: <a class="support type" href="assetsource.doc.html">AssetSource</a>! </span></td></tr><tr class="row"><td id="L20" class="td-index">20</td><td id="LC20" class="td-code"></td></tr><tr class="row"><td id="L21" class="td-index">21</td><td id="LC21" class="td-code"><span class="tab"><span class="comment line">#   The infrastructure fee account for this asset</span></span></td></tr><tr class="row"><td id="L22" class="td-index">22</td><td id="LC22" class="td-code"><span class="tab"><span class="meta">infrastructureFeeAccount</span>: <a class="support type" href="account.doc.html">Account</a>! </span></td></tr><tr class="row"><td id="L23" class="td-index">23</td><td id="LC23" class="td-code"></td></tr><tr class="row"><td id="L24" class="td-index">24</td><td id="LC24" class="td-code">}</td></tr></tbody></table></code>
+                  <code class="highlight">
+<table class="code">
+<tbody>
+<tr class="row">
+<td id="L1" class="td-index">1</td>
+<td id="LC1" class="td-code">
+<span class="keyword operator ts">type</span> <span class="identifier">Asset</span> {</td>
+</tr>
+<tr class="row">
+<td id="L2" class="td-index">2</td>
+<td id="LC2" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L3" class="td-index">3</td>
+<td id="LC3" class="td-code">
+<span class="tab">
+<span class="comment line">#   The id of the asset</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L4" class="td-index">4</td>
+<td id="LC4" class="td-code">
+<span class="tab">
+<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L5" class="td-index">5</td>
+<td id="LC5" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L6" class="td-index">6</td>
+<td id="LC6" class="td-code">
+<span class="tab">
+<span class="comment line">#   The full name of the asset (e.g: Great British Pound)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L7" class="td-index">7</td>
+<td id="LC7" class="td-code">
+<span class="tab">
+<span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L8" class="td-index">8</td>
+<td id="LC8" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L9" class="td-index">9</td>
+<td id="LC9" class="td-code">
+<span class="tab">
+<span class="comment line">#   The symbol of the asset (e.g: GBP)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L10" class="td-index">10</td>
+<td id="LC10" class="td-code">
+<span class="tab">
+<span class="meta">symbol</span>: <a class="support type" href="string.doc.html">String</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L11" class="td-index">11</td>
+<td id="LC11" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L12" class="td-index">12</td>
+<td id="LC12" class="td-code">
+<span class="tab">
+<span class="comment line">#   The total supply of the market</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L13" class="td-index">13</td>
+<td id="LC13" class="td-code">
+<span class="tab">
+<span class="meta">totalSupply</span>: <a class="support type" href="string.doc.html">String</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L14" class="td-index">14</td>
+<td id="LC14" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L15" class="td-index">15</td>
+<td id="LC15" class="td-code">
+<span class="tab">
+<span class="comment line">#   The precision of the asset</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L16" class="td-index">16</td>
+<td id="LC16" class="td-code">
+<span class="tab">
+<span class="meta">decimals</span>: <a class="support type" href="int.doc.html">Int</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L17" class="td-index">17</td>
+<td id="LC17" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L18" class="td-index">18</td>
+<td id="LC18" class="td-code">
+<span class="tab">
+<span class="comment line">#   The origin source of the asset (e.g: an erc20 asset)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L19" class="td-index">19</td>
+<td id="LC19" class="td-code">
+<span class="tab">
+<span class="meta">source</span>: <a class="support type" href="assetsource.doc.html">AssetSource</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L20" class="td-index">20</td>
+<td id="LC20" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L21" class="td-index">21</td>
+<td id="LC21" class="td-code">
+<span class="tab">
+<span class="comment line">#   The infrastructure fee account for this asset</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L22" class="td-index">22</td>
+<td id="LC22" class="td-code">
+<span class="tab">
+<span class="meta">infrastructureFeeAccount</span>: <a class="support type" href="account.doc.html">Account</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L23" class="td-index">23</td>
+<td id="LC23" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L24" class="td-index">24</td>
+<td id="LC24" class="td-code">}</td>
+</tr>
+</tbody>
+</table>
+</code>
               </div>
           </section>
           <section>
@@ -980,7 +1147,41 @@
                       </a>
                       Required by
                   </h2>
-                  <ul class="require-by"><li><a href="account.doc.html" title="Account - An account record">Account<em>An account record</em></a><li><li><a href="deposit.doc.html" title="Deposit - The details of a deposit processed by vega">Deposit<em>The details of a deposit processed by vega</em></a><li><li><a href="event.doc.html" title="Event - union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind">Event<em>union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind</em></a><li><li><a href="future.doc.html" title="Future - A Future product">Future<em>A Future product</em></a><li><li><a href="futureproduct.doc.html" title="FutureProduct - ">FutureProduct<em></em></a><li><li><a href="marginlevels.doc.html" title="MarginLevels - Margins for a given a trader">MarginLevels<em>Margins for a given a trader</em></a><li><li><a href="query.doc.html" title="Query - Queries allow a caller to read data and filter data via GraphQL.">Query<em>Queries allow a caller to read data and filter data via GraphQL.</em></a><li><li><a href="withdrawal.doc.html" title="Withdrawal - The details of a withdrawal processed by vega">Withdrawal<em>The details of a withdrawal processed by vega</em></a><li></ul>
+                  <ul class="require-by">
+<li>
+<a href="account.doc.html" title="Account - An account record">Account<em>An account record</em>
+</a>
+<li>
+<li>
+<a href="deposit.doc.html" title="Deposit - The details of a deposit processed by vega">Deposit<em>The details of a deposit processed by vega</em>
+</a>
+<li>
+<li>
+<a href="event.doc.html" title="Event - union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind">Event<em>union type for wrapped events in stream PROPOSAL is mapped to governance data, something to keep in mind</em>
+</a>
+<li>
+<li>
+<a href="future.doc.html" title="Future - A Future product">Future<em>A Future product</em>
+</a>
+<li>
+<li>
+<a href="futureproduct.doc.html" title="FutureProduct - ">FutureProduct<em>
+</em>
+</a>
+<li>
+<li>
+<a href="marginlevels.doc.html" title="MarginLevels - Margins for a given a trader">MarginLevels<em>Margins for a given a trader</em>
+</a>
+<li>
+<li>
+<a href="query.doc.html" title="Query - Queries allow a caller to read data and filter data via GraphQL.">Query<em>Queries allow a caller to read data and filter data via GraphQL.</em>
+</a>
+<li>
+<li>
+<a href="withdrawal.doc.html" title="Withdrawal - The details of a withdrawal processed by vega">Withdrawal<em>The details of a withdrawal processed by vega</em>
+</a>
+<li>
+</ul>
               </div>
           </section>
           <footer>
@@ -991,7 +1192,10 @@
           </div>
           </footer>
 </main>
-    <script src="./scripts/focus-active.js"></script>
-    <script src="./scripts/filter-types.js"></script>
-    <script src="./scripts/toggle-navigation.js"></script>
+    <script src="./scripts/focus-active.js">
+</script>
+    <script src="./scripts/filter-types.js">
+</script>
+    <script src="./scripts/toggle-navigation.js">
+</script>
 </body>
