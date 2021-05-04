@@ -39,10 +39,10 @@ class TradingServiceStub(object):
                 request_serializer=api_dot_trading__pb2.SubmitTransactionRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.SubmitTransactionResponse.FromString,
                 )
-        self.PrepareProposal = channel.unary_unary(
-                '/api.v1.TradingService/PrepareProposal',
-                request_serializer=api_dot_trading__pb2.PrepareProposalRequest.SerializeToString,
-                response_deserializer=api_dot_trading__pb2.PrepareProposalResponse.FromString,
+        self.PrepareProposalSubmission = channel.unary_unary(
+                '/api.v1.TradingService/PrepareProposalSubmission',
+                request_serializer=api_dot_trading__pb2.PrepareProposalSubmissionRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.PrepareProposalSubmissionResponse.FromString,
                 )
         self.PrepareVoteSubmission = channel.unary_unary(
                 '/api.v1.TradingService/PrepareVoteSubmission',
@@ -99,7 +99,7 @@ class TradingServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PrepareProposal(self, request, context):
+    def PrepareProposalSubmission(self, request, context):
         """Prepare a governance proposal
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -155,10 +155,10 @@ def add_TradingServiceServicer_to_server(servicer, server):
                     request_deserializer=api_dot_trading__pb2.SubmitTransactionRequest.FromString,
                     response_serializer=api_dot_trading__pb2.SubmitTransactionResponse.SerializeToString,
             ),
-            'PrepareProposal': grpc.unary_unary_rpc_method_handler(
-                    servicer.PrepareProposal,
-                    request_deserializer=api_dot_trading__pb2.PrepareProposalRequest.FromString,
-                    response_serializer=api_dot_trading__pb2.PrepareProposalResponse.SerializeToString,
+            'PrepareProposalSubmission': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareProposalSubmission,
+                    request_deserializer=api_dot_trading__pb2.PrepareProposalSubmissionRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.PrepareProposalSubmissionResponse.SerializeToString,
             ),
             'PrepareVoteSubmission': grpc.unary_unary_rpc_method_handler(
                     servicer.PrepareVoteSubmission,
@@ -271,7 +271,7 @@ class TradingService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def PrepareProposal(request,
+    def PrepareProposalSubmission(request,
             target,
             options=(),
             channel_credentials=None,
@@ -281,9 +281,9 @@ class TradingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareProposal',
-            api_dot_trading__pb2.PrepareProposalRequest.SerializeToString,
-            api_dot_trading__pb2.PrepareProposalResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/PrepareProposalSubmission',
+            api_dot_trading__pb2.PrepareProposalSubmissionRequest.SerializeToString,
+            api_dot_trading__pb2.PrepareProposalSubmissionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

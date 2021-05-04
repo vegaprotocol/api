@@ -55,7 +55,7 @@ struct TableStruct_governance_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -105,9 +105,6 @@ extern UpdateNetworkParameterDefaultTypeInternal _UpdateNetworkParameter_default
 class Vote;
 class VoteDefaultTypeInternal;
 extern VoteDefaultTypeInternal _Vote_default_instance_;
-class VoteSubmission;
-class VoteSubmissionDefaultTypeInternal;
-extern VoteSubmissionDefaultTypeInternal _VoteSubmission_default_instance_;
 }  // namespace vega
 PROTOBUF_NAMESPACE_OPEN
 template<> ::vega::FutureProduct* Arena::CreateMaybeMessage<::vega::FutureProduct>(Arena*);
@@ -124,7 +121,6 @@ template<> ::vega::ProposalTerms* Arena::CreateMaybeMessage<::vega::ProposalTerm
 template<> ::vega::UpdateMarket* Arena::CreateMaybeMessage<::vega::UpdateMarket>(Arena*);
 template<> ::vega::UpdateNetworkParameter* Arena::CreateMaybeMessage<::vega::UpdateNetworkParameter>(Arena*);
 template<> ::vega::Vote* Arena::CreateMaybeMessage<::vega::Vote>(Arena*);
-template<> ::vega::VoteSubmission* Arena::CreateMaybeMessage<::vega::VoteSubmission>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace vega {
 
@@ -2847,160 +2843,6 @@ class Vote PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_governance_token_weight_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
   ::PROTOBUF_NAMESPACE_ID::uint64 total_governance_token_balance_;
-  int value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_governance_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VoteSubmission PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.VoteSubmission) */ {
- public:
-  inline VoteSubmission() : VoteSubmission(nullptr) {}
-  virtual ~VoteSubmission();
-
-  VoteSubmission(const VoteSubmission& from);
-  VoteSubmission(VoteSubmission&& from) noexcept
-    : VoteSubmission() {
-    *this = ::std::move(from);
-  }
-
-  inline VoteSubmission& operator=(const VoteSubmission& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VoteSubmission& operator=(VoteSubmission&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VoteSubmission& default_instance();
-
-  static inline const VoteSubmission* internal_default_instance() {
-    return reinterpret_cast<const VoteSubmission*>(
-               &_VoteSubmission_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  friend void swap(VoteSubmission& a, VoteSubmission& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VoteSubmission* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VoteSubmission* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VoteSubmission* New() const final {
-    return CreateMaybeMessage<VoteSubmission>(nullptr);
-  }
-
-  VoteSubmission* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VoteSubmission>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VoteSubmission& from);
-  void MergeFrom(const VoteSubmission& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VoteSubmission* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "vega.VoteSubmission";
-  }
-  protected:
-  explicit VoteSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_governance_2eproto);
-    return ::descriptor_table_governance_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kProposalIdFieldNumber = 1,
-    kValueFieldNumber = 2,
-  };
-  // string proposal_id = 1 [json_name = "proposalId", (.validator.field) = {
-  void clear_proposal_id();
-  const std::string& proposal_id() const;
-  void set_proposal_id(const std::string& value);
-  void set_proposal_id(std::string&& value);
-  void set_proposal_id(const char* value);
-  void set_proposal_id(const char* value, size_t size);
-  std::string* mutable_proposal_id();
-  std::string* release_proposal_id();
-  void set_allocated_proposal_id(std::string* proposal_id);
-  private:
-  const std::string& _internal_proposal_id() const;
-  void _internal_set_proposal_id(const std::string& value);
-  std::string* _internal_mutable_proposal_id();
-  public:
-
-  // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
-  void clear_value();
-  ::vega::Vote_Value value() const;
-  void set_value(::vega::Vote_Value value);
-  private:
-  ::vega::Vote_Value _internal_value() const;
-  void _internal_set_value(::vega::Vote_Value value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:vega.VoteSubmission)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr proposal_id_;
   int value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
@@ -5897,96 +5739,9 @@ inline void Vote::set_allocated_total_governance_token_weight(std::string* total
   // @@protoc_insertion_point(field_set_allocated:vega.Vote.total_governance_token_weight)
 }
 
-// -------------------------------------------------------------------
-
-// VoteSubmission
-
-// string proposal_id = 1 [json_name = "proposalId", (.validator.field) = {
-inline void VoteSubmission::clear_proposal_id() {
-  proposal_id_.ClearToEmpty();
-}
-inline const std::string& VoteSubmission::proposal_id() const {
-  // @@protoc_insertion_point(field_get:vega.VoteSubmission.proposal_id)
-  return _internal_proposal_id();
-}
-inline void VoteSubmission::set_proposal_id(const std::string& value) {
-  _internal_set_proposal_id(value);
-  // @@protoc_insertion_point(field_set:vega.VoteSubmission.proposal_id)
-}
-inline std::string* VoteSubmission::mutable_proposal_id() {
-  // @@protoc_insertion_point(field_mutable:vega.VoteSubmission.proposal_id)
-  return _internal_mutable_proposal_id();
-}
-inline const std::string& VoteSubmission::_internal_proposal_id() const {
-  return proposal_id_.Get();
-}
-inline void VoteSubmission::_internal_set_proposal_id(const std::string& value) {
-
-  proposal_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void VoteSubmission::set_proposal_id(std::string&& value) {
-
-  proposal_id_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.VoteSubmission.proposal_id)
-}
-inline void VoteSubmission::set_proposal_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  proposal_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.VoteSubmission.proposal_id)
-}
-inline void VoteSubmission::set_proposal_id(const char* value,
-    size_t size) {
-
-  proposal_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.VoteSubmission.proposal_id)
-}
-inline std::string* VoteSubmission::_internal_mutable_proposal_id() {
-
-  return proposal_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* VoteSubmission::release_proposal_id() {
-  // @@protoc_insertion_point(field_release:vega.VoteSubmission.proposal_id)
-  return proposal_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void VoteSubmission::set_allocated_proposal_id(std::string* proposal_id) {
-  if (proposal_id != nullptr) {
-
-  } else {
-
-  }
-  proposal_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), proposal_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.VoteSubmission.proposal_id)
-}
-
-// .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
-inline void VoteSubmission::clear_value() {
-  value_ = 0;
-}
-inline ::vega::Vote_Value VoteSubmission::_internal_value() const {
-  return static_cast< ::vega::Vote_Value >(value_);
-}
-inline ::vega::Vote_Value VoteSubmission::value() const {
-  // @@protoc_insertion_point(field_get:vega.VoteSubmission.value)
-  return _internal_value();
-}
-inline void VoteSubmission::_internal_set_value(::vega::Vote_Value value) {
-
-  value_ = value;
-}
-inline void VoteSubmission::set_value(::vega::Vote_Value value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:vega.VoteSubmission.value)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

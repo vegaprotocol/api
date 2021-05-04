@@ -95,10 +95,6 @@ class VoteDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Vote> _instance;
 } _Vote_default_instance_;
-class VoteSubmissionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VoteSubmission> _instance;
-} _VoteSubmission_default_instance_;
 }  // namespace vega
 static void InitDefaultsscc_info_FutureProduct_governance_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -306,20 +302,7 @@ static void InitDefaultsscc_info_Vote_governance_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vote_governance_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Vote_governance_2eproto}, {}};
 
-static void InitDefaultsscc_info_VoteSubmission_governance_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_VoteSubmission_default_instance_;
-    new (ptr) ::vega::VoteSubmission();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_governance_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VoteSubmission_governance_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_governance_2eproto[15];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_governance_2eproto[14];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_governance_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_governance_2eproto = nullptr;
 
@@ -457,13 +440,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_governance_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::Vote, timestamp_),
   PROTOBUF_FIELD_OFFSET(::vega::Vote, total_governance_token_balance_),
   PROTOBUF_FIELD_OFFSET(::vega::Vote, total_governance_token_weight_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::VoteSubmission, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::VoteSubmission, proposal_id_),
-  PROTOBUF_FIELD_OFFSET(::vega::VoteSubmission, value_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::FutureProduct)},
@@ -480,7 +456,6 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 100, -1, sizeof(::vega::GovernanceData)},
   { 110, -1, sizeof(::vega::Proposal)},
   { 122, -1, sizeof(::vega::Vote)},
-  { 133, -1, sizeof(::vega::VoteSubmission)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -498,7 +473,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_GovernanceData_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Proposal_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_Vote_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_VoteSubmission_default_instance_),
 };
 
 const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -586,46 +560,44 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "GovernanceTokenBalance\022A\n\035total_governan"
   "ce_token_weight\030\006 \001(\tR\032totalGovernanceTo"
   "kenWeight\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020"
-  "\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002\"j\n\016VoteSu"
-  "bmission\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\np"
-  "roposalId\022/\n\005value\030\002 \001(\0162\020.vega.Vote.Val"
-  "ueB\007\342\337\037\003\210\001\001R\005value*\350\n\n\rProposalError\022\036\n\032"
-  "PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL"
-  "_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL"
-  "_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL"
-  "_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL"
-  "_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL"
-  "_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL"
-  "_ERROR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031"
-  "PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_"
-  "ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_"
-  "ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t"
-  "\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_IS_P"
-  "ASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MOD"
-  "E\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADIN"
-  "G_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATI"
-  "ON_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BU"
-  "ILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MI"
-  "SSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOS"
-  "AL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERR"
-  "OR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL"
-  "_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_"
-  "ERROR_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n"
-  ".PROPOSAL_ERROR_NETWORK_PARAMETER_INVALI"
-  "D_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARA"
-  "METER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ER"
-  "ROR_OPENING_AUCTION_DURATION_TOO_SMALL\020\026"
-  "\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_DURAT"
-  "ION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET"
-  "_MISSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPO"
-  "SAL_ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031"
-  "\022)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRODUC"
-  "T\020\032\022,\n(PROPOSAL_ERROR_MISSING_COMMITMENT"
-  "_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_"
-  "AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE"
-  "\020\035\022)\n%PROPOSAL_ERROR_INVALID_RISK_PARAME"
-  "TER\020\036B7\n\024io.vegaprotocol.vegaZ\037code.vega"
-  "protocol.io/vega/protob\006proto3"
+  "\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\350\n\n\rPropo"
+  "salError\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000"
+  "\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001"
+  "\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002"
+  "\022&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_SOON\020\003"
+  "\022&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_LATE\020\004"
+  "\022&\n\"PROPOSAL_ERROR_INSUFFICIENT_TOKENS\020\005"
+  "\022.\n*PROPOSAL_ERROR_INVALID_INSTRUMENT_SE"
+  "CURITY\020\006\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022"
+  "&\n\"PROPOSAL_ERROR_UNSUPPORTED_PRODUCT\020\010\022"
+  "3\n/PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT"
+  "_TIMESTAMP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_M"
+  "ATURITY_IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO"
+  "_TRADING_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPP"
+  "ORTED_TRADING_MODE\020\014\022)\n%PROPOSAL_ERROR_N"
+  "ODE_VALIDATION_FAILED\020\r\022.\n*PROPOSAL_ERRO"
+  "R_MISSING_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPO"
+  "SAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS"
+  "\020\017\022 \n\034PROPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&"
+  "PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021"
+  "\022%\n!PROPOSAL_ERROR_NO_RISK_PARAMETERS\020\022\022"
+  "0\n,PROPOSAL_ERROR_NETWORK_PARAMETER_INVA"
+  "LID_KEY\020\023\0222\n.PROPOSAL_ERROR_NETWORK_PARA"
+  "METER_INVALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_"
+  "NETWORK_PARAMETER_VALIDATION_FAILED\020\025\0225\n"
+  "1PROPOSAL_ERROR_OPENING_AUCTION_DURATION"
+  "_TOO_SMALL\020\026\0225\n1PROPOSAL_ERROR_OPENING_A"
+  "UCTION_DURATION_TOO_LARGE\020\027\0226\n2PROPOSAL_"
+  "ERROR_MARKET_MISSING_LIQUIDITY_COMMITMEN"
+  "T\020\030\022/\n+PROPOSAL_ERROR_COULD_NOT_INSTANTI"
+  "ATE_MARKET\020\031\022)\n%PROPOSAL_ERROR_INVALID_F"
+  "UTURE_PRODUCT\020\032\022,\n(PROPOSAL_ERROR_MISSIN"
+  "G_COMMITMENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_"
+  "INVALID_FEE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_I"
+  "NVALID_SHAPE\020\035\022)\n%PROPOSAL_ERROR_INVALID"
+  "_RISK_PARAMETER\020\036B7\n\024io.vegaprotocol.veg"
+  "aZ\037code.vegaprotocol.io/vega/protob\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_governance_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
@@ -634,7 +606,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_oracles_2fv1_2foracle_5fspec_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_governance_2eproto_sccs[15] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_governance_2eproto_sccs[14] = {
   &scc_info_FutureProduct_governance_2eproto.base,
   &scc_info_GovernanceData_governance_2eproto.base,
   &scc_info_GovernanceData_NoPartyEntry_DoNotUse_governance_2eproto.base,
@@ -649,14 +621,13 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gov
   &scc_info_UpdateMarket_governance_2eproto.base,
   &scc_info_UpdateNetworkParameter_governance_2eproto.base,
   &scc_info_Vote_governance_2eproto.base,
-  &scc_info_VoteSubmission_governance_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_governance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_governance_2eproto = {
-  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4950,
-  &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 15, 5,
+  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4842,
+  &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 14, 5,
   schemas, file_default_instances, TableStruct_governance_2eproto::offsets,
-  file_level_metadata_governance_2eproto, 15, file_level_enum_descriptors_governance_2eproto, file_level_service_descriptors_governance_2eproto,
+  file_level_metadata_governance_2eproto, 14, file_level_enum_descriptors_governance_2eproto, file_level_service_descriptors_governance_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -5098,240 +5069,6 @@ void Vote::InternalSwap(Vote* other) {
 }
 
 
-// ===================================================================
-
-class VoteSubmission::_Internal {
- public:
-};
-
-VoteSubmission::VoteSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.VoteSubmission)
-}
-VoteSubmission::VoteSubmission(const VoteSubmission& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  proposal_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_proposal_id().empty()) {
-    proposal_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_proposal_id(),
-      GetArena());
-  }
-  value_ = from.value_;
-  // @@protoc_insertion_point(copy_constructor:vega.VoteSubmission)
-}
-
-void VoteSubmission::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VoteSubmission_governance_2eproto.base);
-  proposal_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
-}
-
-VoteSubmission::~VoteSubmission() {
-  // @@protoc_insertion_point(destructor:vega.VoteSubmission)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VoteSubmission::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  proposal_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void VoteSubmission::ArenaDtor(void* object) {
-  VoteSubmission* _this = reinterpret_cast< VoteSubmission* >(object);
-  (void)_this;
-}
-void VoteSubmission::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VoteSubmission::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VoteSubmission& VoteSubmission::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VoteSubmission_governance_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VoteSubmission::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.VoteSubmission)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  proposal_id_.ClearToEmpty();
-  value_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VoteSubmission::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // string proposal_id = 1 [json_name = "proposalId", (.validator.field) = {
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_proposal_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.VoteSubmission.proposal_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_value(static_cast<::vega::Vote_Value>(val));
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VoteSubmission::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.VoteSubmission)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string proposal_id = 1 [json_name = "proposalId", (.validator.field) = {
-  if (this->proposal_id().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_proposal_id().data(), static_cast<int>(this->_internal_proposal_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.VoteSubmission.proposal_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_proposal_id(), target);
-  }
-
-  // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
-  if (this->value() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_value(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.VoteSubmission)
-  return target;
-}
-
-size_t VoteSubmission::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.VoteSubmission)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string proposal_id = 1 [json_name = "proposalId", (.validator.field) = {
-  if (this->proposal_id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_proposal_id());
-  }
-
-  // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
-  if (this->value() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_value());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void VoteSubmission::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.VoteSubmission)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VoteSubmission* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VoteSubmission>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.VoteSubmission)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.VoteSubmission)
-    MergeFrom(*source);
-  }
-}
-
-void VoteSubmission::MergeFrom(const VoteSubmission& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.VoteSubmission)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.proposal_id().size() > 0) {
-    _internal_set_proposal_id(from._internal_proposal_id());
-  }
-  if (from.value() != 0) {
-    _internal_set_value(from._internal_value());
-  }
-}
-
-void VoteSubmission::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.VoteSubmission)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void VoteSubmission::CopyFrom(const VoteSubmission& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.VoteSubmission)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool VoteSubmission::IsInitialized() const {
-  return true;
-}
-
-void VoteSubmission::InternalSwap(VoteSubmission* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  proposal_id_.Swap(&other->proposal_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(value_, other->value_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata VoteSubmission::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace vega
 PROTOBUF_NAMESPACE_OPEN
@@ -5376,9 +5113,6 @@ template<> PROTOBUF_NOINLINE ::vega::Proposal* Arena::CreateMaybeMessage< ::vega
 }
 template<> PROTOBUF_NOINLINE ::vega::Vote* Arena::CreateMaybeMessage< ::vega::Vote >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::Vote >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vega::VoteSubmission* Arena::CreateMaybeMessage< ::vega::VoteSubmission >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::VoteSubmission >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

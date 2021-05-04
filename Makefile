@@ -12,16 +12,14 @@ default:
 preproto:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@rm -rf proto && mkdir proto
-	@mkdir -p proto && find "$(VEGACORE)"/proto -maxdepth 1 -name '*.proto' -exec cp '{}' proto/ ';'
-	@mkdir -p proto/api && find "$(VEGACORE)"/proto/api -maxdepth 1 -name '*.proto' -exec cp '{}' proto/api/ ';'
-	@mkdir -p proto/oracles/v1 && find "$(VEGACORE)"/proto/oracles/v1 -maxdepth 1 -name '*.proto' -exec cp '{}' proto/oracles/v1/ ';'
-	@mkdir -p proto/tm && find "$(VEGACORE)"/proto/tm -maxdepth 1 -name '*.proto' -exec cp '{}' proto/tm/ ';'
+	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm ; do \
+		mkdir -p "$$x" && \
+		java_pkg="$$(echo "$${x//proto/}" | tr / .)" && \
+		find "$(VEGACORE)/$$x" -maxdepth 1 -name '*.proto' -exec cp '{}' "$$x/" ';' && \
+		find "$$x" -maxdepth 1 -name '*.proto' -exec sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega'"$$java_pkg"'";' '{}' ';' || exit 1 ; \
+	done
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
-	@find proto -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega";' # \n// option java_outer_classname = "tbd";\noption java_multiple_files = true;
-	@find proto/api -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.api";'
-	@find proto/oracles/v1 -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.oracles.v1";'
-	@find proto/tm -maxdepth 1 -name '*.proto' | xargs sed --in-place -e '/^package/a\\option java_package = "io.vegaprotocol.vega.tm";'
 	@cp -a "$(VEGACORE)/gateway/rest/grpc-rest-bindings.yml" ./rest/
 
 .PHONY: buf-build

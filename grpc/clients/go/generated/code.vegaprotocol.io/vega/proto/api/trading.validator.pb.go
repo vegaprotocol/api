@@ -11,6 +11,8 @@ import (
 	_ "github.com/mwitkow/go-proto-validators"
 	github_com_mwitkow_go_proto_validators "github.com/mwitkow/go-proto-validators"
 	_ "github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto"
+	_ "github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/commands/v1"
+	_ "github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/events/v1"
 	_ "github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/oracles/v1"
 )
 
@@ -815,24 +817,18 @@ func (this *FeeInfrastructureAccountsResponse) Validate() error {
 	}
 	return nil
 }
-func (this *PrepareProposalRequest) Validate() error {
-	if this.PartyId == "" {
-		return github_com_mwitkow_go_proto_validators.FieldError("PartyId", fmt.Errorf(`value '%v' must not be an empty string`, this.PartyId))
-	}
-	if nil == this.Proposal {
-		return github_com_mwitkow_go_proto_validators.FieldError("Proposal", fmt.Errorf("message must exist"))
-	}
-	if this.Proposal != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Proposal); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("Proposal", err)
+func (this *PrepareProposalSubmissionRequest) Validate() error {
+	if this.Submission != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Submission); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Submission", err)
 		}
 	}
 	return nil
 }
-func (this *PrepareProposalResponse) Validate() error {
-	if this.PendingProposal != nil {
-		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.PendingProposal); err != nil {
-			return github_com_mwitkow_go_proto_validators.FieldError("PendingProposal", err)
+func (this *PrepareProposalSubmissionResponse) Validate() error {
+	if this.Submission != nil {
+		if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(this.Submission); err != nil {
+			return github_com_mwitkow_go_proto_validators.FieldError("Submission", err)
 		}
 	}
 	return nil

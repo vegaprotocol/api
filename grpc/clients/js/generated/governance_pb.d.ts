@@ -502,30 +502,6 @@ export namespace Vote {
   export const Value: ValueMap;
 }
 
-export class VoteSubmission extends jspb.Message {
-  getProposalId(): string;
-  setProposalId(value: string): void;
-
-  getValue(): Vote.ValueMap[keyof Vote.ValueMap];
-  setValue(value: Vote.ValueMap[keyof Vote.ValueMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): VoteSubmission.AsObject;
-  static toObject(includeInstance: boolean, msg: VoteSubmission): VoteSubmission.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: VoteSubmission, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): VoteSubmission;
-  static deserializeBinaryFromReader(message: VoteSubmission, reader: jspb.BinaryReader): VoteSubmission;
-}
-
-export namespace VoteSubmission {
-  export type AsObject = {
-    proposalId: string,
-    value: Vote.ValueMap[keyof Vote.ValueMap],
-  }
-}
-
 export interface ProposalErrorMap {
   PROPOSAL_ERROR_UNSPECIFIED: 0;
   PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON: 1;

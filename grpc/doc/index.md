@@ -64,22 +64,14 @@
     - [LiquidityOrderReference](#vega.LiquidityOrderReference)
     - [LiquidityProviderFeeShare](#vega.LiquidityProviderFeeShare)
     - [LiquidityProvision](#vega.LiquidityProvision)
-    - [LiquidityProvisionSubmission](#vega.LiquidityProvisionSubmission)
     - [MarginLevels](#vega.MarginLevels)
     - [MarketData](#vega.MarketData)
     - [MarketDepth](#vega.MarketDepth)
     - [MarketDepthUpdate](#vega.MarketDepthUpdate)
     - [NetworkParameter](#vega.NetworkParameter)
-    - [NodeRegistration](#vega.NodeRegistration)
-    - [NodeSignature](#vega.NodeSignature)
-    - [NodeVote](#vega.NodeVote)
-    - [OracleDataSubmission](#vega.OracleDataSubmission)
     - [Order](#vega.Order)
-    - [OrderAmendment](#vega.OrderAmendment)
-    - [OrderCancellation](#vega.OrderCancellation)
     - [OrderCancellationConfirmation](#vega.OrderCancellationConfirmation)
     - [OrderConfirmation](#vega.OrderConfirmation)
-    - [OrderSubmission](#vega.OrderSubmission)
     - [Party](#vega.Party)
     - [PeggedOrder](#vega.PeggedOrder)
     - [Position](#vega.Position)
@@ -103,7 +95,6 @@
     - [TransferRequest](#vega.TransferRequest)
     - [TransferResponse](#vega.TransferResponse)
     - [WithdrawExt](#vega.WithdrawExt)
-    - [WithdrawSubmission](#vega.WithdrawSubmission)
     - [Withdrawal](#vega.Withdrawal)
 
     - [AccountType](#vega.AccountType)
@@ -112,8 +103,6 @@
     - [Deposit.Status](#vega.Deposit.Status)
     - [Interval](#vega.Interval)
     - [LiquidityProvision.Status](#vega.LiquidityProvision.Status)
-    - [NodeSignatureKind](#vega.NodeSignatureKind)
-    - [OracleDataSubmission.OracleSource](#vega.OracleDataSubmission.OracleSource)
     - [Order.Status](#vega.Order.Status)
     - [Order.TimeInForce](#vega.Order.TimeInForce)
     - [Order.Type](#vega.Order.Type)
@@ -145,11 +134,23 @@
     - [UpdateMarket](#vega.UpdateMarket)
     - [UpdateNetworkParameter](#vega.UpdateNetworkParameter)
     - [Vote](#vega.Vote)
-    - [VoteSubmission](#vega.VoteSubmission)
 
     - [Proposal.State](#vega.Proposal.State)
     - [ProposalError](#vega.ProposalError)
     - [Vote.Value](#vega.Vote.Value)
+
+- [oracles/v1/oracle_data.proto](#oracles/v1/oracle_data.proto)
+    - [OracleData](#oracles.v1.OracleData)
+    - [Property](#oracles.v1.Property)
+
+- [commands/v1/commands.proto](#commands/v1/commands.proto)
+    - [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission)
+    - [OrderAmendment](#vega.commands.v1.OrderAmendment)
+    - [OrderCancellation](#vega.commands.v1.OrderCancellation)
+    - [OrderSubmission](#vega.commands.v1.OrderSubmission)
+    - [ProposalSubmission](#vega.commands.v1.ProposalSubmission)
+    - [VoteSubmission](#vega.commands.v1.VoteSubmission)
+    - [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission)
 
 - [chain_events.proto](#chain_events.proto)
     - [AddValidator](#vega.AddValidator)
@@ -160,7 +161,6 @@
     - [BuiltinAssetDeposit](#vega.BuiltinAssetDeposit)
     - [BuiltinAssetEvent](#vega.BuiltinAssetEvent)
     - [BuiltinAssetWithdrawal](#vega.BuiltinAssetWithdrawal)
-    - [ChainEvent](#vega.ChainEvent)
     - [ERC20AssetDelist](#vega.ERC20AssetDelist)
     - [ERC20AssetList](#vega.ERC20AssetList)
     - [ERC20Deposit](#vega.ERC20Deposit)
@@ -171,25 +171,29 @@
     - [RemoveValidator](#vega.RemoveValidator)
     - [ValidatorEvent](#vega.ValidatorEvent)
 
-- [oracles/v1/oracle_data.proto](#oracles/v1/oracle_data.proto)
-    - [OracleData](#oracles.v1.OracleData)
-    - [Property](#oracles.v1.Property)
+- [commands/v1/validator_commands.proto](#commands/v1/validator_commands.proto)
+    - [ChainEvent](#vega.commands.v1.ChainEvent)
+    - [NodeRegistration](#vega.commands.v1.NodeRegistration)
+    - [NodeSignature](#vega.commands.v1.NodeSignature)
+    - [NodeVote](#vega.commands.v1.NodeVote)
 
-- [events.proto](#events.proto)
-    - [AuctionEvent](#vega.AuctionEvent)
-    - [BusEvent](#vega.BusEvent)
-    - [LossSocialization](#vega.LossSocialization)
-    - [MarketEvent](#vega.MarketEvent)
-    - [MarketTick](#vega.MarketTick)
-    - [PositionResolution](#vega.PositionResolution)
-    - [SettleDistressed](#vega.SettleDistressed)
-    - [SettlePosition](#vega.SettlePosition)
-    - [TimeUpdate](#vega.TimeUpdate)
-    - [TradeSettlement](#vega.TradeSettlement)
-    - [TransferResponses](#vega.TransferResponses)
-    - [TxErrorEvent](#vega.TxErrorEvent)
+    - [NodeSignatureKind](#vega.commands.v1.NodeSignatureKind)
 
-    - [BusEventType](#vega.BusEventType)
+- [events/v1/events.proto](#events/v1/events.proto)
+    - [AuctionEvent](#vega.events.v1.AuctionEvent)
+    - [BusEvent](#vega.events.v1.BusEvent)
+    - [LossSocialization](#vega.events.v1.LossSocialization)
+    - [MarketEvent](#vega.events.v1.MarketEvent)
+    - [MarketTick](#vega.events.v1.MarketTick)
+    - [PositionResolution](#vega.events.v1.PositionResolution)
+    - [SettleDistressed](#vega.events.v1.SettleDistressed)
+    - [SettlePosition](#vega.events.v1.SettlePosition)
+    - [TimeUpdate](#vega.events.v1.TimeUpdate)
+    - [TradeSettlement](#vega.events.v1.TradeSettlement)
+    - [TransferResponses](#vega.events.v1.TransferResponses)
+    - [TxErrorEvent](#vega.events.v1.TxErrorEvent)
+
+    - [BusEventType](#vega.events.v1.BusEventType)
 
 - [api/trading.proto](#api/trading.proto)
     - [AccountsSubscribeRequest](#api.v1.AccountsSubscribeRequest)
@@ -312,8 +316,8 @@
     - [PrepareCancelOrderResponse](#api.v1.PrepareCancelOrderResponse)
     - [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest)
     - [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse)
-    - [PrepareProposalRequest](#api.v1.PrepareProposalRequest)
-    - [PrepareProposalResponse](#api.v1.PrepareProposalResponse)
+    - [PrepareProposalSubmissionRequest](#api.v1.PrepareProposalSubmissionRequest)
+    - [PrepareProposalSubmissionResponse](#api.v1.PrepareProposalSubmissionResponse)
     - [PrepareSubmitOrderRequest](#api.v1.PrepareSubmitOrderRequest)
     - [PrepareSubmitOrderResponse](#api.v1.PrepareSubmitOrderResponse)
     - [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest)
@@ -345,6 +349,11 @@
 
     - [TradingDataService](#api.v1.TradingDataService)
     - [TradingService](#api.v1.TradingService)
+
+- [commands/v1/oracles.proto](#commands/v1/oracles.proto)
+    - [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission)
+
+    - [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource)
 
 - [tm/replay.proto](#tm/replay.proto)
     - [BlockParams](#tm.BlockParams)
@@ -1316,26 +1325,6 @@ An Liquidity provider commitment
 
 
 
-<a name="vega.LiquidityProvisionSubmission"></a>
-
-### LiquidityProvisionSubmission
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier for the order, required field |
-| commitment_amount | [uint64](#uint64) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
-| fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
-| sells | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
-| buys | [LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
-| reference | [string](#string) |  | A reference to be added to every order created out of this liquidityProvisionSubmission |
-
-
-
-
-
-
 <a name="vega.MarginLevels"></a>
 
 ### MarginLevels
@@ -1449,72 +1438,6 @@ Represents a network parameter on Vega
 
 
 
-<a name="vega.NodeRegistration"></a>
-
-### NodeRegistration
-Used to Register a node as a validator during network start-up
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| pub_key | [bytes](#bytes) |  | Public key, required field |
-| chain_pub_key | [bytes](#bytes) |  | Public key for the blockchain, required field |
-
-
-
-
-
-
-<a name="vega.NodeSignature"></a>
-
-### NodeSignature
-Represents a signature from a validator, to be used by a foreign chain in order to recognise a decision taken by the Vega network
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | The identifier of the resource being signed |
-| sig | [bytes](#bytes) |  | The signature |
-| kind | [NodeSignatureKind](#vega.NodeSignatureKind) |  | The kind of resource being signed |
-
-
-
-
-
-
-<a name="vega.NodeVote"></a>
-
-### NodeVote
-Used when a node votes for validating a given resource exists or is valid,
-for example, an ERC20 deposit is valid and exists on ethereum
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| pub_key | [bytes](#bytes) |  | Public key, required field |
-| reference | [string](#string) |  | Reference, required field |
-
-
-
-
-
-
-<a name="vega.OracleDataSubmission"></a>
-
-### OracleDataSubmission
-Command to submit new Oracle data from third party providers
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| source | [OracleDataSubmission.OracleSource](#vega.OracleDataSubmission.OracleSource) |  | The source from which the data is coming from |
-| payload | [bytes](#bytes) |  | The data provided by the third party provider |
-
-
-
-
-
-
 <a name="vega.Order"></a>
 
 ### Order
@@ -1548,46 +1471,6 @@ An order can be submitted, amended and cancelled on Vega in an attempt to make t
 
 
 
-<a name="vega.OrderAmendment"></a>
-
-### OrderAmendment
-An order amendment is a request to amend or update an existing order on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order_id | [string](#string) |  | Order identifier, this is required to find the order and will not be updated, required field |
-| party_id | [string](#string) |  | Party identifier, this is required to find the order and will not be updated, required field |
-| market_id | [string](#string) |  | Market identifier, this is required to find the order and will not be updated |
-| price | [Price](#vega.Price) |  | Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price) |
-| size_delta | [int64](#int64) |  | Amend the size for the order by the delta specified: - To reduce the size from the current value set a negative integer value - To increase the size from the current value, set a positive integer value - To leave the size unchanged set a value of zero |
-| expires_at | [Timestamp](#vega.Timestamp) |  | Amend the expiry time for the order, if the Timestamp value is set, otherwise expiry time will remain unchanged - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
-| time_in_force | [Order.TimeInForce](#vega.Order.TimeInForce) |  | Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp` |
-| pegged_offset | [google.protobuf.Int64Value](#google.protobuf.Int64Value) |  | Amend the pegged order offset for the order |
-| pegged_reference | [PeggedReference](#vega.PeggedReference) |  | Amend the pegged order reference for the order - See [`PeggedReference`](#vega.PeggedReference) |
-
-
-
-
-
-
-<a name="vega.OrderCancellation"></a>
-
-### OrderCancellation
-An order cancellation is a request to cancel an existing order on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order_id | [string](#string) |  | Unique identifier for the order (set by the system after consensus), required field |
-| market_id | [string](#string) |  | Market identifier for the order, required field |
-| party_id | [string](#string) |  | Party identifier for the order, required field |
-
-
-
-
-
-
 <a name="vega.OrderCancellationConfirmation"></a>
 
 ### OrderCancellationConfirmation
@@ -1614,31 +1497,6 @@ Used when confirming an Order
 | order | [Order](#vega.Order) |  | The order that was confirmed |
 | trades | [Trade](#vega.Trade) | repeated | 0 or more trades that were emitted |
 | passive_orders_affected | [Order](#vega.Order) | repeated | 0 or more passive orders that were affected |
-
-
-
-
-
-
-<a name="vega.OrderSubmission"></a>
-
-### OrderSubmission
-An order submission is a request to submit or create a new order on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Unique identifier for the order (set by the system after consensus) |
-| market_id | [string](#string) |  | Market identifier for the order, required field |
-| party_id | [string](#string) |  | Party identifier for the order, required field |
-| price | [uint64](#uint64) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places, , required field for limit orders, however it is not required for market orders |
-| size | [uint64](#uint64) |  | Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative |
-| side | [Side](#vega.Side) |  | Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side) |
-| time_in_force | [Order.TimeInForce](#vega.Order.TimeInForce) |  | Time in force indicates how long an order will remain active before it is executed or expires, required field - See [`Order.TimeInForce`](#vega.Order.TimeInForce) |
-| expires_at | [int64](#int64) |  | Timestamp for when the order will expire, in nanoseconds since the epoch, required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT` - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
-| type | [Order.Type](#vega.Order.Type) |  | Type for the order, required field - See [`Order.Type`](#vega.Order.Type) |
-| reference | [string](#string) |  | Reference given for the order, this is typically used to retrieve an order submitted through consensus, currently set internally by the node to return a unique reference identifier for the order submission |
-| pegged_order | [PeggedOrder](#vega.PeggedOrder) |  | Used to specify the details for a pegged order - See [`PeggedOrder`](#vega.PeggedOrder) |
 
 
 
@@ -2075,24 +1933,6 @@ Withdrawal external details
 
 
 
-<a name="vega.WithdrawSubmission"></a>
-
-### WithdrawSubmission
-Represents the submission request to withdraw funds for a party on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Unique party identifier for the user wanting to withdraw funds |
-| amount | [uint64](#uint64) |  | The amount to be withdrawn |
-| asset | [string](#string) |  | The asset we want to withdraw |
-| ext | [WithdrawExt](#vega.WithdrawExt) |  | Foreign chain specifics |
-
-
-
-
-
-
 <a name="vega.Withdrawal"></a>
 
 ### Withdrawal
@@ -2219,31 +2059,6 @@ Status of a liquidity provision order
 | STATUS_REJECTED | 4 | The liquidity provision was invalid and got rejected |
 | STATUS_UNDEPLOYED | 5 | The liquidity provision is valid and accepted by network, but orders aren&#39;t deployed |
 | STATUS_PENDING | 6 | The liquidity provision is valid and accepted by network but have never been deployed. I when it&#39;s possible to deploy them for the first time margin check fails, then they will be cancelled without any penalties. |
-
-
-
-<a name="vega.NodeSignatureKind"></a>
-
-### NodeSignatureKind
-The kind of the signature created by a node, for example, allow-listing a new asset, withdrawal etc
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| NODE_SIGNATURE_KIND_UNSPECIFIED | 0 | Represents an unspecified or missing value from the input |
-| NODE_SIGNATURE_KIND_ASSET_NEW | 1 | Represents a signature for a new asset allow-listing |
-| NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL | 2 | Represents a signature for an asset withdrawal |
-
-
-
-<a name="vega.OracleDataSubmission.OracleSource"></a>
-
-### OracleDataSubmission.OracleSource
-The supported Oracle sources
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ORACLE_SOURCE_UNSPECIFIED | 0 | The default value |
-| ORACLE_SOURCE_OPEN_ORACLE | 1 | Support for Open Oracle standard |
 
 
 
@@ -2791,22 +2606,6 @@ Governance vote
 
 
 
-<a name="vega.VoteSubmission"></a>
-
-### VoteSubmission
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| proposal_id | [string](#string) |  |  |
-| value | [Vote.Value](#vega.Vote.Value) |  |  |
-
-
-
-
-
-
 
 
 <a name="vega.Proposal.State"></a>
@@ -2884,6 +2683,207 @@ Vote value
 | VALUE_UNSPECIFIED | 0 | Default value, always invalid |
 | VALUE_NO | 1 | A vote against the proposal |
 | VALUE_YES | 2 | A vote in favour of the proposal |
+
+
+
+
+
+
+
+
+
+
+<a name="oracles/v1/oracle_data.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## oracles/v1/oracle_data.proto
+
+
+
+<a name="oracles.v1.OracleData"></a>
+
+### OracleData
+OracleData describes an oracle data that has been broadcast.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pub_keys | [string](#string) | repeated | pubKeys is the list of authorized public keys that signed the data for this oracle. All the public keys in the oracle data should be contained in these public keys. |
+| data | [Property](#oracles.v1.Property) | repeated | data holds all the properties of the oracle data |
+| matched_spec_ids | [string](#string) | repeated | matched_specs_ids lists all the oracle specs that matched this oracle data. |
+| broadcast_at | [int64](#int64) |  | broadcast_at is the time at which the data was broadcast for the first time. |
+
+
+
+
+
+
+<a name="oracles.v1.Property"></a>
+
+### Property
+Property describes one property of an oracle spec with a key with its value.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | name is the name of the property. |
+| value | [string](#string) |  | value is the value of the property. |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="commands/v1/commands.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## commands/v1/commands.proto
+
+
+
+<a name="vega.commands.v1.LiquidityProvisionSubmission"></a>
+
+### LiquidityProvisionSubmission
+A liquidity provision submitted for a given market
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| market_id | [string](#string) |  | Market identifier for the order, required field |
+| commitment_amount | [uint64](#uint64) |  | Specified as a unitless number that represents the amount of settlement asset of the market |
+| fee | [string](#string) |  | Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers |
+| sells | [vega.LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity sell orders to meet the liquidity provision obligation |
+| buys | [vega.LiquidityOrder](#vega.LiquidityOrder) | repeated | A set of liquidity buy orders to meet the liquidity provision obligation |
+| reference | [string](#string) |  | A reference to be added to every order created out of this liquidityProvisionSubmission |
+
+
+
+
+
+
+<a name="vega.commands.v1.OrderAmendment"></a>
+
+### OrderAmendment
+An order amendment is a request to amend or update an existing order on Vega
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_id | [string](#string) |  | Order identifier, this is required to find the order and will not be updated, required field |
+| party_id | [string](#string) |  | Party identifier, this is required to find the order and will not be updated, required field |
+| market_id | [string](#string) |  | Market identifier, this is required to find the order and will not be updated |
+| price | [vega.Price](#vega.Price) |  | Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price) |
+| size_delta | [int64](#int64) |  | Amend the size for the order by the delta specified: - To reduce the size from the current value set a negative integer value - To increase the size from the current value, set a positive integer value - To leave the size unchanged set a value of zero |
+| expires_at | [vega.Timestamp](#vega.Timestamp) |  | Amend the expiry time for the order, if the Timestamp value is set, otherwise expiry time will remain unchanged - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
+| time_in_force | [vega.Order.TimeInForce](#vega.Order.TimeInForce) |  | Amend the time in force for the order, set to TIME_IN_FORCE_UNSPECIFIED to remain unchanged - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp` |
+| pegged_offset | [google.protobuf.Int64Value](#google.protobuf.Int64Value) |  | Amend the pegged order offset for the order |
+| pegged_reference | [vega.PeggedReference](#vega.PeggedReference) |  | Amend the pegged order reference for the order - See [`PeggedReference`](#vega.PeggedReference) |
+
+
+
+
+
+
+<a name="vega.commands.v1.OrderCancellation"></a>
+
+### OrderCancellation
+An order cancellation is a request to cancel an existing order on Vega
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_id | [string](#string) |  | Unique identifier for the order (set by the system after consensus), required field |
+| market_id | [string](#string) |  | Market identifier for the order, required field |
+
+
+
+
+
+
+<a name="vega.commands.v1.OrderSubmission"></a>
+
+### OrderSubmission
+An order submission is a request to submit or create a new order on Vega
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Unique identifier for the order (set by the system after consensus) |
+| market_id | [string](#string) |  | Market identifier for the order, required field |
+| party_id | [string](#string) |  | Party identifier for the order, required field |
+| price | [uint64](#uint64) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places, , required field for limit orders, however it is not required for market orders |
+| size | [uint64](#uint64) |  | Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative |
+| side | [vega.Side](#vega.Side) |  | Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side) |
+| time_in_force | [vega.Order.TimeInForce](#vega.Order.TimeInForce) |  | Time in force indicates how long an order will remain active before it is executed or expires, required field - See [`Order.TimeInForce`](#vega.Order.TimeInForce) |
+| expires_at | [int64](#int64) |  | Timestamp for when the order will expire, in nanoseconds since the epoch, required field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT` - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
+| type | [vega.Order.Type](#vega.Order.Type) |  | Type for the order, required field - See [`Order.Type`](#vega.Order.Type) |
+| reference | [string](#string) |  | Reference given for the order, this is typically used to retrieve an order submitted through consensus, currently set internally by the node to return a unique reference identifier for the order submission |
+| pegged_order | [vega.PeggedOrder](#vega.PeggedOrder) |  | Used to specify the details for a pegged order - See [`PeggedOrder`](#vega.PeggedOrder) |
+
+
+
+
+
+
+<a name="vega.commands.v1.ProposalSubmission"></a>
+
+### ProposalSubmission
+A command to submit a new proposal for the
+vega network governance
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| reference | [string](#string) |  | Proposal reference |
+| terms | [vega.ProposalTerms](#vega.ProposalTerms) |  | Proposal configuration and the actual change that is meant to be executed when proposal is enacted |
+
+
+
+
+
+
+<a name="vega.commands.v1.VoteSubmission"></a>
+
+### VoteSubmission
+A command to submit a new vote for a governance
+proposal.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposal_id | [string](#string) |  | The ID of the proposal to vote for. |
+| value | [vega.Vote.Value](#vega.Vote.Value) |  | The actual value of the vote |
+
+
+
+
+
+
+<a name="vega.commands.v1.WithdrawSubmission"></a>
+
+### WithdrawSubmission
+Represents the submission request to withdraw funds for a party on Vega
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| amount | [uint64](#uint64) |  | The amount to be withdrawn |
+| asset | [string](#string) |  | The asset we want to withdraw |
+| ext | [vega.WithdrawExt](#vega.WithdrawExt) |  | Foreign chain specifics |
+
+
+
+
+
 
 
 
@@ -3028,26 +3028,6 @@ A withdrawal for a Vega built-in asset
 | vega_asset_id | [string](#string) |  | A Vega network internal asset identifier |
 | party_id | [string](#string) |  | A Vega network party identifier (pub-key) |
 | amount | [uint64](#uint64) |  | The amount to be withdrawn |
-
-
-
-
-
-
-<a name="vega.ChainEvent"></a>
-
-### ChainEvent
-An event forwarded to the Vega network to provide information on events happening on other networks
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tx_id | [string](#string) |  | The identifier of the transaction in which the events happened, usually a hash |
-| nonce | [uint64](#uint64) |  | Arbitrary one-time integer used to prevent replay attacks |
-| builtin | [BuiltinAssetEvent](#vega.BuiltinAssetEvent) |  | Built-in asset event |
-| erc20 | [ERC20Event](#vega.ERC20Event) |  | Ethereum ERC20 event |
-| btc | [BTCEvent](#vega.BTCEvent) |  | Bitcoin BTC event |
-| validator | [ValidatorEvent](#vega.ValidatorEvent) |  | Validator event |
 
 
 
@@ -3211,41 +3191,95 @@ An event related to validator management with foreign networks
 
 
 
-<a name="oracles/v1/oracle_data.proto"></a>
+<a name="commands/v1/validator_commands.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## oracles/v1/oracle_data.proto
+## commands/v1/validator_commands.proto
 
 
 
-<a name="oracles.v1.OracleData"></a>
+<a name="vega.commands.v1.ChainEvent"></a>
 
-### OracleData
-OracleData describes an oracle data that has been broadcast.
+### ChainEvent
+An event forwarded to the Vega network to provide information on events happening on other networks
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| pub_keys | [string](#string) | repeated | pubKeys is the list of authorized public keys that signed the data for this oracle. All the public keys in the oracle data should be contained in these public keys. |
-| data | [Property](#oracles.v1.Property) | repeated | data holds all the properties of the oracle data |
-| matched_spec_ids | [string](#string) | repeated | matched_specs_ids lists all the oracle specs that matched this oracle data. |
-| broadcast_at | [int64](#int64) |  | broadcast_at is the time at which the data was broadcast for the first time. |
+| tx_id | [string](#string) |  | The identifier of the transaction in which the events happened, usually a hash |
+| nonce | [uint64](#uint64) |  | Arbitrary one-time integer used to prevent replay attacks |
+| builtin | [vega.BuiltinAssetEvent](#vega.BuiltinAssetEvent) |  | Built-in asset event |
+| erc20 | [vega.ERC20Event](#vega.ERC20Event) |  | Ethereum ERC20 event |
+| btc | [vega.BTCEvent](#vega.BTCEvent) |  | Bitcoin BTC event |
+| validator | [vega.ValidatorEvent](#vega.ValidatorEvent) |  | Validator event |
 
 
 
 
 
 
-<a name="oracles.v1.Property"></a>
+<a name="vega.commands.v1.NodeRegistration"></a>
 
-### Property
-Property describes one property of an oracle spec with a key with its value.
+### NodeRegistration
+Used to Register a node as a validator during network start-up
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | name is the name of the property. |
-| value | [string](#string) |  | value is the value of the property. |
+| pub_key | [bytes](#bytes) |  | Public key, required field |
+| chain_pub_key | [bytes](#bytes) |  | Public key for the blockchain, required field |
+
+
+
+
+
+
+<a name="vega.commands.v1.NodeSignature"></a>
+
+### NodeSignature
+Represents a signature from a validator, to be used by a foreign chain in order to recognise a decision taken by the Vega network
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | The identifier of the resource being signed |
+| sig | [bytes](#bytes) |  | The signature |
+| kind | [NodeSignatureKind](#vega.commands.v1.NodeSignatureKind) |  | The kind of resource being signed |
+
+
+
+
+
+
+<a name="vega.commands.v1.NodeVote"></a>
+
+### NodeVote
+Used when a node votes for validating a given resource exists or is valid,
+for example, an ERC20 deposit is valid and exists on ethereum
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pub_key | [bytes](#bytes) |  | Public key, required field |
+| reference | [string](#string) |  | Reference, required field |
+
+
+
+
+
+
+
+
+<a name="vega.commands.v1.NodeSignatureKind"></a>
+
+### NodeSignatureKind
+The kind of the signature created by a node, for example, allow-listing a new asset, withdrawal etc
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NODE_SIGNATURE_KIND_UNSPECIFIED | 0 | Represents an unspecified or missing value from the input |
+| NODE_SIGNATURE_KIND_ASSET_NEW | 1 | Represents a signature for a new asset allow-listing |
+| NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL | 2 | Represents a signature for an asset withdrawal |
 
 
 
@@ -3256,19 +3290,14 @@ Property describes one property of an oracle spec with a key with its value.
 
 
 
-
-
-
-
-
-<a name="events.proto"></a>
+<a name="events/v1/events.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## events.proto
+## events/v1/events.proto
 
 
 
-<a name="vega.AuctionEvent"></a>
+<a name="vega.events.v1.AuctionEvent"></a>
 
 ### AuctionEvent
 An auction event indicating a change in auction state, for example starting or ending an auction
@@ -3281,15 +3310,15 @@ An auction event indicating a change in auction state, for example starting or e
 | leave | [bool](#bool) |  | True if the event indicates leaving auction mode and False otherwise |
 | start | [int64](#int64) |  | Timestamp containing the start time for an auction |
 | end | [int64](#int64) |  | Timestamp containing the end time for an auction |
-| trigger | [AuctionTrigger](#vega.AuctionTrigger) |  | the reason this market is/was in auction |
-| extension_trigger | [AuctionTrigger](#vega.AuctionTrigger) |  | If an auction was ongoing, but was extended for whatever reason, this field will be set to the trigger type indicating which component extended the auction |
+| trigger | [vega.AuctionTrigger](#vega.AuctionTrigger) |  | the reason this market is/was in auction |
+| extension_trigger | [vega.AuctionTrigger](#vega.AuctionTrigger) |  | If an auction was ongoing, but was extended for whatever reason, this field will be set to the trigger type indicating which component extended the auction |
 
 
 
 
 
 
-<a name="vega.BusEvent"></a>
+<a name="vega.events.v1.BusEvent"></a>
 
 ### BusEvent
 A bus event is a container for event bus events emitted by Vega
@@ -3299,43 +3328,43 @@ A bus event is a container for event bus events emitted by Vega
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | A unique event identifier for the message |
 | block | [string](#string) |  | The batch (or block) of transactions that the events relate to |
-| type | [BusEventType](#vega.BusEventType) |  | The type of bus event (one of the list below) |
-| time_update | [TimeUpdate](#vega.TimeUpdate) |  | Time update events - See [TimeUpdate](#vega.TimeUpdate) |
-| transfer_responses | [TransferResponses](#vega.TransferResponses) |  | Transfer responses update events - See [TransferResponses](#vega.TransferResponses) |
-| position_resolution | [PositionResolution](#vega.PositionResolution) |  | Position resolution events - See [PositionResolution](#vega.PositionResolution) |
-| order | [Order](#vega.Order) |  | Order events |
-| account | [Account](#vega.Account) |  | Account events |
-| party | [Party](#vega.Party) |  | Party events |
-| trade | [Trade](#vega.Trade) |  | Trade events |
-| margin_levels | [MarginLevels](#vega.MarginLevels) |  | Margin level update events |
-| proposal | [Proposal](#vega.Proposal) |  | Proposal events (for governance) |
-| vote | [Vote](#vega.Vote) |  | Vote events (for governance) |
-| market_data | [MarketData](#vega.MarketData) |  | Market data events |
-| node_signature | [NodeSignature](#vega.NodeSignature) |  | Node signature events |
-| loss_socialization | [LossSocialization](#vega.LossSocialization) |  | Loss socialization events - See [LossSocialization](#vega.LossSocialization) |
-| settle_position | [SettlePosition](#vega.SettlePosition) |  | Position settlement events - See [SettlePosition](#vega.SettlePosition) |
-| settle_distressed | [SettleDistressed](#vega.SettleDistressed) |  | Position distressed events - See [SettleDistressed](#vega.SettleDistressed) |
-| market_created | [Market](#vega.Market) |  | Market created events |
-| asset | [Asset](#vega.Asset) |  | Asset events |
-| market_tick | [MarketTick](#vega.MarketTick) |  | Market tick events - See [MarketTick](#vega.MarketTick) |
-| withdrawal | [Withdrawal](#vega.Withdrawal) |  | Withdrawal events |
-| deposit | [Deposit](#vega.Deposit) |  | Deposit events |
-| auction | [AuctionEvent](#vega.AuctionEvent) |  | Auction events - See [AuctionEvent](#vega.AuctionEvent) |
-| risk_factor | [RiskFactor](#vega.RiskFactor) |  | Risk factor events |
-| network_parameter | [NetworkParameter](#vega.NetworkParameter) |  | Network parameter events |
-| liquidity_provision | [LiquidityProvision](#vega.LiquidityProvision) |  | LiquidityProvision events |
-| market_updated | [Market](#vega.Market) |  | Market created events |
+| type | [BusEventType](#vega.events.v1.BusEventType) |  | The type of bus event (one of the list below) |
+| time_update | [TimeUpdate](#vega.events.v1.TimeUpdate) |  | Time update events - See [TimeUpdate](#vega.TimeUpdate) |
+| transfer_responses | [TransferResponses](#vega.events.v1.TransferResponses) |  | Transfer responses update events - See [TransferResponses](#vega.TransferResponses) |
+| position_resolution | [PositionResolution](#vega.events.v1.PositionResolution) |  | Position resolution events - See [PositionResolution](#vega.PositionResolution) |
+| order | [vega.Order](#vega.Order) |  | Order events |
+| account | [vega.Account](#vega.Account) |  | Account events |
+| party | [vega.Party](#vega.Party) |  | Party events |
+| trade | [vega.Trade](#vega.Trade) |  | Trade events |
+| margin_levels | [vega.MarginLevels](#vega.MarginLevels) |  | Margin level update events |
+| proposal | [vega.Proposal](#vega.Proposal) |  | Proposal events (for governance) |
+| vote | [vega.Vote](#vega.Vote) |  | Vote events (for governance) |
+| market_data | [vega.MarketData](#vega.MarketData) |  | Market data events |
+| node_signature | [vega.commands.v1.NodeSignature](#vega.commands.v1.NodeSignature) |  | Node signature events |
+| loss_socialization | [LossSocialization](#vega.events.v1.LossSocialization) |  | Loss socialization events - See [LossSocialization](#vega.LossSocialization) |
+| settle_position | [SettlePosition](#vega.events.v1.SettlePosition) |  | Position settlement events - See [SettlePosition](#vega.SettlePosition) |
+| settle_distressed | [SettleDistressed](#vega.events.v1.SettleDistressed) |  | Position distressed events - See [SettleDistressed](#vega.SettleDistressed) |
+| market_created | [vega.Market](#vega.Market) |  | Market created events |
+| asset | [vega.Asset](#vega.Asset) |  | Asset events |
+| market_tick | [MarketTick](#vega.events.v1.MarketTick) |  | Market tick events - See [MarketTick](#vega.MarketTick) |
+| withdrawal | [vega.Withdrawal](#vega.Withdrawal) |  | Withdrawal events |
+| deposit | [vega.Deposit](#vega.Deposit) |  | Deposit events |
+| auction | [AuctionEvent](#vega.events.v1.AuctionEvent) |  | Auction events - See [AuctionEvent](#vega.AuctionEvent) |
+| risk_factor | [vega.RiskFactor](#vega.RiskFactor) |  | Risk factor events |
+| network_parameter | [vega.NetworkParameter](#vega.NetworkParameter) |  | Network parameter events |
+| liquidity_provision | [vega.LiquidityProvision](#vega.LiquidityProvision) |  | LiquidityProvision events |
+| market_updated | [vega.Market](#vega.Market) |  | Market created events |
 | oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | OracleSpec events |
 | oracle_data | [oracles.v1.OracleData](#oracles.v1.OracleData) |  | OracleData events |
-| market | [MarketEvent](#vega.MarketEvent) |  | Market tick events - See [MarketEvent](#vega.MarketEvent) |
-| tx_err_event | [TxErrorEvent](#vega.TxErrorEvent) |  | Transaction error events, not included in the ALL event type |
+| market | [MarketEvent](#vega.events.v1.MarketEvent) |  | Market tick events - See [MarketEvent](#vega.MarketEvent) |
+| tx_err_event | [TxErrorEvent](#vega.events.v1.TxErrorEvent) |  | Transaction error events, not included in the ALL event type |
 
 
 
 
 
 
-<a name="vega.LossSocialization"></a>
+<a name="vega.events.v1.LossSocialization"></a>
 
 ### LossSocialization
 A loss socialization event contains details on the amount of wins unable to be distributed
@@ -3352,7 +3381,7 @@ A loss socialization event contains details on the amount of wins unable to be d
 
 
 
-<a name="vega.MarketEvent"></a>
+<a name="vega.events.v1.MarketEvent"></a>
 
 ### MarketEvent
 MarketEvent - the common denominator for all market events
@@ -3369,7 +3398,7 @@ interface has a method to return a string for logging
 
 
 
-<a name="vega.MarketTick"></a>
+<a name="vega.events.v1.MarketTick"></a>
 
 ### MarketTick
 A market ticket event contains the time value for when a particular market was last processed on Vega
@@ -3385,7 +3414,7 @@ A market ticket event contains the time value for when a particular market was l
 
 
 
-<a name="vega.PositionResolution"></a>
+<a name="vega.events.v1.PositionResolution"></a>
 
 ### PositionResolution
 A position resolution event contains information on distressed trades
@@ -3403,7 +3432,7 @@ A position resolution event contains information on distressed trades
 
 
 
-<a name="vega.SettleDistressed"></a>
+<a name="vega.events.v1.SettleDistressed"></a>
 
 ### SettleDistressed
 A settle distressed event contains information on distressed trading parties who are closed out
@@ -3421,7 +3450,7 @@ A settle distressed event contains information on distressed trading parties who
 
 
 
-<a name="vega.SettlePosition"></a>
+<a name="vega.events.v1.SettlePosition"></a>
 
 ### SettlePosition
 A settle position event contains position settlement information for a party
@@ -3432,14 +3461,14 @@ A settle position event contains position settlement information for a party
 | market_id | [string](#string) |  | Market identifier for the event |
 | party_id | [string](#string) |  | Party identifier (public key) for the event |
 | price | [uint64](#uint64) |  | Price of settlement as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
-| trade_settlements | [TradeSettlement](#vega.TradeSettlement) | repeated | A collection of 1 or more trade settlements |
+| trade_settlements | [TradeSettlement](#vega.events.v1.TradeSettlement) | repeated | A collection of 1 or more trade settlements |
 
 
 
 
 
 
-<a name="vega.TimeUpdate"></a>
+<a name="vega.events.v1.TimeUpdate"></a>
 
 ### TimeUpdate
 A time update event contains the latest time update from Vega blockchain
@@ -3454,7 +3483,7 @@ A time update event contains the latest time update from Vega blockchain
 
 
 
-<a name="vega.TradeSettlement"></a>
+<a name="vega.events.v1.TradeSettlement"></a>
 
 ### TradeSettlement
 A trade settlement is part of the settle position event
@@ -3470,7 +3499,7 @@ A trade settlement is part of the settle position event
 
 
 
-<a name="vega.TransferResponses"></a>
+<a name="vega.events.v1.TransferResponses"></a>
 
 ### TransferResponses
 A transfer responses event contains a collection of transfer information
@@ -3478,14 +3507,14 @@ A transfer responses event contains a collection of transfer information
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| responses | [TransferResponse](#vega.TransferResponse) | repeated | One or more entries containing internal transfer information |
+| responses | [vega.TransferResponse](#vega.TransferResponse) | repeated | One or more entries containing internal transfer information |
 
 
 
 
 
 
-<a name="vega.TxErrorEvent"></a>
+<a name="vega.events.v1.TxErrorEvent"></a>
 
 ### TxErrorEvent
 
@@ -3495,12 +3524,13 @@ A transfer responses event contains a collection of transfer information
 | ----- | ---- | ----- | ----------- |
 | party_id | [string](#string) |  | Unique party identifier for the related party |
 | err_msg | [string](#string) |  | An error message describing what went wrong |
-| order_submission | [OrderSubmission](#vega.OrderSubmission) |  |  |
-| order_amendment | [OrderAmendment](#vega.OrderAmendment) |  |  |
-| order_cancellation | [OrderCancellation](#vega.OrderCancellation) |  |  |
-| proposal | [Proposal](#vega.Proposal) |  |  |
-| vote_submission | [VoteSubmission](#vega.VoteSubmission) |  |  |
-| liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.LiquidityProvisionSubmission) |  |  |
+| order_submission | [vega.commands.v1.OrderSubmission](#vega.commands.v1.OrderSubmission) |  |  |
+| order_amendment | [vega.commands.v1.OrderAmendment](#vega.commands.v1.OrderAmendment) |  |  |
+| order_cancellation | [vega.commands.v1.OrderCancellation](#vega.commands.v1.OrderCancellation) |  |  |
+| proposal | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
+| vote_submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
+| liquidity_provision_submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
+| withdraw_submission | [vega.commands.v1.WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  |  |
 
 
 
@@ -3509,7 +3539,7 @@ A transfer responses event contains a collection of transfer information
 
 
 
-<a name="vega.BusEventType"></a>
+<a name="vega.events.v1.BusEventType"></a>
 
 ### BusEventType
 An (event) bus event type is used to specify a type of event
@@ -4016,7 +4046,7 @@ Response to specify the identifier of the resource we want to retrieve aggregate
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| signatures | [vega.NodeSignature](#vega.NodeSignature) | repeated | A list of 0 or more signatures |
+| signatures | [vega.commands.v1.NodeSignature](#vega.commands.v1.NodeSignature) | repeated | A list of 0 or more signatures |
 
 
 
@@ -4656,7 +4686,7 @@ Request to subscribe to a stream of one or more event types from the Vega event 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| type | [vega.BusEventType](#vega.BusEventType) | repeated | One or more types of event, required field |
+| type | [vega.events.v1.BusEventType](#vega.events.v1.BusEventType) | repeated | One or more types of event, required field |
 | market_id | [string](#string) |  | Market identifier, optional field |
 | party_id | [string](#string) |  | Party identifier, optional field |
 | batch_size | [int64](#int64) |  | Batch size, optional field - If not specified, any events received will be sent immediately. If the client is not ready for the next data-set, data may be dropped a number of times, and eventually the stream is closed. if specified, the first batch will be sent when ready. To receive the next set of events, the client must write an `ObserveEventBatch` message on the stream to flush the buffer. If no message is received in 5 seconds, the stream is closed. Default: 0, send any and all events when they are available. |
@@ -4674,7 +4704,7 @@ Response to a subscribed stream of events from the Vega event bus
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| events | [vega.BusEvent](#vega.BusEvent) | repeated | One or more events |
+| events | [vega.events.v1.BusEvent](#vega.events.v1.BusEvent) | repeated | One or more events |
 
 
 
@@ -5289,7 +5319,7 @@ Request to amend an existing order
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| amendment | [vega.OrderAmendment](#vega.OrderAmendment) |  | An order amendment |
+| amendment | [vega.commands.v1.OrderAmendment](#vega.commands.v1.OrderAmendment) |  | An order amendment |
 
 
 
@@ -5319,7 +5349,7 @@ Request to cancel an existing order
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| cancellation | [vega.OrderCancellation](#vega.OrderCancellation) |  | An order cancellation |
+| cancellation | [vega.commands.v1.OrderCancellation](#vega.commands.v1.OrderCancellation) |  | An order cancellation |
 
 
 
@@ -5349,7 +5379,7 @@ Request to prepare liquiditity provision
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| submission | [vega.LiquidityProvisionSubmission](#vega.LiquidityProvisionSubmission) |  | Submission, required field |
+| submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  | Submission, required field |
 
 
 
@@ -5371,33 +5401,31 @@ Response to a liquidity provision request
 
 
 
-<a name="api.v1.PrepareProposalRequest"></a>
+<a name="api.v1.PrepareProposalSubmissionRequest"></a>
 
-### PrepareProposalRequest
+### PrepareProposalSubmissionRequest
 Request to prepare a governance proposal
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-| reference | [string](#string) |  | Unique reference |
-| proposal | [vega.ProposalTerms](#vega.ProposalTerms) |  | Proposal terms, required field |
+| submission | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
 
 
 
 
 
 
-<a name="api.v1.PrepareProposalResponse"></a>
+<a name="api.v1.PrepareProposalSubmissionResponse"></a>
 
-### PrepareProposalResponse
+### PrepareProposalSubmissionResponse
 Response to prepare a governance proposal
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | blob | [bytes](#bytes) |  | A blob is an encoded representation of the proposal ready to sign using the Vega Wallet and then submit as a transaction |
-| pending_proposal | [vega.Proposal](#vega.Proposal) |  | A copy of the prepared proposal |
+| submission | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  | A copy of the prepared proposal |
 
 
 
@@ -5412,7 +5440,7 @@ Request to submit a new order
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| submission | [vega.OrderSubmission](#vega.OrderSubmission) |  | An order submission |
+| submission | [vega.commands.v1.OrderSubmission](#vega.commands.v1.OrderSubmission) |  | An order submission |
 
 
 
@@ -5443,7 +5471,7 @@ Request to prepare a governance vote
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| submission | [vega.VoteSubmission](#vega.VoteSubmission) |  | Vote, required field |
+| submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  | Vote, required field |
 
 
 
@@ -5459,7 +5487,7 @@ Response to prepare a governance vote
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | blob | [bytes](#bytes) |  | A blob is an encoded representation of the vote ready to sign using the Vega Wallet and then submit as a transaction |
-| submission | [vega.VoteSubmission](#vega.VoteSubmission) |  | A copy of the prepared vote |
+| submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  | A copy of the prepared vote |
 
 
 
@@ -5474,7 +5502,7 @@ Request for preparing a withdrawal
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| withdraw | [vega.WithdrawSubmission](#vega.WithdrawSubmission) |  | An asset withdrawal |
+| withdraw | [vega.commands.v1.WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  | An asset withdrawal |
 
 
 
@@ -5504,7 +5532,7 @@ Request for a new event sent by the blockchain queue to be propagated on Vega
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| evt | [vega.ChainEvent](#vega.ChainEvent) |  | Chain event |
+| evt | [vega.commands.v1.ChainEvent](#vega.commands.v1.ChainEvent) |  | Chain event |
 | pub_key | [string](#string) |  | Public key |
 | signature | [bytes](#bytes) |  | Signature |
 
@@ -5899,10 +5927,54 @@ Blockchain transaction type
 | PrepareAmendOrder | [PrepareAmendOrderRequest](#api.v1.PrepareAmendOrderRequest) | [PrepareAmendOrderResponse](#api.v1.PrepareAmendOrderResponse) | Prepare an amend order request |
 | PrepareWithdraw | [PrepareWithdrawRequest](#api.v1.PrepareWithdrawRequest) | [PrepareWithdrawResponse](#api.v1.PrepareWithdrawResponse) | Request a withdrawal |
 | SubmitTransaction | [SubmitTransactionRequest](#api.v1.SubmitTransactionRequest) | [SubmitTransactionResponse](#api.v1.SubmitTransactionResponse) | Submit a signed transaction |
-| PrepareProposal | [PrepareProposalRequest](#api.v1.PrepareProposalRequest) | [PrepareProposalResponse](#api.v1.PrepareProposalResponse) | Prepare a governance proposal |
+| PrepareProposalSubmission | [PrepareProposalSubmissionRequest](#api.v1.PrepareProposalSubmissionRequest) | [PrepareProposalSubmissionResponse](#api.v1.PrepareProposalSubmissionResponse) | Prepare a governance proposal |
 | PrepareVoteSubmission | [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest) | [PrepareVoteSubmissionResponse](#api.v1.PrepareVoteSubmissionResponse) | Prepare a governance vote |
 | PropagateChainEvent | [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest) | [PropagateChainEventResponse](#api.v1.PropagateChainEventResponse) | Propagate a chain event |
 | PrepareLiquidityProvision | [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest) | [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse) | Prepare a liquidity provision request |
+
+
+
+
+
+<a name="commands/v1/oracles.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## commands/v1/oracles.proto
+
+
+
+<a name="vega.commands.v1.OracleDataSubmission"></a>
+
+### OracleDataSubmission
+Command to submit new Oracle data from third party providers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| source | [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource) |  | The source from which the data is coming from |
+| payload | [bytes](#bytes) |  | The data provided by the third party provider |
+
+
+
+
+
+
+
+
+<a name="vega.commands.v1.OracleDataSubmission.OracleSource"></a>
+
+### OracleDataSubmission.OracleSource
+The supported Oracle sources
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ORACLE_SOURCE_UNSPECIFIED | 0 | The default value |
+| ORACLE_SOURCE_OPEN_ORACLE | 1 | Support for Open Oracle standard |
+
+
+
+
+
 
 
 

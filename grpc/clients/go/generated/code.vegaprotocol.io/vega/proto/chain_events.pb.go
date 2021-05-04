@@ -1238,139 +1238,6 @@ func (*ValidatorEvent_Add) isValidatorEvent_Action() {}
 
 func (*ValidatorEvent_Rm) isValidatorEvent_Action() {}
 
-// An event forwarded to the Vega network to provide information on events happening on other networks
-type ChainEvent struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The identifier of the transaction in which the events happened, usually a hash
-	TxId string `protobuf:"bytes,1,opt,name=tx_id,json=txId,proto3" json:"tx_id,omitempty"`
-	// Arbitrary one-time integer used to prevent replay attacks
-	Nonce uint64 `protobuf:"varint,2,opt,name=nonce,proto3" json:"nonce,omitempty"`
-	// The event
-	//
-	// Types that are assignable to Event:
-	//	*ChainEvent_Builtin
-	//	*ChainEvent_Erc20
-	//	*ChainEvent_Btc
-	//	*ChainEvent_Validator
-	Event isChainEvent_Event `protobuf_oneof:"event"`
-}
-
-func (x *ChainEvent) Reset() {
-	*x = ChainEvent{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_chain_events_proto_msgTypes[17]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ChainEvent) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ChainEvent) ProtoMessage() {}
-
-func (x *ChainEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_chain_events_proto_msgTypes[17]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ChainEvent.ProtoReflect.Descriptor instead.
-func (*ChainEvent) Descriptor() ([]byte, []int) {
-	return file_chain_events_proto_rawDescGZIP(), []int{17}
-}
-
-func (x *ChainEvent) GetTxId() string {
-	if x != nil {
-		return x.TxId
-	}
-	return ""
-}
-
-func (x *ChainEvent) GetNonce() uint64 {
-	if x != nil {
-		return x.Nonce
-	}
-	return 0
-}
-
-func (m *ChainEvent) GetEvent() isChainEvent_Event {
-	if m != nil {
-		return m.Event
-	}
-	return nil
-}
-
-func (x *ChainEvent) GetBuiltin() *BuiltinAssetEvent {
-	if x, ok := x.GetEvent().(*ChainEvent_Builtin); ok {
-		return x.Builtin
-	}
-	return nil
-}
-
-func (x *ChainEvent) GetErc20() *ERC20Event {
-	if x, ok := x.GetEvent().(*ChainEvent_Erc20); ok {
-		return x.Erc20
-	}
-	return nil
-}
-
-func (x *ChainEvent) GetBtc() *BTCEvent {
-	if x, ok := x.GetEvent().(*ChainEvent_Btc); ok {
-		return x.Btc
-	}
-	return nil
-}
-
-func (x *ChainEvent) GetValidator() *ValidatorEvent {
-	if x, ok := x.GetEvent().(*ChainEvent_Validator); ok {
-		return x.Validator
-	}
-	return nil
-}
-
-type isChainEvent_Event interface {
-	isChainEvent_Event()
-}
-
-type ChainEvent_Builtin struct {
-	// Built-in asset event
-	Builtin *BuiltinAssetEvent `protobuf:"bytes,1001,opt,name=builtin,proto3,oneof"`
-}
-
-type ChainEvent_Erc20 struct {
-	// Ethereum ERC20 event
-	Erc20 *ERC20Event `protobuf:"bytes,1002,opt,name=erc20,proto3,oneof"`
-}
-
-type ChainEvent_Btc struct {
-	// Bitcoin BTC event
-	Btc *BTCEvent `protobuf:"bytes,1003,opt,name=btc,proto3,oneof"`
-}
-
-type ChainEvent_Validator struct {
-	// Validator event
-	Validator *ValidatorEvent `protobuf:"bytes,1004,opt,name=validator,proto3,oneof"`
-}
-
-func (*ChainEvent_Builtin) isChainEvent_Event() {}
-
-func (*ChainEvent_Erc20) isChainEvent_Event() {}
-
-func (*ChainEvent_Btc) isChainEvent_Event() {}
-
-func (*ChainEvent_Validator) isChainEvent_Event() {}
-
 var File_chain_events_proto protoreflect.FileDescriptor
 
 var file_chain_events_proto_rawDesc = []byte{
@@ -1506,23 +1373,7 @@ var file_chain_events_proto_rawDesc = []byte{
 	0x28, 0x0a, 0x02, 0x72, 0x6d, 0x18, 0xea, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x76,
 	0x65, 0x67, 0x61, 0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x56, 0x61, 0x6c, 0x69, 0x64, 0x61,
 	0x74, 0x6f, 0x72, 0x48, 0x00, 0x52, 0x02, 0x72, 0x6d, 0x42, 0x08, 0x0a, 0x06, 0x61, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x22, 0xfd, 0x01, 0x0a, 0x0a, 0x43, 0x68, 0x61, 0x69, 0x6e, 0x45, 0x76, 0x65,
-	0x6e, 0x74, 0x12, 0x13, 0x0a, 0x05, 0x74, 0x78, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x74, 0x78, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x6e, 0x6f, 0x6e, 0x63, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x6e, 0x6f, 0x6e, 0x63, 0x65, 0x12, 0x34, 0x0a,
-	0x07, 0x62, 0x75, 0x69, 0x6c, 0x74, 0x69, 0x6e, 0x18, 0xe9, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x17, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x42, 0x75, 0x69, 0x6c, 0x74, 0x69, 0x6e, 0x41, 0x73,
-	0x73, 0x65, 0x74, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x07, 0x62, 0x75, 0x69, 0x6c,
-	0x74, 0x69, 0x6e, 0x12, 0x29, 0x0a, 0x05, 0x65, 0x72, 0x63, 0x32, 0x30, 0x18, 0xea, 0x07, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x45, 0x52, 0x43, 0x32, 0x30,
-	0x45, 0x76, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x05, 0x65, 0x72, 0x63, 0x32, 0x30, 0x12, 0x23,
-	0x0a, 0x03, 0x62, 0x74, 0x63, 0x18, 0xeb, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x76,
-	0x65, 0x67, 0x61, 0x2e, 0x42, 0x54, 0x43, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52, 0x03,
-	0x62, 0x74, 0x63, 0x12, 0x35, 0x0a, 0x09, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x6f, 0x72,
-	0x18, 0xec, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x56,
-	0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x6f, 0x72, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x48, 0x00, 0x52,
-	0x09, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x6f, 0x72, 0x42, 0x07, 0x0a, 0x05, 0x65, 0x76,
-	0x65, 0x6e, 0x74, 0x42, 0x37, 0x0a, 0x14, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72,
+	0x69, 0x6f, 0x6e, 0x42, 0x37, 0x0a, 0x14, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x5a, 0x1f, 0x63, 0x6f, 0x64,
 	0x65, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69,
 	0x6f, 0x2f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72,
@@ -1541,7 +1392,7 @@ func file_chain_events_proto_rawDescGZIP() []byte {
 	return file_chain_events_proto_rawDescData
 }
 
-var file_chain_events_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_chain_events_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_chain_events_proto_goTypes = []interface{}{
 	(*BuiltinAssetDeposit)(nil),    // 0: vega.BuiltinAssetDeposit
 	(*BuiltinAssetWithdrawal)(nil), // 1: vega.BuiltinAssetWithdrawal
@@ -1560,7 +1411,6 @@ var file_chain_events_proto_goTypes = []interface{}{
 	(*AddValidator)(nil),           // 14: vega.AddValidator
 	(*RemoveValidator)(nil),        // 15: vega.RemoveValidator
 	(*ValidatorEvent)(nil),         // 16: vega.ValidatorEvent
-	(*ChainEvent)(nil),             // 17: vega.ChainEvent
 }
 var file_chain_events_proto_depIdxs = []int32{
 	0,  // 0: vega.BuiltinAssetEvent.deposit:type_name -> vega.BuiltinAssetDeposit
@@ -1577,15 +1427,11 @@ var file_chain_events_proto_depIdxs = []int32{
 	13, // 11: vega.RemoveValidator.id:type_name -> vega.Identifier
 	14, // 12: vega.ValidatorEvent.add:type_name -> vega.AddValidator
 	15, // 13: vega.ValidatorEvent.rm:type_name -> vega.RemoveValidator
-	2,  // 14: vega.ChainEvent.builtin:type_name -> vega.BuiltinAssetEvent
-	7,  // 15: vega.ChainEvent.erc20:type_name -> vega.ERC20Event
-	10, // 16: vega.ChainEvent.btc:type_name -> vega.BTCEvent
-	16, // 17: vega.ChainEvent.validator:type_name -> vega.ValidatorEvent
-	18, // [18:18] is the sub-list for method output_type
-	18, // [18:18] is the sub-list for method input_type
-	18, // [18:18] is the sub-list for extension type_name
-	18, // [18:18] is the sub-list for extension extendee
-	0,  // [0:18] is the sub-list for field type_name
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_chain_events_proto_init() }
@@ -1798,18 +1644,6 @@ func file_chain_events_proto_init() {
 				return nil
 			}
 		}
-		file_chain_events_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ChainEvent); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
 	}
 	file_chain_events_proto_msgTypes[2].OneofWrappers = []interface{}{
 		(*BuiltinAssetEvent_Deposit)(nil),
@@ -1833,19 +1667,13 @@ func file_chain_events_proto_init() {
 		(*ValidatorEvent_Add)(nil),
 		(*ValidatorEvent_Rm)(nil),
 	}
-	file_chain_events_proto_msgTypes[17].OneofWrappers = []interface{}{
-		(*ChainEvent_Builtin)(nil),
-		(*ChainEvent_Erc20)(nil),
-		(*ChainEvent_Btc)(nil),
-		(*ChainEvent_Validator)(nil),
-	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_chain_events_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

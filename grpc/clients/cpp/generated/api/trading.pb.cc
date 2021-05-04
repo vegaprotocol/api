@@ -20,38 +20,37 @@ extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fdata_2eproto ::PROTOBUF_
 extern PROTOBUF_INTERNAL_EXPORT_oracles_2fv1_2foracle_5fspec_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OracleSpec_oracles_2fv1_2foracle_5fspec_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_assets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Asset_assets_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_events_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_BusEvent_events_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Candle_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Deposit_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Fee_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_GovernanceData_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityProvision_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityProvisionSubmission_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MarginLevels_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<8> scc_info_Market_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_MarketData_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MarketDepth_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MarketDepthUpdate_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NetworkParameter_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodeSignature_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Order_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_OrderAmendment_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OrderCancellation_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OrderSubmission_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Party_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Position_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PriceLevel_vega_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Proposal_governance_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ProposalTerms_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SignedBundle_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Statistics_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Trade_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_TransferResponse_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Vote_governance_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_governance_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_WithdrawSubmission_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Withdrawal_vega_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodeSignature_commands_2fv1_2fvalidator_5fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_OrderAmendment_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_events_2fv1_2fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_BusEvent_events_2fv1_2fevents_2eproto;
 namespace api {
 namespace v1 {
 class PropagateChainEventRequestDefaultTypeInternal {
@@ -494,14 +493,14 @@ class FeeInfrastructureAccountsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FeeInfrastructureAccountsResponse> _instance;
 } _FeeInfrastructureAccountsResponse_default_instance_;
-class PrepareProposalRequestDefaultTypeInternal {
+class PrepareProposalSubmissionRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareProposalRequest> _instance;
-} _PrepareProposalRequest_default_instance_;
-class PrepareProposalResponseDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareProposalSubmissionRequest> _instance;
+} _PrepareProposalSubmissionRequest_default_instance_;
+class PrepareProposalSubmissionResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareProposalResponse> _instance;
-} _PrepareProposalResponse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareProposalSubmissionResponse> _instance;
+} _PrepareProposalSubmissionResponse_default_instance_;
 class PrepareVoteSubmissionRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrepareVoteSubmissionRequest> _instance;
@@ -1055,7 +1054,7 @@ static void InitDefaultsscc_info_GetNodeSignaturesAggregateResponse_api_2ftradin
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetNodeSignaturesAggregateResponse_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetNodeSignaturesAggregateResponse_api_2ftrading_2eproto}, {
-      &scc_info_NodeSignature_vega_2eproto.base,}};
+      &scc_info_NodeSignature_commands_2fv1_2fvalidator_5fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetProposalByIDRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1652,7 +1651,7 @@ static void InitDefaultsscc_info_ObserveEventBusResponse_api_2ftrading_2eproto()
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ObserveEventBusResponse_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ObserveEventBusResponse_api_2ftrading_2eproto}, {
-      &scc_info_BusEvent_events_2eproto.base,}};
+      &scc_info_BusEvent_events_2fv1_2fevents_2eproto.base,}};
 
 static void InitDefaultsscc_info_ObserveGovernanceRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2208,7 +2207,7 @@ static void InitDefaultsscc_info_PrepareAmendOrderRequest_api_2ftrading_2eproto(
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareAmendOrderRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareAmendOrderRequest_api_2ftrading_2eproto}, {
-      &scc_info_OrderAmendment_vega_2eproto.base,}};
+      &scc_info_OrderAmendment_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareAmendOrderResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2235,7 +2234,7 @@ static void InitDefaultsscc_info_PrepareCancelOrderRequest_api_2ftrading_2eproto
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareCancelOrderRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareCancelOrderRequest_api_2ftrading_2eproto}, {
-      &scc_info_OrderCancellation_vega_2eproto.base,}};
+      &scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareCancelOrderResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2262,7 +2261,7 @@ static void InitDefaultsscc_info_PrepareLiquidityProvisionRequest_api_2ftrading_
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareLiquidityProvisionRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareLiquidityProvisionRequest_api_2ftrading_2eproto}, {
-      &scc_info_LiquidityProvisionSubmission_vega_2eproto.base,}};
+      &scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareLiquidityProvisionResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2277,33 +2276,33 @@ static void InitDefaultsscc_info_PrepareLiquidityProvisionResponse_api_2ftrading
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PrepareLiquidityProvisionResponse_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PrepareLiquidityProvisionResponse_api_2ftrading_2eproto}, {}};
 
-static void InitDefaultsscc_info_PrepareProposalRequest_api_2ftrading_2eproto() {
+static void InitDefaultsscc_info_PrepareProposalSubmissionRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::v1::_PrepareProposalRequest_default_instance_;
-    new (ptr) ::api::v1::PrepareProposalRequest();
+    void* ptr = &::api::v1::_PrepareProposalSubmissionRequest_default_instance_;
+    new (ptr) ::api::v1::PrepareProposalSubmissionRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareProposalRequest_api_2ftrading_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareProposalRequest_api_2ftrading_2eproto}, {
-      &scc_info_ProposalTerms_governance_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareProposalSubmissionRequest_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareProposalSubmissionRequest_api_2ftrading_2eproto}, {
+      &scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
-static void InitDefaultsscc_info_PrepareProposalResponse_api_2ftrading_2eproto() {
+static void InitDefaultsscc_info_PrepareProposalSubmissionResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::v1::_PrepareProposalResponse_default_instance_;
-    new (ptr) ::api::v1::PrepareProposalResponse();
+    void* ptr = &::api::v1::_PrepareProposalSubmissionResponse_default_instance_;
+    new (ptr) ::api::v1::PrepareProposalSubmissionResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareProposalResponse_api_2ftrading_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareProposalResponse_api_2ftrading_2eproto}, {
-      &scc_info_Proposal_governance_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareProposalSubmissionResponse_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareProposalSubmissionResponse_api_2ftrading_2eproto}, {
+      &scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareSubmitOrderRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2317,7 +2316,7 @@ static void InitDefaultsscc_info_PrepareSubmitOrderRequest_api_2ftrading_2eproto
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareSubmitOrderRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareSubmitOrderRequest_api_2ftrading_2eproto}, {
-      &scc_info_OrderSubmission_vega_2eproto.base,}};
+      &scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareSubmitOrderResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2344,7 +2343,7 @@ static void InitDefaultsscc_info_PrepareVoteSubmissionRequest_api_2ftrading_2epr
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto}, {
-      &scc_info_VoteSubmission_governance_2eproto.base,}};
+      &scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2358,7 +2357,7 @@ static void InitDefaultsscc_info_PrepareVoteSubmissionResponse_api_2ftrading_2ep
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareVoteSubmissionResponse_api_2ftrading_2eproto}, {
-      &scc_info_VoteSubmission_governance_2eproto.base,}};
+      &scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareWithdrawRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2372,7 +2371,7 @@ static void InitDefaultsscc_info_PrepareWithdrawRequest_api_2ftrading_2eproto() 
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PrepareWithdrawRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PrepareWithdrawRequest_api_2ftrading_2eproto}, {
-      &scc_info_WithdrawSubmission_vega_2eproto.base,}};
+      &scc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PrepareWithdrawResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2399,7 +2398,7 @@ static void InitDefaultsscc_info_PropagateChainEventRequest_api_2ftrading_2eprot
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PropagateChainEventRequest_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PropagateChainEventRequest_api_2ftrading_2eproto}, {
-      &scc_info_ChainEvent_chain_5fevents_2eproto.base,}};
+      &scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_PropagateChainEventResponse_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -3353,20 +3352,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_api_2ftrading_2eproto::offsets
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::api::v1::FeeInfrastructureAccountsResponse, accounts_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalSubmissionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalRequest, party_id_),
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalRequest, reference_),
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalRequest, proposal_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalSubmissionRequest, submission_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalSubmissionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalResponse, blob_),
-  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalResponse, pending_proposal_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalSubmissionResponse, blob_),
+  PROTOBUF_FIELD_OFFSET(::api::v1::PrepareProposalSubmissionResponse, submission_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::api::v1::PrepareVoteSubmissionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -3703,44 +3700,44 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 670, -1, sizeof(::api::v1::MarketAccountsResponse)},
   { 676, -1, sizeof(::api::v1::FeeInfrastructureAccountsRequest)},
   { 682, -1, sizeof(::api::v1::FeeInfrastructureAccountsResponse)},
-  { 688, -1, sizeof(::api::v1::PrepareProposalRequest)},
-  { 696, -1, sizeof(::api::v1::PrepareProposalResponse)},
-  { 703, -1, sizeof(::api::v1::PrepareVoteSubmissionRequest)},
-  { 709, -1, sizeof(::api::v1::PrepareVoteSubmissionResponse)},
-  { 716, -1, sizeof(::api::v1::PrepareLiquidityProvisionRequest)},
-  { 722, -1, sizeof(::api::v1::PrepareLiquidityProvisionResponse)},
-  { 728, -1, sizeof(::api::v1::OrderByIDRequest)},
-  { 735, -1, sizeof(::api::v1::OrderByIDResponse)},
-  { 741, -1, sizeof(::api::v1::OrderVersionsByIDRequest)},
-  { 748, -1, sizeof(::api::v1::OrderVersionsByIDResponse)},
-  { 754, -1, sizeof(::api::v1::EstimateFeeRequest)},
-  { 760, -1, sizeof(::api::v1::EstimateFeeResponse)},
-  { 766, -1, sizeof(::api::v1::EstimateMarginRequest)},
-  { 772, -1, sizeof(::api::v1::EstimateMarginResponse)},
-  { 778, -1, sizeof(::api::v1::ObserveEventBusRequest)},
-  { 787, -1, sizeof(::api::v1::ObserveEventBusResponse)},
-  { 793, -1, sizeof(::api::v1::StatisticsRequest)},
-  { 798, -1, sizeof(::api::v1::StatisticsResponse)},
-  { 804, -1, sizeof(::api::v1::WithdrawalsRequest)},
-  { 810, -1, sizeof(::api::v1::WithdrawalsResponse)},
-  { 816, -1, sizeof(::api::v1::WithdrawalRequest)},
-  { 822, -1, sizeof(::api::v1::WithdrawalResponse)},
-  { 828, -1, sizeof(::api::v1::ERC20WithdrawalApprovalRequest)},
-  { 834, -1, sizeof(::api::v1::ERC20WithdrawalApprovalResponse)},
-  { 844, -1, sizeof(::api::v1::DepositsRequest)},
-  { 850, -1, sizeof(::api::v1::DepositsResponse)},
-  { 856, -1, sizeof(::api::v1::DepositRequest)},
-  { 862, -1, sizeof(::api::v1::DepositResponse)},
-  { 868, -1, sizeof(::api::v1::NetworkParametersRequest)},
-  { 873, -1, sizeof(::api::v1::NetworkParametersResponse)},
-  { 879, -1, sizeof(::api::v1::LiquidityProvisionsRequest)},
-  { 886, -1, sizeof(::api::v1::LiquidityProvisionsResponse)},
-  { 892, -1, sizeof(::api::v1::OracleSpecRequest)},
-  { 898, -1, sizeof(::api::v1::OracleSpecResponse)},
-  { 904, -1, sizeof(::api::v1::OracleSpecsRequest)},
-  { 909, -1, sizeof(::api::v1::OracleSpecsResponse)},
-  { 915, -1, sizeof(::api::v1::OracleDataBySpecRequest)},
-  { 921, -1, sizeof(::api::v1::OracleDataBySpecResponse)},
+  { 688, -1, sizeof(::api::v1::PrepareProposalSubmissionRequest)},
+  { 694, -1, sizeof(::api::v1::PrepareProposalSubmissionResponse)},
+  { 701, -1, sizeof(::api::v1::PrepareVoteSubmissionRequest)},
+  { 707, -1, sizeof(::api::v1::PrepareVoteSubmissionResponse)},
+  { 714, -1, sizeof(::api::v1::PrepareLiquidityProvisionRequest)},
+  { 720, -1, sizeof(::api::v1::PrepareLiquidityProvisionResponse)},
+  { 726, -1, sizeof(::api::v1::OrderByIDRequest)},
+  { 733, -1, sizeof(::api::v1::OrderByIDResponse)},
+  { 739, -1, sizeof(::api::v1::OrderVersionsByIDRequest)},
+  { 746, -1, sizeof(::api::v1::OrderVersionsByIDResponse)},
+  { 752, -1, sizeof(::api::v1::EstimateFeeRequest)},
+  { 758, -1, sizeof(::api::v1::EstimateFeeResponse)},
+  { 764, -1, sizeof(::api::v1::EstimateMarginRequest)},
+  { 770, -1, sizeof(::api::v1::EstimateMarginResponse)},
+  { 776, -1, sizeof(::api::v1::ObserveEventBusRequest)},
+  { 785, -1, sizeof(::api::v1::ObserveEventBusResponse)},
+  { 791, -1, sizeof(::api::v1::StatisticsRequest)},
+  { 796, -1, sizeof(::api::v1::StatisticsResponse)},
+  { 802, -1, sizeof(::api::v1::WithdrawalsRequest)},
+  { 808, -1, sizeof(::api::v1::WithdrawalsResponse)},
+  { 814, -1, sizeof(::api::v1::WithdrawalRequest)},
+  { 820, -1, sizeof(::api::v1::WithdrawalResponse)},
+  { 826, -1, sizeof(::api::v1::ERC20WithdrawalApprovalRequest)},
+  { 832, -1, sizeof(::api::v1::ERC20WithdrawalApprovalResponse)},
+  { 842, -1, sizeof(::api::v1::DepositsRequest)},
+  { 848, -1, sizeof(::api::v1::DepositsResponse)},
+  { 854, -1, sizeof(::api::v1::DepositRequest)},
+  { 860, -1, sizeof(::api::v1::DepositResponse)},
+  { 866, -1, sizeof(::api::v1::NetworkParametersRequest)},
+  { 871, -1, sizeof(::api::v1::NetworkParametersResponse)},
+  { 877, -1, sizeof(::api::v1::LiquidityProvisionsRequest)},
+  { 884, -1, sizeof(::api::v1::LiquidityProvisionsResponse)},
+  { 890, -1, sizeof(::api::v1::OracleSpecRequest)},
+  { 896, -1, sizeof(::api::v1::OracleSpecResponse)},
+  { 902, -1, sizeof(::api::v1::OracleSpecsRequest)},
+  { 907, -1, sizeof(::api::v1::OracleSpecsResponse)},
+  { 913, -1, sizeof(::api::v1::OracleDataBySpecRequest)},
+  { 919, -1, sizeof(::api::v1::OracleDataBySpecResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -3854,8 +3851,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_MarketAccountsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_FeeInfrastructureAccountsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_FeeInfrastructureAccountsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareProposalRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareProposalResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareProposalSubmissionRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareProposalSubmissionResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareVoteSubmissionRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareVoteSubmissionResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_PrepareLiquidityProvisionRequest_default_instance_),
@@ -3896,459 +3893,465 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_api_2ftrading_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021api/trading.proto\022\006api.v1\032\nvega.proto\032"
-  "\rmarkets.proto\032\020governance.proto\032\022chain_"
-  "events.proto\032\014assets.proto\032\014events.proto"
-  "\032\034oracles/v1/oracle_spec.proto\032\034oracles/"
-  "v1/oracle_data.proto\0326github.com/mwitkow"
-  "/go-proto-validators/validator.proto\"w\n\032"
-  "PropagateChainEventRequest\022\"\n\003evt\030\001 \001(\0132"
-  "\020.vega.ChainEventR\003evt\022\027\n\007pub_key\030\002 \001(\tR"
-  "\006pubKey\022\034\n\tsignature\030\003 \001(\014R\tsignature\"7\n"
-  "\033PropagateChainEventResponse\022\030\n\007success\030"
-  "\001 \001(\010R\007success\"\307\001\n\030SubmitTransactionRequ"
-  "est\022\"\n\002tx\030\001 \001(\0132\022.vega.SignedBundleR\002tx\022"
-  "9\n\004type\030\002 \001(\0162%.api.v1.SubmitTransaction"
-  "Request.TypeR\004type\"L\n\004Type\022\024\n\020TYPE_UNSPE"
-  "CIFIED\020\000\022\016\n\nTYPE_ASYNC\020\001\022\r\n\tTYPE_SYNC\020\002\022"
-  "\017\n\013TYPE_COMMIT\020\003\"5\n\031SubmitTransactionRes"
-  "ponse\022\030\n\007success\030\001 \001(\010R\007success\"N\n\026Prepa"
-  "reWithdrawRequest\0224\n\010withdraw\030\001 \001(\0132\030.ve"
-  "ga.WithdrawSubmissionR\010withdraw\"-\n\027Prepa"
-  "reWithdrawResponse\022\022\n\004blob\030\001 \001(\014R\004blob\"M"
-  "\n\032PrepareSubmitOrderResponse\022\022\n\004blob\030\001 \001"
-  "(\014R\004blob\022\033\n\tsubmit_id\030\002 \001(\tR\010submitId\"0\n"
-  "\032PrepareCancelOrderResponse\022\022\n\004blob\030\001 \001("
-  "\014R\004blob\"/\n\031PrepareAmendOrderResponse\022\022\n\004"
-  "blob\030\001 \001(\014R\004blob\"R\n\031PrepareSubmitOrderRe"
-  "quest\0225\n\nsubmission\030\001 \001(\0132\025.vega.OrderSu"
-  "bmissionR\nsubmission\"X\n\031PrepareCancelOrd"
-  "erRequest\022;\n\014cancellation\030\001 \001(\0132\027.vega.O"
-  "rderCancellationR\014cancellation\"N\n\030Prepar"
-  "eAmendOrderRequest\0222\n\tamendment\030\001 \001(\0132\024."
-  "vega.OrderAmendmentR\tamendment\"\017\n\rAssets"
-  "Request\"5\n\016AssetsResponse\022#\n\006assets\030\001 \003("
-  "\0132\013.vega.AssetR\006assets\"*\n\020AssetByIDReque"
-  "st\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"6\n\021AssetByIDR"
-  "esponse\022!\n\005asset\030\001 \001(\0132\013.vega.AssetR\005ass"
-  "et\";\n!GetNodeSignaturesAggregateRequest\022"
-  "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"Y\n\"GetNodeSignat"
-  "uresAggregateResponse\0223\n\nsignatures\030\001 \003("
-  "\0132\023.vega.NodeSignatureR\nsignatures\"C\n\025Op"
-  "tionalProposalState\022*\n\005value\030\001 \001(\0162\024.veg"
-  "a.Proposal.StateR\005value\"\\\n\023GetProposalsR"
-  "equest\022E\n\017select_in_state\030\001 \001(\0132\035.api.v1"
-  ".OptionalProposalStateR\rselectInState\"@\n"
-  "\024GetProposalsResponse\022(\n\004data\030\001 \003(\0132\024.ve"
-  "ga.GovernanceDataR\004data\"\206\001\n\032GetProposals"
-  "ByPartyRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001"
-  "R\007partyId\022E\n\017select_in_state\030\002 \001(\0132\035.api"
-  ".v1.OptionalProposalStateR\rselectInState"
-  "\"G\n\033GetProposalsByPartyResponse\022(\n\004data\030"
-  "\001 \003(\0132\024.vega.GovernanceDataR\004data\";\n\026Get"
-  "VotesByPartyRequest\022!\n\010party_id\030\001 \001(\tB\006\342"
-  "\337\037\002X\001R\007partyId\";\n\027GetVotesByPartyRespons"
-  "e\022 \n\005votes\030\001 \003(\0132\n.vega.VoteR\005votes\"e\n\034G"
-  "etNewMarketProposalsRequest\022E\n\017select_in"
-  "_state\030\001 \001(\0132\035.api.v1.OptionalProposalSt"
-  "ateR\rselectInState\"I\n\035GetNewMarketPropos"
-  "alsResponse\022(\n\004data\030\001 \003(\0132\024.vega.Governa"
-  "nceDataR\004data\"\215\001\n\037GetUpdateMarketProposa"
-  "lsRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010ma"
-  "rketId\022E\n\017select_in_state\030\002 \001(\0132\035.api.v1"
-  ".OptionalProposalStateR\rselectInState\"L\n"
-  " GetUpdateMarketProposalsResponse\022(\n\004dat"
-  "a\030\001 \003(\0132\024.vega.GovernanceDataR\004data\"m\n$G"
-  "etNetworkParametersProposalsRequest\022E\n\017s"
-  "elect_in_state\030\001 \001(\0132\035.api.v1.OptionalPr"
-  "oposalStateR\rselectInState\"Q\n%GetNetwork"
-  "ParametersProposalsResponse\022(\n\004data\030\001 \003("
-  "\0132\024.vega.GovernanceDataR\004data\"d\n\033GetNewA"
-  "ssetProposalsRequest\022E\n\017select_in_state\030"
-  "\001 \001(\0132\035.api.v1.OptionalProposalStateR\rse"
-  "lectInState\"H\n\034GetNewAssetProposalsRespo"
-  "nse\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR"
-  "\004data\"A\n\026GetProposalByIDRequest\022\'\n\013propo"
-  "sal_id\030\001 \001(\tB\006\342\337\037\002X\001R\nproposalId\"C\n\027GetP"
-  "roposalByIDResponse\022(\n\004data\030\001 \001(\0132\024.vega"
-  ".GovernanceDataR\004data\"E\n\035GetProposalByRe"
-  "ferenceRequest\022$\n\treference\030\001 \001(\tB\006\342\337\037\002X"
-  "\001R\treference\"J\n\036GetProposalByReferenceRe"
-  "sponse\022(\n\004data\030\001 \001(\0132\024.vega.GovernanceDa"
-  "taR\004data\"\032\n\030ObserveGovernanceRequest\"E\n\031"
-  "ObserveGovernanceResponse\022(\n\004data\030\001 \001(\0132"
-  "\024.vega.GovernanceDataR\004data\"A\n\034ObservePa"
-  "rtyProposalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342"
-  "\337\037\002X\001R\007partyId\"I\n\035ObservePartyProposalsR"
-  "esponse\022(\n\004data\030\001 \001(\0132\024.vega.GovernanceD"
-  "ataR\004data\"F\n\033ObserveProposalVotesRequest"
+  "\rmarkets.proto\032\020governance.proto\032\014assets"
+  ".proto\032\026events/v1/events.proto\032\034oracles/"
+  "v1/oracle_spec.proto\032\034oracles/v1/oracle_"
+  "data.proto\032\032commands/v1/commands.proto\032$"
+  "commands/v1/validator_commands.proto\0326gi"
+  "thub.com/mwitkow/go-proto-validators/val"
+  "idator.proto\"\203\001\n\032PropagateChainEventRequ"
+  "est\022.\n\003evt\030\001 \001(\0132\034.vega.commands.v1.Chai"
+  "nEventR\003evt\022\027\n\007pub_key\030\002 \001(\tR\006pubKey\022\034\n\t"
+  "signature\030\003 \001(\014R\tsignature\"7\n\033PropagateC"
+  "hainEventResponse\022\030\n\007success\030\001 \001(\010R\007succ"
+  "ess\"\307\001\n\030SubmitTransactionRequest\022\"\n\002tx\030\001"
+  " \001(\0132\022.vega.SignedBundleR\002tx\0229\n\004type\030\002 \001"
+  "(\0162%.api.v1.SubmitTransactionRequest.Typ"
+  "eR\004type\"L\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n"
+  "\nTYPE_ASYNC\020\001\022\r\n\tTYPE_SYNC\020\002\022\017\n\013TYPE_COM"
+  "MIT\020\003\"5\n\031SubmitTransactionResponse\022\030\n\007su"
+  "ccess\030\001 \001(\010R\007success\"Z\n\026PrepareWithdrawR"
+  "equest\022@\n\010withdraw\030\001 \001(\0132$.vega.commands"
+  ".v1.WithdrawSubmissionR\010withdraw\"-\n\027Prep"
+  "areWithdrawResponse\022\022\n\004blob\030\001 \001(\014R\004blob\""
+  "M\n\032PrepareSubmitOrderResponse\022\022\n\004blob\030\001 "
+  "\001(\014R\004blob\022\033\n\tsubmit_id\030\002 \001(\tR\010submitId\"0"
+  "\n\032PrepareCancelOrderResponse\022\022\n\004blob\030\001 \001"
+  "(\014R\004blob\"/\n\031PrepareAmendOrderResponse\022\022\n"
+  "\004blob\030\001 \001(\014R\004blob\"^\n\031PrepareSubmitOrderR"
+  "equest\022A\n\nsubmission\030\001 \001(\0132!.vega.comman"
+  "ds.v1.OrderSubmissionR\nsubmission\"d\n\031Pre"
+  "pareCancelOrderRequest\022G\n\014cancellation\030\001"
+  " \001(\0132#.vega.commands.v1.OrderCancellatio"
+  "nR\014cancellation\"Z\n\030PrepareAmendOrderRequ"
+  "est\022>\n\tamendment\030\001 \001(\0132 .vega.commands.v"
+  "1.OrderAmendmentR\tamendment\"\017\n\rAssetsReq"
+  "uest\"5\n\016AssetsResponse\022#\n\006assets\030\001 \003(\0132\013"
+  ".vega.AssetR\006assets\"*\n\020AssetByIDRequest\022"
+  "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"6\n\021AssetByIDResp"
+  "onse\022!\n\005asset\030\001 \001(\0132\013.vega.AssetR\005asset\""
+  ";\n!GetNodeSignaturesAggregateRequest\022\026\n\002"
+  "id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"e\n\"GetNodeSignature"
+  "sAggregateResponse\022\?\n\nsignatures\030\001 \003(\0132\037"
+  ".vega.commands.v1.NodeSignatureR\nsignatu"
+  "res\"C\n\025OptionalProposalState\022*\n\005value\030\001 "
+  "\001(\0162\024.vega.Proposal.StateR\005value\"\\\n\023GetP"
+  "roposalsRequest\022E\n\017select_in_state\030\001 \001(\013"
+  "2\035.api.v1.OptionalProposalStateR\rselectI"
+  "nState\"@\n\024GetProposalsResponse\022(\n\004data\030\001"
+  " \003(\0132\024.vega.GovernanceDataR\004data\"\206\001\n\032Get"
+  "ProposalsByPartyRequest\022!\n\010party_id\030\001 \001("
+  "\tB\006\342\337\037\002X\001R\007partyId\022E\n\017select_in_state\030\002 "
+  "\001(\0132\035.api.v1.OptionalProposalStateR\rsele"
+  "ctInState\"G\n\033GetProposalsByPartyResponse"
+  "\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR\004da"
+  "ta\";\n\026GetVotesByPartyRequest\022!\n\010party_id"
+  "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\";\n\027GetVotesByPar"
+  "tyResponse\022 \n\005votes\030\001 \003(\0132\n.vega.VoteR\005v"
+  "otes\"e\n\034GetNewMarketProposalsRequest\022E\n\017"
+  "select_in_state\030\001 \001(\0132\035.api.v1.OptionalP"
+  "roposalStateR\rselectInState\"I\n\035GetNewMar"
+  "ketProposalsResponse\022(\n\004data\030\001 \003(\0132\024.veg"
+  "a.GovernanceDataR\004data\"\215\001\n\037GetUpdateMark"
+  "etProposalsRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342"
+  "\337\037\002X\001R\010marketId\022E\n\017select_in_state\030\002 \001(\013"
+  "2\035.api.v1.OptionalProposalStateR\rselectI"
+  "nState\"L\n GetUpdateMarketProposalsRespon"
+  "se\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR\004"
+  "data\"m\n$GetNetworkParametersProposalsReq"
+  "uest\022E\n\017select_in_state\030\001 \001(\0132\035.api.v1.O"
+  "ptionalProposalStateR\rselectInState\"Q\n%G"
+  "etNetworkParametersProposalsResponse\022(\n\004"
+  "data\030\001 \003(\0132\024.vega.GovernanceDataR\004data\"d"
+  "\n\033GetNewAssetProposalsRequest\022E\n\017select_"
+  "in_state\030\001 \001(\0132\035.api.v1.OptionalProposal"
+  "StateR\rselectInState\"H\n\034GetNewAssetPropo"
+  "salsResponse\022(\n\004data\030\001 \003(\0132\024.vega.Govern"
+  "anceDataR\004data\"A\n\026GetProposalByIDRequest"
   "\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\nproposalI"
-  "d\">\n\034ObserveProposalVotesResponse\022\036\n\004vot"
-  "e\030\001 \001(\0132\n.vega.VoteR\004vote\"=\n\030ObservePart"
-  "yVotesRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R"
-  "\007partyId\";\n\031ObservePartyVotesResponse\022\036\n"
-  "\004vote\030\001 \001(\0132\n.vega.VoteR\004vote\"^\n\034MarginL"
-  "evelsSubscribeRequest\022!\n\010party_id\030\001 \001(\tB"
-  "\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010mar"
-  "ketId\"X\n\035MarginLevelsSubscribeResponse\0227"
-  "\n\rmargin_levels\030\001 \001(\0132\022.vega.MarginLevel"
-  "sR\014marginLevels\"U\n\023MarginLevelsRequest\022!"
-  "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmar"
-  "ket_id\030\002 \001(\tR\010marketId\"O\n\024MarginLevelsRe"
-  "sponse\0227\n\rmargin_levels\030\001 \003(\0132\022.vega.Mar"
-  "ginLevelsR\014marginLevels\":\n\033MarketsDataSu"
-  "bscribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010marke"
-  "tId\"Q\n\034MarketsDataSubscribeResponse\0221\n\013m"
-  "arket_data\030\001 \001(\0132\020.vega.MarketDataR\nmark"
-  "etData\"<\n\025MarketDataByIDRequest\022#\n\tmarke"
-  "t_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"K\n\026MarketDa"
-  "taByIDResponse\0221\n\013market_data\030\001 \001(\0132\020.ve"
-  "ga.MarketDataR\nmarketData\"\024\n\022MarketsData"
-  "Request\"J\n\023MarketsDataResponse\0223\n\014market"
-  "s_data\030\001 \003(\0132\020.vega.MarketDataR\013marketsD"
-  "ata\"7\n\020LastTradeRequest\022#\n\tmarket_id\030\001 \001"
-  "(\tB\006\342\337\037\002X\001R\010marketId\"6\n\021LastTradeRespons"
-  "e\022!\n\005trade\030\001 \001(\0132\013.vega.TradeR\005trade\"8\n\021"
-  "MarketByIDRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337"
-  "\037\002X\001R\010marketId\":\n\022MarketByIDResponse\022$\n\006"
-  "market\030\001 \001(\0132\014.vega.MarketR\006market\"5\n\020Pa"
-  "rtyByIDRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001"
-  "R\007partyId\"6\n\021PartyByIDResponse\022!\n\005party\030"
-  "\001 \001(\0132\013.vega.PartyR\005party\"\020\n\016PartiesRequ"
-  "est\"8\n\017PartiesResponse\022%\n\007parties\030\001 \003(\0132"
-  "\013.vega.PartyR\007parties\"\202\001\n\024TradesByPartyR"
-  "equest\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\033\n\tmar"
-  "ket_id\030\002 \001(\tR\010marketId\0222\n\npagination\030\003 \001"
-  "(\0132\022.api.v1.PaginationR\npagination\"<\n\025Tr"
-  "adesByPartyResponse\022#\n\006trades\030\001 \003(\0132\013.ve"
-  "ga.TradeR\006trades\"1\n\024TradesByOrderRequest"
-  "\022\031\n\010order_id\030\001 \001(\tR\007orderId\"<\n\025TradesByO"
-  "rderResponse\022#\n\006trades\030\001 \003(\0132\013.vega.Trad"
-  "eR\006trades\"\217\001\n\030AccountsSubscribeRequest\022\033"
-  "\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030"
-  "\002 \001(\tR\007partyId\022\024\n\005asset\030\003 \001(\tR\005asset\022%\n\004"
-  "type\030\004 \001(\0162\021.vega.AccountTypeR\004type\"D\n\031A"
-  "ccountsSubscribeResponse\022\'\n\007account\030\001 \001("
-  "\0132\r.vega.AccountR\007account\"P\n\026OrdersSubsc"
-  "ribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010marketId"
-  "\022\031\n\010party_id\030\002 \001(\tR\007partyId\"P\n\026TradesSub"
-  "scribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010market"
-  "Id\022\031\n\010party_id\030\002 \001(\tR\007partyId\"j\n\027Candles"
-  "SubscribeRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037"
-  "\002X\001R\010marketId\022*\n\010interval\030\002 \001(\0162\016.vega.I"
-  "ntervalR\010interval\"@\n\030CandlesSubscribeRes"
-  "ponse\022$\n\006candle\030\001 \001(\0132\014.vega.CandleR\006can"
-  "dle\"B\n\033MarketDepthSubscribeRequest\022#\n\tma"
-  "rket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"T\n\034Marke"
-  "tDepthSubscribeResponse\0224\n\014market_depth\030"
-  "\001 \001(\0132\021.vega.MarketDepthR\013marketDepth\"I\n"
-  "\"MarketDepthUpdatesSubscribeRequest\022#\n\tm"
-  "arket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"V\n#Mark"
-  "etDepthUpdatesSubscribeResponse\022/\n\006updat"
-  "e\030\001 \001(\0132\027.vega.MarketDepthUpdateR\006update"
-  "\"S\n\031PositionsSubscribeRequest\022\031\n\010party_i"
-  "d\030\001 \001(\tR\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010mar"
-  "ketId\"H\n\032PositionsSubscribeResponse\022*\n\010p"
-  "osition\030\001 \001(\0132\016.vega.PositionR\010position\""
-  "p\n\025OrdersByMarketRequest\022#\n\tmarket_id\030\001 "
-  "\001(\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagination\030\002 \001("
-  "\0132\022.api.v1.PaginationR\npagination\"=\n\026Ord"
-  "ersByMarketResponse\022#\n\006orders\030\001 \003(\0132\013.ve"
-  "ga.OrderR\006orders\"m\n\024OrdersByPartyRequest"
-  "\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\0222\n\np"
-  "agination\030\002 \001(\0132\022.api.v1.PaginationR\npag"
-  "ination\"<\n\025OrdersByPartyResponse\022#\n\006orde"
-  "rs\030\001 \003(\0132\013.vega.OrderR\006orders\"c\n\031OrderBy"
-  "MarketAndIDRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342"
-  "\337\037\002X\001R\010marketId\022!\n\010order_id\030\002 \001(\tB\006\342\337\037\002X"
-  "\001R\007orderId\"\?\n\032OrderByMarketAndIDResponse"
-  "\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"\?\n\027O"
-  "rderByReferenceRequest\022$\n\treference\030\001 \001("
-  "\tB\006\342\337\037\002X\001R\treference\"=\n\030OrderByReference"
-  "Response\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005or"
-  "der\"\020\n\016MarketsRequest\"9\n\017MarketsResponse"
-  "\022&\n\007markets\030\001 \003(\0132\014.vega.MarketR\007markets"
-  "\"\222\001\n\016CandlesRequest\022#\n\tmarket_id\030\001 \001(\tB\006"
-  "\342\337\037\002X\001R\010marketId\022/\n\017since_timestamp\030\002 \001("
-  "\003B\006\342\337\037\002\020\000R\016sinceTimestamp\022*\n\010interval\030\003 "
-  "\001(\0162\016.vega.IntervalR\010interval\"9\n\017Candles"
-  "Response\022&\n\007candles\030\001 \003(\0132\014.vega.CandleR"
-  "\007candles\"V\n\022MarketDepthRequest\022#\n\tmarket"
-  "_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022\033\n\tmax_depth"
-  "\030\002 \001(\004R\010maxDepth\"\321\001\n\023MarketDepthResponse"
-  "\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\"\n\003buy\030\002 \003"
-  "(\0132\020.vega.PriceLevelR\003buy\022$\n\004sell\030\003 \003(\0132"
-  "\020.vega.PriceLevelR\004sell\022*\n\nlast_trade\030\004 "
-  "\001(\0132\013.vega.TradeR\tlastTrade\022\'\n\017sequence_"
-  "number\030\005 \001(\004R\016sequenceNumber\"p\n\025TradesBy"
-  "MarketRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001"
-  "R\010marketId\0222\n\npagination\030\002 \001(\0132\022.api.v1."
-  "PaginationR\npagination\"=\n\026TradesByMarket"
-  "Response\022#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006t"
-  "rades\"Y\n\027PositionsByPartyRequest\022!\n\010part"
-  "y_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id"
-  "\030\002 \001(\tR\010marketId\"H\n\030PositionsByPartyResp"
-  "onse\022,\n\tpositions\030\001 \003(\0132\016.vega.PositionR"
-  "\tpositions\"\024\n\022GetVegaTimeRequest\"3\n\023GetV"
-  "egaTimeResponse\022\034\n\ttimestamp\030\001 \001(\003R\ttime"
-  "stamp\"V\n\nPagination\022\022\n\004skip\030\001 \001(\004R\004skip\022"
-  "\024\n\005limit\030\002 \001(\004R\005limit\022\036\n\ndescending\030\003 \001("
-  "\010R\ndescending\">\n\027OrdersSubscribeResponse"
-  "\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders\">\n"
-  "\027TradesSubscribeResponse\022#\n\006trades\030\001 \003(\013"
-  "2\013.vega.TradeR\006trades\"#\n!TransferRespons"
-  "esSubscribeRequest\"X\n\"TransferResponsesS"
-  "ubscribeResponse\0222\n\010response\030\001 \001(\0132\026.veg"
-  "a.TransferResponseR\010response\"\213\001\n\024PartyAc"
-  "countsRequest\022\031\n\010party_id\030\001 \001(\tR\007partyId"
-  "\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022%\n\004type\030\003 "
-  "\001(\0162\021.vega.AccountTypeR\004type\022\024\n\005asset\030\004 "
-  "\001(\tR\005asset\"B\n\025PartyAccountsResponse\022)\n\010a"
-  "ccounts\030\001 \003(\0132\r.vega.AccountR\010accounts\"J"
-  "\n\025MarketAccountsRequest\022\033\n\tmarket_id\030\001 \001"
-  "(\tR\010marketId\022\024\n\005asset\030\002 \001(\tR\005asset\"C\n\026Ma"
-  "rketAccountsResponse\022)\n\010accounts\030\001 \003(\0132\r"
-  ".vega.AccountR\010accounts\"8\n FeeInfrastruc"
-  "tureAccountsRequest\022\024\n\005asset\030\001 \001(\tR\005asse"
-  "t\"N\n!FeeInfrastructureAccountsResponse\022)"
-  "\n\010accounts\030\001 \003(\0132\r.vega.AccountR\010account"
-  "s\"\222\001\n\026PrepareProposalRequest\022!\n\010party_id"
-  "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\034\n\treference\030\002 \001"
-  "(\tR\treference\0227\n\010proposal\030\003 \001(\0132\023.vega.P"
-  "roposalTermsB\006\342\337\037\002 \001R\010proposal\"h\n\027Prepar"
-  "eProposalResponse\022\022\n\004blob\030\001 \001(\014R\004blob\0229\n"
-  "\020pending_proposal\030\002 \001(\0132\016.vega.ProposalR"
-  "\017pendingProposal\"\\\n\034PrepareVoteSubmissio"
-  "nRequest\022<\n\nsubmission\030\001 \001(\0132\024.vega.Vote"
-  "SubmissionB\006\342\337\037\002 \001R\nsubmission\"i\n\035Prepar"
-  "eVoteSubmissionResponse\022\022\n\004blob\030\001 \001(\014R\004b"
-  "lob\0224\n\nsubmission\030\002 \001(\0132\024.vega.VoteSubmi"
-  "ssionR\nsubmission\"n\n PrepareLiquidityPro"
-  "visionRequest\022J\n\nsubmission\030\001 \001(\0132\".vega"
-  ".LiquidityProvisionSubmissionB\006\342\337\037\002 \001R\ns"
-  "ubmission\"7\n!PrepareLiquidityProvisionRe"
-  "sponse\022\022\n\004blob\030\001 \001(\014R\004blob\"O\n\020OrderByIDR"
-  "equest\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderI"
-  "d\022\030\n\007version\030\002 \001(\004R\007version\"6\n\021OrderByID"
-  "Response\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005or"
-  "der\"q\n\030OrderVersionsByIDRequest\022!\n\010order"
-  "_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\0222\n\npagination"
-  "\030\002 \001(\0132\022.api.v1.PaginationR\npagination\"@"
-  "\n\031OrderVersionsByIDResponse\022#\n\006orders\030\001 "
-  "\003(\0132\013.vega.OrderR\006orders\"7\n\022EstimateFeeR"
-  "equest\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005orde"
-  "r\"2\n\023EstimateFeeResponse\022\033\n\003fee\030\002 \001(\0132\t."
-  "vega.FeeR\003fee\":\n\025EstimateMarginRequest\022!"
-  "\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"Q\n\026Est"
-  "imateMarginResponse\0227\n\rmargin_levels\030\002 \001"
-  "(\0132\022.vega.MarginLevelsR\014marginLevels\"\227\001\n"
-  "\026ObserveEventBusRequest\022&\n\004type\030\001 \003(\0162\022."
-  "vega.BusEventTypeR\004type\022\033\n\tmarket_id\030\002 \001"
-  "(\tR\010marketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022"
-  "\035\n\nbatch_size\030\004 \001(\003R\tbatchSize\"A\n\027Observ"
-  "eEventBusResponse\022&\n\006events\030\001 \003(\0132\016.vega"
-  ".BusEventR\006events\"\023\n\021StatisticsRequest\"F"
-  "\n\022StatisticsResponse\0220\n\nstatistics\030\001 \001(\013"
-  "2\020.vega.StatisticsR\nstatistics\"7\n\022Withdr"
-  "awalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007"
-  "partyId\"I\n\023WithdrawalsResponse\0222\n\013withdr"
-  "awals\030\001 \003(\0132\020.vega.WithdrawalR\013withdrawa"
-  "ls\"+\n\021WithdrawalRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037"
-  "\002X\001R\002id\"F\n\022WithdrawalResponse\0220\n\nwithdra"
-  "wal\030\001 \001(\0132\020.vega.WithdrawalR\nwithdrawal\""
-  "M\n\036ERC20WithdrawalApprovalRequest\022+\n\rwit"
-  "hdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014withdrawalId\"\252"
-  "\001\n\037ERC20WithdrawalApprovalResponse\022!\n\014as"
-  "set_source\030\001 \001(\tR\013assetSource\022\026\n\006amount\030"
-  "\002 \001(\tR\006amount\022\026\n\006expiry\030\003 \001(\003R\006expiry\022\024\n"
-  "\005nonce\030\004 \001(\tR\005nonce\022\036\n\nsignatures\030\005 \001(\tR"
-  "\nsignatures\"4\n\017DepositsRequest\022!\n\010party_"
-  "id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"=\n\020DepositsRes"
-  "ponse\022)\n\010deposits\030\001 \003(\0132\r.vega.DepositR\010"
-  "deposits\"(\n\016DepositRequest\022\026\n\002id\030\001 \001(\tB\006"
-  "\342\337\037\002X\001R\002id\":\n\017DepositResponse\022\'\n\007deposit"
-  "\030\001 \001(\0132\r.vega.DepositR\007deposit\"\032\n\030Networ"
-  "kParametersRequest\"b\n\031NetworkParametersR"
-  "esponse\022E\n\022network_parameters\030\001 \003(\0132\026.ve"
-  "ga.NetworkParameterR\021networkParameters\"J"
-  "\n\032LiquidityProvisionsRequest\022\026\n\006market\030\001"
-  " \001(\tR\006market\022\024\n\005party\030\002 \001(\tR\005party\"j\n\033Li"
-  "quidityProvisionsResponse\022K\n\024liquidity_p"
-  "rovisions\030\001 \003(\0132\030.vega.LiquidityProvisio"
-  "nR\023liquidityProvisions\"+\n\021OracleSpecRequ"
-  "est\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"M\n\022OracleSpe"
-  "cResponse\0227\n\013oracle_spec\030\001 \001(\0132\026.oracles"
-  ".v1.OracleSpecR\noracleSpec\"\024\n\022OracleSpec"
-  "sRequest\"P\n\023OracleSpecsResponse\0229\n\014oracl"
-  "e_specs\030\001 \003(\0132\026.oracles.v1.OracleSpecR\013o"
-  "racleSpecs\"1\n\027OracleDataBySpecRequest\022\026\n"
-  "\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030OracleDataBySpe"
-  "cResponse\0227\n\013oracle_data\030\001 \003(\0132\026.oracles"
-  ".v1.OracleDataR\noracleData2\336\006\n\016TradingSe"
-  "rvice\022[\n\022PrepareSubmitOrder\022!.api.v1.Pre"
-  "pareSubmitOrderRequest\032\".api.v1.PrepareS"
-  "ubmitOrderResponse\022[\n\022PrepareCancelOrder"
-  "\022!.api.v1.PrepareCancelOrderRequest\032\".ap"
-  "i.v1.PrepareCancelOrderResponse\022X\n\021Prepa"
-  "reAmendOrder\022 .api.v1.PrepareAmendOrderR"
-  "equest\032!.api.v1.PrepareAmendOrderRespons"
-  "e\022R\n\017PrepareWithdraw\022\036.api.v1.PrepareWit"
-  "hdrawRequest\032\037.api.v1.PrepareWithdrawRes"
-  "ponse\022X\n\021SubmitTransaction\022 .api.v1.Subm"
-  "itTransactionRequest\032!.api.v1.SubmitTran"
-  "sactionResponse\022R\n\017PrepareProposal\022\036.api"
-  ".v1.PrepareProposalRequest\032\037.api.v1.Prep"
-  "areProposalResponse\022d\n\025PrepareVoteSubmis"
-  "sion\022$.api.v1.PrepareVoteSubmissionReque"
-  "st\032%.api.v1.PrepareVoteSubmissionRespons"
-  "e\022^\n\023PropagateChainEvent\022\".api.v1.Propag"
-  "ateChainEventRequest\032#.api.v1.PropagateC"
-  "hainEventResponse\022p\n\031PrepareLiquidityPro"
-  "vision\022(.api.v1.PrepareLiquidityProvisio"
-  "nRequest\032).api.v1.PrepareLiquidityProvis"
-  "ionResponse2\333*\n\022TradingDataService\022O\n\016Ma"
-  "rketAccounts\022\035.api.v1.MarketAccountsRequ"
-  "est\032\036.api.v1.MarketAccountsResponse\022L\n\rP"
-  "artyAccounts\022\034.api.v1.PartyAccountsReque"
-  "st\032\035.api.v1.PartyAccountsResponse\022p\n\031Fee"
-  "InfrastructureAccounts\022(.api.v1.FeeInfra"
-  "structureAccountsRequest\032).api.v1.FeeInf"
-  "rastructureAccountsResponse\022:\n\007Candles\022\026"
-  ".api.v1.CandlesRequest\032\027.api.v1.CandlesR"
-  "esponse\022O\n\016MarketDataByID\022\035.api.v1.Marke"
-  "tDataByIDRequest\032\036.api.v1.MarketDataByID"
-  "Response\022F\n\013MarketsData\022\032.api.v1.Markets"
-  "DataRequest\032\033.api.v1.MarketsDataResponse"
-  "\022C\n\nMarketByID\022\031.api.v1.MarketByIDReques"
-  "t\032\032.api.v1.MarketByIDResponse\022F\n\013MarketD"
-  "epth\022\032.api.v1.MarketDepthRequest\032\033.api.v"
-  "1.MarketDepthResponse\022:\n\007Markets\022\026.api.v"
-  "1.MarketsRequest\032\027.api.v1.MarketsRespons"
-  "e\022[\n\022OrderByMarketAndID\022!.api.v1.OrderBy"
-  "MarketAndIDRequest\032\".api.v1.OrderByMarke"
-  "tAndIDResponse\022U\n\020OrderByReference\022\037.api"
-  ".v1.OrderByReferenceRequest\032 .api.v1.Ord"
-  "erByReferenceResponse\022O\n\016OrdersByMarket\022"
-  "\035.api.v1.OrdersByMarketRequest\032\036.api.v1."
-  "OrdersByMarketResponse\022L\n\rOrdersByParty\022"
-  "\034.api.v1.OrdersByPartyRequest\032\035.api.v1.O"
-  "rdersByPartyResponse\022@\n\tOrderByID\022\030.api."
-  "v1.OrderByIDRequest\032\031.api.v1.OrderByIDRe"
-  "sponse\022X\n\021OrderVersionsByID\022 .api.v1.Ord"
-  "erVersionsByIDRequest\032!.api.v1.OrderVers"
-  "ionsByIDResponse\022I\n\014MarginLevels\022\033.api.v"
-  "1.MarginLevelsRequest\032\034.api.v1.MarginLev"
-  "elsResponse\022:\n\007Parties\022\026.api.v1.PartiesR"
-  "equest\032\027.api.v1.PartiesResponse\022@\n\tParty"
-  "ByID\022\030.api.v1.PartyByIDRequest\032\031.api.v1."
-  "PartyByIDResponse\022U\n\020PositionsByParty\022\037."
-  "api.v1.PositionsByPartyRequest\032 .api.v1."
-  "PositionsByPartyResponse\022@\n\tLastTrade\022\030."
-  "api.v1.LastTradeRequest\032\031.api.v1.LastTra"
-  "deResponse\022O\n\016TradesByMarket\022\035.api.v1.Tr"
-  "adesByMarketRequest\032\036.api.v1.TradesByMar"
-  "ketResponse\022L\n\rTradesByOrder\022\034.api.v1.Tr"
-  "adesByOrderRequest\032\035.api.v1.TradesByOrde"
-  "rResponse\022L\n\rTradesByParty\022\034.api.v1.Trad"
-  "esByPartyRequest\032\035.api.v1.TradesByPartyR"
-  "esponse\022I\n\014GetProposals\022\033.api.v1.GetProp"
-  "osalsRequest\032\034.api.v1.GetProposalsRespon"
-  "se\022^\n\023GetProposalsByParty\022\".api.v1.GetPr"
-  "oposalsByPartyRequest\032#.api.v1.GetPropos"
-  "alsByPartyResponse\022R\n\017GetVotesByParty\022\036."
-  "api.v1.GetVotesByPartyRequest\032\037.api.v1.G"
-  "etVotesByPartyResponse\022d\n\025GetNewMarketPr"
-  "oposals\022$.api.v1.GetNewMarketProposalsRe"
-  "quest\032%.api.v1.GetNewMarketProposalsResp"
-  "onse\022m\n\030GetUpdateMarketProposals\022\'.api.v"
-  "1.GetUpdateMarketProposalsRequest\032(.api."
-  "v1.GetUpdateMarketProposalsResponse\022|\n\035G"
-  "etNetworkParametersProposals\022,.api.v1.Ge"
-  "tNetworkParametersProposalsRequest\032-.api"
-  ".v1.GetNetworkParametersProposalsRespons"
-  "e\022a\n\024GetNewAssetProposals\022#.api.v1.GetNe"
-  "wAssetProposalsRequest\032$.api.v1.GetNewAs"
-  "setProposalsResponse\022R\n\017GetProposalByID\022"
-  "\036.api.v1.GetProposalByIDRequest\032\037.api.v1"
-  ".GetProposalByIDResponse\022g\n\026GetProposalB"
-  "yReference\022%.api.v1.GetProposalByReferen"
-  "ceRequest\032&.api.v1.GetProposalByReferenc"
-  "eResponse\022Z\n\021ObserveGovernance\022 .api.v1."
-  "ObserveGovernanceRequest\032!.api.v1.Observ"
-  "eGovernanceResponse0\001\022f\n\025ObservePartyPro"
-  "posals\022$.api.v1.ObservePartyProposalsReq"
-  "uest\032%.api.v1.ObservePartyProposalsRespo"
-  "nse0\001\022Z\n\021ObservePartyVotes\022 .api.v1.Obse"
-  "rvePartyVotesRequest\032!.api.v1.ObservePar"
-  "tyVotesResponse0\001\022c\n\024ObserveProposalVote"
-  "s\022#.api.v1.ObserveProposalVotesRequest\032$"
-  ".api.v1.ObserveProposalVotesResponse0\001\022V"
-  "\n\017ObserveEventBus\022\036.api.v1.ObserveEventB"
-  "usRequest\032\037.api.v1.ObserveEventBusRespon"
-  "se(\0010\001\022C\n\nStatistics\022\031.api.v1.Statistics"
-  "Request\032\032.api.v1.StatisticsResponse\022F\n\013G"
-  "etVegaTime\022\032.api.v1.GetVegaTimeRequest\032\033"
-  ".api.v1.GetVegaTimeResponse\022Z\n\021AccountsS"
-  "ubscribe\022 .api.v1.AccountsSubscribeReque"
-  "st\032!.api.v1.AccountsSubscribeResponse0\001\022"
-  "W\n\020CandlesSubscribe\022\037.api.v1.CandlesSubs"
-  "cribeRequest\032 .api.v1.CandlesSubscribeRe"
-  "sponse0\001\022f\n\025MarginLevelsSubscribe\022$.api."
-  "v1.MarginLevelsSubscribeRequest\032%.api.v1"
-  ".MarginLevelsSubscribeResponse0\001\022c\n\024Mark"
-  "etDepthSubscribe\022#.api.v1.MarketDepthSub"
-  "scribeRequest\032$.api.v1.MarketDepthSubscr"
-  "ibeResponse0\001\022x\n\033MarketDepthUpdatesSubsc"
-  "ribe\022*.api.v1.MarketDepthUpdatesSubscrib"
-  "eRequest\032+.api.v1.MarketDepthUpdatesSubs"
-  "cribeResponse0\001\022c\n\024MarketsDataSubscribe\022"
-  "#.api.v1.MarketsDataSubscribeRequest\032$.a"
-  "pi.v1.MarketsDataSubscribeResponse0\001\022T\n\017"
-  "OrdersSubscribe\022\036.api.v1.OrdersSubscribe"
-  "Request\032\037.api.v1.OrdersSubscribeResponse"
-  "0\001\022]\n\022PositionsSubscribe\022!.api.v1.Positi"
-  "onsSubscribeRequest\032\".api.v1.PositionsSu"
-  "bscribeResponse0\001\022T\n\017TradesSubscribe\022\036.a"
-  "pi.v1.TradesSubscribeRequest\032\037.api.v1.Tr"
-  "adesSubscribeResponse0\001\022u\n\032TransferRespo"
-  "nsesSubscribe\022).api.v1.TransferResponses"
-  "SubscribeRequest\032*.api.v1.TransferRespon"
-  "sesSubscribeResponse0\001\022s\n\032GetNodeSignatu"
-  "resAggregate\022).api.v1.GetNodeSignaturesA"
-  "ggregateRequest\032*.api.v1.GetNodeSignatur"
-  "esAggregateResponse\022@\n\tAssetByID\022\030.api.v"
-  "1.AssetByIDRequest\032\031.api.v1.AssetByIDRes"
-  "ponse\0227\n\006Assets\022\025.api.v1.AssetsRequest\032\026"
-  ".api.v1.AssetsResponse\022F\n\013EstimateFee\022\032."
-  "api.v1.EstimateFeeRequest\032\033.api.v1.Estim"
-  "ateFeeResponse\022O\n\016EstimateMargin\022\035.api.v"
-  "1.EstimateMarginRequest\032\036.api.v1.Estimat"
-  "eMarginResponse\022j\n\027ERC20WithdrawalApprov"
-  "al\022&.api.v1.ERC20WithdrawalApprovalReque"
-  "st\032\'.api.v1.ERC20WithdrawalApprovalRespo"
-  "nse\022C\n\nWithdrawal\022\031.api.v1.WithdrawalReq"
-  "uest\032\032.api.v1.WithdrawalResponse\022F\n\013With"
-  "drawals\022\032.api.v1.WithdrawalsRequest\032\033.ap"
-  "i.v1.WithdrawalsResponse\022:\n\007Deposit\022\026.ap"
-  "i.v1.DepositRequest\032\027.api.v1.DepositResp"
-  "onse\022=\n\010Deposits\022\027.api.v1.DepositsReques"
-  "t\032\030.api.v1.DepositsResponse\022X\n\021NetworkPa"
-  "rameters\022 .api.v1.NetworkParametersReque"
-  "st\032!.api.v1.NetworkParametersResponse\022^\n"
-  "\023LiquidityProvisions\022\".api.v1.LiquidityP"
-  "rovisionsRequest\032#.api.v1.LiquidityProvi"
-  "sionsResponse\022C\n\nOracleSpec\022\031.api.v1.Ora"
-  "cleSpecRequest\032\032.api.v1.OracleSpecRespon"
-  "se\022F\n\013OracleSpecs\022\032.api.v1.OracleSpecsRe"
-  "quest\032\033.api.v1.OracleSpecsResponse\022U\n\020Or"
-  "acleDataBySpec\022\037.api.v1.OracleDataBySpec"
-  "Request\032 .api.v1.OracleDataBySpecRespons"
-  "eB\?\n\030io.vegaprotocol.vega.apiZ#code.vega"
-  "protocol.io/vega/proto/apib\006proto3"
+  "d\"C\n\027GetProposalByIDResponse\022(\n\004data\030\001 \001"
+  "(\0132\024.vega.GovernanceDataR\004data\"E\n\035GetPro"
+  "posalByReferenceRequest\022$\n\treference\030\001 \001"
+  "(\tB\006\342\337\037\002X\001R\treference\"J\n\036GetProposalByRe"
+  "ferenceResponse\022(\n\004data\030\001 \001(\0132\024.vega.Gov"
+  "ernanceDataR\004data\"\032\n\030ObserveGovernanceRe"
+  "quest\"E\n\031ObserveGovernanceResponse\022(\n\004da"
+  "ta\030\001 \001(\0132\024.vega.GovernanceDataR\004data\"A\n\034"
+  "ObservePartyProposalsRequest\022!\n\010party_id"
+  "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\035ObservePartyP"
+  "roposalsResponse\022(\n\004data\030\001 \001(\0132\024.vega.Go"
+  "vernanceDataR\004data\"F\n\033ObserveProposalVot"
+  "esRequest\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\n"
+  "proposalId\">\n\034ObserveProposalVotesRespon"
+  "se\022\036\n\004vote\030\001 \001(\0132\n.vega.VoteR\004vote\"=\n\030Ob"
+  "servePartyVotesRequest\022!\n\010party_id\030\001 \001(\t"
+  "B\006\342\337\037\002X\001R\007partyId\";\n\031ObservePartyVotesRe"
+  "sponse\022\036\n\004vote\030\001 \001(\0132\n.vega.VoteR\004vote\"^"
+  "\n\034MarginLevelsSubscribeRequest\022!\n\010party_"
+  "id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id\030\002"
+  " \001(\tR\010marketId\"X\n\035MarginLevelsSubscribeR"
+  "esponse\0227\n\rmargin_levels\030\001 \001(\0132\022.vega.Ma"
+  "rginLevelsR\014marginLevels\"U\n\023MarginLevels"
+  "Request\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007party"
+  "Id\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"O\n\024Margi"
+  "nLevelsResponse\0227\n\rmargin_levels\030\001 \003(\0132\022"
+  ".vega.MarginLevelsR\014marginLevels\":\n\033Mark"
+  "etsDataSubscribeRequest\022\033\n\tmarket_id\030\001 \001"
+  "(\tR\010marketId\"Q\n\034MarketsDataSubscribeResp"
+  "onse\0221\n\013market_data\030\001 \001(\0132\020.vega.MarketD"
+  "ataR\nmarketData\"<\n\025MarketDataByIDRequest"
+  "\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"K\n"
+  "\026MarketDataByIDResponse\0221\n\013market_data\030\001"
+  " \001(\0132\020.vega.MarketDataR\nmarketData\"\024\n\022Ma"
+  "rketsDataRequest\"J\n\023MarketsDataResponse\022"
+  "3\n\014markets_data\030\001 \003(\0132\020.vega.MarketDataR"
+  "\013marketsData\"7\n\020LastTradeRequest\022#\n\tmark"
+  "et_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"6\n\021LastTra"
+  "deResponse\022!\n\005trade\030\001 \001(\0132\013.vega.TradeR\005"
+  "trade\"8\n\021MarketByIDRequest\022#\n\tmarket_id\030"
+  "\001 \001(\tB\006\342\337\037\002X\001R\010marketId\":\n\022MarketByIDRes"
+  "ponse\022$\n\006market\030\001 \001(\0132\014.vega.MarketR\006mar"
+  "ket\"5\n\020PartyByIDRequest\022!\n\010party_id\030\001 \001("
+  "\tB\006\342\337\037\002X\001R\007partyId\"6\n\021PartyByIDResponse\022"
+  "!\n\005party\030\001 \001(\0132\013.vega.PartyR\005party\"\020\n\016Pa"
+  "rtiesRequest\"8\n\017PartiesResponse\022%\n\007parti"
+  "es\030\001 \003(\0132\013.vega.PartyR\007parties\"\202\001\n\024Trade"
+  "sByPartyRequest\022\031\n\010party_id\030\001 \001(\tR\007party"
+  "Id\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\0222\n\npagin"
+  "ation\030\003 \001(\0132\022.api.v1.PaginationR\npaginat"
+  "ion\"<\n\025TradesByPartyResponse\022#\n\006trades\030\001"
+  " \003(\0132\013.vega.TradeR\006trades\"1\n\024TradesByOrd"
+  "erRequest\022\031\n\010order_id\030\001 \001(\tR\007orderId\"<\n\025"
+  "TradesByOrderResponse\022#\n\006trades\030\001 \003(\0132\013."
+  "vega.TradeR\006trades\"\217\001\n\030AccountsSubscribe"
+  "Request\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010"
+  "party_id\030\002 \001(\tR\007partyId\022\024\n\005asset\030\003 \001(\tR\005"
+  "asset\022%\n\004type\030\004 \001(\0162\021.vega.AccountTypeR\004"
+  "type\"D\n\031AccountsSubscribeResponse\022\'\n\007acc"
+  "ount\030\001 \001(\0132\r.vega.AccountR\007account\"P\n\026Or"
+  "dersSubscribeRequest\022\033\n\tmarket_id\030\001 \001(\tR"
+  "\010marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\"P\n\026"
+  "TradesSubscribeRequest\022\033\n\tmarket_id\030\001 \001("
+  "\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\"j"
+  "\n\027CandlesSubscribeRequest\022#\n\tmarket_id\030\001"
+  " \001(\tB\006\342\337\037\002X\001R\010marketId\022*\n\010interval\030\002 \001(\016"
+  "2\016.vega.IntervalR\010interval\"@\n\030CandlesSub"
+  "scribeResponse\022$\n\006candle\030\001 \001(\0132\014.vega.Ca"
+  "ndleR\006candle\"B\n\033MarketDepthSubscribeRequ"
+  "est\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId"
+  "\"T\n\034MarketDepthSubscribeResponse\0224\n\014mark"
+  "et_depth\030\001 \001(\0132\021.vega.MarketDepthR\013marke"
+  "tDepth\"I\n\"MarketDepthUpdatesSubscribeReq"
+  "uest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketI"
+  "d\"V\n#MarketDepthUpdatesSubscribeResponse"
+  "\022/\n\006update\030\001 \001(\0132\027.vega.MarketDepthUpdat"
+  "eR\006update\"S\n\031PositionsSubscribeRequest\022\031"
+  "\n\010party_id\030\001 \001(\tR\007partyId\022\033\n\tmarket_id\030\002"
+  " \001(\tR\010marketId\"H\n\032PositionsSubscribeResp"
+  "onse\022*\n\010position\030\001 \001(\0132\016.vega.PositionR\010"
+  "position\"p\n\025OrdersByMarketRequest\022#\n\tmar"
+  "ket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagina"
+  "tion\030\002 \001(\0132\022.api.v1.PaginationR\npaginati"
+  "on\"=\n\026OrdersByMarketResponse\022#\n\006orders\030\001"
+  " \003(\0132\013.vega.OrderR\006orders\"m\n\024OrdersByPar"
+  "tyRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007par"
+  "tyId\0222\n\npagination\030\002 \001(\0132\022.api.v1.Pagina"
+  "tionR\npagination\"<\n\025OrdersByPartyRespons"
+  "e\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders\"c"
+  "\n\031OrderByMarketAndIDRequest\022#\n\tmarket_id"
+  "\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022!\n\010order_id\030\002 \001"
+  "(\tB\006\342\337\037\002X\001R\007orderId\"\?\n\032OrderByMarketAndI"
+  "DResponse\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005o"
+  "rder\"\?\n\027OrderByReferenceRequest\022$\n\trefer"
+  "ence\030\001 \001(\tB\006\342\337\037\002X\001R\treference\"=\n\030OrderBy"
+  "ReferenceResponse\022!\n\005order\030\001 \001(\0132\013.vega."
+  "OrderR\005order\"\020\n\016MarketsRequest\"9\n\017Market"
+  "sResponse\022&\n\007markets\030\001 \003(\0132\014.vega.Market"
+  "R\007markets\"\222\001\n\016CandlesRequest\022#\n\tmarket_i"
+  "d\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022/\n\017since_times"
+  "tamp\030\002 \001(\003B\006\342\337\037\002\020\000R\016sinceTimestamp\022*\n\010in"
+  "terval\030\003 \001(\0162\016.vega.IntervalR\010interval\"9"
+  "\n\017CandlesResponse\022&\n\007candles\030\001 \003(\0132\014.veg"
+  "a.CandleR\007candles\"V\n\022MarketDepthRequest\022"
+  "#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022\033\n\t"
+  "max_depth\030\002 \001(\004R\010maxDepth\"\321\001\n\023MarketDept"
+  "hResponse\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\""
+  "\n\003buy\030\002 \003(\0132\020.vega.PriceLevelR\003buy\022$\n\004se"
+  "ll\030\003 \003(\0132\020.vega.PriceLevelR\004sell\022*\n\nlast"
+  "_trade\030\004 \001(\0132\013.vega.TradeR\tlastTrade\022\'\n\017"
+  "sequence_number\030\005 \001(\004R\016sequenceNumber\"p\n"
+  "\025TradesByMarketRequest\022#\n\tmarket_id\030\001 \001("
+  "\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagination\030\002 \001(\0132"
+  "\022.api.v1.PaginationR\npagination\"=\n\026Trade"
+  "sByMarketResponse\022#\n\006trades\030\001 \003(\0132\013.vega"
+  ".TradeR\006trades\"Y\n\027PositionsByPartyReques"
+  "t\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\t"
+  "market_id\030\002 \001(\tR\010marketId\"H\n\030PositionsBy"
+  "PartyResponse\022,\n\tpositions\030\001 \003(\0132\016.vega."
+  "PositionR\tpositions\"\024\n\022GetVegaTimeReques"
+  "t\"3\n\023GetVegaTimeResponse\022\034\n\ttimestamp\030\001 "
+  "\001(\003R\ttimestamp\"V\n\nPagination\022\022\n\004skip\030\001 \001"
+  "(\004R\004skip\022\024\n\005limit\030\002 \001(\004R\005limit\022\036\n\ndescen"
+  "ding\030\003 \001(\010R\ndescending\">\n\027OrdersSubscrib"
+  "eResponse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006"
+  "orders\">\n\027TradesSubscribeResponse\022#\n\006tra"
+  "des\030\001 \003(\0132\013.vega.TradeR\006trades\"#\n!Transf"
+  "erResponsesSubscribeRequest\"X\n\"TransferR"
+  "esponsesSubscribeResponse\0222\n\010response\030\001 "
+  "\001(\0132\026.vega.TransferResponseR\010response\"\213\001"
+  "\n\024PartyAccountsRequest\022\031\n\010party_id\030\001 \001(\t"
+  "R\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022%"
+  "\n\004type\030\003 \001(\0162\021.vega.AccountTypeR\004type\022\024\n"
+  "\005asset\030\004 \001(\tR\005asset\"B\n\025PartyAccountsResp"
+  "onse\022)\n\010accounts\030\001 \003(\0132\r.vega.AccountR\010a"
+  "ccounts\"J\n\025MarketAccountsRequest\022\033\n\tmark"
+  "et_id\030\001 \001(\tR\010marketId\022\024\n\005asset\030\002 \001(\tR\005as"
+  "set\"C\n\026MarketAccountsResponse\022)\n\010account"
+  "s\030\001 \003(\0132\r.vega.AccountR\010accounts\"8\n FeeI"
+  "nfrastructureAccountsRequest\022\024\n\005asset\030\001 "
+  "\001(\tR\005asset\"N\n!FeeInfrastructureAccountsR"
+  "esponse\022)\n\010accounts\030\001 \003(\0132\r.vega.Account"
+  "R\010accounts\"h\n PrepareProposalSubmissionR"
+  "equest\022D\n\nsubmission\030\001 \001(\0132$.vega.comman"
+  "ds.v1.ProposalSubmissionR\nsubmission\"}\n!"
+  "PrepareProposalSubmissionResponse\022\022\n\004blo"
+  "b\030\001 \001(\014R\004blob\022D\n\nsubmission\030\002 \001(\0132$.vega"
+  ".commands.v1.ProposalSubmissionR\nsubmiss"
+  "ion\"h\n\034PrepareVoteSubmissionRequest\022H\n\ns"
+  "ubmission\030\001 \001(\0132 .vega.commands.v1.VoteS"
+  "ubmissionB\006\342\337\037\002 \001R\nsubmission\"u\n\035Prepare"
+  "VoteSubmissionResponse\022\022\n\004blob\030\001 \001(\014R\004bl"
+  "ob\022@\n\nsubmission\030\002 \001(\0132 .vega.commands.v"
+  "1.VoteSubmissionR\nsubmission\"z\n PrepareL"
+  "iquidityProvisionRequest\022V\n\nsubmission\030\001"
+  " \001(\0132..vega.commands.v1.LiquidityProvisi"
+  "onSubmissionB\006\342\337\037\002 \001R\nsubmission\"7\n!Prep"
+  "areLiquidityProvisionResponse\022\022\n\004blob\030\001 "
+  "\001(\014R\004blob\"O\n\020OrderByIDRequest\022!\n\010order_i"
+  "d\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\022\030\n\007version\030\002 \001("
+  "\004R\007version\"6\n\021OrderByIDResponse\022!\n\005order"
+  "\030\001 \001(\0132\013.vega.OrderR\005order\"q\n\030OrderVersi"
+  "onsByIDRequest\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001"
+  "R\007orderId\0222\n\npagination\030\002 \001(\0132\022.api.v1.P"
+  "aginationR\npagination\"@\n\031OrderVersionsBy"
+  "IDResponse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR"
+  "\006orders\"7\n\022EstimateFeeRequest\022!\n\005order\030\001"
+  " \001(\0132\013.vega.OrderR\005order\"2\n\023EstimateFeeR"
+  "esponse\022\033\n\003fee\030\002 \001(\0132\t.vega.FeeR\003fee\":\n\025"
+  "EstimateMarginRequest\022!\n\005order\030\001 \001(\0132\013.v"
+  "ega.OrderR\005order\"Q\n\026EstimateMarginRespon"
+  "se\0227\n\rmargin_levels\030\002 \001(\0132\022.vega.MarginL"
+  "evelsR\014marginLevels\"\241\001\n\026ObserveEventBusR"
+  "equest\0220\n\004type\030\001 \003(\0162\034.vega.events.v1.Bu"
+  "sEventTypeR\004type\022\033\n\tmarket_id\030\002 \001(\tR\010mar"
+  "ketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022\035\n\nbatc"
+  "h_size\030\004 \001(\003R\tbatchSize\"K\n\027ObserveEventB"
+  "usResponse\0220\n\006events\030\001 \003(\0132\030.vega.events"
+  ".v1.BusEventR\006events\"\023\n\021StatisticsReques"
+  "t\"F\n\022StatisticsResponse\0220\n\nstatistics\030\001 "
+  "\001(\0132\020.vega.StatisticsR\nstatistics\"7\n\022Wit"
+  "hdrawalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X"
+  "\001R\007partyId\"I\n\023WithdrawalsResponse\0222\n\013wit"
+  "hdrawals\030\001 \003(\0132\020.vega.WithdrawalR\013withdr"
+  "awals\"+\n\021WithdrawalRequest\022\026\n\002id\030\001 \001(\tB\006"
+  "\342\337\037\002X\001R\002id\"F\n\022WithdrawalResponse\0220\n\nwith"
+  "drawal\030\001 \001(\0132\020.vega.WithdrawalR\nwithdraw"
+  "al\"M\n\036ERC20WithdrawalApprovalRequest\022+\n\r"
+  "withdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014withdrawalI"
+  "d\"\252\001\n\037ERC20WithdrawalApprovalResponse\022!\n"
+  "\014asset_source\030\001 \001(\tR\013assetSource\022\026\n\006amou"
+  "nt\030\002 \001(\tR\006amount\022\026\n\006expiry\030\003 \001(\003R\006expiry"
+  "\022\024\n\005nonce\030\004 \001(\tR\005nonce\022\036\n\nsignatures\030\005 \001"
+  "(\tR\nsignatures\"4\n\017DepositsRequest\022!\n\010par"
+  "ty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"=\n\020Deposits"
+  "Response\022)\n\010deposits\030\001 \003(\0132\r.vega.Deposi"
+  "tR\010deposits\"(\n\016DepositRequest\022\026\n\002id\030\001 \001("
+  "\tB\006\342\337\037\002X\001R\002id\":\n\017DepositResponse\022\'\n\007depo"
+  "sit\030\001 \001(\0132\r.vega.DepositR\007deposit\"\032\n\030Net"
+  "workParametersRequest\"b\n\031NetworkParamete"
+  "rsResponse\022E\n\022network_parameters\030\001 \003(\0132\026"
+  ".vega.NetworkParameterR\021networkParameter"
+  "s\"J\n\032LiquidityProvisionsRequest\022\026\n\006marke"
+  "t\030\001 \001(\tR\006market\022\024\n\005party\030\002 \001(\tR\005party\"j\n"
+  "\033LiquidityProvisionsResponse\022K\n\024liquidit"
+  "y_provisions\030\001 \003(\0132\030.vega.LiquidityProvi"
+  "sionR\023liquidityProvisions\"+\n\021OracleSpecR"
+  "equest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"M\n\022Oracle"
+  "SpecResponse\0227\n\013oracle_spec\030\001 \001(\0132\026.orac"
+  "les.v1.OracleSpecR\noracleSpec\"\024\n\022OracleS"
+  "pecsRequest\"P\n\023OracleSpecsResponse\0229\n\014or"
+  "acle_specs\030\001 \003(\0132\026.oracles.v1.OracleSpec"
+  "R\013oracleSpecs\"1\n\027OracleDataBySpecRequest"
+  "\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030OracleDataBy"
+  "SpecResponse\0227\n\013oracle_data\030\001 \003(\0132\026.orac"
+  "les.v1.OracleDataR\noracleData2\374\006\n\016Tradin"
+  "gService\022[\n\022PrepareSubmitOrder\022!.api.v1."
+  "PrepareSubmitOrderRequest\032\".api.v1.Prepa"
+  "reSubmitOrderResponse\022[\n\022PrepareCancelOr"
+  "der\022!.api.v1.PrepareCancelOrderRequest\032\""
+  ".api.v1.PrepareCancelOrderResponse\022X\n\021Pr"
+  "epareAmendOrder\022 .api.v1.PrepareAmendOrd"
+  "erRequest\032!.api.v1.PrepareAmendOrderResp"
+  "onse\022R\n\017PrepareWithdraw\022\036.api.v1.Prepare"
+  "WithdrawRequest\032\037.api.v1.PrepareWithdraw"
+  "Response\022X\n\021SubmitTransaction\022 .api.v1.S"
+  "ubmitTransactionRequest\032!.api.v1.SubmitT"
+  "ransactionResponse\022p\n\031PrepareProposalSub"
+  "mission\022(.api.v1.PrepareProposalSubmissi"
+  "onRequest\032).api.v1.PrepareProposalSubmis"
+  "sionResponse\022d\n\025PrepareVoteSubmission\022$."
+  "api.v1.PrepareVoteSubmissionRequest\032%.ap"
+  "i.v1.PrepareVoteSubmissionResponse\022^\n\023Pr"
+  "opagateChainEvent\022\".api.v1.PropagateChai"
+  "nEventRequest\032#.api.v1.PropagateChainEve"
+  "ntResponse\022p\n\031PrepareLiquidityProvision\022"
+  "(.api.v1.PrepareLiquidityProvisionReques"
+  "t\032).api.v1.PrepareLiquidityProvisionResp"
+  "onse2\333*\n\022TradingDataService\022O\n\016MarketAcc"
+  "ounts\022\035.api.v1.MarketAccountsRequest\032\036.a"
+  "pi.v1.MarketAccountsResponse\022L\n\rPartyAcc"
+  "ounts\022\034.api.v1.PartyAccountsRequest\032\035.ap"
+  "i.v1.PartyAccountsResponse\022p\n\031FeeInfrast"
+  "ructureAccounts\022(.api.v1.FeeInfrastructu"
+  "reAccountsRequest\032).api.v1.FeeInfrastruc"
+  "tureAccountsResponse\022:\n\007Candles\022\026.api.v1"
+  ".CandlesRequest\032\027.api.v1.CandlesResponse"
+  "\022O\n\016MarketDataByID\022\035.api.v1.MarketDataBy"
+  "IDRequest\032\036.api.v1.MarketDataByIDRespons"
+  "e\022F\n\013MarketsData\022\032.api.v1.MarketsDataReq"
+  "uest\032\033.api.v1.MarketsDataResponse\022C\n\nMar"
+  "ketByID\022\031.api.v1.MarketByIDRequest\032\032.api"
+  ".v1.MarketByIDResponse\022F\n\013MarketDepth\022\032."
+  "api.v1.MarketDepthRequest\032\033.api.v1.Marke"
+  "tDepthResponse\022:\n\007Markets\022\026.api.v1.Marke"
+  "tsRequest\032\027.api.v1.MarketsResponse\022[\n\022Or"
+  "derByMarketAndID\022!.api.v1.OrderByMarketA"
+  "ndIDRequest\032\".api.v1.OrderByMarketAndIDR"
+  "esponse\022U\n\020OrderByReference\022\037.api.v1.Ord"
+  "erByReferenceRequest\032 .api.v1.OrderByRef"
+  "erenceResponse\022O\n\016OrdersByMarket\022\035.api.v"
+  "1.OrdersByMarketRequest\032\036.api.v1.OrdersB"
+  "yMarketResponse\022L\n\rOrdersByParty\022\034.api.v"
+  "1.OrdersByPartyRequest\032\035.api.v1.OrdersBy"
+  "PartyResponse\022@\n\tOrderByID\022\030.api.v1.Orde"
+  "rByIDRequest\032\031.api.v1.OrderByIDResponse\022"
+  "X\n\021OrderVersionsByID\022 .api.v1.OrderVersi"
+  "onsByIDRequest\032!.api.v1.OrderVersionsByI"
+  "DResponse\022I\n\014MarginLevels\022\033.api.v1.Margi"
+  "nLevelsRequest\032\034.api.v1.MarginLevelsResp"
+  "onse\022:\n\007Parties\022\026.api.v1.PartiesRequest\032"
+  "\027.api.v1.PartiesResponse\022@\n\tPartyByID\022\030."
+  "api.v1.PartyByIDRequest\032\031.api.v1.PartyBy"
+  "IDResponse\022U\n\020PositionsByParty\022\037.api.v1."
+  "PositionsByPartyRequest\032 .api.v1.Positio"
+  "nsByPartyResponse\022@\n\tLastTrade\022\030.api.v1."
+  "LastTradeRequest\032\031.api.v1.LastTradeRespo"
+  "nse\022O\n\016TradesByMarket\022\035.api.v1.TradesByM"
+  "arketRequest\032\036.api.v1.TradesByMarketResp"
+  "onse\022L\n\rTradesByOrder\022\034.api.v1.TradesByO"
+  "rderRequest\032\035.api.v1.TradesByOrderRespon"
+  "se\022L\n\rTradesByParty\022\034.api.v1.TradesByPar"
+  "tyRequest\032\035.api.v1.TradesByPartyResponse"
+  "\022I\n\014GetProposals\022\033.api.v1.GetProposalsRe"
+  "quest\032\034.api.v1.GetProposalsResponse\022^\n\023G"
+  "etProposalsByParty\022\".api.v1.GetProposals"
+  "ByPartyRequest\032#.api.v1.GetProposalsByPa"
+  "rtyResponse\022R\n\017GetVotesByParty\022\036.api.v1."
+  "GetVotesByPartyRequest\032\037.api.v1.GetVotes"
+  "ByPartyResponse\022d\n\025GetNewMarketProposals"
+  "\022$.api.v1.GetNewMarketProposalsRequest\032%"
+  ".api.v1.GetNewMarketProposalsResponse\022m\n"
+  "\030GetUpdateMarketProposals\022\'.api.v1.GetUp"
+  "dateMarketProposalsRequest\032(.api.v1.GetU"
+  "pdateMarketProposalsResponse\022|\n\035GetNetwo"
+  "rkParametersProposals\022,.api.v1.GetNetwor"
+  "kParametersProposalsRequest\032-.api.v1.Get"
+  "NetworkParametersProposalsResponse\022a\n\024Ge"
+  "tNewAssetProposals\022#.api.v1.GetNewAssetP"
+  "roposalsRequest\032$.api.v1.GetNewAssetProp"
+  "osalsResponse\022R\n\017GetProposalByID\022\036.api.v"
+  "1.GetProposalByIDRequest\032\037.api.v1.GetPro"
+  "posalByIDResponse\022g\n\026GetProposalByRefere"
+  "nce\022%.api.v1.GetProposalByReferenceReque"
+  "st\032&.api.v1.GetProposalByReferenceRespon"
+  "se\022Z\n\021ObserveGovernance\022 .api.v1.Observe"
+  "GovernanceRequest\032!.api.v1.ObserveGovern"
+  "anceResponse0\001\022f\n\025ObservePartyProposals\022"
+  "$.api.v1.ObservePartyProposalsRequest\032%."
+  "api.v1.ObservePartyProposalsResponse0\001\022Z"
+  "\n\021ObservePartyVotes\022 .api.v1.ObservePart"
+  "yVotesRequest\032!.api.v1.ObservePartyVotes"
+  "Response0\001\022c\n\024ObserveProposalVotes\022#.api"
+  ".v1.ObserveProposalVotesRequest\032$.api.v1"
+  ".ObserveProposalVotesResponse0\001\022V\n\017Obser"
+  "veEventBus\022\036.api.v1.ObserveEventBusReque"
+  "st\032\037.api.v1.ObserveEventBusResponse(\0010\001\022"
+  "C\n\nStatistics\022\031.api.v1.StatisticsRequest"
+  "\032\032.api.v1.StatisticsResponse\022F\n\013GetVegaT"
+  "ime\022\032.api.v1.GetVegaTimeRequest\032\033.api.v1"
+  ".GetVegaTimeResponse\022Z\n\021AccountsSubscrib"
+  "e\022 .api.v1.AccountsSubscribeRequest\032!.ap"
+  "i.v1.AccountsSubscribeResponse0\001\022W\n\020Cand"
+  "lesSubscribe\022\037.api.v1.CandlesSubscribeRe"
+  "quest\032 .api.v1.CandlesSubscribeResponse0"
+  "\001\022f\n\025MarginLevelsSubscribe\022$.api.v1.Marg"
+  "inLevelsSubscribeRequest\032%.api.v1.Margin"
+  "LevelsSubscribeResponse0\001\022c\n\024MarketDepth"
+  "Subscribe\022#.api.v1.MarketDepthSubscribeR"
+  "equest\032$.api.v1.MarketDepthSubscribeResp"
+  "onse0\001\022x\n\033MarketDepthUpdatesSubscribe\022*."
+  "api.v1.MarketDepthUpdatesSubscribeReques"
+  "t\032+.api.v1.MarketDepthUpdatesSubscribeRe"
+  "sponse0\001\022c\n\024MarketsDataSubscribe\022#.api.v"
+  "1.MarketsDataSubscribeRequest\032$.api.v1.M"
+  "arketsDataSubscribeResponse0\001\022T\n\017OrdersS"
+  "ubscribe\022\036.api.v1.OrdersSubscribeRequest"
+  "\032\037.api.v1.OrdersSubscribeResponse0\001\022]\n\022P"
+  "ositionsSubscribe\022!.api.v1.PositionsSubs"
+  "cribeRequest\032\".api.v1.PositionsSubscribe"
+  "Response0\001\022T\n\017TradesSubscribe\022\036.api.v1.T"
+  "radesSubscribeRequest\032\037.api.v1.TradesSub"
+  "scribeResponse0\001\022u\n\032TransferResponsesSub"
+  "scribe\022).api.v1.TransferResponsesSubscri"
+  "beRequest\032*.api.v1.TransferResponsesSubs"
+  "cribeResponse0\001\022s\n\032GetNodeSignaturesAggr"
+  "egate\022).api.v1.GetNodeSignaturesAggregat"
+  "eRequest\032*.api.v1.GetNodeSignaturesAggre"
+  "gateResponse\022@\n\tAssetByID\022\030.api.v1.Asset"
+  "ByIDRequest\032\031.api.v1.AssetByIDResponse\0227"
+  "\n\006Assets\022\025.api.v1.AssetsRequest\032\026.api.v1"
+  ".AssetsResponse\022F\n\013EstimateFee\022\032.api.v1."
+  "EstimateFeeRequest\032\033.api.v1.EstimateFeeR"
+  "esponse\022O\n\016EstimateMargin\022\035.api.v1.Estim"
+  "ateMarginRequest\032\036.api.v1.EstimateMargin"
+  "Response\022j\n\027ERC20WithdrawalApproval\022&.ap"
+  "i.v1.ERC20WithdrawalApprovalRequest\032\'.ap"
+  "i.v1.ERC20WithdrawalApprovalResponse\022C\n\n"
+  "Withdrawal\022\031.api.v1.WithdrawalRequest\032\032."
+  "api.v1.WithdrawalResponse\022F\n\013Withdrawals"
+  "\022\032.api.v1.WithdrawalsRequest\032\033.api.v1.Wi"
+  "thdrawalsResponse\022:\n\007Deposit\022\026.api.v1.De"
+  "positRequest\032\027.api.v1.DepositResponse\022=\n"
+  "\010Deposits\022\027.api.v1.DepositsRequest\032\030.api"
+  ".v1.DepositsResponse\022X\n\021NetworkParameter"
+  "s\022 .api.v1.NetworkParametersRequest\032!.ap"
+  "i.v1.NetworkParametersResponse\022^\n\023Liquid"
+  "ityProvisions\022\".api.v1.LiquidityProvisio"
+  "nsRequest\032#.api.v1.LiquidityProvisionsRe"
+  "sponse\022C\n\nOracleSpec\022\031.api.v1.OracleSpec"
+  "Request\032\032.api.v1.OracleSpecResponse\022F\n\013O"
+  "racleSpecs\022\032.api.v1.OracleSpecsRequest\032\033"
+  ".api.v1.OracleSpecsResponse\022U\n\020OracleDat"
+  "aBySpec\022\037.api.v1.OracleDataBySpecRequest"
+  "\032 .api.v1.OracleDataBySpecResponseB\?\n\030io"
+  ".vegaprotocol.vega.apiZ#code.vegaprotoco"
+  "l.io/vega/proto/apib\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_api_2ftrading_2eproto_deps[9] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_api_2ftrading_2eproto_deps[10] = {
   &::descriptor_table_assets_2eproto,
-  &::descriptor_table_chain_5fevents_2eproto,
-  &::descriptor_table_events_2eproto,
+  &::descriptor_table_commands_2fv1_2fcommands_2eproto,
+  &::descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto,
+  &::descriptor_table_events_2fv1_2fevents_2eproto,
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
   &::descriptor_table_governance_2eproto,
   &::descriptor_table_markets_2eproto,
@@ -4477,8 +4480,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
   &scc_info_PrepareCancelOrderResponse_api_2ftrading_2eproto.base,
   &scc_info_PrepareLiquidityProvisionRequest_api_2ftrading_2eproto.base,
   &scc_info_PrepareLiquidityProvisionResponse_api_2ftrading_2eproto.base,
-  &scc_info_PrepareProposalRequest_api_2ftrading_2eproto.base,
-  &scc_info_PrepareProposalResponse_api_2ftrading_2eproto.base,
+  &scc_info_PrepareProposalSubmissionRequest_api_2ftrading_2eproto.base,
+  &scc_info_PrepareProposalSubmissionResponse_api_2ftrading_2eproto.base,
   &scc_info_PrepareSubmitOrderRequest_api_2ftrading_2eproto.base,
   &scc_info_PrepareSubmitOrderResponse_api_2ftrading_2eproto.base,
   &scc_info_PrepareVoteSubmissionRequest_api_2ftrading_2eproto.base,
@@ -4508,8 +4511,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_api_2ftrading_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_api_2ftrading_2eproto = {
-  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 17954,
-  &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 148, 9,
+  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 18147,
+  &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 148, 10,
   schemas, file_default_instances, TableStruct_api_2ftrading_2eproto::offsets,
   file_level_metadata_api_2ftrading_2eproto, 148, file_level_enum_descriptors_api_2ftrading_2eproto, file_level_service_descriptors_api_2ftrading_2eproto,
 };
@@ -4548,10 +4551,10 @@ constexpr int SubmitTransactionRequest::Type_ARRAYSIZE;
 
 class PropagateChainEventRequest::_Internal {
  public:
-  static const ::vega::ChainEvent& evt(const PropagateChainEventRequest* msg);
+  static const ::vega::commands::v1::ChainEvent& evt(const PropagateChainEventRequest* msg);
 };
 
-const ::vega::ChainEvent&
+const ::vega::commands::v1::ChainEvent&
 PropagateChainEventRequest::_Internal::evt(const PropagateChainEventRequest* msg) {
   return *msg->evt_;
 }
@@ -4581,7 +4584,7 @@ PropagateChainEventRequest::PropagateChainEventRequest(const PropagateChainEvent
       GetArena());
   }
   if (from._internal_has_evt()) {
-    evt_ = new ::vega::ChainEvent(*from.evt_);
+    evt_ = new ::vega::commands::v1::ChainEvent(*from.evt_);
   } else {
     evt_ = nullptr;
   }
@@ -4645,7 +4648,7 @@ const char* PropagateChainEventRequest::_InternalParse(const char* ptr, ::PROTOB
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.ChainEvent evt = 1 [json_name = "evt"];
+      // .vega.commands.v1.ChainEvent evt = 1 [json_name = "evt"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_evt(), ptr);
@@ -4697,7 +4700,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.ChainEvent evt = 1 [json_name = "evt"];
+  // .vega.commands.v1.ChainEvent evt = 1 [json_name = "evt"];
   if (this->has_evt()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4751,7 +4754,7 @@ size_t PropagateChainEventRequest::ByteSizeLong() const {
         this->_internal_signature());
   }
 
-  // .vega.ChainEvent evt = 1 [json_name = "evt"];
+  // .vega.commands.v1.ChainEvent evt = 1 [json_name = "evt"];
   if (this->has_evt()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4796,7 +4799,7 @@ void PropagateChainEventRequest::MergeFrom(const PropagateChainEventRequest& fro
     _internal_set_signature(from._internal_signature());
   }
   if (from.has_evt()) {
-    _internal_mutable_evt()->::vega::ChainEvent::MergeFrom(from._internal_evt());
+    _internal_mutable_evt()->::vega::commands::v1::ChainEvent::MergeFrom(from._internal_evt());
   }
 }
 
@@ -5469,10 +5472,10 @@ void SubmitTransactionResponse::InternalSwap(SubmitTransactionResponse* other) {
 
 class PrepareWithdrawRequest::_Internal {
  public:
-  static const ::vega::WithdrawSubmission& withdraw(const PrepareWithdrawRequest* msg);
+  static const ::vega::commands::v1::WithdrawSubmission& withdraw(const PrepareWithdrawRequest* msg);
 };
 
-const ::vega::WithdrawSubmission&
+const ::vega::commands::v1::WithdrawSubmission&
 PrepareWithdrawRequest::_Internal::withdraw(const PrepareWithdrawRequest* msg) {
   return *msg->withdraw_;
 }
@@ -5492,7 +5495,7 @@ PrepareWithdrawRequest::PrepareWithdrawRequest(const PrepareWithdrawRequest& fro
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_withdraw()) {
-    withdraw_ = new ::vega::WithdrawSubmission(*from.withdraw_);
+    withdraw_ = new ::vega::commands::v1::WithdrawSubmission(*from.withdraw_);
   } else {
     withdraw_ = nullptr;
   }
@@ -5550,7 +5553,7 @@ const char* PrepareWithdrawRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
+      // .vega.commands.v1.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_withdraw(), ptr);
@@ -5585,7 +5588,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
+  // .vega.commands.v1.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
   if (this->has_withdraw()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -5609,7 +5612,7 @@ size_t PrepareWithdrawRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
+  // .vega.commands.v1.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
   if (this->has_withdraw()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -5648,7 +5651,7 @@ void PrepareWithdrawRequest::MergeFrom(const PrepareWithdrawRequest& from) {
   (void) cached_has_bits;
 
   if (from.has_withdraw()) {
-    _internal_mutable_withdraw()->::vega::WithdrawSubmission::MergeFrom(from._internal_withdraw());
+    _internal_mutable_withdraw()->::vega::commands::v1::WithdrawSubmission::MergeFrom(from._internal_withdraw());
   }
 }
 
@@ -6527,10 +6530,10 @@ void PrepareAmendOrderResponse::InternalSwap(PrepareAmendOrderResponse* other) {
 
 class PrepareSubmitOrderRequest::_Internal {
  public:
-  static const ::vega::OrderSubmission& submission(const PrepareSubmitOrderRequest* msg);
+  static const ::vega::commands::v1::OrderSubmission& submission(const PrepareSubmitOrderRequest* msg);
 };
 
-const ::vega::OrderSubmission&
+const ::vega::commands::v1::OrderSubmission&
 PrepareSubmitOrderRequest::_Internal::submission(const PrepareSubmitOrderRequest* msg) {
   return *msg->submission_;
 }
@@ -6550,7 +6553,7 @@ PrepareSubmitOrderRequest::PrepareSubmitOrderRequest(const PrepareSubmitOrderReq
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_submission()) {
-    submission_ = new ::vega::OrderSubmission(*from.submission_);
+    submission_ = new ::vega::commands::v1::OrderSubmission(*from.submission_);
   } else {
     submission_ = nullptr;
   }
@@ -6608,7 +6611,7 @@ const char* PrepareSubmitOrderRequest::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.OrderSubmission submission = 1 [json_name = "submission"];
+      // .vega.commands.v1.OrderSubmission submission = 1 [json_name = "submission"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
@@ -6643,7 +6646,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.OrderSubmission submission = 1 [json_name = "submission"];
+  // .vega.commands.v1.OrderSubmission submission = 1 [json_name = "submission"];
   if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -6667,7 +6670,7 @@ size_t PrepareSubmitOrderRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.OrderSubmission submission = 1 [json_name = "submission"];
+  // .vega.commands.v1.OrderSubmission submission = 1 [json_name = "submission"];
   if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -6706,7 +6709,7 @@ void PrepareSubmitOrderRequest::MergeFrom(const PrepareSubmitOrderRequest& from)
   (void) cached_has_bits;
 
   if (from.has_submission()) {
-    _internal_mutable_submission()->::vega::OrderSubmission::MergeFrom(from._internal_submission());
+    _internal_mutable_submission()->::vega::commands::v1::OrderSubmission::MergeFrom(from._internal_submission());
   }
 }
 
@@ -6743,10 +6746,10 @@ void PrepareSubmitOrderRequest::InternalSwap(PrepareSubmitOrderRequest* other) {
 
 class PrepareCancelOrderRequest::_Internal {
  public:
-  static const ::vega::OrderCancellation& cancellation(const PrepareCancelOrderRequest* msg);
+  static const ::vega::commands::v1::OrderCancellation& cancellation(const PrepareCancelOrderRequest* msg);
 };
 
-const ::vega::OrderCancellation&
+const ::vega::commands::v1::OrderCancellation&
 PrepareCancelOrderRequest::_Internal::cancellation(const PrepareCancelOrderRequest* msg) {
   return *msg->cancellation_;
 }
@@ -6766,7 +6769,7 @@ PrepareCancelOrderRequest::PrepareCancelOrderRequest(const PrepareCancelOrderReq
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_cancellation()) {
-    cancellation_ = new ::vega::OrderCancellation(*from.cancellation_);
+    cancellation_ = new ::vega::commands::v1::OrderCancellation(*from.cancellation_);
   } else {
     cancellation_ = nullptr;
   }
@@ -6824,7 +6827,7 @@ const char* PrepareCancelOrderRequest::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.OrderCancellation cancellation = 1 [json_name = "cancellation"];
+      // .vega.commands.v1.OrderCancellation cancellation = 1 [json_name = "cancellation"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_cancellation(), ptr);
@@ -6859,7 +6862,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.OrderCancellation cancellation = 1 [json_name = "cancellation"];
+  // .vega.commands.v1.OrderCancellation cancellation = 1 [json_name = "cancellation"];
   if (this->has_cancellation()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -6883,7 +6886,7 @@ size_t PrepareCancelOrderRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.OrderCancellation cancellation = 1 [json_name = "cancellation"];
+  // .vega.commands.v1.OrderCancellation cancellation = 1 [json_name = "cancellation"];
   if (this->has_cancellation()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -6922,7 +6925,7 @@ void PrepareCancelOrderRequest::MergeFrom(const PrepareCancelOrderRequest& from)
   (void) cached_has_bits;
 
   if (from.has_cancellation()) {
-    _internal_mutable_cancellation()->::vega::OrderCancellation::MergeFrom(from._internal_cancellation());
+    _internal_mutable_cancellation()->::vega::commands::v1::OrderCancellation::MergeFrom(from._internal_cancellation());
   }
 }
 
@@ -6959,10 +6962,10 @@ void PrepareCancelOrderRequest::InternalSwap(PrepareCancelOrderRequest* other) {
 
 class PrepareAmendOrderRequest::_Internal {
  public:
-  static const ::vega::OrderAmendment& amendment(const PrepareAmendOrderRequest* msg);
+  static const ::vega::commands::v1::OrderAmendment& amendment(const PrepareAmendOrderRequest* msg);
 };
 
-const ::vega::OrderAmendment&
+const ::vega::commands::v1::OrderAmendment&
 PrepareAmendOrderRequest::_Internal::amendment(const PrepareAmendOrderRequest* msg) {
   return *msg->amendment_;
 }
@@ -6982,7 +6985,7 @@ PrepareAmendOrderRequest::PrepareAmendOrderRequest(const PrepareAmendOrderReques
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_amendment()) {
-    amendment_ = new ::vega::OrderAmendment(*from.amendment_);
+    amendment_ = new ::vega::commands::v1::OrderAmendment(*from.amendment_);
   } else {
     amendment_ = nullptr;
   }
@@ -7040,7 +7043,7 @@ const char* PrepareAmendOrderRequest::_InternalParse(const char* ptr, ::PROTOBUF
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.OrderAmendment amendment = 1 [json_name = "amendment"];
+      // .vega.commands.v1.OrderAmendment amendment = 1 [json_name = "amendment"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_amendment(), ptr);
@@ -7075,7 +7078,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.OrderAmendment amendment = 1 [json_name = "amendment"];
+  // .vega.commands.v1.OrderAmendment amendment = 1 [json_name = "amendment"];
   if (this->has_amendment()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -7099,7 +7102,7 @@ size_t PrepareAmendOrderRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.OrderAmendment amendment = 1 [json_name = "amendment"];
+  // .vega.commands.v1.OrderAmendment amendment = 1 [json_name = "amendment"];
   if (this->has_amendment()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -7138,7 +7141,7 @@ void PrepareAmendOrderRequest::MergeFrom(const PrepareAmendOrderRequest& from) {
   (void) cached_has_bits;
 
   if (from.has_amendment()) {
-    _internal_mutable_amendment()->::vega::OrderAmendment::MergeFrom(from._internal_amendment());
+    _internal_mutable_amendment()->::vega::commands::v1::OrderAmendment::MergeFrom(from._internal_amendment());
   }
 }
 
@@ -8233,7 +8236,7 @@ const char* GetNodeSignaturesAggregateResponse::_InternalParse(const char* ptr, 
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .vega.NodeSignature signatures = 1 [json_name = "signatures"];
+      // repeated .vega.commands.v1.NodeSignature signatures = 1 [json_name = "signatures"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -8273,7 +8276,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .vega.NodeSignature signatures = 1 [json_name = "signatures"];
+  // repeated .vega.commands.v1.NodeSignature signatures = 1 [json_name = "signatures"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_signatures_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -8297,7 +8300,7 @@ size_t GetNodeSignaturesAggregateResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.NodeSignature signatures = 1 [json_name = "signatures"];
+  // repeated .vega.commands.v1.NodeSignature signatures = 1 [json_name = "signatures"];
   total_size += 1UL * this->_internal_signatures_size();
   for (const auto& msg : this->signatures_) {
     total_size +=
@@ -28296,127 +28299,93 @@ void FeeInfrastructureAccountsResponse::InternalSwap(FeeInfrastructureAccountsRe
 
 // ===================================================================
 
-class PrepareProposalRequest::_Internal {
+class PrepareProposalSubmissionRequest::_Internal {
  public:
-  static const ::vega::ProposalTerms& proposal(const PrepareProposalRequest* msg);
+  static const ::vega::commands::v1::ProposalSubmission& submission(const PrepareProposalSubmissionRequest* msg);
 };
 
-const ::vega::ProposalTerms&
-PrepareProposalRequest::_Internal::proposal(const PrepareProposalRequest* msg) {
-  return *msg->proposal_;
+const ::vega::commands::v1::ProposalSubmission&
+PrepareProposalSubmissionRequest::_Internal::submission(const PrepareProposalSubmissionRequest* msg) {
+  return *msg->submission_;
 }
-void PrepareProposalRequest::clear_proposal() {
-  if (GetArena() == nullptr && proposal_ != nullptr) {
-    delete proposal_;
+void PrepareProposalSubmissionRequest::clear_submission() {
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  proposal_ = nullptr;
+  submission_ = nullptr;
 }
-PrepareProposalRequest::PrepareProposalRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+PrepareProposalSubmissionRequest::PrepareProposalSubmissionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareProposalSubmissionRequest)
 }
-PrepareProposalRequest::PrepareProposalRequest(const PrepareProposalRequest& from)
+PrepareProposalSubmissionRequest::PrepareProposalSubmissionRequest(const PrepareProposalSubmissionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_party_id().empty()) {
-    party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party_id(),
-      GetArena());
-  }
-  reference_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_reference().empty()) {
-    reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reference(),
-      GetArena());
-  }
-  if (from._internal_has_proposal()) {
-    proposal_ = new ::vega::ProposalTerms(*from.proposal_);
+  if (from._internal_has_submission()) {
+    submission_ = new ::vega::commands::v1::ProposalSubmission(*from.submission_);
   } else {
-    proposal_ = nullptr;
+    submission_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareProposalSubmissionRequest)
 }
 
-void PrepareProposalRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareProposalRequest_api_2ftrading_2eproto.base);
-  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  reference_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  proposal_ = nullptr;
+void PrepareProposalSubmissionRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareProposalSubmissionRequest_api_2ftrading_2eproto.base);
+  submission_ = nullptr;
 }
 
-PrepareProposalRequest::~PrepareProposalRequest() {
-  // @@protoc_insertion_point(destructor:api.v1.PrepareProposalRequest)
+PrepareProposalSubmissionRequest::~PrepareProposalSubmissionRequest() {
+  // @@protoc_insertion_point(destructor:api.v1.PrepareProposalSubmissionRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PrepareProposalRequest::SharedDtor() {
+void PrepareProposalSubmissionRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  reference_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete proposal_;
+  if (this != internal_default_instance()) delete submission_;
 }
 
-void PrepareProposalRequest::ArenaDtor(void* object) {
-  PrepareProposalRequest* _this = reinterpret_cast< PrepareProposalRequest* >(object);
+void PrepareProposalSubmissionRequest::ArenaDtor(void* object) {
+  PrepareProposalSubmissionRequest* _this = reinterpret_cast< PrepareProposalSubmissionRequest* >(object);
   (void)_this;
 }
-void PrepareProposalRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void PrepareProposalSubmissionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void PrepareProposalRequest::SetCachedSize(int size) const {
+void PrepareProposalSubmissionRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrepareProposalRequest& PrepareProposalRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareProposalRequest_api_2ftrading_2eproto.base);
+const PrepareProposalSubmissionRequest& PrepareProposalSubmissionRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareProposalSubmissionRequest_api_2ftrading_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PrepareProposalRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.v1.PrepareProposalRequest)
+void PrepareProposalSubmissionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.PrepareProposalSubmissionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  party_id_.ClearToEmpty();
-  reference_.ClearToEmpty();
-  if (GetArena() == nullptr && proposal_ != nullptr) {
-    delete proposal_;
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  proposal_ = nullptr;
+  submission_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PrepareProposalRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PrepareProposalSubmissionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string party_id = 1 [json_name = "partyId", (.validator.field) = {
+      // .vega.commands.v1.ProposalSubmission submission = 1 [json_name = "submission"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_party_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "api.v1.PrepareProposalRequest.party_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string reference = 2 [json_name = "reference"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_reference();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "api.v1.PrepareProposalRequest.reference"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vega.ProposalTerms proposal = 3 [json_name = "proposal", (.validator.field) = {
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_proposal(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -28442,75 +28411,41 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PrepareProposalRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* PrepareProposalSubmissionRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareProposalSubmissionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string party_id = 1 [json_name = "partyId", (.validator.field) = {
-  if (this->party_id().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_party_id().data(), static_cast<int>(this->_internal_party_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "api.v1.PrepareProposalRequest.party_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_party_id(), target);
-  }
-
-  // string reference = 2 [json_name = "reference"];
-  if (this->reference().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_reference().data(), static_cast<int>(this->_internal_reference().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "api.v1.PrepareProposalRequest.reference");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_reference(), target);
-  }
-
-  // .vega.ProposalTerms proposal = 3 [json_name = "proposal", (.validator.field) = {
-  if (this->has_proposal()) {
+  // .vega.commands.v1.ProposalSubmission submission = 1 [json_name = "submission"];
+  if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::proposal(this), target, stream);
+        1, _Internal::submission(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareProposalSubmissionRequest)
   return target;
 }
 
-size_t PrepareProposalRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareProposalRequest)
+size_t PrepareProposalSubmissionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareProposalSubmissionRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string party_id = 1 [json_name = "partyId", (.validator.field) = {
-  if (this->party_id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_party_id());
-  }
-
-  // string reference = 2 [json_name = "reference"];
-  if (this->reference().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_reference());
-  }
-
-  // .vega.ProposalTerms proposal = 3 [json_name = "proposal", (.validator.field) = {
-  if (this->has_proposal()) {
+  // .vega.commands.v1.ProposalSubmission submission = 1 [json_name = "submission"];
+  if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *proposal_);
+        *submission_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -28522,94 +28457,86 @@ size_t PrepareProposalRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void PrepareProposalRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareProposalRequest)
+void PrepareProposalSubmissionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareProposalSubmissionRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const PrepareProposalRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareProposalRequest>(
+  const PrepareProposalSubmissionRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareProposalSubmissionRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareProposalSubmissionRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareProposalSubmissionRequest)
     MergeFrom(*source);
   }
 }
 
-void PrepareProposalRequest::MergeFrom(const PrepareProposalRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareProposalRequest)
+void PrepareProposalSubmissionRequest::MergeFrom(const PrepareProposalSubmissionRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareProposalSubmissionRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.party_id().size() > 0) {
-    _internal_set_party_id(from._internal_party_id());
-  }
-  if (from.reference().size() > 0) {
-    _internal_set_reference(from._internal_reference());
-  }
-  if (from.has_proposal()) {
-    _internal_mutable_proposal()->::vega::ProposalTerms::MergeFrom(from._internal_proposal());
+  if (from.has_submission()) {
+    _internal_mutable_submission()->::vega::commands::v1::ProposalSubmission::MergeFrom(from._internal_submission());
   }
 }
 
-void PrepareProposalRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareProposalRequest)
+void PrepareProposalSubmissionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareProposalSubmissionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PrepareProposalRequest::CopyFrom(const PrepareProposalRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareProposalRequest)
+void PrepareProposalSubmissionRequest::CopyFrom(const PrepareProposalSubmissionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareProposalSubmissionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PrepareProposalRequest::IsInitialized() const {
+bool PrepareProposalSubmissionRequest::IsInitialized() const {
   return true;
 }
 
-void PrepareProposalRequest::InternalSwap(PrepareProposalRequest* other) {
+void PrepareProposalSubmissionRequest::InternalSwap(PrepareProposalSubmissionRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  party_id_.Swap(&other->party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  reference_.Swap(&other->reference_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(proposal_, other->proposal_);
+  swap(submission_, other->submission_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PrepareProposalRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PrepareProposalSubmissionRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-class PrepareProposalResponse::_Internal {
+class PrepareProposalSubmissionResponse::_Internal {
  public:
-  static const ::vega::Proposal& pending_proposal(const PrepareProposalResponse* msg);
+  static const ::vega::commands::v1::ProposalSubmission& submission(const PrepareProposalSubmissionResponse* msg);
 };
 
-const ::vega::Proposal&
-PrepareProposalResponse::_Internal::pending_proposal(const PrepareProposalResponse* msg) {
-  return *msg->pending_proposal_;
+const ::vega::commands::v1::ProposalSubmission&
+PrepareProposalSubmissionResponse::_Internal::submission(const PrepareProposalSubmissionResponse* msg) {
+  return *msg->submission_;
 }
-void PrepareProposalResponse::clear_pending_proposal() {
-  if (GetArena() == nullptr && pending_proposal_ != nullptr) {
-    delete pending_proposal_;
+void PrepareProposalSubmissionResponse::clear_submission() {
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  pending_proposal_ = nullptr;
+  submission_ = nullptr;
 }
-PrepareProposalResponse::PrepareProposalResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+PrepareProposalSubmissionResponse::PrepareProposalSubmissionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(arena_constructor:api.v1.PrepareProposalSubmissionResponse)
 }
-PrepareProposalResponse::PrepareProposalResponse(const PrepareProposalResponse& from)
+PrepareProposalSubmissionResponse::PrepareProposalSubmissionResponse(const PrepareProposalSubmissionResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -28617,62 +28544,62 @@ PrepareProposalResponse::PrepareProposalResponse(const PrepareProposalResponse& 
     blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blob(),
       GetArena());
   }
-  if (from._internal_has_pending_proposal()) {
-    pending_proposal_ = new ::vega::Proposal(*from.pending_proposal_);
+  if (from._internal_has_submission()) {
+    submission_ = new ::vega::commands::v1::ProposalSubmission(*from.submission_);
   } else {
-    pending_proposal_ = nullptr;
+    submission_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(copy_constructor:api.v1.PrepareProposalSubmissionResponse)
 }
 
-void PrepareProposalResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareProposalResponse_api_2ftrading_2eproto.base);
+void PrepareProposalSubmissionResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PrepareProposalSubmissionResponse_api_2ftrading_2eproto.base);
   blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  pending_proposal_ = nullptr;
+  submission_ = nullptr;
 }
 
-PrepareProposalResponse::~PrepareProposalResponse() {
-  // @@protoc_insertion_point(destructor:api.v1.PrepareProposalResponse)
+PrepareProposalSubmissionResponse::~PrepareProposalSubmissionResponse() {
+  // @@protoc_insertion_point(destructor:api.v1.PrepareProposalSubmissionResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PrepareProposalResponse::SharedDtor() {
+void PrepareProposalSubmissionResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   blob_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete pending_proposal_;
+  if (this != internal_default_instance()) delete submission_;
 }
 
-void PrepareProposalResponse::ArenaDtor(void* object) {
-  PrepareProposalResponse* _this = reinterpret_cast< PrepareProposalResponse* >(object);
+void PrepareProposalSubmissionResponse::ArenaDtor(void* object) {
+  PrepareProposalSubmissionResponse* _this = reinterpret_cast< PrepareProposalSubmissionResponse* >(object);
   (void)_this;
 }
-void PrepareProposalResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void PrepareProposalSubmissionResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void PrepareProposalResponse::SetCachedSize(int size) const {
+void PrepareProposalSubmissionResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrepareProposalResponse& PrepareProposalResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareProposalResponse_api_2ftrading_2eproto.base);
+const PrepareProposalSubmissionResponse& PrepareProposalSubmissionResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrepareProposalSubmissionResponse_api_2ftrading_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PrepareProposalResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.v1.PrepareProposalResponse)
+void PrepareProposalSubmissionResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.PrepareProposalSubmissionResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   blob_.ClearToEmpty();
-  if (GetArena() == nullptr && pending_proposal_ != nullptr) {
-    delete pending_proposal_;
+  if (GetArena() == nullptr && submission_ != nullptr) {
+    delete submission_;
   }
-  pending_proposal_ = nullptr;
+  submission_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PrepareProposalResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* PrepareProposalSubmissionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -28687,10 +28614,10 @@ const char* PrepareProposalResponse::_InternalParse(const char* ptr, ::PROTOBUF_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Proposal pending_proposal = 2 [json_name = "pendingProposal"];
+      // .vega.commands.v1.ProposalSubmission submission = 2 [json_name = "submission"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_pending_proposal(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -28716,9 +28643,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PrepareProposalResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* PrepareProposalSubmissionResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.PrepareProposalSubmissionResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -28728,24 +28655,24 @@ failure:
         1, this->_internal_blob(), target);
   }
 
-  // .vega.Proposal pending_proposal = 2 [json_name = "pendingProposal"];
-  if (this->has_pending_proposal()) {
+  // .vega.commands.v1.ProposalSubmission submission = 2 [json_name = "submission"];
+  if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::pending_proposal(this), target, stream);
+        2, _Internal::submission(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.PrepareProposalSubmissionResponse)
   return target;
 }
 
-size_t PrepareProposalResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareProposalResponse)
+size_t PrepareProposalSubmissionResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.PrepareProposalSubmissionResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -28759,11 +28686,11 @@ size_t PrepareProposalResponse::ByteSizeLong() const {
         this->_internal_blob());
   }
 
-  // .vega.Proposal pending_proposal = 2 [json_name = "pendingProposal"];
-  if (this->has_pending_proposal()) {
+  // .vega.commands.v1.ProposalSubmission submission = 2 [json_name = "submission"];
+  if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *pending_proposal_);
+        *submission_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -28775,23 +28702,23 @@ size_t PrepareProposalResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void PrepareProposalResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareProposalResponse)
+void PrepareProposalSubmissionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.PrepareProposalSubmissionResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const PrepareProposalResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareProposalResponse>(
+  const PrepareProposalSubmissionResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareProposalSubmissionResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.PrepareProposalSubmissionResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.PrepareProposalSubmissionResponse)
     MergeFrom(*source);
   }
 }
 
-void PrepareProposalResponse::MergeFrom(const PrepareProposalResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareProposalResponse)
+void PrepareProposalSubmissionResponse::MergeFrom(const PrepareProposalSubmissionResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.PrepareProposalSubmissionResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -28800,37 +28727,37 @@ void PrepareProposalResponse::MergeFrom(const PrepareProposalResponse& from) {
   if (from.blob().size() > 0) {
     _internal_set_blob(from._internal_blob());
   }
-  if (from.has_pending_proposal()) {
-    _internal_mutable_pending_proposal()->::vega::Proposal::MergeFrom(from._internal_pending_proposal());
+  if (from.has_submission()) {
+    _internal_mutable_submission()->::vega::commands::v1::ProposalSubmission::MergeFrom(from._internal_submission());
   }
 }
 
-void PrepareProposalResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareProposalResponse)
+void PrepareProposalSubmissionResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.PrepareProposalSubmissionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PrepareProposalResponse::CopyFrom(const PrepareProposalResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareProposalResponse)
+void PrepareProposalSubmissionResponse::CopyFrom(const PrepareProposalSubmissionResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.PrepareProposalSubmissionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PrepareProposalResponse::IsInitialized() const {
+bool PrepareProposalSubmissionResponse::IsInitialized() const {
   return true;
 }
 
-void PrepareProposalResponse::InternalSwap(PrepareProposalResponse* other) {
+void PrepareProposalSubmissionResponse::InternalSwap(PrepareProposalSubmissionResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   blob_.Swap(&other->blob_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(pending_proposal_, other->pending_proposal_);
+  swap(submission_, other->submission_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PrepareProposalResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PrepareProposalSubmissionResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -28839,10 +28766,10 @@ void PrepareProposalResponse::InternalSwap(PrepareProposalResponse* other) {
 
 class PrepareVoteSubmissionRequest::_Internal {
  public:
-  static const ::vega::VoteSubmission& submission(const PrepareVoteSubmissionRequest* msg);
+  static const ::vega::commands::v1::VoteSubmission& submission(const PrepareVoteSubmissionRequest* msg);
 };
 
-const ::vega::VoteSubmission&
+const ::vega::commands::v1::VoteSubmission&
 PrepareVoteSubmissionRequest::_Internal::submission(const PrepareVoteSubmissionRequest* msg) {
   return *msg->submission_;
 }
@@ -28862,7 +28789,7 @@ PrepareVoteSubmissionRequest::PrepareVoteSubmissionRequest(const PrepareVoteSubm
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_submission()) {
-    submission_ = new ::vega::VoteSubmission(*from.submission_);
+    submission_ = new ::vega::commands::v1::VoteSubmission(*from.submission_);
   } else {
     submission_ = nullptr;
   }
@@ -28920,7 +28847,7 @@ const char* PrepareVoteSubmissionRequest::_InternalParse(const char* ptr, ::PROT
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+      // .vega.commands.v1.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
@@ -28955,7 +28882,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  // .vega.commands.v1.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
   if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -28979,7 +28906,7 @@ size_t PrepareVoteSubmissionRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  // .vega.commands.v1.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
   if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -29018,7 +28945,7 @@ void PrepareVoteSubmissionRequest::MergeFrom(const PrepareVoteSubmissionRequest&
   (void) cached_has_bits;
 
   if (from.has_submission()) {
-    _internal_mutable_submission()->::vega::VoteSubmission::MergeFrom(from._internal_submission());
+    _internal_mutable_submission()->::vega::commands::v1::VoteSubmission::MergeFrom(from._internal_submission());
   }
 }
 
@@ -29055,10 +28982,10 @@ void PrepareVoteSubmissionRequest::InternalSwap(PrepareVoteSubmissionRequest* ot
 
 class PrepareVoteSubmissionResponse::_Internal {
  public:
-  static const ::vega::VoteSubmission& submission(const PrepareVoteSubmissionResponse* msg);
+  static const ::vega::commands::v1::VoteSubmission& submission(const PrepareVoteSubmissionResponse* msg);
 };
 
-const ::vega::VoteSubmission&
+const ::vega::commands::v1::VoteSubmission&
 PrepareVoteSubmissionResponse::_Internal::submission(const PrepareVoteSubmissionResponse* msg) {
   return *msg->submission_;
 }
@@ -29083,7 +29010,7 @@ PrepareVoteSubmissionResponse::PrepareVoteSubmissionResponse(const PrepareVoteSu
       GetArena());
   }
   if (from._internal_has_submission()) {
-    submission_ = new ::vega::VoteSubmission(*from.submission_);
+    submission_ = new ::vega::commands::v1::VoteSubmission(*from.submission_);
   } else {
     submission_ = nullptr;
   }
@@ -29152,7 +29079,7 @@ const char* PrepareVoteSubmissionResponse::_InternalParse(const char* ptr, ::PRO
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.VoteSubmission submission = 2 [json_name = "submission"];
+      // .vega.commands.v1.VoteSubmission submission = 2 [json_name = "submission"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
@@ -29193,7 +29120,7 @@ failure:
         1, this->_internal_blob(), target);
   }
 
-  // .vega.VoteSubmission submission = 2 [json_name = "submission"];
+  // .vega.commands.v1.VoteSubmission submission = 2 [json_name = "submission"];
   if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -29224,7 +29151,7 @@ size_t PrepareVoteSubmissionResponse::ByteSizeLong() const {
         this->_internal_blob());
   }
 
-  // .vega.VoteSubmission submission = 2 [json_name = "submission"];
+  // .vega.commands.v1.VoteSubmission submission = 2 [json_name = "submission"];
   if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -29266,7 +29193,7 @@ void PrepareVoteSubmissionResponse::MergeFrom(const PrepareVoteSubmissionRespons
     _internal_set_blob(from._internal_blob());
   }
   if (from.has_submission()) {
-    _internal_mutable_submission()->::vega::VoteSubmission::MergeFrom(from._internal_submission());
+    _internal_mutable_submission()->::vega::commands::v1::VoteSubmission::MergeFrom(from._internal_submission());
   }
 }
 
@@ -29304,10 +29231,10 @@ void PrepareVoteSubmissionResponse::InternalSwap(PrepareVoteSubmissionResponse* 
 
 class PrepareLiquidityProvisionRequest::_Internal {
  public:
-  static const ::vega::LiquidityProvisionSubmission& submission(const PrepareLiquidityProvisionRequest* msg);
+  static const ::vega::commands::v1::LiquidityProvisionSubmission& submission(const PrepareLiquidityProvisionRequest* msg);
 };
 
-const ::vega::LiquidityProvisionSubmission&
+const ::vega::commands::v1::LiquidityProvisionSubmission&
 PrepareLiquidityProvisionRequest::_Internal::submission(const PrepareLiquidityProvisionRequest* msg) {
   return *msg->submission_;
 }
@@ -29327,7 +29254,7 @@ PrepareLiquidityProvisionRequest::PrepareLiquidityProvisionRequest(const Prepare
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_submission()) {
-    submission_ = new ::vega::LiquidityProvisionSubmission(*from.submission_);
+    submission_ = new ::vega::commands::v1::LiquidityProvisionSubmission(*from.submission_);
   } else {
     submission_ = nullptr;
   }
@@ -29385,7 +29312,7 @@ const char* PrepareLiquidityProvisionRequest::_InternalParse(const char* ptr, ::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .vega.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+      // .vega.commands.v1.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_submission(), ptr);
@@ -29420,7 +29347,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .vega.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  // .vega.commands.v1.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
   if (this->has_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -29444,7 +29371,7 @@ size_t PrepareLiquidityProvisionRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .vega.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  // .vega.commands.v1.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
   if (this->has_submission()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -29483,7 +29410,7 @@ void PrepareLiquidityProvisionRequest::MergeFrom(const PrepareLiquidityProvision
   (void) cached_has_bits;
 
   if (from.has_submission()) {
-    _internal_mutable_submission()->::vega::LiquidityProvisionSubmission::MergeFrom(from._internal_submission());
+    _internal_mutable_submission()->::vega::commands::v1::LiquidityProvisionSubmission::MergeFrom(from._internal_submission());
   }
 }
 
@@ -31566,7 +31493,7 @@ const char* ObserveEventBusRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .vega.BusEventType type = 1 [json_name = "type"];
+      // repeated .vega.events.v1.BusEventType type = 1 [json_name = "type"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_type(), ptr, ctx);
@@ -31574,7 +31501,7 @@ const char* ObserveEventBusRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_add_type(static_cast<::vega::BusEventType>(val));
+          _internal_add_type(static_cast<::vega::events::v1::BusEventType>(val));
         } else goto handle_unusual;
         continue;
       // string market_id = 2 [json_name = "marketId"];
@@ -31630,7 +31557,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .vega.BusEventType type = 1 [json_name = "type"];
+  // repeated .vega.events.v1.BusEventType type = 1 [json_name = "type"];
   {
     int byte_size = _type_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
@@ -31681,7 +31608,7 @@ size_t ObserveEventBusRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.BusEventType type = 1 [json_name = "type"];
+  // repeated .vega.events.v1.BusEventType type = 1 [json_name = "type"];
   {
     size_t data_size = 0;
     unsigned int count = static_cast<unsigned int>(this->_internal_type_size());for (unsigned int i = 0; i < count; i++) {
@@ -31864,7 +31791,7 @@ const char* ObserveEventBusResponse::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .vega.BusEvent events = 1 [json_name = "events"];
+      // repeated .vega.events.v1.BusEvent events = 1 [json_name = "events"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -31904,7 +31831,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .vega.BusEvent events = 1 [json_name = "events"];
+  // repeated .vega.events.v1.BusEvent events = 1 [json_name = "events"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_events_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -31928,7 +31855,7 @@ size_t ObserveEventBusResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.BusEvent events = 1 [json_name = "events"];
+  // repeated .vega.events.v1.BusEvent events = 1 [json_name = "events"];
   total_size += 1UL * this->_internal_events_size();
   for (const auto& msg : this->events_) {
     total_size +=
@@ -36933,11 +36860,11 @@ template<> PROTOBUF_NOINLINE ::api::v1::FeeInfrastructureAccountsRequest* Arena:
 template<> PROTOBUF_NOINLINE ::api::v1::FeeInfrastructureAccountsResponse* Arena::CreateMaybeMessage< ::api::v1::FeeInfrastructureAccountsResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::api::v1::FeeInfrastructureAccountsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::api::v1::PrepareProposalRequest* Arena::CreateMaybeMessage< ::api::v1::PrepareProposalRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::api::v1::PrepareProposalRequest >(arena);
+template<> PROTOBUF_NOINLINE ::api::v1::PrepareProposalSubmissionRequest* Arena::CreateMaybeMessage< ::api::v1::PrepareProposalSubmissionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::PrepareProposalSubmissionRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::api::v1::PrepareProposalResponse* Arena::CreateMaybeMessage< ::api::v1::PrepareProposalResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::api::v1::PrepareProposalResponse >(arena);
+template<> PROTOBUF_NOINLINE ::api::v1::PrepareProposalSubmissionResponse* Arena::CreateMaybeMessage< ::api::v1::PrepareProposalSubmissionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::PrepareProposalSubmissionResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::api::v1::PrepareVoteSubmissionRequest* Arena::CreateMaybeMessage< ::api::v1::PrepareVoteSubmissionRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::api::v1::PrepareVoteSubmissionRequest >(arena);
