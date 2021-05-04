@@ -5,7 +5,7 @@ var { skipIfLocalOnly } = require('../lib/env')
 // var protoLoader = require('@grpc/proto-loader');
 var xhr = require("xmlhttprequest");
 
-var { vega, api } = require('../../index')
+var { commands, vega, api } = require('../../index')
 
 function wallet_server_login(walletServerURL, walletName, walletPassphrase) {
     var request = new xhr.XMLHttpRequest();
@@ -30,13 +30,13 @@ function wallet_server_login(walletServerURL, walletName, walletPassphrase) {
 }
 
 test('Basic test: Can create an order', t => {
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
     t.equal(typeof order, 'object')
     t.end()
 })
 
 test('Basic test: Can serialise an empty order to an unsigned tx', t => {
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
     t.deepEqual(order.serializeBinary(), new Uint8Array(), 'An empty order should serialise to an empty Uint8Array')
     t.end()
 })
@@ -44,7 +44,7 @@ test('Basic test: Can serialise an empty order to an unsigned tx', t => {
 test('A basic order can be constructed and serialised to an unsigned tx', t => {
     const hardcodedExpectedOutput =  new Uint8Array([18, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 32, 10, 40, 20, 48, 1])
 
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
     order.setMarketId('test-market-id')
     order.setPrice(10)
     order.setSize(20)
@@ -57,7 +57,7 @@ test('A basic order can be constructed and serialised to an unsigned tx', t => {
 test('A basic order can be deserialised', t => {
     const existingSerializedOrder =  new Uint8Array([18, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 32, 10, 40, 20, 48, 1])
 
-    const order = new vega.OrderSubmission.deserializeBinary(existingSerializedOrder)
+    const order = new commands.v1.commands.OrderSubmission.deserializeBinary(existingSerializedOrder)
 
     t.equal(order.getMarketId(), 'test-market-id')
     t.equal(order.getPrice(), 10)
@@ -68,7 +68,7 @@ test('A basic order can be deserialised', t => {
 })
 
 test('Order Validation: An order size must be a number', t => {
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
     order.setSize('this is bad')
 
     t.equal(order.getSize(), 'this is bad')
@@ -79,7 +79,7 @@ test('Order Validation: An order size must be a number', t => {
 })
 
 test('Order Validation: An order price must be a number', t => {
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
     order.setPrice('this is bad')
 
     t.equal(order.getPrice(), 'this is bad')
@@ -92,7 +92,7 @@ test('Order Validation: An order price must be a number', t => {
 test('Order Validation: An order expiry date must be a number', t => {
     const dateShouldBeANumber = new Date().toDateString()
 
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
 
     order.setExpiresAt(dateShouldBeANumber)
 
@@ -106,7 +106,7 @@ test('Order Validation: An order expiry date must be a number', t => {
 test('Order can be a pegged order when an order peg is provided', t => {
     const dateShouldBeANumber = new Date().toDateString()
 
-    const order = new vega.OrderSubmission()
+    const order = new commands.v1.commands.OrderSubmission()
     const orderPeg = new vega.PeggedOrder()
     orderPeg.setOffset(1)
 
@@ -138,7 +138,7 @@ test('Submit Order', t => {
         return t.end()
     }
 
-    const sub = new vega.OrderSubmission()
+    const sub = new commands.v1.commands.OrderSubmission()
     sub.setExpiresAt(2000000000000000000)
     sub.setMarketId("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP")
     sub.setPartyId("1122aabb") // a public key
