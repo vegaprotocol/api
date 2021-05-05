@@ -41,8 +41,8 @@ test('Basic test: Can serialise an empty order to an unsigned tx', t => {
     t.end()
 })
 
-/* test('A basic order can be constructed and serialised to an unsigned tx', t => {
-    const hardcodedExpectedOutput =  new Uint8Array([18, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 32, 10, 40, 20, 48, 1])
+test('A basic order can be constructed and serialised to an unsigned tx', t => {
+    const hardcodedExpectedOutput = new Uint8Array([10, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 16, 10, 24, 20, 32, 1])
 
     const order = new commands.v1.commands.OrderSubmission()
     order.setMarketId('test-market-id')
@@ -50,12 +50,13 @@ test('Basic test: Can serialise an empty order to an unsigned tx', t => {
     order.setSize(20)
     order.setSide(vega.Side.SIDE_BUY)
 
-    t.deepEqual(order.serializeBinary(), hardcodedExpectedOutput, 'The serialised order should match the hardcoded output')
+    let got = order.serializeBinary()
+    t.deepEqual(got, hardcodedExpectedOutput, 'The serialised order should match the hardcoded output. Got ' + got)
     t.end()
 })
 
 test('A basic order can be deserialised', t => {
-    const existingSerializedOrder =  new Uint8Array([18, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 32, 10, 40, 20, 48, 1])
+    const existingSerializedOrder = new Uint8Array([10, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 16, 10, 24, 20, 32, 1])
 
     const order = new commands.v1.commands.OrderSubmission.deserializeBinary(existingSerializedOrder)
 
@@ -65,7 +66,7 @@ test('A basic order can be deserialised', t => {
     t.equal(order.getSide(), vega.Side.SIDE_BUY)
 
     t.end()
-}) */
+})
 
 test('Order Validation: An order size must be a number', t => {
     const order = new commands.v1.commands.OrderSubmission()
