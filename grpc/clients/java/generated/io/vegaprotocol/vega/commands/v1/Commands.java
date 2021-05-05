@@ -20,30 +20,10 @@ public final class Commands {
 
     /**
      * <pre>
-     * Unique identifier for the order (set by the system after consensus)
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <pre>
-     * Unique identifier for the order (set by the system after consensus)
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <pre>
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
      * @return The marketId.
      */
     java.lang.String getMarketId();
@@ -52,31 +32,11 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
      * @return The bytes for marketId.
      */
     com.google.protobuf.ByteString
         getMarketIdBytes();
-
-    /**
-     * <pre>
-     * Party identifier for the order, required field
-     * </pre>
-     *
-     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-     * @return The partyId.
-     */
-    java.lang.String getPartyId();
-    /**
-     * <pre>
-     * Party identifier for the order, required field
-     * </pre>
-     *
-     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-     * @return The bytes for partyId.
-     */
-    com.google.protobuf.ByteString
-        getPartyIdBytes();
 
     /**
      * <pre>
@@ -85,7 +45,7 @@ public final class Commands {
      * , required field for limit orders, however it is not required for market orders
      * </pre>
      *
-     * <code>uint64 price = 4 [json_name = "price"];</code>
+     * <code>uint64 price = 2 [json_name = "price"];</code>
      * @return The price.
      */
     long getPrice();
@@ -95,7 +55,7 @@ public final class Commands {
      * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
      * </pre>
      *
-     * <code>uint64 size = 5 [json_name = "size", (.validator.field) = { ... }</code>
+     * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
      * @return The size.
      */
     long getSize();
@@ -105,7 +65,7 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 6 [json_name = "side"];</code>
+     * <code>.vega.Side side = 4 [json_name = "side"];</code>
      * @return The enum numeric value on the wire for side.
      */
     int getSideValue();
@@ -114,7 +74,7 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 6 [json_name = "side"];</code>
+     * <code>.vega.Side side = 4 [json_name = "side"];</code>
      * @return The side.
      */
     io.vegaprotocol.vega.Vega.Side getSide();
@@ -125,7 +85,7 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     int getTimeInForceValue();
@@ -135,7 +95,7 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
      * @return The timeInForce.
      */
     io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce();
@@ -147,7 +107,7 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+     * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
      * @return The expiresAt.
      */
     long getExpiresAt();
@@ -157,7 +117,7 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
@@ -166,7 +126,7 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
      * @return The type.
      */
     io.vegaprotocol.vega.Vega.Order.Type getType();
@@ -177,7 +137,7 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 10 [json_name = "reference"];</code>
+     * <code>string reference = 8 [json_name = "reference"];</code>
      * @return The reference.
      */
     java.lang.String getReference();
@@ -187,7 +147,7 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 10 [json_name = "reference"];</code>
+     * <code>string reference = 8 [json_name = "reference"];</code>
      * @return The bytes for reference.
      */
     com.google.protobuf.ByteString
@@ -199,7 +159,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
      * @return Whether the peggedOrder field is set.
      */
     boolean hasPeggedOrder();
@@ -209,7 +169,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
      * @return The peggedOrder.
      */
     io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder();
@@ -219,7 +179,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
      */
     io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder();
   }
@@ -240,9 +200,7 @@ public final class Commands {
       super(builder);
     }
     private OrderSubmission() {
-      id_ = "";
       marketId_ = "";
-      partyId_ = "";
       side_ = 0;
       timeInForce_ = 0;
       type_ = 0;
@@ -282,61 +240,49 @@ public final class Commands {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               marketId_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              partyId_ = s;
-              break;
-            }
-            case 32: {
+            case 16: {
 
               price_ = input.readUInt64();
               break;
             }
-            case 40: {
+            case 24: {
 
               size_ = input.readUInt64();
               break;
             }
-            case 48: {
+            case 32: {
               int rawValue = input.readEnum();
 
               side_ = rawValue;
               break;
             }
-            case 56: {
+            case 40: {
               int rawValue = input.readEnum();
 
               timeInForce_ = rawValue;
               break;
             }
-            case 64: {
+            case 48: {
 
               expiresAt_ = input.readInt64();
               break;
             }
-            case 72: {
+            case 56: {
               int rawValue = input.readEnum();
 
               type_ = rawValue;
               break;
             }
-            case 82: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               reference_ = s;
               break;
             }
-            case 90: {
+            case 74: {
               io.vegaprotocol.vega.Vega.PeggedOrder.Builder subBuilder = null;
               if (peggedOrder_ != null) {
                 subBuilder = peggedOrder_.toBuilder();
@@ -381,60 +327,14 @@ public final class Commands {
               io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission.class, io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
-    /**
-     * <pre>
-     * Unique identifier for the order (set by the system after consensus)
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Unique identifier for the order (set by the system after consensus)
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MARKET_ID_FIELD_NUMBER = 2;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object marketId_;
     /**
      * <pre>
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -455,7 +355,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
      * @return The bytes for marketId.
      */
     @java.lang.Override
@@ -473,53 +373,7 @@ public final class Commands {
       }
     }
 
-    public static final int PARTY_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object partyId_;
-    /**
-     * <pre>
-     * Party identifier for the order, required field
-     * </pre>
-     *
-     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-     * @return The partyId.
-     */
-    @java.lang.Override
-    public java.lang.String getPartyId() {
-      java.lang.Object ref = partyId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partyId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Party identifier for the order, required field
-     * </pre>
-     *
-     * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-     * @return The bytes for partyId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPartyIdBytes() {
-      java.lang.Object ref = partyId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        partyId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRICE_FIELD_NUMBER = 4;
+    public static final int PRICE_FIELD_NUMBER = 2;
     private long price_;
     /**
      * <pre>
@@ -528,7 +382,7 @@ public final class Commands {
      * , required field for limit orders, however it is not required for market orders
      * </pre>
      *
-     * <code>uint64 price = 4 [json_name = "price"];</code>
+     * <code>uint64 price = 2 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
@@ -536,14 +390,14 @@ public final class Commands {
       return price_;
     }
 
-    public static final int SIZE_FIELD_NUMBER = 5;
+    public static final int SIZE_FIELD_NUMBER = 3;
     private long size_;
     /**
      * <pre>
      * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
      * </pre>
      *
-     * <code>uint64 size = 5 [json_name = "size", (.validator.field) = { ... }</code>
+     * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
      * @return The size.
      */
     @java.lang.Override
@@ -551,14 +405,14 @@ public final class Commands {
       return size_;
     }
 
-    public static final int SIDE_FIELD_NUMBER = 6;
+    public static final int SIDE_FIELD_NUMBER = 4;
     private int side_;
     /**
      * <pre>
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 6 [json_name = "side"];</code>
+     * <code>.vega.Side side = 4 [json_name = "side"];</code>
      * @return The enum numeric value on the wire for side.
      */
     @java.lang.Override public int getSideValue() {
@@ -569,7 +423,7 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 6 [json_name = "side"];</code>
+     * <code>.vega.Side side = 4 [json_name = "side"];</code>
      * @return The side.
      */
     @java.lang.Override public io.vegaprotocol.vega.Vega.Side getSide() {
@@ -578,7 +432,7 @@ public final class Commands {
       return result == null ? io.vegaprotocol.vega.Vega.Side.UNRECOGNIZED : result;
     }
 
-    public static final int TIME_IN_FORCE_FIELD_NUMBER = 7;
+    public static final int TIME_IN_FORCE_FIELD_NUMBER = 5;
     private int timeInForce_;
     /**
      * <pre>
@@ -586,7 +440,7 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     @java.lang.Override public int getTimeInForceValue() {
@@ -598,7 +452,7 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
      * @return The timeInForce.
      */
     @java.lang.Override public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
@@ -607,7 +461,7 @@ public final class Commands {
       return result == null ? io.vegaprotocol.vega.Vega.Order.TimeInForce.UNRECOGNIZED : result;
     }
 
-    public static final int EXPIRES_AT_FIELD_NUMBER = 8;
+    public static final int EXPIRES_AT_FIELD_NUMBER = 6;
     private long expiresAt_;
     /**
      * <pre>
@@ -616,7 +470,7 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+     * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
      * @return The expiresAt.
      */
     @java.lang.Override
@@ -624,14 +478,14 @@ public final class Commands {
       return expiresAt_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 9;
+    public static final int TYPE_FIELD_NUMBER = 7;
     private int type_;
     /**
      * <pre>
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
@@ -642,7 +496,7 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
      * @return The type.
      */
     @java.lang.Override public io.vegaprotocol.vega.Vega.Order.Type getType() {
@@ -651,7 +505,7 @@ public final class Commands {
       return result == null ? io.vegaprotocol.vega.Vega.Order.Type.UNRECOGNIZED : result;
     }
 
-    public static final int REFERENCE_FIELD_NUMBER = 10;
+    public static final int REFERENCE_FIELD_NUMBER = 8;
     private volatile java.lang.Object reference_;
     /**
      * <pre>
@@ -659,7 +513,7 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 10 [json_name = "reference"];</code>
+     * <code>string reference = 8 [json_name = "reference"];</code>
      * @return The reference.
      */
     @java.lang.Override
@@ -681,7 +535,7 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 10 [json_name = "reference"];</code>
+     * <code>string reference = 8 [json_name = "reference"];</code>
      * @return The bytes for reference.
      */
     @java.lang.Override
@@ -699,7 +553,7 @@ public final class Commands {
       }
     }
 
-    public static final int PEGGED_ORDER_FIELD_NUMBER = 11;
+    public static final int PEGGED_ORDER_FIELD_NUMBER = 9;
     private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_;
     /**
      * <pre>
@@ -707,7 +561,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
      * @return Whether the peggedOrder field is set.
      */
     @java.lang.Override
@@ -720,7 +574,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
      * @return The peggedOrder.
      */
     @java.lang.Override
@@ -733,7 +587,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
@@ -754,38 +608,32 @@ public final class Commands {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
-      }
       if (!getMarketIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, marketId_);
-      }
-      if (!getPartyIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, partyId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, marketId_);
       }
       if (price_ != 0L) {
-        output.writeUInt64(4, price_);
+        output.writeUInt64(2, price_);
       }
       if (size_ != 0L) {
-        output.writeUInt64(5, size_);
+        output.writeUInt64(3, size_);
       }
       if (side_ != io.vegaprotocol.vega.Vega.Side.SIDE_UNSPECIFIED.getNumber()) {
-        output.writeEnum(6, side_);
+        output.writeEnum(4, side_);
       }
       if (timeInForce_ != io.vegaprotocol.vega.Vega.Order.TimeInForce.TIME_IN_FORCE_UNSPECIFIED.getNumber()) {
-        output.writeEnum(7, timeInForce_);
+        output.writeEnum(5, timeInForce_);
       }
       if (expiresAt_ != 0L) {
-        output.writeInt64(8, expiresAt_);
+        output.writeInt64(6, expiresAt_);
       }
       if (type_ != io.vegaprotocol.vega.Vega.Order.Type.TYPE_UNSPECIFIED.getNumber()) {
-        output.writeEnum(9, type_);
+        output.writeEnum(7, type_);
       }
       if (!getReferenceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, reference_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, reference_);
       }
       if (peggedOrder_ != null) {
-        output.writeMessage(11, getPeggedOrder());
+        output.writeMessage(9, getPeggedOrder());
       }
       unknownFields.writeTo(output);
     }
@@ -796,45 +644,39 @@ public final class Commands {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
-      }
       if (!getMarketIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, marketId_);
-      }
-      if (!getPartyIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, partyId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, marketId_);
       }
       if (price_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, price_);
+          .computeUInt64Size(2, price_);
       }
       if (size_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, size_);
+          .computeUInt64Size(3, size_);
       }
       if (side_ != io.vegaprotocol.vega.Vega.Side.SIDE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, side_);
+          .computeEnumSize(4, side_);
       }
       if (timeInForce_ != io.vegaprotocol.vega.Vega.Order.TimeInForce.TIME_IN_FORCE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, timeInForce_);
+          .computeEnumSize(5, timeInForce_);
       }
       if (expiresAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(8, expiresAt_);
+          .computeInt64Size(6, expiresAt_);
       }
       if (type_ != io.vegaprotocol.vega.Vega.Order.Type.TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, type_);
+          .computeEnumSize(7, type_);
       }
       if (!getReferenceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, reference_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, reference_);
       }
       if (peggedOrder_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getPeggedOrder());
+          .computeMessageSize(9, getPeggedOrder());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -851,12 +693,8 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
       if (!getMarketId()
           .equals(other.getMarketId())) return false;
-      if (!getPartyId()
-          .equals(other.getPartyId())) return false;
       if (getPrice()
           != other.getPrice()) return false;
       if (getSize()
@@ -884,12 +722,8 @@ public final class Commands {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMarketId().hashCode();
-      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPartyId().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPrice());
@@ -1048,11 +882,7 @@ public final class Commands {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
-
         marketId_ = "";
-
-        partyId_ = "";
 
         price_ = 0L;
 
@@ -1100,9 +930,7 @@ public final class Commands {
       @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission(this);
-        result.id_ = id_;
         result.marketId_ = marketId_;
-        result.partyId_ = partyId_;
         result.price_ = price_;
         result.size_ = size_;
         result.side_ = side_;
@@ -1163,16 +991,8 @@ public final class Commands {
 
       public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission other) {
         if (other == io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
-        }
         if (!other.getMarketId().isEmpty()) {
           marketId_ = other.marketId_;
-          onChanged();
-        }
-        if (!other.getPartyId().isEmpty()) {
-          partyId_ = other.partyId_;
           onChanged();
         }
         if (other.getPrice() != 0L) {
@@ -1229,109 +1049,13 @@ public final class Commands {
         return this;
       }
 
-      private java.lang.Object id_ = "";
-      /**
-       * <pre>
-       * Unique identifier for the order (set by the system after consensus)
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Unique identifier for the order (set by the system after consensus)
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Unique identifier for the order (set by the system after consensus)
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique identifier for the order (set by the system after consensus)
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique identifier for the order (set by the system after consensus)
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id", (.validator.field) = { ... }</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        id_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object marketId_ = "";
       /**
        * <pre>
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
        * @return The marketId.
        */
       public java.lang.String getMarketId() {
@@ -1351,7 +1075,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
        * @return The bytes for marketId.
        */
       public com.google.protobuf.ByteString
@@ -1372,7 +1096,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -1391,7 +1115,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -1405,7 +1129,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId", (.validator.field) = { ... }</code>
+       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
        * @param value The bytes for marketId to set.
        * @return This builder for chaining.
        */
@@ -1421,102 +1145,6 @@ public final class Commands {
         return this;
       }
 
-      private java.lang.Object partyId_ = "";
-      /**
-       * <pre>
-       * Party identifier for the order, required field
-       * </pre>
-       *
-       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-       * @return The partyId.
-       */
-      public java.lang.String getPartyId() {
-        java.lang.Object ref = partyId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          partyId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Party identifier for the order, required field
-       * </pre>
-       *
-       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-       * @return The bytes for partyId.
-       */
-      public com.google.protobuf.ByteString
-          getPartyIdBytes() {
-        java.lang.Object ref = partyId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          partyId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Party identifier for the order, required field
-       * </pre>
-       *
-       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-       * @param value The partyId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPartyId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        partyId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Party identifier for the order, required field
-       * </pre>
-       *
-       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPartyId() {
-
-        partyId_ = getDefaultInstance().getPartyId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Party identifier for the order, required field
-       * </pre>
-       *
-       * <code>string party_id = 3 [json_name = "partyId", (.validator.field) = { ... }</code>
-       * @param value The bytes for partyId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPartyIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        partyId_ = value;
-        onChanged();
-        return this;
-      }
-
       private long price_ ;
       /**
        * <pre>
@@ -1525,7 +1153,7 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 4 [json_name = "price"];</code>
+       * <code>uint64 price = 2 [json_name = "price"];</code>
        * @return The price.
        */
       @java.lang.Override
@@ -1539,7 +1167,7 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 4 [json_name = "price"];</code>
+       * <code>uint64 price = 2 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
@@ -1556,7 +1184,7 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 4 [json_name = "price"];</code>
+       * <code>uint64 price = 2 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
@@ -1572,7 +1200,7 @@ public final class Commands {
        * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
        * </pre>
        *
-       * <code>uint64 size = 5 [json_name = "size", (.validator.field) = { ... }</code>
+       * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
        * @return The size.
        */
       @java.lang.Override
@@ -1584,7 +1212,7 @@ public final class Commands {
        * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
        * </pre>
        *
-       * <code>uint64 size = 5 [json_name = "size", (.validator.field) = { ... }</code>
+       * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
        * @param value The size to set.
        * @return This builder for chaining.
        */
@@ -1599,7 +1227,7 @@ public final class Commands {
        * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
        * </pre>
        *
-       * <code>uint64 size = 5 [json_name = "size", (.validator.field) = { ... }</code>
+       * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSize() {
@@ -1615,7 +1243,7 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 6 [json_name = "side"];</code>
+       * <code>.vega.Side side = 4 [json_name = "side"];</code>
        * @return The enum numeric value on the wire for side.
        */
       @java.lang.Override public int getSideValue() {
@@ -1626,7 +1254,7 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 6 [json_name = "side"];</code>
+       * <code>.vega.Side side = 4 [json_name = "side"];</code>
        * @param value The enum numeric value on the wire for side to set.
        * @return This builder for chaining.
        */
@@ -1641,7 +1269,7 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 6 [json_name = "side"];</code>
+       * <code>.vega.Side side = 4 [json_name = "side"];</code>
        * @return The side.
        */
       @java.lang.Override
@@ -1655,7 +1283,7 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 6 [json_name = "side"];</code>
+       * <code>.vega.Side side = 4 [json_name = "side"];</code>
        * @param value The side to set.
        * @return This builder for chaining.
        */
@@ -1673,7 +1301,7 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 6 [json_name = "side"];</code>
+       * <code>.vega.Side side = 4 [json_name = "side"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSide() {
@@ -1690,7 +1318,7 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
        * @return The enum numeric value on the wire for timeInForce.
        */
       @java.lang.Override public int getTimeInForceValue() {
@@ -1702,7 +1330,7 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
        * @param value The enum numeric value on the wire for timeInForce to set.
        * @return This builder for chaining.
        */
@@ -1718,7 +1346,7 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
        * @return The timeInForce.
        */
       @java.lang.Override
@@ -1733,7 +1361,7 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
        * @param value The timeInForce to set.
        * @return This builder for chaining.
        */
@@ -1752,7 +1380,7 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];</code>
+       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeInForce() {
@@ -1770,7 +1398,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
        * @return The expiresAt.
        */
       @java.lang.Override
@@ -1784,7 +1412,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
        * @param value The expiresAt to set.
        * @return This builder for chaining.
        */
@@ -1801,7 +1429,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>int64 expires_at = 8 [json_name = "expiresAt"];</code>
+       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearExpiresAt() {
@@ -1817,7 +1445,7 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
@@ -1828,7 +1456,7 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -1843,7 +1471,7 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
        * @return The type.
        */
       @java.lang.Override
@@ -1857,7 +1485,7 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -1875,7 +1503,7 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 9 [json_name = "type"];</code>
+       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -1892,7 +1520,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 10 [json_name = "reference"];</code>
+       * <code>string reference = 8 [json_name = "reference"];</code>
        * @return The reference.
        */
       public java.lang.String getReference() {
@@ -1913,7 +1541,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 10 [json_name = "reference"];</code>
+       * <code>string reference = 8 [json_name = "reference"];</code>
        * @return The bytes for reference.
        */
       public com.google.protobuf.ByteString
@@ -1935,7 +1563,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 10 [json_name = "reference"];</code>
+       * <code>string reference = 8 [json_name = "reference"];</code>
        * @param value The reference to set.
        * @return This builder for chaining.
        */
@@ -1955,7 +1583,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 10 [json_name = "reference"];</code>
+       * <code>string reference = 8 [json_name = "reference"];</code>
        * @return This builder for chaining.
        */
       public Builder clearReference() {
@@ -1970,7 +1598,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 10 [json_name = "reference"];</code>
+       * <code>string reference = 8 [json_name = "reference"];</code>
        * @param value The bytes for reference to set.
        * @return This builder for chaining.
        */
@@ -1995,7 +1623,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        * @return Whether the peggedOrder field is set.
        */
       public boolean hasPeggedOrder() {
@@ -2007,7 +1635,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        * @return The peggedOrder.
        */
       public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
@@ -2023,7 +1651,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       public Builder setPeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
         if (peggedOrderBuilder_ == null) {
@@ -2044,7 +1672,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       public Builder setPeggedOrder(
           io.vegaprotocol.vega.Vega.PeggedOrder.Builder builderForValue) {
@@ -2063,7 +1691,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       public Builder mergePeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
         if (peggedOrderBuilder_ == null) {
@@ -2086,7 +1714,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       public Builder clearPeggedOrder() {
         if (peggedOrderBuilder_ == null) {
@@ -2105,7 +1733,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       public io.vegaprotocol.vega.Vega.PeggedOrder.Builder getPeggedOrderBuilder() {
 
@@ -2118,7 +1746,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
         if (peggedOrderBuilder_ != null) {
@@ -2134,7 +1762,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder>
@@ -9892,46 +9520,44 @@ public final class Commands {
       "nds.v1\032\020governance.proto\032\nvega.proto\032\036go" +
       "ogle/protobuf/wrappers.proto\0326github.com" +
       "/mwitkow/go-proto-validators/validator.p" +
-      "roto\"\231\003\n\017OrderSubmission\022\026\n\002id\030\001 \001(\tB\006\342\337" +
-      "\037\002X\000R\002id\022#\n\tmarket_id\030\002 \001(\tB\006\342\337\037\002X\001R\010mar" +
-      "ketId\022!\n\010party_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId" +
-      "\022\024\n\005price\030\004 \001(\004R\005price\022\032\n\004size\030\005 \001(\004B\006\342\337" +
-      "\037\002\020\000R\004size\022\036\n\004side\030\006 \001(\0162\n.vega.SideR\004si" +
-      "de\022;\n\rtime_in_force\030\007 \001(\0162\027.vega.Order.T" +
-      "imeInForceR\013timeInForce\022\035\n\nexpires_at\030\010 " +
-      "\001(\003R\texpiresAt\022$\n\004type\030\t \001(\0162\020.vega.Orde" +
-      "r.TypeR\004type\022\034\n\treference\030\n \001(\tR\treferen" +
-      "ce\0224\n\014pegged_order\030\013 \001(\0132\021.vega.PeggedOr" +
-      "derR\013peggedOrder\"K\n\021OrderCancellation\022\031\n" +
-      "\010order_id\030\001 \001(\tR\007orderId\022\033\n\tmarket_id\030\002 " +
-      "\001(\tR\010marketId\"\246\003\n\016OrderAmendment\022!\n\010orde" +
-      "r_id\030\001 \001(\tB\006\342\337\037\002X\001R\007orderId\022!\n\010party_id\030" +
-      "\002 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id\030\003 \001(" +
-      "\tR\010marketId\022!\n\005price\030\004 \001(\0132\013.vega.PriceR" +
-      "\005price\022\035\n\nsize_delta\030\005 \001(\003R\tsizeDelta\022.\n" +
-      "\nexpires_at\030\006 \001(\0132\017.vega.TimestampR\texpi" +
-      "resAt\022;\n\rtime_in_force\030\007 \001(\0162\027.vega.Orde" +
-      "r.TimeInForceR\013timeInForce\022@\n\rpegged_off" +
-      "set\030\010 \001(\0132\033.google.protobuf.Int64ValueR\014" +
-      "peggedOffset\022@\n\020pegged_reference\030\t \001(\0162\025" +
-      ".vega.PeggedReferenceR\017peggedReference\"\366" +
-      "\001\n\034LiquidityProvisionSubmission\022#\n\tmarke" +
-      "t_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commitme" +
-      "nt_amount\030\002 \001(\004R\020commitmentAmount\022\020\n\003fee" +
-      "\030\003 \001(\tR\003fee\022*\n\005sells\030\004 \003(\0132\024.vega.Liquid" +
-      "ityOrderR\005sells\022(\n\004buys\030\005 \003(\0132\024.vega.Liq" +
-      "uidityOrderR\004buys\022\034\n\treference\030\006 \001(\tR\tre" +
-      "ference\"g\n\022WithdrawSubmission\022\026\n\006amount\030" +
-      "\001 \001(\004R\006amount\022\024\n\005asset\030\002 \001(\tR\005asset\022#\n\003e" +
-      "xt\030\003 \001(\0132\021.vega.WithdrawExtR\003ext\"e\n\022Prop" +
-      "osalSubmission\022\034\n\treference\030\001 \001(\tR\trefer" +
-      "ence\0221\n\005terms\030\002 \001(\0132\023.vega.ProposalTerms" +
-      "B\006\342\337\037\002 \001R\005terms\"a\n\016VoteSubmission\022\'\n\013pro" +
-      "posal_id\030\001 \001(\tB\006\342\337\037\002X\001R\nproposalId\022&\n\005va" +
-      "lue\030\002 \001(\0162\020.vega.Vote.ValueR\005valueBO\n io" +
-      ".vegaprotocol.vega.commands.v1Z+code.veg" +
-      "aprotocol.io/vega/proto/commands/v1b\006pro" +
-      "to3"
+      "roto\"\336\002\n\017OrderSubmission\022#\n\tmarket_id\030\001 " +
+      "\001(\tB\006\342\337\037\002X\001R\010marketId\022\024\n\005price\030\002 \001(\004R\005pr" +
+      "ice\022\032\n\004size\030\003 \001(\004B\006\342\337\037\002\020\000R\004size\022\036\n\004side\030" +
+      "\004 \001(\0162\n.vega.SideR\004side\022;\n\rtime_in_force" +
+      "\030\005 \001(\0162\027.vega.Order.TimeInForceR\013timeInF" +
+      "orce\022\035\n\nexpires_at\030\006 \001(\003R\texpiresAt\022$\n\004t" +
+      "ype\030\007 \001(\0162\020.vega.Order.TypeR\004type\022\034\n\tref" +
+      "erence\030\010 \001(\tR\treference\0224\n\014pegged_order\030" +
+      "\t \001(\0132\021.vega.PeggedOrderR\013peggedOrder\"K\n" +
+      "\021OrderCancellation\022\031\n\010order_id\030\001 \001(\tR\007or" +
+      "derId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"\246\003\n\016O" +
+      "rderAmendment\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002X\001R" +
+      "\007orderId\022!\n\010party_id\030\002 \001(\tB\006\342\337\037\002X\001R\007part" +
+      "yId\022\033\n\tmarket_id\030\003 \001(\tR\010marketId\022!\n\005pric" +
+      "e\030\004 \001(\0132\013.vega.PriceR\005price\022\035\n\nsize_delt" +
+      "a\030\005 \001(\003R\tsizeDelta\022.\n\nexpires_at\030\006 \001(\0132\017" +
+      ".vega.TimestampR\texpiresAt\022;\n\rtime_in_fo" +
+      "rce\030\007 \001(\0162\027.vega.Order.TimeInForceR\013time" +
+      "InForce\022@\n\rpegged_offset\030\010 \001(\0132\033.google." +
+      "protobuf.Int64ValueR\014peggedOffset\022@\n\020peg" +
+      "ged_reference\030\t \001(\0162\025.vega.PeggedReferen" +
+      "ceR\017peggedReference\"\366\001\n\034LiquidityProvisi" +
+      "onSubmission\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R" +
+      "\010marketId\022+\n\021commitment_amount\030\002 \001(\004R\020co" +
+      "mmitmentAmount\022\020\n\003fee\030\003 \001(\tR\003fee\022*\n\005sell" +
+      "s\030\004 \003(\0132\024.vega.LiquidityOrderR\005sells\022(\n\004" +
+      "buys\030\005 \003(\0132\024.vega.LiquidityOrderR\004buys\022\034" +
+      "\n\treference\030\006 \001(\tR\treference\"g\n\022Withdraw" +
+      "Submission\022\026\n\006amount\030\001 \001(\004R\006amount\022\024\n\005as" +
+      "set\030\002 \001(\tR\005asset\022#\n\003ext\030\003 \001(\0132\021.vega.Wit" +
+      "hdrawExtR\003ext\"e\n\022ProposalSubmission\022\034\n\tr" +
+      "eference\030\001 \001(\tR\treference\0221\n\005terms\030\002 \001(\013" +
+      "2\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005terms\"a\n\016" +
+      "VoteSubmission\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037" +
+      "\002X\001R\nproposalId\022&\n\005value\030\002 \001(\0162\020.vega.Vo" +
+      "te.ValueR\005valueBO\n io.vegaprotocol.vega." +
+      "commands.v1Z+code.vegaprotocol.io/vega/p" +
+      "roto/commands/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9946,7 +9572,7 @@ public final class Commands {
     internal_static_vega_commands_v1_OrderSubmission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_OrderSubmission_descriptor,
-        new java.lang.String[] { "Id", "MarketId", "PartyId", "Price", "Size", "Side", "TimeInForce", "ExpiresAt", "Type", "Reference", "PeggedOrder", });
+        new java.lang.String[] { "MarketId", "Price", "Size", "Side", "TimeInForce", "ExpiresAt", "Type", "Reference", "PeggedOrder", });
     internal_static_vega_commands_v1_OrderCancellation_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_commands_v1_OrderCancellation_fieldAccessorTable = new

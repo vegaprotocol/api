@@ -211,35 +211,17 @@ class OrderSubmission PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIdFieldNumber = 1,
-    kMarketIdFieldNumber = 2,
-    kPartyIdFieldNumber = 3,
-    kReferenceFieldNumber = 10,
-    kPeggedOrderFieldNumber = 11,
-    kPriceFieldNumber = 4,
-    kSizeFieldNumber = 5,
-    kSideFieldNumber = 6,
-    kTimeInForceFieldNumber = 7,
-    kExpiresAtFieldNumber = 8,
-    kTypeFieldNumber = 9,
+    kMarketIdFieldNumber = 1,
+    kReferenceFieldNumber = 8,
+    kPeggedOrderFieldNumber = 9,
+    kPriceFieldNumber = 2,
+    kSizeFieldNumber = 3,
+    kSideFieldNumber = 4,
+    kTimeInForceFieldNumber = 5,
+    kExpiresAtFieldNumber = 6,
+    kTypeFieldNumber = 7,
   };
-  // string id = 1 [json_name = "id", (.validator.field) = {
-  void clear_id();
-  const std::string& id() const;
-  void set_id(const std::string& value);
-  void set_id(std::string&& value);
-  void set_id(const char* value);
-  void set_id(const char* value, size_t size);
-  std::string* mutable_id();
-  std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // string market_id = 2 [json_name = "marketId", (.validator.field) = {
+  // string market_id = 1 [json_name = "marketId", (.validator.field) = {
   void clear_market_id();
   const std::string& market_id() const;
   void set_market_id(const std::string& value);
@@ -255,23 +237,7 @@ class OrderSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_market_id();
   public:
 
-  // string party_id = 3 [json_name = "partyId", (.validator.field) = {
-  void clear_party_id();
-  const std::string& party_id() const;
-  void set_party_id(const std::string& value);
-  void set_party_id(std::string&& value);
-  void set_party_id(const char* value);
-  void set_party_id(const char* value, size_t size);
-  std::string* mutable_party_id();
-  std::string* release_party_id();
-  void set_allocated_party_id(std::string* party_id);
-  private:
-  const std::string& _internal_party_id() const;
-  void _internal_set_party_id(const std::string& value);
-  std::string* _internal_mutable_party_id();
-  public:
-
-  // string reference = 10 [json_name = "reference"];
+  // string reference = 8 [json_name = "reference"];
   void clear_reference();
   const std::string& reference() const;
   void set_reference(const std::string& value);
@@ -287,7 +253,7 @@ class OrderSubmission PROTOBUF_FINAL :
   std::string* _internal_mutable_reference();
   public:
 
-  // .vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];
+  // .vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];
   bool has_pegged_order() const;
   private:
   bool _internal_has_pegged_order() const;
@@ -305,7 +271,7 @@ class OrderSubmission PROTOBUF_FINAL :
       ::vega::PeggedOrder* pegged_order);
   ::vega::PeggedOrder* unsafe_arena_release_pegged_order();
 
-  // uint64 price = 4 [json_name = "price"];
+  // uint64 price = 2 [json_name = "price"];
   void clear_price();
   ::PROTOBUF_NAMESPACE_ID::uint64 price() const;
   void set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -314,7 +280,7 @@ class OrderSubmission PROTOBUF_FINAL :
   void _internal_set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 size = 5 [json_name = "size", (.validator.field) = {
+  // uint64 size = 3 [json_name = "size", (.validator.field) = {
   void clear_size();
   ::PROTOBUF_NAMESPACE_ID::uint64 size() const;
   void set_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -323,7 +289,7 @@ class OrderSubmission PROTOBUF_FINAL :
   void _internal_set_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .vega.Side side = 6 [json_name = "side"];
+  // .vega.Side side = 4 [json_name = "side"];
   void clear_side();
   ::vega::Side side() const;
   void set_side(::vega::Side value);
@@ -332,7 +298,7 @@ class OrderSubmission PROTOBUF_FINAL :
   void _internal_set_side(::vega::Side value);
   public:
 
-  // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+  // .vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];
   void clear_time_in_force();
   ::vega::Order_TimeInForce time_in_force() const;
   void set_time_in_force(::vega::Order_TimeInForce value);
@@ -341,7 +307,7 @@ class OrderSubmission PROTOBUF_FINAL :
   void _internal_set_time_in_force(::vega::Order_TimeInForce value);
   public:
 
-  // int64 expires_at = 8 [json_name = "expiresAt"];
+  // int64 expires_at = 6 [json_name = "expiresAt"];
   void clear_expires_at();
   ::PROTOBUF_NAMESPACE_ID::int64 expires_at() const;
   void set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value);
@@ -350,7 +316,7 @@ class OrderSubmission PROTOBUF_FINAL :
   void _internal_set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // .vega.Order.Type type = 9 [json_name = "type"];
+  // .vega.Order.Type type = 7 [json_name = "type"];
   void clear_type();
   ::vega::Order_Type type() const;
   void set_type(::vega::Order_Type value);
@@ -366,9 +332,7 @@ class OrderSubmission PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::vega::PeggedOrder* pegged_order_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
@@ -1545,68 +1509,7 @@ class VoteSubmission PROTOBUF_FINAL :
 #endif  // __GNUC__
 // OrderSubmission
 
-// string id = 1 [json_name = "id", (.validator.field) = {
-inline void OrderSubmission::clear_id() {
-  id_.ClearToEmpty();
-}
-inline const std::string& OrderSubmission::id() const {
-  // @@protoc_insertion_point(field_get:vega.commands.v1.OrderSubmission.id)
-  return _internal_id();
-}
-inline void OrderSubmission::set_id(const std::string& value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.id)
-}
-inline std::string* OrderSubmission::mutable_id() {
-  // @@protoc_insertion_point(field_mutable:vega.commands.v1.OrderSubmission.id)
-  return _internal_mutable_id();
-}
-inline const std::string& OrderSubmission::_internal_id() const {
-  return id_.Get();
-}
-inline void OrderSubmission::_internal_set_id(const std::string& value) {
-
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void OrderSubmission::set_id(std::string&& value) {
-
-  id_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.OrderSubmission.id)
-}
-inline void OrderSubmission::set_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.commands.v1.OrderSubmission.id)
-}
-inline void OrderSubmission::set_id(const char* value,
-    size_t size) {
-
-  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.OrderSubmission.id)
-}
-inline std::string* OrderSubmission::_internal_mutable_id() {
-
-  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* OrderSubmission::release_id() {
-  // @@protoc_insertion_point(field_release:vega.commands.v1.OrderSubmission.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void OrderSubmission::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-
-  } else {
-
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderSubmission.id)
-}
-
-// string market_id = 2 [json_name = "marketId", (.validator.field) = {
+// string market_id = 1 [json_name = "marketId", (.validator.field) = {
 inline void OrderSubmission::clear_market_id() {
   market_id_.ClearToEmpty();
 }
@@ -1667,68 +1570,7 @@ inline void OrderSubmission::set_allocated_market_id(std::string* market_id) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderSubmission.market_id)
 }
 
-// string party_id = 3 [json_name = "partyId", (.validator.field) = {
-inline void OrderSubmission::clear_party_id() {
-  party_id_.ClearToEmpty();
-}
-inline const std::string& OrderSubmission::party_id() const {
-  // @@protoc_insertion_point(field_get:vega.commands.v1.OrderSubmission.party_id)
-  return _internal_party_id();
-}
-inline void OrderSubmission::set_party_id(const std::string& value) {
-  _internal_set_party_id(value);
-  // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.party_id)
-}
-inline std::string* OrderSubmission::mutable_party_id() {
-  // @@protoc_insertion_point(field_mutable:vega.commands.v1.OrderSubmission.party_id)
-  return _internal_mutable_party_id();
-}
-inline const std::string& OrderSubmission::_internal_party_id() const {
-  return party_id_.Get();
-}
-inline void OrderSubmission::_internal_set_party_id(const std::string& value) {
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void OrderSubmission::set_party_id(std::string&& value) {
-
-  party_id_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.OrderSubmission.party_id)
-}
-inline void OrderSubmission::set_party_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.commands.v1.OrderSubmission.party_id)
-}
-inline void OrderSubmission::set_party_id(const char* value,
-    size_t size) {
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.OrderSubmission.party_id)
-}
-inline std::string* OrderSubmission::_internal_mutable_party_id() {
-
-  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* OrderSubmission::release_party_id() {
-  // @@protoc_insertion_point(field_release:vega.commands.v1.OrderSubmission.party_id)
-  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void OrderSubmission::set_allocated_party_id(std::string* party_id) {
-  if (party_id != nullptr) {
-
-  } else {
-
-  }
-  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderSubmission.party_id)
-}
-
-// uint64 price = 4 [json_name = "price"];
+// uint64 price = 2 [json_name = "price"];
 inline void OrderSubmission::clear_price() {
   price_ = PROTOBUF_ULONGLONG(0);
 }
@@ -1748,7 +1590,7 @@ inline void OrderSubmission::set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.price)
 }
 
-// uint64 size = 5 [json_name = "size", (.validator.field) = {
+// uint64 size = 3 [json_name = "size", (.validator.field) = {
 inline void OrderSubmission::clear_size() {
   size_ = PROTOBUF_ULONGLONG(0);
 }
@@ -1768,7 +1610,7 @@ inline void OrderSubmission::set_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.size)
 }
 
-// .vega.Side side = 6 [json_name = "side"];
+// .vega.Side side = 4 [json_name = "side"];
 inline void OrderSubmission::clear_side() {
   side_ = 0;
 }
@@ -1788,7 +1630,7 @@ inline void OrderSubmission::set_side(::vega::Side value) {
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.side)
 }
 
-// .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+// .vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];
 inline void OrderSubmission::clear_time_in_force() {
   time_in_force_ = 0;
 }
@@ -1808,7 +1650,7 @@ inline void OrderSubmission::set_time_in_force(::vega::Order_TimeInForce value) 
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.time_in_force)
 }
 
-// int64 expires_at = 8 [json_name = "expiresAt"];
+// int64 expires_at = 6 [json_name = "expiresAt"];
 inline void OrderSubmission::clear_expires_at() {
   expires_at_ = PROTOBUF_LONGLONG(0);
 }
@@ -1828,7 +1670,7 @@ inline void OrderSubmission::set_expires_at(::PROTOBUF_NAMESPACE_ID::int64 value
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.expires_at)
 }
 
-// .vega.Order.Type type = 9 [json_name = "type"];
+// .vega.Order.Type type = 7 [json_name = "type"];
 inline void OrderSubmission::clear_type() {
   type_ = 0;
 }
@@ -1848,7 +1690,7 @@ inline void OrderSubmission::set_type(::vega::Order_Type value) {
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderSubmission.type)
 }
 
-// string reference = 10 [json_name = "reference"];
+// string reference = 8 [json_name = "reference"];
 inline void OrderSubmission::clear_reference() {
   reference_.ClearToEmpty();
 }
@@ -1909,7 +1751,7 @@ inline void OrderSubmission::set_allocated_reference(std::string* reference) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderSubmission.reference)
 }
 
-// .vega.PeggedOrder pegged_order = 11 [json_name = "peggedOrder"];
+// .vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];
 inline bool OrderSubmission::_internal_has_pegged_order() const {
   return this != internal_default_instance() && pegged_order_ != nullptr;
 }

@@ -8,14 +8,8 @@ import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wr
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "../../github.com/mwitkow/go-proto-validators/validator_pb";
 
 export class OrderSubmission extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
   getMarketId(): string;
   setMarketId(value: string): void;
-
-  getPartyId(): string;
-  setPartyId(value: string): void;
 
   getPrice(): number;
   setPrice(value: number): void;
@@ -55,9 +49,7 @@ export class OrderSubmission extends jspb.Message {
 
 export namespace OrderSubmission {
   export type AsObject = {
-    id: string,
     marketId: string,
-    partyId: string,
     price: number,
     size: number,
     side: vega_pb.SideMap[keyof vega_pb.SideMap],

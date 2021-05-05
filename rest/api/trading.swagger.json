@@ -1227,16 +1227,8 @@
           "title": "Timestamp for when the order will expire, in nanoseconds since the epoch,\nrequired field only for [`Order.TimeInForce`](#vega.Order.TimeInForce)`.TIME_IN_FORCE_GTT`\n- See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`",
           "type": "string"
         },
-        "id": {
-          "title": "Unique identifier for the order (set by the system after consensus)",
-          "type": "string"
-        },
         "market_id": {
           "title": "Market identifier for the order, required field",
-          "type": "string"
-        },
-        "party_id": {
-          "title": "Party identifier for the order, required field",
           "type": "string"
         },
         "pegged_order": {

@@ -15,11 +15,11 @@ from .. import vega_pb2 as vega__pb2
 from .. import markets_pb2 as markets__pb2
 from .. import governance_pb2 as governance__pb2
 from .. import assets_pb2 as assets__pb2
-from events.v1 import events_pb2 as events_dot_v1_dot_events__pb2
+from ..events.v1 import events_pb2 as events_dot_v1_dot_events__pb2
 from ..oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
 from ..oracles.v1 import oracle_data_pb2 as oracles_dot_v1_dot_oracle__data__pb2
-from commands.v1 import commands_pb2 as commands_dot_v1_dot_commands__pb2
-from commands.v1 import validator_commands_pb2 as commands_dot_v1_dot_validator__commands__pb2
+from ..commands.v1 import commands_pb2 as commands_dot_v1_dot_commands__pb2
+from ..commands.v1 import validator_commands_pb2 as commands_dot_v1_dot_validator__commands__pb2
 from ..github.com.mwitkow.go_proto_validators import validator_pb2 as github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2
 
 

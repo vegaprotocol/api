@@ -2817,9 +2817,7 @@ An order submission is a request to submit or create a new order on Vega
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Unique identifier for the order (set by the system after consensus) |
 | market_id | [string](#string) |  | Market identifier for the order, required field |
-| party_id | [string](#string) |  | Party identifier for the order, required field |
 | price | [uint64](#uint64) |  | Price for the order, the price is an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places, , required field for limit orders, however it is not required for market orders |
 | size | [uint64](#uint64) |  | Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative |
 | side | [vega.Side](#vega.Side) |  | Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side) |

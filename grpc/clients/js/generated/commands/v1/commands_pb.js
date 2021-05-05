@@ -208,16 +208,14 @@ proto.vega.commands.v1.OrderSubmission.prototype.toObject = function(opt_include
  */
 proto.vega.commands.v1.OrderSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    partyId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    price: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    size: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    side: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    timeInForce: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    expiresAt: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    type: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    reference: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    price: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    size: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    side: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    timeInForce: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    expiresAt: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    type: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    reference: jspb.Message.getFieldWithDefault(msg, 8, ""),
     peggedOrder: (f = msg.getPeggedOrder()) && vega_pb.PeggedOrder.toObject(includeInstance, f)
   };
 
@@ -257,45 +255,37 @@ proto.vega.commands.v1.OrderSubmission.deserializeBinaryFromReader = function(ms
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
       msg.setMarketId(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartyId(value);
-      break;
-    case 4:
+    case 2:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setPrice(value);
       break;
-    case 5:
+    case 3:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setSize(value);
       break;
-    case 6:
+    case 4:
       var value = /** @type {!proto.vega.Side} */ (reader.readEnum());
       msg.setSide(value);
       break;
-    case 7:
+    case 5:
       var value = /** @type {!proto.vega.Order.TimeInForce} */ (reader.readEnum());
       msg.setTimeInForce(value);
       break;
-    case 8:
+    case 6:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setExpiresAt(value);
       break;
-    case 9:
+    case 7:
       var value = /** @type {!proto.vega.Order.Type} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 10:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setReference(value);
       break;
-    case 11:
+    case 9:
       var value = new vega_pb.PeggedOrder;
       reader.readMessage(value,vega_pb.PeggedOrder.deserializeBinaryFromReader);
       msg.setPeggedOrder(value);
@@ -329,80 +319,66 @@ proto.vega.commands.v1.OrderSubmission.prototype.serializeBinary = function() {
  */
 proto.vega.commands.v1.OrderSubmission.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getMarketId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getPartyId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getPrice();
   if (f !== 0) {
     writer.writeUint64(
-      4,
+      2,
       f
     );
   }
   f = message.getSize();
   if (f !== 0) {
     writer.writeUint64(
-      5,
+      3,
       f
     );
   }
   f = message.getSide();
   if (f !== 0.0) {
     writer.writeEnum(
-      6,
+      4,
       f
     );
   }
   f = message.getTimeInForce();
   if (f !== 0.0) {
     writer.writeEnum(
-      7,
+      5,
       f
     );
   }
   f = message.getExpiresAt();
   if (f !== 0) {
     writer.writeInt64(
-      8,
+      6,
       f
     );
   }
   f = message.getType();
   if (f !== 0.0) {
     writer.writeEnum(
-      9,
+      7,
       f
     );
   }
   f = message.getReference();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      8,
       f
     );
   }
   f = message.getPeggedOrder();
   if (f != null) {
     writer.writeMessage(
-      11,
+      9,
       f,
       vega_pb.PeggedOrder.serializeBinaryToWriter
     );
@@ -411,10 +387,10 @@ proto.vega.commands.v1.OrderSubmission.serializeBinaryToWriter = function(messag
 
 
 /**
- * optional string id = 1;
+ * optional string market_id = 1;
  * @return {string}
  */
-proto.vega.commands.v1.OrderSubmission.prototype.getId = function() {
+proto.vega.commands.v1.OrderSubmission.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -423,53 +399,17 @@ proto.vega.commands.v1.OrderSubmission.prototype.getId = function() {
  * @param {string} value
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
-proto.vega.commands.v1.OrderSubmission.prototype.setId = function(value) {
+proto.vega.commands.v1.OrderSubmission.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string market_id = 2;
- * @return {string}
- */
-proto.vega.commands.v1.OrderSubmission.prototype.getMarketId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vega.commands.v1.OrderSubmission} returns this
- */
-proto.vega.commands.v1.OrderSubmission.prototype.setMarketId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string party_id = 3;
- * @return {string}
- */
-proto.vega.commands.v1.OrderSubmission.prototype.getPartyId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vega.commands.v1.OrderSubmission} returns this
- */
-proto.vega.commands.v1.OrderSubmission.prototype.setPartyId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional uint64 price = 4;
+ * optional uint64 price = 2;
  * @return {number}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -478,16 +418,16 @@ proto.vega.commands.v1.OrderSubmission.prototype.getPrice = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 size = 5;
+ * optional uint64 size = 3;
  * @return {number}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -496,16 +436,16 @@ proto.vega.commands.v1.OrderSubmission.prototype.getSize = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setSize = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional vega.Side side = 6;
+ * optional vega.Side side = 4;
  * @return {!proto.vega.Side}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getSide = function() {
-  return /** @type {!proto.vega.Side} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {!proto.vega.Side} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -514,16 +454,16 @@ proto.vega.commands.v1.OrderSubmission.prototype.getSide = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setSide = function(value) {
-  return jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
 /**
- * optional vega.Order.TimeInForce time_in_force = 7;
+ * optional vega.Order.TimeInForce time_in_force = 5;
  * @return {!proto.vega.Order.TimeInForce}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getTimeInForce = function() {
-  return /** @type {!proto.vega.Order.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {!proto.vega.Order.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -532,16 +472,16 @@ proto.vega.commands.v1.OrderSubmission.prototype.getTimeInForce = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setTimeInForce = function(value) {
-  return jspb.Message.setProto3EnumField(this, 7, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
 /**
- * optional int64 expires_at = 8;
+ * optional int64 expires_at = 6;
  * @return {number}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getExpiresAt = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -550,16 +490,16 @@ proto.vega.commands.v1.OrderSubmission.prototype.getExpiresAt = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setExpiresAt = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional vega.Order.Type type = 9;
+ * optional vega.Order.Type type = 7;
  * @return {!proto.vega.Order.Type}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getType = function() {
-  return /** @type {!proto.vega.Order.Type} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.vega.Order.Type} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -568,16 +508,16 @@ proto.vega.commands.v1.OrderSubmission.prototype.getType = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
 /**
- * optional string reference = 10;
+ * optional string reference = 8;
  * @return {string}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getReference = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -586,17 +526,17 @@ proto.vega.commands.v1.OrderSubmission.prototype.getReference = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
  */
 proto.vega.commands.v1.OrderSubmission.prototype.setReference = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional vega.PeggedOrder pegged_order = 11;
+ * optional vega.PeggedOrder pegged_order = 9;
  * @return {?proto.vega.PeggedOrder}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.getPeggedOrder = function() {
   return /** @type{?proto.vega.PeggedOrder} */ (
-    jspb.Message.getWrapperField(this, vega_pb.PeggedOrder, 11));
+    jspb.Message.getWrapperField(this, vega_pb.PeggedOrder, 9));
 };
 
 
@@ -605,7 +545,7 @@ proto.vega.commands.v1.OrderSubmission.prototype.getPeggedOrder = function() {
  * @return {!proto.vega.commands.v1.OrderSubmission} returns this
 */
 proto.vega.commands.v1.OrderSubmission.prototype.setPeggedOrder = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -623,7 +563,7 @@ proto.vega.commands.v1.OrderSubmission.prototype.clearPeggedOrder = function() {
  * @return {boolean}
  */
 proto.vega.commands.v1.OrderSubmission.prototype.hasPeggedOrder = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
