@@ -41,7 +41,7 @@ test('Basic test: Can serialise an empty order to an unsigned tx', t => {
     t.end()
 })
 
-test('A basic order can be constructed and serialised to an unsigned tx', t => {
+/* test('A basic order can be constructed and serialised to an unsigned tx', t => {
     const hardcodedExpectedOutput =  new Uint8Array([18, 14, 116, 101, 115, 116, 45, 109, 97, 114, 107, 101, 116, 45, 105, 100, 32, 10, 40, 20, 48, 1])
 
     const order = new commands.v1.commands.OrderSubmission()
@@ -65,7 +65,7 @@ test('A basic order can be deserialised', t => {
     t.equal(order.getSide(), vega.Side.SIDE_BUY)
 
     t.end()
-})
+}) */
 
 test('Order Validation: An order size must be a number', t => {
     const order = new commands.v1.commands.OrderSubmission()
@@ -141,7 +141,6 @@ test('Submit Order', t => {
     const sub = new commands.v1.commands.OrderSubmission()
     sub.setExpiresAt(2000000000000000000)
     sub.setMarketId("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP")
-    sub.setPartyId("1122aabb") // a public key
     sub.setPrice(99912345)
     sub.setSide(vega.Side.SIDE_BUY) // 1
     sub.setSize(555)
