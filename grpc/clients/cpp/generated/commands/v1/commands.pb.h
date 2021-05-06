@@ -620,14 +620,13 @@ class OrderAmendment PROTOBUF_FINAL :
 
   enum : int {
     kOrderIdFieldNumber = 1,
-    kPartyIdFieldNumber = 2,
-    kMarketIdFieldNumber = 3,
-    kPriceFieldNumber = 4,
-    kExpiresAtFieldNumber = 6,
-    kPeggedOffsetFieldNumber = 8,
-    kSizeDeltaFieldNumber = 5,
-    kTimeInForceFieldNumber = 7,
-    kPeggedReferenceFieldNumber = 9,
+    kMarketIdFieldNumber = 2,
+    kPriceFieldNumber = 3,
+    kExpiresAtFieldNumber = 5,
+    kPeggedOffsetFieldNumber = 7,
+    kSizeDeltaFieldNumber = 4,
+    kTimeInForceFieldNumber = 6,
+    kPeggedReferenceFieldNumber = 8,
   };
   // string order_id = 1 [json_name = "orderId", (.validator.field) = {
   void clear_order_id();
@@ -645,23 +644,7 @@ class OrderAmendment PROTOBUF_FINAL :
   std::string* _internal_mutable_order_id();
   public:
 
-  // string party_id = 2 [json_name = "partyId", (.validator.field) = {
-  void clear_party_id();
-  const std::string& party_id() const;
-  void set_party_id(const std::string& value);
-  void set_party_id(std::string&& value);
-  void set_party_id(const char* value);
-  void set_party_id(const char* value, size_t size);
-  std::string* mutable_party_id();
-  std::string* release_party_id();
-  void set_allocated_party_id(std::string* party_id);
-  private:
-  const std::string& _internal_party_id() const;
-  void _internal_set_party_id(const std::string& value);
-  std::string* _internal_mutable_party_id();
-  public:
-
-  // string market_id = 3 [json_name = "marketId"];
+  // string market_id = 2 [json_name = "marketId"];
   void clear_market_id();
   const std::string& market_id() const;
   void set_market_id(const std::string& value);
@@ -677,7 +660,7 @@ class OrderAmendment PROTOBUF_FINAL :
   std::string* _internal_mutable_market_id();
   public:
 
-  // .vega.Price price = 4 [json_name = "price"];
+  // .vega.Price price = 3 [json_name = "price"];
   bool has_price() const;
   private:
   bool _internal_has_price() const;
@@ -695,7 +678,7 @@ class OrderAmendment PROTOBUF_FINAL :
       ::vega::Price* price);
   ::vega::Price* unsafe_arena_release_price();
 
-  // .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
+  // .vega.Timestamp expires_at = 5 [json_name = "expiresAt"];
   bool has_expires_at() const;
   private:
   bool _internal_has_expires_at() const;
@@ -713,7 +696,7 @@ class OrderAmendment PROTOBUF_FINAL :
       ::vega::Timestamp* expires_at);
   ::vega::Timestamp* unsafe_arena_release_expires_at();
 
-  // .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
+  // .google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];
   bool has_pegged_offset() const;
   private:
   bool _internal_has_pegged_offset() const;
@@ -731,7 +714,7 @@ class OrderAmendment PROTOBUF_FINAL :
       PROTOBUF_NAMESPACE_ID::Int64Value* pegged_offset);
   PROTOBUF_NAMESPACE_ID::Int64Value* unsafe_arena_release_pegged_offset();
 
-  // int64 size_delta = 5 [json_name = "sizeDelta"];
+  // int64 size_delta = 4 [json_name = "sizeDelta"];
   void clear_size_delta();
   ::PROTOBUF_NAMESPACE_ID::int64 size_delta() const;
   void set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value);
@@ -740,7 +723,7 @@ class OrderAmendment PROTOBUF_FINAL :
   void _internal_set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+  // .vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];
   void clear_time_in_force();
   ::vega::Order_TimeInForce time_in_force() const;
   void set_time_in_force(::vega::Order_TimeInForce value);
@@ -749,7 +732,7 @@ class OrderAmendment PROTOBUF_FINAL :
   void _internal_set_time_in_force(::vega::Order_TimeInForce value);
   public:
 
-  // .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
+  // .vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];
   void clear_pegged_reference();
   ::vega::PeggedReference pegged_reference() const;
   void set_pegged_reference(::vega::PeggedReference value);
@@ -766,7 +749,6 @@ class OrderAmendment PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr order_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_id_;
   ::vega::Price* price_;
   ::vega::Timestamp* expires_at_;
@@ -2019,68 +2001,7 @@ inline void OrderAmendment::set_allocated_order_id(std::string* order_id) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderAmendment.order_id)
 }
 
-// string party_id = 2 [json_name = "partyId", (.validator.field) = {
-inline void OrderAmendment::clear_party_id() {
-  party_id_.ClearToEmpty();
-}
-inline const std::string& OrderAmendment::party_id() const {
-  // @@protoc_insertion_point(field_get:vega.commands.v1.OrderAmendment.party_id)
-  return _internal_party_id();
-}
-inline void OrderAmendment::set_party_id(const std::string& value) {
-  _internal_set_party_id(value);
-  // @@protoc_insertion_point(field_set:vega.commands.v1.OrderAmendment.party_id)
-}
-inline std::string* OrderAmendment::mutable_party_id() {
-  // @@protoc_insertion_point(field_mutable:vega.commands.v1.OrderAmendment.party_id)
-  return _internal_mutable_party_id();
-}
-inline const std::string& OrderAmendment::_internal_party_id() const {
-  return party_id_.Get();
-}
-inline void OrderAmendment::_internal_set_party_id(const std::string& value) {
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void OrderAmendment::set_party_id(std::string&& value) {
-
-  party_id_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.OrderAmendment.party_id)
-}
-inline void OrderAmendment::set_party_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.commands.v1.OrderAmendment.party_id)
-}
-inline void OrderAmendment::set_party_id(const char* value,
-    size_t size) {
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.OrderAmendment.party_id)
-}
-inline std::string* OrderAmendment::_internal_mutable_party_id() {
-
-  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* OrderAmendment::release_party_id() {
-  // @@protoc_insertion_point(field_release:vega.commands.v1.OrderAmendment.party_id)
-  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void OrderAmendment::set_allocated_party_id(std::string* party_id) {
-  if (party_id != nullptr) {
-
-  } else {
-
-  }
-  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderAmendment.party_id)
-}
-
-// string market_id = 3 [json_name = "marketId"];
+// string market_id = 2 [json_name = "marketId"];
 inline void OrderAmendment::clear_market_id() {
   market_id_.ClearToEmpty();
 }
@@ -2141,7 +2062,7 @@ inline void OrderAmendment::set_allocated_market_id(std::string* market_id) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderAmendment.market_id)
 }
 
-// .vega.Price price = 4 [json_name = "price"];
+// .vega.Price price = 3 [json_name = "price"];
 inline bool OrderAmendment::_internal_has_price() const {
   return this != internal_default_instance() && price_ != nullptr;
 }
@@ -2218,7 +2139,7 @@ inline void OrderAmendment::set_allocated_price(::vega::Price* price) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderAmendment.price)
 }
 
-// int64 size_delta = 5 [json_name = "sizeDelta"];
+// int64 size_delta = 4 [json_name = "sizeDelta"];
 inline void OrderAmendment::clear_size_delta() {
   size_delta_ = PROTOBUF_LONGLONG(0);
 }
@@ -2238,7 +2159,7 @@ inline void OrderAmendment::set_size_delta(::PROTOBUF_NAMESPACE_ID::int64 value)
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderAmendment.size_delta)
 }
 
-// .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
+// .vega.Timestamp expires_at = 5 [json_name = "expiresAt"];
 inline bool OrderAmendment::_internal_has_expires_at() const {
   return this != internal_default_instance() && expires_at_ != nullptr;
 }
@@ -2315,7 +2236,7 @@ inline void OrderAmendment::set_allocated_expires_at(::vega::Timestamp* expires_
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderAmendment.expires_at)
 }
 
-// .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+// .vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];
 inline void OrderAmendment::clear_time_in_force() {
   time_in_force_ = 0;
 }
@@ -2335,7 +2256,7 @@ inline void OrderAmendment::set_time_in_force(::vega::Order_TimeInForce value) {
   // @@protoc_insertion_point(field_set:vega.commands.v1.OrderAmendment.time_in_force)
 }
 
-// .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
+// .google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];
 inline bool OrderAmendment::_internal_has_pegged_offset() const {
   return this != internal_default_instance() && pegged_offset_ != nullptr;
 }
@@ -2412,7 +2333,7 @@ inline void OrderAmendment::set_allocated_pegged_offset(PROTOBUF_NAMESPACE_ID::I
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.OrderAmendment.pegged_offset)
 }
 
-// .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
+// .vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];
 inline void OrderAmendment::clear_pegged_reference() {
   pegged_reference_ = 0;
 }

@@ -89,9 +89,6 @@ export class OrderAmendment extends jspb.Message {
   getOrderId(): string;
   setOrderId(value: string): void;
 
-  getPartyId(): string;
-  setPartyId(value: string): void;
-
   getMarketId(): string;
   setMarketId(value: string): void;
 
@@ -132,7 +129,6 @@ export class OrderAmendment extends jspb.Message {
 export namespace OrderAmendment {
   export type AsObject = {
     orderId: string,
-    partyId: string,
     marketId: string,
     price?: vega_pb.Price.AsObject,
     sizeDelta: number,

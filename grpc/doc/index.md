@@ -2779,7 +2779,6 @@ An order amendment is a request to amend or update an existing order on Vega
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | order_id | [string](#string) |  | Order identifier, this is required to find the order and will not be updated, required field |
-| party_id | [string](#string) |  | Party identifier, this is required to find the order and will not be updated, required field |
 | market_id | [string](#string) |  | Market identifier, this is required to find the order and will not be updated |
 | price | [vega.Price](#vega.Price) |  | Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price) |
 | size_delta | [int64](#int64) |  | Amend the size for the order by the delta specified: - To reduce the size from the current value set a negative integer value - To increase the size from the current value, set a positive integer value - To leave the size unchanged set a value of zero |

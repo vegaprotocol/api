@@ -1148,10 +1148,6 @@
           "title": "Order identifier, this is required to find the order and will not be updated, required field",
           "type": "string"
         },
-        "party_id": {
-          "title": "Party identifier, this is required to find the order and will not be updated, required field",
-          "type": "string"
-        },
         "pegged_offset": {
           "format": "int64",
           "title": "Amend the pegged order offset for the order",

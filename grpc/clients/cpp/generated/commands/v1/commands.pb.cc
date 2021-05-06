@@ -185,7 +185,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2fcommands_2epro
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::OrderAmendment, order_id_),
-  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::OrderAmendment, party_id_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::OrderAmendment, market_id_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::OrderAmendment, price_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::OrderAmendment, size_delta_),
@@ -231,10 +230,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::vega::commands::v1::OrderSubmission)},
   { 14, -1, sizeof(::vega::commands::v1::OrderCancellation)},
   { 21, -1, sizeof(::vega::commands::v1::OrderAmendment)},
-  { 35, -1, sizeof(::vega::commands::v1::LiquidityProvisionSubmission)},
-  { 46, -1, sizeof(::vega::commands::v1::WithdrawSubmission)},
-  { 54, -1, sizeof(::vega::commands::v1::ProposalSubmission)},
-  { 61, -1, sizeof(::vega::commands::v1::VoteSubmission)},
+  { 34, -1, sizeof(::vega::commands::v1::LiquidityProvisionSubmission)},
+  { 45, -1, sizeof(::vega::commands::v1::WithdrawSubmission)},
+  { 53, -1, sizeof(::vega::commands::v1::ProposalSubmission)},
+  { 60, -1, sizeof(::vega::commands::v1::VoteSubmission)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -262,34 +261,33 @@ const char descriptor_table_protodef_commands_2fv1_2fcommands_2eproto[] PROTOBUF
   "erence\030\010 \001(\tR\treference\0224\n\014pegged_order\030"
   "\t \001(\0132\021.vega.PeggedOrderR\013peggedOrder\"K\n"
   "\021OrderCancellation\022\031\n\010order_id\030\001 \001(\tR\007or"
-  "derId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"\246\003\n\016O"
+  "derId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"\203\003\n\016O"
   "rderAmendment\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002X\001R"
-  "\007orderId\022!\n\010party_id\030\002 \001(\tB\006\342\337\037\002X\001R\007part"
-  "yId\022\033\n\tmarket_id\030\003 \001(\tR\010marketId\022!\n\005pric"
-  "e\030\004 \001(\0132\013.vega.PriceR\005price\022\035\n\nsize_delt"
-  "a\030\005 \001(\003R\tsizeDelta\022.\n\nexpires_at\030\006 \001(\0132\017"
-  ".vega.TimestampR\texpiresAt\022;\n\rtime_in_fo"
-  "rce\030\007 \001(\0162\027.vega.Order.TimeInForceR\013time"
-  "InForce\022@\n\rpegged_offset\030\010 \001(\0132\033.google."
-  "protobuf.Int64ValueR\014peggedOffset\022@\n\020peg"
-  "ged_reference\030\t \001(\0162\025.vega.PeggedReferen"
-  "ceR\017peggedReference\"\366\001\n\034LiquidityProvisi"
-  "onSubmission\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R"
-  "\010marketId\022+\n\021commitment_amount\030\002 \001(\004R\020co"
-  "mmitmentAmount\022\020\n\003fee\030\003 \001(\tR\003fee\022*\n\005sell"
-  "s\030\004 \003(\0132\024.vega.LiquidityOrderR\005sells\022(\n\004"
-  "buys\030\005 \003(\0132\024.vega.LiquidityOrderR\004buys\022\034"
-  "\n\treference\030\006 \001(\tR\treference\"g\n\022Withdraw"
-  "Submission\022\026\n\006amount\030\001 \001(\004R\006amount\022\024\n\005as"
-  "set\030\002 \001(\tR\005asset\022#\n\003ext\030\003 \001(\0132\021.vega.Wit"
-  "hdrawExtR\003ext\"e\n\022ProposalSubmission\022\034\n\tr"
-  "eference\030\001 \001(\tR\treference\0221\n\005terms\030\002 \001(\013"
-  "2\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005terms\"a\n\016"
-  "VoteSubmission\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037"
-  "\002X\001R\nproposalId\022&\n\005value\030\002 \001(\0162\020.vega.Vo"
-  "te.ValueR\005valueBO\n io.vegaprotocol.vega."
-  "commands.v1Z+code.vegaprotocol.io/vega/p"
-  "roto/commands/v1b\006proto3"
+  "\007orderId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022!\n"
+  "\005price\030\003 \001(\0132\013.vega.PriceR\005price\022\035\n\nsize"
+  "_delta\030\004 \001(\003R\tsizeDelta\022.\n\nexpires_at\030\005 "
+  "\001(\0132\017.vega.TimestampR\texpiresAt\022;\n\rtime_"
+  "in_force\030\006 \001(\0162\027.vega.Order.TimeInForceR"
+  "\013timeInForce\022@\n\rpegged_offset\030\007 \001(\0132\033.go"
+  "ogle.protobuf.Int64ValueR\014peggedOffset\022@"
+  "\n\020pegged_reference\030\010 \001(\0162\025.vega.PeggedRe"
+  "ferenceR\017peggedReference\"\366\001\n\034LiquidityPr"
+  "ovisionSubmission\022#\n\tmarket_id\030\001 \001(\tB\006\342\337"
+  "\037\002X\001R\010marketId\022+\n\021commitment_amount\030\002 \001("
+  "\004R\020commitmentAmount\022\020\n\003fee\030\003 \001(\tR\003fee\022*\n"
+  "\005sells\030\004 \003(\0132\024.vega.LiquidityOrderR\005sell"
+  "s\022(\n\004buys\030\005 \003(\0132\024.vega.LiquidityOrderR\004b"
+  "uys\022\034\n\treference\030\006 \001(\tR\treference\"g\n\022Wit"
+  "hdrawSubmission\022\026\n\006amount\030\001 \001(\004R\006amount\022"
+  "\024\n\005asset\030\002 \001(\tR\005asset\022#\n\003ext\030\003 \001(\0132\021.veg"
+  "a.WithdrawExtR\003ext\"e\n\022ProposalSubmission"
+  "\022\034\n\treference\030\001 \001(\tR\treference\0221\n\005terms\030"
+  "\002 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005term"
+  "s\"a\n\016VoteSubmission\022\'\n\013proposal_id\030\001 \001(\t"
+  "B\006\342\337\037\002X\001R\nproposalId\022&\n\005value\030\002 \001(\0162\020.ve"
+  "ga.Vote.ValueR\005valueBO\n io.vegaprotocol."
+  "vega.commands.v1Z+code.vegaprotocol.io/v"
+  "ega/proto/commands/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_commands_2fv1_2fcommands_2eproto_deps[4] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
@@ -308,7 +306,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_commands_2fv1_2fcommands_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_commands_2fv1_2fcommands_2eproto = {
-  false, false, descriptor_table_protodef_commands_2fv1_2fcommands_2eproto, "commands/v1/commands.proto", 1664,
+  false, false, descriptor_table_protodef_commands_2fv1_2fcommands_2eproto, "commands/v1/commands.proto", 1629,
   &descriptor_table_commands_2fv1_2fcommands_2eproto_once, descriptor_table_commands_2fv1_2fcommands_2eproto_sccs, descriptor_table_commands_2fv1_2fcommands_2eproto_deps, 7, 4,
   schemas, file_default_instances, TableStruct_commands_2fv1_2fcommands_2eproto::offsets,
   file_level_metadata_commands_2fv1_2fcommands_2eproto, 7, file_level_enum_descriptors_commands_2fv1_2fcommands_2eproto, file_level_service_descriptors_commands_2fv1_2fcommands_2eproto,
@@ -1064,11 +1062,6 @@ OrderAmendment::OrderAmendment(const OrderAmendment& from)
     order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_order_id(),
       GetArena());
   }
-  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_party_id().empty()) {
-    party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party_id(),
-      GetArena());
-  }
   market_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_market_id().empty()) {
     market_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_market_id(),
@@ -1098,7 +1091,6 @@ OrderAmendment::OrderAmendment(const OrderAmendment& from)
 void OrderAmendment::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OrderAmendment_commands_2fv1_2fcommands_2eproto.base);
   order_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  party_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   market_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&price_) - reinterpret_cast<char*>(this)),
@@ -1115,7 +1107,6 @@ OrderAmendment::~OrderAmendment() {
 void OrderAmendment::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   order_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  party_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   market_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete price_;
   if (this != internal_default_instance()) delete expires_at_;
@@ -1144,7 +1135,6 @@ void OrderAmendment::Clear() {
   (void) cached_has_bits;
 
   order_id_.ClearToEmpty();
-  party_id_.ClearToEmpty();
   market_id_.ClearToEmpty();
   if (GetArena() == nullptr && price_ != nullptr) {
     delete price_;
@@ -1180,63 +1170,54 @@ const char* OrderAmendment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string party_id = 2 [json_name = "partyId", (.validator.field) = {
+      // string market_id = 2 [json_name = "marketId"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_party_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.OrderAmendment.party_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string market_id = 3 [json_name = "marketId"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_market_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.OrderAmendment.market_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Price price = 4 [json_name = "price"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // .vega.Price price = 3 [json_name = "price"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_price(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 size_delta = 5 [json_name = "sizeDelta"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // int64 size_delta = 4 [json_name = "sizeDelta"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           size_delta_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // .vega.Timestamp expires_at = 5 [json_name = "expiresAt"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_expires_at(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+      // .vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_time_in_force(static_cast<::vega::Order_TimeInForce>(val));
         } else goto handle_unusual;
         continue;
-      // .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+      // .google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_pegged_offset(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+      // .vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_pegged_reference(static_cast<::vega::PeggedReference>(val));
@@ -1280,68 +1261,58 @@ failure:
         1, this->_internal_order_id(), target);
   }
 
-  // string party_id = 2 [json_name = "partyId", (.validator.field) = {
-  if (this->party_id().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_party_id().data(), static_cast<int>(this->_internal_party_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.commands.v1.OrderAmendment.party_id");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_party_id(), target);
-  }
-
-  // string market_id = 3 [json_name = "marketId"];
+  // string market_id = 2 [json_name = "marketId"];
   if (this->market_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_market_id().data(), static_cast<int>(this->_internal_market_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.commands.v1.OrderAmendment.market_id");
     target = stream->WriteStringMaybeAliased(
-        3, this->_internal_market_id(), target);
+        2, this->_internal_market_id(), target);
   }
 
-  // .vega.Price price = 4 [json_name = "price"];
+  // .vega.Price price = 3 [json_name = "price"];
   if (this->has_price()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::price(this), target, stream);
+        3, _Internal::price(this), target, stream);
   }
 
-  // int64 size_delta = 5 [json_name = "sizeDelta"];
+  // int64 size_delta = 4 [json_name = "sizeDelta"];
   if (this->size_delta() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_size_delta(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(4, this->_internal_size_delta(), target);
   }
 
-  // .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
+  // .vega.Timestamp expires_at = 5 [json_name = "expiresAt"];
   if (this->has_expires_at()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::expires_at(this), target, stream);
+        5, _Internal::expires_at(this), target, stream);
   }
 
-  // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+  // .vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];
   if (this->time_in_force() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_time_in_force(), target);
+      6, this->_internal_time_in_force(), target);
   }
 
-  // .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
+  // .google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];
   if (this->has_pegged_offset()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        8, _Internal::pegged_offset(this), target, stream);
+        7, _Internal::pegged_offset(this), target, stream);
   }
 
-  // .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
+  // .vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];
   if (this->pegged_reference() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      9, this->_internal_pegged_reference(), target);
+      8, this->_internal_pegged_reference(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1367,55 +1338,48 @@ size_t OrderAmendment::ByteSizeLong() const {
         this->_internal_order_id());
   }
 
-  // string party_id = 2 [json_name = "partyId", (.validator.field) = {
-  if (this->party_id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_party_id());
-  }
-
-  // string market_id = 3 [json_name = "marketId"];
+  // string market_id = 2 [json_name = "marketId"];
   if (this->market_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_market_id());
   }
 
-  // .vega.Price price = 4 [json_name = "price"];
+  // .vega.Price price = 3 [json_name = "price"];
   if (this->has_price()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *price_);
   }
 
-  // .vega.Timestamp expires_at = 6 [json_name = "expiresAt"];
+  // .vega.Timestamp expires_at = 5 [json_name = "expiresAt"];
   if (this->has_expires_at()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *expires_at_);
   }
 
-  // .google.protobuf.Int64Value pegged_offset = 8 [json_name = "peggedOffset"];
+  // .google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];
   if (this->has_pegged_offset()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pegged_offset_);
   }
 
-  // int64 size_delta = 5 [json_name = "sizeDelta"];
+  // int64 size_delta = 4 [json_name = "sizeDelta"];
   if (this->size_delta() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
         this->_internal_size_delta());
   }
 
-  // .vega.Order.TimeInForce time_in_force = 7 [json_name = "timeInForce"];
+  // .vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];
   if (this->time_in_force() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_time_in_force());
   }
 
-  // .vega.PeggedReference pegged_reference = 9 [json_name = "peggedReference"];
+  // .vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];
   if (this->pegged_reference() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_pegged_reference());
@@ -1454,9 +1418,6 @@ void OrderAmendment::MergeFrom(const OrderAmendment& from) {
 
   if (from.order_id().size() > 0) {
     _internal_set_order_id(from._internal_order_id());
-  }
-  if (from.party_id().size() > 0) {
-    _internal_set_party_id(from._internal_party_id());
   }
   if (from.market_id().size() > 0) {
     _internal_set_market_id(from._internal_market_id());
@@ -1503,7 +1464,6 @@ void OrderAmendment::InternalSwap(OrderAmendment* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   order_id_.Swap(&other->order_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  party_id_.Swap(&other->party_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   market_id_.Swap(&other->market_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(OrderAmendment, pegged_reference_)

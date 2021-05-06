@@ -760,14 +760,13 @@ proto.vega.commands.v1.OrderAmendment.prototype.toObject = function(opt_includeI
 proto.vega.commands.v1.OrderAmendment.toObject = function(includeInstance, msg) {
   var f, obj = {
     orderId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    partyId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    marketId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     price: (f = msg.getPrice()) && vega_pb.Price.toObject(includeInstance, f),
-    sizeDelta: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    sizeDelta: jspb.Message.getFieldWithDefault(msg, 4, 0),
     expiresAt: (f = msg.getExpiresAt()) && vega_pb.Timestamp.toObject(includeInstance, f),
-    timeInForce: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    timeInForce: jspb.Message.getFieldWithDefault(msg, 6, 0),
     peggedOffset: (f = msg.getPeggedOffset()) && google_protobuf_wrappers_pb.Int64Value.toObject(includeInstance, f),
-    peggedReference: jspb.Message.getFieldWithDefault(msg, 9, 0)
+    peggedReference: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -810,36 +809,32 @@ proto.vega.commands.v1.OrderAmendment.deserializeBinaryFromReader = function(msg
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPartyId(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setMarketId(value);
       break;
-    case 4:
+    case 3:
       var value = new vega_pb.Price;
       reader.readMessage(value,vega_pb.Price.deserializeBinaryFromReader);
       msg.setPrice(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setSizeDelta(value);
       break;
-    case 6:
+    case 5:
       var value = new vega_pb.Timestamp;
       reader.readMessage(value,vega_pb.Timestamp.deserializeBinaryFromReader);
       msg.setExpiresAt(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {!proto.vega.Order.TimeInForce} */ (reader.readEnum());
       msg.setTimeInForce(value);
       break;
-    case 8:
+    case 7:
       var value = new google_protobuf_wrappers_pb.Int64Value;
       reader.readMessage(value,google_protobuf_wrappers_pb.Int64Value.deserializeBinaryFromReader);
       msg.setPeggedOffset(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {!proto.vega.PeggedReference} */ (reader.readEnum());
       msg.setPeggedReference(value);
       break;
@@ -879,24 +874,17 @@ proto.vega.commands.v1.OrderAmendment.serializeBinaryToWriter = function(message
       f
     );
   }
-  f = message.getPartyId();
+  f = message.getMarketId();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getMarketId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getPrice();
   if (f != null) {
     writer.writeMessage(
-      4,
+      3,
       f,
       vega_pb.Price.serializeBinaryToWriter
     );
@@ -904,14 +892,14 @@ proto.vega.commands.v1.OrderAmendment.serializeBinaryToWriter = function(message
   f = message.getSizeDelta();
   if (f !== 0) {
     writer.writeInt64(
-      5,
+      4,
       f
     );
   }
   f = message.getExpiresAt();
   if (f != null) {
     writer.writeMessage(
-      6,
+      5,
       f,
       vega_pb.Timestamp.serializeBinaryToWriter
     );
@@ -919,14 +907,14 @@ proto.vega.commands.v1.OrderAmendment.serializeBinaryToWriter = function(message
   f = message.getTimeInForce();
   if (f !== 0.0) {
     writer.writeEnum(
-      7,
+      6,
       f
     );
   }
   f = message.getPeggedOffset();
   if (f != null) {
     writer.writeMessage(
-      8,
+      7,
       f,
       google_protobuf_wrappers_pb.Int64Value.serializeBinaryToWriter
     );
@@ -934,7 +922,7 @@ proto.vega.commands.v1.OrderAmendment.serializeBinaryToWriter = function(message
   f = message.getPeggedReference();
   if (f !== 0.0) {
     writer.writeEnum(
-      9,
+      8,
       f
     );
   }
@@ -960,10 +948,10 @@ proto.vega.commands.v1.OrderAmendment.prototype.setOrderId = function(value) {
 
 
 /**
- * optional string party_id = 2;
+ * optional string market_id = 2;
  * @return {string}
  */
-proto.vega.commands.v1.OrderAmendment.prototype.getPartyId = function() {
+proto.vega.commands.v1.OrderAmendment.prototype.getMarketId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -972,36 +960,18 @@ proto.vega.commands.v1.OrderAmendment.prototype.getPartyId = function() {
  * @param {string} value
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
  */
-proto.vega.commands.v1.OrderAmendment.prototype.setPartyId = function(value) {
+proto.vega.commands.v1.OrderAmendment.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string market_id = 3;
- * @return {string}
- */
-proto.vega.commands.v1.OrderAmendment.prototype.getMarketId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vega.commands.v1.OrderAmendment} returns this
- */
-proto.vega.commands.v1.OrderAmendment.prototype.setMarketId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional vega.Price price = 4;
+ * optional vega.Price price = 3;
  * @return {?proto.vega.Price}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.getPrice = function() {
   return /** @type{?proto.vega.Price} */ (
-    jspb.Message.getWrapperField(this, vega_pb.Price, 4));
+    jspb.Message.getWrapperField(this, vega_pb.Price, 3));
 };
 
 
@@ -1010,7 +980,7 @@ proto.vega.commands.v1.OrderAmendment.prototype.getPrice = function() {
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
 */
 proto.vega.commands.v1.OrderAmendment.prototype.setPrice = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -1028,16 +998,16 @@ proto.vega.commands.v1.OrderAmendment.prototype.clearPrice = function() {
  * @return {boolean}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.hasPrice = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int64 size_delta = 5;
+ * optional int64 size_delta = 4;
  * @return {number}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.getSizeDelta = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -1046,17 +1016,17 @@ proto.vega.commands.v1.OrderAmendment.prototype.getSizeDelta = function() {
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
  */
 proto.vega.commands.v1.OrderAmendment.prototype.setSizeDelta = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional vega.Timestamp expires_at = 6;
+ * optional vega.Timestamp expires_at = 5;
  * @return {?proto.vega.Timestamp}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.getExpiresAt = function() {
   return /** @type{?proto.vega.Timestamp} */ (
-    jspb.Message.getWrapperField(this, vega_pb.Timestamp, 6));
+    jspb.Message.getWrapperField(this, vega_pb.Timestamp, 5));
 };
 
 
@@ -1065,7 +1035,7 @@ proto.vega.commands.v1.OrderAmendment.prototype.getExpiresAt = function() {
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
 */
 proto.vega.commands.v1.OrderAmendment.prototype.setExpiresAt = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -1083,16 +1053,16 @@ proto.vega.commands.v1.OrderAmendment.prototype.clearExpiresAt = function() {
  * @return {boolean}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.hasExpiresAt = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional vega.Order.TimeInForce time_in_force = 7;
+ * optional vega.Order.TimeInForce time_in_force = 6;
  * @return {!proto.vega.Order.TimeInForce}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.getTimeInForce = function() {
-  return /** @type {!proto.vega.Order.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {!proto.vega.Order.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
@@ -1101,17 +1071,17 @@ proto.vega.commands.v1.OrderAmendment.prototype.getTimeInForce = function() {
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
  */
 proto.vega.commands.v1.OrderAmendment.prototype.setTimeInForce = function(value) {
-  return jspb.Message.setProto3EnumField(this, 7, value);
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
 /**
- * optional google.protobuf.Int64Value pegged_offset = 8;
+ * optional google.protobuf.Int64Value pegged_offset = 7;
  * @return {?proto.google.protobuf.Int64Value}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.getPeggedOffset = function() {
   return /** @type{?proto.google.protobuf.Int64Value} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 8));
+    jspb.Message.getWrapperField(this, google_protobuf_wrappers_pb.Int64Value, 7));
 };
 
 
@@ -1120,7 +1090,7 @@ proto.vega.commands.v1.OrderAmendment.prototype.getPeggedOffset = function() {
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
 */
 proto.vega.commands.v1.OrderAmendment.prototype.setPeggedOffset = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1138,16 +1108,16 @@ proto.vega.commands.v1.OrderAmendment.prototype.clearPeggedOffset = function() {
  * @return {boolean}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.hasPeggedOffset = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional vega.PeggedReference pegged_reference = 9;
+ * optional vega.PeggedReference pegged_reference = 8;
  * @return {!proto.vega.PeggedReference}
  */
 proto.vega.commands.v1.OrderAmendment.prototype.getPeggedReference = function() {
-  return /** @type {!proto.vega.PeggedReference} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.vega.PeggedReference} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
@@ -1156,7 +1126,7 @@ proto.vega.commands.v1.OrderAmendment.prototype.getPeggedReference = function() 
  * @return {!proto.vega.commands.v1.OrderAmendment} returns this
  */
 proto.vega.commands.v1.OrderAmendment.prototype.setPeggedReference = function(value) {
-  return jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 

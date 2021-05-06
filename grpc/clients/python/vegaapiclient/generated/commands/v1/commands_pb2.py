@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x63ommands/v1/commands.proto\x12\x10vega.commands.v1\x1a\x10governance.proto\x1a\nvega.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"\xde\x02\n\x0fOrderSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\x12\x1a\n\x04size\x18\x03 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x04size\x12\x1e\n\x04side\x18\x04 \x01(\x0e\x32\n.vega.SideR\x04side\x12;\n\rtime_in_force\x18\x05 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12\x1d\n\nexpires_at\x18\x06 \x01(\x03R\texpiresAt\x12$\n\x04type\x18\x07 \x01(\x0e\x32\x10.vega.Order.TypeR\x04type\x12\x1c\n\treference\x18\x08 \x01(\tR\treference\x12\x34\n\x0cpegged_order\x18\t \x01(\x0b\x32\x11.vega.PeggedOrderR\x0bpeggedOrder\"K\n\x11OrderCancellation\x12\x19\n\x08order_id\x18\x01 \x01(\tR\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"\xa6\x03\n\x0eOrderAmendment\x12!\n\x08order_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07orderId\x12!\n\x08party_id\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x1b\n\tmarket_id\x18\x03 \x01(\tR\x08marketId\x12!\n\x05price\x18\x04 \x01(\x0b\x32\x0b.vega.PriceR\x05price\x12\x1d\n\nsize_delta\x18\x05 \x01(\x03R\tsizeDelta\x12.\n\nexpires_at\x18\x06 \x01(\x0b\x32\x0f.vega.TimestampR\texpiresAt\x12;\n\rtime_in_force\x18\x07 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12@\n\rpegged_offset\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x0cpeggedOffset\x12@\n\x10pegged_reference\x18\t \x01(\x0e\x32\x15.vega.PeggedReferenceR\x0fpeggedReference\"\xf6\x01\n\x1cLiquidityProvisionSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12+\n\x11\x63ommitment_amount\x18\x02 \x01(\x04R\x10\x63ommitmentAmount\x12\x10\n\x03\x66\x65\x65\x18\x03 \x01(\tR\x03\x66\x65\x65\x12*\n\x05sells\x18\x04 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x05sells\x12(\n\x04\x62uys\x18\x05 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x04\x62uys\x12\x1c\n\treference\x18\x06 \x01(\tR\treference\"g\n\x12WithdrawSubmission\x12\x16\n\x06\x61mount\x18\x01 \x01(\x04R\x06\x61mount\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\x12#\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x11.vega.WithdrawExtR\x03\x65xt\"e\n\x12ProposalSubmission\x12\x1c\n\treference\x18\x01 \x01(\tR\treference\x12\x31\n\x05terms\x18\x02 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x05terms\"a\n\x0eVoteSubmission\x12\'\n\x0bproposal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\x12&\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueR\x05valueBO\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1b\x06proto3'
+  serialized_pb=b'\n\x1a\x63ommands/v1/commands.proto\x12\x10vega.commands.v1\x1a\x10governance.proto\x1a\nvega.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"\xde\x02\n\x0fOrderSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\x12\x1a\n\x04size\x18\x03 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x04size\x12\x1e\n\x04side\x18\x04 \x01(\x0e\x32\n.vega.SideR\x04side\x12;\n\rtime_in_force\x18\x05 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12\x1d\n\nexpires_at\x18\x06 \x01(\x03R\texpiresAt\x12$\n\x04type\x18\x07 \x01(\x0e\x32\x10.vega.Order.TypeR\x04type\x12\x1c\n\treference\x18\x08 \x01(\tR\treference\x12\x34\n\x0cpegged_order\x18\t \x01(\x0b\x32\x11.vega.PeggedOrderR\x0bpeggedOrder\"K\n\x11OrderCancellation\x12\x19\n\x08order_id\x18\x01 \x01(\tR\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"\x83\x03\n\x0eOrderAmendment\x12!\n\x08order_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\x12!\n\x05price\x18\x03 \x01(\x0b\x32\x0b.vega.PriceR\x05price\x12\x1d\n\nsize_delta\x18\x04 \x01(\x03R\tsizeDelta\x12.\n\nexpires_at\x18\x05 \x01(\x0b\x32\x0f.vega.TimestampR\texpiresAt\x12;\n\rtime_in_force\x18\x06 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12@\n\rpegged_offset\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x0cpeggedOffset\x12@\n\x10pegged_reference\x18\x08 \x01(\x0e\x32\x15.vega.PeggedReferenceR\x0fpeggedReference\"\xf6\x01\n\x1cLiquidityProvisionSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12+\n\x11\x63ommitment_amount\x18\x02 \x01(\x04R\x10\x63ommitmentAmount\x12\x10\n\x03\x66\x65\x65\x18\x03 \x01(\tR\x03\x66\x65\x65\x12*\n\x05sells\x18\x04 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x05sells\x12(\n\x04\x62uys\x18\x05 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x04\x62uys\x12\x1c\n\treference\x18\x06 \x01(\tR\treference\"g\n\x12WithdrawSubmission\x12\x16\n\x06\x61mount\x18\x01 \x01(\x04R\x06\x61mount\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\x12#\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x11.vega.WithdrawExtR\x03\x65xt\"e\n\x12ProposalSubmission\x12\x1c\n\treference\x18\x01 \x01(\tR\treference\x12\x31\n\x05terms\x18\x02 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x05terms\"a\n\x0eVoteSubmission\x12\'\n\x0bproposal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\x12&\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueR\x05valueBO\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1b\x06proto3'
   ,
   dependencies=[governance__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
 
@@ -173,57 +173,50 @@ _ORDERAMENDMENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\002X\001', json_name='orderId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='party_id', full_name='vega.commands.v1.OrderAmendment.party_id', index=1,
+      name='market_id', full_name='vega.commands.v1.OrderAmendment.market_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\002X\001', json_name='partyId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='market_id', full_name='vega.commands.v1.OrderAmendment.market_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='marketId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='price', full_name='vega.commands.v1.OrderAmendment.price', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='price', full_name='vega.commands.v1.OrderAmendment.price', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='price', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='size_delta', full_name='vega.commands.v1.OrderAmendment.size_delta', index=4,
-      number=5, type=3, cpp_type=2, label=1,
+      name='size_delta', full_name='vega.commands.v1.OrderAmendment.size_delta', index=3,
+      number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='sizeDelta', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='expires_at', full_name='vega.commands.v1.OrderAmendment.expires_at', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='expires_at', full_name='vega.commands.v1.OrderAmendment.expires_at', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='expiresAt', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='time_in_force', full_name='vega.commands.v1.OrderAmendment.time_in_force', index=6,
-      number=7, type=14, cpp_type=8, label=1,
+      name='time_in_force', full_name='vega.commands.v1.OrderAmendment.time_in_force', index=5,
+      number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='timeInForce', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pegged_offset', full_name='vega.commands.v1.OrderAmendment.pegged_offset', index=7,
-      number=8, type=11, cpp_type=10, label=1,
+      name='pegged_offset', full_name='vega.commands.v1.OrderAmendment.pegged_offset', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='peggedOffset', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pegged_reference', full_name='vega.commands.v1.OrderAmendment.pegged_reference', index=8,
-      number=9, type=14, cpp_type=8, label=1,
+      name='pegged_reference', full_name='vega.commands.v1.OrderAmendment.pegged_reference', index=7,
+      number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -241,7 +234,7 @@ _ORDERAMENDMENT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=597,
-  serialized_end=1019,
+  serialized_end=984,
 )
 
 
@@ -307,8 +300,8 @@ _LIQUIDITYPROVISIONSUBMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1022,
-  serialized_end=1268,
+  serialized_start=987,
+  serialized_end=1233,
 )
 
 
@@ -353,8 +346,8 @@ _WITHDRAWSUBMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1270,
-  serialized_end=1373,
+  serialized_start=1235,
+  serialized_end=1338,
 )
 
 
@@ -392,8 +385,8 @@ _PROPOSALSUBMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1375,
-  serialized_end=1476,
+  serialized_start=1340,
+  serialized_end=1441,
 )
 
 
@@ -431,8 +424,8 @@ _VOTESUBMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1478,
-  serialized_end=1575,
+  serialized_start=1443,
+  serialized_end=1540,
 )
 
 _ORDERSUBMISSION.fields_by_name['side'].enum_type = vega__pb2._SIDE
@@ -512,7 +505,6 @@ DESCRIPTOR._options = None
 _ORDERSUBMISSION.fields_by_name['market_id']._options = None
 _ORDERSUBMISSION.fields_by_name['size']._options = None
 _ORDERAMENDMENT.fields_by_name['order_id']._options = None
-_ORDERAMENDMENT.fields_by_name['party_id']._options = None
 _LIQUIDITYPROVISIONSUBMISSION.fields_by_name['market_id']._options = None
 _PROPOSALSUBMISSION.fields_by_name['terms']._options = None
 _VOTESUBMISSION.fields_by_name['proposal_id']._options = None
