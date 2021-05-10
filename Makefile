@@ -101,7 +101,7 @@ test-cpp:
 
 .PHONY: test-go
 test-go:
-	@echo "TBD: test-go"
+	@cd grpc/clients/go && go test -mod=readonly -count=1 ./...
 
 .PHONY: test-java
 test-java:
