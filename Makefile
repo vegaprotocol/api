@@ -150,4 +150,4 @@ clean-javascript:
 
 .PHONY: clean-python
 clean-python:
-	@rm -rf "$(PYTHON_GENERATED_DIR)" python/build
+	@rm -rf "$(PYTHON_GENERATED_DIR)" grpc/clients/python/build
