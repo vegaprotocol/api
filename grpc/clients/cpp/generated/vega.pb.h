@@ -608,12 +608,13 @@ enum OrderError : int {
   ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER = 44,
   ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER = 45,
   ORDER_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORDER = 46,
+  ORDER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRICE_BOUNDS = 47,
   OrderError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   OrderError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool OrderError_IsValid(int value);
 constexpr OrderError OrderError_MIN = ORDER_ERROR_UNSPECIFIED;
-constexpr OrderError OrderError_MAX = ORDER_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORDER;
+constexpr OrderError OrderError_MAX = ORDER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRICE_BOUNDS;
 constexpr int OrderError_ARRAYSIZE = OrderError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OrderError_descriptor();

@@ -2169,6 +2169,7 @@ with an order during its life-cycle, it will be marked with `status.ORDER_STATUS
 | ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER | 44 | Cannot amend a non pegged orders details |
 | ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER | 45 | We are unable to re-price a pegged order because a market price is unavailable |
 | ORDER_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORDER | 46 | It is not possible to amend the price of an existing pegged order |
+| ORDER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRICE_BOUNDS | 47 | An FOK, IOC, or GFN order was rejected because it resulted in trades outside the price bounds |
 
 
 
