@@ -101,7 +101,7 @@ test-cpp:
 
 .PHONY: test-go
 test-go:
-	@cd grpc/clients/go && go test -mod=readonly -count=1 ./...
+	@cd grpc/clients/go && make test
 
 .PHONY: test-java
 test-java:

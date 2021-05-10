@@ -4,13 +4,13 @@ version: v1beta1
 build:
   roots:
     - proto
-    - vendor
+    - external
   excludes:
-    - vendor/github.com/ethereum
-    - vendor/github.com/tendermint
-    - vendor/github.com/gogo
-    - vendor/github.com/dgraph-io/badger
-    - vendor/github.com/google
+    - external/github.com/ethereum
+    - external/github.com/tendermint
+    - external/github.com/gogo
+    - external/github.com/dgraph-io/badger
+    - external/github.com/google
 lint:
   use:
     - DEFAULT
