@@ -10,7 +10,7 @@ name: Docker
       - master
     paths:
       - "proto/**"
-      - "vendor/**"
+      - "external/**"
   push:
     branches:
       - develop
