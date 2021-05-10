@@ -35,8 +35,8 @@ if __name__ == "__main__":
     wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
 
     if not helpers.check_var(wallet_name) or not helpers.check_var(wallet_passphrase):
-        wallet_name = input("Enter wallet username: ")
-        wallet_passphrase = getpass.getpass("Wallet passphrase: ")
+        wallet_name = input("Enter Vega wallet username: ")
+        wallet_passphrase = getpass.getpass("Vega wallet passphrase: ")
 
     req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
     response = requests.post(wallet_url + "/api/v1/auth/token", json=req)
