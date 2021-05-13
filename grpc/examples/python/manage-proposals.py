@@ -4,11 +4,13 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
-- Vega wallet (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST: requests (https://pypi.org/project/requests/)
+- Vega-API-client (https://pypi.org/project/Vega-API-client/)
+
+Responses:
+- response-examples.txt
 """
 
 # Note: this file uses smart-tags in comments to section parts of the code to
@@ -20,15 +22,12 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import json
-import requests
-import time
-import os
 import helpers
+import os
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
+node_url_grpc = os.getenv("NODE_URL_GRPC")
+if not helpers.check_var(node_url_grpc):
+    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
     exit(1)
 
 wallet_server_url = os.getenv("WALLETSERVER_URL")
@@ -49,6 +48,14 @@ if not helpers.check_var(wallet_passphrase):
 # Help guide users against including api version suffix on url
 wallet_server_url = helpers.check_wallet_url(wallet_server_url)
 
+# __import_client:
+import vegaapiclient as vac
+
+# Vega gRPC clients for reading/writing data
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+wallet_client = vac.WalletClient(wallet_server_url)
+# :import_client__
+
 #####################################################################################
 #                           W A L L E T   S E R V I C E                             #
 #####################################################################################
@@ -57,19 +64,16 @@ print(f"Logging into wallet: {wallet_name}")
 
 # __login_wallet:
 # Log in to an existing wallet
-req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-response = requests.post(f"{wallet_server_url}/api/v1/auth/token", json=req)
+response = wallet_client.login(wallet_name, wallet_passphrase)
 helpers.check_response(response)
-token = response.json()["token"]
+# Note: secret wallet token is stored internally for duration of session
 # :login_wallet__
 
-assert token != ""
 print("Logged in to wallet successfully")
 
 # __get_pubkey:
 # List key pairs and select public key to use
-headers = {"Authorization": f"Bearer {token}"}
-response = requests.get(f"{wallet_server_url}/api/v1/keys", headers=headers)
+response = wallet_client.listkeys()
 helpers.check_response(response)
 keys = response.json()["keys"]
 pubkey = keys[0]["pub"]
@@ -82,20 +86,14 @@ print("Selected pubkey for signing")
 #                            L I S T   P R O P O S A L S                            #
 #####################################################################################
 
-# There are two types of REST request for proposals on Vega:
-# 1 - MARKET proposals (/governance/market/proposals)
-# 2 - ASSET proposals (/governance/asset/proposals)
-# Note: In the future users will be able to call an endpoint to retrieve ALL proposals.
-
 # __get_proposals:
 # Request a list of proposals on a Vega network
-response = requests.get(node_url_rest + "/governance/market/proposals")
-helpers.check_response(response)
-proposals = response.json()
-print("Proposals:\n{}".format(json.dumps(proposals, indent=2, sort_keys=True)))
+request = vac.api.trading.GetProposalsRequest()
+proposals = data_client.GetProposals(request)
+print("Proposals:\n{}".format(proposals))
 # :get_proposals__
 
-proposalID = proposals["data"][0]["proposal"]["id"]
+proposalID = proposals.data[0].proposal.id
 assert proposalID != ""
 print(f"Proposal found: {proposalID}")
 
@@ -105,10 +103,9 @@ print(f"Proposal found: {proposalID}")
 
 # __get_proposal_detail:
 # Request results of a specific proposal on a Vega network
-response = requests.get(node_url_rest + "/governance/proposal/" + proposalID)
-helpers.check_response(response)
-response_json = response.json()
-print("Proposal:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+request = vac.api.trading.GetProposalByIDRequest(proposal_id=proposalID)
+proposal = data_client.GetProposalByID(request)
+print("Proposal:\n{}".format(proposal))
 # :get_proposal_detail__
 
 #####################################################################################
@@ -116,9 +113,8 @@ print("Proposal:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)
 #####################################################################################
 
 # __get_proposals_by_party:
-# Request results of a specific proposal on a Vega network
-response = requests.get(node_url_rest + "/parties/" + pubkey + "/proposals")
-helpers.check_response(response)
-response_json = response.json()
-print("Party proposals:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+# Request a list of proposals for a party (pubkey) on a Vega network
+request = vac.api.trading.GetProposalsByPartyRequest(party_id=pubkey)
+party_proposals = data_client.GetProposalsByParty(request)
+print("Party proposals:\n{}".format(party_proposals))
 # :get_proposals_by_party__

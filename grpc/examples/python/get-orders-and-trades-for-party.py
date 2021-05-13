@@ -5,7 +5,7 @@ Script language: Python3
 
 Talks to:
 - Vega wallet (REST)
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
 - REST: requests (https://pypi.org/project/requests/)
@@ -20,15 +20,15 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import json
-import os
-import requests
 import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+import os
+node_url_grpc = os.getenv("NODE_URL_GRPC")
+
+# __import_client:
+import vegaapiclient as vac
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+# :import_client__
 
 wallet_server_url = os.getenv("WALLETSERVER_URL")
 if not helpers.check_url(wallet_server_url):
@@ -50,19 +50,13 @@ wallet_server_url = helpers.check_wallet_url(wallet_server_url)
 
 # __existing_wallet:
 # Make request to log in to existing wallet
-url = "{base}/api/v1/auth/token".format(base=wallet_server_url)
-req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-response = requests.post(url, json=req)
-helpers.check_response(response)
+wallet_client = vac.WalletClient(wallet_server_url)
+wallet_client.login(wallet_name, wallet_passphrase)
 # :existing_wallet__
-
-token = response.json()["token"]
 
 # __find_keypair:
 # Find an existing keypair for wallet
-headers = {"Authorization": "Bearer " + token}
-url = "{base}/api/v1/keys".format(base=wallet_server_url)
-response = requests.get(url, headers=headers)
+response = wallet_client.listkeys()
 helpers.check_response(response)
 keys = response.json()["keys"]
 assert len(keys) > 0
@@ -73,18 +67,18 @@ assert pubKey != ""
 
 # __get_orders_for_party:
 # Request a list of orders by party (pubKey)
-url = "{base}/parties/{party}/orders".format(base=node_url_rest, party=pubKey)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("OrdersByParty:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+orders_by_party_request = vac.api.trading.OrdersByPartyRequest(
+    party_id=pubKey
+)
+orders_response = data_client.OrdersByParty(orders_by_party_request)
+print("OrdersByParty:\n{}".format(orders_response))
 # :get_orders_for_party__
 
 # __get_trades_for_party:
 # Request a list of trades by party (pubKey)
-url = "{base}/parties/{party}/trades".format(base=node_url_rest, party=pubKey)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("TradesByParty:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+trades_by_party_request = vac.api.trading.TradesByPartyRequest(
+    party_id=pubKey
+)
+trades_response = data_client.TradesByParty(trades_by_party_request)
+print("TradesByParty:\n{}".format(trades_response))
 # :get_trades_for_party__

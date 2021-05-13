@@ -4,10 +4,10 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST: requests (https://pypi.org/project/requests/)
+- gRPC: Vega-API-client (https://pypi.org/project/Vega-API-client/)
 """
 
 # Note: this file uses smart-tags in comments to section parts of the code to
@@ -19,22 +19,19 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import requests
 import os
-import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+# __import_client:
+import vegaapiclient as vac
+# :import_client__
+
+node_url_grpc = os.getenv("NODE_URL_GRPC")
 
 # __get_time:
 # Request the latest timestamp in nanoseconds since epoch from the Vega network
-url = "{base}/time".format(base=node_url_rest)
-response = requests.get(url)
-helpers.check_response(response)
+data_client = vac.VegaTradingDataClient(node_url_grpc)
 
 # The "timestamp" field contains the resulting data we need.
-vega_time = response.json()["timestamp"]
+vega_time = data_client.GetVegaTime(vac.api.trading.GetVegaTimeRequest())
 print("Vega time:\n{}".format(vega_time))
 # :get_time__

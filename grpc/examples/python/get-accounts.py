@@ -4,10 +4,10 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST: requests (https://pypi.org/project/requests/)
+- Vega-API-client (https://pypi.org/project/Vega-API-client/)
 
 Responses:
 - response-examples.txt
@@ -22,14 +22,14 @@ Responses:
 # some code here
 # :something__
 
-import json
-import requests
-import os
+import base64
 import helpers
+import time
+import os
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
+node_url_grpc = os.getenv("NODE_URL_GRPC")
+if not helpers.check_var(node_url_grpc):
+    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
     exit(1)
 
 wallet_server_url = os.getenv("WALLETSERVER_URL")
@@ -50,27 +50,36 @@ if not helpers.check_var(wallet_passphrase):
 # Help guide users against including api version suffix on url
 wallet_server_url = helpers.check_wallet_url(wallet_server_url)
 
+# __import_client:
+import vegaapiclient as vac
+
+# Vega gRPC clients for reading/writing data
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+wallet_client = vac.WalletClient(wallet_server_url)
+# :import_client__
+
 #####################################################################################
 #                           W A L L E T   S E R V I C E                             #
 #####################################################################################
 
 print(f"Logging into wallet: {wallet_name}")
 
+# __login_wallet:
 # Log in to an existing wallet
-req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-response = requests.post(f"{wallet_server_url}/api/v1/auth/token", json=req)
+response = wallet_client.login(wallet_name, wallet_passphrase)
 helpers.check_response(response)
-token = response.json()["token"]
+# Note: secret wallet token is stored internally for duration of session
+# :login_wallet__
 
-assert token != ""
 print("Logged in to wallet successfully")
 
+# __get_pubkey:
 # List key pairs and select public key to use
-headers = {"Authorization": f"Bearer {token}"}
-response = requests.get(f"{wallet_server_url}/api/v1/keys", headers=headers)
+response = wallet_client.listkeys()
 helpers.check_response(response)
 keys = response.json()["keys"]
 pubkey = keys[0]["pub"]
+# :get_pubkey__
 
 assert pubkey != ""
 print("Selected pubkey for signing")
@@ -80,21 +89,18 @@ print("Selected pubkey for signing")
 #####################################################################################
 
 # Request a list of markets and select the first one
-url = f"{node_url_rest}/markets"
-response = requests.get(url)
-helpers.check_response(response)
-marketID = response.json()["markets"][0]["id"]
+req = vac.api.trading.MarketsRequest()
+markets = data_client.Markets(req).markets
+marketID = markets[0].id
 
 assert marketID != ""
 print(f"Market found: {marketID}")
 
 # __get_accounts_by_market:
 # Request a list of accounts for a market on a Vega network
-url = f"{node_url_rest}/markets/{marketID}/accounts"
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("Market accounts:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+request = vac.api.trading.MarketAccountsRequest(market_id=marketID)
+market_accounts = data_client.MarketAccounts(request)
+print("Market accounts:\n{}".format(market_accounts))
 # :get_accounts_by_market__
 
 #####################################################################################
@@ -103,11 +109,9 @@ print("Market accounts:\n{}".format(json.dumps(response_json, indent=2, sort_key
 
 # __get_accounts_by_party:
 # Request a list of accounts for a party (pubkey) on a Vega network
-url = f"{node_url_rest}/parties/{pubkey}/accounts"
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("Party accounts:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+request = vac.api.trading.PartyAccountsRequest(party_id=pubkey)
+party_accounts = data_client.PartyAccounts(request)
+print("Party accounts:\n{}".format(party_accounts))
 # :get_accounts_by_party__
 
 #####################################################################################
@@ -116,9 +120,7 @@ print("Party accounts:\n{}".format(json.dumps(response_json, indent=2, sort_keys
 
 # __get_positions_by_party:
 # Request a list of positions for a party (pubkey) on a Vega network
-url = f"{node_url_rest}/parties/{pubkey}/positions"
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("Party positions:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+request = vac.api.trading.PositionsByPartyRequest(party_id=pubkey)
+party_positions = data_client.PositionsByParty(request)
+print("Party positions:\n{}".format(party_positions))
 # :get_positions_by_party__

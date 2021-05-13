@@ -4,10 +4,10 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST: requests (https://pypi.org/project/requests/)
+- Vega-API-client (https://pypi.org/project/Vega-API-client/)
 
 Responses:
 - response-examples.txt
@@ -22,33 +22,17 @@ Responses:
 # some code here
 # :something__
 
-import json
 import os
-import requests
-import helpers
+# __import_client:
+import vegaapiclient as vac
+# :import_client__
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+node_url_grpc = os.getenv("NODE_URL_GRPC")
 
 # __get_parties:
 # Request a list of parties trading on a Vega network
-url = "{base}/parties".format(base=node_url_rest)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("Parties:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+req = vac.api.trading.PartiesRequest()
+response = data_client.Parties(req)
+print("Parties:\n{}".format(response))
 # :get_parties__
-
-assert len(response_json["parties"]) > 0
-pubkey = response_json["parties"][0]["id"]
-
-# __get_party_by_id:
-# Request a party by their identifier (this is their public key)
-url = "{base}/parties/{partyID}".format(base=node_url_rest, partyID=pubkey)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("PartyById:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
-# :get_party_by_id__

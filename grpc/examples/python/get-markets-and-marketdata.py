@@ -4,10 +4,10 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST: requests (https://pypi.org/project/requests/)
+- Vega-API-client (https://pypi.org/project/Vega-API-client/)
 """
 
 # Note: this file uses smart-tags in comments to section parts of the code to
@@ -19,33 +19,29 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import json
 import os
-import requests
-import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+node_url_grpc = os.getenv("NODE_URL_GRPC")
+
+# __import_client:
+import vegaapiclient as vac
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+# :import_client__
 
 # __get_markets:
-# Request a list of markets available on a Vega network
-url = "{base}/markets".format(base=node_url_rest)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("Markets:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+# Request a list of markets available on the specified Vega Network
+markets = data_client.Markets(vac.api.trading.MarketsRequest()).markets
+print("Markets:\n{}".format(markets))
 # :get_markets__
 
-market_id = response_json["markets"][0]["id"]
+market_id = markets[0].id
 assert market_id != ""
 
 # __get_market_data:
 # Request the market data for a market on a Vega network
-url = "{base}/markets-data/{marketId}".format(base=node_url_rest, marketId=market_id)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("MarketData:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+market_data_request = vac.api.trading.MarketDataByIDRequest(
+    market_id=market_id
+)
+market_data = data_client.MarketDataByID(market_data_request)
+print("MarketData:\n{}".format(market_data))
 # :get_market_data__

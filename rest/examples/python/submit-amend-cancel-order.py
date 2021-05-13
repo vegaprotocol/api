@@ -119,7 +119,6 @@ print(f"Blockchain time: {blockchain_time}")
 req = {
     "submission": {
         "marketId": marketID,
-        "partyId": pubkey,
         "price": "1",  # Note: price is an integer. For example 123456
         "size": "100",  # is a price of 1.23456, assuming 5 decimal places.
         "side": "SIDE_BUY",
@@ -178,7 +177,6 @@ req = {
     "amendment": {
         "orderId": orderID,
         "marketId": marketID,
-        "partyId": pubkey,
         "price": {
             "value": "2"
         },
@@ -235,11 +233,10 @@ if orderStatus == "STATUS_REJECTED":
 # Select the mode to cancel orders from the following (comment out others), default = 3
 
 # __prepare_cancel_order_req1:
-# 1 - Cancel single order for party (pubkey)
+# 1 - Cancel single order for the signing party (pubkey)
 req = {
     "cancellation": {
-        # Include party, market and order identifier fields to cancel single order.
-        "partyId": pubkey,
+        # Include market and order identifier fields to cancel single order.
         "marketId": marketID,
         "orderId": orderID,
     }
@@ -247,23 +244,19 @@ req = {
 # :prepare_cancel_order_req1__
 
 # __prepare_cancel_order_req2:
-# 2 - Cancel all orders on market for party (pubkey)
+# 2 - Cancel all orders on market for the signing party (pubkey)
 req = {
     "cancellation": {
-        # Only include party & market identifier fields.
-        "partyId": pubkey,
+        # Only include market identifier field.
         "marketId": marketID,
     }
 }
 # :prepare_cancel_order_req2__
 
 # __prepare_cancel_order_req3:
-# 3 - Cancel all orders on all markets for party (pubkey)
+# 3 - Cancel all orders on all markets for the signing party (pubkey)
 req = {
-    "cancellation": {
-        # Only include party identifier field.
-        "partyId": pubkey,
-    }
+    "cancellation": {}
 }
 # :prepare_cancel_order_req3__
 

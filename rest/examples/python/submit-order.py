@@ -24,7 +24,6 @@ Apps/Libraries:
 import json
 import os
 import requests
-
 import helpers
 
 node_url_rest = os.getenv("NODE_URL_REST")
@@ -112,7 +111,6 @@ expiresAt = str(int(blockchaintime + 120 * 1e9))  # expire in 2 minutes
 req = {
     "submission": {
         "marketId": marketID,
-        "partyId": pubKey,
         "price": "100000",  # Note: price is an integer. For example 123456
         "size": "100",  # is a price of 1.23456, assuming 5 decimal places.
         "side": "SIDE_BUY",

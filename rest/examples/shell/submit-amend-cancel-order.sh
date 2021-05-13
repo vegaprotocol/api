@@ -95,7 +95,6 @@ cat >req.json <<EOF
 {
     "submission": {
         "marketId": "$marketID",
-        "partyId": "$pubKey",
         "price": "1",
         "size": "10",
         "side": "SIDE_BUY",
@@ -153,7 +152,6 @@ echo "Order processed, ID: $orderID, Status: $orderStatus, Version: $createVersi
 cat >req.json <<EOF
 {
     "amendment": {
-        "partyId": "$pubKey",
         "marketId": "$marketID",
         "orderId": "$orderID",
         "price": {
@@ -213,12 +211,11 @@ echo " Version(Old): $createVersion, Version(New): $orderVersion"
 # Select the mode to cancel orders from the following (comment out others), default = 3
 
 # __prepare_cancel_order_req1:
-# 1 - Cancel single order for party (pubkey)
-#     *** Include party, market and order identifier fields to cancel single order.
+# 1 - Cancel single order for the signing party (pubkey)
+#     *** Include market and order identifier fields to cancel single order.
 cat >req.json <<EOF
 {
     "cancellation": {
-        "partyId": "$pubKey",
         "marketId": "$marketID",
         "orderId": "$orderID"
     }
@@ -227,12 +224,11 @@ EOF
 # :prepare_cancel_order_req1__
 
 # __prepare_cancel_order_req2:
-# 2 - Cancel all orders on market for party (pubkey)
-#     *** Only include party & market identifier fields.
+# 2 - Cancel all orders on market for the signing party (pubkey)
+#     *** Only include market identifier fields.
 cat >req.json <<EOF
 {
     "cancellation": {
-        "partyId": "$pubKey",
         "marketId": "$marketID"
     }
 }
@@ -240,13 +236,10 @@ EOF
 # :prepare_cancel_order_req2__
 
 # __prepare_cancel_order_req3:
-# 3 - Cancel all orders on all markets for party (pubkey)
-#     *** Only include party identifier field.
+# 3 - Cancel all orders on all markets for the signing party (pubkey)
 cat >req.json <<EOF
 {
-    "cancellation": {
-        "partyId": "$pubKey"
-    }
+    "cancellation": {}
 }
 EOF
 # :prepare_cancel_order_req3__

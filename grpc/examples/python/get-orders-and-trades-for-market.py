@@ -4,7 +4,7 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
 - REST: requests (https://pypi.org/project/requests/)
@@ -19,37 +19,33 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import json
 import os
-import requests
-import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+node_url_grpc = os.getenv("NODE_URL_GRPC")
 
-url = "{base}/markets".format(base=node_url_rest)
-response = requests.get(url)
-helpers.check_response(response)
-responseJson = response.json()
-marketID = responseJson["markets"][0]["id"]
-assert marketID != ""
+# __import_client:
+import vegaapiclient as vac
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+# :import_client__
+
+markets = data_client.Markets(vac.api.trading.MarketsRequest()).markets
+market_id = markets[0].id
+assert market_id != ""
 
 # __get_orders_for_market:
 # Request a list of orders by market on a Vega network
-url = "{base}/markets/{marketID}/orders".format(base=node_url_rest, marketID=marketID)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("OrdersByMarket:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+orders_by_market_request = vac.api.trading.OrdersByMarketRequest(
+    market_id=market_id
+)
+orders_response = data_client.OrdersByMarket(orders_by_market_request)
+print("OrdersByMarket:\n{}".format(orders_response))
 # :get_orders_for_market__
 
 # __get_trades_for_market:
 # Request a list of trades by market on a Vega network
-url = "{base}/markets/{marketID}/trades".format(base=node_url_rest, marketID=marketID)
-response = requests.get(url)
-helpers.check_response(response)
-response_json = response.json()
-print("TradesByMarket:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+trades_by_market_request = vac.api.trading.TradesByMarketRequest(
+    market_id=market_id
+)
+trades_response = data_client.TradesByMarket(trades_by_market_request)
+print("TradesByMarket:\n{}".format(trades_response))
 # :get_trades_for_market__

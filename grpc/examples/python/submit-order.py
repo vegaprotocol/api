@@ -5,11 +5,11 @@ Script language: Python3
 
 Talks to:
 - Vega wallet (REST)
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST (wallet): requests (https://pypi.org/project/requests/)
-- REST (node): requests (https://pypi.org/project/requests/)
+- REST (wallet): Vega-API-client (https://pypi.org/project/Vega-API-client/)
+- gRPC (node): Vega-API-client (https://pypi.org/project/Vega-API-client/)
 """
 
 # Note: this file uses smart-tags in comments to section parts of the code to
@@ -21,29 +21,36 @@ Apps/Libraries:
 # some code here
 # :something__
 
+
+import base64
+import grpc
 import json
 import os
-import requests
+
+# __import_client:
+import vegaapiclient as vac
+
+# :import_client__
 
 import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
+node_url_grpc = os.getenv("NODE_URL_GRPC")
+if node_url_grpc is None or not helpers.check_var(node_url_grpc):
+    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
     exit(1)
 
 walletserver_url = os.getenv("WALLETSERVER_URL")
-if not helpers.check_url(walletserver_url):
+if walletserver_url is None or not helpers.check_url(walletserver_url):
     print("Error: Invalid or missing WALLETSERVER_URL environment variable.")
     exit(1)
 
 wallet_name = os.getenv("WALLET_NAME")
-if not helpers.check_var(wallet_name):
+if wallet_name is None or not helpers.check_var(wallet_name):
     print("Error: Invalid or missing WALLET_NAME environment variable.")
     exit(1)
 
 wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
-if not helpers.check_var(wallet_passphrase):
+if wallet_passphrase is None or not helpers.check_var(wallet_passphrase):
     print("Error: Invalid or missing WALLET_PASSPHRASE environment variable.")
     exit(1)
 
@@ -51,109 +58,89 @@ if not helpers.check_var(wallet_passphrase):
 walletserver_url = helpers.check_wallet_url(walletserver_url)
 
 # __create_wallet:
-CREATE_NEW_WALLET = False
-if CREATE_NEW_WALLET:
-    # EITHER: Create new wallet
-    url = f"{walletserver_url}/api/v1/wallets"
-else:
-    # OR: Log in to existing wallet
-    url = f"{walletserver_url}/api/v1/auth/token"
+# Vega node: Create client for accessing public data
+datacli = vac.VegaTradingDataClient(node_url_grpc)
 
-# Make request to create new wallet or log in to existing wallet
-req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-response = requests.post(url, json=req)
-helpers.check_response(response)
+# Vega node: Create client for trading (e.g. submitting orders)
+tradingcli = vac.VegaTradingClient(node_url_grpc)
 
-# Pull out the token and make a headers dict
-token = response.json()["token"]
-headers = {"Authorization": f"Bearer {token}"}
+# Wallet server: Create a walletclient (see above for details)
+walletclient = vac.WalletClient(walletserver_url)
+login_response = walletclient.login(wallet_name, wallet_passphrase)
 # :create_wallet__
+helpers.check_response(login_response)
+
+# __get_market:
+# Get a list of markets
+markets = datacli.Markets(vac.api.trading.MarketsRequest()).markets
+marketID = markets[0].id
+# :get_market__
 
 # __generate_keypair:
 GENERATE_NEW_KEYPAIR = False
-pubKey = ""
 if GENERATE_NEW_KEYPAIR:
-    # EITHER: Generate a new keypair
-    req = {
-        "passphrase": wallet_passphrase,
-        "meta": [{"key": "alias", "value": "my_key_alias"}],
-    }
-    url = f"{walletserver_url}/api/v1/keys"
-    response = requests.post(url, headers=headers, json=req)
+    # If you don't already have a keypair, generate one.
+    response = walletclient.generatekey(wallet_passphrase, [])
     helpers.check_response(response)
     pubKey = response.json()["key"]["pub"]
 else:
-    # OR: List existing keypairs
-    url = f"{walletserver_url}/api/v1/keys"
-    response = requests.get(url, headers=headers)
+    # List keypairs
+    response = walletclient.listkeys()
     helpers.check_response(response)
     keys = response.json()["keys"]
     assert len(keys) > 0
     pubKey = keys[0]["pub"]
 # :generate_keypair__
 
-assert pubKey != ""
-
-# __get_market:
-# Next, get a Market ID
-url = f"{node_url_rest}/markets"
-response = requests.get(url)
-helpers.check_response(response)
-marketID = response.json()["markets"][0]["id"]
-# :get_market__
-
 # __prepare_order:
-# Next, prepare a SubmitOrder
-response = requests.get(f"{node_url_rest}/time")
-helpers.check_response(response)
-blockchaintime = int(response.json()["timestamp"])
-expiresAt = str(int(blockchaintime + 120 * 1e9))  # expire in 2 minutes
-
-req = {
-    "submission": {
-        "marketId": marketID,
-        "partyId": pubKey,
-        "price": "100000",  # Note: price is an integer. For example 123456
-        "size": "100",  # is a price of 1.23456, assuming 5 decimal places.
-        "side": "SIDE_BUY",
-        "timeInForce": "TIME_IN_FORCE_GTT",
-        "expiresAt": expiresAt,
-        "type": "TYPE_LIMIT",
-    }
-}
-print("Request for PrepareSubmitOrder:")
-print(json.dumps(req, indent=2, sort_keys=True))
-url = f"{node_url_rest}/orders/prepare/submit"
-response = requests.post(url, json=req)
-helpers.check_response(response)
-preparedOrder = response.json()
+# Vega node: Prepare the SubmitOrder
+order = vac.api.trading.PrepareSubmitOrderRequest(
+    submission=vac.commands.v1.commands.OrderSubmission(
+        market_id=marketID,
+        # price is an integer. For example 123456 is a price of 1.23456,
+        # assuming 5 decimal places.
+        price=100000,
+        side=vac.vega.Side.SIDE_BUY,
+        size=1,
+        time_in_force=vac.vega.Order.TimeInForce.TIME_IN_FORCE_GTC,
+        type=vac.vega.Order.Type.TYPE_LIMIT,
+    )
+)
+print(f"Request for PrepareSubmitOrder: {order}")
+try:
+    prepare_response = tradingcli.PrepareSubmitOrder(order)
+except grpc.RpcError as exc:
+    print(json.dumps(vac.grpc_error_detail(exc), indent=2, sort_keys=True))
+    exit(1)
+print(f"Response from PrepareSubmitOrder: {prepare_response}")
 # :prepare_order__
-print("Response from PrepareSubmitOrder:")
-print(json.dumps(preparedOrder, indent=2, sort_keys=True))
 
 # __sign_tx:
 # Wallet server: Sign the prepared transaction
-blob = preparedOrder["blob"]
-req = {"tx": blob, "pubKey": pubKey, "propagate": False}
-print("Request for SignTx:")
-print(json.dumps(req, indent=2, sort_keys=True))
-url = f"{walletserver_url}/api/v1/messages/sync"
-response = requests.post(url, headers=headers, json=req)
+blob_base64 = base64.b64encode(prepare_response.blob).decode("ascii")
+print(f"Request for SignTx: blob={blob_base64}, pubKey={pubKey}")
+response = walletclient.signtx(blob_base64, pubKey, False)
 helpers.check_response(response)
-signedTx = response.json()["signedTx"]
-# :sign_tx__
+responsejson = response.json()
 print("Response from SignTx:")
-print(json.dumps(signedTx, indent=2, sort_keys=True))
+print(json.dumps(responsejson, indent=2, sort_keys=True))
+signedTx = responsejson["signedTx"]
+# :sign_tx__
 
 # __submit_tx:
 # Vega node: Submit the signed transaction
-req = {"tx": signedTx}
-print("Request for SubmitTransaction:")
-print(json.dumps(req, indent=2, sort_keys=True))
-url = f"{node_url_rest}/transaction"
-response = requests.post(url, json=req)
-helpers.check_response(response)
+request = vac.api.trading.SubmitTransactionRequest(
+    tx=vac.vega.SignedBundle(
+        tx=base64.b64decode(signedTx["tx"]),
+        sig=vac.vega.Signature(
+            sig=base64.b64decode(signedTx["sig"]["sig"]),
+            algo="vega/ed25519",
+            version=1,
+        ),
+    ),
+)
+print(f"Request for SubmitTransaction: {request}")
+submittx_response = tradingcli.SubmitTransaction(request)
 # :submit_tx__
-
-assert response.json()["success"]
+assert submittx_response.success
 print("All is well.")

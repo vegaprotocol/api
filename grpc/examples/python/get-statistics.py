@@ -4,10 +4,10 @@
 Script language: Python3
 
 Talks to:
-- Vega node (REST)
+- Vega node (gRPC)
 
 Apps/Libraries:
-- REST: requests (https://pypi.org/project/requests/)
+- gRPC: Vega-API-client (https://pypi.org/project/Vega-API-client/)
 """
 
 # Note: this file uses smart-tags in comments to section parts of the code to
@@ -19,19 +19,17 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import requests
 import os
-import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+# __import_client:
+import vegaapiclient as vac
+# :import_client__
+
+node_url_grpc = os.getenv("NODE_URL_GRPC")
 
 # __get_statistics:
 # Request the statistics for a node on Vega
-url = "{base_url}/statistics".format(base_url=node_url_rest)
-response = requests.get(url)
-helpers.check_response(response)
-print("Statistics:\n{}".format(response.json()))
+data_client = vac.VegaTradingDataClient(node_url_grpc)
+response = data_client.Statistics(vac.api.trading.StatisticsRequest())
+print("Statistics:\n{}".format(response))
 # :get_statistics__
