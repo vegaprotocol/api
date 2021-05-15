@@ -93,7 +93,7 @@ proto: buf-generate
 # Test
 
 .PHONY: test
-test: test-cpp test-java test-javascript test-python
+test: test-cpp test-go test-java test-javascript test-python
 
 .PHONY: test-cpp
 test-cpp:
