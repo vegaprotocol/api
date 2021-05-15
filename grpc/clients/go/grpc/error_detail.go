@@ -8,9 +8,9 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-// GRPCErrorDetail takes an error, converts it to a gRPC Status object, and pulls out the code, message, and (most
+// ErrorDetail takes an error, converts it to a gRPC Status object, and pulls out the code, message, and (most
 // importantly) the details list.
-func GRPCErrorDetail(err error) error {
+func ErrorDetail(err error) error {
 	errStatus, _ := status.FromError(err)
 	var b strings.Builder
 	b.WriteString("gRPCError{code=")

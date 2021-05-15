@@ -13,21 +13,21 @@ import (
 	"google.golang.org/protobuf/types/known/anypb"
 )
 
-func TestGRPCErrorDetail_Unknown(t *testing.T) {
+func TestErrorDetail_Unknown(t *testing.T) {
 	e := errors.New("bzzt")
-	e2 := apigrpc.GRPCErrorDetail(e)
+	e2 := apigrpc.ErrorDetail(e)
 	require.NotNil(t, e2)
 	require.Equal(t, "gRPCError{code=Unknown message='bzzt'}", e2.Error())
 }
 
-func TestGRPCErrorDetail_Simple(t *testing.T) {
+func TestErrorDetail_Simple(t *testing.T) {
 	e := status.Error(codes.InvalidArgument, "x should be y")
-	e2 := apigrpc.GRPCErrorDetail(e)
+	e2 := apigrpc.ErrorDetail(e)
 	require.NotNil(t, e2)
 	require.Equal(t, "gRPCError{code=InvalidArgument message='x should be y'}", e2.Error())
 }
 
-func TestGRPCErrorDetail_WithDetails(t *testing.T) {
+func TestErrorDetail_WithDetails(t *testing.T) {
 	e1 := gstatus.Status{
 		Code:    int32(codes.PermissionDenied),
 		Message: "missing token",
@@ -40,7 +40,7 @@ func TestGRPCErrorDetail_WithDetails(t *testing.T) {
 		},
 	}
 	e := status.ErrorProto(&e1)
-	e2 := apigrpc.GRPCErrorDetail(e)
+	e2 := apigrpc.ErrorDetail(e)
 	require.NotNil(t, e2)
 	require.Equal(t, "gRPCError{code=PermissionDenied message='missing token' details=[proto: not found]}", e2.Error())
 }
