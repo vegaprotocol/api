@@ -27,6 +27,7 @@ jobs:
       matrix:
         go: ['1.16', '1.15']
     env:
+      GO111MODULE: "on"
       GO_VER: ${{ matrix.go }}
     steps:
 
