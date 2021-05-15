@@ -1,13 +1,19 @@
 const test = require('tape');
 const { decodeTx } = require('../tx/decode.js')
 
-const encodedTx = `CvABCsABNDliOTk4MzEtMmRjYS00YzA1LThhZTAtN2I3MDA4YWYzN2M4QBIQMjgzOUQ5QjIzMjlDOUU3MBpAMGZjOTM2YWJjNTFkYzk0OTkxOWVkOGE1NmM5MzRkZmFiMWMxNTFkNWFmMWFiMzZjZTc2NDdjNmY1YTYzMTc4OCgiMAE4AkDE5rTVmfDXrRZIAVIkYTg1ZDVlYTctZjNmNi00NjE1LTkyNDUtNzM0NjA3NDBkODM5Wg0IAhD///////////8BEMi/pITL8J2wQ9I+IA/JNqvFHclJkZ7YpWyTTfqxwVHVrxqzbOdkfG9aYxeIElIKQL7B8BUvF+z/fdRi4thGvvpzFuzXdZUov3V2Xt+k0Q992B2JKChioGQ7NpG1mFriYrnwj8n7gCa3kPcX35nqbAcSDHZlZ2EvZWQyNTUxORgB`
+/*
+  To recreate encodedTx, run submit-order/submit-order-with-Vega-API-client.py from the sample-API-scripts repo,
+  and pull base64Bundle from the SignTx response.
+*/
+const encodedTx = `CpkBCmk4MTFiYTA2My03ZmI1LTRkYzEtYjNmMi1hZmQzYjU1MTQxYjFAChAwNzZCQjg2QTVBQTQxRTNFEKCNBhgBIAEoATgBQiRkMDNkY2Y0YS00ZWY4LTRhZGUtYWVkZS1kZDQ5NGZmMjI1YzgQjvblvped87SXAdI+IBeZMfUYuQ83X9agIcDX0QX71PCsHrqMb0XApWFXD+M4ElIKQBDh/AxXZFVPI+f8cyaYxV186o/5J6EO8JpoYL0MhMGYYwKB8RrPM7De7SQFkDhbdIVNnQghikwSLj/Yz5/JeQkSDHZlZ2EvZWQyNTUxORgB`
 
 test('A raw encoded TX decodes', t => {
    const res = decodeTx(encodedTx)
 
-   t.equal(res.marketId, '2839D9B2329C9E70', 'Decodes marketId correctly')
-   t.equal(res.partyId, '0fc936abc51dc949919ed8a56c934dfab1c151d5af1ab36ce7647c6f5a631788', 'Decodes partyId correctly')
+   t.equal(res.marketId, '076BB86A5AA41E3E', 'Decodes marketId correctly')
+   t.equal(res.price, 100000, 'Decodes price correctly')
+   t.equal(res.size, 1, 'Decodes size correctly')
+   t.equal(res.timeInForce, 1, 'Decodes timeInForce correctly')
    t.equal(res.type, 1, 'Decodes the TX type')
    t.end()
 })

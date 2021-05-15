@@ -3448,7 +3448,9 @@ proto.vega.Vote.toObject = function(includeInstance, msg) {
     partyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: jspb.Message.getFieldWithDefault(msg, 2, 0),
     proposalId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    totalGovernanceTokenBalance: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    totalGovernanceTokenWeight: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -3500,6 +3502,14 @@ proto.vega.Vote.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setTotalGovernanceTokenBalance(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTotalGovernanceTokenWeight(value);
       break;
     default:
       reader.skipField();
@@ -3555,6 +3565,20 @@ proto.vega.Vote.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       4,
+      f
+    );
+  }
+  f = message.getTotalGovernanceTokenBalance();
+  if (f !== 0) {
+    writer.writeUint64(
+      5,
+      f
+    );
+  }
+  f = message.getTotalGovernanceTokenWeight();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -3639,6 +3663,42 @@ proto.vega.Vote.prototype.getTimestamp = function() {
  */
 proto.vega.Vote.prototype.setTimestamp = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional uint64 total_governance_token_balance = 5;
+ * @return {number}
+ */
+proto.vega.Vote.prototype.getTotalGovernanceTokenBalance = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.vega.Vote} returns this
+ */
+proto.vega.Vote.prototype.setTotalGovernanceTokenBalance = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string total_governance_token_weight = 6;
+ * @return {string}
+ */
+proto.vega.Vote.prototype.getTotalGovernanceTokenWeight = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.Vote} returns this
+ */
+proto.vega.Vote.prototype.setTotalGovernanceTokenWeight = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

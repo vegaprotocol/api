@@ -6,6 +6,7 @@ name: Shell script tests
   pull_request:
     branches:
       - develop
+      - main
       - master
     paths-ignore:
       - grpc/clients/cpp/generated

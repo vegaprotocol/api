@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "graphqldoc": "2.5.2"
+    "graphqldoc": "2.5.2",
+    "marked": "2.0.3"
   }
 }

@@ -2751,7 +2751,9 @@ class Vote PROTOBUF_FINAL :
   enum : int {
     kPartyIdFieldNumber = 1,
     kProposalIdFieldNumber = 3,
+    kTotalGovernanceTokenWeightFieldNumber = 6,
     kTimestampFieldNumber = 4,
+    kTotalGovernanceTokenBalanceFieldNumber = 5,
     kValueFieldNumber = 2,
   };
   // string party_id = 1 [json_name = "partyId", (.validator.field) = {
@@ -2786,6 +2788,22 @@ class Vote PROTOBUF_FINAL :
   std::string* _internal_mutable_proposal_id();
   public:
 
+  // string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];
+  void clear_total_governance_token_weight();
+  const std::string& total_governance_token_weight() const;
+  void set_total_governance_token_weight(const std::string& value);
+  void set_total_governance_token_weight(std::string&& value);
+  void set_total_governance_token_weight(const char* value);
+  void set_total_governance_token_weight(const char* value, size_t size);
+  std::string* mutable_total_governance_token_weight();
+  std::string* release_total_governance_token_weight();
+  void set_allocated_total_governance_token_weight(std::string* total_governance_token_weight);
+  private:
+  const std::string& _internal_total_governance_token_weight() const;
+  void _internal_set_total_governance_token_weight(const std::string& value);
+  std::string* _internal_mutable_total_governance_token_weight();
+  public:
+
   // int64 timestamp = 4 [json_name = "timestamp"];
   void clear_timestamp();
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp() const;
@@ -2793,6 +2811,15 @@ class Vote PROTOBUF_FINAL :
   private:
   ::PROTOBUF_NAMESPACE_ID::int64 _internal_timestamp() const;
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+  void clear_total_governance_token_balance();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_governance_token_balance() const;
+  void set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_governance_token_balance() const;
+  void _internal_set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .vega.Vote.Value value = 2 [json_name = "value", (.validator.field) = {
@@ -2813,7 +2840,9 @@ class Vote PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr proposal_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_governance_token_weight_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_governance_token_balance_;
   int value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
@@ -5627,6 +5656,87 @@ inline void Vote::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) 
 inline void Vote::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_timestamp(value);
   // @@protoc_insertion_point(field_set:vega.Vote.timestamp)
+}
+
+// uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];
+inline void Vote::clear_total_governance_token_balance() {
+  total_governance_token_balance_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Vote::_internal_total_governance_token_balance() const {
+  return total_governance_token_balance_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Vote::total_governance_token_balance() const {
+  // @@protoc_insertion_point(field_get:vega.Vote.total_governance_token_balance)
+  return _internal_total_governance_token_balance();
+}
+inline void Vote::_internal_set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  total_governance_token_balance_ = value;
+}
+inline void Vote::set_total_governance_token_balance(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_governance_token_balance(value);
+  // @@protoc_insertion_point(field_set:vega.Vote.total_governance_token_balance)
+}
+
+// string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];
+inline void Vote::clear_total_governance_token_weight() {
+  total_governance_token_weight_.ClearToEmpty();
+}
+inline const std::string& Vote::total_governance_token_weight() const {
+  // @@protoc_insertion_point(field_get:vega.Vote.total_governance_token_weight)
+  return _internal_total_governance_token_weight();
+}
+inline void Vote::set_total_governance_token_weight(const std::string& value) {
+  _internal_set_total_governance_token_weight(value);
+  // @@protoc_insertion_point(field_set:vega.Vote.total_governance_token_weight)
+}
+inline std::string* Vote::mutable_total_governance_token_weight() {
+  // @@protoc_insertion_point(field_mutable:vega.Vote.total_governance_token_weight)
+  return _internal_mutable_total_governance_token_weight();
+}
+inline const std::string& Vote::_internal_total_governance_token_weight() const {
+  return total_governance_token_weight_.Get();
+}
+inline void Vote::_internal_set_total_governance_token_weight(const std::string& value) {
+
+  total_governance_token_weight_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Vote::set_total_governance_token_weight(std::string&& value) {
+
+  total_governance_token_weight_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.Vote.total_governance_token_weight)
+}
+inline void Vote::set_total_governance_token_weight(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  total_governance_token_weight_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Vote.total_governance_token_weight)
+}
+inline void Vote::set_total_governance_token_weight(const char* value,
+    size_t size) {
+
+  total_governance_token_weight_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.Vote.total_governance_token_weight)
+}
+inline std::string* Vote::_internal_mutable_total_governance_token_weight() {
+
+  return total_governance_token_weight_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* Vote::release_total_governance_token_weight() {
+  // @@protoc_insertion_point(field_release:vega.Vote.total_governance_token_weight)
+  return total_governance_token_weight_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Vote::set_allocated_total_governance_token_weight(std::string* total_governance_token_weight) {
+  if (total_governance_token_weight != nullptr) {
+
+  } else {
+
+  }
+  total_governance_token_weight_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), total_governance_token_weight,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.Vote.total_governance_token_weight)
 }
 
 #ifdef __GNUC__

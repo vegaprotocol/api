@@ -27,10 +27,9 @@ def test_SubmitOrder(
     # Prepare the SubmitOrder
     now = int(tradingdata.GetVegaTime(Empty()).timestamp)
     request = vac.api.trading.PrepareSubmitOrderRequest(
-        submission=vac.vega.OrderSubmission(
+        submission=vac.commands.v1.commands.OrderSubmission(
             expires_at=now + 120000000000,
             market_id=market.id,
-            party_id=pubKey,
             price=10,
             side=vac.vega.Side.SIDE_BUY,
             size=1,

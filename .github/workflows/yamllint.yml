@@ -6,6 +6,7 @@ name: YAML lint
   pull_request:
     branches:
       - develop
+      - main
       - master
     paths-ignore:
       - "grpc/clients/**"

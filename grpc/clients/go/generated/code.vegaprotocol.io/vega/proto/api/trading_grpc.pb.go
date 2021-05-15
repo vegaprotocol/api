@@ -30,9 +30,9 @@ type TradingServiceClient interface {
 	// Submit a signed transaction
 	SubmitTransaction(ctx context.Context, in *SubmitTransactionRequest, opts ...grpc.CallOption) (*SubmitTransactionResponse, error)
 	// Prepare a governance proposal
-	PrepareProposal(ctx context.Context, in *PrepareProposalRequest, opts ...grpc.CallOption) (*PrepareProposalResponse, error)
+	PrepareProposalSubmission(ctx context.Context, in *PrepareProposalSubmissionRequest, opts ...grpc.CallOption) (*PrepareProposalSubmissionResponse, error)
 	// Prepare a governance vote
-	PrepareVote(ctx context.Context, in *PrepareVoteRequest, opts ...grpc.CallOption) (*PrepareVoteResponse, error)
+	PrepareVoteSubmission(ctx context.Context, in *PrepareVoteSubmissionRequest, opts ...grpc.CallOption) (*PrepareVoteSubmissionResponse, error)
 	// Propagate a chain event
 	PropagateChainEvent(ctx context.Context, in *PropagateChainEventRequest, opts ...grpc.CallOption) (*PropagateChainEventResponse, error)
 	// Prepare a liquidity provision request
@@ -92,18 +92,18 @@ func (c *tradingServiceClient) SubmitTransaction(ctx context.Context, in *Submit
 	return out, nil
 }
 
-func (c *tradingServiceClient) PrepareProposal(ctx context.Context, in *PrepareProposalRequest, opts ...grpc.CallOption) (*PrepareProposalResponse, error) {
-	out := new(PrepareProposalResponse)
-	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareProposal", in, out, opts...)
+func (c *tradingServiceClient) PrepareProposalSubmission(ctx context.Context, in *PrepareProposalSubmissionRequest, opts ...grpc.CallOption) (*PrepareProposalSubmissionResponse, error) {
+	out := new(PrepareProposalSubmissionResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareProposalSubmission", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *tradingServiceClient) PrepareVote(ctx context.Context, in *PrepareVoteRequest, opts ...grpc.CallOption) (*PrepareVoteResponse, error) {
-	out := new(PrepareVoteResponse)
-	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareVote", in, out, opts...)
+func (c *tradingServiceClient) PrepareVoteSubmission(ctx context.Context, in *PrepareVoteSubmissionRequest, opts ...grpc.CallOption) (*PrepareVoteSubmissionResponse, error) {
+	out := new(PrepareVoteSubmissionResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareVoteSubmission", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -143,9 +143,9 @@ type TradingServiceServer interface {
 	// Submit a signed transaction
 	SubmitTransaction(context.Context, *SubmitTransactionRequest) (*SubmitTransactionResponse, error)
 	// Prepare a governance proposal
-	PrepareProposal(context.Context, *PrepareProposalRequest) (*PrepareProposalResponse, error)
+	PrepareProposalSubmission(context.Context, *PrepareProposalSubmissionRequest) (*PrepareProposalSubmissionResponse, error)
 	// Prepare a governance vote
-	PrepareVote(context.Context, *PrepareVoteRequest) (*PrepareVoteResponse, error)
+	PrepareVoteSubmission(context.Context, *PrepareVoteSubmissionRequest) (*PrepareVoteSubmissionResponse, error)
 	// Propagate a chain event
 	PropagateChainEvent(context.Context, *PropagateChainEventRequest) (*PropagateChainEventResponse, error)
 	// Prepare a liquidity provision request
@@ -172,11 +172,11 @@ func (UnimplementedTradingServiceServer) PrepareWithdraw(context.Context, *Prepa
 func (UnimplementedTradingServiceServer) SubmitTransaction(context.Context, *SubmitTransactionRequest) (*SubmitTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitTransaction not implemented")
 }
-func (UnimplementedTradingServiceServer) PrepareProposal(context.Context, *PrepareProposalRequest) (*PrepareProposalResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PrepareProposal not implemented")
+func (UnimplementedTradingServiceServer) PrepareProposalSubmission(context.Context, *PrepareProposalSubmissionRequest) (*PrepareProposalSubmissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrepareProposalSubmission not implemented")
 }
-func (UnimplementedTradingServiceServer) PrepareVote(context.Context, *PrepareVoteRequest) (*PrepareVoteResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PrepareVote not implemented")
+func (UnimplementedTradingServiceServer) PrepareVoteSubmission(context.Context, *PrepareVoteSubmissionRequest) (*PrepareVoteSubmissionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PrepareVoteSubmission not implemented")
 }
 func (UnimplementedTradingServiceServer) PropagateChainEvent(context.Context, *PropagateChainEventRequest) (*PropagateChainEventResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PropagateChainEvent not implemented")
@@ -287,38 +287,38 @@ func _TradingService_SubmitTransaction_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingService_PrepareProposal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PrepareProposalRequest)
+func _TradingService_PrepareProposalSubmission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareProposalSubmissionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServiceServer).PrepareProposal(ctx, in)
+		return srv.(TradingServiceServer).PrepareProposalSubmission(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.v1.TradingService/PrepareProposal",
+		FullMethod: "/api.v1.TradingService/PrepareProposalSubmission",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServiceServer).PrepareProposal(ctx, req.(*PrepareProposalRequest))
+		return srv.(TradingServiceServer).PrepareProposalSubmission(ctx, req.(*PrepareProposalSubmissionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TradingService_PrepareVote_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PrepareVoteRequest)
+func _TradingService_PrepareVoteSubmission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PrepareVoteSubmissionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TradingServiceServer).PrepareVote(ctx, in)
+		return srv.(TradingServiceServer).PrepareVoteSubmission(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.v1.TradingService/PrepareVote",
+		FullMethod: "/api.v1.TradingService/PrepareVoteSubmission",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TradingServiceServer).PrepareVote(ctx, req.(*PrepareVoteRequest))
+		return srv.(TradingServiceServer).PrepareVoteSubmission(ctx, req.(*PrepareVoteSubmissionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -387,12 +387,12 @@ var TradingService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _TradingService_SubmitTransaction_Handler,
 		},
 		{
-			MethodName: "PrepareProposal",
-			Handler:    _TradingService_PrepareProposal_Handler,
+			MethodName: "PrepareProposalSubmission",
+			Handler:    _TradingService_PrepareProposalSubmission_Handler,
 		},
 		{
-			MethodName: "PrepareVote",
-			Handler:    _TradingService_PrepareVote_Handler,
+			MethodName: "PrepareVoteSubmission",
+			Handler:    _TradingService_PrepareVoteSubmission_Handler,
 		},
 		{
 			MethodName: "PropagateChainEvent",

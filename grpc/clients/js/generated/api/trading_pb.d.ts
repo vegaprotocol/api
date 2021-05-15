@@ -5,18 +5,19 @@ import * as jspb from "google-protobuf";
 import * as vega_pb from "../vega_pb";
 import * as markets_pb from "../markets_pb";
 import * as governance_pb from "../governance_pb";
-import * as chain_events_pb from "../chain_events_pb";
 import * as assets_pb from "../assets_pb";
-import * as events_pb from "../events_pb";
+import * as events_v1_events_pb from "../events/v1/events_pb";
 import * as oracles_v1_oracle_spec_pb from "../oracles/v1/oracle_spec_pb";
 import * as oracles_v1_oracle_data_pb from "../oracles/v1/oracle_data_pb";
+import * as commands_v1_commands_pb from "../commands/v1/commands_pb";
+import * as commands_v1_validator_commands_pb from "../commands/v1/validator_commands_pb";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "../github.com/mwitkow/go-proto-validators/validator_pb";
 
 export class PropagateChainEventRequest extends jspb.Message {
   hasEvt(): boolean;
   clearEvt(): void;
-  getEvt(): chain_events_pb.ChainEvent | undefined;
-  setEvt(value?: chain_events_pb.ChainEvent): void;
+  getEvt(): commands_v1_validator_commands_pb.ChainEvent | undefined;
+  setEvt(value?: commands_v1_validator_commands_pb.ChainEvent): void;
 
   getPubKey(): string;
   setPubKey(value: string): void;
@@ -38,7 +39,7 @@ export class PropagateChainEventRequest extends jspb.Message {
 
 export namespace PropagateChainEventRequest {
   export type AsObject = {
-    evt?: chain_events_pb.ChainEvent.AsObject,
+    evt?: commands_v1_validator_commands_pb.ChainEvent.AsObject,
     pubKey: string,
     signature: Uint8Array | string,
   }
@@ -122,8 +123,8 @@ export namespace SubmitTransactionResponse {
 export class PrepareWithdrawRequest extends jspb.Message {
   hasWithdraw(): boolean;
   clearWithdraw(): void;
-  getWithdraw(): vega_pb.WithdrawSubmission | undefined;
-  setWithdraw(value?: vega_pb.WithdrawSubmission): void;
+  getWithdraw(): commands_v1_commands_pb.WithdrawSubmission | undefined;
+  setWithdraw(value?: commands_v1_commands_pb.WithdrawSubmission): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareWithdrawRequest.AsObject;
@@ -137,7 +138,7 @@ export class PrepareWithdrawRequest extends jspb.Message {
 
 export namespace PrepareWithdrawRequest {
   export type AsObject = {
-    withdraw?: vega_pb.WithdrawSubmission.AsObject,
+    withdraw?: commands_v1_commands_pb.WithdrawSubmission.AsObject,
   }
 }
 
@@ -236,8 +237,8 @@ export namespace PrepareAmendOrderResponse {
 export class PrepareSubmitOrderRequest extends jspb.Message {
   hasSubmission(): boolean;
   clearSubmission(): void;
-  getSubmission(): vega_pb.OrderSubmission | undefined;
-  setSubmission(value?: vega_pb.OrderSubmission): void;
+  getSubmission(): commands_v1_commands_pb.OrderSubmission | undefined;
+  setSubmission(value?: commands_v1_commands_pb.OrderSubmission): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareSubmitOrderRequest.AsObject;
@@ -251,15 +252,15 @@ export class PrepareSubmitOrderRequest extends jspb.Message {
 
 export namespace PrepareSubmitOrderRequest {
   export type AsObject = {
-    submission?: vega_pb.OrderSubmission.AsObject,
+    submission?: commands_v1_commands_pb.OrderSubmission.AsObject,
   }
 }
 
 export class PrepareCancelOrderRequest extends jspb.Message {
   hasCancellation(): boolean;
   clearCancellation(): void;
-  getCancellation(): vega_pb.OrderCancellation | undefined;
-  setCancellation(value?: vega_pb.OrderCancellation): void;
+  getCancellation(): commands_v1_commands_pb.OrderCancellation | undefined;
+  setCancellation(value?: commands_v1_commands_pb.OrderCancellation): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareCancelOrderRequest.AsObject;
@@ -273,15 +274,15 @@ export class PrepareCancelOrderRequest extends jspb.Message {
 
 export namespace PrepareCancelOrderRequest {
   export type AsObject = {
-    cancellation?: vega_pb.OrderCancellation.AsObject,
+    cancellation?: commands_v1_commands_pb.OrderCancellation.AsObject,
   }
 }
 
 export class PrepareAmendOrderRequest extends jspb.Message {
   hasAmendment(): boolean;
   clearAmendment(): void;
-  getAmendment(): vega_pb.OrderAmendment | undefined;
-  setAmendment(value?: vega_pb.OrderAmendment): void;
+  getAmendment(): commands_v1_commands_pb.OrderAmendment | undefined;
+  setAmendment(value?: commands_v1_commands_pb.OrderAmendment): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareAmendOrderRequest.AsObject;
@@ -295,7 +296,7 @@ export class PrepareAmendOrderRequest extends jspb.Message {
 
 export namespace PrepareAmendOrderRequest {
   export type AsObject = {
-    amendment?: vega_pb.OrderAmendment.AsObject,
+    amendment?: commands_v1_commands_pb.OrderAmendment.AsObject,
   }
 }
 
@@ -401,9 +402,9 @@ export namespace GetNodeSignaturesAggregateRequest {
 
 export class GetNodeSignaturesAggregateResponse extends jspb.Message {
   clearSignaturesList(): void;
-  getSignaturesList(): Array<vega_pb.NodeSignature>;
-  setSignaturesList(value: Array<vega_pb.NodeSignature>): void;
-  addSignatures(value?: vega_pb.NodeSignature, index?: number): vega_pb.NodeSignature;
+  getSignaturesList(): Array<commands_v1_validator_commands_pb.NodeSignature>;
+  setSignaturesList(value: Array<commands_v1_validator_commands_pb.NodeSignature>): void;
+  addSignatures(value?: commands_v1_validator_commands_pb.NodeSignature, index?: number): commands_v1_validator_commands_pb.NodeSignature;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetNodeSignaturesAggregateResponse.AsObject;
@@ -417,7 +418,7 @@ export class GetNodeSignaturesAggregateResponse extends jspb.Message {
 
 export namespace GetNodeSignaturesAggregateResponse {
   export type AsObject = {
-    signaturesList: Array<vega_pb.NodeSignature.AsObject>,
+    signaturesList: Array<commands_v1_validator_commands_pb.NodeSignature.AsObject>,
   }
 }
 
@@ -2473,119 +2474,111 @@ export namespace FeeInfrastructureAccountsResponse {
   }
 }
 
-export class PrepareProposalRequest extends jspb.Message {
-  getPartyId(): string;
-  setPartyId(value: string): void;
-
-  getReference(): string;
-  setReference(value: string): void;
-
-  hasProposal(): boolean;
-  clearProposal(): void;
-  getProposal(): governance_pb.ProposalTerms | undefined;
-  setProposal(value?: governance_pb.ProposalTerms): void;
+export class PrepareProposalSubmissionRequest extends jspb.Message {
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): commands_v1_commands_pb.ProposalSubmission | undefined;
+  setSubmission(value?: commands_v1_commands_pb.ProposalSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareProposalRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareProposalRequest): PrepareProposalRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareProposalSubmissionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareProposalSubmissionRequest): PrepareProposalSubmissionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareProposalRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareProposalRequest;
-  static deserializeBinaryFromReader(message: PrepareProposalRequest, reader: jspb.BinaryReader): PrepareProposalRequest;
+  static serializeBinaryToWriter(message: PrepareProposalSubmissionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareProposalSubmissionRequest;
+  static deserializeBinaryFromReader(message: PrepareProposalSubmissionRequest, reader: jspb.BinaryReader): PrepareProposalSubmissionRequest;
 }
 
-export namespace PrepareProposalRequest {
+export namespace PrepareProposalSubmissionRequest {
   export type AsObject = {
-    partyId: string,
-    reference: string,
-    proposal?: governance_pb.ProposalTerms.AsObject,
+    submission?: commands_v1_commands_pb.ProposalSubmission.AsObject,
   }
 }
 
-export class PrepareProposalResponse extends jspb.Message {
+export class PrepareProposalSubmissionResponse extends jspb.Message {
   getBlob(): Uint8Array | string;
   getBlob_asU8(): Uint8Array;
   getBlob_asB64(): string;
   setBlob(value: Uint8Array | string): void;
 
-  hasPendingProposal(): boolean;
-  clearPendingProposal(): void;
-  getPendingProposal(): governance_pb.Proposal | undefined;
-  setPendingProposal(value?: governance_pb.Proposal): void;
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): commands_v1_commands_pb.ProposalSubmission | undefined;
+  setSubmission(value?: commands_v1_commands_pb.ProposalSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareProposalResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareProposalResponse): PrepareProposalResponse.AsObject;
+  toObject(includeInstance?: boolean): PrepareProposalSubmissionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareProposalSubmissionResponse): PrepareProposalSubmissionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareProposalResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareProposalResponse;
-  static deserializeBinaryFromReader(message: PrepareProposalResponse, reader: jspb.BinaryReader): PrepareProposalResponse;
+  static serializeBinaryToWriter(message: PrepareProposalSubmissionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareProposalSubmissionResponse;
+  static deserializeBinaryFromReader(message: PrepareProposalSubmissionResponse, reader: jspb.BinaryReader): PrepareProposalSubmissionResponse;
 }
 
-export namespace PrepareProposalResponse {
+export namespace PrepareProposalSubmissionResponse {
   export type AsObject = {
     blob: Uint8Array | string,
-    pendingProposal?: governance_pb.Proposal.AsObject,
+    submission?: commands_v1_commands_pb.ProposalSubmission.AsObject,
   }
 }
 
-export class PrepareVoteRequest extends jspb.Message {
-  hasVote(): boolean;
-  clearVote(): void;
-  getVote(): governance_pb.Vote | undefined;
-  setVote(value?: governance_pb.Vote): void;
+export class PrepareVoteSubmissionRequest extends jspb.Message {
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): commands_v1_commands_pb.VoteSubmission | undefined;
+  setSubmission(value?: commands_v1_commands_pb.VoteSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareVoteRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareVoteRequest): PrepareVoteRequest.AsObject;
+  toObject(includeInstance?: boolean): PrepareVoteSubmissionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareVoteSubmissionRequest): PrepareVoteSubmissionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareVoteRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareVoteRequest;
-  static deserializeBinaryFromReader(message: PrepareVoteRequest, reader: jspb.BinaryReader): PrepareVoteRequest;
+  static serializeBinaryToWriter(message: PrepareVoteSubmissionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareVoteSubmissionRequest;
+  static deserializeBinaryFromReader(message: PrepareVoteSubmissionRequest, reader: jspb.BinaryReader): PrepareVoteSubmissionRequest;
 }
 
-export namespace PrepareVoteRequest {
+export namespace PrepareVoteSubmissionRequest {
   export type AsObject = {
-    vote?: governance_pb.Vote.AsObject,
+    submission?: commands_v1_commands_pb.VoteSubmission.AsObject,
   }
 }
 
-export class PrepareVoteResponse extends jspb.Message {
+export class PrepareVoteSubmissionResponse extends jspb.Message {
   getBlob(): Uint8Array | string;
   getBlob_asU8(): Uint8Array;
   getBlob_asB64(): string;
   setBlob(value: Uint8Array | string): void;
 
-  hasVote(): boolean;
-  clearVote(): void;
-  getVote(): governance_pb.Vote | undefined;
-  setVote(value?: governance_pb.Vote): void;
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): commands_v1_commands_pb.VoteSubmission | undefined;
+  setSubmission(value?: commands_v1_commands_pb.VoteSubmission): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrepareVoteResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PrepareVoteResponse): PrepareVoteResponse.AsObject;
+  toObject(includeInstance?: boolean): PrepareVoteSubmissionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PrepareVoteSubmissionResponse): PrepareVoteSubmissionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PrepareVoteResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrepareVoteResponse;
-  static deserializeBinaryFromReader(message: PrepareVoteResponse, reader: jspb.BinaryReader): PrepareVoteResponse;
+  static serializeBinaryToWriter(message: PrepareVoteSubmissionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrepareVoteSubmissionResponse;
+  static deserializeBinaryFromReader(message: PrepareVoteSubmissionResponse, reader: jspb.BinaryReader): PrepareVoteSubmissionResponse;
 }
 
-export namespace PrepareVoteResponse {
+export namespace PrepareVoteSubmissionResponse {
   export type AsObject = {
     blob: Uint8Array | string,
-    vote?: governance_pb.Vote.AsObject,
+    submission?: commands_v1_commands_pb.VoteSubmission.AsObject,
   }
 }
 
 export class PrepareLiquidityProvisionRequest extends jspb.Message {
   hasSubmission(): boolean;
   clearSubmission(): void;
-  getSubmission(): vega_pb.LiquidityProvisionSubmission | undefined;
-  setSubmission(value?: vega_pb.LiquidityProvisionSubmission): void;
+  getSubmission(): commands_v1_commands_pb.LiquidityProvisionSubmission | undefined;
+  setSubmission(value?: commands_v1_commands_pb.LiquidityProvisionSubmission): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrepareLiquidityProvisionRequest.AsObject;
@@ -2599,7 +2592,7 @@ export class PrepareLiquidityProvisionRequest extends jspb.Message {
 
 export namespace PrepareLiquidityProvisionRequest {
   export type AsObject = {
-    submission?: vega_pb.LiquidityProvisionSubmission.AsObject,
+    submission?: commands_v1_commands_pb.LiquidityProvisionSubmission.AsObject,
   }
 }
 
@@ -2809,9 +2802,9 @@ export namespace EstimateMarginResponse {
 
 export class ObserveEventBusRequest extends jspb.Message {
   clearTypeList(): void;
-  getTypeList(): Array<events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap]>;
-  setTypeList(value: Array<events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap]>): void;
-  addType(value: events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap], index?: number): events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap];
+  getTypeList(): Array<events_v1_events_pb.BusEventTypeMap[keyof events_v1_events_pb.BusEventTypeMap]>;
+  setTypeList(value: Array<events_v1_events_pb.BusEventTypeMap[keyof events_v1_events_pb.BusEventTypeMap]>): void;
+  addType(value: events_v1_events_pb.BusEventTypeMap[keyof events_v1_events_pb.BusEventTypeMap], index?: number): events_v1_events_pb.BusEventTypeMap[keyof events_v1_events_pb.BusEventTypeMap];
 
   getMarketId(): string;
   setMarketId(value: string): void;
@@ -2834,7 +2827,7 @@ export class ObserveEventBusRequest extends jspb.Message {
 
 export namespace ObserveEventBusRequest {
   export type AsObject = {
-    typeList: Array<events_pb.BusEventTypeMap[keyof events_pb.BusEventTypeMap]>,
+    typeList: Array<events_v1_events_pb.BusEventTypeMap[keyof events_v1_events_pb.BusEventTypeMap]>,
     marketId: string,
     partyId: string,
     batchSize: number,
@@ -2843,9 +2836,9 @@ export namespace ObserveEventBusRequest {
 
 export class ObserveEventBusResponse extends jspb.Message {
   clearEventsList(): void;
-  getEventsList(): Array<events_pb.BusEvent>;
-  setEventsList(value: Array<events_pb.BusEvent>): void;
-  addEvents(value?: events_pb.BusEvent, index?: number): events_pb.BusEvent;
+  getEventsList(): Array<events_v1_events_pb.BusEvent>;
+  setEventsList(value: Array<events_v1_events_pb.BusEvent>): void;
+  addEvents(value?: events_v1_events_pb.BusEvent, index?: number): events_v1_events_pb.BusEvent;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ObserveEventBusResponse.AsObject;
@@ -2859,7 +2852,7 @@ export class ObserveEventBusResponse extends jspb.Message {
 
 export namespace ObserveEventBusResponse {
   export type AsObject = {
-    eventsList: Array<events_pb.BusEvent.AsObject>,
+    eventsList: Array<events_v1_events_pb.BusEvent.AsObject>,
   }
 }
 

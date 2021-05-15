@@ -5,4 +5,4 @@ LABEL maintainer="hi@vega.xyz"
 ADD /proto /proto
 
 # Add third party proto files
-ADD /vendor /vendor
+ADD /external /external

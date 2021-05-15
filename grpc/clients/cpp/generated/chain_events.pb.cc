@@ -16,21 +16,17 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AddValidator_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BTCDeposit_chain_5fevents_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_BTCEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BTCWithdrawal_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BitcoinAddress_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BuiltinAssetDeposit_chain_5fevents_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_BuiltinAssetEvent_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ERC20AssetDelist_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ERC20AssetList_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ERC20Deposit_chain_5fevents_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ERC20Event_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ERC20Withdrawal_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EthereumAddress_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Identifier_chain_5fevents_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RemoveValidator_chain_5fevents_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_chain_5fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ValidatorEvent_chain_5fevents_2eproto;
 namespace vega {
 class BuiltinAssetDepositDefaultTypeInternal {
  public:
@@ -100,10 +96,6 @@ class ValidatorEventDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ValidatorEvent> _instance;
 } _ValidatorEvent_default_instance_;
-class ChainEventDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ChainEvent> _instance;
-} _ChainEvent_default_instance_;
 }  // namespace vega
 static void InitDefaultsscc_info_AddValidator_chain_5fevents_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -213,23 +205,6 @@ static void InitDefaultsscc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto()
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto}, {}};
-
-static void InitDefaultsscc_info_ChainEvent_chain_5fevents_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vega::_ChainEvent_default_instance_;
-    new (ptr) ::vega::ChainEvent();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_chain_5fevents_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_ChainEvent_chain_5fevents_2eproto}, {
-      &scc_info_BuiltinAssetEvent_chain_5fevents_2eproto.base,
-      &scc_info_ERC20Event_chain_5fevents_2eproto.base,
-      &scc_info_BTCEvent_chain_5fevents_2eproto.base,
-      &scc_info_ValidatorEvent_chain_5fevents_2eproto.base,}};
 
 static void InitDefaultsscc_info_ERC20AssetDelist_chain_5fevents_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -357,7 +332,7 @@ static void InitDefaultsscc_info_ValidatorEvent_chain_5fevents_2eproto() {
       &scc_info_AddValidator_chain_5fevents_2eproto.base,
       &scc_info_RemoveValidator_chain_5fevents_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_chain_5fevents_2eproto[18];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_chain_5fevents_2eproto[17];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_chain_5fevents_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_chain_5fevents_2eproto = nullptr;
 
@@ -495,18 +470,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_chain_5fevents_2eproto::offset
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::ValidatorEvent, action_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, _internal_metadata_),
-  ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, _oneof_case_[0]),
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, tx_id_),
-  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, nonce_),
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::vega::ChainEvent, event_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::BuiltinAssetDeposit)},
@@ -526,7 +489,6 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 112, -1, sizeof(::vega::AddValidator)},
   { 118, -1, sizeof(::vega::RemoveValidator)},
   { 124, -1, sizeof(::vega::ValidatorEvent)},
-  { 133, -1, sizeof(::vega::ChainEvent)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -547,7 +509,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_AddValidator_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_RemoveValidator_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ValidatorEvent_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::_ChainEvent_default_instance_),
 };
 
 const char descriptor_table_protodef_chain_5fevents_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -603,19 +564,13 @@ const char descriptor_table_protodef_chain_5fevents_2eproto[] PROTOBUF_SECTION_V
   "IdentifierR\002id\"\212\001\n\016ValidatorEvent\022\033\n\tsou"
   "rce_id\030\001 \001(\tR\010sourceId\022\'\n\003add\030\351\007 \001(\0132\022.v"
   "ega.AddValidatorH\000R\003add\022(\n\002rm\030\352\007 \001(\0132\025.v"
-  "ega.RemoveValidatorH\000R\002rmB\010\n\006action\"\375\001\n\n"
-  "ChainEvent\022\023\n\005tx_id\030\001 \001(\tR\004txId\022\024\n\005nonce"
-  "\030\002 \001(\004R\005nonce\0224\n\007builtin\030\351\007 \001(\0132\027.vega.B"
-  "uiltinAssetEventH\000R\007builtin\022)\n\005erc20\030\352\007 "
-  "\001(\0132\020.vega.ERC20EventH\000R\005erc20\022#\n\003btc\030\353\007"
-  " \001(\0132\016.vega.BTCEventH\000R\003btc\0225\n\tvalidator"
-  "\030\354\007 \001(\0132\024.vega.ValidatorEventH\000R\tvalidat"
-  "orB\007\n\005eventB7\n\024io.vegaprotocol.vegaZ\037cod"
-  "e.vegaprotocol.io/vega/protob\006proto3"
+  "ega.RemoveValidatorH\000R\002rmB\010\n\006actionB7\n\024i"
+  "o.vegaprotocol.vegaZ\037code.vegaprotocol.i"
+  "o/vega/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_chain_5fevents_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_chain_5fevents_2eproto_sccs[18] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_chain_5fevents_2eproto_sccs[17] = {
   &scc_info_AddValidator_chain_5fevents_2eproto.base,
   &scc_info_BTCDeposit_chain_5fevents_2eproto.base,
   &scc_info_BTCEvent_chain_5fevents_2eproto.base,
@@ -624,7 +579,6 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cha
   &scc_info_BuiltinAssetDeposit_chain_5fevents_2eproto.base,
   &scc_info_BuiltinAssetEvent_chain_5fevents_2eproto.base,
   &scc_info_BuiltinAssetWithdrawal_chain_5fevents_2eproto.base,
-  &scc_info_ChainEvent_chain_5fevents_2eproto.base,
   &scc_info_ERC20AssetDelist_chain_5fevents_2eproto.base,
   &scc_info_ERC20AssetList_chain_5fevents_2eproto.base,
   &scc_info_ERC20Deposit_chain_5fevents_2eproto.base,
@@ -637,10 +591,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cha
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_chain_5fevents_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_chain_5fevents_2eproto = {
-  false, false, descriptor_table_protodef_chain_5fevents_2eproto, "chain_events.proto", 2436,
-  &descriptor_table_chain_5fevents_2eproto_once, descriptor_table_chain_5fevents_2eproto_sccs, descriptor_table_chain_5fevents_2eproto_deps, 18, 0,
+  false, false, descriptor_table_protodef_chain_5fevents_2eproto, "chain_events.proto", 2180,
+  &descriptor_table_chain_5fevents_2eproto_once, descriptor_table_chain_5fevents_2eproto_sccs, descriptor_table_chain_5fevents_2eproto_deps, 17, 0,
   schemas, file_default_instances, TableStruct_chain_5fevents_2eproto::offsets,
-  file_level_metadata_chain_5fevents_2eproto, 18, file_level_enum_descriptors_chain_5fevents_2eproto, file_level_service_descriptors_chain_5fevents_2eproto,
+  file_level_metadata_chain_5fevents_2eproto, 17, file_level_enum_descriptors_chain_5fevents_2eproto, file_level_service_descriptors_chain_5fevents_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -5481,497 +5435,6 @@ void ValidatorEvent::InternalSwap(ValidatorEvent* other) {
 }
 
 
-// ===================================================================
-
-class ChainEvent::_Internal {
- public:
-  static const ::vega::BuiltinAssetEvent& builtin(const ChainEvent* msg);
-  static const ::vega::ERC20Event& erc20(const ChainEvent* msg);
-  static const ::vega::BTCEvent& btc(const ChainEvent* msg);
-  static const ::vega::ValidatorEvent& validator(const ChainEvent* msg);
-};
-
-const ::vega::BuiltinAssetEvent&
-ChainEvent::_Internal::builtin(const ChainEvent* msg) {
-  return *msg->event_.builtin_;
-}
-const ::vega::ERC20Event&
-ChainEvent::_Internal::erc20(const ChainEvent* msg) {
-  return *msg->event_.erc20_;
-}
-const ::vega::BTCEvent&
-ChainEvent::_Internal::btc(const ChainEvent* msg) {
-  return *msg->event_.btc_;
-}
-const ::vega::ValidatorEvent&
-ChainEvent::_Internal::validator(const ChainEvent* msg) {
-  return *msg->event_.validator_;
-}
-void ChainEvent::set_allocated_builtin(::vega::BuiltinAssetEvent* builtin) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_event();
-  if (builtin) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(builtin);
-    if (message_arena != submessage_arena) {
-      builtin = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, builtin, submessage_arena);
-    }
-    set_has_builtin();
-    event_.builtin_ = builtin;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.builtin)
-}
-void ChainEvent::set_allocated_erc20(::vega::ERC20Event* erc20) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_event();
-  if (erc20) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(erc20);
-    if (message_arena != submessage_arena) {
-      erc20 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, erc20, submessage_arena);
-    }
-    set_has_erc20();
-    event_.erc20_ = erc20;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.erc20)
-}
-void ChainEvent::set_allocated_btc(::vega::BTCEvent* btc) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_event();
-  if (btc) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(btc);
-    if (message_arena != submessage_arena) {
-      btc = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, btc, submessage_arena);
-    }
-    set_has_btc();
-    event_.btc_ = btc;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.btc)
-}
-void ChainEvent::set_allocated_validator(::vega::ValidatorEvent* validator) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  clear_event();
-  if (validator) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(validator);
-    if (message_arena != submessage_arena) {
-      validator = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, validator, submessage_arena);
-    }
-    set_has_validator();
-    event_.validator_ = validator;
-  }
-  // @@protoc_insertion_point(field_set_allocated:vega.ChainEvent.validator)
-}
-ChainEvent::ChainEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:vega.ChainEvent)
-}
-ChainEvent::ChainEvent(const ChainEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  tx_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_tx_id().empty()) {
-    tx_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_id(),
-      GetArena());
-  }
-  nonce_ = from.nonce_;
-  clear_has_event();
-  switch (from.event_case()) {
-    case kBuiltin: {
-      _internal_mutable_builtin()->::vega::BuiltinAssetEvent::MergeFrom(from._internal_builtin());
-      break;
-    }
-    case kErc20: {
-      _internal_mutable_erc20()->::vega::ERC20Event::MergeFrom(from._internal_erc20());
-      break;
-    }
-    case kBtc: {
-      _internal_mutable_btc()->::vega::BTCEvent::MergeFrom(from._internal_btc());
-      break;
-    }
-    case kValidator: {
-      _internal_mutable_validator()->::vega::ValidatorEvent::MergeFrom(from._internal_validator());
-      break;
-    }
-    case EVENT_NOT_SET: {
-      break;
-    }
-  }
-  // @@protoc_insertion_point(copy_constructor:vega.ChainEvent)
-}
-
-void ChainEvent::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ChainEvent_chain_5fevents_2eproto.base);
-  tx_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  nonce_ = PROTOBUF_ULONGLONG(0);
-  clear_has_event();
-}
-
-ChainEvent::~ChainEvent() {
-  // @@protoc_insertion_point(destructor:vega.ChainEvent)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void ChainEvent::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  tx_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (has_event()) {
-    clear_event();
-  }
-}
-
-void ChainEvent::ArenaDtor(void* object) {
-  ChainEvent* _this = reinterpret_cast< ChainEvent* >(object);
-  (void)_this;
-}
-void ChainEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void ChainEvent::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ChainEvent& ChainEvent::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ChainEvent_chain_5fevents_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void ChainEvent::clear_event() {
-// @@protoc_insertion_point(one_of_clear_start:vega.ChainEvent)
-  switch (event_case()) {
-    case kBuiltin: {
-      if (GetArena() == nullptr) {
-        delete event_.builtin_;
-      }
-      break;
-    }
-    case kErc20: {
-      if (GetArena() == nullptr) {
-        delete event_.erc20_;
-      }
-      break;
-    }
-    case kBtc: {
-      if (GetArena() == nullptr) {
-        delete event_.btc_;
-      }
-      break;
-    }
-    case kValidator: {
-      if (GetArena() == nullptr) {
-        delete event_.validator_;
-      }
-      break;
-    }
-    case EVENT_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = EVENT_NOT_SET;
-}
-
-
-void ChainEvent::Clear() {
-// @@protoc_insertion_point(message_clear_start:vega.ChainEvent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  tx_id_.ClearToEmpty();
-  nonce_ = PROTOBUF_ULONGLONG(0);
-  clear_event();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* ChainEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // string tx_id = 1 [json_name = "txId"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_tx_id();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.ChainEvent.tx_id"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint64 nonce = 2 [json_name = "nonce"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          nonce_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];
-      case 1001:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
-          ptr = ctx->ParseMessage(_internal_mutable_builtin(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vega.ERC20Event erc20 = 1002 [json_name = "erc20"];
-      case 1002:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr = ctx->ParseMessage(_internal_mutable_erc20(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vega.BTCEvent btc = 1003 [json_name = "btc"];
-      case 1003:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
-          ptr = ctx->ParseMessage(_internal_mutable_btc(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .vega.ValidatorEvent validator = 1004 [json_name = "validator"];
-      case 1004:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
-          ptr = ctx->ParseMessage(_internal_mutable_validator(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* ChainEvent::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vega.ChainEvent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string tx_id = 1 [json_name = "txId"];
-  if (this->tx_id().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_tx_id().data(), static_cast<int>(this->_internal_tx_id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vega.ChainEvent.tx_id");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_tx_id(), target);
-  }
-
-  // uint64 nonce = 2 [json_name = "nonce"];
-  if (this->nonce() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_nonce(), target);
-  }
-
-  // .vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];
-  if (_internal_has_builtin()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1001, _Internal::builtin(this), target, stream);
-  }
-
-  // .vega.ERC20Event erc20 = 1002 [json_name = "erc20"];
-  if (_internal_has_erc20()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1002, _Internal::erc20(this), target, stream);
-  }
-
-  // .vega.BTCEvent btc = 1003 [json_name = "btc"];
-  if (_internal_has_btc()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1003, _Internal::btc(this), target, stream);
-  }
-
-  // .vega.ValidatorEvent validator = 1004 [json_name = "validator"];
-  if (_internal_has_validator()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1004, _Internal::validator(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vega.ChainEvent)
-  return target;
-}
-
-size_t ChainEvent::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vega.ChainEvent)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string tx_id = 1 [json_name = "txId"];
-  if (this->tx_id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_tx_id());
-  }
-
-  // uint64 nonce = 2 [json_name = "nonce"];
-  if (this->nonce() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_nonce());
-  }
-
-  switch (event_case()) {
-    // .vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];
-    case kBuiltin: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *event_.builtin_);
-      break;
-    }
-    // .vega.ERC20Event erc20 = 1002 [json_name = "erc20"];
-    case kErc20: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *event_.erc20_);
-      break;
-    }
-    // .vega.BTCEvent btc = 1003 [json_name = "btc"];
-    case kBtc: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *event_.btc_);
-      break;
-    }
-    // .vega.ValidatorEvent validator = 1004 [json_name = "validator"];
-    case kValidator: {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *event_.validator_);
-      break;
-    }
-    case EVENT_NOT_SET: {
-      break;
-    }
-  }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void ChainEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:vega.ChainEvent)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ChainEvent* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ChainEvent>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.ChainEvent)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.ChainEvent)
-    MergeFrom(*source);
-  }
-}
-
-void ChainEvent::MergeFrom(const ChainEvent& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vega.ChainEvent)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.tx_id().size() > 0) {
-    _internal_set_tx_id(from._internal_tx_id());
-  }
-  if (from.nonce() != 0) {
-    _internal_set_nonce(from._internal_nonce());
-  }
-  switch (from.event_case()) {
-    case kBuiltin: {
-      _internal_mutable_builtin()->::vega::BuiltinAssetEvent::MergeFrom(from._internal_builtin());
-      break;
-    }
-    case kErc20: {
-      _internal_mutable_erc20()->::vega::ERC20Event::MergeFrom(from._internal_erc20());
-      break;
-    }
-    case kBtc: {
-      _internal_mutable_btc()->::vega::BTCEvent::MergeFrom(from._internal_btc());
-      break;
-    }
-    case kValidator: {
-      _internal_mutable_validator()->::vega::ValidatorEvent::MergeFrom(from._internal_validator());
-      break;
-    }
-    case EVENT_NOT_SET: {
-      break;
-    }
-  }
-}
-
-void ChainEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:vega.ChainEvent)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void ChainEvent::CopyFrom(const ChainEvent& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vega.ChainEvent)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ChainEvent::IsInitialized() const {
-  return true;
-}
-
-void ChainEvent::InternalSwap(ChainEvent* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  tx_id_.Swap(&other->tx_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(nonce_, other->nonce_);
-  swap(event_, other->event_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata ChainEvent::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace vega
 PROTOBUF_NAMESPACE_OPEN
@@ -6025,9 +5488,6 @@ template<> PROTOBUF_NOINLINE ::vega::RemoveValidator* Arena::CreateMaybeMessage<
 }
 template<> PROTOBUF_NOINLINE ::vega::ValidatorEvent* Arena::CreateMaybeMessage< ::vega::ValidatorEvent >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::ValidatorEvent >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vega::ChainEvent* Arena::CreateMaybeMessage< ::vega::ChainEvent >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vega::ChainEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

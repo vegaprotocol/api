@@ -12,8 +12,8 @@ interface ITradingServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
   prepareAmendOrder: grpc.MethodDefinition<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.MethodDefinition<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.MethodDefinition<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
-  prepareProposal: grpc.MethodDefinition<api_trading_pb.PrepareProposalRequest, api_trading_pb.PrepareProposalResponse>;
-  prepareVote: grpc.MethodDefinition<api_trading_pb.PrepareVoteRequest, api_trading_pb.PrepareVoteResponse>;
+  prepareProposalSubmission: grpc.MethodDefinition<api_trading_pb.PrepareProposalSubmissionRequest, api_trading_pb.PrepareProposalSubmissionResponse>;
+  prepareVoteSubmission: grpc.MethodDefinition<api_trading_pb.PrepareVoteSubmissionRequest, api_trading_pb.PrepareVoteSubmissionResponse>;
   propagateChainEvent: grpc.MethodDefinition<api_trading_pb.PropagateChainEventRequest, api_trading_pb.PropagateChainEventResponse>;
   prepareLiquidityProvision: grpc.MethodDefinition<api_trading_pb.PrepareLiquidityProvisionRequest, api_trading_pb.PrepareLiquidityProvisionResponse>;
 }
@@ -26,8 +26,8 @@ export interface ITradingServiceServer extends grpc.UntypedServiceImplementation
   prepareAmendOrder: grpc.handleUnaryCall<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.handleUnaryCall<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.handleUnaryCall<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
-  prepareProposal: grpc.handleUnaryCall<api_trading_pb.PrepareProposalRequest, api_trading_pb.PrepareProposalResponse>;
-  prepareVote: grpc.handleUnaryCall<api_trading_pb.PrepareVoteRequest, api_trading_pb.PrepareVoteResponse>;
+  prepareProposalSubmission: grpc.handleUnaryCall<api_trading_pb.PrepareProposalSubmissionRequest, api_trading_pb.PrepareProposalSubmissionResponse>;
+  prepareVoteSubmission: grpc.handleUnaryCall<api_trading_pb.PrepareVoteSubmissionRequest, api_trading_pb.PrepareVoteSubmissionResponse>;
   propagateChainEvent: grpc.handleUnaryCall<api_trading_pb.PropagateChainEventRequest, api_trading_pb.PropagateChainEventResponse>;
   prepareLiquidityProvision: grpc.handleUnaryCall<api_trading_pb.PrepareLiquidityProvisionRequest, api_trading_pb.PrepareLiquidityProvisionResponse>;
 }
@@ -49,12 +49,12 @@ export class TradingServiceClient extends grpc.Client {
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
-  prepareProposal(argument: api_trading_pb.PrepareProposalRequest, callback: grpc.requestCallback<api_trading_pb.PrepareProposalResponse>): grpc.ClientUnaryCall;
-  prepareProposal(argument: api_trading_pb.PrepareProposalRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalResponse>): grpc.ClientUnaryCall;
-  prepareProposal(argument: api_trading_pb.PrepareProposalRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalResponse>): grpc.ClientUnaryCall;
-  prepareVote(argument: api_trading_pb.PrepareVoteRequest, callback: grpc.requestCallback<api_trading_pb.PrepareVoteResponse>): grpc.ClientUnaryCall;
-  prepareVote(argument: api_trading_pb.PrepareVoteRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareVoteResponse>): grpc.ClientUnaryCall;
-  prepareVote(argument: api_trading_pb.PrepareVoteRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareVoteResponse>): grpc.ClientUnaryCall;
+  prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
+  prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
+  prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
+  prepareVoteSubmission(argument: api_trading_pb.PrepareVoteSubmissionRequest, callback: grpc.requestCallback<api_trading_pb.PrepareVoteSubmissionResponse>): grpc.ClientUnaryCall;
+  prepareVoteSubmission(argument: api_trading_pb.PrepareVoteSubmissionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareVoteSubmissionResponse>): grpc.ClientUnaryCall;
+  prepareVoteSubmission(argument: api_trading_pb.PrepareVoteSubmissionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareVoteSubmissionResponse>): grpc.ClientUnaryCall;
   propagateChainEvent(argument: api_trading_pb.PropagateChainEventRequest, callback: grpc.requestCallback<api_trading_pb.PropagateChainEventResponse>): grpc.ClientUnaryCall;
   propagateChainEvent(argument: api_trading_pb.PropagateChainEventRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PropagateChainEventResponse>): grpc.ClientUnaryCall;
   propagateChainEvent(argument: api_trading_pb.PropagateChainEventRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PropagateChainEventResponse>): grpc.ClientUnaryCall;

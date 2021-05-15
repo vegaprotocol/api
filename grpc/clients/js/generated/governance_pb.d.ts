@@ -467,6 +467,12 @@ export class Vote extends jspb.Message {
   getTimestamp(): number;
   setTimestamp(value: number): void;
 
+  getTotalGovernanceTokenBalance(): number;
+  setTotalGovernanceTokenBalance(value: number): void;
+
+  getTotalGovernanceTokenWeight(): string;
+  setTotalGovernanceTokenWeight(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Vote.AsObject;
   static toObject(includeInstance: boolean, msg: Vote): Vote.AsObject;
@@ -483,6 +489,8 @@ export namespace Vote {
     value: Vote.ValueMap[keyof Vote.ValueMap],
     proposalId: string,
     timestamp: number,
+    totalGovernanceTokenBalance: number,
+    totalGovernanceTokenWeight: string,
   }
 
   export interface ValueMap {

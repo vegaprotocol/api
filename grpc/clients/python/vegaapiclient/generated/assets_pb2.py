@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x61ssets.proto\x12\x04vega\"\xad\x01\n\x05\x41sset\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x03 \x01(\tR\x06symbol\x12!\n\x0ctotal_supply\x18\x04 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x05 \x01(\x04R\x08\x64\x65\x63imals\x12)\n\x06source\x18\x07 \x01(\x0b\x32\x11.vega.AssetSourceR\x06source\"w\n\x0b\x41ssetSource\x12\x39\n\rbuiltin_asset\x18\x01 \x01(\x0b\x32\x12.vega.BuiltinAssetH\x00R\x0c\x62uiltinAsset\x12#\n\x05\x65rc20\x18\x02 \x01(\x0b\x32\x0b.vega.ERC20H\x00R\x05\x65rc20B\x08\n\x06source\"\xae\x01\n\x0c\x42uiltinAsset\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x02 \x01(\tR\x06symbol\x12!\n\x0ctotal_supply\x18\x03 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x04 \x01(\x04R\x08\x64\x65\x63imals\x12\x33\n\x16max_faucet_amount_mint\x18\x05 \x01(\tR\x13maxFaucetAmountMint\"2\n\x05\x45RC20\x12)\n\x10\x63ontract_address\x18\x01 \x01(\tR\x0f\x63ontractAddress\"8\n\tDevAssets\x12+\n\x07sources\x18\x01 \x03(\x0b\x32\x11.vega.AssetSourceR\x07sourcesB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x0c\x61ssets.proto\x12\x04vega\"\xad\x01\n\x05\x41sset\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x03 \x01(\tR\x06symbol\x12!\n\x0ctotal_supply\x18\x04 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x05 \x01(\x04R\x08\x64\x65\x63imals\x12)\n\x06source\x18\x07 \x01(\x0b\x32\x11.vega.AssetSourceR\x06source\"w\n\x0b\x41ssetSource\x12\x39\n\rbuiltin_asset\x18\x01 \x01(\x0b\x32\x12.vega.BuiltinAssetH\x00R\x0c\x62uiltinAsset\x12#\n\x05\x65rc20\x18\x02 \x01(\x0b\x32\x0b.vega.ERC20H\x00R\x05\x65rc20B\x08\n\x06source\"\xae\x01\n\x0c\x42uiltinAsset\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n\x06symbol\x18\x02 \x01(\tR\x06symbol\x12!\n\x0ctotal_supply\x18\x03 \x01(\tR\x0btotalSupply\x12\x1a\n\x08\x64\x65\x63imals\x18\x04 \x01(\x04R\x08\x64\x65\x63imals\x12\x33\n\x16max_faucet_amount_mint\x18\x05 \x01(\tR\x13maxFaucetAmountMint\"2\n\x05\x45RC20\x12)\n\x10\x63ontract_address\x18\x01 \x01(\tR\x0f\x63ontractAddressB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
 )
 
 
@@ -227,38 +227,6 @@ _ERC20 = _descriptor.Descriptor(
   serialized_end=546,
 )
 
-
-_DEVASSETS = _descriptor.Descriptor(
-  name='DevAssets',
-  full_name='vega.DevAssets',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='sources', full_name='vega.DevAssets.sources', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='sources', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=548,
-  serialized_end=604,
-)
-
 _ASSET.fields_by_name['source'].message_type = _ASSETSOURCE
 _ASSETSOURCE.fields_by_name['builtin_asset'].message_type = _BUILTINASSET
 _ASSETSOURCE.fields_by_name['erc20'].message_type = _ERC20
@@ -268,12 +236,10 @@ _ASSETSOURCE.fields_by_name['builtin_asset'].containing_oneof = _ASSETSOURCE.one
 _ASSETSOURCE.oneofs_by_name['source'].fields.append(
   _ASSETSOURCE.fields_by_name['erc20'])
 _ASSETSOURCE.fields_by_name['erc20'].containing_oneof = _ASSETSOURCE.oneofs_by_name['source']
-_DEVASSETS.fields_by_name['sources'].message_type = _ASSETSOURCE
 DESCRIPTOR.message_types_by_name['Asset'] = _ASSET
 DESCRIPTOR.message_types_by_name['AssetSource'] = _ASSETSOURCE
 DESCRIPTOR.message_types_by_name['BuiltinAsset'] = _BUILTINASSET
 DESCRIPTOR.message_types_by_name['ERC20'] = _ERC20
-DESCRIPTOR.message_types_by_name['DevAssets'] = _DEVASSETS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Asset = _reflection.GeneratedProtocolMessageType('Asset', (_message.Message,), {
@@ -303,13 +269,6 @@ ERC20 = _reflection.GeneratedProtocolMessageType('ERC20', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:vega.ERC20)
   })
 _sym_db.RegisterMessage(ERC20)
-
-DevAssets = _reflection.GeneratedProtocolMessageType('DevAssets', (_message.Message,), {
-  'DESCRIPTOR' : _DEVASSETS,
-  '__module__' : 'assets_pb2'
-  # @@protoc_insertion_point(class_scope:vega.DevAssets)
-  })
-_sym_db.RegisterMessage(DevAssets)
 
 
 DESCRIPTOR._options = None
