@@ -47,7 +47,9 @@ jobs:
       - name: Lint
         run: |
           if ! command -v golint 1>/dev/null ; then
-            go install "$(awk '/golang.org\/x\/lint/ {print $1"@"$2}' go.mod)" || exit 1
+            v="$(awk '/golang.org\/x\/lint\/golint/ {print $2}' go.mod)"
+            [[ -z "$v" ]] && v=v0.0.0-20190313153728-d0100b6bd8b3
+            go install "golang.org/x/lint/golint@$v" || exit 1
           fi
           cd grpc/clients/go
           make lint
