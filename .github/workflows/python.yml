@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.6", "3.7", "3.8"]
+        python-version: ["3.7", "3.8", "3.9"]
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -37,20 +37,20 @@ jobs:
       - name: Lint with flake8
         run: |
           command -v flake8 1>/dev/null || pip install flake8
-          cd grpc/clients/python && make flake8
-          cd grpc/examples/python && make flake8
+          (cd grpc/clients/python && make flake8)
+          (cd grpc/examples/python && make flake8)
 
       - name: Lint with black
         run: |
           command -v black 1>/dev/null || pip install black
-          cd grpc/clients/python && make blackcheck
-          cd grpc/examples/python && make blackcheck
+          (cd grpc/clients/python && make blackcheck)
+          (cd grpc/examples/python && make blackcheck)
 
       - name: Type-check with mypy
         run: |
           command -v mypy 1>/dev/null || pip install mypy
-          cd grpc/clients/python && make mypy
-          cd grpc/examples/python && make mypy
+          (cd grpc/clients/python && make mypy)
+          (cd grpc/examples/python && make mypy)
 
       - name: Test with pytest
         env:
@@ -59,7 +59,6 @@ jobs:
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
           cd grpc/clients/python
-          command -v pipenv 1>/dev/null || pip install pipenv
           make test
 
       - name: Coverage with pytest
