@@ -26,9 +26,7 @@ import sys
 
 # __import_client:
 import vegaapiclient as vac
-
 # :import_client__
-
 import helpers
 
 # --- Edit these values below ---
@@ -39,8 +37,6 @@ wallet_name = ">> your wallet name here"
 wallet_passphrase = ">> your passphrase here"
 # --- Edit these values above ---
 
-placeholder_marker = ">>"
-
 if "--ci" in sys.argv:
     node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
     walletserver_url = helpers.get_from_env("WALLETSERVER_URL")
@@ -49,20 +45,23 @@ if "--ci" in sys.argv:
 
 if not helpers.check_var(node_url_grpc):
     print("Invalid Vega node URL (gRPC)")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
 if not helpers.check_url(walletserver_url):
     print("Invalid wallet server URL")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
 if not helpers.check_var(wallet_name):
     print("Invalid wallet name")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
 if not helpers.check_var(wallet_passphrase):
     print("Invalid wallet passphrase")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
-
 
 # Help guide users against including api version suffix on url
 walletserver_url = helpers.fix_walletserver_url(walletserver_url)
@@ -83,6 +82,7 @@ helpers.check_response(login_response)
 # __get_market:
 # Get a list of markets
 markets = datacli.Markets(vac.api.trading.MarketsRequest()).markets
+# Choose the first.
 marketID = markets[0].id
 # :get_market__
 
