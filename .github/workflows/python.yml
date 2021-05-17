@@ -8,8 +8,10 @@ name: Python
       - develop
       - main
     paths:
+      - "external/**"
       - "grpc/clients/python/**"
       - "grpc/examples/python/**"
+      - "proto/**"
       - "rest/examples/python/**"
   push:
     branches:
