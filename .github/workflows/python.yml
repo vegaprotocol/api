@@ -9,6 +9,7 @@ name: Python
       - main
     paths:
       - "grpc/clients/python/**"
+      - "grpc/examples/python/**"
   push:
     branches:
       - develop
@@ -75,6 +76,18 @@ jobs:
           cd grpc/clients/python
           python3 setup.py sdist bdist_wheel
           make check_dist
+
+      - name: Run example scripts
+        env:
+          NODE_URL_GRPC: ${{ secrets.GRPC_NODE }}
+          PYTHONPATH: ../../clients/python:.
+          WALLET_NAME: ${{ secrets.WALLET_NAME }}
+          WALLET_PASSPHRASE: ${{ secrets.WALLET_PASSPHRASE }}
+          WALLETSERVER_URL: ${{ secrets.WALLETSERVER }}
+        run: |
+          cd grpc/examples/python
+          pipenv sync && pipenv clean
+          pipenv run python3 submit-order.py --ci
 
       - name: Push release to PyPI
         if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.python-version == '3.8' }}
