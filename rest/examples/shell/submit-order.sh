@@ -16,6 +16,7 @@
 #   some code here
 #   # :something__
 
+# shellcheck disable=SC1091
 source ../../../grpc/examples/shell/helpers.sh
 
 # --- Edit these values below ---
