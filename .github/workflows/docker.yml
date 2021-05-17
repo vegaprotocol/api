@@ -41,7 +41,7 @@ jobs:
       - name: Set docker image tag
         id: vars
         run: |
-          ref="$(echo "${GITHUB_REF#refs/*/}" | tr -c 'A-Za-z0-9._' -)"
+          ref="$(echo -n "${GITHUB_REF#refs/*/}" | tr -c 'A-Za-z0-9._' -)"
           if [[ "$ref" == "develop" ]] ; then ref=latest ; fi
           echo ::set-output "name=tag::$ref"
 
