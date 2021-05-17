@@ -10,6 +10,7 @@ default:
 	@echo "- coverage:   make coverage report"
 	@echo "- dist:       build and upload to PyPI"
 	@echo "- dist_test:  build and upload to test-PyPI"
+	@echo "- flake8:     run flake8"
 	@echo "- mypy:       run mypy"
 	@echo "- test:       run pytest"
 	@echo "- clean:      remove the generated dir"

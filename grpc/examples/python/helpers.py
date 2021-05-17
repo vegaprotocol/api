@@ -2,7 +2,7 @@ import random
 import os
 import requests
 import string
-from typing import Any, Optional
+from typing import Any
 
 
 def check_response(r: requests.Response) -> None:
@@ -13,18 +13,18 @@ def check_response(r: requests.Response) -> None:
         raise Exception(f"{r.url} returned HTTP {r.status_code} {r.text}")
 
 
-def check_var(val: Optional[str]) -> bool:
+def check_var(val: str) -> bool:
     """
     Return true if the value is ok.
     """
-    if missing(val):
+    if val == "":
         return False
     if invalid(val):
         return False
     return True
 
 
-def check_url(url: Optional[str]) -> bool:
+def check_url(url: str) -> bool:
     """
     Return true if the URL is ok.
     """
@@ -39,8 +39,8 @@ def get_from_env(var_name: str) -> str:
     """
     Get a value from an environment variable. Used in CI for testing.
     """
-    val = os.getenv(var_name)
-    if missing(val):
+    val = os.getenv(var_name, "")
+    if val == "":
         print(f"Error: Missing environment variable {var_name}.")
         exit(1)
 
@@ -53,13 +53,6 @@ def invalid(val: str) -> bool:
     """
     bzzt = [">>", "e.g.", "example"]
     return any(x in val for x in bzzt)
-
-
-def missing(val: Optional[str]) -> bool:
-    """
-    Return true if the value is missing.
-    """
-    return val is None or val == ""
 
 
 def random_string(length: int = 20) -> str:
