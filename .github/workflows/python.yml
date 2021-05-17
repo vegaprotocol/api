@@ -10,6 +10,7 @@ name: Python
     paths:
       - "grpc/clients/python/**"
       - "grpc/examples/python/**"
+      - "rest/examples/python/**"
   push:
     branches:
       - develop
@@ -37,20 +38,17 @@ jobs:
       - name: Lint with flake8
         run: |
           command -v flake8 1>/dev/null || pip install flake8
-          (cd grpc/clients/python && make flake8)
-          (cd grpc/examples/python && make flake8)
+          make flake8
 
       - name: Lint with black
         run: |
           command -v black 1>/dev/null || pip install black
-          (cd grpc/clients/python && make blackcheck)
-          (cd grpc/examples/python && make blackcheck)
+          make blackcheck
 
       - name: Type-check with mypy
         run: |
           command -v mypy 1>/dev/null || pip install mypy
-          (cd grpc/clients/python && make mypy)
-          (cd grpc/examples/python && make mypy)
+          make mypy
 
       - name: Test with pytest
         env:
@@ -62,22 +60,13 @@ jobs:
           command -v pipenv 1>/dev/null || pip install pipenv
           make test
 
-      - name: Coverage with pytest
-        env:
-          GRPC_NODE: ${{ secrets.GRPC_NODE }}
-          FAUCETSERVER: ${{ secrets.FAUCETSERVER }}
-          WALLETSERVER: ${{ secrets.WALLETSERVER }}
-        run: |
-          cd grpc/clients/python
-          make coverage
-
       - name: Check archive file counts
         run: |
           cd grpc/clients/python
           python3 setup.py sdist bdist_wheel
           make check_dist
 
-      - name: Run example scripts
+      - name: Run example scripts for gRPC
         env:
           NODE_URL_GRPC: ${{ secrets.GRPC_NODE }}
           WALLET_NAME: ${{ secrets.WALLET_NAME }}
@@ -86,7 +75,18 @@ jobs:
         run: |
           command -v pipenv 1>/dev/null || pip install pipenv
           cd grpc/examples/python
-          make examples_ci
+          make
+
+      - name: Run example scripts for REST
+        env:
+          NODE_URL_REST: ${{ secrets.NODE_URL_REST }}
+          WALLET_NAME: ${{ secrets.WALLET_NAME }}
+          WALLET_PASSPHRASE: ${{ secrets.WALLET_PASSPHRASE }}
+          WALLETSERVER_URL: ${{ secrets.WALLETSERVER }}
+        run: |
+          command -v pipenv 1>/dev/null || pip install pipenv
+          cd rest/examples/python
+          make
 
       - name: Push release to PyPI
         if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.python-version == '3.8' }}
