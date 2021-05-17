@@ -59,6 +59,7 @@ jobs:
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
           cd grpc/clients/python
+          command -v pipenv 1>/dev/null || pip install pipenv
           make test
 
       - name: Coverage with pytest
@@ -83,6 +84,7 @@ jobs:
           WALLET_PASSPHRASE: ${{ secrets.WALLET_PASSPHRASE }}
           WALLETSERVER_URL: ${{ secrets.WALLETSERVER }}
         run: |
+          command -v pipenv 1>/dev/null || pip install pipenv
           cd grpc/examples/python
           make examples_ci
 
