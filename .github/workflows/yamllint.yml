@@ -1,6 +1,6 @@
 ---
 
-name: YAML lint
+name: YAML
 
 "on":
   pull_request:
@@ -10,6 +10,12 @@ name: YAML lint
       - master
     paths-ignore:
       - "grpc/clients/**"
+  push:
+    branches:
+      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
 
 jobs:
 

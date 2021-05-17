@@ -7,7 +7,6 @@ name: Go
     branches:
       - develop
       - main
-      - master
     paths:
       - "grpc/clients/go/**"
   push:
