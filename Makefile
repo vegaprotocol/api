@@ -127,6 +127,37 @@ spellcheck:
 	pyspelling -c spellcheck.yaml && \
 	deactivate
 
+# Just for Python
+
+.PHONY: black
+black:
+	@black --exclude generated -l 79 .
+
+.PHONY: blackcheck
+blackcheck:
+	@black --exclude generated -l 79 --check .
+
+.PHONY: flake8
+flake8:
+	@find . -name generated -prune -o -name '*.py' -print | xargs flake8
+
+.PHONY: mypy
+mypy:
+	@echo "Running mypy in grpc/clients/python" ; \
+	( \
+		cd grpc/clients/python && \
+		env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
+		code="$$?" ; \
+		test "$$code" -ne 0 \
+	)
+	@for d in grpc/examples/python rest/examples/python ; do \
+		echo "Running mypy in $$d" ; \
+		( \
+			cd "$$d" && \
+			env MYPYPATH=. mypy --ignore-missing-imports . || exit 1 \
+		) || exit 1 ; \
+	done
+
 # Clean
 
 .PHONY: clean
