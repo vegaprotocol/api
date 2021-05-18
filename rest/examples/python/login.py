@@ -6,6 +6,10 @@ import json
 import helpers
 
 wallet_url = os.getenv("WALLETSERVER_URL")
+if not helpers.check_url(wallet_url):
+    print("error: Missing wallet server URL, please set this in configuration")
+    exit(1)
+
 
 def load_token():
     if not os.path.isfile("token.temp"):
