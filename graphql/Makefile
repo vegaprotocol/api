@@ -20,4 +20,4 @@ graphql:
 		npm install || exit 1 ; \
 	fi && \
 	"$$gd" -f -s schema.graphql -o doc/
-
+	@find doc -name '*.html' -print0 | xargs -0r sed --in-place -e 's#><#>\n<#g'

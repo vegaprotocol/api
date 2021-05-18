@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 """
 Script language: Python3
@@ -12,42 +12,56 @@ Apps/Libraries:
 - REST (node): requests (https://pypi.org/project/requests/)
 """
 
-# Note: this file uses smart-tags in comments to section parts of the code to
-# show them as snippets in our documentation. They are not necessary to be
-# included when creating your own custom code.
-#
-# Example of smart-tags:
-#  __something:
-# some code here
-# :something__
+# Note: this file uses special tags in comments to enable snippets to be
+# included in documentation.
+# Example
+#   #  __something:
+#   some code here
+#   # :something__
 
 import json
-import os
 import requests
+import sys
+from typing import Any, Dict
+
 import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
+# --- Edit these values below ---
+node_url_rest = ">> e.g. https://lb.testnet.vega.xyz"
+walletserver_url = ">> Vega-hosted wallet: https://wallet.testnet.vega.xyz"
+walletserver_url = ">> self-hosted wallet: http://localhost:1789"
+wallet_name = ">> your wallet name here"
+wallet_passphrase = ">> your passphrase here"
+# --- Edit these values above ---
+
+if "--ci" in sys.argv:
+    node_url_rest = helpers.get_from_env("NODE_URL_REST")
+    walletserver_url = helpers.get_from_env("WALLETSERVER_URL")
+    wallet_name = helpers.get_from_env("WALLET_NAME")
+    wallet_passphrase = helpers.get_from_env("WALLET_PASSPHRASE")
+
 if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
+    print("Invalid Vega node URL (REST)")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
-walletserver_url = os.getenv("WALLETSERVER_URL")
 if not helpers.check_url(walletserver_url):
-    print("Error: Invalid or missing WALLETSERVER_URL environment variable.")
+    print("Invalid wallet server URL")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
-wallet_name = os.getenv("WALLET_NAME")
 if not helpers.check_var(wallet_name):
-    print("Error: Invalid or missing WALLET_NAME environment variable.")
+    print("Invalid wallet name")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
-wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
 if not helpers.check_var(wallet_passphrase):
-    print("Error: Invalid or missing WALLET_PASSPHRASE environment variable.")
+    print("Invalid wallet passphrase")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
 # Help guide users against including api version suffix on url
-walletserver_url = helpers.check_wallet_url(walletserver_url)
+walletserver_url = helpers.fix_walletserver_url(walletserver_url)
 
 # __create_wallet:
 CREATE_NEW_WALLET = False
@@ -57,6 +71,8 @@ if CREATE_NEW_WALLET:
 else:
     # OR: Log in to existing wallet
     url = f"{walletserver_url}/api/v1/auth/token"
+
+req: Dict[str, Any]
 
 # Make request to create new wallet or log in to existing wallet
 req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
@@ -111,6 +127,7 @@ expiresAt = str(int(blockchaintime + 120 * 1e9))  # expire in 2 minutes
 req = {
     "submission": {
         "marketId": marketID,
+        "partyId": pubKey,
         "price": "100000",  # Note: price is an integer. For example 123456
         "size": "100",  # is a price of 1.23456, assuming 5 decimal places.
         "side": "SIDE_BUY",

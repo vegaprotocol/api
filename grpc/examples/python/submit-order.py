@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 """
 Script language: Python3
@@ -12,50 +12,60 @@ Apps/Libraries:
 - gRPC (node): Vega-API-client (https://pypi.org/project/Vega-API-client/)
 """
 
-# Note: this file uses smart-tags in comments to section parts of the code to
-# show them as snippets in our documentation. They are not necessary to be
-# included when creating your own custom code.
-#
-# Example of smart-tags:
-#  __something:
-# some code here
-# :something__
-
+# Note: this file uses special tags in comments to enable snippets to be
+# included in documentation.
+# Example
+#   #  __something:
+#   some code here
+#   # :something__
 
 import base64
 import grpc
 import json
-import os
+import sys
 
 # __import_client:
 import vegaapiclient as vac
 
 # :import_client__
-
 import helpers
 
-node_url_grpc = os.getenv("NODE_URL_GRPC")
-if node_url_grpc is None or not helpers.check_var(node_url_grpc):
-    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
+# --- Edit these values below ---
+node_url_grpc = ">> e.g. n06.testnet.vega.xyz:3002"
+walletserver_url = ">> Vega-hosted wallet: https://wallet.testnet.vega.xyz"
+walletserver_url = ">> self-hosted wallet: http://localhost:1789"
+wallet_name = ">> your wallet name here"
+wallet_passphrase = ">> your passphrase here"
+# --- Edit these values above ---
+
+if "--ci" in sys.argv:
+    node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
+    walletserver_url = helpers.get_from_env("WALLETSERVER_URL")
+    wallet_name = helpers.get_from_env("WALLET_NAME")
+    wallet_passphrase = helpers.get_from_env("WALLET_PASSPHRASE")
+
+if not helpers.check_var(node_url_grpc):
+    print("Invalid Vega node URL (gRPC)")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
-walletserver_url = os.getenv("WALLETSERVER_URL")
-if walletserver_url is None or not helpers.check_url(walletserver_url):
-    print("Error: Invalid or missing WALLETSERVER_URL environment variable.")
+if not helpers.check_url(walletserver_url):
+    print("Invalid wallet server URL")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
-wallet_name = os.getenv("WALLET_NAME")
-if wallet_name is None or not helpers.check_var(wallet_name):
-    print("Error: Invalid or missing WALLET_NAME environment variable.")
+if not helpers.check_var(wallet_name):
+    print("Invalid wallet name")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
-wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
-if wallet_passphrase is None or not helpers.check_var(wallet_passphrase):
-    print("Error: Invalid or missing WALLET_PASSPHRASE environment variable.")
+if not helpers.check_var(wallet_passphrase):
+    print("Invalid wallet passphrase")
+    print('Edit this script and look for "Edit these values"')
     exit(1)
 
 # Help guide users against including api version suffix on url
-walletserver_url = helpers.check_wallet_url(walletserver_url)
+walletserver_url = helpers.fix_walletserver_url(walletserver_url)
 
 # __create_wallet:
 # Vega node: Create client for accessing public data
@@ -73,6 +83,7 @@ helpers.check_response(login_response)
 # __get_market:
 # Get a list of markets
 markets = datacli.Markets(vac.api.trading.MarketsRequest()).markets
+# Choose the first.
 marketID = markets[0].id
 # :get_market__
 

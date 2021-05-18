@@ -3,7 +3,6 @@
 
 import * as jspb from "google-protobuf";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.com/mwitkow/go-proto-validators/validator_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import * as markets_pb from "./markets_pb";
 
 export class Price extends jspb.Message {
@@ -996,40 +995,6 @@ export namespace Withdrawal {
   export const Status: StatusMap;
 }
 
-export class WithdrawSubmission extends jspb.Message {
-  getPartyId(): string;
-  setPartyId(value: string): void;
-
-  getAmount(): number;
-  setAmount(value: number): void;
-
-  getAsset(): string;
-  setAsset(value: string): void;
-
-  hasExt(): boolean;
-  clearExt(): void;
-  getExt(): WithdrawExt | undefined;
-  setExt(value?: WithdrawExt): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): WithdrawSubmission.AsObject;
-  static toObject(includeInstance: boolean, msg: WithdrawSubmission): WithdrawSubmission.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: WithdrawSubmission, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): WithdrawSubmission;
-  static deserializeBinaryFromReader(message: WithdrawSubmission, reader: jspb.BinaryReader): WithdrawSubmission;
-}
-
-export namespace WithdrawSubmission {
-  export type AsObject = {
-    partyId: string,
-    amount: number,
-    asset: string,
-    ext?: WithdrawExt.AsObject,
-  }
-}
-
 export class WithdrawExt extends jspb.Message {
   hasErc20(): boolean;
   clearErc20(): void;
@@ -1075,208 +1040,6 @@ export class Erc20WithdrawExt extends jspb.Message {
 export namespace Erc20WithdrawExt {
   export type AsObject = {
     receiverAddress: string,
-  }
-}
-
-export class OrderAmendment extends jspb.Message {
-  getOrderId(): string;
-  setOrderId(value: string): void;
-
-  getPartyId(): string;
-  setPartyId(value: string): void;
-
-  getMarketId(): string;
-  setMarketId(value: string): void;
-
-  hasPrice(): boolean;
-  clearPrice(): void;
-  getPrice(): Price | undefined;
-  setPrice(value?: Price): void;
-
-  getSizeDelta(): number;
-  setSizeDelta(value: number): void;
-
-  hasExpiresAt(): boolean;
-  clearExpiresAt(): void;
-  getExpiresAt(): Timestamp | undefined;
-  setExpiresAt(value?: Timestamp): void;
-
-  getTimeInForce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
-  setTimeInForce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
-
-  hasPeggedOffset(): boolean;
-  clearPeggedOffset(): void;
-  getPeggedOffset(): google_protobuf_wrappers_pb.Int64Value | undefined;
-  setPeggedOffset(value?: google_protobuf_wrappers_pb.Int64Value): void;
-
-  getPeggedReference(): PeggedReferenceMap[keyof PeggedReferenceMap];
-  setPeggedReference(value: PeggedReferenceMap[keyof PeggedReferenceMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderAmendment.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderAmendment): OrderAmendment.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrderAmendment, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderAmendment;
-  static deserializeBinaryFromReader(message: OrderAmendment, reader: jspb.BinaryReader): OrderAmendment;
-}
-
-export namespace OrderAmendment {
-  export type AsObject = {
-    orderId: string,
-    partyId: string,
-    marketId: string,
-    price?: Price.AsObject,
-    sizeDelta: number,
-    expiresAt?: Timestamp.AsObject,
-    timeInForce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
-    peggedOffset?: google_protobuf_wrappers_pb.Int64Value.AsObject,
-    peggedReference: PeggedReferenceMap[keyof PeggedReferenceMap],
-  }
-}
-
-export class OrderSubmission extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
-  getMarketId(): string;
-  setMarketId(value: string): void;
-
-  getPartyId(): string;
-  setPartyId(value: string): void;
-
-  getPrice(): number;
-  setPrice(value: number): void;
-
-  getSize(): number;
-  setSize(value: number): void;
-
-  getSide(): SideMap[keyof SideMap];
-  setSide(value: SideMap[keyof SideMap]): void;
-
-  getTimeInForce(): Order.TimeInForceMap[keyof Order.TimeInForceMap];
-  setTimeInForce(value: Order.TimeInForceMap[keyof Order.TimeInForceMap]): void;
-
-  getExpiresAt(): number;
-  setExpiresAt(value: number): void;
-
-  getType(): Order.TypeMap[keyof Order.TypeMap];
-  setType(value: Order.TypeMap[keyof Order.TypeMap]): void;
-
-  getReference(): string;
-  setReference(value: string): void;
-
-  hasPeggedOrder(): boolean;
-  clearPeggedOrder(): void;
-  getPeggedOrder(): PeggedOrder | undefined;
-  setPeggedOrder(value?: PeggedOrder): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderSubmission.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderSubmission): OrderSubmission.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrderSubmission, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderSubmission;
-  static deserializeBinaryFromReader(message: OrderSubmission, reader: jspb.BinaryReader): OrderSubmission;
-}
-
-export namespace OrderSubmission {
-  export type AsObject = {
-    id: string,
-    marketId: string,
-    partyId: string,
-    price: number,
-    size: number,
-    side: SideMap[keyof SideMap],
-    timeInForce: Order.TimeInForceMap[keyof Order.TimeInForceMap],
-    expiresAt: number,
-    type: Order.TypeMap[keyof Order.TypeMap],
-    reference: string,
-    peggedOrder?: PeggedOrder.AsObject,
-  }
-}
-
-export class OrderCancellation extends jspb.Message {
-  getOrderId(): string;
-  setOrderId(value: string): void;
-
-  getMarketId(): string;
-  setMarketId(value: string): void;
-
-  getPartyId(): string;
-  setPartyId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OrderCancellation.AsObject;
-  static toObject(includeInstance: boolean, msg: OrderCancellation): OrderCancellation.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OrderCancellation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OrderCancellation;
-  static deserializeBinaryFromReader(message: OrderCancellation, reader: jspb.BinaryReader): OrderCancellation;
-}
-
-export namespace OrderCancellation {
-  export type AsObject = {
-    orderId: string,
-    marketId: string,
-    partyId: string,
-  }
-}
-
-export class NodeRegistration extends jspb.Message {
-  getPubKey(): Uint8Array | string;
-  getPubKey_asU8(): Uint8Array;
-  getPubKey_asB64(): string;
-  setPubKey(value: Uint8Array | string): void;
-
-  getChainPubKey(): Uint8Array | string;
-  getChainPubKey_asU8(): Uint8Array;
-  getChainPubKey_asB64(): string;
-  setChainPubKey(value: Uint8Array | string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NodeRegistration.AsObject;
-  static toObject(includeInstance: boolean, msg: NodeRegistration): NodeRegistration.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: NodeRegistration, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NodeRegistration;
-  static deserializeBinaryFromReader(message: NodeRegistration, reader: jspb.BinaryReader): NodeRegistration;
-}
-
-export namespace NodeRegistration {
-  export type AsObject = {
-    pubKey: Uint8Array | string,
-    chainPubKey: Uint8Array | string,
-  }
-}
-
-export class NodeVote extends jspb.Message {
-  getPubKey(): Uint8Array | string;
-  getPubKey_asU8(): Uint8Array;
-  getPubKey_asB64(): string;
-  setPubKey(value: Uint8Array | string): void;
-
-  getReference(): string;
-  setReference(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NodeVote.AsObject;
-  static toObject(includeInstance: boolean, msg: NodeVote): NodeVote.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: NodeVote, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NodeVote;
-  static deserializeBinaryFromReader(message: NodeVote, reader: jspb.BinaryReader): NodeVote;
-}
-
-export namespace NodeVote {
-  export type AsObject = {
-    pubKey: Uint8Array | string,
-    reference: string,
   }
 }
 
@@ -1885,36 +1648,6 @@ export namespace SignedBundle {
   }
 }
 
-export class NodeSignature extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
-  getSig(): Uint8Array | string;
-  getSig_asU8(): Uint8Array;
-  getSig_asB64(): string;
-  setSig(value: Uint8Array | string): void;
-
-  getKind(): NodeSignatureKindMap[keyof NodeSignatureKindMap];
-  setKind(value: NodeSignatureKindMap[keyof NodeSignatureKindMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NodeSignature.AsObject;
-  static toObject(includeInstance: boolean, msg: NodeSignature): NodeSignature.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: NodeSignature, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NodeSignature;
-  static deserializeBinaryFromReader(message: NodeSignature, reader: jspb.BinaryReader): NodeSignature;
-}
-
-export namespace NodeSignature {
-  export type AsObject = {
-    id: string,
-    sig: Uint8Array | string,
-    kind: NodeSignatureKindMap[keyof NodeSignatureKindMap],
-  }
-}
-
 export class NetworkParameter extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
@@ -1964,50 +1697,6 @@ export namespace LiquidityOrder {
     reference: PeggedReferenceMap[keyof PeggedReferenceMap],
     proportion: number,
     offset: number,
-  }
-}
-
-export class LiquidityProvisionSubmission extends jspb.Message {
-  getMarketId(): string;
-  setMarketId(value: string): void;
-
-  getCommitmentAmount(): number;
-  setCommitmentAmount(value: number): void;
-
-  getFee(): string;
-  setFee(value: string): void;
-
-  clearSellsList(): void;
-  getSellsList(): Array<LiquidityOrder>;
-  setSellsList(value: Array<LiquidityOrder>): void;
-  addSells(value?: LiquidityOrder, index?: number): LiquidityOrder;
-
-  clearBuysList(): void;
-  getBuysList(): Array<LiquidityOrder>;
-  setBuysList(value: Array<LiquidityOrder>): void;
-  addBuys(value?: LiquidityOrder, index?: number): LiquidityOrder;
-
-  getReference(): string;
-  setReference(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): LiquidityProvisionSubmission.AsObject;
-  static toObject(includeInstance: boolean, msg: LiquidityProvisionSubmission): LiquidityProvisionSubmission.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: LiquidityProvisionSubmission, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): LiquidityProvisionSubmission;
-  static deserializeBinaryFromReader(message: LiquidityProvisionSubmission, reader: jspb.BinaryReader): LiquidityProvisionSubmission;
-}
-
-export namespace LiquidityProvisionSubmission {
-  export type AsObject = {
-    marketId: string,
-    commitmentAmount: number,
-    fee: string,
-    sellsList: Array<LiquidityOrder.AsObject>,
-    buysList: Array<LiquidityOrder.AsObject>,
-    reference: string,
   }
 }
 
@@ -2149,39 +1838,6 @@ export namespace EthereumConfig {
   }
 }
 
-export class OracleDataSubmission extends jspb.Message {
-  getSource(): OracleDataSubmission.OracleSourceMap[keyof OracleDataSubmission.OracleSourceMap];
-  setSource(value: OracleDataSubmission.OracleSourceMap[keyof OracleDataSubmission.OracleSourceMap]): void;
-
-  getPayload(): Uint8Array | string;
-  getPayload_asU8(): Uint8Array;
-  getPayload_asB64(): string;
-  setPayload(value: Uint8Array | string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OracleDataSubmission.AsObject;
-  static toObject(includeInstance: boolean, msg: OracleDataSubmission): OracleDataSubmission.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OracleDataSubmission, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OracleDataSubmission;
-  static deserializeBinaryFromReader(message: OracleDataSubmission, reader: jspb.BinaryReader): OracleDataSubmission;
-}
-
-export namespace OracleDataSubmission {
-  export type AsObject = {
-    source: OracleDataSubmission.OracleSourceMap[keyof OracleDataSubmission.OracleSourceMap],
-    payload: Uint8Array | string,
-  }
-
-  export interface OracleSourceMap {
-    ORACLE_SOURCE_UNSPECIFIED: 0;
-    ORACLE_SOURCE_OPEN_ORACLE: 1;
-  }
-
-  export const OracleSource: OracleSourceMap;
-}
-
 export interface SideMap {
   SIDE_UNSPECIFIED: 0;
   SIDE_BUY: 1;
@@ -2269,6 +1925,7 @@ export interface OrderErrorMap {
   ORDER_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGGED_ORDER: 44;
   ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORDER: 45;
   ORDER_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORDER: 46;
+  ORDER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRICE_BOUNDS: 47;
 }
 
 export const OrderError: OrderErrorMap;
@@ -2323,12 +1980,4 @@ export interface TransferTypeMap {
 }
 
 export const TransferType: TransferTypeMap;
-
-export interface NodeSignatureKindMap {
-  NODE_SIGNATURE_KIND_UNSPECIFIED: 0;
-  NODE_SIGNATURE_KIND_ASSET_NEW: 1;
-  NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL: 2;
-}
-
-export const NodeSignatureKind: NodeSignatureKindMap;
 

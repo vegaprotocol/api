@@ -17137,6 +17137,36 @@ public final class Governance {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     * Total number of governance token for the party that casted the vote
+     * </pre>
+     *
+     * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * @return The totalGovernanceTokenBalance.
+     */
+    long getTotalGovernanceTokenBalance();
+
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The totalGovernanceTokenWeight.
+     */
+    java.lang.String getTotalGovernanceTokenWeight();
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The bytes for totalGovernanceTokenWeight.
+     */
+    com.google.protobuf.ByteString
+        getTotalGovernanceTokenWeightBytes();
   }
   /**
    * <pre>
@@ -17158,6 +17188,7 @@ public final class Governance {
       partyId_ = "";
       value_ = 0;
       proposalId_ = "";
+      totalGovernanceTokenWeight_ = "";
     }
 
     @java.lang.Override
@@ -17211,6 +17242,17 @@ public final class Governance {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              totalGovernanceTokenBalance_ = input.readUInt64();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              totalGovernanceTokenWeight_ = s;
               break;
             }
             default: {
@@ -17524,6 +17566,67 @@ public final class Governance {
       return timestamp_;
     }
 
+    public static final int TOTAL_GOVERNANCE_TOKEN_BALANCE_FIELD_NUMBER = 5;
+    private long totalGovernanceTokenBalance_;
+    /**
+     * <pre>
+     * Total number of governance token for the party that casted the vote
+     * </pre>
+     *
+     * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+     * @return The totalGovernanceTokenBalance.
+     */
+    @java.lang.Override
+    public long getTotalGovernanceTokenBalance() {
+      return totalGovernanceTokenBalance_;
+    }
+
+    public static final int TOTAL_GOVERNANCE_TOKEN_WEIGHT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object totalGovernanceTokenWeight_;
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The totalGovernanceTokenWeight.
+     */
+    @java.lang.Override
+    public java.lang.String getTotalGovernanceTokenWeight() {
+      java.lang.Object ref = totalGovernanceTokenWeight_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        totalGovernanceTokenWeight_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The weight of this vote based on the total of governance token
+     * </pre>
+     *
+     * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+     * @return The bytes for totalGovernanceTokenWeight.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTotalGovernanceTokenWeightBytes() {
+      java.lang.Object ref = totalGovernanceTokenWeight_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        totalGovernanceTokenWeight_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17550,6 +17653,12 @@ public final class Governance {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (totalGovernanceTokenBalance_ != 0L) {
+        output.writeUInt64(5, totalGovernanceTokenBalance_);
+      }
+      if (!getTotalGovernanceTokenWeightBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, totalGovernanceTokenWeight_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17573,6 +17682,13 @@ public final class Governance {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
       }
+      if (totalGovernanceTokenBalance_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(5, totalGovernanceTokenBalance_);
+      }
+      if (!getTotalGovernanceTokenWeightBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, totalGovernanceTokenWeight_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17595,6 +17711,10 @@ public final class Governance {
           .equals(other.getProposalId())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTotalGovernanceTokenBalance()
+          != other.getTotalGovernanceTokenBalance()) return false;
+      if (!getTotalGovernanceTokenWeight()
+          .equals(other.getTotalGovernanceTokenWeight())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17615,6 +17735,11 @@ public final class Governance {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TOTAL_GOVERNANCE_TOKEN_BALANCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalGovernanceTokenBalance());
+      hash = (37 * hash) + TOTAL_GOVERNANCE_TOKEN_WEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalGovernanceTokenWeight().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17760,6 +17885,10 @@ public final class Governance {
 
         timestamp_ = 0L;
 
+        totalGovernanceTokenBalance_ = 0L;
+
+        totalGovernanceTokenWeight_ = "";
+
         return this;
       }
 
@@ -17790,6 +17919,8 @@ public final class Governance {
         result.value_ = value_;
         result.proposalId_ = proposalId_;
         result.timestamp_ = timestamp_;
+        result.totalGovernanceTokenBalance_ = totalGovernanceTokenBalance_;
+        result.totalGovernanceTokenWeight_ = totalGovernanceTokenWeight_;
         onBuilt();
         return result;
       }
@@ -17851,6 +17982,13 @@ public final class Governance {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTotalGovernanceTokenBalance() != 0L) {
+          setTotalGovernanceTokenBalance(other.getTotalGovernanceTokenBalance());
+        }
+        if (!other.getTotalGovernanceTokenWeight().isEmpty()) {
+          totalGovernanceTokenWeight_ = other.totalGovernanceTokenWeight_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18189,6 +18327,145 @@ public final class Governance {
         onChanged();
         return this;
       }
+
+      private long totalGovernanceTokenBalance_ ;
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @return The totalGovernanceTokenBalance.
+       */
+      @java.lang.Override
+      public long getTotalGovernanceTokenBalance() {
+        return totalGovernanceTokenBalance_;
+      }
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @param value The totalGovernanceTokenBalance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenBalance(long value) {
+
+        totalGovernanceTokenBalance_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of governance token for the party that casted the vote
+       * </pre>
+       *
+       * <code>uint64 total_governance_token_balance = 5 [json_name = "totalGovernanceTokenBalance"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalGovernanceTokenBalance() {
+
+        totalGovernanceTokenBalance_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object totalGovernanceTokenWeight_ = "";
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @return The totalGovernanceTokenWeight.
+       */
+      public java.lang.String getTotalGovernanceTokenWeight() {
+        java.lang.Object ref = totalGovernanceTokenWeight_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          totalGovernanceTokenWeight_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @return The bytes for totalGovernanceTokenWeight.
+       */
+      public com.google.protobuf.ByteString
+          getTotalGovernanceTokenWeightBytes() {
+        java.lang.Object ref = totalGovernanceTokenWeight_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          totalGovernanceTokenWeight_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @param value The totalGovernanceTokenWeight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenWeight(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        totalGovernanceTokenWeight_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalGovernanceTokenWeight() {
+
+        totalGovernanceTokenWeight_ = getDefaultInstance().getTotalGovernanceTokenWeight();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The weight of this vote based on the total of governance token
+       * </pre>
+       *
+       * <code>string total_governance_token_weight = 6 [json_name = "totalGovernanceTokenWeight"];</code>
+       * @param value The bytes for totalGovernanceTokenWeight to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalGovernanceTokenWeightBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        totalGovernanceTokenWeight_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18396,49 +18673,53 @@ public final class Governance {
       "IED\020\000\022\020\n\014STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022" +
       "\020\n\014STATE_PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n" +
       "\016STATE_DECLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033" +
-      "STATE_WAITING_FOR_NODE_VOTE\020\007\"\336\001\n\004Vote\022!" +
+      "STATE_WAITING_FOR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!" +
       "\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005val" +
       "ue\030\002 \001(\0162\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005val" +
       "ue\022\'\n\013proposal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposa" +
-      "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\";\n\005Val" +
-      "ue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001\022" +
-      "\r\n\tVALUE_YES\020\002*\350\n\n\rProposalError\022\036\n\032PROP" +
-      "OSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ERR" +
-      "OR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ERR" +
-      "OR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ERR" +
-      "OR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ERR" +
-      "OR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ERR" +
-      "OR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ERR" +
-      "OR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PROP" +
-      "OSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERRO" +
-      "R_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERRO" +
-      "R_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n)" +
-      "PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSE" +
-      "D\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013\022" +
-      "+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MO" +
-      "DE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_F" +
-      "AILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILTI" +
-      "N_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSIN" +
-      "G_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_E" +
-      "RROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_I" +
-      "NCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ERR" +
-      "OR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERRO" +
-      "R_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PRO" +
-      "POSAL_ERROR_NETWORK_PARAMETER_INVALID_VA" +
-      "LUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMETE" +
-      "R_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR_" +
-      "OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n1" +
-      "PROPOSAL_ERROR_OPENING_AUCTION_DURATION_" +
-      "TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MIS" +
-      "SING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL_" +
-      "ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031\022)\n%" +
-      "PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032\022" +
-      ",\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AMO" +
-      "UNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_AMOU" +
-      "NT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035\022)" +
-      "\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER\020" +
-      "\036B7\n\024io.vegaprotocol.vegaZ\037code.vegaprot" +
-      "ocol.io/vega/protob\006proto3"
+      "lId\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\022C\n\036tot" +
+      "al_governance_token_balance\030\005 \001(\004R\033total" +
+      "GovernanceTokenBalance\022A\n\035total_governan" +
+      "ce_token_weight\030\006 \001(\tR\032totalGovernanceTo" +
+      "kenWeight\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020" +
+      "\000\022\014\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\350\n\n\rPropo" +
+      "salError\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000" +
+      "\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001" +
+      "\022&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002" +
+      "\022&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_SOON\020\003" +
+      "\022&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_LATE\020\004" +
+      "\022&\n\"PROPOSAL_ERROR_INSUFFICIENT_TOKENS\020\005" +
+      "\022.\n*PROPOSAL_ERROR_INVALID_INSTRUMENT_SE" +
+      "CURITY\020\006\022\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022" +
+      "&\n\"PROPOSAL_ERROR_UNSUPPORTED_PRODUCT\020\010\022" +
+      "3\n/PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT" +
+      "_TIMESTAMP\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_M" +
+      "ATURITY_IS_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO" +
+      "_TRADING_MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPP" +
+      "ORTED_TRADING_MODE\020\014\022)\n%PROPOSAL_ERROR_N" +
+      "ODE_VALIDATION_FAILED\020\r\022.\n*PROPOSAL_ERRO" +
+      "R_MISSING_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPO" +
+      "SAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS" +
+      "\020\017\022 \n\034PROPOSAL_ERROR_INVALID_ASSET\020\020\022*\n&" +
+      "PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS\020\021" +
+      "\022%\n!PROPOSAL_ERROR_NO_RISK_PARAMETERS\020\022\022" +
+      "0\n,PROPOSAL_ERROR_NETWORK_PARAMETER_INVA" +
+      "LID_KEY\020\023\0222\n.PROPOSAL_ERROR_NETWORK_PARA" +
+      "METER_INVALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_" +
+      "NETWORK_PARAMETER_VALIDATION_FAILED\020\025\0225\n" +
+      "1PROPOSAL_ERROR_OPENING_AUCTION_DURATION" +
+      "_TOO_SMALL\020\026\0225\n1PROPOSAL_ERROR_OPENING_A" +
+      "UCTION_DURATION_TOO_LARGE\020\027\0226\n2PROPOSAL_" +
+      "ERROR_MARKET_MISSING_LIQUIDITY_COMMITMEN" +
+      "T\020\030\022/\n+PROPOSAL_ERROR_COULD_NOT_INSTANTI" +
+      "ATE_MARKET\020\031\022)\n%PROPOSAL_ERROR_INVALID_F" +
+      "UTURE_PRODUCT\020\032\022,\n(PROPOSAL_ERROR_MISSIN" +
+      "G_COMMITMENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_" +
+      "INVALID_FEE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_I" +
+      "NVALID_SHAPE\020\035\022)\n%PROPOSAL_ERROR_INVALID" +
+      "_RISK_PARAMETER\020\036B7\n\024io.vegaprotocol.veg" +
+      "aZ\037code.vegaprotocol.io/vega/protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18532,7 +18813,7 @@ public final class Governance {
     internal_static_vega_Vote_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Vote_descriptor,
-        new java.lang.String[] { "PartyId", "Value", "ProposalId", "Timestamp", });
+        new java.lang.String[] { "PartyId", "Value", "ProposalId", "Timestamp", "TotalGovernanceTokenBalance", "TotalGovernanceTokenWeight", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

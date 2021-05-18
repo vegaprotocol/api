@@ -9,35 +9,60 @@
 # Apps/Libraries:
 # - REST: curl
 
-# Note: this file uses smart-tags in comments to section parts of the code to
-# show them as snippets in our documentation. They are not necessary to be
-# included when creating your own custom code.
-#
-# Example of smart-tags:
-#  __something:
-# some code here
-# :something__
+# Note: this file uses special tags in comments to enable snippets to be
+# included in documentation.
+# Example
+#   #  __something:
+#   some code here
+#   # :something__
 
-source helpers.sh
+# shellcheck disable=SC1091
+source ../../../rest/examples/shell/helpers.sh
 
-check_url "NODE_URL_REST" || exit 1
-check_url "WALLETSERVER_URL" || exit 1
+# --- Edit these values below ---
+node_url_rest=">> e.g. n06.testnet.vega.xyz:3002"
+walletserver_url=">> Vega-hosted wallet: https://wallet.testnet.vega.xyz"
+walletserver_url=">> self-hosted wallet: http://localhost:1789"
+wallet_name=">> your wallet name here"
+wallet_passphrase=">> your passphrase here"
+# --- Edit these values above ---
 
-check_var "WALLET_NAME" || exit 1
-check_var "WALLET_PASSPHRASE" || exit 1
+ci=no
+while true ; do
+	case "${1:-}" in
+	--ci) ci=yes ; shift ;;
+	*)
+		[[ -z "$1" ]] && break
+		echo "Unrecognised argument: $1"
+		exit 1
+		;;
+	esac
+done
+
+if [[ "$ci" = yes ]] ; then
+	node_url_rest="${NODE_URL_REST:?}"
+	walletserver_url="${WALLETSERVER_URL:?}"
+	wallet_name="${WALLET_NAME:?}"
+	wallet_passphrase="${WALLET_PASSPHRASE:?}"
+fi
+
+check_url "node_url_rest" || exit 1
+check_url "walletserver_url" || exit 1
+check_var "wallet_name" || exit 1
+check_var "wallet_passphrase" || exit 1
 
 # __create_wallet:
 CREATE_NEW_WALLET=no
 if test "$CREATE_NEW_WALLET" == yes ; then
 	### EITHER: Create new wallet ###
-	url="$WALLETSERVER_URL/api/v1/wallets"
+	url="$walletserver_url/api/v1/wallets"
 else
 	### OR: Log in to existing wallet ###
-	url="$WALLETSERVER_URL/api/v1/auth/token"
+	url="$walletserver_url/api/v1/auth/token"
 fi
 
 # Make request to create new wallet or log in to existing wallet
-req='{"wallet": "'"$WALLET_NAME"'","passphrase": "'"$WALLET_PASSPHRASE"'"}'
+req='{"wallet": "'"$wallet_name"'","passphrase": "'"$wallet_passphrase"'"}'
 response="$(curl -s -XPOST -d "$req" "$url")"
 
 ### Pull out the token and make a headers var ###
@@ -46,18 +71,23 @@ test "$token" == null && exit 1
 hdr="Authorization: Bearer $token"
 # :create_wallet__
 
+cleanup() {
+    rm -f req.json
+}
+trap cleanup EXIT SIGINT
+
 # __generate_keypair:
 GENERATE_NEW_KEYPAIR=no
 pubKey=""
 if test "$GENERATE_NEW_KEYPAIR" == yes ; then
 	### EITHER: Generate a new keypair ###
-	req='{"passphrase":"'"$WALLET_PASSPHRASE"'","meta":[{"key":"alias","value":"my_key_alias"}]}'
-	url="$WALLETSERVER_URL/api/v1/keys"
+	req='{"passphrase":"'"$wallet_passphrase"'","meta":[{"key":"alias","value":"my_key_alias"}]}'
+	url="$walletserver_url/api/v1/keys"
 	response="$(curl -s -XPOST -H "$hdr" -d "$req" "$url")"
 	pubKey="$(echo "$response" | jq -r .key.pub)"
 else
 	### OR: List existing keypairs ###
-	url="$WALLETSERVER_URL/api/v1/keys"
+	url="$walletserver_url/api/v1/keys"
 	response="$(curl -s -XGET -H "$hdr" "$url")"
 	pubKey="$(echo "$response" | jq -r '.keys[0].pub')"
 fi
@@ -68,7 +98,7 @@ test "$pubKey" == null && exit 1
 
 # __get_market:
 ### Next, get a Market ID ###
-url="$NODE_URL_REST/markets"
+url="$node_url_rest/markets"
 echo "get market ID url: $url"
 response="$(curl -s "$url")"
 marketID="$(echo "$response" | jq -r '.markets[0].id')"
@@ -80,7 +110,7 @@ marketID="$(echo "$response" | jq -r '.markets[0].id')"
 # Note: price is an integer. For example 123456 is a price of 1.23456,
 # assuming 5 decimal places.
 
-url="$NODE_URL_REST/time"
+url="$node_url_rest/time"
 response="$(curl -s "$url")"
 blockchaintime="$(echo "$response" | jq -r .timestamp)"
 expiresAt="$((blockchaintime+120*10**9))" # expire in 2 minutes
@@ -98,7 +128,7 @@ cat >req.json <<EOF
 }
 EOF
 echo "Request for PrepareSubmitOrder: $(cat req.json)"
-url="$NODE_URL_REST/orders/prepare/submit"
+url="$node_url_rest/orders/prepare/submit"
 response="$(curl -s -XPOST -d @req.json "$url")"
 echo "Response from PrepareSubmitOrder: $response"
 # :prepare_order__
@@ -115,7 +145,7 @@ cat >req.json <<EOF
 }
 EOF
 echo "Request for SignTx: $(cat req.json)"
-url="$WALLETSERVER_URL/api/v1/messages/sync"
+url="$walletserver_url/api/v1/messages/sync"
 response="$(curl -s -XPOST -H "$hdr" -d @req.json "$url")"
 signedTx="$(echo "$response" | jq .signedTx)"
 echo "Response from SignTx: $signedTx"
@@ -130,7 +160,7 @@ cat >req.json <<EOF
 }
 EOF
 echo "Request for SubmitTransaction: $(cat req.json)"
-url="$NODE_URL_REST/transaction"
+url="$node_url_rest/transaction"
 response="$(curl -s -XPOST -d @req.json "$url")"
 # :submit_tx__
 

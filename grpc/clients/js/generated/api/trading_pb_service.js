@@ -55,22 +55,22 @@ TradingService.SubmitTransaction = {
   responseType: api_trading_pb.SubmitTransactionResponse
 };
 
-TradingService.PrepareProposal = {
-  methodName: "PrepareProposal",
+TradingService.PrepareProposalSubmission = {
+  methodName: "PrepareProposalSubmission",
   service: TradingService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.PrepareProposalRequest,
-  responseType: api_trading_pb.PrepareProposalResponse
+  requestType: api_trading_pb.PrepareProposalSubmissionRequest,
+  responseType: api_trading_pb.PrepareProposalSubmissionResponse
 };
 
-TradingService.PrepareVote = {
-  methodName: "PrepareVote",
+TradingService.PrepareVoteSubmission = {
+  methodName: "PrepareVoteSubmission",
   service: TradingService,
   requestStream: false,
   responseStream: false,
-  requestType: api_trading_pb.PrepareVoteRequest,
-  responseType: api_trading_pb.PrepareVoteResponse
+  requestType: api_trading_pb.PrepareVoteSubmissionRequest,
+  responseType: api_trading_pb.PrepareVoteSubmissionResponse
 };
 
 TradingService.PropagateChainEvent = {
@@ -253,11 +253,11 @@ TradingServiceClient.prototype.submitTransaction = function submitTransaction(re
   };
 };
 
-TradingServiceClient.prototype.prepareProposal = function prepareProposal(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareProposalSubmission = function prepareProposalSubmission(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(TradingService.PrepareProposal, {
+  var client = grpc.unary(TradingService.PrepareProposalSubmission, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -284,11 +284,11 @@ TradingServiceClient.prototype.prepareProposal = function prepareProposal(reques
   };
 };
 
-TradingServiceClient.prototype.prepareVote = function prepareVote(requestMessage, metadata, callback) {
+TradingServiceClient.prototype.prepareVoteSubmission = function prepareVoteSubmission(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(TradingService.PrepareVote, {
+  var client = grpc.unary(TradingService.PrepareVoteSubmission, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

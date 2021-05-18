@@ -35,11 +35,12 @@
 #include "vega.pb.h"
 #include "markets.pb.h"
 #include "governance.pb.h"
-#include "chain_events.pb.h"
 #include "assets.pb.h"
-#include "events.pb.h"
+#include "events/v1/events.pb.h"
 #include "oracles/v1/oracle_spec.pb.h"
 #include "oracles/v1/oracle_data.pb.h"
+#include "commands/v1/commands.pb.h"
+#include "commands/v1/validator_commands.pb.h"
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -425,24 +426,24 @@ extern PrepareLiquidityProvisionRequestDefaultTypeInternal _PrepareLiquidityProv
 class PrepareLiquidityProvisionResponse;
 class PrepareLiquidityProvisionResponseDefaultTypeInternal;
 extern PrepareLiquidityProvisionResponseDefaultTypeInternal _PrepareLiquidityProvisionResponse_default_instance_;
-class PrepareProposalRequest;
-class PrepareProposalRequestDefaultTypeInternal;
-extern PrepareProposalRequestDefaultTypeInternal _PrepareProposalRequest_default_instance_;
-class PrepareProposalResponse;
-class PrepareProposalResponseDefaultTypeInternal;
-extern PrepareProposalResponseDefaultTypeInternal _PrepareProposalResponse_default_instance_;
+class PrepareProposalSubmissionRequest;
+class PrepareProposalSubmissionRequestDefaultTypeInternal;
+extern PrepareProposalSubmissionRequestDefaultTypeInternal _PrepareProposalSubmissionRequest_default_instance_;
+class PrepareProposalSubmissionResponse;
+class PrepareProposalSubmissionResponseDefaultTypeInternal;
+extern PrepareProposalSubmissionResponseDefaultTypeInternal _PrepareProposalSubmissionResponse_default_instance_;
 class PrepareSubmitOrderRequest;
 class PrepareSubmitOrderRequestDefaultTypeInternal;
 extern PrepareSubmitOrderRequestDefaultTypeInternal _PrepareSubmitOrderRequest_default_instance_;
 class PrepareSubmitOrderResponse;
 class PrepareSubmitOrderResponseDefaultTypeInternal;
 extern PrepareSubmitOrderResponseDefaultTypeInternal _PrepareSubmitOrderResponse_default_instance_;
-class PrepareVoteRequest;
-class PrepareVoteRequestDefaultTypeInternal;
-extern PrepareVoteRequestDefaultTypeInternal _PrepareVoteRequest_default_instance_;
-class PrepareVoteResponse;
-class PrepareVoteResponseDefaultTypeInternal;
-extern PrepareVoteResponseDefaultTypeInternal _PrepareVoteResponse_default_instance_;
+class PrepareVoteSubmissionRequest;
+class PrepareVoteSubmissionRequestDefaultTypeInternal;
+extern PrepareVoteSubmissionRequestDefaultTypeInternal _PrepareVoteSubmissionRequest_default_instance_;
+class PrepareVoteSubmissionResponse;
+class PrepareVoteSubmissionResponseDefaultTypeInternal;
+extern PrepareVoteSubmissionResponseDefaultTypeInternal _PrepareVoteSubmissionResponse_default_instance_;
 class PrepareWithdrawRequest;
 class PrepareWithdrawRequestDefaultTypeInternal;
 extern PrepareWithdrawRequestDefaultTypeInternal _PrepareWithdrawRequest_default_instance_;
@@ -632,12 +633,12 @@ template<> ::api::v1::PrepareCancelOrderRequest* Arena::CreateMaybeMessage<::api
 template<> ::api::v1::PrepareCancelOrderResponse* Arena::CreateMaybeMessage<::api::v1::PrepareCancelOrderResponse>(Arena*);
 template<> ::api::v1::PrepareLiquidityProvisionRequest* Arena::CreateMaybeMessage<::api::v1::PrepareLiquidityProvisionRequest>(Arena*);
 template<> ::api::v1::PrepareLiquidityProvisionResponse* Arena::CreateMaybeMessage<::api::v1::PrepareLiquidityProvisionResponse>(Arena*);
-template<> ::api::v1::PrepareProposalRequest* Arena::CreateMaybeMessage<::api::v1::PrepareProposalRequest>(Arena*);
-template<> ::api::v1::PrepareProposalResponse* Arena::CreateMaybeMessage<::api::v1::PrepareProposalResponse>(Arena*);
+template<> ::api::v1::PrepareProposalSubmissionRequest* Arena::CreateMaybeMessage<::api::v1::PrepareProposalSubmissionRequest>(Arena*);
+template<> ::api::v1::PrepareProposalSubmissionResponse* Arena::CreateMaybeMessage<::api::v1::PrepareProposalSubmissionResponse>(Arena*);
 template<> ::api::v1::PrepareSubmitOrderRequest* Arena::CreateMaybeMessage<::api::v1::PrepareSubmitOrderRequest>(Arena*);
 template<> ::api::v1::PrepareSubmitOrderResponse* Arena::CreateMaybeMessage<::api::v1::PrepareSubmitOrderResponse>(Arena*);
-template<> ::api::v1::PrepareVoteRequest* Arena::CreateMaybeMessage<::api::v1::PrepareVoteRequest>(Arena*);
-template<> ::api::v1::PrepareVoteResponse* Arena::CreateMaybeMessage<::api::v1::PrepareVoteResponse>(Arena*);
+template<> ::api::v1::PrepareVoteSubmissionRequest* Arena::CreateMaybeMessage<::api::v1::PrepareVoteSubmissionRequest>(Arena*);
+template<> ::api::v1::PrepareVoteSubmissionResponse* Arena::CreateMaybeMessage<::api::v1::PrepareVoteSubmissionResponse>(Arena*);
 template<> ::api::v1::PrepareWithdrawRequest* Arena::CreateMaybeMessage<::api::v1::PrepareWithdrawRequest>(Arena*);
 template<> ::api::v1::PrepareWithdrawResponse* Arena::CreateMaybeMessage<::api::v1::PrepareWithdrawResponse>(Arena*);
 template<> ::api::v1::PropagateChainEventRequest* Arena::CreateMaybeMessage<::api::v1::PropagateChainEventRequest>(Arena*);
@@ -841,23 +842,23 @@ class PropagateChainEventRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_signature();
   public:
 
-  // .vega.ChainEvent evt = 1 [json_name = "evt"];
+  // .vega.commands.v1.ChainEvent evt = 1 [json_name = "evt"];
   bool has_evt() const;
   private:
   bool _internal_has_evt() const;
   public:
   void clear_evt();
-  const ::vega::ChainEvent& evt() const;
-  ::vega::ChainEvent* release_evt();
-  ::vega::ChainEvent* mutable_evt();
-  void set_allocated_evt(::vega::ChainEvent* evt);
+  const ::vega::commands::v1::ChainEvent& evt() const;
+  ::vega::commands::v1::ChainEvent* release_evt();
+  ::vega::commands::v1::ChainEvent* mutable_evt();
+  void set_allocated_evt(::vega::commands::v1::ChainEvent* evt);
   private:
-  const ::vega::ChainEvent& _internal_evt() const;
-  ::vega::ChainEvent* _internal_mutable_evt();
+  const ::vega::commands::v1::ChainEvent& _internal_evt() const;
+  ::vega::commands::v1::ChainEvent* _internal_mutable_evt();
   public:
   void unsafe_arena_set_allocated_evt(
-      ::vega::ChainEvent* evt);
-  ::vega::ChainEvent* unsafe_arena_release_evt();
+      ::vega::commands::v1::ChainEvent* evt);
+  ::vega::commands::v1::ChainEvent* unsafe_arena_release_evt();
 
   // @@protoc_insertion_point(class_scope:api.v1.PropagateChainEventRequest)
  private:
@@ -868,7 +869,7 @@ class PropagateChainEventRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pub_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
-  ::vega::ChainEvent* evt_;
+  ::vega::commands::v1::ChainEvent* evt_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -1450,23 +1451,23 @@ class PrepareWithdrawRequest PROTOBUF_FINAL :
   enum : int {
     kWithdrawFieldNumber = 1,
   };
-  // .vega.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
+  // .vega.commands.v1.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
   bool has_withdraw() const;
   private:
   bool _internal_has_withdraw() const;
   public:
   void clear_withdraw();
-  const ::vega::WithdrawSubmission& withdraw() const;
-  ::vega::WithdrawSubmission* release_withdraw();
-  ::vega::WithdrawSubmission* mutable_withdraw();
-  void set_allocated_withdraw(::vega::WithdrawSubmission* withdraw);
+  const ::vega::commands::v1::WithdrawSubmission& withdraw() const;
+  ::vega::commands::v1::WithdrawSubmission* release_withdraw();
+  ::vega::commands::v1::WithdrawSubmission* mutable_withdraw();
+  void set_allocated_withdraw(::vega::commands::v1::WithdrawSubmission* withdraw);
   private:
-  const ::vega::WithdrawSubmission& _internal_withdraw() const;
-  ::vega::WithdrawSubmission* _internal_mutable_withdraw();
+  const ::vega::commands::v1::WithdrawSubmission& _internal_withdraw() const;
+  ::vega::commands::v1::WithdrawSubmission* _internal_mutable_withdraw();
   public:
   void unsafe_arena_set_allocated_withdraw(
-      ::vega::WithdrawSubmission* withdraw);
-  ::vega::WithdrawSubmission* unsafe_arena_release_withdraw();
+      ::vega::commands::v1::WithdrawSubmission* withdraw);
+  ::vega::commands::v1::WithdrawSubmission* unsafe_arena_release_withdraw();
 
   // @@protoc_insertion_point(class_scope:api.v1.PrepareWithdrawRequest)
  private:
@@ -1475,7 +1476,7 @@ class PrepareWithdrawRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::WithdrawSubmission* withdraw_;
+  ::vega::commands::v1::WithdrawSubmission* withdraw_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -2185,23 +2186,23 @@ class PrepareSubmitOrderRequest PROTOBUF_FINAL :
   enum : int {
     kSubmissionFieldNumber = 1,
   };
-  // .vega.OrderSubmission submission = 1 [json_name = "submission"];
+  // .vega.commands.v1.OrderSubmission submission = 1 [json_name = "submission"];
   bool has_submission() const;
   private:
   bool _internal_has_submission() const;
   public:
   void clear_submission();
-  const ::vega::OrderSubmission& submission() const;
-  ::vega::OrderSubmission* release_submission();
-  ::vega::OrderSubmission* mutable_submission();
-  void set_allocated_submission(::vega::OrderSubmission* submission);
+  const ::vega::commands::v1::OrderSubmission& submission() const;
+  ::vega::commands::v1::OrderSubmission* release_submission();
+  ::vega::commands::v1::OrderSubmission* mutable_submission();
+  void set_allocated_submission(::vega::commands::v1::OrderSubmission* submission);
   private:
-  const ::vega::OrderSubmission& _internal_submission() const;
-  ::vega::OrderSubmission* _internal_mutable_submission();
+  const ::vega::commands::v1::OrderSubmission& _internal_submission() const;
+  ::vega::commands::v1::OrderSubmission* _internal_mutable_submission();
   public:
   void unsafe_arena_set_allocated_submission(
-      ::vega::OrderSubmission* submission);
-  ::vega::OrderSubmission* unsafe_arena_release_submission();
+      ::vega::commands::v1::OrderSubmission* submission);
+  ::vega::commands::v1::OrderSubmission* unsafe_arena_release_submission();
 
   // @@protoc_insertion_point(class_scope:api.v1.PrepareSubmitOrderRequest)
  private:
@@ -2210,7 +2211,7 @@ class PrepareSubmitOrderRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::OrderSubmission* submission_;
+  ::vega::commands::v1::OrderSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -2330,23 +2331,23 @@ class PrepareCancelOrderRequest PROTOBUF_FINAL :
   enum : int {
     kCancellationFieldNumber = 1,
   };
-  // .vega.OrderCancellation cancellation = 1 [json_name = "cancellation"];
+  // .vega.commands.v1.OrderCancellation cancellation = 1 [json_name = "cancellation"];
   bool has_cancellation() const;
   private:
   bool _internal_has_cancellation() const;
   public:
   void clear_cancellation();
-  const ::vega::OrderCancellation& cancellation() const;
-  ::vega::OrderCancellation* release_cancellation();
-  ::vega::OrderCancellation* mutable_cancellation();
-  void set_allocated_cancellation(::vega::OrderCancellation* cancellation);
+  const ::vega::commands::v1::OrderCancellation& cancellation() const;
+  ::vega::commands::v1::OrderCancellation* release_cancellation();
+  ::vega::commands::v1::OrderCancellation* mutable_cancellation();
+  void set_allocated_cancellation(::vega::commands::v1::OrderCancellation* cancellation);
   private:
-  const ::vega::OrderCancellation& _internal_cancellation() const;
-  ::vega::OrderCancellation* _internal_mutable_cancellation();
+  const ::vega::commands::v1::OrderCancellation& _internal_cancellation() const;
+  ::vega::commands::v1::OrderCancellation* _internal_mutable_cancellation();
   public:
   void unsafe_arena_set_allocated_cancellation(
-      ::vega::OrderCancellation* cancellation);
-  ::vega::OrderCancellation* unsafe_arena_release_cancellation();
+      ::vega::commands::v1::OrderCancellation* cancellation);
+  ::vega::commands::v1::OrderCancellation* unsafe_arena_release_cancellation();
 
   // @@protoc_insertion_point(class_scope:api.v1.PrepareCancelOrderRequest)
  private:
@@ -2355,7 +2356,7 @@ class PrepareCancelOrderRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::OrderCancellation* cancellation_;
+  ::vega::commands::v1::OrderCancellation* cancellation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -2475,23 +2476,23 @@ class PrepareAmendOrderRequest PROTOBUF_FINAL :
   enum : int {
     kAmendmentFieldNumber = 1,
   };
-  // .vega.OrderAmendment amendment = 1 [json_name = "amendment"];
+  // .vega.commands.v1.OrderAmendment amendment = 1 [json_name = "amendment"];
   bool has_amendment() const;
   private:
   bool _internal_has_amendment() const;
   public:
   void clear_amendment();
-  const ::vega::OrderAmendment& amendment() const;
-  ::vega::OrderAmendment* release_amendment();
-  ::vega::OrderAmendment* mutable_amendment();
-  void set_allocated_amendment(::vega::OrderAmendment* amendment);
+  const ::vega::commands::v1::OrderAmendment& amendment() const;
+  ::vega::commands::v1::OrderAmendment* release_amendment();
+  ::vega::commands::v1::OrderAmendment* mutable_amendment();
+  void set_allocated_amendment(::vega::commands::v1::OrderAmendment* amendment);
   private:
-  const ::vega::OrderAmendment& _internal_amendment() const;
-  ::vega::OrderAmendment* _internal_mutable_amendment();
+  const ::vega::commands::v1::OrderAmendment& _internal_amendment() const;
+  ::vega::commands::v1::OrderAmendment* _internal_mutable_amendment();
   public:
   void unsafe_arena_set_allocated_amendment(
-      ::vega::OrderAmendment* amendment);
-  ::vega::OrderAmendment* unsafe_arena_release_amendment();
+      ::vega::commands::v1::OrderAmendment* amendment);
+  ::vega::commands::v1::OrderAmendment* unsafe_arena_release_amendment();
 
   // @@protoc_insertion_point(class_scope:api.v1.PrepareAmendOrderRequest)
  private:
@@ -2500,7 +2501,7 @@ class PrepareAmendOrderRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::OrderAmendment* amendment_;
+  ::vega::commands::v1::OrderAmendment* amendment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -3319,22 +3320,22 @@ class GetNodeSignaturesAggregateResponse PROTOBUF_FINAL :
   enum : int {
     kSignaturesFieldNumber = 1,
   };
-  // repeated .vega.NodeSignature signatures = 1 [json_name = "signatures"];
+  // repeated .vega.commands.v1.NodeSignature signatures = 1 [json_name = "signatures"];
   int signatures_size() const;
   private:
   int _internal_signatures_size() const;
   public:
   void clear_signatures();
-  ::vega::NodeSignature* mutable_signatures(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::NodeSignature >*
+  ::vega::commands::v1::NodeSignature* mutable_signatures(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::commands::v1::NodeSignature >*
       mutable_signatures();
   private:
-  const ::vega::NodeSignature& _internal_signatures(int index) const;
-  ::vega::NodeSignature* _internal_add_signatures();
+  const ::vega::commands::v1::NodeSignature& _internal_signatures(int index) const;
+  ::vega::commands::v1::NodeSignature* _internal_add_signatures();
   public:
-  const ::vega::NodeSignature& signatures(int index) const;
-  ::vega::NodeSignature* add_signatures();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::NodeSignature >&
+  const ::vega::commands::v1::NodeSignature& signatures(int index) const;
+  ::vega::commands::v1::NodeSignature* add_signatures();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::commands::v1::NodeSignature >&
       signatures() const;
 
   // @@protoc_insertion_point(class_scope:api.v1.GetNodeSignaturesAggregateResponse)
@@ -3344,7 +3345,7 @@ class GetNodeSignaturesAggregateResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::NodeSignature > signatures_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::commands::v1::NodeSignature > signatures_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -16972,23 +16973,23 @@ class FeeInfrastructureAccountsResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class PrepareProposalRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareProposalRequest) */ {
+class PrepareProposalSubmissionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareProposalSubmissionRequest) */ {
  public:
-  inline PrepareProposalRequest() : PrepareProposalRequest(nullptr) {}
-  virtual ~PrepareProposalRequest();
+  inline PrepareProposalSubmissionRequest() : PrepareProposalSubmissionRequest(nullptr) {}
+  virtual ~PrepareProposalSubmissionRequest();
 
-  PrepareProposalRequest(const PrepareProposalRequest& from);
-  PrepareProposalRequest(PrepareProposalRequest&& from) noexcept
-    : PrepareProposalRequest() {
+  PrepareProposalSubmissionRequest(const PrepareProposalSubmissionRequest& from);
+  PrepareProposalSubmissionRequest(PrepareProposalSubmissionRequest&& from) noexcept
+    : PrepareProposalSubmissionRequest() {
     *this = ::std::move(from);
   }
 
-  inline PrepareProposalRequest& operator=(const PrepareProposalRequest& from) {
+  inline PrepareProposalSubmissionRequest& operator=(const PrepareProposalSubmissionRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline PrepareProposalRequest& operator=(PrepareProposalRequest&& from) noexcept {
+  inline PrepareProposalSubmissionRequest& operator=(PrepareProposalSubmissionRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -17006,19 +17007,19 @@ class PrepareProposalRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const PrepareProposalRequest& default_instance();
+  static const PrepareProposalSubmissionRequest& default_instance();
 
-  static inline const PrepareProposalRequest* internal_default_instance() {
-    return reinterpret_cast<const PrepareProposalRequest*>(
-               &_PrepareProposalRequest_default_instance_);
+  static inline const PrepareProposalSubmissionRequest* internal_default_instance() {
+    return reinterpret_cast<const PrepareProposalSubmissionRequest*>(
+               &_PrepareProposalSubmissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     110;
 
-  friend void swap(PrepareProposalRequest& a, PrepareProposalRequest& b) {
+  friend void swap(PrepareProposalSubmissionRequest& a, PrepareProposalSubmissionRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(PrepareProposalRequest* other) {
+  inline void Swap(PrepareProposalSubmissionRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -17026,7 +17027,7 @@ class PrepareProposalRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(PrepareProposalRequest* other) {
+  void UnsafeArenaSwap(PrepareProposalSubmissionRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -17034,17 +17035,17 @@ class PrepareProposalRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline PrepareProposalRequest* New() const final {
-    return CreateMaybeMessage<PrepareProposalRequest>(nullptr);
+  inline PrepareProposalSubmissionRequest* New() const final {
+    return CreateMaybeMessage<PrepareProposalSubmissionRequest>(nullptr);
   }
 
-  PrepareProposalRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<PrepareProposalRequest>(arena);
+  PrepareProposalSubmissionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareProposalSubmissionRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const PrepareProposalRequest& from);
-  void MergeFrom(const PrepareProposalRequest& from);
+  void CopyFrom(const PrepareProposalSubmissionRequest& from);
+  void MergeFrom(const PrepareProposalSubmissionRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -17058,13 +17059,13 @@ class PrepareProposalRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PrepareProposalRequest* other);
+  void InternalSwap(PrepareProposalSubmissionRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "api.v1.PrepareProposalRequest";
+    return "api.v1.PrepareProposalSubmissionRequest";
   }
   protected:
-  explicit PrepareProposalRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PrepareProposalSubmissionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -17084,92 +17085,56 @@ class PrepareProposalRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPartyIdFieldNumber = 1,
-    kReferenceFieldNumber = 2,
-    kProposalFieldNumber = 3,
+    kSubmissionFieldNumber = 1,
   };
-  // string party_id = 1 [json_name = "partyId", (.validator.field) = {
-  void clear_party_id();
-  const std::string& party_id() const;
-  void set_party_id(const std::string& value);
-  void set_party_id(std::string&& value);
-  void set_party_id(const char* value);
-  void set_party_id(const char* value, size_t size);
-  std::string* mutable_party_id();
-  std::string* release_party_id();
-  void set_allocated_party_id(std::string* party_id);
+  // .vega.commands.v1.ProposalSubmission submission = 1 [json_name = "submission"];
+  bool has_submission() const;
   private:
-  const std::string& _internal_party_id() const;
-  void _internal_set_party_id(const std::string& value);
-  std::string* _internal_mutable_party_id();
+  bool _internal_has_submission() const;
   public:
+  void clear_submission();
+  const ::vega::commands::v1::ProposalSubmission& submission() const;
+  ::vega::commands::v1::ProposalSubmission* release_submission();
+  ::vega::commands::v1::ProposalSubmission* mutable_submission();
+  void set_allocated_submission(::vega::commands::v1::ProposalSubmission* submission);
+  private:
+  const ::vega::commands::v1::ProposalSubmission& _internal_submission() const;
+  ::vega::commands::v1::ProposalSubmission* _internal_mutable_submission();
+  public:
+  void unsafe_arena_set_allocated_submission(
+      ::vega::commands::v1::ProposalSubmission* submission);
+  ::vega::commands::v1::ProposalSubmission* unsafe_arena_release_submission();
 
-  // string reference = 2 [json_name = "reference"];
-  void clear_reference();
-  const std::string& reference() const;
-  void set_reference(const std::string& value);
-  void set_reference(std::string&& value);
-  void set_reference(const char* value);
-  void set_reference(const char* value, size_t size);
-  std::string* mutable_reference();
-  std::string* release_reference();
-  void set_allocated_reference(std::string* reference);
-  private:
-  const std::string& _internal_reference() const;
-  void _internal_set_reference(const std::string& value);
-  std::string* _internal_mutable_reference();
-  public:
-
-  // .vega.ProposalTerms proposal = 3 [json_name = "proposal", (.validator.field) = {
-  bool has_proposal() const;
-  private:
-  bool _internal_has_proposal() const;
-  public:
-  void clear_proposal();
-  const ::vega::ProposalTerms& proposal() const;
-  ::vega::ProposalTerms* release_proposal();
-  ::vega::ProposalTerms* mutable_proposal();
-  void set_allocated_proposal(::vega::ProposalTerms* proposal);
-  private:
-  const ::vega::ProposalTerms& _internal_proposal() const;
-  ::vega::ProposalTerms* _internal_mutable_proposal();
-  public:
-  void unsafe_arena_set_allocated_proposal(
-      ::vega::ProposalTerms* proposal);
-  ::vega::ProposalTerms* unsafe_arena_release_proposal();
-
-  // @@protoc_insertion_point(class_scope:api.v1.PrepareProposalRequest)
+  // @@protoc_insertion_point(class_scope:api.v1.PrepareProposalSubmissionRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
-  ::vega::ProposalTerms* proposal_;
+  ::vega::commands::v1::ProposalSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
 // -------------------------------------------------------------------
 
-class PrepareProposalResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareProposalResponse) */ {
+class PrepareProposalSubmissionResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareProposalSubmissionResponse) */ {
  public:
-  inline PrepareProposalResponse() : PrepareProposalResponse(nullptr) {}
-  virtual ~PrepareProposalResponse();
+  inline PrepareProposalSubmissionResponse() : PrepareProposalSubmissionResponse(nullptr) {}
+  virtual ~PrepareProposalSubmissionResponse();
 
-  PrepareProposalResponse(const PrepareProposalResponse& from);
-  PrepareProposalResponse(PrepareProposalResponse&& from) noexcept
-    : PrepareProposalResponse() {
+  PrepareProposalSubmissionResponse(const PrepareProposalSubmissionResponse& from);
+  PrepareProposalSubmissionResponse(PrepareProposalSubmissionResponse&& from) noexcept
+    : PrepareProposalSubmissionResponse() {
     *this = ::std::move(from);
   }
 
-  inline PrepareProposalResponse& operator=(const PrepareProposalResponse& from) {
+  inline PrepareProposalSubmissionResponse& operator=(const PrepareProposalSubmissionResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline PrepareProposalResponse& operator=(PrepareProposalResponse&& from) noexcept {
+  inline PrepareProposalSubmissionResponse& operator=(PrepareProposalSubmissionResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -17187,19 +17152,19 @@ class PrepareProposalResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const PrepareProposalResponse& default_instance();
+  static const PrepareProposalSubmissionResponse& default_instance();
 
-  static inline const PrepareProposalResponse* internal_default_instance() {
-    return reinterpret_cast<const PrepareProposalResponse*>(
-               &_PrepareProposalResponse_default_instance_);
+  static inline const PrepareProposalSubmissionResponse* internal_default_instance() {
+    return reinterpret_cast<const PrepareProposalSubmissionResponse*>(
+               &_PrepareProposalSubmissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     111;
 
-  friend void swap(PrepareProposalResponse& a, PrepareProposalResponse& b) {
+  friend void swap(PrepareProposalSubmissionResponse& a, PrepareProposalSubmissionResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(PrepareProposalResponse* other) {
+  inline void Swap(PrepareProposalSubmissionResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -17207,7 +17172,7 @@ class PrepareProposalResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(PrepareProposalResponse* other) {
+  void UnsafeArenaSwap(PrepareProposalSubmissionResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -17215,17 +17180,17 @@ class PrepareProposalResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline PrepareProposalResponse* New() const final {
-    return CreateMaybeMessage<PrepareProposalResponse>(nullptr);
+  inline PrepareProposalSubmissionResponse* New() const final {
+    return CreateMaybeMessage<PrepareProposalSubmissionResponse>(nullptr);
   }
 
-  PrepareProposalResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<PrepareProposalResponse>(arena);
+  PrepareProposalSubmissionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareProposalSubmissionResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const PrepareProposalResponse& from);
-  void MergeFrom(const PrepareProposalResponse& from);
+  void CopyFrom(const PrepareProposalSubmissionResponse& from);
+  void MergeFrom(const PrepareProposalSubmissionResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -17239,13 +17204,13 @@ class PrepareProposalResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PrepareProposalResponse* other);
+  void InternalSwap(PrepareProposalSubmissionResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "api.v1.PrepareProposalResponse";
+    return "api.v1.PrepareProposalSubmissionResponse";
   }
   protected:
-  explicit PrepareProposalResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PrepareProposalSubmissionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -17266,7 +17231,7 @@ class PrepareProposalResponse PROTOBUF_FINAL :
 
   enum : int {
     kBlobFieldNumber = 1,
-    kPendingProposalFieldNumber = 2,
+    kSubmissionFieldNumber = 2,
   };
   // bytes blob = 1 [json_name = "blob"];
   void clear_blob();
@@ -17284,25 +17249,25 @@ class PrepareProposalResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_blob();
   public:
 
-  // .vega.Proposal pending_proposal = 2 [json_name = "pendingProposal"];
-  bool has_pending_proposal() const;
+  // .vega.commands.v1.ProposalSubmission submission = 2 [json_name = "submission"];
+  bool has_submission() const;
   private:
-  bool _internal_has_pending_proposal() const;
+  bool _internal_has_submission() const;
   public:
-  void clear_pending_proposal();
-  const ::vega::Proposal& pending_proposal() const;
-  ::vega::Proposal* release_pending_proposal();
-  ::vega::Proposal* mutable_pending_proposal();
-  void set_allocated_pending_proposal(::vega::Proposal* pending_proposal);
+  void clear_submission();
+  const ::vega::commands::v1::ProposalSubmission& submission() const;
+  ::vega::commands::v1::ProposalSubmission* release_submission();
+  ::vega::commands::v1::ProposalSubmission* mutable_submission();
+  void set_allocated_submission(::vega::commands::v1::ProposalSubmission* submission);
   private:
-  const ::vega::Proposal& _internal_pending_proposal() const;
-  ::vega::Proposal* _internal_mutable_pending_proposal();
+  const ::vega::commands::v1::ProposalSubmission& _internal_submission() const;
+  ::vega::commands::v1::ProposalSubmission* _internal_mutable_submission();
   public:
-  void unsafe_arena_set_allocated_pending_proposal(
-      ::vega::Proposal* pending_proposal);
-  ::vega::Proposal* unsafe_arena_release_pending_proposal();
+  void unsafe_arena_set_allocated_submission(
+      ::vega::commands::v1::ProposalSubmission* submission);
+  ::vega::commands::v1::ProposalSubmission* unsafe_arena_release_submission();
 
-  // @@protoc_insertion_point(class_scope:api.v1.PrepareProposalResponse)
+  // @@protoc_insertion_point(class_scope:api.v1.PrepareProposalSubmissionResponse)
  private:
   class _Internal;
 
@@ -17310,29 +17275,29 @@ class PrepareProposalResponse PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  ::vega::Proposal* pending_proposal_;
+  ::vega::commands::v1::ProposalSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
 // -------------------------------------------------------------------
 
-class PrepareVoteRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteRequest) */ {
+class PrepareVoteSubmissionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteSubmissionRequest) */ {
  public:
-  inline PrepareVoteRequest() : PrepareVoteRequest(nullptr) {}
-  virtual ~PrepareVoteRequest();
+  inline PrepareVoteSubmissionRequest() : PrepareVoteSubmissionRequest(nullptr) {}
+  virtual ~PrepareVoteSubmissionRequest();
 
-  PrepareVoteRequest(const PrepareVoteRequest& from);
-  PrepareVoteRequest(PrepareVoteRequest&& from) noexcept
-    : PrepareVoteRequest() {
+  PrepareVoteSubmissionRequest(const PrepareVoteSubmissionRequest& from);
+  PrepareVoteSubmissionRequest(PrepareVoteSubmissionRequest&& from) noexcept
+    : PrepareVoteSubmissionRequest() {
     *this = ::std::move(from);
   }
 
-  inline PrepareVoteRequest& operator=(const PrepareVoteRequest& from) {
+  inline PrepareVoteSubmissionRequest& operator=(const PrepareVoteSubmissionRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline PrepareVoteRequest& operator=(PrepareVoteRequest&& from) noexcept {
+  inline PrepareVoteSubmissionRequest& operator=(PrepareVoteSubmissionRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -17350,19 +17315,19 @@ class PrepareVoteRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const PrepareVoteRequest& default_instance();
+  static const PrepareVoteSubmissionRequest& default_instance();
 
-  static inline const PrepareVoteRequest* internal_default_instance() {
-    return reinterpret_cast<const PrepareVoteRequest*>(
-               &_PrepareVoteRequest_default_instance_);
+  static inline const PrepareVoteSubmissionRequest* internal_default_instance() {
+    return reinterpret_cast<const PrepareVoteSubmissionRequest*>(
+               &_PrepareVoteSubmissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     112;
 
-  friend void swap(PrepareVoteRequest& a, PrepareVoteRequest& b) {
+  friend void swap(PrepareVoteSubmissionRequest& a, PrepareVoteSubmissionRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(PrepareVoteRequest* other) {
+  inline void Swap(PrepareVoteSubmissionRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -17370,7 +17335,7 @@ class PrepareVoteRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(PrepareVoteRequest* other) {
+  void UnsafeArenaSwap(PrepareVoteSubmissionRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -17378,17 +17343,17 @@ class PrepareVoteRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline PrepareVoteRequest* New() const final {
-    return CreateMaybeMessage<PrepareVoteRequest>(nullptr);
+  inline PrepareVoteSubmissionRequest* New() const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionRequest>(nullptr);
   }
 
-  PrepareVoteRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<PrepareVoteRequest>(arena);
+  PrepareVoteSubmissionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const PrepareVoteRequest& from);
-  void MergeFrom(const PrepareVoteRequest& from);
+  void CopyFrom(const PrepareVoteSubmissionRequest& from);
+  void MergeFrom(const PrepareVoteSubmissionRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -17402,13 +17367,13 @@ class PrepareVoteRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PrepareVoteRequest* other);
+  void InternalSwap(PrepareVoteSubmissionRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "api.v1.PrepareVoteRequest";
+    return "api.v1.PrepareVoteSubmissionRequest";
   }
   protected:
-  explicit PrepareVoteRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PrepareVoteSubmissionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -17428,56 +17393,56 @@ class PrepareVoteRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kVoteFieldNumber = 1,
+    kSubmissionFieldNumber = 1,
   };
-  // .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
-  bool has_vote() const;
+  // .vega.commands.v1.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  bool has_submission() const;
   private:
-  bool _internal_has_vote() const;
+  bool _internal_has_submission() const;
   public:
-  void clear_vote();
-  const ::vega::Vote& vote() const;
-  ::vega::Vote* release_vote();
-  ::vega::Vote* mutable_vote();
-  void set_allocated_vote(::vega::Vote* vote);
+  void clear_submission();
+  const ::vega::commands::v1::VoteSubmission& submission() const;
+  ::vega::commands::v1::VoteSubmission* release_submission();
+  ::vega::commands::v1::VoteSubmission* mutable_submission();
+  void set_allocated_submission(::vega::commands::v1::VoteSubmission* submission);
   private:
-  const ::vega::Vote& _internal_vote() const;
-  ::vega::Vote* _internal_mutable_vote();
+  const ::vega::commands::v1::VoteSubmission& _internal_submission() const;
+  ::vega::commands::v1::VoteSubmission* _internal_mutable_submission();
   public:
-  void unsafe_arena_set_allocated_vote(
-      ::vega::Vote* vote);
-  ::vega::Vote* unsafe_arena_release_vote();
+  void unsafe_arena_set_allocated_submission(
+      ::vega::commands::v1::VoteSubmission* submission);
+  ::vega::commands::v1::VoteSubmission* unsafe_arena_release_submission();
 
-  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteRequest)
+  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteSubmissionRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::Vote* vote_;
+  ::vega::commands::v1::VoteSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
 // -------------------------------------------------------------------
 
-class PrepareVoteResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteResponse) */ {
+class PrepareVoteSubmissionResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareVoteSubmissionResponse) */ {
  public:
-  inline PrepareVoteResponse() : PrepareVoteResponse(nullptr) {}
-  virtual ~PrepareVoteResponse();
+  inline PrepareVoteSubmissionResponse() : PrepareVoteSubmissionResponse(nullptr) {}
+  virtual ~PrepareVoteSubmissionResponse();
 
-  PrepareVoteResponse(const PrepareVoteResponse& from);
-  PrepareVoteResponse(PrepareVoteResponse&& from) noexcept
-    : PrepareVoteResponse() {
+  PrepareVoteSubmissionResponse(const PrepareVoteSubmissionResponse& from);
+  PrepareVoteSubmissionResponse(PrepareVoteSubmissionResponse&& from) noexcept
+    : PrepareVoteSubmissionResponse() {
     *this = ::std::move(from);
   }
 
-  inline PrepareVoteResponse& operator=(const PrepareVoteResponse& from) {
+  inline PrepareVoteSubmissionResponse& operator=(const PrepareVoteSubmissionResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline PrepareVoteResponse& operator=(PrepareVoteResponse&& from) noexcept {
+  inline PrepareVoteSubmissionResponse& operator=(PrepareVoteSubmissionResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -17495,19 +17460,19 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const PrepareVoteResponse& default_instance();
+  static const PrepareVoteSubmissionResponse& default_instance();
 
-  static inline const PrepareVoteResponse* internal_default_instance() {
-    return reinterpret_cast<const PrepareVoteResponse*>(
-               &_PrepareVoteResponse_default_instance_);
+  static inline const PrepareVoteSubmissionResponse* internal_default_instance() {
+    return reinterpret_cast<const PrepareVoteSubmissionResponse*>(
+               &_PrepareVoteSubmissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     113;
 
-  friend void swap(PrepareVoteResponse& a, PrepareVoteResponse& b) {
+  friend void swap(PrepareVoteSubmissionResponse& a, PrepareVoteSubmissionResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(PrepareVoteResponse* other) {
+  inline void Swap(PrepareVoteSubmissionResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -17515,7 +17480,7 @@ class PrepareVoteResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(PrepareVoteResponse* other) {
+  void UnsafeArenaSwap(PrepareVoteSubmissionResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -17523,17 +17488,17 @@ class PrepareVoteResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline PrepareVoteResponse* New() const final {
-    return CreateMaybeMessage<PrepareVoteResponse>(nullptr);
+  inline PrepareVoteSubmissionResponse* New() const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionResponse>(nullptr);
   }
 
-  PrepareVoteResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<PrepareVoteResponse>(arena);
+  PrepareVoteSubmissionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareVoteSubmissionResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const PrepareVoteResponse& from);
-  void MergeFrom(const PrepareVoteResponse& from);
+  void CopyFrom(const PrepareVoteSubmissionResponse& from);
+  void MergeFrom(const PrepareVoteSubmissionResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -17547,13 +17512,13 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(PrepareVoteResponse* other);
+  void InternalSwap(PrepareVoteSubmissionResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "api.v1.PrepareVoteResponse";
+    return "api.v1.PrepareVoteSubmissionResponse";
   }
   protected:
-  explicit PrepareVoteResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit PrepareVoteSubmissionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -17574,7 +17539,7 @@ class PrepareVoteResponse PROTOBUF_FINAL :
 
   enum : int {
     kBlobFieldNumber = 1,
-    kVoteFieldNumber = 2,
+    kSubmissionFieldNumber = 2,
   };
   // bytes blob = 1 [json_name = "blob"];
   void clear_blob();
@@ -17592,25 +17557,25 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_blob();
   public:
 
-  // .vega.Vote vote = 2 [json_name = "vote"];
-  bool has_vote() const;
+  // .vega.commands.v1.VoteSubmission submission = 2 [json_name = "submission"];
+  bool has_submission() const;
   private:
-  bool _internal_has_vote() const;
+  bool _internal_has_submission() const;
   public:
-  void clear_vote();
-  const ::vega::Vote& vote() const;
-  ::vega::Vote* release_vote();
-  ::vega::Vote* mutable_vote();
-  void set_allocated_vote(::vega::Vote* vote);
+  void clear_submission();
+  const ::vega::commands::v1::VoteSubmission& submission() const;
+  ::vega::commands::v1::VoteSubmission* release_submission();
+  ::vega::commands::v1::VoteSubmission* mutable_submission();
+  void set_allocated_submission(::vega::commands::v1::VoteSubmission* submission);
   private:
-  const ::vega::Vote& _internal_vote() const;
-  ::vega::Vote* _internal_mutable_vote();
+  const ::vega::commands::v1::VoteSubmission& _internal_submission() const;
+  ::vega::commands::v1::VoteSubmission* _internal_mutable_submission();
   public:
-  void unsafe_arena_set_allocated_vote(
-      ::vega::Vote* vote);
-  ::vega::Vote* unsafe_arena_release_vote();
+  void unsafe_arena_set_allocated_submission(
+      ::vega::commands::v1::VoteSubmission* submission);
+  ::vega::commands::v1::VoteSubmission* unsafe_arena_release_submission();
 
-  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteResponse)
+  // @@protoc_insertion_point(class_scope:api.v1.PrepareVoteSubmissionResponse)
  private:
   class _Internal;
 
@@ -17618,7 +17583,7 @@ class PrepareVoteResponse PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  ::vega::Vote* vote_;
+  ::vega::commands::v1::VoteSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -17738,23 +17703,23 @@ class PrepareLiquidityProvisionRequest PROTOBUF_FINAL :
   enum : int {
     kSubmissionFieldNumber = 1,
   };
-  // .vega.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+  // .vega.commands.v1.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
   bool has_submission() const;
   private:
   bool _internal_has_submission() const;
   public:
   void clear_submission();
-  const ::vega::LiquidityProvisionSubmission& submission() const;
-  ::vega::LiquidityProvisionSubmission* release_submission();
-  ::vega::LiquidityProvisionSubmission* mutable_submission();
-  void set_allocated_submission(::vega::LiquidityProvisionSubmission* submission);
+  const ::vega::commands::v1::LiquidityProvisionSubmission& submission() const;
+  ::vega::commands::v1::LiquidityProvisionSubmission* release_submission();
+  ::vega::commands::v1::LiquidityProvisionSubmission* mutable_submission();
+  void set_allocated_submission(::vega::commands::v1::LiquidityProvisionSubmission* submission);
   private:
-  const ::vega::LiquidityProvisionSubmission& _internal_submission() const;
-  ::vega::LiquidityProvisionSubmission* _internal_mutable_submission();
+  const ::vega::commands::v1::LiquidityProvisionSubmission& _internal_submission() const;
+  ::vega::commands::v1::LiquidityProvisionSubmission* _internal_mutable_submission();
   public:
   void unsafe_arena_set_allocated_submission(
-      ::vega::LiquidityProvisionSubmission* submission);
-  ::vega::LiquidityProvisionSubmission* unsafe_arena_release_submission();
+      ::vega::commands::v1::LiquidityProvisionSubmission* submission);
+  ::vega::commands::v1::LiquidityProvisionSubmission* unsafe_arena_release_submission();
 
   // @@protoc_insertion_point(class_scope:api.v1.PrepareLiquidityProvisionRequest)
  private:
@@ -17763,7 +17728,7 @@ class PrepareLiquidityProvisionRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::LiquidityProvisionSubmission* submission_;
+  ::vega::commands::v1::LiquidityProvisionSubmission* submission_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -19216,20 +19181,20 @@ class ObserveEventBusRequest PROTOBUF_FINAL :
     kPartyIdFieldNumber = 3,
     kBatchSizeFieldNumber = 4,
   };
-  // repeated .vega.BusEventType type = 1 [json_name = "type"];
+  // repeated .vega.events.v1.BusEventType type = 1 [json_name = "type"];
   int type_size() const;
   private:
   int _internal_type_size() const;
   public:
   void clear_type();
   private:
-  ::vega::BusEventType _internal_type(int index) const;
-  void _internal_add_type(::vega::BusEventType value);
+  ::vega::events::v1::BusEventType _internal_type(int index) const;
+  void _internal_add_type(::vega::events::v1::BusEventType value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_type();
   public:
-  ::vega::BusEventType type(int index) const;
-  void set_type(int index, ::vega::BusEventType value);
-  void add_type(::vega::BusEventType value);
+  ::vega::events::v1::BusEventType type(int index) const;
+  void set_type(int index, ::vega::events::v1::BusEventType value);
+  void add_type(::vega::events::v1::BusEventType value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& type() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_type();
 
@@ -19405,22 +19370,22 @@ class ObserveEventBusResponse PROTOBUF_FINAL :
   enum : int {
     kEventsFieldNumber = 1,
   };
-  // repeated .vega.BusEvent events = 1 [json_name = "events"];
+  // repeated .vega.events.v1.BusEvent events = 1 [json_name = "events"];
   int events_size() const;
   private:
   int _internal_events_size() const;
   public:
   void clear_events();
-  ::vega::BusEvent* mutable_events(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::BusEvent >*
+  ::vega::events::v1::BusEvent* mutable_events(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::events::v1::BusEvent >*
       mutable_events();
   private:
-  const ::vega::BusEvent& _internal_events(int index) const;
-  ::vega::BusEvent* _internal_add_events();
+  const ::vega::events::v1::BusEvent& _internal_events(int index) const;
+  ::vega::events::v1::BusEvent* _internal_add_events();
   public:
-  const ::vega::BusEvent& events(int index) const;
-  ::vega::BusEvent* add_events();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::BusEvent >&
+  const ::vega::events::v1::BusEvent& events(int index) const;
+  ::vega::events::v1::BusEvent* add_events();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::events::v1::BusEvent >&
       events() const;
 
   // @@protoc_insertion_point(class_scope:api.v1.ObserveEventBusResponse)
@@ -19430,7 +19395,7 @@ class ObserveEventBusResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::BusEvent > events_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::events::v1::BusEvent > events_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
@@ -22634,24 +22599,24 @@ class OracleDataBySpecResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // PropagateChainEventRequest
 
-// .vega.ChainEvent evt = 1 [json_name = "evt"];
+// .vega.commands.v1.ChainEvent evt = 1 [json_name = "evt"];
 inline bool PropagateChainEventRequest::_internal_has_evt() const {
   return this != internal_default_instance() && evt_ != nullptr;
 }
 inline bool PropagateChainEventRequest::has_evt() const {
   return _internal_has_evt();
 }
-inline const ::vega::ChainEvent& PropagateChainEventRequest::_internal_evt() const {
-  const ::vega::ChainEvent* p = evt_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::ChainEvent&>(
-      ::vega::_ChainEvent_default_instance_);
+inline const ::vega::commands::v1::ChainEvent& PropagateChainEventRequest::_internal_evt() const {
+  const ::vega::commands::v1::ChainEvent* p = evt_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::ChainEvent&>(
+      ::vega::commands::v1::_ChainEvent_default_instance_);
 }
-inline const ::vega::ChainEvent& PropagateChainEventRequest::evt() const {
+inline const ::vega::commands::v1::ChainEvent& PropagateChainEventRequest::evt() const {
   // @@protoc_insertion_point(field_get:api.v1.PropagateChainEventRequest.evt)
   return _internal_evt();
 }
 inline void PropagateChainEventRequest::unsafe_arena_set_allocated_evt(
-    ::vega::ChainEvent* evt) {
+    ::vega::commands::v1::ChainEvent* evt) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(evt_);
   }
@@ -22663,35 +22628,35 @@ inline void PropagateChainEventRequest::unsafe_arena_set_allocated_evt(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PropagateChainEventRequest.evt)
 }
-inline ::vega::ChainEvent* PropagateChainEventRequest::release_evt() {
+inline ::vega::commands::v1::ChainEvent* PropagateChainEventRequest::release_evt() {
 
-  ::vega::ChainEvent* temp = evt_;
+  ::vega::commands::v1::ChainEvent* temp = evt_;
   evt_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::ChainEvent* PropagateChainEventRequest::unsafe_arena_release_evt() {
+inline ::vega::commands::v1::ChainEvent* PropagateChainEventRequest::unsafe_arena_release_evt() {
   // @@protoc_insertion_point(field_release:api.v1.PropagateChainEventRequest.evt)
 
-  ::vega::ChainEvent* temp = evt_;
+  ::vega::commands::v1::ChainEvent* temp = evt_;
   evt_ = nullptr;
   return temp;
 }
-inline ::vega::ChainEvent* PropagateChainEventRequest::_internal_mutable_evt() {
+inline ::vega::commands::v1::ChainEvent* PropagateChainEventRequest::_internal_mutable_evt() {
 
   if (evt_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::ChainEvent>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::commands::v1::ChainEvent>(GetArena());
     evt_ = p;
   }
   return evt_;
 }
-inline ::vega::ChainEvent* PropagateChainEventRequest::mutable_evt() {
+inline ::vega::commands::v1::ChainEvent* PropagateChainEventRequest::mutable_evt() {
   // @@protoc_insertion_point(field_mutable:api.v1.PropagateChainEventRequest.evt)
   return _internal_mutable_evt();
 }
-inline void PropagateChainEventRequest::set_allocated_evt(::vega::ChainEvent* evt) {
+inline void PropagateChainEventRequest::set_allocated_evt(::vega::commands::v1::ChainEvent* evt) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(evt_);
@@ -22986,24 +22951,24 @@ inline void SubmitTransactionResponse::set_success(bool value) {
 
 // PrepareWithdrawRequest
 
-// .vega.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
+// .vega.commands.v1.WithdrawSubmission withdraw = 1 [json_name = "withdraw"];
 inline bool PrepareWithdrawRequest::_internal_has_withdraw() const {
   return this != internal_default_instance() && withdraw_ != nullptr;
 }
 inline bool PrepareWithdrawRequest::has_withdraw() const {
   return _internal_has_withdraw();
 }
-inline const ::vega::WithdrawSubmission& PrepareWithdrawRequest::_internal_withdraw() const {
-  const ::vega::WithdrawSubmission* p = withdraw_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::WithdrawSubmission&>(
-      ::vega::_WithdrawSubmission_default_instance_);
+inline const ::vega::commands::v1::WithdrawSubmission& PrepareWithdrawRequest::_internal_withdraw() const {
+  const ::vega::commands::v1::WithdrawSubmission* p = withdraw_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::WithdrawSubmission&>(
+      ::vega::commands::v1::_WithdrawSubmission_default_instance_);
 }
-inline const ::vega::WithdrawSubmission& PrepareWithdrawRequest::withdraw() const {
+inline const ::vega::commands::v1::WithdrawSubmission& PrepareWithdrawRequest::withdraw() const {
   // @@protoc_insertion_point(field_get:api.v1.PrepareWithdrawRequest.withdraw)
   return _internal_withdraw();
 }
 inline void PrepareWithdrawRequest::unsafe_arena_set_allocated_withdraw(
-    ::vega::WithdrawSubmission* withdraw) {
+    ::vega::commands::v1::WithdrawSubmission* withdraw) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(withdraw_);
   }
@@ -23015,35 +22980,35 @@ inline void PrepareWithdrawRequest::unsafe_arena_set_allocated_withdraw(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareWithdrawRequest.withdraw)
 }
-inline ::vega::WithdrawSubmission* PrepareWithdrawRequest::release_withdraw() {
+inline ::vega::commands::v1::WithdrawSubmission* PrepareWithdrawRequest::release_withdraw() {
 
-  ::vega::WithdrawSubmission* temp = withdraw_;
+  ::vega::commands::v1::WithdrawSubmission* temp = withdraw_;
   withdraw_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::WithdrawSubmission* PrepareWithdrawRequest::unsafe_arena_release_withdraw() {
+inline ::vega::commands::v1::WithdrawSubmission* PrepareWithdrawRequest::unsafe_arena_release_withdraw() {
   // @@protoc_insertion_point(field_release:api.v1.PrepareWithdrawRequest.withdraw)
 
-  ::vega::WithdrawSubmission* temp = withdraw_;
+  ::vega::commands::v1::WithdrawSubmission* temp = withdraw_;
   withdraw_ = nullptr;
   return temp;
 }
-inline ::vega::WithdrawSubmission* PrepareWithdrawRequest::_internal_mutable_withdraw() {
+inline ::vega::commands::v1::WithdrawSubmission* PrepareWithdrawRequest::_internal_mutable_withdraw() {
 
   if (withdraw_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::WithdrawSubmission>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::commands::v1::WithdrawSubmission>(GetArena());
     withdraw_ = p;
   }
   return withdraw_;
 }
-inline ::vega::WithdrawSubmission* PrepareWithdrawRequest::mutable_withdraw() {
+inline ::vega::commands::v1::WithdrawSubmission* PrepareWithdrawRequest::mutable_withdraw() {
   // @@protoc_insertion_point(field_mutable:api.v1.PrepareWithdrawRequest.withdraw)
   return _internal_mutable_withdraw();
 }
-inline void PrepareWithdrawRequest::set_allocated_withdraw(::vega::WithdrawSubmission* withdraw) {
+inline void PrepareWithdrawRequest::set_allocated_withdraw(::vega::commands::v1::WithdrawSubmission* withdraw) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(withdraw_);
@@ -23388,24 +23353,24 @@ inline void PrepareAmendOrderResponse::set_allocated_blob(std::string* blob) {
 
 // PrepareSubmitOrderRequest
 
-// .vega.OrderSubmission submission = 1 [json_name = "submission"];
+// .vega.commands.v1.OrderSubmission submission = 1 [json_name = "submission"];
 inline bool PrepareSubmitOrderRequest::_internal_has_submission() const {
   return this != internal_default_instance() && submission_ != nullptr;
 }
 inline bool PrepareSubmitOrderRequest::has_submission() const {
   return _internal_has_submission();
 }
-inline const ::vega::OrderSubmission& PrepareSubmitOrderRequest::_internal_submission() const {
-  const ::vega::OrderSubmission* p = submission_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::OrderSubmission&>(
-      ::vega::_OrderSubmission_default_instance_);
+inline const ::vega::commands::v1::OrderSubmission& PrepareSubmitOrderRequest::_internal_submission() const {
+  const ::vega::commands::v1::OrderSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::OrderSubmission&>(
+      ::vega::commands::v1::_OrderSubmission_default_instance_);
 }
-inline const ::vega::OrderSubmission& PrepareSubmitOrderRequest::submission() const {
+inline const ::vega::commands::v1::OrderSubmission& PrepareSubmitOrderRequest::submission() const {
   // @@protoc_insertion_point(field_get:api.v1.PrepareSubmitOrderRequest.submission)
   return _internal_submission();
 }
 inline void PrepareSubmitOrderRequest::unsafe_arena_set_allocated_submission(
-    ::vega::OrderSubmission* submission) {
+    ::vega::commands::v1::OrderSubmission* submission) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
@@ -23417,35 +23382,35 @@ inline void PrepareSubmitOrderRequest::unsafe_arena_set_allocated_submission(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareSubmitOrderRequest.submission)
 }
-inline ::vega::OrderSubmission* PrepareSubmitOrderRequest::release_submission() {
+inline ::vega::commands::v1::OrderSubmission* PrepareSubmitOrderRequest::release_submission() {
 
-  ::vega::OrderSubmission* temp = submission_;
+  ::vega::commands::v1::OrderSubmission* temp = submission_;
   submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::OrderSubmission* PrepareSubmitOrderRequest::unsafe_arena_release_submission() {
+inline ::vega::commands::v1::OrderSubmission* PrepareSubmitOrderRequest::unsafe_arena_release_submission() {
   // @@protoc_insertion_point(field_release:api.v1.PrepareSubmitOrderRequest.submission)
 
-  ::vega::OrderSubmission* temp = submission_;
+  ::vega::commands::v1::OrderSubmission* temp = submission_;
   submission_ = nullptr;
   return temp;
 }
-inline ::vega::OrderSubmission* PrepareSubmitOrderRequest::_internal_mutable_submission() {
+inline ::vega::commands::v1::OrderSubmission* PrepareSubmitOrderRequest::_internal_mutable_submission() {
 
   if (submission_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::OrderSubmission>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::commands::v1::OrderSubmission>(GetArena());
     submission_ = p;
   }
   return submission_;
 }
-inline ::vega::OrderSubmission* PrepareSubmitOrderRequest::mutable_submission() {
+inline ::vega::commands::v1::OrderSubmission* PrepareSubmitOrderRequest::mutable_submission() {
   // @@protoc_insertion_point(field_mutable:api.v1.PrepareSubmitOrderRequest.submission)
   return _internal_mutable_submission();
 }
-inline void PrepareSubmitOrderRequest::set_allocated_submission(::vega::OrderSubmission* submission) {
+inline void PrepareSubmitOrderRequest::set_allocated_submission(::vega::commands::v1::OrderSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
@@ -23469,24 +23434,24 @@ inline void PrepareSubmitOrderRequest::set_allocated_submission(::vega::OrderSub
 
 // PrepareCancelOrderRequest
 
-// .vega.OrderCancellation cancellation = 1 [json_name = "cancellation"];
+// .vega.commands.v1.OrderCancellation cancellation = 1 [json_name = "cancellation"];
 inline bool PrepareCancelOrderRequest::_internal_has_cancellation() const {
   return this != internal_default_instance() && cancellation_ != nullptr;
 }
 inline bool PrepareCancelOrderRequest::has_cancellation() const {
   return _internal_has_cancellation();
 }
-inline const ::vega::OrderCancellation& PrepareCancelOrderRequest::_internal_cancellation() const {
-  const ::vega::OrderCancellation* p = cancellation_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::OrderCancellation&>(
-      ::vega::_OrderCancellation_default_instance_);
+inline const ::vega::commands::v1::OrderCancellation& PrepareCancelOrderRequest::_internal_cancellation() const {
+  const ::vega::commands::v1::OrderCancellation* p = cancellation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::OrderCancellation&>(
+      ::vega::commands::v1::_OrderCancellation_default_instance_);
 }
-inline const ::vega::OrderCancellation& PrepareCancelOrderRequest::cancellation() const {
+inline const ::vega::commands::v1::OrderCancellation& PrepareCancelOrderRequest::cancellation() const {
   // @@protoc_insertion_point(field_get:api.v1.PrepareCancelOrderRequest.cancellation)
   return _internal_cancellation();
 }
 inline void PrepareCancelOrderRequest::unsafe_arena_set_allocated_cancellation(
-    ::vega::OrderCancellation* cancellation) {
+    ::vega::commands::v1::OrderCancellation* cancellation) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(cancellation_);
   }
@@ -23498,35 +23463,35 @@ inline void PrepareCancelOrderRequest::unsafe_arena_set_allocated_cancellation(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareCancelOrderRequest.cancellation)
 }
-inline ::vega::OrderCancellation* PrepareCancelOrderRequest::release_cancellation() {
+inline ::vega::commands::v1::OrderCancellation* PrepareCancelOrderRequest::release_cancellation() {
 
-  ::vega::OrderCancellation* temp = cancellation_;
+  ::vega::commands::v1::OrderCancellation* temp = cancellation_;
   cancellation_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::OrderCancellation* PrepareCancelOrderRequest::unsafe_arena_release_cancellation() {
+inline ::vega::commands::v1::OrderCancellation* PrepareCancelOrderRequest::unsafe_arena_release_cancellation() {
   // @@protoc_insertion_point(field_release:api.v1.PrepareCancelOrderRequest.cancellation)
 
-  ::vega::OrderCancellation* temp = cancellation_;
+  ::vega::commands::v1::OrderCancellation* temp = cancellation_;
   cancellation_ = nullptr;
   return temp;
 }
-inline ::vega::OrderCancellation* PrepareCancelOrderRequest::_internal_mutable_cancellation() {
+inline ::vega::commands::v1::OrderCancellation* PrepareCancelOrderRequest::_internal_mutable_cancellation() {
 
   if (cancellation_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::OrderCancellation>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::commands::v1::OrderCancellation>(GetArena());
     cancellation_ = p;
   }
   return cancellation_;
 }
-inline ::vega::OrderCancellation* PrepareCancelOrderRequest::mutable_cancellation() {
+inline ::vega::commands::v1::OrderCancellation* PrepareCancelOrderRequest::mutable_cancellation() {
   // @@protoc_insertion_point(field_mutable:api.v1.PrepareCancelOrderRequest.cancellation)
   return _internal_mutable_cancellation();
 }
-inline void PrepareCancelOrderRequest::set_allocated_cancellation(::vega::OrderCancellation* cancellation) {
+inline void PrepareCancelOrderRequest::set_allocated_cancellation(::vega::commands::v1::OrderCancellation* cancellation) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(cancellation_);
@@ -23550,24 +23515,24 @@ inline void PrepareCancelOrderRequest::set_allocated_cancellation(::vega::OrderC
 
 // PrepareAmendOrderRequest
 
-// .vega.OrderAmendment amendment = 1 [json_name = "amendment"];
+// .vega.commands.v1.OrderAmendment amendment = 1 [json_name = "amendment"];
 inline bool PrepareAmendOrderRequest::_internal_has_amendment() const {
   return this != internal_default_instance() && amendment_ != nullptr;
 }
 inline bool PrepareAmendOrderRequest::has_amendment() const {
   return _internal_has_amendment();
 }
-inline const ::vega::OrderAmendment& PrepareAmendOrderRequest::_internal_amendment() const {
-  const ::vega::OrderAmendment* p = amendment_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::OrderAmendment&>(
-      ::vega::_OrderAmendment_default_instance_);
+inline const ::vega::commands::v1::OrderAmendment& PrepareAmendOrderRequest::_internal_amendment() const {
+  const ::vega::commands::v1::OrderAmendment* p = amendment_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::OrderAmendment&>(
+      ::vega::commands::v1::_OrderAmendment_default_instance_);
 }
-inline const ::vega::OrderAmendment& PrepareAmendOrderRequest::amendment() const {
+inline const ::vega::commands::v1::OrderAmendment& PrepareAmendOrderRequest::amendment() const {
   // @@protoc_insertion_point(field_get:api.v1.PrepareAmendOrderRequest.amendment)
   return _internal_amendment();
 }
 inline void PrepareAmendOrderRequest::unsafe_arena_set_allocated_amendment(
-    ::vega::OrderAmendment* amendment) {
+    ::vega::commands::v1::OrderAmendment* amendment) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(amendment_);
   }
@@ -23579,35 +23544,35 @@ inline void PrepareAmendOrderRequest::unsafe_arena_set_allocated_amendment(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareAmendOrderRequest.amendment)
 }
-inline ::vega::OrderAmendment* PrepareAmendOrderRequest::release_amendment() {
+inline ::vega::commands::v1::OrderAmendment* PrepareAmendOrderRequest::release_amendment() {
 
-  ::vega::OrderAmendment* temp = amendment_;
+  ::vega::commands::v1::OrderAmendment* temp = amendment_;
   amendment_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::OrderAmendment* PrepareAmendOrderRequest::unsafe_arena_release_amendment() {
+inline ::vega::commands::v1::OrderAmendment* PrepareAmendOrderRequest::unsafe_arena_release_amendment() {
   // @@protoc_insertion_point(field_release:api.v1.PrepareAmendOrderRequest.amendment)
 
-  ::vega::OrderAmendment* temp = amendment_;
+  ::vega::commands::v1::OrderAmendment* temp = amendment_;
   amendment_ = nullptr;
   return temp;
 }
-inline ::vega::OrderAmendment* PrepareAmendOrderRequest::_internal_mutable_amendment() {
+inline ::vega::commands::v1::OrderAmendment* PrepareAmendOrderRequest::_internal_mutable_amendment() {
 
   if (amendment_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::OrderAmendment>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::commands::v1::OrderAmendment>(GetArena());
     amendment_ = p;
   }
   return amendment_;
 }
-inline ::vega::OrderAmendment* PrepareAmendOrderRequest::mutable_amendment() {
+inline ::vega::commands::v1::OrderAmendment* PrepareAmendOrderRequest::mutable_amendment() {
   // @@protoc_insertion_point(field_mutable:api.v1.PrepareAmendOrderRequest.amendment)
   return _internal_mutable_amendment();
 }
-inline void PrepareAmendOrderRequest::set_allocated_amendment(::vega::OrderAmendment* amendment) {
+inline void PrepareAmendOrderRequest::set_allocated_amendment(::vega::commands::v1::OrderAmendment* amendment) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(amendment_);
@@ -23886,37 +23851,37 @@ inline void GetNodeSignaturesAggregateRequest::set_allocated_id(std::string* id)
 
 // GetNodeSignaturesAggregateResponse
 
-// repeated .vega.NodeSignature signatures = 1 [json_name = "signatures"];
+// repeated .vega.commands.v1.NodeSignature signatures = 1 [json_name = "signatures"];
 inline int GetNodeSignaturesAggregateResponse::_internal_signatures_size() const {
   return signatures_.size();
 }
 inline int GetNodeSignaturesAggregateResponse::signatures_size() const {
   return _internal_signatures_size();
 }
-inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::mutable_signatures(int index) {
+inline ::vega::commands::v1::NodeSignature* GetNodeSignaturesAggregateResponse::mutable_signatures(int index) {
   // @@protoc_insertion_point(field_mutable:api.v1.GetNodeSignaturesAggregateResponse.signatures)
   return signatures_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::NodeSignature >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::commands::v1::NodeSignature >*
 GetNodeSignaturesAggregateResponse::mutable_signatures() {
   // @@protoc_insertion_point(field_mutable_list:api.v1.GetNodeSignaturesAggregateResponse.signatures)
   return &signatures_;
 }
-inline const ::vega::NodeSignature& GetNodeSignaturesAggregateResponse::_internal_signatures(int index) const {
+inline const ::vega::commands::v1::NodeSignature& GetNodeSignaturesAggregateResponse::_internal_signatures(int index) const {
   return signatures_.Get(index);
 }
-inline const ::vega::NodeSignature& GetNodeSignaturesAggregateResponse::signatures(int index) const {
+inline const ::vega::commands::v1::NodeSignature& GetNodeSignaturesAggregateResponse::signatures(int index) const {
   // @@protoc_insertion_point(field_get:api.v1.GetNodeSignaturesAggregateResponse.signatures)
   return _internal_signatures(index);
 }
-inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::_internal_add_signatures() {
+inline ::vega::commands::v1::NodeSignature* GetNodeSignaturesAggregateResponse::_internal_add_signatures() {
   return signatures_.Add();
 }
-inline ::vega::NodeSignature* GetNodeSignaturesAggregateResponse::add_signatures() {
+inline ::vega::commands::v1::NodeSignature* GetNodeSignaturesAggregateResponse::add_signatures() {
   // @@protoc_insertion_point(field_add:api.v1.GetNodeSignaturesAggregateResponse.signatures)
   return _internal_add_signatures();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::NodeSignature >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::commands::v1::NodeSignature >&
 GetNodeSignaturesAggregateResponse::signatures() const {
   // @@protoc_insertion_point(field_list:api.v1.GetNodeSignaturesAggregateResponse.signatures)
   return signatures_;
@@ -30868,262 +30833,140 @@ FeeInfrastructureAccountsResponse::accounts() const {
 
 // -------------------------------------------------------------------
 
-// PrepareProposalRequest
+// PrepareProposalSubmissionRequest
 
-// string party_id = 1 [json_name = "partyId", (.validator.field) = {
-inline void PrepareProposalRequest::clear_party_id() {
-  party_id_.ClearToEmpty();
+// .vega.commands.v1.ProposalSubmission submission = 1 [json_name = "submission"];
+inline bool PrepareProposalSubmissionRequest::_internal_has_submission() const {
+  return this != internal_default_instance() && submission_ != nullptr;
 }
-inline const std::string& PrepareProposalRequest::party_id() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalRequest.party_id)
-  return _internal_party_id();
+inline bool PrepareProposalSubmissionRequest::has_submission() const {
+  return _internal_has_submission();
 }
-inline void PrepareProposalRequest::set_party_id(const std::string& value) {
-  _internal_set_party_id(value);
-  // @@protoc_insertion_point(field_set:api.v1.PrepareProposalRequest.party_id)
+inline const ::vega::commands::v1::ProposalSubmission& PrepareProposalSubmissionRequest::_internal_submission() const {
+  const ::vega::commands::v1::ProposalSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::ProposalSubmission&>(
+      ::vega::commands::v1::_ProposalSubmission_default_instance_);
 }
-inline std::string* PrepareProposalRequest::mutable_party_id() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalRequest.party_id)
-  return _internal_mutable_party_id();
+inline const ::vega::commands::v1::ProposalSubmission& PrepareProposalSubmissionRequest::submission() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalSubmissionRequest.submission)
+  return _internal_submission();
 }
-inline const std::string& PrepareProposalRequest::_internal_party_id() const {
-  return party_id_.Get();
-}
-inline void PrepareProposalRequest::_internal_set_party_id(const std::string& value) {
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void PrepareProposalRequest::set_party_id(std::string&& value) {
-
-  party_id_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareProposalRequest.party_id)
-}
-inline void PrepareProposalRequest::set_party_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:api.v1.PrepareProposalRequest.party_id)
-}
-inline void PrepareProposalRequest::set_party_id(const char* value,
-    size_t size) {
-
-  party_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareProposalRequest.party_id)
-}
-inline std::string* PrepareProposalRequest::_internal_mutable_party_id() {
-
-  return party_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* PrepareProposalRequest::release_party_id() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalRequest.party_id)
-  return party_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void PrepareProposalRequest::set_allocated_party_id(std::string* party_id) {
-  if (party_id != nullptr) {
-
-  } else {
-
-  }
-  party_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party_id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalRequest.party_id)
-}
-
-// string reference = 2 [json_name = "reference"];
-inline void PrepareProposalRequest::clear_reference() {
-  reference_.ClearToEmpty();
-}
-inline const std::string& PrepareProposalRequest::reference() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalRequest.reference)
-  return _internal_reference();
-}
-inline void PrepareProposalRequest::set_reference(const std::string& value) {
-  _internal_set_reference(value);
-  // @@protoc_insertion_point(field_set:api.v1.PrepareProposalRequest.reference)
-}
-inline std::string* PrepareProposalRequest::mutable_reference() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalRequest.reference)
-  return _internal_mutable_reference();
-}
-inline const std::string& PrepareProposalRequest::_internal_reference() const {
-  return reference_.Get();
-}
-inline void PrepareProposalRequest::_internal_set_reference(const std::string& value) {
-
-  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void PrepareProposalRequest::set_reference(std::string&& value) {
-
-  reference_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareProposalRequest.reference)
-}
-inline void PrepareProposalRequest::set_reference(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:api.v1.PrepareProposalRequest.reference)
-}
-inline void PrepareProposalRequest::set_reference(const char* value,
-    size_t size) {
-
-  reference_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareProposalRequest.reference)
-}
-inline std::string* PrepareProposalRequest::_internal_mutable_reference() {
-
-  return reference_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* PrepareProposalRequest::release_reference() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalRequest.reference)
-  return reference_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void PrepareProposalRequest::set_allocated_reference(std::string* reference) {
-  if (reference != nullptr) {
-
-  } else {
-
-  }
-  reference_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reference,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalRequest.reference)
-}
-
-// .vega.ProposalTerms proposal = 3 [json_name = "proposal", (.validator.field) = {
-inline bool PrepareProposalRequest::_internal_has_proposal() const {
-  return this != internal_default_instance() && proposal_ != nullptr;
-}
-inline bool PrepareProposalRequest::has_proposal() const {
-  return _internal_has_proposal();
-}
-inline const ::vega::ProposalTerms& PrepareProposalRequest::_internal_proposal() const {
-  const ::vega::ProposalTerms* p = proposal_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::ProposalTerms&>(
-      ::vega::_ProposalTerms_default_instance_);
-}
-inline const ::vega::ProposalTerms& PrepareProposalRequest::proposal() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalRequest.proposal)
-  return _internal_proposal();
-}
-inline void PrepareProposalRequest::unsafe_arena_set_allocated_proposal(
-    ::vega::ProposalTerms* proposal) {
+inline void PrepareProposalSubmissionRequest::unsafe_arena_set_allocated_submission(
+    ::vega::commands::v1::ProposalSubmission* submission) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  proposal_ = proposal;
-  if (proposal) {
+  submission_ = submission;
+  if (submission) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareProposalRequest.proposal)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareProposalSubmissionRequest.submission)
 }
-inline ::vega::ProposalTerms* PrepareProposalRequest::release_proposal() {
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionRequest::release_submission() {
 
-  ::vega::ProposalTerms* temp = proposal_;
-  proposal_ = nullptr;
+  ::vega::commands::v1::ProposalSubmission* temp = submission_;
+  submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::ProposalTerms* PrepareProposalRequest::unsafe_arena_release_proposal() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalRequest.proposal)
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionRequest::unsafe_arena_release_submission() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalSubmissionRequest.submission)
 
-  ::vega::ProposalTerms* temp = proposal_;
-  proposal_ = nullptr;
+  ::vega::commands::v1::ProposalSubmission* temp = submission_;
+  submission_ = nullptr;
   return temp;
 }
-inline ::vega::ProposalTerms* PrepareProposalRequest::_internal_mutable_proposal() {
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionRequest::_internal_mutable_submission() {
 
-  if (proposal_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::ProposalTerms>(GetArena());
-    proposal_ = p;
+  if (submission_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::commands::v1::ProposalSubmission>(GetArena());
+    submission_ = p;
   }
-  return proposal_;
+  return submission_;
 }
-inline ::vega::ProposalTerms* PrepareProposalRequest::mutable_proposal() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalRequest.proposal)
-  return _internal_mutable_proposal();
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionRequest::mutable_submission() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalSubmissionRequest.submission)
+  return _internal_mutable_submission();
 }
-inline void PrepareProposalRequest::set_allocated_proposal(::vega::ProposalTerms* proposal) {
+inline void PrepareProposalSubmissionRequest::set_allocated_submission(::vega::commands::v1::ProposalSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  if (proposal) {
+  if (submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission)->GetArena();
     if (message_arena != submessage_arena) {
-      proposal = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, proposal, submessage_arena);
+      submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submission, submessage_arena);
     }
 
   } else {
 
   }
-  proposal_ = proposal;
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalRequest.proposal)
+  submission_ = submission;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalSubmissionRequest.submission)
 }
 
 // -------------------------------------------------------------------
 
-// PrepareProposalResponse
+// PrepareProposalSubmissionResponse
 
 // bytes blob = 1 [json_name = "blob"];
-inline void PrepareProposalResponse::clear_blob() {
+inline void PrepareProposalSubmissionResponse::clear_blob() {
   blob_.ClearToEmpty();
 }
-inline const std::string& PrepareProposalResponse::blob() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalResponse.blob)
+inline const std::string& PrepareProposalSubmissionResponse::blob() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalSubmissionResponse.blob)
   return _internal_blob();
 }
-inline void PrepareProposalResponse::set_blob(const std::string& value) {
+inline void PrepareProposalSubmissionResponse::set_blob(const std::string& value) {
   _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:api.v1.PrepareProposalResponse.blob)
+  // @@protoc_insertion_point(field_set:api.v1.PrepareProposalSubmissionResponse.blob)
 }
-inline std::string* PrepareProposalResponse::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalResponse.blob)
+inline std::string* PrepareProposalSubmissionResponse::mutable_blob() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalSubmissionResponse.blob)
   return _internal_mutable_blob();
 }
-inline const std::string& PrepareProposalResponse::_internal_blob() const {
+inline const std::string& PrepareProposalSubmissionResponse::_internal_blob() const {
   return blob_.Get();
 }
-inline void PrepareProposalResponse::_internal_set_blob(const std::string& value) {
+inline void PrepareProposalSubmissionResponse::_internal_set_blob(const std::string& value) {
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void PrepareProposalResponse::set_blob(std::string&& value) {
+inline void PrepareProposalSubmissionResponse::set_blob(std::string&& value) {
 
   blob_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareProposalResponse.blob)
+  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareProposalSubmissionResponse.blob)
 }
-inline void PrepareProposalResponse::set_blob(const char* value) {
+inline void PrepareProposalSubmissionResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:api.v1.PrepareProposalResponse.blob)
+  // @@protoc_insertion_point(field_set_char:api.v1.PrepareProposalSubmissionResponse.blob)
 }
-inline void PrepareProposalResponse::set_blob(const void* value,
+inline void PrepareProposalSubmissionResponse::set_blob(const void* value,
     size_t size) {
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareProposalResponse.blob)
+  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareProposalSubmissionResponse.blob)
 }
-inline std::string* PrepareProposalResponse::_internal_mutable_blob() {
+inline std::string* PrepareProposalSubmissionResponse::_internal_mutable_blob() {
 
   return blob_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* PrepareProposalResponse::release_blob() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalResponse.blob)
+inline std::string* PrepareProposalSubmissionResponse::release_blob() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalSubmissionResponse.blob)
   return blob_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void PrepareProposalResponse::set_allocated_blob(std::string* blob) {
+inline void PrepareProposalSubmissionResponse::set_allocated_blob(std::string* blob) {
   if (blob != nullptr) {
 
   } else {
@@ -31131,222 +30974,222 @@ inline void PrepareProposalResponse::set_allocated_blob(std::string* blob) {
   }
   blob_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blob,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalResponse.blob)
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalSubmissionResponse.blob)
 }
 
-// .vega.Proposal pending_proposal = 2 [json_name = "pendingProposal"];
-inline bool PrepareProposalResponse::_internal_has_pending_proposal() const {
-  return this != internal_default_instance() && pending_proposal_ != nullptr;
+// .vega.commands.v1.ProposalSubmission submission = 2 [json_name = "submission"];
+inline bool PrepareProposalSubmissionResponse::_internal_has_submission() const {
+  return this != internal_default_instance() && submission_ != nullptr;
 }
-inline bool PrepareProposalResponse::has_pending_proposal() const {
-  return _internal_has_pending_proposal();
+inline bool PrepareProposalSubmissionResponse::has_submission() const {
+  return _internal_has_submission();
 }
-inline const ::vega::Proposal& PrepareProposalResponse::_internal_pending_proposal() const {
-  const ::vega::Proposal* p = pending_proposal_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::Proposal&>(
-      ::vega::_Proposal_default_instance_);
+inline const ::vega::commands::v1::ProposalSubmission& PrepareProposalSubmissionResponse::_internal_submission() const {
+  const ::vega::commands::v1::ProposalSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::ProposalSubmission&>(
+      ::vega::commands::v1::_ProposalSubmission_default_instance_);
 }
-inline const ::vega::Proposal& PrepareProposalResponse::pending_proposal() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalResponse.pending_proposal)
-  return _internal_pending_proposal();
+inline const ::vega::commands::v1::ProposalSubmission& PrepareProposalSubmissionResponse::submission() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareProposalSubmissionResponse.submission)
+  return _internal_submission();
 }
-inline void PrepareProposalResponse::unsafe_arena_set_allocated_pending_proposal(
-    ::vega::Proposal* pending_proposal) {
+inline void PrepareProposalSubmissionResponse::unsafe_arena_set_allocated_submission(
+    ::vega::commands::v1::ProposalSubmission* submission) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pending_proposal_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  pending_proposal_ = pending_proposal;
-  if (pending_proposal) {
+  submission_ = submission;
+  if (submission) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareProposalResponse.pending_proposal)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareProposalSubmissionResponse.submission)
 }
-inline ::vega::Proposal* PrepareProposalResponse::release_pending_proposal() {
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionResponse::release_submission() {
 
-  ::vega::Proposal* temp = pending_proposal_;
-  pending_proposal_ = nullptr;
+  ::vega::commands::v1::ProposalSubmission* temp = submission_;
+  submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Proposal* PrepareProposalResponse::unsafe_arena_release_pending_proposal() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalResponse.pending_proposal)
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionResponse::unsafe_arena_release_submission() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareProposalSubmissionResponse.submission)
 
-  ::vega::Proposal* temp = pending_proposal_;
-  pending_proposal_ = nullptr;
+  ::vega::commands::v1::ProposalSubmission* temp = submission_;
+  submission_ = nullptr;
   return temp;
 }
-inline ::vega::Proposal* PrepareProposalResponse::_internal_mutable_pending_proposal() {
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionResponse::_internal_mutable_submission() {
 
-  if (pending_proposal_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::Proposal>(GetArena());
-    pending_proposal_ = p;
+  if (submission_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::commands::v1::ProposalSubmission>(GetArena());
+    submission_ = p;
   }
-  return pending_proposal_;
+  return submission_;
 }
-inline ::vega::Proposal* PrepareProposalResponse::mutable_pending_proposal() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalResponse.pending_proposal)
-  return _internal_mutable_pending_proposal();
+inline ::vega::commands::v1::ProposalSubmission* PrepareProposalSubmissionResponse::mutable_submission() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareProposalSubmissionResponse.submission)
+  return _internal_mutable_submission();
 }
-inline void PrepareProposalResponse::set_allocated_pending_proposal(::vega::Proposal* pending_proposal) {
+inline void PrepareProposalSubmissionResponse::set_allocated_submission(::vega::commands::v1::ProposalSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(pending_proposal_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  if (pending_proposal) {
+  if (submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pending_proposal)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission)->GetArena();
     if (message_arena != submessage_arena) {
-      pending_proposal = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, pending_proposal, submessage_arena);
+      submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submission, submessage_arena);
     }
 
   } else {
 
   }
-  pending_proposal_ = pending_proposal;
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalResponse.pending_proposal)
+  submission_ = submission;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareProposalSubmissionResponse.submission)
 }
 
 // -------------------------------------------------------------------
 
-// PrepareVoteRequest
+// PrepareVoteSubmissionRequest
 
-// .vega.Vote vote = 1 [json_name = "vote", (.validator.field) = {
-inline bool PrepareVoteRequest::_internal_has_vote() const {
-  return this != internal_default_instance() && vote_ != nullptr;
+// .vega.commands.v1.VoteSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+inline bool PrepareVoteSubmissionRequest::_internal_has_submission() const {
+  return this != internal_default_instance() && submission_ != nullptr;
 }
-inline bool PrepareVoteRequest::has_vote() const {
-  return _internal_has_vote();
+inline bool PrepareVoteSubmissionRequest::has_submission() const {
+  return _internal_has_submission();
 }
-inline const ::vega::Vote& PrepareVoteRequest::_internal_vote() const {
-  const ::vega::Vote* p = vote_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::Vote&>(
-      ::vega::_Vote_default_instance_);
+inline const ::vega::commands::v1::VoteSubmission& PrepareVoteSubmissionRequest::_internal_submission() const {
+  const ::vega::commands::v1::VoteSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::VoteSubmission&>(
+      ::vega::commands::v1::_VoteSubmission_default_instance_);
 }
-inline const ::vega::Vote& PrepareVoteRequest::vote() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteRequest.vote)
-  return _internal_vote();
+inline const ::vega::commands::v1::VoteSubmission& PrepareVoteSubmissionRequest::submission() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteSubmissionRequest.submission)
+  return _internal_submission();
 }
-inline void PrepareVoteRequest::unsafe_arena_set_allocated_vote(
-    ::vega::Vote* vote) {
+inline void PrepareVoteSubmissionRequest::unsafe_arena_set_allocated_submission(
+    ::vega::commands::v1::VoteSubmission* submission) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  vote_ = vote;
-  if (vote) {
+  submission_ = submission;
+  if (submission) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteRequest.vote)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteSubmissionRequest.submission)
 }
-inline ::vega::Vote* PrepareVoteRequest::release_vote() {
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionRequest::release_submission() {
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::commands::v1::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Vote* PrepareVoteRequest::unsafe_arena_release_vote() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteRequest.vote)
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionRequest::unsafe_arena_release_submission() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteSubmissionRequest.submission)
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::commands::v1::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   return temp;
 }
-inline ::vega::Vote* PrepareVoteRequest::_internal_mutable_vote() {
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionRequest::_internal_mutable_submission() {
 
-  if (vote_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::Vote>(GetArena());
-    vote_ = p;
+  if (submission_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::commands::v1::VoteSubmission>(GetArena());
+    submission_ = p;
   }
-  return vote_;
+  return submission_;
 }
-inline ::vega::Vote* PrepareVoteRequest::mutable_vote() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteRequest.vote)
-  return _internal_mutable_vote();
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionRequest::mutable_submission() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteSubmissionRequest.submission)
+  return _internal_mutable_submission();
 }
-inline void PrepareVoteRequest::set_allocated_vote(::vega::Vote* vote) {
+inline void PrepareVoteSubmissionRequest::set_allocated_submission(::vega::commands::v1::VoteSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  if (vote) {
+  if (submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission)->GetArena();
     if (message_arena != submessage_arena) {
-      vote = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vote, submessage_arena);
+      submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submission, submessage_arena);
     }
 
   } else {
 
   }
-  vote_ = vote;
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteRequest.vote)
+  submission_ = submission;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteSubmissionRequest.submission)
 }
 
 // -------------------------------------------------------------------
 
-// PrepareVoteResponse
+// PrepareVoteSubmissionResponse
 
 // bytes blob = 1 [json_name = "blob"];
-inline void PrepareVoteResponse::clear_blob() {
+inline void PrepareVoteSubmissionResponse::clear_blob() {
   blob_.ClearToEmpty();
 }
-inline const std::string& PrepareVoteResponse::blob() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteResponse.blob)
+inline const std::string& PrepareVoteSubmissionResponse::blob() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteSubmissionResponse.blob)
   return _internal_blob();
 }
-inline void PrepareVoteResponse::set_blob(const std::string& value) {
+inline void PrepareVoteSubmissionResponse::set_blob(const std::string& value) {
   _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline std::string* PrepareVoteResponse::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteResponse.blob)
+inline std::string* PrepareVoteSubmissionResponse::mutable_blob() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteSubmissionResponse.blob)
   return _internal_mutable_blob();
 }
-inline const std::string& PrepareVoteResponse::_internal_blob() const {
+inline const std::string& PrepareVoteSubmissionResponse::_internal_blob() const {
   return blob_.Get();
 }
-inline void PrepareVoteResponse::_internal_set_blob(const std::string& value) {
+inline void PrepareVoteSubmissionResponse::_internal_set_blob(const std::string& value) {
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void PrepareVoteResponse::set_blob(std::string&& value) {
+inline void PrepareVoteSubmissionResponse::set_blob(std::string&& value) {
 
   blob_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_rvalue:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline void PrepareVoteResponse::set_blob(const char* value) {
+inline void PrepareVoteSubmissionResponse::set_blob(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_char:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline void PrepareVoteResponse::set_blob(const void* value,
+inline void PrepareVoteSubmissionResponse::set_blob(const void* value,
     size_t size) {
 
   blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_pointer:api.v1.PrepareVoteSubmissionResponse.blob)
 }
-inline std::string* PrepareVoteResponse::_internal_mutable_blob() {
+inline std::string* PrepareVoteSubmissionResponse::_internal_mutable_blob() {
 
   return blob_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* PrepareVoteResponse::release_blob() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteResponse.blob)
+inline std::string* PrepareVoteSubmissionResponse::release_blob() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteSubmissionResponse.blob)
   return blob_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void PrepareVoteResponse::set_allocated_blob(std::string* blob) {
+inline void PrepareVoteSubmissionResponse::set_allocated_blob(std::string* blob) {
   if (blob != nullptr) {
 
   } else {
@@ -31354,108 +31197,108 @@ inline void PrepareVoteResponse::set_allocated_blob(std::string* blob) {
   }
   blob_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), blob,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteResponse.blob)
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteSubmissionResponse.blob)
 }
 
-// .vega.Vote vote = 2 [json_name = "vote"];
-inline bool PrepareVoteResponse::_internal_has_vote() const {
-  return this != internal_default_instance() && vote_ != nullptr;
+// .vega.commands.v1.VoteSubmission submission = 2 [json_name = "submission"];
+inline bool PrepareVoteSubmissionResponse::_internal_has_submission() const {
+  return this != internal_default_instance() && submission_ != nullptr;
 }
-inline bool PrepareVoteResponse::has_vote() const {
-  return _internal_has_vote();
+inline bool PrepareVoteSubmissionResponse::has_submission() const {
+  return _internal_has_submission();
 }
-inline const ::vega::Vote& PrepareVoteResponse::_internal_vote() const {
-  const ::vega::Vote* p = vote_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::Vote&>(
-      ::vega::_Vote_default_instance_);
+inline const ::vega::commands::v1::VoteSubmission& PrepareVoteSubmissionResponse::_internal_submission() const {
+  const ::vega::commands::v1::VoteSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::VoteSubmission&>(
+      ::vega::commands::v1::_VoteSubmission_default_instance_);
 }
-inline const ::vega::Vote& PrepareVoteResponse::vote() const {
-  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteResponse.vote)
-  return _internal_vote();
+inline const ::vega::commands::v1::VoteSubmission& PrepareVoteSubmissionResponse::submission() const {
+  // @@protoc_insertion_point(field_get:api.v1.PrepareVoteSubmissionResponse.submission)
+  return _internal_submission();
 }
-inline void PrepareVoteResponse::unsafe_arena_set_allocated_vote(
-    ::vega::Vote* vote) {
+inline void PrepareVoteSubmissionResponse::unsafe_arena_set_allocated_submission(
+    ::vega::commands::v1::VoteSubmission* submission) {
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  vote_ = vote;
-  if (vote) {
+  submission_ = submission;
+  if (submission) {
 
   } else {
 
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteResponse.vote)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareVoteSubmissionResponse.submission)
 }
-inline ::vega::Vote* PrepareVoteResponse::release_vote() {
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionResponse::release_submission() {
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::commands::v1::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::Vote* PrepareVoteResponse::unsafe_arena_release_vote() {
-  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteResponse.vote)
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionResponse::unsafe_arena_release_submission() {
+  // @@protoc_insertion_point(field_release:api.v1.PrepareVoteSubmissionResponse.submission)
 
-  ::vega::Vote* temp = vote_;
-  vote_ = nullptr;
+  ::vega::commands::v1::VoteSubmission* temp = submission_;
+  submission_ = nullptr;
   return temp;
 }
-inline ::vega::Vote* PrepareVoteResponse::_internal_mutable_vote() {
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionResponse::_internal_mutable_submission() {
 
-  if (vote_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::Vote>(GetArena());
-    vote_ = p;
+  if (submission_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::commands::v1::VoteSubmission>(GetArena());
+    submission_ = p;
   }
-  return vote_;
+  return submission_;
 }
-inline ::vega::Vote* PrepareVoteResponse::mutable_vote() {
-  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteResponse.vote)
-  return _internal_mutable_vote();
+inline ::vega::commands::v1::VoteSubmission* PrepareVoteSubmissionResponse::mutable_submission() {
+  // @@protoc_insertion_point(field_mutable:api.v1.PrepareVoteSubmissionResponse.submission)
+  return _internal_mutable_submission();
 }
-inline void PrepareVoteResponse::set_allocated_vote(::vega::Vote* vote) {
+inline void PrepareVoteSubmissionResponse::set_allocated_submission(::vega::commands::v1::VoteSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
-  if (vote) {
+  if (submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(vote)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission)->GetArena();
     if (message_arena != submessage_arena) {
-      vote = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, vote, submessage_arena);
+      submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submission, submessage_arena);
     }
 
   } else {
 
   }
-  vote_ = vote;
-  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteResponse.vote)
+  submission_ = submission;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.PrepareVoteSubmissionResponse.submission)
 }
 
 // -------------------------------------------------------------------
 
 // PrepareLiquidityProvisionRequest
 
-// .vega.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
+// .vega.commands.v1.LiquidityProvisionSubmission submission = 1 [json_name = "submission", (.validator.field) = {
 inline bool PrepareLiquidityProvisionRequest::_internal_has_submission() const {
   return this != internal_default_instance() && submission_ != nullptr;
 }
 inline bool PrepareLiquidityProvisionRequest::has_submission() const {
   return _internal_has_submission();
 }
-inline const ::vega::LiquidityProvisionSubmission& PrepareLiquidityProvisionRequest::_internal_submission() const {
-  const ::vega::LiquidityProvisionSubmission* p = submission_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::LiquidityProvisionSubmission&>(
-      ::vega::_LiquidityProvisionSubmission_default_instance_);
+inline const ::vega::commands::v1::LiquidityProvisionSubmission& PrepareLiquidityProvisionRequest::_internal_submission() const {
+  const ::vega::commands::v1::LiquidityProvisionSubmission* p = submission_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::LiquidityProvisionSubmission&>(
+      ::vega::commands::v1::_LiquidityProvisionSubmission_default_instance_);
 }
-inline const ::vega::LiquidityProvisionSubmission& PrepareLiquidityProvisionRequest::submission() const {
+inline const ::vega::commands::v1::LiquidityProvisionSubmission& PrepareLiquidityProvisionRequest::submission() const {
   // @@protoc_insertion_point(field_get:api.v1.PrepareLiquidityProvisionRequest.submission)
   return _internal_submission();
 }
 inline void PrepareLiquidityProvisionRequest::unsafe_arena_set_allocated_submission(
-    ::vega::LiquidityProvisionSubmission* submission) {
+    ::vega::commands::v1::LiquidityProvisionSubmission* submission) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
   }
@@ -31467,35 +31310,35 @@ inline void PrepareLiquidityProvisionRequest::unsafe_arena_set_allocated_submiss
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.PrepareLiquidityProvisionRequest.submission)
 }
-inline ::vega::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::release_submission() {
+inline ::vega::commands::v1::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::release_submission() {
 
-  ::vega::LiquidityProvisionSubmission* temp = submission_;
+  ::vega::commands::v1::LiquidityProvisionSubmission* temp = submission_;
   submission_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::unsafe_arena_release_submission() {
+inline ::vega::commands::v1::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::unsafe_arena_release_submission() {
   // @@protoc_insertion_point(field_release:api.v1.PrepareLiquidityProvisionRequest.submission)
 
-  ::vega::LiquidityProvisionSubmission* temp = submission_;
+  ::vega::commands::v1::LiquidityProvisionSubmission* temp = submission_;
   submission_ = nullptr;
   return temp;
 }
-inline ::vega::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::_internal_mutable_submission() {
+inline ::vega::commands::v1::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::_internal_mutable_submission() {
 
   if (submission_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::LiquidityProvisionSubmission>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::commands::v1::LiquidityProvisionSubmission>(GetArena());
     submission_ = p;
   }
   return submission_;
 }
-inline ::vega::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::mutable_submission() {
+inline ::vega::commands::v1::LiquidityProvisionSubmission* PrepareLiquidityProvisionRequest::mutable_submission() {
   // @@protoc_insertion_point(field_mutable:api.v1.PrepareLiquidityProvisionRequest.submission)
   return _internal_mutable_submission();
 }
-inline void PrepareLiquidityProvisionRequest::set_allocated_submission(::vega::LiquidityProvisionSubmission* submission) {
+inline void PrepareLiquidityProvisionRequest::set_allocated_submission(::vega::commands::v1::LiquidityProvisionSubmission* submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(submission_);
@@ -32262,7 +32105,7 @@ inline void EstimateMarginResponse::set_allocated_margin_levels(::vega::MarginLe
 
 // ObserveEventBusRequest
 
-// repeated .vega.BusEventType type = 1 [json_name = "type"];
+// repeated .vega.events.v1.BusEventType type = 1 [json_name = "type"];
 inline int ObserveEventBusRequest::_internal_type_size() const {
   return type_.size();
 }
@@ -32272,21 +32115,21 @@ inline int ObserveEventBusRequest::type_size() const {
 inline void ObserveEventBusRequest::clear_type() {
   type_.Clear();
 }
-inline ::vega::BusEventType ObserveEventBusRequest::_internal_type(int index) const {
-  return static_cast< ::vega::BusEventType >(type_.Get(index));
+inline ::vega::events::v1::BusEventType ObserveEventBusRequest::_internal_type(int index) const {
+  return static_cast< ::vega::events::v1::BusEventType >(type_.Get(index));
 }
-inline ::vega::BusEventType ObserveEventBusRequest::type(int index) const {
+inline ::vega::events::v1::BusEventType ObserveEventBusRequest::type(int index) const {
   // @@protoc_insertion_point(field_get:api.v1.ObserveEventBusRequest.type)
   return _internal_type(index);
 }
-inline void ObserveEventBusRequest::set_type(int index, ::vega::BusEventType value) {
+inline void ObserveEventBusRequest::set_type(int index, ::vega::events::v1::BusEventType value) {
   type_.Set(index, value);
   // @@protoc_insertion_point(field_set:api.v1.ObserveEventBusRequest.type)
 }
-inline void ObserveEventBusRequest::_internal_add_type(::vega::BusEventType value) {
+inline void ObserveEventBusRequest::_internal_add_type(::vega::events::v1::BusEventType value) {
   type_.Add(value);
 }
-inline void ObserveEventBusRequest::add_type(::vega::BusEventType value) {
+inline void ObserveEventBusRequest::add_type(::vega::events::v1::BusEventType value) {
   // @@protoc_insertion_point(field_add:api.v1.ObserveEventBusRequest.type)
   _internal_add_type(value);
 }
@@ -32451,37 +32294,37 @@ inline void ObserveEventBusRequest::set_batch_size(::PROTOBUF_NAMESPACE_ID::int6
 
 // ObserveEventBusResponse
 
-// repeated .vega.BusEvent events = 1 [json_name = "events"];
+// repeated .vega.events.v1.BusEvent events = 1 [json_name = "events"];
 inline int ObserveEventBusResponse::_internal_events_size() const {
   return events_.size();
 }
 inline int ObserveEventBusResponse::events_size() const {
   return _internal_events_size();
 }
-inline ::vega::BusEvent* ObserveEventBusResponse::mutable_events(int index) {
+inline ::vega::events::v1::BusEvent* ObserveEventBusResponse::mutable_events(int index) {
   // @@protoc_insertion_point(field_mutable:api.v1.ObserveEventBusResponse.events)
   return events_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::BusEvent >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::events::v1::BusEvent >*
 ObserveEventBusResponse::mutable_events() {
   // @@protoc_insertion_point(field_mutable_list:api.v1.ObserveEventBusResponse.events)
   return &events_;
 }
-inline const ::vega::BusEvent& ObserveEventBusResponse::_internal_events(int index) const {
+inline const ::vega::events::v1::BusEvent& ObserveEventBusResponse::_internal_events(int index) const {
   return events_.Get(index);
 }
-inline const ::vega::BusEvent& ObserveEventBusResponse::events(int index) const {
+inline const ::vega::events::v1::BusEvent& ObserveEventBusResponse::events(int index) const {
   // @@protoc_insertion_point(field_get:api.v1.ObserveEventBusResponse.events)
   return _internal_events(index);
 }
-inline ::vega::BusEvent* ObserveEventBusResponse::_internal_add_events() {
+inline ::vega::events::v1::BusEvent* ObserveEventBusResponse::_internal_add_events() {
   return events_.Add();
 }
-inline ::vega::BusEvent* ObserveEventBusResponse::add_events() {
+inline ::vega::events::v1::BusEvent* ObserveEventBusResponse::add_events() {
   // @@protoc_insertion_point(field_add:api.v1.ObserveEventBusResponse.events)
   return _internal_add_events();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::BusEvent >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::events::v1::BusEvent >&
 ObserveEventBusResponse::events() const {
   // @@protoc_insertion_point(field_list:api.v1.ObserveEventBusResponse.events)
   return events_;

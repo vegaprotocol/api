@@ -8,7 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <title>MarketDepthUpdate</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><script src="./assets/line-link.js"></script><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="./assets/code.css" />
+<script src="./assets/line-link.js">
+</script>
+<link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
     <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
@@ -16,7 +20,9 @@
             <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
                 <i class="material-icons">close</i>
             </button>
-                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+                <h3 class="slds-text-heading--medium">
+<a href="./">GraphQL Schema</a>
+</h3>
             <div class="slds-p-top--small">
                 <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
             </div>
@@ -625,6 +631,16 @@
                             ProposalVote
                         </a>
                     </li>
+                    <li  title="ProposalVotes">
+                        <a href="proposalvotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalVotes
+                        </a>
+                    </li>
+                    <li  title="ProposalVoteSide">
+                        <a href="proposalvoteside.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                            ProposalVoteSide
+                        </a>
+                    </li>
                     <li  title="RiskFactor">
                         <a href="riskfactor.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                             RiskFactor
@@ -934,7 +950,8 @@
             </div>
         </div>
     </nav>
-    <main><section class="title slds-theme--inverse">
+    <main>
+<section class="title slds-theme--inverse">
               <div class="container slds-grid">
                   <div>
                   <button class="slds-button js-toggle-navigation less-than-medium">
@@ -947,7 +964,8 @@
               <div class="container">
                   <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
                   <h1 class="slds-text-heading--large">MarketDepthUpdate</h1>
-                  <div class="slds-text-body--regular"><p>Market Depth Update is a delta to the current market depth which can be used to update the
+                  <div class="slds-text-body--regular">
+<p>Market Depth Update is a delta to the current market depth which can be used to update the
 market depth structure to keep it correct</p>
 </div>
               </div>
@@ -960,7 +978,106 @@ market depth structure to keep it correct</p>
                       </a>
                       GraphQL Schema definition
                   </h2>
-                  <code class="highlight"><table class="code"><tbody><tr class="row"><td id="L1" class="td-index">1</td><td id="LC1" class="td-code"><span class="keyword operator ts">type</span> <span class="identifier">MarketDepthUpdate</span> {</td></tr><tr class="row"><td id="L2" class="td-index">2</td><td id="LC2" class="td-code"></td></tr><tr class="row"><td id="L3" class="td-index">3</td><td id="LC3" class="td-code"><span class="tab"><span class="comment line">#   Market id</span></span></td></tr><tr class="row"><td id="L4" class="td-index">4</td><td id="LC4" class="td-code"><span class="tab"><span class="meta">market</span>: <a class="support type" href="market.doc.html">Market</a>! </span></td></tr><tr class="row"><td id="L5" class="td-index">5</td><td id="LC5" class="td-code"></td></tr><tr class="row"><td id="L6" class="td-index">6</td><td id="LC6" class="td-code"><span class="tab"><span class="comment line">#   Buy side price levels (if available)</span></span></td></tr><tr class="row"><td id="L7" class="td-index">7</td><td id="LC7" class="td-code"><span class="tab"><span class="meta">buy</span>: [<a class="support type" href="pricelevel.doc.html">PriceLevel</a>!] </span></td></tr><tr class="row"><td id="L8" class="td-index">8</td><td id="LC8" class="td-code"></td></tr><tr class="row"><td id="L9" class="td-index">9</td><td id="LC9" class="td-code"><span class="tab"><span class="comment line">#   Sell side price levels (if available)</span></span></td></tr><tr class="row"><td id="L10" class="td-index">10</td><td id="LC10" class="td-code"><span class="tab"><span class="meta">sell</span>: [<a class="support type" href="pricelevel.doc.html">PriceLevel</a>!] </span></td></tr><tr class="row"><td id="L11" class="td-index">11</td><td id="LC11" class="td-code"></td></tr><tr class="row"><td id="L12" class="td-index">12</td><td id="LC12" class="td-code"><span class="tab"><span class="comment line">#   Sequence number for the current snapshot of the market depth</span></span></td></tr><tr class="row"><td id="L13" class="td-index">13</td><td id="LC13" class="td-code"><span class="tab"><span class="meta">sequenceNumber</span>: <a class="support type" href="string.doc.html">String</a>! </span></td></tr><tr class="row"><td id="L14" class="td-index">14</td><td id="LC14" class="td-code"></td></tr><tr class="row"><td id="L15" class="td-index">15</td><td id="LC15" class="td-code">}</td></tr></tbody></table></code>
+                  <code class="highlight">
+<table class="code">
+<tbody>
+<tr class="row">
+<td id="L1" class="td-index">1</td>
+<td id="LC1" class="td-code">
+<span class="keyword operator ts">type</span> <span class="identifier">MarketDepthUpdate</span> {</td>
+</tr>
+<tr class="row">
+<td id="L2" class="td-index">2</td>
+<td id="LC2" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L3" class="td-index">3</td>
+<td id="LC3" class="td-code">
+<span class="tab">
+<span class="comment line">#   Market id</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L4" class="td-index">4</td>
+<td id="LC4" class="td-code">
+<span class="tab">
+<span class="meta">market</span>: <a class="support type" href="market.doc.html">Market</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L5" class="td-index">5</td>
+<td id="LC5" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L6" class="td-index">6</td>
+<td id="LC6" class="td-code">
+<span class="tab">
+<span class="comment line">#   Buy side price levels (if available)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L7" class="td-index">7</td>
+<td id="LC7" class="td-code">
+<span class="tab">
+<span class="meta">buy</span>: [<a class="support type" href="pricelevel.doc.html">PriceLevel</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L8" class="td-index">8</td>
+<td id="LC8" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L9" class="td-index">9</td>
+<td id="LC9" class="td-code">
+<span class="tab">
+<span class="comment line">#   Sell side price levels (if available)</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L10" class="td-index">10</td>
+<td id="LC10" class="td-code">
+<span class="tab">
+<span class="meta">sell</span>: [<a class="support type" href="pricelevel.doc.html">PriceLevel</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L11" class="td-index">11</td>
+<td id="LC11" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L12" class="td-index">12</td>
+<td id="LC12" class="td-code">
+<span class="tab">
+<span class="comment line">#   Sequence number for the current snapshot of the market depth</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L13" class="td-index">13</td>
+<td id="LC13" class="td-code">
+<span class="tab">
+<span class="meta">sequenceNumber</span>: <a class="support type" href="string.doc.html">String</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L14" class="td-index">14</td>
+<td id="LC14" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L15" class="td-index">15</td>
+<td id="LC15" class="td-code">}</td>
+</tr>
+</tbody>
+</table>
+</code>
               </div>
           </section>
           <section>
@@ -971,7 +1088,12 @@ market depth structure to keep it correct</p>
                       </a>
                       Required by
                   </h2>
-                  <ul class="require-by"><li><a href="subscription.doc.html" title="Subscription - Subscriptions allow a caller to receive new information as it is available from the VEGA platform.">Subscription<em>Subscriptions allow a caller to receive new information as it is available from the VEGA platform.</em></a><li></ul>
+                  <ul class="require-by">
+<li>
+<a href="subscription.doc.html" title="Subscription - Subscriptions allow a caller to receive new information as it is available from the VEGA platform.">Subscription<em>Subscriptions allow a caller to receive new information as it is available from the VEGA platform.</em>
+</a>
+<li>
+</ul>
               </div>
           </section>
           <footer>
@@ -982,7 +1104,10 @@ market depth structure to keep it correct</p>
           </div>
           </footer>
 </main>
-    <script src="./scripts/focus-active.js"></script>
-    <script src="./scripts/filter-types.js"></script>
-    <script src="./scripts/toggle-navigation.js"></script>
+    <script src="./scripts/focus-active.js">
+</script>
+    <script src="./scripts/filter-types.js">
+</script>
+    <script src="./scripts/toggle-navigation.js">
+</script>
 </body>

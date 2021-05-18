@@ -3,7 +3,10 @@
 var api_trading = require('./generated/api/trading_pb.js')
 var assets = require('./generated/assets_pb.js')
 var chain_events = require('./generated/chain_events_pb.js')
-var events = require('./generated/events_pb.js')
+var commands_v1_commands = require('./generated/commands/v1/commands_pb.js')
+var commands_v1_oracles = require('./generated/commands/v1/oracles_pb.js')
+var commands_v1_validator_commands = require('./generated/commands/v1/validator_commands_pb.js')
+var events_v1_events = require('./generated/events/v1/events_pb.js')
 var github_com_mwitkow_go_proto_validators_validator = require('./generated/github.com/mwitkow/go-proto-validators/validator_pb.js')
 var governance = require('./generated/governance_pb.js')
 var markets = require('./generated/markets_pb.js')
@@ -19,7 +22,18 @@ module.exports = {
   },
   assets: assets,
   chain_events: chain_events,
-  events: events,
+  commands: {
+    v1: {
+      commands: commands_v1_commands,
+      oracles: commands_v1_oracles,
+      validator_commands: commands_v1_validator_commands
+    }
+  },
+  events: {
+    v1: {
+      events: events_v1_events
+    }
+  },
   github_com: {
     mwitkow: {
       go_proto_validators: {

@@ -1,0 +1,85 @@
+---
+
+name: Go
+
+"on":
+  pull_request:
+    branches:
+      - develop
+      - main
+    paths:
+      - "grpc/clients/go/**"
+  push:
+    branches:
+      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
+
+
+jobs:
+
+  build-linux:
+    name: Linux build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.16', '1.15']
+    env:
+      GO111MODULE: "on"
+      GO_VER: ${{ matrix.go }}
+    steps:
+
+      - name: Set up Go ${{ matrix.go }}
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+        id: go
+
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Test
+        run: |
+          cd grpc/clients/go
+          make test
+
+      - name: Lint
+        run: |
+          if ! command -v golint 1>/dev/null ; then
+            v="$(awk '/golang.org\/x\/lint\/golint/ {print $2}' go.mod)"
+            [[ -z "$v" ]] && v=v0.0.0-20190313153728-d0100b6bd8b3
+            go get "golang.org/x/lint/golint@$v" || exit 1
+          fi
+          cd grpc/clients/go
+          make lint
+
+      - name: Vet
+        run: |
+          cd grpc/clients/go
+          make vet
+
+      - name: Run Gosec Security Scanner
+        uses: securego/gosec@v2.7.0
+        env:
+          GOROOT: /usr/local/go
+          GOTOOLDIR: /usr/local/go/pkg/tool/linux_amd64
+        with:
+          args: ./...
+        if: env.GO_VER == '1.16'
+
+#   build-macos:
+#     name: MacOS build
+#     runs-on: macos-latest
+#     strategy:
+#       matrix:
+#         go: ['1.16', '1.15']
+#     steps: # same as for Linux
+
+#   build-windows:
+#     name: Windows Build
+#     runs-on: windows-latest
+#     strategy:
+#       matrix:
+#         go: ['1.16', '1.15']
+#     steps: # same as for Linux
