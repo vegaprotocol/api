@@ -9,7 +9,6 @@ import helpers
 ci_args = "--ci"
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 
-
 def load_token():
     if ci_args in sys.argv:
         return perform_login()

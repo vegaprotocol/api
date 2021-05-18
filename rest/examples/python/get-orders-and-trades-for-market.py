@@ -20,14 +20,12 @@ Apps/Libraries:
 # :something__
 
 import json
-import os
 import requests
 import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+# Load REST Vega Node URL, this is set using 'source examples-config'
+# located in the root folder of the api repository
+node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
 url = "{base}/markets".format(base=node_url_rest)
 response = requests.get(url)

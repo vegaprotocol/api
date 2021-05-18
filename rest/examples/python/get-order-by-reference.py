@@ -24,10 +24,9 @@ import requests
 import os
 import helpers
 
-node_url_rest = os.getenv("NODE_URL_REST")
-if not helpers.check_url(node_url_rest):
-    print("Error: Invalid or missing NODE_URL_REST environment variable.")
-    exit(1)
+# Load REST Vega Node URL, this is set using 'source examples-config'
+# located in the root folder of the api repository
+node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
 # __get_order_by_ref:
 # Request an order by reference on a Vega network
