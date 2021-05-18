@@ -25,54 +25,13 @@ import time
 import os
 import helpers
 
+# Vega wallet interaction helper, please see login.py for more detail
+from login import token, pubkey, wallet_server_url
+
 node_url_rest = os.getenv("NODE_URL_REST")
 if not helpers.check_url(node_url_rest):
     print("Error: Invalid or missing NODE_URL_REST environment variable.")
     exit(1)
-
-wallet_server_url = os.getenv("WALLETSERVER_URL")
-
-wallet_name = os.getenv("WALLET_NAME")
-if not helpers.check_var(wallet_name):
-    print("Error: Invalid or missing WALLET_NAME environment variable.")
-    exit(1)
-
-wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
-if not helpers.check_var(wallet_passphrase):
-    print("Error: Invalid or missing WALLET_PASSPHRASE environment variable.")
-    exit(1)
-
-# Help guide users against including api version suffix on url
-wallet_server_url = helpers.check_wallet_url(wallet_server_url)
-
-#####################################################################################
-#                           W A L L E T   S E R V I C E                             #
-#####################################################################################
-
-print(f"Logging into wallet: {wallet_name}")
-
-# __login_wallet:
-# Log in to an existing wallet
-req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-response = requests.post(f"{wallet_server_url}/api/v1/auth/token", json=req)
-helpers.check_response(response)
-token = response.json()["token"]
-# :login_wallet__
-
-assert token != ""
-print("Logged in to wallet successfully")
-
-# __get_pubkey:
-# List key pairs and select public key to use
-headers = {"Authorization": f"Bearer {token}"}
-response = requests.get(f"{wallet_server_url}/api/v1/keys", headers=headers)
-helpers.check_response(response)
-keys = response.json()["keys"]
-pubkey = keys[0]["pub"]
-# :get_pubkey__
-
-assert pubkey != ""
-print("Selected pubkey for signing")
 
 #####################################################################################
 #                              F I N D   A S S E T S                                #
@@ -152,7 +111,7 @@ print(f"Blockchain time: {blockchain_time} ({blockchain_time_seconds} seconds pa
 #                           UPDATE NETWORK PARAMETER                                #
 #####################################################################################
 
-# Step 1 propose a network paramtere update
+# Step 1 propose a network parameter update
 
 parameter = "market.liquidity.targetstake.triggering.ratio"
 value = "0.7"
@@ -196,6 +155,7 @@ assert proposal_ref != ""
 blob = prepared_proposal["blob"]
 req = {"tx": blob, "pubKey": pubkey, "propagate": True}
 url = f"{wallet_server_url}/api/v1/messages/sync"
+headers = {"Authorization": f"Bearer {token}"}
 response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
 # :sign_tx_proposal__
@@ -267,6 +227,7 @@ prepared_vote = response.json()
 blob = prepared_vote["blob"]
 req = {"tx": blob, "pubKey": pubkey, "propagate": True}
 url = f"{wallet_server_url}/api/v1/messages/sync"
+headers = {"Authorization": f"Bearer {token}"}
 response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
 # :sign_tx_vote__

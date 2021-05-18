@@ -5,8 +5,8 @@ import os.path
 import json
 import helpers
 
-wallet_url = os.getenv("WALLETSERVER_URL")
-if not helpers.check_url(wallet_url):
+wallet_server_url = os.getenv("WALLETSERVER_URL")
+if not helpers.check_url(wallet_server_url):
     print("error: Missing wallet server URL, please set this in configuration")
     exit(1)
 
@@ -21,7 +21,7 @@ def load_token():
 
 def get_pubkey(token):
     auth_headers = {"Authorization": "Bearer " + token}
-    response = requests.get(wallet_url + "/api/v1/keys", headers=auth_headers)
+    response = requests.get(wallet_server_url + "/api/v1/keys", headers=auth_headers)
     if response.status_code != 200:
         print("error listing keys: " + response.text)
         exit(1)
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         wallet_passphrase = getpass.getpass("Vega wallet passphrase: ")
 
     req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-    response = requests.post(wallet_url + "/api/v1/auth/token", json=req)
+    response = requests.post(wallet_server_url + "/api/v1/auth/token", json=req)
     if response.status_code != 200:
         print("error logging in: " + response.text)
         exit(1)

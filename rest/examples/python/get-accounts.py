@@ -28,7 +28,7 @@ import os
 import helpers
 
 # Vega wallet interaction helper, please see login.py for more detail
-from login import token, pubkey
+from login import pubkey
 
 node_url_rest = os.getenv("NODE_URL_REST")
 if not helpers.check_url(node_url_rest):
