@@ -14,6 +14,11 @@ plugins:
     opt: markdown,index.md
     strategy: all
 
+  - name: doc
+    out: grpc/doc
+    opt: json,doc.json
+    strategy: all
+
   # C++
   - name: cpp
     out: grpc/clients/cpp/generated
