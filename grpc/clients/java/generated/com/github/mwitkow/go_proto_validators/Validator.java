@@ -25,8 +25,7 @@ public final class Validator {
      * Uses a Golang RE2-syntax regex to match the field contents.
      * </pre>
      *
-     * <code>optional string regex = 1 [json_name = "regex"];</code>
-     * @return Whether the regex field is set.
+     * <code>optional string regex = 1[json_name = "regex"];</code>
      */
     boolean hasRegex();
     /**
@@ -34,8 +33,7 @@ public final class Validator {
      * Uses a Golang RE2-syntax regex to match the field contents.
      * </pre>
      *
-     * <code>optional string regex = 1 [json_name = "regex"];</code>
-     * @return The regex.
+     * <code>optional string regex = 1[json_name = "regex"];</code>
      */
     java.lang.String getRegex();
     /**
@@ -43,8 +41,7 @@ public final class Validator {
      * Uses a Golang RE2-syntax regex to match the field contents.
      * </pre>
      *
-     * <code>optional string regex = 1 [json_name = "regex"];</code>
-     * @return The bytes for regex.
+     * <code>optional string regex = 1[json_name = "regex"];</code>
      */
     com.google.protobuf.ByteString
         getRegexBytes();
@@ -54,8 +51,7 @@ public final class Validator {
      * Field value of integer strictly greater than this value.
      * </pre>
      *
-     * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-     * @return Whether the intGt field is set.
+     * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
      */
     boolean hasIntGt();
     /**
@@ -63,8 +59,7 @@ public final class Validator {
      * Field value of integer strictly greater than this value.
      * </pre>
      *
-     * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-     * @return The intGt.
+     * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
      */
     long getIntGt();
 
@@ -73,8 +68,7 @@ public final class Validator {
      * Field value of integer strictly smaller than this value.
      * </pre>
      *
-     * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-     * @return Whether the intLt field is set.
+     * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
      */
     boolean hasIntLt();
     /**
@@ -82,8 +76,7 @@ public final class Validator {
      * Field value of integer strictly smaller than this value.
      * </pre>
      *
-     * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-     * @return The intLt.
+     * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
      */
     long getIntLt();
 
@@ -92,8 +85,7 @@ public final class Validator {
      * Used for nested message types, requires that the message type exists.
      * </pre>
      *
-     * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-     * @return Whether the msgExists field is set.
+     * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
      */
     boolean hasMsgExists();
     /**
@@ -101,8 +93,7 @@ public final class Validator {
      * Used for nested message types, requires that the message type exists.
      * </pre>
      *
-     * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-     * @return The msgExists.
+     * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
      */
     boolean getMsgExists();
 
@@ -111,8 +102,7 @@ public final class Validator {
      * Human error specifies a user-customizable error that is visible to the user.
      * </pre>
      *
-     * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-     * @return Whether the humanError field is set.
+     * <code>optional string human_error = 5[json_name = "humanError"];</code>
      */
     boolean hasHumanError();
     /**
@@ -120,8 +110,7 @@ public final class Validator {
      * Human error specifies a user-customizable error that is visible to the user.
      * </pre>
      *
-     * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-     * @return The humanError.
+     * <code>optional string human_error = 5[json_name = "humanError"];</code>
      */
     java.lang.String getHumanError();
     /**
@@ -129,8 +118,7 @@ public final class Validator {
      * Human error specifies a user-customizable error that is visible to the user.
      * </pre>
      *
-     * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-     * @return The bytes for humanError.
+     * <code>optional string human_error = 5[json_name = "humanError"];</code>
      */
     com.google.protobuf.ByteString
         getHumanErrorBytes();
@@ -142,8 +130,7 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-     * @return Whether the floatGt field is set.
+     * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
      */
     boolean hasFloatGt();
     /**
@@ -153,8 +140,7 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-     * @return The floatGt.
+     * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
      */
     double getFloatGt();
 
@@ -165,8 +151,7 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-     * @return Whether the floatLt field is set.
+     * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
      */
     boolean hasFloatLt();
     /**
@@ -176,8 +161,7 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-     * @return The floatLt.
+     * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
      */
     double getFloatLt();
 
@@ -192,8 +176,7 @@ public final class Validator {
      * comparisons will be attempted.
      * </pre>
      *
-     * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-     * @return Whether the floatEpsilon field is set.
+     * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
      */
     boolean hasFloatEpsilon();
     /**
@@ -207,8 +190,7 @@ public final class Validator {
      * comparisons will be attempted.
      * </pre>
      *
-     * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-     * @return The floatEpsilon.
+     * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
      */
     double getFloatEpsilon();
 
@@ -217,8 +199,7 @@ public final class Validator {
      * Floating-point value compared to which the field content should be greater or equal.
      * </pre>
      *
-     * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-     * @return Whether the floatGte field is set.
+     * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
      */
     boolean hasFloatGte();
     /**
@@ -226,8 +207,7 @@ public final class Validator {
      * Floating-point value compared to which the field content should be greater or equal.
      * </pre>
      *
-     * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-     * @return The floatGte.
+     * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
      */
     double getFloatGte();
 
@@ -236,8 +216,7 @@ public final class Validator {
      * Floating-point value compared to which the field content should be smaller or equal.
      * </pre>
      *
-     * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-     * @return Whether the floatLte field is set.
+     * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
      */
     boolean hasFloatLte();
     /**
@@ -245,8 +224,7 @@ public final class Validator {
      * Floating-point value compared to which the field content should be smaller or equal.
      * </pre>
      *
-     * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-     * @return The floatLte.
+     * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
      */
     double getFloatLte();
 
@@ -255,8 +233,7 @@ public final class Validator {
      * Used for string fields, requires the string to be not empty (i.e different from "").
      * </pre>
      *
-     * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-     * @return Whether the stringNotEmpty field is set.
+     * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
      */
     boolean hasStringNotEmpty();
     /**
@@ -264,8 +241,7 @@ public final class Validator {
      * Used for string fields, requires the string to be not empty (i.e different from "").
      * </pre>
      *
-     * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-     * @return The stringNotEmpty.
+     * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
      */
     boolean getStringNotEmpty();
 
@@ -274,8 +250,7 @@ public final class Validator {
      * Repeated field with at least this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-     * @return Whether the repeatedCountMin field is set.
+     * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
      */
     boolean hasRepeatedCountMin();
     /**
@@ -283,8 +258,7 @@ public final class Validator {
      * Repeated field with at least this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-     * @return The repeatedCountMin.
+     * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
      */
     long getRepeatedCountMin();
 
@@ -293,8 +267,7 @@ public final class Validator {
      * Repeated field with at most this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-     * @return Whether the repeatedCountMax field is set.
+     * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
      */
     boolean hasRepeatedCountMax();
     /**
@@ -302,8 +275,7 @@ public final class Validator {
      * Repeated field with at most this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-     * @return The repeatedCountMax.
+     * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
      */
     long getRepeatedCountMax();
 
@@ -312,8 +284,7 @@ public final class Validator {
      * Field value of length greater than this value.
      * </pre>
      *
-     * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-     * @return Whether the lengthGt field is set.
+     * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
      */
     boolean hasLengthGt();
     /**
@@ -321,8 +292,7 @@ public final class Validator {
      * Field value of length greater than this value.
      * </pre>
      *
-     * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-     * @return The lengthGt.
+     * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
      */
     long getLengthGt();
 
@@ -331,8 +301,7 @@ public final class Validator {
      * Field value of length smaller than this value.
      * </pre>
      *
-     * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-     * @return Whether the lengthLt field is set.
+     * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
      */
     boolean hasLengthLt();
     /**
@@ -340,8 +309,7 @@ public final class Validator {
      * Field value of length smaller than this value.
      * </pre>
      *
-     * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-     * @return The lengthLt.
+     * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
      */
     long getLengthLt();
 
@@ -350,8 +318,7 @@ public final class Validator {
      * Field value of integer strictly equal this value.
      * </pre>
      *
-     * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-     * @return Whether the lengthEq field is set.
+     * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
      */
     boolean hasLengthEq();
     /**
@@ -359,8 +326,7 @@ public final class Validator {
      * Field value of integer strictly equal this value.
      * </pre>
      *
-     * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-     * @return The lengthEq.
+     * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
      */
     long getLengthEq();
 
@@ -369,8 +335,7 @@ public final class Validator {
      * Requires that the value is in the enum.
      * </pre>
      *
-     * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-     * @return Whether the isInEnum field is set.
+     * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
      */
     boolean hasIsInEnum();
     /**
@@ -378,8 +343,7 @@ public final class Validator {
      * Requires that the value is in the enum.
      * </pre>
      *
-     * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-     * @return The isInEnum.
+     * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
      */
     boolean getIsInEnum();
 
@@ -390,8 +354,7 @@ public final class Validator {
      * If uuid_ver is 0 all UUID versions are accepted.
      * </pre>
      *
-     * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-     * @return Whether the uuidVer field is set.
+     * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
      */
     boolean hasUuidVer();
     /**
@@ -401,15 +364,14 @@ public final class Validator {
      * If uuid_ver is 0 all UUID versions are accepted.
      * </pre>
      *
-     * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-     * @return The uuidVer.
+     * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
      */
     int getUuidVer();
   }
   /**
    * Protobuf type {@code validator.FieldValidator}
    */
-  public static final class FieldValidator extends
+  public  static final class FieldValidator extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:validator.FieldValidator)
       FieldValidatorOrBuilder {
@@ -420,14 +382,23 @@ public final class Validator {
     }
     private FieldValidator() {
       regex_ = "";
+      intGt_ = 0L;
+      intLt_ = 0L;
+      msgExists_ = false;
       humanError_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new FieldValidator();
+      floatGt_ = 0D;
+      floatLt_ = 0D;
+      floatEpsilon_ = 0D;
+      floatGte_ = 0D;
+      floatLte_ = 0D;
+      stringNotEmpty_ = false;
+      repeatedCountMin_ = 0L;
+      repeatedCountMax_ = 0L;
+      lengthGt_ = 0L;
+      lengthLt_ = 0L;
+      lengthEq_ = 0L;
+      isInEnum_ = false;
+      uuidVer_ = 0;
     }
 
     @java.lang.Override
@@ -454,6 +425,13 @@ public final class Validator {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -546,13 +524,6 @@ public final class Validator {
               uuidVer_ = input.readInt32();
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -570,7 +541,6 @@ public final class Validator {
       return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_FieldValidator_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_FieldValidator_fieldAccessorTable
@@ -586,28 +556,24 @@ public final class Validator {
      * Uses a Golang RE2-syntax regex to match the field contents.
      * </pre>
      *
-     * <code>optional string regex = 1 [json_name = "regex"];</code>
-     * @return Whether the regex field is set.
+     * <code>optional string regex = 1[json_name = "regex"];</code>
      */
-    @java.lang.Override
     public boolean hasRegex() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
      * Uses a Golang RE2-syntax regex to match the field contents.
      * </pre>
      *
-     * <code>optional string regex = 1 [json_name = "regex"];</code>
-     * @return The regex.
+     * <code>optional string regex = 1[json_name = "regex"];</code>
      */
-    @java.lang.Override
     public java.lang.String getRegex() {
       java.lang.Object ref = regex_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -621,15 +587,13 @@ public final class Validator {
      * Uses a Golang RE2-syntax regex to match the field contents.
      * </pre>
      *
-     * <code>optional string regex = 1 [json_name = "regex"];</code>
-     * @return The bytes for regex.
+     * <code>optional string regex = 1[json_name = "regex"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getRegexBytes() {
       java.lang.Object ref = regex_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         regex_ = b;
@@ -646,22 +610,18 @@ public final class Validator {
      * Field value of integer strictly greater than this value.
      * </pre>
      *
-     * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-     * @return Whether the intGt field is set.
+     * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
      */
-    @java.lang.Override
     public boolean hasIntGt() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <pre>
      * Field value of integer strictly greater than this value.
      * </pre>
      *
-     * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-     * @return The intGt.
+     * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
      */
-    @java.lang.Override
     public long getIntGt() {
       return intGt_;
     }
@@ -673,22 +633,18 @@ public final class Validator {
      * Field value of integer strictly smaller than this value.
      * </pre>
      *
-     * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-     * @return Whether the intLt field is set.
+     * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
      */
-    @java.lang.Override
     public boolean hasIntLt() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <pre>
      * Field value of integer strictly smaller than this value.
      * </pre>
      *
-     * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-     * @return The intLt.
+     * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
      */
-    @java.lang.Override
     public long getIntLt() {
       return intLt_;
     }
@@ -700,22 +656,18 @@ public final class Validator {
      * Used for nested message types, requires that the message type exists.
      * </pre>
      *
-     * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-     * @return Whether the msgExists field is set.
+     * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
      */
-    @java.lang.Override
     public boolean hasMsgExists() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <pre>
      * Used for nested message types, requires that the message type exists.
      * </pre>
      *
-     * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-     * @return The msgExists.
+     * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
      */
-    @java.lang.Override
     public boolean getMsgExists() {
       return msgExists_;
     }
@@ -727,28 +679,24 @@ public final class Validator {
      * Human error specifies a user-customizable error that is visible to the user.
      * </pre>
      *
-     * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-     * @return Whether the humanError field is set.
+     * <code>optional string human_error = 5[json_name = "humanError"];</code>
      */
-    @java.lang.Override
     public boolean hasHumanError() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <pre>
      * Human error specifies a user-customizable error that is visible to the user.
      * </pre>
      *
-     * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-     * @return The humanError.
+     * <code>optional string human_error = 5[json_name = "humanError"];</code>
      */
-    @java.lang.Override
     public java.lang.String getHumanError() {
       java.lang.Object ref = humanError_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -762,15 +710,13 @@ public final class Validator {
      * Human error specifies a user-customizable error that is visible to the user.
      * </pre>
      *
-     * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-     * @return The bytes for humanError.
+     * <code>optional string human_error = 5[json_name = "humanError"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getHumanErrorBytes() {
       java.lang.Object ref = humanError_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         humanError_ = b;
@@ -789,12 +735,10 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-     * @return Whether the floatGt field is set.
+     * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
      */
-    @java.lang.Override
     public boolean hasFloatGt() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <pre>
@@ -803,10 +747,8 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-     * @return The floatGt.
+     * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
      */
-    @java.lang.Override
     public double getFloatGt() {
       return floatGt_;
     }
@@ -820,12 +762,10 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-     * @return Whether the floatLt field is set.
+     * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
      */
-    @java.lang.Override
     public boolean hasFloatLt() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <pre>
@@ -834,10 +774,8 @@ public final class Validator {
      * value. Use together with float_epsilon if you need something more specific.
      * </pre>
      *
-     * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-     * @return The floatLt.
+     * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
      */
-    @java.lang.Override
     public double getFloatLt() {
       return floatLt_;
     }
@@ -855,12 +793,10 @@ public final class Validator {
      * comparisons will be attempted.
      * </pre>
      *
-     * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-     * @return Whether the floatEpsilon field is set.
+     * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
      */
-    @java.lang.Override
     public boolean hasFloatEpsilon() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <pre>
@@ -873,10 +809,8 @@ public final class Validator {
      * comparisons will be attempted.
      * </pre>
      *
-     * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-     * @return The floatEpsilon.
+     * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
      */
-    @java.lang.Override
     public double getFloatEpsilon() {
       return floatEpsilon_;
     }
@@ -888,22 +822,18 @@ public final class Validator {
      * Floating-point value compared to which the field content should be greater or equal.
      * </pre>
      *
-     * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-     * @return Whether the floatGte field is set.
+     * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
      */
-    @java.lang.Override
     public boolean hasFloatGte() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <pre>
      * Floating-point value compared to which the field content should be greater or equal.
      * </pre>
      *
-     * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-     * @return The floatGte.
+     * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
      */
-    @java.lang.Override
     public double getFloatGte() {
       return floatGte_;
     }
@@ -915,22 +845,18 @@ public final class Validator {
      * Floating-point value compared to which the field content should be smaller or equal.
      * </pre>
      *
-     * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-     * @return Whether the floatLte field is set.
+     * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
      */
-    @java.lang.Override
     public boolean hasFloatLte() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <pre>
      * Floating-point value compared to which the field content should be smaller or equal.
      * </pre>
      *
-     * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-     * @return The floatLte.
+     * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
      */
-    @java.lang.Override
     public double getFloatLte() {
       return floatLte_;
     }
@@ -942,22 +868,18 @@ public final class Validator {
      * Used for string fields, requires the string to be not empty (i.e different from "").
      * </pre>
      *
-     * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-     * @return Whether the stringNotEmpty field is set.
+     * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
      */
-    @java.lang.Override
     public boolean hasStringNotEmpty() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <pre>
      * Used for string fields, requires the string to be not empty (i.e different from "").
      * </pre>
      *
-     * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-     * @return The stringNotEmpty.
+     * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
      */
-    @java.lang.Override
     public boolean getStringNotEmpty() {
       return stringNotEmpty_;
     }
@@ -969,22 +891,18 @@ public final class Validator {
      * Repeated field with at least this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-     * @return Whether the repeatedCountMin field is set.
+     * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
      */
-    @java.lang.Override
     public boolean hasRepeatedCountMin() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <pre>
      * Repeated field with at least this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-     * @return The repeatedCountMin.
+     * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
      */
-    @java.lang.Override
     public long getRepeatedCountMin() {
       return repeatedCountMin_;
     }
@@ -996,22 +914,18 @@ public final class Validator {
      * Repeated field with at most this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-     * @return Whether the repeatedCountMax field is set.
+     * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
      */
-    @java.lang.Override
     public boolean hasRepeatedCountMax() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <pre>
      * Repeated field with at most this number of elements.
      * </pre>
      *
-     * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-     * @return The repeatedCountMax.
+     * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
      */
-    @java.lang.Override
     public long getRepeatedCountMax() {
       return repeatedCountMax_;
     }
@@ -1023,22 +937,18 @@ public final class Validator {
      * Field value of length greater than this value.
      * </pre>
      *
-     * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-     * @return Whether the lengthGt field is set.
+     * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
      */
-    @java.lang.Override
     public boolean hasLengthGt() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <pre>
      * Field value of length greater than this value.
      * </pre>
      *
-     * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-     * @return The lengthGt.
+     * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
      */
-    @java.lang.Override
     public long getLengthGt() {
       return lengthGt_;
     }
@@ -1050,22 +960,18 @@ public final class Validator {
      * Field value of length smaller than this value.
      * </pre>
      *
-     * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-     * @return Whether the lengthLt field is set.
+     * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
      */
-    @java.lang.Override
     public boolean hasLengthLt() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <pre>
      * Field value of length smaller than this value.
      * </pre>
      *
-     * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-     * @return The lengthLt.
+     * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
      */
-    @java.lang.Override
     public long getLengthLt() {
       return lengthLt_;
     }
@@ -1077,22 +983,18 @@ public final class Validator {
      * Field value of integer strictly equal this value.
      * </pre>
      *
-     * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-     * @return Whether the lengthEq field is set.
+     * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
      */
-    @java.lang.Override
     public boolean hasLengthEq() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <pre>
      * Field value of integer strictly equal this value.
      * </pre>
      *
-     * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-     * @return The lengthEq.
+     * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
      */
-    @java.lang.Override
     public long getLengthEq() {
       return lengthEq_;
     }
@@ -1104,22 +1006,18 @@ public final class Validator {
      * Requires that the value is in the enum.
      * </pre>
      *
-     * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-     * @return Whether the isInEnum field is set.
+     * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
      */
-    @java.lang.Override
     public boolean hasIsInEnum() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
      * <pre>
      * Requires that the value is in the enum.
      * </pre>
      *
-     * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-     * @return The isInEnum.
+     * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
      */
-    @java.lang.Override
     public boolean getIsInEnum() {
       return isInEnum_;
     }
@@ -1133,12 +1031,10 @@ public final class Validator {
      * If uuid_ver is 0 all UUID versions are accepted.
      * </pre>
      *
-     * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-     * @return Whether the uuidVer field is set.
+     * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
      */
-    @java.lang.Override
     public boolean hasUuidVer() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <pre>
@@ -1147,16 +1043,13 @@ public final class Validator {
      * If uuid_ver is 0 all UUID versions are accepted.
      * </pre>
      *
-     * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-     * @return The uuidVer.
+     * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
      */
-    @java.lang.Override
     public int getUuidVer() {
       return uuidVer_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1166,139 +1059,137 @@ public final class Validator {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, regex_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt64(2, intGt_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt64(3, intLt_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeBool(4, msgExists_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, humanError_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeDouble(6, floatGt_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeDouble(7, floatLt_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeDouble(8, floatEpsilon_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeDouble(9, floatGte_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeDouble(10, floatLte_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeBool(11, stringNotEmpty_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeInt64(12, repeatedCountMin_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeInt64(13, repeatedCountMax_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt64(14, lengthGt_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeInt64(15, lengthLt_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeInt64(16, lengthEq_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeBool(17, isInEnum_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeInt32(18, uuidVer_);
       }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, regex_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, intGt_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, intLt_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, msgExists_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, humanError_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(6, floatGt_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(7, floatLt_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(8, floatEpsilon_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(9, floatGte_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(10, floatLte_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, stringNotEmpty_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(12, repeatedCountMin_);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(13, repeatedCountMax_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(14, lengthGt_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, lengthLt_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(16, lengthEq_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(17, isInEnum_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(18, uuidVer_);
       }
@@ -1317,103 +1208,109 @@ public final class Validator {
       }
       com.github.mwitkow.go_proto_validators.Validator.FieldValidator other = (com.github.mwitkow.go_proto_validators.Validator.FieldValidator) obj;
 
-      if (hasRegex() != other.hasRegex()) return false;
+      boolean result = true;
+      result = result && (hasRegex() == other.hasRegex());
       if (hasRegex()) {
-        if (!getRegex()
-            .equals(other.getRegex())) return false;
+        result = result && getRegex()
+            .equals(other.getRegex());
       }
-      if (hasIntGt() != other.hasIntGt()) return false;
+      result = result && (hasIntGt() == other.hasIntGt());
       if (hasIntGt()) {
-        if (getIntGt()
-            != other.getIntGt()) return false;
+        result = result && (getIntGt()
+            == other.getIntGt());
       }
-      if (hasIntLt() != other.hasIntLt()) return false;
+      result = result && (hasIntLt() == other.hasIntLt());
       if (hasIntLt()) {
-        if (getIntLt()
-            != other.getIntLt()) return false;
+        result = result && (getIntLt()
+            == other.getIntLt());
       }
-      if (hasMsgExists() != other.hasMsgExists()) return false;
+      result = result && (hasMsgExists() == other.hasMsgExists());
       if (hasMsgExists()) {
-        if (getMsgExists()
-            != other.getMsgExists()) return false;
+        result = result && (getMsgExists()
+            == other.getMsgExists());
       }
-      if (hasHumanError() != other.hasHumanError()) return false;
+      result = result && (hasHumanError() == other.hasHumanError());
       if (hasHumanError()) {
-        if (!getHumanError()
-            .equals(other.getHumanError())) return false;
+        result = result && getHumanError()
+            .equals(other.getHumanError());
       }
-      if (hasFloatGt() != other.hasFloatGt()) return false;
+      result = result && (hasFloatGt() == other.hasFloatGt());
       if (hasFloatGt()) {
-        if (java.lang.Double.doubleToLongBits(getFloatGt())
-            != java.lang.Double.doubleToLongBits(
-                other.getFloatGt())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getFloatGt())
+            == java.lang.Double.doubleToLongBits(
+                other.getFloatGt()));
       }
-      if (hasFloatLt() != other.hasFloatLt()) return false;
+      result = result && (hasFloatLt() == other.hasFloatLt());
       if (hasFloatLt()) {
-        if (java.lang.Double.doubleToLongBits(getFloatLt())
-            != java.lang.Double.doubleToLongBits(
-                other.getFloatLt())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getFloatLt())
+            == java.lang.Double.doubleToLongBits(
+                other.getFloatLt()));
       }
-      if (hasFloatEpsilon() != other.hasFloatEpsilon()) return false;
+      result = result && (hasFloatEpsilon() == other.hasFloatEpsilon());
       if (hasFloatEpsilon()) {
-        if (java.lang.Double.doubleToLongBits(getFloatEpsilon())
-            != java.lang.Double.doubleToLongBits(
-                other.getFloatEpsilon())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getFloatEpsilon())
+            == java.lang.Double.doubleToLongBits(
+                other.getFloatEpsilon()));
       }
-      if (hasFloatGte() != other.hasFloatGte()) return false;
+      result = result && (hasFloatGte() == other.hasFloatGte());
       if (hasFloatGte()) {
-        if (java.lang.Double.doubleToLongBits(getFloatGte())
-            != java.lang.Double.doubleToLongBits(
-                other.getFloatGte())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getFloatGte())
+            == java.lang.Double.doubleToLongBits(
+                other.getFloatGte()));
       }
-      if (hasFloatLte() != other.hasFloatLte()) return false;
+      result = result && (hasFloatLte() == other.hasFloatLte());
       if (hasFloatLte()) {
-        if (java.lang.Double.doubleToLongBits(getFloatLte())
-            != java.lang.Double.doubleToLongBits(
-                other.getFloatLte())) return false;
+        result = result && (
+            java.lang.Double.doubleToLongBits(getFloatLte())
+            == java.lang.Double.doubleToLongBits(
+                other.getFloatLte()));
       }
-      if (hasStringNotEmpty() != other.hasStringNotEmpty()) return false;
+      result = result && (hasStringNotEmpty() == other.hasStringNotEmpty());
       if (hasStringNotEmpty()) {
-        if (getStringNotEmpty()
-            != other.getStringNotEmpty()) return false;
+        result = result && (getStringNotEmpty()
+            == other.getStringNotEmpty());
       }
-      if (hasRepeatedCountMin() != other.hasRepeatedCountMin()) return false;
+      result = result && (hasRepeatedCountMin() == other.hasRepeatedCountMin());
       if (hasRepeatedCountMin()) {
-        if (getRepeatedCountMin()
-            != other.getRepeatedCountMin()) return false;
+        result = result && (getRepeatedCountMin()
+            == other.getRepeatedCountMin());
       }
-      if (hasRepeatedCountMax() != other.hasRepeatedCountMax()) return false;
+      result = result && (hasRepeatedCountMax() == other.hasRepeatedCountMax());
       if (hasRepeatedCountMax()) {
-        if (getRepeatedCountMax()
-            != other.getRepeatedCountMax()) return false;
+        result = result && (getRepeatedCountMax()
+            == other.getRepeatedCountMax());
       }
-      if (hasLengthGt() != other.hasLengthGt()) return false;
+      result = result && (hasLengthGt() == other.hasLengthGt());
       if (hasLengthGt()) {
-        if (getLengthGt()
-            != other.getLengthGt()) return false;
+        result = result && (getLengthGt()
+            == other.getLengthGt());
       }
-      if (hasLengthLt() != other.hasLengthLt()) return false;
+      result = result && (hasLengthLt() == other.hasLengthLt());
       if (hasLengthLt()) {
-        if (getLengthLt()
-            != other.getLengthLt()) return false;
+        result = result && (getLengthLt()
+            == other.getLengthLt());
       }
-      if (hasLengthEq() != other.hasLengthEq()) return false;
+      result = result && (hasLengthEq() == other.hasLengthEq());
       if (hasLengthEq()) {
-        if (getLengthEq()
-            != other.getLengthEq()) return false;
+        result = result && (getLengthEq()
+            == other.getLengthEq());
       }
-      if (hasIsInEnum() != other.hasIsInEnum()) return false;
+      result = result && (hasIsInEnum() == other.hasIsInEnum());
       if (hasIsInEnum()) {
-        if (getIsInEnum()
-            != other.getIsInEnum()) return false;
+        result = result && (getIsInEnum()
+            == other.getIsInEnum());
       }
-      if (hasUuidVer() != other.hasUuidVer()) return false;
+      result = result && (hasUuidVer() == other.hasUuidVer());
       if (hasUuidVer()) {
-        if (getUuidVer()
-            != other.getUuidVer()) return false;
+        result = result && (getUuidVer()
+            == other.getUuidVer());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -1585,7 +1482,6 @@ public final class Validator {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1593,7 +1489,6 @@ public final class Validator {
     public static Builder newBuilder(com.github.mwitkow.go_proto_validators.Validator.FieldValidator prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1617,7 +1512,6 @@ public final class Validator {
         return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_FieldValidator_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_FieldValidator_fieldAccessorTable
@@ -1640,7 +1534,6 @@ public final class Validator {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         regex_ = "";
@@ -1682,18 +1575,15 @@ public final class Validator {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_FieldValidator_descriptor;
       }
 
-      @java.lang.Override
       public com.github.mwitkow.go_proto_validators.Validator.FieldValidator getDefaultInstanceForType() {
         return com.github.mwitkow.go_proto_validators.Validator.FieldValidator.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.github.mwitkow.go_proto_validators.Validator.FieldValidator build() {
         com.github.mwitkow.go_proto_validators.Validator.FieldValidator result = buildPartial();
         if (!result.isInitialized()) {
@@ -1702,121 +1592,113 @@ public final class Validator {
         return result;
       }
 
-      @java.lang.Override
       public com.github.mwitkow.go_proto_validators.Validator.FieldValidator buildPartial() {
         com.github.mwitkow.go_proto_validators.Validator.FieldValidator result = new com.github.mwitkow.go_proto_validators.Validator.FieldValidator(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.regex_ = regex_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.intGt_ = intGt_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.intLt_ = intLt_;
+        result.intGt_ = intGt_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.msgExists_ = msgExists_;
+        result.intLt_ = intLt_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.msgExists_ = msgExists_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
         result.humanError_ = humanError_;
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.floatGt_ = floatGt_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.floatLt_ = floatLt_;
+        result.floatGt_ = floatGt_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.floatEpsilon_ = floatEpsilon_;
+        result.floatLt_ = floatLt_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.floatGte_ = floatGte_;
+        result.floatEpsilon_ = floatEpsilon_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.floatLte_ = floatLte_;
+        result.floatGte_ = floatGte_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000200;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.stringNotEmpty_ = stringNotEmpty_;
+        result.floatLte_ = floatLte_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.repeatedCountMin_ = repeatedCountMin_;
+        result.stringNotEmpty_ = stringNotEmpty_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.repeatedCountMax_ = repeatedCountMax_;
+        result.repeatedCountMin_ = repeatedCountMin_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00001000;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.lengthGt_ = lengthGt_;
+        result.repeatedCountMax_ = repeatedCountMax_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.lengthLt_ = lengthLt_;
+        result.lengthGt_ = lengthGt_;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00004000;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.lengthEq_ = lengthEq_;
+        result.lengthLt_ = lengthLt_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00008000;
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.isInEnum_ = isInEnum_;
+        result.lengthEq_ = lengthEq_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00010000;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.uuidVer_ = uuidVer_;
+        result.isInEnum_ = isInEnum_;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
           to_bitField0_ |= 0x00020000;
         }
+        result.uuidVer_ = uuidVer_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.github.mwitkow.go_proto_validators.Validator.FieldValidator) {
           return mergeFrom((com.github.mwitkow.go_proto_validators.Validator.FieldValidator)other);
@@ -1891,12 +1773,10 @@ public final class Validator {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1922,19 +1802,17 @@ public final class Validator {
        * Uses a Golang RE2-syntax regex to match the field contents.
        * </pre>
        *
-       * <code>optional string regex = 1 [json_name = "regex"];</code>
-       * @return Whether the regex field is set.
+       * <code>optional string regex = 1[json_name = "regex"];</code>
        */
       public boolean hasRegex() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
        * Uses a Golang RE2-syntax regex to match the field contents.
        * </pre>
        *
-       * <code>optional string regex = 1 [json_name = "regex"];</code>
-       * @return The regex.
+       * <code>optional string regex = 1[json_name = "regex"];</code>
        */
       public java.lang.String getRegex() {
         java.lang.Object ref = regex_;
@@ -1955,14 +1833,13 @@ public final class Validator {
        * Uses a Golang RE2-syntax regex to match the field contents.
        * </pre>
        *
-       * <code>optional string regex = 1 [json_name = "regex"];</code>
-       * @return The bytes for regex.
+       * <code>optional string regex = 1[json_name = "regex"];</code>
        */
       public com.google.protobuf.ByteString
           getRegexBytes() {
         java.lang.Object ref = regex_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           regex_ = b;
@@ -1976,9 +1853,7 @@ public final class Validator {
        * Uses a Golang RE2-syntax regex to match the field contents.
        * </pre>
        *
-       * <code>optional string regex = 1 [json_name = "regex"];</code>
-       * @param value The regex to set.
-       * @return This builder for chaining.
+       * <code>optional string regex = 1[json_name = "regex"];</code>
        */
       public Builder setRegex(
           java.lang.String value) {
@@ -1995,8 +1870,7 @@ public final class Validator {
        * Uses a Golang RE2-syntax regex to match the field contents.
        * </pre>
        *
-       * <code>optional string regex = 1 [json_name = "regex"];</code>
-       * @return This builder for chaining.
+       * <code>optional string regex = 1[json_name = "regex"];</code>
        */
       public Builder clearRegex() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2009,9 +1883,7 @@ public final class Validator {
        * Uses a Golang RE2-syntax regex to match the field contents.
        * </pre>
        *
-       * <code>optional string regex = 1 [json_name = "regex"];</code>
-       * @param value The bytes for regex to set.
-       * @return This builder for chaining.
+       * <code>optional string regex = 1[json_name = "regex"];</code>
        */
       public Builder setRegexBytes(
           com.google.protobuf.ByteString value) {
@@ -2030,22 +1902,18 @@ public final class Validator {
        * Field value of integer strictly greater than this value.
        * </pre>
        *
-       * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-       * @return Whether the intGt field is set.
+       * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
        */
-      @java.lang.Override
       public boolean hasIntGt() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <pre>
        * Field value of integer strictly greater than this value.
        * </pre>
        *
-       * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-       * @return The intGt.
+       * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
        */
-      @java.lang.Override
       public long getIntGt() {
         return intGt_;
       }
@@ -2054,9 +1922,7 @@ public final class Validator {
        * Field value of integer strictly greater than this value.
        * </pre>
        *
-       * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-       * @param value The intGt to set.
-       * @return This builder for chaining.
+       * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
        */
       public Builder setIntGt(long value) {
         bitField0_ |= 0x00000002;
@@ -2069,8 +1935,7 @@ public final class Validator {
        * Field value of integer strictly greater than this value.
        * </pre>
        *
-       * <code>optional int64 int_gt = 2 [json_name = "intGt"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 int_gt = 2[json_name = "intGt"];</code>
        */
       public Builder clearIntGt() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2085,22 +1950,18 @@ public final class Validator {
        * Field value of integer strictly smaller than this value.
        * </pre>
        *
-       * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-       * @return Whether the intLt field is set.
+       * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
        */
-      @java.lang.Override
       public boolean hasIntLt() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <pre>
        * Field value of integer strictly smaller than this value.
        * </pre>
        *
-       * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-       * @return The intLt.
+       * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
        */
-      @java.lang.Override
       public long getIntLt() {
         return intLt_;
       }
@@ -2109,9 +1970,7 @@ public final class Validator {
        * Field value of integer strictly smaller than this value.
        * </pre>
        *
-       * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-       * @param value The intLt to set.
-       * @return This builder for chaining.
+       * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
        */
       public Builder setIntLt(long value) {
         bitField0_ |= 0x00000004;
@@ -2124,8 +1983,7 @@ public final class Validator {
        * Field value of integer strictly smaller than this value.
        * </pre>
        *
-       * <code>optional int64 int_lt = 3 [json_name = "intLt"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 int_lt = 3[json_name = "intLt"];</code>
        */
       public Builder clearIntLt() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2140,22 +1998,18 @@ public final class Validator {
        * Used for nested message types, requires that the message type exists.
        * </pre>
        *
-       * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-       * @return Whether the msgExists field is set.
+       * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
        */
-      @java.lang.Override
       public boolean hasMsgExists() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <pre>
        * Used for nested message types, requires that the message type exists.
        * </pre>
        *
-       * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-       * @return The msgExists.
+       * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
        */
-      @java.lang.Override
       public boolean getMsgExists() {
         return msgExists_;
       }
@@ -2164,9 +2018,7 @@ public final class Validator {
        * Used for nested message types, requires that the message type exists.
        * </pre>
        *
-       * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-       * @param value The msgExists to set.
-       * @return This builder for chaining.
+       * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
        */
       public Builder setMsgExists(boolean value) {
         bitField0_ |= 0x00000008;
@@ -2179,8 +2031,7 @@ public final class Validator {
        * Used for nested message types, requires that the message type exists.
        * </pre>
        *
-       * <code>optional bool msg_exists = 4 [json_name = "msgExists"];</code>
-       * @return This builder for chaining.
+       * <code>optional bool msg_exists = 4[json_name = "msgExists"];</code>
        */
       public Builder clearMsgExists() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -2195,19 +2046,17 @@ public final class Validator {
        * Human error specifies a user-customizable error that is visible to the user.
        * </pre>
        *
-       * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-       * @return Whether the humanError field is set.
+       * <code>optional string human_error = 5[json_name = "humanError"];</code>
        */
       public boolean hasHumanError() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <pre>
        * Human error specifies a user-customizable error that is visible to the user.
        * </pre>
        *
-       * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-       * @return The humanError.
+       * <code>optional string human_error = 5[json_name = "humanError"];</code>
        */
       public java.lang.String getHumanError() {
         java.lang.Object ref = humanError_;
@@ -2228,14 +2077,13 @@ public final class Validator {
        * Human error specifies a user-customizable error that is visible to the user.
        * </pre>
        *
-       * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-       * @return The bytes for humanError.
+       * <code>optional string human_error = 5[json_name = "humanError"];</code>
        */
       public com.google.protobuf.ByteString
           getHumanErrorBytes() {
         java.lang.Object ref = humanError_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           humanError_ = b;
@@ -2249,9 +2097,7 @@ public final class Validator {
        * Human error specifies a user-customizable error that is visible to the user.
        * </pre>
        *
-       * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-       * @param value The humanError to set.
-       * @return This builder for chaining.
+       * <code>optional string human_error = 5[json_name = "humanError"];</code>
        */
       public Builder setHumanError(
           java.lang.String value) {
@@ -2268,8 +2114,7 @@ public final class Validator {
        * Human error specifies a user-customizable error that is visible to the user.
        * </pre>
        *
-       * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-       * @return This builder for chaining.
+       * <code>optional string human_error = 5[json_name = "humanError"];</code>
        */
       public Builder clearHumanError() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2282,9 +2127,7 @@ public final class Validator {
        * Human error specifies a user-customizable error that is visible to the user.
        * </pre>
        *
-       * <code>optional string human_error = 5 [json_name = "humanError"];</code>
-       * @param value The bytes for humanError to set.
-       * @return This builder for chaining.
+       * <code>optional string human_error = 5[json_name = "humanError"];</code>
        */
       public Builder setHumanErrorBytes(
           com.google.protobuf.ByteString value) {
@@ -2305,12 +2148,10 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-       * @return Whether the floatGt field is set.
+       * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
        */
-      @java.lang.Override
       public boolean hasFloatGt() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <pre>
@@ -2319,10 +2160,8 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-       * @return The floatGt.
+       * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
        */
-      @java.lang.Override
       public double getFloatGt() {
         return floatGt_;
       }
@@ -2333,9 +2172,7 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-       * @param value The floatGt to set.
-       * @return This builder for chaining.
+       * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
        */
       public Builder setFloatGt(double value) {
         bitField0_ |= 0x00000020;
@@ -2350,8 +2187,7 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_gt = 6 [json_name = "floatGt"];</code>
-       * @return This builder for chaining.
+       * <code>optional double float_gt = 6[json_name = "floatGt"];</code>
        */
       public Builder clearFloatGt() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -2368,12 +2204,10 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-       * @return Whether the floatLt field is set.
+       * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
        */
-      @java.lang.Override
       public boolean hasFloatLt() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
        * <pre>
@@ -2382,10 +2216,8 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-       * @return The floatLt.
+       * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
        */
-      @java.lang.Override
       public double getFloatLt() {
         return floatLt_;
       }
@@ -2396,9 +2228,7 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-       * @param value The floatLt to set.
-       * @return This builder for chaining.
+       * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
        */
       public Builder setFloatLt(double value) {
         bitField0_ |= 0x00000040;
@@ -2413,8 +2243,7 @@ public final class Validator {
        * value. Use together with float_epsilon if you need something more specific.
        * </pre>
        *
-       * <code>optional double float_lt = 7 [json_name = "floatLt"];</code>
-       * @return This builder for chaining.
+       * <code>optional double float_lt = 7[json_name = "floatLt"];</code>
        */
       public Builder clearFloatLt() {
         bitField0_ = (bitField0_ & ~0x00000040);
@@ -2435,12 +2264,10 @@ public final class Validator {
        * comparisons will be attempted.
        * </pre>
        *
-       * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-       * @return Whether the floatEpsilon field is set.
+       * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
        */
-      @java.lang.Override
       public boolean hasFloatEpsilon() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
        * <pre>
@@ -2453,10 +2280,8 @@ public final class Validator {
        * comparisons will be attempted.
        * </pre>
        *
-       * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-       * @return The floatEpsilon.
+       * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
        */
-      @java.lang.Override
       public double getFloatEpsilon() {
         return floatEpsilon_;
       }
@@ -2471,9 +2296,7 @@ public final class Validator {
        * comparisons will be attempted.
        * </pre>
        *
-       * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-       * @param value The floatEpsilon to set.
-       * @return This builder for chaining.
+       * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
        */
       public Builder setFloatEpsilon(double value) {
         bitField0_ |= 0x00000080;
@@ -2492,8 +2315,7 @@ public final class Validator {
        * comparisons will be attempted.
        * </pre>
        *
-       * <code>optional double float_epsilon = 8 [json_name = "floatEpsilon"];</code>
-       * @return This builder for chaining.
+       * <code>optional double float_epsilon = 8[json_name = "floatEpsilon"];</code>
        */
       public Builder clearFloatEpsilon() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -2508,22 +2330,18 @@ public final class Validator {
        * Floating-point value compared to which the field content should be greater or equal.
        * </pre>
        *
-       * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-       * @return Whether the floatGte field is set.
+       * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
        */
-      @java.lang.Override
       public boolean hasFloatGte() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <pre>
        * Floating-point value compared to which the field content should be greater or equal.
        * </pre>
        *
-       * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-       * @return The floatGte.
+       * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
        */
-      @java.lang.Override
       public double getFloatGte() {
         return floatGte_;
       }
@@ -2532,9 +2350,7 @@ public final class Validator {
        * Floating-point value compared to which the field content should be greater or equal.
        * </pre>
        *
-       * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-       * @param value The floatGte to set.
-       * @return This builder for chaining.
+       * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
        */
       public Builder setFloatGte(double value) {
         bitField0_ |= 0x00000100;
@@ -2547,8 +2363,7 @@ public final class Validator {
        * Floating-point value compared to which the field content should be greater or equal.
        * </pre>
        *
-       * <code>optional double float_gte = 9 [json_name = "floatGte"];</code>
-       * @return This builder for chaining.
+       * <code>optional double float_gte = 9[json_name = "floatGte"];</code>
        */
       public Builder clearFloatGte() {
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -2563,22 +2378,18 @@ public final class Validator {
        * Floating-point value compared to which the field content should be smaller or equal.
        * </pre>
        *
-       * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-       * @return Whether the floatLte field is set.
+       * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
        */
-      @java.lang.Override
       public boolean hasFloatLte() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <pre>
        * Floating-point value compared to which the field content should be smaller or equal.
        * </pre>
        *
-       * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-       * @return The floatLte.
+       * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
        */
-      @java.lang.Override
       public double getFloatLte() {
         return floatLte_;
       }
@@ -2587,9 +2398,7 @@ public final class Validator {
        * Floating-point value compared to which the field content should be smaller or equal.
        * </pre>
        *
-       * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-       * @param value The floatLte to set.
-       * @return This builder for chaining.
+       * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
        */
       public Builder setFloatLte(double value) {
         bitField0_ |= 0x00000200;
@@ -2602,8 +2411,7 @@ public final class Validator {
        * Floating-point value compared to which the field content should be smaller or equal.
        * </pre>
        *
-       * <code>optional double float_lte = 10 [json_name = "floatLte"];</code>
-       * @return This builder for chaining.
+       * <code>optional double float_lte = 10[json_name = "floatLte"];</code>
        */
       public Builder clearFloatLte() {
         bitField0_ = (bitField0_ & ~0x00000200);
@@ -2618,22 +2426,18 @@ public final class Validator {
        * Used for string fields, requires the string to be not empty (i.e different from "").
        * </pre>
        *
-       * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-       * @return Whether the stringNotEmpty field is set.
+       * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
        */
-      @java.lang.Override
       public boolean hasStringNotEmpty() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <pre>
        * Used for string fields, requires the string to be not empty (i.e different from "").
        * </pre>
        *
-       * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-       * @return The stringNotEmpty.
+       * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
        */
-      @java.lang.Override
       public boolean getStringNotEmpty() {
         return stringNotEmpty_;
       }
@@ -2642,9 +2446,7 @@ public final class Validator {
        * Used for string fields, requires the string to be not empty (i.e different from "").
        * </pre>
        *
-       * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-       * @param value The stringNotEmpty to set.
-       * @return This builder for chaining.
+       * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
        */
       public Builder setStringNotEmpty(boolean value) {
         bitField0_ |= 0x00000400;
@@ -2657,8 +2459,7 @@ public final class Validator {
        * Used for string fields, requires the string to be not empty (i.e different from "").
        * </pre>
        *
-       * <code>optional bool string_not_empty = 11 [json_name = "stringNotEmpty"];</code>
-       * @return This builder for chaining.
+       * <code>optional bool string_not_empty = 11[json_name = "stringNotEmpty"];</code>
        */
       public Builder clearStringNotEmpty() {
         bitField0_ = (bitField0_ & ~0x00000400);
@@ -2673,22 +2474,18 @@ public final class Validator {
        * Repeated field with at least this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-       * @return Whether the repeatedCountMin field is set.
+       * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
        */
-      @java.lang.Override
       public boolean hasRepeatedCountMin() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <pre>
        * Repeated field with at least this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-       * @return The repeatedCountMin.
+       * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
        */
-      @java.lang.Override
       public long getRepeatedCountMin() {
         return repeatedCountMin_;
       }
@@ -2697,9 +2494,7 @@ public final class Validator {
        * Repeated field with at least this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-       * @param value The repeatedCountMin to set.
-       * @return This builder for chaining.
+       * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
        */
       public Builder setRepeatedCountMin(long value) {
         bitField0_ |= 0x00000800;
@@ -2712,8 +2507,7 @@ public final class Validator {
        * Repeated field with at least this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_min = 12 [json_name = "repeatedCountMin"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 repeated_count_min = 12[json_name = "repeatedCountMin"];</code>
        */
       public Builder clearRepeatedCountMin() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -2728,22 +2522,18 @@ public final class Validator {
        * Repeated field with at most this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-       * @return Whether the repeatedCountMax field is set.
+       * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
        */
-      @java.lang.Override
       public boolean hasRepeatedCountMax() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <pre>
        * Repeated field with at most this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-       * @return The repeatedCountMax.
+       * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
        */
-      @java.lang.Override
       public long getRepeatedCountMax() {
         return repeatedCountMax_;
       }
@@ -2752,9 +2542,7 @@ public final class Validator {
        * Repeated field with at most this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-       * @param value The repeatedCountMax to set.
-       * @return This builder for chaining.
+       * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
        */
       public Builder setRepeatedCountMax(long value) {
         bitField0_ |= 0x00001000;
@@ -2767,8 +2555,7 @@ public final class Validator {
        * Repeated field with at most this number of elements.
        * </pre>
        *
-       * <code>optional int64 repeated_count_max = 13 [json_name = "repeatedCountMax"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 repeated_count_max = 13[json_name = "repeatedCountMax"];</code>
        */
       public Builder clearRepeatedCountMax() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -2783,22 +2570,18 @@ public final class Validator {
        * Field value of length greater than this value.
        * </pre>
        *
-       * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-       * @return Whether the lengthGt field is set.
+       * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
        */
-      @java.lang.Override
       public boolean hasLengthGt() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <pre>
        * Field value of length greater than this value.
        * </pre>
        *
-       * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-       * @return The lengthGt.
+       * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
        */
-      @java.lang.Override
       public long getLengthGt() {
         return lengthGt_;
       }
@@ -2807,9 +2590,7 @@ public final class Validator {
        * Field value of length greater than this value.
        * </pre>
        *
-       * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-       * @param value The lengthGt to set.
-       * @return This builder for chaining.
+       * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
        */
       public Builder setLengthGt(long value) {
         bitField0_ |= 0x00002000;
@@ -2822,8 +2603,7 @@ public final class Validator {
        * Field value of length greater than this value.
        * </pre>
        *
-       * <code>optional int64 length_gt = 14 [json_name = "lengthGt"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 length_gt = 14[json_name = "lengthGt"];</code>
        */
       public Builder clearLengthGt() {
         bitField0_ = (bitField0_ & ~0x00002000);
@@ -2838,22 +2618,18 @@ public final class Validator {
        * Field value of length smaller than this value.
        * </pre>
        *
-       * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-       * @return Whether the lengthLt field is set.
+       * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
        */
-      @java.lang.Override
       public boolean hasLengthLt() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <pre>
        * Field value of length smaller than this value.
        * </pre>
        *
-       * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-       * @return The lengthLt.
+       * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
        */
-      @java.lang.Override
       public long getLengthLt() {
         return lengthLt_;
       }
@@ -2862,9 +2638,7 @@ public final class Validator {
        * Field value of length smaller than this value.
        * </pre>
        *
-       * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-       * @param value The lengthLt to set.
-       * @return This builder for chaining.
+       * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
        */
       public Builder setLengthLt(long value) {
         bitField0_ |= 0x00004000;
@@ -2877,8 +2651,7 @@ public final class Validator {
        * Field value of length smaller than this value.
        * </pre>
        *
-       * <code>optional int64 length_lt = 15 [json_name = "lengthLt"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 length_lt = 15[json_name = "lengthLt"];</code>
        */
       public Builder clearLengthLt() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -2893,22 +2666,18 @@ public final class Validator {
        * Field value of integer strictly equal this value.
        * </pre>
        *
-       * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-       * @return Whether the lengthEq field is set.
+       * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
        */
-      @java.lang.Override
       public boolean hasLengthEq() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <pre>
        * Field value of integer strictly equal this value.
        * </pre>
        *
-       * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-       * @return The lengthEq.
+       * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
        */
-      @java.lang.Override
       public long getLengthEq() {
         return lengthEq_;
       }
@@ -2917,9 +2686,7 @@ public final class Validator {
        * Field value of integer strictly equal this value.
        * </pre>
        *
-       * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-       * @param value The lengthEq to set.
-       * @return This builder for chaining.
+       * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
        */
       public Builder setLengthEq(long value) {
         bitField0_ |= 0x00008000;
@@ -2932,8 +2699,7 @@ public final class Validator {
        * Field value of integer strictly equal this value.
        * </pre>
        *
-       * <code>optional int64 length_eq = 16 [json_name = "lengthEq"];</code>
-       * @return This builder for chaining.
+       * <code>optional int64 length_eq = 16[json_name = "lengthEq"];</code>
        */
       public Builder clearLengthEq() {
         bitField0_ = (bitField0_ & ~0x00008000);
@@ -2948,22 +2714,18 @@ public final class Validator {
        * Requires that the value is in the enum.
        * </pre>
        *
-       * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-       * @return Whether the isInEnum field is set.
+       * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
        */
-      @java.lang.Override
       public boolean hasIsInEnum() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <pre>
        * Requires that the value is in the enum.
        * </pre>
        *
-       * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-       * @return The isInEnum.
+       * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
        */
-      @java.lang.Override
       public boolean getIsInEnum() {
         return isInEnum_;
       }
@@ -2972,9 +2734,7 @@ public final class Validator {
        * Requires that the value is in the enum.
        * </pre>
        *
-       * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-       * @param value The isInEnum to set.
-       * @return This builder for chaining.
+       * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
        */
       public Builder setIsInEnum(boolean value) {
         bitField0_ |= 0x00010000;
@@ -2987,8 +2747,7 @@ public final class Validator {
        * Requires that the value is in the enum.
        * </pre>
        *
-       * <code>optional bool is_in_enum = 17 [json_name = "isInEnum"];</code>
-       * @return This builder for chaining.
+       * <code>optional bool is_in_enum = 17[json_name = "isInEnum"];</code>
        */
       public Builder clearIsInEnum() {
         bitField0_ = (bitField0_ & ~0x00010000);
@@ -3005,12 +2764,10 @@ public final class Validator {
        * If uuid_ver is 0 all UUID versions are accepted.
        * </pre>
        *
-       * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-       * @return Whether the uuidVer field is set.
+       * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
        */
-      @java.lang.Override
       public boolean hasUuidVer() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <pre>
@@ -3019,10 +2776,8 @@ public final class Validator {
        * If uuid_ver is 0 all UUID versions are accepted.
        * </pre>
        *
-       * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-       * @return The uuidVer.
+       * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
        */
-      @java.lang.Override
       public int getUuidVer() {
         return uuidVer_;
       }
@@ -3033,9 +2788,7 @@ public final class Validator {
        * If uuid_ver is 0 all UUID versions are accepted.
        * </pre>
        *
-       * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-       * @param value The uuidVer to set.
-       * @return This builder for chaining.
+       * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
        */
       public Builder setUuidVer(int value) {
         bitField0_ |= 0x00020000;
@@ -3050,8 +2803,7 @@ public final class Validator {
        * If uuid_ver is 0 all UUID versions are accepted.
        * </pre>
        *
-       * <code>optional int32 uuid_ver = 18 [json_name = "uuidVer"];</code>
-       * @return This builder for chaining.
+       * <code>optional int32 uuid_ver = 18[json_name = "uuidVer"];</code>
        */
       public Builder clearUuidVer() {
         bitField0_ = (bitField0_ & ~0x00020000);
@@ -3059,13 +2811,11 @@ public final class Validator {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3087,7 +2837,6 @@ public final class Validator {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<FieldValidator>
         PARSER = new com.google.protobuf.AbstractParser<FieldValidator>() {
-      @java.lang.Override
       public FieldValidator parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3105,7 +2854,6 @@ public final class Validator {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.github.mwitkow.go_proto_validators.Validator.FieldValidator getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3121,8 +2869,7 @@ public final class Validator {
      * Require that one of the oneof fields is set.
      * </pre>
      *
-     * <code>optional bool required = 1 [json_name = "required"];</code>
-     * @return Whether the required field is set.
+     * <code>optional bool required = 1[json_name = "required"];</code>
      */
     boolean hasRequired();
     /**
@@ -3130,15 +2877,14 @@ public final class Validator {
      * Require that one of the oneof fields is set.
      * </pre>
      *
-     * <code>optional bool required = 1 [json_name = "required"];</code>
-     * @return The required.
+     * <code>optional bool required = 1[json_name = "required"];</code>
      */
     boolean getRequired();
   }
   /**
    * Protobuf type {@code validator.OneofValidator}
    */
-  public static final class OneofValidator extends
+  public  static final class OneofValidator extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:validator.OneofValidator)
       OneofValidatorOrBuilder {
@@ -3148,13 +2894,7 @@ public final class Validator {
       super(builder);
     }
     private OneofValidator() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OneofValidator();
+      required_ = false;
     }
 
     @java.lang.Override
@@ -3181,16 +2921,16 @@ public final class Validator {
             case 0:
               done = true;
               break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              required_ = input.readBool();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              required_ = input.readBool();
               break;
             }
           }
@@ -3210,7 +2950,6 @@ public final class Validator {
       return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_OneofValidator_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_OneofValidator_fieldAccessorTable
@@ -3226,28 +2965,23 @@ public final class Validator {
      * Require that one of the oneof fields is set.
      * </pre>
      *
-     * <code>optional bool required = 1 [json_name = "required"];</code>
-     * @return Whether the required field is set.
+     * <code>optional bool required = 1[json_name = "required"];</code>
      */
-    @java.lang.Override
     public boolean hasRequired() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <pre>
      * Require that one of the oneof fields is set.
      * </pre>
      *
-     * <code>optional bool required = 1 [json_name = "required"];</code>
-     * @return The required.
+     * <code>optional bool required = 1[json_name = "required"];</code>
      */
-    @java.lang.Override
     public boolean getRequired() {
       return required_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3257,22 +2991,20 @@ public final class Validator {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBool(1, required_);
       }
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, required_);
       }
@@ -3291,13 +3023,14 @@ public final class Validator {
       }
       com.github.mwitkow.go_proto_validators.Validator.OneofValidator other = (com.github.mwitkow.go_proto_validators.Validator.OneofValidator) obj;
 
-      if (hasRequired() != other.hasRequired()) return false;
+      boolean result = true;
+      result = result && (hasRequired() == other.hasRequired());
       if (hasRequired()) {
-        if (getRequired()
-            != other.getRequired()) return false;
+        result = result && (getRequired()
+            == other.getRequired());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3387,7 +3120,6 @@ public final class Validator {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3395,7 +3127,6 @@ public final class Validator {
     public static Builder newBuilder(com.github.mwitkow.go_proto_validators.Validator.OneofValidator prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3419,7 +3150,6 @@ public final class Validator {
         return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_OneofValidator_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_OneofValidator_fieldAccessorTable
@@ -3442,7 +3172,6 @@ public final class Validator {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         required_ = false;
@@ -3450,18 +3179,15 @@ public final class Validator {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.github.mwitkow.go_proto_validators.Validator.internal_static_validator_OneofValidator_descriptor;
       }
 
-      @java.lang.Override
       public com.github.mwitkow.go_proto_validators.Validator.OneofValidator getDefaultInstanceForType() {
         return com.github.mwitkow.go_proto_validators.Validator.OneofValidator.getDefaultInstance();
       }
 
-      @java.lang.Override
       public com.github.mwitkow.go_proto_validators.Validator.OneofValidator build() {
         com.github.mwitkow.go_proto_validators.Validator.OneofValidator result = buildPartial();
         if (!result.isInitialized()) {
@@ -3470,53 +3196,45 @@ public final class Validator {
         return result;
       }
 
-      @java.lang.Override
       public com.github.mwitkow.go_proto_validators.Validator.OneofValidator buildPartial() {
         com.github.mwitkow.go_proto_validators.Validator.OneofValidator result = new com.github.mwitkow.go_proto_validators.Validator.OneofValidator(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.required_ = required_;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
+        result.required_ = required_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.github.mwitkow.go_proto_validators.Validator.OneofValidator) {
           return mergeFrom((com.github.mwitkow.go_proto_validators.Validator.OneofValidator)other);
@@ -3536,12 +3254,10 @@ public final class Validator {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3567,22 +3283,18 @@ public final class Validator {
        * Require that one of the oneof fields is set.
        * </pre>
        *
-       * <code>optional bool required = 1 [json_name = "required"];</code>
-       * @return Whether the required field is set.
+       * <code>optional bool required = 1[json_name = "required"];</code>
        */
-      @java.lang.Override
       public boolean hasRequired() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <pre>
        * Require that one of the oneof fields is set.
        * </pre>
        *
-       * <code>optional bool required = 1 [json_name = "required"];</code>
-       * @return The required.
+       * <code>optional bool required = 1[json_name = "required"];</code>
        */
-      @java.lang.Override
       public boolean getRequired() {
         return required_;
       }
@@ -3591,9 +3303,7 @@ public final class Validator {
        * Require that one of the oneof fields is set.
        * </pre>
        *
-       * <code>optional bool required = 1 [json_name = "required"];</code>
-       * @param value The required to set.
-       * @return This builder for chaining.
+       * <code>optional bool required = 1[json_name = "required"];</code>
        */
       public Builder setRequired(boolean value) {
         bitField0_ |= 0x00000001;
@@ -3606,8 +3316,7 @@ public final class Validator {
        * Require that one of the oneof fields is set.
        * </pre>
        *
-       * <code>optional bool required = 1 [json_name = "required"];</code>
-       * @return This builder for chaining.
+       * <code>optional bool required = 1[json_name = "required"];</code>
        */
       public Builder clearRequired() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3615,13 +3324,11 @@ public final class Validator {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3643,7 +3350,6 @@ public final class Validator {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<OneofValidator>
         PARSER = new com.google.protobuf.AbstractParser<OneofValidator>() {
-      @java.lang.Override
       public OneofValidator parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3661,7 +3367,6 @@ public final class Validator {
       return PARSER;
     }
 
-    @java.lang.Override
     public com.github.mwitkow.go_proto_validators.Validator.OneofValidator getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3692,12 +3397,12 @@ public final class Validator {
         com.github.mwitkow.go_proto_validators.Validator.OneofValidator.getDefaultInstance());
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_validator_FieldValidator_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_validator_FieldValidator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_validator_OneofValidator_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_validator_OneofValidator_fieldAccessorTable;
 
@@ -3735,11 +3440,19 @@ public final class Validator {
       "_validatorsZ0github.com/mwitkow/go-proto" +
       "-validators;validator"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.DescriptorProtos.getDescriptor(),
-        });
+        }, assigner);
     internal_static_validator_FieldValidator_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_validator_FieldValidator_fieldAccessorTable = new

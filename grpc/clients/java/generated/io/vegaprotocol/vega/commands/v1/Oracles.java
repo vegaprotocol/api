@@ -23,8 +23,7 @@ public final class Oracles {
      * The source from which the data is coming from
      * </pre>
      *
-     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-     * @return The enum numeric value on the wire for source.
+     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
      */
     int getSourceValue();
     /**
@@ -32,8 +31,7 @@ public final class Oracles {
      * The source from which the data is coming from
      * </pre>
      *
-     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-     * @return The source.
+     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
      */
     io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource getSource();
 
@@ -42,8 +40,7 @@ public final class Oracles {
      * The data provided by the third party provider
      * </pre>
      *
-     * <code>bytes payload = 2 [json_name = "payload"];</code>
-     * @return The payload.
+     * <code>bytes payload = 2[json_name = "payload"];</code>
      */
     com.google.protobuf.ByteString getPayload();
   }
@@ -54,7 +51,7 @@ public final class Oracles {
    *
    * Protobuf type {@code vega.commands.v1.OracleDataSubmission}
    */
-  public static final class OracleDataSubmission extends
+  public  static final class OracleDataSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.OracleDataSubmission)
       OracleDataSubmissionOrBuilder {
@@ -66,13 +63,6 @@ public final class Oracles {
     private OracleDataSubmission() {
       source_ = 0;
       payload_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OracleDataSubmission();
     }
 
     @java.lang.Override
@@ -88,6 +78,7 @@ public final class Oracles {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -98,6 +89,13 @@ public final class Oracles {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -107,13 +105,6 @@ public final class Oracles {
             case 18: {
 
               payload_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -133,7 +124,6 @@ public final class Oracles {
       return io.vegaprotocol.vega.commands.v1.Oracles.internal_static_vega_commands_v1_OracleDataSubmission_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Oracles.internal_static_vega_commands_v1_OracleDataSubmission_fieldAccessorTable
@@ -196,8 +186,6 @@ public final class Oracles {
       }
 
       /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -205,10 +193,6 @@ public final class Oracles {
         return forNumber(value);
       }
 
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
       public static OracleSource forNumber(int value) {
         switch (value) {
           case 0: return ORACLE_SOURCE_UNSPECIFIED;
@@ -231,10 +215,6 @@ public final class Oracles {
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
         return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -276,10 +256,9 @@ public final class Oracles {
      * The source from which the data is coming from
      * </pre>
      *
-     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-     * @return The enum numeric value on the wire for source.
+     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
      */
-    @java.lang.Override public int getSourceValue() {
+    public int getSourceValue() {
       return source_;
     }
     /**
@@ -287,11 +266,9 @@ public final class Oracles {
      * The source from which the data is coming from
      * </pre>
      *
-     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-     * @return The source.
+     * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource getSource() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource getSource() {
       io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource result = io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource.valueOf(source_);
       return result == null ? io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource.UNRECOGNIZED : result;
     }
@@ -303,16 +280,13 @@ public final class Oracles {
      * The data provided by the third party provider
      * </pre>
      *
-     * <code>bytes payload = 2 [json_name = "payload"];</code>
-     * @return The payload.
+     * <code>bytes payload = 2[json_name = "payload"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -322,7 +296,6 @@ public final class Oracles {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (source_ != io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource.ORACLE_SOURCE_UNSPECIFIED.getNumber()) {
@@ -334,7 +307,6 @@ public final class Oracles {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -363,11 +335,12 @@ public final class Oracles {
       }
       io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission other = (io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission) obj;
 
-      if (source_ != other.source_) return false;
-      if (!getPayload()
-          .equals(other.getPayload())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && source_ == other.source_;
+      result = result && getPayload()
+          .equals(other.getPayload());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -456,7 +429,6 @@ public final class Oracles {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -464,7 +436,6 @@ public final class Oracles {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -492,7 +463,6 @@ public final class Oracles {
         return io.vegaprotocol.vega.commands.v1.Oracles.internal_static_vega_commands_v1_OracleDataSubmission_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Oracles.internal_static_vega_commands_v1_OracleDataSubmission_fieldAccessorTable
@@ -515,7 +485,6 @@ public final class Oracles {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         source_ = 0;
@@ -525,18 +494,15 @@ public final class Oracles {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Oracles.internal_static_vega_commands_v1_OracleDataSubmission_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission build() {
         io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission result = buildPartial();
         if (!result.isInitialized()) {
@@ -545,7 +511,6 @@ public final class Oracles {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission result = new io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission(this);
         result.source_ = source_;
@@ -554,39 +519,32 @@ public final class Oracles {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission)other);
@@ -609,12 +567,10 @@ public final class Oracles {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -639,10 +595,9 @@ public final class Oracles {
        * The source from which the data is coming from
        * </pre>
        *
-       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-       * @return The enum numeric value on the wire for source.
+       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
        */
-      @java.lang.Override public int getSourceValue() {
+      public int getSourceValue() {
         return source_;
       }
       /**
@@ -650,12 +605,9 @@ public final class Oracles {
        * The source from which the data is coming from
        * </pre>
        *
-       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-       * @param value The enum numeric value on the wire for source to set.
-       * @return This builder for chaining.
+       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
        */
       public Builder setSourceValue(int value) {
-
         source_ = value;
         onChanged();
         return this;
@@ -665,12 +617,9 @@ public final class Oracles {
        * The source from which the data is coming from
        * </pre>
        *
-       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-       * @return The source.
+       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource getSource() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource result = io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource.valueOf(source_);
         return result == null ? io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource.UNRECOGNIZED : result;
       }
@@ -679,15 +628,13 @@ public final class Oracles {
        * The source from which the data is coming from
        * </pre>
        *
-       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-       * @param value The source to set.
-       * @return This builder for chaining.
+       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
        */
       public Builder setSource(io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.OracleSource value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         source_ = value.getNumber();
         onChanged();
         return this;
@@ -697,11 +644,10 @@ public final class Oracles {
        * The source from which the data is coming from
        * </pre>
        *
-       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1 [json_name = "source"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.commands.v1.OracleDataSubmission.OracleSource source = 1[json_name = "source"];</code>
        */
       public Builder clearSource() {
-
+        
         source_ = 0;
         onChanged();
         return this;
@@ -713,10 +659,8 @@ public final class Oracles {
        * The data provided by the third party provider
        * </pre>
        *
-       * <code>bytes payload = 2 [json_name = "payload"];</code>
-       * @return The payload.
+       * <code>bytes payload = 2[json_name = "payload"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getPayload() {
         return payload_;
       }
@@ -725,15 +669,13 @@ public final class Oracles {
        * The data provided by the third party provider
        * </pre>
        *
-       * <code>bytes payload = 2 [json_name = "payload"];</code>
-       * @param value The payload to set.
-       * @return This builder for chaining.
+       * <code>bytes payload = 2[json_name = "payload"];</code>
        */
       public Builder setPayload(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         payload_ = value;
         onChanged();
         return this;
@@ -743,22 +685,19 @@ public final class Oracles {
        * The data provided by the third party provider
        * </pre>
        *
-       * <code>bytes payload = 2 [json_name = "payload"];</code>
-       * @return This builder for chaining.
+       * <code>bytes payload = 2[json_name = "payload"];</code>
        */
       public Builder clearPayload() {
-
+        
         payload_ = getDefaultInstance().getPayload();
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -780,7 +719,6 @@ public final class Oracles {
 
     private static final com.google.protobuf.Parser<OracleDataSubmission>
         PARSER = new com.google.protobuf.AbstractParser<OracleDataSubmission>() {
-      @java.lang.Override
       public OracleDataSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -798,7 +736,6 @@ public final class Oracles {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -807,7 +744,7 @@ public final class Oracles {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_OracleDataSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_OracleDataSubmission_fieldAccessorTable;
 
@@ -829,10 +766,18 @@ public final class Oracles {
       "ands.v1Z+code.vegaprotocol.io/vega/proto" +
       "/commands/v1b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_vega_commands_v1_OracleDataSubmission_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_vega_commands_v1_OracleDataSubmission_fieldAccessorTable = new

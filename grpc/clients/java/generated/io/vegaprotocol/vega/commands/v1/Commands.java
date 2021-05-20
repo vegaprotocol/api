@@ -23,8 +23,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
     java.lang.String getMarketId();
     /**
@@ -32,8 +31,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
     com.google.protobuf.ByteString
         getMarketIdBytes();
@@ -45,8 +43,7 @@ public final class Commands {
      * , required field for limit orders, however it is not required for market orders
      * </pre>
      *
-     * <code>uint64 price = 2 [json_name = "price"];</code>
-     * @return The price.
+     * <code>uint64 price = 2[json_name = "price"];</code>
      */
     long getPrice();
 
@@ -55,8 +52,7 @@ public final class Commands {
      * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
      * </pre>
      *
-     * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
-     * @return The size.
+     * <code>uint64 size = 3[json_name = "size", (.validator.field) = { ... }</code>
      */
     long getSize();
 
@@ -65,8 +61,7 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 4 [json_name = "side"];</code>
-     * @return The enum numeric value on the wire for side.
+     * <code>.vega.Side side = 4[json_name = "side"];</code>
      */
     int getSideValue();
     /**
@@ -74,8 +69,7 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 4 [json_name = "side"];</code>
-     * @return The side.
+     * <code>.vega.Side side = 4[json_name = "side"];</code>
      */
     io.vegaprotocol.vega.Vega.Side getSide();
 
@@ -85,8 +79,7 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-     * @return The enum numeric value on the wire for timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
      */
     int getTimeInForceValue();
     /**
@@ -95,8 +88,7 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-     * @return The timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
      */
     io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce();
 
@@ -107,8 +99,7 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
-     * @return The expiresAt.
+     * <code>int64 expires_at = 6[json_name = "expiresAt"];</code>
      */
     long getExpiresAt();
 
@@ -117,8 +108,7 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
      */
     int getTypeValue();
     /**
@@ -126,8 +116,7 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-     * @return The type.
+     * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
      */
     io.vegaprotocol.vega.Vega.Order.Type getType();
 
@@ -137,8 +126,7 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 8 [json_name = "reference"];</code>
-     * @return The reference.
+     * <code>string reference = 8[json_name = "reference"];</code>
      */
     java.lang.String getReference();
     /**
@@ -147,8 +135,7 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 8 [json_name = "reference"];</code>
-     * @return The bytes for reference.
+     * <code>string reference = 8[json_name = "reference"];</code>
      */
     com.google.protobuf.ByteString
         getReferenceBytes();
@@ -159,8 +146,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
-     * @return Whether the peggedOrder field is set.
+     * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
      */
     boolean hasPeggedOrder();
     /**
@@ -169,8 +155,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
-     * @return The peggedOrder.
+     * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
      */
     io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder();
     /**
@@ -179,7 +164,7 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
      */
     io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder();
   }
@@ -190,7 +175,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.OrderSubmission}
    */
-  public static final class OrderSubmission extends
+  public  static final class OrderSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.OrderSubmission)
       OrderSubmissionOrBuilder {
@@ -201,17 +186,13 @@ public final class Commands {
     }
     private OrderSubmission() {
       marketId_ = "";
+      price_ = 0L;
+      size_ = 0L;
       side_ = 0;
       timeInForce_ = 0;
+      expiresAt_ = 0L;
       type_ = 0;
       reference_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OrderSubmission();
     }
 
     @java.lang.Override
@@ -227,6 +208,7 @@ public final class Commands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -237,6 +219,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -295,13 +284,6 @@ public final class Commands {
 
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -319,7 +301,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderSubmission_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderSubmission_fieldAccessorTable
@@ -334,16 +315,14 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public java.lang.String getMarketId() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketId_ = s;
@@ -355,15 +334,13 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMarketIdBytes() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketId_ = b;
@@ -382,10 +359,8 @@ public final class Commands {
      * , required field for limit orders, however it is not required for market orders
      * </pre>
      *
-     * <code>uint64 price = 2 [json_name = "price"];</code>
-     * @return The price.
+     * <code>uint64 price = 2[json_name = "price"];</code>
      */
-    @java.lang.Override
     public long getPrice() {
       return price_;
     }
@@ -397,10 +372,8 @@ public final class Commands {
      * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
      * </pre>
      *
-     * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
-     * @return The size.
+     * <code>uint64 size = 3[json_name = "size", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public long getSize() {
       return size_;
     }
@@ -412,10 +385,9 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 4 [json_name = "side"];</code>
-     * @return The enum numeric value on the wire for side.
+     * <code>.vega.Side side = 4[json_name = "side"];</code>
      */
-    @java.lang.Override public int getSideValue() {
+    public int getSideValue() {
       return side_;
     }
     /**
@@ -423,11 +395,9 @@ public final class Commands {
      * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
      * </pre>
      *
-     * <code>.vega.Side side = 4 [json_name = "side"];</code>
-     * @return The side.
+     * <code>.vega.Side side = 4[json_name = "side"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.Vega.Side getSide() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.Vega.Side getSide() {
       io.vegaprotocol.vega.Vega.Side result = io.vegaprotocol.vega.Vega.Side.valueOf(side_);
       return result == null ? io.vegaprotocol.vega.Vega.Side.UNRECOGNIZED : result;
     }
@@ -440,10 +410,9 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-     * @return The enum numeric value on the wire for timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
      */
-    @java.lang.Override public int getTimeInForceValue() {
+    public int getTimeInForceValue() {
       return timeInForce_;
     }
     /**
@@ -452,11 +421,9 @@ public final class Commands {
      * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-     * @return The timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
       io.vegaprotocol.vega.Vega.Order.TimeInForce result = io.vegaprotocol.vega.Vega.Order.TimeInForce.valueOf(timeInForce_);
       return result == null ? io.vegaprotocol.vega.Vega.Order.TimeInForce.UNRECOGNIZED : result;
     }
@@ -470,10 +437,8 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
-     * @return The expiresAt.
+     * <code>int64 expires_at = 6[json_name = "expiresAt"];</code>
      */
-    @java.lang.Override
     public long getExpiresAt() {
       return expiresAt_;
     }
@@ -485,10 +450,9 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
      */
-    @java.lang.Override public int getTypeValue() {
+    public int getTypeValue() {
       return type_;
     }
     /**
@@ -496,11 +460,9 @@ public final class Commands {
      * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
      * </pre>
      *
-     * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-     * @return The type.
+     * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.Vega.Order.Type getType() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.Vega.Order.Type getType() {
       io.vegaprotocol.vega.Vega.Order.Type result = io.vegaprotocol.vega.Vega.Order.Type.valueOf(type_);
       return result == null ? io.vegaprotocol.vega.Vega.Order.Type.UNRECOGNIZED : result;
     }
@@ -513,16 +475,14 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 8 [json_name = "reference"];</code>
-     * @return The reference.
+     * <code>string reference = 8[json_name = "reference"];</code>
      */
-    @java.lang.Override
     public java.lang.String getReference() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -535,15 +495,13 @@ public final class Commands {
      * set internally by the node to return a unique reference identifier for the order submission
      * </pre>
      *
-     * <code>string reference = 8 [json_name = "reference"];</code>
-     * @return The bytes for reference.
+     * <code>string reference = 8[json_name = "reference"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -561,10 +519,8 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
-     * @return Whether the peggedOrder field is set.
+     * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
      */
-    @java.lang.Override
     public boolean hasPeggedOrder() {
       return peggedOrder_ != null;
     }
@@ -574,10 +530,8 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
-     * @return The peggedOrder.
+     * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
       return peggedOrder_ == null ? io.vegaprotocol.vega.Vega.PeggedOrder.getDefaultInstance() : peggedOrder_;
     }
@@ -587,15 +541,13 @@ public final class Commands {
      * - See [`PeggedOrder`](#vega.PeggedOrder)
      * </pre>
      *
-     * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+     * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
       return getPeggedOrder();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -605,7 +557,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getMarketIdBytes().isEmpty()) {
@@ -638,7 +589,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -693,26 +643,27 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission) obj;
 
-      if (!getMarketId()
-          .equals(other.getMarketId())) return false;
-      if (getPrice()
-          != other.getPrice()) return false;
-      if (getSize()
-          != other.getSize()) return false;
-      if (side_ != other.side_) return false;
-      if (timeInForce_ != other.timeInForce_) return false;
-      if (getExpiresAt()
-          != other.getExpiresAt()) return false;
-      if (type_ != other.type_) return false;
-      if (!getReference()
-          .equals(other.getReference())) return false;
-      if (hasPeggedOrder() != other.hasPeggedOrder()) return false;
+      boolean result = true;
+      result = result && getMarketId()
+          .equals(other.getMarketId());
+      result = result && (getPrice()
+          == other.getPrice());
+      result = result && (getSize()
+          == other.getSize());
+      result = result && side_ == other.side_;
+      result = result && timeInForce_ == other.timeInForce_;
+      result = result && (getExpiresAt()
+          == other.getExpiresAt());
+      result = result && type_ == other.type_;
+      result = result && getReference()
+          .equals(other.getReference());
+      result = result && (hasPeggedOrder() == other.hasPeggedOrder());
       if (hasPeggedOrder()) {
-        if (!getPeggedOrder()
-            .equals(other.getPeggedOrder())) return false;
+        result = result && getPeggedOrder()
+            .equals(other.getPeggedOrder());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -820,7 +771,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -828,7 +778,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -856,7 +805,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderSubmission_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderSubmission_fieldAccessorTable
@@ -879,7 +827,6 @@ public final class Commands {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         marketId_ = "";
@@ -907,18 +854,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderSubmission_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission build() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission result = buildPartial();
         if (!result.isInitialized()) {
@@ -927,7 +871,6 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission(this);
         result.marketId_ = marketId_;
@@ -947,39 +890,32 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission)other);
@@ -1025,12 +961,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1055,8 +989,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @return The marketId.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public java.lang.String getMarketId() {
         java.lang.Object ref = marketId_;
@@ -1075,14 +1008,13 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @return The bytes for marketId.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public com.google.protobuf.ByteString
           getMarketIdBytes() {
         java.lang.Object ref = marketId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketId_ = b;
@@ -1096,16 +1028,14 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @param value The marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         marketId_ = value;
         onChanged();
         return this;
@@ -1115,11 +1045,10 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public Builder clearMarketId() {
-
+        
         marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
@@ -1129,9 +1058,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @param value The bytes for marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1139,7 +1066,7 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         marketId_ = value;
         onChanged();
         return this;
@@ -1153,10 +1080,8 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
-       * @return The price.
+       * <code>uint64 price = 2[json_name = "price"];</code>
        */
-      @java.lang.Override
       public long getPrice() {
         return price_;
       }
@@ -1167,12 +1092,10 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
-       * @param value The price to set.
-       * @return This builder for chaining.
+       * <code>uint64 price = 2[json_name = "price"];</code>
        */
       public Builder setPrice(long value) {
-
+        
         price_ = value;
         onChanged();
         return this;
@@ -1184,11 +1107,10 @@ public final class Commands {
        * , required field for limit orders, however it is not required for market orders
        * </pre>
        *
-       * <code>uint64 price = 2 [json_name = "price"];</code>
-       * @return This builder for chaining.
+       * <code>uint64 price = 2[json_name = "price"];</code>
        */
       public Builder clearPrice() {
-
+        
         price_ = 0L;
         onChanged();
         return this;
@@ -1200,10 +1122,8 @@ public final class Commands {
        * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
        * </pre>
        *
-       * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
-       * @return The size.
+       * <code>uint64 size = 3[json_name = "size", (.validator.field) = { ... }</code>
        */
-      @java.lang.Override
       public long getSize() {
         return size_;
       }
@@ -1212,12 +1132,10 @@ public final class Commands {
        * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
        * </pre>
        *
-       * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
-       * @param value The size to set.
-       * @return This builder for chaining.
+       * <code>uint64 size = 3[json_name = "size", (.validator.field) = { ... }</code>
        */
       public Builder setSize(long value) {
-
+        
         size_ = value;
         onChanged();
         return this;
@@ -1227,11 +1145,10 @@ public final class Commands {
        * Size for the order, for example, in a futures market the size equals the number of contracts, cannot be negative
        * </pre>
        *
-       * <code>uint64 size = 3 [json_name = "size", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>uint64 size = 3[json_name = "size", (.validator.field) = { ... }</code>
        */
       public Builder clearSize() {
-
+        
         size_ = 0L;
         onChanged();
         return this;
@@ -1243,10 +1160,9 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 4 [json_name = "side"];</code>
-       * @return The enum numeric value on the wire for side.
+       * <code>.vega.Side side = 4[json_name = "side"];</code>
        */
-      @java.lang.Override public int getSideValue() {
+      public int getSideValue() {
         return side_;
       }
       /**
@@ -1254,12 +1170,9 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 4 [json_name = "side"];</code>
-       * @param value The enum numeric value on the wire for side to set.
-       * @return This builder for chaining.
+       * <code>.vega.Side side = 4[json_name = "side"];</code>
        */
       public Builder setSideValue(int value) {
-
         side_ = value;
         onChanged();
         return this;
@@ -1269,12 +1182,9 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 4 [json_name = "side"];</code>
-       * @return The side.
+       * <code>.vega.Side side = 4[json_name = "side"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.Vega.Side getSide() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.Vega.Side result = io.vegaprotocol.vega.Vega.Side.valueOf(side_);
         return result == null ? io.vegaprotocol.vega.Vega.Side.UNRECOGNIZED : result;
       }
@@ -1283,15 +1193,13 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 4 [json_name = "side"];</code>
-       * @param value The side to set.
-       * @return This builder for chaining.
+       * <code>.vega.Side side = 4[json_name = "side"];</code>
        */
       public Builder setSide(io.vegaprotocol.vega.Vega.Side value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         side_ = value.getNumber();
         onChanged();
         return this;
@@ -1301,11 +1209,10 @@ public final class Commands {
        * Side for the order, e.g. SIDE_BUY or SIDE_SELL, required field - See [`Side`](#vega.Side)
        * </pre>
        *
-       * <code>.vega.Side side = 4 [json_name = "side"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.Side side = 4[json_name = "side"];</code>
        */
       public Builder clearSide() {
-
+        
         side_ = 0;
         onChanged();
         return this;
@@ -1318,10 +1225,9 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-       * @return The enum numeric value on the wire for timeInForce.
+       * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
        */
-      @java.lang.Override public int getTimeInForceValue() {
+      public int getTimeInForceValue() {
         return timeInForce_;
       }
       /**
@@ -1330,12 +1236,9 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-       * @param value The enum numeric value on the wire for timeInForce to set.
-       * @return This builder for chaining.
+       * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
        */
       public Builder setTimeInForceValue(int value) {
-
         timeInForce_ = value;
         onChanged();
         return this;
@@ -1346,12 +1249,9 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-       * @return The timeInForce.
+       * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.Vega.Order.TimeInForce result = io.vegaprotocol.vega.Vega.Order.TimeInForce.valueOf(timeInForce_);
         return result == null ? io.vegaprotocol.vega.Vega.Order.TimeInForce.UNRECOGNIZED : result;
       }
@@ -1361,15 +1261,13 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-       * @param value The timeInForce to set.
-       * @return This builder for chaining.
+       * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
        */
       public Builder setTimeInForce(io.vegaprotocol.vega.Vega.Order.TimeInForce value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         timeInForce_ = value.getNumber();
         onChanged();
         return this;
@@ -1380,11 +1278,10 @@ public final class Commands {
        * - See [`Order.TimeInForce`](#vega.Order.TimeInForce)
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 5 [json_name = "timeInForce"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.Order.TimeInForce time_in_force = 5[json_name = "timeInForce"];</code>
        */
       public Builder clearTimeInForce() {
-
+        
         timeInForce_ = 0;
         onChanged();
         return this;
@@ -1398,10 +1295,8 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
-       * @return The expiresAt.
+       * <code>int64 expires_at = 6[json_name = "expiresAt"];</code>
        */
-      @java.lang.Override
       public long getExpiresAt() {
         return expiresAt_;
       }
@@ -1412,12 +1307,10 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
-       * @param value The expiresAt to set.
-       * @return This builder for chaining.
+       * <code>int64 expires_at = 6[json_name = "expiresAt"];</code>
        */
       public Builder setExpiresAt(long value) {
-
+        
         expiresAt_ = value;
         onChanged();
         return this;
@@ -1429,11 +1322,10 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
-       * @return This builder for chaining.
+       * <code>int64 expires_at = 6[json_name = "expiresAt"];</code>
        */
       public Builder clearExpiresAt() {
-
+        
         expiresAt_ = 0L;
         onChanged();
         return this;
@@ -1445,10 +1337,9 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-       * @return The enum numeric value on the wire for type.
+       * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
        */
-      @java.lang.Override public int getTypeValue() {
+      public int getTypeValue() {
         return type_;
       }
       /**
@@ -1456,12 +1347,9 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
+       * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
         onChanged();
         return this;
@@ -1471,12 +1359,9 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-       * @return The type.
+       * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.Vega.Order.Type getType() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.Vega.Order.Type result = io.vegaprotocol.vega.Vega.Order.Type.valueOf(type_);
         return result == null ? io.vegaprotocol.vega.Vega.Order.Type.UNRECOGNIZED : result;
       }
@@ -1485,15 +1370,13 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
+       * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
        */
       public Builder setType(io.vegaprotocol.vega.Vega.Order.Type value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1503,11 +1386,10 @@ public final class Commands {
        * Type for the order, required field - See [`Order.Type`](#vega.Order.Type)
        * </pre>
        *
-       * <code>.vega.Order.Type type = 7 [json_name = "type"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.Order.Type type = 7[json_name = "type"];</code>
        */
       public Builder clearType() {
-
+        
         type_ = 0;
         onChanged();
         return this;
@@ -1520,8 +1402,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 8 [json_name = "reference"];</code>
-       * @return The reference.
+       * <code>string reference = 8[json_name = "reference"];</code>
        */
       public java.lang.String getReference() {
         java.lang.Object ref = reference_;
@@ -1541,14 +1422,13 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 8 [json_name = "reference"];</code>
-       * @return The bytes for reference.
+       * <code>string reference = 8[json_name = "reference"];</code>
        */
       public com.google.protobuf.ByteString
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -1563,16 +1443,14 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 8 [json_name = "reference"];</code>
-       * @param value The reference to set.
-       * @return This builder for chaining.
+       * <code>string reference = 8[json_name = "reference"];</code>
        */
       public Builder setReference(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         reference_ = value;
         onChanged();
         return this;
@@ -1583,11 +1461,10 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 8 [json_name = "reference"];</code>
-       * @return This builder for chaining.
+       * <code>string reference = 8[json_name = "reference"];</code>
        */
       public Builder clearReference() {
-
+        
         reference_ = getDefaultInstance().getReference();
         onChanged();
         return this;
@@ -1598,9 +1475,7 @@ public final class Commands {
        * set internally by the node to return a unique reference identifier for the order submission
        * </pre>
        *
-       * <code>string reference = 8 [json_name = "reference"];</code>
-       * @param value The bytes for reference to set.
-       * @return This builder for chaining.
+       * <code>string reference = 8[json_name = "reference"];</code>
        */
       public Builder setReferenceBytes(
           com.google.protobuf.ByteString value) {
@@ -1608,13 +1483,13 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         reference_ = value;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_;
+      private io.vegaprotocol.vega.Vega.PeggedOrder peggedOrder_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder> peggedOrderBuilder_;
       /**
@@ -1623,8 +1498,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
-       * @return Whether the peggedOrder field is set.
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public boolean hasPeggedOrder() {
         return peggedOrderBuilder_ != null || peggedOrder_ != null;
@@ -1635,8 +1509,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
-       * @return The peggedOrder.
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public io.vegaprotocol.vega.Vega.PeggedOrder getPeggedOrder() {
         if (peggedOrderBuilder_ == null) {
@@ -1651,7 +1524,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public Builder setPeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
         if (peggedOrderBuilder_ == null) {
@@ -1672,7 +1545,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public Builder setPeggedOrder(
           io.vegaprotocol.vega.Vega.PeggedOrder.Builder builderForValue) {
@@ -1691,7 +1564,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public Builder mergePeggedOrder(io.vegaprotocol.vega.Vega.PeggedOrder value) {
         if (peggedOrderBuilder_ == null) {
@@ -1714,7 +1587,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public Builder clearPeggedOrder() {
         if (peggedOrderBuilder_ == null) {
@@ -1733,10 +1606,10 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public io.vegaprotocol.vega.Vega.PeggedOrder.Builder getPeggedOrderBuilder() {
-
+        
         onChanged();
         return getPeggedOrderFieldBuilder().getBuilder();
       }
@@ -1746,7 +1619,7 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       public io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder getPeggedOrderOrBuilder() {
         if (peggedOrderBuilder_ != null) {
@@ -1762,10 +1635,10 @@ public final class Commands {
        * - See [`PeggedOrder`](#vega.PeggedOrder)
        * </pre>
        *
-       * <code>.vega.PeggedOrder pegged_order = 9 [json_name = "peggedOrder"];</code>
+       * <code>.vega.PeggedOrder pegged_order = 9[json_name = "peggedOrder"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder>
+          io.vegaprotocol.vega.Vega.PeggedOrder, io.vegaprotocol.vega.Vega.PeggedOrder.Builder, io.vegaprotocol.vega.Vega.PeggedOrderOrBuilder> 
           getPeggedOrderFieldBuilder() {
         if (peggedOrderBuilder_ == null) {
           peggedOrderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1777,13 +1650,11 @@ public final class Commands {
         }
         return peggedOrderBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1805,7 +1676,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<OrderSubmission>
         PARSER = new com.google.protobuf.AbstractParser<OrderSubmission>() {
-      @java.lang.Override
       public OrderSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1823,7 +1693,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1839,8 +1708,7 @@ public final class Commands {
      * Unique identifier for the order (set by the system after consensus), required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId"];</code>
-     * @return The orderId.
+     * <code>string order_id = 1[json_name = "orderId"];</code>
      */
     java.lang.String getOrderId();
     /**
@@ -1848,8 +1716,7 @@ public final class Commands {
      * Unique identifier for the order (set by the system after consensus), required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId"];</code>
-     * @return The bytes for orderId.
+     * <code>string order_id = 1[json_name = "orderId"];</code>
      */
     com.google.protobuf.ByteString
         getOrderIdBytes();
@@ -1859,8 +1726,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
     java.lang.String getMarketId();
     /**
@@ -1868,8 +1734,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
     com.google.protobuf.ByteString
         getMarketIdBytes();
@@ -1881,7 +1746,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.OrderCancellation}
    */
-  public static final class OrderCancellation extends
+  public  static final class OrderCancellation extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.OrderCancellation)
       OrderCancellationOrBuilder {
@@ -1893,13 +1758,6 @@ public final class Commands {
     private OrderCancellation() {
       orderId_ = "";
       marketId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OrderCancellation();
     }
 
     @java.lang.Override
@@ -1915,6 +1773,7 @@ public final class Commands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1925,6 +1784,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1935,13 +1801,6 @@ public final class Commands {
               java.lang.String s = input.readStringRequireUtf8();
 
               marketId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -1961,7 +1820,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderCancellation_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderCancellation_fieldAccessorTable
@@ -1976,16 +1834,14 @@ public final class Commands {
      * Unique identifier for the order (set by the system after consensus), required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId"];</code>
-     * @return The orderId.
+     * <code>string order_id = 1[json_name = "orderId"];</code>
      */
-    @java.lang.Override
     public java.lang.String getOrderId() {
       java.lang.Object ref = orderId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         orderId_ = s;
@@ -1997,15 +1853,13 @@ public final class Commands {
      * Unique identifier for the order (set by the system after consensus), required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId"];</code>
-     * @return The bytes for orderId.
+     * <code>string order_id = 1[json_name = "orderId"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getOrderIdBytes() {
       java.lang.Object ref = orderId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         orderId_ = b;
@@ -2022,16 +1876,14 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
-    @java.lang.Override
     public java.lang.String getMarketId() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketId_ = s;
@@ -2043,15 +1895,13 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMarketIdBytes() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketId_ = b;
@@ -2062,7 +1912,6 @@ public final class Commands {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2072,7 +1921,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getOrderIdBytes().isEmpty()) {
@@ -2084,7 +1932,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2111,12 +1958,13 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation other = (io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation) obj;
 
-      if (!getOrderId()
-          .equals(other.getOrderId())) return false;
-      if (!getMarketId()
-          .equals(other.getMarketId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getOrderId()
+          .equals(other.getOrderId());
+      result = result && getMarketId()
+          .equals(other.getMarketId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2205,7 +2053,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2213,7 +2060,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2241,7 +2087,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderCancellation_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderCancellation_fieldAccessorTable
@@ -2264,7 +2109,6 @@ public final class Commands {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         orderId_ = "";
@@ -2274,18 +2118,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderCancellation_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation build() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation result = buildPartial();
         if (!result.isInitialized()) {
@@ -2294,7 +2135,6 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation result = new io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation(this);
         result.orderId_ = orderId_;
@@ -2303,39 +2143,32 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation)other);
@@ -2360,12 +2193,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2390,8 +2221,7 @@ public final class Commands {
        * Unique identifier for the order (set by the system after consensus), required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId"];</code>
-       * @return The orderId.
+       * <code>string order_id = 1[json_name = "orderId"];</code>
        */
       public java.lang.String getOrderId() {
         java.lang.Object ref = orderId_;
@@ -2410,14 +2240,13 @@ public final class Commands {
        * Unique identifier for the order (set by the system after consensus), required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId"];</code>
-       * @return The bytes for orderId.
+       * <code>string order_id = 1[json_name = "orderId"];</code>
        */
       public com.google.protobuf.ByteString
           getOrderIdBytes() {
         java.lang.Object ref = orderId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           orderId_ = b;
@@ -2431,16 +2260,14 @@ public final class Commands {
        * Unique identifier for the order (set by the system after consensus), required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId"];</code>
-       * @param value The orderId to set.
-       * @return This builder for chaining.
+       * <code>string order_id = 1[json_name = "orderId"];</code>
        */
       public Builder setOrderId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         orderId_ = value;
         onChanged();
         return this;
@@ -2450,11 +2277,10 @@ public final class Commands {
        * Unique identifier for the order (set by the system after consensus), required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId"];</code>
-       * @return This builder for chaining.
+       * <code>string order_id = 1[json_name = "orderId"];</code>
        */
       public Builder clearOrderId() {
-
+        
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
@@ -2464,9 +2290,7 @@ public final class Commands {
        * Unique identifier for the order (set by the system after consensus), required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId"];</code>
-       * @param value The bytes for orderId to set.
-       * @return This builder for chaining.
+       * <code>string order_id = 1[json_name = "orderId"];</code>
        */
       public Builder setOrderIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2474,7 +2298,7 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         orderId_ = value;
         onChanged();
         return this;
@@ -2486,8 +2310,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @return The marketId.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public java.lang.String getMarketId() {
         java.lang.Object ref = marketId_;
@@ -2506,14 +2329,13 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @return The bytes for marketId.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public com.google.protobuf.ByteString
           getMarketIdBytes() {
         java.lang.Object ref = marketId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketId_ = b;
@@ -2527,16 +2349,14 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @param value The marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         marketId_ = value;
         onChanged();
         return this;
@@ -2546,11 +2366,10 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @return This builder for chaining.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public Builder clearMarketId() {
-
+        
         marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
@@ -2560,9 +2379,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @param value The bytes for marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2570,18 +2387,16 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         marketId_ = value;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2603,7 +2418,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<OrderCancellation>
         PARSER = new com.google.protobuf.AbstractParser<OrderCancellation>() {
-      @java.lang.Override
       public OrderCancellation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2621,7 +2435,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.OrderCancellation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2637,8 +2450,7 @@ public final class Commands {
      * Order identifier, this is required to find the order and will not be updated, required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-     * @return The orderId.
+     * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
      */
     java.lang.String getOrderId();
     /**
@@ -2646,8 +2458,7 @@ public final class Commands {
      * Order identifier, this is required to find the order and will not be updated, required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-     * @return The bytes for orderId.
+     * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
      */
     com.google.protobuf.ByteString
         getOrderIdBytes();
@@ -2657,8 +2468,7 @@ public final class Commands {
      * Market identifier, this is required to find the order and will not be updated
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
     java.lang.String getMarketId();
     /**
@@ -2666,8 +2476,7 @@ public final class Commands {
      * Market identifier, this is required to find the order and will not be updated
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
     com.google.protobuf.ByteString
         getMarketIdBytes();
@@ -2677,8 +2486,7 @@ public final class Commands {
      * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
      * </pre>
      *
-     * <code>.vega.Price price = 3 [json_name = "price"];</code>
-     * @return Whether the price field is set.
+     * <code>.vega.Price price = 3[json_name = "price"];</code>
      */
     boolean hasPrice();
     /**
@@ -2686,8 +2494,7 @@ public final class Commands {
      * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
      * </pre>
      *
-     * <code>.vega.Price price = 3 [json_name = "price"];</code>
-     * @return The price.
+     * <code>.vega.Price price = 3[json_name = "price"];</code>
      */
     io.vegaprotocol.vega.Vega.Price getPrice();
     /**
@@ -2695,7 +2502,7 @@ public final class Commands {
      * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
      * </pre>
      *
-     * <code>.vega.Price price = 3 [json_name = "price"];</code>
+     * <code>.vega.Price price = 3[json_name = "price"];</code>
      */
     io.vegaprotocol.vega.Vega.PriceOrBuilder getPriceOrBuilder();
 
@@ -2707,8 +2514,7 @@ public final class Commands {
      * - To leave the size unchanged set a value of zero
      * </pre>
      *
-     * <code>int64 size_delta = 4 [json_name = "sizeDelta"];</code>
-     * @return The sizeDelta.
+     * <code>int64 size_delta = 4[json_name = "sizeDelta"];</code>
      */
     long getSizeDelta();
 
@@ -2718,8 +2524,7 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
-     * @return Whether the expiresAt field is set.
+     * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
      */
     boolean hasExpiresAt();
     /**
@@ -2728,8 +2533,7 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
-     * @return The expiresAt.
+     * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
      */
     io.vegaprotocol.vega.Vega.Timestamp getExpiresAt();
     /**
@@ -2738,7 +2542,7 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+     * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
      */
     io.vegaprotocol.vega.Vega.TimestampOrBuilder getExpiresAtOrBuilder();
 
@@ -2748,8 +2552,7 @@ public final class Commands {
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-     * @return The enum numeric value on the wire for timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
      */
     int getTimeInForceValue();
     /**
@@ -2758,8 +2561,7 @@ public final class Commands {
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-     * @return The timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
      */
     io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce();
 
@@ -2768,8 +2570,7 @@ public final class Commands {
      * Amend the pegged order offset for the order
      * </pre>
      *
-     * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
-     * @return Whether the peggedOffset field is set.
+     * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
      */
     boolean hasPeggedOffset();
     /**
@@ -2777,8 +2578,7 @@ public final class Commands {
      * Amend the pegged order offset for the order
      * </pre>
      *
-     * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
-     * @return The peggedOffset.
+     * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
      */
     com.google.protobuf.Int64Value getPeggedOffset();
     /**
@@ -2786,7 +2586,7 @@ public final class Commands {
      * Amend the pegged order offset for the order
      * </pre>
      *
-     * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+     * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
      */
     com.google.protobuf.Int64ValueOrBuilder getPeggedOffsetOrBuilder();
 
@@ -2796,8 +2596,7 @@ public final class Commands {
      * - See [`PeggedReference`](#vega.PeggedReference)
      * </pre>
      *
-     * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-     * @return The enum numeric value on the wire for peggedReference.
+     * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
      */
     int getPeggedReferenceValue();
     /**
@@ -2806,8 +2605,7 @@ public final class Commands {
      * - See [`PeggedReference`](#vega.PeggedReference)
      * </pre>
      *
-     * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-     * @return The peggedReference.
+     * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
      */
     io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference();
   }
@@ -2818,7 +2616,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.OrderAmendment}
    */
-  public static final class OrderAmendment extends
+  public  static final class OrderAmendment extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.OrderAmendment)
       OrderAmendmentOrBuilder {
@@ -2830,15 +2628,9 @@ public final class Commands {
     private OrderAmendment() {
       orderId_ = "";
       marketId_ = "";
+      sizeDelta_ = 0L;
       timeInForce_ = 0;
       peggedReference_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OrderAmendment();
     }
 
     @java.lang.Override
@@ -2854,6 +2646,7 @@ public final class Commands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2864,6 +2657,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2932,13 +2732,6 @@ public final class Commands {
               peggedReference_ = rawValue;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2956,7 +2749,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderAmendment_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderAmendment_fieldAccessorTable
@@ -2971,16 +2763,14 @@ public final class Commands {
      * Order identifier, this is required to find the order and will not be updated, required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-     * @return The orderId.
+     * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public java.lang.String getOrderId() {
       java.lang.Object ref = orderId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         orderId_ = s;
@@ -2992,15 +2782,13 @@ public final class Commands {
      * Order identifier, this is required to find the order and will not be updated, required field
      * </pre>
      *
-     * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-     * @return The bytes for orderId.
+     * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getOrderIdBytes() {
       java.lang.Object ref = orderId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         orderId_ = b;
@@ -3017,16 +2805,14 @@ public final class Commands {
      * Market identifier, this is required to find the order and will not be updated
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
-    @java.lang.Override
     public java.lang.String getMarketId() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketId_ = s;
@@ -3038,15 +2824,13 @@ public final class Commands {
      * Market identifier, this is required to find the order and will not be updated
      * </pre>
      *
-     * <code>string market_id = 2 [json_name = "marketId"];</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 2[json_name = "marketId"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMarketIdBytes() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketId_ = b;
@@ -3063,10 +2847,8 @@ public final class Commands {
      * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
      * </pre>
      *
-     * <code>.vega.Price price = 3 [json_name = "price"];</code>
-     * @return Whether the price field is set.
+     * <code>.vega.Price price = 3[json_name = "price"];</code>
      */
-    @java.lang.Override
     public boolean hasPrice() {
       return price_ != null;
     }
@@ -3075,10 +2857,8 @@ public final class Commands {
      * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
      * </pre>
      *
-     * <code>.vega.Price price = 3 [json_name = "price"];</code>
-     * @return The price.
+     * <code>.vega.Price price = 3[json_name = "price"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.Price getPrice() {
       return price_ == null ? io.vegaprotocol.vega.Vega.Price.getDefaultInstance() : price_;
     }
@@ -3087,9 +2867,8 @@ public final class Commands {
      * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
      * </pre>
      *
-     * <code>.vega.Price price = 3 [json_name = "price"];</code>
+     * <code>.vega.Price price = 3[json_name = "price"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.PriceOrBuilder getPriceOrBuilder() {
       return getPrice();
     }
@@ -3104,10 +2883,8 @@ public final class Commands {
      * - To leave the size unchanged set a value of zero
      * </pre>
      *
-     * <code>int64 size_delta = 4 [json_name = "sizeDelta"];</code>
-     * @return The sizeDelta.
+     * <code>int64 size_delta = 4[json_name = "sizeDelta"];</code>
      */
-    @java.lang.Override
     public long getSizeDelta() {
       return sizeDelta_;
     }
@@ -3120,10 +2897,8 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
-     * @return Whether the expiresAt field is set.
+     * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
      */
-    @java.lang.Override
     public boolean hasExpiresAt() {
       return expiresAt_ != null;
     }
@@ -3133,10 +2908,8 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
-     * @return The expiresAt.
+     * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.Timestamp getExpiresAt() {
       return expiresAt_ == null ? io.vegaprotocol.vega.Vega.Timestamp.getDefaultInstance() : expiresAt_;
     }
@@ -3146,9 +2919,8 @@ public final class Commands {
      * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+     * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.TimestampOrBuilder getExpiresAtOrBuilder() {
       return getExpiresAt();
     }
@@ -3161,10 +2933,9 @@ public final class Commands {
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-     * @return The enum numeric value on the wire for timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
      */
-    @java.lang.Override public int getTimeInForceValue() {
+    public int getTimeInForceValue() {
       return timeInForce_;
     }
     /**
@@ -3173,11 +2944,9 @@ public final class Commands {
      * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
      * </pre>
      *
-     * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-     * @return The timeInForce.
+     * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
       io.vegaprotocol.vega.Vega.Order.TimeInForce result = io.vegaprotocol.vega.Vega.Order.TimeInForce.valueOf(timeInForce_);
       return result == null ? io.vegaprotocol.vega.Vega.Order.TimeInForce.UNRECOGNIZED : result;
     }
@@ -3189,10 +2958,8 @@ public final class Commands {
      * Amend the pegged order offset for the order
      * </pre>
      *
-     * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
-     * @return Whether the peggedOffset field is set.
+     * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
      */
-    @java.lang.Override
     public boolean hasPeggedOffset() {
       return peggedOffset_ != null;
     }
@@ -3201,10 +2968,8 @@ public final class Commands {
      * Amend the pegged order offset for the order
      * </pre>
      *
-     * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
-     * @return The peggedOffset.
+     * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.Int64Value getPeggedOffset() {
       return peggedOffset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : peggedOffset_;
     }
@@ -3213,9 +2978,8 @@ public final class Commands {
      * Amend the pegged order offset for the order
      * </pre>
      *
-     * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+     * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.Int64ValueOrBuilder getPeggedOffsetOrBuilder() {
       return getPeggedOffset();
     }
@@ -3228,10 +2992,9 @@ public final class Commands {
      * - See [`PeggedReference`](#vega.PeggedReference)
      * </pre>
      *
-     * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-     * @return The enum numeric value on the wire for peggedReference.
+     * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
      */
-    @java.lang.Override public int getPeggedReferenceValue() {
+    public int getPeggedReferenceValue() {
       return peggedReference_;
     }
     /**
@@ -3240,17 +3003,14 @@ public final class Commands {
      * - See [`PeggedReference`](#vega.PeggedReference)
      * </pre>
      *
-     * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-     * @return The peggedReference.
+     * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference() {
       io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(peggedReference_);
       return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3260,7 +3020,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getOrderIdBytes().isEmpty()) {
@@ -3290,7 +3049,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3341,31 +3099,32 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment other = (io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment) obj;
 
-      if (!getOrderId()
-          .equals(other.getOrderId())) return false;
-      if (!getMarketId()
-          .equals(other.getMarketId())) return false;
-      if (hasPrice() != other.hasPrice()) return false;
+      boolean result = true;
+      result = result && getOrderId()
+          .equals(other.getOrderId());
+      result = result && getMarketId()
+          .equals(other.getMarketId());
+      result = result && (hasPrice() == other.hasPrice());
       if (hasPrice()) {
-        if (!getPrice()
-            .equals(other.getPrice())) return false;
+        result = result && getPrice()
+            .equals(other.getPrice());
       }
-      if (getSizeDelta()
-          != other.getSizeDelta()) return false;
-      if (hasExpiresAt() != other.hasExpiresAt()) return false;
+      result = result && (getSizeDelta()
+          == other.getSizeDelta());
+      result = result && (hasExpiresAt() == other.hasExpiresAt());
       if (hasExpiresAt()) {
-        if (!getExpiresAt()
-            .equals(other.getExpiresAt())) return false;
+        result = result && getExpiresAt()
+            .equals(other.getExpiresAt());
       }
-      if (timeInForce_ != other.timeInForce_) return false;
-      if (hasPeggedOffset() != other.hasPeggedOffset()) return false;
+      result = result && timeInForce_ == other.timeInForce_;
+      result = result && (hasPeggedOffset() == other.hasPeggedOffset());
       if (hasPeggedOffset()) {
-        if (!getPeggedOffset()
-            .equals(other.getPeggedOffset())) return false;
+        result = result && getPeggedOffset()
+            .equals(other.getPeggedOffset());
       }
-      if (peggedReference_ != other.peggedReference_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && peggedReference_ == other.peggedReference_;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3473,7 +3232,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3481,7 +3239,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3509,7 +3266,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderAmendment_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderAmendment_fieldAccessorTable
@@ -3532,7 +3288,6 @@ public final class Commands {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         orderId_ = "";
@@ -3566,18 +3321,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_OrderAmendment_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment build() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment result = buildPartial();
         if (!result.isInitialized()) {
@@ -3586,7 +3338,6 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment result = new io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment(this);
         result.orderId_ = orderId_;
@@ -3613,39 +3364,32 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment)other);
@@ -3688,12 +3432,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3718,8 +3460,7 @@ public final class Commands {
        * Order identifier, this is required to find the order and will not be updated, required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-       * @return The orderId.
+       * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
        */
       public java.lang.String getOrderId() {
         java.lang.Object ref = orderId_;
@@ -3738,14 +3479,13 @@ public final class Commands {
        * Order identifier, this is required to find the order and will not be updated, required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-       * @return The bytes for orderId.
+       * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
        */
       public com.google.protobuf.ByteString
           getOrderIdBytes() {
         java.lang.Object ref = orderId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           orderId_ = b;
@@ -3759,16 +3499,14 @@ public final class Commands {
        * Order identifier, this is required to find the order and will not be updated, required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-       * @param value The orderId to set.
-       * @return This builder for chaining.
+       * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
        */
       public Builder setOrderId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         orderId_ = value;
         onChanged();
         return this;
@@ -3778,11 +3516,10 @@ public final class Commands {
        * Order identifier, this is required to find the order and will not be updated, required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
        */
       public Builder clearOrderId() {
-
+        
         orderId_ = getDefaultInstance().getOrderId();
         onChanged();
         return this;
@@ -3792,9 +3529,7 @@ public final class Commands {
        * Order identifier, this is required to find the order and will not be updated, required field
        * </pre>
        *
-       * <code>string order_id = 1 [json_name = "orderId", (.validator.field) = { ... }</code>
-       * @param value The bytes for orderId to set.
-       * @return This builder for chaining.
+       * <code>string order_id = 1[json_name = "orderId", (.validator.field) = { ... }</code>
        */
       public Builder setOrderIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3802,7 +3537,7 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         orderId_ = value;
         onChanged();
         return this;
@@ -3814,8 +3549,7 @@ public final class Commands {
        * Market identifier, this is required to find the order and will not be updated
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @return The marketId.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public java.lang.String getMarketId() {
         java.lang.Object ref = marketId_;
@@ -3834,14 +3568,13 @@ public final class Commands {
        * Market identifier, this is required to find the order and will not be updated
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @return The bytes for marketId.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public com.google.protobuf.ByteString
           getMarketIdBytes() {
         java.lang.Object ref = marketId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketId_ = b;
@@ -3855,16 +3588,14 @@ public final class Commands {
        * Market identifier, this is required to find the order and will not be updated
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @param value The marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         marketId_ = value;
         onChanged();
         return this;
@@ -3874,11 +3605,10 @@ public final class Commands {
        * Market identifier, this is required to find the order and will not be updated
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @return This builder for chaining.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public Builder clearMarketId() {
-
+        
         marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
@@ -3888,9 +3618,7 @@ public final class Commands {
        * Market identifier, this is required to find the order and will not be updated
        * </pre>
        *
-       * <code>string market_id = 2 [json_name = "marketId"];</code>
-       * @param value The bytes for marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 2[json_name = "marketId"];</code>
        */
       public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3898,13 +3626,13 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         marketId_ = value;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.Vega.Price price_;
+      private io.vegaprotocol.vega.Vega.Price price_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.Price, io.vegaprotocol.vega.Vega.Price.Builder, io.vegaprotocol.vega.Vega.PriceOrBuilder> priceBuilder_;
       /**
@@ -3912,8 +3640,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
-       * @return Whether the price field is set.
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public boolean hasPrice() {
         return priceBuilder_ != null || price_ != null;
@@ -3923,8 +3650,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
-       * @return The price.
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public io.vegaprotocol.vega.Vega.Price getPrice() {
         if (priceBuilder_ == null) {
@@ -3938,7 +3664,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public Builder setPrice(io.vegaprotocol.vega.Vega.Price value) {
         if (priceBuilder_ == null) {
@@ -3958,7 +3684,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public Builder setPrice(
           io.vegaprotocol.vega.Vega.Price.Builder builderForValue) {
@@ -3976,7 +3702,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public Builder mergePrice(io.vegaprotocol.vega.Vega.Price value) {
         if (priceBuilder_ == null) {
@@ -3998,7 +3724,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public Builder clearPrice() {
         if (priceBuilder_ == null) {
@@ -4016,10 +3742,10 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public io.vegaprotocol.vega.Vega.Price.Builder getPriceBuilder() {
-
+        
         onChanged();
         return getPriceFieldBuilder().getBuilder();
       }
@@ -4028,7 +3754,7 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       public io.vegaprotocol.vega.Vega.PriceOrBuilder getPriceOrBuilder() {
         if (priceBuilder_ != null) {
@@ -4043,10 +3769,10 @@ public final class Commands {
        * Amend the price for the order, if the Price value is set, otherwise price will remain unchanged - See [`Price`](#vega.Price)
        * </pre>
        *
-       * <code>.vega.Price price = 3 [json_name = "price"];</code>
+       * <code>.vega.Price price = 3[json_name = "price"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Price, io.vegaprotocol.vega.Vega.Price.Builder, io.vegaprotocol.vega.Vega.PriceOrBuilder>
+          io.vegaprotocol.vega.Vega.Price, io.vegaprotocol.vega.Vega.Price.Builder, io.vegaprotocol.vega.Vega.PriceOrBuilder> 
           getPriceFieldBuilder() {
         if (priceBuilder_ == null) {
           priceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4068,10 +3794,8 @@ public final class Commands {
        * - To leave the size unchanged set a value of zero
        * </pre>
        *
-       * <code>int64 size_delta = 4 [json_name = "sizeDelta"];</code>
-       * @return The sizeDelta.
+       * <code>int64 size_delta = 4[json_name = "sizeDelta"];</code>
        */
-      @java.lang.Override
       public long getSizeDelta() {
         return sizeDelta_;
       }
@@ -4083,12 +3807,10 @@ public final class Commands {
        * - To leave the size unchanged set a value of zero
        * </pre>
        *
-       * <code>int64 size_delta = 4 [json_name = "sizeDelta"];</code>
-       * @param value The sizeDelta to set.
-       * @return This builder for chaining.
+       * <code>int64 size_delta = 4[json_name = "sizeDelta"];</code>
        */
       public Builder setSizeDelta(long value) {
-
+        
         sizeDelta_ = value;
         onChanged();
         return this;
@@ -4101,17 +3823,16 @@ public final class Commands {
        * - To leave the size unchanged set a value of zero
        * </pre>
        *
-       * <code>int64 size_delta = 4 [json_name = "sizeDelta"];</code>
-       * @return This builder for chaining.
+       * <code>int64 size_delta = 4[json_name = "sizeDelta"];</code>
        */
       public Builder clearSizeDelta() {
-
+        
         sizeDelta_ = 0L;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.Vega.Timestamp expiresAt_;
+      private io.vegaprotocol.vega.Vega.Timestamp expiresAt_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.Timestamp, io.vegaprotocol.vega.Vega.Timestamp.Builder, io.vegaprotocol.vega.Vega.TimestampOrBuilder> expiresAtBuilder_;
       /**
@@ -4120,8 +3841,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
-       * @return Whether the expiresAt field is set.
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public boolean hasExpiresAt() {
         return expiresAtBuilder_ != null || expiresAt_ != null;
@@ -4132,8 +3852,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
-       * @return The expiresAt.
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public io.vegaprotocol.vega.Vega.Timestamp getExpiresAt() {
         if (expiresAtBuilder_ == null) {
@@ -4148,7 +3867,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public Builder setExpiresAt(io.vegaprotocol.vega.Vega.Timestamp value) {
         if (expiresAtBuilder_ == null) {
@@ -4169,7 +3888,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public Builder setExpiresAt(
           io.vegaprotocol.vega.Vega.Timestamp.Builder builderForValue) {
@@ -4188,7 +3907,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public Builder mergeExpiresAt(io.vegaprotocol.vega.Vega.Timestamp value) {
         if (expiresAtBuilder_ == null) {
@@ -4211,7 +3930,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public Builder clearExpiresAt() {
         if (expiresAtBuilder_ == null) {
@@ -4230,10 +3949,10 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public io.vegaprotocol.vega.Vega.Timestamp.Builder getExpiresAtBuilder() {
-
+        
         onChanged();
         return getExpiresAtFieldBuilder().getBuilder();
       }
@@ -4243,7 +3962,7 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       public io.vegaprotocol.vega.Vega.TimestampOrBuilder getExpiresAtOrBuilder() {
         if (expiresAtBuilder_ != null) {
@@ -4259,10 +3978,10 @@ public final class Commands {
        * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Timestamp expires_at = 5 [json_name = "expiresAt"];</code>
+       * <code>.vega.Timestamp expires_at = 5[json_name = "expiresAt"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Timestamp, io.vegaprotocol.vega.Vega.Timestamp.Builder, io.vegaprotocol.vega.Vega.TimestampOrBuilder>
+          io.vegaprotocol.vega.Vega.Timestamp, io.vegaprotocol.vega.Vega.Timestamp.Builder, io.vegaprotocol.vega.Vega.TimestampOrBuilder> 
           getExpiresAtFieldBuilder() {
         if (expiresAtBuilder_ == null) {
           expiresAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4282,10 +4001,9 @@ public final class Commands {
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-       * @return The enum numeric value on the wire for timeInForce.
+       * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
        */
-      @java.lang.Override public int getTimeInForceValue() {
+      public int getTimeInForceValue() {
         return timeInForce_;
       }
       /**
@@ -4294,12 +4012,9 @@ public final class Commands {
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-       * @param value The enum numeric value on the wire for timeInForce to set.
-       * @return This builder for chaining.
+       * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
        */
       public Builder setTimeInForceValue(int value) {
-
         timeInForce_ = value;
         onChanged();
         return this;
@@ -4310,12 +4025,9 @@ public final class Commands {
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-       * @return The timeInForce.
+       * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.Vega.Order.TimeInForce getTimeInForce() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.Vega.Order.TimeInForce result = io.vegaprotocol.vega.Vega.Order.TimeInForce.valueOf(timeInForce_);
         return result == null ? io.vegaprotocol.vega.Vega.Order.TimeInForce.UNRECOGNIZED : result;
       }
@@ -4325,15 +4037,13 @@ public final class Commands {
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-       * @param value The timeInForce to set.
-       * @return This builder for chaining.
+       * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
        */
       public Builder setTimeInForce(io.vegaprotocol.vega.Vega.Order.TimeInForce value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         timeInForce_ = value.getNumber();
         onChanged();
         return this;
@@ -4344,17 +4054,16 @@ public final class Commands {
        * - See [`TimeInForce`](#api.VegaTimeResponse).`timestamp`
        * </pre>
        *
-       * <code>.vega.Order.TimeInForce time_in_force = 6 [json_name = "timeInForce"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.Order.TimeInForce time_in_force = 6[json_name = "timeInForce"];</code>
        */
       public Builder clearTimeInForce() {
-
+        
         timeInForce_ = 0;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Int64Value peggedOffset_;
+      private com.google.protobuf.Int64Value peggedOffset_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder> peggedOffsetBuilder_;
       /**
@@ -4362,8 +4071,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
-       * @return Whether the peggedOffset field is set.
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public boolean hasPeggedOffset() {
         return peggedOffsetBuilder_ != null || peggedOffset_ != null;
@@ -4373,8 +4081,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
-       * @return The peggedOffset.
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public com.google.protobuf.Int64Value getPeggedOffset() {
         if (peggedOffsetBuilder_ == null) {
@@ -4388,7 +4095,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public Builder setPeggedOffset(com.google.protobuf.Int64Value value) {
         if (peggedOffsetBuilder_ == null) {
@@ -4408,7 +4115,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public Builder setPeggedOffset(
           com.google.protobuf.Int64Value.Builder builderForValue) {
@@ -4426,7 +4133,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public Builder mergePeggedOffset(com.google.protobuf.Int64Value value) {
         if (peggedOffsetBuilder_ == null) {
@@ -4448,7 +4155,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public Builder clearPeggedOffset() {
         if (peggedOffsetBuilder_ == null) {
@@ -4466,10 +4173,10 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public com.google.protobuf.Int64Value.Builder getPeggedOffsetBuilder() {
-
+        
         onChanged();
         return getPeggedOffsetFieldBuilder().getBuilder();
       }
@@ -4478,7 +4185,7 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       public com.google.protobuf.Int64ValueOrBuilder getPeggedOffsetOrBuilder() {
         if (peggedOffsetBuilder_ != null) {
@@ -4493,10 +4200,10 @@ public final class Commands {
        * Amend the pegged order offset for the order
        * </pre>
        *
-       * <code>.google.protobuf.Int64Value pegged_offset = 7 [json_name = "peggedOffset"];</code>
+       * <code>.google.protobuf.Int64Value pegged_offset = 7[json_name = "peggedOffset"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder>
+          com.google.protobuf.Int64Value, com.google.protobuf.Int64Value.Builder, com.google.protobuf.Int64ValueOrBuilder> 
           getPeggedOffsetFieldBuilder() {
         if (peggedOffsetBuilder_ == null) {
           peggedOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4516,10 +4223,9 @@ public final class Commands {
        * - See [`PeggedReference`](#vega.PeggedReference)
        * </pre>
        *
-       * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-       * @return The enum numeric value on the wire for peggedReference.
+       * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
        */
-      @java.lang.Override public int getPeggedReferenceValue() {
+      public int getPeggedReferenceValue() {
         return peggedReference_;
       }
       /**
@@ -4528,12 +4234,9 @@ public final class Commands {
        * - See [`PeggedReference`](#vega.PeggedReference)
        * </pre>
        *
-       * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-       * @param value The enum numeric value on the wire for peggedReference to set.
-       * @return This builder for chaining.
+       * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
        */
       public Builder setPeggedReferenceValue(int value) {
-
         peggedReference_ = value;
         onChanged();
         return this;
@@ -4544,12 +4247,9 @@ public final class Commands {
        * - See [`PeggedReference`](#vega.PeggedReference)
        * </pre>
        *
-       * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-       * @return The peggedReference.
+       * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.Vega.PeggedReference getPeggedReference() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.Vega.PeggedReference result = io.vegaprotocol.vega.Vega.PeggedReference.valueOf(peggedReference_);
         return result == null ? io.vegaprotocol.vega.Vega.PeggedReference.UNRECOGNIZED : result;
       }
@@ -4559,15 +4259,13 @@ public final class Commands {
        * - See [`PeggedReference`](#vega.PeggedReference)
        * </pre>
        *
-       * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-       * @param value The peggedReference to set.
-       * @return This builder for chaining.
+       * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
        */
       public Builder setPeggedReference(io.vegaprotocol.vega.Vega.PeggedReference value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         peggedReference_ = value.getNumber();
         onChanged();
         return this;
@@ -4578,22 +4276,19 @@ public final class Commands {
        * - See [`PeggedReference`](#vega.PeggedReference)
        * </pre>
        *
-       * <code>.vega.PeggedReference pegged_reference = 8 [json_name = "peggedReference"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.PeggedReference pegged_reference = 8[json_name = "peggedReference"];</code>
        */
       public Builder clearPeggedReference() {
-
+        
         peggedReference_ = 0;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4615,7 +4310,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<OrderAmendment>
         PARSER = new com.google.protobuf.AbstractParser<OrderAmendment>() {
-      @java.lang.Override
       public OrderAmendment parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4633,7 +4327,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.OrderAmendment getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4649,8 +4342,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
     java.lang.String getMarketId();
     /**
@@ -4658,8 +4350,7 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
     com.google.protobuf.ByteString
         getMarketIdBytes();
@@ -4669,8 +4360,7 @@ public final class Commands {
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
-     * @return The commitmentAmount.
+     * <code>uint64 commitment_amount = 2[json_name = "commitmentAmount"];</code>
      */
     long getCommitmentAmount();
 
@@ -4679,8 +4369,7 @@ public final class Commands {
      * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
-     * <code>string fee = 3 [json_name = "fee"];</code>
-     * @return The fee.
+     * <code>string fee = 3[json_name = "fee"];</code>
      */
     java.lang.String getFee();
     /**
@@ -4688,8 +4377,7 @@ public final class Commands {
      * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
-     * <code>string fee = 3 [json_name = "fee"];</code>
-     * @return The bytes for fee.
+     * <code>string fee = 3[json_name = "fee"];</code>
      */
     com.google.protobuf.ByteString
         getFeeBytes();
@@ -4699,16 +4387,16 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> 
         getSellsList();
     /**
      * <pre>
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index);
     /**
@@ -4716,7 +4404,7 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
     int getSellsCount();
     /**
@@ -4724,16 +4412,16 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getSellsOrBuilderList();
     /**
      * <pre>
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
         int index);
@@ -4743,16 +4431,16 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> 
         getBuysList();
     /**
      * <pre>
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index);
     /**
@@ -4760,7 +4448,7 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
     int getBuysCount();
     /**
@@ -4768,16 +4456,16 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getBuysOrBuilderList();
     /**
      * <pre>
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
         int index);
@@ -4787,8 +4475,7 @@ public final class Commands {
      * A reference to be added to every order created out of this liquidityProvisionSubmission
      * </pre>
      *
-     * <code>string reference = 6 [json_name = "reference"];</code>
-     * @return The reference.
+     * <code>string reference = 6[json_name = "reference"];</code>
      */
     java.lang.String getReference();
     /**
@@ -4796,8 +4483,7 @@ public final class Commands {
      * A reference to be added to every order created out of this liquidityProvisionSubmission
      * </pre>
      *
-     * <code>string reference = 6 [json_name = "reference"];</code>
-     * @return The bytes for reference.
+     * <code>string reference = 6[json_name = "reference"];</code>
      */
     com.google.protobuf.ByteString
         getReferenceBytes();
@@ -4809,7 +4495,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.LiquidityProvisionSubmission}
    */
-  public static final class LiquidityProvisionSubmission extends
+  public  static final class LiquidityProvisionSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.LiquidityProvisionSubmission)
       LiquidityProvisionSubmissionOrBuilder {
@@ -4820,17 +4506,11 @@ public final class Commands {
     }
     private LiquidityProvisionSubmission() {
       marketId_ = "";
+      commitmentAmount_ = 0L;
       fee_ = "";
       sells_ = java.util.Collections.emptyList();
       buys_ = java.util.Collections.emptyList();
       reference_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new LiquidityProvisionSubmission();
     }
 
     @java.lang.Override
@@ -4857,6 +4537,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -4875,18 +4562,18 @@ public final class Commands {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 sells_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               sells_.add(
                   input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrder.parser(), extensionRegistry));
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                 buys_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000010;
               }
               buys_.add(
                   input.readMessage(io.vegaprotocol.vega.Vega.LiquidityOrder.parser(), extensionRegistry));
@@ -4898,13 +4585,6 @@ public final class Commands {
               reference_ = s;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4913,10 +4593,10 @@ public final class Commands {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           sells_ = java.util.Collections.unmodifiableList(sells_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           buys_ = java.util.Collections.unmodifiableList(buys_);
         }
         this.unknownFields = unknownFields.build();
@@ -4928,7 +4608,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_LiquidityProvisionSubmission_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_LiquidityProvisionSubmission_fieldAccessorTable
@@ -4936,6 +4615,7 @@ public final class Commands {
               io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission.class, io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission.Builder.class);
     }
 
+    private int bitField0_;
     public static final int MARKET_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object marketId_;
     /**
@@ -4943,16 +4623,14 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public java.lang.String getMarketId() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         marketId_ = s;
@@ -4964,15 +4642,13 @@ public final class Commands {
      * Market identifier for the order, required field
      * </pre>
      *
-     * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-     * @return The bytes for marketId.
+     * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getMarketIdBytes() {
       java.lang.Object ref = marketId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         marketId_ = b;
@@ -4989,10 +4665,8 @@ public final class Commands {
      * Specified as a unitless number that represents the amount of settlement asset of the market
      * </pre>
      *
-     * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
-     * @return The commitmentAmount.
+     * <code>uint64 commitment_amount = 2[json_name = "commitmentAmount"];</code>
      */
-    @java.lang.Override
     public long getCommitmentAmount() {
       return commitmentAmount_;
     }
@@ -5004,16 +4678,14 @@ public final class Commands {
      * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
-     * <code>string fee = 3 [json_name = "fee"];</code>
-     * @return The fee.
+     * <code>string fee = 3[json_name = "fee"];</code>
      */
-    @java.lang.Override
     public java.lang.String getFee() {
       java.lang.Object ref = fee_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fee_ = s;
@@ -5025,15 +4697,13 @@ public final class Commands {
      * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
      * </pre>
      *
-     * <code>string fee = 3 [json_name = "fee"];</code>
-     * @return The bytes for fee.
+     * <code>string fee = 3[json_name = "fee"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getFeeBytes() {
       java.lang.Object ref = fee_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fee_ = b;
@@ -5050,9 +4720,8 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getSellsList() {
       return sells_;
     }
@@ -5061,10 +4730,9 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getSellsOrBuilderList() {
       return sells_;
     }
@@ -5073,9 +4741,8 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    @java.lang.Override
     public int getSellsCount() {
       return sells_.size();
     }
@@ -5084,9 +4751,8 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index) {
       return sells_.get(index);
     }
@@ -5095,9 +4761,8 @@ public final class Commands {
      * A set of liquidity sell orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+     * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
         int index) {
       return sells_.get(index);
@@ -5110,9 +4775,8 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getBuysList() {
       return buys_;
     }
@@ -5121,10 +4785,9 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getBuysOrBuilderList() {
       return buys_;
     }
@@ -5133,9 +4796,8 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    @java.lang.Override
     public int getBuysCount() {
       return buys_.size();
     }
@@ -5144,9 +4806,8 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index) {
       return buys_.get(index);
     }
@@ -5155,9 +4816,8 @@ public final class Commands {
      * A set of liquidity buy orders to meet the liquidity provision obligation
      * </pre>
      *
-     * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+     * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
         int index) {
       return buys_.get(index);
@@ -5170,16 +4830,14 @@ public final class Commands {
      * A reference to be added to every order created out of this liquidityProvisionSubmission
      * </pre>
      *
-     * <code>string reference = 6 [json_name = "reference"];</code>
-     * @return The reference.
+     * <code>string reference = 6[json_name = "reference"];</code>
      */
-    @java.lang.Override
     public java.lang.String getReference() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -5191,15 +4849,13 @@ public final class Commands {
      * A reference to be added to every order created out of this liquidityProvisionSubmission
      * </pre>
      *
-     * <code>string reference = 6 [json_name = "reference"];</code>
-     * @return The bytes for reference.
+     * <code>string reference = 6[json_name = "reference"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -5210,7 +4866,6 @@ public final class Commands {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5220,7 +4875,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getMarketIdBytes().isEmpty()) {
@@ -5244,7 +4898,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5286,20 +4939,21 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission) obj;
 
-      if (!getMarketId()
-          .equals(other.getMarketId())) return false;
-      if (getCommitmentAmount()
-          != other.getCommitmentAmount()) return false;
-      if (!getFee()
-          .equals(other.getFee())) return false;
-      if (!getSellsList()
-          .equals(other.getSellsList())) return false;
-      if (!getBuysList()
-          .equals(other.getBuysList())) return false;
-      if (!getReference()
-          .equals(other.getReference())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getMarketId()
+          .equals(other.getMarketId());
+      result = result && (getCommitmentAmount()
+          == other.getCommitmentAmount());
+      result = result && getFee()
+          .equals(other.getFee());
+      result = result && getSellsList()
+          .equals(other.getSellsList());
+      result = result && getBuysList()
+          .equals(other.getBuysList());
+      result = result && getReference()
+          .equals(other.getReference());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5401,7 +5055,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5409,7 +5062,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5437,7 +5089,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_LiquidityProvisionSubmission_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_LiquidityProvisionSubmission_fieldAccessorTable
@@ -5462,7 +5113,6 @@ public final class Commands {
           getBuysFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         marketId_ = "";
@@ -5473,13 +5123,13 @@ public final class Commands {
 
         if (sellsBuilder_ == null) {
           sells_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           sellsBuilder_.clear();
         }
         if (buysBuilder_ == null) {
           buys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           buysBuilder_.clear();
         }
@@ -5488,18 +5138,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_LiquidityProvisionSubmission_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission build() {
         io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission result = buildPartial();
         if (!result.isInitialized()) {
@@ -5508,69 +5155,63 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.marketId_ = marketId_;
         result.commitmentAmount_ = commitmentAmount_;
         result.fee_ = fee_;
         if (sellsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             sells_ = java.util.Collections.unmodifiableList(sells_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.sells_ = sells_;
         } else {
           result.sells_ = sellsBuilder_.build();
         }
         if (buysBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             buys_ = java.util.Collections.unmodifiableList(buys_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.buys_ = buys_;
         } else {
           result.buys_ = buysBuilder_.build();
         }
         result.reference_ = reference_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission)other);
@@ -5597,7 +5238,7 @@ public final class Commands {
           if (!other.sells_.isEmpty()) {
             if (sells_.isEmpty()) {
               sells_ = other.sells_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureSellsIsMutable();
               sells_.addAll(other.sells_);
@@ -5610,8 +5251,8 @@ public final class Commands {
               sellsBuilder_.dispose();
               sellsBuilder_ = null;
               sells_ = other.sells_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              sellsBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000008);
+              sellsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSellsFieldBuilder() : null;
             } else {
@@ -5623,7 +5264,7 @@ public final class Commands {
           if (!other.buys_.isEmpty()) {
             if (buys_.isEmpty()) {
               buys_ = other.buys_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureBuysIsMutable();
               buys_.addAll(other.buys_);
@@ -5636,8 +5277,8 @@ public final class Commands {
               buysBuilder_.dispose();
               buysBuilder_ = null;
               buys_ = other.buys_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              buysBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000010);
+              buysBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuysFieldBuilder() : null;
             } else {
@@ -5654,12 +5295,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5685,8 +5324,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @return The marketId.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public java.lang.String getMarketId() {
         java.lang.Object ref = marketId_;
@@ -5705,14 +5343,13 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @return The bytes for marketId.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public com.google.protobuf.ByteString
           getMarketIdBytes() {
         java.lang.Object ref = marketId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           marketId_ = b;
@@ -5726,16 +5363,14 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @param value The marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public Builder setMarketId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         marketId_ = value;
         onChanged();
         return this;
@@ -5745,11 +5380,10 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public Builder clearMarketId() {
-
+        
         marketId_ = getDefaultInstance().getMarketId();
         onChanged();
         return this;
@@ -5759,9 +5393,7 @@ public final class Commands {
        * Market identifier for the order, required field
        * </pre>
        *
-       * <code>string market_id = 1 [json_name = "marketId", (.validator.field) = { ... }</code>
-       * @param value The bytes for marketId to set.
-       * @return This builder for chaining.
+       * <code>string market_id = 1[json_name = "marketId", (.validator.field) = { ... }</code>
        */
       public Builder setMarketIdBytes(
           com.google.protobuf.ByteString value) {
@@ -5769,7 +5401,7 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         marketId_ = value;
         onChanged();
         return this;
@@ -5781,10 +5413,8 @@ public final class Commands {
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
-       * @return The commitmentAmount.
+       * <code>uint64 commitment_amount = 2[json_name = "commitmentAmount"];</code>
        */
-      @java.lang.Override
       public long getCommitmentAmount() {
         return commitmentAmount_;
       }
@@ -5793,12 +5423,10 @@ public final class Commands {
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
-       * @param value The commitmentAmount to set.
-       * @return This builder for chaining.
+       * <code>uint64 commitment_amount = 2[json_name = "commitmentAmount"];</code>
        */
       public Builder setCommitmentAmount(long value) {
-
+        
         commitmentAmount_ = value;
         onChanged();
         return this;
@@ -5808,11 +5436,10 @@ public final class Commands {
        * Specified as a unitless number that represents the amount of settlement asset of the market
        * </pre>
        *
-       * <code>uint64 commitment_amount = 2 [json_name = "commitmentAmount"];</code>
-       * @return This builder for chaining.
+       * <code>uint64 commitment_amount = 2[json_name = "commitmentAmount"];</code>
        */
       public Builder clearCommitmentAmount() {
-
+        
         commitmentAmount_ = 0L;
         onChanged();
         return this;
@@ -5824,8 +5451,7 @@ public final class Commands {
        * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
-       * <code>string fee = 3 [json_name = "fee"];</code>
-       * @return The fee.
+       * <code>string fee = 3[json_name = "fee"];</code>
        */
       public java.lang.String getFee() {
         java.lang.Object ref = fee_;
@@ -5844,14 +5470,13 @@ public final class Commands {
        * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
-       * <code>string fee = 3 [json_name = "fee"];</code>
-       * @return The bytes for fee.
+       * <code>string fee = 3[json_name = "fee"];</code>
        */
       public com.google.protobuf.ByteString
           getFeeBytes() {
         java.lang.Object ref = fee_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fee_ = b;
@@ -5865,16 +5490,14 @@ public final class Commands {
        * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
-       * <code>string fee = 3 [json_name = "fee"];</code>
-       * @param value The fee to set.
-       * @return This builder for chaining.
+       * <code>string fee = 3[json_name = "fee"];</code>
        */
       public Builder setFee(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         fee_ = value;
         onChanged();
         return this;
@@ -5884,11 +5507,10 @@ public final class Commands {
        * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
-       * <code>string fee = 3 [json_name = "fee"];</code>
-       * @return This builder for chaining.
+       * <code>string fee = 3[json_name = "fee"];</code>
        */
       public Builder clearFee() {
-
+        
         fee_ = getDefaultInstance().getFee();
         onChanged();
         return this;
@@ -5898,9 +5520,7 @@ public final class Commands {
        * Nominated liquidity fee factor, which is an input to the calculation of taker fees on the market, as per seeting fees and rewarding liquidity providers
        * </pre>
        *
-       * <code>string fee = 3 [json_name = "fee"];</code>
-       * @param value The bytes for fee to set.
-       * @return This builder for chaining.
+       * <code>string fee = 3[json_name = "fee"];</code>
        */
       public Builder setFeeBytes(
           com.google.protobuf.ByteString value) {
@@ -5908,7 +5528,7 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         fee_ = value;
         onChanged();
         return this;
@@ -5917,9 +5537,9 @@ public final class Commands {
       private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> sells_ =
         java.util.Collections.emptyList();
       private void ensureSellsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           sells_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>(sells_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -5931,7 +5551,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getSellsList() {
         if (sellsBuilder_ == null) {
@@ -5945,7 +5565,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public int getSellsCount() {
         if (sellsBuilder_ == null) {
@@ -5959,7 +5579,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder getSells(int index) {
         if (sellsBuilder_ == null) {
@@ -5973,7 +5593,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder setSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -5994,7 +5614,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder setSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6012,7 +5632,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder addSells(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
         if (sellsBuilder_ == null) {
@@ -6032,7 +5652,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder addSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6053,7 +5673,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder addSells(
           io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6071,7 +5691,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder addSells(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6089,7 +5709,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder addAllSells(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrder> values) {
@@ -6108,12 +5728,12 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder clearSells() {
         if (sellsBuilder_ == null) {
           sells_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           sellsBuilder_.clear();
@@ -6125,7 +5745,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public Builder removeSells(int index) {
         if (sellsBuilder_ == null) {
@@ -6142,7 +5762,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getSellsBuilder(
           int index) {
@@ -6153,7 +5773,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getSellsOrBuilder(
           int index) {
@@ -6167,9 +5787,9 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
            getSellsOrBuilderList() {
         if (sellsBuilder_ != null) {
           return sellsBuilder_.getMessageOrBuilderList();
@@ -6182,7 +5802,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addSellsBuilder() {
         return getSellsFieldBuilder().addBuilder(
@@ -6193,7 +5813,7 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addSellsBuilder(
           int index) {
@@ -6205,20 +5825,20 @@ public final class Commands {
        * A set of liquidity sell orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder sells = 4 [json_name = "sells"];</code>
+       * <code>repeated .vega.LiquidityOrder sells = 4[json_name = "sells"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder> 
            getSellsBuilderList() {
         return getSellsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
           getSellsFieldBuilder() {
         if (sellsBuilder_ == null) {
           sellsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>(
                   sells_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           sells_ = null;
@@ -6229,9 +5849,9 @@ public final class Commands {
       private java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> buys_ =
         java.util.Collections.emptyList();
       private void ensureBuysIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           buys_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityOrder>(buys_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -6243,7 +5863,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> getBuysList() {
         if (buysBuilder_ == null) {
@@ -6257,7 +5877,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public int getBuysCount() {
         if (buysBuilder_ == null) {
@@ -6271,7 +5891,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder getBuys(int index) {
         if (buysBuilder_ == null) {
@@ -6285,7 +5905,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder setBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6306,7 +5926,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder setBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6324,7 +5944,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder addBuys(io.vegaprotocol.vega.Vega.LiquidityOrder value) {
         if (buysBuilder_ == null) {
@@ -6344,7 +5964,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder addBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder value) {
@@ -6365,7 +5985,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder addBuys(
           io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6383,7 +6003,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder addBuys(
           int index, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder builderForValue) {
@@ -6401,7 +6021,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder addAllBuys(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityOrder> values) {
@@ -6420,12 +6040,12 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder clearBuys() {
         if (buysBuilder_ == null) {
           buys_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           buysBuilder_.clear();
@@ -6437,7 +6057,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public Builder removeBuys(int index) {
         if (buysBuilder_ == null) {
@@ -6454,7 +6074,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder getBuysBuilder(
           int index) {
@@ -6465,7 +6085,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder getBuysOrBuilder(
           int index) {
@@ -6479,9 +6099,9 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
            getBuysOrBuilderList() {
         if (buysBuilder_ != null) {
           return buysBuilder_.getMessageOrBuilderList();
@@ -6494,7 +6114,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addBuysBuilder() {
         return getBuysFieldBuilder().addBuilder(
@@ -6505,7 +6125,7 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityOrder.Builder addBuysBuilder(
           int index) {
@@ -6517,20 +6137,20 @@ public final class Commands {
        * A set of liquidity buy orders to meet the liquidity provision obligation
        * </pre>
        *
-       * <code>repeated .vega.LiquidityOrder buys = 5 [json_name = "buys"];</code>
+       * <code>repeated .vega.LiquidityOrder buys = 5[json_name = "buys"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder> 
            getBuysBuilderList() {
         return getBuysFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
           getBuysFieldBuilder() {
         if (buysBuilder_ == null) {
           buysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>(
                   buys_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           buys_ = null;
@@ -6544,8 +6164,7 @@ public final class Commands {
        * A reference to be added to every order created out of this liquidityProvisionSubmission
        * </pre>
        *
-       * <code>string reference = 6 [json_name = "reference"];</code>
-       * @return The reference.
+       * <code>string reference = 6[json_name = "reference"];</code>
        */
       public java.lang.String getReference() {
         java.lang.Object ref = reference_;
@@ -6564,14 +6183,13 @@ public final class Commands {
        * A reference to be added to every order created out of this liquidityProvisionSubmission
        * </pre>
        *
-       * <code>string reference = 6 [json_name = "reference"];</code>
-       * @return The bytes for reference.
+       * <code>string reference = 6[json_name = "reference"];</code>
        */
       public com.google.protobuf.ByteString
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -6585,16 +6203,14 @@ public final class Commands {
        * A reference to be added to every order created out of this liquidityProvisionSubmission
        * </pre>
        *
-       * <code>string reference = 6 [json_name = "reference"];</code>
-       * @param value The reference to set.
-       * @return This builder for chaining.
+       * <code>string reference = 6[json_name = "reference"];</code>
        */
       public Builder setReference(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         reference_ = value;
         onChanged();
         return this;
@@ -6604,11 +6220,10 @@ public final class Commands {
        * A reference to be added to every order created out of this liquidityProvisionSubmission
        * </pre>
        *
-       * <code>string reference = 6 [json_name = "reference"];</code>
-       * @return This builder for chaining.
+       * <code>string reference = 6[json_name = "reference"];</code>
        */
       public Builder clearReference() {
-
+        
         reference_ = getDefaultInstance().getReference();
         onChanged();
         return this;
@@ -6618,9 +6233,7 @@ public final class Commands {
        * A reference to be added to every order created out of this liquidityProvisionSubmission
        * </pre>
        *
-       * <code>string reference = 6 [json_name = "reference"];</code>
-       * @param value The bytes for reference to set.
-       * @return This builder for chaining.
+       * <code>string reference = 6[json_name = "reference"];</code>
        */
       public Builder setReferenceBytes(
           com.google.protobuf.ByteString value) {
@@ -6628,18 +6241,16 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         reference_ = value;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6661,7 +6272,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<LiquidityProvisionSubmission>
         PARSER = new com.google.protobuf.AbstractParser<LiquidityProvisionSubmission>() {
-      @java.lang.Override
       public LiquidityProvisionSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6679,7 +6289,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.LiquidityProvisionSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6695,8 +6304,7 @@ public final class Commands {
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 1 [json_name = "amount"];</code>
-     * @return The amount.
+     * <code>uint64 amount = 1[json_name = "amount"];</code>
      */
     long getAmount();
 
@@ -6705,8 +6313,7 @@ public final class Commands {
      * The asset we want to withdraw
      * </pre>
      *
-     * <code>string asset = 2 [json_name = "asset"];</code>
-     * @return The asset.
+     * <code>string asset = 2[json_name = "asset"];</code>
      */
     java.lang.String getAsset();
     /**
@@ -6714,8 +6321,7 @@ public final class Commands {
      * The asset we want to withdraw
      * </pre>
      *
-     * <code>string asset = 2 [json_name = "asset"];</code>
-     * @return The bytes for asset.
+     * <code>string asset = 2[json_name = "asset"];</code>
      */
     com.google.protobuf.ByteString
         getAssetBytes();
@@ -6725,8 +6331,7 @@ public final class Commands {
      * Foreign chain specifics
      * </pre>
      *
-     * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
-     * @return Whether the ext field is set.
+     * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
      */
     boolean hasExt();
     /**
@@ -6734,8 +6339,7 @@ public final class Commands {
      * Foreign chain specifics
      * </pre>
      *
-     * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
-     * @return The ext.
+     * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
      */
     io.vegaprotocol.vega.Vega.WithdrawExt getExt();
     /**
@@ -6743,7 +6347,7 @@ public final class Commands {
      * Foreign chain specifics
      * </pre>
      *
-     * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+     * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
      */
     io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder getExtOrBuilder();
   }
@@ -6754,7 +6358,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.WithdrawSubmission}
    */
-  public static final class WithdrawSubmission extends
+  public  static final class WithdrawSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.WithdrawSubmission)
       WithdrawSubmissionOrBuilder {
@@ -6764,14 +6368,8 @@ public final class Commands {
       super(builder);
     }
     private WithdrawSubmission() {
+      amount_ = 0L;
       asset_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new WithdrawSubmission();
     }
 
     @java.lang.Override
@@ -6787,6 +6385,7 @@ public final class Commands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6797,6 +6396,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               amount_ = input.readUInt64();
@@ -6821,13 +6427,6 @@ public final class Commands {
 
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6845,7 +6444,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_WithdrawSubmission_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_WithdrawSubmission_fieldAccessorTable
@@ -6860,10 +6458,8 @@ public final class Commands {
      * The amount to be withdrawn
      * </pre>
      *
-     * <code>uint64 amount = 1 [json_name = "amount"];</code>
-     * @return The amount.
+     * <code>uint64 amount = 1[json_name = "amount"];</code>
      */
-    @java.lang.Override
     public long getAmount() {
       return amount_;
     }
@@ -6875,16 +6471,14 @@ public final class Commands {
      * The asset we want to withdraw
      * </pre>
      *
-     * <code>string asset = 2 [json_name = "asset"];</code>
-     * @return The asset.
+     * <code>string asset = 2[json_name = "asset"];</code>
      */
-    @java.lang.Override
     public java.lang.String getAsset() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         asset_ = s;
@@ -6896,15 +6490,13 @@ public final class Commands {
      * The asset we want to withdraw
      * </pre>
      *
-     * <code>string asset = 2 [json_name = "asset"];</code>
-     * @return The bytes for asset.
+     * <code>string asset = 2[json_name = "asset"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getAssetBytes() {
       java.lang.Object ref = asset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         asset_ = b;
@@ -6921,10 +6513,8 @@ public final class Commands {
      * Foreign chain specifics
      * </pre>
      *
-     * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
-     * @return Whether the ext field is set.
+     * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
      */
-    @java.lang.Override
     public boolean hasExt() {
       return ext_ != null;
     }
@@ -6933,10 +6523,8 @@ public final class Commands {
      * Foreign chain specifics
      * </pre>
      *
-     * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
-     * @return The ext.
+     * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.WithdrawExt getExt() {
       return ext_ == null ? io.vegaprotocol.vega.Vega.WithdrawExt.getDefaultInstance() : ext_;
     }
@@ -6945,15 +6533,13 @@ public final class Commands {
      * Foreign chain specifics
      * </pre>
      *
-     * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+     * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder getExtOrBuilder() {
       return getExt();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6963,7 +6549,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (amount_ != 0L) {
@@ -6978,7 +6563,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7010,17 +6594,18 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission) obj;
 
-      if (getAmount()
-          != other.getAmount()) return false;
-      if (!getAsset()
-          .equals(other.getAsset())) return false;
-      if (hasExt() != other.hasExt()) return false;
+      boolean result = true;
+      result = result && (getAmount()
+          == other.getAmount());
+      result = result && getAsset()
+          .equals(other.getAsset());
+      result = result && (hasExt() == other.hasExt());
       if (hasExt()) {
-        if (!getExt()
-            .equals(other.getExt())) return false;
+        result = result && getExt()
+            .equals(other.getExt());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -7114,7 +6699,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7122,7 +6706,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7150,7 +6733,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_WithdrawSubmission_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_WithdrawSubmission_fieldAccessorTable
@@ -7173,7 +6755,6 @@ public final class Commands {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         amount_ = 0L;
@@ -7189,18 +6770,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_WithdrawSubmission_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission build() {
         io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission result = buildPartial();
         if (!result.isInitialized()) {
@@ -7209,7 +6787,6 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission(this);
         result.amount_ = amount_;
@@ -7223,39 +6800,32 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission)other);
@@ -7282,12 +6852,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7312,10 +6880,8 @@ public final class Commands {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
-       * @return The amount.
+       * <code>uint64 amount = 1[json_name = "amount"];</code>
        */
-      @java.lang.Override
       public long getAmount() {
         return amount_;
       }
@@ -7324,12 +6890,10 @@ public final class Commands {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
-       * @param value The amount to set.
-       * @return This builder for chaining.
+       * <code>uint64 amount = 1[json_name = "amount"];</code>
        */
       public Builder setAmount(long value) {
-
+        
         amount_ = value;
         onChanged();
         return this;
@@ -7339,11 +6903,10 @@ public final class Commands {
        * The amount to be withdrawn
        * </pre>
        *
-       * <code>uint64 amount = 1 [json_name = "amount"];</code>
-       * @return This builder for chaining.
+       * <code>uint64 amount = 1[json_name = "amount"];</code>
        */
       public Builder clearAmount() {
-
+        
         amount_ = 0L;
         onChanged();
         return this;
@@ -7355,8 +6918,7 @@ public final class Commands {
        * The asset we want to withdraw
        * </pre>
        *
-       * <code>string asset = 2 [json_name = "asset"];</code>
-       * @return The asset.
+       * <code>string asset = 2[json_name = "asset"];</code>
        */
       public java.lang.String getAsset() {
         java.lang.Object ref = asset_;
@@ -7375,14 +6937,13 @@ public final class Commands {
        * The asset we want to withdraw
        * </pre>
        *
-       * <code>string asset = 2 [json_name = "asset"];</code>
-       * @return The bytes for asset.
+       * <code>string asset = 2[json_name = "asset"];</code>
        */
       public com.google.protobuf.ByteString
           getAssetBytes() {
         java.lang.Object ref = asset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           asset_ = b;
@@ -7396,16 +6957,14 @@ public final class Commands {
        * The asset we want to withdraw
        * </pre>
        *
-       * <code>string asset = 2 [json_name = "asset"];</code>
-       * @param value The asset to set.
-       * @return This builder for chaining.
+       * <code>string asset = 2[json_name = "asset"];</code>
        */
       public Builder setAsset(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         asset_ = value;
         onChanged();
         return this;
@@ -7415,11 +6974,10 @@ public final class Commands {
        * The asset we want to withdraw
        * </pre>
        *
-       * <code>string asset = 2 [json_name = "asset"];</code>
-       * @return This builder for chaining.
+       * <code>string asset = 2[json_name = "asset"];</code>
        */
       public Builder clearAsset() {
-
+        
         asset_ = getDefaultInstance().getAsset();
         onChanged();
         return this;
@@ -7429,9 +6987,7 @@ public final class Commands {
        * The asset we want to withdraw
        * </pre>
        *
-       * <code>string asset = 2 [json_name = "asset"];</code>
-       * @param value The bytes for asset to set.
-       * @return This builder for chaining.
+       * <code>string asset = 2[json_name = "asset"];</code>
        */
       public Builder setAssetBytes(
           com.google.protobuf.ByteString value) {
@@ -7439,13 +6995,13 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         asset_ = value;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.Vega.WithdrawExt ext_;
+      private io.vegaprotocol.vega.Vega.WithdrawExt ext_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder> extBuilder_;
       /**
@@ -7453,8 +7009,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
-       * @return Whether the ext field is set.
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public boolean hasExt() {
         return extBuilder_ != null || ext_ != null;
@@ -7464,8 +7019,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
-       * @return The ext.
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public io.vegaprotocol.vega.Vega.WithdrawExt getExt() {
         if (extBuilder_ == null) {
@@ -7479,7 +7033,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public Builder setExt(io.vegaprotocol.vega.Vega.WithdrawExt value) {
         if (extBuilder_ == null) {
@@ -7499,7 +7053,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public Builder setExt(
           io.vegaprotocol.vega.Vega.WithdrawExt.Builder builderForValue) {
@@ -7517,7 +7071,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public Builder mergeExt(io.vegaprotocol.vega.Vega.WithdrawExt value) {
         if (extBuilder_ == null) {
@@ -7539,7 +7093,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public Builder clearExt() {
         if (extBuilder_ == null) {
@@ -7557,10 +7111,10 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public io.vegaprotocol.vega.Vega.WithdrawExt.Builder getExtBuilder() {
-
+        
         onChanged();
         return getExtFieldBuilder().getBuilder();
       }
@@ -7569,7 +7123,7 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       public io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder getExtOrBuilder() {
         if (extBuilder_ != null) {
@@ -7584,10 +7138,10 @@ public final class Commands {
        * Foreign chain specifics
        * </pre>
        *
-       * <code>.vega.WithdrawExt ext = 3 [json_name = "ext"];</code>
+       * <code>.vega.WithdrawExt ext = 3[json_name = "ext"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder>
+          io.vegaprotocol.vega.Vega.WithdrawExt, io.vegaprotocol.vega.Vega.WithdrawExt.Builder, io.vegaprotocol.vega.Vega.WithdrawExtOrBuilder> 
           getExtFieldBuilder() {
         if (extBuilder_ == null) {
           extBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -7599,13 +7153,11 @@ public final class Commands {
         }
         return extBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -7627,7 +7179,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<WithdrawSubmission>
         PARSER = new com.google.protobuf.AbstractParser<WithdrawSubmission>() {
-      @java.lang.Override
       public WithdrawSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7645,7 +7196,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.WithdrawSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7661,8 +7211,7 @@ public final class Commands {
      * Proposal reference
      * </pre>
      *
-     * <code>string reference = 1 [json_name = "reference"];</code>
-     * @return The reference.
+     * <code>string reference = 1[json_name = "reference"];</code>
      */
     java.lang.String getReference();
     /**
@@ -7670,8 +7219,7 @@ public final class Commands {
      * Proposal reference
      * </pre>
      *
-     * <code>string reference = 1 [json_name = "reference"];</code>
-     * @return The bytes for reference.
+     * <code>string reference = 1[json_name = "reference"];</code>
      */
     com.google.protobuf.ByteString
         getReferenceBytes();
@@ -7681,8 +7229,7 @@ public final class Commands {
      * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
-     * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
-     * @return Whether the terms field is set.
+     * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
      */
     boolean hasTerms();
     /**
@@ -7690,8 +7237,7 @@ public final class Commands {
      * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
-     * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
-     * @return The terms.
+     * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
      */
     io.vegaprotocol.vega.Governance.ProposalTerms getTerms();
     /**
@@ -7699,7 +7245,7 @@ public final class Commands {
      * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
-     * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+     * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
      */
     io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder getTermsOrBuilder();
   }
@@ -7711,7 +7257,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.ProposalSubmission}
    */
-  public static final class ProposalSubmission extends
+  public  static final class ProposalSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.ProposalSubmission)
       ProposalSubmissionOrBuilder {
@@ -7722,13 +7268,6 @@ public final class Commands {
     }
     private ProposalSubmission() {
       reference_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ProposalSubmission();
     }
 
     @java.lang.Override
@@ -7744,6 +7283,7 @@ public final class Commands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7754,6 +7294,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -7773,13 +7320,6 @@ public final class Commands {
 
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7797,7 +7337,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_ProposalSubmission_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_ProposalSubmission_fieldAccessorTable
@@ -7812,16 +7351,14 @@ public final class Commands {
      * Proposal reference
      * </pre>
      *
-     * <code>string reference = 1 [json_name = "reference"];</code>
-     * @return The reference.
+     * <code>string reference = 1[json_name = "reference"];</code>
      */
-    @java.lang.Override
     public java.lang.String getReference() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -7833,15 +7370,13 @@ public final class Commands {
      * Proposal reference
      * </pre>
      *
-     * <code>string reference = 1 [json_name = "reference"];</code>
-     * @return The bytes for reference.
+     * <code>string reference = 1[json_name = "reference"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -7858,10 +7393,8 @@ public final class Commands {
      * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
-     * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
-     * @return Whether the terms field is set.
+     * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public boolean hasTerms() {
       return terms_ != null;
     }
@@ -7870,10 +7403,8 @@ public final class Commands {
      * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
-     * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
-     * @return The terms.
+     * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Governance.ProposalTerms getTerms() {
       return terms_ == null ? io.vegaprotocol.vega.Governance.ProposalTerms.getDefaultInstance() : terms_;
     }
@@ -7882,15 +7413,13 @@ public final class Commands {
      * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
      * </pre>
      *
-     * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+     * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder getTermsOrBuilder() {
       return getTerms();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7900,7 +7429,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getReferenceBytes().isEmpty()) {
@@ -7912,7 +7440,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7940,15 +7467,16 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission) obj;
 
-      if (!getReference()
-          .equals(other.getReference())) return false;
-      if (hasTerms() != other.hasTerms()) return false;
+      boolean result = true;
+      result = result && getReference()
+          .equals(other.getReference());
+      result = result && (hasTerms() == other.hasTerms());
       if (hasTerms()) {
-        if (!getTerms()
-            .equals(other.getTerms())) return false;
+        result = result && getTerms()
+            .equals(other.getTerms());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8039,7 +7567,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8047,7 +7574,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8076,7 +7602,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_ProposalSubmission_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_ProposalSubmission_fieldAccessorTable
@@ -8099,7 +7624,6 @@ public final class Commands {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         reference_ = "";
@@ -8113,18 +7637,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_ProposalSubmission_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission build() {
         io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission result = buildPartial();
         if (!result.isInitialized()) {
@@ -8133,7 +7654,6 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission(this);
         result.reference_ = reference_;
@@ -8146,39 +7666,32 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission)other);
@@ -8202,12 +7715,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8232,8 +7743,7 @@ public final class Commands {
        * Proposal reference
        * </pre>
        *
-       * <code>string reference = 1 [json_name = "reference"];</code>
-       * @return The reference.
+       * <code>string reference = 1[json_name = "reference"];</code>
        */
       public java.lang.String getReference() {
         java.lang.Object ref = reference_;
@@ -8252,14 +7762,13 @@ public final class Commands {
        * Proposal reference
        * </pre>
        *
-       * <code>string reference = 1 [json_name = "reference"];</code>
-       * @return The bytes for reference.
+       * <code>string reference = 1[json_name = "reference"];</code>
        */
       public com.google.protobuf.ByteString
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -8273,16 +7782,14 @@ public final class Commands {
        * Proposal reference
        * </pre>
        *
-       * <code>string reference = 1 [json_name = "reference"];</code>
-       * @param value The reference to set.
-       * @return This builder for chaining.
+       * <code>string reference = 1[json_name = "reference"];</code>
        */
       public Builder setReference(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         reference_ = value;
         onChanged();
         return this;
@@ -8292,11 +7799,10 @@ public final class Commands {
        * Proposal reference
        * </pre>
        *
-       * <code>string reference = 1 [json_name = "reference"];</code>
-       * @return This builder for chaining.
+       * <code>string reference = 1[json_name = "reference"];</code>
        */
       public Builder clearReference() {
-
+        
         reference_ = getDefaultInstance().getReference();
         onChanged();
         return this;
@@ -8306,9 +7812,7 @@ public final class Commands {
        * Proposal reference
        * </pre>
        *
-       * <code>string reference = 1 [json_name = "reference"];</code>
-       * @param value The bytes for reference to set.
-       * @return This builder for chaining.
+       * <code>string reference = 1[json_name = "reference"];</code>
        */
       public Builder setReferenceBytes(
           com.google.protobuf.ByteString value) {
@@ -8316,13 +7820,13 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         reference_ = value;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.Governance.ProposalTerms terms_;
+      private io.vegaprotocol.vega.Governance.ProposalTerms terms_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder> termsBuilder_;
       /**
@@ -8330,8 +7834,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
-       * @return Whether the terms field is set.
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public boolean hasTerms() {
         return termsBuilder_ != null || terms_ != null;
@@ -8341,8 +7844,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
-       * @return The terms.
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Governance.ProposalTerms getTerms() {
         if (termsBuilder_ == null) {
@@ -8356,7 +7858,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public Builder setTerms(io.vegaprotocol.vega.Governance.ProposalTerms value) {
         if (termsBuilder_ == null) {
@@ -8376,7 +7878,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public Builder setTerms(
           io.vegaprotocol.vega.Governance.ProposalTerms.Builder builderForValue) {
@@ -8394,7 +7896,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public Builder mergeTerms(io.vegaprotocol.vega.Governance.ProposalTerms value) {
         if (termsBuilder_ == null) {
@@ -8416,7 +7918,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public Builder clearTerms() {
         if (termsBuilder_ == null) {
@@ -8434,10 +7936,10 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Governance.ProposalTerms.Builder getTermsBuilder() {
-
+        
         onChanged();
         return getTermsFieldBuilder().getBuilder();
       }
@@ -8446,7 +7948,7 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder getTermsOrBuilder() {
         if (termsBuilder_ != null) {
@@ -8461,10 +7963,10 @@ public final class Commands {
        * Proposal configuration and the actual change that is meant to be executed when proposal is enacted
        * </pre>
        *
-       * <code>.vega.ProposalTerms terms = 2 [json_name = "terms", (.validator.field) = { ... }</code>
+       * <code>.vega.ProposalTerms terms = 2[json_name = "terms", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder>
+          io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder> 
           getTermsFieldBuilder() {
         if (termsBuilder_ == null) {
           termsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -8476,13 +7978,11 @@ public final class Commands {
         }
         return termsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8504,7 +8004,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<ProposalSubmission>
         PARSER = new com.google.protobuf.AbstractParser<ProposalSubmission>() {
-      @java.lang.Override
       public ProposalSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8522,7 +8021,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.ProposalSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8538,8 +8036,7 @@ public final class Commands {
      * The ID of the proposal to vote for.
      * </pre>
      *
-     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-     * @return The proposalId.
+     * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
      */
     java.lang.String getProposalId();
     /**
@@ -8547,8 +8044,7 @@ public final class Commands {
      * The ID of the proposal to vote for.
      * </pre>
      *
-     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-     * @return The bytes for proposalId.
+     * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
      */
     com.google.protobuf.ByteString
         getProposalIdBytes();
@@ -8558,8 +8054,7 @@ public final class Commands {
      * The actual value of the vote
      * </pre>
      *
-     * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-     * @return The enum numeric value on the wire for value.
+     * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
      */
     int getValueValue();
     /**
@@ -8567,8 +8062,7 @@ public final class Commands {
      * The actual value of the vote
      * </pre>
      *
-     * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
      */
     io.vegaprotocol.vega.Governance.Vote.Value getValue();
   }
@@ -8580,7 +8074,7 @@ public final class Commands {
    *
    * Protobuf type {@code vega.commands.v1.VoteSubmission}
    */
-  public static final class VoteSubmission extends
+  public  static final class VoteSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.VoteSubmission)
       VoteSubmissionOrBuilder {
@@ -8592,13 +8086,6 @@ public final class Commands {
     private VoteSubmission() {
       proposalId_ = "";
       value_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new VoteSubmission();
     }
 
     @java.lang.Override
@@ -8614,6 +8101,7 @@ public final class Commands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -8624,6 +8112,13 @@ public final class Commands {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8634,13 +8129,6 @@ public final class Commands {
               int rawValue = input.readEnum();
 
               value_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -8660,7 +8148,6 @@ public final class Commands {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_VoteSubmission_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_VoteSubmission_fieldAccessorTable
@@ -8675,16 +8162,14 @@ public final class Commands {
      * The ID of the proposal to vote for.
      * </pre>
      *
-     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-     * @return The proposalId.
+     * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public java.lang.String getProposalId() {
       java.lang.Object ref = proposalId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         proposalId_ = s;
@@ -8696,15 +8181,13 @@ public final class Commands {
      * The ID of the proposal to vote for.
      * </pre>
      *
-     * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-     * @return The bytes for proposalId.
+     * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getProposalIdBytes() {
       java.lang.Object ref = proposalId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         proposalId_ = b;
@@ -8721,10 +8204,9 @@ public final class Commands {
      * The actual value of the vote
      * </pre>
      *
-     * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-     * @return The enum numeric value on the wire for value.
+     * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
      */
-    @java.lang.Override public int getValueValue() {
+    public int getValueValue() {
       return value_;
     }
     /**
@@ -8732,17 +8214,14 @@ public final class Commands {
      * The actual value of the vote
      * </pre>
      *
-     * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.Governance.Vote.Value getValue() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.Governance.Vote.Value getValue() {
       io.vegaprotocol.vega.Governance.Vote.Value result = io.vegaprotocol.vega.Governance.Vote.Value.valueOf(value_);
       return result == null ? io.vegaprotocol.vega.Governance.Vote.Value.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8752,7 +8231,6 @@ public final class Commands {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getProposalIdBytes().isEmpty()) {
@@ -8764,7 +8242,6 @@ public final class Commands {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8792,11 +8269,12 @@ public final class Commands {
       }
       io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission) obj;
 
-      if (!getProposalId()
-          .equals(other.getProposalId())) return false;
-      if (value_ != other.value_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getProposalId()
+          .equals(other.getProposalId());
+      result = result && value_ == other.value_;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8885,7 +8363,6 @@ public final class Commands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8893,7 +8370,6 @@ public final class Commands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8922,7 +8398,6 @@ public final class Commands {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_VoteSubmission_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_VoteSubmission_fieldAccessorTable
@@ -8945,7 +8420,6 @@ public final class Commands {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         proposalId_ = "";
@@ -8955,18 +8429,15 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_VoteSubmission_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission build() {
         io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission result = buildPartial();
         if (!result.isInitialized()) {
@@ -8975,7 +8446,6 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission buildPartial() {
         io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission(this);
         result.proposalId_ = proposalId_;
@@ -8984,39 +8454,32 @@ public final class Commands {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission)other);
@@ -9040,12 +8503,10 @@ public final class Commands {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9070,8 +8531,7 @@ public final class Commands {
        * The ID of the proposal to vote for.
        * </pre>
        *
-       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-       * @return The proposalId.
+       * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
        */
       public java.lang.String getProposalId() {
         java.lang.Object ref = proposalId_;
@@ -9090,14 +8550,13 @@ public final class Commands {
        * The ID of the proposal to vote for.
        * </pre>
        *
-       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-       * @return The bytes for proposalId.
+       * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
        */
       public com.google.protobuf.ByteString
           getProposalIdBytes() {
         java.lang.Object ref = proposalId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           proposalId_ = b;
@@ -9111,16 +8570,14 @@ public final class Commands {
        * The ID of the proposal to vote for.
        * </pre>
        *
-       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-       * @param value The proposalId to set.
-       * @return This builder for chaining.
+       * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
        */
       public Builder setProposalId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         proposalId_ = value;
         onChanged();
         return this;
@@ -9130,11 +8587,10 @@ public final class Commands {
        * The ID of the proposal to vote for.
        * </pre>
        *
-       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-       * @return This builder for chaining.
+       * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
        */
       public Builder clearProposalId() {
-
+        
         proposalId_ = getDefaultInstance().getProposalId();
         onChanged();
         return this;
@@ -9144,9 +8600,7 @@ public final class Commands {
        * The ID of the proposal to vote for.
        * </pre>
        *
-       * <code>string proposal_id = 1 [json_name = "proposalId", (.validator.field) = { ... }</code>
-       * @param value The bytes for proposalId to set.
-       * @return This builder for chaining.
+       * <code>string proposal_id = 1[json_name = "proposalId", (.validator.field) = { ... }</code>
        */
       public Builder setProposalIdBytes(
           com.google.protobuf.ByteString value) {
@@ -9154,7 +8608,7 @@ public final class Commands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         proposalId_ = value;
         onChanged();
         return this;
@@ -9166,10 +8620,9 @@ public final class Commands {
        * The actual value of the vote
        * </pre>
        *
-       * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-       * @return The enum numeric value on the wire for value.
+       * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
        */
-      @java.lang.Override public int getValueValue() {
+      public int getValueValue() {
         return value_;
       }
       /**
@@ -9177,12 +8630,9 @@ public final class Commands {
        * The actual value of the vote
        * </pre>
        *
-       * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-       * @param value The enum numeric value on the wire for value to set.
-       * @return This builder for chaining.
+       * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
        */
       public Builder setValueValue(int value) {
-
         value_ = value;
         onChanged();
         return this;
@@ -9192,12 +8642,9 @@ public final class Commands {
        * The actual value of the vote
        * </pre>
        *
-       * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-       * @return The value.
+       * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.Governance.Vote.Value getValue() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.Governance.Vote.Value result = io.vegaprotocol.vega.Governance.Vote.Value.valueOf(value_);
         return result == null ? io.vegaprotocol.vega.Governance.Vote.Value.UNRECOGNIZED : result;
       }
@@ -9206,15 +8653,13 @@ public final class Commands {
        * The actual value of the vote
        * </pre>
        *
-       * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
+       * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
        */
       public Builder setValue(io.vegaprotocol.vega.Governance.Vote.Value value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         value_ = value.getNumber();
         onChanged();
         return this;
@@ -9224,22 +8669,19 @@ public final class Commands {
        * The actual value of the vote
        * </pre>
        *
-       * <code>.vega.Vote.Value value = 2 [json_name = "value"];</code>
-       * @return This builder for chaining.
+       * <code>.vega.Vote.Value value = 2[json_name = "value"];</code>
        */
       public Builder clearValue() {
-
+        
         value_ = 0;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9261,7 +8703,6 @@ public final class Commands {
 
     private static final com.google.protobuf.Parser<VoteSubmission>
         PARSER = new com.google.protobuf.AbstractParser<VoteSubmission>() {
-      @java.lang.Override
       public VoteSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9279,7 +8720,6 @@ public final class Commands {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.Commands.VoteSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9288,37 +8728,37 @@ public final class Commands {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_OrderSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_OrderSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_OrderCancellation_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_OrderCancellation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_OrderAmendment_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_OrderAmendment_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_LiquidityProvisionSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_LiquidityProvisionSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_WithdrawSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_WithdrawSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_ProposalSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_ProposalSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_VoteSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_VoteSubmission_fieldAccessorTable;
 
@@ -9372,14 +8812,22 @@ public final class Commands {
       "vega.commands.v1Z+code.vegaprotocol.io/v" +
       "ega/proto/commands/v1b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.vegaprotocol.vega.Governance.getDescriptor(),
           io.vegaprotocol.vega.Vega.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
-        });
+        }, assigner);
     internal_static_vega_commands_v1_OrderSubmission_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_vega_commands_v1_OrderSubmission_fieldAccessorTable = new

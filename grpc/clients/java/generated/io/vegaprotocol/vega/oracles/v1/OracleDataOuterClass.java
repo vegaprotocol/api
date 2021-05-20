@@ -25,8 +25,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @return A list containing the pubKeys.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     java.util.List<java.lang.String>
         getPubKeysList();
@@ -37,8 +36,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @return The count of pubKeys.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     int getPubKeysCount();
     /**
@@ -48,9 +46,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @param index The index of the element to return.
-     * @return The pubKeys at the given index.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     java.lang.String getPubKeys(int index);
     /**
@@ -60,9 +56,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the pubKeys at the given index.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     com.google.protobuf.ByteString
         getPubKeysBytes(int index);
@@ -72,16 +66,16 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property>
+    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property> 
         getDataList();
     /**
      * <pre>
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
     io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property getData(int index);
     /**
@@ -89,7 +83,7 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
     int getDataCount();
     /**
@@ -97,16 +91,16 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
         getDataOrBuilderList();
     /**
      * <pre>
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
     io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder getDataOrBuilder(
         int index);
@@ -116,8 +110,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @return A list containing the matchedSpecIds.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     java.util.List<java.lang.String>
         getMatchedSpecIdsList();
@@ -126,8 +119,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @return The count of matchedSpecIds.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     int getMatchedSpecIdsCount();
     /**
@@ -135,9 +127,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @param index The index of the element to return.
-     * @return The matchedSpecIds at the given index.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     java.lang.String getMatchedSpecIds(int index);
     /**
@@ -145,9 +135,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the matchedSpecIds at the given index.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     com.google.protobuf.ByteString
         getMatchedSpecIdsBytes(int index);
@@ -158,8 +146,7 @@ public final class OracleDataOuterClass {
      * time.
      * </pre>
      *
-     * <code>int64 broadcast_at = 4 [json_name = "broadcastAt"];</code>
-     * @return The broadcastAt.
+     * <code>int64 broadcast_at = 4[json_name = "broadcastAt"];</code>
      */
     long getBroadcastAt();
   }
@@ -170,7 +157,7 @@ public final class OracleDataOuterClass {
    *
    * Protobuf type {@code oracles.v1.OracleData}
    */
-  public static final class OracleData extends
+  public  static final class OracleData extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:oracles.v1.OracleData)
       OracleDataOrBuilder {
@@ -183,13 +170,7 @@ public final class OracleDataOuterClass {
       pubKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       data_ = java.util.Collections.emptyList();
       matchedSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new OracleData();
+      broadcastAt_ = 0L;
     }
 
     @java.lang.Override
@@ -216,9 +197,16 @@ public final class OracleDataOuterClass {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 pubKeys_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
@@ -226,7 +214,7 @@ public final class OracleDataOuterClass {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 data_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property>();
                 mutable_bitField0_ |= 0x00000002;
               }
@@ -236,7 +224,7 @@ public final class OracleDataOuterClass {
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 matchedSpecIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
@@ -248,13 +236,6 @@ public final class OracleDataOuterClass {
               broadcastAt_ = input.readInt64();
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -263,13 +244,13 @@ public final class OracleDataOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           pubKeys_ = pubKeys_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           data_ = java.util.Collections.unmodifiableList(data_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           matchedSpecIds_ = matchedSpecIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -281,7 +262,6 @@ public final class OracleDataOuterClass {
       return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_OracleData_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_OracleData_fieldAccessorTable
@@ -289,6 +269,7 @@ public final class OracleDataOuterClass {
               io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.class, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PUB_KEYS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList pubKeys_;
     /**
@@ -298,8 +279,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @return A list containing the pubKeys.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     public com.google.protobuf.ProtocolStringList
         getPubKeysList() {
@@ -312,8 +292,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @return The count of pubKeys.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     public int getPubKeysCount() {
       return pubKeys_.size();
@@ -325,9 +304,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @param index The index of the element to return.
-     * @return The pubKeys at the given index.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     public java.lang.String getPubKeys(int index) {
       return pubKeys_.get(index);
@@ -339,9 +316,7 @@ public final class OracleDataOuterClass {
      * public keys.
      * </pre>
      *
-     * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the pubKeys at the given index.
+     * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
      */
     public com.google.protobuf.ByteString
         getPubKeysBytes(int index) {
@@ -355,9 +330,8 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property> getDataList() {
       return data_;
     }
@@ -366,10 +340,9 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
         getDataOrBuilderList() {
       return data_;
     }
@@ -378,9 +351,8 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    @java.lang.Override
     public int getDataCount() {
       return data_.size();
     }
@@ -389,9 +361,8 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property getData(int index) {
       return data_.get(index);
     }
@@ -400,9 +371,8 @@ public final class OracleDataOuterClass {
      * data holds all the properties of the oracle data
      * </pre>
      *
-     * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+     * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder getDataOrBuilder(
         int index) {
       return data_.get(index);
@@ -415,8 +385,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @return A list containing the matchedSpecIds.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     public com.google.protobuf.ProtocolStringList
         getMatchedSpecIdsList() {
@@ -427,8 +396,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @return The count of matchedSpecIds.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     public int getMatchedSpecIdsCount() {
       return matchedSpecIds_.size();
@@ -438,9 +406,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @param index The index of the element to return.
-     * @return The matchedSpecIds at the given index.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     public java.lang.String getMatchedSpecIds(int index) {
       return matchedSpecIds_.get(index);
@@ -450,9 +416,7 @@ public final class OracleDataOuterClass {
      * matched_specs_ids lists all the oracle specs that matched this oracle data.
      * </pre>
      *
-     * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the matchedSpecIds at the given index.
+     * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
      */
     public com.google.protobuf.ByteString
         getMatchedSpecIdsBytes(int index) {
@@ -467,16 +431,13 @@ public final class OracleDataOuterClass {
      * time.
      * </pre>
      *
-     * <code>int64 broadcast_at = 4 [json_name = "broadcastAt"];</code>
-     * @return The broadcastAt.
+     * <code>int64 broadcast_at = 4[json_name = "broadcastAt"];</code>
      */
-    @java.lang.Override
     public long getBroadcastAt() {
       return broadcastAt_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -486,7 +447,6 @@ public final class OracleDataOuterClass {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < pubKeys_.size(); i++) {
@@ -504,7 +464,6 @@ public final class OracleDataOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -549,16 +508,17 @@ public final class OracleDataOuterClass {
       }
       io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData other = (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) obj;
 
-      if (!getPubKeysList()
-          .equals(other.getPubKeysList())) return false;
-      if (!getDataList()
-          .equals(other.getDataList())) return false;
-      if (!getMatchedSpecIdsList()
-          .equals(other.getMatchedSpecIdsList())) return false;
-      if (getBroadcastAt()
-          != other.getBroadcastAt()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getPubKeysList()
+          .equals(other.getPubKeysList());
+      result = result && getDataList()
+          .equals(other.getDataList());
+      result = result && getMatchedSpecIdsList()
+          .equals(other.getMatchedSpecIdsList());
+      result = result && (getBroadcastAt()
+          == other.getBroadcastAt());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -658,7 +618,6 @@ public final class OracleDataOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -666,7 +625,6 @@ public final class OracleDataOuterClass {
     public static Builder newBuilder(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -694,7 +652,6 @@ public final class OracleDataOuterClass {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_OracleData_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_OracleData_fieldAccessorTable
@@ -718,7 +675,6 @@ public final class OracleDataOuterClass {
           getDataFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         pubKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -736,18 +692,15 @@ public final class OracleDataOuterClass {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_OracleData_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getDefaultInstanceForType() {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData build() {
         io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData result = buildPartial();
         if (!result.isInitialized()) {
@@ -756,17 +709,17 @@ public final class OracleDataOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData buildPartial() {
         io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData result = new io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           pubKeys_ = pubKeys_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.pubKeys_ = pubKeys_;
         if (dataBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             data_ = java.util.Collections.unmodifiableList(data_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
@@ -774,49 +727,43 @@ public final class OracleDataOuterClass {
         } else {
           result.data_ = dataBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
           matchedSpecIds_ = matchedSpecIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.matchedSpecIds_ = matchedSpecIds_;
         result.broadcastAt_ = broadcastAt_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) {
           return mergeFrom((io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData)other);
@@ -856,7 +803,7 @@ public final class OracleDataOuterClass {
               dataBuilder_ = null;
               data_ = other.data_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              dataBuilder_ =
+              dataBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDataFieldBuilder() : null;
             } else {
@@ -882,12 +829,10 @@ public final class OracleDataOuterClass {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -909,7 +854,7 @@ public final class OracleDataOuterClass {
 
       private com.google.protobuf.LazyStringList pubKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensurePubKeysIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           pubKeys_ = new com.google.protobuf.LazyStringArrayList(pubKeys_);
           bitField0_ |= 0x00000001;
          }
@@ -921,8 +866,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @return A list containing the pubKeys.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public com.google.protobuf.ProtocolStringList
           getPubKeysList() {
@@ -935,8 +879,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @return The count of pubKeys.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public int getPubKeysCount() {
         return pubKeys_.size();
@@ -948,9 +891,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @param index The index of the element to return.
-       * @return The pubKeys at the given index.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public java.lang.String getPubKeys(int index) {
         return pubKeys_.get(index);
@@ -962,9 +903,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the pubKeys at the given index.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public com.google.protobuf.ByteString
           getPubKeysBytes(int index) {
@@ -977,10 +916,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @param index The index to set the value at.
-       * @param value The pubKeys to set.
-       * @return This builder for chaining.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public Builder setPubKeys(
           int index, java.lang.String value) {
@@ -999,9 +935,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @param value The pubKeys to add.
-       * @return This builder for chaining.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public Builder addPubKeys(
           java.lang.String value) {
@@ -1020,9 +954,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @param values The pubKeys to add.
-       * @return This builder for chaining.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public Builder addAllPubKeys(
           java.lang.Iterable<java.lang.String> values) {
@@ -1039,8 +971,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @return This builder for chaining.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public Builder clearPubKeys() {
         pubKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1055,9 +986,7 @@ public final class OracleDataOuterClass {
        * public keys.
        * </pre>
        *
-       * <code>repeated string pub_keys = 1 [json_name = "pubKeys"];</code>
-       * @param value The bytes of the pubKeys to add.
-       * @return This builder for chaining.
+       * <code>repeated string pub_keys = 1[json_name = "pubKeys"];</code>
        */
       public Builder addPubKeysBytes(
           com.google.protobuf.ByteString value) {
@@ -1074,7 +1003,7 @@ public final class OracleDataOuterClass {
       private java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property> data_ =
         java.util.Collections.emptyList();
       private void ensureDataIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           data_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property>(data_);
           bitField0_ |= 0x00000002;
          }
@@ -1088,7 +1017,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property> getDataList() {
         if (dataBuilder_ == null) {
@@ -1102,7 +1031,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public int getDataCount() {
         if (dataBuilder_ == null) {
@@ -1116,7 +1045,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property getData(int index) {
         if (dataBuilder_ == null) {
@@ -1130,7 +1059,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder setData(
           int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property value) {
@@ -1151,7 +1080,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder setData(
           int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder builderForValue) {
@@ -1169,7 +1098,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder addData(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property value) {
         if (dataBuilder_ == null) {
@@ -1189,7 +1118,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder addData(
           int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property value) {
@@ -1210,7 +1139,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder addData(
           io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder builderForValue) {
@@ -1228,7 +1157,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder addData(
           int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder builderForValue) {
@@ -1246,7 +1175,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder addAllData(
           java.lang.Iterable<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property> values) {
@@ -1265,7 +1194,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder clearData() {
         if (dataBuilder_ == null) {
@@ -1282,7 +1211,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public Builder removeData(int index) {
         if (dataBuilder_ == null) {
@@ -1299,7 +1228,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder getDataBuilder(
           int index) {
@@ -1310,7 +1239,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder getDataOrBuilder(
           int index) {
@@ -1324,9 +1253,9 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
            getDataOrBuilderList() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilderList();
@@ -1339,7 +1268,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder addDataBuilder() {
         return getDataFieldBuilder().addBuilder(
@@ -1350,7 +1279,7 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder addDataBuilder(
           int index) {
@@ -1362,20 +1291,20 @@ public final class OracleDataOuterClass {
        * data holds all the properties of the oracle data
        * </pre>
        *
-       * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
+       * <code>repeated .oracles.v1.Property data = 2[json_name = "data"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder>
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder> 
            getDataBuilderList() {
         return getDataFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>(
                   data_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           data_ = null;
@@ -1385,7 +1314,7 @@ public final class OracleDataOuterClass {
 
       private com.google.protobuf.LazyStringList matchedSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureMatchedSpecIdsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           matchedSpecIds_ = new com.google.protobuf.LazyStringArrayList(matchedSpecIds_);
           bitField0_ |= 0x00000004;
          }
@@ -1395,8 +1324,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @return A list containing the matchedSpecIds.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public com.google.protobuf.ProtocolStringList
           getMatchedSpecIdsList() {
@@ -1407,8 +1335,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @return The count of matchedSpecIds.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public int getMatchedSpecIdsCount() {
         return matchedSpecIds_.size();
@@ -1418,9 +1345,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @param index The index of the element to return.
-       * @return The matchedSpecIds at the given index.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public java.lang.String getMatchedSpecIds(int index) {
         return matchedSpecIds_.get(index);
@@ -1430,9 +1355,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the matchedSpecIds at the given index.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public com.google.protobuf.ByteString
           getMatchedSpecIdsBytes(int index) {
@@ -1443,10 +1366,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @param index The index to set the value at.
-       * @param value The matchedSpecIds to set.
-       * @return This builder for chaining.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public Builder setMatchedSpecIds(
           int index, java.lang.String value) {
@@ -1463,9 +1383,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @param value The matchedSpecIds to add.
-       * @return This builder for chaining.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public Builder addMatchedSpecIds(
           java.lang.String value) {
@@ -1482,9 +1400,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @param values The matchedSpecIds to add.
-       * @return This builder for chaining.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public Builder addAllMatchedSpecIds(
           java.lang.Iterable<java.lang.String> values) {
@@ -1499,8 +1415,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @return This builder for chaining.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public Builder clearMatchedSpecIds() {
         matchedSpecIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1513,9 +1428,7 @@ public final class OracleDataOuterClass {
        * matched_specs_ids lists all the oracle specs that matched this oracle data.
        * </pre>
        *
-       * <code>repeated string matched_spec_ids = 3 [json_name = "matchedSpecIds"];</code>
-       * @param value The bytes of the matchedSpecIds to add.
-       * @return This builder for chaining.
+       * <code>repeated string matched_spec_ids = 3[json_name = "matchedSpecIds"];</code>
        */
       public Builder addMatchedSpecIdsBytes(
           com.google.protobuf.ByteString value) {
@@ -1536,10 +1449,8 @@ public final class OracleDataOuterClass {
        * time.
        * </pre>
        *
-       * <code>int64 broadcast_at = 4 [json_name = "broadcastAt"];</code>
-       * @return The broadcastAt.
+       * <code>int64 broadcast_at = 4[json_name = "broadcastAt"];</code>
        */
-      @java.lang.Override
       public long getBroadcastAt() {
         return broadcastAt_;
       }
@@ -1549,12 +1460,10 @@ public final class OracleDataOuterClass {
        * time.
        * </pre>
        *
-       * <code>int64 broadcast_at = 4 [json_name = "broadcastAt"];</code>
-       * @param value The broadcastAt to set.
-       * @return This builder for chaining.
+       * <code>int64 broadcast_at = 4[json_name = "broadcastAt"];</code>
        */
       public Builder setBroadcastAt(long value) {
-
+        
         broadcastAt_ = value;
         onChanged();
         return this;
@@ -1565,22 +1474,19 @@ public final class OracleDataOuterClass {
        * time.
        * </pre>
        *
-       * <code>int64 broadcast_at = 4 [json_name = "broadcastAt"];</code>
-       * @return This builder for chaining.
+       * <code>int64 broadcast_at = 4[json_name = "broadcastAt"];</code>
        */
       public Builder clearBroadcastAt() {
-
+        
         broadcastAt_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1602,7 +1508,6 @@ public final class OracleDataOuterClass {
 
     private static final com.google.protobuf.Parser<OracleData>
         PARSER = new com.google.protobuf.AbstractParser<OracleData>() {
-      @java.lang.Override
       public OracleData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1620,7 +1525,6 @@ public final class OracleDataOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1636,8 +1540,7 @@ public final class OracleDataOuterClass {
      * name is the name of the property.
      * </pre>
      *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string name = 1[json_name = "name"];</code>
      */
     java.lang.String getName();
     /**
@@ -1645,8 +1548,7 @@ public final class OracleDataOuterClass {
      * name is the name of the property.
      * </pre>
      *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string name = 1[json_name = "name"];</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -1656,8 +1558,7 @@ public final class OracleDataOuterClass {
      * value is the value of the property.
      * </pre>
      *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>string value = 2[json_name = "value"];</code>
      */
     java.lang.String getValue();
     /**
@@ -1665,8 +1566,7 @@ public final class OracleDataOuterClass {
      * value is the value of the property.
      * </pre>
      *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>string value = 2[json_name = "value"];</code>
      */
     com.google.protobuf.ByteString
         getValueBytes();
@@ -1678,7 +1578,7 @@ public final class OracleDataOuterClass {
    *
    * Protobuf type {@code oracles.v1.Property}
    */
-  public static final class Property extends
+  public  static final class Property extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:oracles.v1.Property)
       PropertyOrBuilder {
@@ -1690,13 +1590,6 @@ public final class OracleDataOuterClass {
     private Property() {
       name_ = "";
       value_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Property();
     }
 
     @java.lang.Override
@@ -1712,6 +1605,7 @@ public final class OracleDataOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1722,6 +1616,13 @@ public final class OracleDataOuterClass {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1732,13 +1633,6 @@ public final class OracleDataOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               value_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -1758,7 +1652,6 @@ public final class OracleDataOuterClass {
       return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_Property_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_Property_fieldAccessorTable
@@ -1773,16 +1666,14 @@ public final class OracleDataOuterClass {
      * name is the name of the property.
      * </pre>
      *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The name.
+     * <code>string name = 1[json_name = "name"];</code>
      */
-    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -1794,15 +1685,13 @@ public final class OracleDataOuterClass {
      * name is the name of the property.
      * </pre>
      *
-     * <code>string name = 1 [json_name = "name"];</code>
-     * @return The bytes for name.
+     * <code>string name = 1[json_name = "name"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -1819,16 +1708,14 @@ public final class OracleDataOuterClass {
      * value is the value of the property.
      * </pre>
      *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>string value = 2[json_name = "value"];</code>
      */
-    @java.lang.Override
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         value_ = s;
@@ -1840,15 +1727,13 @@ public final class OracleDataOuterClass {
      * value is the value of the property.
      * </pre>
      *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>string value = 2[json_name = "value"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         value_ = b;
@@ -1859,7 +1744,6 @@ public final class OracleDataOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1869,7 +1753,6 @@ public final class OracleDataOuterClass {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -1881,7 +1764,6 @@ public final class OracleDataOuterClass {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1908,12 +1790,13 @@ public final class OracleDataOuterClass {
       }
       io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property other = (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2002,7 +1885,6 @@ public final class OracleDataOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2010,7 +1892,6 @@ public final class OracleDataOuterClass {
     public static Builder newBuilder(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2038,7 +1919,6 @@ public final class OracleDataOuterClass {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_Property_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_Property_fieldAccessorTable
@@ -2061,7 +1941,6 @@ public final class OracleDataOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -2071,18 +1950,15 @@ public final class OracleDataOuterClass {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.internal_static_oracles_v1_Property_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property getDefaultInstanceForType() {
         return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property build() {
         io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property result = buildPartial();
         if (!result.isInitialized()) {
@@ -2091,7 +1967,6 @@ public final class OracleDataOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property buildPartial() {
         io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property result = new io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property(this);
         result.name_ = name_;
@@ -2100,39 +1975,32 @@ public final class OracleDataOuterClass {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property) {
           return mergeFrom((io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property)other);
@@ -2157,12 +2025,10 @@ public final class OracleDataOuterClass {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2187,8 +2053,7 @@ public final class OracleDataOuterClass {
        * name is the name of the property.
        * </pre>
        *
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return The name.
+       * <code>string name = 1[json_name = "name"];</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2207,14 +2072,13 @@ public final class OracleDataOuterClass {
        * name is the name of the property.
        * </pre>
        *
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return The bytes for name.
+       * <code>string name = 1[json_name = "name"];</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -2228,16 +2092,14 @@ public final class OracleDataOuterClass {
        * name is the name of the property.
        * </pre>
        *
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
+       * <code>string name = 1[json_name = "name"];</code>
        */
       public Builder setName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         name_ = value;
         onChanged();
         return this;
@@ -2247,11 +2109,10 @@ public final class OracleDataOuterClass {
        * name is the name of the property.
        * </pre>
        *
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @return This builder for chaining.
+       * <code>string name = 1[json_name = "name"];</code>
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -2261,9 +2122,7 @@ public final class OracleDataOuterClass {
        * name is the name of the property.
        * </pre>
        *
-       * <code>string name = 1 [json_name = "name"];</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
+       * <code>string name = 1[json_name = "name"];</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2271,7 +2130,7 @@ public final class OracleDataOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         name_ = value;
         onChanged();
         return this;
@@ -2283,8 +2142,7 @@ public final class OracleDataOuterClass {
        * value is the value of the property.
        * </pre>
        *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The value.
+       * <code>string value = 2[json_name = "value"];</code>
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -2303,14 +2161,13 @@ public final class OracleDataOuterClass {
        * value is the value of the property.
        * </pre>
        *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The bytes for value.
+       * <code>string value = 2[json_name = "value"];</code>
        */
       public com.google.protobuf.ByteString
           getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           value_ = b;
@@ -2324,16 +2181,14 @@ public final class OracleDataOuterClass {
        * value is the value of the property.
        * </pre>
        *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
+       * <code>string value = 2[json_name = "value"];</code>
        */
       public Builder setValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         value_ = value;
         onChanged();
         return this;
@@ -2343,11 +2198,10 @@ public final class OracleDataOuterClass {
        * value is the value of the property.
        * </pre>
        *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return This builder for chaining.
+       * <code>string value = 2[json_name = "value"];</code>
        */
       public Builder clearValue() {
-
+        
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
@@ -2357,9 +2211,7 @@ public final class OracleDataOuterClass {
        * value is the value of the property.
        * </pre>
        *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The bytes for value to set.
-       * @return This builder for chaining.
+       * <code>string value = 2[json_name = "value"];</code>
        */
       public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
@@ -2367,18 +2219,16 @@ public final class OracleDataOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         value_ = value;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2400,7 +2250,6 @@ public final class OracleDataOuterClass {
 
     private static final com.google.protobuf.Parser<Property>
         PARSER = new com.google.protobuf.AbstractParser<Property>() {
-      @java.lang.Override
       public Property parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2418,7 +2267,6 @@ public final class OracleDataOuterClass {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2427,12 +2275,12 @@ public final class OracleDataOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_OracleData_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_OracleData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_Property_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_Property_fieldAccessorTable;
 
@@ -2454,10 +2302,18 @@ public final class OracleDataOuterClass {
       "a.oracles.v1Z*code.vegaprotocol.io/vega/" +
       "proto/oracles/v1b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_oracles_v1_OracleData_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_oracles_v1_OracleData_fieldAccessorTable = new

@@ -57,8 +57,6 @@ public final class Replay {
     }
 
     /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -66,10 +64,6 @@ public final class Replay {
       return forNumber(value);
     }
 
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
     public static EvidenceType forNumber(int value) {
       switch (value) {
         case 0: return UNKNOWN;
@@ -93,10 +87,6 @@ public final class Replay {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -136,92 +126,80 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
-     * @return Whether the reqInitChain field is set.
+     * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
      */
     boolean hasReqInitChain();
     /**
-     * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
-     * @return The reqInitChain.
+     * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.RequestInitChain getReqInitChain();
     /**
-     * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+     * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder getReqInitChainOrBuilder();
 
     /**
-     * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
-     * @return Whether the resInitChain field is set.
+     * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
      */
     boolean hasResInitChain();
     /**
-     * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
-     * @return The resInitChain.
+     * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ResponseInitChain getResInitChain();
     /**
-     * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+     * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder getResInitChainOrBuilder();
 
     /**
-     * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
-     * @return Whether the reqDeliverTx field is set.
+     * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
      */
     boolean hasReqDeliverTx();
     /**
-     * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
-     * @return The reqDeliverTx.
+     * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.RequestDeliverTx getReqDeliverTx();
     /**
-     * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+     * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder getReqDeliverTxOrBuilder();
 
     /**
-     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
-     * @return Whether the resDeliverTx field is set.
+     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
      */
     boolean hasResDeliverTx();
     /**
-     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
-     * @return The resDeliverTx.
+     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx getResDeliverTx();
     /**
-     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder getResDeliverTxOrBuilder();
 
     /**
-     * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
-     * @return Whether the reqBeginBlock field is set.
+     * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
      */
     boolean hasReqBeginBlock();
     /**
-     * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
-     * @return The reqBeginBlock.
+     * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.RequestBeginBlock getReqBeginBlock();
     /**
-     * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+     * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder getReqBeginBlockOrBuilder();
 
     /**
-     * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
-     * @return Whether the resBeginBlock field is set.
+     * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
      */
     boolean hasResBeginBlock();
     /**
-     * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
-     * @return The resBeginBlock.
+     * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock getResBeginBlock();
     /**
-     * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+     * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder getResBeginBlockOrBuilder();
 
@@ -230,7 +208,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.TmEvent}
    */
-  public static final class TmEvent extends
+  public  static final class TmEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.TmEvent)
       TmEventOrBuilder {
@@ -240,13 +218,6 @@ public final class Replay {
       super(builder);
     }
     private TmEvent() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TmEvent();
     }
 
     @java.lang.Override
@@ -262,6 +233,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -272,6 +244,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder subBuilder = null;
               if (actionCase_ == 1) {
@@ -356,13 +335,6 @@ public final class Replay {
               actionCase_ = 6;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -380,7 +352,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_TmEvent_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_TmEvent_fieldAccessorTable
@@ -391,8 +362,7 @@ public final class Replay {
     private int actionCase_ = 0;
     private java.lang.Object action_;
     public enum ActionCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       REQ_INIT_CHAIN(1),
       RES_INIT_CHAIN(2),
       REQ_DELIVER_TX(3),
@@ -405,8 +375,6 @@ public final class Replay {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -439,18 +407,14 @@ public final class Replay {
 
     public static final int REQ_INIT_CHAIN_FIELD_NUMBER = 1;
     /**
-     * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
-     * @return Whether the reqInitChain field is set.
+     * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
      */
-    @java.lang.Override
     public boolean hasReqInitChain() {
       return actionCase_ == 1;
     }
     /**
-     * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
-     * @return The reqInitChain.
+     * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestInitChain getReqInitChain() {
       if (actionCase_ == 1) {
          return (io.vegaprotocol.vega.tm.Replay.RequestInitChain) action_;
@@ -458,9 +422,8 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.RequestInitChain.getDefaultInstance();
     }
     /**
-     * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+     * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder getReqInitChainOrBuilder() {
       if (actionCase_ == 1) {
          return (io.vegaprotocol.vega.tm.Replay.RequestInitChain) action_;
@@ -470,18 +433,14 @@ public final class Replay {
 
     public static final int RES_INIT_CHAIN_FIELD_NUMBER = 2;
     /**
-     * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
-     * @return Whether the resInitChain field is set.
+     * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
      */
-    @java.lang.Override
     public boolean hasResInitChain() {
       return actionCase_ == 2;
     }
     /**
-     * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
-     * @return The resInitChain.
+     * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseInitChain getResInitChain() {
       if (actionCase_ == 2) {
          return (io.vegaprotocol.vega.tm.Replay.ResponseInitChain) action_;
@@ -489,9 +448,8 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.ResponseInitChain.getDefaultInstance();
     }
     /**
-     * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+     * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder getResInitChainOrBuilder() {
       if (actionCase_ == 2) {
          return (io.vegaprotocol.vega.tm.Replay.ResponseInitChain) action_;
@@ -501,18 +459,14 @@ public final class Replay {
 
     public static final int REQ_DELIVER_TX_FIELD_NUMBER = 3;
     /**
-     * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
-     * @return Whether the reqDeliverTx field is set.
+     * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
      */
-    @java.lang.Override
     public boolean hasReqDeliverTx() {
       return actionCase_ == 3;
     }
     /**
-     * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
-     * @return The reqDeliverTx.
+     * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx getReqDeliverTx() {
       if (actionCase_ == 3) {
          return (io.vegaprotocol.vega.tm.Replay.RequestDeliverTx) action_;
@@ -520,9 +474,8 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.getDefaultInstance();
     }
     /**
-     * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+     * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder getReqDeliverTxOrBuilder() {
       if (actionCase_ == 3) {
          return (io.vegaprotocol.vega.tm.Replay.RequestDeliverTx) action_;
@@ -532,18 +485,14 @@ public final class Replay {
 
     public static final int RES_DELIVER_TX_FIELD_NUMBER = 4;
     /**
-     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
-     * @return Whether the resDeliverTx field is set.
+     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
      */
-    @java.lang.Override
     public boolean hasResDeliverTx() {
       return actionCase_ == 4;
     }
     /**
-     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
-     * @return The resDeliverTx.
+     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx getResDeliverTx() {
       if (actionCase_ == 4) {
          return (io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx) action_;
@@ -551,9 +500,8 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.getDefaultInstance();
     }
     /**
-     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+     * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder getResDeliverTxOrBuilder() {
       if (actionCase_ == 4) {
          return (io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx) action_;
@@ -563,18 +511,14 @@ public final class Replay {
 
     public static final int REQ_BEGIN_BLOCK_FIELD_NUMBER = 5;
     /**
-     * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
-     * @return Whether the reqBeginBlock field is set.
+     * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
      */
-    @java.lang.Override
     public boolean hasReqBeginBlock() {
       return actionCase_ == 5;
     }
     /**
-     * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
-     * @return The reqBeginBlock.
+     * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock getReqBeginBlock() {
       if (actionCase_ == 5) {
          return (io.vegaprotocol.vega.tm.Replay.RequestBeginBlock) action_;
@@ -582,9 +526,8 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.getDefaultInstance();
     }
     /**
-     * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+     * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder getReqBeginBlockOrBuilder() {
       if (actionCase_ == 5) {
          return (io.vegaprotocol.vega.tm.Replay.RequestBeginBlock) action_;
@@ -594,18 +537,14 @@ public final class Replay {
 
     public static final int RES_BEGIN_BLOCK_FIELD_NUMBER = 6;
     /**
-     * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
-     * @return Whether the resBeginBlock field is set.
+     * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
      */
-    @java.lang.Override
     public boolean hasResBeginBlock() {
       return actionCase_ == 6;
     }
     /**
-     * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
-     * @return The resBeginBlock.
+     * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock getResBeginBlock() {
       if (actionCase_ == 6) {
          return (io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock) action_;
@@ -613,9 +552,8 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.getDefaultInstance();
     }
     /**
-     * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+     * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder getResBeginBlockOrBuilder() {
       if (actionCase_ == 6) {
          return (io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock) action_;
@@ -624,7 +562,6 @@ public final class Replay {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -634,7 +571,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (actionCase_ == 1) {
@@ -658,7 +594,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -703,37 +638,40 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.TmEvent other = (io.vegaprotocol.vega.tm.Replay.TmEvent) obj;
 
-      if (!getActionCase().equals(other.getActionCase())) return false;
+      boolean result = true;
+      result = result && getActionCase().equals(
+          other.getActionCase());
+      if (!result) return false;
       switch (actionCase_) {
         case 1:
-          if (!getReqInitChain()
-              .equals(other.getReqInitChain())) return false;
+          result = result && getReqInitChain()
+              .equals(other.getReqInitChain());
           break;
         case 2:
-          if (!getResInitChain()
-              .equals(other.getResInitChain())) return false;
+          result = result && getResInitChain()
+              .equals(other.getResInitChain());
           break;
         case 3:
-          if (!getReqDeliverTx()
-              .equals(other.getReqDeliverTx())) return false;
+          result = result && getReqDeliverTx()
+              .equals(other.getReqDeliverTx());
           break;
         case 4:
-          if (!getResDeliverTx()
-              .equals(other.getResDeliverTx())) return false;
+          result = result && getResDeliverTx()
+              .equals(other.getResDeliverTx());
           break;
         case 5:
-          if (!getReqBeginBlock()
-              .equals(other.getReqBeginBlock())) return false;
+          result = result && getReqBeginBlock()
+              .equals(other.getReqBeginBlock());
           break;
         case 6:
-          if (!getResBeginBlock()
-              .equals(other.getResBeginBlock())) return false;
+          result = result && getResBeginBlock()
+              .equals(other.getResBeginBlock());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -846,7 +784,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -854,7 +791,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.TmEvent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -878,7 +814,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_TmEvent_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_TmEvent_fieldAccessorTable
@@ -901,7 +836,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         actionCase_ = 0;
@@ -909,18 +843,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_TmEvent_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.TmEvent getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.TmEvent.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.TmEvent build() {
         io.vegaprotocol.vega.tm.Replay.TmEvent result = buildPartial();
         if (!result.isInitialized()) {
@@ -929,7 +860,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.TmEvent buildPartial() {
         io.vegaprotocol.vega.tm.Replay.TmEvent result = new io.vegaprotocol.vega.tm.Replay.TmEvent(this);
         if (actionCase_ == 1) {
@@ -979,39 +909,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.TmEvent) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.TmEvent)other);
@@ -1057,12 +980,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1099,18 +1020,14 @@ public final class Replay {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.RequestInitChain, io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder, io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder> reqInitChainBuilder_;
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
-       * @return Whether the reqInitChain field is set.
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
-      @java.lang.Override
       public boolean hasReqInitChain() {
         return actionCase_ == 1;
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
-       * @return The reqInitChain.
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestInitChain getReqInitChain() {
         if (reqInitChainBuilder_ == null) {
           if (actionCase_ == 1) {
@@ -1125,7 +1042,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
       public Builder setReqInitChain(io.vegaprotocol.vega.tm.Replay.RequestInitChain value) {
         if (reqInitChainBuilder_ == null) {
@@ -1141,7 +1058,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
       public Builder setReqInitChain(
           io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder builderForValue) {
@@ -1155,7 +1072,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
       public Builder mergeReqInitChain(io.vegaprotocol.vega.tm.Replay.RequestInitChain value) {
         if (reqInitChainBuilder_ == null) {
@@ -1177,7 +1094,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
       public Builder clearReqInitChain() {
         if (reqInitChainBuilder_ == null) {
@@ -1196,15 +1113,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder getReqInitChainBuilder() {
         return getReqInitChainFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder getReqInitChainOrBuilder() {
         if ((actionCase_ == 1) && (reqInitChainBuilder_ != null)) {
           return reqInitChainBuilder_.getMessageOrBuilder();
@@ -1216,10 +1132,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
+       * <code>.tm.RequestInitChain req_init_chain = 1[json_name = "reqInitChain"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.RequestInitChain, io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder, io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.RequestInitChain, io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder, io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder> 
           getReqInitChainFieldBuilder() {
         if (reqInitChainBuilder_ == null) {
           if (!(actionCase_ == 1)) {
@@ -1240,18 +1156,14 @@ public final class Replay {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.ResponseInitChain, io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder, io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder> resInitChainBuilder_;
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
-       * @return Whether the resInitChain field is set.
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
-      @java.lang.Override
       public boolean hasResInitChain() {
         return actionCase_ == 2;
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
-       * @return The resInitChain.
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseInitChain getResInitChain() {
         if (resInitChainBuilder_ == null) {
           if (actionCase_ == 2) {
@@ -1266,7 +1178,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
       public Builder setResInitChain(io.vegaprotocol.vega.tm.Replay.ResponseInitChain value) {
         if (resInitChainBuilder_ == null) {
@@ -1282,7 +1194,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
       public Builder setResInitChain(
           io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder builderForValue) {
@@ -1296,7 +1208,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
       public Builder mergeResInitChain(io.vegaprotocol.vega.tm.Replay.ResponseInitChain value) {
         if (resInitChainBuilder_ == null) {
@@ -1318,7 +1230,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
       public Builder clearResInitChain() {
         if (resInitChainBuilder_ == null) {
@@ -1337,15 +1249,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder getResInitChainBuilder() {
         return getResInitChainFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder getResInitChainOrBuilder() {
         if ((actionCase_ == 2) && (resInitChainBuilder_ != null)) {
           return resInitChainBuilder_.getMessageOrBuilder();
@@ -1357,10 +1268,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
+       * <code>.tm.ResponseInitChain res_init_chain = 2[json_name = "resInitChain"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ResponseInitChain, io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder, io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ResponseInitChain, io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder, io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder> 
           getResInitChainFieldBuilder() {
         if (resInitChainBuilder_ == null) {
           if (!(actionCase_ == 2)) {
@@ -1381,18 +1292,14 @@ public final class Replay {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.RequestDeliverTx, io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder> reqDeliverTxBuilder_;
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
-       * @return Whether the reqDeliverTx field is set.
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
-      @java.lang.Override
       public boolean hasReqDeliverTx() {
         return actionCase_ == 3;
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
-       * @return The reqDeliverTx.
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx getReqDeliverTx() {
         if (reqDeliverTxBuilder_ == null) {
           if (actionCase_ == 3) {
@@ -1407,7 +1314,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
       public Builder setReqDeliverTx(io.vegaprotocol.vega.tm.Replay.RequestDeliverTx value) {
         if (reqDeliverTxBuilder_ == null) {
@@ -1423,7 +1330,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
       public Builder setReqDeliverTx(
           io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder builderForValue) {
@@ -1437,7 +1344,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
       public Builder mergeReqDeliverTx(io.vegaprotocol.vega.tm.Replay.RequestDeliverTx value) {
         if (reqDeliverTxBuilder_ == null) {
@@ -1459,7 +1366,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
       public Builder clearReqDeliverTx() {
         if (reqDeliverTxBuilder_ == null) {
@@ -1478,15 +1385,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder getReqDeliverTxBuilder() {
         return getReqDeliverTxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder getReqDeliverTxOrBuilder() {
         if ((actionCase_ == 3) && (reqDeliverTxBuilder_ != null)) {
           return reqDeliverTxBuilder_.getMessageOrBuilder();
@@ -1498,10 +1404,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
+       * <code>.tm.RequestDeliverTx req_deliver_tx = 3[json_name = "reqDeliverTx"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.RequestDeliverTx, io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.RequestDeliverTx, io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder> 
           getReqDeliverTxFieldBuilder() {
         if (reqDeliverTxBuilder_ == null) {
           if (!(actionCase_ == 3)) {
@@ -1522,18 +1428,14 @@ public final class Replay {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder> resDeliverTxBuilder_;
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
-       * @return Whether the resDeliverTx field is set.
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
-      @java.lang.Override
       public boolean hasResDeliverTx() {
         return actionCase_ == 4;
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
-       * @return The resDeliverTx.
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx getResDeliverTx() {
         if (resDeliverTxBuilder_ == null) {
           if (actionCase_ == 4) {
@@ -1548,7 +1450,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
       public Builder setResDeliverTx(io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx value) {
         if (resDeliverTxBuilder_ == null) {
@@ -1564,7 +1466,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
       public Builder setResDeliverTx(
           io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder builderForValue) {
@@ -1578,7 +1480,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
       public Builder mergeResDeliverTx(io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx value) {
         if (resDeliverTxBuilder_ == null) {
@@ -1600,7 +1502,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
       public Builder clearResDeliverTx() {
         if (resDeliverTxBuilder_ == null) {
@@ -1619,15 +1521,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder getResDeliverTxBuilder() {
         return getResDeliverTxFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder getResDeliverTxOrBuilder() {
         if ((actionCase_ == 4) && (resDeliverTxBuilder_ != null)) {
           return resDeliverTxBuilder_.getMessageOrBuilder();
@@ -1639,10 +1540,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
+       * <code>.tm.ResponseDeliverTx res_deliver_tx = 4[json_name = "resDeliverTx"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder> 
           getResDeliverTxFieldBuilder() {
         if (resDeliverTxBuilder_ == null) {
           if (!(actionCase_ == 4)) {
@@ -1663,18 +1564,14 @@ public final class Replay {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.RequestBeginBlock, io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder> reqBeginBlockBuilder_;
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
-       * @return Whether the reqBeginBlock field is set.
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
-      @java.lang.Override
       public boolean hasReqBeginBlock() {
         return actionCase_ == 5;
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
-       * @return The reqBeginBlock.
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock getReqBeginBlock() {
         if (reqBeginBlockBuilder_ == null) {
           if (actionCase_ == 5) {
@@ -1689,7 +1586,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
       public Builder setReqBeginBlock(io.vegaprotocol.vega.tm.Replay.RequestBeginBlock value) {
         if (reqBeginBlockBuilder_ == null) {
@@ -1705,7 +1602,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
       public Builder setReqBeginBlock(
           io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder builderForValue) {
@@ -1719,7 +1616,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
       public Builder mergeReqBeginBlock(io.vegaprotocol.vega.tm.Replay.RequestBeginBlock value) {
         if (reqBeginBlockBuilder_ == null) {
@@ -1741,7 +1638,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
       public Builder clearReqBeginBlock() {
         if (reqBeginBlockBuilder_ == null) {
@@ -1760,15 +1657,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder getReqBeginBlockBuilder() {
         return getReqBeginBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder getReqBeginBlockOrBuilder() {
         if ((actionCase_ == 5) && (reqBeginBlockBuilder_ != null)) {
           return reqBeginBlockBuilder_.getMessageOrBuilder();
@@ -1780,10 +1676,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
+       * <code>.tm.RequestBeginBlock req_begin_block = 5[json_name = "reqBeginBlock"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.RequestBeginBlock, io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.RequestBeginBlock, io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder> 
           getReqBeginBlockFieldBuilder() {
         if (reqBeginBlockBuilder_ == null) {
           if (!(actionCase_ == 5)) {
@@ -1804,18 +1700,14 @@ public final class Replay {
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder> resBeginBlockBuilder_;
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
-       * @return Whether the resBeginBlock field is set.
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
-      @java.lang.Override
       public boolean hasResBeginBlock() {
         return actionCase_ == 6;
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
-       * @return The resBeginBlock.
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock getResBeginBlock() {
         if (resBeginBlockBuilder_ == null) {
           if (actionCase_ == 6) {
@@ -1830,7 +1722,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
       public Builder setResBeginBlock(io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock value) {
         if (resBeginBlockBuilder_ == null) {
@@ -1846,7 +1738,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
       public Builder setResBeginBlock(
           io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder builderForValue) {
@@ -1860,7 +1752,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
       public Builder mergeResBeginBlock(io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock value) {
         if (resBeginBlockBuilder_ == null) {
@@ -1882,7 +1774,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
       public Builder clearResBeginBlock() {
         if (resBeginBlockBuilder_ == null) {
@@ -1901,15 +1793,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder getResBeginBlockBuilder() {
         return getResBeginBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder getResBeginBlockOrBuilder() {
         if ((actionCase_ == 6) && (resBeginBlockBuilder_ != null)) {
           return resBeginBlockBuilder_.getMessageOrBuilder();
@@ -1921,10 +1812,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
+       * <code>.tm.ResponseBeginBlock res_begin_block = 6[json_name = "resBeginBlock"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder> 
           getResBeginBlockFieldBuilder() {
         if (resBeginBlockBuilder_ == null) {
           if (!(actionCase_ == 6)) {
@@ -1941,13 +1832,11 @@ public final class Replay {
         onChanged();;
         return resBeginBlockBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1969,7 +1858,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<TmEvent>
         PARSER = new com.google.protobuf.AbstractParser<TmEvent>() {
-      @java.lang.Override
       public TmEvent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1987,7 +1875,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.TmEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1999,78 +1886,71 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 time = 1 [json_name = "time"];</code>
-     * @return The time.
+     * <code>int64 time = 1[json_name = "time"];</code>
      */
     long getTime();
 
     /**
-     * <code>string chain_id = 2 [json_name = "chainId"];</code>
-     * @return The chainId.
+     * <code>string chain_id = 2[json_name = "chainId"];</code>
      */
     java.lang.String getChainId();
     /**
-     * <code>string chain_id = 2 [json_name = "chainId"];</code>
-     * @return The bytes for chainId.
+     * <code>string chain_id = 2[json_name = "chainId"];</code>
      */
     com.google.protobuf.ByteString
         getChainIdBytes();
 
     /**
-     * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
-     * @return Whether the consensusParams field is set.
+     * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
      */
     boolean hasConsensusParams();
     /**
-     * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
-     * @return The consensusParams.
+     * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ConsensusParams getConsensusParams();
     /**
-     * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+     * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder getConsensusParamsOrBuilder();
 
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> 
         getValidatorsList();
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getValidators(int index);
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
     int getValidatorsCount();
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
         getValidatorsOrBuilderList();
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder getValidatorsOrBuilder(
         int index);
 
     /**
-     * <code>bytes app_state_bytes = 5 [json_name = "appStateBytes"];</code>
-     * @return The appStateBytes.
+     * <code>bytes app_state_bytes = 5[json_name = "appStateBytes"];</code>
      */
     com.google.protobuf.ByteString getAppStateBytes();
 
     /**
-     * <code>int64 initial_height = 6 [json_name = "initialHeight"];</code>
-     * @return The initialHeight.
+     * <code>int64 initial_height = 6[json_name = "initialHeight"];</code>
      */
     long getInitialHeight();
   }
   /**
    * Protobuf type {@code tm.RequestInitChain}
    */
-  public static final class RequestInitChain extends
+  public  static final class RequestInitChain extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.RequestInitChain)
       RequestInitChainOrBuilder {
@@ -2080,16 +1960,11 @@ public final class Replay {
       super(builder);
     }
     private RequestInitChain() {
+      time_ = 0L;
       chainId_ = "";
       validators_ = java.util.Collections.emptyList();
       appStateBytes_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RequestInitChain();
+      initialHeight_ = 0L;
     }
 
     @java.lang.Override
@@ -2116,6 +1991,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               time_ = input.readInt64();
@@ -2141,9 +2023,9 @@ public final class Replay {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 validators_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               validators_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.parser(), extensionRegistry));
@@ -2159,13 +2041,6 @@ public final class Replay {
               initialHeight_ = input.readInt64();
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2174,7 +2049,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           validators_ = java.util.Collections.unmodifiableList(validators_);
         }
         this.unknownFields = unknownFields.build();
@@ -2186,7 +2061,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestInitChain_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestInitChain_fieldAccessorTable
@@ -2194,13 +2068,12 @@ public final class Replay {
               io.vegaprotocol.vega.tm.Replay.RequestInitChain.class, io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder.class);
     }
 
+    private int bitField0_;
     public static final int TIME_FIELD_NUMBER = 1;
     private long time_;
     /**
-     * <code>int64 time = 1 [json_name = "time"];</code>
-     * @return The time.
+     * <code>int64 time = 1[json_name = "time"];</code>
      */
-    @java.lang.Override
     public long getTime() {
       return time_;
     }
@@ -2208,16 +2081,14 @@ public final class Replay {
     public static final int CHAIN_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object chainId_;
     /**
-     * <code>string chain_id = 2 [json_name = "chainId"];</code>
-     * @return The chainId.
+     * <code>string chain_id = 2[json_name = "chainId"];</code>
      */
-    @java.lang.Override
     public java.lang.String getChainId() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         chainId_ = s;
@@ -2225,15 +2096,13 @@ public final class Replay {
       }
     }
     /**
-     * <code>string chain_id = 2 [json_name = "chainId"];</code>
-     * @return The bytes for chainId.
+     * <code>string chain_id = 2[json_name = "chainId"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getChainIdBytes() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         chainId_ = b;
@@ -2246,25 +2115,20 @@ public final class Replay {
     public static final int CONSENSUS_PARAMS_FIELD_NUMBER = 3;
     private io.vegaprotocol.vega.tm.Replay.ConsensusParams consensusParams_;
     /**
-     * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
-     * @return Whether the consensusParams field is set.
+     * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
      */
-    @java.lang.Override
     public boolean hasConsensusParams() {
       return consensusParams_ != null;
     }
     /**
-     * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
-     * @return The consensusParams.
+     * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ConsensusParams getConsensusParams() {
       return consensusParams_ == null ? io.vegaprotocol.vega.tm.Replay.ConsensusParams.getDefaultInstance() : consensusParams_;
     }
     /**
-     * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+     * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder getConsensusParamsOrBuilder() {
       return getConsensusParams();
     }
@@ -2272,38 +2136,33 @@ public final class Replay {
     public static final int VALIDATORS_FIELD_NUMBER = 4;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> validators_;
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> getValidatorsList() {
       return validators_;
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
         getValidatorsOrBuilderList() {
       return validators_;
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public int getValidatorsCount() {
       return validators_.size();
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getValidators(int index) {
       return validators_.get(index);
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder getValidatorsOrBuilder(
         int index) {
       return validators_.get(index);
@@ -2312,10 +2171,8 @@ public final class Replay {
     public static final int APP_STATE_BYTES_FIELD_NUMBER = 5;
     private com.google.protobuf.ByteString appStateBytes_;
     /**
-     * <code>bytes app_state_bytes = 5 [json_name = "appStateBytes"];</code>
-     * @return The appStateBytes.
+     * <code>bytes app_state_bytes = 5[json_name = "appStateBytes"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getAppStateBytes() {
       return appStateBytes_;
     }
@@ -2323,16 +2180,13 @@ public final class Replay {
     public static final int INITIAL_HEIGHT_FIELD_NUMBER = 6;
     private long initialHeight_;
     /**
-     * <code>int64 initial_height = 6 [json_name = "initialHeight"];</code>
-     * @return The initialHeight.
+     * <code>int64 initial_height = 6[json_name = "initialHeight"];</code>
      */
-    @java.lang.Override
     public long getInitialHeight() {
       return initialHeight_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2342,7 +2196,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (time_ != 0L) {
@@ -2366,7 +2219,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2410,23 +2262,24 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.RequestInitChain other = (io.vegaprotocol.vega.tm.Replay.RequestInitChain) obj;
 
-      if (getTime()
-          != other.getTime()) return false;
-      if (!getChainId()
-          .equals(other.getChainId())) return false;
-      if (hasConsensusParams() != other.hasConsensusParams()) return false;
+      boolean result = true;
+      result = result && (getTime()
+          == other.getTime());
+      result = result && getChainId()
+          .equals(other.getChainId());
+      result = result && (hasConsensusParams() == other.hasConsensusParams());
       if (hasConsensusParams()) {
-        if (!getConsensusParams()
-            .equals(other.getConsensusParams())) return false;
+        result = result && getConsensusParams()
+            .equals(other.getConsensusParams());
       }
-      if (!getValidatorsList()
-          .equals(other.getValidatorsList())) return false;
-      if (!getAppStateBytes()
-          .equals(other.getAppStateBytes())) return false;
-      if (getInitialHeight()
-          != other.getInitialHeight()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && getValidatorsList()
+          .equals(other.getValidatorsList());
+      result = result && getAppStateBytes()
+          .equals(other.getAppStateBytes());
+      result = result && (getInitialHeight()
+          == other.getInitialHeight());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -2529,7 +2382,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2537,7 +2389,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.RequestInitChain prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2561,7 +2412,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestInitChain_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestInitChain_fieldAccessorTable
@@ -2585,7 +2435,6 @@ public final class Replay {
           getValidatorsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         time_ = 0L;
@@ -2600,7 +2449,7 @@ public final class Replay {
         }
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           validatorsBuilder_.clear();
         }
@@ -2611,18 +2460,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestInitChain_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestInitChain getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.RequestInitChain.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestInitChain build() {
         io.vegaprotocol.vega.tm.Replay.RequestInitChain result = buildPartial();
         if (!result.isInitialized()) {
@@ -2631,10 +2477,10 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestInitChain buildPartial() {
         io.vegaprotocol.vega.tm.Replay.RequestInitChain result = new io.vegaprotocol.vega.tm.Replay.RequestInitChain(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.time_ = time_;
         result.chainId_ = chainId_;
         if (consensusParamsBuilder_ == null) {
@@ -2643,9 +2489,9 @@ public final class Replay {
           result.consensusParams_ = consensusParamsBuilder_.build();
         }
         if (validatorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             validators_ = java.util.Collections.unmodifiableList(validators_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.validators_ = validators_;
         } else {
@@ -2653,43 +2499,37 @@ public final class Replay {
         }
         result.appStateBytes_ = appStateBytes_;
         result.initialHeight_ = initialHeight_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.RequestInitChain) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.RequestInitChain)other);
@@ -2715,7 +2555,7 @@ public final class Replay {
           if (!other.validators_.isEmpty()) {
             if (validators_.isEmpty()) {
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureValidatorsIsMutable();
               validators_.addAll(other.validators_);
@@ -2728,8 +2568,8 @@ public final class Replay {
               validatorsBuilder_.dispose();
               validatorsBuilder_ = null;
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              validatorsBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000008);
+              validatorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getValidatorsFieldBuilder() : null;
             } else {
@@ -2748,12 +2588,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2775,30 +2613,25 @@ public final class Replay {
 
       private long time_ ;
       /**
-       * <code>int64 time = 1 [json_name = "time"];</code>
-       * @return The time.
+       * <code>int64 time = 1[json_name = "time"];</code>
        */
-      @java.lang.Override
       public long getTime() {
         return time_;
       }
       /**
-       * <code>int64 time = 1 [json_name = "time"];</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
+       * <code>int64 time = 1[json_name = "time"];</code>
        */
       public Builder setTime(long value) {
-
+        
         time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 time = 1 [json_name = "time"];</code>
-       * @return This builder for chaining.
+       * <code>int64 time = 1[json_name = "time"];</code>
        */
       public Builder clearTime() {
-
+        
         time_ = 0L;
         onChanged();
         return this;
@@ -2806,8 +2639,7 @@ public final class Replay {
 
       private java.lang.Object chainId_ = "";
       /**
-       * <code>string chain_id = 2 [json_name = "chainId"];</code>
-       * @return The chainId.
+       * <code>string chain_id = 2[json_name = "chainId"];</code>
        */
       public java.lang.String getChainId() {
         java.lang.Object ref = chainId_;
@@ -2822,14 +2654,13 @@ public final class Replay {
         }
       }
       /**
-       * <code>string chain_id = 2 [json_name = "chainId"];</code>
-       * @return The bytes for chainId.
+       * <code>string chain_id = 2[json_name = "chainId"];</code>
        */
       public com.google.protobuf.ByteString
           getChainIdBytes() {
         java.lang.Object ref = chainId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           chainId_ = b;
@@ -2839,34 +2670,29 @@ public final class Replay {
         }
       }
       /**
-       * <code>string chain_id = 2 [json_name = "chainId"];</code>
-       * @param value The chainId to set.
-       * @return This builder for chaining.
+       * <code>string chain_id = 2[json_name = "chainId"];</code>
        */
       public Builder setChainId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         chainId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string chain_id = 2 [json_name = "chainId"];</code>
-       * @return This builder for chaining.
+       * <code>string chain_id = 2[json_name = "chainId"];</code>
        */
       public Builder clearChainId() {
-
+        
         chainId_ = getDefaultInstance().getChainId();
         onChanged();
         return this;
       }
       /**
-       * <code>string chain_id = 2 [json_name = "chainId"];</code>
-       * @param value The bytes for chainId to set.
-       * @return This builder for chaining.
+       * <code>string chain_id = 2[json_name = "chainId"];</code>
        */
       public Builder setChainIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2874,25 +2700,23 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         chainId_ = value;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.ConsensusParams consensusParams_;
+      private io.vegaprotocol.vega.tm.Replay.ConsensusParams consensusParams_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder> consensusParamsBuilder_;
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
-       * @return Whether the consensusParams field is set.
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public boolean hasConsensusParams() {
         return consensusParamsBuilder_ != null || consensusParams_ != null;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
-       * @return The consensusParams.
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams getConsensusParams() {
         if (consensusParamsBuilder_ == null) {
@@ -2902,7 +2726,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public Builder setConsensusParams(io.vegaprotocol.vega.tm.Replay.ConsensusParams value) {
         if (consensusParamsBuilder_ == null) {
@@ -2918,7 +2742,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public Builder setConsensusParams(
           io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder builderForValue) {
@@ -2932,7 +2756,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public Builder mergeConsensusParams(io.vegaprotocol.vega.tm.Replay.ConsensusParams value) {
         if (consensusParamsBuilder_ == null) {
@@ -2950,7 +2774,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public Builder clearConsensusParams() {
         if (consensusParamsBuilder_ == null) {
@@ -2964,15 +2788,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder getConsensusParamsBuilder() {
-
+        
         onChanged();
         return getConsensusParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder getConsensusParamsOrBuilder() {
         if (consensusParamsBuilder_ != null) {
@@ -2983,10 +2807,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 3[json_name = "consensusParams"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder> 
           getConsensusParamsFieldBuilder() {
         if (consensusParamsBuilder_ == null) {
           consensusParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3002,9 +2826,9 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> validators_ =
         java.util.Collections.emptyList();
       private void ensureValidatorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           validators_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>(validators_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -3012,7 +2836,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> validatorsBuilder_;
 
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> getValidatorsList() {
         if (validatorsBuilder_ == null) {
@@ -3022,7 +2846,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public int getValidatorsCount() {
         if (validatorsBuilder_ == null) {
@@ -3032,7 +2856,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -3042,7 +2866,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder setValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate value) {
@@ -3059,7 +2883,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder setValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder builderForValue) {
@@ -3073,7 +2897,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder addValidators(io.vegaprotocol.vega.tm.Replay.ValidatorUpdate value) {
         if (validatorsBuilder_ == null) {
@@ -3089,7 +2913,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder addValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate value) {
@@ -3106,7 +2930,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder addValidators(
           io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder builderForValue) {
@@ -3120,7 +2944,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder addValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder builderForValue) {
@@ -3134,7 +2958,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder addAllValidators(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> values) {
@@ -3149,12 +2973,12 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder clearValidators() {
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           validatorsBuilder_.clear();
@@ -3162,7 +2986,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public Builder removeValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -3175,14 +2999,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder getValidatorsBuilder(
           int index) {
         return getValidatorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder getValidatorsOrBuilder(
           int index) {
@@ -3192,9 +3016,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
            getValidatorsOrBuilderList() {
         if (validatorsBuilder_ != null) {
           return validatorsBuilder_.getMessageOrBuilderList();
@@ -3203,14 +3027,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder addValidatorsBuilder() {
         return getValidatorsFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder addValidatorsBuilder(
           int index) {
@@ -3218,20 +3042,20 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 4[json_name = "validators"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder> 
            getValidatorsBuilderList() {
         return getValidatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
           getValidatorsFieldBuilder() {
         if (validatorsBuilder_ == null) {
           validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>(
                   validators_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           validators_ = null;
@@ -3241,33 +3065,28 @@ public final class Replay {
 
       private com.google.protobuf.ByteString appStateBytes_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes app_state_bytes = 5 [json_name = "appStateBytes"];</code>
-       * @return The appStateBytes.
+       * <code>bytes app_state_bytes = 5[json_name = "appStateBytes"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getAppStateBytes() {
         return appStateBytes_;
       }
       /**
-       * <code>bytes app_state_bytes = 5 [json_name = "appStateBytes"];</code>
-       * @param value The appStateBytes to set.
-       * @return This builder for chaining.
+       * <code>bytes app_state_bytes = 5[json_name = "appStateBytes"];</code>
        */
       public Builder setAppStateBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         appStateBytes_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes app_state_bytes = 5 [json_name = "appStateBytes"];</code>
-       * @return This builder for chaining.
+       * <code>bytes app_state_bytes = 5[json_name = "appStateBytes"];</code>
        */
       public Builder clearAppStateBytes() {
-
+        
         appStateBytes_ = getDefaultInstance().getAppStateBytes();
         onChanged();
         return this;
@@ -3275,41 +3094,34 @@ public final class Replay {
 
       private long initialHeight_ ;
       /**
-       * <code>int64 initial_height = 6 [json_name = "initialHeight"];</code>
-       * @return The initialHeight.
+       * <code>int64 initial_height = 6[json_name = "initialHeight"];</code>
        */
-      @java.lang.Override
       public long getInitialHeight() {
         return initialHeight_;
       }
       /**
-       * <code>int64 initial_height = 6 [json_name = "initialHeight"];</code>
-       * @param value The initialHeight to set.
-       * @return This builder for chaining.
+       * <code>int64 initial_height = 6[json_name = "initialHeight"];</code>
        */
       public Builder setInitialHeight(long value) {
-
+        
         initialHeight_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 initial_height = 6 [json_name = "initialHeight"];</code>
-       * @return This builder for chaining.
+       * <code>int64 initial_height = 6[json_name = "initialHeight"];</code>
        */
       public Builder clearInitialHeight() {
-
+        
         initialHeight_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3331,7 +3143,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<RequestInitChain>
         PARSER = new com.google.protobuf.AbstractParser<RequestInitChain>() {
-      @java.lang.Override
       public RequestInitChain parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3349,7 +3160,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestInitChain getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3361,61 +3171,56 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes hash = 1 [json_name = "hash"];</code>
-     * @return The hash.
+     * <code>bytes hash = 1[json_name = "hash"];</code>
      */
     com.google.protobuf.ByteString getHash();
 
     /**
-     * <code>.tm.Header header = 2 [json_name = "header"];</code>
-     * @return Whether the header field is set.
+     * <code>.tm.Header header = 2[json_name = "header"];</code>
      */
     boolean hasHeader();
     /**
-     * <code>.tm.Header header = 2 [json_name = "header"];</code>
-     * @return The header.
+     * <code>.tm.Header header = 2[json_name = "header"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.Header getHeader();
     /**
-     * <code>.tm.Header header = 2 [json_name = "header"];</code>
+     * <code>.tm.Header header = 2[json_name = "header"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder getHeaderOrBuilder();
 
     /**
-     * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
-     * @return Whether the lastCommitInfo field is set.
+     * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
      */
     boolean hasLastCommitInfo();
     /**
-     * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
-     * @return The lastCommitInfo.
+     * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.LastCommitInfo getLastCommitInfo();
     /**
-     * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+     * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder getLastCommitInfoOrBuilder();
 
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence> 
         getByzantineValidatorsList();
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.Evidence getByzantineValidators(int index);
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
     int getByzantineValidatorsCount();
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
         getByzantineValidatorsOrBuilderList();
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder getByzantineValidatorsOrBuilder(
         int index);
@@ -3423,7 +3228,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.RequestBeginBlock}
    */
-  public static final class RequestBeginBlock extends
+  public  static final class RequestBeginBlock extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.RequestBeginBlock)
       RequestBeginBlockOrBuilder {
@@ -3435,13 +3240,6 @@ public final class Replay {
     private RequestBeginBlock() {
       hash_ = com.google.protobuf.ByteString.EMPTY;
       byzantineValidators_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RequestBeginBlock();
     }
 
     @java.lang.Override
@@ -3468,6 +3266,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
 
               hash_ = input.readBytes();
@@ -3500,19 +3305,12 @@ public final class Replay {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 byzantineValidators_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.Evidence>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000008;
               }
               byzantineValidators_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.Evidence.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -3523,7 +3321,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           byzantineValidators_ = java.util.Collections.unmodifiableList(byzantineValidators_);
         }
         this.unknownFields = unknownFields.build();
@@ -3535,7 +3333,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestBeginBlock_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestBeginBlock_fieldAccessorTable
@@ -3543,13 +3340,12 @@ public final class Replay {
               io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.class, io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder.class);
     }
 
+    private int bitField0_;
     public static final int HASH_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString hash_;
     /**
-     * <code>bytes hash = 1 [json_name = "hash"];</code>
-     * @return The hash.
+     * <code>bytes hash = 1[json_name = "hash"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getHash() {
       return hash_;
     }
@@ -3557,25 +3353,20 @@ public final class Replay {
     public static final int HEADER_FIELD_NUMBER = 2;
     private io.vegaprotocol.vega.tm.Replay.Header header_;
     /**
-     * <code>.tm.Header header = 2 [json_name = "header"];</code>
-     * @return Whether the header field is set.
+     * <code>.tm.Header header = 2[json_name = "header"];</code>
      */
-    @java.lang.Override
     public boolean hasHeader() {
       return header_ != null;
     }
     /**
-     * <code>.tm.Header header = 2 [json_name = "header"];</code>
-     * @return The header.
+     * <code>.tm.Header header = 2[json_name = "header"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Header getHeader() {
       return header_ == null ? io.vegaprotocol.vega.tm.Replay.Header.getDefaultInstance() : header_;
     }
     /**
-     * <code>.tm.Header header = 2 [json_name = "header"];</code>
+     * <code>.tm.Header header = 2[json_name = "header"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder getHeaderOrBuilder() {
       return getHeader();
     }
@@ -3583,25 +3374,20 @@ public final class Replay {
     public static final int LAST_COMMIT_INFO_FIELD_NUMBER = 3;
     private io.vegaprotocol.vega.tm.Replay.LastCommitInfo lastCommitInfo_;
     /**
-     * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
-     * @return Whether the lastCommitInfo field is set.
+     * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
      */
-    @java.lang.Override
     public boolean hasLastCommitInfo() {
       return lastCommitInfo_ != null;
     }
     /**
-     * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
-     * @return The lastCommitInfo.
+     * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.LastCommitInfo getLastCommitInfo() {
       return lastCommitInfo_ == null ? io.vegaprotocol.vega.tm.Replay.LastCommitInfo.getDefaultInstance() : lastCommitInfo_;
     }
     /**
-     * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+     * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder getLastCommitInfoOrBuilder() {
       return getLastCommitInfo();
     }
@@ -3609,45 +3395,39 @@ public final class Replay {
     public static final int BYZANTINE_VALIDATORS_FIELD_NUMBER = 4;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence> byzantineValidators_;
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence> getByzantineValidatorsList() {
       return byzantineValidators_;
     }
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
         getByzantineValidatorsOrBuilderList() {
       return byzantineValidators_;
     }
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    @java.lang.Override
     public int getByzantineValidatorsCount() {
       return byzantineValidators_.size();
     }
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Evidence getByzantineValidators(int index) {
       return byzantineValidators_.get(index);
     }
     /**
-     * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+     * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder getByzantineValidatorsOrBuilder(
         int index) {
       return byzantineValidators_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3657,7 +3437,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!hash_.isEmpty()) {
@@ -3675,7 +3454,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3712,22 +3490,23 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.RequestBeginBlock other = (io.vegaprotocol.vega.tm.Replay.RequestBeginBlock) obj;
 
-      if (!getHash()
-          .equals(other.getHash())) return false;
-      if (hasHeader() != other.hasHeader()) return false;
+      boolean result = true;
+      result = result && getHash()
+          .equals(other.getHash());
+      result = result && (hasHeader() == other.hasHeader());
       if (hasHeader()) {
-        if (!getHeader()
-            .equals(other.getHeader())) return false;
+        result = result && getHeader()
+            .equals(other.getHeader());
       }
-      if (hasLastCommitInfo() != other.hasLastCommitInfo()) return false;
+      result = result && (hasLastCommitInfo() == other.hasLastCommitInfo());
       if (hasLastCommitInfo()) {
-        if (!getLastCommitInfo()
-            .equals(other.getLastCommitInfo())) return false;
+        result = result && getLastCommitInfo()
+            .equals(other.getLastCommitInfo());
       }
-      if (!getByzantineValidatorsList()
-          .equals(other.getByzantineValidatorsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && getByzantineValidatorsList()
+          .equals(other.getByzantineValidatorsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -3826,7 +3605,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3834,7 +3612,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.RequestBeginBlock prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3858,7 +3635,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestBeginBlock_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestBeginBlock_fieldAccessorTable
@@ -3882,7 +3658,6 @@ public final class Replay {
           getByzantineValidatorsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         hash_ = com.google.protobuf.ByteString.EMPTY;
@@ -3901,25 +3676,22 @@ public final class Replay {
         }
         if (byzantineValidatorsBuilder_ == null) {
           byzantineValidators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           byzantineValidatorsBuilder_.clear();
         }
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestBeginBlock_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock build() {
         io.vegaprotocol.vega.tm.Replay.RequestBeginBlock result = buildPartial();
         if (!result.isInitialized()) {
@@ -3928,10 +3700,10 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock buildPartial() {
         io.vegaprotocol.vega.tm.Replay.RequestBeginBlock result = new io.vegaprotocol.vega.tm.Replay.RequestBeginBlock(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.hash_ = hash_;
         if (headerBuilder_ == null) {
           result.header_ = header_;
@@ -3944,51 +3716,45 @@ public final class Replay {
           result.lastCommitInfo_ = lastCommitInfoBuilder_.build();
         }
         if (byzantineValidatorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             byzantineValidators_ = java.util.Collections.unmodifiableList(byzantineValidators_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.byzantineValidators_ = byzantineValidators_;
         } else {
           result.byzantineValidators_ = byzantineValidatorsBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.RequestBeginBlock) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.RequestBeginBlock)other);
@@ -4013,7 +3779,7 @@ public final class Replay {
           if (!other.byzantineValidators_.isEmpty()) {
             if (byzantineValidators_.isEmpty()) {
               byzantineValidators_ = other.byzantineValidators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureByzantineValidatorsIsMutable();
               byzantineValidators_.addAll(other.byzantineValidators_);
@@ -4026,8 +3792,8 @@ public final class Replay {
               byzantineValidatorsBuilder_.dispose();
               byzantineValidatorsBuilder_ = null;
               byzantineValidators_ = other.byzantineValidators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              byzantineValidatorsBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000008);
+              byzantineValidatorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getByzantineValidatorsFieldBuilder() : null;
             } else {
@@ -4040,12 +3806,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4067,51 +3831,44 @@ public final class Replay {
 
       private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes hash = 1 [json_name = "hash"];</code>
-       * @return The hash.
+       * <code>bytes hash = 1[json_name = "hash"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getHash() {
         return hash_;
       }
       /**
-       * <code>bytes hash = 1 [json_name = "hash"];</code>
-       * @param value The hash to set.
-       * @return This builder for chaining.
+       * <code>bytes hash = 1[json_name = "hash"];</code>
        */
       public Builder setHash(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         hash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes hash = 1 [json_name = "hash"];</code>
-       * @return This builder for chaining.
+       * <code>bytes hash = 1[json_name = "hash"];</code>
        */
       public Builder clearHash() {
-
+        
         hash_ = getDefaultInstance().getHash();
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.Header header_;
+      private io.vegaprotocol.vega.tm.Replay.Header header_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.Header, io.vegaprotocol.vega.tm.Replay.Header.Builder, io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder> headerBuilder_;
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
-       * @return Whether the header field is set.
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public boolean hasHeader() {
         return headerBuilder_ != null || header_ != null;
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
-       * @return The header.
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Header getHeader() {
         if (headerBuilder_ == null) {
@@ -4121,7 +3878,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public Builder setHeader(io.vegaprotocol.vega.tm.Replay.Header value) {
         if (headerBuilder_ == null) {
@@ -4137,7 +3894,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public Builder setHeader(
           io.vegaprotocol.vega.tm.Replay.Header.Builder builderForValue) {
@@ -4151,7 +3908,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public Builder mergeHeader(io.vegaprotocol.vega.tm.Replay.Header value) {
         if (headerBuilder_ == null) {
@@ -4169,7 +3926,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public Builder clearHeader() {
         if (headerBuilder_ == null) {
@@ -4183,15 +3940,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Header.Builder getHeaderBuilder() {
-
+        
         onChanged();
         return getHeaderFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder getHeaderOrBuilder() {
         if (headerBuilder_ != null) {
@@ -4202,10 +3959,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.Header header = 2 [json_name = "header"];</code>
+       * <code>.tm.Header header = 2[json_name = "header"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Header, io.vegaprotocol.vega.tm.Replay.Header.Builder, io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.Header, io.vegaprotocol.vega.tm.Replay.Header.Builder, io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder> 
           getHeaderFieldBuilder() {
         if (headerBuilder_ == null) {
           headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4218,19 +3975,17 @@ public final class Replay {
         return headerBuilder_;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.LastCommitInfo lastCommitInfo_;
+      private io.vegaprotocol.vega.tm.Replay.LastCommitInfo lastCommitInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.LastCommitInfo, io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder, io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder> lastCommitInfoBuilder_;
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
-       * @return Whether the lastCommitInfo field is set.
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public boolean hasLastCommitInfo() {
         return lastCommitInfoBuilder_ != null || lastCommitInfo_ != null;
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
-       * @return The lastCommitInfo.
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfo getLastCommitInfo() {
         if (lastCommitInfoBuilder_ == null) {
@@ -4240,7 +3995,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public Builder setLastCommitInfo(io.vegaprotocol.vega.tm.Replay.LastCommitInfo value) {
         if (lastCommitInfoBuilder_ == null) {
@@ -4256,7 +4011,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public Builder setLastCommitInfo(
           io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder builderForValue) {
@@ -4270,7 +4025,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public Builder mergeLastCommitInfo(io.vegaprotocol.vega.tm.Replay.LastCommitInfo value) {
         if (lastCommitInfoBuilder_ == null) {
@@ -4288,7 +4043,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public Builder clearLastCommitInfo() {
         if (lastCommitInfoBuilder_ == null) {
@@ -4302,15 +4057,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder getLastCommitInfoBuilder() {
-
+        
         onChanged();
         return getLastCommitInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder getLastCommitInfoOrBuilder() {
         if (lastCommitInfoBuilder_ != null) {
@@ -4321,10 +4076,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
+       * <code>.tm.LastCommitInfo last_commit_info = 3[json_name = "lastCommitInfo"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.LastCommitInfo, io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder, io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.LastCommitInfo, io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder, io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder> 
           getLastCommitInfoFieldBuilder() {
         if (lastCommitInfoBuilder_ == null) {
           lastCommitInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4340,9 +4095,9 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence> byzantineValidators_ =
         java.util.Collections.emptyList();
       private void ensureByzantineValidatorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           byzantineValidators_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.Evidence>(byzantineValidators_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -4350,7 +4105,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.Evidence, io.vegaprotocol.vega.tm.Replay.Evidence.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> byzantineValidatorsBuilder_;
 
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence> getByzantineValidatorsList() {
         if (byzantineValidatorsBuilder_ == null) {
@@ -4360,7 +4115,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public int getByzantineValidatorsCount() {
         if (byzantineValidatorsBuilder_ == null) {
@@ -4370,7 +4125,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Evidence getByzantineValidators(int index) {
         if (byzantineValidatorsBuilder_ == null) {
@@ -4380,7 +4135,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder setByzantineValidators(
           int index, io.vegaprotocol.vega.tm.Replay.Evidence value) {
@@ -4397,7 +4152,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder setByzantineValidators(
           int index, io.vegaprotocol.vega.tm.Replay.Evidence.Builder builderForValue) {
@@ -4411,7 +4166,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder addByzantineValidators(io.vegaprotocol.vega.tm.Replay.Evidence value) {
         if (byzantineValidatorsBuilder_ == null) {
@@ -4427,7 +4182,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder addByzantineValidators(
           int index, io.vegaprotocol.vega.tm.Replay.Evidence value) {
@@ -4444,7 +4199,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder addByzantineValidators(
           io.vegaprotocol.vega.tm.Replay.Evidence.Builder builderForValue) {
@@ -4458,7 +4213,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder addByzantineValidators(
           int index, io.vegaprotocol.vega.tm.Replay.Evidence.Builder builderForValue) {
@@ -4472,7 +4227,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder addAllByzantineValidators(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.Evidence> values) {
@@ -4487,12 +4242,12 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder clearByzantineValidators() {
         if (byzantineValidatorsBuilder_ == null) {
           byzantineValidators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           byzantineValidatorsBuilder_.clear();
@@ -4500,7 +4255,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public Builder removeByzantineValidators(int index) {
         if (byzantineValidatorsBuilder_ == null) {
@@ -4513,14 +4268,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Evidence.Builder getByzantineValidatorsBuilder(
           int index) {
         return getByzantineValidatorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder getByzantineValidatorsOrBuilder(
           int index) {
@@ -4530,9 +4285,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
            getByzantineValidatorsOrBuilderList() {
         if (byzantineValidatorsBuilder_ != null) {
           return byzantineValidatorsBuilder_.getMessageOrBuilderList();
@@ -4541,14 +4296,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Evidence.Builder addByzantineValidatorsBuilder() {
         return getByzantineValidatorsFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.Evidence.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Evidence.Builder addByzantineValidatorsBuilder(
           int index) {
@@ -4556,33 +4311,31 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.Evidence.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
+       * <code>repeated .tm.Evidence byzantine_validators = 4[json_name = "byzantineValidators"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence.Builder> 
            getByzantineValidatorsBuilderList() {
         return getByzantineValidatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Evidence, io.vegaprotocol.vega.tm.Replay.Evidence.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.Evidence, io.vegaprotocol.vega.tm.Replay.Evidence.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
           getByzantineValidatorsFieldBuilder() {
         if (byzantineValidatorsBuilder_ == null) {
           byzantineValidatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.Evidence, io.vegaprotocol.vega.tm.Replay.Evidence.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>(
                   byzantineValidators_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           byzantineValidators_ = null;
         }
         return byzantineValidatorsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4604,7 +4357,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<RequestBeginBlock>
         PARSER = new com.google.protobuf.AbstractParser<RequestBeginBlock>() {
-      @java.lang.Override
       public RequestBeginBlock parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4622,7 +4374,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestBeginBlock getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4634,15 +4385,14 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes tx = 1 [json_name = "tx"];</code>
-     * @return The tx.
+     * <code>bytes tx = 1[json_name = "tx"];</code>
      */
     com.google.protobuf.ByteString getTx();
   }
   /**
    * Protobuf type {@code tm.RequestDeliverTx}
    */
-  public static final class RequestDeliverTx extends
+  public  static final class RequestDeliverTx extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.RequestDeliverTx)
       RequestDeliverTxOrBuilder {
@@ -4653,13 +4403,6 @@ public final class Replay {
     }
     private RequestDeliverTx() {
       tx_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RequestDeliverTx();
     }
 
     @java.lang.Override
@@ -4675,6 +4418,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4685,16 +4429,16 @@ public final class Replay {
             case 0:
               done = true;
               break;
-            case 10: {
-
-              tx_ = input.readBytes();
-              break;
-            }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+
+              tx_ = input.readBytes();
               break;
             }
           }
@@ -4714,7 +4458,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestDeliverTx_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestDeliverTx_fieldAccessorTable
@@ -4725,16 +4468,13 @@ public final class Replay {
     public static final int TX_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString tx_;
     /**
-     * <code>bytes tx = 1 [json_name = "tx"];</code>
-     * @return The tx.
+     * <code>bytes tx = 1[json_name = "tx"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getTx() {
       return tx_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4744,7 +4484,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!tx_.isEmpty()) {
@@ -4753,7 +4492,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4778,10 +4516,11 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.RequestDeliverTx other = (io.vegaprotocol.vega.tm.Replay.RequestDeliverTx) obj;
 
-      if (!getTx()
-          .equals(other.getTx())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getTx()
+          .equals(other.getTx());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -4868,7 +4607,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4876,7 +4614,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.RequestDeliverTx prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4900,7 +4637,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestDeliverTx_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestDeliverTx_fieldAccessorTable
@@ -4923,7 +4659,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         tx_ = com.google.protobuf.ByteString.EMPTY;
@@ -4931,18 +4666,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_RequestDeliverTx_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx build() {
         io.vegaprotocol.vega.tm.Replay.RequestDeliverTx result = buildPartial();
         if (!result.isInitialized()) {
@@ -4951,7 +4683,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx buildPartial() {
         io.vegaprotocol.vega.tm.Replay.RequestDeliverTx result = new io.vegaprotocol.vega.tm.Replay.RequestDeliverTx(this);
         result.tx_ = tx_;
@@ -4959,39 +4690,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.RequestDeliverTx) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.RequestDeliverTx)other);
@@ -5011,12 +4735,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5037,44 +4759,37 @@ public final class Replay {
 
       private com.google.protobuf.ByteString tx_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes tx = 1 [json_name = "tx"];</code>
-       * @return The tx.
+       * <code>bytes tx = 1[json_name = "tx"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getTx() {
         return tx_;
       }
       /**
-       * <code>bytes tx = 1 [json_name = "tx"];</code>
-       * @param value The tx to set.
-       * @return This builder for chaining.
+       * <code>bytes tx = 1[json_name = "tx"];</code>
        */
       public Builder setTx(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         tx_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes tx = 1 [json_name = "tx"];</code>
-       * @return This builder for chaining.
+       * <code>bytes tx = 1[json_name = "tx"];</code>
        */
       public Builder clearTx() {
-
+        
         tx_ = getDefaultInstance().getTx();
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -5096,7 +4811,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<RequestDeliverTx>
         PARSER = new com.google.protobuf.AbstractParser<RequestDeliverTx>() {
-      @java.lang.Override
       public RequestDeliverTx parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5114,7 +4828,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.RequestDeliverTx getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5126,54 +4839,51 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
-     * @return Whether the consensusParams field is set.
+     * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
      */
     boolean hasConsensusParams();
     /**
-     * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
-     * @return The consensusParams.
+     * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ConsensusParams getConsensusParams();
     /**
-     * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+     * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder getConsensusParamsOrBuilder();
 
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> 
         getValidatorsList();
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getValidators(int index);
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
     int getValidatorsCount();
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
         getValidatorsOrBuilderList();
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder getValidatorsOrBuilder(
         int index);
 
     /**
-     * <code>bytes app_hash = 3 [json_name = "appHash"];</code>
-     * @return The appHash.
+     * <code>bytes app_hash = 3[json_name = "appHash"];</code>
      */
     com.google.protobuf.ByteString getAppHash();
   }
   /**
    * Protobuf type {@code tm.ResponseInitChain}
    */
-  public static final class ResponseInitChain extends
+  public  static final class ResponseInitChain extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.ResponseInitChain)
       ResponseInitChainOrBuilder {
@@ -5185,13 +4895,6 @@ public final class Replay {
     private ResponseInitChain() {
       validators_ = java.util.Collections.emptyList();
       appHash_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ResponseInitChain();
     }
 
     @java.lang.Override
@@ -5218,6 +4921,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder subBuilder = null;
               if (consensusParams_ != null) {
@@ -5232,9 +4942,9 @@ public final class Replay {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 validators_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               validators_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.parser(), extensionRegistry));
@@ -5245,13 +4955,6 @@ public final class Replay {
               appHash_ = input.readBytes();
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5260,7 +4963,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           validators_ = java.util.Collections.unmodifiableList(validators_);
         }
         this.unknownFields = unknownFields.build();
@@ -5272,7 +4975,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseInitChain_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseInitChain_fieldAccessorTable
@@ -5280,28 +4982,24 @@ public final class Replay {
               io.vegaprotocol.vega.tm.Replay.ResponseInitChain.class, io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder.class);
     }
 
+    private int bitField0_;
     public static final int CONSENSUS_PARAMS_FIELD_NUMBER = 1;
     private io.vegaprotocol.vega.tm.Replay.ConsensusParams consensusParams_;
     /**
-     * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
-     * @return Whether the consensusParams field is set.
+     * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
      */
-    @java.lang.Override
     public boolean hasConsensusParams() {
       return consensusParams_ != null;
     }
     /**
-     * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
-     * @return The consensusParams.
+     * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ConsensusParams getConsensusParams() {
       return consensusParams_ == null ? io.vegaprotocol.vega.tm.Replay.ConsensusParams.getDefaultInstance() : consensusParams_;
     }
     /**
-     * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+     * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder getConsensusParamsOrBuilder() {
       return getConsensusParams();
     }
@@ -5309,38 +5007,33 @@ public final class Replay {
     public static final int VALIDATORS_FIELD_NUMBER = 2;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> validators_;
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> getValidatorsList() {
       return validators_;
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
         getValidatorsOrBuilderList() {
       return validators_;
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public int getValidatorsCount() {
       return validators_.size();
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getValidators(int index) {
       return validators_.get(index);
     }
     /**
-     * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+     * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder getValidatorsOrBuilder(
         int index) {
       return validators_.get(index);
@@ -5349,16 +5042,13 @@ public final class Replay {
     public static final int APP_HASH_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString appHash_;
     /**
-     * <code>bytes app_hash = 3 [json_name = "appHash"];</code>
-     * @return The appHash.
+     * <code>bytes app_hash = 3[json_name = "appHash"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getAppHash() {
       return appHash_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5368,7 +5058,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (consensusParams_ != null) {
@@ -5383,7 +5072,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5416,17 +5104,18 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.ResponseInitChain other = (io.vegaprotocol.vega.tm.Replay.ResponseInitChain) obj;
 
-      if (hasConsensusParams() != other.hasConsensusParams()) return false;
+      boolean result = true;
+      result = result && (hasConsensusParams() == other.hasConsensusParams());
       if (hasConsensusParams()) {
-        if (!getConsensusParams()
-            .equals(other.getConsensusParams())) return false;
+        result = result && getConsensusParams()
+            .equals(other.getConsensusParams());
       }
-      if (!getValidatorsList()
-          .equals(other.getValidatorsList())) return false;
-      if (!getAppHash()
-          .equals(other.getAppHash())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && getValidatorsList()
+          .equals(other.getValidatorsList());
+      result = result && getAppHash()
+          .equals(other.getAppHash());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -5521,7 +5210,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5529,7 +5217,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.ResponseInitChain prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5553,7 +5240,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseInitChain_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseInitChain_fieldAccessorTable
@@ -5577,7 +5263,6 @@ public final class Replay {
           getValidatorsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (consensusParamsBuilder_ == null) {
@@ -5588,7 +5273,7 @@ public final class Replay {
         }
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           validatorsBuilder_.clear();
         }
@@ -5597,18 +5282,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseInitChain_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseInitChain getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.ResponseInitChain.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseInitChain build() {
         io.vegaprotocol.vega.tm.Replay.ResponseInitChain result = buildPartial();
         if (!result.isInitialized()) {
@@ -5617,62 +5299,56 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseInitChain buildPartial() {
         io.vegaprotocol.vega.tm.Replay.ResponseInitChain result = new io.vegaprotocol.vega.tm.Replay.ResponseInitChain(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (consensusParamsBuilder_ == null) {
           result.consensusParams_ = consensusParams_;
         } else {
           result.consensusParams_ = consensusParamsBuilder_.build();
         }
         if (validatorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             validators_ = java.util.Collections.unmodifiableList(validators_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.validators_ = validators_;
         } else {
           result.validators_ = validatorsBuilder_.build();
         }
         result.appHash_ = appHash_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.ResponseInitChain) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.ResponseInitChain)other);
@@ -5691,7 +5367,7 @@ public final class Replay {
           if (!other.validators_.isEmpty()) {
             if (validators_.isEmpty()) {
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureValidatorsIsMutable();
               validators_.addAll(other.validators_);
@@ -5704,8 +5380,8 @@ public final class Replay {
               validatorsBuilder_.dispose();
               validatorsBuilder_ = null;
               validators_ = other.validators_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              validatorsBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000002);
+              validatorsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getValidatorsFieldBuilder() : null;
             } else {
@@ -5721,12 +5397,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5746,19 +5420,17 @@ public final class Replay {
       }
       private int bitField0_;
 
-      private io.vegaprotocol.vega.tm.Replay.ConsensusParams consensusParams_;
+      private io.vegaprotocol.vega.tm.Replay.ConsensusParams consensusParams_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder> consensusParamsBuilder_;
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
-       * @return Whether the consensusParams field is set.
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public boolean hasConsensusParams() {
         return consensusParamsBuilder_ != null || consensusParams_ != null;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
-       * @return The consensusParams.
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams getConsensusParams() {
         if (consensusParamsBuilder_ == null) {
@@ -5768,7 +5440,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public Builder setConsensusParams(io.vegaprotocol.vega.tm.Replay.ConsensusParams value) {
         if (consensusParamsBuilder_ == null) {
@@ -5784,7 +5456,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public Builder setConsensusParams(
           io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder builderForValue) {
@@ -5798,7 +5470,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public Builder mergeConsensusParams(io.vegaprotocol.vega.tm.Replay.ConsensusParams value) {
         if (consensusParamsBuilder_ == null) {
@@ -5816,7 +5488,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public Builder clearConsensusParams() {
         if (consensusParamsBuilder_ == null) {
@@ -5830,15 +5502,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder getConsensusParamsBuilder() {
-
+        
         onChanged();
         return getConsensusParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder getConsensusParamsOrBuilder() {
         if (consensusParamsBuilder_ != null) {
@@ -5849,10 +5521,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
+       * <code>.tm.ConsensusParams consensus_params = 1[json_name = "consensusParams"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder> 
           getConsensusParamsFieldBuilder() {
         if (consensusParamsBuilder_ == null) {
           consensusParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -5868,9 +5540,9 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> validators_ =
         java.util.Collections.emptyList();
       private void ensureValidatorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           validators_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>(validators_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -5878,7 +5550,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> validatorsBuilder_;
 
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> getValidatorsList() {
         if (validatorsBuilder_ == null) {
@@ -5888,7 +5560,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public int getValidatorsCount() {
         if (validatorsBuilder_ == null) {
@@ -5898,7 +5570,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -5908,7 +5580,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder setValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate value) {
@@ -5925,7 +5597,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder setValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder builderForValue) {
@@ -5939,7 +5611,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder addValidators(io.vegaprotocol.vega.tm.Replay.ValidatorUpdate value) {
         if (validatorsBuilder_ == null) {
@@ -5955,7 +5627,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder addValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate value) {
@@ -5972,7 +5644,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder addValidators(
           io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder builderForValue) {
@@ -5986,7 +5658,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder addValidators(
           int index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder builderForValue) {
@@ -6000,7 +5672,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder addAllValidators(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> values) {
@@ -6015,12 +5687,12 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder clearValidators() {
         if (validatorsBuilder_ == null) {
           validators_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           validatorsBuilder_.clear();
@@ -6028,7 +5700,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public Builder removeValidators(int index) {
         if (validatorsBuilder_ == null) {
@@ -6041,14 +5713,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder getValidatorsBuilder(
           int index) {
         return getValidatorsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder getValidatorsOrBuilder(
           int index) {
@@ -6058,9 +5730,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
            getValidatorsOrBuilderList() {
         if (validatorsBuilder_ != null) {
           return validatorsBuilder_.getMessageOrBuilderList();
@@ -6069,14 +5741,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder addValidatorsBuilder() {
         return getValidatorsFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder addValidatorsBuilder(
           int index) {
@@ -6084,20 +5756,20 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
+       * <code>repeated .tm.ValidatorUpdate validators = 2[json_name = "validators"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder> 
            getValidatorsBuilderList() {
         return getValidatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
           getValidatorsFieldBuilder() {
         if (validatorsBuilder_ == null) {
           validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>(
                   validators_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           validators_ = null;
@@ -6107,44 +5779,37 @@ public final class Replay {
 
       private com.google.protobuf.ByteString appHash_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes app_hash = 3 [json_name = "appHash"];</code>
-       * @return The appHash.
+       * <code>bytes app_hash = 3[json_name = "appHash"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getAppHash() {
         return appHash_;
       }
       /**
-       * <code>bytes app_hash = 3 [json_name = "appHash"];</code>
-       * @param value The appHash to set.
-       * @return This builder for chaining.
+       * <code>bytes app_hash = 3[json_name = "appHash"];</code>
        */
       public Builder setAppHash(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         appHash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes app_hash = 3 [json_name = "appHash"];</code>
-       * @return This builder for chaining.
+       * <code>bytes app_hash = 3[json_name = "appHash"];</code>
        */
       public Builder clearAppHash() {
-
+        
         appHash_ = getDefaultInstance().getAppHash();
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6166,7 +5831,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<ResponseInitChain>
         PARSER = new com.google.protobuf.AbstractParser<ResponseInitChain>() {
-      @java.lang.Override
       public ResponseInitChain parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6184,7 +5848,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseInitChain getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6196,25 +5859,25 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.Event>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.Event> 
         getEventsList();
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.Event getEvents(int index);
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
     int getEventsCount();
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
         getEventsOrBuilderList();
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EventOrBuilder getEventsOrBuilder(
         int index);
@@ -6222,7 +5885,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.ResponseBeginBlock}
    */
-  public static final class ResponseBeginBlock extends
+  public  static final class ResponseBeginBlock extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.ResponseBeginBlock)
       ResponseBeginBlockOrBuilder {
@@ -6233,13 +5896,6 @@ public final class Replay {
     }
     private ResponseBeginBlock() {
       events_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ResponseBeginBlock();
     }
 
     @java.lang.Override
@@ -6266,20 +5922,20 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 events_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.Event>();
                 mutable_bitField0_ |= 0x00000001;
               }
               events_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.Event.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -6290,7 +5946,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           events_ = java.util.Collections.unmodifiableList(events_);
         }
         this.unknownFields = unknownFields.build();
@@ -6302,7 +5958,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseBeginBlock_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseBeginBlock_fieldAccessorTable
@@ -6313,45 +5968,39 @@ public final class Replay {
     public static final int EVENTS_FIELD_NUMBER = 1;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.Event> events_;
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.Event> getEventsList() {
       return events_;
     }
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
         getEventsOrBuilderList() {
       return events_;
     }
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    @java.lang.Override
     public int getEventsCount() {
       return events_.size();
     }
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Event getEvents(int index) {
       return events_.get(index);
     }
     /**
-     * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EventOrBuilder getEventsOrBuilder(
         int index) {
       return events_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6361,7 +6010,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < events_.size(); i++) {
@@ -6370,7 +6018,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6395,10 +6042,11 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock other = (io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock) obj;
 
-      if (!getEventsList()
-          .equals(other.getEventsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getEventsList()
+          .equals(other.getEventsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -6487,7 +6135,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6495,7 +6142,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6519,7 +6165,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseBeginBlock_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseBeginBlock_fieldAccessorTable
@@ -6543,7 +6188,6 @@ public final class Replay {
           getEventsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (eventsBuilder_ == null) {
@@ -6555,18 +6199,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseBeginBlock_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock build() {
         io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock result = buildPartial();
         if (!result.isInitialized()) {
@@ -6575,12 +6216,11 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock buildPartial() {
         io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock result = new io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock(this);
         int from_bitField0_ = bitField0_;
         if (eventsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
             events_ = java.util.Collections.unmodifiableList(events_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -6592,39 +6232,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock)other);
@@ -6654,7 +6287,7 @@ public final class Replay {
               eventsBuilder_ = null;
               events_ = other.events_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              eventsBuilder_ =
+              eventsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEventsFieldBuilder() : null;
             } else {
@@ -6667,12 +6300,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6695,7 +6326,7 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.Event> events_ =
         java.util.Collections.emptyList();
       private void ensureEventsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           events_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.Event>(events_);
           bitField0_ |= 0x00000001;
          }
@@ -6705,7 +6336,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder> eventsBuilder_;
 
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.Event> getEventsList() {
         if (eventsBuilder_ == null) {
@@ -6715,7 +6346,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public int getEventsCount() {
         if (eventsBuilder_ == null) {
@@ -6725,7 +6356,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event getEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -6735,7 +6366,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder setEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event value) {
@@ -6752,7 +6383,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder setEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event.Builder builderForValue) {
@@ -6766,7 +6397,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder addEvents(io.vegaprotocol.vega.tm.Replay.Event value) {
         if (eventsBuilder_ == null) {
@@ -6782,7 +6413,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder addEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event value) {
@@ -6799,7 +6430,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder addEvents(
           io.vegaprotocol.vega.tm.Replay.Event.Builder builderForValue) {
@@ -6813,7 +6444,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder addEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event.Builder builderForValue) {
@@ -6827,7 +6458,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder addAllEvents(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.Event> values) {
@@ -6842,7 +6473,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder clearEvents() {
         if (eventsBuilder_ == null) {
@@ -6855,7 +6486,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public Builder removeEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -6868,14 +6499,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event.Builder getEventsBuilder(
           int index) {
         return getEventsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventOrBuilder getEventsOrBuilder(
           int index) {
@@ -6885,9 +6516,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
            getEventsOrBuilderList() {
         if (eventsBuilder_ != null) {
           return eventsBuilder_.getMessageOrBuilderList();
@@ -6896,14 +6527,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event.Builder addEventsBuilder() {
         return getEventsFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.Event.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event.Builder addEventsBuilder(
           int index) {
@@ -6911,33 +6542,31 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.Event.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 1[json_name = "events"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder> 
            getEventsBuilderList() {
         return getEventsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
           getEventsFieldBuilder() {
         if (eventsBuilder_ == null) {
           eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder>(
                   events_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
           events_ = null;
         }
         return eventsBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -6959,7 +6588,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<ResponseBeginBlock>
         PARSER = new com.google.protobuf.AbstractParser<ResponseBeginBlock>() {
-      @java.lang.Override
       public ResponseBeginBlock parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6977,7 +6605,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6989,14 +6616,12 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 code = 1 [json_name = "code"];</code>
-     * @return The code.
+     * <code>uint32 code = 1[json_name = "code"];</code>
      */
     int getCode();
 
     /**
-     * <code>bytes data = 2 [json_name = "data"];</code>
-     * @return The data.
+     * <code>bytes data = 2[json_name = "data"];</code>
      */
     com.google.protobuf.ByteString getData();
 
@@ -7005,8 +6630,7 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string log = 3 [json_name = "log"];</code>
-     * @return The log.
+     * <code>string log = 3[json_name = "log"];</code>
      */
     java.lang.String getLog();
     /**
@@ -7014,8 +6638,7 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string log = 3 [json_name = "log"];</code>
-     * @return The bytes for log.
+     * <code>string log = 3[json_name = "log"];</code>
      */
     com.google.protobuf.ByteString
         getLogBytes();
@@ -7025,8 +6648,7 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string info = 4 [json_name = "info"];</code>
-     * @return The info.
+     * <code>string info = 4[json_name = "info"];</code>
      */
     java.lang.String getInfo();
     /**
@@ -7034,56 +6656,51 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string info = 4 [json_name = "info"];</code>
-     * @return The bytes for info.
+     * <code>string info = 4[json_name = "info"];</code>
      */
     com.google.protobuf.ByteString
         getInfoBytes();
 
     /**
-     * <code>int64 gas_wanted = 5 [json_name = "gasWanted"];</code>
-     * @return The gasWanted.
+     * <code>int64 gas_wanted = 5[json_name = "gasWanted"];</code>
      */
     long getGasWanted();
 
     /**
-     * <code>int64 gas_used = 6 [json_name = "gasUsed"];</code>
-     * @return The gasUsed.
+     * <code>int64 gas_used = 6[json_name = "gasUsed"];</code>
      */
     long getGasUsed();
 
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.Event>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.Event> 
         getEventsList();
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.Event getEvents(int index);
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
     int getEventsCount();
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
         getEventsOrBuilderList();
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EventOrBuilder getEventsOrBuilder(
         int index);
 
     /**
-     * <code>string codespace = 8 [json_name = "codespace"];</code>
-     * @return The codespace.
+     * <code>string codespace = 8[json_name = "codespace"];</code>
      */
     java.lang.String getCodespace();
     /**
-     * <code>string codespace = 8 [json_name = "codespace"];</code>
-     * @return The bytes for codespace.
+     * <code>string codespace = 8[json_name = "codespace"];</code>
      */
     com.google.protobuf.ByteString
         getCodespaceBytes();
@@ -7091,7 +6708,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.ResponseDeliverTx}
    */
-  public static final class ResponseDeliverTx extends
+  public  static final class ResponseDeliverTx extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.ResponseDeliverTx)
       ResponseDeliverTxOrBuilder {
@@ -7101,18 +6718,14 @@ public final class Replay {
       super(builder);
     }
     private ResponseDeliverTx() {
+      code_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
       log_ = "";
       info_ = "";
+      gasWanted_ = 0L;
+      gasUsed_ = 0L;
       events_ = java.util.Collections.emptyList();
       codespace_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ResponseDeliverTx();
     }
 
     @java.lang.Override
@@ -7139,6 +6752,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               code_ = input.readUInt32();
@@ -7172,9 +6792,9 @@ public final class Replay {
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                 events_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.Event>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000040;
               }
               events_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.Event.parser(), extensionRegistry));
@@ -7186,13 +6806,6 @@ public final class Replay {
               codespace_ = s;
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7201,7 +6814,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
           events_ = java.util.Collections.unmodifiableList(events_);
         }
         this.unknownFields = unknownFields.build();
@@ -7213,7 +6826,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseDeliverTx_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseDeliverTx_fieldAccessorTable
@@ -7221,13 +6833,12 @@ public final class Replay {
               io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.class, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder.class);
     }
 
+    private int bitField0_;
     public static final int CODE_FIELD_NUMBER = 1;
     private int code_;
     /**
-     * <code>uint32 code = 1 [json_name = "code"];</code>
-     * @return The code.
+     * <code>uint32 code = 1[json_name = "code"];</code>
      */
-    @java.lang.Override
     public int getCode() {
       return code_;
     }
@@ -7235,10 +6846,8 @@ public final class Replay {
     public static final int DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString data_;
     /**
-     * <code>bytes data = 2 [json_name = "data"];</code>
-     * @return The data.
+     * <code>bytes data = 2[json_name = "data"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
@@ -7250,16 +6859,14 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string log = 3 [json_name = "log"];</code>
-     * @return The log.
+     * <code>string log = 3[json_name = "log"];</code>
      */
-    @java.lang.Override
     public java.lang.String getLog() {
       java.lang.Object ref = log_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         log_ = s;
@@ -7271,15 +6878,13 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string log = 3 [json_name = "log"];</code>
-     * @return The bytes for log.
+     * <code>string log = 3[json_name = "log"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getLogBytes() {
       java.lang.Object ref = log_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         log_ = b;
@@ -7296,16 +6901,14 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string info = 4 [json_name = "info"];</code>
-     * @return The info.
+     * <code>string info = 4[json_name = "info"];</code>
      */
-    @java.lang.Override
     public java.lang.String getInfo() {
       java.lang.Object ref = info_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         info_ = s;
@@ -7317,15 +6920,13 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>string info = 4 [json_name = "info"];</code>
-     * @return The bytes for info.
+     * <code>string info = 4[json_name = "info"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getInfoBytes() {
       java.lang.Object ref = info_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         info_ = b;
@@ -7338,10 +6939,8 @@ public final class Replay {
     public static final int GAS_WANTED_FIELD_NUMBER = 5;
     private long gasWanted_;
     /**
-     * <code>int64 gas_wanted = 5 [json_name = "gasWanted"];</code>
-     * @return The gasWanted.
+     * <code>int64 gas_wanted = 5[json_name = "gasWanted"];</code>
      */
-    @java.lang.Override
     public long getGasWanted() {
       return gasWanted_;
     }
@@ -7349,10 +6948,8 @@ public final class Replay {
     public static final int GAS_USED_FIELD_NUMBER = 6;
     private long gasUsed_;
     /**
-     * <code>int64 gas_used = 6 [json_name = "gasUsed"];</code>
-     * @return The gasUsed.
+     * <code>int64 gas_used = 6[json_name = "gasUsed"];</code>
      */
-    @java.lang.Override
     public long getGasUsed() {
       return gasUsed_;
     }
@@ -7360,38 +6957,33 @@ public final class Replay {
     public static final int EVENTS_FIELD_NUMBER = 7;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.Event> events_;
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.Event> getEventsList() {
       return events_;
     }
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
         getEventsOrBuilderList() {
       return events_;
     }
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    @java.lang.Override
     public int getEventsCount() {
       return events_.size();
     }
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Event getEvents(int index) {
       return events_.get(index);
     }
     /**
-     * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+     * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EventOrBuilder getEventsOrBuilder(
         int index) {
       return events_.get(index);
@@ -7400,16 +6992,14 @@ public final class Replay {
     public static final int CODESPACE_FIELD_NUMBER = 8;
     private volatile java.lang.Object codespace_;
     /**
-     * <code>string codespace = 8 [json_name = "codespace"];</code>
-     * @return The codespace.
+     * <code>string codespace = 8[json_name = "codespace"];</code>
      */
-    @java.lang.Override
     public java.lang.String getCodespace() {
       java.lang.Object ref = codespace_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         codespace_ = s;
@@ -7417,15 +7007,13 @@ public final class Replay {
       }
     }
     /**
-     * <code>string codespace = 8 [json_name = "codespace"];</code>
-     * @return The bytes for codespace.
+     * <code>string codespace = 8[json_name = "codespace"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getCodespaceBytes() {
       java.lang.Object ref = codespace_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         codespace_ = b;
@@ -7436,7 +7024,6 @@ public final class Replay {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7446,7 +7033,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (code_ != 0) {
@@ -7476,7 +7062,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7526,24 +7111,25 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx other = (io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx) obj;
 
-      if (getCode()
-          != other.getCode()) return false;
-      if (!getData()
-          .equals(other.getData())) return false;
-      if (!getLog()
-          .equals(other.getLog())) return false;
-      if (!getInfo()
-          .equals(other.getInfo())) return false;
-      if (getGasWanted()
-          != other.getGasWanted()) return false;
-      if (getGasUsed()
-          != other.getGasUsed()) return false;
-      if (!getEventsList()
-          .equals(other.getEventsList())) return false;
-      if (!getCodespace()
-          .equals(other.getCodespace())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getCode()
+          == other.getCode());
+      result = result && getData()
+          .equals(other.getData());
+      result = result && getLog()
+          .equals(other.getLog());
+      result = result && getInfo()
+          .equals(other.getInfo());
+      result = result && (getGasWanted()
+          == other.getGasWanted());
+      result = result && (getGasUsed()
+          == other.getGasUsed());
+      result = result && getEventsList()
+          .equals(other.getEventsList());
+      result = result && getCodespace()
+          .equals(other.getCodespace());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -7648,7 +7234,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7656,7 +7241,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7680,7 +7264,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseDeliverTx_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseDeliverTx_fieldAccessorTable
@@ -7704,7 +7287,6 @@ public final class Replay {
           getEventsFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         code_ = 0;
@@ -7721,7 +7303,7 @@ public final class Replay {
 
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           eventsBuilder_.clear();
         }
@@ -7730,18 +7312,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ResponseDeliverTx_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx build() {
         io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx result = buildPartial();
         if (!result.isInitialized()) {
@@ -7750,10 +7329,10 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx buildPartial() {
         io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx result = new io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.code_ = code_;
         result.data_ = data_;
         result.log_ = log_;
@@ -7761,52 +7340,46 @@ public final class Replay {
         result.gasWanted_ = gasWanted_;
         result.gasUsed_ = gasUsed_;
         if (eventsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
             events_ = java.util.Collections.unmodifiableList(events_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.events_ = events_;
         } else {
           result.events_ = eventsBuilder_.build();
         }
         result.codespace_ = codespace_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx)other);
@@ -7842,7 +7415,7 @@ public final class Replay {
           if (!other.events_.isEmpty()) {
             if (events_.isEmpty()) {
               events_ = other.events_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureEventsIsMutable();
               events_.addAll(other.events_);
@@ -7855,8 +7428,8 @@ public final class Replay {
               eventsBuilder_.dispose();
               eventsBuilder_ = null;
               events_ = other.events_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              eventsBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000040);
+              eventsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEventsFieldBuilder() : null;
             } else {
@@ -7873,12 +7446,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7900,30 +7471,25 @@ public final class Replay {
 
       private int code_ ;
       /**
-       * <code>uint32 code = 1 [json_name = "code"];</code>
-       * @return The code.
+       * <code>uint32 code = 1[json_name = "code"];</code>
        */
-      @java.lang.Override
       public int getCode() {
         return code_;
       }
       /**
-       * <code>uint32 code = 1 [json_name = "code"];</code>
-       * @param value The code to set.
-       * @return This builder for chaining.
+       * <code>uint32 code = 1[json_name = "code"];</code>
        */
       public Builder setCode(int value) {
-
+        
         code_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 code = 1 [json_name = "code"];</code>
-       * @return This builder for chaining.
+       * <code>uint32 code = 1[json_name = "code"];</code>
        */
       public Builder clearCode() {
-
+        
         code_ = 0;
         onChanged();
         return this;
@@ -7931,33 +7497,28 @@ public final class Replay {
 
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes data = 2 [json_name = "data"];</code>
-       * @return The data.
+       * <code>bytes data = 2[json_name = "data"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getData() {
         return data_;
       }
       /**
-       * <code>bytes data = 2 [json_name = "data"];</code>
-       * @param value The data to set.
-       * @return This builder for chaining.
+       * <code>bytes data = 2[json_name = "data"];</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         data_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes data = 2 [json_name = "data"];</code>
-       * @return This builder for chaining.
+       * <code>bytes data = 2[json_name = "data"];</code>
        */
       public Builder clearData() {
-
+        
         data_ = getDefaultInstance().getData();
         onChanged();
         return this;
@@ -7969,8 +7530,7 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string log = 3 [json_name = "log"];</code>
-       * @return The log.
+       * <code>string log = 3[json_name = "log"];</code>
        */
       public java.lang.String getLog() {
         java.lang.Object ref = log_;
@@ -7989,14 +7549,13 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string log = 3 [json_name = "log"];</code>
-       * @return The bytes for log.
+       * <code>string log = 3[json_name = "log"];</code>
        */
       public com.google.protobuf.ByteString
           getLogBytes() {
         java.lang.Object ref = log_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           log_ = b;
@@ -8010,16 +7569,14 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string log = 3 [json_name = "log"];</code>
-       * @param value The log to set.
-       * @return This builder for chaining.
+       * <code>string log = 3[json_name = "log"];</code>
        */
       public Builder setLog(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         log_ = value;
         onChanged();
         return this;
@@ -8029,11 +7586,10 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string log = 3 [json_name = "log"];</code>
-       * @return This builder for chaining.
+       * <code>string log = 3[json_name = "log"];</code>
        */
       public Builder clearLog() {
-
+        
         log_ = getDefaultInstance().getLog();
         onChanged();
         return this;
@@ -8043,9 +7599,7 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string log = 3 [json_name = "log"];</code>
-       * @param value The bytes for log to set.
-       * @return This builder for chaining.
+       * <code>string log = 3[json_name = "log"];</code>
        */
       public Builder setLogBytes(
           com.google.protobuf.ByteString value) {
@@ -8053,7 +7607,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         log_ = value;
         onChanged();
         return this;
@@ -8065,8 +7619,7 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string info = 4 [json_name = "info"];</code>
-       * @return The info.
+       * <code>string info = 4[json_name = "info"];</code>
        */
       public java.lang.String getInfo() {
         java.lang.Object ref = info_;
@@ -8085,14 +7638,13 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string info = 4 [json_name = "info"];</code>
-       * @return The bytes for info.
+       * <code>string info = 4[json_name = "info"];</code>
        */
       public com.google.protobuf.ByteString
           getInfoBytes() {
         java.lang.Object ref = info_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           info_ = b;
@@ -8106,16 +7658,14 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string info = 4 [json_name = "info"];</code>
-       * @param value The info to set.
-       * @return This builder for chaining.
+       * <code>string info = 4[json_name = "info"];</code>
        */
       public Builder setInfo(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         info_ = value;
         onChanged();
         return this;
@@ -8125,11 +7675,10 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string info = 4 [json_name = "info"];</code>
-       * @return This builder for chaining.
+       * <code>string info = 4[json_name = "info"];</code>
        */
       public Builder clearInfo() {
-
+        
         info_ = getDefaultInstance().getInfo();
         onChanged();
         return this;
@@ -8139,9 +7688,7 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>string info = 4 [json_name = "info"];</code>
-       * @param value The bytes for info to set.
-       * @return This builder for chaining.
+       * <code>string info = 4[json_name = "info"];</code>
        */
       public Builder setInfoBytes(
           com.google.protobuf.ByteString value) {
@@ -8149,7 +7696,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         info_ = value;
         onChanged();
         return this;
@@ -8157,30 +7704,25 @@ public final class Replay {
 
       private long gasWanted_ ;
       /**
-       * <code>int64 gas_wanted = 5 [json_name = "gasWanted"];</code>
-       * @return The gasWanted.
+       * <code>int64 gas_wanted = 5[json_name = "gasWanted"];</code>
        */
-      @java.lang.Override
       public long getGasWanted() {
         return gasWanted_;
       }
       /**
-       * <code>int64 gas_wanted = 5 [json_name = "gasWanted"];</code>
-       * @param value The gasWanted to set.
-       * @return This builder for chaining.
+       * <code>int64 gas_wanted = 5[json_name = "gasWanted"];</code>
        */
       public Builder setGasWanted(long value) {
-
+        
         gasWanted_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 gas_wanted = 5 [json_name = "gasWanted"];</code>
-       * @return This builder for chaining.
+       * <code>int64 gas_wanted = 5[json_name = "gasWanted"];</code>
        */
       public Builder clearGasWanted() {
-
+        
         gasWanted_ = 0L;
         onChanged();
         return this;
@@ -8188,30 +7730,25 @@ public final class Replay {
 
       private long gasUsed_ ;
       /**
-       * <code>int64 gas_used = 6 [json_name = "gasUsed"];</code>
-       * @return The gasUsed.
+       * <code>int64 gas_used = 6[json_name = "gasUsed"];</code>
        */
-      @java.lang.Override
       public long getGasUsed() {
         return gasUsed_;
       }
       /**
-       * <code>int64 gas_used = 6 [json_name = "gasUsed"];</code>
-       * @param value The gasUsed to set.
-       * @return This builder for chaining.
+       * <code>int64 gas_used = 6[json_name = "gasUsed"];</code>
        */
       public Builder setGasUsed(long value) {
-
+        
         gasUsed_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 gas_used = 6 [json_name = "gasUsed"];</code>
-       * @return This builder for chaining.
+       * <code>int64 gas_used = 6[json_name = "gasUsed"];</code>
        */
       public Builder clearGasUsed() {
-
+        
         gasUsed_ = 0L;
         onChanged();
         return this;
@@ -8220,9 +7757,9 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.Event> events_ =
         java.util.Collections.emptyList();
       private void ensureEventsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           events_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.Event>(events_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -8230,7 +7767,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder> eventsBuilder_;
 
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.Event> getEventsList() {
         if (eventsBuilder_ == null) {
@@ -8240,7 +7777,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public int getEventsCount() {
         if (eventsBuilder_ == null) {
@@ -8250,7 +7787,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event getEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -8260,7 +7797,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder setEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event value) {
@@ -8277,7 +7814,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder setEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event.Builder builderForValue) {
@@ -8291,7 +7828,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder addEvents(io.vegaprotocol.vega.tm.Replay.Event value) {
         if (eventsBuilder_ == null) {
@@ -8307,7 +7844,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder addEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event value) {
@@ -8324,7 +7861,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder addEvents(
           io.vegaprotocol.vega.tm.Replay.Event.Builder builderForValue) {
@@ -8338,7 +7875,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder addEvents(
           int index, io.vegaprotocol.vega.tm.Replay.Event.Builder builderForValue) {
@@ -8352,7 +7889,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder addAllEvents(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.Event> values) {
@@ -8367,12 +7904,12 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder clearEvents() {
         if (eventsBuilder_ == null) {
           events_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           eventsBuilder_.clear();
@@ -8380,7 +7917,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public Builder removeEvents(int index) {
         if (eventsBuilder_ == null) {
@@ -8393,14 +7930,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event.Builder getEventsBuilder(
           int index) {
         return getEventsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventOrBuilder getEventsOrBuilder(
           int index) {
@@ -8410,9 +7947,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
            getEventsOrBuilderList() {
         if (eventsBuilder_ != null) {
           return eventsBuilder_.getMessageOrBuilderList();
@@ -8421,14 +7958,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event.Builder addEventsBuilder() {
         return getEventsFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.Event.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Event.Builder addEventsBuilder(
           int index) {
@@ -8436,20 +7973,20 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.Event.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
+       * <code>repeated .tm.Event events = 7[json_name = "events"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder> 
            getEventsBuilderList() {
         return getEventsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
           getEventsFieldBuilder() {
         if (eventsBuilder_ == null) {
           eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder>(
                   events_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
                   isClean());
           events_ = null;
@@ -8459,8 +7996,7 @@ public final class Replay {
 
       private java.lang.Object codespace_ = "";
       /**
-       * <code>string codespace = 8 [json_name = "codespace"];</code>
-       * @return The codespace.
+       * <code>string codespace = 8[json_name = "codespace"];</code>
        */
       public java.lang.String getCodespace() {
         java.lang.Object ref = codespace_;
@@ -8475,14 +8011,13 @@ public final class Replay {
         }
       }
       /**
-       * <code>string codespace = 8 [json_name = "codespace"];</code>
-       * @return The bytes for codespace.
+       * <code>string codespace = 8[json_name = "codespace"];</code>
        */
       public com.google.protobuf.ByteString
           getCodespaceBytes() {
         java.lang.Object ref = codespace_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           codespace_ = b;
@@ -8492,34 +8027,29 @@ public final class Replay {
         }
       }
       /**
-       * <code>string codespace = 8 [json_name = "codespace"];</code>
-       * @param value The codespace to set.
-       * @return This builder for chaining.
+       * <code>string codespace = 8[json_name = "codespace"];</code>
        */
       public Builder setCodespace(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         codespace_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string codespace = 8 [json_name = "codespace"];</code>
-       * @return This builder for chaining.
+       * <code>string codespace = 8[json_name = "codespace"];</code>
        */
       public Builder clearCodespace() {
-
+        
         codespace_ = getDefaultInstance().getCodespace();
         onChanged();
         return this;
       }
       /**
-       * <code>string codespace = 8 [json_name = "codespace"];</code>
-       * @param value The bytes for codespace to set.
-       * @return This builder for chaining.
+       * <code>string codespace = 8[json_name = "codespace"];</code>
        */
       public Builder setCodespaceBytes(
           com.google.protobuf.ByteString value) {
@@ -8527,18 +8057,16 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         codespace_ = value;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -8560,7 +8088,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<ResponseDeliverTx>
         PARSER = new com.google.protobuf.AbstractParser<ResponseDeliverTx>() {
-      @java.lang.Override
       public ResponseDeliverTx parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8578,7 +8105,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8590,37 +8116,35 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string type = 1 [json_name = "type"];</code>
-     * @return The type.
+     * <code>string type = 1[json_name = "type"];</code>
      */
     java.lang.String getType();
     /**
-     * <code>string type = 1 [json_name = "type"];</code>
-     * @return The bytes for type.
+     * <code>string type = 1[json_name = "type"];</code>
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute> 
         getAttributesList();
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EventAttribute getAttributes(int index);
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
     int getAttributesCount();
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
         getAttributesOrBuilderList();
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder getAttributesOrBuilder(
         int index);
@@ -8628,7 +8152,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.Event}
    */
-  public static final class Event extends
+  public  static final class Event extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.Event)
       EventOrBuilder {
@@ -8640,13 +8164,6 @@ public final class Replay {
     private Event() {
       type_ = "";
       attributes_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Event();
     }
 
     @java.lang.Override
@@ -8673,6 +8190,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8680,19 +8204,12 @@ public final class Replay {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 attributes_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.EventAttribute>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               attributes_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.EventAttribute.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -8703,7 +8220,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           attributes_ = java.util.Collections.unmodifiableList(attributes_);
         }
         this.unknownFields = unknownFields.build();
@@ -8715,7 +8232,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Event_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Event_fieldAccessorTable
@@ -8723,19 +8239,18 @@ public final class Replay {
               io.vegaprotocol.vega.tm.Replay.Event.class, io.vegaprotocol.vega.tm.Replay.Event.Builder.class);
     }
 
+    private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object type_;
     /**
-     * <code>string type = 1 [json_name = "type"];</code>
-     * @return The type.
+     * <code>string type = 1[json_name = "type"];</code>
      */
-    @java.lang.Override
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
@@ -8743,15 +8258,13 @@ public final class Replay {
       }
     }
     /**
-     * <code>string type = 1 [json_name = "type"];</code>
-     * @return The bytes for type.
+     * <code>string type = 1[json_name = "type"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         type_ = b;
@@ -8764,45 +8277,39 @@ public final class Replay {
     public static final int ATTRIBUTES_FIELD_NUMBER = 2;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute> attributes_;
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute> getAttributesList() {
       return attributes_;
     }
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
         getAttributesOrBuilderList() {
       return attributes_;
     }
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    @java.lang.Override
     public int getAttributesCount() {
       return attributes_.size();
     }
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EventAttribute getAttributes(int index) {
       return attributes_.get(index);
     }
     /**
-     * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+     * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder getAttributesOrBuilder(
         int index) {
       return attributes_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8812,7 +8319,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTypeBytes().isEmpty()) {
@@ -8824,7 +8330,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8852,12 +8357,13 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.Event other = (io.vegaprotocol.vega.tm.Replay.Event) obj;
 
-      if (!getType()
-          .equals(other.getType())) return false;
-      if (!getAttributesList()
-          .equals(other.getAttributesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getType()
+          .equals(other.getType());
+      result = result && getAttributesList()
+          .equals(other.getAttributesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -8948,7 +8454,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8956,7 +8461,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.Event prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8980,7 +8484,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Event_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Event_fieldAccessorTable
@@ -9004,32 +8507,28 @@ public final class Replay {
           getAttributesFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         type_ = "";
 
         if (attributesBuilder_ == null) {
           attributes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           attributesBuilder_.clear();
         }
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Event_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Event getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.Event.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Event build() {
         io.vegaprotocol.vega.tm.Replay.Event result = buildPartial();
         if (!result.isInitialized()) {
@@ -9038,57 +8537,51 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Event buildPartial() {
         io.vegaprotocol.vega.tm.Replay.Event result = new io.vegaprotocol.vega.tm.Replay.Event(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.type_ = type_;
         if (attributesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             attributes_ = java.util.Collections.unmodifiableList(attributes_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.attributes_ = attributes_;
         } else {
           result.attributes_ = attributesBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.Event) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.Event)other);
@@ -9108,7 +8601,7 @@ public final class Replay {
           if (!other.attributes_.isEmpty()) {
             if (attributes_.isEmpty()) {
               attributes_ = other.attributes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAttributesIsMutable();
               attributes_.addAll(other.attributes_);
@@ -9121,8 +8614,8 @@ public final class Replay {
               attributesBuilder_.dispose();
               attributesBuilder_ = null;
               attributes_ = other.attributes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              attributesBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000002);
+              attributesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAttributesFieldBuilder() : null;
             } else {
@@ -9135,12 +8628,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9162,8 +8653,7 @@ public final class Replay {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>string type = 1 [json_name = "type"];</code>
-       * @return The type.
+       * <code>string type = 1[json_name = "type"];</code>
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -9178,14 +8668,13 @@ public final class Replay {
         }
       }
       /**
-       * <code>string type = 1 [json_name = "type"];</code>
-       * @return The bytes for type.
+       * <code>string type = 1[json_name = "type"];</code>
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           type_ = b;
@@ -9195,34 +8684,29 @@ public final class Replay {
         }
       }
       /**
-       * <code>string type = 1 [json_name = "type"];</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
+       * <code>string type = 1[json_name = "type"];</code>
        */
       public Builder setType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string type = 1 [json_name = "type"];</code>
-       * @return This builder for chaining.
+       * <code>string type = 1[json_name = "type"];</code>
        */
       public Builder clearType() {
-
+        
         type_ = getDefaultInstance().getType();
         onChanged();
         return this;
       }
       /**
-       * <code>string type = 1 [json_name = "type"];</code>
-       * @param value The bytes for type to set.
-       * @return This builder for chaining.
+       * <code>string type = 1[json_name = "type"];</code>
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -9230,7 +8714,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         type_ = value;
         onChanged();
         return this;
@@ -9239,9 +8723,9 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute> attributes_ =
         java.util.Collections.emptyList();
       private void ensureAttributesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           attributes_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.EventAttribute>(attributes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -9249,7 +8733,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.EventAttribute, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder, io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> attributesBuilder_;
 
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute> getAttributesList() {
         if (attributesBuilder_ == null) {
@@ -9259,7 +8743,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public int getAttributesCount() {
         if (attributesBuilder_ == null) {
@@ -9269,7 +8753,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventAttribute getAttributes(int index) {
         if (attributesBuilder_ == null) {
@@ -9279,7 +8763,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder setAttributes(
           int index, io.vegaprotocol.vega.tm.Replay.EventAttribute value) {
@@ -9296,7 +8780,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder setAttributes(
           int index, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder builderForValue) {
@@ -9310,7 +8794,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder addAttributes(io.vegaprotocol.vega.tm.Replay.EventAttribute value) {
         if (attributesBuilder_ == null) {
@@ -9326,7 +8810,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder addAttributes(
           int index, io.vegaprotocol.vega.tm.Replay.EventAttribute value) {
@@ -9343,7 +8827,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder addAttributes(
           io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder builderForValue) {
@@ -9357,7 +8841,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder addAttributes(
           int index, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder builderForValue) {
@@ -9371,7 +8855,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder addAllAttributes(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.EventAttribute> values) {
@@ -9386,12 +8870,12 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder clearAttributes() {
         if (attributesBuilder_ == null) {
           attributes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           attributesBuilder_.clear();
@@ -9399,7 +8883,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public Builder removeAttributes(int index) {
         if (attributesBuilder_ == null) {
@@ -9412,14 +8896,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder getAttributesBuilder(
           int index) {
         return getAttributesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder getAttributesOrBuilder(
           int index) {
@@ -9429,9 +8913,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
            getAttributesOrBuilderList() {
         if (attributesBuilder_ != null) {
           return attributesBuilder_.getMessageOrBuilderList();
@@ -9440,14 +8924,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder addAttributesBuilder() {
         return getAttributesFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.EventAttribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder addAttributesBuilder(
           int index) {
@@ -9455,33 +8939,31 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.EventAttribute.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
+       * <code>repeated .tm.EventAttribute attributes = 2[json_name = "attributes"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder> 
            getAttributesBuilderList() {
         return getAttributesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.EventAttribute, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder, io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.EventAttribute, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder, io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
           getAttributesFieldBuilder() {
         if (attributesBuilder_ == null) {
           attributesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.EventAttribute, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder, io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>(
                   attributes_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           attributes_ = null;
         }
         return attributesBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -9503,7 +8985,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<Event>
         PARSER = new com.google.protobuf.AbstractParser<Event>() {
-      @java.lang.Override
       public Event parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9521,7 +9002,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Event getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9533,14 +9013,12 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes key = 1 [json_name = "key"];</code>
-     * @return The key.
+     * <code>bytes key = 1[json_name = "key"];</code>
      */
     com.google.protobuf.ByteString getKey();
 
     /**
-     * <code>bytes value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>bytes value = 2[json_name = "value"];</code>
      */
     com.google.protobuf.ByteString getValue();
 
@@ -9549,15 +9027,14 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>bool index = 3 [json_name = "index"];</code>
-     * @return The index.
+     * <code>bool index = 3[json_name = "index"];</code>
      */
     boolean getIndex();
   }
   /**
    * Protobuf type {@code tm.EventAttribute}
    */
-  public static final class EventAttribute extends
+  public  static final class EventAttribute extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.EventAttribute)
       EventAttributeOrBuilder {
@@ -9569,13 +9046,7 @@ public final class Replay {
     private EventAttribute() {
       key_ = com.google.protobuf.ByteString.EMPTY;
       value_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new EventAttribute();
+      index_ = false;
     }
 
     @java.lang.Override
@@ -9591,6 +9062,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9601,6 +9073,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
 
               key_ = input.readBytes();
@@ -9614,13 +9093,6 @@ public final class Replay {
             case 24: {
 
               index_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -9640,7 +9112,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EventAttribute_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EventAttribute_fieldAccessorTable
@@ -9651,10 +9122,8 @@ public final class Replay {
     public static final int KEY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString key_;
     /**
-     * <code>bytes key = 1 [json_name = "key"];</code>
-     * @return The key.
+     * <code>bytes key = 1[json_name = "key"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
@@ -9662,10 +9131,8 @@ public final class Replay {
     public static final int VALUE_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString value_;
     /**
-     * <code>bytes value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>bytes value = 2[json_name = "value"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
@@ -9677,16 +9144,13 @@ public final class Replay {
      * nondeterministic
      * </pre>
      *
-     * <code>bool index = 3 [json_name = "index"];</code>
-     * @return The index.
+     * <code>bool index = 3[json_name = "index"];</code>
      */
-    @java.lang.Override
     public boolean getIndex() {
       return index_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9696,7 +9160,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!key_.isEmpty()) {
@@ -9711,7 +9174,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9744,14 +9206,15 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.EventAttribute other = (io.vegaprotocol.vega.tm.Replay.EventAttribute) obj;
 
-      if (!getKey()
-          .equals(other.getKey())) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
-      if (getIndex()
-          != other.getIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && (getIndex()
+          == other.getIndex());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -9843,7 +9306,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9851,7 +9313,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.EventAttribute prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9875,7 +9336,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EventAttribute_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EventAttribute_fieldAccessorTable
@@ -9898,7 +9358,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = com.google.protobuf.ByteString.EMPTY;
@@ -9910,18 +9369,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EventAttribute_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EventAttribute getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.EventAttribute.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EventAttribute build() {
         io.vegaprotocol.vega.tm.Replay.EventAttribute result = buildPartial();
         if (!result.isInitialized()) {
@@ -9930,7 +9386,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EventAttribute buildPartial() {
         io.vegaprotocol.vega.tm.Replay.EventAttribute result = new io.vegaprotocol.vega.tm.Replay.EventAttribute(this);
         result.key_ = key_;
@@ -9940,39 +9395,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.EventAttribute) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.EventAttribute)other);
@@ -9998,12 +9446,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10024,33 +9470,28 @@ public final class Replay {
 
       private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes key = 1 [json_name = "key"];</code>
-       * @return The key.
+       * <code>bytes key = 1[json_name = "key"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getKey() {
         return key_;
       }
       /**
-       * <code>bytes key = 1 [json_name = "key"];</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
+       * <code>bytes key = 1[json_name = "key"];</code>
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         key_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes key = 1 [json_name = "key"];</code>
-       * @return This builder for chaining.
+       * <code>bytes key = 1[json_name = "key"];</code>
        */
       public Builder clearKey() {
-
+        
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
@@ -10058,33 +9499,28 @@ public final class Replay {
 
       private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes value = 2 [json_name = "value"];</code>
-       * @return The value.
+       * <code>bytes value = 2[json_name = "value"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getValue() {
         return value_;
       }
       /**
-       * <code>bytes value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
+       * <code>bytes value = 2[json_name = "value"];</code>
        */
       public Builder setValue(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes value = 2 [json_name = "value"];</code>
-       * @return This builder for chaining.
+       * <code>bytes value = 2[json_name = "value"];</code>
        */
       public Builder clearValue() {
-
+        
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
@@ -10096,10 +9532,8 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>bool index = 3 [json_name = "index"];</code>
-       * @return The index.
+       * <code>bool index = 3[json_name = "index"];</code>
        */
-      @java.lang.Override
       public boolean getIndex() {
         return index_;
       }
@@ -10108,12 +9542,10 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>bool index = 3 [json_name = "index"];</code>
-       * @param value The index to set.
-       * @return This builder for chaining.
+       * <code>bool index = 3[json_name = "index"];</code>
        */
       public Builder setIndex(boolean value) {
-
+        
         index_ = value;
         onChanged();
         return this;
@@ -10123,22 +9555,19 @@ public final class Replay {
        * nondeterministic
        * </pre>
        *
-       * <code>bool index = 3 [json_name = "index"];</code>
-       * @return This builder for chaining.
+       * <code>bool index = 3[json_name = "index"];</code>
        */
       public Builder clearIndex() {
-
+        
         index_ = false;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -10160,7 +9589,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<EventAttribute>
         PARSER = new com.google.protobuf.AbstractParser<EventAttribute>() {
-      @java.lang.Override
       public EventAttribute parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10178,7 +9606,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EventAttribute getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10190,30 +9617,27 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
-     * @return Whether the pubKey field is set.
+     * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
      */
     boolean hasPubKey();
     /**
-     * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
-     * @return The pubKey.
+     * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.PublicKey getPubKey();
     /**
-     * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+     * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder getPubKeyOrBuilder();
 
     /**
-     * <code>int64 power = 2 [json_name = "power"];</code>
-     * @return The power.
+     * <code>int64 power = 2[json_name = "power"];</code>
      */
     long getPower();
   }
   /**
    * Protobuf type {@code tm.ValidatorUpdate}
    */
-  public static final class ValidatorUpdate extends
+  public  static final class ValidatorUpdate extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.ValidatorUpdate)
       ValidatorUpdateOrBuilder {
@@ -10223,13 +9647,7 @@ public final class Replay {
       super(builder);
     }
     private ValidatorUpdate() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ValidatorUpdate();
+      power_ = 0L;
     }
 
     @java.lang.Override
@@ -10245,6 +9663,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10255,6 +9674,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               io.vegaprotocol.vega.tm.Replay.PublicKey.Builder subBuilder = null;
               if (pubKey_ != null) {
@@ -10271,13 +9697,6 @@ public final class Replay {
             case 16: {
 
               power_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -10297,7 +9716,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorUpdate_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorUpdate_fieldAccessorTable
@@ -10308,25 +9726,20 @@ public final class Replay {
     public static final int PUB_KEY_FIELD_NUMBER = 1;
     private io.vegaprotocol.vega.tm.Replay.PublicKey pubKey_;
     /**
-     * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
-     * @return Whether the pubKey field is set.
+     * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
      */
-    @java.lang.Override
     public boolean hasPubKey() {
       return pubKey_ != null;
     }
     /**
-     * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
-     * @return The pubKey.
+     * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.PublicKey getPubKey() {
       return pubKey_ == null ? io.vegaprotocol.vega.tm.Replay.PublicKey.getDefaultInstance() : pubKey_;
     }
     /**
-     * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+     * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder getPubKeyOrBuilder() {
       return getPubKey();
     }
@@ -10334,16 +9747,13 @@ public final class Replay {
     public static final int POWER_FIELD_NUMBER = 2;
     private long power_;
     /**
-     * <code>int64 power = 2 [json_name = "power"];</code>
-     * @return The power.
+     * <code>int64 power = 2[json_name = "power"];</code>
      */
-    @java.lang.Override
     public long getPower() {
       return power_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10353,7 +9763,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pubKey_ != null) {
@@ -10365,7 +9774,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10394,15 +9802,16 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.ValidatorUpdate other = (io.vegaprotocol.vega.tm.Replay.ValidatorUpdate) obj;
 
-      if (hasPubKey() != other.hasPubKey()) return false;
+      boolean result = true;
+      result = result && (hasPubKey() == other.hasPubKey());
       if (hasPubKey()) {
-        if (!getPubKey()
-            .equals(other.getPubKey())) return false;
+        result = result && getPubKey()
+            .equals(other.getPubKey());
       }
-      if (getPower()
-          != other.getPower()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && (getPower()
+          == other.getPower());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -10494,7 +9903,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10502,7 +9910,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.ValidatorUpdate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10526,7 +9933,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorUpdate_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorUpdate_fieldAccessorTable
@@ -10549,7 +9955,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (pubKeyBuilder_ == null) {
@@ -10563,18 +9968,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorUpdate_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate build() {
         io.vegaprotocol.vega.tm.Replay.ValidatorUpdate result = buildPartial();
         if (!result.isInitialized()) {
@@ -10583,7 +9985,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate buildPartial() {
         io.vegaprotocol.vega.tm.Replay.ValidatorUpdate result = new io.vegaprotocol.vega.tm.Replay.ValidatorUpdate(this);
         if (pubKeyBuilder_ == null) {
@@ -10596,39 +9997,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.ValidatorUpdate) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.ValidatorUpdate)other);
@@ -10651,12 +10045,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10675,19 +10067,17 @@ public final class Replay {
         return this;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.PublicKey pubKey_;
+      private io.vegaprotocol.vega.tm.Replay.PublicKey pubKey_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.PublicKey, io.vegaprotocol.vega.tm.Replay.PublicKey.Builder, io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder> pubKeyBuilder_;
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
-       * @return Whether the pubKey field is set.
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public boolean hasPubKey() {
         return pubKeyBuilder_ != null || pubKey_ != null;
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
-       * @return The pubKey.
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.PublicKey getPubKey() {
         if (pubKeyBuilder_ == null) {
@@ -10697,7 +10087,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public Builder setPubKey(io.vegaprotocol.vega.tm.Replay.PublicKey value) {
         if (pubKeyBuilder_ == null) {
@@ -10713,7 +10103,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public Builder setPubKey(
           io.vegaprotocol.vega.tm.Replay.PublicKey.Builder builderForValue) {
@@ -10727,7 +10117,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public Builder mergePubKey(io.vegaprotocol.vega.tm.Replay.PublicKey value) {
         if (pubKeyBuilder_ == null) {
@@ -10745,7 +10135,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public Builder clearPubKey() {
         if (pubKeyBuilder_ == null) {
@@ -10759,15 +10149,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.PublicKey.Builder getPubKeyBuilder() {
-
+        
         onChanged();
         return getPubKeyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder getPubKeyOrBuilder() {
         if (pubKeyBuilder_ != null) {
@@ -10778,10 +10168,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
+       * <code>.tm.PublicKey pub_key = 1[json_name = "pubKey"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.PublicKey, io.vegaprotocol.vega.tm.Replay.PublicKey.Builder, io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.PublicKey, io.vegaprotocol.vega.tm.Replay.PublicKey.Builder, io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder> 
           getPubKeyFieldBuilder() {
         if (pubKeyBuilder_ == null) {
           pubKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -10796,41 +10186,34 @@ public final class Replay {
 
       private long power_ ;
       /**
-       * <code>int64 power = 2 [json_name = "power"];</code>
-       * @return The power.
+       * <code>int64 power = 2[json_name = "power"];</code>
        */
-      @java.lang.Override
       public long getPower() {
         return power_;
       }
       /**
-       * <code>int64 power = 2 [json_name = "power"];</code>
-       * @param value The power to set.
-       * @return This builder for chaining.
+       * <code>int64 power = 2[json_name = "power"];</code>
        */
       public Builder setPower(long value) {
-
+        
         power_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 power = 2 [json_name = "power"];</code>
-       * @return This builder for chaining.
+       * <code>int64 power = 2[json_name = "power"];</code>
        */
       public Builder clearPower() {
-
+        
         power_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -10852,7 +10235,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<ValidatorUpdate>
         PARSER = new com.google.protobuf.AbstractParser<ValidatorUpdate>() {
-      @java.lang.Override
       public ValidatorUpdate parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10870,7 +10252,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorUpdate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10882,69 +10263,61 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
-     * @return Whether the block field is set.
+     * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
      */
     boolean hasBlock();
     /**
-     * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
-     * @return The block.
+     * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.BlockParams getBlock();
     /**
-     * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+     * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder getBlockOrBuilder();
 
     /**
-     * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
-     * @return Whether the evidence field is set.
+     * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
      */
     boolean hasEvidence();
     /**
-     * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
-     * @return The evidence.
+     * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EvidenceParams getEvidence();
     /**
-     * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+     * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder getEvidenceOrBuilder();
 
     /**
-     * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
-     * @return Whether the validator field is set.
+     * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
      */
     boolean hasValidator();
     /**
-     * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
-     * @return The validator.
+     * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorParams getValidator();
     /**
-     * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+     * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder getValidatorOrBuilder();
 
     /**
-     * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
-     * @return Whether the version field is set.
+     * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
      */
     boolean hasVersion();
     /**
-     * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
-     * @return The version.
+     * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.VersionParams getVersion();
     /**
-     * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+     * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder getVersionOrBuilder();
   }
   /**
    * Protobuf type {@code tm.ConsensusParams}
    */
-  public static final class ConsensusParams extends
+  public  static final class ConsensusParams extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.ConsensusParams)
       ConsensusParamsOrBuilder {
@@ -10954,13 +10327,6 @@ public final class Replay {
       super(builder);
     }
     private ConsensusParams() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ConsensusParams();
     }
 
     @java.lang.Override
@@ -10976,6 +10342,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -10986,6 +10353,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               io.vegaprotocol.vega.tm.Replay.BlockParams.Builder subBuilder = null;
               if (block_ != null) {
@@ -11038,13 +10412,6 @@ public final class Replay {
 
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11062,7 +10429,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ConsensusParams_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ConsensusParams_fieldAccessorTable
@@ -11073,25 +10439,20 @@ public final class Replay {
     public static final int BLOCK_FIELD_NUMBER = 1;
     private io.vegaprotocol.vega.tm.Replay.BlockParams block_;
     /**
-     * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
-     * @return Whether the block field is set.
+     * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
      */
-    @java.lang.Override
     public boolean hasBlock() {
       return block_ != null;
     }
     /**
-     * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
-     * @return The block.
+     * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.BlockParams getBlock() {
       return block_ == null ? io.vegaprotocol.vega.tm.Replay.BlockParams.getDefaultInstance() : block_;
     }
     /**
-     * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+     * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder getBlockOrBuilder() {
       return getBlock();
     }
@@ -11099,25 +10460,20 @@ public final class Replay {
     public static final int EVIDENCE_FIELD_NUMBER = 2;
     private io.vegaprotocol.vega.tm.Replay.EvidenceParams evidence_;
     /**
-     * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
-     * @return Whether the evidence field is set.
+     * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
      */
-    @java.lang.Override
     public boolean hasEvidence() {
       return evidence_ != null;
     }
     /**
-     * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
-     * @return The evidence.
+     * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EvidenceParams getEvidence() {
       return evidence_ == null ? io.vegaprotocol.vega.tm.Replay.EvidenceParams.getDefaultInstance() : evidence_;
     }
     /**
-     * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+     * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder getEvidenceOrBuilder() {
       return getEvidence();
     }
@@ -11125,25 +10481,20 @@ public final class Replay {
     public static final int VALIDATOR_FIELD_NUMBER = 3;
     private io.vegaprotocol.vega.tm.Replay.ValidatorParams validator_;
     /**
-     * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
-     * @return Whether the validator field is set.
+     * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public boolean hasValidator() {
       return validator_ != null;
     }
     /**
-     * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
-     * @return The validator.
+     * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorParams getValidator() {
       return validator_ == null ? io.vegaprotocol.vega.tm.Replay.ValidatorParams.getDefaultInstance() : validator_;
     }
     /**
-     * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+     * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder getValidatorOrBuilder() {
       return getValidator();
     }
@@ -11151,31 +10502,25 @@ public final class Replay {
     public static final int VERSION_FIELD_NUMBER = 4;
     private io.vegaprotocol.vega.tm.Replay.VersionParams version_;
     /**
-     * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
-     * @return Whether the version field is set.
+     * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
      */
-    @java.lang.Override
     public boolean hasVersion() {
       return version_ != null;
     }
     /**
-     * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
-     * @return The version.
+     * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.VersionParams getVersion() {
       return version_ == null ? io.vegaprotocol.vega.tm.Replay.VersionParams.getDefaultInstance() : version_;
     }
     /**
-     * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+     * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder getVersionOrBuilder() {
       return getVersion();
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11185,7 +10530,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (block_ != null) {
@@ -11203,7 +10547,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11240,28 +10583,29 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.ConsensusParams other = (io.vegaprotocol.vega.tm.Replay.ConsensusParams) obj;
 
-      if (hasBlock() != other.hasBlock()) return false;
+      boolean result = true;
+      result = result && (hasBlock() == other.hasBlock());
       if (hasBlock()) {
-        if (!getBlock()
-            .equals(other.getBlock())) return false;
+        result = result && getBlock()
+            .equals(other.getBlock());
       }
-      if (hasEvidence() != other.hasEvidence()) return false;
+      result = result && (hasEvidence() == other.hasEvidence());
       if (hasEvidence()) {
-        if (!getEvidence()
-            .equals(other.getEvidence())) return false;
+        result = result && getEvidence()
+            .equals(other.getEvidence());
       }
-      if (hasValidator() != other.hasValidator()) return false;
+      result = result && (hasValidator() == other.hasValidator());
       if (hasValidator()) {
-        if (!getValidator()
-            .equals(other.getValidator())) return false;
+        result = result && getValidator()
+            .equals(other.getValidator());
       }
-      if (hasVersion() != other.hasVersion()) return false;
+      result = result && (hasVersion() == other.hasVersion());
       if (hasVersion()) {
-        if (!getVersion()
-            .equals(other.getVersion())) return false;
+        result = result && getVersion()
+            .equals(other.getVersion());
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -11362,7 +10706,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11370,7 +10713,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.ConsensusParams prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11394,7 +10736,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ConsensusParams_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ConsensusParams_fieldAccessorTable
@@ -11417,7 +10758,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (blockBuilder_ == null) {
@@ -11447,18 +10787,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ConsensusParams_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.ConsensusParams.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams build() {
         io.vegaprotocol.vega.tm.Replay.ConsensusParams result = buildPartial();
         if (!result.isInitialized()) {
@@ -11467,7 +10804,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams buildPartial() {
         io.vegaprotocol.vega.tm.Replay.ConsensusParams result = new io.vegaprotocol.vega.tm.Replay.ConsensusParams(this);
         if (blockBuilder_ == null) {
@@ -11494,39 +10830,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.ConsensusParams) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.ConsensusParams)other);
@@ -11555,12 +10884,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11579,19 +10906,17 @@ public final class Replay {
         return this;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.BlockParams block_;
+      private io.vegaprotocol.vega.tm.Replay.BlockParams block_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.BlockParams, io.vegaprotocol.vega.tm.Replay.BlockParams.Builder, io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder> blockBuilder_;
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
-       * @return Whether the block field is set.
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public boolean hasBlock() {
         return blockBuilder_ != null || block_ != null;
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
-       * @return The block.
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.BlockParams getBlock() {
         if (blockBuilder_ == null) {
@@ -11601,7 +10926,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public Builder setBlock(io.vegaprotocol.vega.tm.Replay.BlockParams value) {
         if (blockBuilder_ == null) {
@@ -11617,7 +10942,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public Builder setBlock(
           io.vegaprotocol.vega.tm.Replay.BlockParams.Builder builderForValue) {
@@ -11631,7 +10956,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public Builder mergeBlock(io.vegaprotocol.vega.tm.Replay.BlockParams value) {
         if (blockBuilder_ == null) {
@@ -11649,7 +10974,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public Builder clearBlock() {
         if (blockBuilder_ == null) {
@@ -11663,15 +10988,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.BlockParams.Builder getBlockBuilder() {
-
+        
         onChanged();
         return getBlockFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder getBlockOrBuilder() {
         if (blockBuilder_ != null) {
@@ -11682,10 +11007,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
+       * <code>.tm.BlockParams block = 1[json_name = "block"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.BlockParams, io.vegaprotocol.vega.tm.Replay.BlockParams.Builder, io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.BlockParams, io.vegaprotocol.vega.tm.Replay.BlockParams.Builder, io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder> 
           getBlockFieldBuilder() {
         if (blockBuilder_ == null) {
           blockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11698,19 +11023,17 @@ public final class Replay {
         return blockBuilder_;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.EvidenceParams evidence_;
+      private io.vegaprotocol.vega.tm.Replay.EvidenceParams evidence_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.EvidenceParams, io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder> evidenceBuilder_;
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
-       * @return Whether the evidence field is set.
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public boolean hasEvidence() {
         return evidenceBuilder_ != null || evidence_ != null;
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
-       * @return The evidence.
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EvidenceParams getEvidence() {
         if (evidenceBuilder_ == null) {
@@ -11720,7 +11043,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public Builder setEvidence(io.vegaprotocol.vega.tm.Replay.EvidenceParams value) {
         if (evidenceBuilder_ == null) {
@@ -11736,7 +11059,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public Builder setEvidence(
           io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder builderForValue) {
@@ -11750,7 +11073,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public Builder mergeEvidence(io.vegaprotocol.vega.tm.Replay.EvidenceParams value) {
         if (evidenceBuilder_ == null) {
@@ -11768,7 +11091,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public Builder clearEvidence() {
         if (evidenceBuilder_ == null) {
@@ -11782,15 +11105,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder getEvidenceBuilder() {
-
+        
         onChanged();
         return getEvidenceFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder getEvidenceOrBuilder() {
         if (evidenceBuilder_ != null) {
@@ -11801,10 +11124,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
+       * <code>.tm.EvidenceParams evidence = 2[json_name = "evidence"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.EvidenceParams, io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.EvidenceParams, io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder> 
           getEvidenceFieldBuilder() {
         if (evidenceBuilder_ == null) {
           evidenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11817,19 +11140,17 @@ public final class Replay {
         return evidenceBuilder_;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.ValidatorParams validator_;
+      private io.vegaprotocol.vega.tm.Replay.ValidatorParams validator_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.ValidatorParams, io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder> validatorBuilder_;
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
-       * @return Whether the validator field is set.
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public boolean hasValidator() {
         return validatorBuilder_ != null || validator_ != null;
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
-       * @return The validator.
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorParams getValidator() {
         if (validatorBuilder_ == null) {
@@ -11839,7 +11160,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public Builder setValidator(io.vegaprotocol.vega.tm.Replay.ValidatorParams value) {
         if (validatorBuilder_ == null) {
@@ -11855,7 +11176,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public Builder setValidator(
           io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder builderForValue) {
@@ -11869,7 +11190,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public Builder mergeValidator(io.vegaprotocol.vega.tm.Replay.ValidatorParams value) {
         if (validatorBuilder_ == null) {
@@ -11887,7 +11208,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -11901,15 +11222,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder getValidatorBuilder() {
-
+        
         onChanged();
         return getValidatorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder getValidatorOrBuilder() {
         if (validatorBuilder_ != null) {
@@ -11920,10 +11241,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
+       * <code>.tm.ValidatorParams validator = 3[json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ValidatorParams, io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.ValidatorParams, io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder> 
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           validatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11936,19 +11257,17 @@ public final class Replay {
         return validatorBuilder_;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.VersionParams version_;
+      private io.vegaprotocol.vega.tm.Replay.VersionParams version_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.VersionParams, io.vegaprotocol.vega.tm.Replay.VersionParams.Builder, io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder> versionBuilder_;
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
-       * @return Whether the version field is set.
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public boolean hasVersion() {
         return versionBuilder_ != null || version_ != null;
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
-       * @return The version.
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VersionParams getVersion() {
         if (versionBuilder_ == null) {
@@ -11958,7 +11277,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public Builder setVersion(io.vegaprotocol.vega.tm.Replay.VersionParams value) {
         if (versionBuilder_ == null) {
@@ -11974,7 +11293,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public Builder setVersion(
           io.vegaprotocol.vega.tm.Replay.VersionParams.Builder builderForValue) {
@@ -11988,7 +11307,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public Builder mergeVersion(io.vegaprotocol.vega.tm.Replay.VersionParams value) {
         if (versionBuilder_ == null) {
@@ -12006,7 +11325,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public Builder clearVersion() {
         if (versionBuilder_ == null) {
@@ -12020,15 +11339,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VersionParams.Builder getVersionBuilder() {
-
+        
         onChanged();
         return getVersionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder getVersionOrBuilder() {
         if (versionBuilder_ != null) {
@@ -12039,10 +11358,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
+       * <code>.tm.VersionParams version = 4[json_name = "version"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.VersionParams, io.vegaprotocol.vega.tm.Replay.VersionParams.Builder, io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.VersionParams, io.vegaprotocol.vega.tm.Replay.VersionParams.Builder, io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder> 
           getVersionFieldBuilder() {
         if (versionBuilder_ == null) {
           versionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12054,13 +11373,11 @@ public final class Replay {
         }
         return versionBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12082,7 +11399,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<ConsensusParams>
         PARSER = new com.google.protobuf.AbstractParser<ConsensusParams>() {
-      @java.lang.Override
       public ConsensusParams parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12100,7 +11416,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ConsensusParams getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12112,21 +11427,19 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 max_bytes = 1 [json_name = "maxBytes"];</code>
-     * @return The maxBytes.
+     * <code>int64 max_bytes = 1[json_name = "maxBytes"];</code>
      */
     long getMaxBytes();
 
     /**
-     * <code>int64 max_gas = 2 [json_name = "maxGas"];</code>
-     * @return The maxGas.
+     * <code>int64 max_gas = 2[json_name = "maxGas"];</code>
      */
     long getMaxGas();
   }
   /**
    * Protobuf type {@code tm.BlockParams}
    */
-  public static final class BlockParams extends
+  public  static final class BlockParams extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.BlockParams)
       BlockParamsOrBuilder {
@@ -12136,13 +11449,8 @@ public final class Replay {
       super(builder);
     }
     private BlockParams() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new BlockParams();
+      maxBytes_ = 0L;
+      maxGas_ = 0L;
     }
 
     @java.lang.Override
@@ -12158,6 +11466,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12168,6 +11477,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               maxBytes_ = input.readInt64();
@@ -12176,13 +11492,6 @@ public final class Replay {
             case 16: {
 
               maxGas_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -12202,7 +11511,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_BlockParams_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_BlockParams_fieldAccessorTable
@@ -12213,10 +11521,8 @@ public final class Replay {
     public static final int MAX_BYTES_FIELD_NUMBER = 1;
     private long maxBytes_;
     /**
-     * <code>int64 max_bytes = 1 [json_name = "maxBytes"];</code>
-     * @return The maxBytes.
+     * <code>int64 max_bytes = 1[json_name = "maxBytes"];</code>
      */
-    @java.lang.Override
     public long getMaxBytes() {
       return maxBytes_;
     }
@@ -12224,16 +11530,13 @@ public final class Replay {
     public static final int MAX_GAS_FIELD_NUMBER = 2;
     private long maxGas_;
     /**
-     * <code>int64 max_gas = 2 [json_name = "maxGas"];</code>
-     * @return The maxGas.
+     * <code>int64 max_gas = 2[json_name = "maxGas"];</code>
      */
-    @java.lang.Override
     public long getMaxGas() {
       return maxGas_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12243,7 +11546,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (maxBytes_ != 0L) {
@@ -12255,7 +11557,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12284,12 +11585,13 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.BlockParams other = (io.vegaprotocol.vega.tm.Replay.BlockParams) obj;
 
-      if (getMaxBytes()
-          != other.getMaxBytes()) return false;
-      if (getMaxGas()
-          != other.getMaxGas()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getMaxBytes()
+          == other.getMaxBytes());
+      result = result && (getMaxGas()
+          == other.getMaxGas());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -12380,7 +11682,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12388,7 +11689,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.BlockParams prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12412,7 +11712,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_BlockParams_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_BlockParams_fieldAccessorTable
@@ -12435,7 +11734,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         maxBytes_ = 0L;
@@ -12445,18 +11743,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_BlockParams_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.BlockParams getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.BlockParams.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.BlockParams build() {
         io.vegaprotocol.vega.tm.Replay.BlockParams result = buildPartial();
         if (!result.isInitialized()) {
@@ -12465,7 +11760,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.BlockParams buildPartial() {
         io.vegaprotocol.vega.tm.Replay.BlockParams result = new io.vegaprotocol.vega.tm.Replay.BlockParams(this);
         result.maxBytes_ = maxBytes_;
@@ -12474,39 +11768,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.BlockParams) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.BlockParams)other);
@@ -12529,12 +11816,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12555,30 +11840,25 @@ public final class Replay {
 
       private long maxBytes_ ;
       /**
-       * <code>int64 max_bytes = 1 [json_name = "maxBytes"];</code>
-       * @return The maxBytes.
+       * <code>int64 max_bytes = 1[json_name = "maxBytes"];</code>
        */
-      @java.lang.Override
       public long getMaxBytes() {
         return maxBytes_;
       }
       /**
-       * <code>int64 max_bytes = 1 [json_name = "maxBytes"];</code>
-       * @param value The maxBytes to set.
-       * @return This builder for chaining.
+       * <code>int64 max_bytes = 1[json_name = "maxBytes"];</code>
        */
       public Builder setMaxBytes(long value) {
-
+        
         maxBytes_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 max_bytes = 1 [json_name = "maxBytes"];</code>
-       * @return This builder for chaining.
+       * <code>int64 max_bytes = 1[json_name = "maxBytes"];</code>
        */
       public Builder clearMaxBytes() {
-
+        
         maxBytes_ = 0L;
         onChanged();
         return this;
@@ -12586,41 +11866,34 @@ public final class Replay {
 
       private long maxGas_ ;
       /**
-       * <code>int64 max_gas = 2 [json_name = "maxGas"];</code>
-       * @return The maxGas.
+       * <code>int64 max_gas = 2[json_name = "maxGas"];</code>
        */
-      @java.lang.Override
       public long getMaxGas() {
         return maxGas_;
       }
       /**
-       * <code>int64 max_gas = 2 [json_name = "maxGas"];</code>
-       * @param value The maxGas to set.
-       * @return This builder for chaining.
+       * <code>int64 max_gas = 2[json_name = "maxGas"];</code>
        */
       public Builder setMaxGas(long value) {
-
+        
         maxGas_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 max_gas = 2 [json_name = "maxGas"];</code>
-       * @return This builder for chaining.
+       * <code>int64 max_gas = 2[json_name = "maxGas"];</code>
        */
       public Builder clearMaxGas() {
-
+        
         maxGas_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -12642,7 +11915,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<BlockParams>
         PARSER = new com.google.protobuf.AbstractParser<BlockParams>() {
-      @java.lang.Override
       public BlockParams parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12660,7 +11932,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.BlockParams getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12672,53 +11943,46 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
      */
     int getTypeValue();
     /**
-     * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-     * @return The type.
+     * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.EvidenceType getType();
 
     /**
-     * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
-     * @return Whether the validator field is set.
+     * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
      */
     boolean hasValidator();
     /**
-     * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
-     * @return The validator.
+     * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.Validator getValidator();
     /**
-     * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+     * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder getValidatorOrBuilder();
 
     /**
-     * <code>int64 height = 3 [json_name = "height"];</code>
-     * @return The height.
+     * <code>int64 height = 3[json_name = "height"];</code>
      */
     long getHeight();
 
     /**
-     * <code>int64 time = 4 [json_name = "time"];</code>
-     * @return The time.
+     * <code>int64 time = 4[json_name = "time"];</code>
      */
     long getTime();
 
     /**
-     * <code>int64 total_voting_power = 5 [json_name = "totalVotingPower"];</code>
-     * @return The totalVotingPower.
+     * <code>int64 total_voting_power = 5[json_name = "totalVotingPower"];</code>
      */
     long getTotalVotingPower();
   }
   /**
    * Protobuf type {@code tm.Evidence}
    */
-  public static final class Evidence extends
+  public  static final class Evidence extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.Evidence)
       EvidenceOrBuilder {
@@ -12729,13 +11993,9 @@ public final class Replay {
     }
     private Evidence() {
       type_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Evidence();
+      height_ = 0L;
+      time_ = 0L;
+      totalVotingPower_ = 0L;
     }
 
     @java.lang.Override
@@ -12751,6 +12011,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12761,6 +12022,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
               int rawValue = input.readEnum();
 
@@ -12795,13 +12063,6 @@ public final class Replay {
               totalVotingPower_ = input.readInt64();
               break;
             }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12819,7 +12080,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Evidence_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Evidence_fieldAccessorTable
@@ -12830,18 +12090,15 @@ public final class Replay {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
      */
-    @java.lang.Override public int getTypeValue() {
+    public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-     * @return The type.
+     * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
      */
-    @java.lang.Override public io.vegaprotocol.vega.tm.Replay.EvidenceType getType() {
-      @SuppressWarnings("deprecation")
+    public io.vegaprotocol.vega.tm.Replay.EvidenceType getType() {
       io.vegaprotocol.vega.tm.Replay.EvidenceType result = io.vegaprotocol.vega.tm.Replay.EvidenceType.valueOf(type_);
       return result == null ? io.vegaprotocol.vega.tm.Replay.EvidenceType.UNRECOGNIZED : result;
     }
@@ -12849,25 +12106,20 @@ public final class Replay {
     public static final int VALIDATOR_FIELD_NUMBER = 2;
     private io.vegaprotocol.vega.tm.Replay.Validator validator_;
     /**
-     * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
-     * @return Whether the validator field is set.
+     * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public boolean hasValidator() {
       return validator_ != null;
     }
     /**
-     * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
-     * @return The validator.
+     * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Validator getValidator() {
       return validator_ == null ? io.vegaprotocol.vega.tm.Replay.Validator.getDefaultInstance() : validator_;
     }
     /**
-     * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+     * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder getValidatorOrBuilder() {
       return getValidator();
     }
@@ -12875,10 +12127,8 @@ public final class Replay {
     public static final int HEIGHT_FIELD_NUMBER = 3;
     private long height_;
     /**
-     * <code>int64 height = 3 [json_name = "height"];</code>
-     * @return The height.
+     * <code>int64 height = 3[json_name = "height"];</code>
      */
-    @java.lang.Override
     public long getHeight() {
       return height_;
     }
@@ -12886,10 +12136,8 @@ public final class Replay {
     public static final int TIME_FIELD_NUMBER = 4;
     private long time_;
     /**
-     * <code>int64 time = 4 [json_name = "time"];</code>
-     * @return The time.
+     * <code>int64 time = 4[json_name = "time"];</code>
      */
-    @java.lang.Override
     public long getTime() {
       return time_;
     }
@@ -12897,16 +12145,13 @@ public final class Replay {
     public static final int TOTAL_VOTING_POWER_FIELD_NUMBER = 5;
     private long totalVotingPower_;
     /**
-     * <code>int64 total_voting_power = 5 [json_name = "totalVotingPower"];</code>
-     * @return The totalVotingPower.
+     * <code>int64 total_voting_power = 5[json_name = "totalVotingPower"];</code>
      */
-    @java.lang.Override
     public long getTotalVotingPower() {
       return totalVotingPower_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12916,7 +12161,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (type_ != io.vegaprotocol.vega.tm.Replay.EvidenceType.UNKNOWN.getNumber()) {
@@ -12937,7 +12181,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -12978,20 +12221,21 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.Evidence other = (io.vegaprotocol.vega.tm.Replay.Evidence) obj;
 
-      if (type_ != other.type_) return false;
-      if (hasValidator() != other.hasValidator()) return false;
+      boolean result = true;
+      result = result && type_ == other.type_;
+      result = result && (hasValidator() == other.hasValidator());
       if (hasValidator()) {
-        if (!getValidator()
-            .equals(other.getValidator())) return false;
+        result = result && getValidator()
+            .equals(other.getValidator());
       }
-      if (getHeight()
-          != other.getHeight()) return false;
-      if (getTime()
-          != other.getTime()) return false;
-      if (getTotalVotingPower()
-          != other.getTotalVotingPower()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && (getHeight()
+          == other.getHeight());
+      result = result && (getTime()
+          == other.getTime());
+      result = result && (getTotalVotingPower()
+          == other.getTotalVotingPower());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -13091,7 +12335,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13099,7 +12342,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.Evidence prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13123,7 +12365,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Evidence_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Evidence_fieldAccessorTable
@@ -13146,7 +12387,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         type_ = 0;
@@ -13166,18 +12406,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Evidence_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Evidence getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.Evidence.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Evidence build() {
         io.vegaprotocol.vega.tm.Replay.Evidence result = buildPartial();
         if (!result.isInitialized()) {
@@ -13186,7 +12423,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Evidence buildPartial() {
         io.vegaprotocol.vega.tm.Replay.Evidence result = new io.vegaprotocol.vega.tm.Replay.Evidence(this);
         result.type_ = type_;
@@ -13202,39 +12438,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.Evidence) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.Evidence)other);
@@ -13266,12 +12495,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13292,71 +12519,59 @@ public final class Replay {
 
       private int type_ = 0;
       /**
-       * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-       * @return The enum numeric value on the wire for type.
+       * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
        */
-      @java.lang.Override public int getTypeValue() {
+      public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
+       * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-       * @return The type.
+       * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
        */
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EvidenceType getType() {
-        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.tm.Replay.EvidenceType result = io.vegaprotocol.vega.tm.Replay.EvidenceType.valueOf(type_);
         return result == null ? io.vegaprotocol.vega.tm.Replay.EvidenceType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
+       * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
        */
       public Builder setType(io.vegaprotocol.vega.tm.Replay.EvidenceType value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         type_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.tm.EvidenceType type = 1 [json_name = "type"];</code>
-       * @return This builder for chaining.
+       * <code>.tm.EvidenceType type = 1[json_name = "type"];</code>
        */
       public Builder clearType() {
-
+        
         type_ = 0;
         onChanged();
         return this;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.Validator validator_;
+      private io.vegaprotocol.vega.tm.Replay.Validator validator_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder> validatorBuilder_;
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
-       * @return Whether the validator field is set.
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public boolean hasValidator() {
         return validatorBuilder_ != null || validator_ != null;
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
-       * @return The validator.
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Validator getValidator() {
         if (validatorBuilder_ == null) {
@@ -13366,7 +12581,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public Builder setValidator(io.vegaprotocol.vega.tm.Replay.Validator value) {
         if (validatorBuilder_ == null) {
@@ -13382,7 +12597,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public Builder setValidator(
           io.vegaprotocol.vega.tm.Replay.Validator.Builder builderForValue) {
@@ -13396,7 +12611,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public Builder mergeValidator(io.vegaprotocol.vega.tm.Replay.Validator value) {
         if (validatorBuilder_ == null) {
@@ -13414,7 +12629,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -13428,15 +12643,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Validator.Builder getValidatorBuilder() {
-
+        
         onChanged();
         return getValidatorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder getValidatorOrBuilder() {
         if (validatorBuilder_ != null) {
@@ -13447,10 +12662,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 2[json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder> 
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           validatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13465,30 +12680,25 @@ public final class Replay {
 
       private long height_ ;
       /**
-       * <code>int64 height = 3 [json_name = "height"];</code>
-       * @return The height.
+       * <code>int64 height = 3[json_name = "height"];</code>
        */
-      @java.lang.Override
       public long getHeight() {
         return height_;
       }
       /**
-       * <code>int64 height = 3 [json_name = "height"];</code>
-       * @param value The height to set.
-       * @return This builder for chaining.
+       * <code>int64 height = 3[json_name = "height"];</code>
        */
       public Builder setHeight(long value) {
-
+        
         height_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 height = 3 [json_name = "height"];</code>
-       * @return This builder for chaining.
+       * <code>int64 height = 3[json_name = "height"];</code>
        */
       public Builder clearHeight() {
-
+        
         height_ = 0L;
         onChanged();
         return this;
@@ -13496,30 +12706,25 @@ public final class Replay {
 
       private long time_ ;
       /**
-       * <code>int64 time = 4 [json_name = "time"];</code>
-       * @return The time.
+       * <code>int64 time = 4[json_name = "time"];</code>
        */
-      @java.lang.Override
       public long getTime() {
         return time_;
       }
       /**
-       * <code>int64 time = 4 [json_name = "time"];</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
+       * <code>int64 time = 4[json_name = "time"];</code>
        */
       public Builder setTime(long value) {
-
+        
         time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 time = 4 [json_name = "time"];</code>
-       * @return This builder for chaining.
+       * <code>int64 time = 4[json_name = "time"];</code>
        */
       public Builder clearTime() {
-
+        
         time_ = 0L;
         onChanged();
         return this;
@@ -13527,41 +12732,34 @@ public final class Replay {
 
       private long totalVotingPower_ ;
       /**
-       * <code>int64 total_voting_power = 5 [json_name = "totalVotingPower"];</code>
-       * @return The totalVotingPower.
+       * <code>int64 total_voting_power = 5[json_name = "totalVotingPower"];</code>
        */
-      @java.lang.Override
       public long getTotalVotingPower() {
         return totalVotingPower_;
       }
       /**
-       * <code>int64 total_voting_power = 5 [json_name = "totalVotingPower"];</code>
-       * @param value The totalVotingPower to set.
-       * @return This builder for chaining.
+       * <code>int64 total_voting_power = 5[json_name = "totalVotingPower"];</code>
        */
       public Builder setTotalVotingPower(long value) {
-
+        
         totalVotingPower_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 total_voting_power = 5 [json_name = "totalVotingPower"];</code>
-       * @return This builder for chaining.
+       * <code>int64 total_voting_power = 5[json_name = "totalVotingPower"];</code>
        */
       public Builder clearTotalVotingPower() {
-
+        
         totalVotingPower_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -13583,7 +12781,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<Evidence>
         PARSER = new com.google.protobuf.AbstractParser<Evidence>() {
-      @java.lang.Override
       public Evidence parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13601,7 +12798,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Evidence getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13613,21 +12809,19 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes address = 1 [json_name = "address"];</code>
-     * @return The address.
+     * <code>bytes address = 1[json_name = "address"];</code>
      */
     com.google.protobuf.ByteString getAddress();
 
     /**
-     * <code>int64 power = 3 [json_name = "power"];</code>
-     * @return The power.
+     * <code>int64 power = 3[json_name = "power"];</code>
      */
     long getPower();
   }
   /**
    * Protobuf type {@code tm.Validator}
    */
-  public static final class Validator extends
+  public  static final class Validator extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.Validator)
       ValidatorOrBuilder {
@@ -13638,13 +12832,7 @@ public final class Replay {
     }
     private Validator() {
       address_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Validator();
+      power_ = 0L;
     }
 
     @java.lang.Override
@@ -13660,6 +12848,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -13670,6 +12859,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
 
               address_ = input.readBytes();
@@ -13678,13 +12874,6 @@ public final class Replay {
             case 24: {
 
               power_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -13704,7 +12893,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Validator_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Validator_fieldAccessorTable
@@ -13715,10 +12903,8 @@ public final class Replay {
     public static final int ADDRESS_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString address_;
     /**
-     * <code>bytes address = 1 [json_name = "address"];</code>
-     * @return The address.
+     * <code>bytes address = 1[json_name = "address"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getAddress() {
       return address_;
     }
@@ -13726,16 +12912,13 @@ public final class Replay {
     public static final int POWER_FIELD_NUMBER = 3;
     private long power_;
     /**
-     * <code>int64 power = 3 [json_name = "power"];</code>
-     * @return The power.
+     * <code>int64 power = 3[json_name = "power"];</code>
      */
-    @java.lang.Override
     public long getPower() {
       return power_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -13745,7 +12928,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!address_.isEmpty()) {
@@ -13757,7 +12939,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13786,12 +12967,13 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.Validator other = (io.vegaprotocol.vega.tm.Replay.Validator) obj;
 
-      if (!getAddress()
-          .equals(other.getAddress())) return false;
-      if (getPower()
-          != other.getPower()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getAddress()
+          .equals(other.getAddress());
+      result = result && (getPower()
+          == other.getPower());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -13881,7 +13063,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13889,7 +13070,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.Validator prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13913,7 +13093,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Validator_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Validator_fieldAccessorTable
@@ -13936,7 +13115,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         address_ = com.google.protobuf.ByteString.EMPTY;
@@ -13946,18 +13124,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Validator_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Validator getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.Validator.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Validator build() {
         io.vegaprotocol.vega.tm.Replay.Validator result = buildPartial();
         if (!result.isInitialized()) {
@@ -13966,7 +13141,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Validator buildPartial() {
         io.vegaprotocol.vega.tm.Replay.Validator result = new io.vegaprotocol.vega.tm.Replay.Validator(this);
         result.address_ = address_;
@@ -13975,39 +13149,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.Validator) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.Validator)other);
@@ -14030,12 +13197,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14056,33 +13221,28 @@ public final class Replay {
 
       private com.google.protobuf.ByteString address_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes address = 1 [json_name = "address"];</code>
-       * @return The address.
+       * <code>bytes address = 1[json_name = "address"];</code>
        */
-      @java.lang.Override
       public com.google.protobuf.ByteString getAddress() {
         return address_;
       }
       /**
-       * <code>bytes address = 1 [json_name = "address"];</code>
-       * @param value The address to set.
-       * @return This builder for chaining.
+       * <code>bytes address = 1[json_name = "address"];</code>
        */
       public Builder setAddress(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         address_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bytes address = 1 [json_name = "address"];</code>
-       * @return This builder for chaining.
+       * <code>bytes address = 1[json_name = "address"];</code>
        */
       public Builder clearAddress() {
-
+        
         address_ = getDefaultInstance().getAddress();
         onChanged();
         return this;
@@ -14090,41 +13250,34 @@ public final class Replay {
 
       private long power_ ;
       /**
-       * <code>int64 power = 3 [json_name = "power"];</code>
-       * @return The power.
+       * <code>int64 power = 3[json_name = "power"];</code>
        */
-      @java.lang.Override
       public long getPower() {
         return power_;
       }
       /**
-       * <code>int64 power = 3 [json_name = "power"];</code>
-       * @param value The power to set.
-       * @return This builder for chaining.
+       * <code>int64 power = 3[json_name = "power"];</code>
        */
       public Builder setPower(long value) {
-
+        
         power_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 power = 3 [json_name = "power"];</code>
-       * @return This builder for chaining.
+       * <code>int64 power = 3[json_name = "power"];</code>
        */
       public Builder clearPower() {
-
+        
         power_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -14146,7 +13299,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<Validator>
         PARSER = new com.google.protobuf.AbstractParser<Validator>() {
-      @java.lang.Override
       public Validator parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14164,7 +13316,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Validator getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -14176,31 +13327,30 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 round = 1 [json_name = "round"];</code>
-     * @return The round.
+     * <code>int32 round = 1[json_name = "round"];</code>
      */
     int getRound();
 
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo>
+    java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo> 
         getVotesList();
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.VoteInfo getVotes(int index);
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
     int getVotesCount();
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
         getVotesOrBuilderList();
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder getVotesOrBuilder(
         int index);
@@ -14208,7 +13358,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.LastCommitInfo}
    */
-  public static final class LastCommitInfo extends
+  public  static final class LastCommitInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.LastCommitInfo)
       LastCommitInfoOrBuilder {
@@ -14218,14 +13368,8 @@ public final class Replay {
       super(builder);
     }
     private LastCommitInfo() {
+      round_ = 0;
       votes_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new LastCommitInfo();
     }
 
     @java.lang.Override
@@ -14252,25 +13396,25 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               round_ = input.readInt32();
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 votes_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.VoteInfo>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               votes_.add(
                   input.readMessage(io.vegaprotocol.vega.tm.Replay.VoteInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -14281,7 +13425,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           votes_ = java.util.Collections.unmodifiableList(votes_);
         }
         this.unknownFields = unknownFields.build();
@@ -14293,7 +13437,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_LastCommitInfo_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_LastCommitInfo_fieldAccessorTable
@@ -14301,13 +13444,12 @@ public final class Replay {
               io.vegaprotocol.vega.tm.Replay.LastCommitInfo.class, io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ROUND_FIELD_NUMBER = 1;
     private int round_;
     /**
-     * <code>int32 round = 1 [json_name = "round"];</code>
-     * @return The round.
+     * <code>int32 round = 1[json_name = "round"];</code>
      */
-    @java.lang.Override
     public int getRound() {
       return round_;
     }
@@ -14315,45 +13457,39 @@ public final class Replay {
     public static final int VOTES_FIELD_NUMBER = 2;
     private java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo> votes_;
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo> getVotesList() {
       return votes_;
     }
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
         getVotesOrBuilderList() {
       return votes_;
     }
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    @java.lang.Override
     public int getVotesCount() {
       return votes_.size();
     }
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.VoteInfo getVotes(int index) {
       return votes_.get(index);
     }
     /**
-     * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+     * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder getVotesOrBuilder(
         int index) {
       return votes_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -14363,7 +13499,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (round_ != 0) {
@@ -14375,7 +13510,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -14404,12 +13538,13 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.LastCommitInfo other = (io.vegaprotocol.vega.tm.Replay.LastCommitInfo) obj;
 
-      if (getRound()
-          != other.getRound()) return false;
-      if (!getVotesList()
-          .equals(other.getVotesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getRound()
+          == other.getRound());
+      result = result && getVotesList()
+          .equals(other.getVotesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -14500,7 +13635,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -14508,7 +13642,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.LastCommitInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -14532,7 +13665,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_LastCommitInfo_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_LastCommitInfo_fieldAccessorTable
@@ -14556,32 +13688,28 @@ public final class Replay {
           getVotesFieldBuilder();
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         round_ = 0;
 
         if (votesBuilder_ == null) {
           votes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           votesBuilder_.clear();
         }
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_LastCommitInfo_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfo getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.LastCommitInfo.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfo build() {
         io.vegaprotocol.vega.tm.Replay.LastCommitInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -14590,57 +13718,51 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfo buildPartial() {
         io.vegaprotocol.vega.tm.Replay.LastCommitInfo result = new io.vegaprotocol.vega.tm.Replay.LastCommitInfo(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.round_ = round_;
         if (votesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             votes_ = java.util.Collections.unmodifiableList(votes_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.votes_ = votes_;
         } else {
           result.votes_ = votesBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.LastCommitInfo) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.LastCommitInfo)other);
@@ -14659,7 +13781,7 @@ public final class Replay {
           if (!other.votes_.isEmpty()) {
             if (votes_.isEmpty()) {
               votes_ = other.votes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureVotesIsMutable();
               votes_.addAll(other.votes_);
@@ -14672,8 +13794,8 @@ public final class Replay {
               votesBuilder_.dispose();
               votesBuilder_ = null;
               votes_ = other.votes_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              votesBuilder_ =
+              bitField0_ = (bitField0_ & ~0x00000002);
+              votesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getVotesFieldBuilder() : null;
             } else {
@@ -14686,12 +13808,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -14713,30 +13833,25 @@ public final class Replay {
 
       private int round_ ;
       /**
-       * <code>int32 round = 1 [json_name = "round"];</code>
-       * @return The round.
+       * <code>int32 round = 1[json_name = "round"];</code>
        */
-      @java.lang.Override
       public int getRound() {
         return round_;
       }
       /**
-       * <code>int32 round = 1 [json_name = "round"];</code>
-       * @param value The round to set.
-       * @return This builder for chaining.
+       * <code>int32 round = 1[json_name = "round"];</code>
        */
       public Builder setRound(int value) {
-
+        
         round_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 round = 1 [json_name = "round"];</code>
-       * @return This builder for chaining.
+       * <code>int32 round = 1[json_name = "round"];</code>
        */
       public Builder clearRound() {
-
+        
         round_ = 0;
         onChanged();
         return this;
@@ -14745,9 +13860,9 @@ public final class Replay {
       private java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo> votes_ =
         java.util.Collections.emptyList();
       private void ensureVotesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
           votes_ = new java.util.ArrayList<io.vegaprotocol.vega.tm.Replay.VoteInfo>(votes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -14755,7 +13870,7 @@ public final class Replay {
           io.vegaprotocol.vega.tm.Replay.VoteInfo, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder, io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> votesBuilder_;
 
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo> getVotesList() {
         if (votesBuilder_ == null) {
@@ -14765,7 +13880,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public int getVotesCount() {
         if (votesBuilder_ == null) {
@@ -14775,7 +13890,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VoteInfo getVotes(int index) {
         if (votesBuilder_ == null) {
@@ -14785,7 +13900,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder setVotes(
           int index, io.vegaprotocol.vega.tm.Replay.VoteInfo value) {
@@ -14802,7 +13917,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder setVotes(
           int index, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder builderForValue) {
@@ -14816,7 +13931,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder addVotes(io.vegaprotocol.vega.tm.Replay.VoteInfo value) {
         if (votesBuilder_ == null) {
@@ -14832,7 +13947,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder addVotes(
           int index, io.vegaprotocol.vega.tm.Replay.VoteInfo value) {
@@ -14849,7 +13964,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder addVotes(
           io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder builderForValue) {
@@ -14863,7 +13978,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder addVotes(
           int index, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder builderForValue) {
@@ -14877,7 +13992,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder addAllVotes(
           java.lang.Iterable<? extends io.vegaprotocol.vega.tm.Replay.VoteInfo> values) {
@@ -14892,12 +14007,12 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder clearVotes() {
         if (votesBuilder_ == null) {
           votes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           votesBuilder_.clear();
@@ -14905,7 +14020,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public Builder removeVotes(int index) {
         if (votesBuilder_ == null) {
@@ -14918,14 +14033,14 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder getVotesBuilder(
           int index) {
         return getVotesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder getVotesOrBuilder(
           int index) {
@@ -14935,9 +14050,9 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
            getVotesOrBuilderList() {
         if (votesBuilder_ != null) {
           return votesBuilder_.getMessageOrBuilderList();
@@ -14946,14 +14061,14 @@ public final class Replay {
         }
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder addVotesBuilder() {
         return getVotesFieldBuilder().addBuilder(
             io.vegaprotocol.vega.tm.Replay.VoteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder addVotesBuilder(
           int index) {
@@ -14961,33 +14076,31 @@ public final class Replay {
             index, io.vegaprotocol.vega.tm.Replay.VoteInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
+       * <code>repeated .tm.VoteInfo votes = 2[json_name = "votes"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder>
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder> 
            getVotesBuilderList() {
         return getVotesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.VoteInfo, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder, io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.VoteInfo, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder, io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
           getVotesFieldBuilder() {
         if (votesBuilder_ == null) {
           votesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               io.vegaprotocol.vega.tm.Replay.VoteInfo, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder, io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>(
                   votes_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           votes_ = null;
         }
         return votesBuilder_;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -15009,7 +14122,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<LastCommitInfo>
         PARSER = new com.google.protobuf.AbstractParser<LastCommitInfo>() {
-      @java.lang.Override
       public LastCommitInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15027,7 +14139,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.LastCommitInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -15039,30 +14150,27 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
-     * @return Whether the validator field is set.
+     * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
      */
     boolean hasValidator();
     /**
-     * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
-     * @return The validator.
+     * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.Validator getValidator();
     /**
-     * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+     * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder getValidatorOrBuilder();
 
     /**
-     * <code>bool signed_last_block = 2 [json_name = "signedLastBlock"];</code>
-     * @return The signedLastBlock.
+     * <code>bool signed_last_block = 2[json_name = "signedLastBlock"];</code>
      */
     boolean getSignedLastBlock();
   }
   /**
    * Protobuf type {@code tm.VoteInfo}
    */
-  public static final class VoteInfo extends
+  public  static final class VoteInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.VoteInfo)
       VoteInfoOrBuilder {
@@ -15072,13 +14180,7 @@ public final class Replay {
       super(builder);
     }
     private VoteInfo() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new VoteInfo();
+      signedLastBlock_ = false;
     }
 
     @java.lang.Override
@@ -15094,6 +14196,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -15104,6 +14207,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               io.vegaprotocol.vega.tm.Replay.Validator.Builder subBuilder = null;
               if (validator_ != null) {
@@ -15120,13 +14230,6 @@ public final class Replay {
             case 16: {
 
               signedLastBlock_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -15146,7 +14249,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VoteInfo_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VoteInfo_fieldAccessorTable
@@ -15157,25 +14259,20 @@ public final class Replay {
     public static final int VALIDATOR_FIELD_NUMBER = 1;
     private io.vegaprotocol.vega.tm.Replay.Validator validator_;
     /**
-     * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
-     * @return Whether the validator field is set.
+     * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public boolean hasValidator() {
       return validator_ != null;
     }
     /**
-     * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
-     * @return The validator.
+     * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Validator getValidator() {
       return validator_ == null ? io.vegaprotocol.vega.tm.Replay.Validator.getDefaultInstance() : validator_;
     }
     /**
-     * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+     * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
      */
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder getValidatorOrBuilder() {
       return getValidator();
     }
@@ -15183,16 +14280,13 @@ public final class Replay {
     public static final int SIGNED_LAST_BLOCK_FIELD_NUMBER = 2;
     private boolean signedLastBlock_;
     /**
-     * <code>bool signed_last_block = 2 [json_name = "signedLastBlock"];</code>
-     * @return The signedLastBlock.
+     * <code>bool signed_last_block = 2[json_name = "signedLastBlock"];</code>
      */
-    @java.lang.Override
     public boolean getSignedLastBlock() {
       return signedLastBlock_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -15202,7 +14296,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (validator_ != null) {
@@ -15214,7 +14307,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -15243,15 +14335,16 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.VoteInfo other = (io.vegaprotocol.vega.tm.Replay.VoteInfo) obj;
 
-      if (hasValidator() != other.hasValidator()) return false;
+      boolean result = true;
+      result = result && (hasValidator() == other.hasValidator());
       if (hasValidator()) {
-        if (!getValidator()
-            .equals(other.getValidator())) return false;
+        result = result && getValidator()
+            .equals(other.getValidator());
       }
-      if (getSignedLastBlock()
-          != other.getSignedLastBlock()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && (getSignedLastBlock()
+          == other.getSignedLastBlock());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -15343,7 +14436,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -15351,7 +14443,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.VoteInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -15375,7 +14466,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VoteInfo_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VoteInfo_fieldAccessorTable
@@ -15398,7 +14488,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (validatorBuilder_ == null) {
@@ -15412,18 +14501,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VoteInfo_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.VoteInfo getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.VoteInfo.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.VoteInfo build() {
         io.vegaprotocol.vega.tm.Replay.VoteInfo result = buildPartial();
         if (!result.isInitialized()) {
@@ -15432,7 +14518,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.VoteInfo buildPartial() {
         io.vegaprotocol.vega.tm.Replay.VoteInfo result = new io.vegaprotocol.vega.tm.Replay.VoteInfo(this);
         if (validatorBuilder_ == null) {
@@ -15445,39 +14530,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.VoteInfo) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.VoteInfo)other);
@@ -15500,12 +14578,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15524,19 +14600,17 @@ public final class Replay {
         return this;
       }
 
-      private io.vegaprotocol.vega.tm.Replay.Validator validator_;
+      private io.vegaprotocol.vega.tm.Replay.Validator validator_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder> validatorBuilder_;
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
-       * @return Whether the validator field is set.
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public boolean hasValidator() {
         return validatorBuilder_ != null || validator_ != null;
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
-       * @return The validator.
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Validator getValidator() {
         if (validatorBuilder_ == null) {
@@ -15546,7 +14620,7 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public Builder setValidator(io.vegaprotocol.vega.tm.Replay.Validator value) {
         if (validatorBuilder_ == null) {
@@ -15562,7 +14636,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public Builder setValidator(
           io.vegaprotocol.vega.tm.Replay.Validator.Builder builderForValue) {
@@ -15576,7 +14650,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public Builder mergeValidator(io.vegaprotocol.vega.tm.Replay.Validator value) {
         if (validatorBuilder_ == null) {
@@ -15594,7 +14668,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -15608,15 +14682,15 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Validator.Builder getValidatorBuilder() {
-
+        
         onChanged();
         return getValidatorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder getValidatorOrBuilder() {
         if (validatorBuilder_ != null) {
@@ -15627,10 +14701,10 @@ public final class Replay {
         }
       }
       /**
-       * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
+       * <code>.tm.Validator validator = 1[json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder>
+          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder> 
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           validatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -15645,41 +14719,34 @@ public final class Replay {
 
       private boolean signedLastBlock_ ;
       /**
-       * <code>bool signed_last_block = 2 [json_name = "signedLastBlock"];</code>
-       * @return The signedLastBlock.
+       * <code>bool signed_last_block = 2[json_name = "signedLastBlock"];</code>
        */
-      @java.lang.Override
       public boolean getSignedLastBlock() {
         return signedLastBlock_;
       }
       /**
-       * <code>bool signed_last_block = 2 [json_name = "signedLastBlock"];</code>
-       * @param value The signedLastBlock to set.
-       * @return This builder for chaining.
+       * <code>bool signed_last_block = 2[json_name = "signedLastBlock"];</code>
        */
       public Builder setSignedLastBlock(boolean value) {
-
+        
         signedLastBlock_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool signed_last_block = 2 [json_name = "signedLastBlock"];</code>
-       * @return This builder for chaining.
+       * <code>bool signed_last_block = 2[json_name = "signedLastBlock"];</code>
        */
       public Builder clearSignedLastBlock() {
-
+        
         signedLastBlock_ = false;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -15701,7 +14768,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<VoteInfo>
         PARSER = new com.google.protobuf.AbstractParser<VoteInfo>() {
-      @java.lang.Override
       public VoteInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -15719,7 +14785,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.VoteInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -15731,27 +14796,24 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];</code>
-     * @return The maxAgeNumBlocks.
+     * <code>int64 max_age_num_blocks = 1[json_name = "maxAgeNumBlocks"];</code>
      */
     long getMaxAgeNumBlocks();
 
     /**
-     * <code>int64 max_age_duration = 2 [json_name = "maxAgeDuration"];</code>
-     * @return The maxAgeDuration.
+     * <code>int64 max_age_duration = 2[json_name = "maxAgeDuration"];</code>
      */
     long getMaxAgeDuration();
 
     /**
-     * <code>uint32 max_num = 3 [json_name = "maxNum"];</code>
-     * @return The maxNum.
+     * <code>uint32 max_num = 3[json_name = "maxNum"];</code>
      */
     int getMaxNum();
   }
   /**
    * Protobuf type {@code tm.EvidenceParams}
    */
-  public static final class EvidenceParams extends
+  public  static final class EvidenceParams extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.EvidenceParams)
       EvidenceParamsOrBuilder {
@@ -15761,13 +14823,9 @@ public final class Replay {
       super(builder);
     }
     private EvidenceParams() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new EvidenceParams();
+      maxAgeNumBlocks_ = 0L;
+      maxAgeDuration_ = 0L;
+      maxNum_ = 0;
     }
 
     @java.lang.Override
@@ -15783,6 +14841,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -15793,6 +14852,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 8: {
 
               maxAgeNumBlocks_ = input.readInt64();
@@ -15806,13 +14872,6 @@ public final class Replay {
             case 24: {
 
               maxNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -15832,7 +14891,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EvidenceParams_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EvidenceParams_fieldAccessorTable
@@ -15843,10 +14901,8 @@ public final class Replay {
     public static final int MAX_AGE_NUM_BLOCKS_FIELD_NUMBER = 1;
     private long maxAgeNumBlocks_;
     /**
-     * <code>int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];</code>
-     * @return The maxAgeNumBlocks.
+     * <code>int64 max_age_num_blocks = 1[json_name = "maxAgeNumBlocks"];</code>
      */
-    @java.lang.Override
     public long getMaxAgeNumBlocks() {
       return maxAgeNumBlocks_;
     }
@@ -15854,10 +14910,8 @@ public final class Replay {
     public static final int MAX_AGE_DURATION_FIELD_NUMBER = 2;
     private long maxAgeDuration_;
     /**
-     * <code>int64 max_age_duration = 2 [json_name = "maxAgeDuration"];</code>
-     * @return The maxAgeDuration.
+     * <code>int64 max_age_duration = 2[json_name = "maxAgeDuration"];</code>
      */
-    @java.lang.Override
     public long getMaxAgeDuration() {
       return maxAgeDuration_;
     }
@@ -15865,16 +14919,13 @@ public final class Replay {
     public static final int MAX_NUM_FIELD_NUMBER = 3;
     private int maxNum_;
     /**
-     * <code>uint32 max_num = 3 [json_name = "maxNum"];</code>
-     * @return The maxNum.
+     * <code>uint32 max_num = 3[json_name = "maxNum"];</code>
      */
-    @java.lang.Override
     public int getMaxNum() {
       return maxNum_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -15884,7 +14935,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (maxAgeNumBlocks_ != 0L) {
@@ -15899,7 +14949,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -15932,14 +14981,15 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.EvidenceParams other = (io.vegaprotocol.vega.tm.Replay.EvidenceParams) obj;
 
-      if (getMaxAgeNumBlocks()
-          != other.getMaxAgeNumBlocks()) return false;
-      if (getMaxAgeDuration()
-          != other.getMaxAgeDuration()) return false;
-      if (getMaxNum()
-          != other.getMaxNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getMaxAgeNumBlocks()
+          == other.getMaxAgeNumBlocks());
+      result = result && (getMaxAgeDuration()
+          == other.getMaxAgeDuration());
+      result = result && (getMaxNum()
+          == other.getMaxNum());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -16032,7 +15082,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -16040,7 +15089,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.EvidenceParams prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -16064,7 +15112,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EvidenceParams_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EvidenceParams_fieldAccessorTable
@@ -16087,7 +15134,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         maxAgeNumBlocks_ = 0L;
@@ -16099,18 +15145,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_EvidenceParams_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EvidenceParams getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.EvidenceParams.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EvidenceParams build() {
         io.vegaprotocol.vega.tm.Replay.EvidenceParams result = buildPartial();
         if (!result.isInitialized()) {
@@ -16119,7 +15162,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.EvidenceParams buildPartial() {
         io.vegaprotocol.vega.tm.Replay.EvidenceParams result = new io.vegaprotocol.vega.tm.Replay.EvidenceParams(this);
         result.maxAgeNumBlocks_ = maxAgeNumBlocks_;
@@ -16129,39 +15171,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.EvidenceParams) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.EvidenceParams)other);
@@ -16187,12 +15222,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16213,30 +15246,25 @@ public final class Replay {
 
       private long maxAgeNumBlocks_ ;
       /**
-       * <code>int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];</code>
-       * @return The maxAgeNumBlocks.
+       * <code>int64 max_age_num_blocks = 1[json_name = "maxAgeNumBlocks"];</code>
        */
-      @java.lang.Override
       public long getMaxAgeNumBlocks() {
         return maxAgeNumBlocks_;
       }
       /**
-       * <code>int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];</code>
-       * @param value The maxAgeNumBlocks to set.
-       * @return This builder for chaining.
+       * <code>int64 max_age_num_blocks = 1[json_name = "maxAgeNumBlocks"];</code>
        */
       public Builder setMaxAgeNumBlocks(long value) {
-
+        
         maxAgeNumBlocks_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 max_age_num_blocks = 1 [json_name = "maxAgeNumBlocks"];</code>
-       * @return This builder for chaining.
+       * <code>int64 max_age_num_blocks = 1[json_name = "maxAgeNumBlocks"];</code>
        */
       public Builder clearMaxAgeNumBlocks() {
-
+        
         maxAgeNumBlocks_ = 0L;
         onChanged();
         return this;
@@ -16244,30 +15272,25 @@ public final class Replay {
 
       private long maxAgeDuration_ ;
       /**
-       * <code>int64 max_age_duration = 2 [json_name = "maxAgeDuration"];</code>
-       * @return The maxAgeDuration.
+       * <code>int64 max_age_duration = 2[json_name = "maxAgeDuration"];</code>
        */
-      @java.lang.Override
       public long getMaxAgeDuration() {
         return maxAgeDuration_;
       }
       /**
-       * <code>int64 max_age_duration = 2 [json_name = "maxAgeDuration"];</code>
-       * @param value The maxAgeDuration to set.
-       * @return This builder for chaining.
+       * <code>int64 max_age_duration = 2[json_name = "maxAgeDuration"];</code>
        */
       public Builder setMaxAgeDuration(long value) {
-
+        
         maxAgeDuration_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 max_age_duration = 2 [json_name = "maxAgeDuration"];</code>
-       * @return This builder for chaining.
+       * <code>int64 max_age_duration = 2[json_name = "maxAgeDuration"];</code>
        */
       public Builder clearMaxAgeDuration() {
-
+        
         maxAgeDuration_ = 0L;
         onChanged();
         return this;
@@ -16275,41 +15298,34 @@ public final class Replay {
 
       private int maxNum_ ;
       /**
-       * <code>uint32 max_num = 3 [json_name = "maxNum"];</code>
-       * @return The maxNum.
+       * <code>uint32 max_num = 3[json_name = "maxNum"];</code>
        */
-      @java.lang.Override
       public int getMaxNum() {
         return maxNum_;
       }
       /**
-       * <code>uint32 max_num = 3 [json_name = "maxNum"];</code>
-       * @param value The maxNum to set.
-       * @return This builder for chaining.
+       * <code>uint32 max_num = 3[json_name = "maxNum"];</code>
        */
       public Builder setMaxNum(int value) {
-
+        
         maxNum_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 max_num = 3 [json_name = "maxNum"];</code>
-       * @return This builder for chaining.
+       * <code>uint32 max_num = 3[json_name = "maxNum"];</code>
        */
       public Builder clearMaxNum() {
-
+        
         maxNum_ = 0;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -16331,7 +15347,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<EvidenceParams>
         PARSER = new com.google.protobuf.AbstractParser<EvidenceParams>() {
-      @java.lang.Override
       public EvidenceParams parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16349,7 +15364,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.EvidenceParams getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -16361,26 +15375,20 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @return A list containing the pubKeyTypes.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     java.util.List<java.lang.String>
         getPubKeyTypesList();
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @return The count of pubKeyTypes.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     int getPubKeyTypesCount();
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @param index The index of the element to return.
-     * @return The pubKeyTypes at the given index.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     java.lang.String getPubKeyTypes(int index);
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the pubKeyTypes at the given index.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     com.google.protobuf.ByteString
         getPubKeyTypesBytes(int index);
@@ -16388,7 +15396,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.ValidatorParams}
    */
-  public static final class ValidatorParams extends
+  public  static final class ValidatorParams extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.ValidatorParams)
       ValidatorParamsOrBuilder {
@@ -16399,13 +15407,6 @@ public final class Replay {
     }
     private ValidatorParams() {
       pubKeyTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ValidatorParams();
     }
 
     @java.lang.Override
@@ -16432,20 +15433,20 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 pubKeyTypes_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
               pubKeyTypes_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -16456,7 +15457,7 @@ public final class Replay {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           pubKeyTypes_ = pubKeyTypes_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -16468,7 +15469,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorParams_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorParams_fieldAccessorTable
@@ -16479,32 +15479,26 @@ public final class Replay {
     public static final int PUB_KEY_TYPES_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList pubKeyTypes_;
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @return A list containing the pubKeyTypes.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     public com.google.protobuf.ProtocolStringList
         getPubKeyTypesList() {
       return pubKeyTypes_;
     }
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @return The count of pubKeyTypes.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     public int getPubKeyTypesCount() {
       return pubKeyTypes_.size();
     }
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @param index The index of the element to return.
-     * @return The pubKeyTypes at the given index.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     public java.lang.String getPubKeyTypes(int index) {
       return pubKeyTypes_.get(index);
     }
     /**
-     * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the pubKeyTypes at the given index.
+     * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
      */
     public com.google.protobuf.ByteString
         getPubKeyTypesBytes(int index) {
@@ -16512,7 +15506,6 @@ public final class Replay {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -16522,7 +15515,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < pubKeyTypes_.size(); i++) {
@@ -16531,7 +15523,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -16560,10 +15551,11 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.ValidatorParams other = (io.vegaprotocol.vega.tm.Replay.ValidatorParams) obj;
 
-      if (!getPubKeyTypesList()
-          .equals(other.getPubKeyTypesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getPubKeyTypesList()
+          .equals(other.getPubKeyTypesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -16652,7 +15644,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -16660,7 +15651,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.ValidatorParams prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -16684,7 +15674,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorParams_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorParams_fieldAccessorTable
@@ -16707,7 +15696,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         pubKeyTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -16715,18 +15703,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_ValidatorParams_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ValidatorParams getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.ValidatorParams.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ValidatorParams build() {
         io.vegaprotocol.vega.tm.Replay.ValidatorParams result = buildPartial();
         if (!result.isInitialized()) {
@@ -16735,11 +15720,10 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.ValidatorParams buildPartial() {
         io.vegaprotocol.vega.tm.Replay.ValidatorParams result = new io.vegaprotocol.vega.tm.Replay.ValidatorParams(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
           pubKeyTypes_ = pubKeyTypes_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
@@ -16748,39 +15732,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.ValidatorParams) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.ValidatorParams)other);
@@ -16807,12 +15784,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16834,48 +15809,39 @@ public final class Replay {
 
       private com.google.protobuf.LazyStringList pubKeyTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensurePubKeyTypesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           pubKeyTypes_ = new com.google.protobuf.LazyStringArrayList(pubKeyTypes_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @return A list containing the pubKeyTypes.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public com.google.protobuf.ProtocolStringList
           getPubKeyTypesList() {
         return pubKeyTypes_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @return The count of pubKeyTypes.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public int getPubKeyTypesCount() {
         return pubKeyTypes_.size();
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @param index The index of the element to return.
-       * @return The pubKeyTypes at the given index.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public java.lang.String getPubKeyTypes(int index) {
         return pubKeyTypes_.get(index);
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the pubKeyTypes at the given index.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public com.google.protobuf.ByteString
           getPubKeyTypesBytes(int index) {
         return pubKeyTypes_.getByteString(index);
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @param index The index to set the value at.
-       * @param value The pubKeyTypes to set.
-       * @return This builder for chaining.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public Builder setPubKeyTypes(
           int index, java.lang.String value) {
@@ -16888,9 +15854,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @param value The pubKeyTypes to add.
-       * @return This builder for chaining.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public Builder addPubKeyTypes(
           java.lang.String value) {
@@ -16903,9 +15867,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @param values The pubKeyTypes to add.
-       * @return This builder for chaining.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public Builder addAllPubKeyTypes(
           java.lang.Iterable<java.lang.String> values) {
@@ -16916,8 +15878,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @return This builder for chaining.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public Builder clearPubKeyTypes() {
         pubKeyTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -16926,9 +15887,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>repeated string pub_key_types = 1 [json_name = "pubKeyTypes"];</code>
-       * @param value The bytes of the pubKeyTypes to add.
-       * @return This builder for chaining.
+       * <code>repeated string pub_key_types = 1[json_name = "pubKeyTypes"];</code>
        */
       public Builder addPubKeyTypesBytes(
           com.google.protobuf.ByteString value) {
@@ -16941,13 +15900,11 @@ public final class Replay {
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -16969,7 +15926,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<ValidatorParams>
         PARSER = new com.google.protobuf.AbstractParser<ValidatorParams>() {
-      @java.lang.Override
       public ValidatorParams parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -16987,7 +15943,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.ValidatorParams getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -16999,15 +15954,14 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 app_version = 1 [json_name = "appVersion"];</code>
-     * @return The appVersion.
+     * <code>uint64 app_version = 1[json_name = "appVersion"];</code>
      */
     long getAppVersion();
   }
   /**
    * Protobuf type {@code tm.VersionParams}
    */
-  public static final class VersionParams extends
+  public  static final class VersionParams extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.VersionParams)
       VersionParamsOrBuilder {
@@ -17017,13 +15971,7 @@ public final class Replay {
       super(builder);
     }
     private VersionParams() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new VersionParams();
+      appVersion_ = 0L;
     }
 
     @java.lang.Override
@@ -17039,6 +15987,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -17049,16 +15998,16 @@ public final class Replay {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              appVersion_ = input.readUInt64();
-              break;
-            }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 8: {
+
+              appVersion_ = input.readUInt64();
               break;
             }
           }
@@ -17078,7 +16027,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VersionParams_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VersionParams_fieldAccessorTable
@@ -17089,16 +16037,13 @@ public final class Replay {
     public static final int APP_VERSION_FIELD_NUMBER = 1;
     private long appVersion_;
     /**
-     * <code>uint64 app_version = 1 [json_name = "appVersion"];</code>
-     * @return The appVersion.
+     * <code>uint64 app_version = 1[json_name = "appVersion"];</code>
      */
-    @java.lang.Override
     public long getAppVersion() {
       return appVersion_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -17108,7 +16053,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (appVersion_ != 0L) {
@@ -17117,7 +16061,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -17142,10 +16085,11 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.VersionParams other = (io.vegaprotocol.vega.tm.Replay.VersionParams) obj;
 
-      if (getAppVersion()
-          != other.getAppVersion()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && (getAppVersion()
+          == other.getAppVersion());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -17233,7 +16177,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17241,7 +16184,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.VersionParams prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17265,7 +16207,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VersionParams_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VersionParams_fieldAccessorTable
@@ -17288,7 +16229,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         appVersion_ = 0L;
@@ -17296,18 +16236,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_VersionParams_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.VersionParams getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.VersionParams.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.VersionParams build() {
         io.vegaprotocol.vega.tm.Replay.VersionParams result = buildPartial();
         if (!result.isInitialized()) {
@@ -17316,7 +16253,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.VersionParams buildPartial() {
         io.vegaprotocol.vega.tm.Replay.VersionParams result = new io.vegaprotocol.vega.tm.Replay.VersionParams(this);
         result.appVersion_ = appVersion_;
@@ -17324,39 +16260,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.VersionParams) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.VersionParams)other);
@@ -17376,12 +16305,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17402,41 +16329,34 @@ public final class Replay {
 
       private long appVersion_ ;
       /**
-       * <code>uint64 app_version = 1 [json_name = "appVersion"];</code>
-       * @return The appVersion.
+       * <code>uint64 app_version = 1[json_name = "appVersion"];</code>
        */
-      @java.lang.Override
       public long getAppVersion() {
         return appVersion_;
       }
       /**
-       * <code>uint64 app_version = 1 [json_name = "appVersion"];</code>
-       * @param value The appVersion to set.
-       * @return This builder for chaining.
+       * <code>uint64 app_version = 1[json_name = "appVersion"];</code>
        */
       public Builder setAppVersion(long value) {
-
+        
         appVersion_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 app_version = 1 [json_name = "appVersion"];</code>
-       * @return This builder for chaining.
+       * <code>uint64 app_version = 1[json_name = "appVersion"];</code>
        */
       public Builder clearAppVersion() {
-
+        
         appVersion_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -17458,7 +16378,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<VersionParams>
         PARSER = new com.google.protobuf.AbstractParser<VersionParams>() {
-      @java.lang.Override
       public VersionParams parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -17476,7 +16395,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.VersionParams getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -17488,33 +16406,29 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string chain_id = 1 [json_name = "chainId"];</code>
-     * @return The chainId.
+     * <code>string chain_id = 1[json_name = "chainId"];</code>
      */
     java.lang.String getChainId();
     /**
-     * <code>string chain_id = 1 [json_name = "chainId"];</code>
-     * @return The bytes for chainId.
+     * <code>string chain_id = 1[json_name = "chainId"];</code>
      */
     com.google.protobuf.ByteString
         getChainIdBytes();
 
     /**
-     * <code>int64 height = 2 [json_name = "height"];</code>
-     * @return The height.
+     * <code>int64 height = 2[json_name = "height"];</code>
      */
     long getHeight();
 
     /**
-     * <code>int64 time = 3 [json_name = "time"];</code>
-     * @return The time.
+     * <code>int64 time = 3[json_name = "time"];</code>
      */
     long getTime();
   }
   /**
    * Protobuf type {@code tm.Header}
    */
-  public static final class Header extends
+  public  static final class Header extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.Header)
       HeaderOrBuilder {
@@ -17525,13 +16439,8 @@ public final class Replay {
     }
     private Header() {
       chainId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Header();
+      height_ = 0L;
+      time_ = 0L;
     }
 
     @java.lang.Override
@@ -17547,6 +16456,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -17557,6 +16467,13 @@ public final class Replay {
             case 0:
               done = true;
               break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -17571,13 +16488,6 @@ public final class Replay {
             case 24: {
 
               time_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
               break;
             }
           }
@@ -17597,7 +16507,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Header_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Header_fieldAccessorTable
@@ -17608,16 +16517,14 @@ public final class Replay {
     public static final int CHAIN_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object chainId_;
     /**
-     * <code>string chain_id = 1 [json_name = "chainId"];</code>
-     * @return The chainId.
+     * <code>string chain_id = 1[json_name = "chainId"];</code>
      */
-    @java.lang.Override
     public java.lang.String getChainId() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         chainId_ = s;
@@ -17625,15 +16532,13 @@ public final class Replay {
       }
     }
     /**
-     * <code>string chain_id = 1 [json_name = "chainId"];</code>
-     * @return The bytes for chainId.
+     * <code>string chain_id = 1[json_name = "chainId"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getChainIdBytes() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         chainId_ = b;
@@ -17646,10 +16551,8 @@ public final class Replay {
     public static final int HEIGHT_FIELD_NUMBER = 2;
     private long height_;
     /**
-     * <code>int64 height = 2 [json_name = "height"];</code>
-     * @return The height.
+     * <code>int64 height = 2[json_name = "height"];</code>
      */
-    @java.lang.Override
     public long getHeight() {
       return height_;
     }
@@ -17657,16 +16560,13 @@ public final class Replay {
     public static final int TIME_FIELD_NUMBER = 3;
     private long time_;
     /**
-     * <code>int64 time = 3 [json_name = "time"];</code>
-     * @return The time.
+     * <code>int64 time = 3[json_name = "time"];</code>
      */
-    @java.lang.Override
     public long getTime() {
       return time_;
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -17676,7 +16576,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getChainIdBytes().isEmpty()) {
@@ -17691,7 +16590,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -17723,14 +16621,15 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.Header other = (io.vegaprotocol.vega.tm.Replay.Header) obj;
 
-      if (!getChainId()
-          .equals(other.getChainId())) return false;
-      if (getHeight()
-          != other.getHeight()) return false;
-      if (getTime()
-          != other.getTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      boolean result = true;
+      result = result && getChainId()
+          .equals(other.getChainId());
+      result = result && (getHeight()
+          == other.getHeight());
+      result = result && (getTime()
+          == other.getTime());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -17823,7 +16722,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -17831,7 +16729,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.Header prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -17855,7 +16752,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Header_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Header_fieldAccessorTable
@@ -17878,7 +16774,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         chainId_ = "";
@@ -17890,18 +16785,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_Header_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Header getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.Header.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Header build() {
         io.vegaprotocol.vega.tm.Replay.Header result = buildPartial();
         if (!result.isInitialized()) {
@@ -17910,7 +16802,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.Header buildPartial() {
         io.vegaprotocol.vega.tm.Replay.Header result = new io.vegaprotocol.vega.tm.Replay.Header(this);
         result.chainId_ = chainId_;
@@ -17920,39 +16811,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.Header) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.Header)other);
@@ -17979,12 +16863,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18005,8 +16887,7 @@ public final class Replay {
 
       private java.lang.Object chainId_ = "";
       /**
-       * <code>string chain_id = 1 [json_name = "chainId"];</code>
-       * @return The chainId.
+       * <code>string chain_id = 1[json_name = "chainId"];</code>
        */
       public java.lang.String getChainId() {
         java.lang.Object ref = chainId_;
@@ -18021,14 +16902,13 @@ public final class Replay {
         }
       }
       /**
-       * <code>string chain_id = 1 [json_name = "chainId"];</code>
-       * @return The bytes for chainId.
+       * <code>string chain_id = 1[json_name = "chainId"];</code>
        */
       public com.google.protobuf.ByteString
           getChainIdBytes() {
         java.lang.Object ref = chainId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           chainId_ = b;
@@ -18038,34 +16918,29 @@ public final class Replay {
         }
       }
       /**
-       * <code>string chain_id = 1 [json_name = "chainId"];</code>
-       * @param value The chainId to set.
-       * @return This builder for chaining.
+       * <code>string chain_id = 1[json_name = "chainId"];</code>
        */
       public Builder setChainId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         chainId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string chain_id = 1 [json_name = "chainId"];</code>
-       * @return This builder for chaining.
+       * <code>string chain_id = 1[json_name = "chainId"];</code>
        */
       public Builder clearChainId() {
-
+        
         chainId_ = getDefaultInstance().getChainId();
         onChanged();
         return this;
       }
       /**
-       * <code>string chain_id = 1 [json_name = "chainId"];</code>
-       * @param value The bytes for chainId to set.
-       * @return This builder for chaining.
+       * <code>string chain_id = 1[json_name = "chainId"];</code>
        */
       public Builder setChainIdBytes(
           com.google.protobuf.ByteString value) {
@@ -18073,7 +16948,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         chainId_ = value;
         onChanged();
         return this;
@@ -18081,30 +16956,25 @@ public final class Replay {
 
       private long height_ ;
       /**
-       * <code>int64 height = 2 [json_name = "height"];</code>
-       * @return The height.
+       * <code>int64 height = 2[json_name = "height"];</code>
        */
-      @java.lang.Override
       public long getHeight() {
         return height_;
       }
       /**
-       * <code>int64 height = 2 [json_name = "height"];</code>
-       * @param value The height to set.
-       * @return This builder for chaining.
+       * <code>int64 height = 2[json_name = "height"];</code>
        */
       public Builder setHeight(long value) {
-
+        
         height_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 height = 2 [json_name = "height"];</code>
-       * @return This builder for chaining.
+       * <code>int64 height = 2[json_name = "height"];</code>
        */
       public Builder clearHeight() {
-
+        
         height_ = 0L;
         onChanged();
         return this;
@@ -18112,41 +16982,34 @@ public final class Replay {
 
       private long time_ ;
       /**
-       * <code>int64 time = 3 [json_name = "time"];</code>
-       * @return The time.
+       * <code>int64 time = 3[json_name = "time"];</code>
        */
-      @java.lang.Override
       public long getTime() {
         return time_;
       }
       /**
-       * <code>int64 time = 3 [json_name = "time"];</code>
-       * @param value The time to set.
-       * @return This builder for chaining.
+       * <code>int64 time = 3[json_name = "time"];</code>
        */
       public Builder setTime(long value) {
-
+        
         time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 time = 3 [json_name = "time"];</code>
-       * @return This builder for chaining.
+       * <code>int64 time = 3[json_name = "time"];</code>
        */
       public Builder clearTime() {
-
+        
         time_ = 0L;
         onChanged();
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18168,7 +17031,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<Header>
         PARSER = new com.google.protobuf.AbstractParser<Header>() {
-      @java.lang.Override
       public Header parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18186,7 +17048,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.Header getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18198,8 +17059,7 @@ public final class Replay {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-     * @return The ed25519.
+     * <code>bytes ed25519 = 1[json_name = "ed25519"];</code>
      */
     com.google.protobuf.ByteString getEd25519();
 
@@ -18208,7 +17068,7 @@ public final class Replay {
   /**
    * Protobuf type {@code tm.PublicKey}
    */
-  public static final class PublicKey extends
+  public  static final class PublicKey extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tm.PublicKey)
       PublicKeyOrBuilder {
@@ -18218,13 +17078,6 @@ public final class Replay {
       super(builder);
     }
     private PublicKey() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PublicKey();
     }
 
     @java.lang.Override
@@ -18240,6 +17093,7 @@ public final class Replay {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -18250,16 +17104,16 @@ public final class Replay {
             case 0:
               done = true;
               break;
-            case 10: {
-              sumCase_ = 1;
-              sum_ = input.readBytes();
-              break;
-            }
             default: {
-              if (!parseUnknownField(
+              if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              sumCase_ = 1;
+              sum_ = input.readBytes();
               break;
             }
           }
@@ -18279,7 +17133,6 @@ public final class Replay {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_PublicKey_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.tm.Replay.internal_static_tm_PublicKey_fieldAccessorTable
@@ -18290,8 +17143,7 @@ public final class Replay {
     private int sumCase_ = 0;
     private java.lang.Object sum_;
     public enum SumCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        implements com.google.protobuf.Internal.EnumLite {
       ED25519(1),
       SUM_NOT_SET(0);
       private final int value;
@@ -18299,8 +17151,6 @@ public final class Replay {
         this.value = value;
       }
       /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -18328,10 +17178,8 @@ public final class Replay {
 
     public static final int ED25519_FIELD_NUMBER = 1;
     /**
-     * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-     * @return The ed25519.
+     * <code>bytes ed25519 = 1[json_name = "ed25519"];</code>
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString getEd25519() {
       if (sumCase_ == 1) {
         return (com.google.protobuf.ByteString) sum_;
@@ -18340,7 +17188,6 @@ public final class Replay {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -18350,7 +17197,6 @@ public final class Replay {
       return true;
     }
 
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sumCase_ == 1) {
@@ -18360,7 +17206,6 @@ public final class Replay {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -18386,17 +17231,20 @@ public final class Replay {
       }
       io.vegaprotocol.vega.tm.Replay.PublicKey other = (io.vegaprotocol.vega.tm.Replay.PublicKey) obj;
 
-      if (!getSumCase().equals(other.getSumCase())) return false;
+      boolean result = true;
+      result = result && getSumCase().equals(
+          other.getSumCase());
+      if (!result) return false;
       switch (sumCase_) {
         case 1:
-          if (!getEd25519()
-              .equals(other.getEd25519())) return false;
+          result = result && getEd25519()
+              .equals(other.getEd25519());
           break;
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
     @java.lang.Override
@@ -18489,7 +17337,6 @@ public final class Replay {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -18497,7 +17344,6 @@ public final class Replay {
     public static Builder newBuilder(io.vegaprotocol.vega.tm.Replay.PublicKey prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -18521,7 +17367,6 @@ public final class Replay {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_PublicKey_descriptor;
       }
 
-      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_PublicKey_fieldAccessorTable
@@ -18544,7 +17389,6 @@ public final class Replay {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
       public Builder clear() {
         super.clear();
         sumCase_ = 0;
@@ -18552,18 +17396,15 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.tm.Replay.internal_static_tm_PublicKey_descriptor;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.PublicKey getDefaultInstanceForType() {
         return io.vegaprotocol.vega.tm.Replay.PublicKey.getDefaultInstance();
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.PublicKey build() {
         io.vegaprotocol.vega.tm.Replay.PublicKey result = buildPartial();
         if (!result.isInitialized()) {
@@ -18572,7 +17413,6 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public io.vegaprotocol.vega.tm.Replay.PublicKey buildPartial() {
         io.vegaprotocol.vega.tm.Replay.PublicKey result = new io.vegaprotocol.vega.tm.Replay.PublicKey(this);
         if (sumCase_ == 1) {
@@ -18583,39 +17423,32 @@ public final class Replay {
         return result;
       }
 
-      @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
-      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
-      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
-      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
-      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.tm.Replay.PublicKey) {
           return mergeFrom((io.vegaprotocol.vega.tm.Replay.PublicKey)other);
@@ -18641,12 +17474,10 @@ public final class Replay {
         return this;
       }
 
-      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18681,8 +17512,7 @@ public final class Replay {
 
 
       /**
-       * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-       * @return The ed25519.
+       * <code>bytes ed25519 = 1[json_name = "ed25519"];</code>
        */
       public com.google.protobuf.ByteString getEd25519() {
         if (sumCase_ == 1) {
@@ -18691,9 +17521,7 @@ public final class Replay {
         return com.google.protobuf.ByteString.EMPTY;
       }
       /**
-       * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-       * @param value The ed25519 to set.
-       * @return This builder for chaining.
+       * <code>bytes ed25519 = 1[json_name = "ed25519"];</code>
        */
       public Builder setEd25519(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -18705,8 +17533,7 @@ public final class Replay {
         return this;
       }
       /**
-       * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-       * @return This builder for chaining.
+       * <code>bytes ed25519 = 1[json_name = "ed25519"];</code>
        */
       public Builder clearEd25519() {
         if (sumCase_ == 1) {
@@ -18716,13 +17543,11 @@ public final class Replay {
         }
         return this;
       }
-      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
-      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -18744,7 +17569,6 @@ public final class Replay {
 
     private static final com.google.protobuf.Parser<PublicKey>
         PARSER = new com.google.protobuf.AbstractParser<PublicKey>() {
-      @java.lang.Override
       public PublicKey parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -18762,7 +17586,6 @@ public final class Replay {
       return PARSER;
     }
 
-    @java.lang.Override
     public io.vegaprotocol.vega.tm.Replay.PublicKey getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -18771,107 +17594,107 @@ public final class Replay {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_TmEvent_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_TmEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_RequestInitChain_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_RequestInitChain_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_RequestBeginBlock_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_RequestBeginBlock_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_RequestDeliverTx_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_RequestDeliverTx_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ResponseInitChain_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ResponseInitChain_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ResponseBeginBlock_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ResponseBeginBlock_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ResponseDeliverTx_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ResponseDeliverTx_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Event_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Event_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_EventAttribute_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_EventAttribute_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ValidatorUpdate_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ValidatorUpdate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ConsensusParams_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ConsensusParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_BlockParams_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_BlockParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Evidence_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Evidence_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Validator_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Validator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_LastCommitInfo_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_LastCommitInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_VoteInfo_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_VoteInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_EvidenceParams_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_EvidenceParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ValidatorParams_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ValidatorParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_VersionParams_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_VersionParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Header_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Header_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_PublicKey_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_PublicKey_fieldAccessorTable;
 
@@ -18955,10 +17778,18 @@ public final class Replay {
       "egaprotocol.vega.tmZ\034code.vegaprotocol.i" +
       "o/vega/tmb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
+        }, assigner);
     internal_static_tm_TmEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_tm_TmEvent_fieldAccessorTable = new
