@@ -34,6 +34,28 @@ JAVA_GENERATED_DIR := grpc/clients/java/generated
 JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
 PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
 
+ifeq ($(OS),Windows_NT)
+    GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-windows-x86_64.exe
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-linux-x86_64.exe
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-osx-x86_64.exe
+    endif
+endif
+
+.PHONY: buf-generate-java
+buf-generate-java:
+	@rm -rf tools/java && mkdir -p tools/java && \
+	pushd tools/java 1>/dev/null && \
+		wget $(GRPC_JAVA_PLUGIN) -O protoc-gen-grpc-java && \
+		chmod +x protoc-gen-grpc-java && \
+	popd 1>/dev/null
+	@mkdir -p $(JAVA_GENERATED_DIR)
+	@buf build -o - | protoc --descriptor_set_in=/dev/stdin --plugin=protoc-gen-grpc-java=tools/java/protoc-gen-grpc-java --java_out=$(JAVA_GENERATED_DIR) --grpc-java_out=$(JAVA_GENERATED_DIR) $$(buf build -o - | buf ls-files -)
+
 .PHONY: buf-generate
 buf-generate: buf-build
 	@if ! command -v protoc-gen-doc 1>/dev/null ; then \
