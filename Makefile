@@ -85,7 +85,7 @@ buf-generate: buf-build
 		pushd tools/java 1>/dev/null && \
 			wget $(GRPC_JAVA_PLUGIN) -O protoc-gen-grpc-java && \
 			chmod +x protoc-gen-grpc-java && \
-		popd 1>/dev/null
+		popd 1>/dev/null ; \
 	fi
 	@for d in \
 		"$(CPP_GENERATED_DIR)" \
