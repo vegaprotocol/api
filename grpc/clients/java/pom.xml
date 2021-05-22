@@ -12,7 +12,7 @@
         <src.dir>src</src.dir>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <grpc.version>1.31.1</grpc.version>
+        <grpc.version>1.38.0</grpc.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
