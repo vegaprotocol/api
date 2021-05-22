@@ -655,7 +655,7 @@ public final class Oracles {
        * @return This builder for chaining.
        */
       public Builder setSourceValue(int value) {
-
+        
         source_ = value;
         onChanged();
         return this;
@@ -687,7 +687,7 @@ public final class Oracles {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         source_ = value.getNumber();
         onChanged();
         return this;
@@ -701,7 +701,7 @@ public final class Oracles {
        * @return This builder for chaining.
        */
       public Builder clearSource() {
-
+        
         source_ = 0;
         onChanged();
         return this;
@@ -733,7 +733,7 @@ public final class Oracles {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         payload_ = value;
         onChanged();
         return this;
@@ -747,7 +747,7 @@ public final class Oracles {
        * @return This builder for chaining.
        */
       public Builder clearPayload() {
-
+        
         payload_ = getDefaultInstance().getPayload();
         onChanged();
         return this;
@@ -807,7 +807,7 @@ public final class Oracles {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_OracleDataSubmission_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_OracleDataSubmission_fieldAccessorTable;
 

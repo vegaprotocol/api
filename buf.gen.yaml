@@ -40,7 +40,11 @@ plugins:
 
   # Java
   - name: java
-    out: grpc/clients/java/generated
+    out: grpc/clients/java/generated/src
+
+  - name: grpc-java
+    out: grpc/clients/java/generated/src
+    path: ./tools/java/protoc-gen-grpc-java
 
   # JavaScript and TypeScript
   - name: js

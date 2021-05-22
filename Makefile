@@ -30,9 +30,21 @@ DOC_GENERATED_DIR := grpc/doc
 
 CPP_GENERATED_DIR := grpc/clients/cpp/generated
 GO_GENERATED_DIR := grpc/clients/go/generated
-JAVA_GENERATED_DIR := grpc/clients/java/generated
+JAVA_GENERATED_DIR := grpc/clients/java/generated/src
 JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
 PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
+
+ifeq ($(OS),Windows_NT)
+    GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-windows-x86_64.exe
+else
+    UNAME_S := $(shell uname -s)
+    ifeq ($(UNAME_S),Linux)
+        GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-linux-x86_64.exe
+    endif
+    ifeq ($(UNAME_S),Darwin)
+        GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-osx-x86_64.exe
+    endif
+endif
 
 .PHONY: buf-generate
 buf-generate: buf-build
@@ -67,6 +79,13 @@ buf-generate: buf-build
 			echo "Not found/executable: protoc-gen-ts" ; \
 			exit 1 ; \
 		fi ; \
+	fi
+	@proto_gen_java=./tools/java/protoc-gen-grpc-java && \
+	if ! test -r "$$proto_gen_java" -a -x "$$proto_gen_java" ; then \
+		pushd tools/java 1>/dev/null && \
+			wget $(GRPC_JAVA_PLUGIN) -O protoc-gen-grpc-java && \
+			chmod +x protoc-gen-grpc-java && \
+		popd 1>/dev/null ; \
 	fi
 	@for d in \
 		"$(CPP_GENERATED_DIR)" \

@@ -897,7 +897,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         maturity_ = s;
@@ -917,7 +917,7 @@ public final class Governance {
         getMaturityBytes() {
       java.lang.Object ref = maturity_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         maturity_ = b;
@@ -943,7 +943,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         settlementAsset_ = s;
@@ -963,7 +963,7 @@ public final class Governance {
         getSettlementAssetBytes() {
       java.lang.Object ref = settlementAsset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         settlementAsset_ = b;
@@ -989,7 +989,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         quoteName_ = s;
@@ -1009,7 +1009,7 @@ public final class Governance {
         getQuoteNameBytes() {
       java.lang.Object ref = quoteName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         quoteName_ = b;
@@ -1528,7 +1528,7 @@ public final class Governance {
           getMaturityBytes() {
         java.lang.Object ref = maturity_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           maturity_ = b;
@@ -1551,7 +1551,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         maturity_ = value;
         onChanged();
         return this;
@@ -1565,7 +1565,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearMaturity() {
-
+        
         maturity_ = getDefaultInstance().getMaturity();
         onChanged();
         return this;
@@ -1585,7 +1585,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         maturity_ = value;
         onChanged();
         return this;
@@ -1624,7 +1624,7 @@ public final class Governance {
           getSettlementAssetBytes() {
         java.lang.Object ref = settlementAsset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           settlementAsset_ = b;
@@ -1647,7 +1647,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         settlementAsset_ = value;
         onChanged();
         return this;
@@ -1661,7 +1661,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearSettlementAsset() {
-
+        
         settlementAsset_ = getDefaultInstance().getSettlementAsset();
         onChanged();
         return this;
@@ -1681,7 +1681,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         settlementAsset_ = value;
         onChanged();
         return this;
@@ -1720,7 +1720,7 @@ public final class Governance {
           getQuoteNameBytes() {
         java.lang.Object ref = quoteName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           quoteName_ = b;
@@ -1743,7 +1743,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         quoteName_ = value;
         onChanged();
         return this;
@@ -1757,7 +1757,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearQuoteName() {
-
+        
         quoteName_ = getDefaultInstance().getQuoteName();
         onChanged();
         return this;
@@ -1777,7 +1777,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         quoteName_ = value;
         onChanged();
         return this;
@@ -1898,7 +1898,7 @@ public final class Governance {
        * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfiguration.Builder getOracleSpecBuilder() {
-
+        
         onChanged();
         return getOracleSpecFieldBuilder().getBuilder();
       }
@@ -1925,7 +1925,7 @@ public final class Governance {
        * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfigurationOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecConfigurationOrBuilder> 
           getOracleSpecFieldBuilder() {
         if (oracleSpecBuilder_ == null) {
           oracleSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2053,7 +2053,7 @@ public final class Governance {
        * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
        */
       public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder getOracleSpecBindingBuilder() {
-
+        
         onChanged();
         return getOracleSpecBindingFieldBuilder().getBuilder();
       }
@@ -2080,7 +2080,7 @@ public final class Governance {
        * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder>
+          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder> 
           getOracleSpecBindingFieldBuilder() {
         if (oracleSpecBindingBuilder_ == null) {
           oracleSpecBindingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2382,7 +2382,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -2402,7 +2402,7 @@ public final class Governance {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -2428,7 +2428,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         code_ = s;
@@ -2448,7 +2448,7 @@ public final class Governance {
         getCodeBytes() {
       java.lang.Object ref = code_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         code_ = b;
@@ -2915,7 +2915,7 @@ public final class Governance {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -2938,7 +2938,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         name_ = value;
         onChanged();
         return this;
@@ -2952,7 +2952,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -2972,7 +2972,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         name_ = value;
         onChanged();
         return this;
@@ -3011,7 +3011,7 @@ public final class Governance {
           getCodeBytes() {
         java.lang.Object ref = code_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           code_ = b;
@@ -3034,7 +3034,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         code_ = value;
         onChanged();
         return this;
@@ -3048,7 +3048,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-
+        
         code_ = getDefaultInstance().getCode();
         onChanged();
         return this;
@@ -3068,7 +3068,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         code_ = value;
         onChanged();
         return this;
@@ -3233,7 +3233,7 @@ public final class Governance {
        * <code>.vega.FutureProduct future = 100 [json_name = "future"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.FutureProduct, io.vegaprotocol.vega.Governance.FutureProduct.Builder, io.vegaprotocol.vega.Governance.FutureProductOrBuilder>
+          io.vegaprotocol.vega.Governance.FutureProduct, io.vegaprotocol.vega.Governance.FutureProduct.Builder, io.vegaprotocol.vega.Governance.FutureProductOrBuilder> 
           getFutureFieldBuilder() {
         if (futureBuilder_ == null) {
           if (!(productCase_ == 100)) {
@@ -4896,7 +4896,7 @@ public final class Governance {
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Governance.InstrumentConfiguration.Builder getInstrumentBuilder() {
-
+        
         onChanged();
         return getInstrumentFieldBuilder().getBuilder();
       }
@@ -4923,7 +4923,7 @@ public final class Governance {
        * <code>.vega.InstrumentConfiguration instrument = 1 [json_name = "instrument", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.InstrumentConfiguration, io.vegaprotocol.vega.Governance.InstrumentConfiguration.Builder, io.vegaprotocol.vega.Governance.InstrumentConfigurationOrBuilder>
+          io.vegaprotocol.vega.Governance.InstrumentConfiguration, io.vegaprotocol.vega.Governance.InstrumentConfiguration.Builder, io.vegaprotocol.vega.Governance.InstrumentConfigurationOrBuilder> 
           getInstrumentFieldBuilder() {
         if (instrumentBuilder_ == null) {
           instrumentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4959,7 +4959,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setDecimalPlaces(long value) {
-
+        
         decimalPlaces_ = value;
         onChanged();
         return this;
@@ -4973,7 +4973,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearDecimalPlaces() {
-
+        
         decimalPlaces_ = 0L;
         onChanged();
         return this;
@@ -5240,7 +5240,7 @@ public final class Governance {
        * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getPriceMonitoringParametersBuilder() {
-
+        
         onChanged();
         return getPriceMonitoringParametersFieldBuilder().getBuilder();
       }
@@ -5267,7 +5267,7 @@ public final class Governance {
        * <code>.vega.PriceMonitoringParameters price_monitoring_parameters = 4 [json_name = "priceMonitoringParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
+          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> 
           getPriceMonitoringParametersFieldBuilder() {
         if (priceMonitoringParametersBuilder_ == null) {
           priceMonitoringParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -5395,7 +5395,7 @@ public final class Governance {
        * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder getLiquidityMonitoringParametersBuilder() {
-
+        
         onChanged();
         return getLiquidityMonitoringParametersFieldBuilder().getBuilder();
       }
@@ -5422,7 +5422,7 @@ public final class Governance {
        * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 5 [json_name = "liquidityMonitoringParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder>
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder> 
           getLiquidityMonitoringParametersFieldBuilder() {
         if (liquidityMonitoringParametersBuilder_ == null) {
           liquidityMonitoringParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -5594,7 +5594,7 @@ public final class Governance {
        * <code>.vega.SimpleModelParams simple = 100 [json_name = "simple"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder>
+          io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder> 
           getSimpleFieldBuilder() {
         if (simpleBuilder_ == null) {
           if (!(riskParametersCase_ == 100)) {
@@ -5771,7 +5771,7 @@ public final class Governance {
        * <code>.vega.LogNormalRiskModel log_normal = 101 [json_name = "logNormal"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder>
+          io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder> 
           getLogNormalFieldBuilder() {
         if (logNormalBuilder_ == null) {
           if (!(riskParametersCase_ == 101)) {
@@ -5948,7 +5948,7 @@ public final class Governance {
        * <code>.vega.ContinuousTrading continuous = 200 [json_name = "continuous"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder>
+          io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder> 
           getContinuousFieldBuilder() {
         if (continuousBuilder_ == null) {
           if (!(tradingModeCase_ == 200)) {
@@ -6125,7 +6125,7 @@ public final class Governance {
        * <code>.vega.DiscreteTrading discrete = 201 [json_name = "discrete"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder>
+          io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder> 
           getDiscreteFieldBuilder() {
         if (discreteBuilder_ == null) {
           if (!(tradingModeCase_ == 201)) {
@@ -6236,7 +6236,7 @@ public final class Governance {
      *
      * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> 
         getSellsList();
     /**
      * <pre>
@@ -6261,7 +6261,7 @@ public final class Governance {
      *
      * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getSellsOrBuilderList();
     /**
      * <pre>
@@ -6280,7 +6280,7 @@ public final class Governance {
      *
      * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder>
+    java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder> 
         getBuysList();
     /**
      * <pre>
@@ -6305,7 +6305,7 @@ public final class Governance {
      *
      * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getBuysOrBuilderList();
     /**
      * <pre>
@@ -6495,7 +6495,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fee_ = s;
@@ -6515,7 +6515,7 @@ public final class Governance {
         getFeeBytes() {
       java.lang.Object ref = fee_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fee_ = b;
@@ -6546,7 +6546,7 @@ public final class Governance {
      * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getSellsOrBuilderList() {
       return sells_;
     }
@@ -6606,7 +6606,7 @@ public final class Governance {
      * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
         getBuysOrBuilderList() {
       return buys_;
     }
@@ -6661,7 +6661,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -6681,7 +6681,7 @@ public final class Governance {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -7076,7 +7076,7 @@ public final class Governance {
               sellsBuilder_ = null;
               sells_ = other.sells_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              sellsBuilder_ =
+              sellsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSellsFieldBuilder() : null;
             } else {
@@ -7102,7 +7102,7 @@ public final class Governance {
               buysBuilder_ = null;
               buys_ = other.buys_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              buysBuilder_ =
+              buysBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuysFieldBuilder() : null;
             } else {
@@ -7167,7 +7167,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setCommitmentAmount(long value) {
-
+        
         commitmentAmount_ = value;
         onChanged();
         return this;
@@ -7181,7 +7181,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearCommitmentAmount() {
-
+        
         commitmentAmount_ = 0L;
         onChanged();
         return this;
@@ -7220,7 +7220,7 @@ public final class Governance {
           getFeeBytes() {
         java.lang.Object ref = fee_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fee_ = b;
@@ -7243,7 +7243,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         fee_ = value;
         onChanged();
         return this;
@@ -7257,7 +7257,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearFee() {
-
+        
         fee_ = getDefaultInstance().getFee();
         onChanged();
         return this;
@@ -7277,7 +7277,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         fee_ = value;
         onChanged();
         return this;
@@ -7538,7 +7538,7 @@ public final class Governance {
        *
        * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
            getSellsOrBuilderList() {
         if (sellsBuilder_ != null) {
           return sellsBuilder_.getMessageOrBuilderList();
@@ -7576,12 +7576,12 @@ public final class Governance {
        *
        * <code>repeated .vega.LiquidityOrder sells = 3 [json_name = "sells"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder> 
            getSellsBuilderList() {
         return getSellsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
           getSellsFieldBuilder() {
         if (sellsBuilder_ == null) {
           sellsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -7850,7 +7850,7 @@ public final class Governance {
        *
        * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
            getBuysOrBuilderList() {
         if (buysBuilder_ != null) {
           return buysBuilder_.getMessageOrBuilderList();
@@ -7888,12 +7888,12 @@ public final class Governance {
        *
        * <code>repeated .vega.LiquidityOrder buys = 4 [json_name = "buys"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder>
+      public java.util.List<io.vegaprotocol.vega.Vega.LiquidityOrder.Builder> 
            getBuysBuilderList() {
         return getBuysFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder>
+          io.vegaprotocol.vega.Vega.LiquidityOrder, io.vegaprotocol.vega.Vega.LiquidityOrder.Builder, io.vegaprotocol.vega.Vega.LiquidityOrderOrBuilder> 
           getBuysFieldBuilder() {
         if (buysBuilder_ == null) {
           buysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -7940,7 +7940,7 @@ public final class Governance {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -7963,7 +7963,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         reference_ = value;
         onChanged();
         return this;
@@ -7977,7 +7977,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearReference() {
-
+        
         reference_ = getDefaultInstance().getReference();
         onChanged();
         return this;
@@ -7997,7 +7997,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         reference_ = value;
         onChanged();
         return this;
@@ -8760,7 +8760,7 @@ public final class Governance {
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Governance.NewMarketConfiguration.Builder getChangesBuilder() {
-
+        
         onChanged();
         return getChangesFieldBuilder().getBuilder();
       }
@@ -8787,7 +8787,7 @@ public final class Governance {
        * <code>.vega.NewMarketConfiguration changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewMarketConfiguration, io.vegaprotocol.vega.Governance.NewMarketConfiguration.Builder, io.vegaprotocol.vega.Governance.NewMarketConfigurationOrBuilder>
+          io.vegaprotocol.vega.Governance.NewMarketConfiguration, io.vegaprotocol.vega.Governance.NewMarketConfiguration.Builder, io.vegaprotocol.vega.Governance.NewMarketConfigurationOrBuilder> 
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -8915,7 +8915,7 @@ public final class Governance {
        * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       public io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder getLiquidityCommitmentBuilder() {
-
+        
         onChanged();
         return getLiquidityCommitmentFieldBuilder().getBuilder();
       }
@@ -8942,7 +8942,7 @@ public final class Governance {
        * <code>.vega.NewMarketCommitment liquidity_commitment = 2 [json_name = "liquidityCommitment"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewMarketCommitment, io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder, io.vegaprotocol.vega.Governance.NewMarketCommitmentOrBuilder>
+          io.vegaprotocol.vega.Governance.NewMarketCommitment, io.vegaprotocol.vega.Governance.NewMarketCommitment.Builder, io.vegaprotocol.vega.Governance.NewMarketCommitmentOrBuilder> 
           getLiquidityCommitmentFieldBuilder() {
         if (liquidityCommitmentBuilder_ == null) {
           liquidityCommitmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -10030,7 +10030,7 @@ public final class Governance {
        * <code>.vega.NetworkParameter changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Vega.NetworkParameter.Builder getChangesBuilder() {
-
+        
         onChanged();
         return getChangesFieldBuilder().getBuilder();
       }
@@ -10057,7 +10057,7 @@ public final class Governance {
        * <code>.vega.NetworkParameter changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.NetworkParameter, io.vegaprotocol.vega.Vega.NetworkParameter.Builder, io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder>
+          io.vegaprotocol.vega.Vega.NetworkParameter, io.vegaprotocol.vega.Vega.NetworkParameter.Builder, io.vegaprotocol.vega.Vega.NetworkParameterOrBuilder> 
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -10719,7 +10719,7 @@ public final class Governance {
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Assets.AssetSource.Builder getChangesBuilder() {
-
+        
         onChanged();
         return getChangesFieldBuilder().getBuilder();
       }
@@ -10746,7 +10746,7 @@ public final class Governance {
        * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder>
+          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> 
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11877,7 +11877,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setClosingTimestamp(long value) {
-
+        
         closingTimestamp_ = value;
         onChanged();
         return this;
@@ -11892,7 +11892,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearClosingTimestamp() {
-
+        
         closingTimestamp_ = 0L;
         onChanged();
         return this;
@@ -11923,7 +11923,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setEnactmentTimestamp(long value) {
-
+        
         enactmentTimestamp_ = value;
         onChanged();
         return this;
@@ -11938,7 +11938,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearEnactmentTimestamp() {
-
+        
         enactmentTimestamp_ = 0L;
         onChanged();
         return this;
@@ -11967,7 +11967,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setValidationTimestamp(long value) {
-
+        
         validationTimestamp_ = value;
         onChanged();
         return this;
@@ -11981,7 +11981,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearValidationTimestamp() {
-
+        
         validationTimestamp_ = 0L;
         onChanged();
         return this;
@@ -12146,7 +12146,7 @@ public final class Governance {
        * <code>.vega.UpdateMarket update_market = 101 [json_name = "updateMarket"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.UpdateMarket, io.vegaprotocol.vega.Governance.UpdateMarket.Builder, io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder>
+          io.vegaprotocol.vega.Governance.UpdateMarket, io.vegaprotocol.vega.Governance.UpdateMarket.Builder, io.vegaprotocol.vega.Governance.UpdateMarketOrBuilder> 
           getUpdateMarketFieldBuilder() {
         if (updateMarketBuilder_ == null) {
           if (!(changeCase_ == 101)) {
@@ -12323,7 +12323,7 @@ public final class Governance {
        * <code>.vega.NewMarket new_market = 102 [json_name = "newMarket"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewMarket, io.vegaprotocol.vega.Governance.NewMarket.Builder, io.vegaprotocol.vega.Governance.NewMarketOrBuilder>
+          io.vegaprotocol.vega.Governance.NewMarket, io.vegaprotocol.vega.Governance.NewMarket.Builder, io.vegaprotocol.vega.Governance.NewMarketOrBuilder> 
           getNewMarketFieldBuilder() {
         if (newMarketBuilder_ == null) {
           if (!(changeCase_ == 102)) {
@@ -12500,7 +12500,7 @@ public final class Governance {
        * <code>.vega.UpdateNetworkParameter update_network_parameter = 103 [json_name = "updateNetworkParameter"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder>
+          io.vegaprotocol.vega.Governance.UpdateNetworkParameter, io.vegaprotocol.vega.Governance.UpdateNetworkParameter.Builder, io.vegaprotocol.vega.Governance.UpdateNetworkParameterOrBuilder> 
           getUpdateNetworkParameterFieldBuilder() {
         if (updateNetworkParameterBuilder_ == null) {
           if (!(changeCase_ == 103)) {
@@ -12677,7 +12677,7 @@ public final class Governance {
        * <code>.vega.NewAsset new_asset = 104 [json_name = "newAsset"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.NewAsset, io.vegaprotocol.vega.Governance.NewAsset.Builder, io.vegaprotocol.vega.Governance.NewAssetOrBuilder>
+          io.vegaprotocol.vega.Governance.NewAsset, io.vegaprotocol.vega.Governance.NewAsset.Builder, io.vegaprotocol.vega.Governance.NewAssetOrBuilder> 
           getNewAssetFieldBuilder() {
         if (newAssetBuilder_ == null) {
           if (!(changeCase_ == 104)) {
@@ -12785,7 +12785,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Governance.Vote>
+    java.util.List<io.vegaprotocol.vega.Governance.Vote> 
         getYesList();
     /**
      * <pre>
@@ -12810,7 +12810,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
         getYesOrBuilderList();
     /**
      * <pre>
@@ -12829,7 +12829,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Governance.Vote>
+    java.util.List<io.vegaprotocol.vega.Governance.Vote> 
         getNoList();
     /**
      * <pre>
@@ -12854,7 +12854,7 @@ public final class Governance {
      *
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
         getNoOrBuilderList();
     /**
      * <pre>
@@ -13214,7 +13214,7 @@ public final class Governance {
      * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
         getYesOrBuilderList() {
       return yes_;
     }
@@ -13274,7 +13274,7 @@ public final class Governance {
      * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
         getNoOrBuilderList() {
       return no_;
     }
@@ -13319,7 +13319,7 @@ public final class Governance {
           java.lang.String, io.vegaprotocol.vega.Governance.Vote> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, io.vegaprotocol.vega.Governance.Vote>newDefaultInstance(
-                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_YesPartyEntry_descriptor,
+                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_YesPartyEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -13424,7 +13424,7 @@ public final class Governance {
           java.lang.String, io.vegaprotocol.vega.Governance.Vote> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, io.vegaprotocol.vega.Governance.Vote>newDefaultInstance(
-                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_NoPartyEntry_descriptor,
+                  io.vegaprotocol.vega.Governance.internal_static_vega_GovernanceData_NoPartyEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -13966,7 +13966,7 @@ public final class Governance {
               yesBuilder_ = null;
               yes_ = other.yes_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              yesBuilder_ =
+              yesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getYesFieldBuilder() : null;
             } else {
@@ -13992,7 +13992,7 @@ public final class Governance {
               noBuilder_ = null;
               no_ = other.no_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              noBuilder_ =
+              noBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNoFieldBuilder() : null;
             } else {
@@ -14149,7 +14149,7 @@ public final class Governance {
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
        */
       public io.vegaprotocol.vega.Governance.Proposal.Builder getProposalBuilder() {
-
+        
         onChanged();
         return getProposalFieldBuilder().getBuilder();
       }
@@ -14176,7 +14176,7 @@ public final class Governance {
        * <code>.vega.Proposal proposal = 1 [json_name = "proposal"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder>
+          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder> 
           getProposalFieldBuilder() {
         if (proposalBuilder_ == null) {
           proposalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -14444,7 +14444,7 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
            getYesOrBuilderList() {
         if (yesBuilder_ != null) {
           return yesBuilder_.getMessageOrBuilderList();
@@ -14482,12 +14482,12 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote yes = 2 [json_name = "yes"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder>
+      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder> 
            getYesBuilderList() {
         return getYesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
+          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> 
           getYesFieldBuilder() {
         if (yesBuilder_ == null) {
           yesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -14756,7 +14756,7 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.Governance.VoteOrBuilder> 
            getNoOrBuilderList() {
         if (noBuilder_ != null) {
           return noBuilder_.getMessageOrBuilderList();
@@ -14794,12 +14794,12 @@ public final class Governance {
        *
        * <code>repeated .vega.Vote no = 3 [json_name = "no"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder>
+      public java.util.List<io.vegaprotocol.vega.Governance.Vote.Builder> 
            getNoBuilderList() {
         return getNoFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder>
+          io.vegaprotocol.vega.Governance.Vote, io.vegaprotocol.vega.Governance.Vote.Builder, io.vegaprotocol.vega.Governance.VoteOrBuilder> 
           getNoFieldBuilder() {
         if (noBuilder_ == null) {
           noBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -15730,7 +15730,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -15750,7 +15750,7 @@ public final class Governance {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -15776,7 +15776,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -15796,7 +15796,7 @@ public final class Governance {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -15822,7 +15822,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyId_ = s;
@@ -15842,7 +15842,7 @@ public final class Governance {
         getPartyIdBytes() {
       java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyId_ = b;
@@ -16412,7 +16412,7 @@ public final class Governance {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -16435,7 +16435,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -16449,7 +16449,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -16469,7 +16469,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -16508,7 +16508,7 @@ public final class Governance {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -16531,7 +16531,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         reference_ = value;
         onChanged();
         return this;
@@ -16545,7 +16545,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearReference() {
-
+        
         reference_ = getDefaultInstance().getReference();
         onChanged();
         return this;
@@ -16565,7 +16565,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         reference_ = value;
         onChanged();
         return this;
@@ -16604,7 +16604,7 @@ public final class Governance {
           getPartyIdBytes() {
         java.lang.Object ref = partyId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyId_ = b;
@@ -16627,7 +16627,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         partyId_ = value;
         onChanged();
         return this;
@@ -16641,7 +16641,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearPartyId() {
-
+        
         partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
@@ -16661,7 +16661,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         partyId_ = value;
         onChanged();
         return this;
@@ -16689,7 +16689,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
+        
         state_ = value;
         onChanged();
         return this;
@@ -16721,7 +16721,7 @@ public final class Governance {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -16735,7 +16735,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        
         state_ = 0;
         onChanged();
         return this;
@@ -16764,7 +16764,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
-
+        
         timestamp_ = value;
         onChanged();
         return this;
@@ -16778,7 +16778,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-
+        
         timestamp_ = 0L;
         onChanged();
         return this;
@@ -16899,7 +16899,7 @@ public final class Governance {
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Governance.ProposalTerms.Builder getTermsBuilder() {
-
+        
         onChanged();
         return getTermsFieldBuilder().getBuilder();
       }
@@ -16926,7 +16926,7 @@ public final class Governance {
        * <code>.vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder>
+          io.vegaprotocol.vega.Governance.ProposalTerms, io.vegaprotocol.vega.Governance.ProposalTerms.Builder, io.vegaprotocol.vega.Governance.ProposalTermsOrBuilder> 
           getTermsFieldBuilder() {
         if (termsBuilder_ == null) {
           termsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -16961,7 +16961,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-
+        
         reason_ = value;
         onChanged();
         return this;
@@ -16993,7 +16993,7 @@ public final class Governance {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -17007,7 +17007,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-
+        
         reason_ = 0;
         onChanged();
         return this;
@@ -17448,7 +17448,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         partyId_ = s;
@@ -17468,7 +17468,7 @@ public final class Governance {
         getPartyIdBytes() {
       java.lang.Object ref = partyId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         partyId_ = b;
@@ -17521,7 +17521,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         proposalId_ = s;
@@ -17541,7 +17541,7 @@ public final class Governance {
         getProposalIdBytes() {
       java.lang.Object ref = proposalId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         proposalId_ = b;
@@ -17597,7 +17597,7 @@ public final class Governance {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         totalGovernanceTokenWeight_ = s;
@@ -17617,7 +17617,7 @@ public final class Governance {
         getTotalGovernanceTokenWeightBytes() {
       java.lang.Object ref = totalGovernanceTokenWeight_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         totalGovernanceTokenWeight_ = b;
@@ -18052,7 +18052,7 @@ public final class Governance {
           getPartyIdBytes() {
         java.lang.Object ref = partyId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           partyId_ = b;
@@ -18075,7 +18075,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         partyId_ = value;
         onChanged();
         return this;
@@ -18089,7 +18089,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearPartyId() {
-
+        
         partyId_ = getDefaultInstance().getPartyId();
         onChanged();
         return this;
@@ -18109,7 +18109,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         partyId_ = value;
         onChanged();
         return this;
@@ -18137,7 +18137,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setValueValue(int value) {
-
+        
         value_ = value;
         onChanged();
         return this;
@@ -18169,7 +18169,7 @@ public final class Governance {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         value_ = value.getNumber();
         onChanged();
         return this;
@@ -18183,7 +18183,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
+        
         value_ = 0;
         onChanged();
         return this;
@@ -18222,7 +18222,7 @@ public final class Governance {
           getProposalIdBytes() {
         java.lang.Object ref = proposalId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           proposalId_ = b;
@@ -18245,7 +18245,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         proposalId_ = value;
         onChanged();
         return this;
@@ -18259,7 +18259,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearProposalId() {
-
+        
         proposalId_ = getDefaultInstance().getProposalId();
         onChanged();
         return this;
@@ -18279,7 +18279,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         proposalId_ = value;
         onChanged();
         return this;
@@ -18308,7 +18308,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
-
+        
         timestamp_ = value;
         onChanged();
         return this;
@@ -18322,7 +18322,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-
+        
         timestamp_ = 0L;
         onChanged();
         return this;
@@ -18351,7 +18351,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder setTotalGovernanceTokenBalance(long value) {
-
+        
         totalGovernanceTokenBalance_ = value;
         onChanged();
         return this;
@@ -18365,7 +18365,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearTotalGovernanceTokenBalance() {
-
+        
         totalGovernanceTokenBalance_ = 0L;
         onChanged();
         return this;
@@ -18404,7 +18404,7 @@ public final class Governance {
           getTotalGovernanceTokenWeightBytes() {
         java.lang.Object ref = totalGovernanceTokenWeight_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           totalGovernanceTokenWeight_ = b;
@@ -18427,7 +18427,7 @@ public final class Governance {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         totalGovernanceTokenWeight_ = value;
         onChanged();
         return this;
@@ -18441,7 +18441,7 @@ public final class Governance {
        * @return This builder for chaining.
        */
       public Builder clearTotalGovernanceTokenWeight() {
-
+        
         totalGovernanceTokenWeight_ = getDefaultInstance().getTotalGovernanceTokenWeight();
         onChanged();
         return this;
@@ -18461,7 +18461,7 @@ public final class Governance {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         totalGovernanceTokenWeight_ = value;
         onChanged();
         return this;
@@ -18521,72 +18521,72 @@ public final class Governance {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_FutureProduct_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_FutureProduct_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_InstrumentConfiguration_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_InstrumentConfiguration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewMarketConfiguration_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewMarketConfiguration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewMarketCommitment_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewMarketCommitment_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewMarket_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewMarket_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_UpdateMarket_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_UpdateMarket_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_UpdateNetworkParameter_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_UpdateNetworkParameter_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NewAsset_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_NewAsset_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ProposalTerms_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ProposalTerms_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_GovernanceData_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_GovernanceData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_GovernanceData_YesPartyEntry_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_GovernanceData_YesPartyEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_GovernanceData_NoPartyEntry_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_GovernanceData_NoPartyEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Proposal_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Proposal_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Vote_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Vote_fieldAccessorTable;
 

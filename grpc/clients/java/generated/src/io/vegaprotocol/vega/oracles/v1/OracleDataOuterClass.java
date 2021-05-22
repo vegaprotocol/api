@@ -74,7 +74,7 @@ public final class OracleDataOuterClass {
      *
      * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property>
+    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property> 
         getDataList();
     /**
      * <pre>
@@ -99,7 +99,7 @@ public final class OracleDataOuterClass {
      *
      * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
         getDataOrBuilderList();
     /**
      * <pre>
@@ -369,7 +369,7 @@ public final class OracleDataOuterClass {
      * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
         getDataOrBuilderList() {
       return data_;
     }
@@ -856,7 +856,7 @@ public final class OracleDataOuterClass {
               dataBuilder_ = null;
               data_ = other.data_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              dataBuilder_ =
+              dataBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDataFieldBuilder() : null;
             } else {
@@ -1326,7 +1326,7 @@ public final class OracleDataOuterClass {
        *
        * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
            getDataOrBuilderList() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilderList();
@@ -1364,12 +1364,12 @@ public final class OracleDataOuterClass {
        *
        * <code>repeated .oracles.v1.Property data = 2 [json_name = "data"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder>
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder> 
            getDataBuilderList() {
         return getDataFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.Property.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.PropertyOrBuilder> 
           getDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -1554,7 +1554,7 @@ public final class OracleDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBroadcastAt(long value) {
-
+        
         broadcastAt_ = value;
         onChanged();
         return this;
@@ -1569,7 +1569,7 @@ public final class OracleDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBroadcastAt() {
-
+        
         broadcastAt_ = 0L;
         onChanged();
         return this;
@@ -1782,7 +1782,7 @@ public final class OracleDataOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -1802,7 +1802,7 @@ public final class OracleDataOuterClass {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -1828,7 +1828,7 @@ public final class OracleDataOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         value_ = s;
@@ -1848,7 +1848,7 @@ public final class OracleDataOuterClass {
         getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         value_ = b;
@@ -2214,7 +2214,7 @@ public final class OracleDataOuterClass {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -2237,7 +2237,7 @@ public final class OracleDataOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         name_ = value;
         onChanged();
         return this;
@@ -2251,7 +2251,7 @@ public final class OracleDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -2271,7 +2271,7 @@ public final class OracleDataOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         name_ = value;
         onChanged();
         return this;
@@ -2310,7 +2310,7 @@ public final class OracleDataOuterClass {
           getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           value_ = b;
@@ -2333,7 +2333,7 @@ public final class OracleDataOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         value_ = value;
         onChanged();
         return this;
@@ -2347,7 +2347,7 @@ public final class OracleDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
+        
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
@@ -2367,7 +2367,7 @@ public final class OracleDataOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         value_ = value;
         onChanged();
         return this;
@@ -2427,12 +2427,12 @@ public final class OracleDataOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_OracleData_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_OracleData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_Property_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_Property_fieldAccessorTable;
 

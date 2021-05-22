@@ -278,7 +278,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -298,7 +298,7 @@ public final class Assets {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -324,7 +324,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -344,7 +344,7 @@ public final class Assets {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -370,7 +370,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         symbol_ = s;
@@ -390,7 +390,7 @@ public final class Assets {
         getSymbolBytes() {
       java.lang.Object ref = symbol_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         symbol_ = b;
@@ -416,7 +416,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         totalSupply_ = s;
@@ -436,7 +436,7 @@ public final class Assets {
         getTotalSupplyBytes() {
       java.lang.Object ref = totalSupply_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         totalSupply_ = b;
@@ -937,7 +937,7 @@ public final class Assets {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -960,7 +960,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -974,7 +974,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -994,7 +994,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -1033,7 +1033,7 @@ public final class Assets {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -1056,7 +1056,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         name_ = value;
         onChanged();
         return this;
@@ -1070,7 +1070,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -1090,7 +1090,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         name_ = value;
         onChanged();
         return this;
@@ -1129,7 +1129,7 @@ public final class Assets {
           getSymbolBytes() {
         java.lang.Object ref = symbol_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           symbol_ = b;
@@ -1152,7 +1152,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         symbol_ = value;
         onChanged();
         return this;
@@ -1166,7 +1166,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearSymbol() {
-
+        
         symbol_ = getDefaultInstance().getSymbol();
         onChanged();
         return this;
@@ -1186,7 +1186,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         symbol_ = value;
         onChanged();
         return this;
@@ -1225,7 +1225,7 @@ public final class Assets {
           getTotalSupplyBytes() {
         java.lang.Object ref = totalSupply_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           totalSupply_ = b;
@@ -1248,7 +1248,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         totalSupply_ = value;
         onChanged();
         return this;
@@ -1262,7 +1262,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearTotalSupply() {
-
+        
         totalSupply_ = getDefaultInstance().getTotalSupply();
         onChanged();
         return this;
@@ -1282,7 +1282,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         totalSupply_ = value;
         onChanged();
         return this;
@@ -1311,7 +1311,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder setDecimals(long value) {
-
+        
         decimals_ = value;
         onChanged();
         return this;
@@ -1325,7 +1325,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearDecimals() {
-
+        
         decimals_ = 0L;
         onChanged();
         return this;
@@ -1446,7 +1446,7 @@ public final class Assets {
        * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public io.vegaprotocol.vega.Assets.AssetSource.Builder getSourceBuilder() {
-
+        
         onChanged();
         return getSourceFieldBuilder().getBuilder();
       }
@@ -1473,7 +1473,7 @@ public final class Assets {
        * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder>
+          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> 
           getSourceFieldBuilder() {
         if (sourceBuilder_ == null) {
           sourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2366,7 +2366,7 @@ public final class Assets {
        * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.BuiltinAsset, io.vegaprotocol.vega.Assets.BuiltinAsset.Builder, io.vegaprotocol.vega.Assets.BuiltinAssetOrBuilder>
+          io.vegaprotocol.vega.Assets.BuiltinAsset, io.vegaprotocol.vega.Assets.BuiltinAsset.Builder, io.vegaprotocol.vega.Assets.BuiltinAssetOrBuilder> 
           getBuiltinAssetFieldBuilder() {
         if (builtinAssetBuilder_ == null) {
           if (!(sourceCase_ == 1)) {
@@ -2543,7 +2543,7 @@ public final class Assets {
        * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.ERC20, io.vegaprotocol.vega.Assets.ERC20.Builder, io.vegaprotocol.vega.Assets.ERC20OrBuilder>
+          io.vegaprotocol.vega.Assets.ERC20, io.vegaprotocol.vega.Assets.ERC20.Builder, io.vegaprotocol.vega.Assets.ERC20OrBuilder> 
           getErc20FieldBuilder() {
         if (erc20Builder_ == null) {
           if (!(sourceCase_ == 2)) {
@@ -2837,7 +2837,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -2857,7 +2857,7 @@ public final class Assets {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -2883,7 +2883,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         symbol_ = s;
@@ -2903,7 +2903,7 @@ public final class Assets {
         getSymbolBytes() {
       java.lang.Object ref = symbol_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         symbol_ = b;
@@ -2929,7 +2929,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         totalSupply_ = s;
@@ -2949,7 +2949,7 @@ public final class Assets {
         getTotalSupplyBytes() {
       java.lang.Object ref = totalSupply_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         totalSupply_ = b;
@@ -2990,7 +2990,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         maxFaucetAmountMint_ = s;
@@ -3010,7 +3010,7 @@ public final class Assets {
         getMaxFaucetAmountMintBytes() {
       java.lang.Object ref = maxFaucetAmountMint_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         maxFaucetAmountMint_ = b;
@@ -3428,7 +3428,7 @@ public final class Assets {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -3451,7 +3451,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         name_ = value;
         onChanged();
         return this;
@@ -3465,7 +3465,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -3485,7 +3485,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         name_ = value;
         onChanged();
         return this;
@@ -3524,7 +3524,7 @@ public final class Assets {
           getSymbolBytes() {
         java.lang.Object ref = symbol_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           symbol_ = b;
@@ -3547,7 +3547,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         symbol_ = value;
         onChanged();
         return this;
@@ -3561,7 +3561,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearSymbol() {
-
+        
         symbol_ = getDefaultInstance().getSymbol();
         onChanged();
         return this;
@@ -3581,7 +3581,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         symbol_ = value;
         onChanged();
         return this;
@@ -3620,7 +3620,7 @@ public final class Assets {
           getTotalSupplyBytes() {
         java.lang.Object ref = totalSupply_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           totalSupply_ = b;
@@ -3643,7 +3643,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         totalSupply_ = value;
         onChanged();
         return this;
@@ -3657,7 +3657,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearTotalSupply() {
-
+        
         totalSupply_ = getDefaultInstance().getTotalSupply();
         onChanged();
         return this;
@@ -3677,7 +3677,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         totalSupply_ = value;
         onChanged();
         return this;
@@ -3706,7 +3706,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder setDecimals(long value) {
-
+        
         decimals_ = value;
         onChanged();
         return this;
@@ -3720,7 +3720,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearDecimals() {
-
+        
         decimals_ = 0L;
         onChanged();
         return this;
@@ -3759,7 +3759,7 @@ public final class Assets {
           getMaxFaucetAmountMintBytes() {
         java.lang.Object ref = maxFaucetAmountMint_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           maxFaucetAmountMint_ = b;
@@ -3782,7 +3782,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         maxFaucetAmountMint_ = value;
         onChanged();
         return this;
@@ -3796,7 +3796,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearMaxFaucetAmountMint() {
-
+        
         maxFaucetAmountMint_ = getDefaultInstance().getMaxFaucetAmountMint();
         onChanged();
         return this;
@@ -3816,7 +3816,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         maxFaucetAmountMint_ = value;
         onChanged();
         return this;
@@ -4002,7 +4002,7 @@ public final class Assets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         contractAddress_ = s;
@@ -4022,7 +4022,7 @@ public final class Assets {
         getContractAddressBytes() {
       java.lang.Object ref = contractAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         contractAddress_ = b;
@@ -4371,7 +4371,7 @@ public final class Assets {
           getContractAddressBytes() {
         java.lang.Object ref = contractAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           contractAddress_ = b;
@@ -4394,7 +4394,7 @@ public final class Assets {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         contractAddress_ = value;
         onChanged();
         return this;
@@ -4408,7 +4408,7 @@ public final class Assets {
        * @return This builder for chaining.
        */
       public Builder clearContractAddress() {
-
+        
         contractAddress_ = getDefaultInstance().getContractAddress();
         onChanged();
         return this;
@@ -4428,7 +4428,7 @@ public final class Assets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         contractAddress_ = value;
         onChanged();
         return this;
@@ -4488,22 +4488,22 @@ public final class Assets {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Asset_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Asset_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_AssetSource_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_AssetSource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_BuiltinAsset_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_BuiltinAsset_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ERC20_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ERC20_fieldAccessorTable;
 

@@ -655,7 +655,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         pubKey_ = value;
         onChanged();
         return this;
@@ -669,7 +669,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearPubKey() {
-
+        
         pubKey_ = getDefaultInstance().getPubKey();
         onChanged();
         return this;
@@ -701,7 +701,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         chainPubKey_ = value;
         onChanged();
         return this;
@@ -715,7 +715,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearChainPubKey() {
-
+        
         chainPubKey_ = getDefaultInstance().getChainPubKey();
         onChanged();
         return this;
@@ -933,7 +933,7 @@ public final class ValidatorCommands {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reference_ = s;
@@ -953,7 +953,7 @@ public final class ValidatorCommands {
         getReferenceBytes() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         reference_ = b;
@@ -1313,7 +1313,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         pubKey_ = value;
         onChanged();
         return this;
@@ -1327,7 +1327,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearPubKey() {
-
+        
         pubKey_ = getDefaultInstance().getPubKey();
         onChanged();
         return this;
@@ -1366,7 +1366,7 @@ public final class ValidatorCommands {
           getReferenceBytes() {
         java.lang.Object ref = reference_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           reference_ = b;
@@ -1389,7 +1389,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         reference_ = value;
         onChanged();
         return this;
@@ -1403,7 +1403,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearReference() {
-
+        
         reference_ = getDefaultInstance().getReference();
         onChanged();
         return this;
@@ -1423,7 +1423,7 @@ public final class ValidatorCommands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         reference_ = value;
         onChanged();
         return this;
@@ -1651,7 +1651,7 @@ public final class ValidatorCommands {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -1671,7 +1671,7 @@ public final class ValidatorCommands {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -2095,7 +2095,7 @@ public final class ValidatorCommands {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -2118,7 +2118,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         id_ = value;
         onChanged();
         return this;
@@ -2132,7 +2132,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-
+        
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -2152,7 +2152,7 @@ public final class ValidatorCommands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         id_ = value;
         onChanged();
         return this;
@@ -2184,7 +2184,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         sig_ = value;
         onChanged();
         return this;
@@ -2198,7 +2198,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearSig() {
-
+        
         sig_ = getDefaultInstance().getSig();
         onChanged();
         return this;
@@ -2226,7 +2226,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder setKindValue(int value) {
-
+        
         kind_ = value;
         onChanged();
         return this;
@@ -2258,7 +2258,7 @@ public final class ValidatorCommands {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         kind_ = value.getNumber();
         onChanged();
         return this;
@@ -2272,7 +2272,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearKind() {
-
+        
         kind_ = 0;
         onChanged();
         return this;
@@ -2684,7 +2684,7 @@ public final class ValidatorCommands {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         txId_ = s;
@@ -2704,7 +2704,7 @@ public final class ValidatorCommands {
         getTxIdBytes() {
       java.lang.Object ref = txId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         txId_ = b;
@@ -3394,7 +3394,7 @@ public final class ValidatorCommands {
           getTxIdBytes() {
         java.lang.Object ref = txId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           txId_ = b;
@@ -3417,7 +3417,7 @@ public final class ValidatorCommands {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         txId_ = value;
         onChanged();
         return this;
@@ -3431,7 +3431,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearTxId() {
-
+        
         txId_ = getDefaultInstance().getTxId();
         onChanged();
         return this;
@@ -3451,7 +3451,7 @@ public final class ValidatorCommands {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
+        
         txId_ = value;
         onChanged();
         return this;
@@ -3480,7 +3480,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder setNonce(long value) {
-
+        
         nonce_ = value;
         onChanged();
         return this;
@@ -3494,7 +3494,7 @@ public final class ValidatorCommands {
        * @return This builder for chaining.
        */
       public Builder clearNonce() {
-
+        
         nonce_ = 0L;
         onChanged();
         return this;
@@ -3659,7 +3659,7 @@ public final class ValidatorCommands {
        * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder>
+          io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder> 
           getBuiltinFieldBuilder() {
         if (builtinBuilder_ == null) {
           if (!(eventCase_ == 1001)) {
@@ -3836,7 +3836,7 @@ public final class ValidatorCommands {
        * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ERC20Event, io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder, io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder>
+          io.vegaprotocol.vega.ChainEvents.ERC20Event, io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder, io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder> 
           getErc20FieldBuilder() {
         if (erc20Builder_ == null) {
           if (!(eventCase_ == 1002)) {
@@ -4013,7 +4013,7 @@ public final class ValidatorCommands {
        * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.BTCEvent, io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder, io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder>
+          io.vegaprotocol.vega.ChainEvents.BTCEvent, io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder, io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder> 
           getBtcFieldBuilder() {
         if (btcBuilder_ == null) {
           if (!(eventCase_ == 1003)) {
@@ -4190,7 +4190,7 @@ public final class ValidatorCommands {
        * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.ChainEvents.ValidatorEvent, io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder, io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder>
+          io.vegaprotocol.vega.ChainEvents.ValidatorEvent, io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder, io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder> 
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           if (!(eventCase_ == 1004)) {
@@ -4262,22 +4262,22 @@ public final class ValidatorCommands {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_NodeRegistration_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_NodeRegistration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_NodeVote_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_NodeVote_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_NodeSignature_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_NodeSignature_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_ChainEvent_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_ChainEvent_fieldAccessorTable;
 
