@@ -9,6 +9,8 @@ set -e
 
 java_generated_dir=generated
 
+mv pom.xml $java_generated_dir/
+
 pushd $java_generated_dir 1>/dev/null || exit 1
 mvn clean package
 popd 1>/dev/null || exit 1
