@@ -1,5 +1,5 @@
 *.jar
 *.class
 classes
-generated/manifest.txt
-lib
+generated/pom.xml
+target

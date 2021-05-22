@@ -1,0 +1,53 @@
+---
+
+name: Java
+
+"on":
+  pull_request:
+    branches:
+      - develop
+      - main
+    paths:
+      - "external/**"
+      - "grpc/clients/java/**"
+      - "grpc/examples/java/**"
+      - "proto/**"
+      - "rest/examples/java/**"
+  push:
+    branches:
+      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Build with Maven
+        run: |
+          cd grpc/clients/java
+          ./make-jar.sh
+
+      - name: Set release version
+        id: vars
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        run: echo ::set-output name=version::${GITHUB_REF#refs/*/v}
+
+      - name: Publish JAR file
+        uses: softprops/action-gh-release@v1
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        with:
+          files: grpc/clients/java/generated/target/vega-${{ steps.vars.outputs.version }}.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
