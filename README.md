@@ -73,15 +73,10 @@ GRPC_NODE=veganode.example.com:1234 WALLETSERVER=https://vegawallet.example.com 
 
 ### Java gRPC generation
 
-Install protobuf
-* [Ubuntu 18.04 installation instructions](https://gist.github.com/olivoil/a2e0e4f3427db8b6ef4a6374f9c4cb32)
+Run the update for gRPC in general and this will generate all the Java source files.
 
 Install maven
 * Linux: `sudo apt install maven`
-
-Run the following make command
-
-    make buf-generate-java
 
 Run `./make-jar.sh` in the `grpc/clients/java` directory
 

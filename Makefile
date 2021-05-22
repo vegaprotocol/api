@@ -46,16 +46,6 @@ else
     endif
 endif
 
-.PHONY: buf-generate-java
-buf-generate-java:
-	@rm -rf tools/java && mkdir -p tools/java && \
-	pushd tools/java 1>/dev/null && \
-		wget $(GRPC_JAVA_PLUGIN) -O protoc-gen-grpc-java && \
-		chmod +x protoc-gen-grpc-java && \
-	popd 1>/dev/null
-	@mkdir -p $(JAVA_GENERATED_DIR)
-	@buf build -o - | protoc --descriptor_set_in=/dev/stdin --plugin=protoc-gen-grpc-java=tools/java/protoc-gen-grpc-java --java_out=$(JAVA_GENERATED_DIR) --grpc-java_out=$(JAVA_GENERATED_DIR) $$(buf build -o - | buf ls-files -)
-
 .PHONY: buf-generate
 buf-generate: buf-build
 	@if ! command -v protoc-gen-doc 1>/dev/null ; then \
@@ -89,6 +79,13 @@ buf-generate: buf-build
 			echo "Not found/executable: protoc-gen-ts" ; \
 			exit 1 ; \
 		fi ; \
+	fi
+	@proto_gen_java=./tools/java/protoc-gen-grpc-java && \
+	if ! test -r "$$proto_gen_java" -a -x "$$proto_gen_java" ; then \
+		pushd tools/java 1>/dev/null && \
+			wget $(GRPC_JAVA_PLUGIN) -O protoc-gen-grpc-java && \
+			chmod +x protoc-gen-grpc-java && \
+		popd 1>/dev/null
 	fi
 	@for d in \
 		"$(CPP_GENERATED_DIR)" \
