@@ -30,7 +30,7 @@ DOC_GENERATED_DIR := grpc/doc
 
 CPP_GENERATED_DIR := grpc/clients/cpp/generated
 GO_GENERATED_DIR := grpc/clients/go/generated
-JAVA_GENERATED_DIR := grpc/clients/java/generated
+JAVA_GENERATED_DIR := grpc/clients/java/generated/src
 JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
 PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
 
