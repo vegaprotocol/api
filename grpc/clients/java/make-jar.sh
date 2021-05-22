@@ -2,15 +2,13 @@
 
 # This script generates a jar file. Run it as:
 #
-#     cd java
+#     cd grpc/clients/java
 #     ./make-jar.sh
 
 set -e
 
-java_generated_dir=generated
+cp pom.xml generated/
 
-cp pom.xml $java_generated_dir/
-
-pushd $java_generated_dir 1>/dev/null || exit 1
+pushd generated 1>/dev/null || exit 1
 mvn clean package
 popd 1>/dev/null || exit 1

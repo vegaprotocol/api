@@ -26,6 +26,10 @@ checkfile README.md '^Version: '"$version"'$'
 # CPP
 # to be done
 
+# Java
+sed --in-place -e 's#^    <version>[^<]*</version>#    <version>'"$version"'</version>#' grpc/clients/java/pom.xml
+checkfile grpc/clients/java/pom.xml "<version>$version</version>"
+
 # Javascript
 sed --in-place -e 's#"version": "[^"]*"#"version": "'"$version"'"#' grpc/clients/js/package.json
 checkfile grpc/clients/js/package.json '"version": "'"$version"'",'

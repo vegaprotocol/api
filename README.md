@@ -56,8 +56,7 @@ Pull requests for additional languages are gratefully received.
 
 ## Update process - gRPC
 
-Install BUF
-* https://docs.buf.build/installation/
+Install `buf`: https://docs.buf.build/installation/
 
 ```bash
 # Copy proto files from Core
@@ -78,7 +77,7 @@ Run the update for gRPC in general and this will generate all the Java source fi
 Install maven
 * Linux: `sudo apt install maven`
 
-Run `./make-jar.sh` in the `grpc/clients/java` directory
+Run `./make-jar.sh` in the `grpc/clients/java` directory.
 
 ## Update process - GraphQL
 
