@@ -85,6 +85,8 @@ public final class ValidatorCommands {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -92,6 +94,10 @@ public final class ValidatorCommands {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static NodeSignatureKind forNumber(int value) {
       switch (value) {
         case 0: return NODE_SIGNATURE_KIND_UNSPECIFIED;
@@ -115,6 +121,10 @@ public final class ValidatorCommands {
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
       return getDescriptor().getValues().get(ordinal());
     }
     public final com.google.protobuf.Descriptors.EnumDescriptor
@@ -158,7 +168,8 @@ public final class ValidatorCommands {
      * Public key, required field
      * </pre>
      *
-     * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+     * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The pubKey.
      */
     com.google.protobuf.ByteString getPubKey();
 
@@ -167,7 +178,8 @@ public final class ValidatorCommands {
      * Public key for the blockchain, required field
      * </pre>
      *
-     * <code>bytes chain_pub_key = 2[json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * @return The chainPubKey.
      */
     com.google.protobuf.ByteString getChainPubKey();
   }
@@ -178,7 +190,7 @@ public final class ValidatorCommands {
    *
    * Protobuf type {@code vega.commands.v1.NodeRegistration}
    */
-  public  static final class NodeRegistration extends
+  public static final class NodeRegistration extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.NodeRegistration)
       NodeRegistrationOrBuilder {
@@ -190,6 +202,13 @@ public final class ValidatorCommands {
     private NodeRegistration() {
       pubKey_ = com.google.protobuf.ByteString.EMPTY;
       chainPubKey_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NodeRegistration();
     }
 
     @java.lang.Override
@@ -205,7 +224,6 @@ public final class ValidatorCommands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -216,13 +234,6 @@ public final class ValidatorCommands {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               pubKey_ = input.readBytes();
@@ -231,6 +242,13 @@ public final class ValidatorCommands {
             case 18: {
 
               chainPubKey_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -250,6 +268,7 @@ public final class ValidatorCommands {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeRegistration_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeRegistration_fieldAccessorTable
@@ -264,8 +283,10 @@ public final class ValidatorCommands {
      * Public key, required field
      * </pre>
      *
-     * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+     * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The pubKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPubKey() {
       return pubKey_;
     }
@@ -277,13 +298,16 @@ public final class ValidatorCommands {
      * Public key for the blockchain, required field
      * </pre>
      *
-     * <code>bytes chain_pub_key = 2[json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * @return The chainPubKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getChainPubKey() {
       return chainPubKey_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -293,6 +317,7 @@ public final class ValidatorCommands {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!pubKey_.isEmpty()) {
@@ -304,6 +329,7 @@ public final class ValidatorCommands {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -332,13 +358,12 @@ public final class ValidatorCommands {
       }
       io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration other = (io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration) obj;
 
-      boolean result = true;
-      result = result && getPubKey()
-          .equals(other.getPubKey());
-      result = result && getChainPubKey()
-          .equals(other.getChainPubKey());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getPubKey()
+          .equals(other.getPubKey())) return false;
+      if (!getChainPubKey()
+          .equals(other.getChainPubKey())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -427,6 +452,7 @@ public final class ValidatorCommands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -434,6 +460,7 @@ public final class ValidatorCommands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -461,6 +488,7 @@ public final class ValidatorCommands {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeRegistration_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeRegistration_fieldAccessorTable
@@ -483,6 +511,7 @@ public final class ValidatorCommands {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         pubKey_ = com.google.protobuf.ByteString.EMPTY;
@@ -492,15 +521,18 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeRegistration_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration build() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration result = buildPartial();
         if (!result.isInitialized()) {
@@ -509,6 +541,7 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration buildPartial() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration result = new io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration(this);
         result.pubKey_ = pubKey_;
@@ -517,32 +550,39 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration)other);
@@ -565,10 +605,12 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -593,8 +635,10 @@ public final class ValidatorCommands {
        * Public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return The pubKey.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getPubKey() {
         return pubKey_;
       }
@@ -603,7 +647,9 @@ public final class ValidatorCommands {
        * Public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @param value The pubKey to set.
+       * @return This builder for chaining.
        */
       public Builder setPubKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -619,7 +665,8 @@ public final class ValidatorCommands {
        * Public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
        */
       public Builder clearPubKey() {
         
@@ -634,8 +681,10 @@ public final class ValidatorCommands {
        * Public key for the blockchain, required field
        * </pre>
        *
-       * <code>bytes chain_pub_key = 2[json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * @return The chainPubKey.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getChainPubKey() {
         return chainPubKey_;
       }
@@ -644,7 +693,9 @@ public final class ValidatorCommands {
        * Public key for the blockchain, required field
        * </pre>
        *
-       * <code>bytes chain_pub_key = 2[json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * @param value The chainPubKey to set.
+       * @return This builder for chaining.
        */
       public Builder setChainPubKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -660,7 +711,8 @@ public final class ValidatorCommands {
        * Public key for the blockchain, required field
        * </pre>
        *
-       * <code>bytes chain_pub_key = 2[json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
        */
       public Builder clearChainPubKey() {
         
@@ -668,11 +720,13 @@ public final class ValidatorCommands {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -694,6 +748,7 @@ public final class ValidatorCommands {
 
     private static final com.google.protobuf.Parser<NodeRegistration>
         PARSER = new com.google.protobuf.AbstractParser<NodeRegistration>() {
+      @java.lang.Override
       public NodeRegistration parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -711,6 +766,7 @@ public final class ValidatorCommands {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -726,7 +782,8 @@ public final class ValidatorCommands {
      * Public key, required field
      * </pre>
      *
-     * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+     * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The pubKey.
      */
     com.google.protobuf.ByteString getPubKey();
 
@@ -735,7 +792,8 @@ public final class ValidatorCommands {
      * Reference, required field
      * </pre>
      *
-     * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+     * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+     * @return The reference.
      */
     java.lang.String getReference();
     /**
@@ -743,7 +801,8 @@ public final class ValidatorCommands {
      * Reference, required field
      * </pre>
      *
-     * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+     * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+     * @return The bytes for reference.
      */
     com.google.protobuf.ByteString
         getReferenceBytes();
@@ -756,7 +815,7 @@ public final class ValidatorCommands {
    *
    * Protobuf type {@code vega.commands.v1.NodeVote}
    */
-  public  static final class NodeVote extends
+  public static final class NodeVote extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.NodeVote)
       NodeVoteOrBuilder {
@@ -768,6 +827,13 @@ public final class ValidatorCommands {
     private NodeVote() {
       pubKey_ = com.google.protobuf.ByteString.EMPTY;
       reference_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NodeVote();
     }
 
     @java.lang.Override
@@ -783,7 +849,6 @@ public final class ValidatorCommands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -794,13 +859,6 @@ public final class ValidatorCommands {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               pubKey_ = input.readBytes();
@@ -810,6 +868,13 @@ public final class ValidatorCommands {
               java.lang.String s = input.readStringRequireUtf8();
 
               reference_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -829,6 +894,7 @@ public final class ValidatorCommands {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeVote_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeVote_fieldAccessorTable
@@ -843,8 +909,10 @@ public final class ValidatorCommands {
      * Public key, required field
      * </pre>
      *
-     * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+     * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The pubKey.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getPubKey() {
       return pubKey_;
     }
@@ -856,8 +924,10 @@ public final class ValidatorCommands {
      * Reference, required field
      * </pre>
      *
-     * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+     * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+     * @return The reference.
      */
+    @java.lang.Override
     public java.lang.String getReference() {
       java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
@@ -875,8 +945,10 @@ public final class ValidatorCommands {
      * Reference, required field
      * </pre>
      *
-     * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+     * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+     * @return The bytes for reference.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getReferenceBytes() {
       java.lang.Object ref = reference_;
@@ -892,6 +964,7 @@ public final class ValidatorCommands {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -901,6 +974,7 @@ public final class ValidatorCommands {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!pubKey_.isEmpty()) {
@@ -912,6 +986,7 @@ public final class ValidatorCommands {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -939,13 +1014,12 @@ public final class ValidatorCommands {
       }
       io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote other = (io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote) obj;
 
-      boolean result = true;
-      result = result && getPubKey()
-          .equals(other.getPubKey());
-      result = result && getReference()
-          .equals(other.getReference());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getPubKey()
+          .equals(other.getPubKey())) return false;
+      if (!getReference()
+          .equals(other.getReference())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1034,6 +1108,7 @@ public final class ValidatorCommands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1041,6 +1116,7 @@ public final class ValidatorCommands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1069,6 +1145,7 @@ public final class ValidatorCommands {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeVote_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeVote_fieldAccessorTable
@@ -1091,6 +1168,7 @@ public final class ValidatorCommands {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         pubKey_ = com.google.protobuf.ByteString.EMPTY;
@@ -1100,15 +1178,18 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeVote_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote build() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote result = buildPartial();
         if (!result.isInitialized()) {
@@ -1117,6 +1198,7 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote buildPartial() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote result = new io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote(this);
         result.pubKey_ = pubKey_;
@@ -1125,32 +1207,39 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote)other);
@@ -1174,10 +1263,12 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1202,8 +1293,10 @@ public final class ValidatorCommands {
        * Public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return The pubKey.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getPubKey() {
         return pubKey_;
       }
@@ -1212,7 +1305,9 @@ public final class ValidatorCommands {
        * Public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @param value The pubKey to set.
+       * @return This builder for chaining.
        */
       public Builder setPubKey(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1228,7 +1323,8 @@ public final class ValidatorCommands {
        * Public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1[json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
        */
       public Builder clearPubKey() {
         
@@ -1243,7 +1339,8 @@ public final class ValidatorCommands {
        * Reference, required field
        * </pre>
        *
-       * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+       * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+       * @return The reference.
        */
       public java.lang.String getReference() {
         java.lang.Object ref = reference_;
@@ -1262,7 +1359,8 @@ public final class ValidatorCommands {
        * Reference, required field
        * </pre>
        *
-       * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+       * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+       * @return The bytes for reference.
        */
       public com.google.protobuf.ByteString
           getReferenceBytes() {
@@ -1282,7 +1380,9 @@ public final class ValidatorCommands {
        * Reference, required field
        * </pre>
        *
-       * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+       * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+       * @param value The reference to set.
+       * @return This builder for chaining.
        */
       public Builder setReference(
           java.lang.String value) {
@@ -1299,7 +1399,8 @@ public final class ValidatorCommands {
        * Reference, required field
        * </pre>
        *
-       * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+       * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
        */
       public Builder clearReference() {
         
@@ -1312,7 +1413,9 @@ public final class ValidatorCommands {
        * Reference, required field
        * </pre>
        *
-       * <code>string reference = 2[json_name = "reference", (.validator.field) = { ... }</code>
+       * <code>string reference = 2 [json_name = "reference", (.validator.field) = { ... }</code>
+       * @param value The bytes for reference to set.
+       * @return This builder for chaining.
        */
       public Builder setReferenceBytes(
           com.google.protobuf.ByteString value) {
@@ -1325,11 +1428,13 @@ public final class ValidatorCommands {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1351,6 +1456,7 @@ public final class ValidatorCommands {
 
     private static final com.google.protobuf.Parser<NodeVote>
         PARSER = new com.google.protobuf.AbstractParser<NodeVote>() {
+      @java.lang.Override
       public NodeVote parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1368,6 +1474,7 @@ public final class ValidatorCommands {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeVote getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1383,7 +1490,8 @@ public final class ValidatorCommands {
      * The identifier of the resource being signed
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
@@ -1391,7 +1499,8 @@ public final class ValidatorCommands {
      * The identifier of the resource being signed
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -1401,7 +1510,8 @@ public final class ValidatorCommands {
      * The signature
      * </pre>
      *
-     * <code>bytes sig = 2[json_name = "sig"];</code>
+     * <code>bytes sig = 2 [json_name = "sig"];</code>
+     * @return The sig.
      */
     com.google.protobuf.ByteString getSig();
 
@@ -1410,7 +1520,8 @@ public final class ValidatorCommands {
      * The kind of resource being signed
      * </pre>
      *
-     * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+     * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+     * @return The enum numeric value on the wire for kind.
      */
     int getKindValue();
     /**
@@ -1418,7 +1529,8 @@ public final class ValidatorCommands {
      * The kind of resource being signed
      * </pre>
      *
-     * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+     * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+     * @return The kind.
      */
     io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind getKind();
   }
@@ -1429,7 +1541,7 @@ public final class ValidatorCommands {
    *
    * Protobuf type {@code vega.commands.v1.NodeSignature}
    */
-  public  static final class NodeSignature extends
+  public static final class NodeSignature extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.NodeSignature)
       NodeSignatureOrBuilder {
@@ -1445,6 +1557,13 @@ public final class ValidatorCommands {
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NodeSignature();
+    }
+
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -1457,7 +1576,6 @@ public final class ValidatorCommands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1468,13 +1586,6 @@ public final class ValidatorCommands {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1490,6 +1601,13 @@ public final class ValidatorCommands {
               int rawValue = input.readEnum();
 
               kind_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1509,6 +1627,7 @@ public final class ValidatorCommands {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeSignature_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeSignature_fieldAccessorTable
@@ -1523,8 +1642,10 @@ public final class ValidatorCommands {
      * The identifier of the resource being signed
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -1542,8 +1663,10 @@ public final class ValidatorCommands {
      * The identifier of the resource being signed
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -1565,8 +1688,10 @@ public final class ValidatorCommands {
      * The signature
      * </pre>
      *
-     * <code>bytes sig = 2[json_name = "sig"];</code>
+     * <code>bytes sig = 2 [json_name = "sig"];</code>
+     * @return The sig.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getSig() {
       return sig_;
     }
@@ -1578,9 +1703,10 @@ public final class ValidatorCommands {
      * The kind of resource being signed
      * </pre>
      *
-     * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+     * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+     * @return The enum numeric value on the wire for kind.
      */
-    public int getKindValue() {
+    @java.lang.Override public int getKindValue() {
       return kind_;
     }
     /**
@@ -1588,14 +1714,17 @@ public final class ValidatorCommands {
      * The kind of resource being signed
      * </pre>
      *
-     * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+     * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+     * @return The kind.
      */
-    public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind getKind() {
+    @java.lang.Override public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind getKind() {
+      @SuppressWarnings("deprecation")
       io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind result = io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind.valueOf(kind_);
       return result == null ? io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1605,6 +1734,7 @@ public final class ValidatorCommands {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -1619,6 +1749,7 @@ public final class ValidatorCommands {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1650,14 +1781,13 @@ public final class ValidatorCommands {
       }
       io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature other = (io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getSig()
-          .equals(other.getSig());
-      result = result && kind_ == other.kind_;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getSig()
+          .equals(other.getSig())) return false;
+      if (kind_ != other.kind_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1748,6 +1878,7 @@ public final class ValidatorCommands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1755,6 +1886,7 @@ public final class ValidatorCommands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1782,6 +1914,7 @@ public final class ValidatorCommands {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeSignature_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeSignature_fieldAccessorTable
@@ -1804,6 +1937,7 @@ public final class ValidatorCommands {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -1815,15 +1949,18 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_NodeSignature_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature build() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature result = buildPartial();
         if (!result.isInitialized()) {
@@ -1832,6 +1969,7 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature buildPartial() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature result = new io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature(this);
         result.id_ = id_;
@@ -1841,32 +1979,39 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature)other);
@@ -1893,10 +2038,12 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1921,7 +2068,8 @@ public final class ValidatorCommands {
        * The identifier of the resource being signed
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -1940,7 +2088,8 @@ public final class ValidatorCommands {
        * The identifier of the resource being signed
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -1960,7 +2109,9 @@ public final class ValidatorCommands {
        * The identifier of the resource being signed
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -1977,7 +2128,8 @@ public final class ValidatorCommands {
        * The identifier of the resource being signed
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1990,7 +2142,9 @@ public final class ValidatorCommands {
        * The identifier of the resource being signed
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2010,8 +2164,10 @@ public final class ValidatorCommands {
        * The signature
        * </pre>
        *
-       * <code>bytes sig = 2[json_name = "sig"];</code>
+       * <code>bytes sig = 2 [json_name = "sig"];</code>
+       * @return The sig.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString getSig() {
         return sig_;
       }
@@ -2020,7 +2176,9 @@ public final class ValidatorCommands {
        * The signature
        * </pre>
        *
-       * <code>bytes sig = 2[json_name = "sig"];</code>
+       * <code>bytes sig = 2 [json_name = "sig"];</code>
+       * @param value The sig to set.
+       * @return This builder for chaining.
        */
       public Builder setSig(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2036,7 +2194,8 @@ public final class ValidatorCommands {
        * The signature
        * </pre>
        *
-       * <code>bytes sig = 2[json_name = "sig"];</code>
+       * <code>bytes sig = 2 [json_name = "sig"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSig() {
         
@@ -2051,9 +2210,10 @@ public final class ValidatorCommands {
        * The kind of resource being signed
        * </pre>
        *
-       * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+       * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+       * @return The enum numeric value on the wire for kind.
        */
-      public int getKindValue() {
+      @java.lang.Override public int getKindValue() {
         return kind_;
       }
       /**
@@ -2061,9 +2221,12 @@ public final class ValidatorCommands {
        * The kind of resource being signed
        * </pre>
        *
-       * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+       * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+       * @param value The enum numeric value on the wire for kind to set.
+       * @return This builder for chaining.
        */
       public Builder setKindValue(int value) {
+        
         kind_ = value;
         onChanged();
         return this;
@@ -2073,9 +2236,12 @@ public final class ValidatorCommands {
        * The kind of resource being signed
        * </pre>
        *
-       * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+       * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+       * @return The kind.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind getKind() {
+        @SuppressWarnings("deprecation")
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind result = io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind.valueOf(kind_);
         return result == null ? io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind.UNRECOGNIZED : result;
       }
@@ -2084,7 +2250,9 @@ public final class ValidatorCommands {
        * The kind of resource being signed
        * </pre>
        *
-       * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+       * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+       * @param value The kind to set.
+       * @return This builder for chaining.
        */
       public Builder setKind(io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignatureKind value) {
         if (value == null) {
@@ -2100,7 +2268,8 @@ public final class ValidatorCommands {
        * The kind of resource being signed
        * </pre>
        *
-       * <code>.vega.commands.v1.NodeSignatureKind kind = 3[json_name = "kind"];</code>
+       * <code>.vega.commands.v1.NodeSignatureKind kind = 3 [json_name = "kind"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearKind() {
         
@@ -2108,11 +2277,13 @@ public final class ValidatorCommands {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2134,6 +2305,7 @@ public final class ValidatorCommands {
 
     private static final com.google.protobuf.Parser<NodeSignature>
         PARSER = new com.google.protobuf.AbstractParser<NodeSignature>() {
+      @java.lang.Override
       public NodeSignature parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2151,6 +2323,7 @@ public final class ValidatorCommands {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeSignature getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2166,7 +2339,8 @@ public final class ValidatorCommands {
      * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string tx_id = 1[json_name = "txId"];</code>
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The txId.
      */
     java.lang.String getTxId();
     /**
@@ -2174,7 +2348,8 @@ public final class ValidatorCommands {
      * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string tx_id = 1[json_name = "txId"];</code>
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The bytes for txId.
      */
     com.google.protobuf.ByteString
         getTxIdBytes();
@@ -2184,7 +2359,8 @@ public final class ValidatorCommands {
      * Arbitrary one-time integer used to prevent replay attacks
      * </pre>
      *
-     * <code>uint64 nonce = 2[json_name = "nonce"];</code>
+     * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
+     * @return The nonce.
      */
     long getNonce();
 
@@ -2193,7 +2369,8 @@ public final class ValidatorCommands {
      * Built-in asset event
      * </pre>
      *
-     * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+     * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
+     * @return Whether the builtin field is set.
      */
     boolean hasBuiltin();
     /**
@@ -2201,7 +2378,8 @@ public final class ValidatorCommands {
      * Built-in asset event
      * </pre>
      *
-     * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+     * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
+     * @return The builtin.
      */
     io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent getBuiltin();
     /**
@@ -2209,7 +2387,7 @@ public final class ValidatorCommands {
      * Built-in asset event
      * </pre>
      *
-     * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+     * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder getBuiltinOrBuilder();
 
@@ -2218,7 +2396,8 @@ public final class ValidatorCommands {
      * Ethereum ERC20 event
      * </pre>
      *
-     * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+     * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
+     * @return Whether the erc20 field is set.
      */
     boolean hasErc20();
     /**
@@ -2226,7 +2405,8 @@ public final class ValidatorCommands {
      * Ethereum ERC20 event
      * </pre>
      *
-     * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+     * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
+     * @return The erc20.
      */
     io.vegaprotocol.vega.ChainEvents.ERC20Event getErc20();
     /**
@@ -2234,7 +2414,7 @@ public final class ValidatorCommands {
      * Ethereum ERC20 event
      * </pre>
      *
-     * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+     * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder getErc20OrBuilder();
 
@@ -2243,7 +2423,8 @@ public final class ValidatorCommands {
      * Bitcoin BTC event
      * </pre>
      *
-     * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+     * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
+     * @return Whether the btc field is set.
      */
     boolean hasBtc();
     /**
@@ -2251,7 +2432,8 @@ public final class ValidatorCommands {
      * Bitcoin BTC event
      * </pre>
      *
-     * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+     * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
+     * @return The btc.
      */
     io.vegaprotocol.vega.ChainEvents.BTCEvent getBtc();
     /**
@@ -2259,7 +2441,7 @@ public final class ValidatorCommands {
      * Bitcoin BTC event
      * </pre>
      *
-     * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+     * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder getBtcOrBuilder();
 
@@ -2268,7 +2450,8 @@ public final class ValidatorCommands {
      * Validator event
      * </pre>
      *
-     * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+     * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
+     * @return Whether the validator field is set.
      */
     boolean hasValidator();
     /**
@@ -2276,7 +2459,8 @@ public final class ValidatorCommands {
      * Validator event
      * </pre>
      *
-     * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+     * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
+     * @return The validator.
      */
     io.vegaprotocol.vega.ChainEvents.ValidatorEvent getValidator();
     /**
@@ -2284,7 +2468,7 @@ public final class ValidatorCommands {
      * Validator event
      * </pre>
      *
-     * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+     * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
      */
     io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder getValidatorOrBuilder();
 
@@ -2297,7 +2481,7 @@ public final class ValidatorCommands {
    *
    * Protobuf type {@code vega.commands.v1.ChainEvent}
    */
-  public  static final class ChainEvent extends
+  public static final class ChainEvent extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.commands.v1.ChainEvent)
       ChainEventOrBuilder {
@@ -2308,7 +2492,13 @@ public final class ValidatorCommands {
     }
     private ChainEvent() {
       txId_ = "";
-      nonce_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChainEvent();
     }
 
     @java.lang.Override
@@ -2324,7 +2514,6 @@ public final class ValidatorCommands {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2335,13 +2524,6 @@ public final class ValidatorCommands {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2409,6 +2591,13 @@ public final class ValidatorCommands {
               eventCase_ = 1004;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2426,6 +2615,7 @@ public final class ValidatorCommands {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_ChainEvent_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_ChainEvent_fieldAccessorTable
@@ -2436,7 +2626,8 @@ public final class ValidatorCommands {
     private int eventCase_ = 0;
     private java.lang.Object event_;
     public enum EventCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       BUILTIN(1001),
       ERC20(1002),
       BTC(1003),
@@ -2447,6 +2638,8 @@ public final class ValidatorCommands {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -2482,8 +2675,10 @@ public final class ValidatorCommands {
      * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string tx_id = 1[json_name = "txId"];</code>
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The txId.
      */
+    @java.lang.Override
     public java.lang.String getTxId() {
       java.lang.Object ref = txId_;
       if (ref instanceof java.lang.String) {
@@ -2501,8 +2696,10 @@ public final class ValidatorCommands {
      * The identifier of the transaction in which the events happened, usually a hash
      * </pre>
      *
-     * <code>string tx_id = 1[json_name = "txId"];</code>
+     * <code>string tx_id = 1 [json_name = "txId"];</code>
+     * @return The bytes for txId.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTxIdBytes() {
       java.lang.Object ref = txId_;
@@ -2524,8 +2721,10 @@ public final class ValidatorCommands {
      * Arbitrary one-time integer used to prevent replay attacks
      * </pre>
      *
-     * <code>uint64 nonce = 2[json_name = "nonce"];</code>
+     * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
+     * @return The nonce.
      */
+    @java.lang.Override
     public long getNonce() {
       return nonce_;
     }
@@ -2536,8 +2735,10 @@ public final class ValidatorCommands {
      * Built-in asset event
      * </pre>
      *
-     * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+     * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
+     * @return Whether the builtin field is set.
      */
+    @java.lang.Override
     public boolean hasBuiltin() {
       return eventCase_ == 1001;
     }
@@ -2546,8 +2747,10 @@ public final class ValidatorCommands {
      * Built-in asset event
      * </pre>
      *
-     * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+     * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
+     * @return The builtin.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent getBuiltin() {
       if (eventCase_ == 1001) {
          return (io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent) event_;
@@ -2559,8 +2762,9 @@ public final class ValidatorCommands {
      * Built-in asset event
      * </pre>
      *
-     * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+     * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder getBuiltinOrBuilder() {
       if (eventCase_ == 1001) {
          return (io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent) event_;
@@ -2574,8 +2778,10 @@ public final class ValidatorCommands {
      * Ethereum ERC20 event
      * </pre>
      *
-     * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+     * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
+     * @return Whether the erc20 field is set.
      */
+    @java.lang.Override
     public boolean hasErc20() {
       return eventCase_ == 1002;
     }
@@ -2584,8 +2790,10 @@ public final class ValidatorCommands {
      * Ethereum ERC20 event
      * </pre>
      *
-     * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+     * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
+     * @return The erc20.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.ERC20Event getErc20() {
       if (eventCase_ == 1002) {
          return (io.vegaprotocol.vega.ChainEvents.ERC20Event) event_;
@@ -2597,8 +2805,9 @@ public final class ValidatorCommands {
      * Ethereum ERC20 event
      * </pre>
      *
-     * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+     * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder getErc20OrBuilder() {
       if (eventCase_ == 1002) {
          return (io.vegaprotocol.vega.ChainEvents.ERC20Event) event_;
@@ -2612,8 +2821,10 @@ public final class ValidatorCommands {
      * Bitcoin BTC event
      * </pre>
      *
-     * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+     * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
+     * @return Whether the btc field is set.
      */
+    @java.lang.Override
     public boolean hasBtc() {
       return eventCase_ == 1003;
     }
@@ -2622,8 +2833,10 @@ public final class ValidatorCommands {
      * Bitcoin BTC event
      * </pre>
      *
-     * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+     * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
+     * @return The btc.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.BTCEvent getBtc() {
       if (eventCase_ == 1003) {
          return (io.vegaprotocol.vega.ChainEvents.BTCEvent) event_;
@@ -2635,8 +2848,9 @@ public final class ValidatorCommands {
      * Bitcoin BTC event
      * </pre>
      *
-     * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+     * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder getBtcOrBuilder() {
       if (eventCase_ == 1003) {
          return (io.vegaprotocol.vega.ChainEvents.BTCEvent) event_;
@@ -2650,8 +2864,10 @@ public final class ValidatorCommands {
      * Validator event
      * </pre>
      *
-     * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+     * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
+     * @return Whether the validator field is set.
      */
+    @java.lang.Override
     public boolean hasValidator() {
       return eventCase_ == 1004;
     }
@@ -2660,8 +2876,10 @@ public final class ValidatorCommands {
      * Validator event
      * </pre>
      *
-     * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+     * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
+     * @return The validator.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.ValidatorEvent getValidator() {
       if (eventCase_ == 1004) {
          return (io.vegaprotocol.vega.ChainEvents.ValidatorEvent) event_;
@@ -2673,8 +2891,9 @@ public final class ValidatorCommands {
      * Validator event
      * </pre>
      *
-     * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+     * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder getValidatorOrBuilder() {
       if (eventCase_ == 1004) {
          return (io.vegaprotocol.vega.ChainEvents.ValidatorEvent) event_;
@@ -2683,6 +2902,7 @@ public final class ValidatorCommands {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2692,6 +2912,7 @@ public final class ValidatorCommands {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTxIdBytes().isEmpty()) {
@@ -2715,6 +2936,7 @@ public final class ValidatorCommands {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2758,36 +2980,33 @@ public final class ValidatorCommands {
       }
       io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent other = (io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent) obj;
 
-      boolean result = true;
-      result = result && getTxId()
-          .equals(other.getTxId());
-      result = result && (getNonce()
-          == other.getNonce());
-      result = result && getEventCase().equals(
-          other.getEventCase());
-      if (!result) return false;
+      if (!getTxId()
+          .equals(other.getTxId())) return false;
+      if (getNonce()
+          != other.getNonce()) return false;
+      if (!getEventCase().equals(other.getEventCase())) return false;
       switch (eventCase_) {
         case 1001:
-          result = result && getBuiltin()
-              .equals(other.getBuiltin());
+          if (!getBuiltin()
+              .equals(other.getBuiltin())) return false;
           break;
         case 1002:
-          result = result && getErc20()
-              .equals(other.getErc20());
+          if (!getErc20()
+              .equals(other.getErc20())) return false;
           break;
         case 1003:
-          result = result && getBtc()
-              .equals(other.getBtc());
+          if (!getBtc()
+              .equals(other.getBtc())) return false;
           break;
         case 1004:
-          result = result && getValidator()
-              .equals(other.getValidator());
+          if (!getValidator()
+              .equals(other.getValidator())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2897,6 +3116,7 @@ public final class ValidatorCommands {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2904,6 +3124,7 @@ public final class ValidatorCommands {
     public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2931,6 +3152,7 @@ public final class ValidatorCommands {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_ChainEvent_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_ChainEvent_fieldAccessorTable
@@ -2953,6 +3175,7 @@ public final class ValidatorCommands {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         txId_ = "";
@@ -2964,15 +3187,18 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.internal_static_vega_commands_v1_ChainEvent_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent getDefaultInstanceForType() {
         return io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent build() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent result = buildPartial();
         if (!result.isInitialized()) {
@@ -2981,6 +3207,7 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent buildPartial() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent result = new io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent(this);
         result.txId_ = txId_;
@@ -3018,32 +3245,39 @@ public final class ValidatorCommands {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent) {
           return mergeFrom((io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent)other);
@@ -3088,10 +3322,12 @@ public final class ValidatorCommands {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3131,7 +3367,8 @@ public final class ValidatorCommands {
        * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string tx_id = 1[json_name = "txId"];</code>
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @return The txId.
        */
       public java.lang.String getTxId() {
         java.lang.Object ref = txId_;
@@ -3150,7 +3387,8 @@ public final class ValidatorCommands {
        * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string tx_id = 1[json_name = "txId"];</code>
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @return The bytes for txId.
        */
       public com.google.protobuf.ByteString
           getTxIdBytes() {
@@ -3170,7 +3408,9 @@ public final class ValidatorCommands {
        * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string tx_id = 1[json_name = "txId"];</code>
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @param value The txId to set.
+       * @return This builder for chaining.
        */
       public Builder setTxId(
           java.lang.String value) {
@@ -3187,7 +3427,8 @@ public final class ValidatorCommands {
        * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string tx_id = 1[json_name = "txId"];</code>
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTxId() {
         
@@ -3200,7 +3441,9 @@ public final class ValidatorCommands {
        * The identifier of the transaction in which the events happened, usually a hash
        * </pre>
        *
-       * <code>string tx_id = 1[json_name = "txId"];</code>
+       * <code>string tx_id = 1 [json_name = "txId"];</code>
+       * @param value The bytes for txId to set.
+       * @return This builder for chaining.
        */
       public Builder setTxIdBytes(
           com.google.protobuf.ByteString value) {
@@ -3220,8 +3463,10 @@ public final class ValidatorCommands {
        * Arbitrary one-time integer used to prevent replay attacks
        * </pre>
        *
-       * <code>uint64 nonce = 2[json_name = "nonce"];</code>
+       * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
+       * @return The nonce.
        */
+      @java.lang.Override
       public long getNonce() {
         return nonce_;
       }
@@ -3230,7 +3475,9 @@ public final class ValidatorCommands {
        * Arbitrary one-time integer used to prevent replay attacks
        * </pre>
        *
-       * <code>uint64 nonce = 2[json_name = "nonce"];</code>
+       * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
+       * @param value The nonce to set.
+       * @return This builder for chaining.
        */
       public Builder setNonce(long value) {
         
@@ -3243,7 +3490,8 @@ public final class ValidatorCommands {
        * Arbitrary one-time integer used to prevent replay attacks
        * </pre>
        *
-       * <code>uint64 nonce = 2[json_name = "nonce"];</code>
+       * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearNonce() {
         
@@ -3259,8 +3507,10 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
+       * @return Whether the builtin field is set.
        */
+      @java.lang.Override
       public boolean hasBuiltin() {
         return eventCase_ == 1001;
       }
@@ -3269,8 +3519,10 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
+       * @return The builtin.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent getBuiltin() {
         if (builtinBuilder_ == null) {
           if (eventCase_ == 1001) {
@@ -3289,7 +3541,7 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       public Builder setBuiltin(io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent value) {
         if (builtinBuilder_ == null) {
@@ -3309,7 +3561,7 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       public Builder setBuiltin(
           io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder builderForValue) {
@@ -3327,7 +3579,7 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       public Builder mergeBuiltin(io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent value) {
         if (builtinBuilder_ == null) {
@@ -3353,7 +3605,7 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       public Builder clearBuiltin() {
         if (builtinBuilder_ == null) {
@@ -3376,7 +3628,7 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder getBuiltinBuilder() {
         return getBuiltinFieldBuilder().getBuilder();
@@ -3386,8 +3638,9 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder getBuiltinOrBuilder() {
         if ((eventCase_ == 1001) && (builtinBuilder_ != null)) {
           return builtinBuilder_.getMessageOrBuilder();
@@ -3403,7 +3656,7 @@ public final class ValidatorCommands {
        * Built-in asset event
        * </pre>
        *
-       * <code>.vega.BuiltinAssetEvent builtin = 1001[json_name = "builtin"];</code>
+       * <code>.vega.BuiltinAssetEvent builtin = 1001 [json_name = "builtin"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEvent.Builder, io.vegaprotocol.vega.ChainEvents.BuiltinAssetEventOrBuilder> 
@@ -3431,8 +3684,10 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
+       * @return Whether the erc20 field is set.
        */
+      @java.lang.Override
       public boolean hasErc20() {
         return eventCase_ == 1002;
       }
@@ -3441,8 +3696,10 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
+       * @return The erc20.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20Event getErc20() {
         if (erc20Builder_ == null) {
           if (eventCase_ == 1002) {
@@ -3461,7 +3718,7 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       public Builder setErc20(io.vegaprotocol.vega.ChainEvents.ERC20Event value) {
         if (erc20Builder_ == null) {
@@ -3481,7 +3738,7 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       public Builder setErc20(
           io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder builderForValue) {
@@ -3499,7 +3756,7 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       public Builder mergeErc20(io.vegaprotocol.vega.ChainEvents.ERC20Event value) {
         if (erc20Builder_ == null) {
@@ -3525,7 +3782,7 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       public Builder clearErc20() {
         if (erc20Builder_ == null) {
@@ -3548,7 +3805,7 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder getErc20Builder() {
         return getErc20FieldBuilder().getBuilder();
@@ -3558,8 +3815,9 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder getErc20OrBuilder() {
         if ((eventCase_ == 1002) && (erc20Builder_ != null)) {
           return erc20Builder_.getMessageOrBuilder();
@@ -3575,7 +3833,7 @@ public final class ValidatorCommands {
        * Ethereum ERC20 event
        * </pre>
        *
-       * <code>.vega.ERC20Event erc20 = 1002[json_name = "erc20"];</code>
+       * <code>.vega.ERC20Event erc20 = 1002 [json_name = "erc20"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.ERC20Event, io.vegaprotocol.vega.ChainEvents.ERC20Event.Builder, io.vegaprotocol.vega.ChainEvents.ERC20EventOrBuilder> 
@@ -3603,8 +3861,10 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
+       * @return Whether the btc field is set.
        */
+      @java.lang.Override
       public boolean hasBtc() {
         return eventCase_ == 1003;
       }
@@ -3613,8 +3873,10 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
+       * @return The btc.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BTCEvent getBtc() {
         if (btcBuilder_ == null) {
           if (eventCase_ == 1003) {
@@ -3633,7 +3895,7 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       public Builder setBtc(io.vegaprotocol.vega.ChainEvents.BTCEvent value) {
         if (btcBuilder_ == null) {
@@ -3653,7 +3915,7 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       public Builder setBtc(
           io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder builderForValue) {
@@ -3671,7 +3933,7 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       public Builder mergeBtc(io.vegaprotocol.vega.ChainEvents.BTCEvent value) {
         if (btcBuilder_ == null) {
@@ -3697,7 +3959,7 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       public Builder clearBtc() {
         if (btcBuilder_ == null) {
@@ -3720,7 +3982,7 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder getBtcBuilder() {
         return getBtcFieldBuilder().getBuilder();
@@ -3730,8 +3992,9 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder getBtcOrBuilder() {
         if ((eventCase_ == 1003) && (btcBuilder_ != null)) {
           return btcBuilder_.getMessageOrBuilder();
@@ -3747,7 +4010,7 @@ public final class ValidatorCommands {
        * Bitcoin BTC event
        * </pre>
        *
-       * <code>.vega.BTCEvent btc = 1003[json_name = "btc"];</code>
+       * <code>.vega.BTCEvent btc = 1003 [json_name = "btc"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.BTCEvent, io.vegaprotocol.vega.ChainEvents.BTCEvent.Builder, io.vegaprotocol.vega.ChainEvents.BTCEventOrBuilder> 
@@ -3775,8 +4038,10 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
+       * @return Whether the validator field is set.
        */
+      @java.lang.Override
       public boolean hasValidator() {
         return eventCase_ == 1004;
       }
@@ -3785,8 +4050,10 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
+       * @return The validator.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ValidatorEvent getValidator() {
         if (validatorBuilder_ == null) {
           if (eventCase_ == 1004) {
@@ -3805,7 +4072,7 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       public Builder setValidator(io.vegaprotocol.vega.ChainEvents.ValidatorEvent value) {
         if (validatorBuilder_ == null) {
@@ -3825,7 +4092,7 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       public Builder setValidator(
           io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder builderForValue) {
@@ -3843,7 +4110,7 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       public Builder mergeValidator(io.vegaprotocol.vega.ChainEvents.ValidatorEvent value) {
         if (validatorBuilder_ == null) {
@@ -3869,7 +4136,7 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       public Builder clearValidator() {
         if (validatorBuilder_ == null) {
@@ -3892,7 +4159,7 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder getValidatorBuilder() {
         return getValidatorFieldBuilder().getBuilder();
@@ -3902,8 +4169,9 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder getValidatorOrBuilder() {
         if ((eventCase_ == 1004) && (validatorBuilder_ != null)) {
           return validatorBuilder_.getMessageOrBuilder();
@@ -3919,7 +4187,7 @@ public final class ValidatorCommands {
        * Validator event
        * </pre>
        *
-       * <code>.vega.ValidatorEvent validator = 1004[json_name = "validator"];</code>
+       * <code>.vega.ValidatorEvent validator = 1004 [json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.ChainEvents.ValidatorEvent, io.vegaprotocol.vega.ChainEvents.ValidatorEvent.Builder, io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder> 
@@ -3939,11 +4207,13 @@ public final class ValidatorCommands {
         onChanged();;
         return validatorBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3965,6 +4235,7 @@ public final class ValidatorCommands {
 
     private static final com.google.protobuf.Parser<ChainEvent>
         PARSER = new com.google.protobuf.AbstractParser<ChainEvent>() {
+      @java.lang.Override
       public ChainEvent parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3982,6 +4253,7 @@ public final class ValidatorCommands {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4041,20 +4313,12 @@ public final class ValidatorCommands {
       "mands.v1Z+code.vegaprotocol.io/vega/prot" +
       "o/commands/v1b\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.vegaprotocol.vega.ChainEvents.getDescriptor(),
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
-        }, assigner);
+        });
     internal_static_vega_commands_v1_NodeRegistration_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_vega_commands_v1_NodeRegistration_fieldAccessorTable = new

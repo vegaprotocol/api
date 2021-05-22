@@ -23,7 +23,8 @@ public final class Assets {
      * Internal identifier of the asset
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
     java.lang.String getId();
     /**
@@ -31,7 +32,8 @@ public final class Assets {
      * Internal identifier of the asset
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -41,7 +43,8 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 2[json_name = "name"];</code>
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -49,7 +52,8 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 2[json_name = "name"];</code>
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -59,7 +63,8 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 3[json_name = "symbol"];</code>
+     * <code>string symbol = 3 [json_name = "symbol"];</code>
+     * @return The symbol.
      */
     java.lang.String getSymbol();
     /**
@@ -67,7 +72,8 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 3[json_name = "symbol"];</code>
+     * <code>string symbol = 3 [json_name = "symbol"];</code>
+     * @return The bytes for symbol.
      */
     com.google.protobuf.ByteString
         getSymbolBytes();
@@ -77,7 +83,8 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+     * @return The totalSupply.
      */
     java.lang.String getTotalSupply();
     /**
@@ -85,7 +92,8 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+     * @return The bytes for totalSupply.
      */
     com.google.protobuf.ByteString
         getTotalSupplyBytes();
@@ -95,7 +103,8 @@ public final class Assets {
      * Number of decimals / precision handled by this asset
      * </pre>
      *
-     * <code>uint64 decimals = 5[json_name = "decimals"];</code>
+     * <code>uint64 decimals = 5 [json_name = "decimals"];</code>
+     * @return The decimals.
      */
     long getDecimals();
 
@@ -104,7 +113,8 @@ public final class Assets {
      * The definition of the external source for this asset
      * </pre>
      *
-     * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+     * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
+     * @return Whether the source field is set.
      */
     boolean hasSource();
     /**
@@ -112,7 +122,8 @@ public final class Assets {
      * The definition of the external source for this asset
      * </pre>
      *
-     * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+     * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
+     * @return The source.
      */
     io.vegaprotocol.vega.Assets.AssetSource getSource();
     /**
@@ -120,7 +131,7 @@ public final class Assets {
      * The definition of the external source for this asset
      * </pre>
      *
-     * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+     * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
      */
     io.vegaprotocol.vega.Assets.AssetSourceOrBuilder getSourceOrBuilder();
   }
@@ -131,7 +142,7 @@ public final class Assets {
    *
    * Protobuf type {@code vega.Asset}
    */
-  public  static final class Asset extends
+  public static final class Asset extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.Asset)
       AssetOrBuilder {
@@ -145,7 +156,13 @@ public final class Assets {
       name_ = "";
       symbol_ = "";
       totalSupply_ = "";
-      decimals_ = 0L;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Asset();
     }
 
     @java.lang.Override
@@ -161,7 +178,6 @@ public final class Assets {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -172,13 +188,6 @@ public final class Assets {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -221,6 +230,13 @@ public final class Assets {
 
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -238,6 +254,7 @@ public final class Assets {
       return io.vegaprotocol.vega.Assets.internal_static_vega_Asset_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.Assets.internal_static_vega_Asset_fieldAccessorTable
@@ -252,8 +269,10 @@ public final class Assets {
      * Internal identifier of the asset
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
      */
+    @java.lang.Override
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
@@ -271,8 +290,10 @@ public final class Assets {
      * Internal identifier of the asset
      * </pre>
      *
-     * <code>string id = 1[json_name = "id"];</code>
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getIdBytes() {
       java.lang.Object ref = id_;
@@ -294,8 +315,10 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 2[json_name = "name"];</code>
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -313,8 +336,10 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 2[json_name = "name"];</code>
+     * <code>string name = 2 [json_name = "name"];</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -336,8 +361,10 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 3[json_name = "symbol"];</code>
+     * <code>string symbol = 3 [json_name = "symbol"];</code>
+     * @return The symbol.
      */
+    @java.lang.Override
     public java.lang.String getSymbol() {
       java.lang.Object ref = symbol_;
       if (ref instanceof java.lang.String) {
@@ -355,8 +382,10 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 3[json_name = "symbol"];</code>
+     * <code>string symbol = 3 [json_name = "symbol"];</code>
+     * @return The bytes for symbol.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSymbolBytes() {
       java.lang.Object ref = symbol_;
@@ -378,8 +407,10 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+     * @return The totalSupply.
      */
+    @java.lang.Override
     public java.lang.String getTotalSupply() {
       java.lang.Object ref = totalSupply_;
       if (ref instanceof java.lang.String) {
@@ -397,8 +428,10 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+     * @return The bytes for totalSupply.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTotalSupplyBytes() {
       java.lang.Object ref = totalSupply_;
@@ -420,8 +453,10 @@ public final class Assets {
      * Number of decimals / precision handled by this asset
      * </pre>
      *
-     * <code>uint64 decimals = 5[json_name = "decimals"];</code>
+     * <code>uint64 decimals = 5 [json_name = "decimals"];</code>
+     * @return The decimals.
      */
+    @java.lang.Override
     public long getDecimals() {
       return decimals_;
     }
@@ -433,8 +468,10 @@ public final class Assets {
      * The definition of the external source for this asset
      * </pre>
      *
-     * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+     * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
+     * @return Whether the source field is set.
      */
+    @java.lang.Override
     public boolean hasSource() {
       return source_ != null;
     }
@@ -443,8 +480,10 @@ public final class Assets {
      * The definition of the external source for this asset
      * </pre>
      *
-     * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+     * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
+     * @return The source.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.AssetSource getSource() {
       return source_ == null ? io.vegaprotocol.vega.Assets.AssetSource.getDefaultInstance() : source_;
     }
@@ -453,13 +492,15 @@ public final class Assets {
      * The definition of the external source for this asset
      * </pre>
      *
-     * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+     * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.AssetSourceOrBuilder getSourceOrBuilder() {
       return getSource();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -469,6 +510,7 @@ public final class Assets {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -492,6 +534,7 @@ public final class Assets {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -532,24 +575,23 @@ public final class Assets {
       }
       io.vegaprotocol.vega.Assets.Asset other = (io.vegaprotocol.vega.Assets.Asset) obj;
 
-      boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getSymbol()
-          .equals(other.getSymbol());
-      result = result && getTotalSupply()
-          .equals(other.getTotalSupply());
-      result = result && (getDecimals()
-          == other.getDecimals());
-      result = result && (hasSource() == other.hasSource());
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSymbol()
+          .equals(other.getSymbol())) return false;
+      if (!getTotalSupply()
+          .equals(other.getTotalSupply())) return false;
+      if (getDecimals()
+          != other.getDecimals()) return false;
+      if (hasSource() != other.hasSource()) return false;
       if (hasSource()) {
-        result = result && getSource()
-            .equals(other.getSource());
+        if (!getSource()
+            .equals(other.getSource())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -649,6 +691,7 @@ public final class Assets {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -656,6 +699,7 @@ public final class Assets {
     public static Builder newBuilder(io.vegaprotocol.vega.Assets.Asset prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -683,6 +727,7 @@ public final class Assets {
         return io.vegaprotocol.vega.Assets.internal_static_vega_Asset_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_Asset_fieldAccessorTable
@@ -705,6 +750,7 @@ public final class Assets {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -726,15 +772,18 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_Asset_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.Asset getDefaultInstanceForType() {
         return io.vegaprotocol.vega.Assets.Asset.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.Asset build() {
         io.vegaprotocol.vega.Assets.Asset result = buildPartial();
         if (!result.isInitialized()) {
@@ -743,6 +792,7 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.Asset buildPartial() {
         io.vegaprotocol.vega.Assets.Asset result = new io.vegaprotocol.vega.Assets.Asset(this);
         result.id_ = id_;
@@ -759,32 +809,39 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.Assets.Asset) {
           return mergeFrom((io.vegaprotocol.vega.Assets.Asset)other);
@@ -823,10 +880,12 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -851,7 +910,8 @@ public final class Assets {
        * Internal identifier of the asset
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -870,7 +930,8 @@ public final class Assets {
        * Internal identifier of the asset
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -890,7 +951,9 @@ public final class Assets {
        * Internal identifier of the asset
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(
           java.lang.String value) {
@@ -907,7 +970,8 @@ public final class Assets {
        * Internal identifier of the asset
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -920,7 +984,9 @@ public final class Assets {
        * Internal identifier of the asset
        * </pre>
        *
-       * <code>string id = 1[json_name = "id"];</code>
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -940,7 +1006,8 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 2[json_name = "name"];</code>
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -959,7 +1026,8 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 2[json_name = "name"];</code>
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -979,7 +1047,9 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 2[json_name = "name"];</code>
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -996,7 +1066,8 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 2[json_name = "name"];</code>
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1009,7 +1080,9 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 2[json_name = "name"];</code>
+       * <code>string name = 2 [json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1029,7 +1102,8 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 3[json_name = "symbol"];</code>
+       * <code>string symbol = 3 [json_name = "symbol"];</code>
+       * @return The symbol.
        */
       public java.lang.String getSymbol() {
         java.lang.Object ref = symbol_;
@@ -1048,7 +1122,8 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 3[json_name = "symbol"];</code>
+       * <code>string symbol = 3 [json_name = "symbol"];</code>
+       * @return The bytes for symbol.
        */
       public com.google.protobuf.ByteString
           getSymbolBytes() {
@@ -1068,7 +1143,9 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 3[json_name = "symbol"];</code>
+       * <code>string symbol = 3 [json_name = "symbol"];</code>
+       * @param value The symbol to set.
+       * @return This builder for chaining.
        */
       public Builder setSymbol(
           java.lang.String value) {
@@ -1085,7 +1162,8 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 3[json_name = "symbol"];</code>
+       * <code>string symbol = 3 [json_name = "symbol"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSymbol() {
         
@@ -1098,7 +1176,9 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 3[json_name = "symbol"];</code>
+       * <code>string symbol = 3 [json_name = "symbol"];</code>
+       * @param value The bytes for symbol to set.
+       * @return This builder for chaining.
        */
       public Builder setSymbolBytes(
           com.google.protobuf.ByteString value) {
@@ -1118,7 +1198,8 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+       * @return The totalSupply.
        */
       public java.lang.String getTotalSupply() {
         java.lang.Object ref = totalSupply_;
@@ -1137,7 +1218,8 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+       * @return The bytes for totalSupply.
        */
       public com.google.protobuf.ByteString
           getTotalSupplyBytes() {
@@ -1157,7 +1239,9 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+       * @param value The totalSupply to set.
+       * @return This builder for chaining.
        */
       public Builder setTotalSupply(
           java.lang.String value) {
@@ -1174,7 +1258,8 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTotalSupply() {
         
@@ -1187,7 +1272,9 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 4[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 4 [json_name = "totalSupply"];</code>
+       * @param value The bytes for totalSupply to set.
+       * @return This builder for chaining.
        */
       public Builder setTotalSupplyBytes(
           com.google.protobuf.ByteString value) {
@@ -1207,8 +1294,10 @@ public final class Assets {
        * Number of decimals / precision handled by this asset
        * </pre>
        *
-       * <code>uint64 decimals = 5[json_name = "decimals"];</code>
+       * <code>uint64 decimals = 5 [json_name = "decimals"];</code>
+       * @return The decimals.
        */
+      @java.lang.Override
       public long getDecimals() {
         return decimals_;
       }
@@ -1217,7 +1306,9 @@ public final class Assets {
        * Number of decimals / precision handled by this asset
        * </pre>
        *
-       * <code>uint64 decimals = 5[json_name = "decimals"];</code>
+       * <code>uint64 decimals = 5 [json_name = "decimals"];</code>
+       * @param value The decimals to set.
+       * @return This builder for chaining.
        */
       public Builder setDecimals(long value) {
         
@@ -1230,7 +1321,8 @@ public final class Assets {
        * Number of decimals / precision handled by this asset
        * </pre>
        *
-       * <code>uint64 decimals = 5[json_name = "decimals"];</code>
+       * <code>uint64 decimals = 5 [json_name = "decimals"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDecimals() {
         
@@ -1239,7 +1331,7 @@ public final class Assets {
         return this;
       }
 
-      private io.vegaprotocol.vega.Assets.AssetSource source_ = null;
+      private io.vegaprotocol.vega.Assets.AssetSource source_;
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> sourceBuilder_;
       /**
@@ -1247,7 +1339,8 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
+       * @return Whether the source field is set.
        */
       public boolean hasSource() {
         return sourceBuilder_ != null || source_ != null;
@@ -1257,7 +1350,8 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
+       * @return The source.
        */
       public io.vegaprotocol.vega.Assets.AssetSource getSource() {
         if (sourceBuilder_ == null) {
@@ -1271,7 +1365,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public Builder setSource(io.vegaprotocol.vega.Assets.AssetSource value) {
         if (sourceBuilder_ == null) {
@@ -1291,7 +1385,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public Builder setSource(
           io.vegaprotocol.vega.Assets.AssetSource.Builder builderForValue) {
@@ -1309,7 +1403,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public Builder mergeSource(io.vegaprotocol.vega.Assets.AssetSource value) {
         if (sourceBuilder_ == null) {
@@ -1331,7 +1425,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public Builder clearSource() {
         if (sourceBuilder_ == null) {
@@ -1349,7 +1443,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public io.vegaprotocol.vega.Assets.AssetSource.Builder getSourceBuilder() {
         
@@ -1361,7 +1455,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       public io.vegaprotocol.vega.Assets.AssetSourceOrBuilder getSourceOrBuilder() {
         if (sourceBuilder_ != null) {
@@ -1376,7 +1470,7 @@ public final class Assets {
        * The definition of the external source for this asset
        * </pre>
        *
-       * <code>.vega.AssetSource source = 7[json_name = "source"];</code>
+       * <code>.vega.AssetSource source = 7 [json_name = "source"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> 
@@ -1391,11 +1485,13 @@ public final class Assets {
         }
         return sourceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1417,6 +1513,7 @@ public final class Assets {
 
     private static final com.google.protobuf.Parser<Asset>
         PARSER = new com.google.protobuf.AbstractParser<Asset>() {
+      @java.lang.Override
       public Asset parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1434,6 +1531,7 @@ public final class Assets {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.Asset getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1449,7 +1547,8 @@ public final class Assets {
      * A built-in asset
      * </pre>
      *
-     * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+     * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
+     * @return Whether the builtinAsset field is set.
      */
     boolean hasBuiltinAsset();
     /**
@@ -1457,7 +1556,8 @@ public final class Assets {
      * A built-in asset
      * </pre>
      *
-     * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+     * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
+     * @return The builtinAsset.
      */
     io.vegaprotocol.vega.Assets.BuiltinAsset getBuiltinAsset();
     /**
@@ -1465,7 +1565,7 @@ public final class Assets {
      * A built-in asset
      * </pre>
      *
-     * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+     * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
      */
     io.vegaprotocol.vega.Assets.BuiltinAssetOrBuilder getBuiltinAssetOrBuilder();
 
@@ -1474,7 +1574,8 @@ public final class Assets {
      * An Ethereum ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+     * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
+     * @return Whether the erc20 field is set.
      */
     boolean hasErc20();
     /**
@@ -1482,7 +1583,8 @@ public final class Assets {
      * An Ethereum ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+     * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
+     * @return The erc20.
      */
     io.vegaprotocol.vega.Assets.ERC20 getErc20();
     /**
@@ -1490,7 +1592,7 @@ public final class Assets {
      * An Ethereum ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+     * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
      */
     io.vegaprotocol.vega.Assets.ERC20OrBuilder getErc20OrBuilder();
 
@@ -1503,7 +1605,7 @@ public final class Assets {
    *
    * Protobuf type {@code vega.AssetSource}
    */
-  public  static final class AssetSource extends
+  public static final class AssetSource extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.AssetSource)
       AssetSourceOrBuilder {
@@ -1513,6 +1615,13 @@ public final class Assets {
       super(builder);
     }
     private AssetSource() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AssetSource();
     }
 
     @java.lang.Override
@@ -1528,7 +1637,6 @@ public final class Assets {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1539,13 +1647,6 @@ public final class Assets {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               io.vegaprotocol.vega.Assets.BuiltinAsset.Builder subBuilder = null;
               if (sourceCase_ == 1) {
@@ -1574,6 +1675,13 @@ public final class Assets {
               sourceCase_ = 2;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1591,6 +1699,7 @@ public final class Assets {
       return io.vegaprotocol.vega.Assets.internal_static_vega_AssetSource_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.Assets.internal_static_vega_AssetSource_fieldAccessorTable
@@ -1601,7 +1710,8 @@ public final class Assets {
     private int sourceCase_ = 0;
     private java.lang.Object source_;
     public enum SourceCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       BUILTIN_ASSET(1),
       ERC20(2),
       SOURCE_NOT_SET(0);
@@ -1610,6 +1720,8 @@ public final class Assets {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -1642,8 +1754,10 @@ public final class Assets {
      * A built-in asset
      * </pre>
      *
-     * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+     * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
+     * @return Whether the builtinAsset field is set.
      */
+    @java.lang.Override
     public boolean hasBuiltinAsset() {
       return sourceCase_ == 1;
     }
@@ -1652,8 +1766,10 @@ public final class Assets {
      * A built-in asset
      * </pre>
      *
-     * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+     * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
+     * @return The builtinAsset.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.BuiltinAsset getBuiltinAsset() {
       if (sourceCase_ == 1) {
          return (io.vegaprotocol.vega.Assets.BuiltinAsset) source_;
@@ -1665,8 +1781,9 @@ public final class Assets {
      * A built-in asset
      * </pre>
      *
-     * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+     * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.BuiltinAssetOrBuilder getBuiltinAssetOrBuilder() {
       if (sourceCase_ == 1) {
          return (io.vegaprotocol.vega.Assets.BuiltinAsset) source_;
@@ -1680,8 +1797,10 @@ public final class Assets {
      * An Ethereum ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+     * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
+     * @return Whether the erc20 field is set.
      */
+    @java.lang.Override
     public boolean hasErc20() {
       return sourceCase_ == 2;
     }
@@ -1690,8 +1809,10 @@ public final class Assets {
      * An Ethereum ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+     * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
+     * @return The erc20.
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.ERC20 getErc20() {
       if (sourceCase_ == 2) {
          return (io.vegaprotocol.vega.Assets.ERC20) source_;
@@ -1703,8 +1824,9 @@ public final class Assets {
      * An Ethereum ERC20 asset
      * </pre>
      *
-     * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+     * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
      */
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.ERC20OrBuilder getErc20OrBuilder() {
       if (sourceCase_ == 2) {
          return (io.vegaprotocol.vega.Assets.ERC20) source_;
@@ -1713,6 +1835,7 @@ public final class Assets {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1722,6 +1845,7 @@ public final class Assets {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (sourceCase_ == 1) {
@@ -1733,6 +1857,7 @@ public final class Assets {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1761,24 +1886,21 @@ public final class Assets {
       }
       io.vegaprotocol.vega.Assets.AssetSource other = (io.vegaprotocol.vega.Assets.AssetSource) obj;
 
-      boolean result = true;
-      result = result && getSourceCase().equals(
-          other.getSourceCase());
-      if (!result) return false;
+      if (!getSourceCase().equals(other.getSourceCase())) return false;
       switch (sourceCase_) {
         case 1:
-          result = result && getBuiltinAsset()
-              .equals(other.getBuiltinAsset());
+          if (!getBuiltinAsset()
+              .equals(other.getBuiltinAsset())) return false;
           break;
         case 2:
-          result = result && getErc20()
-              .equals(other.getErc20());
+          if (!getErc20()
+              .equals(other.getErc20())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1875,6 +1997,7 @@ public final class Assets {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1882,6 +2005,7 @@ public final class Assets {
     public static Builder newBuilder(io.vegaprotocol.vega.Assets.AssetSource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1909,6 +2033,7 @@ public final class Assets {
         return io.vegaprotocol.vega.Assets.internal_static_vega_AssetSource_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_AssetSource_fieldAccessorTable
@@ -1931,6 +2056,7 @@ public final class Assets {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         sourceCase_ = 0;
@@ -1938,15 +2064,18 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_AssetSource_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.AssetSource getDefaultInstanceForType() {
         return io.vegaprotocol.vega.Assets.AssetSource.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.AssetSource build() {
         io.vegaprotocol.vega.Assets.AssetSource result = buildPartial();
         if (!result.isInitialized()) {
@@ -1955,6 +2084,7 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.AssetSource buildPartial() {
         io.vegaprotocol.vega.Assets.AssetSource result = new io.vegaprotocol.vega.Assets.AssetSource(this);
         if (sourceCase_ == 1) {
@@ -1976,32 +2106,39 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.Assets.AssetSource) {
           return mergeFrom((io.vegaprotocol.vega.Assets.AssetSource)other);
@@ -2031,10 +2168,12 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2075,8 +2214,10 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
+       * @return Whether the builtinAsset field is set.
        */
+      @java.lang.Override
       public boolean hasBuiltinAsset() {
         return sourceCase_ == 1;
       }
@@ -2085,8 +2226,10 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
+       * @return The builtinAsset.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.BuiltinAsset getBuiltinAsset() {
         if (builtinAssetBuilder_ == null) {
           if (sourceCase_ == 1) {
@@ -2105,7 +2248,7 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       public Builder setBuiltinAsset(io.vegaprotocol.vega.Assets.BuiltinAsset value) {
         if (builtinAssetBuilder_ == null) {
@@ -2125,7 +2268,7 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       public Builder setBuiltinAsset(
           io.vegaprotocol.vega.Assets.BuiltinAsset.Builder builderForValue) {
@@ -2143,7 +2286,7 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       public Builder mergeBuiltinAsset(io.vegaprotocol.vega.Assets.BuiltinAsset value) {
         if (builtinAssetBuilder_ == null) {
@@ -2169,7 +2312,7 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       public Builder clearBuiltinAsset() {
         if (builtinAssetBuilder_ == null) {
@@ -2192,7 +2335,7 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       public io.vegaprotocol.vega.Assets.BuiltinAsset.Builder getBuiltinAssetBuilder() {
         return getBuiltinAssetFieldBuilder().getBuilder();
@@ -2202,8 +2345,9 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.BuiltinAssetOrBuilder getBuiltinAssetOrBuilder() {
         if ((sourceCase_ == 1) && (builtinAssetBuilder_ != null)) {
           return builtinAssetBuilder_.getMessageOrBuilder();
@@ -2219,7 +2363,7 @@ public final class Assets {
        * A built-in asset
        * </pre>
        *
-       * <code>.vega.BuiltinAsset builtin_asset = 1[json_name = "builtinAsset"];</code>
+       * <code>.vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Assets.BuiltinAsset, io.vegaprotocol.vega.Assets.BuiltinAsset.Builder, io.vegaprotocol.vega.Assets.BuiltinAssetOrBuilder> 
@@ -2247,8 +2391,10 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
+       * @return Whether the erc20 field is set.
        */
+      @java.lang.Override
       public boolean hasErc20() {
         return sourceCase_ == 2;
       }
@@ -2257,8 +2403,10 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
+       * @return The erc20.
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.ERC20 getErc20() {
         if (erc20Builder_ == null) {
           if (sourceCase_ == 2) {
@@ -2277,7 +2425,7 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       public Builder setErc20(io.vegaprotocol.vega.Assets.ERC20 value) {
         if (erc20Builder_ == null) {
@@ -2297,7 +2445,7 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       public Builder setErc20(
           io.vegaprotocol.vega.Assets.ERC20.Builder builderForValue) {
@@ -2315,7 +2463,7 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       public Builder mergeErc20(io.vegaprotocol.vega.Assets.ERC20 value) {
         if (erc20Builder_ == null) {
@@ -2341,7 +2489,7 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       public Builder clearErc20() {
         if (erc20Builder_ == null) {
@@ -2364,7 +2512,7 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       public io.vegaprotocol.vega.Assets.ERC20.Builder getErc20Builder() {
         return getErc20FieldBuilder().getBuilder();
@@ -2374,8 +2522,9 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.ERC20OrBuilder getErc20OrBuilder() {
         if ((sourceCase_ == 2) && (erc20Builder_ != null)) {
           return erc20Builder_.getMessageOrBuilder();
@@ -2391,7 +2540,7 @@ public final class Assets {
        * An Ethereum ERC20 asset
        * </pre>
        *
-       * <code>.vega.ERC20 erc20 = 2[json_name = "erc20"];</code>
+       * <code>.vega.ERC20 erc20 = 2 [json_name = "erc20"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Assets.ERC20, io.vegaprotocol.vega.Assets.ERC20.Builder, io.vegaprotocol.vega.Assets.ERC20OrBuilder> 
@@ -2411,11 +2560,13 @@ public final class Assets {
         onChanged();;
         return erc20Builder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2437,6 +2588,7 @@ public final class Assets {
 
     private static final com.google.protobuf.Parser<AssetSource>
         PARSER = new com.google.protobuf.AbstractParser<AssetSource>() {
+      @java.lang.Override
       public AssetSource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2454,6 +2606,7 @@ public final class Assets {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.AssetSource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2469,7 +2622,8 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 1[json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
@@ -2477,7 +2631,8 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 1[json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -2487,7 +2642,8 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 2[json_name = "symbol"];</code>
+     * <code>string symbol = 2 [json_name = "symbol"];</code>
+     * @return The symbol.
      */
     java.lang.String getSymbol();
     /**
@@ -2495,7 +2651,8 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 2[json_name = "symbol"];</code>
+     * <code>string symbol = 2 [json_name = "symbol"];</code>
+     * @return The bytes for symbol.
      */
     com.google.protobuf.ByteString
         getSymbolBytes();
@@ -2505,7 +2662,8 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+     * @return The totalSupply.
      */
     java.lang.String getTotalSupply();
     /**
@@ -2513,7 +2671,8 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+     * @return The bytes for totalSupply.
      */
     com.google.protobuf.ByteString
         getTotalSupplyBytes();
@@ -2523,7 +2682,8 @@ public final class Assets {
      * Number of decimal / precision handled by this asset
      * </pre>
      *
-     * <code>uint64 decimals = 4[json_name = "decimals"];</code>
+     * <code>uint64 decimals = 4 [json_name = "decimals"];</code>
+     * @return The decimals.
      */
     long getDecimals();
 
@@ -2532,7 +2692,8 @@ public final class Assets {
      * Maximum amount that can be requested by a party through the built-in asset faucet at a time
      * </pre>
      *
-     * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+     * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+     * @return The maxFaucetAmountMint.
      */
     java.lang.String getMaxFaucetAmountMint();
     /**
@@ -2540,7 +2701,8 @@ public final class Assets {
      * Maximum amount that can be requested by a party through the built-in asset faucet at a time
      * </pre>
      *
-     * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+     * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+     * @return The bytes for maxFaucetAmountMint.
      */
     com.google.protobuf.ByteString
         getMaxFaucetAmountMintBytes();
@@ -2552,7 +2714,7 @@ public final class Assets {
    *
    * Protobuf type {@code vega.BuiltinAsset}
    */
-  public  static final class BuiltinAsset extends
+  public static final class BuiltinAsset extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.BuiltinAsset)
       BuiltinAssetOrBuilder {
@@ -2565,8 +2727,14 @@ public final class Assets {
       name_ = "";
       symbol_ = "";
       totalSupply_ = "";
-      decimals_ = 0L;
       maxFaucetAmountMint_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new BuiltinAsset();
     }
 
     @java.lang.Override
@@ -2582,7 +2750,6 @@ public final class Assets {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2593,13 +2760,6 @@ public final class Assets {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2629,6 +2789,13 @@ public final class Assets {
               maxFaucetAmountMint_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2646,6 +2813,7 @@ public final class Assets {
       return io.vegaprotocol.vega.Assets.internal_static_vega_BuiltinAsset_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.Assets.internal_static_vega_BuiltinAsset_fieldAccessorTable
@@ -2660,8 +2828,10 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 1[json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The name.
      */
+    @java.lang.Override
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
@@ -2679,8 +2849,10 @@ public final class Assets {
      * Name of the asset (e.g: Great British Pound)
      * </pre>
      *
-     * <code>string name = 1[json_name = "name"];</code>
+     * <code>string name = 1 [json_name = "name"];</code>
+     * @return The bytes for name.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getNameBytes() {
       java.lang.Object ref = name_;
@@ -2702,8 +2874,10 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 2[json_name = "symbol"];</code>
+     * <code>string symbol = 2 [json_name = "symbol"];</code>
+     * @return The symbol.
      */
+    @java.lang.Override
     public java.lang.String getSymbol() {
       java.lang.Object ref = symbol_;
       if (ref instanceof java.lang.String) {
@@ -2721,8 +2895,10 @@ public final class Assets {
      * Symbol of the asset (e.g: GBP)
      * </pre>
      *
-     * <code>string symbol = 2[json_name = "symbol"];</code>
+     * <code>string symbol = 2 [json_name = "symbol"];</code>
+     * @return The bytes for symbol.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getSymbolBytes() {
       java.lang.Object ref = symbol_;
@@ -2744,8 +2920,10 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+     * @return The totalSupply.
      */
+    @java.lang.Override
     public java.lang.String getTotalSupply() {
       java.lang.Object ref = totalSupply_;
       if (ref instanceof java.lang.String) {
@@ -2763,8 +2941,10 @@ public final class Assets {
      * Total circulating supply for the asset
      * </pre>
      *
-     * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+     * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+     * @return The bytes for totalSupply.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getTotalSupplyBytes() {
       java.lang.Object ref = totalSupply_;
@@ -2786,8 +2966,10 @@ public final class Assets {
      * Number of decimal / precision handled by this asset
      * </pre>
      *
-     * <code>uint64 decimals = 4[json_name = "decimals"];</code>
+     * <code>uint64 decimals = 4 [json_name = "decimals"];</code>
+     * @return The decimals.
      */
+    @java.lang.Override
     public long getDecimals() {
       return decimals_;
     }
@@ -2799,8 +2981,10 @@ public final class Assets {
      * Maximum amount that can be requested by a party through the built-in asset faucet at a time
      * </pre>
      *
-     * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+     * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+     * @return The maxFaucetAmountMint.
      */
+    @java.lang.Override
     public java.lang.String getMaxFaucetAmountMint() {
       java.lang.Object ref = maxFaucetAmountMint_;
       if (ref instanceof java.lang.String) {
@@ -2818,8 +3002,10 @@ public final class Assets {
      * Maximum amount that can be requested by a party through the built-in asset faucet at a time
      * </pre>
      *
-     * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+     * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+     * @return The bytes for maxFaucetAmountMint.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getMaxFaucetAmountMintBytes() {
       java.lang.Object ref = maxFaucetAmountMint_;
@@ -2835,6 +3021,7 @@ public final class Assets {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2844,6 +3031,7 @@ public final class Assets {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -2864,6 +3052,7 @@ public final class Assets {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2900,19 +3089,18 @@ public final class Assets {
       }
       io.vegaprotocol.vega.Assets.BuiltinAsset other = (io.vegaprotocol.vega.Assets.BuiltinAsset) obj;
 
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getSymbol()
-          .equals(other.getSymbol());
-      result = result && getTotalSupply()
-          .equals(other.getTotalSupply());
-      result = result && (getDecimals()
-          == other.getDecimals());
-      result = result && getMaxFaucetAmountMint()
-          .equals(other.getMaxFaucetAmountMint());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getSymbol()
+          .equals(other.getSymbol())) return false;
+      if (!getTotalSupply()
+          .equals(other.getTotalSupply())) return false;
+      if (getDecimals()
+          != other.getDecimals()) return false;
+      if (!getMaxFaucetAmountMint()
+          .equals(other.getMaxFaucetAmountMint())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3008,6 +3196,7 @@ public final class Assets {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3015,6 +3204,7 @@ public final class Assets {
     public static Builder newBuilder(io.vegaprotocol.vega.Assets.BuiltinAsset prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3042,6 +3232,7 @@ public final class Assets {
         return io.vegaprotocol.vega.Assets.internal_static_vega_BuiltinAsset_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_BuiltinAsset_fieldAccessorTable
@@ -3064,6 +3255,7 @@ public final class Assets {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -3079,15 +3271,18 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_BuiltinAsset_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.BuiltinAsset getDefaultInstanceForType() {
         return io.vegaprotocol.vega.Assets.BuiltinAsset.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.BuiltinAsset build() {
         io.vegaprotocol.vega.Assets.BuiltinAsset result = buildPartial();
         if (!result.isInitialized()) {
@@ -3096,6 +3291,7 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.BuiltinAsset buildPartial() {
         io.vegaprotocol.vega.Assets.BuiltinAsset result = new io.vegaprotocol.vega.Assets.BuiltinAsset(this);
         result.name_ = name_;
@@ -3107,32 +3303,39 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.Assets.BuiltinAsset) {
           return mergeFrom((io.vegaprotocol.vega.Assets.BuiltinAsset)other);
@@ -3168,10 +3371,12 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3196,7 +3401,8 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3215,7 +3421,8 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3235,7 +3442,9 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -3252,7 +3461,8 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -3265,7 +3475,9 @@ public final class Assets {
        * Name of the asset (e.g: Great British Pound)
        * </pre>
        *
-       * <code>string name = 1[json_name = "name"];</code>
+       * <code>string name = 1 [json_name = "name"];</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3285,7 +3497,8 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 2[json_name = "symbol"];</code>
+       * <code>string symbol = 2 [json_name = "symbol"];</code>
+       * @return The symbol.
        */
       public java.lang.String getSymbol() {
         java.lang.Object ref = symbol_;
@@ -3304,7 +3517,8 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 2[json_name = "symbol"];</code>
+       * <code>string symbol = 2 [json_name = "symbol"];</code>
+       * @return The bytes for symbol.
        */
       public com.google.protobuf.ByteString
           getSymbolBytes() {
@@ -3324,7 +3538,9 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 2[json_name = "symbol"];</code>
+       * <code>string symbol = 2 [json_name = "symbol"];</code>
+       * @param value The symbol to set.
+       * @return This builder for chaining.
        */
       public Builder setSymbol(
           java.lang.String value) {
@@ -3341,7 +3557,8 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 2[json_name = "symbol"];</code>
+       * <code>string symbol = 2 [json_name = "symbol"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearSymbol() {
         
@@ -3354,7 +3571,9 @@ public final class Assets {
        * Symbol of the asset (e.g: GBP)
        * </pre>
        *
-       * <code>string symbol = 2[json_name = "symbol"];</code>
+       * <code>string symbol = 2 [json_name = "symbol"];</code>
+       * @param value The bytes for symbol to set.
+       * @return This builder for chaining.
        */
       public Builder setSymbolBytes(
           com.google.protobuf.ByteString value) {
@@ -3374,7 +3593,8 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+       * @return The totalSupply.
        */
       public java.lang.String getTotalSupply() {
         java.lang.Object ref = totalSupply_;
@@ -3393,7 +3613,8 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+       * @return The bytes for totalSupply.
        */
       public com.google.protobuf.ByteString
           getTotalSupplyBytes() {
@@ -3413,7 +3634,9 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+       * @param value The totalSupply to set.
+       * @return This builder for chaining.
        */
       public Builder setTotalSupply(
           java.lang.String value) {
@@ -3430,7 +3653,8 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearTotalSupply() {
         
@@ -3443,7 +3667,9 @@ public final class Assets {
        * Total circulating supply for the asset
        * </pre>
        *
-       * <code>string total_supply = 3[json_name = "totalSupply"];</code>
+       * <code>string total_supply = 3 [json_name = "totalSupply"];</code>
+       * @param value The bytes for totalSupply to set.
+       * @return This builder for chaining.
        */
       public Builder setTotalSupplyBytes(
           com.google.protobuf.ByteString value) {
@@ -3463,8 +3689,10 @@ public final class Assets {
        * Number of decimal / precision handled by this asset
        * </pre>
        *
-       * <code>uint64 decimals = 4[json_name = "decimals"];</code>
+       * <code>uint64 decimals = 4 [json_name = "decimals"];</code>
+       * @return The decimals.
        */
+      @java.lang.Override
       public long getDecimals() {
         return decimals_;
       }
@@ -3473,7 +3701,9 @@ public final class Assets {
        * Number of decimal / precision handled by this asset
        * </pre>
        *
-       * <code>uint64 decimals = 4[json_name = "decimals"];</code>
+       * <code>uint64 decimals = 4 [json_name = "decimals"];</code>
+       * @param value The decimals to set.
+       * @return This builder for chaining.
        */
       public Builder setDecimals(long value) {
         
@@ -3486,7 +3716,8 @@ public final class Assets {
        * Number of decimal / precision handled by this asset
        * </pre>
        *
-       * <code>uint64 decimals = 4[json_name = "decimals"];</code>
+       * <code>uint64 decimals = 4 [json_name = "decimals"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearDecimals() {
         
@@ -3501,7 +3732,8 @@ public final class Assets {
        * Maximum amount that can be requested by a party through the built-in asset faucet at a time
        * </pre>
        *
-       * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+       * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+       * @return The maxFaucetAmountMint.
        */
       public java.lang.String getMaxFaucetAmountMint() {
         java.lang.Object ref = maxFaucetAmountMint_;
@@ -3520,7 +3752,8 @@ public final class Assets {
        * Maximum amount that can be requested by a party through the built-in asset faucet at a time
        * </pre>
        *
-       * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+       * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+       * @return The bytes for maxFaucetAmountMint.
        */
       public com.google.protobuf.ByteString
           getMaxFaucetAmountMintBytes() {
@@ -3540,7 +3773,9 @@ public final class Assets {
        * Maximum amount that can be requested by a party through the built-in asset faucet at a time
        * </pre>
        *
-       * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+       * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+       * @param value The maxFaucetAmountMint to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxFaucetAmountMint(
           java.lang.String value) {
@@ -3557,7 +3792,8 @@ public final class Assets {
        * Maximum amount that can be requested by a party through the built-in asset faucet at a time
        * </pre>
        *
-       * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+       * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearMaxFaucetAmountMint() {
         
@@ -3570,7 +3806,9 @@ public final class Assets {
        * Maximum amount that can be requested by a party through the built-in asset faucet at a time
        * </pre>
        *
-       * <code>string max_faucet_amount_mint = 5[json_name = "maxFaucetAmountMint"];</code>
+       * <code>string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];</code>
+       * @param value The bytes for maxFaucetAmountMint to set.
+       * @return This builder for chaining.
        */
       public Builder setMaxFaucetAmountMintBytes(
           com.google.protobuf.ByteString value) {
@@ -3583,11 +3821,13 @@ public final class Assets {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3609,6 +3849,7 @@ public final class Assets {
 
     private static final com.google.protobuf.Parser<BuiltinAsset>
         PARSER = new com.google.protobuf.AbstractParser<BuiltinAsset>() {
+      @java.lang.Override
       public BuiltinAsset parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3626,6 +3867,7 @@ public final class Assets {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.BuiltinAsset getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3641,7 +3883,8 @@ public final class Assets {
      * The address of the contract for the token, on the ethereum network
      * </pre>
      *
-     * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+     * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+     * @return The contractAddress.
      */
     java.lang.String getContractAddress();
     /**
@@ -3649,7 +3892,8 @@ public final class Assets {
      * The address of the contract for the token, on the ethereum network
      * </pre>
      *
-     * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+     * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+     * @return The bytes for contractAddress.
      */
     com.google.protobuf.ByteString
         getContractAddressBytes();
@@ -3661,7 +3905,7 @@ public final class Assets {
    *
    * Protobuf type {@code vega.ERC20}
    */
-  public  static final class ERC20 extends
+  public static final class ERC20 extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:vega.ERC20)
       ERC20OrBuilder {
@@ -3672,6 +3916,13 @@ public final class Assets {
     }
     private ERC20() {
       contractAddress_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ERC20();
     }
 
     @java.lang.Override
@@ -3687,7 +3938,6 @@ public final class Assets {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3698,17 +3948,17 @@ public final class Assets {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               contractAddress_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3728,6 +3978,7 @@ public final class Assets {
       return io.vegaprotocol.vega.Assets.internal_static_vega_ERC20_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.vegaprotocol.vega.Assets.internal_static_vega_ERC20_fieldAccessorTable
@@ -3742,8 +3993,10 @@ public final class Assets {
      * The address of the contract for the token, on the ethereum network
      * </pre>
      *
-     * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+     * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+     * @return The contractAddress.
      */
+    @java.lang.Override
     public java.lang.String getContractAddress() {
       java.lang.Object ref = contractAddress_;
       if (ref instanceof java.lang.String) {
@@ -3761,8 +4014,10 @@ public final class Assets {
      * The address of the contract for the token, on the ethereum network
      * </pre>
      *
-     * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+     * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+     * @return The bytes for contractAddress.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getContractAddressBytes() {
       java.lang.Object ref = contractAddress_;
@@ -3778,6 +4033,7 @@ public final class Assets {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3787,6 +4043,7 @@ public final class Assets {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getContractAddressBytes().isEmpty()) {
@@ -3795,6 +4052,7 @@ public final class Assets {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3818,11 +4076,10 @@ public final class Assets {
       }
       io.vegaprotocol.vega.Assets.ERC20 other = (io.vegaprotocol.vega.Assets.ERC20) obj;
 
-      boolean result = true;
-      result = result && getContractAddress()
-          .equals(other.getContractAddress());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getContractAddress()
+          .equals(other.getContractAddress())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3909,6 +4166,7 @@ public final class Assets {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3916,6 +4174,7 @@ public final class Assets {
     public static Builder newBuilder(io.vegaprotocol.vega.Assets.ERC20 prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3943,6 +4202,7 @@ public final class Assets {
         return io.vegaprotocol.vega.Assets.internal_static_vega_ERC20_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_ERC20_fieldAccessorTable
@@ -3965,6 +4225,7 @@ public final class Assets {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         contractAddress_ = "";
@@ -3972,15 +4233,18 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return io.vegaprotocol.vega.Assets.internal_static_vega_ERC20_descriptor;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.ERC20 getDefaultInstanceForType() {
         return io.vegaprotocol.vega.Assets.ERC20.getDefaultInstance();
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.ERC20 build() {
         io.vegaprotocol.vega.Assets.ERC20 result = buildPartial();
         if (!result.isInitialized()) {
@@ -3989,6 +4253,7 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public io.vegaprotocol.vega.Assets.ERC20 buildPartial() {
         io.vegaprotocol.vega.Assets.ERC20 result = new io.vegaprotocol.vega.Assets.ERC20(this);
         result.contractAddress_ = contractAddress_;
@@ -3996,32 +4261,39 @@ public final class Assets {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.vegaprotocol.vega.Assets.ERC20) {
           return mergeFrom((io.vegaprotocol.vega.Assets.ERC20)other);
@@ -4042,10 +4314,12 @@ public final class Assets {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4070,7 +4344,8 @@ public final class Assets {
        * The address of the contract for the token, on the ethereum network
        * </pre>
        *
-       * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+       * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+       * @return The contractAddress.
        */
       public java.lang.String getContractAddress() {
         java.lang.Object ref = contractAddress_;
@@ -4089,7 +4364,8 @@ public final class Assets {
        * The address of the contract for the token, on the ethereum network
        * </pre>
        *
-       * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+       * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+       * @return The bytes for contractAddress.
        */
       public com.google.protobuf.ByteString
           getContractAddressBytes() {
@@ -4109,7 +4385,9 @@ public final class Assets {
        * The address of the contract for the token, on the ethereum network
        * </pre>
        *
-       * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+       * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+       * @param value The contractAddress to set.
+       * @return This builder for chaining.
        */
       public Builder setContractAddress(
           java.lang.String value) {
@@ -4126,7 +4404,8 @@ public final class Assets {
        * The address of the contract for the token, on the ethereum network
        * </pre>
        *
-       * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+       * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+       * @return This builder for chaining.
        */
       public Builder clearContractAddress() {
         
@@ -4139,7 +4418,9 @@ public final class Assets {
        * The address of the contract for the token, on the ethereum network
        * </pre>
        *
-       * <code>string contract_address = 1[json_name = "contractAddress"];</code>
+       * <code>string contract_address = 1 [json_name = "contractAddress"];</code>
+       * @param value The bytes for contractAddress to set.
+       * @return This builder for chaining.
        */
       public Builder setContractAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -4152,11 +4433,13 @@ public final class Assets {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -4178,6 +4461,7 @@ public final class Assets {
 
     private static final com.google.protobuf.Parser<ERC20>
         PARSER = new com.google.protobuf.AbstractParser<ERC20>() {
+      @java.lang.Override
       public ERC20 parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4195,6 +4479,7 @@ public final class Assets {
       return PARSER;
     }
 
+    @java.lang.Override
     public io.vegaprotocol.vega.Assets.ERC20 getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4247,18 +4532,10 @@ public final class Assets {
       "tocol.vegaZ\037code.vegaprotocol.io/vega/pr" +
       "otob\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_vega_Asset_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_vega_Asset_fieldAccessorTable = new
