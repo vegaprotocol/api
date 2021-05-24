@@ -34,7 +34,7 @@
     "@typescript-eslint/eslint-plugin": "4.24.0",
     "@typescript-eslint/parser": "4.24.0",
     "eslint": "7.27.0",
-    "google-protobuf": "3.17.0",
+    "google-protobuf": "3.17.1",
     "tape": "5.2.2",
     "tinyify": "3.0.0",
     "ts-protoc-gen": "0.15.0",
