@@ -2488,6 +2488,7 @@ class Proposal PROTOBUF_FINAL :
     kIdFieldNumber = 1,
     kReferenceFieldNumber = 2,
     kPartyIdFieldNumber = 3,
+    kErrorDetailsFieldNumber = 8,
     kTermsFieldNumber = 6,
     kTimestampFieldNumber = 5,
     kStateFieldNumber = 4,
@@ -2539,6 +2540,22 @@ class Proposal PROTOBUF_FINAL :
   const std::string& _internal_party_id() const;
   void _internal_set_party_id(const std::string& value);
   std::string* _internal_mutable_party_id();
+  public:
+
+  // string error_details = 8 [json_name = "errorDetails"];
+  void clear_error_details();
+  const std::string& error_details() const;
+  void set_error_details(const std::string& value);
+  void set_error_details(std::string&& value);
+  void set_error_details(const char* value);
+  void set_error_details(const char* value, size_t size);
+  std::string* mutable_error_details();
+  std::string* release_error_details();
+  void set_allocated_error_details(std::string* error_details);
+  private:
+  const std::string& _internal_error_details() const;
+  void _internal_set_error_details(const std::string& value);
+  std::string* _internal_mutable_error_details();
   public:
 
   // .vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = {
@@ -2596,6 +2613,7 @@ class Proposal PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_details_;
   ::vega::ProposalTerms* terms_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
   int state_;
@@ -5490,6 +5508,67 @@ inline void Proposal::_internal_set_reason(::vega::ProposalError value) {
 inline void Proposal::set_reason(::vega::ProposalError value) {
   _internal_set_reason(value);
   // @@protoc_insertion_point(field_set:vega.Proposal.reason)
+}
+
+// string error_details = 8 [json_name = "errorDetails"];
+inline void Proposal::clear_error_details() {
+  error_details_.ClearToEmpty();
+}
+inline const std::string& Proposal::error_details() const {
+  // @@protoc_insertion_point(field_get:vega.Proposal.error_details)
+  return _internal_error_details();
+}
+inline void Proposal::set_error_details(const std::string& value) {
+  _internal_set_error_details(value);
+  // @@protoc_insertion_point(field_set:vega.Proposal.error_details)
+}
+inline std::string* Proposal::mutable_error_details() {
+  // @@protoc_insertion_point(field_mutable:vega.Proposal.error_details)
+  return _internal_mutable_error_details();
+}
+inline const std::string& Proposal::_internal_error_details() const {
+  return error_details_.Get();
+}
+inline void Proposal::_internal_set_error_details(const std::string& value) {
+
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Proposal::set_error_details(std::string&& value) {
+
+  error_details_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.Proposal.error_details)
+}
+inline void Proposal::set_error_details(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Proposal.error_details)
+}
+inline void Proposal::set_error_details(const char* value,
+    size_t size) {
+
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.Proposal.error_details)
+}
+inline std::string* Proposal::_internal_mutable_error_details() {
+
+  return error_details_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* Proposal::release_error_details() {
+  // @@protoc_insertion_point(field_release:vega.Proposal.error_details)
+  return error_details_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Proposal::set_allocated_error_details(std::string* error_details) {
+  if (error_details != nullptr) {
+
+  } else {
+
+  }
+  error_details_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error_details,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.Proposal.error_details)
 }
 
 // -------------------------------------------------------------------

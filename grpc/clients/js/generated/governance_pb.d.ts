@@ -419,6 +419,9 @@ export class Proposal extends jspb.Message {
   getReason(): ProposalErrorMap[keyof ProposalErrorMap];
   setReason(value: ProposalErrorMap[keyof ProposalErrorMap]): void;
 
+  getErrorDetails(): string;
+  setErrorDetails(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Proposal.AsObject;
   static toObject(includeInstance: boolean, msg: Proposal): Proposal.AsObject;
@@ -438,6 +441,7 @@ export namespace Proposal {
     timestamp: number,
     terms?: ProposalTerms.AsObject,
     reason: ProposalErrorMap[keyof ProposalErrorMap],
+    errorDetails: string,
   }
 
   export interface StateMap {

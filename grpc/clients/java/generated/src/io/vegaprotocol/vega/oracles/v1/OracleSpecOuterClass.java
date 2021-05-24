@@ -75,7 +75,7 @@ public final class OracleSpecOuterClass {
      *
      * <code>repeated .oracles.v1.Filter filters = 2 [json_name = "filters"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter> 
+    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter>
         getFiltersList();
     /**
      * <pre>
@@ -103,7 +103,7 @@ public final class OracleSpecOuterClass {
      *
      * <code>repeated .oracles.v1.Filter filters = 2 [json_name = "filters"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
         getFiltersOrBuilderList();
     /**
      * <pre>
@@ -307,7 +307,7 @@ public final class OracleSpecOuterClass {
      * <code>repeated .oracles.v1.Filter filters = 2 [json_name = "filters"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
         getFiltersOrBuilderList() {
       return filters_;
     }
@@ -692,7 +692,7 @@ public final class OracleSpecOuterClass {
               filtersBuilder_ = null;
               filters_ = other.filters_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              filtersBuilder_ = 
+              filtersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFiltersFieldBuilder() : null;
             } else {
@@ -1164,7 +1164,7 @@ public final class OracleSpecOuterClass {
        *
        * <code>repeated .oracles.v1.Filter filters = 2 [json_name = "filters"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
            getFiltersOrBuilderList() {
         if (filtersBuilder_ != null) {
           return filtersBuilder_.getMessageOrBuilderList();
@@ -1205,12 +1205,12 @@ public final class OracleSpecOuterClass {
        *
        * <code>repeated .oracles.v1.Filter filters = 2 [json_name = "filters"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder> 
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder>
            getFiltersBuilderList() {
         return getFiltersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
           getFiltersFieldBuilder() {
         if (filtersBuilder_ == null) {
           filtersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -1377,7 +1377,7 @@ public final class OracleSpecOuterClass {
      *
      * <code>repeated .oracles.v1.Filter filters = 5 [json_name = "filters"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter> 
+    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter>
         getFiltersList();
     /**
      * <pre>
@@ -1405,7 +1405,7 @@ public final class OracleSpecOuterClass {
      *
      * <code>repeated .oracles.v1.Filter filters = 5 [json_name = "filters"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
         getFiltersOrBuilderList();
     /**
      * <pre>
@@ -1734,7 +1734,7 @@ public final class OracleSpecOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -1754,7 +1754,7 @@ public final class OracleSpecOuterClass {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -1876,7 +1876,7 @@ public final class OracleSpecOuterClass {
      * <code>repeated .oracles.v1.Filter filters = 5 [json_name = "filters"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
         getFiltersOrBuilderList() {
       return filters_;
     }
@@ -2355,7 +2355,7 @@ public final class OracleSpecOuterClass {
               filtersBuilder_ = null;
               filters_ = other.filters_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              filtersBuilder_ = 
+              filtersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFiltersFieldBuilder() : null;
             } else {
@@ -2429,7 +2429,7 @@ public final class OracleSpecOuterClass {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -2452,7 +2452,7 @@ public final class OracleSpecOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         id_ = value;
         onChanged();
         return this;
@@ -2466,7 +2466,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -2486,7 +2486,7 @@ public final class OracleSpecOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         id_ = value;
         onChanged();
         return this;
@@ -2515,7 +2515,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
-        
+
         createdAt_ = value;
         onChanged();
         return this;
@@ -2529,7 +2529,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        
+
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -2558,7 +2558,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
-        
+
         updatedAt_ = value;
         onChanged();
         return this;
@@ -2572,7 +2572,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        
+
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -3012,7 +3012,7 @@ public final class OracleSpecOuterClass {
        *
        * <code>repeated .oracles.v1.Filter filters = 5 [json_name = "filters"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
            getFiltersOrBuilderList() {
         if (filtersBuilder_ != null) {
           return filtersBuilder_.getMessageOrBuilderList();
@@ -3053,12 +3053,12 @@ public final class OracleSpecOuterClass {
        *
        * <code>repeated .oracles.v1.Filter filters = 5 [json_name = "filters"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder> 
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder>
            getFiltersBuilderList() {
         return getFiltersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder> 
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Filter.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.FilterOrBuilder>
           getFiltersFieldBuilder() {
         if (filtersBuilder_ == null) {
           filtersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -3094,7 +3094,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
-        
+
         status_ = value;
         onChanged();
         return this;
@@ -3126,7 +3126,7 @@ public final class OracleSpecOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -3140,7 +3140,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        
+
         status_ = 0;
         onChanged();
         return this;
@@ -3232,17 +3232,17 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition> 
+    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition>
         getConditionsList();
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3251,7 +3251,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3260,17 +3260,17 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder>
         getConditionsOrBuilderList();
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3430,7 +3430,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3442,20 +3442,20 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder>
         getConditionsOrBuilderList() {
       return conditions_;
     }
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3467,7 +3467,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3479,7 +3479,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3829,7 +3829,7 @@ public final class OracleSpecOuterClass {
               conditionsBuilder_ = null;
               conditions_ = other.conditions_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              conditionsBuilder_ = 
+              conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getConditionsFieldBuilder() : null;
             } else {
@@ -3982,7 +3982,7 @@ public final class OracleSpecOuterClass {
        * <code>.oracles.v1.PropertyKey key = 1 [json_name = "key"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKey.Builder getKeyBuilder() {
-        
+
         onChanged();
         return getKeyFieldBuilder().getBuilder();
       }
@@ -4009,7 +4009,7 @@ public final class OracleSpecOuterClass {
        * <code>.oracles.v1.PropertyKey key = 1 [json_name = "key"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKey, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKey.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKeyOrBuilder> 
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKey, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKey.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.PropertyKeyOrBuilder>
           getKeyFieldBuilder() {
         if (keyBuilder_ == null) {
           keyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4037,7 +4037,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4052,7 +4052,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4067,7 +4067,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4082,7 +4082,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4104,7 +4104,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4123,7 +4123,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4144,7 +4144,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4166,7 +4166,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4185,7 +4185,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4204,7 +4204,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4224,7 +4224,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4242,7 +4242,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4260,7 +4260,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4272,7 +4272,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4287,12 +4287,12 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder>
            getConditionsOrBuilderList() {
         if (conditionsBuilder_ != null) {
           return conditionsBuilder_.getMessageOrBuilderList();
@@ -4303,7 +4303,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4315,7 +4315,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4328,17 +4328,17 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition.Builder> 
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition.Builder>
            getConditionsBuilderList() {
         return getConditionsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder> 
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.Condition.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.ConditionOrBuilder>
           getConditionsFieldBuilder() {
         if (conditionsBuilder_ == null) {
           conditionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -4772,7 +4772,7 @@ public final class OracleSpecOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -4792,7 +4792,7 @@ public final class OracleSpecOuterClass {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -5184,7 +5184,7 @@ public final class OracleSpecOuterClass {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -5207,7 +5207,7 @@ public final class OracleSpecOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         name_ = value;
         onChanged();
         return this;
@@ -5221,7 +5221,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -5241,7 +5241,7 @@ public final class OracleSpecOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         name_ = value;
         onChanged();
         return this;
@@ -5269,7 +5269,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
+
         type_ = value;
         onChanged();
         return this;
@@ -5301,7 +5301,7 @@ public final class OracleSpecOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -5315,7 +5315,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+
         type_ = 0;
         onChanged();
         return this;
@@ -5754,7 +5754,7 @@ public final class OracleSpecOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         value_ = s;
@@ -5774,7 +5774,7 @@ public final class OracleSpecOuterClass {
         getValueBytes() {
       java.lang.Object ref = value_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         value_ = b;
@@ -6128,7 +6128,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOperatorValue(int value) {
-        
+
         operator_ = value;
         onChanged();
         return this;
@@ -6160,7 +6160,7 @@ public final class OracleSpecOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         operator_ = value.getNumber();
         onChanged();
         return this;
@@ -6174,7 +6174,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOperator() {
-        
+
         operator_ = 0;
         onChanged();
         return this;
@@ -6213,7 +6213,7 @@ public final class OracleSpecOuterClass {
           getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           value_ = b;
@@ -6236,7 +6236,7 @@ public final class OracleSpecOuterClass {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         value_ = value;
         onChanged();
         return this;
@@ -6250,7 +6250,7 @@ public final class OracleSpecOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        
+
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
@@ -6270,7 +6270,7 @@ public final class OracleSpecOuterClass {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         value_ = value;
         onChanged();
         return this;
@@ -6330,27 +6330,27 @@ public final class OracleSpecOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_OracleSpecConfiguration_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_OracleSpecConfiguration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_OracleSpec_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_OracleSpec_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_Filter_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_Filter_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_PropertyKey_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_PropertyKey_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oracles_v1_Condition_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oracles_v1_Condition_fieldAccessorTable;
 

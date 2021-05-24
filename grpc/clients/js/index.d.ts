@@ -15,6 +15,9 @@ export * as commands_v1_commands_service from "./generated/commands/v1/commands_
 export * as commands_v1_oracles_grpc from "./generated/commands/v1/oracles_grpc_pb";
 export * as commands_v1_oracles from "./generated/commands/v1/oracles_pb";
 export * as commands_v1_oracles_service from "./generated/commands/v1/oracles_pb_service";
+export * as commands_v1_transaction_grpc from "./generated/commands/v1/transaction_grpc_pb";
+export * as commands_v1_transaction from "./generated/commands/v1/transaction_pb";
+export * as commands_v1_transaction_service from "./generated/commands/v1/transaction_pb_service";
 export * as commands_v1_validator_commands_grpc from "./generated/commands/v1/validator_commands_grpc_pb";
 export * as commands_v1_validator_commands from "./generated/commands/v1/validator_commands_pb";
 export * as commands_v1_validator_commands_service from "./generated/commands/v1/validator_commands_pb_service";

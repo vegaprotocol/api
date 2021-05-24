@@ -355,6 +355,11 @@
 
     - [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource)
 
+- [commands/v1/transaction.proto](#commands/v1/transaction.proto)
+    - [InputData](#vega.commands.v1.InputData)
+    - [Signature](#vega.commands.v1.Signature)
+    - [Transaction](#vega.commands.v1.Transaction)
+
 - [tm/replay.proto](#tm/replay.proto)
     - [BlockParams](#tm.BlockParams)
     - [ConsensusParams](#tm.ConsensusParams)
@@ -837,7 +842,7 @@ Market definition
 | liquidity_monitoring_parameters | [LiquidityMonitoringParameters](#vega.LiquidityMonitoringParameters) |  | LiquidityMonitoringParameters for the market |
 | trading_mode | [Market.TradingMode](#vega.Market.TradingMode) |  | Current mode of execution of the market |
 | state | [Market.State](#vega.Market.State) |  | Current state of the market |
-| market_timestamps | [MarketTimestamps](#vega.MarketTimestamps) |  | Timestamps for when the market staye changes |
+| market_timestamps | [MarketTimestamps](#vega.MarketTimestamps) |  | Timestamps for when the market stay changes |
 
 
 
@@ -918,7 +923,7 @@ PriceMonitoringTrigger holds together price projection horizon τ, probability l
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | horizon | [int64](#int64) |  | Price monitoring projection horizon τ in seconds |
-| probability | [double](#double) |  | Price monitoirng probability level p |
+| probability | [double](#double) |  | Price monitoring probability level p |
 | auction_extension | [int64](#int64) |  | Price monitoring auction extension duration in seconds should the price breach it&#39;s theoretical level over the specified horizon at the specified probability level |
 
 
@@ -2535,6 +2540,7 @@ Governance proposal
 | timestamp | [int64](#int64) |  | Proposal timestamp for date and time (in nanoseconds) when proposal was submitted to the network |
 | terms | [ProposalTerms](#vega.ProposalTerms) |  | Proposal configuration and the actual change that is meant to be executed when proposal is enacted |
 | reason | [ProposalError](#vega.ProposalError) |  | A reason for the current state of the proposal, this may be set in case of REJECTED and FAILED statuses |
+| error_details | [string](#string) |  | The detailed error associated to the reason. |
 
 
 
@@ -5968,6 +5974,87 @@ The supported Oracle sources
 | ---- | ------ | ----------- |
 | ORACLE_SOURCE_UNSPECIFIED | 0 | The default value |
 | ORACLE_SOURCE_OPEN_ORACLE | 1 | Support for Open Oracle standard |
+
+
+
+
+
+
+
+
+
+
+<a name="commands/v1/transaction.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## commands/v1/transaction.proto
+
+
+
+<a name="vega.commands.v1.InputData"></a>
+
+### InputData
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nonce | [uint64](#uint64) |  | A random number used to provided uniqueness and prevents against replay attack. |
+| block_height | [uint64](#uint64) |  | The block height associated to the transaction. This should always be current height of the node at the time of sending the Tx. BlockHeight is used as a mechanism for replay protection. |
+| order_submission | [OrderSubmission](#vega.commands.v1.OrderSubmission) |  | user commands |
+| order_cancellation | [OrderCancellation](#vega.commands.v1.OrderCancellation) |  |  |
+| order_amendment | [OrderAmendment](#vega.commands.v1.OrderAmendment) |  |  |
+| withdraw_submission | [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  |  |
+| proposal_submission | [ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
+| vote_submission | [VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
+| liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
+| node_registration | [NodeRegistration](#vega.commands.v1.NodeRegistration) |  | validator commands |
+| node_vote | [NodeVote](#vega.commands.v1.NodeVote) |  |  |
+| node_signature | [NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
+| chain_event | [ChainEvent](#vega.commands.v1.ChainEvent) |  |  |
+| oracle_data_submission | [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission) |  | Oracles |
+
+
+
+
+
+
+<a name="vega.commands.v1.Signature"></a>
+
+### Signature
+A signature to be authenticate a transaction
+and to be verified by the vega network
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| bytes | [bytes](#bytes) |  | The bytes of the signature |
+| algo | [string](#string) |  | The algorithm used to create the signature |
+| version | [uint32](#uint32) |  | The version of the signature used to create the signature |
+
+
+
+
+
+
+<a name="vega.commands.v1.Transaction"></a>
+
+### Transaction
+Represents a transaction to be sent to Vega.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| input_data | [bytes](#bytes) |  | One of the set of Vega commands (proto marshalled). |
+| signature | [Signature](#vega.commands.v1.Signature) |  | The signature of the inputData |
+| address | [bytes](#bytes) |  | The address of the sender. |
+| pub_key | [bytes](#bytes) |  | The public key of the sender. |
+| version | [uint32](#uint32) |  | A version of the transaction, to be used in the future in case we want to implement changes to the Transaction format |
+
+
+
+
+
 
 
 
