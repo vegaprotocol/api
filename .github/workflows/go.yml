@@ -60,7 +60,7 @@ jobs:
           make vet
 
       - name: Run Gosec Security Scanner
-        uses: securego/gosec@v2.7.0
+        uses: securego/gosec@v2.8.0
         env:
           GOROOT: /usr/local/go
           GOTOOLDIR: /usr/local/go/pkg/tool/linux_amd64
