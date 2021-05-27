@@ -7,17 +7,22 @@ name: Shell script tests
     branches:
       - develop
       - main
-      - master
     paths-ignore:
       - grpc/clients/cpp/generated
       - grpc/clients/go/generated
       - grpc/clients/java/generated
       - grpc/clients/js/generated
       - grpc/clients/python/vegaapiclient/generated
+  push:
+    branches:
+      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
 
 jobs:
 
-  shellcheck:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -25,3 +30,13 @@ jobs:
 
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
+
+      - name: Run example shell scripts for REST
+        env:
+          NODE_URL_REST: ${{ secrets.NODE_URL_REST }}
+          WALLET_NAME: ${{ secrets.WALLET_NAME }}
+          WALLET_PASSPHRASE: ${{ secrets.WALLET_PASSPHRASE }}
+          WALLETSERVER_URL: ${{ secrets.WALLETSERVER }}
+        run: |
+          cd rest/examples/shell
+          make

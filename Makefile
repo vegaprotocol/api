@@ -34,6 +34,23 @@ JAVA_GENERATED_DIR := grpc/clients/java/generated
 JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
 PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
 
+# Pull the version from pom.xml
+PROTOC_GEN_GRPC_JAVA_VER := $(shell awk '/<grpc.version>1.38.0/ {print $1}' grpc/clients/java/pom.xml | cut -f2 -d '>' | cut -f1 -d '<')
+ifeq ($(OS),Windows_NT)
+	PROTOC_GEN_GRPC_JAVA_OS_ARCH := windows-x86_64
+else
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Linux)
+		PROTOC_GEN_GRPC_JAVA_OS_ARCH := linux-x86_64
+	endif
+	ifeq ($(UNAME_S),Darwin)
+		PROTOC_GEN_GRPC_JAVA_OS_ARCH := osx-x86_64
+	endif
+endif
+# yes, all protoc-gen-grpc-java binaries end in ".exe", whatever the OS.
+PROTOC_GEN_GRPC_JAVA_URL := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/$(PROTOC_GEN_GRPC_JAVA_VER)/protoc-gen-grpc-java-$(PROTOC_GEN_GRPC_JAVA_VER)-$(PROTOC_GEN_GRPC_JAVA_OS_ARCH).exe
+PROTOC_GEN_GRPC_JAVA := ./tools/java/protoc-gen-grpc-java
+
 .PHONY: buf-generate
 buf-generate: buf-build
 	@if ! command -v protoc-gen-doc 1>/dev/null ; then \
@@ -67,6 +84,11 @@ buf-generate: buf-build
 			echo "Not found/executable: protoc-gen-ts" ; \
 			exit 1 ; \
 		fi ; \
+	fi
+	@if ! [[ -x "$(PROTOC_GEN_GRPC_JAVA)" ]] ; then \
+		mkdir -p "$$(dirname "$(PROTOC_GEN_GRPC_JAVA)")" && \
+		wget -qO "$(PROTOC_GEN_GRPC_JAVA)" "$(PROTOC_GEN_GRPC_JAVA_URL)" && \
+		chmod +x "$(PROTOC_GEN_GRPC_JAVA)" ; \
 	fi
 	@for d in \
 		"$(CPP_GENERATED_DIR)" \
@@ -127,6 +149,37 @@ spellcheck:
 	pyspelling -c spellcheck.yaml && \
 	deactivate
 
+# Just for Python
+
+.PHONY: black
+black:
+	@black --exclude generated -l 79 .
+
+.PHONY: blackcheck
+blackcheck:
+	@black --exclude generated -l 79 --check .
+
+.PHONY: flake8
+flake8:
+	@find . -name generated -prune -o -name '*.py' -print | xargs flake8
+
+.PHONY: mypy
+mypy:
+	@echo "Running mypy in grpc/clients/python" ; \
+	( \
+		cd grpc/clients/python && \
+		env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
+		code="$$?" ; \
+		test "$$code" -ne 0 \
+	)
+	@for d in grpc/examples/python rest/examples/python ; do \
+		echo "Running mypy in $$d" ; \
+		( \
+			cd "$$d" && \
+			env MYPYPATH=. mypy --ignore-missing-imports . || exit 1 \
+		) || exit 1 ; \
+	done
+
 # Clean
 
 .PHONY: clean
@@ -142,7 +195,7 @@ clean-go:
 
 .PHONY: clean-java
 clean-java:
-	@rm -rf "$(JAVA_GENERATED_DIR)"
+	@rm -rf tools/java "$(JAVA_GENERATED_DIR)"
 
 .PHONY: clean-javascript
 clean-javascript:

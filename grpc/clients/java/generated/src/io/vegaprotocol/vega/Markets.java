@@ -14252,7 +14252,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Price monitoirng probability level p
+     * Price monitoring probability level p
      * </pre>
      *
      * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14387,7 +14387,7 @@ public final class Markets {
     private double probability_;
     /**
      * <pre>
-     * Price monitoirng probability level p
+     * Price monitoring probability level p
      * </pre>
      *
      * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14805,7 +14805,7 @@ public final class Markets {
       private double probability_ ;
       /**
        * <pre>
-       * Price monitoirng probability level p
+       * Price monitoring probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14817,7 +14817,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoirng probability level p
+       * Price monitoring probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14832,7 +14832,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoirng probability level p
+       * Price monitoring probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -18276,7 +18276,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -18285,7 +18285,7 @@ public final class Markets {
     boolean hasMarketTimestamps();
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -18294,7 +18294,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.MarketTimestamps getMarketTimestamps();
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -19404,7 +19404,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.MarketTimestamps marketTimestamps_;
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -19416,7 +19416,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -19428,7 +19428,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21494,7 +21494,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder> marketTimestampsBuilder_;
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21505,7 +21505,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21520,7 +21520,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21540,7 +21540,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21558,7 +21558,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21580,7 +21580,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21598,7 +21598,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21610,7 +21610,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21625,7 +21625,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>

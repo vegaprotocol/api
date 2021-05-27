@@ -3232,7 +3232,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3242,7 +3242,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3251,7 +3251,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3260,7 +3260,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3270,7 +3270,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3430,7 +3430,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3442,7 +3442,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3455,7 +3455,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3467,7 +3467,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -3479,7 +3479,7 @@ public final class OracleSpecOuterClass {
     /**
      * <pre>
      * conditions are the conditions that should be matched by the data to be
-     *considered of interest.
+     * considered of interest.
      * </pre>
      *
      * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4037,7 +4037,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4052,7 +4052,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4067,7 +4067,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4082,7 +4082,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4104,7 +4104,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4123,7 +4123,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4144,7 +4144,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4166,7 +4166,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4185,7 +4185,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4204,7 +4204,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4224,7 +4224,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4242,7 +4242,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4260,7 +4260,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4272,7 +4272,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4287,7 +4287,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4303,7 +4303,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4315,7 +4315,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>
@@ -4328,7 +4328,7 @@ public final class OracleSpecOuterClass {
       /**
        * <pre>
        * conditions are the conditions that should be matched by the data to be
-       *considered of interest.
+       * considered of interest.
        * </pre>
        *
        * <code>repeated .oracles.v1.Condition conditions = 2 [json_name = "conditions"];</code>

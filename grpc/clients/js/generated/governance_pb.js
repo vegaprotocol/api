@@ -3106,7 +3106,8 @@ proto.vega.Proposal.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 4, 0),
     timestamp: jspb.Message.getFieldWithDefault(msg, 5, 0),
     terms: (f = msg.getTerms()) && proto.vega.ProposalTerms.toObject(includeInstance, f),
-    reason: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    reason: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    errorDetails: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -3171,6 +3172,10 @@ proto.vega.Proposal.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {!proto.vega.ProposalError} */ (reader.readEnum());
       msg.setReason(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setErrorDetails(value);
       break;
     default:
       reader.skipField();
@@ -3248,6 +3253,13 @@ proto.vega.Proposal.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getErrorDetails();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -3410,6 +3422,24 @@ proto.vega.Proposal.prototype.getReason = function() {
  */
 proto.vega.Proposal.prototype.setReason = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional string error_details = 8;
+ * @return {string}
+ */
+proto.vega.Proposal.prototype.getErrorDetails = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.Proposal} returns this
+ */
+proto.vega.Proposal.prototype.setErrorDetails = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
