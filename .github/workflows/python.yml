@@ -78,6 +78,19 @@ jobs:
           command -v pipenv 1>/dev/null || pip install pipenv
           cd grpc/examples/python
           make
+        if: ${{ matrix.python-version == '3.9' }}
+
+      - name: Run example scripts for GraphQL
+        env:
+          NODE_URL_REST: ${{ secrets.NODE_URL_REST }}
+          WALLET_NAME: ${{ secrets.WALLET_NAME }}
+          WALLET_PASSPHRASE: ${{ secrets.WALLET_PASSPHRASE }}
+          WALLETSERVER_URL: ${{ secrets.WALLETSERVER }}
+        run: |
+          command -v pipenv 1>/dev/null || pip install pipenv
+          cd graphql/examples/python
+          make
+        if: ${{ matrix.python-version == '3.9' }}
 
       - name: Run example scripts for REST
         env:
@@ -89,6 +102,7 @@ jobs:
           command -v pipenv 1>/dev/null || pip install pipenv
           cd rest/examples/python
           make
+        if: ${{ matrix.python-version == '3.9' }}
 
       - name: Push release to PyPI
         if: ${{ startsWith(github.ref, 'refs/tags/') && matrix.python-version == '3.8' }}
