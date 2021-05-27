@@ -38,7 +38,7 @@
     "tape": "5.2.2",
     "tinyify": "3.0.0",
     "ts-protoc-gen": "0.15.0",
-    "typescript": "4.2.4",
+    "typescript": "4.3.2",
     "uglify-js": "3.13.8",
     "xmlhttprequest": "1.8.0"
   }
