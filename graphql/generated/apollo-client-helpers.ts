@@ -521,7 +521,7 @@ export type PropertyKeyFieldPolicy = {
 	name?: FieldPolicy<any> | FieldReadFunction<any>,
 	type?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProposalKeySpecifier = ('id' | 'reference' | 'party' | 'state' | 'datetime' | 'terms' | 'votes' | 'rejectionReason' | ProposalKeySpecifier)[];
+export type ProposalKeySpecifier = ('id' | 'reference' | 'party' | 'state' | 'datetime' | 'terms' | 'votes' | 'rejectionReason' | 'errorDetails' | ProposalKeySpecifier)[];
 export type ProposalFieldPolicy = {
 	id?: FieldPolicy<any> | FieldReadFunction<any>,
 	reference?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -530,7 +530,8 @@ export type ProposalFieldPolicy = {
 	datetime?: FieldPolicy<any> | FieldReadFunction<any>,
 	terms?: FieldPolicy<any> | FieldReadFunction<any>,
 	votes?: FieldPolicy<any> | FieldReadFunction<any>,
-	rejectionReason?: FieldPolicy<any> | FieldReadFunction<any>
+	rejectionReason?: FieldPolicy<any> | FieldReadFunction<any>,
+	errorDetails?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProposalTermsKeySpecifier = ('closingDatetime' | 'enactmentDatetime' | 'change' | ProposalTermsKeySpecifier)[];
 export type ProposalTermsFieldPolicy = {

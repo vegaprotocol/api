@@ -787,7 +787,7 @@ export type Market = {
   /** Candles on a market, for the 'last' n candles, at 'interval' seconds as specified by params */
   candles?: Maybe<Array<Maybe<Candle>>>;
   /** marketData for the given market */
-  data: MarketData;
+  data?: Maybe<MarketData>;
   /** The list of the liquidity provision commitment for this market */
   liquidityProvisions?: Maybe<Array<LiquidityProvision>>;
   /** timestamps for state changes in the market */
@@ -1886,6 +1886,8 @@ export type Proposal = {
   votes: ProposalVotes;
   /** Reason for the proposal to be rejected by the core */
   rejectionReason?: Maybe<ProposalRejectionReason>;
+  /** Error details of the rejectionReason */
+  errorDetails?: Maybe<Scalars['String']>;
 };
 
 export type ProposalChange = NewMarket | UpdateMarket | UpdateNetworkParameter | NewAsset;
