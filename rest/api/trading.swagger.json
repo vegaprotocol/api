@@ -2998,7 +2998,7 @@
         },
         "market_timestamps": {
           "$ref": "#/definitions/vegaMarketTimestamps",
-          "title": "Timestamps for when the market staye changes"
+          "title": "Timestamps for when the market stay changes"
         },
         "opening_auction": {
           "$ref": "#/definitions/vegaAuctionDuration",
@@ -3729,7 +3729,7 @@
         },
         "probability": {
           "format": "double",
-          "title": "Price monitoirng probability level p",
+          "title": "Price monitoring probability level p",
           "type": "number"
         }
       },
@@ -3738,6 +3738,10 @@
     },
     "vegaProposal": {
       "properties": {
+        "error_details": {
+          "description": "The detailed error associated to the reason.",
+          "type": "string"
+        },
         "id": {
           "title": "Unique proposal identifier",
           "type": "string"

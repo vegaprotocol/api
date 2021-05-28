@@ -5,6 +5,7 @@ var assets = require('./generated/assets_pb.js')
 var chain_events = require('./generated/chain_events_pb.js')
 var commands_v1_commands = require('./generated/commands/v1/commands_pb.js')
 var commands_v1_oracles = require('./generated/commands/v1/oracles_pb.js')
+var commands_v1_transaction = require('./generated/commands/v1/transaction_pb.js')
 var commands_v1_validator_commands = require('./generated/commands/v1/validator_commands_pb.js')
 var events_v1_events = require('./generated/events/v1/events_pb.js')
 var github_com_mwitkow_go_proto_validators_validator = require('./generated/github.com/mwitkow/go-proto-validators/validator_pb.js')
@@ -26,6 +27,7 @@ module.exports = {
     v1: {
       commands: commands_v1_commands,
       oracles: commands_v1_oracles,
+      transaction: commands_v1_transaction,
       validator_commands: commands_v1_validator_commands
     }
   },

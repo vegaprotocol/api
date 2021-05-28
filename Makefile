@@ -30,21 +30,26 @@ DOC_GENERATED_DIR := grpc/doc
 
 CPP_GENERATED_DIR := grpc/clients/cpp/generated
 GO_GENERATED_DIR := grpc/clients/go/generated
-JAVA_GENERATED_DIR := grpc/clients/java/generated/src
+JAVA_GENERATED_DIR := grpc/clients/java/generated
 JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
 PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
 
+# Pull the version from pom.xml
+PROTOC_GEN_GRPC_JAVA_VER := $(shell awk '/<grpc.version>1.38.0/ {print $1}' grpc/clients/java/pom.xml | cut -f2 -d '>' | cut -f1 -d '<')
 ifeq ($(OS),Windows_NT)
-    GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-windows-x86_64.exe
+	PROTOC_GEN_GRPC_JAVA_OS_ARCH := windows-x86_64
 else
-    UNAME_S := $(shell uname -s)
-    ifeq ($(UNAME_S),Linux)
-        GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-linux-x86_64.exe
-    endif
-    ifeq ($(UNAME_S),Darwin)
-        GRPC_JAVA_PLUGIN := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/1.37.0/protoc-gen-grpc-java-1.37.0-osx-x86_64.exe
-    endif
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Linux)
+		PROTOC_GEN_GRPC_JAVA_OS_ARCH := linux-x86_64
+	endif
+	ifeq ($(UNAME_S),Darwin)
+		PROTOC_GEN_GRPC_JAVA_OS_ARCH := osx-x86_64
+	endif
 endif
+# yes, all protoc-gen-grpc-java binaries end in ".exe", whatever the OS.
+PROTOC_GEN_GRPC_JAVA_URL := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/$(PROTOC_GEN_GRPC_JAVA_VER)/protoc-gen-grpc-java-$(PROTOC_GEN_GRPC_JAVA_VER)-$(PROTOC_GEN_GRPC_JAVA_OS_ARCH).exe
+PROTOC_GEN_GRPC_JAVA := ./tools/java/protoc-gen-grpc-java
 
 .PHONY: buf-generate
 buf-generate: buf-build
@@ -80,12 +85,10 @@ buf-generate: buf-build
 			exit 1 ; \
 		fi ; \
 	fi
-	@proto_gen_java=./tools/java/protoc-gen-grpc-java && \
-	if ! test -r "$$proto_gen_java" -a -x "$$proto_gen_java" ; then \
-		pushd tools/java 1>/dev/null && \
-			wget $(GRPC_JAVA_PLUGIN) -O protoc-gen-grpc-java && \
-			chmod +x protoc-gen-grpc-java && \
-		popd 1>/dev/null ; \
+	@if ! [[ -x "$(PROTOC_GEN_GRPC_JAVA)" ]] ; then \
+		mkdir -p "$$(dirname "$(PROTOC_GEN_GRPC_JAVA)")" && \
+		wget -qO "$(PROTOC_GEN_GRPC_JAVA)" "$(PROTOC_GEN_GRPC_JAVA_URL)" && \
+		chmod +x "$(PROTOC_GEN_GRPC_JAVA)" ; \
 	fi
 	@for d in \
 		"$(CPP_GENERATED_DIR)" \
@@ -192,7 +195,7 @@ clean-go:
 
 .PHONY: clean-java
 clean-java:
-	@rm -rf "$(JAVA_GENERATED_DIR)"
+	@rm -rf tools/java "$(JAVA_GENERATED_DIR)"
 
 .PHONY: clean-javascript
 clean-javascript:

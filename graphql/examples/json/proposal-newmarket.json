@@ -1,0 +1,75 @@
+{
+  "partyId": "yourPartyId",
+  "proposalTerms": {
+    "closingDatetime": "2021-05-23T18:40:00Z",
+    "enactmentDatetime": "2021-05-24T18:44:00Z",
+    "newMarket": {
+      "commitment": {
+        "buys": [
+          {
+            "offset": "-2",
+            "proportion": "1",
+            "reference": "Mid"
+          }
+        ],
+        "commitmentAmount": "100",
+        "fee": "0.1",
+        "sells": [
+          {
+            "offset": "2",
+            "proportion": "1",
+            "reference": "Mid"
+          }
+        ]
+      },
+      "continuousTrading": {
+        "tickSize": "1"
+      },
+      "decimalPlaces": 6,
+      "instrument": {
+        "code": "XXXYYY",
+        "futureProduct": {
+          "maturity": "2099-12-31T23:59:59Z",
+          "oracleSpec": {
+            "filters": [
+              {
+                "conditions": [
+                  {
+                    "operator": "OperatorEquals",
+                    "value": "lastPrice"
+                  }
+                ],
+                "key": {
+                  "name": "price.YYY.value",
+                  "type": "TypeString"
+                }
+              }
+            ],
+            "pubKeys": [
+              "G6VC6AB0QIAGNRU"
+            ]
+          },
+          "oracleSpecBinding": {
+            "settlementPriceProperty": "price.YYY.value"
+          },
+          "quoteName": "tDAI",
+          "settlementAsset": "6d9d35f657589e40ddfb448b7ad4a7463b66efb307527fedd2aa7df1bbd5ea61"
+        },
+        "name": "XXXYYY (2099, tDAI)"
+      },
+      "metadata": [],
+      "riskParameters": {
+        "logNormal": {
+          "params": {
+            "mu": 0,
+            "r": 0,
+            "sigma": 0.1
+          },
+          "riskAversionParameter": 1e-05,
+          "tau": 0.1
+        }
+      }
+    }
+  },
+  "reference": "test"
+}

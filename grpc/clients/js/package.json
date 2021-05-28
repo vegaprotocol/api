@@ -1,6 +1,6 @@
 {
   "name": "@vegaprotocol/vega-grpc",
-  "version": "0.36.0",
+  "version": "0.37.0",
   "description": "A gRPC client for Vega Protocol",
   "main": "index.js",
   "types": "./index.d.ts",
@@ -30,16 +30,16 @@
   "homepage": "https://github.com/vegaprotocol/api#readme",
   "devDependencies": {
     "@types/google-protobuf": "3.15.2",
-    "@types/node": "14.17.0",
-    "@typescript-eslint/eslint-plugin": "4.24.0",
-    "@typescript-eslint/parser": "4.24.0",
+    "@types/node": "14.17.1",
+    "@typescript-eslint/eslint-plugin": "4.25.0",
+    "@typescript-eslint/parser": "4.25.0",
     "eslint": "7.27.0",
-    "google-protobuf": "3.17.0",
+    "google-protobuf": "3.17.1",
     "tape": "5.2.2",
     "tinyify": "3.0.0",
     "ts-protoc-gen": "0.15.0",
-    "typescript": "4.2.4",
-    "uglify-js": "3.13.7",
+    "typescript": "4.3.2",
+    "uglify-js": "3.13.8",
     "xmlhttprequest": "1.8.0"
   }
 }

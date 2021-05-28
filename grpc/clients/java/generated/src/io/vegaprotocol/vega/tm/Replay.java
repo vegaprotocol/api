@@ -1219,7 +1219,7 @@ public final class Replay {
        * <code>.tm.RequestInitChain req_init_chain = 1 [json_name = "reqInitChain"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.RequestInitChain, io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder, io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.RequestInitChain, io.vegaprotocol.vega.tm.Replay.RequestInitChain.Builder, io.vegaprotocol.vega.tm.Replay.RequestInitChainOrBuilder>
           getReqInitChainFieldBuilder() {
         if (reqInitChainBuilder_ == null) {
           if (!(actionCase_ == 1)) {
@@ -1360,7 +1360,7 @@ public final class Replay {
        * <code>.tm.ResponseInitChain res_init_chain = 2 [json_name = "resInitChain"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ResponseInitChain, io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder, io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ResponseInitChain, io.vegaprotocol.vega.tm.Replay.ResponseInitChain.Builder, io.vegaprotocol.vega.tm.Replay.ResponseInitChainOrBuilder>
           getResInitChainFieldBuilder() {
         if (resInitChainBuilder_ == null) {
           if (!(actionCase_ == 2)) {
@@ -1501,7 +1501,7 @@ public final class Replay {
        * <code>.tm.RequestDeliverTx req_deliver_tx = 3 [json_name = "reqDeliverTx"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.RequestDeliverTx, io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.RequestDeliverTx, io.vegaprotocol.vega.tm.Replay.RequestDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.RequestDeliverTxOrBuilder>
           getReqDeliverTxFieldBuilder() {
         if (reqDeliverTxBuilder_ == null) {
           if (!(actionCase_ == 3)) {
@@ -1642,7 +1642,7 @@ public final class Replay {
        * <code>.tm.ResponseDeliverTx res_deliver_tx = 4 [json_name = "resDeliverTx"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTx.Builder, io.vegaprotocol.vega.tm.Replay.ResponseDeliverTxOrBuilder>
           getResDeliverTxFieldBuilder() {
         if (resDeliverTxBuilder_ == null) {
           if (!(actionCase_ == 4)) {
@@ -1783,7 +1783,7 @@ public final class Replay {
        * <code>.tm.RequestBeginBlock req_begin_block = 5 [json_name = "reqBeginBlock"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.RequestBeginBlock, io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.RequestBeginBlock, io.vegaprotocol.vega.tm.Replay.RequestBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.RequestBeginBlockOrBuilder>
           getReqBeginBlockFieldBuilder() {
         if (reqBeginBlockBuilder_ == null) {
           if (!(actionCase_ == 5)) {
@@ -1924,7 +1924,7 @@ public final class Replay {
        * <code>.tm.ResponseBeginBlock res_begin_block = 6 [json_name = "resBeginBlock"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlock.Builder, io.vegaprotocol.vega.tm.Replay.ResponseBeginBlockOrBuilder>
           getResBeginBlockFieldBuilder() {
         if (resBeginBlockBuilder_ == null) {
           if (!(actionCase_ == 6)) {
@@ -2034,7 +2034,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>
         getValidatorsList();
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
@@ -2047,7 +2047,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
         getValidatorsOrBuilderList();
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
@@ -2217,7 +2217,7 @@ public final class Replay {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         chainId_ = s;
@@ -2233,7 +2233,7 @@ public final class Replay {
         getChainIdBytes() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         chainId_ = b;
@@ -2282,7 +2282,7 @@ public final class Replay {
      * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
         getValidatorsOrBuilderList() {
       return validators_;
     }
@@ -2729,7 +2729,7 @@ public final class Replay {
               validatorsBuilder_ = null;
               validators_ = other.validators_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              validatorsBuilder_ = 
+              validatorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getValidatorsFieldBuilder() : null;
             } else {
@@ -2788,7 +2788,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setTime(long value) {
-        
+
         time_ = value;
         onChanged();
         return this;
@@ -2798,7 +2798,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        
+
         time_ = 0L;
         onChanged();
         return this;
@@ -2829,7 +2829,7 @@ public final class Replay {
           getChainIdBytes() {
         java.lang.Object ref = chainId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           chainId_ = b;
@@ -2848,7 +2848,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         chainId_ = value;
         onChanged();
         return this;
@@ -2858,7 +2858,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearChainId() {
-        
+
         chainId_ = getDefaultInstance().getChainId();
         onChanged();
         return this;
@@ -2874,7 +2874,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         chainId_ = value;
         onChanged();
         return this;
@@ -2967,7 +2967,7 @@ public final class Replay {
        * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder getConsensusParamsBuilder() {
-        
+
         onChanged();
         return getConsensusParamsFieldBuilder().getBuilder();
       }
@@ -2986,7 +2986,7 @@ public final class Replay {
        * <code>.tm.ConsensusParams consensus_params = 3 [json_name = "consensusParams"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder>
           getConsensusParamsFieldBuilder() {
         if (consensusParamsBuilder_ == null) {
           consensusParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3194,7 +3194,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
            getValidatorsOrBuilderList() {
         if (validatorsBuilder_ != null) {
           return validatorsBuilder_.getMessageOrBuilderList();
@@ -3220,12 +3220,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.ValidatorUpdate validators = 4 [json_name = "validators"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder>
            getValidatorsBuilderList() {
         return getValidatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
           getValidatorsFieldBuilder() {
         if (validatorsBuilder_ == null) {
           validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -3257,7 +3257,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         appStateBytes_ = value;
         onChanged();
         return this;
@@ -3267,7 +3267,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearAppStateBytes() {
-        
+
         appStateBytes_ = getDefaultInstance().getAppStateBytes();
         onChanged();
         return this;
@@ -3288,7 +3288,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setInitialHeight(long value) {
-        
+
         initialHeight_ = value;
         onChanged();
         return this;
@@ -3298,7 +3298,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearInitialHeight() {
-        
+
         initialHeight_ = 0L;
         onChanged();
         return this;
@@ -3399,7 +3399,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence>
         getByzantineValidatorsList();
     /**
      * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
@@ -3412,7 +3412,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
         getByzantineValidatorsOrBuilderList();
     /**
      * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
@@ -3619,7 +3619,7 @@ public final class Replay {
      * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
         getByzantineValidatorsOrBuilderList() {
       return byzantineValidators_;
     }
@@ -4027,7 +4027,7 @@ public final class Replay {
               byzantineValidatorsBuilder_ = null;
               byzantineValidators_ = other.byzantineValidators_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              byzantineValidatorsBuilder_ = 
+              byzantineValidatorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getByzantineValidatorsFieldBuilder() : null;
             } else {
@@ -4083,7 +4083,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         hash_ = value;
         onChanged();
         return this;
@@ -4093,7 +4093,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearHash() {
-        
+
         hash_ = getDefaultInstance().getHash();
         onChanged();
         return this;
@@ -4186,7 +4186,7 @@ public final class Replay {
        * <code>.tm.Header header = 2 [json_name = "header"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Header.Builder getHeaderBuilder() {
-        
+
         onChanged();
         return getHeaderFieldBuilder().getBuilder();
       }
@@ -4205,7 +4205,7 @@ public final class Replay {
        * <code>.tm.Header header = 2 [json_name = "header"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Header, io.vegaprotocol.vega.tm.Replay.Header.Builder, io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.Header, io.vegaprotocol.vega.tm.Replay.Header.Builder, io.vegaprotocol.vega.tm.Replay.HeaderOrBuilder>
           getHeaderFieldBuilder() {
         if (headerBuilder_ == null) {
           headerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4305,7 +4305,7 @@ public final class Replay {
        * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder getLastCommitInfoBuilder() {
-        
+
         onChanged();
         return getLastCommitInfoFieldBuilder().getBuilder();
       }
@@ -4324,7 +4324,7 @@ public final class Replay {
        * <code>.tm.LastCommitInfo last_commit_info = 3 [json_name = "lastCommitInfo"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.LastCommitInfo, io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder, io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.LastCommitInfo, io.vegaprotocol.vega.tm.Replay.LastCommitInfo.Builder, io.vegaprotocol.vega.tm.Replay.LastCommitInfoOrBuilder>
           getLastCommitInfoFieldBuilder() {
         if (lastCommitInfoBuilder_ == null) {
           lastCommitInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -4532,7 +4532,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
            getByzantineValidatorsOrBuilderList() {
         if (byzantineValidatorsBuilder_ != null) {
           return byzantineValidatorsBuilder_.getMessageOrBuilderList();
@@ -4558,12 +4558,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.Evidence byzantine_validators = 4 [json_name = "byzantineValidators"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.Evidence.Builder>
            getByzantineValidatorsBuilderList() {
         return getByzantineValidatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Evidence, io.vegaprotocol.vega.tm.Replay.Evidence.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.Evidence, io.vegaprotocol.vega.tm.Replay.Evidence.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceOrBuilder>
           getByzantineValidatorsFieldBuilder() {
         if (byzantineValidatorsBuilder_ == null) {
           byzantineValidatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -5053,7 +5053,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         tx_ = value;
         onChanged();
         return this;
@@ -5063,7 +5063,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearTx() {
-        
+
         tx_ = getDefaultInstance().getTx();
         onChanged();
         return this;
@@ -5143,7 +5143,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate>
         getValidatorsList();
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
@@ -5156,7 +5156,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
         getValidatorsOrBuilderList();
     /**
      * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
@@ -5319,7 +5319,7 @@ public final class Replay {
      * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
         getValidatorsOrBuilderList() {
       return validators_;
     }
@@ -5705,7 +5705,7 @@ public final class Replay {
               validatorsBuilder_ = null;
               validators_ = other.validators_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              validatorsBuilder_ = 
+              validatorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getValidatorsFieldBuilder() : null;
             } else {
@@ -5833,7 +5833,7 @@ public final class Replay {
        * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder getConsensusParamsBuilder() {
-        
+
         onChanged();
         return getConsensusParamsFieldBuilder().getBuilder();
       }
@@ -5852,7 +5852,7 @@ public final class Replay {
        * <code>.tm.ConsensusParams consensus_params = 1 [json_name = "consensusParams"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ConsensusParams, io.vegaprotocol.vega.tm.Replay.ConsensusParams.Builder, io.vegaprotocol.vega.tm.Replay.ConsensusParamsOrBuilder>
           getConsensusParamsFieldBuilder() {
         if (consensusParamsBuilder_ == null) {
           consensusParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -6060,7 +6060,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
            getValidatorsOrBuilderList() {
         if (validatorsBuilder_ != null) {
           return validatorsBuilder_.getMessageOrBuilderList();
@@ -6086,12 +6086,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.ValidatorUpdate validators = 2 [json_name = "validators"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder>
            getValidatorsBuilderList() {
         return getValidatorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ValidatorUpdate, io.vegaprotocol.vega.tm.Replay.ValidatorUpdate.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorUpdateOrBuilder>
           getValidatorsFieldBuilder() {
         if (validatorsBuilder_ == null) {
           validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -6123,7 +6123,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         appHash_ = value;
         onChanged();
         return this;
@@ -6133,7 +6133,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearAppHash() {
-        
+
         appHash_ = getDefaultInstance().getAppHash();
         onChanged();
         return this;
@@ -6198,7 +6198,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.Event> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.Event>
         getEventsList();
     /**
      * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
@@ -6211,7 +6211,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
         getEventsOrBuilderList();
     /**
      * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
@@ -6323,7 +6323,7 @@ public final class Replay {
      * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
         getEventsOrBuilderList() {
       return events_;
     }
@@ -6654,7 +6654,7 @@ public final class Replay {
               eventsBuilder_ = null;
               events_ = other.events_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              eventsBuilder_ = 
+              eventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEventsFieldBuilder() : null;
             } else {
@@ -6887,7 +6887,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
            getEventsOrBuilderList() {
         if (eventsBuilder_ != null) {
           return eventsBuilder_.getMessageOrBuilderList();
@@ -6913,12 +6913,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.Event events = 1 [json_name = "events"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder>
            getEventsBuilderList() {
         return getEventsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
           getEventsFieldBuilder() {
         if (eventsBuilder_ == null) {
           eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -7055,7 +7055,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.Event> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.Event>
         getEventsList();
     /**
      * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
@@ -7068,7 +7068,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
         getEventsOrBuilderList();
     /**
      * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
@@ -7259,7 +7259,7 @@ public final class Replay {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         log_ = s;
@@ -7279,7 +7279,7 @@ public final class Replay {
         getLogBytes() {
       java.lang.Object ref = log_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         log_ = b;
@@ -7305,7 +7305,7 @@ public final class Replay {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         info_ = s;
@@ -7325,7 +7325,7 @@ public final class Replay {
         getInfoBytes() {
       java.lang.Object ref = info_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         info_ = b;
@@ -7370,7 +7370,7 @@ public final class Replay {
      * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
         getEventsOrBuilderList() {
       return events_;
     }
@@ -7409,7 +7409,7 @@ public final class Replay {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         codespace_ = s;
@@ -7425,7 +7425,7 @@ public final class Replay {
         getCodespaceBytes() {
       java.lang.Object ref = codespace_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         codespace_ = b;
@@ -7856,7 +7856,7 @@ public final class Replay {
               eventsBuilder_ = null;
               events_ = other.events_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              eventsBuilder_ = 
+              eventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEventsFieldBuilder() : null;
             } else {
@@ -7913,7 +7913,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setCode(int value) {
-        
+
         code_ = value;
         onChanged();
         return this;
@@ -7923,7 +7923,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-        
+
         code_ = 0;
         onChanged();
         return this;
@@ -7947,7 +7947,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         data_ = value;
         onChanged();
         return this;
@@ -7957,7 +7957,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearData() {
-        
+
         data_ = getDefaultInstance().getData();
         onChanged();
         return this;
@@ -7996,7 +7996,7 @@ public final class Replay {
           getLogBytes() {
         java.lang.Object ref = log_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           log_ = b;
@@ -8019,7 +8019,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         log_ = value;
         onChanged();
         return this;
@@ -8033,7 +8033,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearLog() {
-        
+
         log_ = getDefaultInstance().getLog();
         onChanged();
         return this;
@@ -8053,7 +8053,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         log_ = value;
         onChanged();
         return this;
@@ -8092,7 +8092,7 @@ public final class Replay {
           getInfoBytes() {
         java.lang.Object ref = info_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           info_ = b;
@@ -8115,7 +8115,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         info_ = value;
         onChanged();
         return this;
@@ -8129,7 +8129,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearInfo() {
-        
+
         info_ = getDefaultInstance().getInfo();
         onChanged();
         return this;
@@ -8149,7 +8149,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         info_ = value;
         onChanged();
         return this;
@@ -8170,7 +8170,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setGasWanted(long value) {
-        
+
         gasWanted_ = value;
         onChanged();
         return this;
@@ -8180,7 +8180,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearGasWanted() {
-        
+
         gasWanted_ = 0L;
         onChanged();
         return this;
@@ -8201,7 +8201,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setGasUsed(long value) {
-        
+
         gasUsed_ = value;
         onChanged();
         return this;
@@ -8211,7 +8211,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearGasUsed() {
-        
+
         gasUsed_ = 0L;
         onChanged();
         return this;
@@ -8412,7 +8412,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
            getEventsOrBuilderList() {
         if (eventsBuilder_ != null) {
           return eventsBuilder_.getMessageOrBuilderList();
@@ -8438,12 +8438,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.Event events = 7 [json_name = "events"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.Event.Builder>
            getEventsBuilderList() {
         return getEventsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.Event, io.vegaprotocol.vega.tm.Replay.Event.Builder, io.vegaprotocol.vega.tm.Replay.EventOrBuilder>
           getEventsFieldBuilder() {
         if (eventsBuilder_ == null) {
           eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -8482,7 +8482,7 @@ public final class Replay {
           getCodespaceBytes() {
         java.lang.Object ref = codespace_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           codespace_ = b;
@@ -8501,7 +8501,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         codespace_ = value;
         onChanged();
         return this;
@@ -8511,7 +8511,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearCodespace() {
-        
+
         codespace_ = getDefaultInstance().getCodespace();
         onChanged();
         return this;
@@ -8527,7 +8527,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         codespace_ = value;
         onChanged();
         return this;
@@ -8604,7 +8604,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute>
         getAttributesList();
     /**
      * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
@@ -8617,7 +8617,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
         getAttributesOrBuilderList();
     /**
      * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
@@ -8735,7 +8735,7 @@ public final class Replay {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
@@ -8751,7 +8751,7 @@ public final class Replay {
         getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         type_ = b;
@@ -8774,7 +8774,7 @@ public final class Replay {
      * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
         getAttributesOrBuilderList() {
       return attributes_;
     }
@@ -9122,7 +9122,7 @@ public final class Replay {
               attributesBuilder_ = null;
               attributes_ = other.attributes_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              attributesBuilder_ = 
+              attributesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAttributesFieldBuilder() : null;
             } else {
@@ -9185,7 +9185,7 @@ public final class Replay {
           getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           type_ = b;
@@ -9204,7 +9204,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         type_ = value;
         onChanged();
         return this;
@@ -9214,7 +9214,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+
         type_ = getDefaultInstance().getType();
         onChanged();
         return this;
@@ -9230,7 +9230,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         type_ = value;
         onChanged();
         return this;
@@ -9431,7 +9431,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
            getAttributesOrBuilderList() {
         if (attributesBuilder_ != null) {
           return attributesBuilder_.getMessageOrBuilderList();
@@ -9457,12 +9457,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.EventAttribute attributes = 2 [json_name = "attributes"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder>
            getAttributesBuilderList() {
         return getAttributesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.EventAttribute, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder, io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.EventAttribute, io.vegaprotocol.vega.tm.Replay.EventAttribute.Builder, io.vegaprotocol.vega.tm.Replay.EventAttributeOrBuilder>
           getAttributesFieldBuilder() {
         if (attributesBuilder_ == null) {
           attributesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -10040,7 +10040,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         key_ = value;
         onChanged();
         return this;
@@ -10050,7 +10050,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-        
+
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
@@ -10074,7 +10074,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         value_ = value;
         onChanged();
         return this;
@@ -10084,7 +10084,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        
+
         value_ = getDefaultInstance().getValue();
         onChanged();
         return this;
@@ -10113,7 +10113,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setIndex(boolean value) {
-        
+
         index_ = value;
         onChanged();
         return this;
@@ -10127,7 +10127,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+
         index_ = false;
         onChanged();
         return this;
@@ -10762,7 +10762,7 @@ public final class Replay {
        * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.PublicKey.Builder getPubKeyBuilder() {
-        
+
         onChanged();
         return getPubKeyFieldBuilder().getBuilder();
       }
@@ -10781,7 +10781,7 @@ public final class Replay {
        * <code>.tm.PublicKey pub_key = 1 [json_name = "pubKey"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.PublicKey, io.vegaprotocol.vega.tm.Replay.PublicKey.Builder, io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.PublicKey, io.vegaprotocol.vega.tm.Replay.PublicKey.Builder, io.vegaprotocol.vega.tm.Replay.PublicKeyOrBuilder>
           getPubKeyFieldBuilder() {
         if (pubKeyBuilder_ == null) {
           pubKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -10809,7 +10809,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setPower(long value) {
-        
+
         power_ = value;
         onChanged();
         return this;
@@ -10819,7 +10819,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearPower() {
-        
+
         power_ = 0L;
         onChanged();
         return this;
@@ -11666,7 +11666,7 @@ public final class Replay {
        * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.BlockParams.Builder getBlockBuilder() {
-        
+
         onChanged();
         return getBlockFieldBuilder().getBuilder();
       }
@@ -11685,7 +11685,7 @@ public final class Replay {
        * <code>.tm.BlockParams block = 1 [json_name = "block"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.BlockParams, io.vegaprotocol.vega.tm.Replay.BlockParams.Builder, io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.BlockParams, io.vegaprotocol.vega.tm.Replay.BlockParams.Builder, io.vegaprotocol.vega.tm.Replay.BlockParamsOrBuilder>
           getBlockFieldBuilder() {
         if (blockBuilder_ == null) {
           blockBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11785,7 +11785,7 @@ public final class Replay {
        * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder getEvidenceBuilder() {
-        
+
         onChanged();
         return getEvidenceFieldBuilder().getBuilder();
       }
@@ -11804,7 +11804,7 @@ public final class Replay {
        * <code>.tm.EvidenceParams evidence = 2 [json_name = "evidence"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.EvidenceParams, io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.EvidenceParams, io.vegaprotocol.vega.tm.Replay.EvidenceParams.Builder, io.vegaprotocol.vega.tm.Replay.EvidenceParamsOrBuilder>
           getEvidenceFieldBuilder() {
         if (evidenceBuilder_ == null) {
           evidenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11904,7 +11904,7 @@ public final class Replay {
        * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder getValidatorBuilder() {
-        
+
         onChanged();
         return getValidatorFieldBuilder().getBuilder();
       }
@@ -11923,7 +11923,7 @@ public final class Replay {
        * <code>.tm.ValidatorParams validator = 3 [json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.ValidatorParams, io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.ValidatorParams, io.vegaprotocol.vega.tm.Replay.ValidatorParams.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorParamsOrBuilder>
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           validatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12023,7 +12023,7 @@ public final class Replay {
        * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.VersionParams.Builder getVersionBuilder() {
-        
+
         onChanged();
         return getVersionFieldBuilder().getBuilder();
       }
@@ -12042,7 +12042,7 @@ public final class Replay {
        * <code>.tm.VersionParams version = 4 [json_name = "version"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.VersionParams, io.vegaprotocol.vega.tm.Replay.VersionParams.Builder, io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.VersionParams, io.vegaprotocol.vega.tm.Replay.VersionParams.Builder, io.vegaprotocol.vega.tm.Replay.VersionParamsOrBuilder>
           getVersionFieldBuilder() {
         if (versionBuilder_ == null) {
           versionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12568,7 +12568,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setMaxBytes(long value) {
-        
+
         maxBytes_ = value;
         onChanged();
         return this;
@@ -12578,7 +12578,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearMaxBytes() {
-        
+
         maxBytes_ = 0L;
         onChanged();
         return this;
@@ -12599,7 +12599,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setMaxGas(long value) {
-        
+
         maxGas_ = value;
         onChanged();
         return this;
@@ -12609,7 +12609,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearMaxGas() {
-        
+
         maxGas_ = 0L;
         onChanged();
         return this;
@@ -13304,7 +13304,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
+
         type_ = value;
         onChanged();
         return this;
@@ -13328,7 +13328,7 @@ public final class Replay {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -13338,7 +13338,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+
         type_ = 0;
         onChanged();
         return this;
@@ -13431,7 +13431,7 @@ public final class Replay {
        * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Validator.Builder getValidatorBuilder() {
-        
+
         onChanged();
         return getValidatorFieldBuilder().getBuilder();
       }
@@ -13450,7 +13450,7 @@ public final class Replay {
        * <code>.tm.Validator validator = 2 [json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder>
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           validatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13478,7 +13478,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setHeight(long value) {
-        
+
         height_ = value;
         onChanged();
         return this;
@@ -13488,7 +13488,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearHeight() {
-        
+
         height_ = 0L;
         onChanged();
         return this;
@@ -13509,7 +13509,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setTime(long value) {
-        
+
         time_ = value;
         onChanged();
         return this;
@@ -13519,7 +13519,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        
+
         time_ = 0L;
         onChanged();
         return this;
@@ -13540,7 +13540,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setTotalVotingPower(long value) {
-        
+
         totalVotingPower_ = value;
         onChanged();
         return this;
@@ -13550,7 +13550,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearTotalVotingPower() {
-        
+
         totalVotingPower_ = 0L;
         onChanged();
         return this;
@@ -14072,7 +14072,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         address_ = value;
         onChanged();
         return this;
@@ -14082,7 +14082,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
-        
+
         address_ = getDefaultInstance().getAddress();
         onChanged();
         return this;
@@ -14103,7 +14103,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setPower(long value) {
-        
+
         power_ = value;
         onChanged();
         return this;
@@ -14113,7 +14113,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearPower() {
-        
+
         power_ = 0L;
         onChanged();
         return this;
@@ -14184,7 +14184,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo> 
+    java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo>
         getVotesList();
     /**
      * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
@@ -14197,7 +14197,7 @@ public final class Replay {
     /**
      * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
         getVotesOrBuilderList();
     /**
      * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
@@ -14325,7 +14325,7 @@ public final class Replay {
      * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
         getVotesOrBuilderList() {
       return votes_;
     }
@@ -14673,7 +14673,7 @@ public final class Replay {
               votesBuilder_ = null;
               votes_ = other.votes_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              votesBuilder_ = 
+              votesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getVotesFieldBuilder() : null;
             } else {
@@ -14726,7 +14726,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setRound(int value) {
-        
+
         round_ = value;
         onChanged();
         return this;
@@ -14736,7 +14736,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearRound() {
-        
+
         round_ = 0;
         onChanged();
         return this;
@@ -14937,7 +14937,7 @@ public final class Replay {
       /**
        * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
            getVotesOrBuilderList() {
         if (votesBuilder_ != null) {
           return votesBuilder_.getMessageOrBuilderList();
@@ -14963,12 +14963,12 @@ public final class Replay {
       /**
        * <code>repeated .tm.VoteInfo votes = 2 [json_name = "votes"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder> 
+      public java.util.List<io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder>
            getVotesBuilderList() {
         return getVotesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.VoteInfo, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder, io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.VoteInfo, io.vegaprotocol.vega.tm.Replay.VoteInfo.Builder, io.vegaprotocol.vega.tm.Replay.VoteInfoOrBuilder>
           getVotesFieldBuilder() {
         if (votesBuilder_ == null) {
           votesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -15611,7 +15611,7 @@ public final class Replay {
        * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
        */
       public io.vegaprotocol.vega.tm.Replay.Validator.Builder getValidatorBuilder() {
-        
+
         onChanged();
         return getValidatorFieldBuilder().getBuilder();
       }
@@ -15630,7 +15630,7 @@ public final class Replay {
        * <code>.tm.Validator validator = 1 [json_name = "validator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder> 
+          io.vegaprotocol.vega.tm.Replay.Validator, io.vegaprotocol.vega.tm.Replay.Validator.Builder, io.vegaprotocol.vega.tm.Replay.ValidatorOrBuilder>
           getValidatorFieldBuilder() {
         if (validatorBuilder_ == null) {
           validatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -15658,7 +15658,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setSignedLastBlock(boolean value) {
-        
+
         signedLastBlock_ = value;
         onChanged();
         return this;
@@ -15668,7 +15668,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearSignedLastBlock() {
-        
+
         signedLastBlock_ = false;
         onChanged();
         return this;
@@ -16226,7 +16226,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setMaxAgeNumBlocks(long value) {
-        
+
         maxAgeNumBlocks_ = value;
         onChanged();
         return this;
@@ -16236,7 +16236,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearMaxAgeNumBlocks() {
-        
+
         maxAgeNumBlocks_ = 0L;
         onChanged();
         return this;
@@ -16257,7 +16257,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setMaxAgeDuration(long value) {
-        
+
         maxAgeDuration_ = value;
         onChanged();
         return this;
@@ -16267,7 +16267,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearMaxAgeDuration() {
-        
+
         maxAgeDuration_ = 0L;
         onChanged();
         return this;
@@ -16288,7 +16288,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setMaxNum(int value) {
-        
+
         maxNum_ = value;
         onChanged();
         return this;
@@ -16298,7 +16298,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearMaxNum() {
-        
+
         maxNum_ = 0;
         onChanged();
         return this;
@@ -17415,7 +17415,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setAppVersion(long value) {
-        
+
         appVersion_ = value;
         onChanged();
         return this;
@@ -17425,7 +17425,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearAppVersion() {
-        
+
         appVersion_ = 0L;
         onChanged();
         return this;
@@ -17617,7 +17617,7 @@ public final class Replay {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         chainId_ = s;
@@ -17633,7 +17633,7 @@ public final class Replay {
         getChainIdBytes() {
       java.lang.Object ref = chainId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         chainId_ = b;
@@ -18028,7 +18028,7 @@ public final class Replay {
           getChainIdBytes() {
         java.lang.Object ref = chainId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           chainId_ = b;
@@ -18047,7 +18047,7 @@ public final class Replay {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         chainId_ = value;
         onChanged();
         return this;
@@ -18057,7 +18057,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearChainId() {
-        
+
         chainId_ = getDefaultInstance().getChainId();
         onChanged();
         return this;
@@ -18073,7 +18073,7 @@ public final class Replay {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         chainId_ = value;
         onChanged();
         return this;
@@ -18094,7 +18094,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setHeight(long value) {
-        
+
         height_ = value;
         onChanged();
         return this;
@@ -18104,7 +18104,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearHeight() {
-        
+
         height_ = 0L;
         onChanged();
         return this;
@@ -18125,7 +18125,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder setTime(long value) {
-        
+
         time_ = value;
         onChanged();
         return this;
@@ -18135,7 +18135,7 @@ public final class Replay {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        
+
         time_ = 0L;
         onChanged();
         return this;
@@ -18197,11 +18197,6 @@ public final class Replay {
       // @@protoc_insertion_point(interface_extends:tm.PublicKey)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-     * @return Whether the ed25519 field is set.
-     */
-    boolean hasEd25519();
     /**
      * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
      * @return The ed25519.
@@ -18332,14 +18327,6 @@ public final class Replay {
     }
 
     public static final int ED25519_FIELD_NUMBER = 1;
-    /**
-     * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-     * @return Whether the ed25519 field is set.
-     */
-    @java.lang.Override
-    public boolean hasEd25519() {
-      return sumCase_ == 1;
-    }
     /**
      * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
      * @return The ed25519.
@@ -18695,13 +18682,6 @@ public final class Replay {
 
       /**
        * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
-       * @return Whether the ed25519 field is set.
-       */
-      public boolean hasEd25519() {
-        return sumCase_ == 1;
-      }
-      /**
-       * <code>bytes ed25519 = 1 [json_name = "ed25519"];</code>
        * @return The ed25519.
        */
       public com.google.protobuf.ByteString getEd25519() {
@@ -18791,107 +18771,107 @@ public final class Replay {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_TmEvent_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_TmEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_RequestInitChain_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_RequestInitChain_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_RequestBeginBlock_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_RequestBeginBlock_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_RequestDeliverTx_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_RequestDeliverTx_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ResponseInitChain_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ResponseInitChain_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ResponseBeginBlock_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ResponseBeginBlock_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ResponseDeliverTx_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ResponseDeliverTx_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Event_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Event_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_EventAttribute_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_EventAttribute_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ValidatorUpdate_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ValidatorUpdate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ConsensusParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ConsensusParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_BlockParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_BlockParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Evidence_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Evidence_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Validator_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Validator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_LastCommitInfo_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_LastCommitInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_VoteInfo_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_VoteInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_EvidenceParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_EvidenceParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_ValidatorParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_ValidatorParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_VersionParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_VersionParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_Header_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_Header_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tm_PublicKey_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tm_PublicKey_fieldAccessorTable;
 

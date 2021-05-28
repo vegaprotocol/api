@@ -519,7 +519,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setDuration(long value) {
-        
+
         duration_ = value;
         onChanged();
         return this;
@@ -533,7 +533,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
-        
+
         duration_ = 0L;
         onChanged();
         return this;
@@ -562,7 +562,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setVolume(long value) {
-        
+
         volume_ = value;
         onChanged();
         return this;
@@ -576,7 +576,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearVolume() {
-        
+
         volume_ = 0L;
         onChanged();
         return this;
@@ -762,7 +762,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         tickSize_ = s;
@@ -782,7 +782,7 @@ public final class Markets {
         getTickSizeBytes() {
       java.lang.Object ref = tickSize_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         tickSize_ = b;
@@ -1131,7 +1131,7 @@ public final class Markets {
           getTickSizeBytes() {
         java.lang.Object ref = tickSize_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           tickSize_ = b;
@@ -1154,7 +1154,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         tickSize_ = value;
         onChanged();
         return this;
@@ -1168,7 +1168,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearTickSize() {
-        
+
         tickSize_ = getDefaultInstance().getTickSize();
         onChanged();
         return this;
@@ -1188,7 +1188,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         tickSize_ = value;
         onChanged();
         return this;
@@ -1404,7 +1404,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         tickSize_ = s;
@@ -1424,7 +1424,7 @@ public final class Markets {
         getTickSizeBytes() {
       java.lang.Object ref = tickSize_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         tickSize_ = b;
@@ -1781,7 +1781,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setDurationNs(long value) {
-        
+
         durationNs_ = value;
         onChanged();
         return this;
@@ -1795,7 +1795,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearDurationNs() {
-        
+
         durationNs_ = 0L;
         onChanged();
         return this;
@@ -1834,7 +1834,7 @@ public final class Markets {
           getTickSizeBytes() {
         java.lang.Object ref = tickSize_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           tickSize_ = b;
@@ -1857,7 +1857,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         tickSize_ = value;
         onChanged();
         return this;
@@ -1871,7 +1871,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearTickSize() {
-        
+
         tickSize_ = getDefaultInstance().getTickSize();
         onChanged();
         return this;
@@ -1891,7 +1891,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         tickSize_ = value;
         onChanged();
         return this;
@@ -2211,7 +2211,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         maturity_ = s;
@@ -2231,7 +2231,7 @@ public final class Markets {
         getMaturityBytes() {
       java.lang.Object ref = maturity_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         maturity_ = b;
@@ -2257,7 +2257,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         settlementAsset_ = s;
@@ -2277,7 +2277,7 @@ public final class Markets {
         getSettlementAssetBytes() {
       java.lang.Object ref = settlementAsset_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         settlementAsset_ = b;
@@ -2303,7 +2303,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         quoteName_ = s;
@@ -2323,7 +2323,7 @@ public final class Markets {
         getQuoteNameBytes() {
       java.lang.Object ref = quoteName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         quoteName_ = b;
@@ -2842,7 +2842,7 @@ public final class Markets {
           getMaturityBytes() {
         java.lang.Object ref = maturity_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           maturity_ = b;
@@ -2865,7 +2865,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         maturity_ = value;
         onChanged();
         return this;
@@ -2879,7 +2879,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearMaturity() {
-        
+
         maturity_ = getDefaultInstance().getMaturity();
         onChanged();
         return this;
@@ -2899,7 +2899,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         maturity_ = value;
         onChanged();
         return this;
@@ -2938,7 +2938,7 @@ public final class Markets {
           getSettlementAssetBytes() {
         java.lang.Object ref = settlementAsset_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           settlementAsset_ = b;
@@ -2961,7 +2961,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         settlementAsset_ = value;
         onChanged();
         return this;
@@ -2975,7 +2975,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearSettlementAsset() {
-        
+
         settlementAsset_ = getDefaultInstance().getSettlementAsset();
         onChanged();
         return this;
@@ -2995,7 +2995,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         settlementAsset_ = value;
         onChanged();
         return this;
@@ -3034,7 +3034,7 @@ public final class Markets {
           getQuoteNameBytes() {
         java.lang.Object ref = quoteName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           quoteName_ = b;
@@ -3057,7 +3057,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         quoteName_ = value;
         onChanged();
         return this;
@@ -3071,7 +3071,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearQuoteName() {
-        
+
         quoteName_ = getDefaultInstance().getQuoteName();
         onChanged();
         return this;
@@ -3091,7 +3091,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         quoteName_ = value;
         onChanged();
         return this;
@@ -3212,7 +3212,7 @@ public final class Markets {
        * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
       public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder getOracleSpecBuilder() {
-        
+
         onChanged();
         return getOracleSpecFieldBuilder().getBuilder();
       }
@@ -3239,7 +3239,7 @@ public final class Markets {
        * <code>.oracles.v1.OracleSpec oracle_spec = 5 [json_name = "oracleSpec"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder> 
+          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
           getOracleSpecFieldBuilder() {
         if (oracleSpecBuilder_ == null) {
           oracleSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3367,7 +3367,7 @@ public final class Markets {
        * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
        */
       public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder getOracleSpecBindingBuilder() {
-        
+
         onChanged();
         return getOracleSpecBindingFieldBuilder().getBuilder();
       }
@@ -3394,7 +3394,7 @@ public final class Markets {
        * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder> 
+          io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder>
           getOracleSpecBindingFieldBuilder() {
         if (oracleSpecBindingBuilder_ == null) {
           oracleSpecBindingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3597,7 +3597,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         settlementPriceProperty_ = s;
@@ -3620,7 +3620,7 @@ public final class Markets {
         getSettlementPricePropertyBytes() {
       java.lang.Object ref = settlementPriceProperty_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         settlementPriceProperty_ = b;
@@ -3976,7 +3976,7 @@ public final class Markets {
           getSettlementPricePropertyBytes() {
         java.lang.Object ref = settlementPriceProperty_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           settlementPriceProperty_ = b;
@@ -4002,7 +4002,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         settlementPriceProperty_ = value;
         onChanged();
         return this;
@@ -4019,7 +4019,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearSettlementPriceProperty() {
-        
+
         settlementPriceProperty_ = getDefaultInstance().getSettlementPriceProperty();
         onChanged();
         return this;
@@ -4042,7 +4042,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         settlementPriceProperty_ = value;
         onChanged();
         return this;
@@ -5118,7 +5118,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -5138,7 +5138,7 @@ public final class Markets {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -5164,7 +5164,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         code_ = s;
@@ -5184,7 +5184,7 @@ public final class Markets {
         getCodeBytes() {
       java.lang.Object ref = code_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         code_ = b;
@@ -5210,7 +5210,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
@@ -5230,7 +5230,7 @@ public final class Markets {
         getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         name_ = b;
@@ -5782,7 +5782,7 @@ public final class Markets {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -5805,7 +5805,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         id_ = value;
         onChanged();
         return this;
@@ -5819,7 +5819,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -5839,7 +5839,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         id_ = value;
         onChanged();
         return this;
@@ -5878,7 +5878,7 @@ public final class Markets {
           getCodeBytes() {
         java.lang.Object ref = code_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           code_ = b;
@@ -5901,7 +5901,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         code_ = value;
         onChanged();
         return this;
@@ -5915,7 +5915,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-        
+
         code_ = getDefaultInstance().getCode();
         onChanged();
         return this;
@@ -5935,7 +5935,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         code_ = value;
         onChanged();
         return this;
@@ -5974,7 +5974,7 @@ public final class Markets {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -5997,7 +5997,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         name_ = value;
         onChanged();
         return this;
@@ -6011,7 +6011,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
@@ -6031,7 +6031,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         name_ = value;
         onChanged();
         return this;
@@ -6152,7 +6152,7 @@ public final class Markets {
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
        */
       public io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder getMetadataBuilder() {
-        
+
         onChanged();
         return getMetadataFieldBuilder().getBuilder();
       }
@@ -6179,7 +6179,7 @@ public final class Markets {
        * <code>.vega.InstrumentMetadata metadata = 4 [json_name = "metadata"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.InstrumentMetadata, io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder, io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder> 
+          io.vegaprotocol.vega.Markets.InstrumentMetadata, io.vegaprotocol.vega.Markets.InstrumentMetadata.Builder, io.vegaprotocol.vega.Markets.InstrumentMetadataOrBuilder>
           getMetadataFieldBuilder() {
         if (metadataBuilder_ == null) {
           metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -6351,7 +6351,7 @@ public final class Markets {
        * <code>.vega.Future future = 100 [json_name = "future"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.Future, io.vegaprotocol.vega.Markets.Future.Builder, io.vegaprotocol.vega.Markets.FutureOrBuilder> 
+          io.vegaprotocol.vega.Markets.Future, io.vegaprotocol.vega.Markets.Future.Builder, io.vegaprotocol.vega.Markets.FutureOrBuilder>
           getFutureFieldBuilder() {
         if (futureBuilder_ == null) {
           if (!(productCase_ == 100)) {
@@ -7024,7 +7024,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setRiskAversionParameter(double value) {
-        
+
         riskAversionParameter_ = value;
         onChanged();
         return this;
@@ -7038,7 +7038,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearRiskAversionParameter() {
-        
+
         riskAversionParameter_ = 0D;
         onChanged();
         return this;
@@ -7067,7 +7067,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setTau(double value) {
-        
+
         tau_ = value;
         onChanged();
         return this;
@@ -7081,7 +7081,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearTau() {
-        
+
         tau_ = 0D;
         onChanged();
         return this;
@@ -7202,7 +7202,7 @@ public final class Markets {
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
        */
       public io.vegaprotocol.vega.Markets.LogNormalModelParams.Builder getParamsBuilder() {
-        
+
         onChanged();
         return getParamsFieldBuilder().getBuilder();
       }
@@ -7229,7 +7229,7 @@ public final class Markets {
        * <code>.vega.LogNormalModelParams params = 3 [json_name = "params"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.LogNormalModelParams, io.vegaprotocol.vega.Markets.LogNormalModelParams.Builder, io.vegaprotocol.vega.Markets.LogNormalModelParamsOrBuilder> 
+          io.vegaprotocol.vega.Markets.LogNormalModelParams, io.vegaprotocol.vega.Markets.LogNormalModelParams.Builder, io.vegaprotocol.vega.Markets.LogNormalModelParamsOrBuilder>
           getParamsFieldBuilder() {
         if (paramsBuilder_ == null) {
           paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -7838,7 +7838,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setMu(double value) {
-        
+
         mu_ = value;
         onChanged();
         return this;
@@ -7852,7 +7852,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearMu() {
-        
+
         mu_ = 0D;
         onChanged();
         return this;
@@ -7881,7 +7881,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setR(double value) {
-        
+
         r_ = value;
         onChanged();
         return this;
@@ -7895,7 +7895,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearR() {
-        
+
         r_ = 0D;
         onChanged();
         return this;
@@ -7924,7 +7924,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setSigma(double value) {
-        
+
         sigma_ = value;
         onChanged();
         return this;
@@ -7938,7 +7938,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearSigma() {
-        
+
         sigma_ = 0D;
         onChanged();
         return this;
@@ -8593,7 +8593,7 @@ public final class Markets {
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
        */
       public io.vegaprotocol.vega.Markets.SimpleModelParams.Builder getParamsBuilder() {
-        
+
         onChanged();
         return getParamsFieldBuilder().getBuilder();
       }
@@ -8620,7 +8620,7 @@ public final class Markets {
        * <code>.vega.SimpleModelParams params = 1 [json_name = "params"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder> 
+          io.vegaprotocol.vega.Markets.SimpleModelParams, io.vegaprotocol.vega.Markets.SimpleModelParams.Builder, io.vegaprotocol.vega.Markets.SimpleModelParamsOrBuilder>
           getParamsFieldBuilder() {
         if (paramsBuilder_ == null) {
           paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -9327,7 +9327,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setFactorLong(double value) {
-        
+
         factorLong_ = value;
         onChanged();
         return this;
@@ -9341,7 +9341,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearFactorLong() {
-        
+
         factorLong_ = 0D;
         onChanged();
         return this;
@@ -9370,7 +9370,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setFactorShort(double value) {
-        
+
         factorShort_ = value;
         onChanged();
         return this;
@@ -9384,7 +9384,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearFactorShort() {
-        
+
         factorShort_ = 0D;
         onChanged();
         return this;
@@ -9413,7 +9413,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setMaxMoveUp(double value) {
-        
+
         maxMoveUp_ = value;
         onChanged();
         return this;
@@ -9427,7 +9427,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearMaxMoveUp() {
-        
+
         maxMoveUp_ = 0D;
         onChanged();
         return this;
@@ -9456,7 +9456,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setMinMoveDown(double value) {
-        
+
         minMoveDown_ = value;
         onChanged();
         return this;
@@ -9470,7 +9470,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearMinMoveDown() {
-        
+
         minMoveDown_ = 0D;
         onChanged();
         return this;
@@ -9499,7 +9499,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setProbabilityOfTrading(double value) {
-        
+
         probabilityOfTrading_ = value;
         onChanged();
         return this;
@@ -9513,7 +9513,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearProbabilityOfTrading() {
-        
+
         probabilityOfTrading_ = 0D;
         onChanged();
         return this;
@@ -10115,7 +10115,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setSearchLevel(double value) {
-        
+
         searchLevel_ = value;
         onChanged();
         return this;
@@ -10129,7 +10129,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearSearchLevel() {
-        
+
         searchLevel_ = 0D;
         onChanged();
         return this;
@@ -10158,7 +10158,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setInitialMargin(double value) {
-        
+
         initialMargin_ = value;
         onChanged();
         return this;
@@ -10172,7 +10172,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearInitialMargin() {
-        
+
         initialMargin_ = 0D;
         onChanged();
         return this;
@@ -10201,7 +10201,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setCollateralRelease(double value) {
-        
+
         collateralRelease_ = value;
         onChanged();
         return this;
@@ -10215,7 +10215,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearCollateralRelease() {
-        
+
         collateralRelease_ = 0D;
         onChanged();
         return this;
@@ -10870,7 +10870,7 @@ public final class Markets {
        * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       public io.vegaprotocol.vega.Markets.ScalingFactors.Builder getScalingFactorsBuilder() {
-        
+
         onChanged();
         return getScalingFactorsFieldBuilder().getBuilder();
       }
@@ -10897,7 +10897,7 @@ public final class Markets {
        * <code>.vega.ScalingFactors scaling_factors = 1 [json_name = "scalingFactors"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder> 
+          io.vegaprotocol.vega.Markets.ScalingFactors, io.vegaprotocol.vega.Markets.ScalingFactors.Builder, io.vegaprotocol.vega.Markets.ScalingFactorsOrBuilder>
           getScalingFactorsFieldBuilder() {
         if (scalingFactorsBuilder_ == null) {
           scalingFactorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -11962,7 +11962,7 @@ public final class Markets {
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
        */
       public io.vegaprotocol.vega.Markets.Instrument.Builder getInstrumentBuilder() {
-        
+
         onChanged();
         return getInstrumentFieldBuilder().getBuilder();
       }
@@ -11989,7 +11989,7 @@ public final class Markets {
        * <code>.vega.Instrument instrument = 1 [json_name = "instrument"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.Instrument, io.vegaprotocol.vega.Markets.Instrument.Builder, io.vegaprotocol.vega.Markets.InstrumentOrBuilder> 
+          io.vegaprotocol.vega.Markets.Instrument, io.vegaprotocol.vega.Markets.Instrument.Builder, io.vegaprotocol.vega.Markets.InstrumentOrBuilder>
           getInstrumentFieldBuilder() {
         if (instrumentBuilder_ == null) {
           instrumentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12117,7 +12117,7 @@ public final class Markets {
        * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       public io.vegaprotocol.vega.Markets.MarginCalculator.Builder getMarginCalculatorBuilder() {
-        
+
         onChanged();
         return getMarginCalculatorFieldBuilder().getBuilder();
       }
@@ -12144,7 +12144,7 @@ public final class Markets {
        * <code>.vega.MarginCalculator margin_calculator = 2 [json_name = "marginCalculator"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.MarginCalculator, io.vegaprotocol.vega.Markets.MarginCalculator.Builder, io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder> 
+          io.vegaprotocol.vega.Markets.MarginCalculator, io.vegaprotocol.vega.Markets.MarginCalculator.Builder, io.vegaprotocol.vega.Markets.MarginCalculatorOrBuilder>
           getMarginCalculatorFieldBuilder() {
         if (marginCalculatorBuilder_ == null) {
           marginCalculatorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -12316,7 +12316,7 @@ public final class Markets {
        * <code>.vega.LogNormalRiskModel log_normal_risk_model = 100 [json_name = "logNormalRiskModel"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder> 
+          io.vegaprotocol.vega.Markets.LogNormalRiskModel, io.vegaprotocol.vega.Markets.LogNormalRiskModel.Builder, io.vegaprotocol.vega.Markets.LogNormalRiskModelOrBuilder>
           getLogNormalRiskModelFieldBuilder() {
         if (logNormalRiskModelBuilder_ == null) {
           if (!(riskModelCase_ == 100)) {
@@ -12493,7 +12493,7 @@ public final class Markets {
        * <code>.vega.SimpleRiskModel simple_risk_model = 101 [json_name = "simpleRiskModel"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.SimpleRiskModel, io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder, io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder> 
+          io.vegaprotocol.vega.Markets.SimpleRiskModel, io.vegaprotocol.vega.Markets.SimpleRiskModel.Builder, io.vegaprotocol.vega.Markets.SimpleRiskModelOrBuilder>
           getSimpleRiskModelFieldBuilder() {
         if (simpleRiskModelBuilder_ == null) {
           if (!(riskModelCase_ == 101)) {
@@ -12745,7 +12745,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         makerFee_ = s;
@@ -12765,7 +12765,7 @@ public final class Markets {
         getMakerFeeBytes() {
       java.lang.Object ref = makerFee_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         makerFee_ = b;
@@ -12791,7 +12791,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         infrastructureFee_ = s;
@@ -12811,7 +12811,7 @@ public final class Markets {
         getInfrastructureFeeBytes() {
       java.lang.Object ref = infrastructureFee_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         infrastructureFee_ = b;
@@ -12837,7 +12837,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         liquidityFee_ = s;
@@ -12857,7 +12857,7 @@ public final class Markets {
         getLiquidityFeeBytes() {
       java.lang.Object ref = liquidityFee_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         liquidityFee_ = b;
@@ -13240,7 +13240,7 @@ public final class Markets {
           getMakerFeeBytes() {
         java.lang.Object ref = makerFee_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           makerFee_ = b;
@@ -13263,7 +13263,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         makerFee_ = value;
         onChanged();
         return this;
@@ -13277,7 +13277,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearMakerFee() {
-        
+
         makerFee_ = getDefaultInstance().getMakerFee();
         onChanged();
         return this;
@@ -13297,7 +13297,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         makerFee_ = value;
         onChanged();
         return this;
@@ -13336,7 +13336,7 @@ public final class Markets {
           getInfrastructureFeeBytes() {
         java.lang.Object ref = infrastructureFee_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           infrastructureFee_ = b;
@@ -13359,7 +13359,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         infrastructureFee_ = value;
         onChanged();
         return this;
@@ -13373,7 +13373,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearInfrastructureFee() {
-        
+
         infrastructureFee_ = getDefaultInstance().getInfrastructureFee();
         onChanged();
         return this;
@@ -13393,7 +13393,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         infrastructureFee_ = value;
         onChanged();
         return this;
@@ -13432,7 +13432,7 @@ public final class Markets {
           getLiquidityFeeBytes() {
         java.lang.Object ref = liquidityFee_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           liquidityFee_ = b;
@@ -13455,7 +13455,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         liquidityFee_ = value;
         onChanged();
         return this;
@@ -13469,7 +13469,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearLiquidityFee() {
-        
+
         liquidityFee_ = getDefaultInstance().getLiquidityFee();
         onChanged();
         return this;
@@ -13489,7 +13489,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         liquidityFee_ = value;
         onChanged();
         return this;
@@ -14144,7 +14144,7 @@ public final class Markets {
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
        */
       public io.vegaprotocol.vega.Markets.FeeFactors.Builder getFactorsBuilder() {
-        
+
         onChanged();
         return getFactorsFieldBuilder().getBuilder();
       }
@@ -14171,7 +14171,7 @@ public final class Markets {
        * <code>.vega.FeeFactors factors = 1 [json_name = "factors"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.FeeFactors, io.vegaprotocol.vega.Markets.FeeFactors.Builder, io.vegaprotocol.vega.Markets.FeeFactorsOrBuilder> 
+          io.vegaprotocol.vega.Markets.FeeFactors, io.vegaprotocol.vega.Markets.FeeFactors.Builder, io.vegaprotocol.vega.Markets.FeeFactorsOrBuilder>
           getFactorsFieldBuilder() {
         if (factorsBuilder_ == null) {
           factorsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -14252,7 +14252,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Price monitoirng probability level p
+     * Price monitoring probability level p
      * </pre>
      *
      * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14387,7 +14387,7 @@ public final class Markets {
     private double probability_;
     /**
      * <pre>
-     * Price monitoirng probability level p
+     * Price monitoring probability level p
      * </pre>
      *
      * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14782,7 +14782,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setHorizon(long value) {
-        
+
         horizon_ = value;
         onChanged();
         return this;
@@ -14796,7 +14796,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearHorizon() {
-        
+
         horizon_ = 0L;
         onChanged();
         return this;
@@ -14805,7 +14805,7 @@ public final class Markets {
       private double probability_ ;
       /**
        * <pre>
-       * Price monitoirng probability level p
+       * Price monitoring probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14817,7 +14817,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Price monitoirng probability level p
+       * Price monitoring probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
@@ -14825,21 +14825,21 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setProbability(double value) {
-        
+
         probability_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Price monitoirng probability level p
+       * Price monitoring probability level p
        * </pre>
        *
        * <code>double probability = 2 [json_name = "probability", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearProbability() {
-        
+
         probability_ = 0D;
         onChanged();
         return this;
@@ -14872,7 +14872,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setAuctionExtension(long value) {
-        
+
         auctionExtension_ = value;
         onChanged();
         return this;
@@ -14888,7 +14888,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearAuctionExtension() {
-        
+
         auctionExtension_ = 0L;
         onChanged();
         return this;
@@ -14953,7 +14953,7 @@ public final class Markets {
     /**
      * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger> 
+    java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger>
         getTriggersList();
     /**
      * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
@@ -14966,7 +14966,7 @@ public final class Markets {
     /**
      * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder> 
+    java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
         getTriggersOrBuilderList();
     /**
      * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
@@ -15082,7 +15082,7 @@ public final class Markets {
      * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder> 
+    public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
         getTriggersOrBuilderList() {
       return triggers_;
     }
@@ -15417,7 +15417,7 @@ public final class Markets {
               triggersBuilder_ = null;
               triggers_ = other.triggers_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              triggersBuilder_ = 
+              triggersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTriggersFieldBuilder() : null;
             } else {
@@ -15650,7 +15650,7 @@ public final class Markets {
       /**
        * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder> 
+      public java.util.List<? extends io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
            getTriggersOrBuilderList() {
         if (triggersBuilder_ != null) {
           return triggersBuilder_.getMessageOrBuilderList();
@@ -15676,12 +15676,12 @@ public final class Markets {
       /**
        * <code>repeated .vega.PriceMonitoringTrigger triggers = 1 [json_name = "triggers"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder> 
+      public java.util.List<io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder>
            getTriggersBuilderList() {
         return getTriggersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder> 
+          io.vegaprotocol.vega.Markets.PriceMonitoringTrigger, io.vegaprotocol.vega.Markets.PriceMonitoringTrigger.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringTriggerOrBuilder>
           getTriggersFieldBuilder() {
         if (triggersBuilder_ == null) {
           triggersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -16392,7 +16392,7 @@ public final class Markets {
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder getParametersBuilder() {
-        
+
         onChanged();
         return getParametersFieldBuilder().getBuilder();
       }
@@ -16419,7 +16419,7 @@ public final class Markets {
        * <code>.vega.PriceMonitoringParameters parameters = 1 [json_name = "parameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder> 
+          io.vegaprotocol.vega.Markets.PriceMonitoringParameters, io.vegaprotocol.vega.Markets.PriceMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringParametersOrBuilder>
           getParametersFieldBuilder() {
         if (parametersBuilder_ == null) {
           parametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -16455,7 +16455,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setUpdateFrequency(long value) {
-        
+
         updateFrequency_ = value;
         onChanged();
         return this;
@@ -16469,7 +16469,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearUpdateFrequency() {
-        
+
         updateFrequency_ = 0L;
         onChanged();
         return this;
@@ -17221,7 +17221,7 @@ public final class Markets {
        * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder getTargetStakeParametersBuilder() {
-        
+
         onChanged();
         return getTargetStakeParametersFieldBuilder().getBuilder();
       }
@@ -17248,7 +17248,7 @@ public final class Markets {
        * <code>.vega.TargetStakeParameters target_stake_parameters = 1 [json_name = "targetStakeParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder> 
+          io.vegaprotocol.vega.Markets.TargetStakeParameters, io.vegaprotocol.vega.Markets.TargetStakeParameters.Builder, io.vegaprotocol.vega.Markets.TargetStakeParametersOrBuilder>
           getTargetStakeParametersFieldBuilder() {
         if (targetStakeParametersBuilder_ == null) {
           targetStakeParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -17284,7 +17284,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setTriggeringRatio(double value) {
-        
+
         triggeringRatio_ = value;
         onChanged();
         return this;
@@ -17298,7 +17298,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearTriggeringRatio() {
-        
+
         triggeringRatio_ = 0D;
         onChanged();
         return this;
@@ -17327,7 +17327,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setAuctionExtension(long value) {
-        
+
         auctionExtension_ = value;
         onChanged();
         return this;
@@ -17341,7 +17341,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearAuctionExtension() {
-        
+
         auctionExtension_ = 0L;
         onChanged();
         return this;
@@ -17893,7 +17893,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setTimeWindow(long value) {
-        
+
         timeWindow_ = value;
         onChanged();
         return this;
@@ -17907,7 +17907,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearTimeWindow() {
-        
+
         timeWindow_ = 0L;
         onChanged();
         return this;
@@ -17936,7 +17936,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setScalingFactor(double value) {
-        
+
         scalingFactor_ = value;
         onChanged();
         return this;
@@ -17950,7 +17950,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearScalingFactor() {
-        
+
         scalingFactor_ = 0D;
         onChanged();
         return this;
@@ -18276,7 +18276,7 @@ public final class Markets {
 
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -18285,7 +18285,7 @@ public final class Markets {
     boolean hasMarketTimestamps();
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -18294,7 +18294,7 @@ public final class Markets {
     io.vegaprotocol.vega.Markets.MarketTimestamps getMarketTimestamps();
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -19020,7 +19020,7 @@ public final class Markets {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
@@ -19040,7 +19040,7 @@ public final class Markets {
         getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         id_ = b;
@@ -19404,7 +19404,7 @@ public final class Markets {
     private io.vegaprotocol.vega.Markets.MarketTimestamps marketTimestamps_;
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -19416,7 +19416,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -19428,7 +19428,7 @@ public final class Markets {
     }
     /**
      * <pre>
-     * Timestamps for when the market staye changes
+     * Timestamps for when the market stay changes
      * </pre>
      *
      * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -20091,7 +20091,7 @@ public final class Markets {
           getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           id_ = b;
@@ -20114,7 +20114,7 @@ public final class Markets {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         id_ = value;
         onChanged();
         return this;
@@ -20128,7 +20128,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
@@ -20148,7 +20148,7 @@ public final class Markets {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         id_ = value;
         onChanged();
         return this;
@@ -20269,7 +20269,7 @@ public final class Markets {
        * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       public io.vegaprotocol.vega.Markets.TradableInstrument.Builder getTradableInstrumentBuilder() {
-        
+
         onChanged();
         return getTradableInstrumentFieldBuilder().getBuilder();
       }
@@ -20296,7 +20296,7 @@ public final class Markets {
        * <code>.vega.TradableInstrument tradable_instrument = 2 [json_name = "tradableInstrument"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.TradableInstrument, io.vegaprotocol.vega.Markets.TradableInstrument.Builder, io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder> 
+          io.vegaprotocol.vega.Markets.TradableInstrument, io.vegaprotocol.vega.Markets.TradableInstrument.Builder, io.vegaprotocol.vega.Markets.TradableInstrumentOrBuilder>
           getTradableInstrumentFieldBuilder() {
         if (tradableInstrumentBuilder_ == null) {
           tradableInstrumentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -20336,7 +20336,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setDecimalPlaces(long value) {
-        
+
         decimalPlaces_ = value;
         onChanged();
         return this;
@@ -20352,7 +20352,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearDecimalPlaces() {
-        
+
         decimalPlaces_ = 0L;
         onChanged();
         return this;
@@ -20473,7 +20473,7 @@ public final class Markets {
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
        */
       public io.vegaprotocol.vega.Markets.Fees.Builder getFeesBuilder() {
-        
+
         onChanged();
         return getFeesFieldBuilder().getBuilder();
       }
@@ -20500,7 +20500,7 @@ public final class Markets {
        * <code>.vega.Fees fees = 4 [json_name = "fees"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.Fees, io.vegaprotocol.vega.Markets.Fees.Builder, io.vegaprotocol.vega.Markets.FeesOrBuilder> 
+          io.vegaprotocol.vega.Markets.Fees, io.vegaprotocol.vega.Markets.Fees.Builder, io.vegaprotocol.vega.Markets.FeesOrBuilder>
           getFeesFieldBuilder() {
         if (feesBuilder_ == null) {
           feesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -20635,7 +20635,7 @@ public final class Markets {
        * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       public io.vegaprotocol.vega.Markets.AuctionDuration.Builder getOpeningAuctionBuilder() {
-        
+
         onChanged();
         return getOpeningAuctionFieldBuilder().getBuilder();
       }
@@ -20664,7 +20664,7 @@ public final class Markets {
        * <code>.vega.AuctionDuration opening_auction = 5 [json_name = "openingAuction"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.AuctionDuration, io.vegaprotocol.vega.Markets.AuctionDuration.Builder, io.vegaprotocol.vega.Markets.AuctionDurationOrBuilder> 
+          io.vegaprotocol.vega.Markets.AuctionDuration, io.vegaprotocol.vega.Markets.AuctionDuration.Builder, io.vegaprotocol.vega.Markets.AuctionDurationOrBuilder>
           getOpeningAuctionFieldBuilder() {
         if (openingAuctionBuilder_ == null) {
           openingAuctionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -20836,7 +20836,7 @@ public final class Markets {
        * <code>.vega.ContinuousTrading continuous = 100 [json_name = "continuous"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder> 
+          io.vegaprotocol.vega.Markets.ContinuousTrading, io.vegaprotocol.vega.Markets.ContinuousTrading.Builder, io.vegaprotocol.vega.Markets.ContinuousTradingOrBuilder>
           getContinuousFieldBuilder() {
         if (continuousBuilder_ == null) {
           if (!(tradingModeConfigCase_ == 100)) {
@@ -21013,7 +21013,7 @@ public final class Markets {
        * <code>.vega.DiscreteTrading discrete = 101 [json_name = "discrete"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder> 
+          io.vegaprotocol.vega.Markets.DiscreteTrading, io.vegaprotocol.vega.Markets.DiscreteTrading.Builder, io.vegaprotocol.vega.Markets.DiscreteTradingOrBuilder>
           getDiscreteFieldBuilder() {
         if (discreteBuilder_ == null) {
           if (!(tradingModeConfigCase_ == 101)) {
@@ -21146,7 +21146,7 @@ public final class Markets {
        * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       public io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder getPriceMonitoringSettingsBuilder() {
-        
+
         onChanged();
         return getPriceMonitoringSettingsFieldBuilder().getBuilder();
       }
@@ -21173,7 +21173,7 @@ public final class Markets {
        * <code>.vega.PriceMonitoringSettings price_monitoring_settings = 6 [json_name = "priceMonitoringSettings"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder> 
+          io.vegaprotocol.vega.Markets.PriceMonitoringSettings, io.vegaprotocol.vega.Markets.PriceMonitoringSettings.Builder, io.vegaprotocol.vega.Markets.PriceMonitoringSettingsOrBuilder>
           getPriceMonitoringSettingsFieldBuilder() {
         if (priceMonitoringSettingsBuilder_ == null) {
           priceMonitoringSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -21301,7 +21301,7 @@ public final class Markets {
        * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
       public io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder getLiquidityMonitoringParametersBuilder() {
-        
+
         onChanged();
         return getLiquidityMonitoringParametersFieldBuilder().getBuilder();
       }
@@ -21328,7 +21328,7 @@ public final class Markets {
        * <code>.vega.LiquidityMonitoringParameters liquidity_monitoring_parameters = 7 [json_name = "liquidityMonitoringParameters"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder> 
+          io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters, io.vegaprotocol.vega.Markets.LiquidityMonitoringParameters.Builder, io.vegaprotocol.vega.Markets.LiquidityMonitoringParametersOrBuilder>
           getLiquidityMonitoringParametersFieldBuilder() {
         if (liquidityMonitoringParametersBuilder_ == null) {
           liquidityMonitoringParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -21363,7 +21363,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setTradingModeValue(int value) {
-        
+
         tradingMode_ = value;
         onChanged();
         return this;
@@ -21395,7 +21395,7 @@ public final class Markets {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         tradingMode_ = value.getNumber();
         onChanged();
         return this;
@@ -21409,7 +21409,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearTradingMode() {
-        
+
         tradingMode_ = 0;
         onChanged();
         return this;
@@ -21437,7 +21437,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-        
+
         state_ = value;
         onChanged();
         return this;
@@ -21469,7 +21469,7 @@ public final class Markets {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -21483,7 +21483,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+
         state_ = 0;
         onChanged();
         return this;
@@ -21494,7 +21494,7 @@ public final class Markets {
           io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder> marketTimestampsBuilder_;
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21505,7 +21505,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21520,7 +21520,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21540,7 +21540,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21558,7 +21558,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21580,7 +21580,7 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21598,19 +21598,19 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
        */
       public io.vegaprotocol.vega.Markets.MarketTimestamps.Builder getMarketTimestampsBuilder() {
-        
+
         onChanged();
         return getMarketTimestampsFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
@@ -21625,13 +21625,13 @@ public final class Markets {
       }
       /**
        * <pre>
-       * Timestamps for when the market staye changes
+       * Timestamps for when the market stay changes
        * </pre>
        *
        * <code>.vega.MarketTimestamps market_timestamps = 10 [json_name = "marketTimestamps"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder> 
+          io.vegaprotocol.vega.Markets.MarketTimestamps, io.vegaprotocol.vega.Markets.MarketTimestamps.Builder, io.vegaprotocol.vega.Markets.MarketTimestampsOrBuilder>
           getMarketTimestampsFieldBuilder() {
         if (marketTimestampsBuilder_ == null) {
           marketTimestampsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -22285,7 +22285,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setProposed(long value) {
-        
+
         proposed_ = value;
         onChanged();
         return this;
@@ -22299,7 +22299,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearProposed() {
-        
+
         proposed_ = 0L;
         onChanged();
         return this;
@@ -22328,7 +22328,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setPending(long value) {
-        
+
         pending_ = value;
         onChanged();
         return this;
@@ -22342,7 +22342,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearPending() {
-        
+
         pending_ = 0L;
         onChanged();
         return this;
@@ -22371,7 +22371,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setOpen(long value) {
-        
+
         open_ = value;
         onChanged();
         return this;
@@ -22385,7 +22385,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearOpen() {
-        
+
         open_ = 0L;
         onChanged();
         return this;
@@ -22414,7 +22414,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder setClose(long value) {
-        
+
         close_ = value;
         onChanged();
         return this;
@@ -22428,7 +22428,7 @@ public final class Markets {
        * @return This builder for chaining.
        */
       public Builder clearClose() {
-        
+
         close_ = 0L;
         onChanged();
         return this;
@@ -22488,117 +22488,117 @@ public final class Markets {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_AuctionDuration_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_AuctionDuration_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ContinuousTrading_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ContinuousTrading_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_DiscreteTrading_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_DiscreteTrading_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Future_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Future_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_OracleSpecToFutureBinding_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_OracleSpecToFutureBinding_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_InstrumentMetadata_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_InstrumentMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Instrument_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Instrument_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_LogNormalRiskModel_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_LogNormalRiskModel_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_LogNormalModelParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_LogNormalModelParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_SimpleRiskModel_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_SimpleRiskModel_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_SimpleModelParams_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_SimpleModelParams_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_ScalingFactors_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ScalingFactors_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_MarginCalculator_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarginCalculator_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TradableInstrument_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_TradableInstrument_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_FeeFactors_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_FeeFactors_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Fees_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Fees_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_PriceMonitoringTrigger_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PriceMonitoringTrigger_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_PriceMonitoringParameters_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PriceMonitoringParameters_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_PriceMonitoringSettings_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PriceMonitoringSettings_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_LiquidityMonitoringParameters_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_LiquidityMonitoringParameters_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_TargetStakeParameters_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_TargetStakeParameters_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Market_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_Market_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_MarketTimestamps_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_MarketTimestamps_fieldAccessorTable;
 
