@@ -213,12 +213,14 @@ enum ProposalError : int {
   PROPOSAL_ERROR_INVALID_FEE_AMOUNT = 28,
   PROPOSAL_ERROR_INVALID_SHAPE = 29,
   PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30,
+  PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED = 31,
+  PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 constexpr ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_RISK_PARAMETER;
+constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED;
 constexpr int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProposalError_descriptor();

@@ -45967,10 +45967,29 @@ public final class Vega {
 
     /**
      * <pre>
+     * When a market auction is extended, this field indicates what caused the extension
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+     * @return The enum numeric value on the wire for extensionTrigger.
+     */
+    int getExtensionTriggerValue();
+    /**
+     * <pre>
+     * When a market auction is extended, this field indicates what caused the extension
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+     * @return The extensionTrigger.
+     */
+    io.vegaprotocol.vega.Vega.AuctionTrigger getExtensionTrigger();
+
+    /**
+     * <pre>
      * Targeted stake for the given market
      * </pre>
      *
-     * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+     * <code>string target_stake = 22 [json_name = "targetStake"];</code>
      * @return The targetStake.
      */
     java.lang.String getTargetStake();
@@ -45979,7 +45998,7 @@ public final class Vega {
      * Targeted stake for the given market
      * </pre>
      *
-     * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+     * <code>string target_stake = 22 [json_name = "targetStake"];</code>
      * @return The bytes for targetStake.
      */
     com.google.protobuf.ByteString
@@ -45990,7 +46009,7 @@ public final class Vega {
      * Available stake for the given market
      * </pre>
      *
-     * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+     * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
      * @return The suppliedStake.
      */
     java.lang.String getSuppliedStake();
@@ -45999,7 +46018,7 @@ public final class Vega {
      * Available stake for the given market
      * </pre>
      *
-     * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+     * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
      * @return The bytes for suppliedStake.
      */
     com.google.protobuf.ByteString
@@ -46010,7 +46029,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds>
         getPriceMonitoringBoundsList();
@@ -46019,7 +46038,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     io.vegaprotocol.vega.Vega.PriceMonitoringBounds getPriceMonitoringBounds(int index);
     /**
@@ -46027,7 +46046,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     int getPriceMonitoringBoundsCount();
     /**
@@ -46035,7 +46054,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     java.util.List<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
         getPriceMonitoringBoundsOrBuilderList();
@@ -46044,7 +46063,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder getPriceMonitoringBoundsOrBuilder(
         int index);
@@ -46054,7 +46073,7 @@ public final class Vega {
      * the market value proxy
      * </pre>
      *
-     * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+     * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
      * @return The marketValueProxy.
      */
     java.lang.String getMarketValueProxy();
@@ -46063,7 +46082,7 @@ public final class Vega {
      * the market value proxy
      * </pre>
      *
-     * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+     * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
      * @return The bytes for marketValueProxy.
      */
     com.google.protobuf.ByteString
@@ -46074,7 +46093,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     java.util.List<io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare>
         getLiquidityProviderFeeShareList();
@@ -46083,7 +46102,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare getLiquidityProviderFeeShare(int index);
     /**
@@ -46091,7 +46110,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     int getLiquidityProviderFeeShareCount();
     /**
@@ -46099,7 +46118,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityProviderFeeShareOrBuilder>
         getLiquidityProviderFeeShareOrBuilderList();
@@ -46108,7 +46127,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     io.vegaprotocol.vega.Vega.LiquidityProviderFeeShareOrBuilder getLiquidityProviderFeeShareOrBuilder(
         int index);
@@ -46133,6 +46152,7 @@ public final class Vega {
       market_ = "";
       marketTradingMode_ = 0;
       trigger_ = 0;
+      extensionTrigger_ = 0;
       targetStake_ = "";
       suppliedStake_ = "";
       priceMonitoringBounds_ = java.util.Collections.emptyList();
@@ -46274,19 +46294,25 @@ public final class Vega {
               trigger_ = rawValue;
               break;
             }
-            case 170: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 168: {
+              int rawValue = input.readEnum();
 
-              targetStake_ = s;
+              extensionTrigger_ = rawValue;
               break;
             }
             case 178: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              suppliedStake_ = s;
+              targetStake_ = s;
               break;
             }
             case 186: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              suppliedStake_ = s;
+              break;
+            }
+            case 194: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 priceMonitoringBounds_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.PriceMonitoringBounds>();
                 mutable_bitField0_ |= 0x00000001;
@@ -46295,13 +46321,13 @@ public final class Vega {
                   input.readMessage(io.vegaprotocol.vega.Vega.PriceMonitoringBounds.parser(), extensionRegistry));
               break;
             }
-            case 194: {
+            case 202: {
               java.lang.String s = input.readStringRequireUtf8();
 
               marketValueProxy_ = s;
               break;
             }
-            case 202: {
+            case 210: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 liquidityProviderFeeShare_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare>();
                 mutable_bitField0_ |= 0x00000002;
@@ -46708,14 +46734,41 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
     }
 
-    public static final int TARGET_STAKE_FIELD_NUMBER = 21;
+    public static final int EXTENSION_TRIGGER_FIELD_NUMBER = 21;
+    private int extensionTrigger_;
+    /**
+     * <pre>
+     * When a market auction is extended, this field indicates what caused the extension
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+     * @return The enum numeric value on the wire for extensionTrigger.
+     */
+    @java.lang.Override public int getExtensionTriggerValue() {
+      return extensionTrigger_;
+    }
+    /**
+     * <pre>
+     * When a market auction is extended, this field indicates what caused the extension
+     * </pre>
+     *
+     * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+     * @return The extensionTrigger.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.Vega.AuctionTrigger getExtensionTrigger() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.AuctionTrigger result = io.vegaprotocol.vega.Vega.AuctionTrigger.valueOf(extensionTrigger_);
+      return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
+    }
+
+    public static final int TARGET_STAKE_FIELD_NUMBER = 22;
     private volatile java.lang.Object targetStake_;
     /**
      * <pre>
      * Targeted stake for the given market
      * </pre>
      *
-     * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+     * <code>string target_stake = 22 [json_name = "targetStake"];</code>
      * @return The targetStake.
      */
     @java.lang.Override
@@ -46736,7 +46789,7 @@ public final class Vega {
      * Targeted stake for the given market
      * </pre>
      *
-     * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+     * <code>string target_stake = 22 [json_name = "targetStake"];</code>
      * @return The bytes for targetStake.
      */
     @java.lang.Override
@@ -46754,14 +46807,14 @@ public final class Vega {
       }
     }
 
-    public static final int SUPPLIED_STAKE_FIELD_NUMBER = 22;
+    public static final int SUPPLIED_STAKE_FIELD_NUMBER = 23;
     private volatile java.lang.Object suppliedStake_;
     /**
      * <pre>
      * Available stake for the given market
      * </pre>
      *
-     * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+     * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
      * @return The suppliedStake.
      */
     @java.lang.Override
@@ -46782,7 +46835,7 @@ public final class Vega {
      * Available stake for the given market
      * </pre>
      *
-     * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+     * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
      * @return The bytes for suppliedStake.
      */
     @java.lang.Override
@@ -46800,14 +46853,14 @@ public final class Vega {
       }
     }
 
-    public static final int PRICE_MONITORING_BOUNDS_FIELD_NUMBER = 23;
+    public static final int PRICE_MONITORING_BOUNDS_FIELD_NUMBER = 24;
     private java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> priceMonitoringBounds_;
     /**
      * <pre>
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> getPriceMonitoringBoundsList() {
@@ -46818,7 +46871,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
@@ -46830,7 +46883,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     @java.lang.Override
     public int getPriceMonitoringBoundsCount() {
@@ -46841,7 +46894,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.PriceMonitoringBounds getPriceMonitoringBounds(int index) {
@@ -46852,7 +46905,7 @@ public final class Vega {
      * One or more price monitoring bounds for the current timestamp
      * </pre>
      *
-     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+     * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder getPriceMonitoringBoundsOrBuilder(
@@ -46860,14 +46913,14 @@ public final class Vega {
       return priceMonitoringBounds_.get(index);
     }
 
-    public static final int MARKET_VALUE_PROXY_FIELD_NUMBER = 24;
+    public static final int MARKET_VALUE_PROXY_FIELD_NUMBER = 25;
     private volatile java.lang.Object marketValueProxy_;
     /**
      * <pre>
      * the market value proxy
      * </pre>
      *
-     * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+     * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
      * @return The marketValueProxy.
      */
     @java.lang.Override
@@ -46888,7 +46941,7 @@ public final class Vega {
      * the market value proxy
      * </pre>
      *
-     * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+     * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
      * @return The bytes for marketValueProxy.
      */
     @java.lang.Override
@@ -46906,14 +46959,14 @@ public final class Vega {
       }
     }
 
-    public static final int LIQUIDITY_PROVIDER_FEE_SHARE_FIELD_NUMBER = 25;
+    public static final int LIQUIDITY_PROVIDER_FEE_SHARE_FIELD_NUMBER = 26;
     private java.util.List<io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare> liquidityProviderFeeShare_;
     /**
      * <pre>
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare> getLiquidityProviderFeeShareList() {
@@ -46924,7 +46977,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityProviderFeeShareOrBuilder>
@@ -46936,7 +46989,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     @java.lang.Override
     public int getLiquidityProviderFeeShareCount() {
@@ -46947,7 +47000,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare getLiquidityProviderFeeShare(int index) {
@@ -46958,7 +47011,7 @@ public final class Vega {
      * the equity like share of liquidity fee for each liquidity provider
      * </pre>
      *
-     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+     * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShareOrBuilder getLiquidityProviderFeeShareOrBuilder(
@@ -47040,20 +47093,23 @@ public final class Vega {
       if (trigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
         output.writeEnum(20, trigger_);
       }
+      if (extensionTrigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
+        output.writeEnum(21, extensionTrigger_);
+      }
       if (!getTargetStakeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, targetStake_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, targetStake_);
       }
       if (!getSuppliedStakeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, suppliedStake_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, suppliedStake_);
       }
       for (int i = 0; i < priceMonitoringBounds_.size(); i++) {
-        output.writeMessage(23, priceMonitoringBounds_.get(i));
+        output.writeMessage(24, priceMonitoringBounds_.get(i));
       }
       if (!getMarketValueProxyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, marketValueProxy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, marketValueProxy_);
       }
       for (int i = 0; i < liquidityProviderFeeShare_.size(); i++) {
-        output.writeMessage(25, liquidityProviderFeeShare_.get(i));
+        output.writeMessage(26, liquidityProviderFeeShare_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -47143,22 +47199,26 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(20, trigger_);
       }
+      if (extensionTrigger_ != io.vegaprotocol.vega.Vega.AuctionTrigger.AUCTION_TRIGGER_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(21, extensionTrigger_);
+      }
       if (!getTargetStakeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, targetStake_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, targetStake_);
       }
       if (!getSuppliedStakeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, suppliedStake_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, suppliedStake_);
       }
       for (int i = 0; i < priceMonitoringBounds_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(23, priceMonitoringBounds_.get(i));
+          .computeMessageSize(24, priceMonitoringBounds_.get(i));
       }
       if (!getMarketValueProxyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, marketValueProxy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, marketValueProxy_);
       }
       for (int i = 0; i < liquidityProviderFeeShare_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, liquidityProviderFeeShare_.get(i));
+          .computeMessageSize(26, liquidityProviderFeeShare_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -47213,6 +47273,7 @@ public final class Vega {
           != other.getIndicativeVolume()) return false;
       if (marketTradingMode_ != other.marketTradingMode_) return false;
       if (trigger_ != other.trigger_) return false;
+      if (extensionTrigger_ != other.extensionTrigger_) return false;
       if (!getTargetStake()
           .equals(other.getTargetStake())) return false;
       if (!getSuppliedStake()
@@ -47291,6 +47352,8 @@ public final class Vega {
       hash = (53 * hash) + marketTradingMode_;
       hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
       hash = (53 * hash) + trigger_;
+      hash = (37 * hash) + EXTENSION_TRIGGER_FIELD_NUMBER;
+      hash = (53 * hash) + extensionTrigger_;
       hash = (37 * hash) + TARGET_STAKE_FIELD_NUMBER;
       hash = (53 * hash) + getTargetStake().hashCode();
       hash = (37 * hash) + SUPPLIED_STAKE_FIELD_NUMBER;
@@ -47484,6 +47547,8 @@ public final class Vega {
 
         trigger_ = 0;
 
+        extensionTrigger_ = 0;
+
         targetStake_ = "";
 
         suppliedStake_ = "";
@@ -47549,6 +47614,7 @@ public final class Vega {
         result.indicativeVolume_ = indicativeVolume_;
         result.marketTradingMode_ = marketTradingMode_;
         result.trigger_ = trigger_;
+        result.extensionTrigger_ = extensionTrigger_;
         result.targetStake_ = targetStake_;
         result.suppliedStake_ = suppliedStake_;
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -47678,6 +47744,9 @@ public final class Vega {
         }
         if (other.trigger_ != 0) {
           setTriggerValue(other.getTriggerValue());
+        }
+        if (other.extensionTrigger_ != 0) {
+          setExtensionTriggerValue(other.getExtensionTriggerValue());
         }
         if (!other.getTargetStake().isEmpty()) {
           targetStake_ = other.targetStake_;
@@ -48763,13 +48832,87 @@ public final class Vega {
         return this;
       }
 
+      private int extensionTrigger_ = 0;
+      /**
+       * <pre>
+       * When a market auction is extended, this field indicates what caused the extension
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+       * @return The enum numeric value on the wire for extensionTrigger.
+       */
+      @java.lang.Override public int getExtensionTriggerValue() {
+        return extensionTrigger_;
+      }
+      /**
+       * <pre>
+       * When a market auction is extended, this field indicates what caused the extension
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+       * @param value The enum numeric value on the wire for extensionTrigger to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtensionTriggerValue(int value) {
+
+        extensionTrigger_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * When a market auction is extended, this field indicates what caused the extension
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+       * @return The extensionTrigger.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.AuctionTrigger getExtensionTrigger() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.AuctionTrigger result = io.vegaprotocol.vega.Vega.AuctionTrigger.valueOf(extensionTrigger_);
+        return result == null ? io.vegaprotocol.vega.Vega.AuctionTrigger.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * When a market auction is extended, this field indicates what caused the extension
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+       * @param value The extensionTrigger to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtensionTrigger(io.vegaprotocol.vega.Vega.AuctionTrigger value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        extensionTrigger_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * When a market auction is extended, this field indicates what caused the extension
+       * </pre>
+       *
+       * <code>.vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExtensionTrigger() {
+
+        extensionTrigger_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object targetStake_ = "";
       /**
        * <pre>
        * Targeted stake for the given market
        * </pre>
        *
-       * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+       * <code>string target_stake = 22 [json_name = "targetStake"];</code>
        * @return The targetStake.
        */
       public java.lang.String getTargetStake() {
@@ -48789,7 +48932,7 @@ public final class Vega {
        * Targeted stake for the given market
        * </pre>
        *
-       * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+       * <code>string target_stake = 22 [json_name = "targetStake"];</code>
        * @return The bytes for targetStake.
        */
       public com.google.protobuf.ByteString
@@ -48810,7 +48953,7 @@ public final class Vega {
        * Targeted stake for the given market
        * </pre>
        *
-       * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+       * <code>string target_stake = 22 [json_name = "targetStake"];</code>
        * @param value The targetStake to set.
        * @return This builder for chaining.
        */
@@ -48829,7 +48972,7 @@ public final class Vega {
        * Targeted stake for the given market
        * </pre>
        *
-       * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+       * <code>string target_stake = 22 [json_name = "targetStake"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetStake() {
@@ -48843,7 +48986,7 @@ public final class Vega {
        * Targeted stake for the given market
        * </pre>
        *
-       * <code>string target_stake = 21 [json_name = "targetStake"];</code>
+       * <code>string target_stake = 22 [json_name = "targetStake"];</code>
        * @param value The bytes for targetStake to set.
        * @return This builder for chaining.
        */
@@ -48865,7 +49008,7 @@ public final class Vega {
        * Available stake for the given market
        * </pre>
        *
-       * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+       * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
        * @return The suppliedStake.
        */
       public java.lang.String getSuppliedStake() {
@@ -48885,7 +49028,7 @@ public final class Vega {
        * Available stake for the given market
        * </pre>
        *
-       * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+       * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
        * @return The bytes for suppliedStake.
        */
       public com.google.protobuf.ByteString
@@ -48906,7 +49049,7 @@ public final class Vega {
        * Available stake for the given market
        * </pre>
        *
-       * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+       * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
        * @param value The suppliedStake to set.
        * @return This builder for chaining.
        */
@@ -48925,7 +49068,7 @@ public final class Vega {
        * Available stake for the given market
        * </pre>
        *
-       * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+       * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSuppliedStake() {
@@ -48939,7 +49082,7 @@ public final class Vega {
        * Available stake for the given market
        * </pre>
        *
-       * <code>string supplied_stake = 22 [json_name = "suppliedStake"];</code>
+       * <code>string supplied_stake = 23 [json_name = "suppliedStake"];</code>
        * @param value The bytes for suppliedStake to set.
        * @return This builder for chaining.
        */
@@ -48972,7 +49115,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds> getPriceMonitoringBoundsList() {
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -48986,7 +49129,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public int getPriceMonitoringBoundsCount() {
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -49000,7 +49143,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public io.vegaprotocol.vega.Vega.PriceMonitoringBounds getPriceMonitoringBounds(int index) {
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -49014,7 +49157,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder setPriceMonitoringBounds(
           int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds value) {
@@ -49035,7 +49178,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder setPriceMonitoringBounds(
           int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder builderForValue) {
@@ -49053,7 +49196,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder addPriceMonitoringBounds(io.vegaprotocol.vega.Vega.PriceMonitoringBounds value) {
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -49073,7 +49216,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder addPriceMonitoringBounds(
           int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds value) {
@@ -49094,7 +49237,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder addPriceMonitoringBounds(
           io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder builderForValue) {
@@ -49112,7 +49255,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder addPriceMonitoringBounds(
           int index, io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder builderForValue) {
@@ -49130,7 +49273,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder addAllPriceMonitoringBounds(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBounds> values) {
@@ -49149,7 +49292,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder clearPriceMonitoringBounds() {
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -49166,7 +49309,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public Builder removePriceMonitoringBounds(int index) {
         if (priceMonitoringBoundsBuilder_ == null) {
@@ -49183,7 +49326,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder getPriceMonitoringBoundsBuilder(
           int index) {
@@ -49194,7 +49337,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder getPriceMonitoringBoundsOrBuilder(
           int index) {
@@ -49208,7 +49351,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public java.util.List<? extends io.vegaprotocol.vega.Vega.PriceMonitoringBoundsOrBuilder>
            getPriceMonitoringBoundsOrBuilderList() {
@@ -49223,7 +49366,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder addPriceMonitoringBoundsBuilder() {
         return getPriceMonitoringBoundsFieldBuilder().addBuilder(
@@ -49234,7 +49377,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder addPriceMonitoringBoundsBuilder(
           int index) {
@@ -49246,7 +49389,7 @@ public final class Vega {
        * One or more price monitoring bounds for the current timestamp
        * </pre>
        *
-       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];</code>
+       * <code>repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.PriceMonitoringBounds.Builder>
            getPriceMonitoringBoundsBuilderList() {
@@ -49273,7 +49416,7 @@ public final class Vega {
        * the market value proxy
        * </pre>
        *
-       * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+       * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
        * @return The marketValueProxy.
        */
       public java.lang.String getMarketValueProxy() {
@@ -49293,7 +49436,7 @@ public final class Vega {
        * the market value proxy
        * </pre>
        *
-       * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+       * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
        * @return The bytes for marketValueProxy.
        */
       public com.google.protobuf.ByteString
@@ -49314,7 +49457,7 @@ public final class Vega {
        * the market value proxy
        * </pre>
        *
-       * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+       * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
        * @param value The marketValueProxy to set.
        * @return This builder for chaining.
        */
@@ -49333,7 +49476,7 @@ public final class Vega {
        * the market value proxy
        * </pre>
        *
-       * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+       * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketValueProxy() {
@@ -49347,7 +49490,7 @@ public final class Vega {
        * the market value proxy
        * </pre>
        *
-       * <code>string market_value_proxy = 24 [json_name = "marketValueProxy"];</code>
+       * <code>string market_value_proxy = 25 [json_name = "marketValueProxy"];</code>
        * @param value The bytes for marketValueProxy to set.
        * @return This builder for chaining.
        */
@@ -49380,7 +49523,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare> getLiquidityProviderFeeShareList() {
         if (liquidityProviderFeeShareBuilder_ == null) {
@@ -49394,7 +49537,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public int getLiquidityProviderFeeShareCount() {
         if (liquidityProviderFeeShareBuilder_ == null) {
@@ -49408,7 +49551,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare getLiquidityProviderFeeShare(int index) {
         if (liquidityProviderFeeShareBuilder_ == null) {
@@ -49422,7 +49565,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder setLiquidityProviderFeeShare(
           int index, io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare value) {
@@ -49443,7 +49586,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder setLiquidityProviderFeeShare(
           int index, io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder builderForValue) {
@@ -49461,7 +49604,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder addLiquidityProviderFeeShare(io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare value) {
         if (liquidityProviderFeeShareBuilder_ == null) {
@@ -49481,7 +49624,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder addLiquidityProviderFeeShare(
           int index, io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare value) {
@@ -49502,7 +49645,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder addLiquidityProviderFeeShare(
           io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder builderForValue) {
@@ -49520,7 +49663,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder addLiquidityProviderFeeShare(
           int index, io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder builderForValue) {
@@ -49538,7 +49681,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder addAllLiquidityProviderFeeShare(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare> values) {
@@ -49557,7 +49700,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder clearLiquidityProviderFeeShare() {
         if (liquidityProviderFeeShareBuilder_ == null) {
@@ -49574,7 +49717,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public Builder removeLiquidityProviderFeeShare(int index) {
         if (liquidityProviderFeeShareBuilder_ == null) {
@@ -49591,7 +49734,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder getLiquidityProviderFeeShareBuilder(
           int index) {
@@ -49602,7 +49745,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShareOrBuilder getLiquidityProviderFeeShareOrBuilder(
           int index) {
@@ -49616,7 +49759,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public java.util.List<? extends io.vegaprotocol.vega.Vega.LiquidityProviderFeeShareOrBuilder>
            getLiquidityProviderFeeShareOrBuilderList() {
@@ -49631,7 +49774,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder addLiquidityProviderFeeShareBuilder() {
         return getLiquidityProviderFeeShareFieldBuilder().addBuilder(
@@ -49642,7 +49785,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder addLiquidityProviderFeeShareBuilder(
           int index) {
@@ -49654,7 +49797,7 @@ public final class Vega {
        * the equity like share of liquidity fee for each liquidity provider
        * </pre>
        *
-       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];</code>
+       * <code>repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.LiquidityProviderFeeShare.Builder>
            getLiquidityProviderFeeShareBuilderList() {
@@ -62227,7 +62370,7 @@ public final class Vega {
       "lateralReleaseLevel\022\031\n\010party_id\030\005 \001(\tR\007p" +
       "artyId\022\033\n\tmarket_id\030\006 \001(\tR\010marketId\022\024\n\005a" +
       "sset\030\007 \001(\tR\005asset\022\034\n\ttimestamp\030\010 \001(\003R\tti" +
-      "mestamp\"\220\t\n\nMarketData\022\035\n\nmark_price\030\001 \001" +
+      "mestamp\"\323\t\n\nMarketData\022\035\n\nmark_price\030\001 \001" +
       "(\004R\tmarkPrice\022$\n\016best_bid_price\030\002 \001(\004R\014b" +
       "estBidPrice\022&\n\017best_bid_volume\030\003 \001(\004R\rbe" +
       "stBidVolume\022(\n\020best_offer_price\030\004 \001(\004R\016b" +
@@ -62248,155 +62391,157 @@ public final class Vega {
       "ve_volume\030\022 \001(\004R\020indicativeVolume\022H\n\023mar" +
       "ket_trading_mode\030\023 \001(\0162\030.vega.Market.Tra" +
       "dingModeR\021marketTradingMode\022.\n\007trigger\030\024" +
-      " \001(\0162\024.vega.AuctionTriggerR\007trigger\022!\n\014t" +
-      "arget_stake\030\025 \001(\tR\013targetStake\022%\n\016suppli" +
-      "ed_stake\030\026 \001(\tR\rsuppliedStake\022S\n\027price_m" +
-      "onitoring_bounds\030\027 \003(\0132\033.vega.PriceMonit" +
-      "oringBoundsR\025priceMonitoringBounds\022,\n\022ma" +
-      "rket_value_proxy\030\030 \001(\tR\020marketValueProxy" +
-      "\022`\n\034liquidity_provider_fee_share\030\031 \003(\0132\037" +
-      ".vega.LiquidityProviderFeeShareR\031liquidi" +
-      "tyProviderFeeShare\"\225\001\n\031LiquidityProvider" +
-      "FeeShare\022\024\n\005party\030\001 \001(\tR\005party\022*\n\021equity" +
-      "_like_share\030\002 \001(\tR\017equityLikeShare\0226\n\027av" +
-      "erage_entry_valuation\030\003 \001(\tR\025averageEntr" +
-      "yValuation\"\310\001\n\025PriceMonitoringBounds\022&\n\017" +
-      "min_valid_price\030\001 \001(\004R\rminValidPrice\022&\n\017" +
-      "max_valid_price\030\002 \001(\004R\rmaxValidPrice\0226\n\007" +
-      "trigger\030\003 \001(\0132\034.vega.PriceMonitoringTrig" +
-      "gerR\007trigger\022\'\n\017reference_price\030\004 \001(\001R\016r" +
-      "eferencePrice\"Q\n\013ErrorDetail\022\022\n\004code\030\001 \001" +
-      "(\005R\004code\022\030\n\007message\030\002 \001(\tR\007message\022\024\n\005in" +
-      "ner\030\003 \001(\tR\005inner\"\246\001\n\013Transaction\022\035\n\ninpu" +
-      "t_data\030\001 \001(\014R\tinputData\022\024\n\005nonce\030\002 \001(\004R\005" +
-      "nonce\022!\n\014block_height\030\003 \001(\004R\013blockHeight" +
-      "\022\033\n\007address\030\351\007 \001(\014H\000R\007address\022\032\n\007pub_key" +
-      "\030\352\007 \001(\014H\000R\006pubKeyB\006\n\004from\"K\n\tSignature\022\020" +
-      "\n\003sig\030\001 \001(\014R\003sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007" +
-      "version\030\003 \001(\004R\007version\"A\n\014SignedBundle\022\016" +
-      "\n\002tx\030\001 \001(\014R\002tx\022!\n\003sig\030\002 \001(\0132\017.vega.Signa" +
-      "tureR\003sig\":\n\020NetworkParameter\022\020\n\003key\030\001 \001" +
-      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value\"}\n\016Liquidi" +
-      "tyOrder\0223\n\treference\030\001 \001(\0162\025.vega.Pegged" +
-      "ReferenceR\treference\022\036\n\nproportion\030\002 \001(\r" +
-      "R\nproportion\022\026\n\006offset\030\003 \001(\003R\006offset\"s\n\027" +
-      "LiquidityOrderReference\022\031\n\010order_id\030\001 \001(" +
-      "\tR\007orderId\022=\n\017liquidity_order\030\002 \001(\0132\024.ve" +
-      "ga.LiquidityOrderR\016liquidityOrder\"\332\004\n\022Li" +
-      "quidityProvision\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010part" +
-      "y_id\030\002 \001(\tR\007partyId\022\035\n\ncreated_at\030\003 \001(\003R" +
-      "\tcreatedAt\022\035\n\nupdated_at\030\004 \001(\003R\tupdatedA" +
-      "t\022#\n\tmarket_id\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+" +
-      "\n\021commitment_amount\030\006 \001(\004R\020commitmentAmo" +
-      "unt\022\020\n\003fee\030\007 \001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.v" +
-      "ega.LiquidityOrderReferenceR\005sells\0221\n\004bu" +
-      "ys\030\t \003(\0132\035.vega.LiquidityOrderReferenceR" +
-      "\004buys\022\030\n\007version\030\n \001(\tR\007version\0227\n\006statu" +
-      "s\030\013 \001(\0162\037.vega.LiquidityProvision.Status" +
-      "R\006status\022\034\n\treference\030\014 \001(\tR\treference\"\235" +
-      "\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\021\n\rSTA" +
-      "TUS_ACTIVE\020\001\022\022\n\016STATUS_STOPPED\020\002\022\024\n\020STAT" +
-      "US_CANCELLED\020\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021S" +
-      "TATUS_UNDEPLOYED\020\005\022\022\n\016STATUS_PENDING\020\006\"\227" +
-      "\001\n\016EthereumConfig\022\035\n\nnetwork_id\030\001 \001(\tR\tn" +
-      "etworkId\022\031\n\010chain_id\030\002 \001(\tR\007chainId\022%\n\016b" +
-      "ridge_address\030\003 \001(\tR\rbridgeAddress\022$\n\rco" +
-      "nfirmations\030\004 \001(\rR\rconfirmations*9\n\004Side" +
-      "\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\t" +
-      "SIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_UNS" +
-      "PECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERVAL" +
-      "_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVAL_" +
-      "I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I" +
-      "1D\020\200\243\005*\243\001\n\016AuctionTrigger\022\037\n\033AUCTION_TRI" +
-      "GGER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIGGER_BA" +
-      "TCH\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002\022\031\n\025AU" +
-      "CTION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_TRIGGER" +
-      "_LIQUIDITY\020\004*\213\001\n\017PeggedReference\022 \n\034PEGG" +
-      "ED_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGGED_REF" +
-      "ERENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_BEST_BI" +
-      "D\020\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003*\370\017\n\nO" +
-      "rderError\022\033\n\027ORDER_ERROR_UNSPECIFIED\020\000\022!" +
-      "\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORD" +
-      "ER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERR" +
-      "OR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVA" +
-      "LID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME" +
-      "_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILUR" +
-      "E\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRATION_DA" +
-      "TETIME\020\007\022\'\n#ORDER_ERROR_INVALID_ORDER_RE" +
-      "FERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWE" +
-      "D\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025OR" +
-      "DER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INV" +
-      "ALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CL" +
-      "OSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHECK_FAILE" +
-      "D\020\016\022\'\n#ORDER_ERROR_MISSING_GENERAL_ACCOU" +
-      "NT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030" +
-      "ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERRO" +
-      "R_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_I" +
-      "NVALID_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADIN" +
-      "G\020\024\022.\n*ORDER_ERROR_INSUFFICIENT_FUNDS_TO" +
-      "_PAY_FEES\020\025\022%\n!ORDER_ERROR_INCORRECT_MAR" +
-      "KET_TYPE\020\026\022%\n!ORDER_ERROR_INVALID_TIME_I" +
-      "N_FORCE\020\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURIN" +
-      "G_AN_AUCTION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_" +
-      "DURING_CONTINUOUS_TRADING\020\031\0224\n0ORDER_ERR" +
-      "OR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020" +
-      "\032\022)\n%ORDER_ERROR_EXPIRYAT_BEFORE_CREATED" +
-      "AT\020\033\022,\n(ORDER_ERROR_CANNOT_HAVE_GTC_AND_" +
-      "EXPIRYAT\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_T" +
-      "O_FOK_OR_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AME" +
-      "ND_TO_GFA_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT" +
-      "_AMEND_FROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_" +
-      "CANNOT_SEND_IOC_ORDER_DURING_AUCTION\020 \0224" +
-      "\n0ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURI" +
-      "NG_AUCTION\020!\022#\n\037ORDER_ERROR_MUST_BE_LIMI" +
-      "T_ORDER\020\"\022\"\n\036ORDER_ERROR_MUST_BE_GTT_OR_" +
-      "GTC\020#\022\'\n#ORDER_ERROR_WITHOUT_REFERENCE_P" +
-      "RICE\020$\0223\n/ORDER_ERROR_BUY_CANNOT_REFEREN" +
-      "CE_BEST_ASK_PRICE\020%\0224\n0ORDER_ERROR_OFFSE" +
-      "T_MUST_BE_LESS_OR_EQUAL_TO_ZERO\020&\022-\n)ORD" +
-      "ER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO\020\'" +
-      "\0227\n3ORDER_ERROR_OFFSET_MUST_BE_GREATER_O" +
-      "R_EQUAL_TO_ZERO\020(\0224\n0ORDER_ERROR_SELL_CA" +
-      "NNOT_REFERENCE_BEST_BID_PRICE\020)\0220\n,ORDER" +
-      "_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO\020" +
-      "*\022*\n&ORDER_ERROR_INSUFFICIENT_ASSET_BALA" +
-      "NCE\020+\022E\nAORDER_ERROR_CANNOT_AMEND_PEGGED" +
-      "_ORDER_DETAILS_ON_NON_PEGGED_ORDER\020,\022.\n*" +
-      "ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORD" +
-      "ER\020-\0225\n1ORDER_ERROR_UNABLE_TO_AMEND_PRIC" +
-      "E_ON_PEGGED_ORDER\020.\0228\n4ORDER_ERROR_NON_P" +
-      "ERSISTENT_ORDER_OUT_OF_PRICE_BOUNDS\020/*\202\001" +
-      "\n\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIE" +
-      "D\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CH" +
-      "AIN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_C" +
-      "ONNECTED\020\003*\315\002\n\013AccountType\022\034\n\030ACCOUNT_TY" +
-      "PE_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURAN" +
-      "CE\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACC" +
-      "OUNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENER" +
-      "AL\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE" +
-      "\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027A" +
-      "CCOUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE" +
-      "_LOCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022" +
-      "\031\n\025ACCOUNT_TYPE_EXTERNAL\020\n*\263\005\n\014TransferT" +
-      "ype\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TR" +
-      "ANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020" +
-      "\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_T" +
-      "YPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020" +
-      "\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANS" +
-      "FER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_" +
-      "MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_MA" +
-      "KER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FEE" +
-      "_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCTU" +
-      "RE_FEE_PAY\020\013\022/\n+TRANSFER_TYPE_INFRASTRUC" +
-      "TURE_FEE_DISTRIBUTE\020\014\022#\n\037TRANSFER_TYPE_L" +
-      "IQUIDITY_FEE_PAY\020\r\022*\n&TRANSFER_TYPE_LIQU" +
-      "IDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TRANSFER_TYPE_" +
-      "BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_BOND_HIGH\020\020\022" +
-      "\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\021\022\032\n\026TRAN" +
-      "SFER_TYPE_WITHDRAW\020\022\022\031\n\025TRANSFER_TYPE_DE" +
-      "POSIT\020\023\022\037\n\033TRANSFER_TYPE_BOND_SLASHING\020\024" +
-      "B7\n\024io.vegaprotocol.vegaZ\037code.vegaproto" +
-      "col.io/vega/protob\006proto3"
+      " \001(\0162\024.vega.AuctionTriggerR\007trigger\022A\n\021e" +
+      "xtension_trigger\030\025 \001(\0162\024.vega.AuctionTri" +
+      "ggerR\020extensionTrigger\022!\n\014target_stake\030\026" +
+      " \001(\tR\013targetStake\022%\n\016supplied_stake\030\027 \001(" +
+      "\tR\rsuppliedStake\022S\n\027price_monitoring_bou" +
+      "nds\030\030 \003(\0132\033.vega.PriceMonitoringBoundsR\025" +
+      "priceMonitoringBounds\022,\n\022market_value_pr" +
+      "oxy\030\031 \001(\tR\020marketValueProxy\022`\n\034liquidity" +
+      "_provider_fee_share\030\032 \003(\0132\037.vega.Liquidi" +
+      "tyProviderFeeShareR\031liquidityProviderFee" +
+      "Share\"\225\001\n\031LiquidityProviderFeeShare\022\024\n\005p" +
+      "arty\030\001 \001(\tR\005party\022*\n\021equity_like_share\030\002" +
+      " \001(\tR\017equityLikeShare\0226\n\027average_entry_v" +
+      "aluation\030\003 \001(\tR\025averageEntryValuation\"\310\001" +
+      "\n\025PriceMonitoringBounds\022&\n\017min_valid_pri" +
+      "ce\030\001 \001(\004R\rminValidPrice\022&\n\017max_valid_pri" +
+      "ce\030\002 \001(\004R\rmaxValidPrice\0226\n\007trigger\030\003 \001(\013" +
+      "2\034.vega.PriceMonitoringTriggerR\007trigger\022" +
+      "\'\n\017reference_price\030\004 \001(\001R\016referencePrice" +
+      "\"Q\n\013ErrorDetail\022\022\n\004code\030\001 \001(\005R\004code\022\030\n\007m" +
+      "essage\030\002 \001(\tR\007message\022\024\n\005inner\030\003 \001(\tR\005in" +
+      "ner\"\246\001\n\013Transaction\022\035\n\ninput_data\030\001 \001(\014R" +
+      "\tinputData\022\024\n\005nonce\030\002 \001(\004R\005nonce\022!\n\014bloc" +
+      "k_height\030\003 \001(\004R\013blockHeight\022\033\n\007address\030\351" +
+      "\007 \001(\014H\000R\007address\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pu" +
+      "bKeyB\006\n\004from\"K\n\tSignature\022\020\n\003sig\030\001 \001(\014R\003" +
+      "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\004" +
+      "R\007version\"A\n\014SignedBundle\022\016\n\002tx\030\001 \001(\014R\002t" +
+      "x\022!\n\003sig\030\002 \001(\0132\017.vega.SignatureR\003sig\":\n\020" +
+      "NetworkParameter\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\tR\005value\"}\n\016LiquidityOrder\0223\n\tre" +
+      "ference\030\001 \001(\0162\025.vega.PeggedReferenceR\tre" +
+      "ference\022\036\n\nproportion\030\002 \001(\rR\nproportion\022" +
+      "\026\n\006offset\030\003 \001(\003R\006offset\"s\n\027LiquidityOrde" +
+      "rReference\022\031\n\010order_id\030\001 \001(\tR\007orderId\022=\n" +
+      "\017liquidity_order\030\002 \001(\0132\024.vega.LiquidityO" +
+      "rderR\016liquidityOrder\"\332\004\n\022LiquidityProvis" +
+      "ion\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010party_id\030\002 \001(\tR\007p" +
+      "artyId\022\035\n\ncreated_at\030\003 \001(\003R\tcreatedAt\022\035\n" +
+      "\nupdated_at\030\004 \001(\003R\tupdatedAt\022#\n\tmarket_i" +
+      "d\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commitment_" +
+      "amount\030\006 \001(\004R\020commitmentAmount\022\020\n\003fee\030\007 " +
+      "\001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.vega.Liquidity" +
+      "OrderReferenceR\005sells\0221\n\004buys\030\t \003(\0132\035.ve" +
+      "ga.LiquidityOrderReferenceR\004buys\022\030\n\007vers" +
+      "ion\030\n \001(\tR\007version\0227\n\006status\030\013 \001(\0162\037.veg" +
+      "a.LiquidityProvision.StatusR\006status\022\034\n\tr" +
+      "eference\030\014 \001(\tR\treference\"\235\001\n\006Status\022\026\n\022" +
+      "STATUS_UNSPECIFIED\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022" +
+      "\022\n\016STATUS_STOPPED\020\002\022\024\n\020STATUS_CANCELLED\020" +
+      "\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021STATUS_UNDEPLO" +
+      "YED\020\005\022\022\n\016STATUS_PENDING\020\006\"\227\001\n\016EthereumCo" +
+      "nfig\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId\022\031\n\010c" +
+      "hain_id\030\002 \001(\tR\007chainId\022%\n\016bridge_address" +
+      "\030\003 \001(\tR\rbridgeAddress\022$\n\rconfirmations\030\004" +
+      " \001(\rR\rconfirmations*9\n\004Side\022\024\n\020SIDE_UNSP" +
+      "ECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230" +
+      "\001\n\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n" +
+      "\014INTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rIN" +
+      "TERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INT" +
+      "ERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Au" +
+      "ctionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIF" +
+      "IED\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCT" +
+      "ION_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER" +
+      "_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*" +
+      "\213\001\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_" +
+      "UNSPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022" +
+      "\035\n\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED" +
+      "_REFERENCE_BEST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027" +
+      "ORDER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR" +
+      "_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVA" +
+      "LID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQ" +
+      "UENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING" +
+      "_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n" +
+      "\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_" +
+      "ERROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#O" +
+      "RDER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034" +
+      "ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_" +
+      "ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT" +
+      "_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID" +
+      "\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORD" +
+      "ER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_" +
+      "ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER" +
+      "_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_I" +
+      "NVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PER" +
+      "SISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023" +
+      "\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_" +
+      "ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%" +
+      "\n!ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n" +
+      "!ORDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'" +
+      "ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020" +
+      "\030\0223\n/ORDER_ERROR_GFA_ORDER_DURING_CONTIN" +
+      "UOUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AME" +
+      "ND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ER" +
+      "ROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER" +
+      "_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n" +
+      "&ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020" +
+      "\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_" +
+      "GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_G" +
+      "FA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_I" +
+      "OC_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR" +
+      "_CANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022" +
+      "#\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036" +
+      "ORDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDE" +
+      "R_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORD" +
+      "ER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_P" +
+      "RICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LES" +
+      "S_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFS" +
+      "ET_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERR" +
+      "OR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZE" +
+      "RO\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENC" +
+      "E_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET" +
+      "_MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ER" +
+      "ROR_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDE" +
+      "R_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAIL" +
+      "S_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_U" +
+      "NABLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER" +
+      "_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_O" +
+      "RDER\020.\0228\n4ORDER_ERROR_NON_PERSISTENT_ORD" +
+      "ER_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus" +
+      "\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_" +
+      "STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_RE" +
+      "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\315\002" +
+      "\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIE" +
+      "D\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOU" +
+      "NT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MAR" +
+      "GIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOU" +
+      "NT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT" +
+      "_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_F" +
+      "EES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRA" +
+      "W\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TY" +
+      "PE_EXTERNAL\020\n*\263\005\n\014TransferType\022\035\n\031TRANSF" +
+      "ER_TYPE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_TYPE_L" +
+      "OSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER" +
+      "_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020" +
+      "\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER" +
+      "_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE_MARG" +
+      "IN_HIGH\020\007\022$\n TRANSFER_TYPE_MARGIN_CONFIS" +
+      "CATED\020\010\022\037\n\033TRANSFER_TYPE_MAKER_FEE_PAY\020\t" +
+      "\022#\n\037TRANSFER_TYPE_MAKER_FEE_RECEIVE\020\n\022(\n" +
+      "$TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY\020\013\022" +
+      "/\n+TRANSFER_TYPE_INFRASTRUCTURE_FEE_DIST" +
+      "RIBUTE\020\014\022#\n\037TRANSFER_TYPE_LIQUIDITY_FEE_" +
+      "PAY\020\r\022*\n&TRANSFER_TYPE_LIQUIDITY_FEE_DIS" +
+      "TRIBUTE\020\016\022\032\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033\n" +
+      "\027TRANSFER_TYPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_T" +
+      "YPE_WITHDRAW_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WIT" +
+      "HDRAW\020\022\022\031\n\025TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TR" +
+      "ANSFER_TYPE_BOND_SLASHING\020\024B7\n\024io.vegapr" +
+      "otocol.vegaZ\037code.vegaprotocol.io/vega/p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -62613,7 +62758,7 @@ public final class Vega {
     internal_static_vega_MarketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketData_descriptor,
-        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "BestStaticBidPrice", "BestStaticBidVolume", "BestStaticOfferPrice", "BestStaticOfferVolume", "MidPrice", "StaticMidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketTradingMode", "Trigger", "TargetStake", "SuppliedStake", "PriceMonitoringBounds", "MarketValueProxy", "LiquidityProviderFeeShare", });
+        new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "BestStaticBidPrice", "BestStaticBidVolume", "BestStaticOfferPrice", "BestStaticOfferVolume", "MidPrice", "StaticMidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketTradingMode", "Trigger", "ExtensionTrigger", "TargetStake", "SuppliedStake", "PriceMonitoringBounds", "MarketValueProxy", "LiquidityProviderFeeShare", });
     internal_static_vega_LiquidityProviderFeeShare_descriptor =
       getDescriptor().getMessageTypes().get(33);
     internal_static_vega_LiquidityProviderFeeShare_fieldAccessorTable = new

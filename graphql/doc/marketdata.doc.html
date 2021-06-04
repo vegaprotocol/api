@@ -1434,7 +1434,7 @@
 <td id="L68" class="td-index">68</td>
 <td id="LC68" class="td-code">
 <span class="tab">
-<span class="comment line">#   the amount of stake targeted for this market</span>
+<span class="comment line">#   what extended the ongoing auction (if an auction was extended)</span>
 </span>
 </td>
 </tr>
@@ -1442,7 +1442,7 @@
 <td id="L69" class="td-index">69</td>
 <td id="LC69" class="td-code">
 <span class="tab">
-<span class="meta">targetStake</span>: <a class="support type" href="string.doc.html">String</a> </span>
+<span class="meta">extensionTrigger</span>: <a class="support type" href="auctiontrigger.doc.html">AuctionTrigger</a>! </span>
 </td>
 </tr>
 <tr class="row">
@@ -1454,7 +1454,7 @@
 <td id="L71" class="td-index">71</td>
 <td id="LC71" class="td-code">
 <span class="tab">
-<span class="comment line">#   the supplied stake for the market</span>
+<span class="comment line">#   the amount of stake targeted for this market</span>
 </span>
 </td>
 </tr>
@@ -1462,7 +1462,7 @@
 <td id="L72" class="td-index">72</td>
 <td id="LC72" class="td-code">
 <span class="tab">
-<span class="meta">suppliedStake</span>: <a class="support type" href="string.doc.html">String</a> </span>
+<span class="meta">targetStake</span>: <a class="support type" href="string.doc.html">String</a> </span>
 </td>
 </tr>
 <tr class="row">
@@ -1474,7 +1474,7 @@
 <td id="L74" class="td-index">74</td>
 <td id="LC74" class="td-code">
 <span class="tab">
-<span class="comment line">#   The liquidity commitments for a given market</span>
+<span class="comment line">#   the supplied stake for the market</span>
 </span>
 </td>
 </tr>
@@ -1482,7 +1482,7 @@
 <td id="L75" class="td-index">75</td>
 <td id="LC75" class="td-code">
 <span class="tab">
-<span class="meta">commitments</span>: <a class="support type" href="marketdatacommitments.doc.html">MarketDataCommitments</a>! </span>
+<span class="meta">suppliedStake</span>: <a class="support type" href="string.doc.html">String</a> </span>
 </td>
 </tr>
 <tr class="row">
@@ -1494,7 +1494,7 @@
 <td id="L77" class="td-index">77</td>
 <td id="LC77" class="td-code">
 <span class="tab">
-<span class="comment line">#   A list of valid price ranges per associated trigger</span>
+<span class="comment line">#   The liquidity commitments for a given market</span>
 </span>
 </td>
 </tr>
@@ -1502,7 +1502,7 @@
 <td id="L78" class="td-index">78</td>
 <td id="LC78" class="td-code">
 <span class="tab">
-<span class="meta">priceMonitoringBounds</span>: [<a class="support type" href="pricemonitoringbounds.doc.html">PriceMonitoringBounds</a>!] </span>
+<span class="meta">commitments</span>: <a class="support type" href="marketdatacommitments.doc.html">MarketDataCommitments</a>! </span>
 </td>
 </tr>
 <tr class="row">
@@ -1514,7 +1514,7 @@
 <td id="L80" class="td-index">80</td>
 <td id="LC80" class="td-code">
 <span class="tab">
-<span class="comment line">#   the market value proxy</span>
+<span class="comment line">#   A list of valid price ranges per associated trigger</span>
 </span>
 </td>
 </tr>
@@ -1522,7 +1522,7 @@
 <td id="L81" class="td-index">81</td>
 <td id="LC81" class="td-code">
 <span class="tab">
-<span class="meta">marketValueProxy</span>: <a class="support type" href="string.doc.html">String</a>! </span>
+<span class="meta">priceMonitoringBounds</span>: [<a class="support type" href="pricemonitoringbounds.doc.html">PriceMonitoringBounds</a>!] </span>
 </td>
 </tr>
 <tr class="row">
@@ -1534,7 +1534,7 @@
 <td id="L83" class="td-index">83</td>
 <td id="LC83" class="td-code">
 <span class="tab">
-<span class="comment line">#   the equity like share of liquidity fee for each liquidity provider</span>
+<span class="comment line">#   the market value proxy</span>
 </span>
 </td>
 </tr>
@@ -1542,7 +1542,7 @@
 <td id="L84" class="td-index">84</td>
 <td id="LC84" class="td-code">
 <span class="tab">
-<span class="meta">liquidityProviderFeeShare</span>: [<a class="support type" href="liquidityproviderfeeshare.doc.html">LiquidityProviderFeeShare</a>!] </span>
+<span class="meta">marketValueProxy</span>: <a class="support type" href="string.doc.html">String</a>! </span>
 </td>
 </tr>
 <tr class="row">
@@ -1552,7 +1552,27 @@
 </tr>
 <tr class="row">
 <td id="L86" class="td-index">86</td>
-<td id="LC86" class="td-code">}</td>
+<td id="LC86" class="td-code">
+<span class="tab">
+<span class="comment line">#   the equity like share of liquidity fee for each liquidity provider</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L87" class="td-index">87</td>
+<td id="LC87" class="td-code">
+<span class="tab">
+<span class="meta">liquidityProviderFeeShare</span>: [<a class="support type" href="liquidityproviderfeeshare.doc.html">LiquidityProviderFeeShare</a>!] </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L88" class="td-index">88</td>
+<td id="LC88" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L89" class="td-index">89</td>
+<td id="LC89" class="td-code">}</td>
 </tr>
 </tbody>
 </table>

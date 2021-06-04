@@ -271,6 +271,22 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30;</code>
      */
     PROPOSAL_ERROR_INVALID_RISK_PARAMETER(30),
+    /**
+     * <pre>
+     * Proposal was declined because vote didn't reach the majority thershold required
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED = 31;</code>
+     */
+    PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED(31),
+    /**
+     * <pre>
+     * Proposal declined because the participation threshold was not reached
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32;</code>
+     */
+    PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED(32),
     UNRECOGNIZED(-1),
     ;
 
@@ -522,6 +538,22 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30;</code>
      */
     public static final int PROPOSAL_ERROR_INVALID_RISK_PARAMETER_VALUE = 30;
+    /**
+     * <pre>
+     * Proposal was declined because vote didn't reach the majority thershold required
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED = 31;</code>
+     */
+    public static final int PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED_VALUE = 31;
+    /**
+     * <pre>
+     * Proposal declined because the participation threshold was not reached
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32;</code>
+     */
+    public static final int PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED_VALUE = 32;
 
 
     public final int getNumber() {
@@ -579,6 +611,8 @@ public final class Governance {
         case 28: return PROPOSAL_ERROR_INVALID_FEE_AMOUNT;
         case 29: return PROPOSAL_ERROR_INVALID_SHAPE;
         case 30: return PROPOSAL_ERROR_INVALID_RISK_PARAMETER;
+        case 31: return PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED;
+        case 32: return PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED;
         default: return null;
       }
     }
@@ -18869,7 +18903,7 @@ public final class Governance {
       "ernanceTokenBalance\022A\n\035total_governance_" +
       "token_weight\030\006 \001(\tR\032totalGovernanceToken" +
       "Weight\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014" +
-      "\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\350\n\n\rProposal" +
+      "\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\323\013\n\rProposal" +
       "Error\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n" +
       "\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n" +
       "\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n" +
@@ -18904,8 +18938,11 @@ public final class Governance {
       "OMMITMENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INV" +
       "ALID_FEE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVA" +
       "LID_SHAPE\020\035\022)\n%PROPOSAL_ERROR_INVALID_RI" +
-      "SK_PARAMETER\020\036B7\n\024io.vegaprotocol.vegaZ\037" +
-      "code.vegaprotocol.io/vega/protob\006proto3"
+      "SK_PARAMETER\020\036\0221\n-PROPOSAL_ERROR_MAJORIT" +
+      "Y_THRESHOLD_NOT_REACHED\020\037\0226\n2PROPOSAL_ER" +
+      "ROR_PARTICIPATION_THRESHOLD_NOT_REACHED\020" +
+      " B7\n\024io.vegaprotocol.vegaZ\037code.vegaprot" +
+      "ocol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

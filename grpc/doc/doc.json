@@ -4107,6 +4107,18 @@
               "defaultValue": ""
             },
             {
+              "name": "extension_trigger",
+              "description": "When a market auction is extended, this field indicates what caused the extension",
+              "label": "",
+              "type": "AuctionTrigger",
+              "longType": "AuctionTrigger",
+              "fullType": "vega.AuctionTrigger",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
               "name": "target_stake",
               "description": "Targeted stake for the given market",
               "label": "",
@@ -6774,6 +6786,16 @@
               "name": "PROPOSAL_ERROR_INVALID_RISK_PARAMETER",
               "number": "30",
               "description": "Market proposal invalid risk parameter"
+            },
+            {
+              "name": "PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED",
+              "number": "31",
+              "description": "Proposal was declined because vote didn't reach the majority thershold required"
+            },
+            {
+              "name": "PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED",
+              "number": "32",
+              "description": "Proposal declined because the participation threshold was not reached"
             }
           ]
         },

@@ -562,7 +562,7 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "ernanceTokenBalance\022A\n\035total_governance_"
   "token_weight\030\006 \001(\tR\032totalGovernanceToken"
   "Weight\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014"
-  "\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\350\n\n\rProposal"
+  "\n\010VALUE_NO\020\001\022\r\n\tVALUE_YES\020\002*\323\013\n\rProposal"
   "Error\022\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n"
   "\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n"
   "\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n"
@@ -597,8 +597,11 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "OMMITMENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INV"
   "ALID_FEE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVA"
   "LID_SHAPE\020\035\022)\n%PROPOSAL_ERROR_INVALID_RI"
-  "SK_PARAMETER\020\036B7\n\024io.vegaprotocol.vegaZ\037"
-  "code.vegaprotocol.io/vega/protob\006proto3"
+  "SK_PARAMETER\020\036\0221\n-PROPOSAL_ERROR_MAJORIT"
+  "Y_THRESHOLD_NOT_REACHED\020\037\0226\n2PROPOSAL_ER"
+  "ROR_PARTICIPATION_THRESHOLD_NOT_REACHED\020"
+  " B7\n\024io.vegaprotocol.vegaZ\037code.vegaprot"
+  "ocol.io/vega/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_governance_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
@@ -625,7 +628,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gov
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_governance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_governance_2eproto = {
-  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4879,
+  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 4986,
   &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 14, 5,
   schemas, file_default_instances, TableStruct_governance_2eproto::offsets,
   file_level_metadata_governance_2eproto, 14, file_level_enum_descriptors_governance_2eproto, file_level_service_descriptors_governance_2eproto,
@@ -727,6 +730,8 @@ bool ProposalError_IsValid(int value) {
     case 28:
     case 29:
     case 30:
+    case 31:
+    case 32:
       return true;
     default:
       return false;

@@ -10072,7 +10072,7 @@ proto.vega.MarginLevels.prototype.setTimestamp = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.vega.MarketData.repeatedFields_ = [23,25];
+proto.vega.MarketData.repeatedFields_ = [24,26];
 
 
 
@@ -10125,11 +10125,12 @@ proto.vega.MarketData.toObject = function(includeInstance, msg) {
     indicativeVolume: jspb.Message.getFieldWithDefault(msg, 18, 0),
     marketTradingMode: jspb.Message.getFieldWithDefault(msg, 19, 0),
     trigger: jspb.Message.getFieldWithDefault(msg, 20, 0),
-    targetStake: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    suppliedStake: jspb.Message.getFieldWithDefault(msg, 22, ""),
+    extensionTrigger: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    targetStake: jspb.Message.getFieldWithDefault(msg, 22, ""),
+    suppliedStake: jspb.Message.getFieldWithDefault(msg, 23, ""),
     priceMonitoringBoundsList: jspb.Message.toObjectList(msg.getPriceMonitoringBoundsList(),
     proto.vega.PriceMonitoringBounds.toObject, includeInstance),
-    marketValueProxy: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    marketValueProxy: jspb.Message.getFieldWithDefault(msg, 25, ""),
     liquidityProviderFeeShareList: jspb.Message.toObjectList(msg.getLiquidityProviderFeeShareList(),
     proto.vega.LiquidityProviderFeeShare.toObject, includeInstance)
   };
@@ -10249,23 +10250,27 @@ proto.vega.MarketData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTrigger(value);
       break;
     case 21:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTargetStake(value);
+      var value = /** @type {!proto.vega.AuctionTrigger} */ (reader.readEnum());
+      msg.setExtensionTrigger(value);
       break;
     case 22:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSuppliedStake(value);
+      msg.setTargetStake(value);
       break;
     case 23:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSuppliedStake(value);
+      break;
+    case 24:
       var value = new proto.vega.PriceMonitoringBounds;
       reader.readMessage(value,proto.vega.PriceMonitoringBounds.deserializeBinaryFromReader);
       msg.addPriceMonitoringBounds(value);
       break;
-    case 24:
+    case 25:
       var value = /** @type {string} */ (reader.readString());
       msg.setMarketValueProxy(value);
       break;
-    case 25:
+    case 26:
       var value = new proto.vega.LiquidityProviderFeeShare;
       reader.readMessage(value,proto.vega.LiquidityProviderFeeShare.deserializeBinaryFromReader);
       msg.addLiquidityProviderFeeShare(value);
@@ -10439,24 +10444,31 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTargetStake();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getExtensionTrigger();
+  if (f !== 0.0) {
+    writer.writeEnum(
       21,
       f
     );
   }
-  f = message.getSuppliedStake();
+  f = message.getTargetStake();
   if (f.length > 0) {
     writer.writeString(
       22,
       f
     );
   }
+  f = message.getSuppliedStake();
+  if (f.length > 0) {
+    writer.writeString(
+      23,
+      f
+    );
+  }
   f = message.getPriceMonitoringBoundsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      23,
+      24,
       f,
       proto.vega.PriceMonitoringBounds.serializeBinaryToWriter
     );
@@ -10464,14 +10476,14 @@ proto.vega.MarketData.serializeBinaryToWriter = function(message, writer) {
   f = message.getMarketValueProxy();
   if (f.length > 0) {
     writer.writeString(
-      24,
+      25,
       f
     );
   }
   f = message.getLiquidityProviderFeeShareList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      25,
+      26,
       f,
       proto.vega.LiquidityProviderFeeShare.serializeBinaryToWriter
     );
@@ -10840,28 +10852,28 @@ proto.vega.MarketData.prototype.setTrigger = function(value) {
 
 
 /**
- * optional string target_stake = 21;
+ * optional AuctionTrigger extension_trigger = 21;
+ * @return {!proto.vega.AuctionTrigger}
+ */
+proto.vega.MarketData.prototype.getExtensionTrigger = function() {
+  return /** @type {!proto.vega.AuctionTrigger} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
+};
+
+
+/**
+ * @param {!proto.vega.AuctionTrigger} value
+ * @return {!proto.vega.MarketData} returns this
+ */
+proto.vega.MarketData.prototype.setExtensionTrigger = function(value) {
+  return jspb.Message.setProto3EnumField(this, 21, value);
+};
+
+
+/**
+ * optional string target_stake = 22;
  * @return {string}
  */
 proto.vega.MarketData.prototype.getTargetStake = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.vega.MarketData} returns this
- */
-proto.vega.MarketData.prototype.setTargetStake = function(value) {
-  return jspb.Message.setProto3StringField(this, 21, value);
-};
-
-
-/**
- * optional string supplied_stake = 22;
- * @return {string}
- */
-proto.vega.MarketData.prototype.getSuppliedStake = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
 };
 
@@ -10870,18 +10882,36 @@ proto.vega.MarketData.prototype.getSuppliedStake = function() {
  * @param {string} value
  * @return {!proto.vega.MarketData} returns this
  */
-proto.vega.MarketData.prototype.setSuppliedStake = function(value) {
+proto.vega.MarketData.prototype.setTargetStake = function(value) {
   return jspb.Message.setProto3StringField(this, 22, value);
 };
 
 
 /**
- * repeated PriceMonitoringBounds price_monitoring_bounds = 23;
+ * optional string supplied_stake = 23;
+ * @return {string}
+ */
+proto.vega.MarketData.prototype.getSuppliedStake = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.MarketData} returns this
+ */
+proto.vega.MarketData.prototype.setSuppliedStake = function(value) {
+  return jspb.Message.setProto3StringField(this, 23, value);
+};
+
+
+/**
+ * repeated PriceMonitoringBounds price_monitoring_bounds = 24;
  * @return {!Array<!proto.vega.PriceMonitoringBounds>}
  */
 proto.vega.MarketData.prototype.getPriceMonitoringBoundsList = function() {
   return /** @type{!Array<!proto.vega.PriceMonitoringBounds>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.vega.PriceMonitoringBounds, 23));
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.PriceMonitoringBounds, 24));
 };
 
 
@@ -10890,7 +10920,7 @@ proto.vega.MarketData.prototype.getPriceMonitoringBoundsList = function() {
  * @return {!proto.vega.MarketData} returns this
 */
 proto.vega.MarketData.prototype.setPriceMonitoringBoundsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 23, value);
+  return jspb.Message.setRepeatedWrapperField(this, 24, value);
 };
 
 
@@ -10900,7 +10930,7 @@ proto.vega.MarketData.prototype.setPriceMonitoringBoundsList = function(value) {
  * @return {!proto.vega.PriceMonitoringBounds}
  */
 proto.vega.MarketData.prototype.addPriceMonitoringBounds = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.vega.PriceMonitoringBounds, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 24, opt_value, proto.vega.PriceMonitoringBounds, opt_index);
 };
 
 
@@ -10914,11 +10944,11 @@ proto.vega.MarketData.prototype.clearPriceMonitoringBoundsList = function() {
 
 
 /**
- * optional string market_value_proxy = 24;
+ * optional string market_value_proxy = 25;
  * @return {string}
  */
 proto.vega.MarketData.prototype.getMarketValueProxy = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
 
 
@@ -10927,17 +10957,17 @@ proto.vega.MarketData.prototype.getMarketValueProxy = function() {
  * @return {!proto.vega.MarketData} returns this
  */
 proto.vega.MarketData.prototype.setMarketValueProxy = function(value) {
-  return jspb.Message.setProto3StringField(this, 24, value);
+  return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
 /**
- * repeated LiquidityProviderFeeShare liquidity_provider_fee_share = 25;
+ * repeated LiquidityProviderFeeShare liquidity_provider_fee_share = 26;
  * @return {!Array<!proto.vega.LiquidityProviderFeeShare>}
  */
 proto.vega.MarketData.prototype.getLiquidityProviderFeeShareList = function() {
   return /** @type{!Array<!proto.vega.LiquidityProviderFeeShare>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.vega.LiquidityProviderFeeShare, 25));
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.LiquidityProviderFeeShare, 26));
 };
 
 
@@ -10946,7 +10976,7 @@ proto.vega.MarketData.prototype.getLiquidityProviderFeeShareList = function() {
  * @return {!proto.vega.MarketData} returns this
 */
 proto.vega.MarketData.prototype.setLiquidityProviderFeeShareList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 25, value);
+  return jspb.Message.setRepeatedWrapperField(this, 26, value);
 };
 
 
@@ -10956,7 +10986,7 @@ proto.vega.MarketData.prototype.setLiquidityProviderFeeShareList = function(valu
  * @return {!proto.vega.LiquidityProviderFeeShare}
  */
 proto.vega.MarketData.prototype.addLiquidityProviderFeeShare = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 25, opt_value, proto.vega.LiquidityProviderFeeShare, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 26, opt_value, proto.vega.LiquidityProviderFeeShare, opt_index);
 };
 
 

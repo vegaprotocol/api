@@ -4434,6 +4434,13 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                 </tr>
 
                 <tr>
+                  <td>extension_trigger</td>
+                  <td><a href="#vega.AuctionTrigger">AuctionTrigger</a></td>
+                  <td></td>
+                  <td><p>When a market auction is extended, this field indicates what caused the extension </p></td>
+                </tr>
+
+                <tr>
                   <td>target_stake</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -8520,6 +8527,18 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
                 <td>PROPOSAL_ERROR_INVALID_RISK_PARAMETER</td>
                 <td>30</td>
                 <td><p>Market proposal invalid risk parameter</p></td>
+              </tr>
+
+              <tr>
+                <td>PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED</td>
+                <td>31</td>
+                <td><p>Proposal was declined because vote didn&#39;t reach the majority thershold required</p></td>
+              </tr>
+
+              <tr>
+                <td>PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED</td>
+                <td>32</td>
+                <td><p>Proposal declined because the participation threshold was not reached</p></td>
               </tr>
 
           </tbody>

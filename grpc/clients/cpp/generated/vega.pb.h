@@ -7658,12 +7658,12 @@ class MarketData PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPriceMonitoringBoundsFieldNumber = 23,
-    kLiquidityProviderFeeShareFieldNumber = 25,
+    kPriceMonitoringBoundsFieldNumber = 24,
+    kLiquidityProviderFeeShareFieldNumber = 26,
     kMarketFieldNumber = 12,
-    kTargetStakeFieldNumber = 21,
-    kSuppliedStakeFieldNumber = 22,
-    kMarketValueProxyFieldNumber = 24,
+    kTargetStakeFieldNumber = 22,
+    kSuppliedStakeFieldNumber = 23,
+    kMarketValueProxyFieldNumber = 25,
     kMarkPriceFieldNumber = 1,
     kBestBidPriceFieldNumber = 2,
     kBestBidVolumeFieldNumber = 3,
@@ -7683,8 +7683,9 @@ class MarketData PROTOBUF_FINAL :
     kIndicativeVolumeFieldNumber = 18,
     kMarketTradingModeFieldNumber = 19,
     kTriggerFieldNumber = 20,
+    kExtensionTriggerFieldNumber = 21,
   };
-  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
+  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];
   int price_monitoring_bounds_size() const;
   private:
   int _internal_price_monitoring_bounds_size() const;
@@ -7702,7 +7703,7 @@ class MarketData PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::PriceMonitoringBounds >&
       price_monitoring_bounds() const;
 
-  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
+  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];
   int liquidity_provider_fee_share_size() const;
   private:
   int _internal_liquidity_provider_fee_share_size() const;
@@ -7736,7 +7737,7 @@ class MarketData PROTOBUF_FINAL :
   std::string* _internal_mutable_market();
   public:
 
-  // string target_stake = 21 [json_name = "targetStake"];
+  // string target_stake = 22 [json_name = "targetStake"];
   void clear_target_stake();
   const std::string& target_stake() const;
   void set_target_stake(const std::string& value);
@@ -7752,7 +7753,7 @@ class MarketData PROTOBUF_FINAL :
   std::string* _internal_mutable_target_stake();
   public:
 
-  // string supplied_stake = 22 [json_name = "suppliedStake"];
+  // string supplied_stake = 23 [json_name = "suppliedStake"];
   void clear_supplied_stake();
   const std::string& supplied_stake() const;
   void set_supplied_stake(const std::string& value);
@@ -7768,7 +7769,7 @@ class MarketData PROTOBUF_FINAL :
   std::string* _internal_mutable_supplied_stake();
   public:
 
-  // string market_value_proxy = 24 [json_name = "marketValueProxy"];
+  // string market_value_proxy = 25 [json_name = "marketValueProxy"];
   void clear_market_value_proxy();
   const std::string& market_value_proxy() const;
   void set_market_value_proxy(const std::string& value);
@@ -7955,6 +7956,15 @@ class MarketData PROTOBUF_FINAL :
   void _internal_set_trigger(::vega::AuctionTrigger value);
   public:
 
+  // .vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];
+  void clear_extension_trigger();
+  ::vega::AuctionTrigger extension_trigger() const;
+  void set_extension_trigger(::vega::AuctionTrigger value);
+  private:
+  ::vega::AuctionTrigger _internal_extension_trigger() const;
+  void _internal_set_extension_trigger(::vega::AuctionTrigger value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vega.MarketData)
  private:
   class _Internal;
@@ -7987,6 +7997,7 @@ class MarketData PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint64 indicative_volume_;
   int market_trading_mode_;
   int trigger_;
+  int extension_trigger_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -17178,7 +17189,27 @@ inline void MarketData::set_trigger(::vega::AuctionTrigger value) {
   // @@protoc_insertion_point(field_set:vega.MarketData.trigger)
 }
 
-// string target_stake = 21 [json_name = "targetStake"];
+// .vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];
+inline void MarketData::clear_extension_trigger() {
+  extension_trigger_ = 0;
+}
+inline ::vega::AuctionTrigger MarketData::_internal_extension_trigger() const {
+  return static_cast< ::vega::AuctionTrigger >(extension_trigger_);
+}
+inline ::vega::AuctionTrigger MarketData::extension_trigger() const {
+  // @@protoc_insertion_point(field_get:vega.MarketData.extension_trigger)
+  return _internal_extension_trigger();
+}
+inline void MarketData::_internal_set_extension_trigger(::vega::AuctionTrigger value) {
+
+  extension_trigger_ = value;
+}
+inline void MarketData::set_extension_trigger(::vega::AuctionTrigger value) {
+  _internal_set_extension_trigger(value);
+  // @@protoc_insertion_point(field_set:vega.MarketData.extension_trigger)
+}
+
+// string target_stake = 22 [json_name = "targetStake"];
 inline void MarketData::clear_target_stake() {
   target_stake_.ClearToEmpty();
 }
@@ -17239,7 +17270,7 @@ inline void MarketData::set_allocated_target_stake(std::string* target_stake) {
   // @@protoc_insertion_point(field_set_allocated:vega.MarketData.target_stake)
 }
 
-// string supplied_stake = 22 [json_name = "suppliedStake"];
+// string supplied_stake = 23 [json_name = "suppliedStake"];
 inline void MarketData::clear_supplied_stake() {
   supplied_stake_.ClearToEmpty();
 }
@@ -17300,7 +17331,7 @@ inline void MarketData::set_allocated_supplied_stake(std::string* supplied_stake
   // @@protoc_insertion_point(field_set_allocated:vega.MarketData.supplied_stake)
 }
 
-// repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
+// repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];
 inline int MarketData::_internal_price_monitoring_bounds_size() const {
   return price_monitoring_bounds_.size();
 }
@@ -17339,7 +17370,7 @@ MarketData::price_monitoring_bounds() const {
   return price_monitoring_bounds_;
 }
 
-// string market_value_proxy = 24 [json_name = "marketValueProxy"];
+// string market_value_proxy = 25 [json_name = "marketValueProxy"];
 inline void MarketData::clear_market_value_proxy() {
   market_value_proxy_.ClearToEmpty();
 }
@@ -17400,7 +17431,7 @@ inline void MarketData::set_allocated_market_value_proxy(std::string* market_val
   // @@protoc_insertion_point(field_set_allocated:vega.MarketData.market_value_proxy)
 }
 
-// repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
+// repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];
 inline int MarketData::_internal_liquidity_provider_fee_share_size() const {
   return liquidity_provider_fee_share_.size();
 }
