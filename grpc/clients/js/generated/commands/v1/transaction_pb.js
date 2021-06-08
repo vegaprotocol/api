@@ -956,8 +956,8 @@ proto.vega.commands.v1.Transaction.toObject = function(includeInstance, msg) {
   var f, obj = {
     inputData: msg.getInputData_asB64(),
     signature: (f = msg.getSignature()) && proto.vega.commands.v1.Signature.toObject(includeInstance, f),
-    address: msg.getAddress_asB64(),
-    pubKey: msg.getPubKey_asB64(),
+    address: jspb.Message.getFieldWithDefault(msg, 1001, ""),
+    pubKey: jspb.Message.getFieldWithDefault(msg, 1002, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2000, 0)
   };
 
@@ -1005,11 +1005,11 @@ proto.vega.commands.v1.Transaction.deserializeBinaryFromReader = function(msg, r
       msg.setSignature(value);
       break;
     case 1001:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAddress(value);
       break;
     case 1002:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPubKey(value);
       break;
     case 2000:
@@ -1060,16 +1060,16 @@ proto.vega.commands.v1.Transaction.serializeBinaryToWriter = function(message, w
       proto.vega.commands.v1.Signature.serializeBinaryToWriter
     );
   }
-  f = /** @type {!(string|Uint8Array)} */ (jspb.Message.getField(message, 1001));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1001));
   if (f != null) {
-    writer.writeBytes(
+    writer.writeString(
       1001,
       f
     );
   }
-  f = /** @type {!(string|Uint8Array)} */ (jspb.Message.getField(message, 1002));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1002));
   if (f != null) {
-    writer.writeBytes(
+    writer.writeString(
       1002,
       f
     );
@@ -1164,40 +1164,16 @@ proto.vega.commands.v1.Transaction.prototype.hasSignature = function() {
 
 
 /**
- * optional bytes address = 1001;
- * @return {!(string|Uint8Array)}
- */
-proto.vega.commands.v1.Transaction.prototype.getAddress = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1001, ""));
-};
-
-
-/**
- * optional bytes address = 1001;
- * This is a type-conversion wrapper around `getAddress()`
+ * optional string address = 1001;
  * @return {string}
  */
-proto.vega.commands.v1.Transaction.prototype.getAddress_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getAddress()));
+proto.vega.commands.v1.Transaction.prototype.getAddress = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1001, ""));
 };
 
 
 /**
- * optional bytes address = 1001;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getAddress()`
- * @return {!Uint8Array}
- */
-proto.vega.commands.v1.Transaction.prototype.getAddress_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getAddress()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.Transaction} returns this
  */
 proto.vega.commands.v1.Transaction.prototype.setAddress = function(value) {
@@ -1224,40 +1200,16 @@ proto.vega.commands.v1.Transaction.prototype.hasAddress = function() {
 
 
 /**
- * optional bytes pub_key = 1002;
- * @return {!(string|Uint8Array)}
- */
-proto.vega.commands.v1.Transaction.prototype.getPubKey = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1002, ""));
-};
-
-
-/**
- * optional bytes pub_key = 1002;
- * This is a type-conversion wrapper around `getPubKey()`
+ * optional string pub_key = 1002;
  * @return {string}
  */
-proto.vega.commands.v1.Transaction.prototype.getPubKey_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getPubKey()));
+proto.vega.commands.v1.Transaction.prototype.getPubKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1002, ""));
 };
 
 
 /**
- * optional bytes pub_key = 1002;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getPubKey()`
- * @return {!Uint8Array}
- */
-proto.vega.commands.v1.Transaction.prototype.getPubKey_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getPubKey()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.Transaction} returns this
  */
 proto.vega.commands.v1.Transaction.prototype.setPubKey = function(value) {
@@ -1333,7 +1285,7 @@ proto.vega.commands.v1.Signature.prototype.toObject = function(opt_includeInstan
  */
 proto.vega.commands.v1.Signature.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bytes: msg.getBytes_asB64(),
+    value: jspb.Message.getFieldWithDefault(msg, 1, ""),
     algo: jspb.Message.getFieldWithDefault(msg, 2, ""),
     version: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
@@ -1373,8 +1325,8 @@ proto.vega.commands.v1.Signature.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setBytes(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValue(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1413,9 +1365,9 @@ proto.vega.commands.v1.Signature.prototype.serializeBinary = function() {
  */
 proto.vega.commands.v1.Signature.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBytes_asU8();
+  f = message.getValue();
   if (f.length > 0) {
-    writer.writeBytes(
+    writer.writeString(
       1,
       f
     );
@@ -1438,44 +1390,20 @@ proto.vega.commands.v1.Signature.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional bytes bytes = 1;
- * @return {!(string|Uint8Array)}
- */
-proto.vega.commands.v1.Signature.prototype.getBytes = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * optional bytes bytes = 1;
- * This is a type-conversion wrapper around `getBytes()`
+ * optional string value = 1;
  * @return {string}
  */
-proto.vega.commands.v1.Signature.prototype.getBytes_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getBytes()));
+proto.vega.commands.v1.Signature.prototype.getValue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes bytes = 1;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getBytes()`
- * @return {!Uint8Array}
- */
-proto.vega.commands.v1.Signature.prototype.getBytes_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getBytes()));
-};
-
-
-/**
- * @param {!(string|Uint8Array)} value
+ * @param {string} value
  * @return {!proto.vega.commands.v1.Signature} returns this
  */
-proto.vega.commands.v1.Signature.prototype.setBytes = function(value) {
-  return jspb.Message.setProto3BytesField(this, 1, value);
+proto.vega.commands.v1.Signature.prototype.setValue = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

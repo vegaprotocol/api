@@ -53741,10 +53741,10 @@ public final class Vega {
      * The version of the signature used to create the signature
      * </pre>
      *
-     * <code>uint64 version = 3 [json_name = "version"];</code>
+     * <code>uint32 version = 3 [json_name = "version"];</code>
      * @return The version.
      */
-    long getVersion();
+    int getVersion();
   }
   /**
    * <pre>
@@ -53811,7 +53811,7 @@ public final class Vega {
             }
             case 24: {
 
-              version_ = input.readUInt64();
+              version_ = input.readUInt32();
               break;
             }
             default: {
@@ -53908,17 +53908,17 @@ public final class Vega {
     }
 
     public static final int VERSION_FIELD_NUMBER = 3;
-    private long version_;
+    private int version_;
     /**
      * <pre>
      * The version of the signature used to create the signature
      * </pre>
      *
-     * <code>uint64 version = 3 [json_name = "version"];</code>
+     * <code>uint32 version = 3 [json_name = "version"];</code>
      * @return The version.
      */
     @java.lang.Override
-    public long getVersion() {
+    public int getVersion() {
       return version_;
     }
 
@@ -53942,8 +53942,8 @@ public final class Vega {
       if (!getAlgoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, algo_);
       }
-      if (version_ != 0L) {
-        output.writeUInt64(3, version_);
+      if (version_ != 0) {
+        output.writeUInt32(3, version_);
       }
       unknownFields.writeTo(output);
     }
@@ -53961,9 +53961,9 @@ public final class Vega {
       if (!getAlgoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, algo_);
       }
-      if (version_ != 0L) {
+      if (version_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, version_);
+          .computeUInt32Size(3, version_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -54002,8 +54002,7 @@ public final class Vega {
       hash = (37 * hash) + ALGO_FIELD_NUMBER;
       hash = (53 * hash) + getAlgo().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getVersion());
+      hash = (53 * hash) + getVersion();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -54146,7 +54145,7 @@ public final class Vega {
 
         algo_ = "";
 
-        version_ = 0L;
+        version_ = 0;
 
         return this;
       }
@@ -54232,7 +54231,7 @@ public final class Vega {
           algo_ = other.algo_;
           onChanged();
         }
-        if (other.getVersion() != 0L) {
+        if (other.getVersion() != 0) {
           setVersion(other.getVersion());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -54406,17 +54405,17 @@ public final class Vega {
         return this;
       }
 
-      private long version_ ;
+      private int version_ ;
       /**
        * <pre>
        * The version of the signature used to create the signature
        * </pre>
        *
-       * <code>uint64 version = 3 [json_name = "version"];</code>
+       * <code>uint32 version = 3 [json_name = "version"];</code>
        * @return The version.
        */
       @java.lang.Override
-      public long getVersion() {
+      public int getVersion() {
         return version_;
       }
       /**
@@ -54424,11 +54423,11 @@ public final class Vega {
        * The version of the signature used to create the signature
        * </pre>
        *
-       * <code>uint64 version = 3 [json_name = "version"];</code>
+       * <code>uint32 version = 3 [json_name = "version"];</code>
        * @param value The version to set.
        * @return This builder for chaining.
        */
-      public Builder setVersion(long value) {
+      public Builder setVersion(int value) {
 
         version_ = value;
         onChanged();
@@ -54439,12 +54438,12 @@ public final class Vega {
        * The version of the signature used to create the signature
        * </pre>
        *
-       * <code>uint64 version = 3 [json_name = "version"];</code>
+       * <code>uint32 version = 3 [json_name = "version"];</code>
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
 
-        version_ = 0L;
+        version_ = 0;
         onChanged();
         return this;
       }
@@ -62417,7 +62416,7 @@ public final class Vega {
       "k_height\030\003 \001(\004R\013blockHeight\022\033\n\007address\030\351" +
       "\007 \001(\014H\000R\007address\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pu" +
       "bKeyB\006\n\004from\"K\n\tSignature\022\020\n\003sig\030\001 \001(\014R\003" +
-      "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\004" +
+      "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\r" +
       "R\007version\"A\n\014SignedBundle\022\016\n\002tx\030\001 \001(\014R\002t" +
       "x\022!\n\003sig\030\002 \001(\0132\017.vega.SignatureR\003sig\":\n\020" +
       "NetworkParameter\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +

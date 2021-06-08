@@ -3017,6 +3017,1518 @@ public final class Trading {
 
   }
 
+  public interface SubmitTransactionV2RequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.v1.SubmitTransactionV2Request)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+     * </pre>
+     *
+     * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+     * @return Whether the tx field is set.
+     */
+    boolean hasTx();
+    /**
+     * <pre>
+     * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+     * </pre>
+     *
+     * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+     * @return The tx.
+     */
+    io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction getTx();
+    /**
+     * <pre>
+     * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+     * </pre>
+     *
+     * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+     */
+    io.vegaprotocol.vega.commands.v1.TransactionOuterClass.TransactionOrBuilder getTxOrBuilder();
+
+    /**
+     * <pre>
+     * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+     * </pre>
+     *
+     * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+     * </pre>
+     *
+     * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+     * @return The type.
+     */
+    io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type getType();
+  }
+  /**
+   * <pre>
+   * Request for submitting a transaction v2 on Vega
+   * </pre>
+   *
+   * Protobuf type {@code api.v1.SubmitTransactionV2Request}
+   */
+  public static final class SubmitTransactionV2Request extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.v1.SubmitTransactionV2Request)
+      SubmitTransactionV2RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubmitTransactionV2Request.newBuilder() to construct.
+    private SubmitTransactionV2Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubmitTransactionV2Request() {
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SubmitTransactionV2Request();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubmitTransactionV2Request(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.Builder subBuilder = null;
+              if (tx_ != null) {
+                subBuilder = tx_.toBuilder();
+              }
+              tx_ = input.readMessage(io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tx_);
+                tx_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Request_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Request_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.class, io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * Blockchain transaction type
+     * </pre>
+     *
+     * Protobuf enum {@code api.v1.SubmitTransactionV2Request.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       * <pre>
+       * The transaction will be submitted without waiting for response
+       * </pre>
+       *
+       * <code>TYPE_ASYNC = 1;</code>
+       */
+      TYPE_ASYNC(1),
+      /**
+       * <pre>
+       * The transaction will be submitted, and blocking until the
+       * tendermint mempool return a response
+       * </pre>
+       *
+       * <code>TYPE_SYNC = 2;</code>
+       */
+      TYPE_SYNC(2),
+      /**
+       * <pre>
+       * The transaction will submitted, and blocking until the tendermint
+       * network will have committed it into a block
+       * </pre>
+       *
+       * <code>TYPE_COMMIT = 3;</code>
+       */
+      TYPE_COMMIT(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       * <pre>
+       * The transaction will be submitted without waiting for response
+       * </pre>
+       *
+       * <code>TYPE_ASYNC = 1;</code>
+       */
+      public static final int TYPE_ASYNC_VALUE = 1;
+      /**
+       * <pre>
+       * The transaction will be submitted, and blocking until the
+       * tendermint mempool return a response
+       * </pre>
+       *
+       * <code>TYPE_SYNC = 2;</code>
+       */
+      public static final int TYPE_SYNC_VALUE = 2;
+      /**
+       * <pre>
+       * The transaction will submitted, and blocking until the tendermint
+       * network will have committed it into a block
+       * </pre>
+       *
+       * <code>TYPE_COMMIT = 3;</code>
+       */
+      public static final int TYPE_COMMIT_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TYPE_UNSPECIFIED;
+          case 1: return TYPE_ASYNC;
+          case 2: return TYPE_SYNC;
+          case 3: return TYPE_COMMIT;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:api.v1.SubmitTransactionV2Request.Type)
+    }
+
+    public static final int TX_FIELD_NUMBER = 1;
+    private io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction tx_;
+    /**
+     * <pre>
+     * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+     * </pre>
+     *
+     * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+     * @return Whether the tx field is set.
+     */
+    @java.lang.Override
+    public boolean hasTx() {
+      return tx_ != null;
+    }
+    /**
+     * <pre>
+     * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+     * </pre>
+     *
+     * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+     * @return The tx.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction getTx() {
+      return tx_ == null ? io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.getDefaultInstance() : tx_;
+    }
+    /**
+     * <pre>
+     * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+     * </pre>
+     *
+     * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.TransactionOrBuilder getTxOrBuilder() {
+      return getTx();
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_;
+    /**
+     * <pre>
+     * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+     * </pre>
+     *
+     * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+     * </pre>
+     *
+     * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type getType() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type result = io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type.valueOf(type_);
+      return result == null ? io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (tx_ != null) {
+        output.writeMessage(1, getTx());
+      }
+      if (type_ != io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type.TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tx_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getTx());
+      }
+      if (type_ != io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type.TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request other = (io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request) obj;
+
+      if (hasTx() != other.hasTx()) return false;
+      if (hasTx()) {
+        if (!getTx()
+            .equals(other.getTx())) return false;
+      }
+      if (type_ != other.type_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTx()) {
+        hash = (37 * hash) + TX_FIELD_NUMBER;
+        hash = (53 * hash) + getTx().hashCode();
+      }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Request for submitting a transaction v2 on Vega
+     * </pre>
+     *
+     * Protobuf type {@code api.v1.SubmitTransactionV2Request}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.v1.SubmitTransactionV2Request)
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Request_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Request_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.class, io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (txBuilder_ == null) {
+          tx_ = null;
+        } else {
+          tx_ = null;
+          txBuilder_ = null;
+        }
+        type_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Request_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request build() {
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request buildPartial() {
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request result = new io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request(this);
+        if (txBuilder_ == null) {
+          result.tx_ = tx_;
+        } else {
+          result.tx_ = txBuilder_.build();
+        }
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request other) {
+        if (other == io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.getDefaultInstance()) return this;
+        if (other.hasTx()) {
+          mergeTx(other.getTx());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction tx_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.Builder, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.TransactionOrBuilder> txBuilder_;
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       * @return Whether the tx field is set.
+       */
+      public boolean hasTx() {
+        return txBuilder_ != null || tx_ != null;
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       * @return The tx.
+       */
+      public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction getTx() {
+        if (txBuilder_ == null) {
+          return tx_ == null ? io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.getDefaultInstance() : tx_;
+        } else {
+          return txBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      public Builder setTx(io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction value) {
+        if (txBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tx_ = value;
+          onChanged();
+        } else {
+          txBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      public Builder setTx(
+          io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.Builder builderForValue) {
+        if (txBuilder_ == null) {
+          tx_ = builderForValue.build();
+          onChanged();
+        } else {
+          txBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      public Builder mergeTx(io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction value) {
+        if (txBuilder_ == null) {
+          if (tx_ != null) {
+            tx_ =
+              io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.newBuilder(tx_).mergeFrom(value).buildPartial();
+          } else {
+            tx_ = value;
+          }
+          onChanged();
+        } else {
+          txBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      public Builder clearTx() {
+        if (txBuilder_ == null) {
+          tx_ = null;
+          onChanged();
+        } else {
+          tx_ = null;
+          txBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.Builder getTxBuilder() {
+
+        onChanged();
+        return getTxFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.TransactionOrBuilder getTxOrBuilder() {
+        if (txBuilder_ != null) {
+          return txBuilder_.getMessageOrBuilder();
+        } else {
+          return tx_ == null ?
+              io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.getDefaultInstance() : tx_;
+        }
+      }
+      /**
+       * <pre>
+       * A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain
+       * </pre>
+       *
+       * <code>.vega.commands.v1.Transaction tx = 1 [json_name = "tx"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.Builder, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.TransactionOrBuilder>
+          getTxFieldBuilder() {
+        if (txBuilder_ == null) {
+          txBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Transaction.Builder, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.TransactionOrBuilder>(
+                  getTx(),
+                  getParentForChildren(),
+                  isClean());
+          tx_ = null;
+        }
+        return txBuilder_;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+       * </pre>
+       *
+       * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+       * </pre>
+       *
+       * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+       * </pre>
+       *
+       * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type getType() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type result = io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type.valueOf(type_);
+        return result == null ? io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+       * </pre>
+       *
+       * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response
+       * </pre>
+       *
+       * <code>.api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.v1.SubmitTransactionV2Request)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.v1.SubmitTransactionV2Request)
+    private static final io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubmitTransactionV2Request>
+        PARSER = new com.google.protobuf.AbstractParser<SubmitTransactionV2Request>() {
+      @java.lang.Override
+      public SubmitTransactionV2Request parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubmitTransactionV2Request(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubmitTransactionV2Request> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubmitTransactionV2Request> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SubmitTransactionV2ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.v1.SubmitTransactionV2Response)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Success will be true if the transaction was accepted by the node,
+     * **Important** - success does not mean that the event is confirmed by consensus
+     * </pre>
+     *
+     * <code>bool success = 1 [json_name = "success"];</code>
+     * @return The success.
+     */
+    boolean getSuccess();
+  }
+  /**
+   * <pre>
+   * Response for submitting a transaction v2 on Vega
+   * </pre>
+   *
+   * Protobuf type {@code api.v1.SubmitTransactionV2Response}
+   */
+  public static final class SubmitTransactionV2Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.v1.SubmitTransactionV2Response)
+      SubmitTransactionV2ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubmitTransactionV2Response.newBuilder() to construct.
+    private SubmitTransactionV2Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubmitTransactionV2Response() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SubmitTransactionV2Response();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubmitTransactionV2Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              success_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Response_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.class, io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.Builder.class);
+    }
+
+    public static final int SUCCESS_FIELD_NUMBER = 1;
+    private boolean success_;
+    /**
+     * <pre>
+     * Success will be true if the transaction was accepted by the node,
+     * **Important** - success does not mean that the event is confirmed by consensus
+     * </pre>
+     *
+     * <code>bool success = 1 [json_name = "success"];</code>
+     * @return The success.
+     */
+    @java.lang.Override
+    public boolean getSuccess() {
+      return success_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (success_ != false) {
+        output.writeBool(1, success_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (success_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, success_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response other = (io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response) obj;
+
+      if (getSuccess()
+          != other.getSuccess()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUCCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuccess());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Response for submitting a transaction v2 on Vega
+     * </pre>
+     *
+     * Protobuf type {@code api.v1.SubmitTransactionV2Response}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.v1.SubmitTransactionV2Response)
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Response_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.class, io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        success_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_SubmitTransactionV2Response_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response build() {
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response buildPartial() {
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response result = new io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response(this);
+        result.success_ = success_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response other) {
+        if (other == io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.getDefaultInstance()) return this;
+        if (other.getSuccess() != false) {
+          setSuccess(other.getSuccess());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean success_ ;
+      /**
+       * <pre>
+       * Success will be true if the transaction was accepted by the node,
+       * **Important** - success does not mean that the event is confirmed by consensus
+       * </pre>
+       *
+       * <code>bool success = 1 [json_name = "success"];</code>
+       * @return The success.
+       */
+      @java.lang.Override
+      public boolean getSuccess() {
+        return success_;
+      }
+      /**
+       * <pre>
+       * Success will be true if the transaction was accepted by the node,
+       * **Important** - success does not mean that the event is confirmed by consensus
+       * </pre>
+       *
+       * <code>bool success = 1 [json_name = "success"];</code>
+       * @param value The success to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuccess(boolean value) {
+
+        success_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Success will be true if the transaction was accepted by the node,
+       * **Important** - success does not mean that the event is confirmed by consensus
+       * </pre>
+       *
+       * <code>bool success = 1 [json_name = "success"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSuccess() {
+
+        success_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.v1.SubmitTransactionV2Response)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.v1.SubmitTransactionV2Response)
+    private static final io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubmitTransactionV2Response>
+        PARSER = new com.google.protobuf.AbstractParser<SubmitTransactionV2Response>() {
+      @java.lang.Override
+      public SubmitTransactionV2Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubmitTransactionV2Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubmitTransactionV2Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubmitTransactionV2Response> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PrepareWithdrawRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.v1.PrepareWithdrawRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -105715,7 +107227,7 @@ public final class Trading {
      * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
      * @return The oracleSpec.
      */
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec();
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpec();
     /**
      * <pre>
      * The withdrawal matching the identifier from the request
@@ -105723,7 +107235,7 @@ public final class Trading {
      *
      * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder();
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecOrBuilder();
   }
   /**
    * <pre>
@@ -105775,11 +107287,11 @@ public final class Trading {
               done = true;
               break;
             case 10: {
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder subBuilder = null;
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder subBuilder = null;
               if (oracleSpec_ != null) {
                 subBuilder = oracleSpec_.toBuilder();
               }
-              oracleSpec_ = input.readMessage(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.parser(), extensionRegistry);
+              oracleSpec_ = input.readMessage(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(oracleSpec_);
                 oracleSpec_ = subBuilder.buildPartial();
@@ -105820,7 +107332,7 @@ public final class Trading {
     }
 
     public static final int ORACLE_SPEC_FIELD_NUMBER = 1;
-    private io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec oracleSpec_;
+    private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec oracleSpec_;
     /**
      * <pre>
      * The withdrawal matching the identifier from the request
@@ -105842,8 +107354,8 @@ public final class Trading {
      * @return The oracleSpec.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec() {
-      return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance() : oracleSpec_;
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpec() {
+      return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance() : oracleSpec_;
     }
     /**
      * <pre>
@@ -105853,7 +107365,7 @@ public final class Trading {
      * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder() {
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecOrBuilder() {
       return getOracleSpec();
     }
 
@@ -106176,9 +107688,9 @@ public final class Trading {
         return this;
       }
 
-      private io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec oracleSpec_;
+      private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec oracleSpec_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder> oracleSpecBuilder_;
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder> oracleSpecBuilder_;
       /**
        * <pre>
        * The withdrawal matching the identifier from the request
@@ -106198,9 +107710,9 @@ public final class Trading {
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        * @return The oracleSpec.
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpec() {
         if (oracleSpecBuilder_ == null) {
-          return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance() : oracleSpec_;
+          return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance() : oracleSpec_;
         } else {
           return oracleSpecBuilder_.getMessage();
         }
@@ -106212,7 +107724,7 @@ public final class Trading {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        */
-      public Builder setOracleSpec(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+      public Builder setOracleSpec(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -106233,7 +107745,7 @@ public final class Trading {
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        */
       public Builder setOracleSpec(
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder builderForValue) {
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder builderForValue) {
         if (oracleSpecBuilder_ == null) {
           oracleSpec_ = builderForValue.build();
           onChanged();
@@ -106250,11 +107762,11 @@ public final class Trading {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        */
-      public Builder mergeOracleSpec(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+      public Builder mergeOracleSpec(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecBuilder_ == null) {
           if (oracleSpec_ != null) {
             oracleSpec_ =
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.newBuilder(oracleSpec_).mergeFrom(value).buildPartial();
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.newBuilder(oracleSpec_).mergeFrom(value).buildPartial();
           } else {
             oracleSpec_ = value;
           }
@@ -106290,7 +107802,7 @@ public final class Trading {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder getOracleSpecBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder getOracleSpecBuilder() {
 
         onChanged();
         return getOracleSpecFieldBuilder().getBuilder();
@@ -106302,12 +107814,12 @@ public final class Trading {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecOrBuilder() {
         if (oracleSpecBuilder_ != null) {
           return oracleSpecBuilder_.getMessageOrBuilder();
         } else {
           return oracleSpec_ == null ?
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance() : oracleSpec_;
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance() : oracleSpec_;
         }
       }
       /**
@@ -106318,11 +107830,11 @@ public final class Trading {
        * <code>.oracles.v1.OracleSpec oracle_spec = 1 [json_name = "oracleSpec"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>
           getOracleSpecFieldBuilder() {
         if (oracleSpecBuilder_ == null) {
           oracleSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>(
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>(
                   getOracleSpec(),
                   getParentForChildren(),
                   isClean());
@@ -106820,7 +108332,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec>
+    java.util.List<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec>
         getOracleSpecsList();
     /**
      * <pre>
@@ -106829,7 +108341,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpecs(int index);
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpecs(int index);
     /**
      * <pre>
      * The list of oracle specs
@@ -106845,7 +108357,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>
         getOracleSpecsOrBuilderList();
     /**
      * <pre>
@@ -106854,7 +108366,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecsOrBuilder(
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecsOrBuilder(
         int index);
   }
   /**
@@ -106910,11 +108422,11 @@ public final class Trading {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oracleSpecs_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec>();
+                oracleSpecs_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec>();
                 mutable_bitField0_ |= 0x00000001;
               }
               oracleSpecs_.add(
-                  input.readMessage(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.parser(), extensionRegistry));
+                  input.readMessage(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -106953,7 +108465,7 @@ public final class Trading {
     }
 
     public static final int ORACLE_SPECS_FIELD_NUMBER = 1;
-    private java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec> oracleSpecs_;
+    private java.util.List<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec> oracleSpecs_;
     /**
      * <pre>
      * The list of oracle specs
@@ -106962,7 +108474,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
     @java.lang.Override
-    public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec> getOracleSpecsList() {
+    public java.util.List<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec> getOracleSpecsList() {
       return oracleSpecs_;
     }
     /**
@@ -106973,7 +108485,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>
         getOracleSpecsOrBuilderList() {
       return oracleSpecs_;
     }
@@ -106996,7 +108508,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpecs(int index) {
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpecs(int index) {
       return oracleSpecs_.get(index);
     }
     /**
@@ -107007,7 +108519,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecsOrBuilder(
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecsOrBuilder(
         int index) {
       return oracleSpecs_.get(index);
     }
@@ -107358,17 +108870,17 @@ public final class Trading {
       }
       private int bitField0_;
 
-      private java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec> oracleSpecs_ =
+      private java.util.List<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec> oracleSpecs_ =
         java.util.Collections.emptyList();
       private void ensureOracleSpecsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          oracleSpecs_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec>(oracleSpecs_);
+          oracleSpecs_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec>(oracleSpecs_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder> oracleSpecsBuilder_;
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder> oracleSpecsBuilder_;
 
       /**
        * <pre>
@@ -107377,7 +108889,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec> getOracleSpecsList() {
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec> getOracleSpecsList() {
         if (oracleSpecsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(oracleSpecs_);
         } else {
@@ -107405,7 +108917,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpecs(int index) {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpecs(int index) {
         if (oracleSpecsBuilder_ == null) {
           return oracleSpecs_.get(index);
         } else {
@@ -107420,7 +108932,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
       public Builder setOracleSpecs(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+          int index, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -107441,7 +108953,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
       public Builder setOracleSpecs(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder builderForValue) {
+          int index, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder builderForValue) {
         if (oracleSpecsBuilder_ == null) {
           ensureOracleSpecsIsMutable();
           oracleSpecs_.set(index, builderForValue.build());
@@ -107458,7 +108970,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public Builder addOracleSpecs(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+      public Builder addOracleSpecs(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -107479,7 +108991,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
       public Builder addOracleSpecs(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+          int index, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -107500,7 +109012,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
       public Builder addOracleSpecs(
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder builderForValue) {
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder builderForValue) {
         if (oracleSpecsBuilder_ == null) {
           ensureOracleSpecsIsMutable();
           oracleSpecs_.add(builderForValue.build());
@@ -107518,7 +109030,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
       public Builder addOracleSpecs(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder builderForValue) {
+          int index, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder builderForValue) {
         if (oracleSpecsBuilder_ == null) {
           ensureOracleSpecsIsMutable();
           oracleSpecs_.add(index, builderForValue.build());
@@ -107536,7 +109048,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
       public Builder addAllOracleSpecs(
-          java.lang.Iterable<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec> values) {
+          java.lang.Iterable<? extends io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec> values) {
         if (oracleSpecsBuilder_ == null) {
           ensureOracleSpecsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -107588,7 +109100,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder getOracleSpecsBuilder(
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder getOracleSpecsBuilder(
           int index) {
         return getOracleSpecsFieldBuilder().getBuilder(index);
       }
@@ -107599,7 +109111,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecsOrBuilder(
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecsOrBuilder(
           int index) {
         if (oracleSpecsBuilder_ == null) {
           return oracleSpecs_.get(index);  } else {
@@ -107613,7 +109125,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>
            getOracleSpecsOrBuilderList() {
         if (oracleSpecsBuilder_ != null) {
           return oracleSpecsBuilder_.getMessageOrBuilderList();
@@ -107628,9 +109140,9 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder addOracleSpecsBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder addOracleSpecsBuilder() {
         return getOracleSpecsFieldBuilder().addBuilder(
-            io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance());
+            io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance());
       }
       /**
        * <pre>
@@ -107639,10 +109151,10 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder addOracleSpecsBuilder(
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder addOracleSpecsBuilder(
           int index) {
         return getOracleSpecsFieldBuilder().addBuilder(
-            index, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance());
+            index, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance());
       }
       /**
        * <pre>
@@ -107651,16 +109163,16 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleSpec oracle_specs = 1 [json_name = "oracleSpecs"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder>
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder>
            getOracleSpecsBuilderList() {
         return getOracleSpecsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>
           getOracleSpecsFieldBuilder() {
         if (oracleSpecsBuilder_ == null) {
           oracleSpecsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>(
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>(
                   oracleSpecs_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -108345,7 +109857,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
-    java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData>
+    java.util.List<io.vegaprotocol.vega.oracles.v1.Data.OracleData>
         getOracleDataList();
     /**
      * <pre>
@@ -108354,7 +109866,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getOracleData(int index);
+    io.vegaprotocol.vega.oracles.v1.Data.OracleData getOracleData(int index);
     /**
      * <pre>
      * The list of oracle data broadcast to a given spec
@@ -108370,7 +109882,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
-    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>
+    java.util.List<? extends io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>
         getOracleDataOrBuilderList();
     /**
      * <pre>
@@ -108379,7 +109891,7 @@ public final class Trading {
      *
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder getOracleDataOrBuilder(
+    io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder getOracleDataOrBuilder(
         int index);
   }
   /**
@@ -108435,11 +109947,11 @@ public final class Trading {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oracleData_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData>();
+                oracleData_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.Data.OracleData>();
                 mutable_bitField0_ |= 0x00000001;
               }
               oracleData_.add(
-                  input.readMessage(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.parser(), extensionRegistry));
+                  input.readMessage(io.vegaprotocol.vega.oracles.v1.Data.OracleData.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -108478,7 +109990,7 @@ public final class Trading {
     }
 
     public static final int ORACLE_DATA_FIELD_NUMBER = 1;
-    private java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData> oracleData_;
+    private java.util.List<io.vegaprotocol.vega.oracles.v1.Data.OracleData> oracleData_;
     /**
      * <pre>
      * The list of oracle data broadcast to a given spec
@@ -108487,7 +109999,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
     @java.lang.Override
-    public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData> getOracleDataList() {
+    public java.util.List<io.vegaprotocol.vega.oracles.v1.Data.OracleData> getOracleDataList() {
       return oracleData_;
     }
     /**
@@ -108498,7 +110010,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>
+    public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>
         getOracleDataOrBuilderList() {
       return oracleData_;
     }
@@ -108521,7 +110033,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getOracleData(int index) {
+    public io.vegaprotocol.vega.oracles.v1.Data.OracleData getOracleData(int index) {
       return oracleData_.get(index);
     }
     /**
@@ -108532,7 +110044,7 @@ public final class Trading {
      * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder getOracleDataOrBuilder(
+    public io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder getOracleDataOrBuilder(
         int index) {
       return oracleData_.get(index);
     }
@@ -108883,17 +110395,17 @@ public final class Trading {
       }
       private int bitField0_;
 
-      private java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData> oracleData_ =
+      private java.util.List<io.vegaprotocol.vega.oracles.v1.Data.OracleData> oracleData_ =
         java.util.Collections.emptyList();
       private void ensureOracleDataIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          oracleData_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData>(oracleData_);
+          oracleData_ = new java.util.ArrayList<io.vegaprotocol.vega.oracles.v1.Data.OracleData>(oracleData_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder> oracleDataBuilder_;
+          io.vegaprotocol.vega.oracles.v1.Data.OracleData, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder> oracleDataBuilder_;
 
       /**
        * <pre>
@@ -108902,7 +110414,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData> getOracleDataList() {
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.Data.OracleData> getOracleDataList() {
         if (oracleDataBuilder_ == null) {
           return java.util.Collections.unmodifiableList(oracleData_);
         } else {
@@ -108930,7 +110442,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getOracleData(int index) {
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleData getOracleData(int index) {
         if (oracleDataBuilder_ == null) {
           return oracleData_.get(index);
         } else {
@@ -108945,7 +110457,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
       public Builder setOracleData(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData value) {
+          int index, io.vegaprotocol.vega.oracles.v1.Data.OracleData value) {
         if (oracleDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -108966,7 +110478,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
       public Builder setOracleData(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder builderForValue) {
+          int index, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder builderForValue) {
         if (oracleDataBuilder_ == null) {
           ensureOracleDataIsMutable();
           oracleData_.set(index, builderForValue.build());
@@ -108983,7 +110495,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public Builder addOracleData(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData value) {
+      public Builder addOracleData(io.vegaprotocol.vega.oracles.v1.Data.OracleData value) {
         if (oracleDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -109004,7 +110516,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
       public Builder addOracleData(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData value) {
+          int index, io.vegaprotocol.vega.oracles.v1.Data.OracleData value) {
         if (oracleDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -109025,7 +110537,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
       public Builder addOracleData(
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder builderForValue) {
+          io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder builderForValue) {
         if (oracleDataBuilder_ == null) {
           ensureOracleDataIsMutable();
           oracleData_.add(builderForValue.build());
@@ -109043,7 +110555,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
       public Builder addOracleData(
-          int index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder builderForValue) {
+          int index, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder builderForValue) {
         if (oracleDataBuilder_ == null) {
           ensureOracleDataIsMutable();
           oracleData_.add(index, builderForValue.build());
@@ -109061,7 +110573,7 @@ public final class Trading {
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
       public Builder addAllOracleData(
-          java.lang.Iterable<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData> values) {
+          java.lang.Iterable<? extends io.vegaprotocol.vega.oracles.v1.Data.OracleData> values) {
         if (oracleDataBuilder_ == null) {
           ensureOracleDataIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -109113,7 +110625,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder getOracleDataBuilder(
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder getOracleDataBuilder(
           int index) {
         return getOracleDataFieldBuilder().getBuilder(index);
       }
@@ -109124,7 +110636,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder getOracleDataOrBuilder(
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder getOracleDataOrBuilder(
           int index) {
         if (oracleDataBuilder_ == null) {
           return oracleData_.get(index);  } else {
@@ -109138,7 +110650,7 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>
+      public java.util.List<? extends io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>
            getOracleDataOrBuilderList() {
         if (oracleDataBuilder_ != null) {
           return oracleDataBuilder_.getMessageOrBuilderList();
@@ -109153,9 +110665,9 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder addOracleDataBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder addOracleDataBuilder() {
         return getOracleDataFieldBuilder().addBuilder(
-            io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance());
+            io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance());
       }
       /**
        * <pre>
@@ -109164,10 +110676,10 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder addOracleDataBuilder(
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder addOracleDataBuilder(
           int index) {
         return getOracleDataFieldBuilder().addBuilder(
-            index, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance());
+            index, io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance());
       }
       /**
        * <pre>
@@ -109176,16 +110688,16 @@ public final class Trading {
        *
        * <code>repeated .oracles.v1.OracleData oracle_data = 1 [json_name = "oracleData"];</code>
        */
-      public java.util.List<io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder>
+      public java.util.List<io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder>
            getOracleDataBuilderList() {
         return getOracleDataFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.Data.OracleData, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>
           getOracleDataFieldBuilder() {
         if (oracleDataBuilder_ == null) {
           oracleDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>(
+              io.vegaprotocol.vega.oracles.v1.Data.OracleData, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>(
                   oracleData_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -109267,6 +110779,16 @@ public final class Trading {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_v1_SubmitTransactionResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_v1_SubmitTransactionV2Request_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_v1_SubmitTransactionV2Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_v1_SubmitTransactionV2Response_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_v1_SubmitTransactionV2Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_v1_PrepareWithdrawRequest_descriptor;
   private static final
@@ -109998,458 +111520,468 @@ public final class Trading {
     java.lang.String[] descriptorData = {
       "\n\021api/trading.proto\022\006api.v1\032\nvega.proto\032" +
       "\rmarkets.proto\032\020governance.proto\032\014assets" +
-      ".proto\032\026events/v1/events.proto\032\034oracles/" +
-      "v1/oracle_spec.proto\032\034oracles/v1/oracle_" +
-      "data.proto\032\032commands/v1/commands.proto\032$" +
-      "commands/v1/validator_commands.proto\0326gi" +
-      "thub.com/mwitkow/go-proto-validators/val" +
-      "idator.proto\"\203\001\n\032PropagateChainEventRequ" +
-      "est\022.\n\003evt\030\001 \001(\0132\034.vega.commands.v1.Chai" +
-      "nEventR\003evt\022\027\n\007pub_key\030\002 \001(\tR\006pubKey\022\034\n\t" +
-      "signature\030\003 \001(\014R\tsignature\"7\n\033PropagateC" +
-      "hainEventResponse\022\030\n\007success\030\001 \001(\010R\007succ" +
-      "ess\"\307\001\n\030SubmitTransactionRequest\022\"\n\002tx\030\001" +
-      " \001(\0132\022.vega.SignedBundleR\002tx\0229\n\004type\030\002 \001" +
-      "(\0162%.api.v1.SubmitTransactionRequest.Typ" +
-      "eR\004type\"L\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\016\n" +
-      "\nTYPE_ASYNC\020\001\022\r\n\tTYPE_SYNC\020\002\022\017\n\013TYPE_COM" +
-      "MIT\020\003\"5\n\031SubmitTransactionResponse\022\030\n\007su" +
-      "ccess\030\001 \001(\010R\007success\"Z\n\026PrepareWithdrawR" +
-      "equest\022@\n\010withdraw\030\001 \001(\0132$.vega.commands" +
-      ".v1.WithdrawSubmissionR\010withdraw\"-\n\027Prep" +
-      "areWithdrawResponse\022\022\n\004blob\030\001 \001(\014R\004blob\"" +
-      "M\n\032PrepareSubmitOrderResponse\022\022\n\004blob\030\001 " +
-      "\001(\014R\004blob\022\033\n\tsubmit_id\030\002 \001(\tR\010submitId\"0" +
-      "\n\032PrepareCancelOrderResponse\022\022\n\004blob\030\001 \001" +
-      "(\014R\004blob\"/\n\031PrepareAmendOrderResponse\022\022\n" +
-      "\004blob\030\001 \001(\014R\004blob\"^\n\031PrepareSubmitOrderR" +
-      "equest\022A\n\nsubmission\030\001 \001(\0132!.vega.comman" +
-      "ds.v1.OrderSubmissionR\nsubmission\"d\n\031Pre" +
-      "pareCancelOrderRequest\022G\n\014cancellation\030\001" +
-      " \001(\0132#.vega.commands.v1.OrderCancellatio" +
-      "nR\014cancellation\"Z\n\030PrepareAmendOrderRequ" +
-      "est\022>\n\tamendment\030\001 \001(\0132 .vega.commands.v" +
-      "1.OrderAmendmentR\tamendment\"\017\n\rAssetsReq" +
-      "uest\"5\n\016AssetsResponse\022#\n\006assets\030\001 \003(\0132\013" +
-      ".vega.AssetR\006assets\"*\n\020AssetByIDRequest\022" +
-      "\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"6\n\021AssetByIDResp" +
-      "onse\022!\n\005asset\030\001 \001(\0132\013.vega.AssetR\005asset\"" +
-      ";\n!GetNodeSignaturesAggregateRequest\022\026\n\002" +
-      "id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"e\n\"GetNodeSignature" +
-      "sAggregateResponse\022?\n\nsignatures\030\001 \003(\0132\037" +
-      ".vega.commands.v1.NodeSignatureR\nsignatu" +
-      "res\"C\n\025OptionalProposalState\022*\n\005value\030\001 " +
-      "\001(\0162\024.vega.Proposal.StateR\005value\"\\\n\023GetP" +
+      ".proto\032\026events/v1/events.proto\032\025oracles/" +
+      "v1/spec.proto\032\025oracles/v1/data.proto\032\032co" +
+      "mmands/v1/commands.proto\032\035commands/v1/tr" +
+      "ansaction.proto\032$commands/v1/validator_c" +
+      "ommands.proto\0326github.com/mwitkow/go-pro" +
+      "to-validators/validator.proto\"\203\001\n\032Propag" +
+      "ateChainEventRequest\022.\n\003evt\030\001 \001(\0132\034.vega" +
+      ".commands.v1.ChainEventR\003evt\022\027\n\007pub_key\030" +
+      "\002 \001(\tR\006pubKey\022\034\n\tsignature\030\003 \001(\014R\tsignat" +
+      "ure\"7\n\033PropagateChainEventResponse\022\030\n\007su" +
+      "ccess\030\001 \001(\010R\007success\"\307\001\n\030SubmitTransacti" +
+      "onRequest\022\"\n\002tx\030\001 \001(\0132\022.vega.SignedBundl" +
+      "eR\002tx\0229\n\004type\030\002 \001(\0162%.api.v1.SubmitTrans" +
+      "actionRequest.TypeR\004type\"L\n\004Type\022\024\n\020TYPE" +
+      "_UNSPECIFIED\020\000\022\016\n\nTYPE_ASYNC\020\001\022\r\n\tTYPE_S" +
+      "YNC\020\002\022\017\n\013TYPE_COMMIT\020\003\"5\n\031SubmitTransact" +
+      "ionResponse\022\030\n\007success\030\001 \001(\010R\007success\"\326\001" +
+      "\n\032SubmitTransactionV2Request\022-\n\002tx\030\001 \001(\013" +
+      "2\035.vega.commands.v1.TransactionR\002tx\022;\n\004t" +
+      "ype\030\002 \001(\0162\'.api.v1.SubmitTransactionV2Re" +
+      "quest.TypeR\004type\"L\n\004Type\022\024\n\020TYPE_UNSPECI" +
+      "FIED\020\000\022\016\n\nTYPE_ASYNC\020\001\022\r\n\tTYPE_SYNC\020\002\022\017\n" +
+      "\013TYPE_COMMIT\020\003\"7\n\033SubmitTransactionV2Res" +
+      "ponse\022\030\n\007success\030\001 \001(\010R\007success\"Z\n\026Prepa" +
+      "reWithdrawRequest\022@\n\010withdraw\030\001 \001(\0132$.ve" +
+      "ga.commands.v1.WithdrawSubmissionR\010withd" +
+      "raw\"-\n\027PrepareWithdrawResponse\022\022\n\004blob\030\001" +
+      " \001(\014R\004blob\"M\n\032PrepareSubmitOrderResponse" +
+      "\022\022\n\004blob\030\001 \001(\014R\004blob\022\033\n\tsubmit_id\030\002 \001(\tR" +
+      "\010submitId\"0\n\032PrepareCancelOrderResponse\022" +
+      "\022\n\004blob\030\001 \001(\014R\004blob\"/\n\031PrepareAmendOrder" +
+      "Response\022\022\n\004blob\030\001 \001(\014R\004blob\"^\n\031PrepareS" +
+      "ubmitOrderRequest\022A\n\nsubmission\030\001 \001(\0132!." +
+      "vega.commands.v1.OrderSubmissionR\nsubmis" +
+      "sion\"d\n\031PrepareCancelOrderRequest\022G\n\014can" +
+      "cellation\030\001 \001(\0132#.vega.commands.v1.Order" +
+      "CancellationR\014cancellation\"Z\n\030PrepareAme" +
+      "ndOrderRequest\022>\n\tamendment\030\001 \001(\0132 .vega" +
+      ".commands.v1.OrderAmendmentR\tamendment\"\017" +
+      "\n\rAssetsRequest\"5\n\016AssetsResponse\022#\n\006ass" +
+      "ets\030\001 \003(\0132\013.vega.AssetR\006assets\"*\n\020AssetB" +
+      "yIDRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"6\n\021As" +
+      "setByIDResponse\022!\n\005asset\030\001 \001(\0132\013.vega.As" +
+      "setR\005asset\";\n!GetNodeSignaturesAggregate" +
+      "Request\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"e\n\"GetNo" +
+      "deSignaturesAggregateResponse\022?\n\nsignatu" +
+      "res\030\001 \003(\0132\037.vega.commands.v1.NodeSignatu" +
+      "reR\nsignatures\"C\n\025OptionalProposalState\022" +
+      "*\n\005value\030\001 \001(\0162\024.vega.Proposal.StateR\005va" +
+      "lue\"\\\n\023GetProposalsRequest\022E\n\017select_in_" +
+      "state\030\001 \001(\0132\035.api.v1.OptionalProposalSta" +
+      "teR\rselectInState\"@\n\024GetProposalsRespons" +
+      "e\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR\004d" +
+      "ata\"\206\001\n\032GetProposalsByPartyRequest\022!\n\010pa" +
+      "rty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022E\n\017select_" +
+      "in_state\030\002 \001(\0132\035.api.v1.OptionalProposal" +
+      "StateR\rselectInState\"G\n\033GetProposalsByPa" +
+      "rtyResponse\022(\n\004data\030\001 \003(\0132\024.vega.Governa" +
+      "nceDataR\004data\";\n\026GetVotesByPartyRequest\022" +
+      "!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\";\n\027Ge" +
+      "tVotesByPartyResponse\022 \n\005votes\030\001 \003(\0132\n.v" +
+      "ega.VoteR\005votes\"e\n\034GetNewMarketProposals" +
+      "Request\022E\n\017select_in_state\030\001 \001(\0132\035.api.v" +
+      "1.OptionalProposalStateR\rselectInState\"I" +
+      "\n\035GetNewMarketProposalsResponse\022(\n\004data\030" +
+      "\001 \003(\0132\024.vega.GovernanceDataR\004data\"\215\001\n\037Ge" +
+      "tUpdateMarketProposalsRequest\022#\n\tmarket_" +
+      "id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022E\n\017select_in_" +
+      "state\030\002 \001(\0132\035.api.v1.OptionalProposalSta" +
+      "teR\rselectInState\"L\n GetUpdateMarketProp" +
+      "osalsResponse\022(\n\004data\030\001 \003(\0132\024.vega.Gover" +
+      "nanceDataR\004data\"m\n$GetNetworkParametersP" +
       "roposalsRequest\022E\n\017select_in_state\030\001 \001(\013" +
       "2\035.api.v1.OptionalProposalStateR\rselectI" +
-      "nState\"@\n\024GetProposalsResponse\022(\n\004data\030\001" +
-      " \003(\0132\024.vega.GovernanceDataR\004data\"\206\001\n\032Get" +
-      "ProposalsByPartyRequest\022!\n\010party_id\030\001 \001(" +
-      "\tB\006\342\337\037\002X\001R\007partyId\022E\n\017select_in_state\030\002 " +
-      "\001(\0132\035.api.v1.OptionalProposalStateR\rsele" +
-      "ctInState\"G\n\033GetProposalsByPartyResponse" +
-      "\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR\004da" +
-      "ta\";\n\026GetVotesByPartyRequest\022!\n\010party_id" +
-      "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\";\n\027GetVotesByPar" +
-      "tyResponse\022 \n\005votes\030\001 \003(\0132\n.vega.VoteR\005v" +
-      "otes\"e\n\034GetNewMarketProposalsRequest\022E\n\017" +
-      "select_in_state\030\001 \001(\0132\035.api.v1.OptionalP" +
-      "roposalStateR\rselectInState\"I\n\035GetNewMar" +
-      "ketProposalsResponse\022(\n\004data\030\001 \003(\0132\024.veg" +
-      "a.GovernanceDataR\004data\"\215\001\n\037GetUpdateMark" +
-      "etProposalsRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342" +
-      "\337\037\002X\001R\010marketId\022E\n\017select_in_state\030\002 \001(\013" +
-      "2\035.api.v1.OptionalProposalStateR\rselectI" +
-      "nState\"L\n GetUpdateMarketProposalsRespon" +
-      "se\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceDataR\004" +
-      "data\"m\n$GetNetworkParametersProposalsReq" +
-      "uest\022E\n\017select_in_state\030\001 \001(\0132\035.api.v1.O" +
-      "ptionalProposalStateR\rselectInState\"Q\n%G" +
-      "etNetworkParametersProposalsResponse\022(\n\004" +
-      "data\030\001 \003(\0132\024.vega.GovernanceDataR\004data\"d" +
-      "\n\033GetNewAssetProposalsRequest\022E\n\017select_" +
-      "in_state\030\001 \001(\0132\035.api.v1.OptionalProposal" +
-      "StateR\rselectInState\"H\n\034GetNewAssetPropo" +
-      "salsResponse\022(\n\004data\030\001 \003(\0132\024.vega.Govern" +
-      "anceDataR\004data\"A\n\026GetProposalByIDRequest" +
-      "\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\nproposalI" +
-      "d\"C\n\027GetProposalByIDResponse\022(\n\004data\030\001 \001" +
-      "(\0132\024.vega.GovernanceDataR\004data\"E\n\035GetPro" +
-      "posalByReferenceRequest\022$\n\treference\030\001 \001" +
-      "(\tB\006\342\337\037\002X\001R\treference\"J\n\036GetProposalByRe" +
-      "ferenceResponse\022(\n\004data\030\001 \001(\0132\024.vega.Gov" +
-      "ernanceDataR\004data\"\032\n\030ObserveGovernanceRe" +
-      "quest\"E\n\031ObserveGovernanceResponse\022(\n\004da" +
-      "ta\030\001 \001(\0132\024.vega.GovernanceDataR\004data\"A\n\034" +
-      "ObservePartyProposalsRequest\022!\n\010party_id" +
-      "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\035ObservePartyP" +
-      "roposalsResponse\022(\n\004data\030\001 \001(\0132\024.vega.Go" +
-      "vernanceDataR\004data\"F\n\033ObserveProposalVot" +
-      "esRequest\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001R\n" +
-      "proposalId\">\n\034ObserveProposalVotesRespon" +
-      "se\022\036\n\004vote\030\001 \001(\0132\n.vega.VoteR\004vote\"=\n\030Ob" +
-      "servePartyVotesRequest\022!\n\010party_id\030\001 \001(\t" +
-      "B\006\342\337\037\002X\001R\007partyId\";\n\031ObservePartyVotesRe" +
-      "sponse\022\036\n\004vote\030\001 \001(\0132\n.vega.VoteR\004vote\"^" +
-      "\n\034MarginLevelsSubscribeRequest\022!\n\010party_" +
-      "id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\tmarket_id\030\002" +
-      " \001(\tR\010marketId\"X\n\035MarginLevelsSubscribeR" +
-      "esponse\0227\n\rmargin_levels\030\001 \001(\0132\022.vega.Ma" +
-      "rginLevelsR\014marginLevels\"U\n\023MarginLevels" +
-      "Request\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007party" +
-      "Id\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"O\n\024Margi" +
-      "nLevelsResponse\0227\n\rmargin_levels\030\001 \003(\0132\022" +
-      ".vega.MarginLevelsR\014marginLevels\":\n\033Mark" +
-      "etsDataSubscribeRequest\022\033\n\tmarket_id\030\001 \001" +
-      "(\tR\010marketId\"Q\n\034MarketsDataSubscribeResp" +
-      "onse\0221\n\013market_data\030\001 \001(\0132\020.vega.MarketD" +
-      "ataR\nmarketData\"<\n\025MarketDataByIDRequest" +
-      "\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"K\n" +
-      "\026MarketDataByIDResponse\0221\n\013market_data\030\001" +
-      " \001(\0132\020.vega.MarketDataR\nmarketData\"\024\n\022Ma" +
-      "rketsDataRequest\"J\n\023MarketsDataResponse\022" +
-      "3\n\014markets_data\030\001 \003(\0132\020.vega.MarketDataR" +
-      "\013marketsData\"7\n\020LastTradeRequest\022#\n\tmark" +
-      "et_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\"6\n\021LastTra" +
-      "deResponse\022!\n\005trade\030\001 \001(\0132\013.vega.TradeR\005" +
-      "trade\"8\n\021MarketByIDRequest\022#\n\tmarket_id\030" +
-      "\001 \001(\tB\006\342\337\037\002X\001R\010marketId\":\n\022MarketByIDRes" +
-      "ponse\022$\n\006market\030\001 \001(\0132\014.vega.MarketR\006mar" +
-      "ket\"5\n\020PartyByIDRequest\022!\n\010party_id\030\001 \001(" +
-      "\tB\006\342\337\037\002X\001R\007partyId\"6\n\021PartyByIDResponse\022" +
-      "!\n\005party\030\001 \001(\0132\013.vega.PartyR\005party\"\020\n\016Pa" +
-      "rtiesRequest\"8\n\017PartiesResponse\022%\n\007parti" +
-      "es\030\001 \003(\0132\013.vega.PartyR\007parties\"\202\001\n\024Trade" +
-      "sByPartyRequest\022\031\n\010party_id\030\001 \001(\tR\007party" +
-      "Id\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\0222\n\npagin" +
-      "ation\030\003 \001(\0132\022.api.v1.PaginationR\npaginat" +
-      "ion\"<\n\025TradesByPartyResponse\022#\n\006trades\030\001" +
-      " \003(\0132\013.vega.TradeR\006trades\"1\n\024TradesByOrd" +
-      "erRequest\022\031\n\010order_id\030\001 \001(\tR\007orderId\"<\n\025" +
-      "TradesByOrderResponse\022#\n\006trades\030\001 \003(\0132\013." +
-      "vega.TradeR\006trades\"\217\001\n\030AccountsSubscribe" +
-      "Request\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010" +
-      "party_id\030\002 \001(\tR\007partyId\022\024\n\005asset\030\003 \001(\tR\005" +
-      "asset\022%\n\004type\030\004 \001(\0162\021.vega.AccountTypeR\004" +
-      "type\"D\n\031AccountsSubscribeResponse\022\'\n\007acc" +
-      "ount\030\001 \001(\0132\r.vega.AccountR\007account\"P\n\026Or" +
-      "dersSubscribeRequest\022\033\n\tmarket_id\030\001 \001(\tR" +
-      "\010marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\"P\n\026" +
-      "TradesSubscribeRequest\022\033\n\tmarket_id\030\001 \001(" +
-      "\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\"j" +
-      "\n\027CandlesSubscribeRequest\022#\n\tmarket_id\030\001" +
-      " \001(\tB\006\342\337\037\002X\001R\010marketId\022*\n\010interval\030\002 \001(\016" +
-      "2\016.vega.IntervalR\010interval\"@\n\030CandlesSub" +
-      "scribeResponse\022$\n\006candle\030\001 \001(\0132\014.vega.Ca" +
-      "ndleR\006candle\"B\n\033MarketDepthSubscribeRequ" +
+      "nState\"Q\n%GetNetworkParametersProposalsR" +
+      "esponse\022(\n\004data\030\001 \003(\0132\024.vega.GovernanceD" +
+      "ataR\004data\"d\n\033GetNewAssetProposalsRequest" +
+      "\022E\n\017select_in_state\030\001 \001(\0132\035.api.v1.Optio" +
+      "nalProposalStateR\rselectInState\"H\n\034GetNe" +
+      "wAssetProposalsResponse\022(\n\004data\030\001 \003(\0132\024." +
+      "vega.GovernanceDataR\004data\"A\n\026GetProposal" +
+      "ByIDRequest\022\'\n\013proposal_id\030\001 \001(\tB\006\342\337\037\002X\001" +
+      "R\nproposalId\"C\n\027GetProposalByIDResponse\022" +
+      "(\n\004data\030\001 \001(\0132\024.vega.GovernanceDataR\004dat" +
+      "a\"E\n\035GetProposalByReferenceRequest\022$\n\tre" +
+      "ference\030\001 \001(\tB\006\342\337\037\002X\001R\treference\"J\n\036GetP" +
+      "roposalByReferenceResponse\022(\n\004data\030\001 \001(\013" +
+      "2\024.vega.GovernanceDataR\004data\"\032\n\030ObserveG" +
+      "overnanceRequest\"E\n\031ObserveGovernanceRes" +
+      "ponse\022(\n\004data\030\001 \001(\0132\024.vega.GovernanceDat" +
+      "aR\004data\"A\n\034ObservePartyProposalsRequest\022" +
+      "!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\035Ob" +
+      "servePartyProposalsResponse\022(\n\004data\030\001 \001(" +
+      "\0132\024.vega.GovernanceDataR\004data\"F\n\033Observe" +
+      "ProposalVotesRequest\022\'\n\013proposal_id\030\001 \001(" +
+      "\tB\006\342\337\037\002X\001R\nproposalId\">\n\034ObserveProposal" +
+      "VotesResponse\022\036\n\004vote\030\001 \001(\0132\n.vega.VoteR" +
+      "\004vote\"=\n\030ObservePartyVotesRequest\022!\n\010par" +
+      "ty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\";\n\031ObserveP" +
+      "artyVotesResponse\022\036\n\004vote\030\001 \001(\0132\n.vega.V" +
+      "oteR\004vote\"^\n\034MarginLevelsSubscribeReques" +
+      "t\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\t" +
+      "market_id\030\002 \001(\tR\010marketId\"X\n\035MarginLevel" +
+      "sSubscribeResponse\0227\n\rmargin_levels\030\001 \001(" +
+      "\0132\022.vega.MarginLevelsR\014marginLevels\"U\n\023M" +
+      "arginLevelsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337" +
+      "\037\002X\001R\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010market" +
+      "Id\"O\n\024MarginLevelsResponse\0227\n\rmargin_lev" +
+      "els\030\001 \003(\0132\022.vega.MarginLevelsR\014marginLev" +
+      "els\":\n\033MarketsDataSubscribeRequest\022\033\n\tma" +
+      "rket_id\030\001 \001(\tR\010marketId\"Q\n\034MarketsDataSu" +
+      "bscribeResponse\0221\n\013market_data\030\001 \001(\0132\020.v" +
+      "ega.MarketDataR\nmarketData\"<\n\025MarketData" +
+      "ByIDRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010" +
+      "marketId\"K\n\026MarketDataByIDResponse\0221\n\013ma" +
+      "rket_data\030\001 \001(\0132\020.vega.MarketDataR\nmarke" +
+      "tData\"\024\n\022MarketsDataRequest\"J\n\023MarketsDa" +
+      "taResponse\0223\n\014markets_data\030\001 \003(\0132\020.vega." +
+      "MarketDataR\013marketsData\"7\n\020LastTradeRequ" +
       "est\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId" +
-      "\"T\n\034MarketDepthSubscribeResponse\0224\n\014mark" +
-      "et_depth\030\001 \001(\0132\021.vega.MarketDepthR\013marke" +
-      "tDepth\"I\n\"MarketDepthUpdatesSubscribeReq" +
+      "\"6\n\021LastTradeResponse\022!\n\005trade\030\001 \001(\0132\013.v" +
+      "ega.TradeR\005trade\"8\n\021MarketByIDRequest\022#\n" +
+      "\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\":\n\022Ma" +
+      "rketByIDResponse\022$\n\006market\030\001 \001(\0132\014.vega." +
+      "MarketR\006market\"5\n\020PartyByIDRequest\022!\n\010pa" +
+      "rty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"6\n\021PartyBy" +
+      "IDResponse\022!\n\005party\030\001 \001(\0132\013.vega.PartyR\005" +
+      "party\"\020\n\016PartiesRequest\"8\n\017PartiesRespon" +
+      "se\022%\n\007parties\030\001 \003(\0132\013.vega.PartyR\007partie" +
+      "s\"\202\001\n\024TradesByPartyRequest\022\031\n\010party_id\030\001" +
+      " \001(\tR\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010market" +
+      "Id\0222\n\npagination\030\003 \001(\0132\022.api.v1.Paginati" +
+      "onR\npagination\"<\n\025TradesByPartyResponse\022" +
+      "#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006trades\"1\n\024" +
+      "TradesByOrderRequest\022\031\n\010order_id\030\001 \001(\tR\007" +
+      "orderId\"<\n\025TradesByOrderResponse\022#\n\006trad" +
+      "es\030\001 \003(\0132\013.vega.TradeR\006trades\"\217\001\n\030Accoun" +
+      "tsSubscribeRequest\022\033\n\tmarket_id\030\001 \001(\tR\010m" +
+      "arketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005as" +
+      "set\030\003 \001(\tR\005asset\022%\n\004type\030\004 \001(\0162\021.vega.Ac" +
+      "countTypeR\004type\"D\n\031AccountsSubscribeResp" +
+      "onse\022\'\n\007account\030\001 \001(\0132\r.vega.AccountR\007ac" +
+      "count\"P\n\026OrdersSubscribeRequest\022\033\n\tmarke" +
+      "t_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007" +
+      "partyId\"P\n\026TradesSubscribeRequest\022\033\n\tmar" +
+      "ket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\t" +
+      "R\007partyId\"j\n\027CandlesSubscribeRequest\022#\n\t" +
+      "market_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022*\n\010int" +
+      "erval\030\002 \001(\0162\016.vega.IntervalR\010interval\"@\n" +
+      "\030CandlesSubscribeResponse\022$\n\006candle\030\001 \001(" +
+      "\0132\014.vega.CandleR\006candle\"B\n\033MarketDepthSu" +
+      "bscribeRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X" +
+      "\001R\010marketId\"T\n\034MarketDepthSubscribeRespo" +
+      "nse\0224\n\014market_depth\030\001 \001(\0132\021.vega.MarketD" +
+      "epthR\013marketDepth\"I\n\"MarketDepthUpdatesS" +
+      "ubscribeRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002" +
+      "X\001R\010marketId\"V\n#MarketDepthUpdatesSubscr" +
+      "ibeResponse\022/\n\006update\030\001 \001(\0132\027.vega.Marke" +
+      "tDepthUpdateR\006update\"S\n\031PositionsSubscri" +
+      "beRequest\022\031\n\010party_id\030\001 \001(\tR\007partyId\022\033\n\t" +
+      "market_id\030\002 \001(\tR\010marketId\"H\n\032PositionsSu" +
+      "bscribeResponse\022*\n\010position\030\001 \001(\0132\016.vega" +
+      ".PositionR\010position\"p\n\025OrdersByMarketReq" +
       "uest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketI" +
-      "d\"V\n#MarketDepthUpdatesSubscribeResponse" +
-      "\022/\n\006update\030\001 \001(\0132\027.vega.MarketDepthUpdat" +
-      "eR\006update\"S\n\031PositionsSubscribeRequest\022\031" +
-      "\n\010party_id\030\001 \001(\tR\007partyId\022\033\n\tmarket_id\030\002" +
-      " \001(\tR\010marketId\"H\n\032PositionsSubscribeResp" +
-      "onse\022*\n\010position\030\001 \001(\0132\016.vega.PositionR\010" +
-      "position\"p\n\025OrdersByMarketRequest\022#\n\tmar" +
+      "d\0222\n\npagination\030\002 \001(\0132\022.api.v1.Paginatio" +
+      "nR\npagination\"=\n\026OrdersByMarketResponse\022" +
+      "#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders\"m\n\024" +
+      "OrdersByPartyRequest\022!\n\010party_id\030\001 \001(\tB\006" +
+      "\342\337\037\002X\001R\007partyId\0222\n\npagination\030\002 \001(\0132\022.ap" +
+      "i.v1.PaginationR\npagination\"<\n\025OrdersByP" +
+      "artyResponse\022#\n\006orders\030\001 \003(\0132\013.vega.Orde" +
+      "rR\006orders\"c\n\031OrderByMarketAndIDRequest\022#" +
+      "\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022!\n\010o" +
+      "rder_id\030\002 \001(\tB\006\342\337\037\002X\001R\007orderId\"?\n\032OrderB" +
+      "yMarketAndIDResponse\022!\n\005order\030\001 \001(\0132\013.ve" +
+      "ga.OrderR\005order\"?\n\027OrderByReferenceReque" +
+      "st\022$\n\treference\030\001 \001(\tB\006\342\337\037\002X\001R\treference" +
+      "\"=\n\030OrderByReferenceResponse\022!\n\005order\030\001 " +
+      "\001(\0132\013.vega.OrderR\005order\"\020\n\016MarketsReques" +
+      "t\"9\n\017MarketsResponse\022&\n\007markets\030\001 \003(\0132\014." +
+      "vega.MarketR\007markets\"\222\001\n\016CandlesRequest\022" +
+      "#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022/\n\017" +
+      "since_timestamp\030\002 \001(\003B\006\342\337\037\002\020\000R\016sinceTime" +
+      "stamp\022*\n\010interval\030\003 \001(\0162\016.vega.IntervalR" +
+      "\010interval\"9\n\017CandlesResponse\022&\n\007candles\030" +
+      "\001 \003(\0132\014.vega.CandleR\007candles\"V\n\022MarketDe" +
+      "pthRequest\022#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010m" +
+      "arketId\022\033\n\tmax_depth\030\002 \001(\004R\010maxDepth\"\321\001\n" +
+      "\023MarketDepthResponse\022\033\n\tmarket_id\030\001 \001(\tR" +
+      "\010marketId\022\"\n\003buy\030\002 \003(\0132\020.vega.PriceLevel" +
+      "R\003buy\022$\n\004sell\030\003 \003(\0132\020.vega.PriceLevelR\004s" +
+      "ell\022*\n\nlast_trade\030\004 \001(\0132\013.vega.TradeR\tla" +
+      "stTrade\022\'\n\017sequence_number\030\005 \001(\004R\016sequen" +
+      "ceNumber\"p\n\025TradesByMarketRequest\022#\n\tmar" +
       "ket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagina" +
       "tion\030\002 \001(\0132\022.api.v1.PaginationR\npaginati" +
-      "on\"=\n\026OrdersByMarketResponse\022#\n\006orders\030\001" +
-      " \003(\0132\013.vega.OrderR\006orders\"m\n\024OrdersByPar" +
-      "tyRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007par" +
-      "tyId\0222\n\npagination\030\002 \001(\0132\022.api.v1.Pagina" +
-      "tionR\npagination\"<\n\025OrdersByPartyRespons" +
-      "e\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006orders\"c" +
-      "\n\031OrderByMarketAndIDRequest\022#\n\tmarket_id" +
-      "\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022!\n\010order_id\030\002 \001" +
-      "(\tB\006\342\337\037\002X\001R\007orderId\"?\n\032OrderByMarketAndI" +
-      "DResponse\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005o" +
-      "rder\"?\n\027OrderByReferenceRequest\022$\n\trefer" +
-      "ence\030\001 \001(\tB\006\342\337\037\002X\001R\treference\"=\n\030OrderBy" +
-      "ReferenceResponse\022!\n\005order\030\001 \001(\0132\013.vega." +
-      "OrderR\005order\"\020\n\016MarketsRequest\"9\n\017Market" +
-      "sResponse\022&\n\007markets\030\001 \003(\0132\014.vega.Market" +
-      "R\007markets\"\222\001\n\016CandlesRequest\022#\n\tmarket_i" +
-      "d\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022/\n\017since_times" +
-      "tamp\030\002 \001(\003B\006\342\337\037\002\020\000R\016sinceTimestamp\022*\n\010in" +
-      "terval\030\003 \001(\0162\016.vega.IntervalR\010interval\"9" +
-      "\n\017CandlesResponse\022&\n\007candles\030\001 \003(\0132\014.veg" +
-      "a.CandleR\007candles\"V\n\022MarketDepthRequest\022" +
-      "#\n\tmarket_id\030\001 \001(\tB\006\342\337\037\002X\001R\010marketId\022\033\n\t" +
-      "max_depth\030\002 \001(\004R\010maxDepth\"\321\001\n\023MarketDept" +
-      "hResponse\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\"" +
-      "\n\003buy\030\002 \003(\0132\020.vega.PriceLevelR\003buy\022$\n\004se" +
-      "ll\030\003 \003(\0132\020.vega.PriceLevelR\004sell\022*\n\nlast" +
-      "_trade\030\004 \001(\0132\013.vega.TradeR\tlastTrade\022\'\n\017" +
-      "sequence_number\030\005 \001(\004R\016sequenceNumber\"p\n" +
-      "\025TradesByMarketRequest\022#\n\tmarket_id\030\001 \001(" +
-      "\tB\006\342\337\037\002X\001R\010marketId\0222\n\npagination\030\002 \001(\0132" +
-      "\022.api.v1.PaginationR\npagination\"=\n\026Trade" +
-      "sByMarketResponse\022#\n\006trades\030\001 \003(\0132\013.vega" +
-      ".TradeR\006trades\"Y\n\027PositionsByPartyReques" +
-      "t\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022\033\n\t" +
-      "market_id\030\002 \001(\tR\010marketId\"H\n\030PositionsBy" +
-      "PartyResponse\022,\n\tpositions\030\001 \003(\0132\016.vega." +
-      "PositionR\tpositions\"\024\n\022GetVegaTimeReques" +
-      "t\"3\n\023GetVegaTimeResponse\022\034\n\ttimestamp\030\001 " +
-      "\001(\003R\ttimestamp\"V\n\nPagination\022\022\n\004skip\030\001 \001" +
-      "(\004R\004skip\022\024\n\005limit\030\002 \001(\004R\005limit\022\036\n\ndescen" +
-      "ding\030\003 \001(\010R\ndescending\">\n\027OrdersSubscrib" +
-      "eResponse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR\006" +
-      "orders\">\n\027TradesSubscribeResponse\022#\n\006tra" +
-      "des\030\001 \003(\0132\013.vega.TradeR\006trades\"#\n!Transf" +
-      "erResponsesSubscribeRequest\"X\n\"TransferR" +
-      "esponsesSubscribeResponse\0222\n\010response\030\001 " +
-      "\001(\0132\026.vega.TransferResponseR\010response\"\213\001" +
-      "\n\024PartyAccountsRequest\022\031\n\010party_id\030\001 \001(\t" +
-      "R\007partyId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022%" +
-      "\n\004type\030\003 \001(\0162\021.vega.AccountTypeR\004type\022\024\n" +
-      "\005asset\030\004 \001(\tR\005asset\"B\n\025PartyAccountsResp" +
-      "onse\022)\n\010accounts\030\001 \003(\0132\r.vega.AccountR\010a" +
-      "ccounts\"J\n\025MarketAccountsRequest\022\033\n\tmark" +
-      "et_id\030\001 \001(\tR\010marketId\022\024\n\005asset\030\002 \001(\tR\005as" +
-      "set\"C\n\026MarketAccountsResponse\022)\n\010account" +
-      "s\030\001 \003(\0132\r.vega.AccountR\010accounts\"8\n FeeI" +
-      "nfrastructureAccountsRequest\022\024\n\005asset\030\001 " +
-      "\001(\tR\005asset\"N\n!FeeInfrastructureAccountsR" +
-      "esponse\022)\n\010accounts\030\001 \003(\0132\r.vega.Account" +
-      "R\010accounts\"h\n PrepareProposalSubmissionR" +
-      "equest\022D\n\nsubmission\030\001 \001(\0132$.vega.comman" +
-      "ds.v1.ProposalSubmissionR\nsubmission\"}\n!" +
-      "PrepareProposalSubmissionResponse\022\022\n\004blo" +
-      "b\030\001 \001(\014R\004blob\022D\n\nsubmission\030\002 \001(\0132$.vega" +
-      ".commands.v1.ProposalSubmissionR\nsubmiss" +
-      "ion\"h\n\034PrepareVoteSubmissionRequest\022H\n\ns" +
-      "ubmission\030\001 \001(\0132 .vega.commands.v1.VoteS" +
-      "ubmissionB\006\342\337\037\002 \001R\nsubmission\"u\n\035Prepare" +
-      "VoteSubmissionResponse\022\022\n\004blob\030\001 \001(\014R\004bl" +
-      "ob\022@\n\nsubmission\030\002 \001(\0132 .vega.commands.v" +
-      "1.VoteSubmissionR\nsubmission\"z\n PrepareL" +
-      "iquidityProvisionRequest\022V\n\nsubmission\030\001" +
-      " \001(\0132..vega.commands.v1.LiquidityProvisi" +
-      "onSubmissionB\006\342\337\037\002 \001R\nsubmission\"7\n!Prep" +
-      "areLiquidityProvisionResponse\022\022\n\004blob\030\001 " +
-      "\001(\014R\004blob\"O\n\020OrderByIDRequest\022!\n\010order_i" +
-      "d\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\022\030\n\007version\030\002 \001(" +
-      "\004R\007version\"6\n\021OrderByIDResponse\022!\n\005order" +
-      "\030\001 \001(\0132\013.vega.OrderR\005order\"q\n\030OrderVersi" +
-      "onsByIDRequest\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001" +
-      "R\007orderId\0222\n\npagination\030\002 \001(\0132\022.api.v1.P" +
-      "aginationR\npagination\"@\n\031OrderVersionsBy" +
-      "IDResponse\022#\n\006orders\030\001 \003(\0132\013.vega.OrderR" +
-      "\006orders\"7\n\022EstimateFeeRequest\022!\n\005order\030\001" +
-      " \001(\0132\013.vega.OrderR\005order\"2\n\023EstimateFeeR" +
-      "esponse\022\033\n\003fee\030\002 \001(\0132\t.vega.FeeR\003fee\":\n\025" +
-      "EstimateMarginRequest\022!\n\005order\030\001 \001(\0132\013.v" +
-      "ega.OrderR\005order\"Q\n\026EstimateMarginRespon" +
-      "se\0227\n\rmargin_levels\030\002 \001(\0132\022.vega.MarginL" +
-      "evelsR\014marginLevels\"\241\001\n\026ObserveEventBusR" +
-      "equest\0220\n\004type\030\001 \003(\0162\034.vega.events.v1.Bu" +
-      "sEventTypeR\004type\022\033\n\tmarket_id\030\002 \001(\tR\010mar" +
-      "ketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022\035\n\nbatc" +
-      "h_size\030\004 \001(\003R\tbatchSize\"K\n\027ObserveEventB" +
-      "usResponse\0220\n\006events\030\001 \003(\0132\030.vega.events" +
-      ".v1.BusEventR\006events\"\023\n\021StatisticsReques" +
-      "t\"F\n\022StatisticsResponse\0220\n\nstatistics\030\001 " +
-      "\001(\0132\020.vega.StatisticsR\nstatistics\"7\n\022Wit" +
-      "hdrawalsRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X" +
-      "\001R\007partyId\"I\n\023WithdrawalsResponse\0222\n\013wit" +
-      "hdrawals\030\001 \003(\0132\020.vega.WithdrawalR\013withdr" +
-      "awals\"+\n\021WithdrawalRequest\022\026\n\002id\030\001 \001(\tB\006" +
-      "\342\337\037\002X\001R\002id\"F\n\022WithdrawalResponse\0220\n\nwith" +
-      "drawal\030\001 \001(\0132\020.vega.WithdrawalR\nwithdraw" +
-      "al\"M\n\036ERC20WithdrawalApprovalRequest\022+\n\r" +
-      "withdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014withdrawalI" +
-      "d\"\252\001\n\037ERC20WithdrawalApprovalResponse\022!\n" +
-      "\014asset_source\030\001 \001(\tR\013assetSource\022\026\n\006amou" +
-      "nt\030\002 \001(\tR\006amount\022\026\n\006expiry\030\003 \001(\003R\006expiry" +
-      "\022\024\n\005nonce\030\004 \001(\tR\005nonce\022\036\n\nsignatures\030\005 \001" +
-      "(\tR\nsignatures\"4\n\017DepositsRequest\022!\n\010par" +
-      "ty_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"=\n\020Deposits" +
-      "Response\022)\n\010deposits\030\001 \003(\0132\r.vega.Deposi" +
-      "tR\010deposits\"(\n\016DepositRequest\022\026\n\002id\030\001 \001(" +
-      "\tB\006\342\337\037\002X\001R\002id\":\n\017DepositResponse\022\'\n\007depo" +
-      "sit\030\001 \001(\0132\r.vega.DepositR\007deposit\"\032\n\030Net" +
-      "workParametersRequest\"b\n\031NetworkParamete" +
-      "rsResponse\022E\n\022network_parameters\030\001 \003(\0132\026" +
-      ".vega.NetworkParameterR\021networkParameter" +
-      "s\"J\n\032LiquidityProvisionsRequest\022\026\n\006marke" +
-      "t\030\001 \001(\tR\006market\022\024\n\005party\030\002 \001(\tR\005party\"j\n" +
-      "\033LiquidityProvisionsResponse\022K\n\024liquidit" +
-      "y_provisions\030\001 \003(\0132\030.vega.LiquidityProvi" +
-      "sionR\023liquidityProvisions\"+\n\021OracleSpecR" +
-      "equest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"M\n\022Oracle" +
-      "SpecResponse\0227\n\013oracle_spec\030\001 \001(\0132\026.orac" +
-      "les.v1.OracleSpecR\noracleSpec\"\024\n\022OracleS" +
-      "pecsRequest\"P\n\023OracleSpecsResponse\0229\n\014or" +
-      "acle_specs\030\001 \003(\0132\026.oracles.v1.OracleSpec" +
-      "R\013oracleSpecs\"1\n\027OracleDataBySpecRequest" +
-      "\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030OracleDataBy" +
-      "SpecResponse\0227\n\013oracle_data\030\001 \003(\0132\026.orac" +
-      "les.v1.OracleDataR\noracleData2\374\006\n\016Tradin" +
-      "gService\022[\n\022PrepareSubmitOrder\022!.api.v1." +
-      "PrepareSubmitOrderRequest\032\".api.v1.Prepa" +
-      "reSubmitOrderResponse\022[\n\022PrepareCancelOr" +
-      "der\022!.api.v1.PrepareCancelOrderRequest\032\"" +
-      ".api.v1.PrepareCancelOrderResponse\022X\n\021Pr" +
-      "epareAmendOrder\022 .api.v1.PrepareAmendOrd" +
-      "erRequest\032!.api.v1.PrepareAmendOrderResp" +
-      "onse\022R\n\017PrepareWithdraw\022\036.api.v1.Prepare" +
-      "WithdrawRequest\032\037.api.v1.PrepareWithdraw" +
-      "Response\022X\n\021SubmitTransaction\022 .api.v1.S" +
-      "ubmitTransactionRequest\032!.api.v1.SubmitT" +
-      "ransactionResponse\022p\n\031PrepareProposalSub" +
-      "mission\022(.api.v1.PrepareProposalSubmissi" +
-      "onRequest\032).api.v1.PrepareProposalSubmis" +
-      "sionResponse\022d\n\025PrepareVoteSubmission\022$." +
-      "api.v1.PrepareVoteSubmissionRequest\032%.ap" +
-      "i.v1.PrepareVoteSubmissionResponse\022^\n\023Pr" +
-      "opagateChainEvent\022\".api.v1.PropagateChai" +
-      "nEventRequest\032#.api.v1.PropagateChainEve" +
-      "ntResponse\022p\n\031PrepareLiquidityProvision\022" +
-      "(.api.v1.PrepareLiquidityProvisionReques" +
-      "t\032).api.v1.PrepareLiquidityProvisionResp" +
-      "onse2\333*\n\022TradingDataService\022O\n\016MarketAcc" +
-      "ounts\022\035.api.v1.MarketAccountsRequest\032\036.a" +
-      "pi.v1.MarketAccountsResponse\022L\n\rPartyAcc" +
-      "ounts\022\034.api.v1.PartyAccountsRequest\032\035.ap" +
-      "i.v1.PartyAccountsResponse\022p\n\031FeeInfrast" +
-      "ructureAccounts\022(.api.v1.FeeInfrastructu" +
-      "reAccountsRequest\032).api.v1.FeeInfrastruc" +
-      "tureAccountsResponse\022:\n\007Candles\022\026.api.v1" +
-      ".CandlesRequest\032\027.api.v1.CandlesResponse" +
-      "\022O\n\016MarketDataByID\022\035.api.v1.MarketDataBy" +
-      "IDRequest\032\036.api.v1.MarketDataByIDRespons" +
-      "e\022F\n\013MarketsData\022\032.api.v1.MarketsDataReq" +
-      "uest\032\033.api.v1.MarketsDataResponse\022C\n\nMar" +
-      "ketByID\022\031.api.v1.MarketByIDRequest\032\032.api" +
-      ".v1.MarketByIDResponse\022F\n\013MarketDepth\022\032." +
-      "api.v1.MarketDepthRequest\032\033.api.v1.Marke" +
-      "tDepthResponse\022:\n\007Markets\022\026.api.v1.Marke" +
-      "tsRequest\032\027.api.v1.MarketsResponse\022[\n\022Or" +
-      "derByMarketAndID\022!.api.v1.OrderByMarketA" +
-      "ndIDRequest\032\".api.v1.OrderByMarketAndIDR" +
-      "esponse\022U\n\020OrderByReference\022\037.api.v1.Ord" +
-      "erByReferenceRequest\032 .api.v1.OrderByRef" +
-      "erenceResponse\022O\n\016OrdersByMarket\022\035.api.v" +
-      "1.OrdersByMarketRequest\032\036.api.v1.OrdersB" +
-      "yMarketResponse\022L\n\rOrdersByParty\022\034.api.v" +
-      "1.OrdersByPartyRequest\032\035.api.v1.OrdersBy" +
-      "PartyResponse\022@\n\tOrderByID\022\030.api.v1.Orde" +
-      "rByIDRequest\032\031.api.v1.OrderByIDResponse\022" +
-      "X\n\021OrderVersionsByID\022 .api.v1.OrderVersi" +
-      "onsByIDRequest\032!.api.v1.OrderVersionsByI" +
-      "DResponse\022I\n\014MarginLevels\022\033.api.v1.Margi" +
-      "nLevelsRequest\032\034.api.v1.MarginLevelsResp" +
-      "onse\022:\n\007Parties\022\026.api.v1.PartiesRequest\032" +
-      "\027.api.v1.PartiesResponse\022@\n\tPartyByID\022\030." +
-      "api.v1.PartyByIDRequest\032\031.api.v1.PartyBy" +
-      "IDResponse\022U\n\020PositionsByParty\022\037.api.v1." +
-      "PositionsByPartyRequest\032 .api.v1.Positio" +
-      "nsByPartyResponse\022@\n\tLastTrade\022\030.api.v1." +
-      "LastTradeRequest\032\031.api.v1.LastTradeRespo" +
-      "nse\022O\n\016TradesByMarket\022\035.api.v1.TradesByM" +
-      "arketRequest\032\036.api.v1.TradesByMarketResp" +
-      "onse\022L\n\rTradesByOrder\022\034.api.v1.TradesByO" +
-      "rderRequest\032\035.api.v1.TradesByOrderRespon" +
-      "se\022L\n\rTradesByParty\022\034.api.v1.TradesByPar" +
-      "tyRequest\032\035.api.v1.TradesByPartyResponse" +
-      "\022I\n\014GetProposals\022\033.api.v1.GetProposalsRe" +
-      "quest\032\034.api.v1.GetProposalsResponse\022^\n\023G" +
-      "etProposalsByParty\022\".api.v1.GetProposals" +
-      "ByPartyRequest\032#.api.v1.GetProposalsByPa" +
-      "rtyResponse\022R\n\017GetVotesByParty\022\036.api.v1." +
-      "GetVotesByPartyRequest\032\037.api.v1.GetVotes" +
-      "ByPartyResponse\022d\n\025GetNewMarketProposals" +
-      "\022$.api.v1.GetNewMarketProposalsRequest\032%" +
-      ".api.v1.GetNewMarketProposalsResponse\022m\n" +
-      "\030GetUpdateMarketProposals\022\'.api.v1.GetUp" +
-      "dateMarketProposalsRequest\032(.api.v1.GetU" +
-      "pdateMarketProposalsResponse\022|\n\035GetNetwo" +
-      "rkParametersProposals\022,.api.v1.GetNetwor" +
-      "kParametersProposalsRequest\032-.api.v1.Get" +
-      "NetworkParametersProposalsResponse\022a\n\024Ge" +
-      "tNewAssetProposals\022#.api.v1.GetNewAssetP" +
-      "roposalsRequest\032$.api.v1.GetNewAssetProp" +
-      "osalsResponse\022R\n\017GetProposalByID\022\036.api.v" +
-      "1.GetProposalByIDRequest\032\037.api.v1.GetPro" +
-      "posalByIDResponse\022g\n\026GetProposalByRefere" +
-      "nce\022%.api.v1.GetProposalByReferenceReque" +
-      "st\032&.api.v1.GetProposalByReferenceRespon" +
-      "se\022Z\n\021ObserveGovernance\022 .api.v1.Observe" +
-      "GovernanceRequest\032!.api.v1.ObserveGovern" +
-      "anceResponse0\001\022f\n\025ObservePartyProposals\022" +
-      "$.api.v1.ObservePartyProposalsRequest\032%." +
-      "api.v1.ObservePartyProposalsResponse0\001\022Z" +
-      "\n\021ObservePartyVotes\022 .api.v1.ObservePart" +
-      "yVotesRequest\032!.api.v1.ObservePartyVotes" +
-      "Response0\001\022c\n\024ObserveProposalVotes\022#.api" +
-      ".v1.ObserveProposalVotesRequest\032$.api.v1" +
-      ".ObserveProposalVotesResponse0\001\022V\n\017Obser" +
-      "veEventBus\022\036.api.v1.ObserveEventBusReque" +
-      "st\032\037.api.v1.ObserveEventBusResponse(\0010\001\022" +
-      "C\n\nStatistics\022\031.api.v1.StatisticsRequest" +
-      "\032\032.api.v1.StatisticsResponse\022F\n\013GetVegaT" +
-      "ime\022\032.api.v1.GetVegaTimeRequest\032\033.api.v1" +
-      ".GetVegaTimeResponse\022Z\n\021AccountsSubscrib" +
-      "e\022 .api.v1.AccountsSubscribeRequest\032!.ap" +
-      "i.v1.AccountsSubscribeResponse0\001\022W\n\020Cand",
-      "lesSubscribe\022\037.api.v1.CandlesSubscribeRe" +
-      "quest\032 .api.v1.CandlesSubscribeResponse0" +
-      "\001\022f\n\025MarginLevelsSubscribe\022$.api.v1.Marg" +
-      "inLevelsSubscribeRequest\032%.api.v1.Margin" +
-      "LevelsSubscribeResponse0\001\022c\n\024MarketDepth" +
-      "Subscribe\022#.api.v1.MarketDepthSubscribeR" +
-      "equest\032$.api.v1.MarketDepthSubscribeResp" +
-      "onse0\001\022x\n\033MarketDepthUpdatesSubscribe\022*." +
-      "api.v1.MarketDepthUpdatesSubscribeReques" +
-      "t\032+.api.v1.MarketDepthUpdatesSubscribeRe" +
-      "sponse0\001\022c\n\024MarketsDataSubscribe\022#.api.v" +
-      "1.MarketsDataSubscribeRequest\032$.api.v1.M" +
-      "arketsDataSubscribeResponse0\001\022T\n\017OrdersS" +
-      "ubscribe\022\036.api.v1.OrdersSubscribeRequest" +
-      "\032\037.api.v1.OrdersSubscribeResponse0\001\022]\n\022P" +
-      "ositionsSubscribe\022!.api.v1.PositionsSubs" +
-      "cribeRequest\032\".api.v1.PositionsSubscribe" +
-      "Response0\001\022T\n\017TradesSubscribe\022\036.api.v1.T" +
-      "radesSubscribeRequest\032\037.api.v1.TradesSub" +
-      "scribeResponse0\001\022u\n\032TransferResponsesSub" +
-      "scribe\022).api.v1.TransferResponsesSubscri" +
-      "beRequest\032*.api.v1.TransferResponsesSubs" +
-      "cribeResponse0\001\022s\n\032GetNodeSignaturesAggr" +
-      "egate\022).api.v1.GetNodeSignaturesAggregat" +
-      "eRequest\032*.api.v1.GetNodeSignaturesAggre" +
-      "gateResponse\022@\n\tAssetByID\022\030.api.v1.Asset" +
-      "ByIDRequest\032\031.api.v1.AssetByIDResponse\0227" +
-      "\n\006Assets\022\025.api.v1.AssetsRequest\032\026.api.v1" +
-      ".AssetsResponse\022F\n\013EstimateFee\022\032.api.v1." +
-      "EstimateFeeRequest\032\033.api.v1.EstimateFeeR" +
-      "esponse\022O\n\016EstimateMargin\022\035.api.v1.Estim" +
-      "ateMarginRequest\032\036.api.v1.EstimateMargin" +
-      "Response\022j\n\027ERC20WithdrawalApproval\022&.ap" +
-      "i.v1.ERC20WithdrawalApprovalRequest\032\'.ap" +
-      "i.v1.ERC20WithdrawalApprovalResponse\022C\n\n" +
-      "Withdrawal\022\031.api.v1.WithdrawalRequest\032\032." +
-      "api.v1.WithdrawalResponse\022F\n\013Withdrawals" +
-      "\022\032.api.v1.WithdrawalsRequest\032\033.api.v1.Wi" +
-      "thdrawalsResponse\022:\n\007Deposit\022\026.api.v1.De" +
-      "positRequest\032\027.api.v1.DepositResponse\022=\n" +
-      "\010Deposits\022\027.api.v1.DepositsRequest\032\030.api" +
-      ".v1.DepositsResponse\022X\n\021NetworkParameter" +
-      "s\022 .api.v1.NetworkParametersRequest\032!.ap" +
-      "i.v1.NetworkParametersResponse\022^\n\023Liquid" +
-      "ityProvisions\022\".api.v1.LiquidityProvisio" +
-      "nsRequest\032#.api.v1.LiquidityProvisionsRe" +
-      "sponse\022C\n\nOracleSpec\022\031.api.v1.OracleSpec" +
-      "Request\032\032.api.v1.OracleSpecResponse\022F\n\013O" +
-      "racleSpecs\022\032.api.v1.OracleSpecsRequest\032\033" +
-      ".api.v1.OracleSpecsResponse\022U\n\020OracleDat" +
-      "aBySpec\022\037.api.v1.OracleDataBySpecRequest" +
-      "\032 .api.v1.OracleDataBySpecResponseB?\n\030io" +
-      ".vegaprotocol.vega.apiZ#code.vegaprotoco" +
-      "l.io/vega/proto/apib\006proto3"
+      "on\"=\n\026TradesByMarketResponse\022#\n\006trades\030\001" +
+      " \003(\0132\013.vega.TradeR\006trades\"Y\n\027PositionsBy" +
+      "PartyRequest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007" +
+      "partyId\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\"H\n\030" +
+      "PositionsByPartyResponse\022,\n\tpositions\030\001 " +
+      "\003(\0132\016.vega.PositionR\tpositions\"\024\n\022GetVeg" +
+      "aTimeRequest\"3\n\023GetVegaTimeResponse\022\034\n\tt" +
+      "imestamp\030\001 \001(\003R\ttimestamp\"V\n\nPagination\022" +
+      "\022\n\004skip\030\001 \001(\004R\004skip\022\024\n\005limit\030\002 \001(\004R\005limi" +
+      "t\022\036\n\ndescending\030\003 \001(\010R\ndescending\">\n\027Ord" +
+      "ersSubscribeResponse\022#\n\006orders\030\001 \003(\0132\013.v" +
+      "ega.OrderR\006orders\">\n\027TradesSubscribeResp" +
+      "onse\022#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006trade" +
+      "s\"#\n!TransferResponsesSubscribeRequest\"X" +
+      "\n\"TransferResponsesSubscribeResponse\0222\n\010" +
+      "response\030\001 \001(\0132\026.vega.TransferResponseR\010" +
+      "response\"\213\001\n\024PartyAccountsRequest\022\031\n\010par" +
+      "ty_id\030\001 \001(\tR\007partyId\022\033\n\tmarket_id\030\002 \001(\tR" +
+      "\010marketId\022%\n\004type\030\003 \001(\0162\021.vega.AccountTy" +
+      "peR\004type\022\024\n\005asset\030\004 \001(\tR\005asset\"B\n\025PartyA" +
+      "ccountsResponse\022)\n\010accounts\030\001 \003(\0132\r.vega" +
+      ".AccountR\010accounts\"J\n\025MarketAccountsRequ" +
+      "est\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\024\n\005asse" +
+      "t\030\002 \001(\tR\005asset\"C\n\026MarketAccountsResponse" +
+      "\022)\n\010accounts\030\001 \003(\0132\r.vega.AccountR\010accou" +
+      "nts\"8\n FeeInfrastructureAccountsRequest\022" +
+      "\024\n\005asset\030\001 \001(\tR\005asset\"N\n!FeeInfrastructu" +
+      "reAccountsResponse\022)\n\010accounts\030\001 \003(\0132\r.v" +
+      "ega.AccountR\010accounts\"h\n PrepareProposal" +
+      "SubmissionRequest\022D\n\nsubmission\030\001 \001(\0132$." +
+      "vega.commands.v1.ProposalSubmissionR\nsub" +
+      "mission\"}\n!PrepareProposalSubmissionResp" +
+      "onse\022\022\n\004blob\030\001 \001(\014R\004blob\022D\n\nsubmission\030\002" +
+      " \001(\0132$.vega.commands.v1.ProposalSubmissi" +
+      "onR\nsubmission\"h\n\034PrepareVoteSubmissionR" +
+      "equest\022H\n\nsubmission\030\001 \001(\0132 .vega.comman" +
+      "ds.v1.VoteSubmissionB\006\342\337\037\002 \001R\nsubmission" +
+      "\"u\n\035PrepareVoteSubmissionResponse\022\022\n\004blo" +
+      "b\030\001 \001(\014R\004blob\022@\n\nsubmission\030\002 \001(\0132 .vega" +
+      ".commands.v1.VoteSubmissionR\nsubmission\"" +
+      "z\n PrepareLiquidityProvisionRequest\022V\n\ns" +
+      "ubmission\030\001 \001(\0132..vega.commands.v1.Liqui" +
+      "dityProvisionSubmissionB\006\342\337\037\002 \001R\nsubmiss" +
+      "ion\"7\n!PrepareLiquidityProvisionResponse" +
+      "\022\022\n\004blob\030\001 \001(\014R\004blob\"O\n\020OrderByIDRequest" +
+      "\022!\n\010order_id\030\001 \001(\tB\006\342\337\037\002 \001R\007orderId\022\030\n\007v" +
+      "ersion\030\002 \001(\004R\007version\"6\n\021OrderByIDRespon" +
+      "se\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"q\n" +
+      "\030OrderVersionsByIDRequest\022!\n\010order_id\030\001 " +
+      "\001(\tB\006\342\337\037\002 \001R\007orderId\0222\n\npagination\030\002 \001(\013" +
+      "2\022.api.v1.PaginationR\npagination\"@\n\031Orde" +
+      "rVersionsByIDResponse\022#\n\006orders\030\001 \003(\0132\013." +
+      "vega.OrderR\006orders\"7\n\022EstimateFeeRequest" +
+      "\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order\"2\n\023E" +
+      "stimateFeeResponse\022\033\n\003fee\030\002 \001(\0132\t.vega.F" +
+      "eeR\003fee\":\n\025EstimateMarginRequest\022!\n\005orde" +
+      "r\030\001 \001(\0132\013.vega.OrderR\005order\"Q\n\026EstimateM" +
+      "arginResponse\0227\n\rmargin_levels\030\002 \001(\0132\022.v" +
+      "ega.MarginLevelsR\014marginLevels\"\241\001\n\026Obser" +
+      "veEventBusRequest\0220\n\004type\030\001 \003(\0162\034.vega.e" +
+      "vents.v1.BusEventTypeR\004type\022\033\n\tmarket_id" +
+      "\030\002 \001(\tR\010marketId\022\031\n\010party_id\030\003 \001(\tR\007part" +
+      "yId\022\035\n\nbatch_size\030\004 \001(\003R\tbatchSize\"K\n\027Ob" +
+      "serveEventBusResponse\0220\n\006events\030\001 \003(\0132\030." +
+      "vega.events.v1.BusEventR\006events\"\023\n\021Stati" +
+      "sticsRequest\"F\n\022StatisticsResponse\0220\n\nst" +
+      "atistics\030\001 \001(\0132\020.vega.StatisticsR\nstatis" +
+      "tics\"7\n\022WithdrawalsRequest\022!\n\010party_id\030\001" +
+      " \001(\tB\006\342\337\037\002X\001R\007partyId\"I\n\023WithdrawalsResp" +
+      "onse\0222\n\013withdrawals\030\001 \003(\0132\020.vega.Withdra" +
+      "walR\013withdrawals\"+\n\021WithdrawalRequest\022\026\n" +
+      "\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"F\n\022WithdrawalRespo" +
+      "nse\0220\n\nwithdrawal\030\001 \001(\0132\020.vega.Withdrawa" +
+      "lR\nwithdrawal\"M\n\036ERC20WithdrawalApproval" +
+      "Request\022+\n\rwithdrawal_id\030\001 \001(\tB\006\342\337\037\002X\001R\014" +
+      "withdrawalId\"\252\001\n\037ERC20WithdrawalApproval" +
+      "Response\022!\n\014asset_source\030\001 \001(\tR\013assetSou" +
+      "rce\022\026\n\006amount\030\002 \001(\tR\006amount\022\026\n\006expiry\030\003 " +
+      "\001(\003R\006expiry\022\024\n\005nonce\030\004 \001(\tR\005nonce\022\036\n\nsig" +
+      "natures\030\005 \001(\tR\nsignatures\"4\n\017DepositsReq" +
+      "uest\022!\n\010party_id\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\"" +
+      "=\n\020DepositsResponse\022)\n\010deposits\030\001 \003(\0132\r." +
+      "vega.DepositR\010deposits\"(\n\016DepositRequest" +
+      "\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\":\n\017DepositRespo" +
+      "nse\022\'\n\007deposit\030\001 \001(\0132\r.vega.DepositR\007dep" +
+      "osit\"\032\n\030NetworkParametersRequest\"b\n\031Netw" +
+      "orkParametersResponse\022E\n\022network_paramet" +
+      "ers\030\001 \003(\0132\026.vega.NetworkParameterR\021netwo" +
+      "rkParameters\"J\n\032LiquidityProvisionsReque" +
+      "st\022\026\n\006market\030\001 \001(\tR\006market\022\024\n\005party\030\002 \001(" +
+      "\tR\005party\"j\n\033LiquidityProvisionsResponse\022" +
+      "K\n\024liquidity_provisions\030\001 \003(\0132\030.vega.Liq" +
+      "uidityProvisionR\023liquidityProvisions\"+\n\021" +
+      "OracleSpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002i" +
+      "d\"M\n\022OracleSpecResponse\0227\n\013oracle_spec\030\001" +
+      " \001(\0132\026.oracles.v1.OracleSpecR\noracleSpec" +
+      "\"\024\n\022OracleSpecsRequest\"P\n\023OracleSpecsRes" +
+      "ponse\0229\n\014oracle_specs\030\001 \003(\0132\026.oracles.v1" +
+      ".OracleSpecR\013oracleSpecs\"1\n\027OracleDataBy" +
+      "SpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030O" +
+      "racleDataBySpecResponse\0227\n\013oracle_data\030\001" +
+      " \003(\0132\026.oracles.v1.OracleDataR\noracleData" +
+      "2\334\007\n\016TradingService\022[\n\022PrepareSubmitOrde" +
+      "r\022!.api.v1.PrepareSubmitOrderRequest\032\".a" +
+      "pi.v1.PrepareSubmitOrderResponse\022[\n\022Prep" +
+      "areCancelOrder\022!.api.v1.PrepareCancelOrd" +
+      "erRequest\032\".api.v1.PrepareCancelOrderRes" +
+      "ponse\022X\n\021PrepareAmendOrder\022 .api.v1.Prep" +
+      "areAmendOrderRequest\032!.api.v1.PrepareAme" +
+      "ndOrderResponse\022R\n\017PrepareWithdraw\022\036.api" +
+      ".v1.PrepareWithdrawRequest\032\037.api.v1.Prep" +
+      "areWithdrawResponse\022X\n\021SubmitTransaction" +
+      "\022 .api.v1.SubmitTransactionRequest\032!.api" +
+      ".v1.SubmitTransactionResponse\022^\n\023SubmitT" +
+      "ransactionV2\022\".api.v1.SubmitTransactionV" +
+      "2Request\032#.api.v1.SubmitTransactionV2Res" +
+      "ponse\022p\n\031PrepareProposalSubmission\022(.api" +
+      ".v1.PrepareProposalSubmissionRequest\032).a" +
+      "pi.v1.PrepareProposalSubmissionResponse\022" +
+      "d\n\025PrepareVoteSubmission\022$.api.v1.Prepar" +
+      "eVoteSubmissionRequest\032%.api.v1.PrepareV" +
+      "oteSubmissionResponse\022^\n\023PropagateChainE" +
+      "vent\022\".api.v1.PropagateChainEventRequest" +
+      "\032#.api.v1.PropagateChainEventResponse\022p\n" +
+      "\031PrepareLiquidityProvision\022(.api.v1.Prep" +
+      "areLiquidityProvisionRequest\032).api.v1.Pr" +
+      "epareLiquidityProvisionResponse2\333*\n\022Trad" +
+      "ingDataService\022O\n\016MarketAccounts\022\035.api.v" +
+      "1.MarketAccountsRequest\032\036.api.v1.MarketA" +
+      "ccountsResponse\022L\n\rPartyAccounts\022\034.api.v" +
+      "1.PartyAccountsRequest\032\035.api.v1.PartyAcc" +
+      "ountsResponse\022p\n\031FeeInfrastructureAccoun" +
+      "ts\022(.api.v1.FeeInfrastructureAccountsReq" +
+      "uest\032).api.v1.FeeInfrastructureAccountsR" +
+      "esponse\022:\n\007Candles\022\026.api.v1.CandlesReque" +
+      "st\032\027.api.v1.CandlesResponse\022O\n\016MarketDat" +
+      "aByID\022\035.api.v1.MarketDataByIDRequest\032\036.a" +
+      "pi.v1.MarketDataByIDResponse\022F\n\013MarketsD" +
+      "ata\022\032.api.v1.MarketsDataRequest\032\033.api.v1" +
+      ".MarketsDataResponse\022C\n\nMarketByID\022\031.api" +
+      ".v1.MarketByIDRequest\032\032.api.v1.MarketByI" +
+      "DResponse\022F\n\013MarketDepth\022\032.api.v1.Market" +
+      "DepthRequest\032\033.api.v1.MarketDepthRespons" +
+      "e\022:\n\007Markets\022\026.api.v1.MarketsRequest\032\027.a" +
+      "pi.v1.MarketsResponse\022[\n\022OrderByMarketAn" +
+      "dID\022!.api.v1.OrderByMarketAndIDRequest\032\"" +
+      ".api.v1.OrderByMarketAndIDResponse\022U\n\020Or" +
+      "derByReference\022\037.api.v1.OrderByReference" +
+      "Request\032 .api.v1.OrderByReferenceRespons" +
+      "e\022O\n\016OrdersByMarket\022\035.api.v1.OrdersByMar" +
+      "ketRequest\032\036.api.v1.OrdersByMarketRespon" +
+      "se\022L\n\rOrdersByParty\022\034.api.v1.OrdersByPar" +
+      "tyRequest\032\035.api.v1.OrdersByPartyResponse" +
+      "\022@\n\tOrderByID\022\030.api.v1.OrderByIDRequest\032" +
+      "\031.api.v1.OrderByIDResponse\022X\n\021OrderVersi" +
+      "onsByID\022 .api.v1.OrderVersionsByIDReques" +
+      "t\032!.api.v1.OrderVersionsByIDResponse\022I\n\014" +
+      "MarginLevels\022\033.api.v1.MarginLevelsReques" +
+      "t\032\034.api.v1.MarginLevelsResponse\022:\n\007Parti" +
+      "es\022\026.api.v1.PartiesRequest\032\027.api.v1.Part" +
+      "iesResponse\022@\n\tPartyByID\022\030.api.v1.PartyB" +
+      "yIDRequest\032\031.api.v1.PartyByIDResponse\022U\n" +
+      "\020PositionsByParty\022\037.api.v1.PositionsByPa" +
+      "rtyRequest\032 .api.v1.PositionsByPartyResp" +
+      "onse\022@\n\tLastTrade\022\030.api.v1.LastTradeRequ" +
+      "est\032\031.api.v1.LastTradeResponse\022O\n\016Trades" +
+      "ByMarket\022\035.api.v1.TradesByMarketRequest\032" +
+      "\036.api.v1.TradesByMarketResponse\022L\n\rTrade" +
+      "sByOrder\022\034.api.v1.TradesByOrderRequest\032\035" +
+      ".api.v1.TradesByOrderResponse\022L\n\rTradesB" +
+      "yParty\022\034.api.v1.TradesByPartyRequest\032\035.a" +
+      "pi.v1.TradesByPartyResponse\022I\n\014GetPropos" +
+      "als\022\033.api.v1.GetProposalsRequest\032\034.api.v" +
+      "1.GetProposalsResponse\022^\n\023GetProposalsBy" +
+      "Party\022\".api.v1.GetProposalsByPartyReques" +
+      "t\032#.api.v1.GetProposalsByPartyResponse\022R" +
+      "\n\017GetVotesByParty\022\036.api.v1.GetVotesByPar" +
+      "tyRequest\032\037.api.v1.GetVotesByPartyRespon" +
+      "se\022d\n\025GetNewMarketProposals\022$.api.v1.Get" +
+      "NewMarketProposalsRequest\032%.api.v1.GetNe" +
+      "wMarketProposalsResponse\022m\n\030GetUpdateMar" +
+      "ketProposals\022\'.api.v1.GetUpdateMarketPro" +
+      "posalsRequest\032(.api.v1.GetUpdateMarketPr" +
+      "oposalsResponse\022|\n\035GetNetworkParametersP" +
+      "roposals\022,.api.v1.GetNetworkParametersPr" +
+      "oposalsRequest\032-.api.v1.GetNetworkParame" +
+      "tersProposalsResponse\022a\n\024GetNewAssetProp" +
+      "osals\022#.api.v1.GetNewAssetProposalsReque" +
+      "st\032$.api.v1.GetNewAssetProposalsResponse" +
+      "\022R\n\017GetProposalByID\022\036.api.v1.GetProposal" +
+      "ByIDRequest\032\037.api.v1.GetProposalByIDResp" +
+      "onse\022g\n\026GetProposalByReference\022%.api.v1." +
+      "GetProposalByReferenceRequest\032&.api.v1.G" +
+      "etProposalByReferenceResponse\022Z\n\021Observe" +
+      "Governance\022 .api.v1.ObserveGovernanceReq" +
+      "uest\032!.api.v1.ObserveGovernanceResponse0" +
+      "\001\022f\n\025ObservePartyProposals\022$.api.v1.Obse" +
+      "rvePartyProposalsRequest\032%.api.v1.Observ" +
+      "ePartyProposalsResponse0\001\022Z\n\021ObservePart" +
+      "yVotes\022 .api.v1.ObservePartyVotesRequest" +
+      "\032!.api.v1.ObservePartyVotesResponse0\001\022c\n" +
+      "\024ObserveProposalVotes\022#.api.v1.ObservePr",
+      "oposalVotesRequest\032$.api.v1.ObservePropo" +
+      "salVotesResponse0\001\022V\n\017ObserveEventBus\022\036." +
+      "api.v1.ObserveEventBusRequest\032\037.api.v1.O" +
+      "bserveEventBusResponse(\0010\001\022C\n\nStatistics" +
+      "\022\031.api.v1.StatisticsRequest\032\032.api.v1.Sta" +
+      "tisticsResponse\022F\n\013GetVegaTime\022\032.api.v1." +
+      "GetVegaTimeRequest\032\033.api.v1.GetVegaTimeR" +
+      "esponse\022Z\n\021AccountsSubscribe\022 .api.v1.Ac" +
+      "countsSubscribeRequest\032!.api.v1.Accounts" +
+      "SubscribeResponse0\001\022W\n\020CandlesSubscribe\022" +
+      "\037.api.v1.CandlesSubscribeRequest\032 .api.v" +
+      "1.CandlesSubscribeResponse0\001\022f\n\025MarginLe" +
+      "velsSubscribe\022$.api.v1.MarginLevelsSubsc" +
+      "ribeRequest\032%.api.v1.MarginLevelsSubscri" +
+      "beResponse0\001\022c\n\024MarketDepthSubscribe\022#.a" +
+      "pi.v1.MarketDepthSubscribeRequest\032$.api." +
+      "v1.MarketDepthSubscribeResponse0\001\022x\n\033Mar" +
+      "ketDepthUpdatesSubscribe\022*.api.v1.Market" +
+      "DepthUpdatesSubscribeRequest\032+.api.v1.Ma" +
+      "rketDepthUpdatesSubscribeResponse0\001\022c\n\024M" +
+      "arketsDataSubscribe\022#.api.v1.MarketsData" +
+      "SubscribeRequest\032$.api.v1.MarketsDataSub" +
+      "scribeResponse0\001\022T\n\017OrdersSubscribe\022\036.ap" +
+      "i.v1.OrdersSubscribeRequest\032\037.api.v1.Ord" +
+      "ersSubscribeResponse0\001\022]\n\022PositionsSubsc" +
+      "ribe\022!.api.v1.PositionsSubscribeRequest\032" +
+      "\".api.v1.PositionsSubscribeResponse0\001\022T\n" +
+      "\017TradesSubscribe\022\036.api.v1.TradesSubscrib" +
+      "eRequest\032\037.api.v1.TradesSubscribeRespons" +
+      "e0\001\022u\n\032TransferResponsesSubscribe\022).api." +
+      "v1.TransferResponsesSubscribeRequest\032*.a" +
+      "pi.v1.TransferResponsesSubscribeResponse" +
+      "0\001\022s\n\032GetNodeSignaturesAggregate\022).api.v" +
+      "1.GetNodeSignaturesAggregateRequest\032*.ap" +
+      "i.v1.GetNodeSignaturesAggregateResponse\022" +
+      "@\n\tAssetByID\022\030.api.v1.AssetByIDRequest\032\031" +
+      ".api.v1.AssetByIDResponse\0227\n\006Assets\022\025.ap" +
+      "i.v1.AssetsRequest\032\026.api.v1.AssetsRespon" +
+      "se\022F\n\013EstimateFee\022\032.api.v1.EstimateFeeRe" +
+      "quest\032\033.api.v1.EstimateFeeResponse\022O\n\016Es" +
+      "timateMargin\022\035.api.v1.EstimateMarginRequ" +
+      "est\032\036.api.v1.EstimateMarginResponse\022j\n\027E" +
+      "RC20WithdrawalApproval\022&.api.v1.ERC20Wit" +
+      "hdrawalApprovalRequest\032\'.api.v1.ERC20Wit" +
+      "hdrawalApprovalResponse\022C\n\nWithdrawal\022\031." +
+      "api.v1.WithdrawalRequest\032\032.api.v1.Withdr" +
+      "awalResponse\022F\n\013Withdrawals\022\032.api.v1.Wit" +
+      "hdrawalsRequest\032\033.api.v1.WithdrawalsResp" +
+      "onse\022:\n\007Deposit\022\026.api.v1.DepositRequest\032" +
+      "\027.api.v1.DepositResponse\022=\n\010Deposits\022\027.a" +
+      "pi.v1.DepositsRequest\032\030.api.v1.DepositsR" +
+      "esponse\022X\n\021NetworkParameters\022 .api.v1.Ne" +
+      "tworkParametersRequest\032!.api.v1.NetworkP" +
+      "arametersResponse\022^\n\023LiquidityProvisions" +
+      "\022\".api.v1.LiquidityProvisionsRequest\032#.a" +
+      "pi.v1.LiquidityProvisionsResponse\022C\n\nOra" +
+      "cleSpec\022\031.api.v1.OracleSpecRequest\032\032.api" +
+      ".v1.OracleSpecResponse\022F\n\013OracleSpecs\022\032." +
+      "api.v1.OracleSpecsRequest\032\033.api.v1.Oracl" +
+      "eSpecsResponse\022U\n\020OracleDataBySpec\022\037.api" +
+      ".v1.OracleDataBySpecRequest\032 .api.v1.Ora" +
+      "cleDataBySpecResponseB?\n\030io.vegaprotocol" +
+      ".vega.apiZ#code.vegaprotocol.io/vega/pro" +
+      "to/apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -110459,9 +111991,10 @@ public final class Trading {
           io.vegaprotocol.vega.Governance.getDescriptor(),
           io.vegaprotocol.vega.Assets.getDescriptor(),
           io.vegaprotocol.vega.events.v1.Events.getDescriptor(),
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.getDescriptor(),
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.getDescriptor(),
+          io.vegaprotocol.vega.oracles.v1.Spec.getDescriptor(),
+          io.vegaprotocol.vega.oracles.v1.Data.getDescriptor(),
           io.vegaprotocol.vega.commands.v1.Commands.getDescriptor(),
+          io.vegaprotocol.vega.commands.v1.TransactionOuterClass.getDescriptor(),
           io.vegaprotocol.vega.commands.v1.ValidatorCommands.getDescriptor(),
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
         });
@@ -110489,866 +112022,878 @@ public final class Trading {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_SubmitTransactionResponse_descriptor,
         new java.lang.String[] { "Success", });
-    internal_static_api_v1_PrepareWithdrawRequest_descriptor =
+    internal_static_api_v1_SubmitTransactionV2Request_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_api_v1_SubmitTransactionV2Request_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_v1_SubmitTransactionV2Request_descriptor,
+        new java.lang.String[] { "Tx", "Type", });
+    internal_static_api_v1_SubmitTransactionV2Response_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_api_v1_SubmitTransactionV2Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_v1_SubmitTransactionV2Response_descriptor,
+        new java.lang.String[] { "Success", });
+    internal_static_api_v1_PrepareWithdrawRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_v1_PrepareWithdrawRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareWithdrawRequest_descriptor,
         new java.lang.String[] { "Withdraw", });
     internal_static_api_v1_PrepareWithdrawResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_v1_PrepareWithdrawResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareWithdrawResponse_descriptor,
         new java.lang.String[] { "Blob", });
     internal_static_api_v1_PrepareSubmitOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_v1_PrepareSubmitOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareSubmitOrderResponse_descriptor,
         new java.lang.String[] { "Blob", "SubmitId", });
     internal_static_api_v1_PrepareCancelOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_v1_PrepareCancelOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareCancelOrderResponse_descriptor,
         new java.lang.String[] { "Blob", });
     internal_static_api_v1_PrepareAmendOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_v1_PrepareAmendOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareAmendOrderResponse_descriptor,
         new java.lang.String[] { "Blob", });
     internal_static_api_v1_PrepareSubmitOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_v1_PrepareSubmitOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareSubmitOrderRequest_descriptor,
         new java.lang.String[] { "Submission", });
     internal_static_api_v1_PrepareCancelOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_v1_PrepareCancelOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareCancelOrderRequest_descriptor,
         new java.lang.String[] { "Cancellation", });
     internal_static_api_v1_PrepareAmendOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_v1_PrepareAmendOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareAmendOrderRequest_descriptor,
         new java.lang.String[] { "Amendment", });
     internal_static_api_v1_AssetsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_v1_AssetsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_AssetsRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_AssetsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_v1_AssetsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_AssetsResponse_descriptor,
         new java.lang.String[] { "Assets", });
     internal_static_api_v1_AssetByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_v1_AssetByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_AssetByIDRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_v1_AssetByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_v1_AssetByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_AssetByIDResponse_descriptor,
         new java.lang.String[] { "Asset", });
     internal_static_api_v1_GetNodeSignaturesAggregateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_v1_GetNodeSignaturesAggregateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNodeSignaturesAggregateRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_v1_GetNodeSignaturesAggregateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_v1_GetNodeSignaturesAggregateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNodeSignaturesAggregateResponse_descriptor,
         new java.lang.String[] { "Signatures", });
     internal_static_api_v1_OptionalProposalState_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_v1_OptionalProposalState_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OptionalProposalState_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_api_v1_GetProposalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_v1_GetProposalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalsRequest_descriptor,
         new java.lang.String[] { "SelectInState", });
     internal_static_api_v1_GetProposalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_v1_GetProposalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalsResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetProposalsByPartyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_v1_GetProposalsByPartyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalsByPartyRequest_descriptor,
         new java.lang.String[] { "PartyId", "SelectInState", });
     internal_static_api_v1_GetProposalsByPartyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_v1_GetProposalsByPartyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalsByPartyResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetVotesByPartyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_v1_GetVotesByPartyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetVotesByPartyRequest_descriptor,
         new java.lang.String[] { "PartyId", });
     internal_static_api_v1_GetVotesByPartyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_v1_GetVotesByPartyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetVotesByPartyResponse_descriptor,
         new java.lang.String[] { "Votes", });
     internal_static_api_v1_GetNewMarketProposalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_v1_GetNewMarketProposalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNewMarketProposalsRequest_descriptor,
         new java.lang.String[] { "SelectInState", });
     internal_static_api_v1_GetNewMarketProposalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_api_v1_GetNewMarketProposalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNewMarketProposalsResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetUpdateMarketProposalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_api_v1_GetUpdateMarketProposalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetUpdateMarketProposalsRequest_descriptor,
         new java.lang.String[] { "MarketId", "SelectInState", });
     internal_static_api_v1_GetUpdateMarketProposalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_api_v1_GetUpdateMarketProposalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetUpdateMarketProposalsResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetNetworkParametersProposalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_api_v1_GetNetworkParametersProposalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNetworkParametersProposalsRequest_descriptor,
         new java.lang.String[] { "SelectInState", });
     internal_static_api_v1_GetNetworkParametersProposalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_api_v1_GetNetworkParametersProposalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNetworkParametersProposalsResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetNewAssetProposalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_api_v1_GetNewAssetProposalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNewAssetProposalsRequest_descriptor,
         new java.lang.String[] { "SelectInState", });
     internal_static_api_v1_GetNewAssetProposalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_api_v1_GetNewAssetProposalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetNewAssetProposalsResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetProposalByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_api_v1_GetProposalByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalByIDRequest_descriptor,
         new java.lang.String[] { "ProposalId", });
     internal_static_api_v1_GetProposalByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_api_v1_GetProposalByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalByIDResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_GetProposalByReferenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_api_v1_GetProposalByReferenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalByReferenceRequest_descriptor,
         new java.lang.String[] { "Reference", });
     internal_static_api_v1_GetProposalByReferenceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_api_v1_GetProposalByReferenceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetProposalByReferenceResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_ObserveGovernanceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_api_v1_ObserveGovernanceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObserveGovernanceRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_ObserveGovernanceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_api_v1_ObserveGovernanceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObserveGovernanceResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_ObservePartyProposalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_api_v1_ObservePartyProposalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObservePartyProposalsRequest_descriptor,
         new java.lang.String[] { "PartyId", });
     internal_static_api_v1_ObservePartyProposalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_api_v1_ObservePartyProposalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObservePartyProposalsResponse_descriptor,
         new java.lang.String[] { "Data", });
     internal_static_api_v1_ObserveProposalVotesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_api_v1_ObserveProposalVotesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObserveProposalVotesRequest_descriptor,
         new java.lang.String[] { "ProposalId", });
     internal_static_api_v1_ObserveProposalVotesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_api_v1_ObserveProposalVotesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObserveProposalVotesResponse_descriptor,
         new java.lang.String[] { "Vote", });
     internal_static_api_v1_ObservePartyVotesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_api_v1_ObservePartyVotesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObservePartyVotesRequest_descriptor,
         new java.lang.String[] { "PartyId", });
     internal_static_api_v1_ObservePartyVotesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_api_v1_ObservePartyVotesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObservePartyVotesResponse_descriptor,
         new java.lang.String[] { "Vote", });
     internal_static_api_v1_MarginLevelsSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_api_v1_MarginLevelsSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarginLevelsSubscribeRequest_descriptor,
         new java.lang.String[] { "PartyId", "MarketId", });
     internal_static_api_v1_MarginLevelsSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_api_v1_MarginLevelsSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarginLevelsSubscribeResponse_descriptor,
         new java.lang.String[] { "MarginLevels", });
     internal_static_api_v1_MarginLevelsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_api_v1_MarginLevelsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarginLevelsRequest_descriptor,
         new java.lang.String[] { "PartyId", "MarketId", });
     internal_static_api_v1_MarginLevelsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_api_v1_MarginLevelsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarginLevelsResponse_descriptor,
         new java.lang.String[] { "MarginLevels", });
     internal_static_api_v1_MarketsDataSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_api_v1_MarketsDataSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketsDataSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", });
     internal_static_api_v1_MarketsDataSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_api_v1_MarketsDataSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketsDataSubscribeResponse_descriptor,
         new java.lang.String[] { "MarketData", });
     internal_static_api_v1_MarketDataByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_api_v1_MarketDataByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDataByIDRequest_descriptor,
         new java.lang.String[] { "MarketId", });
     internal_static_api_v1_MarketDataByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_api_v1_MarketDataByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDataByIDResponse_descriptor,
         new java.lang.String[] { "MarketData", });
     internal_static_api_v1_MarketsDataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_api_v1_MarketsDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketsDataRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_MarketsDataResponse_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_api_v1_MarketsDataResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketsDataResponse_descriptor,
         new java.lang.String[] { "MarketsData", });
     internal_static_api_v1_LastTradeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_api_v1_LastTradeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_LastTradeRequest_descriptor,
         new java.lang.String[] { "MarketId", });
     internal_static_api_v1_LastTradeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(56);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_api_v1_LastTradeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_LastTradeResponse_descriptor,
         new java.lang.String[] { "Trade", });
     internal_static_api_v1_MarketByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(57);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_api_v1_MarketByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketByIDRequest_descriptor,
         new java.lang.String[] { "MarketId", });
     internal_static_api_v1_MarketByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(58);
+      getDescriptor().getMessageTypes().get(60);
     internal_static_api_v1_MarketByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketByIDResponse_descriptor,
         new java.lang.String[] { "Market", });
     internal_static_api_v1_PartyByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(59);
+      getDescriptor().getMessageTypes().get(61);
     internal_static_api_v1_PartyByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PartyByIDRequest_descriptor,
         new java.lang.String[] { "PartyId", });
     internal_static_api_v1_PartyByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(60);
+      getDescriptor().getMessageTypes().get(62);
     internal_static_api_v1_PartyByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PartyByIDResponse_descriptor,
         new java.lang.String[] { "Party", });
     internal_static_api_v1_PartiesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(61);
+      getDescriptor().getMessageTypes().get(63);
     internal_static_api_v1_PartiesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PartiesRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_PartiesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(62);
+      getDescriptor().getMessageTypes().get(64);
     internal_static_api_v1_PartiesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PartiesResponse_descriptor,
         new java.lang.String[] { "Parties", });
     internal_static_api_v1_TradesByPartyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(63);
+      getDescriptor().getMessageTypes().get(65);
     internal_static_api_v1_TradesByPartyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesByPartyRequest_descriptor,
         new java.lang.String[] { "PartyId", "MarketId", "Pagination", });
     internal_static_api_v1_TradesByPartyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(64);
+      getDescriptor().getMessageTypes().get(66);
     internal_static_api_v1_TradesByPartyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesByPartyResponse_descriptor,
         new java.lang.String[] { "Trades", });
     internal_static_api_v1_TradesByOrderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(65);
+      getDescriptor().getMessageTypes().get(67);
     internal_static_api_v1_TradesByOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesByOrderRequest_descriptor,
         new java.lang.String[] { "OrderId", });
     internal_static_api_v1_TradesByOrderResponse_descriptor =
-      getDescriptor().getMessageTypes().get(66);
+      getDescriptor().getMessageTypes().get(68);
     internal_static_api_v1_TradesByOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesByOrderResponse_descriptor,
         new java.lang.String[] { "Trades", });
     internal_static_api_v1_AccountsSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(67);
+      getDescriptor().getMessageTypes().get(69);
     internal_static_api_v1_AccountsSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_AccountsSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", "PartyId", "Asset", "Type", });
     internal_static_api_v1_AccountsSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(68);
+      getDescriptor().getMessageTypes().get(70);
     internal_static_api_v1_AccountsSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_AccountsSubscribeResponse_descriptor,
         new java.lang.String[] { "Account", });
     internal_static_api_v1_OrdersSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(69);
+      getDescriptor().getMessageTypes().get(71);
     internal_static_api_v1_OrdersSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrdersSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", "PartyId", });
     internal_static_api_v1_TradesSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(70);
+      getDescriptor().getMessageTypes().get(72);
     internal_static_api_v1_TradesSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", "PartyId", });
     internal_static_api_v1_CandlesSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(71);
+      getDescriptor().getMessageTypes().get(73);
     internal_static_api_v1_CandlesSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_CandlesSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", "Interval", });
     internal_static_api_v1_CandlesSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(72);
+      getDescriptor().getMessageTypes().get(74);
     internal_static_api_v1_CandlesSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_CandlesSubscribeResponse_descriptor,
         new java.lang.String[] { "Candle", });
     internal_static_api_v1_MarketDepthSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(73);
+      getDescriptor().getMessageTypes().get(75);
     internal_static_api_v1_MarketDepthSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDepthSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", });
     internal_static_api_v1_MarketDepthSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(74);
+      getDescriptor().getMessageTypes().get(76);
     internal_static_api_v1_MarketDepthSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDepthSubscribeResponse_descriptor,
         new java.lang.String[] { "MarketDepth", });
     internal_static_api_v1_MarketDepthUpdatesSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(75);
+      getDescriptor().getMessageTypes().get(77);
     internal_static_api_v1_MarketDepthUpdatesSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDepthUpdatesSubscribeRequest_descriptor,
         new java.lang.String[] { "MarketId", });
     internal_static_api_v1_MarketDepthUpdatesSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(76);
+      getDescriptor().getMessageTypes().get(78);
     internal_static_api_v1_MarketDepthUpdatesSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDepthUpdatesSubscribeResponse_descriptor,
         new java.lang.String[] { "Update", });
     internal_static_api_v1_PositionsSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(77);
+      getDescriptor().getMessageTypes().get(79);
     internal_static_api_v1_PositionsSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PositionsSubscribeRequest_descriptor,
         new java.lang.String[] { "PartyId", "MarketId", });
     internal_static_api_v1_PositionsSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(78);
+      getDescriptor().getMessageTypes().get(80);
     internal_static_api_v1_PositionsSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PositionsSubscribeResponse_descriptor,
         new java.lang.String[] { "Position", });
     internal_static_api_v1_OrdersByMarketRequest_descriptor =
-      getDescriptor().getMessageTypes().get(79);
+      getDescriptor().getMessageTypes().get(81);
     internal_static_api_v1_OrdersByMarketRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrdersByMarketRequest_descriptor,
         new java.lang.String[] { "MarketId", "Pagination", });
     internal_static_api_v1_OrdersByMarketResponse_descriptor =
-      getDescriptor().getMessageTypes().get(80);
+      getDescriptor().getMessageTypes().get(82);
     internal_static_api_v1_OrdersByMarketResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrdersByMarketResponse_descriptor,
         new java.lang.String[] { "Orders", });
     internal_static_api_v1_OrdersByPartyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(81);
+      getDescriptor().getMessageTypes().get(83);
     internal_static_api_v1_OrdersByPartyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrdersByPartyRequest_descriptor,
         new java.lang.String[] { "PartyId", "Pagination", });
     internal_static_api_v1_OrdersByPartyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(82);
+      getDescriptor().getMessageTypes().get(84);
     internal_static_api_v1_OrdersByPartyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrdersByPartyResponse_descriptor,
         new java.lang.String[] { "Orders", });
     internal_static_api_v1_OrderByMarketAndIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(83);
+      getDescriptor().getMessageTypes().get(85);
     internal_static_api_v1_OrderByMarketAndIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderByMarketAndIDRequest_descriptor,
         new java.lang.String[] { "MarketId", "OrderId", });
     internal_static_api_v1_OrderByMarketAndIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(84);
+      getDescriptor().getMessageTypes().get(86);
     internal_static_api_v1_OrderByMarketAndIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderByMarketAndIDResponse_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_v1_OrderByReferenceRequest_descriptor =
-      getDescriptor().getMessageTypes().get(85);
+      getDescriptor().getMessageTypes().get(87);
     internal_static_api_v1_OrderByReferenceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderByReferenceRequest_descriptor,
         new java.lang.String[] { "Reference", });
     internal_static_api_v1_OrderByReferenceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(86);
+      getDescriptor().getMessageTypes().get(88);
     internal_static_api_v1_OrderByReferenceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderByReferenceResponse_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_v1_MarketsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(87);
+      getDescriptor().getMessageTypes().get(89);
     internal_static_api_v1_MarketsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketsRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_MarketsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(88);
+      getDescriptor().getMessageTypes().get(90);
     internal_static_api_v1_MarketsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketsResponse_descriptor,
         new java.lang.String[] { "Markets", });
     internal_static_api_v1_CandlesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(89);
+      getDescriptor().getMessageTypes().get(91);
     internal_static_api_v1_CandlesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_CandlesRequest_descriptor,
         new java.lang.String[] { "MarketId", "SinceTimestamp", "Interval", });
     internal_static_api_v1_CandlesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(90);
+      getDescriptor().getMessageTypes().get(92);
     internal_static_api_v1_CandlesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_CandlesResponse_descriptor,
         new java.lang.String[] { "Candles", });
     internal_static_api_v1_MarketDepthRequest_descriptor =
-      getDescriptor().getMessageTypes().get(91);
+      getDescriptor().getMessageTypes().get(93);
     internal_static_api_v1_MarketDepthRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDepthRequest_descriptor,
         new java.lang.String[] { "MarketId", "MaxDepth", });
     internal_static_api_v1_MarketDepthResponse_descriptor =
-      getDescriptor().getMessageTypes().get(92);
+      getDescriptor().getMessageTypes().get(94);
     internal_static_api_v1_MarketDepthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketDepthResponse_descriptor,
         new java.lang.String[] { "MarketId", "Buy", "Sell", "LastTrade", "SequenceNumber", });
     internal_static_api_v1_TradesByMarketRequest_descriptor =
-      getDescriptor().getMessageTypes().get(93);
+      getDescriptor().getMessageTypes().get(95);
     internal_static_api_v1_TradesByMarketRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesByMarketRequest_descriptor,
         new java.lang.String[] { "MarketId", "Pagination", });
     internal_static_api_v1_TradesByMarketResponse_descriptor =
-      getDescriptor().getMessageTypes().get(94);
+      getDescriptor().getMessageTypes().get(96);
     internal_static_api_v1_TradesByMarketResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesByMarketResponse_descriptor,
         new java.lang.String[] { "Trades", });
     internal_static_api_v1_PositionsByPartyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(95);
+      getDescriptor().getMessageTypes().get(97);
     internal_static_api_v1_PositionsByPartyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PositionsByPartyRequest_descriptor,
         new java.lang.String[] { "PartyId", "MarketId", });
     internal_static_api_v1_PositionsByPartyResponse_descriptor =
-      getDescriptor().getMessageTypes().get(96);
+      getDescriptor().getMessageTypes().get(98);
     internal_static_api_v1_PositionsByPartyResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PositionsByPartyResponse_descriptor,
         new java.lang.String[] { "Positions", });
     internal_static_api_v1_GetVegaTimeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(97);
+      getDescriptor().getMessageTypes().get(99);
     internal_static_api_v1_GetVegaTimeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetVegaTimeRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_GetVegaTimeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(98);
+      getDescriptor().getMessageTypes().get(100);
     internal_static_api_v1_GetVegaTimeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_GetVegaTimeResponse_descriptor,
         new java.lang.String[] { "Timestamp", });
     internal_static_api_v1_Pagination_descriptor =
-      getDescriptor().getMessageTypes().get(99);
+      getDescriptor().getMessageTypes().get(101);
     internal_static_api_v1_Pagination_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_Pagination_descriptor,
         new java.lang.String[] { "Skip", "Limit", "Descending", });
     internal_static_api_v1_OrdersSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(100);
+      getDescriptor().getMessageTypes().get(102);
     internal_static_api_v1_OrdersSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrdersSubscribeResponse_descriptor,
         new java.lang.String[] { "Orders", });
     internal_static_api_v1_TradesSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(101);
+      getDescriptor().getMessageTypes().get(103);
     internal_static_api_v1_TradesSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TradesSubscribeResponse_descriptor,
         new java.lang.String[] { "Trades", });
     internal_static_api_v1_TransferResponsesSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(102);
+      getDescriptor().getMessageTypes().get(104);
     internal_static_api_v1_TransferResponsesSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TransferResponsesSubscribeRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_TransferResponsesSubscribeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(103);
+      getDescriptor().getMessageTypes().get(105);
     internal_static_api_v1_TransferResponsesSubscribeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_TransferResponsesSubscribeResponse_descriptor,
         new java.lang.String[] { "Response", });
     internal_static_api_v1_PartyAccountsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(104);
+      getDescriptor().getMessageTypes().get(106);
     internal_static_api_v1_PartyAccountsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PartyAccountsRequest_descriptor,
         new java.lang.String[] { "PartyId", "MarketId", "Type", "Asset", });
     internal_static_api_v1_PartyAccountsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(105);
+      getDescriptor().getMessageTypes().get(107);
     internal_static_api_v1_PartyAccountsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PartyAccountsResponse_descriptor,
         new java.lang.String[] { "Accounts", });
     internal_static_api_v1_MarketAccountsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(106);
+      getDescriptor().getMessageTypes().get(108);
     internal_static_api_v1_MarketAccountsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketAccountsRequest_descriptor,
         new java.lang.String[] { "MarketId", "Asset", });
     internal_static_api_v1_MarketAccountsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(107);
+      getDescriptor().getMessageTypes().get(109);
     internal_static_api_v1_MarketAccountsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_MarketAccountsResponse_descriptor,
         new java.lang.String[] { "Accounts", });
     internal_static_api_v1_FeeInfrastructureAccountsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(108);
+      getDescriptor().getMessageTypes().get(110);
     internal_static_api_v1_FeeInfrastructureAccountsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_FeeInfrastructureAccountsRequest_descriptor,
         new java.lang.String[] { "Asset", });
     internal_static_api_v1_FeeInfrastructureAccountsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(109);
+      getDescriptor().getMessageTypes().get(111);
     internal_static_api_v1_FeeInfrastructureAccountsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_FeeInfrastructureAccountsResponse_descriptor,
         new java.lang.String[] { "Accounts", });
     internal_static_api_v1_PrepareProposalSubmissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(110);
+      getDescriptor().getMessageTypes().get(112);
     internal_static_api_v1_PrepareProposalSubmissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareProposalSubmissionRequest_descriptor,
         new java.lang.String[] { "Submission", });
     internal_static_api_v1_PrepareProposalSubmissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(111);
+      getDescriptor().getMessageTypes().get(113);
     internal_static_api_v1_PrepareProposalSubmissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareProposalSubmissionResponse_descriptor,
         new java.lang.String[] { "Blob", "Submission", });
     internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(112);
+      getDescriptor().getMessageTypes().get(114);
     internal_static_api_v1_PrepareVoteSubmissionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareVoteSubmissionRequest_descriptor,
         new java.lang.String[] { "Submission", });
     internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(113);
+      getDescriptor().getMessageTypes().get(115);
     internal_static_api_v1_PrepareVoteSubmissionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareVoteSubmissionResponse_descriptor,
         new java.lang.String[] { "Blob", "Submission", });
     internal_static_api_v1_PrepareLiquidityProvisionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(114);
+      getDescriptor().getMessageTypes().get(116);
     internal_static_api_v1_PrepareLiquidityProvisionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareLiquidityProvisionRequest_descriptor,
         new java.lang.String[] { "Submission", });
     internal_static_api_v1_PrepareLiquidityProvisionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(115);
+      getDescriptor().getMessageTypes().get(117);
     internal_static_api_v1_PrepareLiquidityProvisionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_PrepareLiquidityProvisionResponse_descriptor,
         new java.lang.String[] { "Blob", });
     internal_static_api_v1_OrderByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(116);
+      getDescriptor().getMessageTypes().get(118);
     internal_static_api_v1_OrderByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderByIDRequest_descriptor,
         new java.lang.String[] { "OrderId", "Version", });
     internal_static_api_v1_OrderByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(117);
+      getDescriptor().getMessageTypes().get(119);
     internal_static_api_v1_OrderByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderByIDResponse_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_v1_OrderVersionsByIDRequest_descriptor =
-      getDescriptor().getMessageTypes().get(118);
+      getDescriptor().getMessageTypes().get(120);
     internal_static_api_v1_OrderVersionsByIDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderVersionsByIDRequest_descriptor,
         new java.lang.String[] { "OrderId", "Pagination", });
     internal_static_api_v1_OrderVersionsByIDResponse_descriptor =
-      getDescriptor().getMessageTypes().get(119);
+      getDescriptor().getMessageTypes().get(121);
     internal_static_api_v1_OrderVersionsByIDResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OrderVersionsByIDResponse_descriptor,
         new java.lang.String[] { "Orders", });
     internal_static_api_v1_EstimateFeeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(120);
+      getDescriptor().getMessageTypes().get(122);
     internal_static_api_v1_EstimateFeeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_EstimateFeeRequest_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_v1_EstimateFeeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(121);
+      getDescriptor().getMessageTypes().get(123);
     internal_static_api_v1_EstimateFeeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_EstimateFeeResponse_descriptor,
         new java.lang.String[] { "Fee", });
     internal_static_api_v1_EstimateMarginRequest_descriptor =
-      getDescriptor().getMessageTypes().get(122);
+      getDescriptor().getMessageTypes().get(124);
     internal_static_api_v1_EstimateMarginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_EstimateMarginRequest_descriptor,
         new java.lang.String[] { "Order", });
     internal_static_api_v1_EstimateMarginResponse_descriptor =
-      getDescriptor().getMessageTypes().get(123);
+      getDescriptor().getMessageTypes().get(125);
     internal_static_api_v1_EstimateMarginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_EstimateMarginResponse_descriptor,
         new java.lang.String[] { "MarginLevels", });
     internal_static_api_v1_ObserveEventBusRequest_descriptor =
-      getDescriptor().getMessageTypes().get(124);
+      getDescriptor().getMessageTypes().get(126);
     internal_static_api_v1_ObserveEventBusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObserveEventBusRequest_descriptor,
         new java.lang.String[] { "Type", "MarketId", "PartyId", "BatchSize", });
     internal_static_api_v1_ObserveEventBusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(125);
+      getDescriptor().getMessageTypes().get(127);
     internal_static_api_v1_ObserveEventBusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ObserveEventBusResponse_descriptor,
         new java.lang.String[] { "Events", });
     internal_static_api_v1_StatisticsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(126);
+      getDescriptor().getMessageTypes().get(128);
     internal_static_api_v1_StatisticsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_StatisticsRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_StatisticsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(127);
+      getDescriptor().getMessageTypes().get(129);
     internal_static_api_v1_StatisticsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_StatisticsResponse_descriptor,
         new java.lang.String[] { "Statistics", });
     internal_static_api_v1_WithdrawalsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(128);
+      getDescriptor().getMessageTypes().get(130);
     internal_static_api_v1_WithdrawalsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_WithdrawalsRequest_descriptor,
         new java.lang.String[] { "PartyId", });
     internal_static_api_v1_WithdrawalsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(129);
+      getDescriptor().getMessageTypes().get(131);
     internal_static_api_v1_WithdrawalsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_WithdrawalsResponse_descriptor,
         new java.lang.String[] { "Withdrawals", });
     internal_static_api_v1_WithdrawalRequest_descriptor =
-      getDescriptor().getMessageTypes().get(130);
+      getDescriptor().getMessageTypes().get(132);
     internal_static_api_v1_WithdrawalRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_WithdrawalRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_v1_WithdrawalResponse_descriptor =
-      getDescriptor().getMessageTypes().get(131);
+      getDescriptor().getMessageTypes().get(133);
     internal_static_api_v1_WithdrawalResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_WithdrawalResponse_descriptor,
         new java.lang.String[] { "Withdrawal", });
     internal_static_api_v1_ERC20WithdrawalApprovalRequest_descriptor =
-      getDescriptor().getMessageTypes().get(132);
+      getDescriptor().getMessageTypes().get(134);
     internal_static_api_v1_ERC20WithdrawalApprovalRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ERC20WithdrawalApprovalRequest_descriptor,
         new java.lang.String[] { "WithdrawalId", });
     internal_static_api_v1_ERC20WithdrawalApprovalResponse_descriptor =
-      getDescriptor().getMessageTypes().get(133);
+      getDescriptor().getMessageTypes().get(135);
     internal_static_api_v1_ERC20WithdrawalApprovalResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_ERC20WithdrawalApprovalResponse_descriptor,
         new java.lang.String[] { "AssetSource", "Amount", "Expiry", "Nonce", "Signatures", });
     internal_static_api_v1_DepositsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(134);
+      getDescriptor().getMessageTypes().get(136);
     internal_static_api_v1_DepositsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_DepositsRequest_descriptor,
         new java.lang.String[] { "PartyId", });
     internal_static_api_v1_DepositsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(135);
+      getDescriptor().getMessageTypes().get(137);
     internal_static_api_v1_DepositsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_DepositsResponse_descriptor,
         new java.lang.String[] { "Deposits", });
     internal_static_api_v1_DepositRequest_descriptor =
-      getDescriptor().getMessageTypes().get(136);
+      getDescriptor().getMessageTypes().get(138);
     internal_static_api_v1_DepositRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_DepositRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_v1_DepositResponse_descriptor =
-      getDescriptor().getMessageTypes().get(137);
+      getDescriptor().getMessageTypes().get(139);
     internal_static_api_v1_DepositResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_DepositResponse_descriptor,
         new java.lang.String[] { "Deposit", });
     internal_static_api_v1_NetworkParametersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(138);
+      getDescriptor().getMessageTypes().get(140);
     internal_static_api_v1_NetworkParametersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_NetworkParametersRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_NetworkParametersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(139);
+      getDescriptor().getMessageTypes().get(141);
     internal_static_api_v1_NetworkParametersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_NetworkParametersResponse_descriptor,
         new java.lang.String[] { "NetworkParameters", });
     internal_static_api_v1_LiquidityProvisionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(140);
+      getDescriptor().getMessageTypes().get(142);
     internal_static_api_v1_LiquidityProvisionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_LiquidityProvisionsRequest_descriptor,
         new java.lang.String[] { "Market", "Party", });
     internal_static_api_v1_LiquidityProvisionsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(141);
+      getDescriptor().getMessageTypes().get(143);
     internal_static_api_v1_LiquidityProvisionsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_LiquidityProvisionsResponse_descriptor,
         new java.lang.String[] { "LiquidityProvisions", });
     internal_static_api_v1_OracleSpecRequest_descriptor =
-      getDescriptor().getMessageTypes().get(142);
+      getDescriptor().getMessageTypes().get(144);
     internal_static_api_v1_OracleSpecRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleSpecRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_v1_OracleSpecResponse_descriptor =
-      getDescriptor().getMessageTypes().get(143);
+      getDescriptor().getMessageTypes().get(145);
     internal_static_api_v1_OracleSpecResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleSpecResponse_descriptor,
         new java.lang.String[] { "OracleSpec", });
     internal_static_api_v1_OracleSpecsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(144);
+      getDescriptor().getMessageTypes().get(146);
     internal_static_api_v1_OracleSpecsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleSpecsRequest_descriptor,
         new java.lang.String[] { });
     internal_static_api_v1_OracleSpecsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(145);
+      getDescriptor().getMessageTypes().get(147);
     internal_static_api_v1_OracleSpecsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleSpecsResponse_descriptor,
         new java.lang.String[] { "OracleSpecs", });
     internal_static_api_v1_OracleDataBySpecRequest_descriptor =
-      getDescriptor().getMessageTypes().get(146);
+      getDescriptor().getMessageTypes().get(148);
     internal_static_api_v1_OracleDataBySpecRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleDataBySpecRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_v1_OracleDataBySpecResponse_descriptor =
-      getDescriptor().getMessageTypes().get(147);
+      getDescriptor().getMessageTypes().get(149);
     internal_static_api_v1_OracleDataBySpecResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleDataBySpecResponse_descriptor,
@@ -111363,9 +112908,10 @@ public final class Trading {
     io.vegaprotocol.vega.Governance.getDescriptor();
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.events.v1.Events.getDescriptor();
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.getDescriptor();
-    io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.getDescriptor();
+    io.vegaprotocol.vega.oracles.v1.Spec.getDescriptor();
+    io.vegaprotocol.vega.oracles.v1.Data.getDescriptor();
     io.vegaprotocol.vega.commands.v1.Commands.getDescriptor();
+    io.vegaprotocol.vega.commands.v1.TransactionOuterClass.getDescriptor();
     io.vegaprotocol.vega.commands.v1.ValidatorCommands.getDescriptor();
     com.github.mwitkow.go_proto_validators.Validator.getDescriptor();
   }

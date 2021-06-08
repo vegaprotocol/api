@@ -202,7 +202,7 @@
 
 
           <li>
-            <a href="#oracles%2fv1%2foracle_spec.proto">oracles/v1/oracle_spec.proto</a>
+            <a href="#oracles%2fv1%2fspec.proto">oracles/v1/spec.proto</a>
             <ul>
 
                 <li>
@@ -717,7 +717,7 @@
 
 
           <li>
-            <a href="#oracles%2fv1%2foracle_data.proto">oracles/v1/oracle_data.proto</a>
+            <a href="#oracles%2fv1%2fdata.proto">oracles/v1/data.proto</a>
             <ul>
 
                 <li>
@@ -940,6 +940,48 @@
                 <li>
                   <a href="#vega.events.v1.BusEventType"><span class="badge">E</span>BusEventType</a>
                 </li>
+
+
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="#commands%2fv1%2foracles.proto">commands/v1/oracles.proto</a>
+            <ul>
+
+                <li>
+                  <a href="#vega.commands.v1.OracleDataSubmission"><span class="badge">M</span>OracleDataSubmission</a>
+                </li>
+
+
+                <li>
+                  <a href="#vega.commands.v1.OracleDataSubmission.OracleSource"><span class="badge">E</span>OracleDataSubmission.OracleSource</a>
+                </li>
+
+
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="#commands%2fv1%2ftransaction.proto">commands/v1/transaction.proto</a>
+            <ul>
+
+                <li>
+                  <a href="#vega.commands.v1.InputData"><span class="badge">M</span>InputData</a>
+                </li>
+
+                <li>
+                  <a href="#vega.commands.v1.Signature"><span class="badge">M</span>Signature</a>
+                </li>
+
+                <li>
+                  <a href="#vega.commands.v1.Transaction"><span class="badge">M</span>Transaction</a>
+                </li>
+
 
 
 
@@ -1488,6 +1530,14 @@
                 </li>
 
                 <li>
+                  <a href="#api.v1.SubmitTransactionV2Request"><span class="badge">M</span>SubmitTransactionV2Request</a>
+                </li>
+
+                <li>
+                  <a href="#api.v1.SubmitTransactionV2Response"><span class="badge">M</span>SubmitTransactionV2Response</a>
+                </li>
+
+                <li>
                   <a href="#api.v1.TradesByMarketRequest"><span class="badge">M</span>TradesByMarketRequest</a>
                 </li>
 
@@ -1548,6 +1598,10 @@
                   <a href="#api.v1.SubmitTransactionRequest.Type"><span class="badge">E</span>SubmitTransactionRequest.Type</a>
                 </li>
 
+                <li>
+                  <a href="#api.v1.SubmitTransactionV2Request.Type"><span class="badge">E</span>SubmitTransactionV2Request.Type</a>
+                </li>
+
 
 
                 <li>
@@ -1557,48 +1611,6 @@
                 <li>
                   <a href="#api.v1.TradingService"><span class="badge">S</span>TradingService</a>
                 </li>
-
-            </ul>
-          </li>
-
-
-          <li>
-            <a href="#commands%2fv1%2foracles.proto">commands/v1/oracles.proto</a>
-            <ul>
-
-                <li>
-                  <a href="#vega.commands.v1.OracleDataSubmission"><span class="badge">M</span>OracleDataSubmission</a>
-                </li>
-
-
-                <li>
-                  <a href="#vega.commands.v1.OracleDataSubmission.OracleSource"><span class="badge">E</span>OracleDataSubmission.OracleSource</a>
-                </li>
-
-
-
-            </ul>
-          </li>
-
-
-          <li>
-            <a href="#commands%2fv1%2ftransaction.proto">commands/v1/transaction.proto</a>
-            <ul>
-
-                <li>
-                  <a href="#vega.commands.v1.InputData"><span class="badge">M</span>InputData</a>
-                </li>
-
-                <li>
-                  <a href="#vega.commands.v1.Signature"><span class="badge">M</span>Signature</a>
-                </li>
-
-                <li>
-                  <a href="#vega.commands.v1.Transaction"><span class="badge">M</span>Transaction</a>
-                </li>
-
-
-
 
             </ul>
           </li>
@@ -1696,6 +1708,21 @@
                 <li>
                   <a href="#tm.EvidenceType"><span class="badge">E</span>EvidenceType</a>
                 </li>
+
+
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="#wallet%2fv1%2fwallet.proto">wallet/v1/wallet.proto</a>
+            <ul>
+
+                <li>
+                  <a href="#vega.wallet.v1.SubmitTransactionRequest"><span class="badge">M</span>SubmitTransactionRequest</a>
+                </li>
+
 
 
 
@@ -1928,7 +1955,7 @@ If uuid_ver is 0 all UUID versions are accepted. </p></td>
 
 
       <div class="file-heading">
-        <h2 id="oracles/v1/oracle_spec.proto">oracles/v1/oracle_spec.proto</h2><a href="#title">Top</a>
+        <h2 id="oracles/v1/spec.proto">oracles/v1/spec.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
@@ -5285,7 +5312,7 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
                 <tr>
                   <td>version</td>
-                  <td><a href="#uint64">uint64</a></td>
+                  <td><a href="#uint32">uint32</a></td>
                   <td></td>
                   <td><p>The version of the signature used to create the signature </p></td>
                 </tr>
@@ -8580,7 +8607,7 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
 
 
       <div class="file-heading">
-        <h2 id="oracles/v1/oracle_data.proto">oracles/v1/oracle_data.proto</h2><a href="#title">Top</a>
+        <h2 id="oracles/v1/data.proto">oracles/v1/data.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
@@ -10981,6 +11008,297 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
 
           </tbody>
         </table>
+
+
+
+
+
+
+
+      <div class="file-heading">
+        <h2 id="commands/v1/oracles.proto">commands/v1/oracles.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+
+        <h3 id="vega.commands.v1.OracleDataSubmission">OracleDataSubmission</h3>
+        <p>Command to submit new Oracle data from third party providers</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>source</td>
+                  <td><a href="#vega.commands.v1.OracleDataSubmission.OracleSource">OracleDataSubmission.OracleSource</a></td>
+                  <td></td>
+                  <td><p>The source from which the data is coming from </p></td>
+                </tr>
+
+                <tr>
+                  <td>payload</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>The data provided by the third party provider </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+        <h3 id="vega.commands.v1.OracleDataSubmission.OracleSource">OracleDataSubmission.OracleSource</h3>
+        <p>The supported Oracle sources</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>ORACLE_SOURCE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>The default value</p></td>
+              </tr>
+
+              <tr>
+                <td>ORACLE_SOURCE_OPEN_ORACLE</td>
+                <td>1</td>
+                <td><p>Support for Open Oracle standard</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+      <div class="file-heading">
+        <h2 id="commands/v1/transaction.proto">commands/v1/transaction.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+
+        <h3 id="vega.commands.v1.InputData">InputData</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>nonce</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>A random number used to provided uniqueness and prevents against replay
+attack. </p></td>
+                </tr>
+
+                <tr>
+                  <td>block_height</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>The block height associated to the transaction.
+This should always be current height of the node at the time of sending the
+Tx. BlockHeight is used as a mechanism for replay protection. </p></td>
+                </tr>
+
+                <tr>
+                  <td>order_submission</td>
+                  <td><a href="#vega.commands.v1.OrderSubmission">OrderSubmission</a></td>
+                  <td></td>
+                  <td><p>User commands </p></td>
+                </tr>
+
+                <tr>
+                  <td>order_cancellation</td>
+                  <td><a href="#vega.commands.v1.OrderCancellation">OrderCancellation</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>order_amendment</td>
+                  <td><a href="#vega.commands.v1.OrderAmendment">OrderAmendment</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>withdraw_submission</td>
+                  <td><a href="#vega.commands.v1.WithdrawSubmission">WithdrawSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>proposal_submission</td>
+                  <td><a href="#vega.commands.v1.ProposalSubmission">ProposalSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>vote_submission</td>
+                  <td><a href="#vega.commands.v1.VoteSubmission">VoteSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>liquidity_provision_submission</td>
+                  <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">LiquidityProvisionSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_registration</td>
+                  <td><a href="#vega.commands.v1.NodeRegistration">NodeRegistration</a></td>
+                  <td></td>
+                  <td><p>Validator commands </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_vote</td>
+                  <td><a href="#vega.commands.v1.NodeVote">NodeVote</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_signature</td>
+                  <td><a href="#vega.commands.v1.NodeSignature">NodeSignature</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>chain_event</td>
+                  <td><a href="#vega.commands.v1.ChainEvent">ChainEvent</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>oracle_data_submission</td>
+                  <td><a href="#vega.commands.v1.OracleDataSubmission">OracleDataSubmission</a></td>
+                  <td></td>
+                  <td><p>Oracles </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.commands.v1.Signature">Signature</h3>
+        <p>A signature to be authenticate a transaction and to be verified by the vega</p><p>network.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The bytes of the signature (hex-encoded). </p></td>
+                </tr>
+
+                <tr>
+                  <td>algo</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The algorithm used to create the signature. </p></td>
+                </tr>
+
+                <tr>
+                  <td>version</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The version of the signature used to create the signature. </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.commands.v1.Transaction">Transaction</h3>
+        <p>Represents a transaction to be sent to Vega.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>input_data</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p>One of the set of Vega commands (proto marshalled). </p></td>
+                </tr>
+
+                <tr>
+                  <td>signature</td>
+                  <td><a href="#vega.commands.v1.Signature">Signature</a></td>
+                  <td></td>
+                  <td><p>The signature of the inputData. </p></td>
+                </tr>
+
+                <tr>
+                  <td>address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The address of the sender (hex-encoded). Not supported yet. </p></td>
+                </tr>
+
+                <tr>
+                  <td>pub_key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The public key of the sender (hex-encoded). </p></td>
+                </tr>
+
+                <tr>
+                  <td>version</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>A version of the transaction, to be used in the future in case we want to
+implement changes to the Transaction format. </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
 
 
 
@@ -15346,6 +15664,62 @@ default is true, if false the results will be returned in ascending order </p></
 
 
 
+        <h3 id="api.v1.SubmitTransactionV2Request">SubmitTransactionV2Request</h3>
+        <p>Request for submitting a transaction v2 on Vega</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>tx</td>
+                  <td><a href="#vega.commands.v1.Transaction">vega.commands.v1.Transaction</a></td>
+                  <td></td>
+                  <td><p>A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain </p></td>
+                </tr>
+
+                <tr>
+                  <td>type</td>
+                  <td><a href="#api.v1.SubmitTransactionV2Request.Type">SubmitTransactionV2Request.Type</a></td>
+                  <td></td>
+                  <td><p>Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="api.v1.SubmitTransactionV2Response">SubmitTransactionV2Response</h3>
+        <p>Response for submitting a transaction v2 on Vega</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>success</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Success will be true if the transaction was accepted by the node,
+**Important** - success does not mean that the event is confirmed by consensus </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
         <h3 id="api.v1.TradesByMarketRequest">TradesByMarketRequest</h3>
         <p>Request for a list of trades on a market</p>
 
@@ -15777,6 +16151,43 @@ default is true, if false the results will be returned in ascending order </p></
 
 
         <h3 id="api.v1.SubmitTransactionRequest.Type">SubmitTransactionRequest.Type</h3>
+        <p>Blockchain transaction type</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TYPE_ASYNC</td>
+                <td>1</td>
+                <td><p>The transaction will be submitted without waiting for response</p></td>
+              </tr>
+
+              <tr>
+                <td>TYPE_SYNC</td>
+                <td>2</td>
+                <td><p>The transaction will be submitted, and blocking until the
+tendermint mempool return a response</p></td>
+              </tr>
+
+              <tr>
+                <td>TYPE_COMMIT</td>
+                <td>3</td>
+                <td><p>The transaction will submitted, and blocking until the tendermint
+network will have committed it into a block</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="api.v1.SubmitTransactionV2Request.Type">SubmitTransactionV2Request.Type</h3>
         <p>Blockchain transaction type</p>
         <table class="enum-table">
           <thead>
@@ -16324,6 +16735,13 @@ these data are being used to bundle the call to the smart contract on the ethere
               </tr>
 
               <tr>
+                <td>SubmitTransactionV2</td>
+                <td><a href="#api.v1.SubmitTransactionV2Request">SubmitTransactionV2Request</a></td>
+                <td><a href="#api.v1.SubmitTransactionV2Response">SubmitTransactionV2Response</a></td>
+                <td><p>Submit a signed transaction (v2)</p></td>
+              </tr>
+
+              <tr>
                 <td>PrepareProposalSubmission</td>
                 <td><a href="#api.v1.PrepareProposalSubmissionRequest">PrepareProposalSubmissionRequest</a></td>
                 <td><a href="#api.v1.PrepareProposalSubmissionResponse">PrepareProposalSubmissionResponse</a></td>
@@ -16353,298 +16771,6 @@ these data are being used to bundle the call to the smart contract on the ethere
 
           </tbody>
         </table>
-
-
-
-
-      <div class="file-heading">
-        <h2 id="commands/v1/oracles.proto">commands/v1/oracles.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-
-        <h3 id="vega.commands.v1.OracleDataSubmission">OracleDataSubmission</h3>
-        <p>Command to submit new Oracle data from third party providers</p>
-
-
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                  <td>source</td>
-                  <td><a href="#vega.commands.v1.OracleDataSubmission.OracleSource">OracleDataSubmission.OracleSource</a></td>
-                  <td></td>
-                  <td><p>The source from which the data is coming from </p></td>
-                </tr>
-
-                <tr>
-                  <td>payload</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>The data provided by the third party provider </p></td>
-                </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
-
-
-        <h3 id="vega.commands.v1.OracleDataSubmission.OracleSource">OracleDataSubmission.OracleSource</h3>
-        <p>The supported Oracle sources</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-
-              <tr>
-                <td>ORACLE_SOURCE_UNSPECIFIED</td>
-                <td>0</td>
-                <td><p>The default value</p></td>
-              </tr>
-
-              <tr>
-                <td>ORACLE_SOURCE_OPEN_ORACLE</td>
-                <td>1</td>
-                <td><p>Support for Open Oracle standard</p></td>
-              </tr>
-
-          </tbody>
-        </table>
-
-
-
-
-
-
-
-      <div class="file-heading">
-        <h2 id="commands/v1/transaction.proto">commands/v1/transaction.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-
-        <h3 id="vega.commands.v1.InputData">InputData</h3>
-        <p></p>
-
-
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                  <td>nonce</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>A random number used to provided uniqueness and prevents
-against replay attack. </p></td>
-                </tr>
-
-                <tr>
-                  <td>block_height</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>The block height associated to the transaction.
-This should always be current height of the node at the time of sending the Tx.
-BlockHeight is used as a mechanism for replay protection. </p></td>
-                </tr>
-
-                <tr>
-                  <td>order_submission</td>
-                  <td><a href="#vega.commands.v1.OrderSubmission">OrderSubmission</a></td>
-                  <td></td>
-                  <td><p>user commands </p></td>
-                </tr>
-
-                <tr>
-                  <td>order_cancellation</td>
-                  <td><a href="#vega.commands.v1.OrderCancellation">OrderCancellation</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>order_amendment</td>
-                  <td><a href="#vega.commands.v1.OrderAmendment">OrderAmendment</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>withdraw_submission</td>
-                  <td><a href="#vega.commands.v1.WithdrawSubmission">WithdrawSubmission</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>proposal_submission</td>
-                  <td><a href="#vega.commands.v1.ProposalSubmission">ProposalSubmission</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>vote_submission</td>
-                  <td><a href="#vega.commands.v1.VoteSubmission">VoteSubmission</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>liquidity_provision_submission</td>
-                  <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">LiquidityProvisionSubmission</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>node_registration</td>
-                  <td><a href="#vega.commands.v1.NodeRegistration">NodeRegistration</a></td>
-                  <td></td>
-                  <td><p>validator commands </p></td>
-                </tr>
-
-                <tr>
-                  <td>node_vote</td>
-                  <td><a href="#vega.commands.v1.NodeVote">NodeVote</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>node_signature</td>
-                  <td><a href="#vega.commands.v1.NodeSignature">NodeSignature</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>chain_event</td>
-                  <td><a href="#vega.commands.v1.ChainEvent">ChainEvent</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-
-                <tr>
-                  <td>oracle_data_submission</td>
-                  <td><a href="#vega.commands.v1.OracleDataSubmission">OracleDataSubmission</a></td>
-                  <td></td>
-                  <td><p>Oracles </p></td>
-                </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
-        <h3 id="vega.commands.v1.Signature">Signature</h3>
-        <p>A signature to be authenticate a transaction</p><p>and to be verified by the vega network</p>
-
-
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                  <td>bytes</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>The bytes of the signature </p></td>
-                </tr>
-
-                <tr>
-                  <td>algo</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>The algorithm used to create the signature </p></td>
-                </tr>
-
-                <tr>
-                  <td>version</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>The version of the signature used to create the signature </p></td>
-                </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
-        <h3 id="vega.commands.v1.Transaction">Transaction</h3>
-        <p>Represents a transaction to be sent to Vega.</p>
-
-
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                  <td>input_data</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>One of the set of Vega commands (proto marshalled). </p></td>
-                </tr>
-
-                <tr>
-                  <td>signature</td>
-                  <td><a href="#vega.commands.v1.Signature">Signature</a></td>
-                  <td></td>
-                  <td><p>The signature of the inputData </p></td>
-                </tr>
-
-                <tr>
-                  <td>address</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>The address of the sender. </p></td>
-                </tr>
-
-                <tr>
-                  <td>pub_key</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p>The public key of the sender. </p></td>
-                </tr>
-
-                <tr>
-                  <td>version</td>
-                  <td><a href="#uint32">uint32</a></td>
-                  <td></td>
-                  <td><p>A version of the transaction, to be used
-in the future in case we want to implement
-changes to the Transaction format </p></td>
-                </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -17476,6 +17602,135 @@ changes to the Transaction format </p></td>
 
           </tbody>
         </table>
+
+
+
+
+
+
+
+      <div class="file-heading">
+        <h2 id="wallet/v1/wallet.proto">wallet/v1/wallet.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+
+        <h3 id="vega.wallet.v1.SubmitTransactionRequest">SubmitTransactionRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>pub_key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>propagate</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>order_submission</td>
+                  <td><a href="#vega.commands.v1.OrderSubmission">vega.commands.v1.OrderSubmission</a></td>
+                  <td></td>
+                  <td><p>User commands </p></td>
+                </tr>
+
+                <tr>
+                  <td>order_cancellation</td>
+                  <td><a href="#vega.commands.v1.OrderCancellation">vega.commands.v1.OrderCancellation</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>order_amendment</td>
+                  <td><a href="#vega.commands.v1.OrderAmendment">vega.commands.v1.OrderAmendment</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>withdraw_submission</td>
+                  <td><a href="#vega.commands.v1.WithdrawSubmission">vega.commands.v1.WithdrawSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>proposal_submission</td>
+                  <td><a href="#vega.commands.v1.ProposalSubmission">vega.commands.v1.ProposalSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>vote_submission</td>
+                  <td><a href="#vega.commands.v1.VoteSubmission">vega.commands.v1.VoteSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>liquidity_provision_submission</td>
+                  <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">vega.commands.v1.LiquidityProvisionSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_registration</td>
+                  <td><a href="#vega.commands.v1.NodeRegistration">vega.commands.v1.NodeRegistration</a></td>
+                  <td></td>
+                  <td><p>Validator commands </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_vote</td>
+                  <td><a href="#vega.commands.v1.NodeVote">vega.commands.v1.NodeVote</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_signature</td>
+                  <td><a href="#vega.commands.v1.NodeSignature">vega.commands.v1.NodeSignature</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>chain_event</td>
+                  <td><a href="#vega.commands.v1.ChainEvent">vega.commands.v1.ChainEvent</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>oracle_data_submission</td>
+                  <td><a href="#vega.commands.v1.OracleDataSubmission">vega.commands.v1.OracleDataSubmission</a></td>
+                  <td></td>
+                  <td><p>Oracle commands </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
 
 
 

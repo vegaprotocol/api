@@ -12084,7 +12084,7 @@ proto.vega.Signature.deserializeBinaryFromReader = function(msg, reader) {
       msg.setAlgo(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setVersion(value);
       break;
     default:
@@ -12132,7 +12132,7 @@ proto.vega.Signature.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getVersion();
   if (f !== 0) {
-    writer.writeUint64(
+    writer.writeUint32(
       3,
       f
     );
@@ -12201,7 +12201,7 @@ proto.vega.Signature.prototype.setAlgo = function(value) {
 
 
 /**
- * optional uint64 version = 3;
+ * optional uint32 version = 3;
  * @return {number}
  */
 proto.vega.Signature.prototype.getVersion = function() {

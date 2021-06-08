@@ -1672,7 +1672,7 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "k_height\030\003 \001(\004R\013blockHeight\022\033\n\007address\030\351"
   "\007 \001(\014H\000R\007address\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pu"
   "bKeyB\006\n\004from\"K\n\tSignature\022\020\n\003sig\030\001 \001(\014R\003"
-  "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\004"
+  "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\r"
   "R\007version\"A\n\014SignedBundle\022\016\n\002tx\030\001 \001(\014R\002t"
   "x\022!\n\003sig\030\002 \001(\0132\017.vega.SignatureR\003sig\":\n\020"
   "NetworkParameter\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
@@ -15354,7 +15354,7 @@ void Signature::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Signature_vega_2eproto.base);
   sig_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   algo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_ = PROTOBUF_ULONGLONG(0);
+  version_ = 0u;
 }
 
 Signature::~Signature() {
@@ -15392,7 +15392,7 @@ void Signature::Clear() {
 
   sig_.ClearToEmpty();
   algo_.ClearToEmpty();
-  version_ = PROTOBUF_ULONGLONG(0);
+  version_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15420,10 +15420,10 @@ const char* Signature::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 version = 3 [json_name = "version"];
+      // uint32 version = 3 [json_name = "version"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -15471,10 +15471,10 @@ failure:
         2, this->_internal_algo(), target);
   }
 
-  // uint64 version = 3 [json_name = "version"];
+  // uint32 version = 3 [json_name = "version"];
   if (this->version() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_version(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_version(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15507,10 +15507,10 @@ size_t Signature::ByteSizeLong() const {
         this->_internal_algo());
   }
 
-  // uint64 version = 3 [json_name = "version"];
+  // uint32 version = 3 [json_name = "version"];
   if (this->version() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_version());
   }
 

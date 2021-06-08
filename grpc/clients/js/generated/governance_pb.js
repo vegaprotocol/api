@@ -22,8 +22,8 @@ var vega_pb = require('./vega_pb.js');
 goog.object.extend(proto, vega_pb);
 var assets_pb = require('./assets_pb.js');
 goog.object.extend(proto, assets_pb);
-var oracles_v1_oracle_spec_pb = require('./oracles/v1/oracle_spec_pb.js');
-goog.object.extend(proto, oracles_v1_oracle_spec_pb);
+var oracles_v1_spec_pb = require('./oracles/v1/spec_pb.js');
+goog.object.extend(proto, oracles_v1_spec_pb);
 goog.exportSymbol('proto.vega.FutureProduct', null, global);
 goog.exportSymbol('proto.vega.GovernanceData', null, global);
 goog.exportSymbol('proto.vega.InstrumentConfiguration', null, global);
@@ -330,7 +330,7 @@ proto.vega.FutureProduct.toObject = function(includeInstance, msg) {
     maturity: jspb.Message.getFieldWithDefault(msg, 1, ""),
     settlementAsset: jspb.Message.getFieldWithDefault(msg, 2, ""),
     quoteName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpecConfiguration.toObject(includeInstance, f),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_spec_pb.OracleSpecConfiguration.toObject(includeInstance, f),
     oracleSpecBinding: (f = msg.getOracleSpecBinding()) && markets_pb.OracleSpecToFutureBinding.toObject(includeInstance, f)
   };
 
@@ -381,8 +381,8 @@ proto.vega.FutureProduct.deserializeBinaryFromReader = function(msg, reader) {
       msg.setQuoteName(value);
       break;
     case 5:
-      var value = new oracles_v1_oracle_spec_pb.OracleSpecConfiguration;
-      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpecConfiguration.deserializeBinaryFromReader);
+      var value = new oracles_v1_spec_pb.OracleSpecConfiguration;
+      reader.readMessage(value,oracles_v1_spec_pb.OracleSpecConfiguration.deserializeBinaryFromReader);
       msg.setOracleSpec(value);
       break;
     case 6:
@@ -445,7 +445,7 @@ proto.vega.FutureProduct.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       5,
       f,
-      oracles_v1_oracle_spec_pb.OracleSpecConfiguration.serializeBinaryToWriter
+      oracles_v1_spec_pb.OracleSpecConfiguration.serializeBinaryToWriter
     );
   }
   f = message.getOracleSpecBinding();
@@ -519,7 +519,7 @@ proto.vega.FutureProduct.prototype.setQuoteName = function(value) {
  */
 proto.vega.FutureProduct.prototype.getOracleSpec = function() {
   return /** @type{?proto.oracles.v1.OracleSpecConfiguration} */ (
-    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpecConfiguration, 5));
+    jspb.Message.getWrapperField(this, oracles_v1_spec_pb.OracleSpecConfiguration, 5));
 };
 
 

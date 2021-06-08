@@ -77,6 +77,14 @@ class TradingService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionResponse>> PrepareAsyncSubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionResponse>>(PrepareAsyncSubmitTransactionRaw(context, request, cq));
     }
+    // Submit a signed transaction (v2)
+    virtual ::grpc::Status SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::api::v1::SubmitTransactionV2Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionV2Response>> AsyncSubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionV2Response>>(AsyncSubmitTransactionV2Raw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionV2Response>> PrepareAsyncSubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionV2Response>>(PrepareAsyncSubmitTransactionV2Raw(context, request, cq));
+    }
     // Prepare a governance proposal
     virtual ::grpc::Status PrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::api::v1::PrepareProposalSubmissionResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PrepareProposalSubmissionResponse>> AsyncPrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::grpc::CompletionQueue* cq) {
@@ -147,6 +155,13 @@ class TradingService final {
       #else
       virtual void SubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Submit a signed transaction (v2)
+      virtual void SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Prepare a governance proposal
       virtual void PrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest* request, ::api::v1::PrepareProposalSubmissionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -194,6 +209,8 @@ class TradingService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PrepareWithdrawResponse>* PrepareAsyncPrepareWithdrawRaw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionResponse>* AsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionResponse>* PrepareAsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionV2Response>* AsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::SubmitTransactionV2Response>* PrepareAsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PrepareProposalSubmissionResponse>* AsyncPrepareProposalSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PrepareProposalSubmissionResponse>* PrepareAsyncPrepareProposalSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::PrepareVoteSubmissionResponse>* AsyncPrepareVoteSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -240,6 +257,13 @@ class TradingService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>> PrepareAsyncSubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>>(PrepareAsyncSubmitTransactionRaw(context, request, cq));
+    }
+    ::grpc::Status SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::api::v1::SubmitTransactionV2Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>> AsyncSubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>>(AsyncSubmitTransactionV2Raw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>> PrepareAsyncSubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>>(PrepareAsyncSubmitTransactionV2Raw(context, request, cq));
     }
     ::grpc::Status PrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::api::v1::PrepareProposalSubmissionResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::PrepareProposalSubmissionResponse>> AsyncPrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::grpc::CompletionQueue* cq) {
@@ -302,6 +326,12 @@ class TradingService final {
       #else
       void SubmitTransaction(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void PrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest* request, ::api::v1::PrepareProposalSubmissionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void PrepareProposalSubmission(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest* request, ::api::v1::PrepareProposalSubmissionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -347,6 +377,8 @@ class TradingService final {
     ::grpc::ClientAsyncResponseReader< ::api::v1::PrepareWithdrawResponse>* PrepareAsyncPrepareWithdrawRaw(::grpc::ClientContext* context, const ::api::v1::PrepareWithdrawRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>* AsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>* PrepareAsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>* AsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>* PrepareAsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::PrepareProposalSubmissionResponse>* AsyncPrepareProposalSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::PrepareProposalSubmissionResponse>* PrepareAsyncPrepareProposalSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareProposalSubmissionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::PrepareVoteSubmissionResponse>* AsyncPrepareVoteSubmissionRaw(::grpc::ClientContext* context, const ::api::v1::PrepareVoteSubmissionRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -360,6 +392,7 @@ class TradingService final {
     const ::grpc::internal::RpcMethod rpcmethod_PrepareAmendOrder_;
     const ::grpc::internal::RpcMethod rpcmethod_PrepareWithdraw_;
     const ::grpc::internal::RpcMethod rpcmethod_SubmitTransaction_;
+    const ::grpc::internal::RpcMethod rpcmethod_SubmitTransactionV2_;
     const ::grpc::internal::RpcMethod rpcmethod_PrepareProposalSubmission_;
     const ::grpc::internal::RpcMethod rpcmethod_PrepareVoteSubmission_;
     const ::grpc::internal::RpcMethod rpcmethod_PropagateChainEvent_;
@@ -381,6 +414,8 @@ class TradingService final {
     virtual ::grpc::Status PrepareWithdraw(::grpc::ServerContext* context, const ::api::v1::PrepareWithdrawRequest* request, ::api::v1::PrepareWithdrawResponse* response);
     // Submit a signed transaction
     virtual ::grpc::Status SubmitTransaction(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response);
+    // Submit a signed transaction (v2)
+    virtual ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response);
     // Prepare a governance proposal
     virtual ::grpc::Status PrepareProposalSubmission(::grpc::ServerContext* context, const ::api::v1::PrepareProposalSubmissionRequest* request, ::api::v1::PrepareProposalSubmissionResponse* response);
     // Prepare a governance vote
@@ -491,12 +526,32 @@ class TradingService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_SubmitTransactionV2 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SubmitTransactionV2() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_SubmitTransactionV2() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSubmitTransactionV2(::grpc::ServerContext* context, ::api::v1::SubmitTransactionV2Request* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::SubmitTransactionV2Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_PrepareProposalSubmission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PrepareProposalSubmission() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_PrepareProposalSubmission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -507,7 +562,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareProposalSubmission(::grpc::ServerContext* context, ::api::v1::PrepareProposalSubmissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::PrepareProposalSubmissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -516,7 +571,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PrepareVoteSubmission() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_PrepareVoteSubmission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -527,7 +582,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareVoteSubmission(::grpc::ServerContext* context, ::api::v1::PrepareVoteSubmissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::PrepareVoteSubmissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -536,7 +591,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PropagateChainEvent() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_PropagateChainEvent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -547,7 +602,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPropagateChainEvent(::grpc::ServerContext* context, ::api::v1::PropagateChainEventRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::PropagateChainEventResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -556,7 +611,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PrepareLiquidityProvision() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_PrepareLiquidityProvision() override {
       BaseClassMustBeDerivedFromService(this);
@@ -567,10 +622,10 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareLiquidityProvision(::grpc::ServerContext* context, ::api::v1::PrepareLiquidityProvisionRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::PrepareLiquidityProvisionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_PrepareSubmitOrder<WithAsyncMethod_PrepareCancelOrder<WithAsyncMethod_PrepareAmendOrder<WithAsyncMethod_PrepareWithdraw<WithAsyncMethod_SubmitTransaction<WithAsyncMethod_PrepareProposalSubmission<WithAsyncMethod_PrepareVoteSubmission<WithAsyncMethod_PropagateChainEvent<WithAsyncMethod_PrepareLiquidityProvision<Service > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_PrepareSubmitOrder<WithAsyncMethod_PrepareCancelOrder<WithAsyncMethod_PrepareAmendOrder<WithAsyncMethod_PrepareWithdraw<WithAsyncMethod_SubmitTransaction<WithAsyncMethod_SubmitTransactionV2<WithAsyncMethod_PrepareProposalSubmission<WithAsyncMethod_PrepareVoteSubmission<WithAsyncMethod_PropagateChainEvent<WithAsyncMethod_PrepareLiquidityProvision<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_PrepareSubmitOrder : public BaseClass {
    private:
@@ -807,6 +862,53 @@ class TradingService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_SubmitTransactionV2 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_SubmitTransactionV2() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response) { return this->SubmitTransactionV2(context, request, response); }));}
+    void SetMessageAllocatorFor_SubmitTransactionV2(
+        ::grpc::experimental::MessageAllocator< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_SubmitTransactionV2() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* SubmitTransactionV2(
+      ::grpc::CallbackServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* SubmitTransactionV2(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithCallbackMethod_PrepareProposalSubmission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -817,7 +919,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::PrepareProposalSubmissionRequest, ::api::v1::PrepareProposalSubmissionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -829,9 +931,9 @@ class TradingService final {
     void SetMessageAllocatorFor_PrepareProposalSubmission(
         ::grpc::experimental::MessageAllocator< ::api::v1::PrepareProposalSubmissionRequest, ::api::v1::PrepareProposalSubmissionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::PrepareProposalSubmissionRequest, ::api::v1::PrepareProposalSubmissionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -864,7 +966,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -876,9 +978,9 @@ class TradingService final {
     void SetMessageAllocatorFor_PrepareVoteSubmission(
         ::grpc::experimental::MessageAllocator< ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -911,7 +1013,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(7,
+        MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -923,9 +1025,9 @@ class TradingService final {
     void SetMessageAllocatorFor_PropagateChainEvent(
         ::grpc::experimental::MessageAllocator< ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -958,7 +1060,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(8,
+        MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -970,9 +1072,9 @@ class TradingService final {
     void SetMessageAllocatorFor_PrepareLiquidityProvision(
         ::grpc::experimental::MessageAllocator< ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -995,10 +1097,10 @@ class TradingService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_PrepareSubmitOrder<ExperimentalWithCallbackMethod_PrepareCancelOrder<ExperimentalWithCallbackMethod_PrepareAmendOrder<ExperimentalWithCallbackMethod_PrepareWithdraw<ExperimentalWithCallbackMethod_SubmitTransaction<ExperimentalWithCallbackMethod_PrepareProposalSubmission<ExperimentalWithCallbackMethod_PrepareVoteSubmission<ExperimentalWithCallbackMethod_PropagateChainEvent<ExperimentalWithCallbackMethod_PrepareLiquidityProvision<Service > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_PrepareSubmitOrder<ExperimentalWithCallbackMethod_PrepareCancelOrder<ExperimentalWithCallbackMethod_PrepareAmendOrder<ExperimentalWithCallbackMethod_PrepareWithdraw<ExperimentalWithCallbackMethod_SubmitTransaction<ExperimentalWithCallbackMethod_SubmitTransactionV2<ExperimentalWithCallbackMethod_PrepareProposalSubmission<ExperimentalWithCallbackMethod_PrepareVoteSubmission<ExperimentalWithCallbackMethod_PropagateChainEvent<ExperimentalWithCallbackMethod_PrepareLiquidityProvision<Service > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_PrepareSubmitOrder<ExperimentalWithCallbackMethod_PrepareCancelOrder<ExperimentalWithCallbackMethod_PrepareAmendOrder<ExperimentalWithCallbackMethod_PrepareWithdraw<ExperimentalWithCallbackMethod_SubmitTransaction<ExperimentalWithCallbackMethod_PrepareProposalSubmission<ExperimentalWithCallbackMethod_PrepareVoteSubmission<ExperimentalWithCallbackMethod_PropagateChainEvent<ExperimentalWithCallbackMethod_PrepareLiquidityProvision<Service > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_PrepareSubmitOrder<ExperimentalWithCallbackMethod_PrepareCancelOrder<ExperimentalWithCallbackMethod_PrepareAmendOrder<ExperimentalWithCallbackMethod_PrepareWithdraw<ExperimentalWithCallbackMethod_SubmitTransaction<ExperimentalWithCallbackMethod_SubmitTransactionV2<ExperimentalWithCallbackMethod_PrepareProposalSubmission<ExperimentalWithCallbackMethod_PrepareVoteSubmission<ExperimentalWithCallbackMethod_PropagateChainEvent<ExperimentalWithCallbackMethod_PrepareLiquidityProvision<Service > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_PrepareSubmitOrder : public BaseClass {
    private:
@@ -1085,12 +1187,29 @@ class TradingService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_SubmitTransactionV2 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SubmitTransactionV2() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_SubmitTransactionV2() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_PrepareProposalSubmission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PrepareProposalSubmission() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_PrepareProposalSubmission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1107,7 +1226,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PrepareVoteSubmission() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_PrepareVoteSubmission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1124,7 +1243,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PropagateChainEvent() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_PropagateChainEvent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1141,7 +1260,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PrepareLiquidityProvision() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_PrepareLiquidityProvision() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1253,12 +1372,32 @@ class TradingService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SubmitTransactionV2 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SubmitTransactionV2() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_SubmitTransactionV2() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSubmitTransactionV2(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_PrepareProposalSubmission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PrepareProposalSubmission() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_PrepareProposalSubmission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1269,7 +1408,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareProposalSubmission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1278,7 +1417,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PrepareVoteSubmission() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_PrepareVoteSubmission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1289,7 +1428,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareVoteSubmission(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1298,7 +1437,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PropagateChainEvent() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_PropagateChainEvent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1309,7 +1448,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPropagateChainEvent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1318,7 +1457,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PrepareLiquidityProvision() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_PrepareLiquidityProvision() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1329,7 +1468,7 @@ class TradingService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareLiquidityProvision(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1523,6 +1662,44 @@ class TradingService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_SubmitTransactionV2 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_SubmitTransactionV2() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SubmitTransactionV2(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_SubmitTransactionV2() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* SubmitTransactionV2(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* SubmitTransactionV2(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_PrepareProposalSubmission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1533,7 +1710,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1571,7 +1748,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1609,7 +1786,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(7,
+        MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1647,7 +1824,7 @@ class TradingService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(8,
+        MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1810,12 +1987,39 @@ class TradingService final {
     virtual ::grpc::Status StreamedSubmitTransaction(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::SubmitTransactionRequest,::api::v1::SubmitTransactionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_SubmitTransactionV2 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SubmitTransactionV2() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response>* streamer) {
+                       return this->StreamedSubmitTransactionV2(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SubmitTransactionV2() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SubmitTransactionV2(::grpc::ServerContext* /*context*/, const ::api::v1::SubmitTransactionV2Request* /*request*/, ::api::v1::SubmitTransactionV2Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSubmitTransactionV2(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::SubmitTransactionV2Request,::api::v1::SubmitTransactionV2Response>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_PrepareProposalSubmission : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PrepareProposalSubmission() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::PrepareProposalSubmissionRequest, ::api::v1::PrepareProposalSubmissionResponse>(
             [this](::grpc::ServerContext* context,
@@ -1842,7 +2046,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PrepareVoteSubmission() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse>(
             [this](::grpc::ServerContext* context,
@@ -1869,7 +2073,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PropagateChainEvent() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse>(
             [this](::grpc::ServerContext* context,
@@ -1896,7 +2100,7 @@ class TradingService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_PrepareLiquidityProvision() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse>(
             [this](::grpc::ServerContext* context,
@@ -1917,9 +2121,9 @@ class TradingService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedPrepareLiquidityProvision(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::PrepareLiquidityProvisionRequest,::api::v1::PrepareLiquidityProvisionResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_PrepareSubmitOrder<WithStreamedUnaryMethod_PrepareCancelOrder<WithStreamedUnaryMethod_PrepareAmendOrder<WithStreamedUnaryMethod_PrepareWithdraw<WithStreamedUnaryMethod_SubmitTransaction<WithStreamedUnaryMethod_PrepareProposalSubmission<WithStreamedUnaryMethod_PrepareVoteSubmission<WithStreamedUnaryMethod_PropagateChainEvent<WithStreamedUnaryMethod_PrepareLiquidityProvision<Service > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_PrepareSubmitOrder<WithStreamedUnaryMethod_PrepareCancelOrder<WithStreamedUnaryMethod_PrepareAmendOrder<WithStreamedUnaryMethod_PrepareWithdraw<WithStreamedUnaryMethod_SubmitTransaction<WithStreamedUnaryMethod_SubmitTransactionV2<WithStreamedUnaryMethod_PrepareProposalSubmission<WithStreamedUnaryMethod_PrepareVoteSubmission<WithStreamedUnaryMethod_PropagateChainEvent<WithStreamedUnaryMethod_PrepareLiquidityProvision<Service > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_PrepareSubmitOrder<WithStreamedUnaryMethod_PrepareCancelOrder<WithStreamedUnaryMethod_PrepareAmendOrder<WithStreamedUnaryMethod_PrepareWithdraw<WithStreamedUnaryMethod_SubmitTransaction<WithStreamedUnaryMethod_PrepareProposalSubmission<WithStreamedUnaryMethod_PrepareVoteSubmission<WithStreamedUnaryMethod_PropagateChainEvent<WithStreamedUnaryMethod_PrepareLiquidityProvision<Service > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_PrepareSubmitOrder<WithStreamedUnaryMethod_PrepareCancelOrder<WithStreamedUnaryMethod_PrepareAmendOrder<WithStreamedUnaryMethod_PrepareWithdraw<WithStreamedUnaryMethod_SubmitTransaction<WithStreamedUnaryMethod_SubmitTransactionV2<WithStreamedUnaryMethod_PrepareProposalSubmission<WithStreamedUnaryMethod_PrepareVoteSubmission<WithStreamedUnaryMethod_PropagateChainEvent<WithStreamedUnaryMethod_PrepareLiquidityProvision<Service > > > > > > > > > > StreamedService;
 };
 
 class TradingDataService final {

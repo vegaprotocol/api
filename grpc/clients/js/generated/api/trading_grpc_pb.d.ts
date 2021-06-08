@@ -12,6 +12,7 @@ interface ITradingServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
   prepareAmendOrder: grpc.MethodDefinition<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.MethodDefinition<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.MethodDefinition<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
+  submitTransactionV2: grpc.MethodDefinition<api_trading_pb.SubmitTransactionV2Request, api_trading_pb.SubmitTransactionV2Response>;
   prepareProposalSubmission: grpc.MethodDefinition<api_trading_pb.PrepareProposalSubmissionRequest, api_trading_pb.PrepareProposalSubmissionResponse>;
   prepareVoteSubmission: grpc.MethodDefinition<api_trading_pb.PrepareVoteSubmissionRequest, api_trading_pb.PrepareVoteSubmissionResponse>;
   propagateChainEvent: grpc.MethodDefinition<api_trading_pb.PropagateChainEventRequest, api_trading_pb.PropagateChainEventResponse>;
@@ -26,6 +27,7 @@ export interface ITradingServiceServer extends grpc.UntypedServiceImplementation
   prepareAmendOrder: grpc.handleUnaryCall<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.handleUnaryCall<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.handleUnaryCall<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
+  submitTransactionV2: grpc.handleUnaryCall<api_trading_pb.SubmitTransactionV2Request, api_trading_pb.SubmitTransactionV2Response>;
   prepareProposalSubmission: grpc.handleUnaryCall<api_trading_pb.PrepareProposalSubmissionRequest, api_trading_pb.PrepareProposalSubmissionResponse>;
   prepareVoteSubmission: grpc.handleUnaryCall<api_trading_pb.PrepareVoteSubmissionRequest, api_trading_pb.PrepareVoteSubmissionResponse>;
   propagateChainEvent: grpc.handleUnaryCall<api_trading_pb.PropagateChainEventRequest, api_trading_pb.PropagateChainEventResponse>;
@@ -49,6 +51,9 @@ export class TradingServiceClient extends grpc.Client {
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
+  submitTransactionV2(argument: api_trading_pb.SubmitTransactionV2Request, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionV2Response>): grpc.ClientUnaryCall;
+  submitTransactionV2(argument: api_trading_pb.SubmitTransactionV2Request, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionV2Response>): grpc.ClientUnaryCall;
+  submitTransactionV2(argument: api_trading_pb.SubmitTransactionV2Request, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionV2Response>): grpc.ClientUnaryCall;
   prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
   prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
   prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;

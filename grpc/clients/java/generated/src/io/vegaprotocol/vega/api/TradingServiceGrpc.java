@@ -169,6 +169,37 @@ public final class TradingServiceGrpc {
     return getSubmitTransactionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request,
+      io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> getSubmitTransactionV2Method;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitTransactionV2",
+      requestType = io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.class,
+      responseType = io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request,
+      io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> getSubmitTransactionV2Method() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request, io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> getSubmitTransactionV2Method;
+    if ((getSubmitTransactionV2Method = TradingServiceGrpc.getSubmitTransactionV2Method) == null) {
+      synchronized (TradingServiceGrpc.class) {
+        if ((getSubmitTransactionV2Method = TradingServiceGrpc.getSubmitTransactionV2Method) == null) {
+          TradingServiceGrpc.getSubmitTransactionV2Method = getSubmitTransactionV2Method =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request, io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitTransactionV2"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response.getDefaultInstance()))
+              .setSchemaDescriptor(new TradingServiceMethodDescriptorSupplier("SubmitTransactionV2"))
+              .build();
+        }
+      }
+    }
+    return getSubmitTransactionV2Method;
+  }
+
   private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest,
       io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionResponse> getPrepareProposalSubmissionMethod;
 
@@ -393,6 +424,16 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
+     * Submit a signed transaction (v2)
+     * </pre>
+     */
+    public void submitTransactionV2(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSubmitTransactionV2Method(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Prepare a governance proposal
      * </pre>
      */
@@ -468,6 +509,13 @@ public final class TradingServiceGrpc {
                 io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest,
                 io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse>(
                   this, METHODID_SUBMIT_TRANSACTION)))
+          .addMethod(
+            getSubmitTransactionV2Method(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request,
+                io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response>(
+                  this, METHODID_SUBMIT_TRANSACTION_V2)))
           .addMethod(
             getPrepareProposalSubmissionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -567,6 +615,17 @@ public final class TradingServiceGrpc {
         io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitTransactionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Submit a signed transaction (v2)
+     * </pre>
+     */
+    public void submitTransactionV2(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitTransactionV2Method(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -676,6 +735,16 @@ public final class TradingServiceGrpc {
     public io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse submitTransaction(io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitTransactionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Submit a signed transaction (v2)
+     * </pre>
+     */
+    public io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response submitTransactionV2(io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitTransactionV2Method(), getCallOptions(), request);
     }
 
     /**
@@ -790,6 +859,17 @@ public final class TradingServiceGrpc {
 
     /**
      * <pre>
+     * Submit a signed transaction (v2)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response> submitTransactionV2(
+        io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitTransactionV2Method(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Prepare a governance proposal
      * </pre>
      */
@@ -838,10 +918,11 @@ public final class TradingServiceGrpc {
   private static final int METHODID_PREPARE_AMEND_ORDER = 2;
   private static final int METHODID_PREPARE_WITHDRAW = 3;
   private static final int METHODID_SUBMIT_TRANSACTION = 4;
-  private static final int METHODID_PREPARE_PROPOSAL_SUBMISSION = 5;
-  private static final int METHODID_PREPARE_VOTE_SUBMISSION = 6;
-  private static final int METHODID_PROPAGATE_CHAIN_EVENT = 7;
-  private static final int METHODID_PREPARE_LIQUIDITY_PROVISION = 8;
+  private static final int METHODID_SUBMIT_TRANSACTION_V2 = 5;
+  private static final int METHODID_PREPARE_PROPOSAL_SUBMISSION = 6;
+  private static final int METHODID_PREPARE_VOTE_SUBMISSION = 7;
+  private static final int METHODID_PROPAGATE_CHAIN_EVENT = 8;
+  private static final int METHODID_PREPARE_LIQUIDITY_PROVISION = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -879,6 +960,10 @@ public final class TradingServiceGrpc {
         case METHODID_SUBMIT_TRANSACTION:
           serviceImpl.submitTransaction((io.vegaprotocol.vega.api.Trading.SubmitTransactionRequest) request,
               (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionResponse>) responseObserver);
+          break;
+        case METHODID_SUBMIT_TRANSACTION_V2:
+          serviceImpl.submitTransactionV2((io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Request) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.SubmitTransactionV2Response>) responseObserver);
           break;
         case METHODID_PREPARE_PROPOSAL_SUBMISSION:
           serviceImpl.prepareProposalSubmission((io.vegaprotocol.vega.api.Trading.PrepareProposalSubmissionRequest) request,
@@ -962,6 +1047,7 @@ public final class TradingServiceGrpc {
               .addMethod(getPrepareAmendOrderMethod())
               .addMethod(getPrepareWithdrawMethod())
               .addMethod(getSubmitTransactionMethod())
+              .addMethod(getSubmitTransactionV2Method())
               .addMethod(getPrepareProposalSubmissionMethod())
               .addMethod(getPrepareVoteSubmissionMethod())
               .addMethod(getPropagateChainEventMethod())

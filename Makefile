@@ -12,7 +12,7 @@ default:
 preproto:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@rm -rf proto && mkdir proto
-	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm ; do \
+	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm proto/wallet/v1 ; do \
 		mkdir -p "$$x" && \
 		java_pkg="$$(echo "$${x//proto/}" | tr / .)" && \
 		find "$(VEGACORE)/$$x" -maxdepth 1 -name '*.proto' -exec cp '{}' "$$x/" ';' && \
@@ -21,6 +21,11 @@ preproto:
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 	@cp -a "$(VEGACORE)/gateway/rest/grpc-rest-bindings.yml" ./rest/
+	@core_protos_fn="$$(mktemp -t protofiles-core-XXXXXX.txt)" && \
+	api_protos_fn="$$(mktemp -t protofiles-api-XXXXXX.txt)" && \
+	find "$(VEGACORE)/proto" -name '*.proto' | sed -e 's#^$(VEGACORE)/##' | sort >"$$core_protos_fn" && \
+	find "./proto" -name '*.proto' | sed -e 's#^./##' | sort >"$$api_protos_fn" && \
+	diff "$$core_protos_fn" "$$api_protos_fn"
 
 .PHONY: buf-build
 buf-build:

@@ -8905,13 +8905,13 @@ class Signature PROTOBUF_FINAL :
   std::string* _internal_mutable_algo();
   public:
 
-  // uint64 version = 3 [json_name = "version"];
+  // uint32 version = 3 [json_name = "version"];
   void clear_version();
-  ::PROTOBUF_NAMESPACE_ID::uint64 version() const;
-  void set_version(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 version() const;
+  void set_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_version() const;
-  void _internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_version() const;
+  void _internal_set_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:vega.Signature)
@@ -8923,7 +8923,7 @@ class Signature PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sig_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr algo_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 version_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
 };
@@ -18398,22 +18398,22 @@ inline void Signature::set_allocated_algo(std::string* algo) {
   // @@protoc_insertion_point(field_set_allocated:vega.Signature.algo)
 }
 
-// uint64 version = 3 [json_name = "version"];
+// uint32 version = 3 [json_name = "version"];
 inline void Signature::clear_version() {
-  version_ = PROTOBUF_ULONGLONG(0);
+  version_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Signature::_internal_version() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Signature::_internal_version() const {
   return version_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Signature::version() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Signature::version() const {
   // @@protoc_insertion_point(field_get:vega.Signature.version)
   return _internal_version();
 }
-inline void Signature::_internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Signature::_internal_set_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
   version_ = value;
 }
-inline void Signature::set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Signature::set_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_version(value);
   // @@protoc_insertion_point(field_set:vega.Signature.version)
 }

@@ -39,6 +39,11 @@ class TradingServiceStub(object):
                 request_serializer=api_dot_trading__pb2.SubmitTransactionRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.SubmitTransactionResponse.FromString,
                 )
+        self.SubmitTransactionV2 = channel.unary_unary(
+                '/api.v1.TradingService/SubmitTransactionV2',
+                request_serializer=api_dot_trading__pb2.SubmitTransactionV2Request.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.SubmitTransactionV2Response.FromString,
+                )
         self.PrepareProposalSubmission = channel.unary_unary(
                 '/api.v1.TradingService/PrepareProposalSubmission',
                 request_serializer=api_dot_trading__pb2.PrepareProposalSubmissionRequest.SerializeToString,
@@ -99,6 +104,13 @@ class TradingServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SubmitTransactionV2(self, request, context):
+        """Submit a signed transaction (v2)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def PrepareProposalSubmission(self, request, context):
         """Prepare a governance proposal
         """
@@ -154,6 +166,11 @@ def add_TradingServiceServicer_to_server(servicer, server):
                     servicer.SubmitTransaction,
                     request_deserializer=api_dot_trading__pb2.SubmitTransactionRequest.FromString,
                     response_serializer=api_dot_trading__pb2.SubmitTransactionResponse.SerializeToString,
+            ),
+            'SubmitTransactionV2': grpc.unary_unary_rpc_method_handler(
+                    servicer.SubmitTransactionV2,
+                    request_deserializer=api_dot_trading__pb2.SubmitTransactionV2Request.FromString,
+                    response_serializer=api_dot_trading__pb2.SubmitTransactionV2Response.SerializeToString,
             ),
             'PrepareProposalSubmission': grpc.unary_unary_rpc_method_handler(
                     servicer.PrepareProposalSubmission,
@@ -267,6 +284,23 @@ class TradingService(object):
         return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/SubmitTransaction',
             api_dot_trading__pb2.SubmitTransactionRequest.SerializeToString,
             api_dot_trading__pb2.SubmitTransactionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SubmitTransactionV2(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingService/SubmitTransactionV2',
+            api_dot_trading__pb2.SubmitTransactionV2Request.SerializeToString,
+            api_dot_trading__pb2.SubmitTransactionV2Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

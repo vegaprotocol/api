@@ -37,9 +37,10 @@
 #include "governance.pb.h"
 #include "assets.pb.h"
 #include "events/v1/events.pb.h"
-#include "oracles/v1/oracle_spec.pb.h"
-#include "oracles/v1/oracle_data.pb.h"
+#include "oracles/v1/spec.pb.h"
+#include "oracles/v1/data.pb.h"
 #include "commands/v1/commands.pb.h"
+#include "commands/v1/transaction.pb.h"
 #include "commands/v1/validator_commands.pb.h"
 #include "github.com/mwitkow/go-proto-validators/validator.pb.h"
 // @@protoc_insertion_point(includes)
@@ -57,7 +58,7 @@ struct TableStruct_api_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[148]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[150]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -468,6 +469,12 @@ extern SubmitTransactionRequestDefaultTypeInternal _SubmitTransactionRequest_def
 class SubmitTransactionResponse;
 class SubmitTransactionResponseDefaultTypeInternal;
 extern SubmitTransactionResponseDefaultTypeInternal _SubmitTransactionResponse_default_instance_;
+class SubmitTransactionV2Request;
+class SubmitTransactionV2RequestDefaultTypeInternal;
+extern SubmitTransactionV2RequestDefaultTypeInternal _SubmitTransactionV2Request_default_instance_;
+class SubmitTransactionV2Response;
+class SubmitTransactionV2ResponseDefaultTypeInternal;
+extern SubmitTransactionV2ResponseDefaultTypeInternal _SubmitTransactionV2Response_default_instance_;
 class TradesByMarketRequest;
 class TradesByMarketRequestDefaultTypeInternal;
 extern TradesByMarketRequestDefaultTypeInternal _TradesByMarketRequest_default_instance_;
@@ -647,6 +654,8 @@ template<> ::api::v1::StatisticsRequest* Arena::CreateMaybeMessage<::api::v1::St
 template<> ::api::v1::StatisticsResponse* Arena::CreateMaybeMessage<::api::v1::StatisticsResponse>(Arena*);
 template<> ::api::v1::SubmitTransactionRequest* Arena::CreateMaybeMessage<::api::v1::SubmitTransactionRequest>(Arena*);
 template<> ::api::v1::SubmitTransactionResponse* Arena::CreateMaybeMessage<::api::v1::SubmitTransactionResponse>(Arena*);
+template<> ::api::v1::SubmitTransactionV2Request* Arena::CreateMaybeMessage<::api::v1::SubmitTransactionV2Request>(Arena*);
+template<> ::api::v1::SubmitTransactionV2Response* Arena::CreateMaybeMessage<::api::v1::SubmitTransactionV2Response>(Arena*);
 template<> ::api::v1::TradesByMarketRequest* Arena::CreateMaybeMessage<::api::v1::TradesByMarketRequest>(Arena*);
 template<> ::api::v1::TradesByMarketResponse* Arena::CreateMaybeMessage<::api::v1::TradesByMarketResponse>(Arena*);
 template<> ::api::v1::TradesByOrderRequest* Arena::CreateMaybeMessage<::api::v1::TradesByOrderRequest>(Arena*);
@@ -691,6 +700,33 @@ inline bool SubmitTransactionRequest_Type_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SubmitTransactionRequest_Type* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<SubmitTransactionRequest_Type>(
     SubmitTransactionRequest_Type_descriptor(), name, value);
+}
+enum SubmitTransactionV2Request_Type : int {
+  SubmitTransactionV2Request_Type_TYPE_UNSPECIFIED = 0,
+  SubmitTransactionV2Request_Type_TYPE_ASYNC = 1,
+  SubmitTransactionV2Request_Type_TYPE_SYNC = 2,
+  SubmitTransactionV2Request_Type_TYPE_COMMIT = 3,
+  SubmitTransactionV2Request_Type_SubmitTransactionV2Request_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  SubmitTransactionV2Request_Type_SubmitTransactionV2Request_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool SubmitTransactionV2Request_Type_IsValid(int value);
+constexpr SubmitTransactionV2Request_Type SubmitTransactionV2Request_Type_Type_MIN = SubmitTransactionV2Request_Type_TYPE_UNSPECIFIED;
+constexpr SubmitTransactionV2Request_Type SubmitTransactionV2Request_Type_Type_MAX = SubmitTransactionV2Request_Type_TYPE_COMMIT;
+constexpr int SubmitTransactionV2Request_Type_Type_ARRAYSIZE = SubmitTransactionV2Request_Type_Type_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SubmitTransactionV2Request_Type_descriptor();
+template<typename T>
+inline const std::string& SubmitTransactionV2Request_Type_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, SubmitTransactionV2Request_Type>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function SubmitTransactionV2Request_Type_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    SubmitTransactionV2Request_Type_descriptor(), enum_t_value);
+}
+inline bool SubmitTransactionV2Request_Type_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SubmitTransactionV2Request_Type* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<SubmitTransactionV2Request_Type>(
+    SubmitTransactionV2Request_Type_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1337,6 +1373,332 @@ class SubmitTransactionResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class SubmitTransactionV2Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.SubmitTransactionV2Request) */ {
+ public:
+  inline SubmitTransactionV2Request() : SubmitTransactionV2Request(nullptr) {}
+  virtual ~SubmitTransactionV2Request();
+
+  SubmitTransactionV2Request(const SubmitTransactionV2Request& from);
+  SubmitTransactionV2Request(SubmitTransactionV2Request&& from) noexcept
+    : SubmitTransactionV2Request() {
+    *this = ::std::move(from);
+  }
+
+  inline SubmitTransactionV2Request& operator=(const SubmitTransactionV2Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubmitTransactionV2Request& operator=(SubmitTransactionV2Request&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const SubmitTransactionV2Request& default_instance();
+
+  static inline const SubmitTransactionV2Request* internal_default_instance() {
+    return reinterpret_cast<const SubmitTransactionV2Request*>(
+               &_SubmitTransactionV2Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(SubmitTransactionV2Request& a, SubmitTransactionV2Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubmitTransactionV2Request* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubmitTransactionV2Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SubmitTransactionV2Request* New() const final {
+    return CreateMaybeMessage<SubmitTransactionV2Request>(nullptr);
+  }
+
+  SubmitTransactionV2Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SubmitTransactionV2Request>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const SubmitTransactionV2Request& from);
+  void MergeFrom(const SubmitTransactionV2Request& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubmitTransactionV2Request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.SubmitTransactionV2Request";
+  }
+  protected:
+  explicit SubmitTransactionV2Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef SubmitTransactionV2Request_Type Type;
+  static constexpr Type TYPE_UNSPECIFIED =
+    SubmitTransactionV2Request_Type_TYPE_UNSPECIFIED;
+  static constexpr Type TYPE_ASYNC =
+    SubmitTransactionV2Request_Type_TYPE_ASYNC;
+  static constexpr Type TYPE_SYNC =
+    SubmitTransactionV2Request_Type_TYPE_SYNC;
+  static constexpr Type TYPE_COMMIT =
+    SubmitTransactionV2Request_Type_TYPE_COMMIT;
+  static inline bool Type_IsValid(int value) {
+    return SubmitTransactionV2Request_Type_IsValid(value);
+  }
+  static constexpr Type Type_MIN =
+    SubmitTransactionV2Request_Type_Type_MIN;
+  static constexpr Type Type_MAX =
+    SubmitTransactionV2Request_Type_Type_MAX;
+  static constexpr int Type_ARRAYSIZE =
+    SubmitTransactionV2Request_Type_Type_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Type_descriptor() {
+    return SubmitTransactionV2Request_Type_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Type_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Type>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Type_Name.");
+    return SubmitTransactionV2Request_Type_Name(enum_t_value);
+  }
+  static inline bool Type_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      Type* value) {
+    return SubmitTransactionV2Request_Type_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTxFieldNumber = 1,
+    kTypeFieldNumber = 2,
+  };
+  // .vega.commands.v1.Transaction tx = 1 [json_name = "tx"];
+  bool has_tx() const;
+  private:
+  bool _internal_has_tx() const;
+  public:
+  void clear_tx();
+  const ::vega::commands::v1::Transaction& tx() const;
+  ::vega::commands::v1::Transaction* release_tx();
+  ::vega::commands::v1::Transaction* mutable_tx();
+  void set_allocated_tx(::vega::commands::v1::Transaction* tx);
+  private:
+  const ::vega::commands::v1::Transaction& _internal_tx() const;
+  ::vega::commands::v1::Transaction* _internal_mutable_tx();
+  public:
+  void unsafe_arena_set_allocated_tx(
+      ::vega::commands::v1::Transaction* tx);
+  ::vega::commands::v1::Transaction* unsafe_arena_release_tx();
+
+  // .api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];
+  void clear_type();
+  ::api::v1::SubmitTransactionV2Request_Type type() const;
+  void set_type(::api::v1::SubmitTransactionV2Request_Type value);
+  private:
+  ::api::v1::SubmitTransactionV2Request_Type _internal_type() const;
+  void _internal_set_type(::api::v1::SubmitTransactionV2Request_Type value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:api.v1.SubmitTransactionV2Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::vega::commands::v1::Transaction* tx_;
+  int type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SubmitTransactionV2Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.SubmitTransactionV2Response) */ {
+ public:
+  inline SubmitTransactionV2Response() : SubmitTransactionV2Response(nullptr) {}
+  virtual ~SubmitTransactionV2Response();
+
+  SubmitTransactionV2Response(const SubmitTransactionV2Response& from);
+  SubmitTransactionV2Response(SubmitTransactionV2Response&& from) noexcept
+    : SubmitTransactionV2Response() {
+    *this = ::std::move(from);
+  }
+
+  inline SubmitTransactionV2Response& operator=(const SubmitTransactionV2Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubmitTransactionV2Response& operator=(SubmitTransactionV2Response&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const SubmitTransactionV2Response& default_instance();
+
+  static inline const SubmitTransactionV2Response* internal_default_instance() {
+    return reinterpret_cast<const SubmitTransactionV2Response*>(
+               &_SubmitTransactionV2Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(SubmitTransactionV2Response& a, SubmitTransactionV2Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubmitTransactionV2Response* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubmitTransactionV2Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SubmitTransactionV2Response* New() const final {
+    return CreateMaybeMessage<SubmitTransactionV2Response>(nullptr);
+  }
+
+  SubmitTransactionV2Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<SubmitTransactionV2Response>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const SubmitTransactionV2Response& from);
+  void MergeFrom(const SubmitTransactionV2Response& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubmitTransactionV2Response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.SubmitTransactionV2Response";
+  }
+  protected:
+  explicit SubmitTransactionV2Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSuccessFieldNumber = 1,
+  };
+  // bool success = 1 [json_name = "success"];
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:api.v1.SubmitTransactionV2Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  bool success_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
 class PrepareWithdrawRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.PrepareWithdrawRequest) */ {
  public:
@@ -1378,7 +1740,7 @@ class PrepareWithdrawRequest PROTOBUF_FINAL :
                &_PrepareWithdrawRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(PrepareWithdrawRequest& a, PrepareWithdrawRequest& b) {
     a.Swap(&b);
@@ -1523,7 +1885,7 @@ class PrepareWithdrawResponse PROTOBUF_FINAL :
                &_PrepareWithdrawResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(PrepareWithdrawResponse& a, PrepareWithdrawResponse& b) {
     a.Swap(&b);
@@ -1666,7 +2028,7 @@ class PrepareSubmitOrderResponse PROTOBUF_FINAL :
                &_PrepareSubmitOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(PrepareSubmitOrderResponse& a, PrepareSubmitOrderResponse& b) {
     a.Swap(&b);
@@ -1827,7 +2189,7 @@ class PrepareCancelOrderResponse PROTOBUF_FINAL :
                &_PrepareCancelOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(PrepareCancelOrderResponse& a, PrepareCancelOrderResponse& b) {
     a.Swap(&b);
@@ -1970,7 +2332,7 @@ class PrepareAmendOrderResponse PROTOBUF_FINAL :
                &_PrepareAmendOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(PrepareAmendOrderResponse& a, PrepareAmendOrderResponse& b) {
     a.Swap(&b);
@@ -2113,7 +2475,7 @@ class PrepareSubmitOrderRequest PROTOBUF_FINAL :
                &_PrepareSubmitOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(PrepareSubmitOrderRequest& a, PrepareSubmitOrderRequest& b) {
     a.Swap(&b);
@@ -2258,7 +2620,7 @@ class PrepareCancelOrderRequest PROTOBUF_FINAL :
                &_PrepareCancelOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(PrepareCancelOrderRequest& a, PrepareCancelOrderRequest& b) {
     a.Swap(&b);
@@ -2403,7 +2765,7 @@ class PrepareAmendOrderRequest PROTOBUF_FINAL :
                &_PrepareAmendOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(PrepareAmendOrderRequest& a, PrepareAmendOrderRequest& b) {
     a.Swap(&b);
@@ -2548,7 +2910,7 @@ class AssetsRequest PROTOBUF_FINAL :
                &_AssetsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(AssetsRequest& a, AssetsRequest& b) {
     a.Swap(&b);
@@ -2671,7 +3033,7 @@ class AssetsResponse PROTOBUF_FINAL :
                &_AssetsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(AssetsResponse& a, AssetsResponse& b) {
     a.Swap(&b);
@@ -2816,7 +3178,7 @@ class AssetByIDRequest PROTOBUF_FINAL :
                &_AssetByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(AssetByIDRequest& a, AssetByIDRequest& b) {
     a.Swap(&b);
@@ -2959,7 +3321,7 @@ class AssetByIDResponse PROTOBUF_FINAL :
                &_AssetByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(AssetByIDResponse& a, AssetByIDResponse& b) {
     a.Swap(&b);
@@ -3104,7 +3466,7 @@ class GetNodeSignaturesAggregateRequest PROTOBUF_FINAL :
                &_GetNodeSignaturesAggregateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(GetNodeSignaturesAggregateRequest& a, GetNodeSignaturesAggregateRequest& b) {
     a.Swap(&b);
@@ -3247,7 +3609,7 @@ class GetNodeSignaturesAggregateResponse PROTOBUF_FINAL :
                &_GetNodeSignaturesAggregateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(GetNodeSignaturesAggregateResponse& a, GetNodeSignaturesAggregateResponse& b) {
     a.Swap(&b);
@@ -3392,7 +3754,7 @@ class OptionalProposalState PROTOBUF_FINAL :
                &_OptionalProposalState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(OptionalProposalState& a, OptionalProposalState& b) {
     a.Swap(&b);
@@ -3528,7 +3890,7 @@ class GetProposalsRequest PROTOBUF_FINAL :
                &_GetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(GetProposalsRequest& a, GetProposalsRequest& b) {
     a.Swap(&b);
@@ -3673,7 +4035,7 @@ class GetProposalsResponse PROTOBUF_FINAL :
                &_GetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(GetProposalsResponse& a, GetProposalsResponse& b) {
     a.Swap(&b);
@@ -3818,7 +4180,7 @@ class GetProposalsByPartyRequest PROTOBUF_FINAL :
                &_GetProposalsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(GetProposalsByPartyRequest& a, GetProposalsByPartyRequest& b) {
     a.Swap(&b);
@@ -3981,7 +4343,7 @@ class GetProposalsByPartyResponse PROTOBUF_FINAL :
                &_GetProposalsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(GetProposalsByPartyResponse& a, GetProposalsByPartyResponse& b) {
     a.Swap(&b);
@@ -4126,7 +4488,7 @@ class GetVotesByPartyRequest PROTOBUF_FINAL :
                &_GetVotesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(GetVotesByPartyRequest& a, GetVotesByPartyRequest& b) {
     a.Swap(&b);
@@ -4269,7 +4631,7 @@ class GetVotesByPartyResponse PROTOBUF_FINAL :
                &_GetVotesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(GetVotesByPartyResponse& a, GetVotesByPartyResponse& b) {
     a.Swap(&b);
@@ -4414,7 +4776,7 @@ class GetNewMarketProposalsRequest PROTOBUF_FINAL :
                &_GetNewMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(GetNewMarketProposalsRequest& a, GetNewMarketProposalsRequest& b) {
     a.Swap(&b);
@@ -4559,7 +4921,7 @@ class GetNewMarketProposalsResponse PROTOBUF_FINAL :
                &_GetNewMarketProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(GetNewMarketProposalsResponse& a, GetNewMarketProposalsResponse& b) {
     a.Swap(&b);
@@ -4704,7 +5066,7 @@ class GetUpdateMarketProposalsRequest PROTOBUF_FINAL :
                &_GetUpdateMarketProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(GetUpdateMarketProposalsRequest& a, GetUpdateMarketProposalsRequest& b) {
     a.Swap(&b);
@@ -4867,7 +5229,7 @@ class GetUpdateMarketProposalsResponse PROTOBUF_FINAL :
                &_GetUpdateMarketProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(GetUpdateMarketProposalsResponse& a, GetUpdateMarketProposalsResponse& b) {
     a.Swap(&b);
@@ -5012,7 +5374,7 @@ class GetNetworkParametersProposalsRequest PROTOBUF_FINAL :
                &_GetNetworkParametersProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(GetNetworkParametersProposalsRequest& a, GetNetworkParametersProposalsRequest& b) {
     a.Swap(&b);
@@ -5157,7 +5519,7 @@ class GetNetworkParametersProposalsResponse PROTOBUF_FINAL :
                &_GetNetworkParametersProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(GetNetworkParametersProposalsResponse& a, GetNetworkParametersProposalsResponse& b) {
     a.Swap(&b);
@@ -5302,7 +5664,7 @@ class GetNewAssetProposalsRequest PROTOBUF_FINAL :
                &_GetNewAssetProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(GetNewAssetProposalsRequest& a, GetNewAssetProposalsRequest& b) {
     a.Swap(&b);
@@ -5447,7 +5809,7 @@ class GetNewAssetProposalsResponse PROTOBUF_FINAL :
                &_GetNewAssetProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(GetNewAssetProposalsResponse& a, GetNewAssetProposalsResponse& b) {
     a.Swap(&b);
@@ -5592,7 +5954,7 @@ class GetProposalByIDRequest PROTOBUF_FINAL :
                &_GetProposalByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(GetProposalByIDRequest& a, GetProposalByIDRequest& b) {
     a.Swap(&b);
@@ -5735,7 +6097,7 @@ class GetProposalByIDResponse PROTOBUF_FINAL :
                &_GetProposalByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(GetProposalByIDResponse& a, GetProposalByIDResponse& b) {
     a.Swap(&b);
@@ -5880,7 +6242,7 @@ class GetProposalByReferenceRequest PROTOBUF_FINAL :
                &_GetProposalByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(GetProposalByReferenceRequest& a, GetProposalByReferenceRequest& b) {
     a.Swap(&b);
@@ -6023,7 +6385,7 @@ class GetProposalByReferenceResponse PROTOBUF_FINAL :
                &_GetProposalByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(GetProposalByReferenceResponse& a, GetProposalByReferenceResponse& b) {
     a.Swap(&b);
@@ -6168,7 +6530,7 @@ class ObserveGovernanceRequest PROTOBUF_FINAL :
                &_ObserveGovernanceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(ObserveGovernanceRequest& a, ObserveGovernanceRequest& b) {
     a.Swap(&b);
@@ -6291,7 +6653,7 @@ class ObserveGovernanceResponse PROTOBUF_FINAL :
                &_ObserveGovernanceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(ObserveGovernanceResponse& a, ObserveGovernanceResponse& b) {
     a.Swap(&b);
@@ -6436,7 +6798,7 @@ class ObservePartyProposalsRequest PROTOBUF_FINAL :
                &_ObservePartyProposalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(ObservePartyProposalsRequest& a, ObservePartyProposalsRequest& b) {
     a.Swap(&b);
@@ -6579,7 +6941,7 @@ class ObservePartyProposalsResponse PROTOBUF_FINAL :
                &_ObservePartyProposalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(ObservePartyProposalsResponse& a, ObservePartyProposalsResponse& b) {
     a.Swap(&b);
@@ -6724,7 +7086,7 @@ class ObserveProposalVotesRequest PROTOBUF_FINAL :
                &_ObserveProposalVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(ObserveProposalVotesRequest& a, ObserveProposalVotesRequest& b) {
     a.Swap(&b);
@@ -6867,7 +7229,7 @@ class ObserveProposalVotesResponse PROTOBUF_FINAL :
                &_ObserveProposalVotesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(ObserveProposalVotesResponse& a, ObserveProposalVotesResponse& b) {
     a.Swap(&b);
@@ -7012,7 +7374,7 @@ class ObservePartyVotesRequest PROTOBUF_FINAL :
                &_ObservePartyVotesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(ObservePartyVotesRequest& a, ObservePartyVotesRequest& b) {
     a.Swap(&b);
@@ -7155,7 +7517,7 @@ class ObservePartyVotesResponse PROTOBUF_FINAL :
                &_ObservePartyVotesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(ObservePartyVotesResponse& a, ObservePartyVotesResponse& b) {
     a.Swap(&b);
@@ -7300,7 +7662,7 @@ class MarginLevelsSubscribeRequest PROTOBUF_FINAL :
                &_MarginLevelsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(MarginLevelsSubscribeRequest& a, MarginLevelsSubscribeRequest& b) {
     a.Swap(&b);
@@ -7461,7 +7823,7 @@ class MarginLevelsSubscribeResponse PROTOBUF_FINAL :
                &_MarginLevelsSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(MarginLevelsSubscribeResponse& a, MarginLevelsSubscribeResponse& b) {
     a.Swap(&b);
@@ -7606,7 +7968,7 @@ class MarginLevelsRequest PROTOBUF_FINAL :
                &_MarginLevelsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(MarginLevelsRequest& a, MarginLevelsRequest& b) {
     a.Swap(&b);
@@ -7767,7 +8129,7 @@ class MarginLevelsResponse PROTOBUF_FINAL :
                &_MarginLevelsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(MarginLevelsResponse& a, MarginLevelsResponse& b) {
     a.Swap(&b);
@@ -7912,7 +8274,7 @@ class MarketsDataSubscribeRequest PROTOBUF_FINAL :
                &_MarketsDataSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(MarketsDataSubscribeRequest& a, MarketsDataSubscribeRequest& b) {
     a.Swap(&b);
@@ -8055,7 +8417,7 @@ class MarketsDataSubscribeResponse PROTOBUF_FINAL :
                &_MarketsDataSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(MarketsDataSubscribeResponse& a, MarketsDataSubscribeResponse& b) {
     a.Swap(&b);
@@ -8200,7 +8562,7 @@ class MarketDataByIDRequest PROTOBUF_FINAL :
                &_MarketDataByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(MarketDataByIDRequest& a, MarketDataByIDRequest& b) {
     a.Swap(&b);
@@ -8343,7 +8705,7 @@ class MarketDataByIDResponse PROTOBUF_FINAL :
                &_MarketDataByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(MarketDataByIDResponse& a, MarketDataByIDResponse& b) {
     a.Swap(&b);
@@ -8488,7 +8850,7 @@ class MarketsDataRequest PROTOBUF_FINAL :
                &_MarketsDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(MarketsDataRequest& a, MarketsDataRequest& b) {
     a.Swap(&b);
@@ -8611,7 +8973,7 @@ class MarketsDataResponse PROTOBUF_FINAL :
                &_MarketsDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(MarketsDataResponse& a, MarketsDataResponse& b) {
     a.Swap(&b);
@@ -8756,7 +9118,7 @@ class LastTradeRequest PROTOBUF_FINAL :
                &_LastTradeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   friend void swap(LastTradeRequest& a, LastTradeRequest& b) {
     a.Swap(&b);
@@ -8899,7 +9261,7 @@ class LastTradeResponse PROTOBUF_FINAL :
                &_LastTradeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   friend void swap(LastTradeResponse& a, LastTradeResponse& b) {
     a.Swap(&b);
@@ -9044,7 +9406,7 @@ class MarketByIDRequest PROTOBUF_FINAL :
                &_MarketByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   friend void swap(MarketByIDRequest& a, MarketByIDRequest& b) {
     a.Swap(&b);
@@ -9187,7 +9549,7 @@ class MarketByIDResponse PROTOBUF_FINAL :
                &_MarketByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   friend void swap(MarketByIDResponse& a, MarketByIDResponse& b) {
     a.Swap(&b);
@@ -9332,7 +9694,7 @@ class PartyByIDRequest PROTOBUF_FINAL :
                &_PartyByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   friend void swap(PartyByIDRequest& a, PartyByIDRequest& b) {
     a.Swap(&b);
@@ -9475,7 +9837,7 @@ class PartyByIDResponse PROTOBUF_FINAL :
                &_PartyByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   friend void swap(PartyByIDResponse& a, PartyByIDResponse& b) {
     a.Swap(&b);
@@ -9620,7 +9982,7 @@ class PartiesRequest PROTOBUF_FINAL :
                &_PartiesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(PartiesRequest& a, PartiesRequest& b) {
     a.Swap(&b);
@@ -9743,7 +10105,7 @@ class PartiesResponse PROTOBUF_FINAL :
                &_PartiesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(PartiesResponse& a, PartiesResponse& b) {
     a.Swap(&b);
@@ -9888,7 +10250,7 @@ class TradesByPartyRequest PROTOBUF_FINAL :
                &_TradesByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(TradesByPartyRequest& a, TradesByPartyRequest& b) {
     a.Swap(&b);
@@ -10069,7 +10431,7 @@ class TradesByPartyResponse PROTOBUF_FINAL :
                &_TradesByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(TradesByPartyResponse& a, TradesByPartyResponse& b) {
     a.Swap(&b);
@@ -10214,7 +10576,7 @@ class TradesByOrderRequest PROTOBUF_FINAL :
                &_TradesByOrderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(TradesByOrderRequest& a, TradesByOrderRequest& b) {
     a.Swap(&b);
@@ -10357,7 +10719,7 @@ class TradesByOrderResponse PROTOBUF_FINAL :
                &_TradesByOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(TradesByOrderResponse& a, TradesByOrderResponse& b) {
     a.Swap(&b);
@@ -10502,7 +10864,7 @@ class AccountsSubscribeRequest PROTOBUF_FINAL :
                &_AccountsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(AccountsSubscribeRequest& a, AccountsSubscribeRequest& b) {
     a.Swap(&b);
@@ -10692,7 +11054,7 @@ class AccountsSubscribeResponse PROTOBUF_FINAL :
                &_AccountsSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   friend void swap(AccountsSubscribeResponse& a, AccountsSubscribeResponse& b) {
     a.Swap(&b);
@@ -10837,7 +11199,7 @@ class OrdersSubscribeRequest PROTOBUF_FINAL :
                &_OrdersSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   friend void swap(OrdersSubscribeRequest& a, OrdersSubscribeRequest& b) {
     a.Swap(&b);
@@ -10998,7 +11360,7 @@ class TradesSubscribeRequest PROTOBUF_FINAL :
                &_TradesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   friend void swap(TradesSubscribeRequest& a, TradesSubscribeRequest& b) {
     a.Swap(&b);
@@ -11159,7 +11521,7 @@ class CandlesSubscribeRequest PROTOBUF_FINAL :
                &_CandlesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(CandlesSubscribeRequest& a, CandlesSubscribeRequest& b) {
     a.Swap(&b);
@@ -11313,7 +11675,7 @@ class CandlesSubscribeResponse PROTOBUF_FINAL :
                &_CandlesSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(CandlesSubscribeResponse& a, CandlesSubscribeResponse& b) {
     a.Swap(&b);
@@ -11458,7 +11820,7 @@ class MarketDepthSubscribeRequest PROTOBUF_FINAL :
                &_MarketDepthSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(MarketDepthSubscribeRequest& a, MarketDepthSubscribeRequest& b) {
     a.Swap(&b);
@@ -11601,7 +11963,7 @@ class MarketDepthSubscribeResponse PROTOBUF_FINAL :
                &_MarketDepthSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(MarketDepthSubscribeResponse& a, MarketDepthSubscribeResponse& b) {
     a.Swap(&b);
@@ -11746,7 +12108,7 @@ class MarketDepthUpdatesSubscribeRequest PROTOBUF_FINAL :
                &_MarketDepthUpdatesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(MarketDepthUpdatesSubscribeRequest& a, MarketDepthUpdatesSubscribeRequest& b) {
     a.Swap(&b);
@@ -11889,7 +12251,7 @@ class MarketDepthUpdatesSubscribeResponse PROTOBUF_FINAL :
                &_MarketDepthUpdatesSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(MarketDepthUpdatesSubscribeResponse& a, MarketDepthUpdatesSubscribeResponse& b) {
     a.Swap(&b);
@@ -12034,7 +12396,7 @@ class PositionsSubscribeRequest PROTOBUF_FINAL :
                &_PositionsSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(PositionsSubscribeRequest& a, PositionsSubscribeRequest& b) {
     a.Swap(&b);
@@ -12195,7 +12557,7 @@ class PositionsSubscribeResponse PROTOBUF_FINAL :
                &_PositionsSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(PositionsSubscribeResponse& a, PositionsSubscribeResponse& b) {
     a.Swap(&b);
@@ -12340,7 +12702,7 @@ class OrdersByMarketRequest PROTOBUF_FINAL :
                &_OrdersByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(OrdersByMarketRequest& a, OrdersByMarketRequest& b) {
     a.Swap(&b);
@@ -12503,7 +12865,7 @@ class OrdersByMarketResponse PROTOBUF_FINAL :
                &_OrdersByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(OrdersByMarketResponse& a, OrdersByMarketResponse& b) {
     a.Swap(&b);
@@ -12648,7 +13010,7 @@ class OrdersByPartyRequest PROTOBUF_FINAL :
                &_OrdersByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(OrdersByPartyRequest& a, OrdersByPartyRequest& b) {
     a.Swap(&b);
@@ -12811,7 +13173,7 @@ class OrdersByPartyResponse PROTOBUF_FINAL :
                &_OrdersByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(OrdersByPartyResponse& a, OrdersByPartyResponse& b) {
     a.Swap(&b);
@@ -12956,7 +13318,7 @@ class OrderByMarketAndIDRequest PROTOBUF_FINAL :
                &_OrderByMarketAndIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(OrderByMarketAndIDRequest& a, OrderByMarketAndIDRequest& b) {
     a.Swap(&b);
@@ -13117,7 +13479,7 @@ class OrderByMarketAndIDResponse PROTOBUF_FINAL :
                &_OrderByMarketAndIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(OrderByMarketAndIDResponse& a, OrderByMarketAndIDResponse& b) {
     a.Swap(&b);
@@ -13262,7 +13624,7 @@ class OrderByReferenceRequest PROTOBUF_FINAL :
                &_OrderByReferenceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(OrderByReferenceRequest& a, OrderByReferenceRequest& b) {
     a.Swap(&b);
@@ -13405,7 +13767,7 @@ class OrderByReferenceResponse PROTOBUF_FINAL :
                &_OrderByReferenceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(OrderByReferenceResponse& a, OrderByReferenceResponse& b) {
     a.Swap(&b);
@@ -13550,7 +13912,7 @@ class MarketsRequest PROTOBUF_FINAL :
                &_MarketsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(MarketsRequest& a, MarketsRequest& b) {
     a.Swap(&b);
@@ -13673,7 +14035,7 @@ class MarketsResponse PROTOBUF_FINAL :
                &_MarketsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(MarketsResponse& a, MarketsResponse& b) {
     a.Swap(&b);
@@ -13818,7 +14180,7 @@ class CandlesRequest PROTOBUF_FINAL :
                &_CandlesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   friend void swap(CandlesRequest& a, CandlesRequest& b) {
     a.Swap(&b);
@@ -13983,7 +14345,7 @@ class CandlesResponse PROTOBUF_FINAL :
                &_CandlesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   friend void swap(CandlesResponse& a, CandlesResponse& b) {
     a.Swap(&b);
@@ -14128,7 +14490,7 @@ class MarketDepthRequest PROTOBUF_FINAL :
                &_MarketDepthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    93;
 
   friend void swap(MarketDepthRequest& a, MarketDepthRequest& b) {
     a.Swap(&b);
@@ -14282,7 +14644,7 @@ class MarketDepthResponse PROTOBUF_FINAL :
                &_MarketDepthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    94;
 
   friend void swap(MarketDepthResponse& a, MarketDepthResponse& b) {
     a.Swap(&b);
@@ -14496,7 +14858,7 @@ class TradesByMarketRequest PROTOBUF_FINAL :
                &_TradesByMarketRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    95;
 
   friend void swap(TradesByMarketRequest& a, TradesByMarketRequest& b) {
     a.Swap(&b);
@@ -14659,7 +15021,7 @@ class TradesByMarketResponse PROTOBUF_FINAL :
                &_TradesByMarketResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    96;
 
   friend void swap(TradesByMarketResponse& a, TradesByMarketResponse& b) {
     a.Swap(&b);
@@ -14804,7 +15166,7 @@ class PositionsByPartyRequest PROTOBUF_FINAL :
                &_PositionsByPartyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    97;
 
   friend void swap(PositionsByPartyRequest& a, PositionsByPartyRequest& b) {
     a.Swap(&b);
@@ -14965,7 +15327,7 @@ class PositionsByPartyResponse PROTOBUF_FINAL :
                &_PositionsByPartyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    98;
 
   friend void swap(PositionsByPartyResponse& a, PositionsByPartyResponse& b) {
     a.Swap(&b);
@@ -15110,7 +15472,7 @@ class GetVegaTimeRequest PROTOBUF_FINAL :
                &_GetVegaTimeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    99;
 
   friend void swap(GetVegaTimeRequest& a, GetVegaTimeRequest& b) {
     a.Swap(&b);
@@ -15233,7 +15595,7 @@ class GetVegaTimeResponse PROTOBUF_FINAL :
                &_GetVegaTimeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    100;
 
   friend void swap(GetVegaTimeResponse& a, GetVegaTimeResponse& b) {
     a.Swap(&b);
@@ -15369,7 +15731,7 @@ class Pagination PROTOBUF_FINAL :
                &_Pagination_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    101;
 
   friend void swap(Pagination& a, Pagination& b) {
     a.Swap(&b);
@@ -15527,7 +15889,7 @@ class OrdersSubscribeResponse PROTOBUF_FINAL :
                &_OrdersSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    102;
 
   friend void swap(OrdersSubscribeResponse& a, OrdersSubscribeResponse& b) {
     a.Swap(&b);
@@ -15672,7 +16034,7 @@ class TradesSubscribeResponse PROTOBUF_FINAL :
                &_TradesSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    103;
 
   friend void swap(TradesSubscribeResponse& a, TradesSubscribeResponse& b) {
     a.Swap(&b);
@@ -15817,7 +16179,7 @@ class TransferResponsesSubscribeRequest PROTOBUF_FINAL :
                &_TransferResponsesSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    104;
 
   friend void swap(TransferResponsesSubscribeRequest& a, TransferResponsesSubscribeRequest& b) {
     a.Swap(&b);
@@ -15940,7 +16302,7 @@ class TransferResponsesSubscribeResponse PROTOBUF_FINAL :
                &_TransferResponsesSubscribeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    105;
 
   friend void swap(TransferResponsesSubscribeResponse& a, TransferResponsesSubscribeResponse& b) {
     a.Swap(&b);
@@ -16085,7 +16447,7 @@ class PartyAccountsRequest PROTOBUF_FINAL :
                &_PartyAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    106;
 
   friend void swap(PartyAccountsRequest& a, PartyAccountsRequest& b) {
     a.Swap(&b);
@@ -16275,7 +16637,7 @@ class PartyAccountsResponse PROTOBUF_FINAL :
                &_PartyAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    107;
 
   friend void swap(PartyAccountsResponse& a, PartyAccountsResponse& b) {
     a.Swap(&b);
@@ -16420,7 +16782,7 @@ class MarketAccountsRequest PROTOBUF_FINAL :
                &_MarketAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    108;
 
   friend void swap(MarketAccountsRequest& a, MarketAccountsRequest& b) {
     a.Swap(&b);
@@ -16581,7 +16943,7 @@ class MarketAccountsResponse PROTOBUF_FINAL :
                &_MarketAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    109;
 
   friend void swap(MarketAccountsResponse& a, MarketAccountsResponse& b) {
     a.Swap(&b);
@@ -16726,7 +17088,7 @@ class FeeInfrastructureAccountsRequest PROTOBUF_FINAL :
                &_FeeInfrastructureAccountsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    110;
 
   friend void swap(FeeInfrastructureAccountsRequest& a, FeeInfrastructureAccountsRequest& b) {
     a.Swap(&b);
@@ -16869,7 +17231,7 @@ class FeeInfrastructureAccountsResponse PROTOBUF_FINAL :
                &_FeeInfrastructureAccountsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    111;
 
   friend void swap(FeeInfrastructureAccountsResponse& a, FeeInfrastructureAccountsResponse& b) {
     a.Swap(&b);
@@ -17014,7 +17376,7 @@ class PrepareProposalSubmissionRequest PROTOBUF_FINAL :
                &_PrepareProposalSubmissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    112;
 
   friend void swap(PrepareProposalSubmissionRequest& a, PrepareProposalSubmissionRequest& b) {
     a.Swap(&b);
@@ -17159,7 +17521,7 @@ class PrepareProposalSubmissionResponse PROTOBUF_FINAL :
                &_PrepareProposalSubmissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    113;
 
   friend void swap(PrepareProposalSubmissionResponse& a, PrepareProposalSubmissionResponse& b) {
     a.Swap(&b);
@@ -17322,7 +17684,7 @@ class PrepareVoteSubmissionRequest PROTOBUF_FINAL :
                &_PrepareVoteSubmissionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    114;
 
   friend void swap(PrepareVoteSubmissionRequest& a, PrepareVoteSubmissionRequest& b) {
     a.Swap(&b);
@@ -17467,7 +17829,7 @@ class PrepareVoteSubmissionResponse PROTOBUF_FINAL :
                &_PrepareVoteSubmissionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    115;
 
   friend void swap(PrepareVoteSubmissionResponse& a, PrepareVoteSubmissionResponse& b) {
     a.Swap(&b);
@@ -17630,7 +17992,7 @@ class PrepareLiquidityProvisionRequest PROTOBUF_FINAL :
                &_PrepareLiquidityProvisionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    116;
 
   friend void swap(PrepareLiquidityProvisionRequest& a, PrepareLiquidityProvisionRequest& b) {
     a.Swap(&b);
@@ -17775,7 +18137,7 @@ class PrepareLiquidityProvisionResponse PROTOBUF_FINAL :
                &_PrepareLiquidityProvisionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    115;
+    117;
 
   friend void swap(PrepareLiquidityProvisionResponse& a, PrepareLiquidityProvisionResponse& b) {
     a.Swap(&b);
@@ -17918,7 +18280,7 @@ class OrderByIDRequest PROTOBUF_FINAL :
                &_OrderByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    116;
+    118;
 
   friend void swap(OrderByIDRequest& a, OrderByIDRequest& b) {
     a.Swap(&b);
@@ -18072,7 +18434,7 @@ class OrderByIDResponse PROTOBUF_FINAL :
                &_OrderByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    117;
+    119;
 
   friend void swap(OrderByIDResponse& a, OrderByIDResponse& b) {
     a.Swap(&b);
@@ -18217,7 +18579,7 @@ class OrderVersionsByIDRequest PROTOBUF_FINAL :
                &_OrderVersionsByIDRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    118;
+    120;
 
   friend void swap(OrderVersionsByIDRequest& a, OrderVersionsByIDRequest& b) {
     a.Swap(&b);
@@ -18380,7 +18742,7 @@ class OrderVersionsByIDResponse PROTOBUF_FINAL :
                &_OrderVersionsByIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    119;
+    121;
 
   friend void swap(OrderVersionsByIDResponse& a, OrderVersionsByIDResponse& b) {
     a.Swap(&b);
@@ -18525,7 +18887,7 @@ class EstimateFeeRequest PROTOBUF_FINAL :
                &_EstimateFeeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    120;
+    122;
 
   friend void swap(EstimateFeeRequest& a, EstimateFeeRequest& b) {
     a.Swap(&b);
@@ -18670,7 +19032,7 @@ class EstimateFeeResponse PROTOBUF_FINAL :
                &_EstimateFeeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    121;
+    123;
 
   friend void swap(EstimateFeeResponse& a, EstimateFeeResponse& b) {
     a.Swap(&b);
@@ -18815,7 +19177,7 @@ class EstimateMarginRequest PROTOBUF_FINAL :
                &_EstimateMarginRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    122;
+    124;
 
   friend void swap(EstimateMarginRequest& a, EstimateMarginRequest& b) {
     a.Swap(&b);
@@ -18960,7 +19322,7 @@ class EstimateMarginResponse PROTOBUF_FINAL :
                &_EstimateMarginResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    123;
+    125;
 
   friend void swap(EstimateMarginResponse& a, EstimateMarginResponse& b) {
     a.Swap(&b);
@@ -19105,7 +19467,7 @@ class ObserveEventBusRequest PROTOBUF_FINAL :
                &_ObserveEventBusRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    124;
+    126;
 
   friend void swap(ObserveEventBusRequest& a, ObserveEventBusRequest& b) {
     a.Swap(&b);
@@ -19297,7 +19659,7 @@ class ObserveEventBusResponse PROTOBUF_FINAL :
                &_ObserveEventBusResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    125;
+    127;
 
   friend void swap(ObserveEventBusResponse& a, ObserveEventBusResponse& b) {
     a.Swap(&b);
@@ -19442,7 +19804,7 @@ class StatisticsRequest PROTOBUF_FINAL :
                &_StatisticsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    126;
+    128;
 
   friend void swap(StatisticsRequest& a, StatisticsRequest& b) {
     a.Swap(&b);
@@ -19565,7 +19927,7 @@ class StatisticsResponse PROTOBUF_FINAL :
                &_StatisticsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    127;
+    129;
 
   friend void swap(StatisticsResponse& a, StatisticsResponse& b) {
     a.Swap(&b);
@@ -19710,7 +20072,7 @@ class WithdrawalsRequest PROTOBUF_FINAL :
                &_WithdrawalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    128;
+    130;
 
   friend void swap(WithdrawalsRequest& a, WithdrawalsRequest& b) {
     a.Swap(&b);
@@ -19853,7 +20215,7 @@ class WithdrawalsResponse PROTOBUF_FINAL :
                &_WithdrawalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    129;
+    131;
 
   friend void swap(WithdrawalsResponse& a, WithdrawalsResponse& b) {
     a.Swap(&b);
@@ -19998,7 +20360,7 @@ class WithdrawalRequest PROTOBUF_FINAL :
                &_WithdrawalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    130;
+    132;
 
   friend void swap(WithdrawalRequest& a, WithdrawalRequest& b) {
     a.Swap(&b);
@@ -20141,7 +20503,7 @@ class WithdrawalResponse PROTOBUF_FINAL :
                &_WithdrawalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    131;
+    133;
 
   friend void swap(WithdrawalResponse& a, WithdrawalResponse& b) {
     a.Swap(&b);
@@ -20286,7 +20648,7 @@ class ERC20WithdrawalApprovalRequest PROTOBUF_FINAL :
                &_ERC20WithdrawalApprovalRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    132;
+    134;
 
   friend void swap(ERC20WithdrawalApprovalRequest& a, ERC20WithdrawalApprovalRequest& b) {
     a.Swap(&b);
@@ -20429,7 +20791,7 @@ class ERC20WithdrawalApprovalResponse PROTOBUF_FINAL :
                &_ERC20WithdrawalApprovalResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    133;
+    135;
 
   friend void swap(ERC20WithdrawalApprovalResponse& a, ERC20WithdrawalApprovalResponse& b) {
     a.Swap(&b);
@@ -20637,7 +20999,7 @@ class DepositsRequest PROTOBUF_FINAL :
                &_DepositsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    134;
+    136;
 
   friend void swap(DepositsRequest& a, DepositsRequest& b) {
     a.Swap(&b);
@@ -20780,7 +21142,7 @@ class DepositsResponse PROTOBUF_FINAL :
                &_DepositsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    135;
+    137;
 
   friend void swap(DepositsResponse& a, DepositsResponse& b) {
     a.Swap(&b);
@@ -20925,7 +21287,7 @@ class DepositRequest PROTOBUF_FINAL :
                &_DepositRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    136;
+    138;
 
   friend void swap(DepositRequest& a, DepositRequest& b) {
     a.Swap(&b);
@@ -21068,7 +21430,7 @@ class DepositResponse PROTOBUF_FINAL :
                &_DepositResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    137;
+    139;
 
   friend void swap(DepositResponse& a, DepositResponse& b) {
     a.Swap(&b);
@@ -21213,7 +21575,7 @@ class NetworkParametersRequest PROTOBUF_FINAL :
                &_NetworkParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    138;
+    140;
 
   friend void swap(NetworkParametersRequest& a, NetworkParametersRequest& b) {
     a.Swap(&b);
@@ -21336,7 +21698,7 @@ class NetworkParametersResponse PROTOBUF_FINAL :
                &_NetworkParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    139;
+    141;
 
   friend void swap(NetworkParametersResponse& a, NetworkParametersResponse& b) {
     a.Swap(&b);
@@ -21481,7 +21843,7 @@ class LiquidityProvisionsRequest PROTOBUF_FINAL :
                &_LiquidityProvisionsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    140;
+    142;
 
   friend void swap(LiquidityProvisionsRequest& a, LiquidityProvisionsRequest& b) {
     a.Swap(&b);
@@ -21642,7 +22004,7 @@ class LiquidityProvisionsResponse PROTOBUF_FINAL :
                &_LiquidityProvisionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    141;
+    143;
 
   friend void swap(LiquidityProvisionsResponse& a, LiquidityProvisionsResponse& b) {
     a.Swap(&b);
@@ -21787,7 +22149,7 @@ class OracleSpecRequest PROTOBUF_FINAL :
                &_OracleSpecRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    142;
+    144;
 
   friend void swap(OracleSpecRequest& a, OracleSpecRequest& b) {
     a.Swap(&b);
@@ -21930,7 +22292,7 @@ class OracleSpecResponse PROTOBUF_FINAL :
                &_OracleSpecResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    143;
+    145;
 
   friend void swap(OracleSpecResponse& a, OracleSpecResponse& b) {
     a.Swap(&b);
@@ -22075,7 +22437,7 @@ class OracleSpecsRequest PROTOBUF_FINAL :
                &_OracleSpecsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    144;
+    146;
 
   friend void swap(OracleSpecsRequest& a, OracleSpecsRequest& b) {
     a.Swap(&b);
@@ -22198,7 +22560,7 @@ class OracleSpecsResponse PROTOBUF_FINAL :
                &_OracleSpecsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    145;
+    147;
 
   friend void swap(OracleSpecsResponse& a, OracleSpecsResponse& b) {
     a.Swap(&b);
@@ -22343,7 +22705,7 @@ class OracleDataBySpecRequest PROTOBUF_FINAL :
                &_OracleDataBySpecRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    146;
+    148;
 
   friend void swap(OracleDataBySpecRequest& a, OracleDataBySpecRequest& b) {
     a.Swap(&b);
@@ -22486,7 +22848,7 @@ class OracleDataBySpecResponse PROTOBUF_FINAL :
                &_OracleDataBySpecResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    147;
+    149;
 
   friend void swap(OracleDataBySpecResponse& a, OracleDataBySpecResponse& b) {
     a.Swap(&b);
@@ -22945,6 +23307,131 @@ inline void SubmitTransactionResponse::_internal_set_success(bool value) {
 inline void SubmitTransactionResponse::set_success(bool value) {
   _internal_set_success(value);
   // @@protoc_insertion_point(field_set:api.v1.SubmitTransactionResponse.success)
+}
+
+// -------------------------------------------------------------------
+
+// SubmitTransactionV2Request
+
+// .vega.commands.v1.Transaction tx = 1 [json_name = "tx"];
+inline bool SubmitTransactionV2Request::_internal_has_tx() const {
+  return this != internal_default_instance() && tx_ != nullptr;
+}
+inline bool SubmitTransactionV2Request::has_tx() const {
+  return _internal_has_tx();
+}
+inline const ::vega::commands::v1::Transaction& SubmitTransactionV2Request::_internal_tx() const {
+  const ::vega::commands::v1::Transaction* p = tx_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::commands::v1::Transaction&>(
+      ::vega::commands::v1::_Transaction_default_instance_);
+}
+inline const ::vega::commands::v1::Transaction& SubmitTransactionV2Request::tx() const {
+  // @@protoc_insertion_point(field_get:api.v1.SubmitTransactionV2Request.tx)
+  return _internal_tx();
+}
+inline void SubmitTransactionV2Request::unsafe_arena_set_allocated_tx(
+    ::vega::commands::v1::Transaction* tx) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tx_);
+  }
+  tx_ = tx;
+  if (tx) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:api.v1.SubmitTransactionV2Request.tx)
+}
+inline ::vega::commands::v1::Transaction* SubmitTransactionV2Request::release_tx() {
+
+  ::vega::commands::v1::Transaction* temp = tx_;
+  tx_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::commands::v1::Transaction* SubmitTransactionV2Request::unsafe_arena_release_tx() {
+  // @@protoc_insertion_point(field_release:api.v1.SubmitTransactionV2Request.tx)
+
+  ::vega::commands::v1::Transaction* temp = tx_;
+  tx_ = nullptr;
+  return temp;
+}
+inline ::vega::commands::v1::Transaction* SubmitTransactionV2Request::_internal_mutable_tx() {
+
+  if (tx_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::commands::v1::Transaction>(GetArena());
+    tx_ = p;
+  }
+  return tx_;
+}
+inline ::vega::commands::v1::Transaction* SubmitTransactionV2Request::mutable_tx() {
+  // @@protoc_insertion_point(field_mutable:api.v1.SubmitTransactionV2Request.tx)
+  return _internal_mutable_tx();
+}
+inline void SubmitTransactionV2Request::set_allocated_tx(::vega::commands::v1::Transaction* tx) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(tx_);
+  }
+  if (tx) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(tx)->GetArena();
+    if (message_arena != submessage_arena) {
+      tx = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tx, submessage_arena);
+    }
+
+  } else {
+
+  }
+  tx_ = tx;
+  // @@protoc_insertion_point(field_set_allocated:api.v1.SubmitTransactionV2Request.tx)
+}
+
+// .api.v1.SubmitTransactionV2Request.Type type = 2 [json_name = "type"];
+inline void SubmitTransactionV2Request::clear_type() {
+  type_ = 0;
+}
+inline ::api::v1::SubmitTransactionV2Request_Type SubmitTransactionV2Request::_internal_type() const {
+  return static_cast< ::api::v1::SubmitTransactionV2Request_Type >(type_);
+}
+inline ::api::v1::SubmitTransactionV2Request_Type SubmitTransactionV2Request::type() const {
+  // @@protoc_insertion_point(field_get:api.v1.SubmitTransactionV2Request.type)
+  return _internal_type();
+}
+inline void SubmitTransactionV2Request::_internal_set_type(::api::v1::SubmitTransactionV2Request_Type value) {
+
+  type_ = value;
+}
+inline void SubmitTransactionV2Request::set_type(::api::v1::SubmitTransactionV2Request_Type value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:api.v1.SubmitTransactionV2Request.type)
+}
+
+// -------------------------------------------------------------------
+
+// SubmitTransactionV2Response
+
+// bool success = 1 [json_name = "success"];
+inline void SubmitTransactionV2Response::clear_success() {
+  success_ = false;
+}
+inline bool SubmitTransactionV2Response::_internal_success() const {
+  return success_;
+}
+inline bool SubmitTransactionV2Response::success() const {
+  // @@protoc_insertion_point(field_get:api.v1.SubmitTransactionV2Response.success)
+  return _internal_success();
+}
+inline void SubmitTransactionV2Response::_internal_set_success(bool value) {
+
+  success_ = value;
+}
+inline void SubmitTransactionV2Response::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:api.v1.SubmitTransactionV2Response.success)
 }
 
 // -------------------------------------------------------------------
@@ -34052,6 +34539,10 @@ OracleDataBySpecResponse::oracle_data() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -34064,6 +34555,11 @@ template <> struct is_proto_enum< ::api::v1::SubmitTransactionRequest_Type> : ::
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::api::v1::SubmitTransactionRequest_Type>() {
   return ::api::v1::SubmitTransactionRequest_Type_descriptor();
+}
+template <> struct is_proto_enum< ::api::v1::SubmitTransactionV2Request_Type> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::api::v1::SubmitTransactionV2Request_Type>() {
+  return ::api::v1::SubmitTransactionV2Request_Type_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

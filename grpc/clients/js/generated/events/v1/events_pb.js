@@ -22,10 +22,10 @@ var governance_pb = require('../../governance_pb.js');
 goog.object.extend(proto, governance_pb);
 var vega_pb = require('../../vega_pb.js');
 goog.object.extend(proto, vega_pb);
-var oracles_v1_oracle_spec_pb = require('../../oracles/v1/oracle_spec_pb.js');
-goog.object.extend(proto, oracles_v1_oracle_spec_pb);
-var oracles_v1_oracle_data_pb = require('../../oracles/v1/oracle_data_pb.js');
-goog.object.extend(proto, oracles_v1_oracle_data_pb);
+var oracles_v1_spec_pb = require('../../oracles/v1/spec_pb.js');
+goog.object.extend(proto, oracles_v1_spec_pb);
+var oracles_v1_data_pb = require('../../oracles/v1/data_pb.js');
+goog.object.extend(proto, oracles_v1_data_pb);
 var commands_v1_commands_pb = require('../../commands/v1/commands_pb.js');
 goog.object.extend(proto, commands_v1_commands_pb);
 var commands_v1_validator_commands_pb = require('../../commands/v1/validator_commands_pb.js');
@@ -2918,8 +2918,8 @@ proto.vega.events.v1.BusEvent.toObject = function(includeInstance, msg) {
     networkParameter: (f = msg.getNetworkParameter()) && vega_pb.NetworkParameter.toObject(includeInstance, f),
     liquidityProvision: (f = msg.getLiquidityProvision()) && vega_pb.LiquidityProvision.toObject(includeInstance, f),
     marketUpdated: (f = msg.getMarketUpdated()) && markets_pb.Market.toObject(includeInstance, f),
-    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpec.toObject(includeInstance, f),
-    oracleData: (f = msg.getOracleData()) && oracles_v1_oracle_data_pb.OracleData.toObject(includeInstance, f),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_spec_pb.OracleSpec.toObject(includeInstance, f),
+    oracleData: (f = msg.getOracleData()) && oracles_v1_data_pb.OracleData.toObject(includeInstance, f),
     market: (f = msg.getMarket()) && proto.vega.events.v1.MarketEvent.toObject(includeInstance, f),
     txErrEvent: (f = msg.getTxErrEvent()) && proto.vega.events.v1.TxErrorEvent.toObject(includeInstance, f)
   };
@@ -3096,13 +3096,13 @@ proto.vega.events.v1.BusEvent.deserializeBinaryFromReader = function(msg, reader
       msg.setMarketUpdated(value);
       break;
     case 126:
-      var value = new oracles_v1_oracle_spec_pb.OracleSpec;
-      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpec.deserializeBinaryFromReader);
+      var value = new oracles_v1_spec_pb.OracleSpec;
+      reader.readMessage(value,oracles_v1_spec_pb.OracleSpec.deserializeBinaryFromReader);
       msg.setOracleSpec(value);
       break;
     case 127:
-      var value = new oracles_v1_oracle_data_pb.OracleData;
-      reader.readMessage(value,oracles_v1_oracle_data_pb.OracleData.deserializeBinaryFromReader);
+      var value = new oracles_v1_data_pb.OracleData;
+      reader.readMessage(value,oracles_v1_data_pb.OracleData.deserializeBinaryFromReader);
       msg.setOracleData(value);
       break;
     case 1001:
@@ -3370,7 +3370,7 @@ proto.vega.events.v1.BusEvent.serializeBinaryToWriter = function(message, writer
     writer.writeMessage(
       126,
       f,
-      oracles_v1_oracle_spec_pb.OracleSpec.serializeBinaryToWriter
+      oracles_v1_spec_pb.OracleSpec.serializeBinaryToWriter
     );
   }
   f = message.getOracleData();
@@ -3378,7 +3378,7 @@ proto.vega.events.v1.BusEvent.serializeBinaryToWriter = function(message, writer
     writer.writeMessage(
       127,
       f,
-      oracles_v1_oracle_data_pb.OracleData.serializeBinaryToWriter
+      oracles_v1_data_pb.OracleData.serializeBinaryToWriter
     );
   }
   f = message.getMarket();
@@ -4385,7 +4385,7 @@ proto.vega.events.v1.BusEvent.prototype.hasMarketUpdated = function() {
  */
 proto.vega.events.v1.BusEvent.prototype.getOracleSpec = function() {
   return /** @type{?proto.oracles.v1.OracleSpec} */ (
-    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpec, 126));
+    jspb.Message.getWrapperField(this, oracles_v1_spec_pb.OracleSpec, 126));
 };
 
 
@@ -4422,7 +4422,7 @@ proto.vega.events.v1.BusEvent.prototype.hasOracleSpec = function() {
  */
 proto.vega.events.v1.BusEvent.prototype.getOracleData = function() {
   return /** @type{?proto.oracles.v1.OracleData} */ (
-    jspb.Message.getWrapperField(this, oracles_v1_oracle_data_pb.OracleData, 127));
+    jspb.Message.getWrapperField(this, oracles_v1_data_pb.OracleData, 127));
 };
 
 

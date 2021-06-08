@@ -16,8 +16,8 @@ var global = Function('return this')();
 
 var github_com_mwitkow_go$proto$validators_validator_pb = require('./github.com/mwitkow/go-proto-validators/validator_pb.js');
 goog.object.extend(proto, github_com_mwitkow_go$proto$validators_validator_pb);
-var oracles_v1_oracle_spec_pb = require('./oracles/v1/oracle_spec_pb.js');
-goog.object.extend(proto, oracles_v1_oracle_spec_pb);
+var oracles_v1_spec_pb = require('./oracles/v1/spec_pb.js');
+goog.object.extend(proto, oracles_v1_spec_pb);
 goog.exportSymbol('proto.vega.AuctionDuration', null, global);
 goog.exportSymbol('proto.vega.ContinuousTrading', null, global);
 goog.exportSymbol('proto.vega.DiscreteTrading', null, global);
@@ -1014,7 +1014,7 @@ proto.vega.Future.toObject = function(includeInstance, msg) {
     maturity: jspb.Message.getFieldWithDefault(msg, 1, ""),
     settlementAsset: jspb.Message.getFieldWithDefault(msg, 2, ""),
     quoteName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpec.toObject(includeInstance, f),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_spec_pb.OracleSpec.toObject(includeInstance, f),
     oracleSpecBinding: (f = msg.getOracleSpecBinding()) && proto.vega.OracleSpecToFutureBinding.toObject(includeInstance, f)
   };
 
@@ -1065,8 +1065,8 @@ proto.vega.Future.deserializeBinaryFromReader = function(msg, reader) {
       msg.setQuoteName(value);
       break;
     case 5:
-      var value = new oracles_v1_oracle_spec_pb.OracleSpec;
-      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpec.deserializeBinaryFromReader);
+      var value = new oracles_v1_spec_pb.OracleSpec;
+      reader.readMessage(value,oracles_v1_spec_pb.OracleSpec.deserializeBinaryFromReader);
       msg.setOracleSpec(value);
       break;
     case 6:
@@ -1129,7 +1129,7 @@ proto.vega.Future.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       5,
       f,
-      oracles_v1_oracle_spec_pb.OracleSpec.serializeBinaryToWriter
+      oracles_v1_spec_pb.OracleSpec.serializeBinaryToWriter
     );
   }
   f = message.getOracleSpecBinding();
@@ -1203,7 +1203,7 @@ proto.vega.Future.prototype.setQuoteName = function(value) {
  */
 proto.vega.Future.prototype.getOracleSpec = function() {
   return /** @type{?proto.oracles.v1.OracleSpec} */ (
-    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpec, 5));
+    jspb.Message.getWrapperField(this, oracles_v1_spec_pb.OracleSpec, 5));
 };
 
 

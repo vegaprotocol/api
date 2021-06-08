@@ -10,7 +10,7 @@
     - [File-level Extensions](#github.com/mwitkow/go-proto-validators/validator.proto-extensions)
     - [File-level Extensions](#github.com/mwitkow/go-proto-validators/validator.proto-extensions)
 
-- [oracles/v1/oracle_spec.proto](#oracles/v1/oracle_spec.proto)
+- [oracles/v1/spec.proto](#oracles/v1/spec.proto)
     - [Condition](#oracles.v1.Condition)
     - [Filter](#oracles.v1.Filter)
     - [OracleSpec](#oracles.v1.OracleSpec)
@@ -139,7 +139,7 @@
     - [ProposalError](#vega.ProposalError)
     - [Vote.Value](#vega.Vote.Value)
 
-- [oracles/v1/oracle_data.proto](#oracles/v1/oracle_data.proto)
+- [oracles/v1/data.proto](#oracles/v1/data.proto)
     - [OracleData](#oracles.v1.OracleData)
     - [Property](#oracles.v1.Property)
 
@@ -194,6 +194,16 @@
     - [TxErrorEvent](#vega.events.v1.TxErrorEvent)
 
     - [BusEventType](#vega.events.v1.BusEventType)
+
+- [commands/v1/oracles.proto](#commands/v1/oracles.proto)
+    - [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission)
+
+    - [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource)
+
+- [commands/v1/transaction.proto](#commands/v1/transaction.proto)
+    - [InputData](#vega.commands.v1.InputData)
+    - [Signature](#vega.commands.v1.Signature)
+    - [Transaction](#vega.commands.v1.Transaction)
 
 - [api/trading.proto](#api/trading.proto)
     - [AccountsSubscribeRequest](#api.v1.AccountsSubscribeRequest)
@@ -330,6 +340,8 @@
     - [StatisticsResponse](#api.v1.StatisticsResponse)
     - [SubmitTransactionRequest](#api.v1.SubmitTransactionRequest)
     - [SubmitTransactionResponse](#api.v1.SubmitTransactionResponse)
+    - [SubmitTransactionV2Request](#api.v1.SubmitTransactionV2Request)
+    - [SubmitTransactionV2Response](#api.v1.SubmitTransactionV2Response)
     - [TradesByMarketRequest](#api.v1.TradesByMarketRequest)
     - [TradesByMarketResponse](#api.v1.TradesByMarketResponse)
     - [TradesByOrderRequest](#api.v1.TradesByOrderRequest)
@@ -346,19 +358,10 @@
     - [WithdrawalsResponse](#api.v1.WithdrawalsResponse)
 
     - [SubmitTransactionRequest.Type](#api.v1.SubmitTransactionRequest.Type)
+    - [SubmitTransactionV2Request.Type](#api.v1.SubmitTransactionV2Request.Type)
 
     - [TradingDataService](#api.v1.TradingDataService)
     - [TradingService](#api.v1.TradingService)
-
-- [commands/v1/oracles.proto](#commands/v1/oracles.proto)
-    - [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission)
-
-    - [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource)
-
-- [commands/v1/transaction.proto](#commands/v1/transaction.proto)
-    - [InputData](#vega.commands.v1.InputData)
-    - [Signature](#vega.commands.v1.Signature)
-    - [Transaction](#vega.commands.v1.Transaction)
 
 - [tm/replay.proto](#tm/replay.proto)
     - [BlockParams](#tm.BlockParams)
@@ -384,6 +387,9 @@
     - [VoteInfo](#tm.VoteInfo)
 
     - [EvidenceType](#tm.EvidenceType)
+
+- [wallet/v1/wallet.proto](#wallet/v1/wallet.proto)
+    - [SubmitTransactionRequest](#vega.wallet.v1.SubmitTransactionRequest)
 
 - [Scalar Value Types](#scalar-value-types)
 
@@ -461,10 +467,10 @@
 
 
 
-<a name="oracles/v1/oracle_spec.proto"></a>
+<a name="oracles/v1/spec.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## oracles/v1/oracle_spec.proto
+## oracles/v1/spec.proto
 
 
 
@@ -1706,7 +1712,7 @@ and to be verified by the vega network
 | ----- | ---- | ----- | ----------- |
 | sig | [bytes](#bytes) |  | The bytes of the signature |
 | algo | [string](#string) |  | The algorithm used to create the signature |
-| version | [uint64](#uint64) |  | The version of the signature used to create the signature |
+| version | [uint32](#uint32) |  | The version of the signature used to create the signature |
 
 
 
@@ -2703,10 +2709,10 @@ Vote value
 
 
 
-<a name="oracles/v1/oracle_data.proto"></a>
+<a name="oracles/v1/data.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## oracles/v1/oracle_data.proto
+## oracles/v1/data.proto
 
 
 
@@ -3587,6 +3593,131 @@ Group values (e.g. BUS_EVENT_TYPE_AUCTION) where they represent a group of data 
 | BUS_EVENT_TYPE_ORACLE_DATA | 28 | Event indicating that an oracle data has been broadcast |
 | BUS_EVENT_TYPE_MARKET | 101 | Event indicating a market related event, for example when a market opens |
 | BUS_EVENT_TYPE_TX_ERROR | 201 | Event used to report failed transactions back to a user, this is excluded from the ALL type |
+
+
+
+
+
+
+
+
+
+
+<a name="commands/v1/oracles.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## commands/v1/oracles.proto
+
+
+
+<a name="vega.commands.v1.OracleDataSubmission"></a>
+
+### OracleDataSubmission
+Command to submit new Oracle data from third party providers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| source | [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource) |  | The source from which the data is coming from |
+| payload | [bytes](#bytes) |  | The data provided by the third party provider |
+
+
+
+
+
+
+
+
+<a name="vega.commands.v1.OracleDataSubmission.OracleSource"></a>
+
+### OracleDataSubmission.OracleSource
+The supported Oracle sources
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ORACLE_SOURCE_UNSPECIFIED | 0 | The default value |
+| ORACLE_SOURCE_OPEN_ORACLE | 1 | Support for Open Oracle standard |
+
+
+
+
+
+
+
+
+
+
+<a name="commands/v1/transaction.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## commands/v1/transaction.proto
+
+
+
+<a name="vega.commands.v1.InputData"></a>
+
+### InputData
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nonce | [uint64](#uint64) |  | A random number used to provided uniqueness and prevents against replay attack. |
+| block_height | [uint64](#uint64) |  | The block height associated to the transaction. This should always be current height of the node at the time of sending the Tx. BlockHeight is used as a mechanism for replay protection. |
+| order_submission | [OrderSubmission](#vega.commands.v1.OrderSubmission) |  | User commands |
+| order_cancellation | [OrderCancellation](#vega.commands.v1.OrderCancellation) |  |  |
+| order_amendment | [OrderAmendment](#vega.commands.v1.OrderAmendment) |  |  |
+| withdraw_submission | [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  |  |
+| proposal_submission | [ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
+| vote_submission | [VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
+| liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
+| node_registration | [NodeRegistration](#vega.commands.v1.NodeRegistration) |  | Validator commands |
+| node_vote | [NodeVote](#vega.commands.v1.NodeVote) |  |  |
+| node_signature | [NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
+| chain_event | [ChainEvent](#vega.commands.v1.ChainEvent) |  |  |
+| oracle_data_submission | [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission) |  | Oracles |
+
+
+
+
+
+
+<a name="vega.commands.v1.Signature"></a>
+
+### Signature
+A signature to be authenticate a transaction and to be verified by the vega
+network.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| value | [string](#string) |  | The bytes of the signature (hex-encoded). |
+| algo | [string](#string) |  | The algorithm used to create the signature. |
+| version | [uint32](#uint32) |  | The version of the signature used to create the signature. |
+
+
+
+
+
+
+<a name="vega.commands.v1.Transaction"></a>
+
+### Transaction
+Represents a transaction to be sent to Vega.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| input_data | [bytes](#bytes) |  | One of the set of Vega commands (proto marshalled). |
+| signature | [Signature](#vega.commands.v1.Signature) |  | The signature of the inputData. |
+| address | [string](#string) |  | The address of the sender (hex-encoded). Not supported yet. |
+| pub_key | [string](#string) |  | The public key of the sender (hex-encoded). |
+| version | [uint32](#uint32) |  | A version of the transaction, to be used in the future in case we want to implement changes to the Transaction format. |
+
+
+
+
+
 
 
 
@@ -5619,6 +5750,37 @@ Response for submitting a transaction on Vega
 
 
 
+<a name="api.v1.SubmitTransactionV2Request"></a>
+
+### SubmitTransactionV2Request
+Request for submitting a transaction v2 on Vega
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tx | [vega.commands.v1.Transaction](#vega.commands.v1.Transaction) |  | A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain |
+| type | [SubmitTransactionV2Request.Type](#api.v1.SubmitTransactionV2Request.Type) |  | Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response |
+
+
+
+
+
+
+<a name="api.v1.SubmitTransactionV2Response"></a>
+
+### SubmitTransactionV2Response
+Response for submitting a transaction v2 on Vega
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| success | [bool](#bool) |  | Success will be true if the transaction was accepted by the node, **Important** - success does not mean that the event is confirmed by consensus |
+
+
+
+
+
+
 <a name="api.v1.TradesByMarketRequest"></a>
 
 ### TradesByMarketRequest
@@ -5845,6 +6007,20 @@ Blockchain transaction type
 
 
 
+<a name="api.v1.SubmitTransactionV2Request.Type"></a>
+
+### SubmitTransactionV2Request.Type
+Blockchain transaction type
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TYPE_UNSPECIFIED | 0 |  |
+| TYPE_ASYNC | 1 | The transaction will be submitted without waiting for response |
+| TYPE_SYNC | 2 | The transaction will be submitted, and blocking until the tendermint mempool return a response |
+| TYPE_COMMIT | 3 | The transaction will submitted, and blocking until the tendermint network will have committed it into a block |
+
+
+
 
 
 
@@ -5934,135 +6110,11 @@ Blockchain transaction type
 | PrepareAmendOrder | [PrepareAmendOrderRequest](#api.v1.PrepareAmendOrderRequest) | [PrepareAmendOrderResponse](#api.v1.PrepareAmendOrderResponse) | Prepare an amend order request |
 | PrepareWithdraw | [PrepareWithdrawRequest](#api.v1.PrepareWithdrawRequest) | [PrepareWithdrawResponse](#api.v1.PrepareWithdrawResponse) | Request a withdrawal |
 | SubmitTransaction | [SubmitTransactionRequest](#api.v1.SubmitTransactionRequest) | [SubmitTransactionResponse](#api.v1.SubmitTransactionResponse) | Submit a signed transaction |
+| SubmitTransactionV2 | [SubmitTransactionV2Request](#api.v1.SubmitTransactionV2Request) | [SubmitTransactionV2Response](#api.v1.SubmitTransactionV2Response) | Submit a signed transaction (v2) |
 | PrepareProposalSubmission | [PrepareProposalSubmissionRequest](#api.v1.PrepareProposalSubmissionRequest) | [PrepareProposalSubmissionResponse](#api.v1.PrepareProposalSubmissionResponse) | Prepare a governance proposal |
 | PrepareVoteSubmission | [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest) | [PrepareVoteSubmissionResponse](#api.v1.PrepareVoteSubmissionResponse) | Prepare a governance vote |
 | PropagateChainEvent | [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest) | [PropagateChainEventResponse](#api.v1.PropagateChainEventResponse) | Propagate a chain event |
 | PrepareLiquidityProvision | [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest) | [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse) | Prepare a liquidity provision request |
-
-
-
-
-
-<a name="commands/v1/oracles.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## commands/v1/oracles.proto
-
-
-
-<a name="vega.commands.v1.OracleDataSubmission"></a>
-
-### OracleDataSubmission
-Command to submit new Oracle data from third party providers
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| source | [OracleDataSubmission.OracleSource](#vega.commands.v1.OracleDataSubmission.OracleSource) |  | The source from which the data is coming from |
-| payload | [bytes](#bytes) |  | The data provided by the third party provider |
-
-
-
-
-
-
-
-
-<a name="vega.commands.v1.OracleDataSubmission.OracleSource"></a>
-
-### OracleDataSubmission.OracleSource
-The supported Oracle sources
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| ORACLE_SOURCE_UNSPECIFIED | 0 | The default value |
-| ORACLE_SOURCE_OPEN_ORACLE | 1 | Support for Open Oracle standard |
-
-
-
-
-
-
-
-
-
-
-<a name="commands/v1/transaction.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## commands/v1/transaction.proto
-
-
-
-<a name="vega.commands.v1.InputData"></a>
-
-### InputData
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| nonce | [uint64](#uint64) |  | A random number used to provided uniqueness and prevents against replay attack. |
-| block_height | [uint64](#uint64) |  | The block height associated to the transaction. This should always be current height of the node at the time of sending the Tx. BlockHeight is used as a mechanism for replay protection. |
-| order_submission | [OrderSubmission](#vega.commands.v1.OrderSubmission) |  | user commands |
-| order_cancellation | [OrderCancellation](#vega.commands.v1.OrderCancellation) |  |  |
-| order_amendment | [OrderAmendment](#vega.commands.v1.OrderAmendment) |  |  |
-| withdraw_submission | [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  |  |
-| proposal_submission | [ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
-| vote_submission | [VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
-| liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
-| node_registration | [NodeRegistration](#vega.commands.v1.NodeRegistration) |  | validator commands |
-| node_vote | [NodeVote](#vega.commands.v1.NodeVote) |  |  |
-| node_signature | [NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
-| chain_event | [ChainEvent](#vega.commands.v1.ChainEvent) |  |  |
-| oracle_data_submission | [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission) |  | Oracles |
-
-
-
-
-
-
-<a name="vega.commands.v1.Signature"></a>
-
-### Signature
-A signature to be authenticate a transaction
-and to be verified by the vega network
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| bytes | [bytes](#bytes) |  | The bytes of the signature |
-| algo | [string](#string) |  | The algorithm used to create the signature |
-| version | [uint32](#uint32) |  | The version of the signature used to create the signature |
-
-
-
-
-
-
-<a name="vega.commands.v1.Transaction"></a>
-
-### Transaction
-Represents a transaction to be sent to Vega.
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| input_data | [bytes](#bytes) |  | One of the set of Vega commands (proto marshalled). |
-| signature | [Signature](#vega.commands.v1.Signature) |  | The signature of the inputData |
-| address | [bytes](#bytes) |  | The address of the sender. |
-| pub_key | [bytes](#bytes) |  | The public key of the sender. |
-| version | [uint32](#uint32) |  | A version of the transaction, to be used in the future in case we want to implement changes to the Transaction format |
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -6443,6 +6495,50 @@ Represents a transaction to be sent to Vega.
 | UNKNOWN | 0 |  |
 | DUPLICATE_VOTE | 1 |  |
 | LIGHT_CLIENT_ATTACK | 2 |  |
+
+
+
+
+
+
+
+
+
+
+<a name="wallet/v1/wallet.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## wallet/v1/wallet.proto
+
+
+
+<a name="vega.wallet.v1.SubmitTransactionRequest"></a>
+
+### SubmitTransactionRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pub_key | [string](#string) |  |  |
+| propagate | [bool](#bool) |  |  |
+| order_submission | [vega.commands.v1.OrderSubmission](#vega.commands.v1.OrderSubmission) |  | User commands |
+| order_cancellation | [vega.commands.v1.OrderCancellation](#vega.commands.v1.OrderCancellation) |  |  |
+| order_amendment | [vega.commands.v1.OrderAmendment](#vega.commands.v1.OrderAmendment) |  |  |
+| withdraw_submission | [vega.commands.v1.WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  |  |
+| proposal_submission | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
+| vote_submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
+| liquidity_provision_submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
+| node_registration | [vega.commands.v1.NodeRegistration](#vega.commands.v1.NodeRegistration) |  | Validator commands |
+| node_vote | [vega.commands.v1.NodeVote](#vega.commands.v1.NodeVote) |  |  |
+| node_signature | [vega.commands.v1.NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
+| chain_event | [vega.commands.v1.ChainEvent](#vega.commands.v1.ChainEvent) |  |  |
+| oracle_data_submission | [vega.commands.v1.OracleDataSubmission](#vega.commands.v1.OracleDataSubmission) |  | Oracle commands |
+
+
+
+
+
 
 
 

@@ -39,7 +39,7 @@
 #include "markets.pb.h"
 #include "vega.pb.h"
 #include "assets.pb.h"
-#include "oracles/v1/oracle_spec.pb.h"
+#include "oracles/v1/spec.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_governance_2eproto

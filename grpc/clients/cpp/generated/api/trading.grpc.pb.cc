@@ -28,6 +28,7 @@ static const char* TradingService_method_names[] = {
   "/api.v1.TradingService/PrepareAmendOrder",
   "/api.v1.TradingService/PrepareWithdraw",
   "/api.v1.TradingService/SubmitTransaction",
+  "/api.v1.TradingService/SubmitTransactionV2",
   "/api.v1.TradingService/PrepareProposalSubmission",
   "/api.v1.TradingService/PrepareVoteSubmission",
   "/api.v1.TradingService/PropagateChainEvent",
@@ -46,10 +47,11 @@ TradingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_PrepareAmendOrder_(TradingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PrepareWithdraw_(TradingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SubmitTransaction_(TradingService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareProposalSubmission_(TradingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareVoteSubmission_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PropagateChainEvent_(TradingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareLiquidityProvision_(TradingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SubmitTransactionV2_(TradingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareProposalSubmission_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareVoteSubmission_(TradingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PropagateChainEvent_(TradingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareLiquidityProvision_(TradingService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TradingService::Stub::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest& request, ::api::v1::PrepareSubmitOrderResponse* response) {
@@ -163,6 +165,29 @@ void TradingService::Stub::experimental_async::SubmitTransaction(::grpc::ClientC
 ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>* TradingService::Stub::AsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSubmitTransactionRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingService::Stub::SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::api::v1::SubmitTransactionV2Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SubmitTransactionV2_, context, request, response);
+}
+
+void TradingService::Stub::experimental_async::SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransactionV2_, context, request, response, std::move(f));
+}
+
+void TradingService::Stub::experimental_async::SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransactionV2_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>* TradingService::Stub::PrepareAsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::SubmitTransactionV2Response, ::api::v1::SubmitTransactionV2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SubmitTransactionV2_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>* TradingService::Stub::AsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSubmitTransactionV2Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -313,6 +338,16 @@ TradingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TradingService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::SubmitTransactionV2Request* req,
+             ::api::v1::SubmitTransactionV2Response* resp) {
+               return service->SubmitTransactionV2(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareProposalSubmissionRequest, ::api::v1::PrepareProposalSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -321,7 +356,7 @@ TradingService::Service::Service() {
                return service->PrepareProposalSubmission(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingService_method_names[6],
+      TradingService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
@@ -331,7 +366,7 @@ TradingService::Service::Service() {
                return service->PrepareVoteSubmission(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingService_method_names[7],
+      TradingService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
@@ -341,7 +376,7 @@ TradingService::Service::Service() {
                return service->PropagateChainEvent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingService_method_names[8],
+      TradingService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
@@ -384,6 +419,13 @@ TradingService::Service::~Service() {
 }
 
 ::grpc::Status TradingService::Service::SubmitTransaction(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingService::Service::SubmitTransactionV2(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response) {
   (void) context;
   (void) request;
   (void) response;

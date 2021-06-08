@@ -49,6 +49,15 @@ type TradingServiceSubmitTransaction = {
   readonly responseType: typeof api_trading_pb.SubmitTransactionResponse;
 };
 
+type TradingServiceSubmitTransactionV2 = {
+  readonly methodName: string;
+  readonly service: typeof TradingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_trading_pb.SubmitTransactionV2Request;
+  readonly responseType: typeof api_trading_pb.SubmitTransactionV2Response;
+};
+
 type TradingServicePrepareProposalSubmission = {
   readonly methodName: string;
   readonly service: typeof TradingService;
@@ -92,6 +101,7 @@ export class TradingService {
   static readonly PrepareAmendOrder: TradingServicePrepareAmendOrder;
   static readonly PrepareWithdraw: TradingServicePrepareWithdraw;
   static readonly SubmitTransaction: TradingServiceSubmitTransaction;
+  static readonly SubmitTransactionV2: TradingServiceSubmitTransactionV2;
   static readonly PrepareProposalSubmission: TradingServicePrepareProposalSubmission;
   static readonly PrepareVoteSubmission: TradingServicePrepareVoteSubmission;
   static readonly PropagateChainEvent: TradingServicePropagateChainEvent;
@@ -818,6 +828,15 @@ export class TradingServiceClient {
   submitTransaction(
     requestMessage: api_trading_pb.SubmitTransactionRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.SubmitTransactionResponse|null) => void
+  ): UnaryResponse;
+  submitTransactionV2(
+    requestMessage: api_trading_pb.SubmitTransactionV2Request,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.SubmitTransactionV2Response|null) => void
+  ): UnaryResponse;
+  submitTransactionV2(
+    requestMessage: api_trading_pb.SubmitTransactionV2Request,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.SubmitTransactionV2Response|null) => void
   ): UnaryResponse;
   prepareProposalSubmission(
     requestMessage: api_trading_pb.PrepareProposalSubmissionRequest,

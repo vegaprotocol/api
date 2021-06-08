@@ -55,6 +55,15 @@ TradingService.SubmitTransaction = {
   responseType: api_trading_pb.SubmitTransactionResponse
 };
 
+TradingService.SubmitTransactionV2 = {
+  methodName: "SubmitTransactionV2",
+  service: TradingService,
+  requestStream: false,
+  responseStream: false,
+  requestType: api_trading_pb.SubmitTransactionV2Request,
+  responseType: api_trading_pb.SubmitTransactionV2Response
+};
+
 TradingService.PrepareProposalSubmission = {
   methodName: "PrepareProposalSubmission",
   service: TradingService,
@@ -227,6 +236,37 @@ TradingServiceClient.prototype.submitTransaction = function submitTransaction(re
     callback = arguments[1];
   }
   var client = grpc.unary(TradingService.SubmitTransaction, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+TradingServiceClient.prototype.submitTransactionV2 = function submitTransactionV2(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(TradingService.SubmitTransactionV2, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
