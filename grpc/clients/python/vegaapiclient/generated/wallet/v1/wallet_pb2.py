@@ -11,9 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from commands.v1 import commands_pb2 as commands_dot_v1_dot_commands__pb2
-from commands.v1 import validator_commands_pb2 as commands_dot_v1_dot_validator__commands__pb2
-from commands.v1 import oracles_pb2 as commands_dot_v1_dot_oracles__pb2
+from ...commands.v1 import commands_pb2 as commands_dot_v1_dot_commands__pb2
+from ...commands.v1 import validator_commands_pb2 as commands_dot_v1_dot_validator__commands__pb2
+from ...commands.v1 import oracles_pb2 as commands_dot_v1_dot_oracles__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

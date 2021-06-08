@@ -7,22 +7,10 @@ export class Asset extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getName(): string;
-  setName(value: string): void;
-
-  getSymbol(): string;
-  setSymbol(value: string): void;
-
-  getTotalSupply(): string;
-  setTotalSupply(value: string): void;
-
-  getDecimals(): number;
-  setDecimals(value: number): void;
-
-  hasSource(): boolean;
-  clearSource(): void;
-  getSource(): AssetSource | undefined;
-  setSource(value?: AssetSource): void;
+  hasDetails(): boolean;
+  clearDetails(): void;
+  getDetails(): AssetDetails | undefined;
+  setDetails(value?: AssetDetails): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Asset.AsObject;
@@ -37,50 +25,11 @@ export class Asset extends jspb.Message {
 export namespace Asset {
   export type AsObject = {
     id: string,
-    name: string,
-    symbol: string,
-    totalSupply: string,
-    decimals: number,
-    source?: AssetSource.AsObject,
+    details?: AssetDetails.AsObject,
   }
 }
 
-export class AssetSource extends jspb.Message {
-  hasBuiltinAsset(): boolean;
-  clearBuiltinAsset(): void;
-  getBuiltinAsset(): BuiltinAsset | undefined;
-  setBuiltinAsset(value?: BuiltinAsset): void;
-
-  hasErc20(): boolean;
-  clearErc20(): void;
-  getErc20(): ERC20 | undefined;
-  setErc20(value?: ERC20): void;
-
-  getSourceCase(): AssetSource.SourceCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AssetSource.AsObject;
-  static toObject(includeInstance: boolean, msg: AssetSource): AssetSource.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: AssetSource, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AssetSource;
-  static deserializeBinaryFromReader(message: AssetSource, reader: jspb.BinaryReader): AssetSource;
-}
-
-export namespace AssetSource {
-  export type AsObject = {
-    builtinAsset?: BuiltinAsset.AsObject,
-    erc20?: ERC20.AsObject,
-  }
-
-  export enum SourceCase {
-    SOURCE_NOT_SET = 0,
-    BUILTIN_ASSET = 1,
-    ERC20 = 2,
-  }
-}
-
-export class BuiltinAsset extends jspb.Message {
+export class AssetDetails extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
@@ -93,6 +42,49 @@ export class BuiltinAsset extends jspb.Message {
   getDecimals(): number;
   setDecimals(value: number): void;
 
+  getMinLpStake(): string;
+  setMinLpStake(value: string): void;
+
+  hasBuiltinAsset(): boolean;
+  clearBuiltinAsset(): void;
+  getBuiltinAsset(): BuiltinAsset | undefined;
+  setBuiltinAsset(value?: BuiltinAsset): void;
+
+  hasErc20(): boolean;
+  clearErc20(): void;
+  getErc20(): ERC20 | undefined;
+  setErc20(value?: ERC20): void;
+
+  getSourceCase(): AssetDetails.SourceCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssetDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: AssetDetails): AssetDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssetDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssetDetails;
+  static deserializeBinaryFromReader(message: AssetDetails, reader: jspb.BinaryReader): AssetDetails;
+}
+
+export namespace AssetDetails {
+  export type AsObject = {
+    name: string,
+    symbol: string,
+    totalSupply: string,
+    decimals: number,
+    minLpStake: string,
+    builtinAsset?: BuiltinAsset.AsObject,
+    erc20?: ERC20.AsObject,
+  }
+
+  export enum SourceCase {
+    SOURCE_NOT_SET = 0,
+    BUILTIN_ASSET = 101,
+    ERC20 = 102,
+  }
+}
+
+export class BuiltinAsset extends jspb.Message {
   getMaxFaucetAmountMint(): string;
   setMaxFaucetAmountMint(value: string): void;
 
@@ -108,10 +100,6 @@ export class BuiltinAsset extends jspb.Message {
 
 export namespace BuiltinAsset {
   export type AsObject = {
-    name: string,
-    symbol: string,
-    totalSupply: string,
-    decimals: number,
     maxFaucetAmountMint: string,
   }
 }

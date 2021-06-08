@@ -2197,7 +2197,7 @@ proto.vega.NewAsset.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.NewAsset.toObject = function(includeInstance, msg) {
   var f, obj = {
-    changes: (f = msg.getChanges()) && assets_pb.AssetSource.toObject(includeInstance, f)
+    changes: (f = msg.getChanges()) && assets_pb.AssetDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2235,8 +2235,8 @@ proto.vega.NewAsset.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new assets_pb.AssetSource;
-      reader.readMessage(value,assets_pb.AssetSource.deserializeBinaryFromReader);
+      var value = new assets_pb.AssetDetails;
+      reader.readMessage(value,assets_pb.AssetDetails.deserializeBinaryFromReader);
       msg.setChanges(value);
       break;
     default:
@@ -2273,24 +2273,24 @@ proto.vega.NewAsset.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       1,
       f,
-      assets_pb.AssetSource.serializeBinaryToWriter
+      assets_pb.AssetDetails.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional AssetSource changes = 1;
- * @return {?proto.vega.AssetSource}
+ * optional AssetDetails changes = 1;
+ * @return {?proto.vega.AssetDetails}
  */
 proto.vega.NewAsset.prototype.getChanges = function() {
-  return /** @type{?proto.vega.AssetSource} */ (
-    jspb.Message.getWrapperField(this, assets_pb.AssetSource, 1));
+  return /** @type{?proto.vega.AssetDetails} */ (
+    jspb.Message.getWrapperField(this, assets_pb.AssetDetails, 1));
 };
 
 
 /**
- * @param {?proto.vega.AssetSource|undefined} value
+ * @param {?proto.vega.AssetDetails|undefined} value
  * @return {!proto.vega.NewAsset} returns this
 */
 proto.vega.NewAsset.prototype.setChanges = function(value) {
@@ -3768,7 +3768,8 @@ proto.vega.ProposalError = {
   PROPOSAL_ERROR_INVALID_SHAPE: 29,
   PROPOSAL_ERROR_INVALID_RISK_PARAMETER: 30,
   PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED: 31,
-  PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED: 32
+  PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED: 32,
+  PROPOSAL_ERROR_INVALID_ASSET_DETAILS: 33
 };
 
 goog.object.extend(exports, proto.vega);

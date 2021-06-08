@@ -6373,60 +6373,12 @@
               "defaultValue": ""
             },
             {
-              "name": "name",
-              "description": "Name of the asset (e.g: Great British Pound)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "symbol",
-              "description": "Symbol of the asset (e.g: GBP)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "total_supply",
-              "description": "Total circulating supply for the asset",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "decimals",
-              "description": "Number of decimals / precision handled by this asset",
-              "label": "",
-              "type": "uint64",
-              "longType": "uint64",
-              "fullType": "uint64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "source",
+              "name": "details",
               "description": "The definition of the external source for this asset",
               "label": "",
-              "type": "AssetSource",
-              "longType": "AssetSource",
-              "fullType": "vega.AssetSource",
+              "type": "AssetDetails",
+              "longType": "AssetDetails",
+              "fullType": "vega.AssetDetails",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -6435,49 +6387,13 @@
           ]
         },
         {
-          "name": "AssetSource",
-          "longName": "AssetSource",
-          "fullName": "vega.AssetSource",
-          "description": "Asset source definition",
+          "name": "AssetDetails",
+          "longName": "AssetDetails",
+          "fullName": "vega.AssetDetails",
+          "description": "The Vega representation of an external asset",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "builtin_asset",
-              "description": "A built-in asset",
-              "label": "",
-              "type": "BuiltinAsset",
-              "longType": "BuiltinAsset",
-              "fullType": "vega.BuiltinAsset",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "source",
-              "defaultValue": ""
-            },
-            {
-              "name": "erc20",
-              "description": "An Ethereum ERC20 asset",
-              "label": "",
-              "type": "ERC20",
-              "longType": "ERC20",
-              "fullType": "vega.ERC20",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "source",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "BuiltinAsset",
-          "longName": "BuiltinAsset",
-          "fullName": "vega.BuiltinAsset",
-          "description": "A Vega internal asset",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
@@ -6528,6 +6444,54 @@
               "oneofdecl": "",
               "defaultValue": ""
             },
+            {
+              "name": "min_lp_stake",
+              "description": "Min stake required for this asset from liquidity providers",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "builtin_asset",
+              "description": "A built-in asset",
+              "label": "",
+              "type": "BuiltinAsset",
+              "longType": "BuiltinAsset",
+              "fullType": "vega.BuiltinAsset",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "source",
+              "defaultValue": ""
+            },
+            {
+              "name": "erc20",
+              "description": "An Ethereum ERC20 asset",
+              "label": "",
+              "type": "ERC20",
+              "longType": "ERC20",
+              "fullType": "vega.ERC20",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "source",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BuiltinAsset",
+          "longName": "BuiltinAsset",
+          "fullName": "vega.BuiltinAsset",
+          "description": "A Vega internal asset",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
             {
               "name": "max_faucet_amount_mint",
               "description": "Maximum amount that can be requested by a party through the built-in asset faucet at a time",
@@ -6796,6 +6760,11 @@
               "name": "PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED",
               "number": "32",
               "description": "Proposal declined because the participation threshold was not reached"
+            },
+            {
+              "name": "PROPOSAL_ERROR_INVALID_ASSET_DETAILS",
+              "number": "33",
+              "description": "Asset proposal invalid asset details"
             }
           ]
         },
@@ -7143,9 +7112,9 @@
               "name": "changes",
               "description": "The configuration of the new asset",
               "label": "",
-              "type": "AssetSource",
-              "longType": "AssetSource",
-              "fullType": "vega.AssetSource",
+              "type": "AssetDetails",
+              "longType": "AssetDetails",
+              "fullType": "vega.AssetDetails",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",

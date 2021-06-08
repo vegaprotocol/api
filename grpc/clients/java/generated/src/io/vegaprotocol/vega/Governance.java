@@ -287,6 +287,14 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32;</code>
      */
     PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED(32),
+    /**
+     * <pre>
+     * Asset proposal invalid asset details
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_INVALID_ASSET_DETAILS = 33;</code>
+     */
+    PROPOSAL_ERROR_INVALID_ASSET_DETAILS(33),
     UNRECOGNIZED(-1),
     ;
 
@@ -554,6 +562,14 @@ public final class Governance {
      * <code>PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32;</code>
      */
     public static final int PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED_VALUE = 32;
+    /**
+     * <pre>
+     * Asset proposal invalid asset details
+     * </pre>
+     *
+     * <code>PROPOSAL_ERROR_INVALID_ASSET_DETAILS = 33;</code>
+     */
+    public static final int PROPOSAL_ERROR_INVALID_ASSET_DETAILS_VALUE = 33;
 
 
     public final int getNumber() {
@@ -613,6 +629,7 @@ public final class Governance {
         case 30: return PROPOSAL_ERROR_INVALID_RISK_PARAMETER;
         case 31: return PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED;
         case 32: return PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED;
+        case 33: return PROPOSAL_ERROR_INVALID_ASSET_DETAILS;
         default: return null;
       }
     }
@@ -10165,7 +10182,7 @@ public final class Governance {
      * The configuration of the new asset
      * </pre>
      *
-     * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+     * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
      * @return Whether the changes field is set.
      */
     boolean hasChanges();
@@ -10174,18 +10191,18 @@ public final class Governance {
      * The configuration of the new asset
      * </pre>
      *
-     * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+     * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
      * @return The changes.
      */
-    io.vegaprotocol.vega.Assets.AssetSource getChanges();
+    io.vegaprotocol.vega.Assets.AssetDetails getChanges();
     /**
      * <pre>
      * The configuration of the new asset
      * </pre>
      *
-     * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+     * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
      */
-    io.vegaprotocol.vega.Assets.AssetSourceOrBuilder getChangesOrBuilder();
+    io.vegaprotocol.vega.Assets.AssetDetailsOrBuilder getChangesOrBuilder();
   }
   /**
    * <pre>
@@ -10237,11 +10254,11 @@ public final class Governance {
               done = true;
               break;
             case 10: {
-              io.vegaprotocol.vega.Assets.AssetSource.Builder subBuilder = null;
+              io.vegaprotocol.vega.Assets.AssetDetails.Builder subBuilder = null;
               if (changes_ != null) {
                 subBuilder = changes_.toBuilder();
               }
-              changes_ = input.readMessage(io.vegaprotocol.vega.Assets.AssetSource.parser(), extensionRegistry);
+              changes_ = input.readMessage(io.vegaprotocol.vega.Assets.AssetDetails.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(changes_);
                 changes_ = subBuilder.buildPartial();
@@ -10282,13 +10299,13 @@ public final class Governance {
     }
 
     public static final int CHANGES_FIELD_NUMBER = 1;
-    private io.vegaprotocol.vega.Assets.AssetSource changes_;
+    private io.vegaprotocol.vega.Assets.AssetDetails changes_;
     /**
      * <pre>
      * The configuration of the new asset
      * </pre>
      *
-     * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+     * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
      * @return Whether the changes field is set.
      */
     @java.lang.Override
@@ -10300,22 +10317,22 @@ public final class Governance {
      * The configuration of the new asset
      * </pre>
      *
-     * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+     * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
      * @return The changes.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Assets.AssetSource getChanges() {
-      return changes_ == null ? io.vegaprotocol.vega.Assets.AssetSource.getDefaultInstance() : changes_;
+    public io.vegaprotocol.vega.Assets.AssetDetails getChanges() {
+      return changes_ == null ? io.vegaprotocol.vega.Assets.AssetDetails.getDefaultInstance() : changes_;
     }
     /**
      * <pre>
      * The configuration of the new asset
      * </pre>
      *
-     * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+     * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.Assets.AssetSourceOrBuilder getChangesOrBuilder() {
+    public io.vegaprotocol.vega.Assets.AssetDetailsOrBuilder getChangesOrBuilder() {
       return getChanges();
     }
 
@@ -10638,15 +10655,15 @@ public final class Governance {
         return this;
       }
 
-      private io.vegaprotocol.vega.Assets.AssetSource changes_;
+      private io.vegaprotocol.vega.Assets.AssetDetails changes_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder> changesBuilder_;
+          io.vegaprotocol.vega.Assets.AssetDetails, io.vegaprotocol.vega.Assets.AssetDetails.Builder, io.vegaprotocol.vega.Assets.AssetDetailsOrBuilder> changesBuilder_;
       /**
        * <pre>
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        * @return Whether the changes field is set.
        */
       public boolean hasChanges() {
@@ -10657,12 +10674,12 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        * @return The changes.
        */
-      public io.vegaprotocol.vega.Assets.AssetSource getChanges() {
+      public io.vegaprotocol.vega.Assets.AssetDetails getChanges() {
         if (changesBuilder_ == null) {
-          return changes_ == null ? io.vegaprotocol.vega.Assets.AssetSource.getDefaultInstance() : changes_;
+          return changes_ == null ? io.vegaprotocol.vega.Assets.AssetDetails.getDefaultInstance() : changes_;
         } else {
           return changesBuilder_.getMessage();
         }
@@ -10672,9 +10689,9 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
-      public Builder setChanges(io.vegaprotocol.vega.Assets.AssetSource value) {
+      public Builder setChanges(io.vegaprotocol.vega.Assets.AssetDetails value) {
         if (changesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10692,10 +10709,10 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       public Builder setChanges(
-          io.vegaprotocol.vega.Assets.AssetSource.Builder builderForValue) {
+          io.vegaprotocol.vega.Assets.AssetDetails.Builder builderForValue) {
         if (changesBuilder_ == null) {
           changes_ = builderForValue.build();
           onChanged();
@@ -10710,13 +10727,13 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
-      public Builder mergeChanges(io.vegaprotocol.vega.Assets.AssetSource value) {
+      public Builder mergeChanges(io.vegaprotocol.vega.Assets.AssetDetails value) {
         if (changesBuilder_ == null) {
           if (changes_ != null) {
             changes_ =
-              io.vegaprotocol.vega.Assets.AssetSource.newBuilder(changes_).mergeFrom(value).buildPartial();
+              io.vegaprotocol.vega.Assets.AssetDetails.newBuilder(changes_).mergeFrom(value).buildPartial();
           } else {
             changes_ = value;
           }
@@ -10732,7 +10749,7 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       public Builder clearChanges() {
         if (changesBuilder_ == null) {
@@ -10750,9 +10767,9 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Assets.AssetSource.Builder getChangesBuilder() {
+      public io.vegaprotocol.vega.Assets.AssetDetails.Builder getChangesBuilder() {
 
         onChanged();
         return getChangesFieldBuilder().getBuilder();
@@ -10762,14 +10779,14 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
-      public io.vegaprotocol.vega.Assets.AssetSourceOrBuilder getChangesOrBuilder() {
+      public io.vegaprotocol.vega.Assets.AssetDetailsOrBuilder getChangesOrBuilder() {
         if (changesBuilder_ != null) {
           return changesBuilder_.getMessageOrBuilder();
         } else {
           return changes_ == null ?
-              io.vegaprotocol.vega.Assets.AssetSource.getDefaultInstance() : changes_;
+              io.vegaprotocol.vega.Assets.AssetDetails.getDefaultInstance() : changes_;
         }
       }
       /**
@@ -10777,14 +10794,14 @@ public final class Governance {
        * The configuration of the new asset
        * </pre>
        *
-       * <code>.vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
+       * <code>.vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder>
+          io.vegaprotocol.vega.Assets.AssetDetails, io.vegaprotocol.vega.Assets.AssetDetails.Builder, io.vegaprotocol.vega.Assets.AssetDetailsOrBuilder>
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Assets.AssetSource, io.vegaprotocol.vega.Assets.AssetSource.Builder, io.vegaprotocol.vega.Assets.AssetSourceOrBuilder>(
+              io.vegaprotocol.vega.Assets.AssetDetails, io.vegaprotocol.vega.Assets.AssetDetails.Builder, io.vegaprotocol.vega.Assets.AssetDetailsOrBuilder>(
                   getChanges(),
                   getParentForChildren(),
                   isClean());
@@ -18860,89 +18877,90 @@ public final class Governance {
       "liquidityCommitment\"\016\n\014UpdateMarket\"R\n\026U" +
       "pdateNetworkParameter\0228\n\007changes\030\001 \001(\0132\026" +
       ".vega.NetworkParameterB\006\342\337\037\002 \001R\007changes\"" +
-      "?\n\010NewAsset\0223\n\007changes\030\001 \001(\0132\021.vega.Asse" +
-      "tSourceB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProposalTer" +
-      "ms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020c" +
-      "losingTimestamp\0227\n\023enactment_timestamp\030\002" +
-      " \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\0221\n\024vali" +
-      "dation_timestamp\030\003 \001(\003R\023validationTimest" +
-      "amp\0229\n\rupdate_market\030e \001(\0132\022.vega.Update" +
-      "MarketH\000R\014updateMarket\0220\n\nnew_market\030f \001" +
-      "(\0132\017.vega.NewMarketH\000R\tnewMarket\022X\n\030upda" +
-      "te_network_parameter\030g \001(\0132\034.vega.Update" +
-      "NetworkParameterH\000R\026updateNetworkParamet" +
-      "er\022-\n\tnew_asset\030h \001(\0132\016.vega.NewAssetH\000R" +
-      "\010newAssetB\010\n\006change\"\206\003\n\016GovernanceData\022*" +
-      "\n\010proposal\030\001 \001(\0132\016.vega.ProposalR\010propos" +
-      "al\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030\003" +
-      " \003(\0132\n.vega.VoteR\002no\022?\n\tyes_party\030\004 \003(\0132" +
-      "\".vega.GovernanceData.YesPartyEntryR\010yes" +
-      "Party\022<\n\010no_party\030\005 \003(\0132!.vega.Governanc" +
-      "eData.NoPartyEntryR\007noParty\032G\n\rYesPartyE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n." +
-      "vega.VoteR\005value:\0028\001\032F\n\014NoPartyEntry\022\020\n\003" +
-      "key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.Vot" +
-      "eR\005value:\0028\001\"\344\003\n\010Proposal\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022\034\n\treference\030\002 \001(\tR\treference\022!\n\010party" +
-      "_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005state\030\004 \001(" +
-      "\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R\005state\022" +
-      "\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005terms\030\006" +
-      " \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005terms" +
-      "\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalErrorR\006r" +
-      "eason\022#\n\rerror_details\030\010 \001(\tR\014errorDetai" +
-      "ls\"\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014S" +
-      "TATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_P" +
-      "ASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DEC" +
-      "LINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAIT" +
-      "ING_FOR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!\n\010party_id" +
-      "\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005value\030\002 \001(\0162\020" +
-      ".vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013prop" +
-      "osal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\ttim" +
-      "estamp\030\004 \001(\003R\ttimestamp\022C\n\036total_governa" +
-      "nce_token_balance\030\005 \001(\004R\033totalGovernance" +
-      "TokenBalance\022A\n\035total_governance_token_w" +
-      "eight\030\006 \001(\tR\032totalGovernanceTokenWeight\"" +
-      ";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE" +
-      "_NO\020\001\022\r\n\tVALUE_YES\020\002*\323\013\n\rProposalError\022\036" +
-      "\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOS" +
-      "AL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOS" +
-      "AL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOS" +
-      "AL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOS" +
-      "AL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOS" +
-      "AL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOS" +
-      "AL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006\022\035" +
-      "\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSA" +
-      "L_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSA" +
-      "L_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP" +
-      "\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_IS" +
-      "_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_M" +
-      "ODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRAD" +
-      "ING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDA" +
-      "TION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_" +
-      "BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_" +
-      "MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROP" +
-      "OSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_E" +
-      "RROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOS" +
-      "AL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSA" +
-      "L_ERROR_NETWORK_PARAMETER_INVALID_KEY\020\023\022" +
-      "2\n.PROPOSAL_ERROR_NETWORK_PARAMETER_INVA" +
-      "LID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PA" +
-      "RAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_" +
-      "ERROR_OPENING_AUCTION_DURATION_TOO_SMALL" +
-      "\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_DUR" +
-      "ATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARK" +
-      "ET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PRO" +
-      "POSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET" +
-      "\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE_PROD" +
-      "UCT\020\032\022,\n(PROPOSAL_ERROR_MISSING_COMMITME" +
-      "NT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FE" +
-      "E_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHA" +
-      "PE\020\035\022)\n%PROPOSAL_ERROR_INVALID_RISK_PARA" +
-      "METER\020\036\0221\n-PROPOSAL_ERROR_MAJORITY_THRES" +
-      "HOLD_NOT_REACHED\020\037\0226\n2PROPOSAL_ERROR_PAR" +
-      "TICIPATION_THRESHOLD_NOT_REACHED\020 B7\n\024io" +
-      ".vegaprotocol.vegaZ\037code.vegaprotocol.io" +
-      "/vega/protob\006proto3"
+      "@\n\010NewAsset\0224\n\007changes\030\001 \001(\0132\022.vega.Asse" +
+      "tDetailsB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProposalTe" +
+      "rms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020" +
+      "closingTimestamp\0227\n\023enactment_timestamp\030" +
+      "\002 \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\0221\n\024val" +
+      "idation_timestamp\030\003 \001(\003R\023validationTimes" +
+      "tamp\0229\n\rupdate_market\030e \001(\0132\022.vega.Updat" +
+      "eMarketH\000R\014updateMarket\0220\n\nnew_market\030f " +
+      "\001(\0132\017.vega.NewMarketH\000R\tnewMarket\022X\n\030upd" +
+      "ate_network_parameter\030g \001(\0132\034.vega.Updat" +
+      "eNetworkParameterH\000R\026updateNetworkParame" +
+      "ter\022-\n\tnew_asset\030h \001(\0132\016.vega.NewAssetH\000" +
+      "R\010newAssetB\010\n\006change\"\206\003\n\016GovernanceData\022" +
+      "*\n\010proposal\030\001 \001(\0132\016.vega.ProposalR\010propo" +
+      "sal\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030" +
+      "\003 \003(\0132\n.vega.VoteR\002no\022?\n\tyes_party\030\004 \003(\013" +
+      "2\".vega.GovernanceData.YesPartyEntryR\010ye" +
+      "sParty\022<\n\010no_party\030\005 \003(\0132!.vega.Governan" +
+      "ceData.NoPartyEntryR\007noParty\032G\n\rYesParty" +
+      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n" +
+      ".vega.VoteR\005value:\0028\001\032F\n\014NoPartyEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.Vo" +
+      "teR\005value:\0028\001\"\344\003\n\010Proposal\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022\034\n\treference\030\002 \001(\tR\treference\022!\n\010part" +
+      "y_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005state\030\004 \001" +
+      "(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R\005state" +
+      "\022\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005terms\030" +
+      "\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005term" +
+      "s\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalErrorR\006" +
+      "reason\022#\n\rerror_details\030\010 \001(\tR\014errorDeta" +
+      "ils\"\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014" +
+      "STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_" +
+      "PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DE" +
+      "CLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAI" +
+      "TING_FOR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!\n\010party_i" +
+      "d\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005value\030\002 \001(\0162" +
+      "\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013pro" +
+      "posal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\tti" +
+      "mestamp\030\004 \001(\003R\ttimestamp\022C\n\036total_govern" +
+      "ance_token_balance\030\005 \001(\004R\033totalGovernanc" +
+      "eTokenBalance\022A\n\035total_governance_token_" +
+      "weight\030\006 \001(\tR\032totalGovernanceTokenWeight" +
+      "\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALU" +
+      "E_NO\020\001\022\r\n\tVALUE_YES\020\002*\375\013\n\rProposalError\022" +
+      "\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPO" +
+      "SAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPO" +
+      "SAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPO" +
+      "SAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPO" +
+      "SAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPO" +
+      "SAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPO" +
+      "SAL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006\022" +
+      "\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOS" +
+      "AL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOS" +
+      "AL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAM" +
+      "P\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_I" +
+      "S_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_" +
+      "MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRA" +
+      "DING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALID" +
+      "ATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING" +
+      "_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR" +
+      "_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PRO" +
+      "POSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_" +
+      "ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPO" +
+      "SAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOS" +
+      "AL_ERROR_NETWORK_PARAMETER_INVALID_KEY\020\023" +
+      "\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER_INV" +
+      "ALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_P" +
+      "ARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL" +
+      "_ERROR_OPENING_AUCTION_DURATION_TOO_SMAL" +
+      "L\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_DU" +
+      "RATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MAR" +
+      "KET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PR" +
+      "OPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKE" +
+      "T\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRO" +
+      "DUCT\020\032\022,\n(PROPOSAL_ERROR_MISSING_COMMITM" +
+      "ENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_F" +
+      "EE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SH" +
+      "APE\020\035\022)\n%PROPOSAL_ERROR_INVALID_RISK_PAR" +
+      "AMETER\020\036\0221\n-PROPOSAL_ERROR_MAJORITY_THRE" +
+      "SHOLD_NOT_REACHED\020\037\0226\n2PROPOSAL_ERROR_PA" +
+      "RTICIPATION_THRESHOLD_NOT_REACHED\020 \022(\n$P" +
+      "ROPOSAL_ERROR_INVALID_ASSET_DETAILS\020!B7\n" +
+      "\024io.vegaprotocol.vegaZ\037code.vegaprotocol" +
+      ".io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

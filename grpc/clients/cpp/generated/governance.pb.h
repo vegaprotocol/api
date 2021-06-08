@@ -215,12 +215,13 @@ enum ProposalError : int {
   PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30,
   PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED = 31,
   PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32,
+  PROPOSAL_ERROR_INVALID_ASSET_DETAILS = 33,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 constexpr ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED;
+constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_ASSET_DETAILS;
 constexpr int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProposalError_descriptor();
@@ -1750,23 +1751,23 @@ class NewAsset PROTOBUF_FINAL :
   enum : int {
     kChangesFieldNumber = 1,
   };
-  // .vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = {
+  // .vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = {
   bool has_changes() const;
   private:
   bool _internal_has_changes() const;
   public:
   void clear_changes();
-  const ::vega::AssetSource& changes() const;
-  ::vega::AssetSource* release_changes();
-  ::vega::AssetSource* mutable_changes();
-  void set_allocated_changes(::vega::AssetSource* changes);
+  const ::vega::AssetDetails& changes() const;
+  ::vega::AssetDetails* release_changes();
+  ::vega::AssetDetails* mutable_changes();
+  void set_allocated_changes(::vega::AssetDetails* changes);
   private:
-  const ::vega::AssetSource& _internal_changes() const;
-  ::vega::AssetSource* _internal_mutable_changes();
+  const ::vega::AssetDetails& _internal_changes() const;
+  ::vega::AssetDetails* _internal_mutable_changes();
   public:
   void unsafe_arena_set_allocated_changes(
-      ::vega::AssetSource* changes);
-  ::vega::AssetSource* unsafe_arena_release_changes();
+      ::vega::AssetDetails* changes);
+  ::vega::AssetDetails* unsafe_arena_release_changes();
 
   // @@protoc_insertion_point(class_scope:vega.NewAsset)
  private:
@@ -1775,7 +1776,7 @@ class NewAsset PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::AssetSource* changes_;
+  ::vega::AssetDetails* changes_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
 };
@@ -4513,24 +4514,24 @@ inline void UpdateNetworkParameter::set_allocated_changes(::vega::NetworkParamet
 
 // NewAsset
 
-// .vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = {
+// .vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = {
 inline bool NewAsset::_internal_has_changes() const {
   return this != internal_default_instance() && changes_ != nullptr;
 }
 inline bool NewAsset::has_changes() const {
   return _internal_has_changes();
 }
-inline const ::vega::AssetSource& NewAsset::_internal_changes() const {
-  const ::vega::AssetSource* p = changes_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::AssetSource&>(
-      ::vega::_AssetSource_default_instance_);
+inline const ::vega::AssetDetails& NewAsset::_internal_changes() const {
+  const ::vega::AssetDetails* p = changes_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::AssetDetails&>(
+      ::vega::_AssetDetails_default_instance_);
 }
-inline const ::vega::AssetSource& NewAsset::changes() const {
+inline const ::vega::AssetDetails& NewAsset::changes() const {
   // @@protoc_insertion_point(field_get:vega.NewAsset.changes)
   return _internal_changes();
 }
 inline void NewAsset::unsafe_arena_set_allocated_changes(
-    ::vega::AssetSource* changes) {
+    ::vega::AssetDetails* changes) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(changes_);
   }
@@ -4542,35 +4543,35 @@ inline void NewAsset::unsafe_arena_set_allocated_changes(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.NewAsset.changes)
 }
-inline ::vega::AssetSource* NewAsset::release_changes() {
+inline ::vega::AssetDetails* NewAsset::release_changes() {
 
-  ::vega::AssetSource* temp = changes_;
+  ::vega::AssetDetails* temp = changes_;
   changes_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::AssetSource* NewAsset::unsafe_arena_release_changes() {
+inline ::vega::AssetDetails* NewAsset::unsafe_arena_release_changes() {
   // @@protoc_insertion_point(field_release:vega.NewAsset.changes)
 
-  ::vega::AssetSource* temp = changes_;
+  ::vega::AssetDetails* temp = changes_;
   changes_ = nullptr;
   return temp;
 }
-inline ::vega::AssetSource* NewAsset::_internal_mutable_changes() {
+inline ::vega::AssetDetails* NewAsset::_internal_mutable_changes() {
 
   if (changes_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::AssetSource>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::AssetDetails>(GetArena());
     changes_ = p;
   }
   return changes_;
 }
-inline ::vega::AssetSource* NewAsset::mutable_changes() {
+inline ::vega::AssetDetails* NewAsset::mutable_changes() {
   // @@protoc_insertion_point(field_mutable:vega.NewAsset.changes)
   return _internal_mutable_changes();
 }
-inline void NewAsset::set_allocated_changes(::vega::AssetSource* changes) {
+inline void NewAsset::set_allocated_changes(::vega::AssetDetails* changes) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(changes_);

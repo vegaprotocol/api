@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10governance.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\x1a\rmarkets.proto\x1a\nvega.proto\x1a\x0c\x61ssets.proto\x1a\x15oracles/v1/spec.proto\"\xa4\x02\n\rFutureProduct\x12\"\n\x08maturity\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08maturity\x12\x31\n\x10settlement_asset\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x0fsettlementAsset\x12%\n\nquote_name\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\tquoteName\x12\x44\n\x0boracle_spec\x18\x05 \x01(\x0b\x32#.oracles.v1.OracleSpecConfigurationR\noracleSpec\x12O\n\x13oracle_spec_binding\x18\x06 \x01(\x0b\x32\x1f.vega.OracleSpecToFutureBindingR\x11oracleSpecBinding\"\x8b\x01\n\x17InstrumentConfiguration\x12\x1a\n\x04name\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x04name\x12\x1a\n\x04\x63ode\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x04\x63ode\x12-\n\x06\x66uture\x18\x64 \x01(\x0b\x32\x13.vega.FutureProductH\x00R\x06\x66utureB\t\n\x07product\"\xfc\x04\n\x16NewMarketConfiguration\x12\x45\n\ninstrument\x18\x01 \x01(\x0b\x32\x1d.vega.InstrumentConfigurationB\x06\xe2\xdf\x1f\x02 \x01R\ninstrument\x12.\n\x0e\x64\x65\x63imal_places\x18\x02 \x01(\x04\x42\x07\xe2\xdf\x1f\x03\x18\x96\x01R\rdecimalPlaces\x12\x1a\n\x08metadata\x18\x03 \x03(\tR\x08metadata\x12_\n\x1bprice_monitoring_parameters\x18\x04 \x01(\x0b\x32\x1f.vega.PriceMonitoringParametersR\x19priceMonitoringParameters\x12k\n\x1fliquidity_monitoring_parameters\x18\x05 \x01(\x0b\x32#.vega.LiquidityMonitoringParametersR\x1dliquidityMonitoringParameters\x12\x31\n\x06simple\x18\x64 \x01(\x0b\x32\x17.vega.SimpleModelParamsH\x00R\x06simple\x12\x39\n\nlog_normal\x18\x65 \x01(\x0b\x32\x18.vega.LogNormalRiskModelH\x00R\tlogNormal\x12:\n\ncontinuous\x18\xc8\x01 \x01(\x0b\x32\x17.vega.ContinuousTradingH\x01R\ncontinuous\x12\x34\n\x08\x64iscrete\x18\xc9\x01 \x01(\x0b\x32\x15.vega.DiscreteTradingH\x01R\x08\x64iscreteB\x11\n\x0frisk_parametersB\x0e\n\x0ctrading_mode\"\xc8\x01\n\x13NewMarketCommitment\x12+\n\x11\x63ommitment_amount\x18\x01 \x01(\x04R\x10\x63ommitmentAmount\x12\x10\n\x03\x66\x65\x65\x18\x02 \x01(\tR\x03\x66\x65\x65\x12*\n\x05sells\x18\x03 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x05sells\x12(\n\x04\x62uys\x18\x04 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x04\x62uys\x12\x1c\n\treference\x18\x05 \x01(\tR\treference\"\x99\x01\n\tNewMarket\x12>\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x1c.vega.NewMarketConfigurationB\x06\xe2\xdf\x1f\x02 \x01R\x07\x63hanges\x12L\n\x14liquidity_commitment\x18\x02 \x01(\x0b\x32\x19.vega.NewMarketCommitmentR\x13liquidityCommitment\"\x0e\n\x0cUpdateMarket\"R\n\x16UpdateNetworkParameter\x12\x38\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x16.vega.NetworkParameterB\x06\xe2\xdf\x1f\x02 \x01R\x07\x63hanges\"?\n\x08NewAsset\x12\x33\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x11.vega.AssetSourceB\x06\xe2\xdf\x1f\x02 \x01R\x07\x63hanges\"\xb0\x03\n\rProposalTerms\x12\x33\n\x11\x63losing_timestamp\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x10\x63losingTimestamp\x12\x37\n\x13\x65nactment_timestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x12\x65nactmentTimestamp\x12\x31\n\x14validation_timestamp\x18\x03 \x01(\x03R\x13validationTimestamp\x12\x39\n\rupdate_market\x18\x65 \x01(\x0b\x32\x12.vega.UpdateMarketH\x00R\x0cupdateMarket\x12\x30\n\nnew_market\x18\x66 \x01(\x0b\x32\x0f.vega.NewMarketH\x00R\tnewMarket\x12X\n\x18update_network_parameter\x18g \x01(\x0b\x32\x1c.vega.UpdateNetworkParameterH\x00R\x16updateNetworkParameter\x12-\n\tnew_asset\x18h \x01(\x0b\x32\x0e.vega.NewAssetH\x00R\x08newAssetB\x08\n\x06\x63hange\"\x86\x03\n\x0eGovernanceData\x12*\n\x08proposal\x18\x01 \x01(\x0b\x32\x0e.vega.ProposalR\x08proposal\x12\x1c\n\x03yes\x18\x02 \x03(\x0b\x32\n.vega.VoteR\x03yes\x12\x1a\n\x02no\x18\x03 \x03(\x0b\x32\n.vega.VoteR\x02no\x12?\n\tyes_party\x18\x04 \x03(\x0b\x32\".vega.GovernanceData.YesPartyEntryR\x08yesParty\x12<\n\x08no_party\x18\x05 \x03(\x0b\x32!.vega.GovernanceData.NoPartyEntryR\x07noParty\x1aG\n\rYesPartyEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12 \n\x05value\x18\x02 \x01(\x0b\x32\n.vega.VoteR\x05value:\x02\x38\x01\x1a\x46\n\x0cNoPartyEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12 \n\x05value\x18\x02 \x01(\x0b\x32\n.vega.VoteR\x05value:\x02\x38\x01\"\xe4\x03\n\x08Proposal\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1c\n\treference\x18\x02 \x01(\tR\treference\x12!\n\x08party_id\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x33\n\x05state\x18\x04 \x01(\x0e\x32\x14.vega.Proposal.StateB\x07\xe2\xdf\x1f\x03\x88\x01\x01R\x05state\x12\x1c\n\ttimestamp\x18\x05 \x01(\x03R\ttimestamp\x12\x31\n\x05terms\x18\x06 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x05terms\x12+\n\x06reason\x18\x07 \x01(\x0e\x32\x13.vega.ProposalErrorR\x06reason\x12#\n\rerror_details\x18\x08 \x01(\tR\x0c\x65rrorDetails\"\xae\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x10\n\x0cSTATE_FAILED\x10\x01\x12\x0e\n\nSTATE_OPEN\x10\x02\x12\x10\n\x0cSTATE_PASSED\x10\x03\x12\x12\n\x0eSTATE_REJECTED\x10\x04\x12\x12\n\x0eSTATE_DECLINED\x10\x05\x12\x11\n\rSTATE_ENACTED\x10\x06\x12\x1f\n\x1bSTATE_WAITING_FOR_NODE_VOTE\x10\x07\"\xe6\x02\n\x04Vote\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12/\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueB\x07\xe2\xdf\x1f\x03\x88\x01\x01R\x05value\x12\'\n\x0bproposal_id\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\x12\x1c\n\ttimestamp\x18\x04 \x01(\x03R\ttimestamp\x12\x43\n\x1etotal_governance_token_balance\x18\x05 \x01(\x04R\x1btotalGovernanceTokenBalance\x12\x41\n\x1dtotal_governance_token_weight\x18\x06 \x01(\tR\x1atotalGovernanceTokenWeight\";\n\x05Value\x12\x15\n\x11VALUE_UNSPECIFIED\x10\x00\x12\x0c\n\x08VALUE_NO\x10\x01\x12\r\n\tVALUE_YES\x10\x02*\xd3\x0b\n\rProposalError\x12\x1e\n\x1aPROPOSAL_ERROR_UNSPECIFIED\x10\x00\x12&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\x10\x01\x12&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\x10\x02\x12&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_SOON\x10\x03\x12&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_LATE\x10\x04\x12&\n\"PROPOSAL_ERROR_INSUFFICIENT_TOKENS\x10\x05\x12.\n*PROPOSAL_ERROR_INVALID_INSTRUMENT_SECURITY\x10\x06\x12\x1d\n\x19PROPOSAL_ERROR_NO_PRODUCT\x10\x07\x12&\n\"PROPOSAL_ERROR_UNSUPPORTED_PRODUCT\x10\x08\x12\x33\n/PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP\x10\t\x12-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSED\x10\n\x12\"\n\x1ePROPOSAL_ERROR_NO_TRADING_MODE\x10\x0b\x12+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MODE\x10\x0c\x12)\n%PROPOSAL_ERROR_NODE_VALIDATION_FAILED\x10\r\x12.\n*PROPOSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD\x10\x0e\x12\x31\n-PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS\x10\x0f\x12 \n\x1cPROPOSAL_ERROR_INVALID_ASSET\x10\x10\x12*\n&PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS\x10\x11\x12%\n!PROPOSAL_ERROR_NO_RISK_PARAMETERS\x10\x12\x12\x30\n,PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY\x10\x13\x12\x32\n.PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE\x10\x14\x12\x36\n2PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED\x10\x15\x12\x35\n1PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL\x10\x16\x12\x35\n1PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE\x10\x17\x12\x36\n2PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT\x10\x18\x12/\n+PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET\x10\x19\x12)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\x10\x1a\x12,\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT\x10\x1b\x12%\n!PROPOSAL_ERROR_INVALID_FEE_AMOUNT\x10\x1c\x12 \n\x1cPROPOSAL_ERROR_INVALID_SHAPE\x10\x1d\x12)\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER\x10\x1e\x12\x31\n-PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED\x10\x1f\x12\x36\n2PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED\x10 B7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\x10governance.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\x1a\rmarkets.proto\x1a\nvega.proto\x1a\x0c\x61ssets.proto\x1a\x15oracles/v1/spec.proto\"\xa4\x02\n\rFutureProduct\x12\"\n\x08maturity\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08maturity\x12\x31\n\x10settlement_asset\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x0fsettlementAsset\x12%\n\nquote_name\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\tquoteName\x12\x44\n\x0boracle_spec\x18\x05 \x01(\x0b\x32#.oracles.v1.OracleSpecConfigurationR\noracleSpec\x12O\n\x13oracle_spec_binding\x18\x06 \x01(\x0b\x32\x1f.vega.OracleSpecToFutureBindingR\x11oracleSpecBinding\"\x8b\x01\n\x17InstrumentConfiguration\x12\x1a\n\x04name\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x04name\x12\x1a\n\x04\x63ode\x18\x02 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x04\x63ode\x12-\n\x06\x66uture\x18\x64 \x01(\x0b\x32\x13.vega.FutureProductH\x00R\x06\x66utureB\t\n\x07product\"\xfc\x04\n\x16NewMarketConfiguration\x12\x45\n\ninstrument\x18\x01 \x01(\x0b\x32\x1d.vega.InstrumentConfigurationB\x06\xe2\xdf\x1f\x02 \x01R\ninstrument\x12.\n\x0e\x64\x65\x63imal_places\x18\x02 \x01(\x04\x42\x07\xe2\xdf\x1f\x03\x18\x96\x01R\rdecimalPlaces\x12\x1a\n\x08metadata\x18\x03 \x03(\tR\x08metadata\x12_\n\x1bprice_monitoring_parameters\x18\x04 \x01(\x0b\x32\x1f.vega.PriceMonitoringParametersR\x19priceMonitoringParameters\x12k\n\x1fliquidity_monitoring_parameters\x18\x05 \x01(\x0b\x32#.vega.LiquidityMonitoringParametersR\x1dliquidityMonitoringParameters\x12\x31\n\x06simple\x18\x64 \x01(\x0b\x32\x17.vega.SimpleModelParamsH\x00R\x06simple\x12\x39\n\nlog_normal\x18\x65 \x01(\x0b\x32\x18.vega.LogNormalRiskModelH\x00R\tlogNormal\x12:\n\ncontinuous\x18\xc8\x01 \x01(\x0b\x32\x17.vega.ContinuousTradingH\x01R\ncontinuous\x12\x34\n\x08\x64iscrete\x18\xc9\x01 \x01(\x0b\x32\x15.vega.DiscreteTradingH\x01R\x08\x64iscreteB\x11\n\x0frisk_parametersB\x0e\n\x0ctrading_mode\"\xc8\x01\n\x13NewMarketCommitment\x12+\n\x11\x63ommitment_amount\x18\x01 \x01(\x04R\x10\x63ommitmentAmount\x12\x10\n\x03\x66\x65\x65\x18\x02 \x01(\tR\x03\x66\x65\x65\x12*\n\x05sells\x18\x03 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x05sells\x12(\n\x04\x62uys\x18\x04 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x04\x62uys\x12\x1c\n\treference\x18\x05 \x01(\tR\treference\"\x99\x01\n\tNewMarket\x12>\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x1c.vega.NewMarketConfigurationB\x06\xe2\xdf\x1f\x02 \x01R\x07\x63hanges\x12L\n\x14liquidity_commitment\x18\x02 \x01(\x0b\x32\x19.vega.NewMarketCommitmentR\x13liquidityCommitment\"\x0e\n\x0cUpdateMarket\"R\n\x16UpdateNetworkParameter\x12\x38\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x16.vega.NetworkParameterB\x06\xe2\xdf\x1f\x02 \x01R\x07\x63hanges\"@\n\x08NewAsset\x12\x34\n\x07\x63hanges\x18\x01 \x01(\x0b\x32\x12.vega.AssetDetailsB\x06\xe2\xdf\x1f\x02 \x01R\x07\x63hanges\"\xb0\x03\n\rProposalTerms\x12\x33\n\x11\x63losing_timestamp\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x10\x63losingTimestamp\x12\x37\n\x13\x65nactment_timestamp\x18\x02 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x12\x65nactmentTimestamp\x12\x31\n\x14validation_timestamp\x18\x03 \x01(\x03R\x13validationTimestamp\x12\x39\n\rupdate_market\x18\x65 \x01(\x0b\x32\x12.vega.UpdateMarketH\x00R\x0cupdateMarket\x12\x30\n\nnew_market\x18\x66 \x01(\x0b\x32\x0f.vega.NewMarketH\x00R\tnewMarket\x12X\n\x18update_network_parameter\x18g \x01(\x0b\x32\x1c.vega.UpdateNetworkParameterH\x00R\x16updateNetworkParameter\x12-\n\tnew_asset\x18h \x01(\x0b\x32\x0e.vega.NewAssetH\x00R\x08newAssetB\x08\n\x06\x63hange\"\x86\x03\n\x0eGovernanceData\x12*\n\x08proposal\x18\x01 \x01(\x0b\x32\x0e.vega.ProposalR\x08proposal\x12\x1c\n\x03yes\x18\x02 \x03(\x0b\x32\n.vega.VoteR\x03yes\x12\x1a\n\x02no\x18\x03 \x03(\x0b\x32\n.vega.VoteR\x02no\x12?\n\tyes_party\x18\x04 \x03(\x0b\x32\".vega.GovernanceData.YesPartyEntryR\x08yesParty\x12<\n\x08no_party\x18\x05 \x03(\x0b\x32!.vega.GovernanceData.NoPartyEntryR\x07noParty\x1aG\n\rYesPartyEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12 \n\x05value\x18\x02 \x01(\x0b\x32\n.vega.VoteR\x05value:\x02\x38\x01\x1a\x46\n\x0cNoPartyEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12 \n\x05value\x18\x02 \x01(\x0b\x32\n.vega.VoteR\x05value:\x02\x38\x01\"\xe4\x03\n\x08Proposal\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1c\n\treference\x18\x02 \x01(\tR\treference\x12!\n\x08party_id\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12\x33\n\x05state\x18\x04 \x01(\x0e\x32\x14.vega.Proposal.StateB\x07\xe2\xdf\x1f\x03\x88\x01\x01R\x05state\x12\x1c\n\ttimestamp\x18\x05 \x01(\x03R\ttimestamp\x12\x31\n\x05terms\x18\x06 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x05terms\x12+\n\x06reason\x18\x07 \x01(\x0e\x32\x13.vega.ProposalErrorR\x06reason\x12#\n\rerror_details\x18\x08 \x01(\tR\x0c\x65rrorDetails\"\xae\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x10\n\x0cSTATE_FAILED\x10\x01\x12\x0e\n\nSTATE_OPEN\x10\x02\x12\x10\n\x0cSTATE_PASSED\x10\x03\x12\x12\n\x0eSTATE_REJECTED\x10\x04\x12\x12\n\x0eSTATE_DECLINED\x10\x05\x12\x11\n\rSTATE_ENACTED\x10\x06\x12\x1f\n\x1bSTATE_WAITING_FOR_NODE_VOTE\x10\x07\"\xe6\x02\n\x04Vote\x12!\n\x08party_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07partyId\x12/\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueB\x07\xe2\xdf\x1f\x03\x88\x01\x01R\x05value\x12\'\n\x0bproposal_id\x18\x03 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\x12\x1c\n\ttimestamp\x18\x04 \x01(\x03R\ttimestamp\x12\x43\n\x1etotal_governance_token_balance\x18\x05 \x01(\x04R\x1btotalGovernanceTokenBalance\x12\x41\n\x1dtotal_governance_token_weight\x18\x06 \x01(\tR\x1atotalGovernanceTokenWeight\";\n\x05Value\x12\x15\n\x11VALUE_UNSPECIFIED\x10\x00\x12\x0c\n\x08VALUE_NO\x10\x01\x12\r\n\tVALUE_YES\x10\x02*\xfd\x0b\n\rProposalError\x12\x1e\n\x1aPROPOSAL_ERROR_UNSPECIFIED\x10\x00\x12&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_SOON\x10\x01\x12&\n\"PROPOSAL_ERROR_CLOSE_TIME_TOO_LATE\x10\x02\x12&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_SOON\x10\x03\x12&\n\"PROPOSAL_ERROR_ENACT_TIME_TOO_LATE\x10\x04\x12&\n\"PROPOSAL_ERROR_INSUFFICIENT_TOKENS\x10\x05\x12.\n*PROPOSAL_ERROR_INVALID_INSTRUMENT_SECURITY\x10\x06\x12\x1d\n\x19PROPOSAL_ERROR_NO_PRODUCT\x10\x07\x12&\n\"PROPOSAL_ERROR_UNSUPPORTED_PRODUCT\x10\x08\x12\x33\n/PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAMP\x10\t\x12-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASSED\x10\n\x12\"\n\x1ePROPOSAL_ERROR_NO_TRADING_MODE\x10\x0b\x12+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_MODE\x10\x0c\x12)\n%PROPOSAL_ERROR_NODE_VALIDATION_FAILED\x10\r\x12.\n*PROPOSAL_ERROR_MISSING_BUILTIN_ASSET_FIELD\x10\x0e\x12\x31\n-PROPOSAL_ERROR_MISSING_ERC20_CONTRACT_ADDRESS\x10\x0f\x12 \n\x1cPROPOSAL_ERROR_INVALID_ASSET\x10\x10\x12*\n&PROPOSAL_ERROR_INCOMPATIBLE_TIMESTAMPS\x10\x11\x12%\n!PROPOSAL_ERROR_NO_RISK_PARAMETERS\x10\x12\x12\x30\n,PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_KEY\x10\x13\x12\x32\n.PROPOSAL_ERROR_NETWORK_PARAMETER_INVALID_VALUE\x10\x14\x12\x36\n2PROPOSAL_ERROR_NETWORK_PARAMETER_VALIDATION_FAILED\x10\x15\x12\x35\n1PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_SMALL\x10\x16\x12\x35\n1PROPOSAL_ERROR_OPENING_AUCTION_DURATION_TOO_LARGE\x10\x17\x12\x36\n2PROPOSAL_ERROR_MARKET_MISSING_LIQUIDITY_COMMITMENT\x10\x18\x12/\n+PROPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKET\x10\x19\x12)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\x10\x1a\x12,\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT\x10\x1b\x12%\n!PROPOSAL_ERROR_INVALID_FEE_AMOUNT\x10\x1c\x12 \n\x1cPROPOSAL_ERROR_INVALID_SHAPE\x10\x1d\x12)\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER\x10\x1e\x12\x31\n-PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED\x10\x1f\x12\x36\n2PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED\x10 \x12(\n$PROPOSAL_ERROR_INVALID_ASSET_DETAILS\x10!B7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
   dependencies=[github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,markets__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,oracles_dot_v1_dot_spec__pb2.DESCRIPTOR,])
 
@@ -201,11 +201,16 @@ _PROPOSALERROR = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PROPOSAL_ERROR_INVALID_ASSET_DETAILS', index=33, number=33,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3423,
-  serialized_end=4914,
+  serialized_start=3424,
+  serialized_end=4957,
 )
 _sym_db.RegisterEnumDescriptor(_PROPOSALERROR)
 
@@ -243,6 +248,7 @@ PROPOSAL_ERROR_INVALID_SHAPE = 29
 PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30
 PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED = 31
 PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32
+PROPOSAL_ERROR_INVALID_ASSET_DETAILS = 33
 
 
 _PROPOSAL_STATE = _descriptor.EnumDescriptor(
@@ -295,8 +301,8 @@ _PROPOSAL_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2885,
-  serialized_end=3059,
+  serialized_start=2886,
+  serialized_end=3060,
 )
 _sym_db.RegisterEnumDescriptor(_PROPOSAL_STATE)
 
@@ -325,8 +331,8 @@ _VOTE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3361,
-  serialized_end=3420,
+  serialized_start=3362,
+  serialized_end=3421,
 )
 _sym_db.RegisterEnumDescriptor(_VOTE_VALUE)
 
@@ -724,7 +730,7 @@ _NEWASSET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1681,
-  serialized_end=1744,
+  serialized_end=1745,
 )
 
 
@@ -802,8 +808,8 @@ _PROPOSALTERMS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1747,
-  serialized_end=2179,
+  serialized_start=1748,
+  serialized_end=2180,
 )
 
 
@@ -841,8 +847,8 @@ _GOVERNANCEDATA_YESPARTYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2429,
-  serialized_end=2500,
+  serialized_start=2430,
+  serialized_end=2501,
 )
 
 _GOVERNANCEDATA_NOPARTYENTRY = _descriptor.Descriptor(
@@ -879,8 +885,8 @@ _GOVERNANCEDATA_NOPARTYENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2502,
-  serialized_end=2572,
+  serialized_start=2503,
+  serialized_end=2573,
 )
 
 _GOVERNANCEDATA = _descriptor.Descriptor(
@@ -938,8 +944,8 @@ _GOVERNANCEDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2182,
-  serialized_end=2572,
+  serialized_start=2183,
+  serialized_end=2573,
 )
 
 
@@ -1020,8 +1026,8 @@ _PROPOSAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2575,
-  serialized_end=3059,
+  serialized_start=2576,
+  serialized_end=3060,
 )
 
 
@@ -1088,8 +1094,8 @@ _VOTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3062,
-  serialized_end=3420,
+  serialized_start=3063,
+  serialized_end=3421,
 )
 
 _FUTUREPRODUCT.fields_by_name['oracle_spec'].message_type = oracles_dot_v1_dot_spec__pb2._ORACLESPECCONFIGURATION
@@ -1122,7 +1128,7 @@ _NEWMARKETCOMMITMENT.fields_by_name['buys'].message_type = vega__pb2._LIQUIDITYO
 _NEWMARKET.fields_by_name['changes'].message_type = _NEWMARKETCONFIGURATION
 _NEWMARKET.fields_by_name['liquidity_commitment'].message_type = _NEWMARKETCOMMITMENT
 _UPDATENETWORKPARAMETER.fields_by_name['changes'].message_type = vega__pb2._NETWORKPARAMETER
-_NEWASSET.fields_by_name['changes'].message_type = assets__pb2._ASSETSOURCE
+_NEWASSET.fields_by_name['changes'].message_type = assets__pb2._ASSETDETAILS
 _PROPOSALTERMS.fields_by_name['update_market'].message_type = _UPDATEMARKET
 _PROPOSALTERMS.fields_by_name['new_market'].message_type = _NEWMARKET
 _PROPOSALTERMS.fields_by_name['update_network_parameter'].message_type = _UPDATENETWORKPARAMETER

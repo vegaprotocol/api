@@ -275,8 +275,8 @@ export namespace UpdateNetworkParameter {
 export class NewAsset extends jspb.Message {
   hasChanges(): boolean;
   clearChanges(): void;
-  getChanges(): assets_pb.AssetSource | undefined;
-  setChanges(value?: assets_pb.AssetSource): void;
+  getChanges(): assets_pb.AssetDetails | undefined;
+  setChanges(value?: assets_pb.AssetDetails): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewAsset.AsObject;
@@ -290,7 +290,7 @@ export class NewAsset extends jspb.Message {
 
 export namespace NewAsset {
   export type AsObject = {
-    changes?: assets_pb.AssetSource.AsObject,
+    changes?: assets_pb.AssetDetails.AsObject,
   }
 }
 
@@ -540,6 +540,7 @@ export interface ProposalErrorMap {
   PROPOSAL_ERROR_INVALID_RISK_PARAMETER: 30;
   PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED: 31;
   PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED: 32;
+  PROPOSAL_ERROR_INVALID_ASSET_DETAILS: 33;
 }
 
 export const ProposalError: ProposalErrorMap;

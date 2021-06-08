@@ -115,7 +115,7 @@
 
 - [assets.proto](#assets.proto)
     - [Asset](#vega.Asset)
-    - [AssetSource](#vega.AssetSource)
+    - [AssetDetails](#vega.AssetDetails)
     - [BuiltinAsset](#vega.BuiltinAsset)
     - [ERC20](#vega.ERC20)
 
@@ -2295,25 +2295,26 @@ The Vega representation of an external asset
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Internal identifier of the asset |
-| name | [string](#string) |  | Name of the asset (e.g: Great British Pound) |
-| symbol | [string](#string) |  | Symbol of the asset (e.g: GBP) |
-| total_supply | [string](#string) |  | Total circulating supply for the asset |
-| decimals | [uint64](#uint64) |  | Number of decimals / precision handled by this asset |
-| source | [AssetSource](#vega.AssetSource) |  | The definition of the external source for this asset |
+| details | [AssetDetails](#vega.AssetDetails) |  | The definition of the external source for this asset |
 
 
 
 
 
 
-<a name="vega.AssetSource"></a>
+<a name="vega.AssetDetails"></a>
 
-### AssetSource
-Asset source definition
+### AssetDetails
+The Vega representation of an external asset
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of the asset (e.g: Great British Pound) |
+| symbol | [string](#string) |  | Symbol of the asset (e.g: GBP) |
+| total_supply | [string](#string) |  | Total circulating supply for the asset |
+| decimals | [uint64](#uint64) |  | Number of decimal / precision handled by this asset |
+| min_lp_stake | [string](#string) |  | Min stake required for this asset from liquidity providers |
 | builtin_asset | [BuiltinAsset](#vega.BuiltinAsset) |  | A built-in asset |
 | erc20 | [ERC20](#vega.ERC20) |  | An Ethereum ERC20 asset |
 
@@ -2330,10 +2331,6 @@ A Vega internal asset
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Name of the asset (e.g: Great British Pound) |
-| symbol | [string](#string) |  | Symbol of the asset (e.g: GBP) |
-| total_supply | [string](#string) |  | Total circulating supply for the asset |
-| decimals | [uint64](#uint64) |  | Number of decimal / precision handled by this asset |
 | max_faucet_amount_mint | [string](#string) |  | Maximum amount that can be requested by a party through the built-in asset faucet at a time |
 
 
@@ -2467,7 +2464,7 @@ New asset on Vega
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| changes | [AssetSource](#vega.AssetSource) |  | The configuration of the new asset |
+| changes | [AssetDetails](#vega.AssetDetails) |  | The configuration of the new asset |
 
 
 
@@ -2686,6 +2683,7 @@ A list of possible errors that can cause a proposal to be in state rejected or f
 | PROPOSAL_ERROR_INVALID_RISK_PARAMETER | 30 | Market proposal invalid risk parameter |
 | PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED | 31 | Proposal was declined because vote didn&#39;t reach the majority thershold required |
 | PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED | 32 | Proposal declined because the participation threshold was not reached |
+| PROPOSAL_ERROR_INVALID_ASSET_DETAILS | 33 | Asset proposal invalid asset details |
 
 
 

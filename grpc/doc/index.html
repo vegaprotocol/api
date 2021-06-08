@@ -619,7 +619,7 @@
                 </li>
 
                 <li>
-                  <a href="#vega.AssetSource"><span class="badge">M</span>AssetSource</a>
+                  <a href="#vega.AssetDetails"><span class="badge">M</span>AssetDetails</a>
                 </li>
 
                 <li>
@@ -7175,36 +7175,8 @@ Vega network and are unlocked on the foreign chain bridge, for example, on the E
                 </tr>
 
                 <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Name of the asset (e.g: Great British Pound) </p></td>
-                </tr>
-
-                <tr>
-                  <td>symbol</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Symbol of the asset (e.g: GBP) </p></td>
-                </tr>
-
-                <tr>
-                  <td>total_supply</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>Total circulating supply for the asset </p></td>
-                </tr>
-
-                <tr>
-                  <td>decimals</td>
-                  <td><a href="#uint64">uint64</a></td>
-                  <td></td>
-                  <td><p>Number of decimals / precision handled by this asset </p></td>
-                </tr>
-
-                <tr>
-                  <td>source</td>
-                  <td><a href="#vega.AssetSource">AssetSource</a></td>
+                  <td>details</td>
+                  <td><a href="#vega.AssetDetails">AssetDetails</a></td>
                   <td></td>
                   <td><p>The definition of the external source for this asset </p></td>
                 </tr>
@@ -7216,39 +7188,8 @@ Vega network and are unlocked on the foreign chain bridge, for example, on the E
 
 
 
-        <h3 id="vega.AssetSource">AssetSource</h3>
-        <p>Asset source definition</p>
-
-
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                  <td>builtin_asset</td>
-                  <td><a href="#vega.BuiltinAsset">BuiltinAsset</a></td>
-                  <td></td>
-                  <td><p>A built-in asset </p></td>
-                </tr>
-
-                <tr>
-                  <td>erc20</td>
-                  <td><a href="#vega.ERC20">ERC20</a></td>
-                  <td></td>
-                  <td><p>An Ethereum ERC20 asset </p></td>
-                </tr>
-
-            </tbody>
-          </table>
-
-
-
-
-
-        <h3 id="vega.BuiltinAsset">BuiltinAsset</h3>
-        <p>A Vega internal asset</p>
+        <h3 id="vega.AssetDetails">AssetDetails</h3>
+        <p>The Vega representation of an external asset</p>
 
 
           <table class="field-table">
@@ -7284,6 +7225,44 @@ Vega network and are unlocked on the foreign chain bridge, for example, on the E
                   <td></td>
                   <td><p>Number of decimal / precision handled by this asset </p></td>
                 </tr>
+
+                <tr>
+                  <td>min_lp_stake</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Min stake required for this asset from liquidity providers </p></td>
+                </tr>
+
+                <tr>
+                  <td>builtin_asset</td>
+                  <td><a href="#vega.BuiltinAsset">BuiltinAsset</a></td>
+                  <td></td>
+                  <td><p>A built-in asset </p></td>
+                </tr>
+
+                <tr>
+                  <td>erc20</td>
+                  <td><a href="#vega.ERC20">ERC20</a></td>
+                  <td></td>
+                  <td><p>An Ethereum ERC20 asset </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.BuiltinAsset">BuiltinAsset</h3>
+        <p>A Vega internal asset</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
 
                 <tr>
                   <td>max_faucet_amount_mint</td>
@@ -7644,7 +7623,7 @@ value (Vote) is the vote cast by the given party </p></td>
 
                 <tr>
                   <td>changes</td>
-                  <td><a href="#vega.AssetSource">AssetSource</a></td>
+                  <td><a href="#vega.AssetDetails">AssetDetails</a></td>
                   <td></td>
                   <td><p>The configuration of the new asset </p></td>
                 </tr>
@@ -8566,6 +8545,12 @@ constrained by `minEnactInSeconds` and `maxEnactInSeconds` network parameters </
                 <td>PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED</td>
                 <td>32</td>
                 <td><p>Proposal declined because the participation threshold was not reached</p></td>
+              </tr>
+
+              <tr>
+                <td>PROPOSAL_ERROR_INVALID_ASSET_DETAILS</td>
+                <td>33</td>
+                <td><p>Asset proposal invalid asset details</p></td>
               </tr>
 
           </tbody>
