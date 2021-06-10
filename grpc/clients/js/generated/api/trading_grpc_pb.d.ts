@@ -107,6 +107,7 @@ interface ITradingDataServiceService extends grpc.ServiceDefinition<grpc.Untyped
   observeProposalVotes: grpc.MethodDefinition<api_trading_pb.ObserveProposalVotesRequest, api_trading_pb.ObserveProposalVotesResponse>;
   observeEventBus: grpc.MethodDefinition<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
   statistics: grpc.MethodDefinition<api_trading_pb.StatisticsRequest, api_trading_pb.StatisticsResponse>;
+  lastBlockHeight: grpc.MethodDefinition<api_trading_pb.LastBlockHeightRequest, api_trading_pb.LastBlockHeightResponse>;
   getVegaTime: grpc.MethodDefinition<api_trading_pb.GetVegaTimeRequest, api_trading_pb.GetVegaTimeResponse>;
   accountsSubscribe: grpc.MethodDefinition<api_trading_pb.AccountsSubscribeRequest, api_trading_pb.AccountsSubscribeResponse>;
   candlesSubscribe: grpc.MethodDefinition<api_trading_pb.CandlesSubscribeRequest, api_trading_pb.CandlesSubscribeResponse>;
@@ -176,6 +177,7 @@ export interface ITradingDataServiceServer extends grpc.UntypedServiceImplementa
   observeProposalVotes: grpc.handleServerStreamingCall<api_trading_pb.ObserveProposalVotesRequest, api_trading_pb.ObserveProposalVotesResponse>;
   observeEventBus: grpc.handleBidiStreamingCall<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
   statistics: grpc.handleUnaryCall<api_trading_pb.StatisticsRequest, api_trading_pb.StatisticsResponse>;
+  lastBlockHeight: grpc.handleUnaryCall<api_trading_pb.LastBlockHeightRequest, api_trading_pb.LastBlockHeightResponse>;
   getVegaTime: grpc.handleUnaryCall<api_trading_pb.GetVegaTimeRequest, api_trading_pb.GetVegaTimeResponse>;
   accountsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.AccountsSubscribeRequest, api_trading_pb.AccountsSubscribeResponse>;
   candlesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.CandlesSubscribeRequest, api_trading_pb.CandlesSubscribeResponse>;
@@ -315,6 +317,9 @@ export class TradingDataServiceClient extends grpc.Client {
   statistics(argument: api_trading_pb.StatisticsRequest, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
   statistics(argument: api_trading_pb.StatisticsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
   statistics(argument: api_trading_pb.StatisticsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
+  lastBlockHeight(argument: api_trading_pb.LastBlockHeightRequest, callback: grpc.requestCallback<api_trading_pb.LastBlockHeightResponse>): grpc.ClientUnaryCall;
+  lastBlockHeight(argument: api_trading_pb.LastBlockHeightRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.LastBlockHeightResponse>): grpc.ClientUnaryCall;
+  lastBlockHeight(argument: api_trading_pb.LastBlockHeightRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.LastBlockHeightResponse>): grpc.ClientUnaryCall;
   getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
   getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
   getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;

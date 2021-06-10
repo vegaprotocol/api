@@ -110759,6 +110759,933 @@ public final class Trading {
 
   }
 
+  public interface LastBlockHeightRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.v1.LastBlockHeightRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * A request to get the height of the very last block processed
+   * by tendermint
+   * </pre>
+   *
+   * Protobuf type {@code api.v1.LastBlockHeightRequest}
+   */
+  public static final class LastBlockHeightRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.v1.LastBlockHeightRequest)
+      LastBlockHeightRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LastBlockHeightRequest.newBuilder() to construct.
+    private LastBlockHeightRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LastBlockHeightRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LastBlockHeightRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LastBlockHeightRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.class, io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest other = (io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest) obj;
+
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A request to get the height of the very last block processed
+     * by tendermint
+     * </pre>
+     *
+     * Protobuf type {@code api.v1.LastBlockHeightRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.v1.LastBlockHeightRequest)
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.class, io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest build() {
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest buildPartial() {
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest result = new io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest other) {
+        if (other == io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.v1.LastBlockHeightRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.v1.LastBlockHeightRequest)
+    private static final io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LastBlockHeightRequest>
+        PARSER = new com.google.protobuf.AbstractParser<LastBlockHeightRequest>() {
+      @java.lang.Override
+      public LastBlockHeightRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LastBlockHeightRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LastBlockHeightRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LastBlockHeightRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LastBlockHeightResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.v1.LastBlockHeightResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 height = 1 [json_name = "height"];</code>
+     * @return The height.
+     */
+    long getHeight();
+  }
+  /**
+   * <pre>
+   * A response with the height of the last block processed by
+   * tendermint
+   * </pre>
+   *
+   * Protobuf type {@code api.v1.LastBlockHeightResponse}
+   */
+  public static final class LastBlockHeightResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.v1.LastBlockHeightResponse)
+      LastBlockHeightResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LastBlockHeightResponse.newBuilder() to construct.
+    private LastBlockHeightResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LastBlockHeightResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new LastBlockHeightResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LastBlockHeightResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              height_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.class, io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.Builder.class);
+    }
+
+    public static final int HEIGHT_FIELD_NUMBER = 1;
+    private long height_;
+    /**
+     * <code>uint64 height = 1 [json_name = "height"];</code>
+     * @return The height.
+     */
+    @java.lang.Override
+    public long getHeight() {
+      return height_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (height_ != 0L) {
+        output.writeUInt64(1, height_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (height_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, height_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse other = (io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse) obj;
+
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getHeight());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A response with the height of the last block processed by
+     * tendermint
+     * </pre>
+     *
+     * Protobuf type {@code api.v1.LastBlockHeightResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.v1.LastBlockHeightResponse)
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.class, io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        height_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.api.Trading.internal_static_api_v1_LastBlockHeightResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse build() {
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse buildPartial() {
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse result = new io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse(this);
+        result.height_ = height_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse) {
+          return mergeFrom((io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse other) {
+        if (other == io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.getDefaultInstance()) return this;
+        if (other.getHeight() != 0L) {
+          setHeight(other.getHeight());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long height_ ;
+      /**
+       * <code>uint64 height = 1 [json_name = "height"];</code>
+       * @return The height.
+       */
+      @java.lang.Override
+      public long getHeight() {
+        return height_;
+      }
+      /**
+       * <code>uint64 height = 1 [json_name = "height"];</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeight(long value) {
+
+        height_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 height = 1 [json_name = "height"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeight() {
+
+        height_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.v1.LastBlockHeightResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.v1.LastBlockHeightResponse)
+    private static final io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse();
+    }
+
+    public static io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LastBlockHeightResponse>
+        PARSER = new com.google.protobuf.AbstractParser<LastBlockHeightResponse>() {
+      @java.lang.Override
+      public LastBlockHeightResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LastBlockHeightResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LastBlockHeightResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LastBlockHeightResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_v1_PropagateChainEventRequest_descriptor;
   private static final
@@ -111509,6 +112436,16 @@ public final class Trading {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_v1_OracleDataBySpecResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_v1_LastBlockHeightRequest_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_v1_LastBlockHeightRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_v1_LastBlockHeightResponse_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_v1_LastBlockHeightResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -111818,170 +112755,174 @@ public final class Trading {
       "SpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030O" +
       "racleDataBySpecResponse\0227\n\013oracle_data\030\001" +
       " \003(\0132\026.oracles.v1.OracleDataR\noracleData" +
-      "2\334\007\n\016TradingService\022[\n\022PrepareSubmitOrde" +
-      "r\022!.api.v1.PrepareSubmitOrderRequest\032\".a" +
-      "pi.v1.PrepareSubmitOrderResponse\022[\n\022Prep" +
-      "areCancelOrder\022!.api.v1.PrepareCancelOrd" +
-      "erRequest\032\".api.v1.PrepareCancelOrderRes" +
-      "ponse\022X\n\021PrepareAmendOrder\022 .api.v1.Prep" +
-      "areAmendOrderRequest\032!.api.v1.PrepareAme" +
-      "ndOrderResponse\022R\n\017PrepareWithdraw\022\036.api" +
-      ".v1.PrepareWithdrawRequest\032\037.api.v1.Prep" +
-      "areWithdrawResponse\022X\n\021SubmitTransaction" +
-      "\022 .api.v1.SubmitTransactionRequest\032!.api" +
-      ".v1.SubmitTransactionResponse\022^\n\023SubmitT" +
-      "ransactionV2\022\".api.v1.SubmitTransactionV" +
-      "2Request\032#.api.v1.SubmitTransactionV2Res" +
-      "ponse\022p\n\031PrepareProposalSubmission\022(.api" +
-      ".v1.PrepareProposalSubmissionRequest\032).a" +
-      "pi.v1.PrepareProposalSubmissionResponse\022" +
-      "d\n\025PrepareVoteSubmission\022$.api.v1.Prepar" +
-      "eVoteSubmissionRequest\032%.api.v1.PrepareV" +
-      "oteSubmissionResponse\022^\n\023PropagateChainE" +
-      "vent\022\".api.v1.PropagateChainEventRequest" +
-      "\032#.api.v1.PropagateChainEventResponse\022p\n" +
-      "\031PrepareLiquidityProvision\022(.api.v1.Prep" +
-      "areLiquidityProvisionRequest\032).api.v1.Pr" +
-      "epareLiquidityProvisionResponse2\333*\n\022Trad" +
-      "ingDataService\022O\n\016MarketAccounts\022\035.api.v" +
-      "1.MarketAccountsRequest\032\036.api.v1.MarketA" +
-      "ccountsResponse\022L\n\rPartyAccounts\022\034.api.v" +
-      "1.PartyAccountsRequest\032\035.api.v1.PartyAcc" +
-      "ountsResponse\022p\n\031FeeInfrastructureAccoun" +
-      "ts\022(.api.v1.FeeInfrastructureAccountsReq" +
-      "uest\032).api.v1.FeeInfrastructureAccountsR" +
-      "esponse\022:\n\007Candles\022\026.api.v1.CandlesReque" +
-      "st\032\027.api.v1.CandlesResponse\022O\n\016MarketDat" +
-      "aByID\022\035.api.v1.MarketDataByIDRequest\032\036.a" +
-      "pi.v1.MarketDataByIDResponse\022F\n\013MarketsD" +
-      "ata\022\032.api.v1.MarketsDataRequest\032\033.api.v1" +
-      ".MarketsDataResponse\022C\n\nMarketByID\022\031.api" +
-      ".v1.MarketByIDRequest\032\032.api.v1.MarketByI" +
-      "DResponse\022F\n\013MarketDepth\022\032.api.v1.Market" +
-      "DepthRequest\032\033.api.v1.MarketDepthRespons" +
-      "e\022:\n\007Markets\022\026.api.v1.MarketsRequest\032\027.a" +
-      "pi.v1.MarketsResponse\022[\n\022OrderByMarketAn" +
-      "dID\022!.api.v1.OrderByMarketAndIDRequest\032\"" +
-      ".api.v1.OrderByMarketAndIDResponse\022U\n\020Or" +
-      "derByReference\022\037.api.v1.OrderByReference" +
-      "Request\032 .api.v1.OrderByReferenceRespons" +
-      "e\022O\n\016OrdersByMarket\022\035.api.v1.OrdersByMar" +
-      "ketRequest\032\036.api.v1.OrdersByMarketRespon" +
-      "se\022L\n\rOrdersByParty\022\034.api.v1.OrdersByPar" +
-      "tyRequest\032\035.api.v1.OrdersByPartyResponse" +
-      "\022@\n\tOrderByID\022\030.api.v1.OrderByIDRequest\032" +
-      "\031.api.v1.OrderByIDResponse\022X\n\021OrderVersi" +
-      "onsByID\022 .api.v1.OrderVersionsByIDReques" +
-      "t\032!.api.v1.OrderVersionsByIDResponse\022I\n\014" +
-      "MarginLevels\022\033.api.v1.MarginLevelsReques" +
-      "t\032\034.api.v1.MarginLevelsResponse\022:\n\007Parti" +
-      "es\022\026.api.v1.PartiesRequest\032\027.api.v1.Part" +
-      "iesResponse\022@\n\tPartyByID\022\030.api.v1.PartyB" +
-      "yIDRequest\032\031.api.v1.PartyByIDResponse\022U\n" +
-      "\020PositionsByParty\022\037.api.v1.PositionsByPa" +
-      "rtyRequest\032 .api.v1.PositionsByPartyResp" +
-      "onse\022@\n\tLastTrade\022\030.api.v1.LastTradeRequ" +
-      "est\032\031.api.v1.LastTradeResponse\022O\n\016Trades" +
-      "ByMarket\022\035.api.v1.TradesByMarketRequest\032" +
-      "\036.api.v1.TradesByMarketResponse\022L\n\rTrade" +
-      "sByOrder\022\034.api.v1.TradesByOrderRequest\032\035" +
-      ".api.v1.TradesByOrderResponse\022L\n\rTradesB" +
-      "yParty\022\034.api.v1.TradesByPartyRequest\032\035.a" +
-      "pi.v1.TradesByPartyResponse\022I\n\014GetPropos" +
-      "als\022\033.api.v1.GetProposalsRequest\032\034.api.v" +
-      "1.GetProposalsResponse\022^\n\023GetProposalsBy" +
-      "Party\022\".api.v1.GetProposalsByPartyReques" +
-      "t\032#.api.v1.GetProposalsByPartyResponse\022R" +
-      "\n\017GetVotesByParty\022\036.api.v1.GetVotesByPar" +
-      "tyRequest\032\037.api.v1.GetVotesByPartyRespon" +
-      "se\022d\n\025GetNewMarketProposals\022$.api.v1.Get" +
-      "NewMarketProposalsRequest\032%.api.v1.GetNe" +
-      "wMarketProposalsResponse\022m\n\030GetUpdateMar" +
-      "ketProposals\022\'.api.v1.GetUpdateMarketPro" +
-      "posalsRequest\032(.api.v1.GetUpdateMarketPr" +
-      "oposalsResponse\022|\n\035GetNetworkParametersP" +
-      "roposals\022,.api.v1.GetNetworkParametersPr" +
-      "oposalsRequest\032-.api.v1.GetNetworkParame" +
-      "tersProposalsResponse\022a\n\024GetNewAssetProp" +
-      "osals\022#.api.v1.GetNewAssetProposalsReque" +
-      "st\032$.api.v1.GetNewAssetProposalsResponse" +
-      "\022R\n\017GetProposalByID\022\036.api.v1.GetProposal" +
-      "ByIDRequest\032\037.api.v1.GetProposalByIDResp" +
-      "onse\022g\n\026GetProposalByReference\022%.api.v1." +
-      "GetProposalByReferenceRequest\032&.api.v1.G" +
-      "etProposalByReferenceResponse\022Z\n\021Observe" +
-      "Governance\022 .api.v1.ObserveGovernanceReq" +
-      "uest\032!.api.v1.ObserveGovernanceResponse0" +
-      "\001\022f\n\025ObservePartyProposals\022$.api.v1.Obse" +
-      "rvePartyProposalsRequest\032%.api.v1.Observ" +
-      "ePartyProposalsResponse0\001\022Z\n\021ObservePart" +
-      "yVotes\022 .api.v1.ObservePartyVotesRequest" +
-      "\032!.api.v1.ObservePartyVotesResponse0\001\022c\n" +
-      "\024ObserveProposalVotes\022#.api.v1.ObservePr",
-      "oposalVotesRequest\032$.api.v1.ObservePropo" +
-      "salVotesResponse0\001\022V\n\017ObserveEventBus\022\036." +
-      "api.v1.ObserveEventBusRequest\032\037.api.v1.O" +
-      "bserveEventBusResponse(\0010\001\022C\n\nStatistics" +
-      "\022\031.api.v1.StatisticsRequest\032\032.api.v1.Sta" +
-      "tisticsResponse\022F\n\013GetVegaTime\022\032.api.v1." +
-      "GetVegaTimeRequest\032\033.api.v1.GetVegaTimeR" +
-      "esponse\022Z\n\021AccountsSubscribe\022 .api.v1.Ac" +
-      "countsSubscribeRequest\032!.api.v1.Accounts" +
-      "SubscribeResponse0\001\022W\n\020CandlesSubscribe\022" +
-      "\037.api.v1.CandlesSubscribeRequest\032 .api.v" +
-      "1.CandlesSubscribeResponse0\001\022f\n\025MarginLe" +
-      "velsSubscribe\022$.api.v1.MarginLevelsSubsc" +
-      "ribeRequest\032%.api.v1.MarginLevelsSubscri" +
-      "beResponse0\001\022c\n\024MarketDepthSubscribe\022#.a" +
-      "pi.v1.MarketDepthSubscribeRequest\032$.api." +
-      "v1.MarketDepthSubscribeResponse0\001\022x\n\033Mar" +
-      "ketDepthUpdatesSubscribe\022*.api.v1.Market" +
-      "DepthUpdatesSubscribeRequest\032+.api.v1.Ma" +
-      "rketDepthUpdatesSubscribeResponse0\001\022c\n\024M" +
-      "arketsDataSubscribe\022#.api.v1.MarketsData" +
-      "SubscribeRequest\032$.api.v1.MarketsDataSub" +
-      "scribeResponse0\001\022T\n\017OrdersSubscribe\022\036.ap" +
-      "i.v1.OrdersSubscribeRequest\032\037.api.v1.Ord" +
-      "ersSubscribeResponse0\001\022]\n\022PositionsSubsc" +
-      "ribe\022!.api.v1.PositionsSubscribeRequest\032" +
-      "\".api.v1.PositionsSubscribeResponse0\001\022T\n" +
-      "\017TradesSubscribe\022\036.api.v1.TradesSubscrib" +
-      "eRequest\032\037.api.v1.TradesSubscribeRespons" +
-      "e0\001\022u\n\032TransferResponsesSubscribe\022).api." +
-      "v1.TransferResponsesSubscribeRequest\032*.a" +
-      "pi.v1.TransferResponsesSubscribeResponse" +
-      "0\001\022s\n\032GetNodeSignaturesAggregate\022).api.v" +
-      "1.GetNodeSignaturesAggregateRequest\032*.ap" +
-      "i.v1.GetNodeSignaturesAggregateResponse\022" +
-      "@\n\tAssetByID\022\030.api.v1.AssetByIDRequest\032\031" +
-      ".api.v1.AssetByIDResponse\0227\n\006Assets\022\025.ap" +
-      "i.v1.AssetsRequest\032\026.api.v1.AssetsRespon" +
-      "se\022F\n\013EstimateFee\022\032.api.v1.EstimateFeeRe" +
-      "quest\032\033.api.v1.EstimateFeeResponse\022O\n\016Es" +
-      "timateMargin\022\035.api.v1.EstimateMarginRequ" +
-      "est\032\036.api.v1.EstimateMarginResponse\022j\n\027E" +
-      "RC20WithdrawalApproval\022&.api.v1.ERC20Wit" +
-      "hdrawalApprovalRequest\032\'.api.v1.ERC20Wit" +
-      "hdrawalApprovalResponse\022C\n\nWithdrawal\022\031." +
-      "api.v1.WithdrawalRequest\032\032.api.v1.Withdr" +
-      "awalResponse\022F\n\013Withdrawals\022\032.api.v1.Wit" +
-      "hdrawalsRequest\032\033.api.v1.WithdrawalsResp" +
-      "onse\022:\n\007Deposit\022\026.api.v1.DepositRequest\032" +
-      "\027.api.v1.DepositResponse\022=\n\010Deposits\022\027.a" +
-      "pi.v1.DepositsRequest\032\030.api.v1.DepositsR" +
-      "esponse\022X\n\021NetworkParameters\022 .api.v1.Ne" +
-      "tworkParametersRequest\032!.api.v1.NetworkP" +
-      "arametersResponse\022^\n\023LiquidityProvisions" +
-      "\022\".api.v1.LiquidityProvisionsRequest\032#.a" +
-      "pi.v1.LiquidityProvisionsResponse\022C\n\nOra" +
-      "cleSpec\022\031.api.v1.OracleSpecRequest\032\032.api" +
-      ".v1.OracleSpecResponse\022F\n\013OracleSpecs\022\032." +
-      "api.v1.OracleSpecsRequest\032\033.api.v1.Oracl" +
-      "eSpecsResponse\022U\n\020OracleDataBySpec\022\037.api" +
-      ".v1.OracleDataBySpecRequest\032 .api.v1.Ora" +
-      "cleDataBySpecResponseB?\n\030io.vegaprotocol" +
-      ".vega.apiZ#code.vegaprotocol.io/vega/pro" +
-      "to/apib\006proto3"
+      "\"\030\n\026LastBlockHeightRequest\"1\n\027LastBlockH" +
+      "eightResponse\022\026\n\006height\030\001 \001(\004R\006height2\334\007" +
+      "\n\016TradingService\022[\n\022PrepareSubmitOrder\022!" +
+      ".api.v1.PrepareSubmitOrderRequest\032\".api." +
+      "v1.PrepareSubmitOrderResponse\022[\n\022Prepare" +
+      "CancelOrder\022!.api.v1.PrepareCancelOrderR" +
+      "equest\032\".api.v1.PrepareCancelOrderRespon" +
+      "se\022X\n\021PrepareAmendOrder\022 .api.v1.Prepare" +
+      "AmendOrderRequest\032!.api.v1.PrepareAmendO" +
+      "rderResponse\022R\n\017PrepareWithdraw\022\036.api.v1" +
+      ".PrepareWithdrawRequest\032\037.api.v1.Prepare" +
+      "WithdrawResponse\022X\n\021SubmitTransaction\022 ." +
+      "api.v1.SubmitTransactionRequest\032!.api.v1" +
+      ".SubmitTransactionResponse\022^\n\023SubmitTran" +
+      "sactionV2\022\".api.v1.SubmitTransactionV2Re" +
+      "quest\032#.api.v1.SubmitTransactionV2Respon" +
+      "se\022p\n\031PrepareProposalSubmission\022(.api.v1" +
+      ".PrepareProposalSubmissionRequest\032).api." +
+      "v1.PrepareProposalSubmissionResponse\022d\n\025" +
+      "PrepareVoteSubmission\022$.api.v1.PrepareVo" +
+      "teSubmissionRequest\032%.api.v1.PrepareVote" +
+      "SubmissionResponse\022^\n\023PropagateChainEven" +
+      "t\022\".api.v1.PropagateChainEventRequest\032#." +
+      "api.v1.PropagateChainEventResponse\022p\n\031Pr" +
+      "epareLiquidityProvision\022(.api.v1.Prepare" +
+      "LiquidityProvisionRequest\032).api.v1.Prepa" +
+      "reLiquidityProvisionResponse2\257+\n\022Trading" +
+      "DataService\022O\n\016MarketAccounts\022\035.api.v1.M" +
+      "arketAccountsRequest\032\036.api.v1.MarketAcco" +
+      "untsResponse\022L\n\rPartyAccounts\022\034.api.v1.P" +
+      "artyAccountsRequest\032\035.api.v1.PartyAccoun" +
+      "tsResponse\022p\n\031FeeInfrastructureAccounts\022" +
+      "(.api.v1.FeeInfrastructureAccountsReques" +
+      "t\032).api.v1.FeeInfrastructureAccountsResp" +
+      "onse\022:\n\007Candles\022\026.api.v1.CandlesRequest\032" +
+      "\027.api.v1.CandlesResponse\022O\n\016MarketDataBy" +
+      "ID\022\035.api.v1.MarketDataByIDRequest\032\036.api." +
+      "v1.MarketDataByIDResponse\022F\n\013MarketsData" +
+      "\022\032.api.v1.MarketsDataRequest\032\033.api.v1.Ma" +
+      "rketsDataResponse\022C\n\nMarketByID\022\031.api.v1" +
+      ".MarketByIDRequest\032\032.api.v1.MarketByIDRe" +
+      "sponse\022F\n\013MarketDepth\022\032.api.v1.MarketDep" +
+      "thRequest\032\033.api.v1.MarketDepthResponse\022:" +
+      "\n\007Markets\022\026.api.v1.MarketsRequest\032\027.api." +
+      "v1.MarketsResponse\022[\n\022OrderByMarketAndID" +
+      "\022!.api.v1.OrderByMarketAndIDRequest\032\".ap" +
+      "i.v1.OrderByMarketAndIDResponse\022U\n\020Order" +
+      "ByReference\022\037.api.v1.OrderByReferenceReq" +
+      "uest\032 .api.v1.OrderByReferenceResponse\022O" +
+      "\n\016OrdersByMarket\022\035.api.v1.OrdersByMarket" +
+      "Request\032\036.api.v1.OrdersByMarketResponse\022" +
+      "L\n\rOrdersByParty\022\034.api.v1.OrdersByPartyR" +
+      "equest\032\035.api.v1.OrdersByPartyResponse\022@\n" +
+      "\tOrderByID\022\030.api.v1.OrderByIDRequest\032\031.a" +
+      "pi.v1.OrderByIDResponse\022X\n\021OrderVersions" +
+      "ByID\022 .api.v1.OrderVersionsByIDRequest\032!" +
+      ".api.v1.OrderVersionsByIDResponse\022I\n\014Mar" +
+      "ginLevels\022\033.api.v1.MarginLevelsRequest\032\034" +
+      ".api.v1.MarginLevelsResponse\022:\n\007Parties\022" +
+      "\026.api.v1.PartiesRequest\032\027.api.v1.Parties" +
+      "Response\022@\n\tPartyByID\022\030.api.v1.PartyByID" +
+      "Request\032\031.api.v1.PartyByIDResponse\022U\n\020Po" +
+      "sitionsByParty\022\037.api.v1.PositionsByParty" +
+      "Request\032 .api.v1.PositionsByPartyRespons" +
+      "e\022@\n\tLastTrade\022\030.api.v1.LastTradeRequest" +
+      "\032\031.api.v1.LastTradeResponse\022O\n\016TradesByM" +
+      "arket\022\035.api.v1.TradesByMarketRequest\032\036.a" +
+      "pi.v1.TradesByMarketResponse\022L\n\rTradesBy" +
+      "Order\022\034.api.v1.TradesByOrderRequest\032\035.ap" +
+      "i.v1.TradesByOrderResponse\022L\n\rTradesByPa" +
+      "rty\022\034.api.v1.TradesByPartyRequest\032\035.api." +
+      "v1.TradesByPartyResponse\022I\n\014GetProposals" +
+      "\022\033.api.v1.GetProposalsRequest\032\034.api.v1.G" +
+      "etProposalsResponse\022^\n\023GetProposalsByPar" +
+      "ty\022\".api.v1.GetProposalsByPartyRequest\032#" +
+      ".api.v1.GetProposalsByPartyResponse\022R\n\017G" +
+      "etVotesByParty\022\036.api.v1.GetVotesByPartyR" +
+      "equest\032\037.api.v1.GetVotesByPartyResponse\022" +
+      "d\n\025GetNewMarketProposals\022$.api.v1.GetNew" +
+      "MarketProposalsRequest\032%.api.v1.GetNewMa" +
+      "rketProposalsResponse\022m\n\030GetUpdateMarket" +
+      "Proposals\022\'.api.v1.GetUpdateMarketPropos" +
+      "alsRequest\032(.api.v1.GetUpdateMarketPropo" +
+      "salsResponse\022|\n\035GetNetworkParametersProp" +
+      "osals\022,.api.v1.GetNetworkParametersPropo" +
+      "salsRequest\032-.api.v1.GetNetworkParameter" +
+      "sProposalsResponse\022a\n\024GetNewAssetProposa" +
+      "ls\022#.api.v1.GetNewAssetProposalsRequest\032" +
+      "$.api.v1.GetNewAssetProposalsResponse\022R\n" +
+      "\017GetProposalByID\022\036.api.v1.GetProposalByI" +
+      "DRequest\032\037.api.v1.GetProposalByIDRespons" +
+      "e\022g\n\026GetProposalByReference\022%.api.v1.Get" +
+      "ProposalByReferenceRequest\032&.api.v1.GetP" +
+      "roposalByReferenceResponse\022Z\n\021ObserveGov" +
+      "ernance\022 .api.v1.ObserveGovernanceReques" +
+      "t\032!.api.v1.ObserveGovernanceResponse0\001\022f" +
+      "\n\025ObservePartyProposals\022$.api.v1.Observe" +
+      "PartyProposalsRequest\032%.api.v1.ObservePa" +
+      "rtyProposalsResponse0\001\022Z\n\021ObservePartyVo" +
+      "tes\022 .api.v1.ObservePartyVotesRequest\032!.",
+      "api.v1.ObservePartyVotesResponse0\001\022c\n\024Ob" +
+      "serveProposalVotes\022#.api.v1.ObservePropo" +
+      "salVotesRequest\032$.api.v1.ObserveProposal" +
+      "VotesResponse0\001\022V\n\017ObserveEventBus\022\036.api" +
+      ".v1.ObserveEventBusRequest\032\037.api.v1.Obse" +
+      "rveEventBusResponse(\0010\001\022C\n\nStatistics\022\031." +
+      "api.v1.StatisticsRequest\032\032.api.v1.Statis" +
+      "ticsResponse\022R\n\017LastBlockHeight\022\036.api.v1" +
+      ".LastBlockHeightRequest\032\037.api.v1.LastBlo" +
+      "ckHeightResponse\022F\n\013GetVegaTime\022\032.api.v1" +
+      ".GetVegaTimeRequest\032\033.api.v1.GetVegaTime" +
+      "Response\022Z\n\021AccountsSubscribe\022 .api.v1.A" +
+      "ccountsSubscribeRequest\032!.api.v1.Account" +
+      "sSubscribeResponse0\001\022W\n\020CandlesSubscribe" +
+      "\022\037.api.v1.CandlesSubscribeRequest\032 .api." +
+      "v1.CandlesSubscribeResponse0\001\022f\n\025MarginL" +
+      "evelsSubscribe\022$.api.v1.MarginLevelsSubs" +
+      "cribeRequest\032%.api.v1.MarginLevelsSubscr" +
+      "ibeResponse0\001\022c\n\024MarketDepthSubscribe\022#." +
+      "api.v1.MarketDepthSubscribeRequest\032$.api" +
+      ".v1.MarketDepthSubscribeResponse0\001\022x\n\033Ma" +
+      "rketDepthUpdatesSubscribe\022*.api.v1.Marke" +
+      "tDepthUpdatesSubscribeRequest\032+.api.v1.M" +
+      "arketDepthUpdatesSubscribeResponse0\001\022c\n\024" +
+      "MarketsDataSubscribe\022#.api.v1.MarketsDat" +
+      "aSubscribeRequest\032$.api.v1.MarketsDataSu" +
+      "bscribeResponse0\001\022T\n\017OrdersSubscribe\022\036.a" +
+      "pi.v1.OrdersSubscribeRequest\032\037.api.v1.Or" +
+      "dersSubscribeResponse0\001\022]\n\022PositionsSubs" +
+      "cribe\022!.api.v1.PositionsSubscribeRequest" +
+      "\032\".api.v1.PositionsSubscribeResponse0\001\022T" +
+      "\n\017TradesSubscribe\022\036.api.v1.TradesSubscri" +
+      "beRequest\032\037.api.v1.TradesSubscribeRespon" +
+      "se0\001\022u\n\032TransferResponsesSubscribe\022).api" +
+      ".v1.TransferResponsesSubscribeRequest\032*." +
+      "api.v1.TransferResponsesSubscribeRespons" +
+      "e0\001\022s\n\032GetNodeSignaturesAggregate\022).api." +
+      "v1.GetNodeSignaturesAggregateRequest\032*.a" +
+      "pi.v1.GetNodeSignaturesAggregateResponse" +
+      "\022@\n\tAssetByID\022\030.api.v1.AssetByIDRequest\032" +
+      "\031.api.v1.AssetByIDResponse\0227\n\006Assets\022\025.a" +
+      "pi.v1.AssetsRequest\032\026.api.v1.AssetsRespo" +
+      "nse\022F\n\013EstimateFee\022\032.api.v1.EstimateFeeR" +
+      "equest\032\033.api.v1.EstimateFeeResponse\022O\n\016E" +
+      "stimateMargin\022\035.api.v1.EstimateMarginReq" +
+      "uest\032\036.api.v1.EstimateMarginResponse\022j\n\027" +
+      "ERC20WithdrawalApproval\022&.api.v1.ERC20Wi" +
+      "thdrawalApprovalRequest\032\'.api.v1.ERC20Wi" +
+      "thdrawalApprovalResponse\022C\n\nWithdrawal\022\031" +
+      ".api.v1.WithdrawalRequest\032\032.api.v1.Withd" +
+      "rawalResponse\022F\n\013Withdrawals\022\032.api.v1.Wi" +
+      "thdrawalsRequest\032\033.api.v1.WithdrawalsRes" +
+      "ponse\022:\n\007Deposit\022\026.api.v1.DepositRequest" +
+      "\032\027.api.v1.DepositResponse\022=\n\010Deposits\022\027." +
+      "api.v1.DepositsRequest\032\030.api.v1.Deposits" +
+      "Response\022X\n\021NetworkParameters\022 .api.v1.N" +
+      "etworkParametersRequest\032!.api.v1.Network" +
+      "ParametersResponse\022^\n\023LiquidityProvision" +
+      "s\022\".api.v1.LiquidityProvisionsRequest\032#." +
+      "api.v1.LiquidityProvisionsResponse\022C\n\nOr" +
+      "acleSpec\022\031.api.v1.OracleSpecRequest\032\032.ap" +
+      "i.v1.OracleSpecResponse\022F\n\013OracleSpecs\022\032" +
+      ".api.v1.OracleSpecsRequest\032\033.api.v1.Orac" +
+      "leSpecsResponse\022U\n\020OracleDataBySpec\022\037.ap" +
+      "i.v1.OracleDataBySpecRequest\032 .api.v1.Or" +
+      "acleDataBySpecResponseB?\n\030io.vegaprotoco" +
+      "l.vega.apiZ#code.vegaprotocol.io/vega/pr" +
+      "oto/apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -112898,6 +113839,18 @@ public final class Trading {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_v1_OracleDataBySpecResponse_descriptor,
         new java.lang.String[] { "OracleData", });
+    internal_static_api_v1_LastBlockHeightRequest_descriptor =
+      getDescriptor().getMessageTypes().get(150);
+    internal_static_api_v1_LastBlockHeightRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_v1_LastBlockHeightRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_api_v1_LastBlockHeightResponse_descriptor =
+      getDescriptor().getMessageTypes().get(151);
+    internal_static_api_v1_LastBlockHeightResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_v1_LastBlockHeightResponse_descriptor,
+        new java.lang.String[] { "Height", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

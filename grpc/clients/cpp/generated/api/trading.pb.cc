@@ -654,6 +654,14 @@ class OracleDataBySpecResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OracleDataBySpecResponse> _instance;
 } _OracleDataBySpecResponse_default_instance_;
+class LastBlockHeightRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LastBlockHeightRequest> _instance;
+} _LastBlockHeightRequest_default_instance_;
+class LastBlockHeightResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LastBlockHeightResponse> _instance;
+} _LastBlockHeightResponse_default_instance_;
 }  // namespace v1
 }  // namespace api
 static void InitDefaultsscc_info_AccountsSubscribeRequest_api_2ftrading_2eproto() {
@@ -1255,6 +1263,32 @@ static void InitDefaultsscc_info_GetVotesByPartyResponse_api_2ftrading_2eproto()
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetVotesByPartyResponse_api_2ftrading_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetVotesByPartyResponse_api_2ftrading_2eproto}, {
       &scc_info_Vote_governance_2eproto.base,}};
+
+static void InitDefaultsscc_info_LastBlockHeightRequest_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_LastBlockHeightRequest_default_instance_;
+    new (ptr) ::api::v1::LastBlockHeightRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LastBlockHeightRequest_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LastBlockHeightRequest_api_2ftrading_2eproto}, {}};
+
+static void InitDefaultsscc_info_LastBlockHeightResponse_api_2ftrading_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::v1::_LastBlockHeightResponse_default_instance_;
+    new (ptr) ::api::v1::LastBlockHeightResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LastBlockHeightResponse_api_2ftrading_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LastBlockHeightResponse_api_2ftrading_2eproto}, {}};
 
 static void InitDefaultsscc_info_LastTradeRequest_api_2ftrading_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -2694,7 +2728,7 @@ static void InitDefaultsscc_info_WithdrawalsResponse_api_2ftrading_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_WithdrawalsResponse_api_2ftrading_2eproto}, {
       &scc_info_Withdrawal_vega_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_api_2ftrading_2eproto[150];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_api_2ftrading_2eproto[152];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_api_2ftrading_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_api_2ftrading_2eproto = nullptr;
 
@@ -3637,6 +3671,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_api_2ftrading_2eproto::offsets
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::api::v1::OracleDataBySpecResponse, oracle_data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::LastBlockHeightRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::api::v1::LastBlockHeightResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::api::v1::LastBlockHeightResponse, height_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::v1::PropagateChainEventRequest)},
@@ -3789,6 +3834,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 920, -1, sizeof(::api::v1::OracleSpecsResponse)},
   { 926, -1, sizeof(::api::v1::OracleDataBySpecRequest)},
   { 932, -1, sizeof(::api::v1::OracleDataBySpecResponse)},
+  { 938, -1, sizeof(::api::v1::LastBlockHeightRequest)},
+  { 943, -1, sizeof(::api::v1::LastBlockHeightResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -3942,6 +3989,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleSpecsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleDataBySpecRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_OracleDataBySpecResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_LastBlockHeightRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::api::v1::_LastBlockHeightResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_api_2ftrading_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -4245,170 +4294,174 @@ const char descriptor_table_protodef_api_2ftrading_2eproto[] PROTOBUF_SECTION_VA
   "SpecRequest\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002X\001R\002id\"S\n\030O"
   "racleDataBySpecResponse\0227\n\013oracle_data\030\001"
   " \003(\0132\026.oracles.v1.OracleDataR\noracleData"
-  "2\334\007\n\016TradingService\022[\n\022PrepareSubmitOrde"
-  "r\022!.api.v1.PrepareSubmitOrderRequest\032\".a"
-  "pi.v1.PrepareSubmitOrderResponse\022[\n\022Prep"
-  "areCancelOrder\022!.api.v1.PrepareCancelOrd"
-  "erRequest\032\".api.v1.PrepareCancelOrderRes"
-  "ponse\022X\n\021PrepareAmendOrder\022 .api.v1.Prep"
-  "areAmendOrderRequest\032!.api.v1.PrepareAme"
-  "ndOrderResponse\022R\n\017PrepareWithdraw\022\036.api"
-  ".v1.PrepareWithdrawRequest\032\037.api.v1.Prep"
-  "areWithdrawResponse\022X\n\021SubmitTransaction"
-  "\022 .api.v1.SubmitTransactionRequest\032!.api"
-  ".v1.SubmitTransactionResponse\022^\n\023SubmitT"
-  "ransactionV2\022\".api.v1.SubmitTransactionV"
-  "2Request\032#.api.v1.SubmitTransactionV2Res"
-  "ponse\022p\n\031PrepareProposalSubmission\022(.api"
-  ".v1.PrepareProposalSubmissionRequest\032).a"
-  "pi.v1.PrepareProposalSubmissionResponse\022"
-  "d\n\025PrepareVoteSubmission\022$.api.v1.Prepar"
-  "eVoteSubmissionRequest\032%.api.v1.PrepareV"
-  "oteSubmissionResponse\022^\n\023PropagateChainE"
-  "vent\022\".api.v1.PropagateChainEventRequest"
-  "\032#.api.v1.PropagateChainEventResponse\022p\n"
-  "\031PrepareLiquidityProvision\022(.api.v1.Prep"
-  "areLiquidityProvisionRequest\032).api.v1.Pr"
-  "epareLiquidityProvisionResponse2\333*\n\022Trad"
-  "ingDataService\022O\n\016MarketAccounts\022\035.api.v"
-  "1.MarketAccountsRequest\032\036.api.v1.MarketA"
-  "ccountsResponse\022L\n\rPartyAccounts\022\034.api.v"
-  "1.PartyAccountsRequest\032\035.api.v1.PartyAcc"
-  "ountsResponse\022p\n\031FeeInfrastructureAccoun"
-  "ts\022(.api.v1.FeeInfrastructureAccountsReq"
-  "uest\032).api.v1.FeeInfrastructureAccountsR"
-  "esponse\022:\n\007Candles\022\026.api.v1.CandlesReque"
-  "st\032\027.api.v1.CandlesResponse\022O\n\016MarketDat"
-  "aByID\022\035.api.v1.MarketDataByIDRequest\032\036.a"
-  "pi.v1.MarketDataByIDResponse\022F\n\013MarketsD"
-  "ata\022\032.api.v1.MarketsDataRequest\032\033.api.v1"
-  ".MarketsDataResponse\022C\n\nMarketByID\022\031.api"
-  ".v1.MarketByIDRequest\032\032.api.v1.MarketByI"
-  "DResponse\022F\n\013MarketDepth\022\032.api.v1.Market"
-  "DepthRequest\032\033.api.v1.MarketDepthRespons"
-  "e\022:\n\007Markets\022\026.api.v1.MarketsRequest\032\027.a"
-  "pi.v1.MarketsResponse\022[\n\022OrderByMarketAn"
-  "dID\022!.api.v1.OrderByMarketAndIDRequest\032\""
-  ".api.v1.OrderByMarketAndIDResponse\022U\n\020Or"
-  "derByReference\022\037.api.v1.OrderByReference"
-  "Request\032 .api.v1.OrderByReferenceRespons"
-  "e\022O\n\016OrdersByMarket\022\035.api.v1.OrdersByMar"
-  "ketRequest\032\036.api.v1.OrdersByMarketRespon"
-  "se\022L\n\rOrdersByParty\022\034.api.v1.OrdersByPar"
-  "tyRequest\032\035.api.v1.OrdersByPartyResponse"
-  "\022@\n\tOrderByID\022\030.api.v1.OrderByIDRequest\032"
-  "\031.api.v1.OrderByIDResponse\022X\n\021OrderVersi"
-  "onsByID\022 .api.v1.OrderVersionsByIDReques"
-  "t\032!.api.v1.OrderVersionsByIDResponse\022I\n\014"
-  "MarginLevels\022\033.api.v1.MarginLevelsReques"
-  "t\032\034.api.v1.MarginLevelsResponse\022:\n\007Parti"
-  "es\022\026.api.v1.PartiesRequest\032\027.api.v1.Part"
-  "iesResponse\022@\n\tPartyByID\022\030.api.v1.PartyB"
-  "yIDRequest\032\031.api.v1.PartyByIDResponse\022U\n"
-  "\020PositionsByParty\022\037.api.v1.PositionsByPa"
-  "rtyRequest\032 .api.v1.PositionsByPartyResp"
-  "onse\022@\n\tLastTrade\022\030.api.v1.LastTradeRequ"
-  "est\032\031.api.v1.LastTradeResponse\022O\n\016Trades"
-  "ByMarket\022\035.api.v1.TradesByMarketRequest\032"
-  "\036.api.v1.TradesByMarketResponse\022L\n\rTrade"
-  "sByOrder\022\034.api.v1.TradesByOrderRequest\032\035"
-  ".api.v1.TradesByOrderResponse\022L\n\rTradesB"
-  "yParty\022\034.api.v1.TradesByPartyRequest\032\035.a"
-  "pi.v1.TradesByPartyResponse\022I\n\014GetPropos"
-  "als\022\033.api.v1.GetProposalsRequest\032\034.api.v"
-  "1.GetProposalsResponse\022^\n\023GetProposalsBy"
-  "Party\022\".api.v1.GetProposalsByPartyReques"
-  "t\032#.api.v1.GetProposalsByPartyResponse\022R"
-  "\n\017GetVotesByParty\022\036.api.v1.GetVotesByPar"
-  "tyRequest\032\037.api.v1.GetVotesByPartyRespon"
-  "se\022d\n\025GetNewMarketProposals\022$.api.v1.Get"
-  "NewMarketProposalsRequest\032%.api.v1.GetNe"
-  "wMarketProposalsResponse\022m\n\030GetUpdateMar"
-  "ketProposals\022\'.api.v1.GetUpdateMarketPro"
-  "posalsRequest\032(.api.v1.GetUpdateMarketPr"
-  "oposalsResponse\022|\n\035GetNetworkParametersP"
-  "roposals\022,.api.v1.GetNetworkParametersPr"
-  "oposalsRequest\032-.api.v1.GetNetworkParame"
-  "tersProposalsResponse\022a\n\024GetNewAssetProp"
-  "osals\022#.api.v1.GetNewAssetProposalsReque"
-  "st\032$.api.v1.GetNewAssetProposalsResponse"
-  "\022R\n\017GetProposalByID\022\036.api.v1.GetProposal"
-  "ByIDRequest\032\037.api.v1.GetProposalByIDResp"
-  "onse\022g\n\026GetProposalByReference\022%.api.v1."
-  "GetProposalByReferenceRequest\032&.api.v1.G"
-  "etProposalByReferenceResponse\022Z\n\021Observe"
-  "Governance\022 .api.v1.ObserveGovernanceReq"
-  "uest\032!.api.v1.ObserveGovernanceResponse0"
-  "\001\022f\n\025ObservePartyProposals\022$.api.v1.Obse"
-  "rvePartyProposalsRequest\032%.api.v1.Observ"
-  "ePartyProposalsResponse0\001\022Z\n\021ObservePart"
-  "yVotes\022 .api.v1.ObservePartyVotesRequest"
-  "\032!.api.v1.ObservePartyVotesResponse0\001\022c\n"
-  "\024ObserveProposalVotes\022#.api.v1.ObservePr"
-  "oposalVotesRequest\032$.api.v1.ObservePropo"
-  "salVotesResponse0\001\022V\n\017ObserveEventBus\022\036."
-  "api.v1.ObserveEventBusRequest\032\037.api.v1.O"
-  "bserveEventBusResponse(\0010\001\022C\n\nStatistics"
-  "\022\031.api.v1.StatisticsRequest\032\032.api.v1.Sta"
-  "tisticsResponse\022F\n\013GetVegaTime\022\032.api.v1."
-  "GetVegaTimeRequest\032\033.api.v1.GetVegaTimeR"
-  "esponse\022Z\n\021AccountsSubscribe\022 .api.v1.Ac"
-  "countsSubscribeRequest\032!.api.v1.Accounts"
-  "SubscribeResponse0\001\022W\n\020CandlesSubscribe\022"
-  "\037.api.v1.CandlesSubscribeRequest\032 .api.v"
-  "1.CandlesSubscribeResponse0\001\022f\n\025MarginLe"
-  "velsSubscribe\022$.api.v1.MarginLevelsSubsc"
-  "ribeRequest\032%.api.v1.MarginLevelsSubscri"
-  "beResponse0\001\022c\n\024MarketDepthSubscribe\022#.a"
-  "pi.v1.MarketDepthSubscribeRequest\032$.api."
-  "v1.MarketDepthSubscribeResponse0\001\022x\n\033Mar"
-  "ketDepthUpdatesSubscribe\022*.api.v1.Market"
-  "DepthUpdatesSubscribeRequest\032+.api.v1.Ma"
-  "rketDepthUpdatesSubscribeResponse0\001\022c\n\024M"
-  "arketsDataSubscribe\022#.api.v1.MarketsData"
-  "SubscribeRequest\032$.api.v1.MarketsDataSub"
-  "scribeResponse0\001\022T\n\017OrdersSubscribe\022\036.ap"
-  "i.v1.OrdersSubscribeRequest\032\037.api.v1.Ord"
-  "ersSubscribeResponse0\001\022]\n\022PositionsSubsc"
-  "ribe\022!.api.v1.PositionsSubscribeRequest\032"
-  "\".api.v1.PositionsSubscribeResponse0\001\022T\n"
-  "\017TradesSubscribe\022\036.api.v1.TradesSubscrib"
-  "eRequest\032\037.api.v1.TradesSubscribeRespons"
-  "e0\001\022u\n\032TransferResponsesSubscribe\022).api."
-  "v1.TransferResponsesSubscribeRequest\032*.a"
-  "pi.v1.TransferResponsesSubscribeResponse"
-  "0\001\022s\n\032GetNodeSignaturesAggregate\022).api.v"
-  "1.GetNodeSignaturesAggregateRequest\032*.ap"
-  "i.v1.GetNodeSignaturesAggregateResponse\022"
-  "@\n\tAssetByID\022\030.api.v1.AssetByIDRequest\032\031"
-  ".api.v1.AssetByIDResponse\0227\n\006Assets\022\025.ap"
-  "i.v1.AssetsRequest\032\026.api.v1.AssetsRespon"
-  "se\022F\n\013EstimateFee\022\032.api.v1.EstimateFeeRe"
-  "quest\032\033.api.v1.EstimateFeeResponse\022O\n\016Es"
-  "timateMargin\022\035.api.v1.EstimateMarginRequ"
-  "est\032\036.api.v1.EstimateMarginResponse\022j\n\027E"
-  "RC20WithdrawalApproval\022&.api.v1.ERC20Wit"
-  "hdrawalApprovalRequest\032\'.api.v1.ERC20Wit"
-  "hdrawalApprovalResponse\022C\n\nWithdrawal\022\031."
-  "api.v1.WithdrawalRequest\032\032.api.v1.Withdr"
-  "awalResponse\022F\n\013Withdrawals\022\032.api.v1.Wit"
-  "hdrawalsRequest\032\033.api.v1.WithdrawalsResp"
-  "onse\022:\n\007Deposit\022\026.api.v1.DepositRequest\032"
-  "\027.api.v1.DepositResponse\022=\n\010Deposits\022\027.a"
-  "pi.v1.DepositsRequest\032\030.api.v1.DepositsR"
-  "esponse\022X\n\021NetworkParameters\022 .api.v1.Ne"
-  "tworkParametersRequest\032!.api.v1.NetworkP"
-  "arametersResponse\022^\n\023LiquidityProvisions"
-  "\022\".api.v1.LiquidityProvisionsRequest\032#.a"
-  "pi.v1.LiquidityProvisionsResponse\022C\n\nOra"
-  "cleSpec\022\031.api.v1.OracleSpecRequest\032\032.api"
-  ".v1.OracleSpecResponse\022F\n\013OracleSpecs\022\032."
-  "api.v1.OracleSpecsRequest\032\033.api.v1.Oracl"
-  "eSpecsResponse\022U\n\020OracleDataBySpec\022\037.api"
-  ".v1.OracleDataBySpecRequest\032 .api.v1.Ora"
-  "cleDataBySpecResponseB\?\n\030io.vegaprotocol"
-  ".vega.apiZ#code.vegaprotocol.io/vega/pro"
-  "to/apib\006proto3"
+  "\"\030\n\026LastBlockHeightRequest\"1\n\027LastBlockH"
+  "eightResponse\022\026\n\006height\030\001 \001(\004R\006height2\334\007"
+  "\n\016TradingService\022[\n\022PrepareSubmitOrder\022!"
+  ".api.v1.PrepareSubmitOrderRequest\032\".api."
+  "v1.PrepareSubmitOrderResponse\022[\n\022Prepare"
+  "CancelOrder\022!.api.v1.PrepareCancelOrderR"
+  "equest\032\".api.v1.PrepareCancelOrderRespon"
+  "se\022X\n\021PrepareAmendOrder\022 .api.v1.Prepare"
+  "AmendOrderRequest\032!.api.v1.PrepareAmendO"
+  "rderResponse\022R\n\017PrepareWithdraw\022\036.api.v1"
+  ".PrepareWithdrawRequest\032\037.api.v1.Prepare"
+  "WithdrawResponse\022X\n\021SubmitTransaction\022 ."
+  "api.v1.SubmitTransactionRequest\032!.api.v1"
+  ".SubmitTransactionResponse\022^\n\023SubmitTran"
+  "sactionV2\022\".api.v1.SubmitTransactionV2Re"
+  "quest\032#.api.v1.SubmitTransactionV2Respon"
+  "se\022p\n\031PrepareProposalSubmission\022(.api.v1"
+  ".PrepareProposalSubmissionRequest\032).api."
+  "v1.PrepareProposalSubmissionResponse\022d\n\025"
+  "PrepareVoteSubmission\022$.api.v1.PrepareVo"
+  "teSubmissionRequest\032%.api.v1.PrepareVote"
+  "SubmissionResponse\022^\n\023PropagateChainEven"
+  "t\022\".api.v1.PropagateChainEventRequest\032#."
+  "api.v1.PropagateChainEventResponse\022p\n\031Pr"
+  "epareLiquidityProvision\022(.api.v1.Prepare"
+  "LiquidityProvisionRequest\032).api.v1.Prepa"
+  "reLiquidityProvisionResponse2\257+\n\022Trading"
+  "DataService\022O\n\016MarketAccounts\022\035.api.v1.M"
+  "arketAccountsRequest\032\036.api.v1.MarketAcco"
+  "untsResponse\022L\n\rPartyAccounts\022\034.api.v1.P"
+  "artyAccountsRequest\032\035.api.v1.PartyAccoun"
+  "tsResponse\022p\n\031FeeInfrastructureAccounts\022"
+  "(.api.v1.FeeInfrastructureAccountsReques"
+  "t\032).api.v1.FeeInfrastructureAccountsResp"
+  "onse\022:\n\007Candles\022\026.api.v1.CandlesRequest\032"
+  "\027.api.v1.CandlesResponse\022O\n\016MarketDataBy"
+  "ID\022\035.api.v1.MarketDataByIDRequest\032\036.api."
+  "v1.MarketDataByIDResponse\022F\n\013MarketsData"
+  "\022\032.api.v1.MarketsDataRequest\032\033.api.v1.Ma"
+  "rketsDataResponse\022C\n\nMarketByID\022\031.api.v1"
+  ".MarketByIDRequest\032\032.api.v1.MarketByIDRe"
+  "sponse\022F\n\013MarketDepth\022\032.api.v1.MarketDep"
+  "thRequest\032\033.api.v1.MarketDepthResponse\022:"
+  "\n\007Markets\022\026.api.v1.MarketsRequest\032\027.api."
+  "v1.MarketsResponse\022[\n\022OrderByMarketAndID"
+  "\022!.api.v1.OrderByMarketAndIDRequest\032\".ap"
+  "i.v1.OrderByMarketAndIDResponse\022U\n\020Order"
+  "ByReference\022\037.api.v1.OrderByReferenceReq"
+  "uest\032 .api.v1.OrderByReferenceResponse\022O"
+  "\n\016OrdersByMarket\022\035.api.v1.OrdersByMarket"
+  "Request\032\036.api.v1.OrdersByMarketResponse\022"
+  "L\n\rOrdersByParty\022\034.api.v1.OrdersByPartyR"
+  "equest\032\035.api.v1.OrdersByPartyResponse\022@\n"
+  "\tOrderByID\022\030.api.v1.OrderByIDRequest\032\031.a"
+  "pi.v1.OrderByIDResponse\022X\n\021OrderVersions"
+  "ByID\022 .api.v1.OrderVersionsByIDRequest\032!"
+  ".api.v1.OrderVersionsByIDResponse\022I\n\014Mar"
+  "ginLevels\022\033.api.v1.MarginLevelsRequest\032\034"
+  ".api.v1.MarginLevelsResponse\022:\n\007Parties\022"
+  "\026.api.v1.PartiesRequest\032\027.api.v1.Parties"
+  "Response\022@\n\tPartyByID\022\030.api.v1.PartyByID"
+  "Request\032\031.api.v1.PartyByIDResponse\022U\n\020Po"
+  "sitionsByParty\022\037.api.v1.PositionsByParty"
+  "Request\032 .api.v1.PositionsByPartyRespons"
+  "e\022@\n\tLastTrade\022\030.api.v1.LastTradeRequest"
+  "\032\031.api.v1.LastTradeResponse\022O\n\016TradesByM"
+  "arket\022\035.api.v1.TradesByMarketRequest\032\036.a"
+  "pi.v1.TradesByMarketResponse\022L\n\rTradesBy"
+  "Order\022\034.api.v1.TradesByOrderRequest\032\035.ap"
+  "i.v1.TradesByOrderResponse\022L\n\rTradesByPa"
+  "rty\022\034.api.v1.TradesByPartyRequest\032\035.api."
+  "v1.TradesByPartyResponse\022I\n\014GetProposals"
+  "\022\033.api.v1.GetProposalsRequest\032\034.api.v1.G"
+  "etProposalsResponse\022^\n\023GetProposalsByPar"
+  "ty\022\".api.v1.GetProposalsByPartyRequest\032#"
+  ".api.v1.GetProposalsByPartyResponse\022R\n\017G"
+  "etVotesByParty\022\036.api.v1.GetVotesByPartyR"
+  "equest\032\037.api.v1.GetVotesByPartyResponse\022"
+  "d\n\025GetNewMarketProposals\022$.api.v1.GetNew"
+  "MarketProposalsRequest\032%.api.v1.GetNewMa"
+  "rketProposalsResponse\022m\n\030GetUpdateMarket"
+  "Proposals\022\'.api.v1.GetUpdateMarketPropos"
+  "alsRequest\032(.api.v1.GetUpdateMarketPropo"
+  "salsResponse\022|\n\035GetNetworkParametersProp"
+  "osals\022,.api.v1.GetNetworkParametersPropo"
+  "salsRequest\032-.api.v1.GetNetworkParameter"
+  "sProposalsResponse\022a\n\024GetNewAssetProposa"
+  "ls\022#.api.v1.GetNewAssetProposalsRequest\032"
+  "$.api.v1.GetNewAssetProposalsResponse\022R\n"
+  "\017GetProposalByID\022\036.api.v1.GetProposalByI"
+  "DRequest\032\037.api.v1.GetProposalByIDRespons"
+  "e\022g\n\026GetProposalByReference\022%.api.v1.Get"
+  "ProposalByReferenceRequest\032&.api.v1.GetP"
+  "roposalByReferenceResponse\022Z\n\021ObserveGov"
+  "ernance\022 .api.v1.ObserveGovernanceReques"
+  "t\032!.api.v1.ObserveGovernanceResponse0\001\022f"
+  "\n\025ObservePartyProposals\022$.api.v1.Observe"
+  "PartyProposalsRequest\032%.api.v1.ObservePa"
+  "rtyProposalsResponse0\001\022Z\n\021ObservePartyVo"
+  "tes\022 .api.v1.ObservePartyVotesRequest\032!."
+  "api.v1.ObservePartyVotesResponse0\001\022c\n\024Ob"
+  "serveProposalVotes\022#.api.v1.ObservePropo"
+  "salVotesRequest\032$.api.v1.ObserveProposal"
+  "VotesResponse0\001\022V\n\017ObserveEventBus\022\036.api"
+  ".v1.ObserveEventBusRequest\032\037.api.v1.Obse"
+  "rveEventBusResponse(\0010\001\022C\n\nStatistics\022\031."
+  "api.v1.StatisticsRequest\032\032.api.v1.Statis"
+  "ticsResponse\022R\n\017LastBlockHeight\022\036.api.v1"
+  ".LastBlockHeightRequest\032\037.api.v1.LastBlo"
+  "ckHeightResponse\022F\n\013GetVegaTime\022\032.api.v1"
+  ".GetVegaTimeRequest\032\033.api.v1.GetVegaTime"
+  "Response\022Z\n\021AccountsSubscribe\022 .api.v1.A"
+  "ccountsSubscribeRequest\032!.api.v1.Account"
+  "sSubscribeResponse0\001\022W\n\020CandlesSubscribe"
+  "\022\037.api.v1.CandlesSubscribeRequest\032 .api."
+  "v1.CandlesSubscribeResponse0\001\022f\n\025MarginL"
+  "evelsSubscribe\022$.api.v1.MarginLevelsSubs"
+  "cribeRequest\032%.api.v1.MarginLevelsSubscr"
+  "ibeResponse0\001\022c\n\024MarketDepthSubscribe\022#."
+  "api.v1.MarketDepthSubscribeRequest\032$.api"
+  ".v1.MarketDepthSubscribeResponse0\001\022x\n\033Ma"
+  "rketDepthUpdatesSubscribe\022*.api.v1.Marke"
+  "tDepthUpdatesSubscribeRequest\032+.api.v1.M"
+  "arketDepthUpdatesSubscribeResponse0\001\022c\n\024"
+  "MarketsDataSubscribe\022#.api.v1.MarketsDat"
+  "aSubscribeRequest\032$.api.v1.MarketsDataSu"
+  "bscribeResponse0\001\022T\n\017OrdersSubscribe\022\036.a"
+  "pi.v1.OrdersSubscribeRequest\032\037.api.v1.Or"
+  "dersSubscribeResponse0\001\022]\n\022PositionsSubs"
+  "cribe\022!.api.v1.PositionsSubscribeRequest"
+  "\032\".api.v1.PositionsSubscribeResponse0\001\022T"
+  "\n\017TradesSubscribe\022\036.api.v1.TradesSubscri"
+  "beRequest\032\037.api.v1.TradesSubscribeRespon"
+  "se0\001\022u\n\032TransferResponsesSubscribe\022).api"
+  ".v1.TransferResponsesSubscribeRequest\032*."
+  "api.v1.TransferResponsesSubscribeRespons"
+  "e0\001\022s\n\032GetNodeSignaturesAggregate\022).api."
+  "v1.GetNodeSignaturesAggregateRequest\032*.a"
+  "pi.v1.GetNodeSignaturesAggregateResponse"
+  "\022@\n\tAssetByID\022\030.api.v1.AssetByIDRequest\032"
+  "\031.api.v1.AssetByIDResponse\0227\n\006Assets\022\025.a"
+  "pi.v1.AssetsRequest\032\026.api.v1.AssetsRespo"
+  "nse\022F\n\013EstimateFee\022\032.api.v1.EstimateFeeR"
+  "equest\032\033.api.v1.EstimateFeeResponse\022O\n\016E"
+  "stimateMargin\022\035.api.v1.EstimateMarginReq"
+  "uest\032\036.api.v1.EstimateMarginResponse\022j\n\027"
+  "ERC20WithdrawalApproval\022&.api.v1.ERC20Wi"
+  "thdrawalApprovalRequest\032\'.api.v1.ERC20Wi"
+  "thdrawalApprovalResponse\022C\n\nWithdrawal\022\031"
+  ".api.v1.WithdrawalRequest\032\032.api.v1.Withd"
+  "rawalResponse\022F\n\013Withdrawals\022\032.api.v1.Wi"
+  "thdrawalsRequest\032\033.api.v1.WithdrawalsRes"
+  "ponse\022:\n\007Deposit\022\026.api.v1.DepositRequest"
+  "\032\027.api.v1.DepositResponse\022=\n\010Deposits\022\027."
+  "api.v1.DepositsRequest\032\030.api.v1.Deposits"
+  "Response\022X\n\021NetworkParameters\022 .api.v1.N"
+  "etworkParametersRequest\032!.api.v1.Network"
+  "ParametersResponse\022^\n\023LiquidityProvision"
+  "s\022\".api.v1.LiquidityProvisionsRequest\032#."
+  "api.v1.LiquidityProvisionsResponse\022C\n\nOr"
+  "acleSpec\022\031.api.v1.OracleSpecRequest\032\032.ap"
+  "i.v1.OracleSpecResponse\022F\n\013OracleSpecs\022\032"
+  ".api.v1.OracleSpecsRequest\032\033.api.v1.Orac"
+  "leSpecsResponse\022U\n\020OracleDataBySpec\022\037.ap"
+  "i.v1.OracleDataBySpecRequest\032 .api.v1.Or"
+  "acleDataBySpecResponseB\?\n\030io.vegaprotoco"
+  "l.vega.apiZ#code.vegaprotocol.io/vega/pr"
+  "oto/apib\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_api_2ftrading_2eproto_deps[11] = {
   &::descriptor_table_assets_2eproto,
@@ -4423,7 +4476,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_oracles_2fv1_2fspec_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api_2ftrading_2eproto_sccs[150] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api_2ftrading_2eproto_sccs[152] = {
   &scc_info_AccountsSubscribeRequest_api_2ftrading_2eproto.base,
   &scc_info_AccountsSubscribeResponse_api_2ftrading_2eproto.base,
   &scc_info_AssetByIDRequest_api_2ftrading_2eproto.base,
@@ -4468,6 +4521,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
   &scc_info_GetVegaTimeResponse_api_2ftrading_2eproto.base,
   &scc_info_GetVotesByPartyRequest_api_2ftrading_2eproto.base,
   &scc_info_GetVotesByPartyResponse_api_2ftrading_2eproto.base,
+  &scc_info_LastBlockHeightRequest_api_2ftrading_2eproto.base,
+  &scc_info_LastBlockHeightResponse_api_2ftrading_2eproto.base,
   &scc_info_LastTradeRequest_api_2ftrading_2eproto.base,
   &scc_info_LastTradeResponse_api_2ftrading_2eproto.base,
   &scc_info_LiquidityProvisionsRequest_api_2ftrading_2eproto.base,
@@ -4577,10 +4632,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_api
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_api_2ftrading_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_api_2ftrading_2eproto = {
-  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 18534,
-  &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 150, 11,
+  false, false, descriptor_table_protodef_api_2ftrading_2eproto, "api/trading.proto", 18695,
+  &descriptor_table_api_2ftrading_2eproto_once, descriptor_table_api_2ftrading_2eproto_sccs, descriptor_table_api_2ftrading_2eproto_deps, 152, 11,
   schemas, file_default_instances, TableStruct_api_2ftrading_2eproto::offsets,
-  file_level_metadata_api_2ftrading_2eproto, 150, file_level_enum_descriptors_api_2ftrading_2eproto, file_level_service_descriptors_api_2ftrading_2eproto,
+  file_level_metadata_api_2ftrading_2eproto, 152, file_level_enum_descriptors_api_2ftrading_2eproto, file_level_service_descriptors_api_2ftrading_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -37059,6 +37114,362 @@ void OracleDataBySpecResponse::InternalSwap(OracleDataBySpecResponse* other) {
 }
 
 
+// ===================================================================
+
+class LastBlockHeightRequest::_Internal {
+ public:
+};
+
+LastBlockHeightRequest::LastBlockHeightRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.LastBlockHeightRequest)
+}
+LastBlockHeightRequest::LastBlockHeightRequest(const LastBlockHeightRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:api.v1.LastBlockHeightRequest)
+}
+
+void LastBlockHeightRequest::SharedCtor() {
+}
+
+LastBlockHeightRequest::~LastBlockHeightRequest() {
+  // @@protoc_insertion_point(destructor:api.v1.LastBlockHeightRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void LastBlockHeightRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void LastBlockHeightRequest::ArenaDtor(void* object) {
+  LastBlockHeightRequest* _this = reinterpret_cast< LastBlockHeightRequest* >(object);
+  (void)_this;
+}
+void LastBlockHeightRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void LastBlockHeightRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const LastBlockHeightRequest& LastBlockHeightRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LastBlockHeightRequest_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void LastBlockHeightRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.LastBlockHeightRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LastBlockHeightRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* LastBlockHeightRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.LastBlockHeightRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.LastBlockHeightRequest)
+  return target;
+}
+
+size_t LastBlockHeightRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.LastBlockHeightRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void LastBlockHeightRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.LastBlockHeightRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const LastBlockHeightRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<LastBlockHeightRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.LastBlockHeightRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.LastBlockHeightRequest)
+    MergeFrom(*source);
+  }
+}
+
+void LastBlockHeightRequest::MergeFrom(const LastBlockHeightRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.LastBlockHeightRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void LastBlockHeightRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.LastBlockHeightRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LastBlockHeightRequest::CopyFrom(const LastBlockHeightRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.LastBlockHeightRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LastBlockHeightRequest::IsInitialized() const {
+  return true;
+}
+
+void LastBlockHeightRequest::InternalSwap(LastBlockHeightRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LastBlockHeightRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class LastBlockHeightResponse::_Internal {
+ public:
+};
+
+LastBlockHeightResponse::LastBlockHeightResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:api.v1.LastBlockHeightResponse)
+}
+LastBlockHeightResponse::LastBlockHeightResponse(const LastBlockHeightResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  height_ = from.height_;
+  // @@protoc_insertion_point(copy_constructor:api.v1.LastBlockHeightResponse)
+}
+
+void LastBlockHeightResponse::SharedCtor() {
+  height_ = PROTOBUF_ULONGLONG(0);
+}
+
+LastBlockHeightResponse::~LastBlockHeightResponse() {
+  // @@protoc_insertion_point(destructor:api.v1.LastBlockHeightResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void LastBlockHeightResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void LastBlockHeightResponse::ArenaDtor(void* object) {
+  LastBlockHeightResponse* _this = reinterpret_cast< LastBlockHeightResponse* >(object);
+  (void)_this;
+}
+void LastBlockHeightResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void LastBlockHeightResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const LastBlockHeightResponse& LastBlockHeightResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LastBlockHeightResponse_api_2ftrading_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void LastBlockHeightResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.v1.LastBlockHeightResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  height_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LastBlockHeightResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 height = 1 [json_name = "height"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* LastBlockHeightResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:api.v1.LastBlockHeightResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 height = 1 [json_name = "height"];
+  if (this->height() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_height(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.v1.LastBlockHeightResponse)
+  return target;
+}
+
+size_t LastBlockHeightResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.v1.LastBlockHeightResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 height = 1 [json_name = "height"];
+  if (this->height() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_height());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void LastBlockHeightResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.v1.LastBlockHeightResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const LastBlockHeightResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<LastBlockHeightResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.v1.LastBlockHeightResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.v1.LastBlockHeightResponse)
+    MergeFrom(*source);
+  }
+}
+
+void LastBlockHeightResponse::MergeFrom(const LastBlockHeightResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.v1.LastBlockHeightResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.height() != 0) {
+    _internal_set_height(from._internal_height());
+  }
+}
+
+void LastBlockHeightResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.v1.LastBlockHeightResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LastBlockHeightResponse::CopyFrom(const LastBlockHeightResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.v1.LastBlockHeightResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LastBlockHeightResponse::IsInitialized() const {
+  return true;
+}
+
+void LastBlockHeightResponse::InternalSwap(LastBlockHeightResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(height_, other->height_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LastBlockHeightResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace api
@@ -37512,6 +37923,12 @@ template<> PROTOBUF_NOINLINE ::api::v1::OracleDataBySpecRequest* Arena::CreateMa
 }
 template<> PROTOBUF_NOINLINE ::api::v1::OracleDataBySpecResponse* Arena::CreateMaybeMessage< ::api::v1::OracleDataBySpecResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::api::v1::OracleDataBySpecResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::LastBlockHeightRequest* Arena::CreateMaybeMessage< ::api::v1::LastBlockHeightRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::LastBlockHeightRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::api::v1::LastBlockHeightResponse* Arena::CreateMaybeMessage< ::api::v1::LastBlockHeightResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::api::v1::LastBlockHeightResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

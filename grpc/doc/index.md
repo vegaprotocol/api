@@ -250,6 +250,8 @@
     - [GetVegaTimeResponse](#api.v1.GetVegaTimeResponse)
     - [GetVotesByPartyRequest](#api.v1.GetVotesByPartyRequest)
     - [GetVotesByPartyResponse](#api.v1.GetVotesByPartyResponse)
+    - [LastBlockHeightRequest](#api.v1.LastBlockHeightRequest)
+    - [LastBlockHeightResponse](#api.v1.LastBlockHeightResponse)
     - [LastTradeRequest](#api.v1.LastTradeRequest)
     - [LastTradeResponse](#api.v1.LastTradeResponse)
     - [LiquidityProvisionsRequest](#api.v1.LiquidityProvisionsRequest)
@@ -4396,6 +4398,33 @@ Response for a list of votes for a party
 
 
 
+<a name="api.v1.LastBlockHeightRequest"></a>
+
+### LastBlockHeightRequest
+A request to get the height of the very last block processed
+by tendermint
+
+
+
+
+
+
+<a name="api.v1.LastBlockHeightResponse"></a>
+
+### LastBlockHeightResponse
+A response with the height of the last block processed by
+tendermint
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| height | [uint64](#uint64) |  |  |
+
+
+
+
+
+
 <a name="api.v1.LastTradeRequest"></a>
 
 ### LastTradeRequest
@@ -6068,6 +6097,7 @@ Blockchain transaction type
 | ObserveProposalVotes | [ObserveProposalVotesRequest](#api.v1.ObserveProposalVotesRequest) | [ObserveProposalVotesResponse](#api.v1.ObserveProposalVotesResponse) stream | Subscribe to a stream of proposal votes |
 | ObserveEventBus | [ObserveEventBusRequest](#api.v1.ObserveEventBusRequest) stream | [ObserveEventBusResponse](#api.v1.ObserveEventBusResponse) stream | Subscribe to a stream of events from the core |
 | Statistics | [StatisticsRequest](#api.v1.StatisticsRequest) | [StatisticsResponse](#api.v1.StatisticsResponse) | Get Statistics on Vega |
+| LastBlockHeight | [LastBlockHeightRequest](#api.v1.LastBlockHeightRequest) | [LastBlockHeightResponse](#api.v1.LastBlockHeightResponse) |  |
 | GetVegaTime | [GetVegaTimeRequest](#api.v1.GetVegaTimeRequest) | [GetVegaTimeResponse](#api.v1.GetVegaTimeResponse) | Get Time |
 | AccountsSubscribe | [AccountsSubscribeRequest](#api.v1.AccountsSubscribeRequest) | [AccountsSubscribeResponse](#api.v1.AccountsSubscribeResponse) stream | Subscribe to a stream of Accounts |
 | CandlesSubscribe | [CandlesSubscribeRequest](#api.v1.CandlesSubscribeRequest) | [CandlesSubscribeResponse](#api.v1.CandlesSubscribeResponse) stream | Subscribe to a stream of Candles |

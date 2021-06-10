@@ -2470,6 +2470,13 @@ class TradingDataService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::StatisticsResponse>> PrepareAsyncStatistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::StatisticsResponse>>(PrepareAsyncStatisticsRaw(context, request, cq));
     }
+    virtual ::grpc::Status LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::api::v1::LastBlockHeightResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LastBlockHeightResponse>> AsyncLastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LastBlockHeightResponse>>(AsyncLastBlockHeightRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LastBlockHeightResponse>> PrepareAsyncLastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LastBlockHeightResponse>>(PrepareAsyncLastBlockHeightRaw(context, request, cq));
+    }
     // Get Time
     virtual ::grpc::Status GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::api::v1::GetVegaTimeResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::GetVegaTimeResponse>> AsyncGetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) {
@@ -2985,6 +2992,12 @@ class TradingDataService final {
       #else
       virtual void Statistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get Time
       virtual void GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3248,6 +3261,8 @@ class TradingDataService final {
     virtual ::grpc::ClientAsyncReaderWriterInterface< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>* PrepareAsyncObserveEventBusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::StatisticsResponse>* AsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::StatisticsResponse>* PrepareAsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LastBlockHeightResponse>* AsyncLastBlockHeightRaw(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::LastBlockHeightResponse>* PrepareAsyncLastBlockHeightRaw(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::GetVegaTimeResponse>* AsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::api::v1::GetVegaTimeResponse>* PrepareAsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::api::v1::AccountsSubscribeResponse>* AccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::AccountsSubscribeRequest& request) = 0;
@@ -3589,6 +3604,13 @@ class TradingDataService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>> PrepareAsyncStatistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>>(PrepareAsyncStatisticsRaw(context, request, cq));
+    }
+    ::grpc::Status LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::api::v1::LastBlockHeightResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>> AsyncLastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>>(AsyncLastBlockHeightRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>> PrepareAsyncLastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>>(PrepareAsyncLastBlockHeightRaw(context, request, cq));
     }
     ::grpc::Status GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::api::v1::GetVegaTimeResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::api::v1::GetVegaTimeResponse>> AsyncGetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) {
@@ -4018,6 +4040,12 @@ class TradingDataService final {
       #else
       void Statistics(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetVegaTime(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -4256,6 +4284,8 @@ class TradingDataService final {
     ::grpc::ClientAsyncReaderWriter< ::api::v1::ObserveEventBusRequest, ::api::v1::ObserveEventBusResponse>* PrepareAsyncObserveEventBusRaw(::grpc::ClientContext* context, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>* AsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>* PrepareAsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>* AsyncLastBlockHeightRaw(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>* PrepareAsyncLastBlockHeightRaw(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::GetVegaTimeResponse>* AsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::api::v1::GetVegaTimeResponse>* PrepareAsyncGetVegaTimeRaw(::grpc::ClientContext* context, const ::api::v1::GetVegaTimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::api::v1::AccountsSubscribeResponse>* AccountsSubscribeRaw(::grpc::ClientContext* context, const ::api::v1::AccountsSubscribeRequest& request) override;
@@ -4356,6 +4386,7 @@ class TradingDataService final {
     const ::grpc::internal::RpcMethod rpcmethod_ObserveProposalVotes_;
     const ::grpc::internal::RpcMethod rpcmethod_ObserveEventBus_;
     const ::grpc::internal::RpcMethod rpcmethod_Statistics_;
+    const ::grpc::internal::RpcMethod rpcmethod_LastBlockHeight_;
     const ::grpc::internal::RpcMethod rpcmethod_GetVegaTime_;
     const ::grpc::internal::RpcMethod rpcmethod_AccountsSubscribe_;
     const ::grpc::internal::RpcMethod rpcmethod_CandlesSubscribe_;
@@ -4487,6 +4518,7 @@ class TradingDataService final {
     //
     // Get Statistics on Vega
     virtual ::grpc::Status Statistics(::grpc::ServerContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response);
+    virtual ::grpc::Status LastBlockHeight(::grpc::ServerContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response);
     // Get Time
     virtual ::grpc::Status GetVegaTime(::grpc::ServerContext* context, const ::api::v1::GetVegaTimeRequest* request, ::api::v1::GetVegaTimeResponse* response);
     // Subscribe to a stream of Accounts
@@ -5302,12 +5334,32 @@ class TradingDataService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_LastBlockHeight : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_LastBlockHeight() {
+      ::grpc::Service::MarkMethodAsync(38);
+    }
+    ~WithAsyncMethod_LastBlockHeight() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LastBlockHeight(::grpc::ServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLastBlockHeight(::grpc::ServerContext* context, ::api::v1::LastBlockHeightRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::LastBlockHeightResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_GetVegaTime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetVegaTime() {
-      ::grpc::Service::MarkMethodAsync(38);
+      ::grpc::Service::MarkMethodAsync(39);
     }
     ~WithAsyncMethod_GetVegaTime() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5318,7 +5370,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetVegaTime(::grpc::ServerContext* context, ::api::v1::GetVegaTimeRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::GetVegaTimeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5327,7 +5379,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AccountsSubscribe() {
-      ::grpc::Service::MarkMethodAsync(39);
+      ::grpc::Service::MarkMethodAsync(40);
     }
     ~WithAsyncMethod_AccountsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5338,7 +5390,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAccountsSubscribe(::grpc::ServerContext* context, ::api::v1::AccountsSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::AccountsSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(39, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(40, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5347,7 +5399,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CandlesSubscribe() {
-      ::grpc::Service::MarkMethodAsync(40);
+      ::grpc::Service::MarkMethodAsync(41);
     }
     ~WithAsyncMethod_CandlesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5358,7 +5410,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCandlesSubscribe(::grpc::ServerContext* context, ::api::v1::CandlesSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::CandlesSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(40, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(41, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5367,7 +5419,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MarginLevelsSubscribe() {
-      ::grpc::Service::MarkMethodAsync(41);
+      ::grpc::Service::MarkMethodAsync(42);
     }
     ~WithAsyncMethod_MarginLevelsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5378,7 +5430,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarginLevelsSubscribe(::grpc::ServerContext* context, ::api::v1::MarginLevelsSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::MarginLevelsSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(41, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(42, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5387,7 +5439,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MarketDepthSubscribe() {
-      ::grpc::Service::MarkMethodAsync(42);
+      ::grpc::Service::MarkMethodAsync(43);
     }
     ~WithAsyncMethod_MarketDepthSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5398,7 +5450,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarketDepthSubscribe(::grpc::ServerContext* context, ::api::v1::MarketDepthSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::MarketDepthSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(42, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(43, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5407,7 +5459,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MarketDepthUpdatesSubscribe() {
-      ::grpc::Service::MarkMethodAsync(43);
+      ::grpc::Service::MarkMethodAsync(44);
     }
     ~WithAsyncMethod_MarketDepthUpdatesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5418,7 +5470,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarketDepthUpdatesSubscribe(::grpc::ServerContext* context, ::api::v1::MarketDepthUpdatesSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::MarketDepthUpdatesSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(43, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(44, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5427,7 +5479,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MarketsDataSubscribe() {
-      ::grpc::Service::MarkMethodAsync(44);
+      ::grpc::Service::MarkMethodAsync(45);
     }
     ~WithAsyncMethod_MarketsDataSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5438,7 +5490,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarketsDataSubscribe(::grpc::ServerContext* context, ::api::v1::MarketsDataSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::MarketsDataSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(44, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(45, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5447,7 +5499,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_OrdersSubscribe() {
-      ::grpc::Service::MarkMethodAsync(45);
+      ::grpc::Service::MarkMethodAsync(46);
     }
     ~WithAsyncMethod_OrdersSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5458,7 +5510,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOrdersSubscribe(::grpc::ServerContext* context, ::api::v1::OrdersSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::OrdersSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(45, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(46, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5467,7 +5519,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_PositionsSubscribe() {
-      ::grpc::Service::MarkMethodAsync(46);
+      ::grpc::Service::MarkMethodAsync(47);
     }
     ~WithAsyncMethod_PositionsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5478,7 +5530,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPositionsSubscribe(::grpc::ServerContext* context, ::api::v1::PositionsSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::PositionsSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(46, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(47, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5487,7 +5539,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_TradesSubscribe() {
-      ::grpc::Service::MarkMethodAsync(47);
+      ::grpc::Service::MarkMethodAsync(48);
     }
     ~WithAsyncMethod_TradesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5498,7 +5550,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestTradesSubscribe(::grpc::ServerContext* context, ::api::v1::TradesSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::TradesSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(47, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(48, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5507,7 +5559,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_TransferResponsesSubscribe() {
-      ::grpc::Service::MarkMethodAsync(48);
+      ::grpc::Service::MarkMethodAsync(49);
     }
     ~WithAsyncMethod_TransferResponsesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5518,7 +5570,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestTransferResponsesSubscribe(::grpc::ServerContext* context, ::api::v1::TransferResponsesSubscribeRequest* request, ::grpc::ServerAsyncWriter< ::api::v1::TransferResponsesSubscribeResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(48, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(49, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5527,7 +5579,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetNodeSignaturesAggregate() {
-      ::grpc::Service::MarkMethodAsync(49);
+      ::grpc::Service::MarkMethodAsync(50);
     }
     ~WithAsyncMethod_GetNodeSignaturesAggregate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5538,7 +5590,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetNodeSignaturesAggregate(::grpc::ServerContext* context, ::api::v1::GetNodeSignaturesAggregateRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::GetNodeSignaturesAggregateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(49, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5547,7 +5599,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AssetByID() {
-      ::grpc::Service::MarkMethodAsync(50);
+      ::grpc::Service::MarkMethodAsync(51);
     }
     ~WithAsyncMethod_AssetByID() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5558,7 +5610,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAssetByID(::grpc::ServerContext* context, ::api::v1::AssetByIDRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::AssetByIDResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5567,7 +5619,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Assets() {
-      ::grpc::Service::MarkMethodAsync(51);
+      ::grpc::Service::MarkMethodAsync(52);
     }
     ~WithAsyncMethod_Assets() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5578,7 +5630,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAssets(::grpc::ServerContext* context, ::api::v1::AssetsRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::AssetsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5587,7 +5639,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_EstimateFee() {
-      ::grpc::Service::MarkMethodAsync(52);
+      ::grpc::Service::MarkMethodAsync(53);
     }
     ~WithAsyncMethod_EstimateFee() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5598,7 +5650,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestEstimateFee(::grpc::ServerContext* context, ::api::v1::EstimateFeeRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::EstimateFeeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5607,7 +5659,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_EstimateMargin() {
-      ::grpc::Service::MarkMethodAsync(53);
+      ::grpc::Service::MarkMethodAsync(54);
     }
     ~WithAsyncMethod_EstimateMargin() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5618,7 +5670,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestEstimateMargin(::grpc::ServerContext* context, ::api::v1::EstimateMarginRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::EstimateMarginResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5627,7 +5679,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ERC20WithdrawalApproval() {
-      ::grpc::Service::MarkMethodAsync(54);
+      ::grpc::Service::MarkMethodAsync(55);
     }
     ~WithAsyncMethod_ERC20WithdrawalApproval() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5638,7 +5690,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestERC20WithdrawalApproval(::grpc::ServerContext* context, ::api::v1::ERC20WithdrawalApprovalRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::ERC20WithdrawalApprovalResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(55, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5647,7 +5699,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Withdrawal() {
-      ::grpc::Service::MarkMethodAsync(55);
+      ::grpc::Service::MarkMethodAsync(56);
     }
     ~WithAsyncMethod_Withdrawal() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5658,7 +5710,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWithdrawal(::grpc::ServerContext* context, ::api::v1::WithdrawalRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::WithdrawalResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(55, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(56, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5667,7 +5719,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Withdrawals() {
-      ::grpc::Service::MarkMethodAsync(56);
+      ::grpc::Service::MarkMethodAsync(57);
     }
     ~WithAsyncMethod_Withdrawals() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5678,7 +5730,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWithdrawals(::grpc::ServerContext* context, ::api::v1::WithdrawalsRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::WithdrawalsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(56, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(57, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5687,7 +5739,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Deposit() {
-      ::grpc::Service::MarkMethodAsync(57);
+      ::grpc::Service::MarkMethodAsync(58);
     }
     ~WithAsyncMethod_Deposit() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5698,7 +5750,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeposit(::grpc::ServerContext* context, ::api::v1::DepositRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::DepositResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(57, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(58, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5707,7 +5759,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Deposits() {
-      ::grpc::Service::MarkMethodAsync(58);
+      ::grpc::Service::MarkMethodAsync(59);
     }
     ~WithAsyncMethod_Deposits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5718,7 +5770,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeposits(::grpc::ServerContext* context, ::api::v1::DepositsRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::DepositsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(58, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5727,7 +5779,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_NetworkParameters() {
-      ::grpc::Service::MarkMethodAsync(59);
+      ::grpc::Service::MarkMethodAsync(60);
     }
     ~WithAsyncMethod_NetworkParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5738,7 +5790,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestNetworkParameters(::grpc::ServerContext* context, ::api::v1::NetworkParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::NetworkParametersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5747,7 +5799,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_LiquidityProvisions() {
-      ::grpc::Service::MarkMethodAsync(60);
+      ::grpc::Service::MarkMethodAsync(61);
     }
     ~WithAsyncMethod_LiquidityProvisions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5758,7 +5810,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestLiquidityProvisions(::grpc::ServerContext* context, ::api::v1::LiquidityProvisionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::LiquidityProvisionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5767,7 +5819,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_OracleSpec() {
-      ::grpc::Service::MarkMethodAsync(61);
+      ::grpc::Service::MarkMethodAsync(62);
     }
     ~WithAsyncMethod_OracleSpec() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5778,7 +5830,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOracleSpec(::grpc::ServerContext* context, ::api::v1::OracleSpecRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::OracleSpecResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(62, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5787,7 +5839,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_OracleSpecs() {
-      ::grpc::Service::MarkMethodAsync(62);
+      ::grpc::Service::MarkMethodAsync(63);
     }
     ~WithAsyncMethod_OracleSpecs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5798,7 +5850,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOracleSpecs(::grpc::ServerContext* context, ::api::v1::OracleSpecsRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::OracleSpecsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(62, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(63, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5807,7 +5859,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_OracleDataBySpec() {
-      ::grpc::Service::MarkMethodAsync(63);
+      ::grpc::Service::MarkMethodAsync(64);
     }
     ~WithAsyncMethod_OracleDataBySpec() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5818,10 +5870,10 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOracleDataBySpec(::grpc::ServerContext* context, ::api::v1::OracleDataBySpecRequest* request, ::grpc::ServerAsyncResponseWriter< ::api::v1::OracleDataBySpecResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(63, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(64, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_MarketAccounts<WithAsyncMethod_PartyAccounts<WithAsyncMethod_FeeInfrastructureAccounts<WithAsyncMethod_Candles<WithAsyncMethod_MarketDataByID<WithAsyncMethod_MarketsData<WithAsyncMethod_MarketByID<WithAsyncMethod_MarketDepth<WithAsyncMethod_Markets<WithAsyncMethod_OrderByMarketAndID<WithAsyncMethod_OrderByReference<WithAsyncMethod_OrdersByMarket<WithAsyncMethod_OrdersByParty<WithAsyncMethod_OrderByID<WithAsyncMethod_OrderVersionsByID<WithAsyncMethod_MarginLevels<WithAsyncMethod_Parties<WithAsyncMethod_PartyByID<WithAsyncMethod_PositionsByParty<WithAsyncMethod_LastTrade<WithAsyncMethod_TradesByMarket<WithAsyncMethod_TradesByOrder<WithAsyncMethod_TradesByParty<WithAsyncMethod_GetProposals<WithAsyncMethod_GetProposalsByParty<WithAsyncMethod_GetVotesByParty<WithAsyncMethod_GetNewMarketProposals<WithAsyncMethod_GetUpdateMarketProposals<WithAsyncMethod_GetNetworkParametersProposals<WithAsyncMethod_GetNewAssetProposals<WithAsyncMethod_GetProposalByID<WithAsyncMethod_GetProposalByReference<WithAsyncMethod_ObserveGovernance<WithAsyncMethod_ObservePartyProposals<WithAsyncMethod_ObservePartyVotes<WithAsyncMethod_ObserveProposalVotes<WithAsyncMethod_ObserveEventBus<WithAsyncMethod_Statistics<WithAsyncMethod_GetVegaTime<WithAsyncMethod_AccountsSubscribe<WithAsyncMethod_CandlesSubscribe<WithAsyncMethod_MarginLevelsSubscribe<WithAsyncMethod_MarketDepthSubscribe<WithAsyncMethod_MarketDepthUpdatesSubscribe<WithAsyncMethod_MarketsDataSubscribe<WithAsyncMethod_OrdersSubscribe<WithAsyncMethod_PositionsSubscribe<WithAsyncMethod_TradesSubscribe<WithAsyncMethod_TransferResponsesSubscribe<WithAsyncMethod_GetNodeSignaturesAggregate<WithAsyncMethod_AssetByID<WithAsyncMethod_Assets<WithAsyncMethod_EstimateFee<WithAsyncMethod_EstimateMargin<WithAsyncMethod_ERC20WithdrawalApproval<WithAsyncMethod_Withdrawal<WithAsyncMethod_Withdrawals<WithAsyncMethod_Deposit<WithAsyncMethod_Deposits<WithAsyncMethod_NetworkParameters<WithAsyncMethod_LiquidityProvisions<WithAsyncMethod_OracleSpec<WithAsyncMethod_OracleSpecs<WithAsyncMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_MarketAccounts<WithAsyncMethod_PartyAccounts<WithAsyncMethod_FeeInfrastructureAccounts<WithAsyncMethod_Candles<WithAsyncMethod_MarketDataByID<WithAsyncMethod_MarketsData<WithAsyncMethod_MarketByID<WithAsyncMethod_MarketDepth<WithAsyncMethod_Markets<WithAsyncMethod_OrderByMarketAndID<WithAsyncMethod_OrderByReference<WithAsyncMethod_OrdersByMarket<WithAsyncMethod_OrdersByParty<WithAsyncMethod_OrderByID<WithAsyncMethod_OrderVersionsByID<WithAsyncMethod_MarginLevels<WithAsyncMethod_Parties<WithAsyncMethod_PartyByID<WithAsyncMethod_PositionsByParty<WithAsyncMethod_LastTrade<WithAsyncMethod_TradesByMarket<WithAsyncMethod_TradesByOrder<WithAsyncMethod_TradesByParty<WithAsyncMethod_GetProposals<WithAsyncMethod_GetProposalsByParty<WithAsyncMethod_GetVotesByParty<WithAsyncMethod_GetNewMarketProposals<WithAsyncMethod_GetUpdateMarketProposals<WithAsyncMethod_GetNetworkParametersProposals<WithAsyncMethod_GetNewAssetProposals<WithAsyncMethod_GetProposalByID<WithAsyncMethod_GetProposalByReference<WithAsyncMethod_ObserveGovernance<WithAsyncMethod_ObservePartyProposals<WithAsyncMethod_ObservePartyVotes<WithAsyncMethod_ObserveProposalVotes<WithAsyncMethod_ObserveEventBus<WithAsyncMethod_Statistics<WithAsyncMethod_LastBlockHeight<WithAsyncMethod_GetVegaTime<WithAsyncMethod_AccountsSubscribe<WithAsyncMethod_CandlesSubscribe<WithAsyncMethod_MarginLevelsSubscribe<WithAsyncMethod_MarketDepthSubscribe<WithAsyncMethod_MarketDepthUpdatesSubscribe<WithAsyncMethod_MarketsDataSubscribe<WithAsyncMethod_OrdersSubscribe<WithAsyncMethod_PositionsSubscribe<WithAsyncMethod_TradesSubscribe<WithAsyncMethod_TransferResponsesSubscribe<WithAsyncMethod_GetNodeSignaturesAggregate<WithAsyncMethod_AssetByID<WithAsyncMethod_Assets<WithAsyncMethod_EstimateFee<WithAsyncMethod_EstimateMargin<WithAsyncMethod_ERC20WithdrawalApproval<WithAsyncMethod_Withdrawal<WithAsyncMethod_Withdrawals<WithAsyncMethod_Deposit<WithAsyncMethod_Deposits<WithAsyncMethod_NetworkParameters<WithAsyncMethod_LiquidityProvisions<WithAsyncMethod_OracleSpec<WithAsyncMethod_OracleSpecs<WithAsyncMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_MarketAccounts : public BaseClass {
    private:
@@ -7564,6 +7616,53 @@ class TradingDataService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_LastBlockHeight : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_LastBlockHeight() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(38,
+          new ::grpc::internal::CallbackUnaryHandler< ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response) { return this->LastBlockHeight(context, request, response); }));}
+    void SetMessageAllocatorFor_LastBlockHeight(
+        ::grpc::experimental::MessageAllocator< ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(38);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(38);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_LastBlockHeight() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LastBlockHeight(::grpc::ServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* LastBlockHeight(
+      ::grpc::CallbackServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* LastBlockHeight(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetVegaTime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -7574,7 +7673,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(38,
+        MarkMethodCallback(39,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7586,9 +7685,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_GetVegaTime(
         ::grpc::experimental::MessageAllocator< ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(38);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(39);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(38);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(39);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -7621,7 +7720,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(39,
+        MarkMethodCallback(40,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::AccountsSubscribeRequest, ::api::v1::AccountsSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7659,7 +7758,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(40,
+        MarkMethodCallback(41,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::CandlesSubscribeRequest, ::api::v1::CandlesSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7697,7 +7796,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(41,
+        MarkMethodCallback(42,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::MarginLevelsSubscribeRequest, ::api::v1::MarginLevelsSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7735,7 +7834,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(42,
+        MarkMethodCallback(43,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::MarketDepthSubscribeRequest, ::api::v1::MarketDepthSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7773,7 +7872,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(43,
+        MarkMethodCallback(44,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::MarketDepthUpdatesSubscribeRequest, ::api::v1::MarketDepthUpdatesSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7811,7 +7910,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(44,
+        MarkMethodCallback(45,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::MarketsDataSubscribeRequest, ::api::v1::MarketsDataSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7849,7 +7948,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(45,
+        MarkMethodCallback(46,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::OrdersSubscribeRequest, ::api::v1::OrdersSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7887,7 +7986,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(46,
+        MarkMethodCallback(47,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::PositionsSubscribeRequest, ::api::v1::PositionsSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7925,7 +8024,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(47,
+        MarkMethodCallback(48,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::TradesSubscribeRequest, ::api::v1::TradesSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -7963,7 +8062,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(48,
+        MarkMethodCallback(49,
           new ::grpc::internal::CallbackServerStreamingHandler< ::api::v1::TransferResponsesSubscribeRequest, ::api::v1::TransferResponsesSubscribeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8001,7 +8100,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(49,
+        MarkMethodCallback(50,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8013,9 +8112,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_GetNodeSignaturesAggregate(
         ::grpc::experimental::MessageAllocator< ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(49);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(50);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(49);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(50);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8048,7 +8147,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(50,
+        MarkMethodCallback(51,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8060,9 +8159,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_AssetByID(
         ::grpc::experimental::MessageAllocator< ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(50);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(51);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(50);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(51);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8095,7 +8194,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(51,
+        MarkMethodCallback(52,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::AssetsRequest, ::api::v1::AssetsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8107,9 +8206,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_Assets(
         ::grpc::experimental::MessageAllocator< ::api::v1::AssetsRequest, ::api::v1::AssetsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(51);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(52);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(51);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(52);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::AssetsRequest, ::api::v1::AssetsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8142,7 +8241,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(52,
+        MarkMethodCallback(53,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8154,9 +8253,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_EstimateFee(
         ::grpc::experimental::MessageAllocator< ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(52);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(53);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(52);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(53);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8189,7 +8288,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(53,
+        MarkMethodCallback(54,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8201,9 +8300,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_EstimateMargin(
         ::grpc::experimental::MessageAllocator< ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(53);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(54);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(53);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(54);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8236,7 +8335,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(54,
+        MarkMethodCallback(55,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8248,9 +8347,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_ERC20WithdrawalApproval(
         ::grpc::experimental::MessageAllocator< ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(54);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(55);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(54);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(55);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8283,7 +8382,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(55,
+        MarkMethodCallback(56,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8295,9 +8394,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_Withdrawal(
         ::grpc::experimental::MessageAllocator< ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(55);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(56);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(55);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(56);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8330,7 +8429,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(56,
+        MarkMethodCallback(57,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8342,9 +8441,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_Withdrawals(
         ::grpc::experimental::MessageAllocator< ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(56);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(57);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(56);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(57);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8377,7 +8476,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(57,
+        MarkMethodCallback(58,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::DepositRequest, ::api::v1::DepositResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8389,9 +8488,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_Deposit(
         ::grpc::experimental::MessageAllocator< ::api::v1::DepositRequest, ::api::v1::DepositResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(57);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(58);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(57);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(58);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::DepositRequest, ::api::v1::DepositResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8424,7 +8523,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(58,
+        MarkMethodCallback(59,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::DepositsRequest, ::api::v1::DepositsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8436,9 +8535,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_Deposits(
         ::grpc::experimental::MessageAllocator< ::api::v1::DepositsRequest, ::api::v1::DepositsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(58);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(59);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(58);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(59);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::DepositsRequest, ::api::v1::DepositsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8471,7 +8570,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(59,
+        MarkMethodCallback(60,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8483,9 +8582,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_NetworkParameters(
         ::grpc::experimental::MessageAllocator< ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(59);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(60);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(59);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(60);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8518,7 +8617,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(60,
+        MarkMethodCallback(61,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8530,9 +8629,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_LiquidityProvisions(
         ::grpc::experimental::MessageAllocator< ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(60);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(61);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(60);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(61);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8565,7 +8664,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(61,
+        MarkMethodCallback(62,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8577,9 +8676,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_OracleSpec(
         ::grpc::experimental::MessageAllocator< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(61);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(62);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(61);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(62);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8612,7 +8711,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(62,
+        MarkMethodCallback(63,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8624,9 +8723,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_OracleSpecs(
         ::grpc::experimental::MessageAllocator< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(62);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(63);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(62);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(63);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8659,7 +8758,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(63,
+        MarkMethodCallback(64,
           new ::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -8671,9 +8770,9 @@ class TradingDataService final {
     void SetMessageAllocatorFor_OracleDataBySpec(
         ::grpc::experimental::MessageAllocator< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(63);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(64);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(63);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(64);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -8696,10 +8795,10 @@ class TradingDataService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<ExperimentalWithCallbackMethod_OracleSpec<ExperimentalWithCallbackMethod_OracleSpecs<ExperimentalWithCallbackMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_LastBlockHeight<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<ExperimentalWithCallbackMethod_OracleSpec<ExperimentalWithCallbackMethod_OracleSpecs<ExperimentalWithCallbackMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<ExperimentalWithCallbackMethod_OracleSpec<ExperimentalWithCallbackMethod_OracleSpecs<ExperimentalWithCallbackMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_MarketAccounts<ExperimentalWithCallbackMethod_PartyAccounts<ExperimentalWithCallbackMethod_FeeInfrastructureAccounts<ExperimentalWithCallbackMethod_Candles<ExperimentalWithCallbackMethod_MarketDataByID<ExperimentalWithCallbackMethod_MarketsData<ExperimentalWithCallbackMethod_MarketByID<ExperimentalWithCallbackMethod_MarketDepth<ExperimentalWithCallbackMethod_Markets<ExperimentalWithCallbackMethod_OrderByMarketAndID<ExperimentalWithCallbackMethod_OrderByReference<ExperimentalWithCallbackMethod_OrdersByMarket<ExperimentalWithCallbackMethod_OrdersByParty<ExperimentalWithCallbackMethod_OrderByID<ExperimentalWithCallbackMethod_OrderVersionsByID<ExperimentalWithCallbackMethod_MarginLevels<ExperimentalWithCallbackMethod_Parties<ExperimentalWithCallbackMethod_PartyByID<ExperimentalWithCallbackMethod_PositionsByParty<ExperimentalWithCallbackMethod_LastTrade<ExperimentalWithCallbackMethod_TradesByMarket<ExperimentalWithCallbackMethod_TradesByOrder<ExperimentalWithCallbackMethod_TradesByParty<ExperimentalWithCallbackMethod_GetProposals<ExperimentalWithCallbackMethod_GetProposalsByParty<ExperimentalWithCallbackMethod_GetVotesByParty<ExperimentalWithCallbackMethod_GetNewMarketProposals<ExperimentalWithCallbackMethod_GetUpdateMarketProposals<ExperimentalWithCallbackMethod_GetNetworkParametersProposals<ExperimentalWithCallbackMethod_GetNewAssetProposals<ExperimentalWithCallbackMethod_GetProposalByID<ExperimentalWithCallbackMethod_GetProposalByReference<ExperimentalWithCallbackMethod_ObserveGovernance<ExperimentalWithCallbackMethod_ObservePartyProposals<ExperimentalWithCallbackMethod_ObservePartyVotes<ExperimentalWithCallbackMethod_ObserveProposalVotes<ExperimentalWithCallbackMethod_ObserveEventBus<ExperimentalWithCallbackMethod_Statistics<ExperimentalWithCallbackMethod_LastBlockHeight<ExperimentalWithCallbackMethod_GetVegaTime<ExperimentalWithCallbackMethod_AccountsSubscribe<ExperimentalWithCallbackMethod_CandlesSubscribe<ExperimentalWithCallbackMethod_MarginLevelsSubscribe<ExperimentalWithCallbackMethod_MarketDepthSubscribe<ExperimentalWithCallbackMethod_MarketDepthUpdatesSubscribe<ExperimentalWithCallbackMethod_MarketsDataSubscribe<ExperimentalWithCallbackMethod_OrdersSubscribe<ExperimentalWithCallbackMethod_PositionsSubscribe<ExperimentalWithCallbackMethod_TradesSubscribe<ExperimentalWithCallbackMethod_TransferResponsesSubscribe<ExperimentalWithCallbackMethod_GetNodeSignaturesAggregate<ExperimentalWithCallbackMethod_AssetByID<ExperimentalWithCallbackMethod_Assets<ExperimentalWithCallbackMethod_EstimateFee<ExperimentalWithCallbackMethod_EstimateMargin<ExperimentalWithCallbackMethod_ERC20WithdrawalApproval<ExperimentalWithCallbackMethod_Withdrawal<ExperimentalWithCallbackMethod_Withdrawals<ExperimentalWithCallbackMethod_Deposit<ExperimentalWithCallbackMethod_Deposits<ExperimentalWithCallbackMethod_NetworkParameters<ExperimentalWithCallbackMethod_LiquidityProvisions<ExperimentalWithCallbackMethod_OracleSpec<ExperimentalWithCallbackMethod_OracleSpecs<ExperimentalWithCallbackMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_MarketAccounts : public BaseClass {
    private:
@@ -9347,12 +9446,29 @@ class TradingDataService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_LastBlockHeight : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_LastBlockHeight() {
+      ::grpc::Service::MarkMethodGeneric(38);
+    }
+    ~WithGenericMethod_LastBlockHeight() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LastBlockHeight(::grpc::ServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetVegaTime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetVegaTime() {
-      ::grpc::Service::MarkMethodGeneric(38);
+      ::grpc::Service::MarkMethodGeneric(39);
     }
     ~WithGenericMethod_GetVegaTime() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9369,7 +9485,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AccountsSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(39);
+      ::grpc::Service::MarkMethodGeneric(40);
     }
     ~WithGenericMethod_AccountsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9386,7 +9502,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CandlesSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(40);
+      ::grpc::Service::MarkMethodGeneric(41);
     }
     ~WithGenericMethod_CandlesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9403,7 +9519,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MarginLevelsSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(41);
+      ::grpc::Service::MarkMethodGeneric(42);
     }
     ~WithGenericMethod_MarginLevelsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9420,7 +9536,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MarketDepthSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(42);
+      ::grpc::Service::MarkMethodGeneric(43);
     }
     ~WithGenericMethod_MarketDepthSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9437,7 +9553,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MarketDepthUpdatesSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(43);
+      ::grpc::Service::MarkMethodGeneric(44);
     }
     ~WithGenericMethod_MarketDepthUpdatesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9454,7 +9570,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MarketsDataSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(44);
+      ::grpc::Service::MarkMethodGeneric(45);
     }
     ~WithGenericMethod_MarketsDataSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9471,7 +9587,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_OrdersSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(45);
+      ::grpc::Service::MarkMethodGeneric(46);
     }
     ~WithGenericMethod_OrdersSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9488,7 +9604,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_PositionsSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(46);
+      ::grpc::Service::MarkMethodGeneric(47);
     }
     ~WithGenericMethod_PositionsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9505,7 +9621,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_TradesSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(47);
+      ::grpc::Service::MarkMethodGeneric(48);
     }
     ~WithGenericMethod_TradesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9522,7 +9638,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_TransferResponsesSubscribe() {
-      ::grpc::Service::MarkMethodGeneric(48);
+      ::grpc::Service::MarkMethodGeneric(49);
     }
     ~WithGenericMethod_TransferResponsesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9539,7 +9655,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetNodeSignaturesAggregate() {
-      ::grpc::Service::MarkMethodGeneric(49);
+      ::grpc::Service::MarkMethodGeneric(50);
     }
     ~WithGenericMethod_GetNodeSignaturesAggregate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9556,7 +9672,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AssetByID() {
-      ::grpc::Service::MarkMethodGeneric(50);
+      ::grpc::Service::MarkMethodGeneric(51);
     }
     ~WithGenericMethod_AssetByID() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9573,7 +9689,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Assets() {
-      ::grpc::Service::MarkMethodGeneric(51);
+      ::grpc::Service::MarkMethodGeneric(52);
     }
     ~WithGenericMethod_Assets() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9590,7 +9706,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_EstimateFee() {
-      ::grpc::Service::MarkMethodGeneric(52);
+      ::grpc::Service::MarkMethodGeneric(53);
     }
     ~WithGenericMethod_EstimateFee() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9607,7 +9723,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_EstimateMargin() {
-      ::grpc::Service::MarkMethodGeneric(53);
+      ::grpc::Service::MarkMethodGeneric(54);
     }
     ~WithGenericMethod_EstimateMargin() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9624,7 +9740,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ERC20WithdrawalApproval() {
-      ::grpc::Service::MarkMethodGeneric(54);
+      ::grpc::Service::MarkMethodGeneric(55);
     }
     ~WithGenericMethod_ERC20WithdrawalApproval() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9641,7 +9757,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Withdrawal() {
-      ::grpc::Service::MarkMethodGeneric(55);
+      ::grpc::Service::MarkMethodGeneric(56);
     }
     ~WithGenericMethod_Withdrawal() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9658,7 +9774,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Withdrawals() {
-      ::grpc::Service::MarkMethodGeneric(56);
+      ::grpc::Service::MarkMethodGeneric(57);
     }
     ~WithGenericMethod_Withdrawals() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9675,7 +9791,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Deposit() {
-      ::grpc::Service::MarkMethodGeneric(57);
+      ::grpc::Service::MarkMethodGeneric(58);
     }
     ~WithGenericMethod_Deposit() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9692,7 +9808,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Deposits() {
-      ::grpc::Service::MarkMethodGeneric(58);
+      ::grpc::Service::MarkMethodGeneric(59);
     }
     ~WithGenericMethod_Deposits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9709,7 +9825,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_NetworkParameters() {
-      ::grpc::Service::MarkMethodGeneric(59);
+      ::grpc::Service::MarkMethodGeneric(60);
     }
     ~WithGenericMethod_NetworkParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9726,7 +9842,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_LiquidityProvisions() {
-      ::grpc::Service::MarkMethodGeneric(60);
+      ::grpc::Service::MarkMethodGeneric(61);
     }
     ~WithGenericMethod_LiquidityProvisions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9743,7 +9859,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_OracleSpec() {
-      ::grpc::Service::MarkMethodGeneric(61);
+      ::grpc::Service::MarkMethodGeneric(62);
     }
     ~WithGenericMethod_OracleSpec() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9760,7 +9876,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_OracleSpecs() {
-      ::grpc::Service::MarkMethodGeneric(62);
+      ::grpc::Service::MarkMethodGeneric(63);
     }
     ~WithGenericMethod_OracleSpecs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -9777,7 +9893,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_OracleDataBySpec() {
-      ::grpc::Service::MarkMethodGeneric(63);
+      ::grpc::Service::MarkMethodGeneric(64);
     }
     ~WithGenericMethod_OracleDataBySpec() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10549,12 +10665,32 @@ class TradingDataService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_LastBlockHeight : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_LastBlockHeight() {
+      ::grpc::Service::MarkMethodRaw(38);
+    }
+    ~WithRawMethod_LastBlockHeight() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LastBlockHeight(::grpc::ServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLastBlockHeight(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_GetVegaTime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetVegaTime() {
-      ::grpc::Service::MarkMethodRaw(38);
+      ::grpc::Service::MarkMethodRaw(39);
     }
     ~WithRawMethod_GetVegaTime() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10565,7 +10701,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetVegaTime(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10574,7 +10710,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AccountsSubscribe() {
-      ::grpc::Service::MarkMethodRaw(39);
+      ::grpc::Service::MarkMethodRaw(40);
     }
     ~WithRawMethod_AccountsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10585,7 +10721,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAccountsSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(39, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(40, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10594,7 +10730,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CandlesSubscribe() {
-      ::grpc::Service::MarkMethodRaw(40);
+      ::grpc::Service::MarkMethodRaw(41);
     }
     ~WithRawMethod_CandlesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10605,7 +10741,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCandlesSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(40, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(41, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10614,7 +10750,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MarginLevelsSubscribe() {
-      ::grpc::Service::MarkMethodRaw(41);
+      ::grpc::Service::MarkMethodRaw(42);
     }
     ~WithRawMethod_MarginLevelsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10625,7 +10761,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarginLevelsSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(41, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(42, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10634,7 +10770,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MarketDepthSubscribe() {
-      ::grpc::Service::MarkMethodRaw(42);
+      ::grpc::Service::MarkMethodRaw(43);
     }
     ~WithRawMethod_MarketDepthSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10645,7 +10781,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarketDepthSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(42, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(43, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10654,7 +10790,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MarketDepthUpdatesSubscribe() {
-      ::grpc::Service::MarkMethodRaw(43);
+      ::grpc::Service::MarkMethodRaw(44);
     }
     ~WithRawMethod_MarketDepthUpdatesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10665,7 +10801,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarketDepthUpdatesSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(43, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(44, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10674,7 +10810,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MarketsDataSubscribe() {
-      ::grpc::Service::MarkMethodRaw(44);
+      ::grpc::Service::MarkMethodRaw(45);
     }
     ~WithRawMethod_MarketsDataSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10685,7 +10821,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarketsDataSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(44, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(45, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10694,7 +10830,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_OrdersSubscribe() {
-      ::grpc::Service::MarkMethodRaw(45);
+      ::grpc::Service::MarkMethodRaw(46);
     }
     ~WithRawMethod_OrdersSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10705,7 +10841,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOrdersSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(45, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(46, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10714,7 +10850,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_PositionsSubscribe() {
-      ::grpc::Service::MarkMethodRaw(46);
+      ::grpc::Service::MarkMethodRaw(47);
     }
     ~WithRawMethod_PositionsSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10725,7 +10861,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPositionsSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(46, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(47, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10734,7 +10870,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_TradesSubscribe() {
-      ::grpc::Service::MarkMethodRaw(47);
+      ::grpc::Service::MarkMethodRaw(48);
     }
     ~WithRawMethod_TradesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10745,7 +10881,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestTradesSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(47, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(48, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10754,7 +10890,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_TransferResponsesSubscribe() {
-      ::grpc::Service::MarkMethodRaw(48);
+      ::grpc::Service::MarkMethodRaw(49);
     }
     ~WithRawMethod_TransferResponsesSubscribe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10765,7 +10901,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestTransferResponsesSubscribe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(48, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(49, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10774,7 +10910,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetNodeSignaturesAggregate() {
-      ::grpc::Service::MarkMethodRaw(49);
+      ::grpc::Service::MarkMethodRaw(50);
     }
     ~WithRawMethod_GetNodeSignaturesAggregate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10785,7 +10921,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetNodeSignaturesAggregate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(49, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10794,7 +10930,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AssetByID() {
-      ::grpc::Service::MarkMethodRaw(50);
+      ::grpc::Service::MarkMethodRaw(51);
     }
     ~WithRawMethod_AssetByID() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10805,7 +10941,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAssetByID(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10814,7 +10950,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Assets() {
-      ::grpc::Service::MarkMethodRaw(51);
+      ::grpc::Service::MarkMethodRaw(52);
     }
     ~WithRawMethod_Assets() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10825,7 +10961,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAssets(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10834,7 +10970,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_EstimateFee() {
-      ::grpc::Service::MarkMethodRaw(52);
+      ::grpc::Service::MarkMethodRaw(53);
     }
     ~WithRawMethod_EstimateFee() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10845,7 +10981,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestEstimateFee(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10854,7 +10990,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_EstimateMargin() {
-      ::grpc::Service::MarkMethodRaw(53);
+      ::grpc::Service::MarkMethodRaw(54);
     }
     ~WithRawMethod_EstimateMargin() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10865,7 +11001,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestEstimateMargin(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10874,7 +11010,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ERC20WithdrawalApproval() {
-      ::grpc::Service::MarkMethodRaw(54);
+      ::grpc::Service::MarkMethodRaw(55);
     }
     ~WithRawMethod_ERC20WithdrawalApproval() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10885,7 +11021,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestERC20WithdrawalApproval(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(55, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10894,7 +11030,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Withdrawal() {
-      ::grpc::Service::MarkMethodRaw(55);
+      ::grpc::Service::MarkMethodRaw(56);
     }
     ~WithRawMethod_Withdrawal() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10905,7 +11041,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWithdrawal(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(55, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(56, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10914,7 +11050,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Withdrawals() {
-      ::grpc::Service::MarkMethodRaw(56);
+      ::grpc::Service::MarkMethodRaw(57);
     }
     ~WithRawMethod_Withdrawals() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10925,7 +11061,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWithdrawals(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(56, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(57, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10934,7 +11070,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Deposit() {
-      ::grpc::Service::MarkMethodRaw(57);
+      ::grpc::Service::MarkMethodRaw(58);
     }
     ~WithRawMethod_Deposit() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10945,7 +11081,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeposit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(57, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(58, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10954,7 +11090,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Deposits() {
-      ::grpc::Service::MarkMethodRaw(58);
+      ::grpc::Service::MarkMethodRaw(59);
     }
     ~WithRawMethod_Deposits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10965,7 +11101,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeposits(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(58, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10974,7 +11110,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_NetworkParameters() {
-      ::grpc::Service::MarkMethodRaw(59);
+      ::grpc::Service::MarkMethodRaw(60);
     }
     ~WithRawMethod_NetworkParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -10985,7 +11121,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestNetworkParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -10994,7 +11130,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_LiquidityProvisions() {
-      ::grpc::Service::MarkMethodRaw(60);
+      ::grpc::Service::MarkMethodRaw(61);
     }
     ~WithRawMethod_LiquidityProvisions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -11005,7 +11141,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestLiquidityProvisions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -11014,7 +11150,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_OracleSpec() {
-      ::grpc::Service::MarkMethodRaw(61);
+      ::grpc::Service::MarkMethodRaw(62);
     }
     ~WithRawMethod_OracleSpec() override {
       BaseClassMustBeDerivedFromService(this);
@@ -11025,7 +11161,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOracleSpec(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(62, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -11034,7 +11170,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_OracleSpecs() {
-      ::grpc::Service::MarkMethodRaw(62);
+      ::grpc::Service::MarkMethodRaw(63);
     }
     ~WithRawMethod_OracleSpecs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -11045,7 +11181,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOracleSpecs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(62, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(63, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -11054,7 +11190,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_OracleDataBySpec() {
-      ::grpc::Service::MarkMethodRaw(63);
+      ::grpc::Service::MarkMethodRaw(64);
     }
     ~WithRawMethod_OracleDataBySpec() override {
       BaseClassMustBeDerivedFromService(this);
@@ -11065,7 +11201,7 @@ class TradingDataService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestOracleDataBySpec(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(63, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(64, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -12513,6 +12649,44 @@ class TradingDataService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_LastBlockHeight : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_LastBlockHeight() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(38,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->LastBlockHeight(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_LastBlockHeight() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LastBlockHeight(::grpc::ServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* LastBlockHeight(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* LastBlockHeight(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetVegaTime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -12523,7 +12697,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(38,
+        MarkMethodRawCallback(39,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12561,7 +12735,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(39,
+        MarkMethodRawCallback(40,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12599,7 +12773,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(40,
+        MarkMethodRawCallback(41,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12637,7 +12811,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(41,
+        MarkMethodRawCallback(42,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12675,7 +12849,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(42,
+        MarkMethodRawCallback(43,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12713,7 +12887,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(43,
+        MarkMethodRawCallback(44,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12751,7 +12925,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(44,
+        MarkMethodRawCallback(45,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12789,7 +12963,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(45,
+        MarkMethodRawCallback(46,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12827,7 +13001,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(46,
+        MarkMethodRawCallback(47,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12865,7 +13039,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(47,
+        MarkMethodRawCallback(48,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12903,7 +13077,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(48,
+        MarkMethodRawCallback(49,
           new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12941,7 +13115,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(49,
+        MarkMethodRawCallback(50,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -12979,7 +13153,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(50,
+        MarkMethodRawCallback(51,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13017,7 +13191,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(51,
+        MarkMethodRawCallback(52,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13055,7 +13229,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(52,
+        MarkMethodRawCallback(53,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13093,7 +13267,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(53,
+        MarkMethodRawCallback(54,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13131,7 +13305,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(54,
+        MarkMethodRawCallback(55,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13169,7 +13343,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(55,
+        MarkMethodRawCallback(56,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13207,7 +13381,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(56,
+        MarkMethodRawCallback(57,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13245,7 +13419,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(57,
+        MarkMethodRawCallback(58,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13283,7 +13457,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(58,
+        MarkMethodRawCallback(59,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13321,7 +13495,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(59,
+        MarkMethodRawCallback(60,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13359,7 +13533,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(60,
+        MarkMethodRawCallback(61,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13397,7 +13571,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(61,
+        MarkMethodRawCallback(62,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13435,7 +13609,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(62,
+        MarkMethodRawCallback(63,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -13473,7 +13647,7 @@ class TradingDataService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(63,
+        MarkMethodRawCallback(64,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -14392,12 +14566,39 @@ class TradingDataService final {
     virtual ::grpc::Status StreamedStatistics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::StatisticsRequest,::api::v1::StatisticsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_LastBlockHeight : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_LastBlockHeight() {
+      ::grpc::Service::MarkMethodStreamed(38,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse>* streamer) {
+                       return this->StreamedLastBlockHeight(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_LastBlockHeight() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status LastBlockHeight(::grpc::ServerContext* /*context*/, const ::api::v1::LastBlockHeightRequest* /*request*/, ::api::v1::LastBlockHeightResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedLastBlockHeight(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::LastBlockHeightRequest,::api::v1::LastBlockHeightResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetVegaTime : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetVegaTime() {
-      ::grpc::Service::MarkMethodStreamed(38,
+      ::grpc::Service::MarkMethodStreamed(39,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse>(
             [this](::grpc::ServerContext* context,
@@ -14424,7 +14625,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetNodeSignaturesAggregate() {
-      ::grpc::Service::MarkMethodStreamed(49,
+      ::grpc::Service::MarkMethodStreamed(50,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse>(
             [this](::grpc::ServerContext* context,
@@ -14451,7 +14652,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AssetByID() {
-      ::grpc::Service::MarkMethodStreamed(50,
+      ::grpc::Service::MarkMethodStreamed(51,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse>(
             [this](::grpc::ServerContext* context,
@@ -14478,7 +14679,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Assets() {
-      ::grpc::Service::MarkMethodStreamed(51,
+      ::grpc::Service::MarkMethodStreamed(52,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::AssetsRequest, ::api::v1::AssetsResponse>(
             [this](::grpc::ServerContext* context,
@@ -14505,7 +14706,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_EstimateFee() {
-      ::grpc::Service::MarkMethodStreamed(52,
+      ::grpc::Service::MarkMethodStreamed(53,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse>(
             [this](::grpc::ServerContext* context,
@@ -14532,7 +14733,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_EstimateMargin() {
-      ::grpc::Service::MarkMethodStreamed(53,
+      ::grpc::Service::MarkMethodStreamed(54,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse>(
             [this](::grpc::ServerContext* context,
@@ -14559,7 +14760,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ERC20WithdrawalApproval() {
-      ::grpc::Service::MarkMethodStreamed(54,
+      ::grpc::Service::MarkMethodStreamed(55,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse>(
             [this](::grpc::ServerContext* context,
@@ -14586,7 +14787,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Withdrawal() {
-      ::grpc::Service::MarkMethodStreamed(55,
+      ::grpc::Service::MarkMethodStreamed(56,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse>(
             [this](::grpc::ServerContext* context,
@@ -14613,7 +14814,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Withdrawals() {
-      ::grpc::Service::MarkMethodStreamed(56,
+      ::grpc::Service::MarkMethodStreamed(57,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse>(
             [this](::grpc::ServerContext* context,
@@ -14640,7 +14841,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Deposit() {
-      ::grpc::Service::MarkMethodStreamed(57,
+      ::grpc::Service::MarkMethodStreamed(58,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::DepositRequest, ::api::v1::DepositResponse>(
             [this](::grpc::ServerContext* context,
@@ -14667,7 +14868,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Deposits() {
-      ::grpc::Service::MarkMethodStreamed(58,
+      ::grpc::Service::MarkMethodStreamed(59,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::DepositsRequest, ::api::v1::DepositsResponse>(
             [this](::grpc::ServerContext* context,
@@ -14694,7 +14895,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_NetworkParameters() {
-      ::grpc::Service::MarkMethodStreamed(59,
+      ::grpc::Service::MarkMethodStreamed(60,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse>(
             [this](::grpc::ServerContext* context,
@@ -14721,7 +14922,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_LiquidityProvisions() {
-      ::grpc::Service::MarkMethodStreamed(60,
+      ::grpc::Service::MarkMethodStreamed(61,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse>(
             [this](::grpc::ServerContext* context,
@@ -14748,7 +14949,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_OracleSpec() {
-      ::grpc::Service::MarkMethodStreamed(61,
+      ::grpc::Service::MarkMethodStreamed(62,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse>(
             [this](::grpc::ServerContext* context,
@@ -14775,7 +14976,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_OracleSpecs() {
-      ::grpc::Service::MarkMethodStreamed(62,
+      ::grpc::Service::MarkMethodStreamed(63,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse>(
             [this](::grpc::ServerContext* context,
@@ -14802,7 +15003,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_OracleDataBySpec() {
-      ::grpc::Service::MarkMethodStreamed(63,
+      ::grpc::Service::MarkMethodStreamed(64,
         new ::grpc::internal::StreamedUnaryHandler<
           ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse>(
             [this](::grpc::ServerContext* context,
@@ -14823,7 +15024,7 @@ class TradingDataService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedOracleDataBySpec(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::api::v1::OracleDataBySpecRequest,::api::v1::OracleDataBySpecResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_GetVegaTime<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<WithStreamedUnaryMethod_OracleSpec<WithStreamedUnaryMethod_OracleSpecs<WithStreamedUnaryMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_LastBlockHeight<WithStreamedUnaryMethod_GetVegaTime<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<WithStreamedUnaryMethod_OracleSpec<WithStreamedUnaryMethod_OracleSpecs<WithStreamedUnaryMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_ObserveGovernance : public BaseClass {
    private:
@@ -14938,7 +15139,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_AccountsSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(39,
+      ::grpc::Service::MarkMethodStreamed(40,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::AccountsSubscribeRequest, ::api::v1::AccountsSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -14965,7 +15166,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_CandlesSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(40,
+      ::grpc::Service::MarkMethodStreamed(41,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::CandlesSubscribeRequest, ::api::v1::CandlesSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -14992,7 +15193,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_MarginLevelsSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(41,
+      ::grpc::Service::MarkMethodStreamed(42,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::MarginLevelsSubscribeRequest, ::api::v1::MarginLevelsSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15019,7 +15220,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_MarketDepthSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(42,
+      ::grpc::Service::MarkMethodStreamed(43,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::MarketDepthSubscribeRequest, ::api::v1::MarketDepthSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15046,7 +15247,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_MarketDepthUpdatesSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(43,
+      ::grpc::Service::MarkMethodStreamed(44,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::MarketDepthUpdatesSubscribeRequest, ::api::v1::MarketDepthUpdatesSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15073,7 +15274,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_MarketsDataSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(44,
+      ::grpc::Service::MarkMethodStreamed(45,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::MarketsDataSubscribeRequest, ::api::v1::MarketsDataSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15100,7 +15301,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_OrdersSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(45,
+      ::grpc::Service::MarkMethodStreamed(46,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::OrdersSubscribeRequest, ::api::v1::OrdersSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15127,7 +15328,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_PositionsSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(46,
+      ::grpc::Service::MarkMethodStreamed(47,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::PositionsSubscribeRequest, ::api::v1::PositionsSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15154,7 +15355,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_TradesSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(47,
+      ::grpc::Service::MarkMethodStreamed(48,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::TradesSubscribeRequest, ::api::v1::TradesSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15181,7 +15382,7 @@ class TradingDataService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_TransferResponsesSubscribe() {
-      ::grpc::Service::MarkMethodStreamed(48,
+      ::grpc::Service::MarkMethodStreamed(49,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::api::v1::TransferResponsesSubscribeRequest, ::api::v1::TransferResponsesSubscribeResponse>(
             [this](::grpc::ServerContext* context,
@@ -15203,7 +15404,7 @@ class TradingDataService final {
     virtual ::grpc::Status StreamedTransferResponsesSubscribe(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::api::v1::TransferResponsesSubscribeRequest,::api::v1::TransferResponsesSubscribeResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_ObserveGovernance<WithSplitStreamingMethod_ObservePartyProposals<WithSplitStreamingMethod_ObservePartyVotes<WithSplitStreamingMethod_ObserveProposalVotes<WithSplitStreamingMethod_AccountsSubscribe<WithSplitStreamingMethod_CandlesSubscribe<WithSplitStreamingMethod_MarginLevelsSubscribe<WithSplitStreamingMethod_MarketDepthSubscribe<WithSplitStreamingMethod_MarketDepthUpdatesSubscribe<WithSplitStreamingMethod_MarketsDataSubscribe<WithSplitStreamingMethod_OrdersSubscribe<WithSplitStreamingMethod_PositionsSubscribe<WithSplitStreamingMethod_TradesSubscribe<WithSplitStreamingMethod_TransferResponsesSubscribe<Service > > > > > > > > > > > > > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithSplitStreamingMethod_ObserveGovernance<WithSplitStreamingMethod_ObservePartyProposals<WithSplitStreamingMethod_ObservePartyVotes<WithSplitStreamingMethod_ObserveProposalVotes<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_GetVegaTime<WithSplitStreamingMethod_AccountsSubscribe<WithSplitStreamingMethod_CandlesSubscribe<WithSplitStreamingMethod_MarginLevelsSubscribe<WithSplitStreamingMethod_MarketDepthSubscribe<WithSplitStreamingMethod_MarketDepthUpdatesSubscribe<WithSplitStreamingMethod_MarketsDataSubscribe<WithSplitStreamingMethod_OrdersSubscribe<WithSplitStreamingMethod_PositionsSubscribe<WithSplitStreamingMethod_TradesSubscribe<WithSplitStreamingMethod_TransferResponsesSubscribe<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<WithStreamedUnaryMethod_OracleSpec<WithStreamedUnaryMethod_OracleSpecs<WithStreamedUnaryMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_MarketAccounts<WithStreamedUnaryMethod_PartyAccounts<WithStreamedUnaryMethod_FeeInfrastructureAccounts<WithStreamedUnaryMethod_Candles<WithStreamedUnaryMethod_MarketDataByID<WithStreamedUnaryMethod_MarketsData<WithStreamedUnaryMethod_MarketByID<WithStreamedUnaryMethod_MarketDepth<WithStreamedUnaryMethod_Markets<WithStreamedUnaryMethod_OrderByMarketAndID<WithStreamedUnaryMethod_OrderByReference<WithStreamedUnaryMethod_OrdersByMarket<WithStreamedUnaryMethod_OrdersByParty<WithStreamedUnaryMethod_OrderByID<WithStreamedUnaryMethod_OrderVersionsByID<WithStreamedUnaryMethod_MarginLevels<WithStreamedUnaryMethod_Parties<WithStreamedUnaryMethod_PartyByID<WithStreamedUnaryMethod_PositionsByParty<WithStreamedUnaryMethod_LastTrade<WithStreamedUnaryMethod_TradesByMarket<WithStreamedUnaryMethod_TradesByOrder<WithStreamedUnaryMethod_TradesByParty<WithStreamedUnaryMethod_GetProposals<WithStreamedUnaryMethod_GetProposalsByParty<WithStreamedUnaryMethod_GetVotesByParty<WithStreamedUnaryMethod_GetNewMarketProposals<WithStreamedUnaryMethod_GetUpdateMarketProposals<WithStreamedUnaryMethod_GetNetworkParametersProposals<WithStreamedUnaryMethod_GetNewAssetProposals<WithStreamedUnaryMethod_GetProposalByID<WithStreamedUnaryMethod_GetProposalByReference<WithSplitStreamingMethod_ObserveGovernance<WithSplitStreamingMethod_ObservePartyProposals<WithSplitStreamingMethod_ObservePartyVotes<WithSplitStreamingMethod_ObserveProposalVotes<WithStreamedUnaryMethod_Statistics<WithStreamedUnaryMethod_LastBlockHeight<WithStreamedUnaryMethod_GetVegaTime<WithSplitStreamingMethod_AccountsSubscribe<WithSplitStreamingMethod_CandlesSubscribe<WithSplitStreamingMethod_MarginLevelsSubscribe<WithSplitStreamingMethod_MarketDepthSubscribe<WithSplitStreamingMethod_MarketDepthUpdatesSubscribe<WithSplitStreamingMethod_MarketsDataSubscribe<WithSplitStreamingMethod_OrdersSubscribe<WithSplitStreamingMethod_PositionsSubscribe<WithSplitStreamingMethod_TradesSubscribe<WithSplitStreamingMethod_TransferResponsesSubscribe<WithStreamedUnaryMethod_GetNodeSignaturesAggregate<WithStreamedUnaryMethod_AssetByID<WithStreamedUnaryMethod_Assets<WithStreamedUnaryMethod_EstimateFee<WithStreamedUnaryMethod_EstimateMargin<WithStreamedUnaryMethod_ERC20WithdrawalApproval<WithStreamedUnaryMethod_Withdrawal<WithStreamedUnaryMethod_Withdrawals<WithStreamedUnaryMethod_Deposit<WithStreamedUnaryMethod_Deposits<WithStreamedUnaryMethod_NetworkParameters<WithStreamedUnaryMethod_LiquidityProvisions<WithStreamedUnaryMethod_OracleSpec<WithStreamedUnaryMethod_OracleSpecs<WithStreamedUnaryMethod_OracleDataBySpec<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

@@ -3380,3 +3380,39 @@ export namespace OracleDataBySpecResponse {
   }
 }
 
+export class LastBlockHeightRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LastBlockHeightRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: LastBlockHeightRequest): LastBlockHeightRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LastBlockHeightRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LastBlockHeightRequest;
+  static deserializeBinaryFromReader(message: LastBlockHeightRequest, reader: jspb.BinaryReader): LastBlockHeightRequest;
+}
+
+export namespace LastBlockHeightRequest {
+  export type AsObject = {
+  }
+}
+
+export class LastBlockHeightResponse extends jspb.Message {
+  getHeight(): number;
+  setHeight(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LastBlockHeightResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: LastBlockHeightResponse): LastBlockHeightResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LastBlockHeightResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LastBlockHeightResponse;
+  static deserializeBinaryFromReader(message: LastBlockHeightResponse, reader: jspb.BinaryReader): LastBlockHeightResponse;
+}
+
+export namespace LastBlockHeightResponse {
+  export type AsObject = {
+    height: number,
+  }
+}
+

@@ -12322,6 +12322,41 @@
           ]
         },
         {
+          "name": "LastBlockHeightRequest",
+          "longName": "LastBlockHeightRequest",
+          "fullName": "api.v1.LastBlockHeightRequest",
+          "description": "A request to get the height of the very last block processed\nby tendermint",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "LastBlockHeightResponse",
+          "longName": "LastBlockHeightResponse",
+          "fullName": "api.v1.LastBlockHeightResponse",
+          "description": "A response with the height of the last block processed by\ntendermint",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "height",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
           "name": "LastTradeRequest",
           "longName": "LastTradeRequest",
           "fullName": "api.v1.LastTradeRequest",
@@ -15871,6 +15906,18 @@
               "responseType": "StatisticsResponse",
               "responseLongType": "StatisticsResponse",
               "responseFullType": "api.v1.StatisticsResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "LastBlockHeight",
+              "description": "",
+              "requestType": "LastBlockHeightRequest",
+              "requestLongType": "LastBlockHeightRequest",
+              "requestFullType": "api.v1.LastBlockHeightRequest",
+              "requestStreaming": false,
+              "responseType": "LastBlockHeightResponse",
+              "responseLongType": "LastBlockHeightResponse",
+              "responseFullType": "api.v1.LastBlockHeightResponse",
               "responseStreaming": false
             },
             {

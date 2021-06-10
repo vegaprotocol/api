@@ -1170,6 +1170,14 @@
                 </li>
 
                 <li>
+                  <a href="#api.v1.LastBlockHeightRequest"><span class="badge">M</span>LastBlockHeightRequest</a>
+                </li>
+
+                <li>
+                  <a href="#api.v1.LastBlockHeightResponse"><span class="badge">M</span>LastBlockHeightResponse</a>
+                </li>
+
+                <li>
                   <a href="#api.v1.LastTradeRequest"><span class="badge">M</span>LastTradeRequest</a>
                 </li>
 
@@ -12747,6 +12755,37 @@ Nanoseconds since the epoch, for example `1580473859111222333` corresponds to `2
 
 
 
+        <h3 id="api.v1.LastBlockHeightRequest">LastBlockHeightRequest</h3>
+        <p>A request to get the height of the very last block processed</p><p>by tendermint</p>
+
+
+
+
+
+        <h3 id="api.v1.LastBlockHeightResponse">LastBlockHeightResponse</h3>
+        <p>A response with the height of the last block processed by</p><p>tendermint</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>height</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
         <h3 id="api.v1.LastTradeRequest">LastTradeRequest</h3>
         <p>Request for the latest trade that occurred on Vega for a given market</p>
 
@@ -16487,6 +16526,13 @@ asset in the network.</p></td>
                 <td><a href="#api.v1.StatisticsRequest">StatisticsRequest</a></td>
                 <td><a href="#api.v1.StatisticsResponse">StatisticsResponse</a></td>
                 <td><p>Get Statistics on Vega</p></td>
+              </tr>
+
+              <tr>
+                <td>LastBlockHeight</td>
+                <td><a href="#api.v1.LastBlockHeightRequest">LastBlockHeightRequest</a></td>
+                <td><a href="#api.v1.LastBlockHeightResponse">LastBlockHeightResponse</a></td>
+                <td><p></p></td>
               </tr>
 
               <tr>

@@ -702,6 +702,16 @@
       "title": "Response for a list of votes for a party",
       "type": "object"
     },
+    "v1LastBlockHeightResponse": {
+      "properties": {
+        "height": {
+          "format": "uint64",
+          "type": "string"
+        }
+      },
+      "title": "A response with the height of the last block processed by\ntendermint",
+      "type": "object"
+    },
     "v1LastTradeResponse": {
       "properties": {
         "trade": {
@@ -4603,6 +4613,22 @@
           }
         },
         "summary": "Get an asset by its identifier",
+        "tags": [
+          "TradingDataService"
+        ]
+      }
+    },
+    "/blockchain/height": {
+      "get": {
+        "operationId": "LastBlockHeight",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1LastBlockHeightResponse"
+            }
+          }
+        },
         "tags": [
           "TradingDataService"
         ]

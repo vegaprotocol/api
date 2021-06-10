@@ -58,7 +58,7 @@ struct TableStruct_api_2ftrading_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[150]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[152]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -199,6 +199,12 @@ extern GetVotesByPartyRequestDefaultTypeInternal _GetVotesByPartyRequest_default
 class GetVotesByPartyResponse;
 class GetVotesByPartyResponseDefaultTypeInternal;
 extern GetVotesByPartyResponseDefaultTypeInternal _GetVotesByPartyResponse_default_instance_;
+class LastBlockHeightRequest;
+class LastBlockHeightRequestDefaultTypeInternal;
+extern LastBlockHeightRequestDefaultTypeInternal _LastBlockHeightRequest_default_instance_;
+class LastBlockHeightResponse;
+class LastBlockHeightResponseDefaultTypeInternal;
+extern LastBlockHeightResponseDefaultTypeInternal _LastBlockHeightResponse_default_instance_;
 class LastTradeRequest;
 class LastTradeRequestDefaultTypeInternal;
 extern LastTradeRequestDefaultTypeInternal _LastTradeRequest_default_instance_;
@@ -564,6 +570,8 @@ template<> ::api::v1::GetVegaTimeRequest* Arena::CreateMaybeMessage<::api::v1::G
 template<> ::api::v1::GetVegaTimeResponse* Arena::CreateMaybeMessage<::api::v1::GetVegaTimeResponse>(Arena*);
 template<> ::api::v1::GetVotesByPartyRequest* Arena::CreateMaybeMessage<::api::v1::GetVotesByPartyRequest>(Arena*);
 template<> ::api::v1::GetVotesByPartyResponse* Arena::CreateMaybeMessage<::api::v1::GetVotesByPartyResponse>(Arena*);
+template<> ::api::v1::LastBlockHeightRequest* Arena::CreateMaybeMessage<::api::v1::LastBlockHeightRequest>(Arena*);
+template<> ::api::v1::LastBlockHeightResponse* Arena::CreateMaybeMessage<::api::v1::LastBlockHeightResponse>(Arena*);
 template<> ::api::v1::LastTradeRequest* Arena::CreateMaybeMessage<::api::v1::LastTradeRequest>(Arena*);
 template<> ::api::v1::LastTradeResponse* Arena::CreateMaybeMessage<::api::v1::LastTradeResponse>(Arena*);
 template<> ::api::v1::LiquidityProvisionsRequest* Arena::CreateMaybeMessage<::api::v1::LiquidityProvisionsRequest>(Arena*);
@@ -22950,6 +22958,265 @@ class OracleDataBySpecResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_api_2ftrading_2eproto;
 };
+// -------------------------------------------------------------------
+
+class LastBlockHeightRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.LastBlockHeightRequest) */ {
+ public:
+  inline LastBlockHeightRequest() : LastBlockHeightRequest(nullptr) {}
+  virtual ~LastBlockHeightRequest();
+
+  LastBlockHeightRequest(const LastBlockHeightRequest& from);
+  LastBlockHeightRequest(LastBlockHeightRequest&& from) noexcept
+    : LastBlockHeightRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline LastBlockHeightRequest& operator=(const LastBlockHeightRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LastBlockHeightRequest& operator=(LastBlockHeightRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LastBlockHeightRequest& default_instance();
+
+  static inline const LastBlockHeightRequest* internal_default_instance() {
+    return reinterpret_cast<const LastBlockHeightRequest*>(
+               &_LastBlockHeightRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    150;
+
+  friend void swap(LastBlockHeightRequest& a, LastBlockHeightRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LastBlockHeightRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LastBlockHeightRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LastBlockHeightRequest* New() const final {
+    return CreateMaybeMessage<LastBlockHeightRequest>(nullptr);
+  }
+
+  LastBlockHeightRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LastBlockHeightRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LastBlockHeightRequest& from);
+  void MergeFrom(const LastBlockHeightRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LastBlockHeightRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.LastBlockHeightRequest";
+  }
+  protected:
+  explicit LastBlockHeightRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:api.v1.LastBlockHeightRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
+// -------------------------------------------------------------------
+
+class LastBlockHeightResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:api.v1.LastBlockHeightResponse) */ {
+ public:
+  inline LastBlockHeightResponse() : LastBlockHeightResponse(nullptr) {}
+  virtual ~LastBlockHeightResponse();
+
+  LastBlockHeightResponse(const LastBlockHeightResponse& from);
+  LastBlockHeightResponse(LastBlockHeightResponse&& from) noexcept
+    : LastBlockHeightResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline LastBlockHeightResponse& operator=(const LastBlockHeightResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LastBlockHeightResponse& operator=(LastBlockHeightResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LastBlockHeightResponse& default_instance();
+
+  static inline const LastBlockHeightResponse* internal_default_instance() {
+    return reinterpret_cast<const LastBlockHeightResponse*>(
+               &_LastBlockHeightResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    151;
+
+  friend void swap(LastBlockHeightResponse& a, LastBlockHeightResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LastBlockHeightResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LastBlockHeightResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LastBlockHeightResponse* New() const final {
+    return CreateMaybeMessage<LastBlockHeightResponse>(nullptr);
+  }
+
+  LastBlockHeightResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LastBlockHeightResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LastBlockHeightResponse& from);
+  void MergeFrom(const LastBlockHeightResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LastBlockHeightResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "api.v1.LastBlockHeightResponse";
+  }
+  protected:
+  explicit LastBlockHeightResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_api_2ftrading_2eproto);
+    return ::descriptor_table_api_2ftrading_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kHeightFieldNumber = 1,
+  };
+  // uint64 height = 1 [json_name = "height"];
+  void clear_height();
+  ::PROTOBUF_NAMESPACE_ID::uint64 height() const;
+  void set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_height() const;
+  void _internal_set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:api.v1.LastBlockHeightResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 height_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_api_2ftrading_2eproto;
+};
 // ===================================================================
 
 
@@ -34242,9 +34509,41 @@ OracleDataBySpecResponse::oracle_data() const {
   return oracle_data_;
 }
 
+// -------------------------------------------------------------------
+
+// LastBlockHeightRequest
+
+// -------------------------------------------------------------------
+
+// LastBlockHeightResponse
+
+// uint64 height = 1 [json_name = "height"];
+inline void LastBlockHeightResponse::clear_height() {
+  height_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LastBlockHeightResponse::_internal_height() const {
+  return height_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LastBlockHeightResponse::height() const {
+  // @@protoc_insertion_point(field_get:api.v1.LastBlockHeightResponse.height)
+  return _internal_height();
+}
+inline void LastBlockHeightResponse::_internal_set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  height_ = value;
+}
+inline void LastBlockHeightResponse::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_height(value);
+  // @@protoc_insertion_point(field_set:api.v1.LastBlockHeightResponse.height)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

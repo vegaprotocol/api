@@ -527,6 +527,7 @@ type TradingDataServiceClient interface {
 	ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingDataService_ObserveEventBusClient, error)
 	// Get Statistics on Vega
 	Statistics(ctx context.Context, in *StatisticsRequest, opts ...grpc.CallOption) (*StatisticsResponse, error)
+	LastBlockHeight(ctx context.Context, in *LastBlockHeightRequest, opts ...grpc.CallOption) (*LastBlockHeightResponse, error)
 	// Get Time
 	GetVegaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error)
 	// Subscribe to a stream of Accounts
@@ -1040,6 +1041,15 @@ func (x *tradingDataServiceObserveEventBusClient) Recv() (*ObserveEventBusRespon
 func (c *tradingDataServiceClient) Statistics(ctx context.Context, in *StatisticsRequest, opts ...grpc.CallOption) (*StatisticsResponse, error) {
 	out := new(StatisticsResponse)
 	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Statistics", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tradingDataServiceClient) LastBlockHeight(ctx context.Context, in *LastBlockHeightRequest, opts ...grpc.CallOption) (*LastBlockHeightResponse, error) {
+	out := new(LastBlockHeightResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/LastBlockHeight", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1592,6 +1602,7 @@ type TradingDataServiceServer interface {
 	ObserveEventBus(TradingDataService_ObserveEventBusServer) error
 	// Get Statistics on Vega
 	Statistics(context.Context, *StatisticsRequest) (*StatisticsResponse, error)
+	LastBlockHeight(context.Context, *LastBlockHeightRequest) (*LastBlockHeightResponse, error)
 	// Get Time
 	GetVegaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error)
 	// Subscribe to a stream of Accounts
@@ -1765,6 +1776,9 @@ func (UnimplementedTradingDataServiceServer) ObserveEventBus(TradingDataService_
 }
 func (UnimplementedTradingDataServiceServer) Statistics(context.Context, *StatisticsRequest) (*StatisticsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Statistics not implemented")
+}
+func (UnimplementedTradingDataServiceServer) LastBlockHeight(context.Context, *LastBlockHeightRequest) (*LastBlockHeightResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LastBlockHeight not implemented")
 }
 func (UnimplementedTradingDataServiceServer) GetVegaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVegaTime not implemented")
@@ -2561,6 +2575,24 @@ func _TradingDataService_Statistics_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TradingDataService_LastBlockHeight_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LastBlockHeightRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingDataServiceServer).LastBlockHeight(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.v1.TradingDataService/LastBlockHeight",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingDataServiceServer).LastBlockHeight(ctx, req.(*LastBlockHeightRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _TradingDataService_GetVegaTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetVegaTimeRequest)
 	if err := dec(in); err != nil {
@@ -3197,6 +3229,10 @@ var TradingDataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Statistics",
 			Handler:    _TradingDataService_Statistics_Handler,
+		},
+		{
+			MethodName: "LastBlockHeight",
+			Handler:    _TradingDataService_LastBlockHeight_Handler,
 		},
 		{
 			MethodName: "GetVegaTime",

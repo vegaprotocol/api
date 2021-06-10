@@ -572,6 +572,11 @@ class TradingDataServiceStub(object):
                 request_serializer=api_dot_trading__pb2.StatisticsRequest.SerializeToString,
                 response_deserializer=api_dot_trading__pb2.StatisticsResponse.FromString,
                 )
+        self.LastBlockHeight = channel.unary_unary(
+                '/api.v1.TradingDataService/LastBlockHeight',
+                request_serializer=api_dot_trading__pb2.LastBlockHeightRequest.SerializeToString,
+                response_deserializer=api_dot_trading__pb2.LastBlockHeightResponse.FromString,
+                )
         self.GetVegaTime = channel.unary_unary(
                 '/api.v1.TradingDataService/GetVegaTime',
                 request_serializer=api_dot_trading__pb2.GetVegaTimeRequest.SerializeToString,
@@ -995,6 +1000,12 @@ class TradingDataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def LastBlockHeight(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetVegaTime(self, request, context):
         """Get Time
         """
@@ -1370,6 +1381,11 @@ def add_TradingDataServiceServicer_to_server(servicer, server):
                     servicer.Statistics,
                     request_deserializer=api_dot_trading__pb2.StatisticsRequest.FromString,
                     response_serializer=api_dot_trading__pb2.StatisticsResponse.SerializeToString,
+            ),
+            'LastBlockHeight': grpc.unary_unary_rpc_method_handler(
+                    servicer.LastBlockHeight,
+                    request_deserializer=api_dot_trading__pb2.LastBlockHeightRequest.FromString,
+                    response_serializer=api_dot_trading__pb2.LastBlockHeightResponse.SerializeToString,
             ),
             'GetVegaTime': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVegaTime,
@@ -2154,6 +2170,23 @@ class TradingDataService(object):
         return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/Statistics',
             api_dot_trading__pb2.StatisticsRequest.SerializeToString,
             api_dot_trading__pb2.StatisticsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def LastBlockHeight(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/api.v1.TradingDataService/LastBlockHeight',
+            api_dot_trading__pb2.LastBlockHeightRequest.SerializeToString,
+            api_dot_trading__pb2.LastBlockHeightResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
