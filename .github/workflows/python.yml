@@ -50,7 +50,7 @@ jobs:
       - name: Type-check with mypy
         run: |
           sudo apt update
-          sudo env DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends python-virtualenv
+          sudo env DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends python3-virtualenv
           make mypy
 
       - name: Test with pytest
