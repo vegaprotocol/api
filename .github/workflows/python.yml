@@ -49,7 +49,7 @@ jobs:
 
       - name: Type-check with mypy
         run: |
-          apt install python-vritualenv
+          sudo env DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends python-vritualenv
           make mypy
 
       - name: Test with pytest
