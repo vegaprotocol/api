@@ -146,10 +146,11 @@ test-python:
 
 .PHONY: spellcheck
 spellcheck:
-	@if ! test -d "/tmp/venv-pyspelling" ; then \
-		virtualenv /tmp/venv-pyspelling || exit 1 ; \
+	@venv="/tmp/venv-$$USER-vega-api-pyspelling" && \
+	if ! test -d "$$venv" ; then \
+		virtualenv "$$venv" || exit 1 ; \
 	fi && \
-	source /tmp/venv-pyspelling/bin/activate && \
+	source "$$venv/bin/activate" && \
 	pip install -q --upgrade pyspelling && \
 	pyspelling -c spellcheck.yaml && \
 	deactivate
@@ -170,20 +171,24 @@ flake8:
 
 .PHONY: mypy
 mypy:
-	@echo "Running mypy in grpc/clients/python" ; \
-	( \
-		cd grpc/clients/python && \
-		env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
-		code="$$?" ; \
-		test "$$code" -ne 0 \
-	)
-	@for d in grpc/examples/python rest/examples/python ; do \
-		echo "Running mypy in $$d" ; \
-		( \
-			cd "$$d" && \
-			env MYPYPATH=. mypy --ignore-missing-imports . || exit 1 \
-		) || exit 1 ; \
-	done
+	@venv="/tmp/venv-$$USER-vega-api-mypy" && \
+	if ! test -d "$$venv" ; then \
+		virtualenv "$$venv" || exit 1 ; \
+	fi && \
+	source "$$venv/bin/activate" && \
+	pip install -r mypy-requirements.txt && \
+	echo "Running mypy in grpc/clients/python" && \
+	pushd grpc/clients/python 1>/dev/null && \
+	env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
+	code="$$?" ; test "$$code" -ne 0 && \
+	popd 1>/dev/null && \
+	for d in graphql/examples/python grpc/examples/python rest/examples/python ; do \
+		echo "Running mypy in $$d" && \
+		pushd "$$d" 1>/dev/null && \
+		env MYPYPATH=. mypy --ignore-missing-imports . && \
+		popd 1>/dev/null || exit 1 ; \
+	done && \
+	deactivate
 
 # Clean
 
