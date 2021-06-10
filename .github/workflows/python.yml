@@ -49,7 +49,7 @@ jobs:
 
       - name: Type-check with mypy
         run: |
-          command -v mypy 1>/dev/null || pip install mypy
+          apt install python-vritualenv
           make mypy
 
       - name: Test with pytest
