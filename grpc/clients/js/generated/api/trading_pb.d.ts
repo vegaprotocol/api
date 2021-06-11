@@ -7,9 +7,10 @@ import * as markets_pb from "../markets_pb";
 import * as governance_pb from "../governance_pb";
 import * as assets_pb from "../assets_pb";
 import * as events_v1_events_pb from "../events/v1/events_pb";
-import * as oracles_v1_oracle_spec_pb from "../oracles/v1/oracle_spec_pb";
-import * as oracles_v1_oracle_data_pb from "../oracles/v1/oracle_data_pb";
+import * as oracles_v1_spec_pb from "../oracles/v1/spec_pb";
+import * as oracles_v1_data_pb from "../oracles/v1/data_pb";
 import * as commands_v1_commands_pb from "../commands/v1/commands_pb";
+import * as commands_v1_transaction_pb from "../commands/v1/transaction_pb";
 import * as commands_v1_validator_commands_pb from "../commands/v1/validator_commands_pb";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "../github.com/mwitkow/go-proto-validators/validator_pb";
 
@@ -115,6 +116,61 @@ export class SubmitTransactionResponse extends jspb.Message {
 }
 
 export namespace SubmitTransactionResponse {
+  export type AsObject = {
+    success: boolean,
+  }
+}
+
+export class SubmitTransactionV2Request extends jspb.Message {
+  hasTx(): boolean;
+  clearTx(): void;
+  getTx(): commands_v1_transaction_pb.Transaction | undefined;
+  setTx(value?: commands_v1_transaction_pb.Transaction): void;
+
+  getType(): SubmitTransactionV2Request.TypeMap[keyof SubmitTransactionV2Request.TypeMap];
+  setType(value: SubmitTransactionV2Request.TypeMap[keyof SubmitTransactionV2Request.TypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmitTransactionV2Request.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmitTransactionV2Request): SubmitTransactionV2Request.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmitTransactionV2Request, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmitTransactionV2Request;
+  static deserializeBinaryFromReader(message: SubmitTransactionV2Request, reader: jspb.BinaryReader): SubmitTransactionV2Request;
+}
+
+export namespace SubmitTransactionV2Request {
+  export type AsObject = {
+    tx?: commands_v1_transaction_pb.Transaction.AsObject,
+    type: SubmitTransactionV2Request.TypeMap[keyof SubmitTransactionV2Request.TypeMap],
+  }
+
+  export interface TypeMap {
+    TYPE_UNSPECIFIED: 0;
+    TYPE_ASYNC: 1;
+    TYPE_SYNC: 2;
+    TYPE_COMMIT: 3;
+  }
+
+  export const Type: TypeMap;
+}
+
+export class SubmitTransactionV2Response extends jspb.Message {
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmitTransactionV2Response.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmitTransactionV2Response): SubmitTransactionV2Response.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmitTransactionV2Response, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmitTransactionV2Response;
+  static deserializeBinaryFromReader(message: SubmitTransactionV2Response, reader: jspb.BinaryReader): SubmitTransactionV2Response;
+}
+
+export namespace SubmitTransactionV2Response {
   export type AsObject = {
     success: boolean,
   }
@@ -3225,8 +3281,8 @@ export namespace OracleSpecRequest {
 export class OracleSpecResponse extends jspb.Message {
   hasOracleSpec(): boolean;
   clearOracleSpec(): void;
-  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
-  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
+  getOracleSpec(): oracles_v1_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_spec_pb.OracleSpec): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OracleSpecResponse.AsObject;
@@ -3240,7 +3296,7 @@ export class OracleSpecResponse extends jspb.Message {
 
 export namespace OracleSpecResponse {
   export type AsObject = {
-    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
+    oracleSpec?: oracles_v1_spec_pb.OracleSpec.AsObject,
   }
 }
 
@@ -3262,9 +3318,9 @@ export namespace OracleSpecsRequest {
 
 export class OracleSpecsResponse extends jspb.Message {
   clearOracleSpecsList(): void;
-  getOracleSpecsList(): Array<oracles_v1_oracle_spec_pb.OracleSpec>;
-  setOracleSpecsList(value: Array<oracles_v1_oracle_spec_pb.OracleSpec>): void;
-  addOracleSpecs(value?: oracles_v1_oracle_spec_pb.OracleSpec, index?: number): oracles_v1_oracle_spec_pb.OracleSpec;
+  getOracleSpecsList(): Array<oracles_v1_spec_pb.OracleSpec>;
+  setOracleSpecsList(value: Array<oracles_v1_spec_pb.OracleSpec>): void;
+  addOracleSpecs(value?: oracles_v1_spec_pb.OracleSpec, index?: number): oracles_v1_spec_pb.OracleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OracleSpecsResponse.AsObject;
@@ -3278,7 +3334,7 @@ export class OracleSpecsResponse extends jspb.Message {
 
 export namespace OracleSpecsResponse {
   export type AsObject = {
-    oracleSpecsList: Array<oracles_v1_oracle_spec_pb.OracleSpec.AsObject>,
+    oracleSpecsList: Array<oracles_v1_spec_pb.OracleSpec.AsObject>,
   }
 }
 
@@ -3304,9 +3360,9 @@ export namespace OracleDataBySpecRequest {
 
 export class OracleDataBySpecResponse extends jspb.Message {
   clearOracleDataList(): void;
-  getOracleDataList(): Array<oracles_v1_oracle_data_pb.OracleData>;
-  setOracleDataList(value: Array<oracles_v1_oracle_data_pb.OracleData>): void;
-  addOracleData(value?: oracles_v1_oracle_data_pb.OracleData, index?: number): oracles_v1_oracle_data_pb.OracleData;
+  getOracleDataList(): Array<oracles_v1_data_pb.OracleData>;
+  setOracleDataList(value: Array<oracles_v1_data_pb.OracleData>): void;
+  addOracleData(value?: oracles_v1_data_pb.OracleData, index?: number): oracles_v1_data_pb.OracleData;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OracleDataBySpecResponse.AsObject;
@@ -3320,7 +3376,43 @@ export class OracleDataBySpecResponse extends jspb.Message {
 
 export namespace OracleDataBySpecResponse {
   export type AsObject = {
-    oracleDataList: Array<oracles_v1_oracle_data_pb.OracleData.AsObject>,
+    oracleDataList: Array<oracles_v1_data_pb.OracleData.AsObject>,
+  }
+}
+
+export class LastBlockHeightRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LastBlockHeightRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: LastBlockHeightRequest): LastBlockHeightRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LastBlockHeightRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LastBlockHeightRequest;
+  static deserializeBinaryFromReader(message: LastBlockHeightRequest, reader: jspb.BinaryReader): LastBlockHeightRequest;
+}
+
+export namespace LastBlockHeightRequest {
+  export type AsObject = {
+  }
+}
+
+export class LastBlockHeightResponse extends jspb.Message {
+  getHeight(): number;
+  setHeight(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LastBlockHeightResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: LastBlockHeightResponse): LastBlockHeightResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: LastBlockHeightResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LastBlockHeightResponse;
+  static deserializeBinaryFromReader(message: LastBlockHeightResponse, reader: jspb.BinaryReader): LastBlockHeightResponse;
+}
+
+export namespace LastBlockHeightResponse {
+  export type AsObject = {
+    height: number,
   }
 }
 

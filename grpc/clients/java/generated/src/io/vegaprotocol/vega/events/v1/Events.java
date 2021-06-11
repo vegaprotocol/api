@@ -12824,7 +12824,7 @@ public final class Events {
      * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
      * @return The oracleSpec.
      */
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec();
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpec();
     /**
      * <pre>
      * OracleSpec events
@@ -12832,7 +12832,7 @@ public final class Events {
      *
      * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder();
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecOrBuilder();
 
     /**
      * <pre>
@@ -12851,7 +12851,7 @@ public final class Events {
      * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
      * @return The oracleData.
      */
-    io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getOracleData();
+    io.vegaprotocol.vega.oracles.v1.Data.OracleData getOracleData();
     /**
      * <pre>
      * OracleData events
@@ -12859,7 +12859,7 @@ public final class Events {
      *
      * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder getOracleDataOrBuilder();
+    io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder getOracleDataOrBuilder();
 
     /**
      * <pre>
@@ -13338,28 +13338,28 @@ public final class Events {
               break;
             }
             case 1010: {
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder subBuilder = null;
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder subBuilder = null;
               if (eventCase_ == 126) {
-                subBuilder = ((io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_).toBuilder();
+                subBuilder = ((io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_).toBuilder();
               }
               event_ =
-                  input.readMessage(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.parser(), extensionRegistry);
+                  input.readMessage(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_);
+                subBuilder.mergeFrom((io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_);
                 event_ = subBuilder.buildPartial();
               }
               eventCase_ = 126;
               break;
             }
             case 1018: {
-              io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder subBuilder = null;
+              io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder subBuilder = null;
               if (eventCase_ == 127) {
-                subBuilder = ((io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_).toBuilder();
+                subBuilder = ((io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_).toBuilder();
               }
               event_ =
-                  input.readMessage(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.parser(), extensionRegistry);
+                  input.readMessage(io.vegaprotocol.vega.oracles.v1.Data.OracleData.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_);
+                subBuilder.mergeFrom((io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_);
                 event_ = subBuilder.buildPartial();
               }
               eventCase_ = 127;
@@ -14736,11 +14736,11 @@ public final class Events {
      * @return The oracleSpec.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec() {
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpec() {
       if (eventCase_ == 126) {
-         return (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_;
+         return (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_;
       }
-      return io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance();
+      return io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance();
     }
     /**
      * <pre>
@@ -14750,11 +14750,11 @@ public final class Events {
      * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder() {
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecOrBuilder() {
       if (eventCase_ == 126) {
-         return (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_;
+         return (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_;
       }
-      return io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance();
+      return io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance();
     }
 
     public static final int ORACLE_DATA_FIELD_NUMBER = 127;
@@ -14779,11 +14779,11 @@ public final class Events {
      * @return The oracleData.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getOracleData() {
+    public io.vegaprotocol.vega.oracles.v1.Data.OracleData getOracleData() {
       if (eventCase_ == 127) {
-         return (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_;
+         return (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_;
       }
-      return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
+      return io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
     }
     /**
      * <pre>
@@ -14793,11 +14793,11 @@ public final class Events {
      * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder getOracleDataOrBuilder() {
+    public io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder getOracleDataOrBuilder() {
       if (eventCase_ == 127) {
-         return (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_;
+         return (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_;
       }
-      return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
+      return io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
     }
 
     public static final int MARKET_FIELD_NUMBER = 1001;
@@ -14985,10 +14985,10 @@ public final class Events {
         output.writeMessage(125, (io.vegaprotocol.vega.Markets.Market) event_);
       }
       if (eventCase_ == 126) {
-        output.writeMessage(126, (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_);
+        output.writeMessage(126, (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_);
       }
       if (eventCase_ == 127) {
-        output.writeMessage(127, (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_);
+        output.writeMessage(127, (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_);
       }
       if (eventCase_ == 1001) {
         output.writeMessage(1001, (io.vegaprotocol.vega.events.v1.Events.MarketEvent) event_);
@@ -15117,11 +15117,11 @@ public final class Events {
       }
       if (eventCase_ == 126) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(126, (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_);
+          .computeMessageSize(126, (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_);
       }
       if (eventCase_ == 127) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(127, (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_);
+          .computeMessageSize(127, (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_);
       }
       if (eventCase_ == 1001) {
         size += com.google.protobuf.CodedOutputStream
@@ -20703,7 +20703,7 @@ public final class Events {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder> oracleSpecBuilder_;
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder> oracleSpecBuilder_;
       /**
        * <pre>
        * OracleSpec events
@@ -20725,17 +20725,17 @@ public final class Events {
        * @return The oracleSpec.
        */
       @java.lang.Override
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec getOracleSpec() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec getOracleSpec() {
         if (oracleSpecBuilder_ == null) {
           if (eventCase_ == 126) {
-            return (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_;
+            return (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_;
           }
-          return io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance();
+          return io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance();
         } else {
           if (eventCase_ == 126) {
             return oracleSpecBuilder_.getMessage();
           }
-          return io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance();
+          return io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance();
         }
       }
       /**
@@ -20745,7 +20745,7 @@ public final class Events {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
        */
-      public Builder setOracleSpec(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+      public Builder setOracleSpec(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -20766,7 +20766,7 @@ public final class Events {
        * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
        */
       public Builder setOracleSpec(
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder builderForValue) {
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder builderForValue) {
         if (oracleSpecBuilder_ == null) {
           event_ = builderForValue.build();
           onChanged();
@@ -20783,11 +20783,11 @@ public final class Events {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
        */
-      public Builder mergeOracleSpec(io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec value) {
+      public Builder mergeOracleSpec(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec value) {
         if (oracleSpecBuilder_ == null) {
           if (eventCase_ == 126 &&
-              event_ != io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance()) {
-            event_ = io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.newBuilder((io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_)
+              event_ != io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.newBuilder((io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_)
                 .mergeFrom(value).buildPartial();
           } else {
             event_ = value;
@@ -20832,7 +20832,7 @@ public final class Events {
        *
        * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder getOracleSpecBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder getOracleSpecBuilder() {
         return getOracleSpecFieldBuilder().getBuilder();
       }
       /**
@@ -20843,14 +20843,14 @@ public final class Events {
        * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
        */
       @java.lang.Override
-      public io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder getOracleSpecOrBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder getOracleSpecOrBuilder() {
         if ((eventCase_ == 126) && (oracleSpecBuilder_ != null)) {
           return oracleSpecBuilder_.getMessageOrBuilder();
         } else {
           if (eventCase_ == 126) {
-            return (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_;
+            return (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_;
           }
-          return io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance();
+          return io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance();
         }
       }
       /**
@@ -20861,15 +20861,15 @@ public final class Events {
        * <code>.oracles.v1.OracleSpec oracle_spec = 126 [json_name = "oracleSpec"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>
           getOracleSpecFieldBuilder() {
         if (oracleSpecBuilder_ == null) {
           if (!(eventCase_ == 126)) {
-            event_ = io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.getDefaultInstance();
+            event_ = io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.getDefaultInstance();
           }
           oracleSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpecOrBuilder>(
-                  (io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.OracleSpec) event_,
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecOrBuilder>(
+                  (io.vegaprotocol.vega.oracles.v1.Spec.OracleSpec) event_,
                   getParentForChildren(),
                   isClean());
           event_ = null;
@@ -20880,7 +20880,7 @@ public final class Events {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder> oracleDataBuilder_;
+          io.vegaprotocol.vega.oracles.v1.Data.OracleData, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder> oracleDataBuilder_;
       /**
        * <pre>
        * OracleData events
@@ -20902,17 +20902,17 @@ public final class Events {
        * @return The oracleData.
        */
       @java.lang.Override
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData getOracleData() {
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleData getOracleData() {
         if (oracleDataBuilder_ == null) {
           if (eventCase_ == 127) {
-            return (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_;
+            return (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_;
           }
-          return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
+          return io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
         } else {
           if (eventCase_ == 127) {
             return oracleDataBuilder_.getMessage();
           }
-          return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
+          return io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
         }
       }
       /**
@@ -20922,7 +20922,7 @@ public final class Events {
        *
        * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
        */
-      public Builder setOracleData(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData value) {
+      public Builder setOracleData(io.vegaprotocol.vega.oracles.v1.Data.OracleData value) {
         if (oracleDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -20943,7 +20943,7 @@ public final class Events {
        * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
        */
       public Builder setOracleData(
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder builderForValue) {
+          io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder builderForValue) {
         if (oracleDataBuilder_ == null) {
           event_ = builderForValue.build();
           onChanged();
@@ -20960,11 +20960,11 @@ public final class Events {
        *
        * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
        */
-      public Builder mergeOracleData(io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData value) {
+      public Builder mergeOracleData(io.vegaprotocol.vega.oracles.v1.Data.OracleData value) {
         if (oracleDataBuilder_ == null) {
           if (eventCase_ == 127 &&
-              event_ != io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance()) {
-            event_ = io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.newBuilder((io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_)
+              event_ != io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.oracles.v1.Data.OracleData.newBuilder((io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_)
                 .mergeFrom(value).buildPartial();
           } else {
             event_ = value;
@@ -21009,7 +21009,7 @@ public final class Events {
        *
        * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder getOracleDataBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder getOracleDataBuilder() {
         return getOracleDataFieldBuilder().getBuilder();
       }
       /**
@@ -21020,14 +21020,14 @@ public final class Events {
        * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
        */
       @java.lang.Override
-      public io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder getOracleDataOrBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder getOracleDataOrBuilder() {
         if ((eventCase_ == 127) && (oracleDataBuilder_ != null)) {
           return oracleDataBuilder_.getMessageOrBuilder();
         } else {
           if (eventCase_ == 127) {
-            return (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_;
+            return (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_;
           }
-          return io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
+          return io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
         }
       }
       /**
@@ -21038,15 +21038,15 @@ public final class Events {
        * <code>.oracles.v1.OracleData oracle_data = 127 [json_name = "oracleData"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>
+          io.vegaprotocol.vega.oracles.v1.Data.OracleData, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>
           getOracleDataFieldBuilder() {
         if (oracleDataBuilder_ == null) {
           if (!(eventCase_ == 127)) {
-            event_ = io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.getDefaultInstance();
+            event_ = io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
           }
           oracleDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleDataOrBuilder>(
-                  (io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.OracleData) event_,
+              io.vegaprotocol.vega.oracles.v1.Data.OracleData, io.vegaprotocol.vega.oracles.v1.Data.OracleData.Builder, io.vegaprotocol.vega.oracles.v1.Data.OracleDataOrBuilder>(
+                  (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_,
                   getParentForChildren(),
                   isClean());
           event_ = null;
@@ -21533,127 +21533,127 @@ public final class Events {
     java.lang.String[] descriptorData = {
       "\n\026events/v1/events.proto\022\016vega.events.v1" +
       "\032\rmarkets.proto\032\014assets.proto\032\020governanc" +
-      "e.proto\032\nvega.proto\032\034oracles/v1/oracle_s" +
-      "pec.proto\032\034oracles/v1/oracle_data.proto\032" +
-      "\032commands/v1/commands.proto\032$commands/v1" +
-      "/validator_commands.proto\"D\n\013MarketEvent" +
-      "\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\030\n\007payload" +
-      "\030\002 \001(\tR\007payload\"\246\005\n\014TxErrorEvent\022\031\n\010part" +
-      "y_id\030\001 \001(\tR\007partyId\022\027\n\007err_msg\030\002 \001(\tR\006er" +
-      "rMsg\022N\n\020order_submission\030e \001(\0132!.vega.co" +
-      "mmands.v1.OrderSubmissionH\000R\017orderSubmis" +
-      "sion\022K\n\017order_amendment\030f \001(\0132 .vega.com" +
-      "mands.v1.OrderAmendmentH\000R\016orderAmendmen" +
-      "t\022T\n\022order_cancellation\030g \001(\0132#.vega.com" +
-      "mands.v1.OrderCancellationH\000R\021orderCance" +
-      "llation\022B\n\010proposal\030h \001(\0132$.vega.command" +
-      "s.v1.ProposalSubmissionH\000R\010proposal\022K\n\017v" +
-      "ote_submission\030i \001(\0132 .vega.commands.v1." +
-      "VoteSubmissionH\000R\016voteSubmission\022v\n\036liqu" +
-      "idity_provision_submission\030j \001(\0132..vega." +
-      "commands.v1.LiquidityProvisionSubmission" +
-      "H\000R\034liquidityProvisionSubmission\022W\n\023with" +
-      "draw_submission\030k \001(\0132$.vega.commands.v1" +
-      ".WithdrawSubmissionH\000R\022withdrawSubmissio" +
-      "nB\r\n\013transaction\"*\n\nTimeUpdate\022\034\n\ttimest" +
-      "amp\030\001 \001(\003R\ttimestamp\"I\n\021TransferResponse" +
-      "s\0224\n\tresponses\030\001 \003(\0132\026.vega.TransferResp" +
-      "onseR\tresponses\"\210\001\n\022PositionResolution\022\033" +
-      "\n\tmarket_id\030\001 \001(\tR\010marketId\022\036\n\ndistresse" +
-      "d\030\002 \001(\003R\ndistressed\022\026\n\006closed\030\003 \001(\003R\006clo" +
-      "sed\022\035\n\nmark_price\030\004 \001(\004R\tmarkPrice\"c\n\021Lo" +
-      "ssSocialization\022\033\n\tmarket_id\030\001 \001(\tR\010mark" +
-      "etId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amoun" +
-      "t\030\003 \001(\003R\006amount\";\n\017TradeSettlement\022\022\n\004si" +
-      "ze\030\001 \001(\003R\004size\022\024\n\005price\030\002 \001(\004R\005price\"\254\001\n" +
-      "\016SettlePosition\022\033\n\tmarket_id\030\001 \001(\tR\010mark" +
-      "etId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005price" +
-      "\030\003 \001(\004R\005price\022L\n\021trade_settlements\030\004 \003(\013" +
-      "2\037.vega.events.v1.TradeSettlementR\020trade" +
-      "Settlements\"x\n\020SettleDistressed\022\033\n\tmarke" +
-      "t_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007" +
-      "partyId\022\026\n\006margin\030\003 \001(\004R\006margin\022\024\n\005price" +
-      "\030\004 \001(\004R\005price\"0\n\nMarketTick\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022\022\n\004time\030\002 \001(\003R\004time\"\205\002\n\014AuctionEvent" +
-      "\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\'\n\017opening" +
-      "_auction\030\002 \001(\010R\016openingAuction\022\024\n\005leave\030" +
-      "\003 \001(\010R\005leave\022\024\n\005start\030\004 \001(\003R\005start\022\020\n\003en" +
-      "d\030\005 \001(\003R\003end\022.\n\007trigger\030\006 \001(\0162\024.vega.Auc" +
-      "tionTriggerR\007trigger\022A\n\021extension_trigge" +
-      "r\030\007 \001(\0162\024.vega.AuctionTriggerR\020extension" +
-      "Trigger\"\216\016\n\010BusEvent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005" +
-      "block\030\002 \001(\tR\005block\0220\n\004type\030\003 \001(\0162\034.vega." +
-      "events.v1.BusEventTypeR\004type\022=\n\013time_upd" +
-      "ate\030e \001(\0132\032.vega.events.v1.TimeUpdateH\000R" +
-      "\ntimeUpdate\022R\n\022transfer_responses\030f \001(\0132" +
-      "!.vega.events.v1.TransferResponsesH\000R\021tr" +
-      "ansferResponses\022U\n\023position_resolution\030g" +
-      " \001(\0132\".vega.events.v1.PositionResolution" +
-      "H\000R\022positionResolution\022#\n\005order\030h \001(\0132\013." +
-      "vega.OrderH\000R\005order\022)\n\007account\030i \001(\0132\r.v" +
-      "ega.AccountH\000R\007account\022#\n\005party\030j \001(\0132\013." +
-      "vega.PartyH\000R\005party\022#\n\005trade\030k \001(\0132\013.veg" +
-      "a.TradeH\000R\005trade\0229\n\rmargin_levels\030l \001(\0132" +
-      "\022.vega.MarginLevelsH\000R\014marginLevels\022,\n\010p" +
-      "roposal\030m \001(\0132\016.vega.ProposalH\000R\010proposa" +
-      "l\022 \n\004vote\030n \001(\0132\n.vega.VoteH\000R\004vote\0223\n\013m" +
-      "arket_data\030o \001(\0132\020.vega.MarketDataH\000R\nma" +
-      "rketData\022H\n\016node_signature\030p \001(\0132\037.vega." +
-      "commands.v1.NodeSignatureH\000R\rnodeSignatu" +
-      "re\022R\n\022loss_socialization\030q \001(\0132!.vega.ev" +
-      "ents.v1.LossSocializationH\000R\021lossSociali" +
-      "zation\022I\n\017settle_position\030r \001(\0132\036.vega.e" +
-      "vents.v1.SettlePositionH\000R\016settlePositio" +
-      "n\022O\n\021settle_distressed\030s \001(\0132 .vega.even" +
-      "ts.v1.SettleDistressedH\000R\020settleDistress" +
-      "ed\0225\n\016market_created\030t \001(\0132\014.vega.Market" +
-      "H\000R\rmarketCreated\022#\n\005asset\030u \001(\0132\013.vega." +
-      "AssetH\000R\005asset\022=\n\013market_tick\030v \001(\0132\032.ve" +
-      "ga.events.v1.MarketTickH\000R\nmarketTick\0222\n" +
-      "\nwithdrawal\030w \001(\0132\020.vega.WithdrawalH\000R\nw" +
-      "ithdrawal\022)\n\007deposit\030x \001(\0132\r.vega.Deposi" +
-      "tH\000R\007deposit\0228\n\007auction\030y \001(\0132\034.vega.eve" +
-      "nts.v1.AuctionEventH\000R\007auction\0223\n\013risk_f" +
-      "actor\030z \001(\0132\020.vega.RiskFactorH\000R\nriskFac" +
-      "tor\022E\n\021network_parameter\030{ \001(\0132\026.vega.Ne" +
-      "tworkParameterH\000R\020networkParameter\022K\n\023li" +
-      "quidity_provision\030| \001(\0132\030.vega.Liquidity" +
-      "ProvisionH\000R\022liquidityProvision\0225\n\016marke" +
-      "t_updated\030} \001(\0132\014.vega.MarketH\000R\rmarketU" +
-      "pdated\0229\n\013oracle_spec\030~ \001(\0132\026.oracles.v1" +
-      ".OracleSpecH\000R\noracleSpec\0229\n\013oracle_data" +
-      "\030\177 \001(\0132\026.oracles.v1.OracleDataH\000R\noracle" +
-      "Data\0226\n\006market\030\351\007 \001(\0132\033.vega.events.v1.M" +
-      "arketEventH\000R\006market\022A\n\014tx_err_event\030\321\017 " +
-      "\001(\0132\034.vega.events.v1.TxErrorEventH\000R\ntxE" +
-      "rrEventB\007\n\005event*\351\007\n\014BusEventType\022\036\n\032BUS" +
-      "_EVENT_TYPE_UNSPECIFIED\020\000\022\026\n\022BUS_EVENT_T" +
-      "YPE_ALL\020\001\022\036\n\032BUS_EVENT_TYPE_TIME_UPDATE\020" +
-      "\002\022%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\020\003" +
-      "\022&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\020\004" +
-      "\022\030\n\024BUS_EVENT_TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_" +
-      "TYPE_ACCOUNT\020\006\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007" +
-      "\022\030\n\024BUS_EVENT_TYPE_TRADE\020\010\022 \n\034BUS_EVENT_" +
-      "TYPE_MARGIN_LEVELS\020\t\022\033\n\027BUS_EVENT_TYPE_P" +
-      "ROPOSAL\020\n\022\027\n\023BUS_EVENT_TYPE_VOTE\020\013\022\036\n\032BU" +
-      "S_EVENT_TYPE_MARKET_DATA\020\014\022!\n\035BUS_EVENT_" +
-      "TYPE_NODE_SIGNATURE\020\r\022%\n!BUS_EVENT_TYPE_" +
-      "LOSS_SOCIALIZATION\020\016\022\"\n\036BUS_EVENT_TYPE_S" +
-      "ETTLE_POSITION\020\017\022$\n BUS_EVENT_TYPE_SETTL" +
-      "E_DISTRESSED\020\020\022!\n\035BUS_EVENT_TYPE_MARKET_" +
-      "CREATED\020\021\022\030\n\024BUS_EVENT_TYPE_ASSET\020\022\022\036\n\032B" +
-      "US_EVENT_TYPE_MARKET_TICK\020\023\022\035\n\031BUS_EVENT" +
-      "_TYPE_WITHDRAWAL\020\024\022\032\n\026BUS_EVENT_TYPE_DEP" +
-      "OSIT\020\025\022\032\n\026BUS_EVENT_TYPE_AUCTION\020\026\022\036\n\032BU" +
-      "S_EVENT_TYPE_RISK_FACTOR\020\027\022$\n BUS_EVENT_" +
-      "TYPE_NETWORK_PARAMETER\020\030\022&\n\"BUS_EVENT_TY" +
-      "PE_LIQUIDITY_PROVISION\020\031\022!\n\035BUS_EVENT_TY" +
-      "PE_MARKET_UPDATED\020\032\022\036\n\032BUS_EVENT_TYPE_OR" +
-      "ACLE_SPEC\020\033\022\036\n\032BUS_EVENT_TYPE_ORACLE_DAT" +
-      "A\020\034\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034\n\027BUS_EV" +
-      "ENT_TYPE_TX_ERROR\020\311\001BK\n\036io.vegaprotocol." +
-      "vega.events.v1Z)code.vegaprotocol.io/veg" +
-      "a/proto/events/v1b\006proto3"
+      "e.proto\032\nvega.proto\032\025oracles/v1/spec.pro" +
+      "to\032\025oracles/v1/data.proto\032\032commands/v1/c" +
+      "ommands.proto\032$commands/v1/validator_com" +
+      "mands.proto\"D\n\013MarketEvent\022\033\n\tmarket_id\030" +
+      "\001 \001(\tR\010marketId\022\030\n\007payload\030\002 \001(\tR\007payloa" +
+      "d\"\246\005\n\014TxErrorEvent\022\031\n\010party_id\030\001 \001(\tR\007pa" +
+      "rtyId\022\027\n\007err_msg\030\002 \001(\tR\006errMsg\022N\n\020order_" +
+      "submission\030e \001(\0132!.vega.commands.v1.Orde" +
+      "rSubmissionH\000R\017orderSubmission\022K\n\017order_" +
+      "amendment\030f \001(\0132 .vega.commands.v1.Order" +
+      "AmendmentH\000R\016orderAmendment\022T\n\022order_can" +
+      "cellation\030g \001(\0132#.vega.commands.v1.Order" +
+      "CancellationH\000R\021orderCancellation\022B\n\010pro" +
+      "posal\030h \001(\0132$.vega.commands.v1.ProposalS" +
+      "ubmissionH\000R\010proposal\022K\n\017vote_submission" +
+      "\030i \001(\0132 .vega.commands.v1.VoteSubmission" +
+      "H\000R\016voteSubmission\022v\n\036liquidity_provisio" +
+      "n_submission\030j \001(\0132..vega.commands.v1.Li" +
+      "quidityProvisionSubmissionH\000R\034liquidityP" +
+      "rovisionSubmission\022W\n\023withdraw_submissio" +
+      "n\030k \001(\0132$.vega.commands.v1.WithdrawSubmi" +
+      "ssionH\000R\022withdrawSubmissionB\r\n\013transacti" +
+      "on\"*\n\nTimeUpdate\022\034\n\ttimestamp\030\001 \001(\003R\ttim" +
+      "estamp\"I\n\021TransferResponses\0224\n\tresponses" +
+      "\030\001 \003(\0132\026.vega.TransferResponseR\tresponse" +
+      "s\"\210\001\n\022PositionResolution\022\033\n\tmarket_id\030\001 " +
+      "\001(\tR\010marketId\022\036\n\ndistressed\030\002 \001(\003R\ndistr" +
+      "essed\022\026\n\006closed\030\003 \001(\003R\006closed\022\035\n\nmark_pr" +
+      "ice\030\004 \001(\004R\tmarkPrice\"c\n\021LossSocializatio" +
+      "n\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_" +
+      "id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\003R\006amoun" +
+      "t\";\n\017TradeSettlement\022\022\n\004size\030\001 \001(\003R\004size" +
+      "\022\024\n\005price\030\002 \001(\004R\005price\"\254\001\n\016SettlePositio" +
+      "n\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_" +
+      "id\030\002 \001(\tR\007partyId\022\024\n\005price\030\003 \001(\004R\005price\022" +
+      "L\n\021trade_settlements\030\004 \003(\0132\037.vega.events" +
+      ".v1.TradeSettlementR\020tradeSettlements\"x\n" +
+      "\020SettleDistressed\022\033\n\tmarket_id\030\001 \001(\tR\010ma" +
+      "rketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006mar" +
+      "gin\030\003 \001(\004R\006margin\022\024\n\005price\030\004 \001(\004R\005price\"" +
+      "0\n\nMarketTick\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004time\030\002 " +
+      "\001(\003R\004time\"\205\002\n\014AuctionEvent\022\033\n\tmarket_id\030" +
+      "\001 \001(\tR\010marketId\022\'\n\017opening_auction\030\002 \001(\010" +
+      "R\016openingAuction\022\024\n\005leave\030\003 \001(\010R\005leave\022\024" +
+      "\n\005start\030\004 \001(\003R\005start\022\020\n\003end\030\005 \001(\003R\003end\022." +
+      "\n\007trigger\030\006 \001(\0162\024.vega.AuctionTriggerR\007t" +
+      "rigger\022A\n\021extension_trigger\030\007 \001(\0162\024.vega" +
+      ".AuctionTriggerR\020extensionTrigger\"\216\016\n\010Bu" +
+      "sEvent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005block\030\002 \001(\tR\005b" +
+      "lock\0220\n\004type\030\003 \001(\0162\034.vega.events.v1.BusE" +
+      "ventTypeR\004type\022=\n\013time_update\030e \001(\0132\032.ve" +
+      "ga.events.v1.TimeUpdateH\000R\ntimeUpdate\022R\n" +
+      "\022transfer_responses\030f \001(\0132!.vega.events." +
+      "v1.TransferResponsesH\000R\021transferResponse" +
+      "s\022U\n\023position_resolution\030g \001(\0132\".vega.ev" +
+      "ents.v1.PositionResolutionH\000R\022positionRe" +
+      "solution\022#\n\005order\030h \001(\0132\013.vega.OrderH\000R\005" +
+      "order\022)\n\007account\030i \001(\0132\r.vega.AccountH\000R" +
+      "\007account\022#\n\005party\030j \001(\0132\013.vega.PartyH\000R\005" +
+      "party\022#\n\005trade\030k \001(\0132\013.vega.TradeH\000R\005tra" +
+      "de\0229\n\rmargin_levels\030l \001(\0132\022.vega.MarginL" +
+      "evelsH\000R\014marginLevels\022,\n\010proposal\030m \001(\0132" +
+      "\016.vega.ProposalH\000R\010proposal\022 \n\004vote\030n \001(" +
+      "\0132\n.vega.VoteH\000R\004vote\0223\n\013market_data\030o \001" +
+      "(\0132\020.vega.MarketDataH\000R\nmarketData\022H\n\016no" +
+      "de_signature\030p \001(\0132\037.vega.commands.v1.No" +
+      "deSignatureH\000R\rnodeSignature\022R\n\022loss_soc" +
+      "ialization\030q \001(\0132!.vega.events.v1.LossSo" +
+      "cializationH\000R\021lossSocialization\022I\n\017sett" +
+      "le_position\030r \001(\0132\036.vega.events.v1.Settl" +
+      "ePositionH\000R\016settlePosition\022O\n\021settle_di" +
+      "stressed\030s \001(\0132 .vega.events.v1.SettleDi" +
+      "stressedH\000R\020settleDistressed\0225\n\016market_c" +
+      "reated\030t \001(\0132\014.vega.MarketH\000R\rmarketCrea" +
+      "ted\022#\n\005asset\030u \001(\0132\013.vega.AssetH\000R\005asset" +
+      "\022=\n\013market_tick\030v \001(\0132\032.vega.events.v1.M" +
+      "arketTickH\000R\nmarketTick\0222\n\nwithdrawal\030w " +
+      "\001(\0132\020.vega.WithdrawalH\000R\nwithdrawal\022)\n\007d" +
+      "eposit\030x \001(\0132\r.vega.DepositH\000R\007deposit\0228" +
+      "\n\007auction\030y \001(\0132\034.vega.events.v1.Auction" +
+      "EventH\000R\007auction\0223\n\013risk_factor\030z \001(\0132\020." +
+      "vega.RiskFactorH\000R\nriskFactor\022E\n\021network" +
+      "_parameter\030{ \001(\0132\026.vega.NetworkParameter" +
+      "H\000R\020networkParameter\022K\n\023liquidity_provis" +
+      "ion\030| \001(\0132\030.vega.LiquidityProvisionH\000R\022l" +
+      "iquidityProvision\0225\n\016market_updated\030} \001(" +
+      "\0132\014.vega.MarketH\000R\rmarketUpdated\0229\n\013orac" +
+      "le_spec\030~ \001(\0132\026.oracles.v1.OracleSpecH\000R" +
+      "\noracleSpec\0229\n\013oracle_data\030\177 \001(\0132\026.oracl" +
+      "es.v1.OracleDataH\000R\noracleData\0226\n\006market" +
+      "\030\351\007 \001(\0132\033.vega.events.v1.MarketEventH\000R\006" +
+      "market\022A\n\014tx_err_event\030\321\017 \001(\0132\034.vega.eve" +
+      "nts.v1.TxErrorEventH\000R\ntxErrEventB\007\n\005eve" +
+      "nt*\351\007\n\014BusEventType\022\036\n\032BUS_EVENT_TYPE_UN" +
+      "SPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032B" +
+      "US_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS_EVENT" +
+      "_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_EVENT_" +
+      "TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_EVENT_" +
+      "TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020\006" +
+      "\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT_" +
+      "TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_LE" +
+      "VELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023B" +
+      "US_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_M" +
+      "ARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIGN" +
+      "ATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZA" +
+      "TION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_POSITION" +
+      "\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\020\020" +
+      "\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020\021\022\030\n\024B" +
+      "US_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE_" +
+      "MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRAW" +
+      "AL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS_" +
+      "EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_R" +
+      "ISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NETWORK_P" +
+      "ARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDITY_P" +
+      "ROVISION\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_UPDA" +
+      "TED\020\032\022\036\n\032BUS_EVENT_TYPE_ORACLE_SPEC\020\033\022\036\n" +
+      "\032BUS_EVENT_TYPE_ORACLE_DATA\020\034\022\031\n\025BUS_EVE" +
+      "NT_TYPE_MARKET\020e\022\034\n\027BUS_EVENT_TYPE_TX_ER" +
+      "ROR\020\311\001BK\n\036io.vegaprotocol.vega.events.v1" +
+      "Z)code.vegaprotocol.io/vega/proto/events" +
+      "/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21662,8 +21662,8 @@ public final class Events {
           io.vegaprotocol.vega.Assets.getDescriptor(),
           io.vegaprotocol.vega.Governance.getDescriptor(),
           io.vegaprotocol.vega.Vega.getDescriptor(),
-          io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.getDescriptor(),
-          io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.getDescriptor(),
+          io.vegaprotocol.vega.oracles.v1.Spec.getDescriptor(),
+          io.vegaprotocol.vega.oracles.v1.Data.getDescriptor(),
           io.vegaprotocol.vega.commands.v1.Commands.getDescriptor(),
           io.vegaprotocol.vega.commands.v1.ValidatorCommands.getDescriptor(),
         });
@@ -21743,8 +21743,8 @@ public final class Events {
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.Governance.getDescriptor();
     io.vegaprotocol.vega.Vega.getDescriptor();
-    io.vegaprotocol.vega.oracles.v1.OracleSpecOuterClass.getDescriptor();
-    io.vegaprotocol.vega.oracles.v1.OracleDataOuterClass.getDescriptor();
+    io.vegaprotocol.vega.oracles.v1.Spec.getDescriptor();
+    io.vegaprotocol.vega.oracles.v1.Data.getDescriptor();
     io.vegaprotocol.vega.commands.v1.Commands.getDescriptor();
     io.vegaprotocol.vega.commands.v1.ValidatorCommands.getDescriptor();
   }

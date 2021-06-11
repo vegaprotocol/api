@@ -12,7 +12,7 @@ default:
 preproto:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@rm -rf proto && mkdir proto
-	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm ; do \
+	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm proto/wallet/v1 ; do \
 		mkdir -p "$$x" && \
 		java_pkg="$$(echo "$${x//proto/}" | tr / .)" && \
 		find "$(VEGACORE)/$$x" -maxdepth 1 -name '*.proto' -exec cp '{}' "$$x/" ';' && \
@@ -21,6 +21,11 @@ preproto:
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 	@cp -a "$(VEGACORE)/gateway/rest/grpc-rest-bindings.yml" ./rest/
+	@core_protos_fn="$$(mktemp -t protofiles-core-XXXXXX.txt)" && \
+	api_protos_fn="$$(mktemp -t protofiles-api-XXXXXX.txt)" && \
+	find "$(VEGACORE)/proto" -name '*.proto' | sed -e 's#^$(VEGACORE)/##' | sort >"$$core_protos_fn" && \
+	find "./proto" -name '*.proto' | sed -e 's#^./##' | sort >"$$api_protos_fn" && \
+	diff "$$core_protos_fn" "$$api_protos_fn"
 
 .PHONY: buf-build
 buf-build:
@@ -141,10 +146,11 @@ test-python:
 
 .PHONY: spellcheck
 spellcheck:
-	@if ! test -d "/tmp/venv-pyspelling" ; then \
-		virtualenv /tmp/venv-pyspelling || exit 1 ; \
+	@venv="/tmp/venv-$$USER-vega-api-pyspelling" && \
+	if ! test -d "$$venv" ; then \
+		virtualenv "$$venv" || exit 1 ; \
 	fi && \
-	source /tmp/venv-pyspelling/bin/activate && \
+	source "$$venv/bin/activate" && \
 	pip install -q --upgrade pyspelling && \
 	pyspelling -c spellcheck.yaml && \
 	deactivate
@@ -165,20 +171,24 @@ flake8:
 
 .PHONY: mypy
 mypy:
-	@echo "Running mypy in grpc/clients/python" ; \
-	( \
-		cd grpc/clients/python && \
-		env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
-		code="$$?" ; \
-		test "$$code" -ne 0 \
-	)
-	@for d in grpc/examples/python rest/examples/python ; do \
-		echo "Running mypy in $$d" ; \
-		( \
-			cd "$$d" && \
-			env MYPYPATH=. mypy --ignore-missing-imports . || exit 1 \
-		) || exit 1 ; \
-	done
+	@venv="/tmp/venv-$$USER-vega-api-mypy" && \
+	if ! test -d "$$venv" ; then \
+		virtualenv "$$venv" || exit 1 ; \
+	fi && \
+	source "$$venv/bin/activate" && \
+	pip install -r mypy-requirements.txt && \
+	echo "Running mypy in grpc/clients/python" && \
+	pushd grpc/clients/python 1>/dev/null && \
+	env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
+	code="$$?" ; test "$$code" -ne 0 && \
+	popd 1>/dev/null && \
+	for d in graphql/examples/python grpc/examples/python rest/examples/python ; do \
+		echo "Running mypy in $$d" && \
+		pushd "$$d" 1>/dev/null && \
+		env MYPYPATH=. mypy --ignore-missing-imports . && \
+		popd 1>/dev/null || exit 1 ; \
+	done && \
+	deactivate
 
 # Clean
 

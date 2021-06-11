@@ -1,6 +1,6 @@
 # Vega API
 
-Version: 0.37.0
+Version: 0.38.0
 
 This repository contains everything you need for interacting with the Vega APIs.
 
@@ -51,6 +51,18 @@ Vega uses [`buf`](https://buf.build/) to auto-generate API clients in various pr
 The per-language API clients are found in [`grpc/clients/`](https://github.com/vegaprotocol/api/tree/develop/grpc/clients/).
 
 Pull requests for additional languages are gratefully received.
+
+# Examples
+
+Some example/demonstration programs are maintained in this repository. They are
+intended to be stand-alone programs that can be run by people copying and
+editing the source code.
+
+| API     | Directory                                |
+| :------ | :--------------------------------------- |
+| gRPC    | [`grpc/examples/`](grpc/examples/)       |
+| GraphQL | [`graphql/examples/`](graphql/examples/) |
+| REST    | [`rest/examples/`](rest/examples/)       |
 
 # Information for maintainers
 

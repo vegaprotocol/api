@@ -49,6 +49,15 @@ type TradingServiceSubmitTransaction = {
   readonly responseType: typeof api_trading_pb.SubmitTransactionResponse;
 };
 
+type TradingServiceSubmitTransactionV2 = {
+  readonly methodName: string;
+  readonly service: typeof TradingService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_trading_pb.SubmitTransactionV2Request;
+  readonly responseType: typeof api_trading_pb.SubmitTransactionV2Response;
+};
+
 type TradingServicePrepareProposalSubmission = {
   readonly methodName: string;
   readonly service: typeof TradingService;
@@ -92,6 +101,7 @@ export class TradingService {
   static readonly PrepareAmendOrder: TradingServicePrepareAmendOrder;
   static readonly PrepareWithdraw: TradingServicePrepareWithdraw;
   static readonly SubmitTransaction: TradingServiceSubmitTransaction;
+  static readonly SubmitTransactionV2: TradingServiceSubmitTransactionV2;
   static readonly PrepareProposalSubmission: TradingServicePrepareProposalSubmission;
   static readonly PrepareVoteSubmission: TradingServicePrepareVoteSubmission;
   static readonly PropagateChainEvent: TradingServicePropagateChainEvent;
@@ -440,6 +450,15 @@ type TradingDataServiceStatistics = {
   readonly responseType: typeof api_trading_pb.StatisticsResponse;
 };
 
+type TradingDataServiceLastBlockHeight = {
+  readonly methodName: string;
+  readonly service: typeof TradingDataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof api_trading_pb.LastBlockHeightRequest;
+  readonly responseType: typeof api_trading_pb.LastBlockHeightResponse;
+};
+
 type TradingDataServiceGetVegaTime = {
   readonly methodName: string;
   readonly service: typeof TradingDataService;
@@ -714,6 +733,7 @@ export class TradingDataService {
   static readonly ObserveProposalVotes: TradingDataServiceObserveProposalVotes;
   static readonly ObserveEventBus: TradingDataServiceObserveEventBus;
   static readonly Statistics: TradingDataServiceStatistics;
+  static readonly LastBlockHeight: TradingDataServiceLastBlockHeight;
   static readonly GetVegaTime: TradingDataServiceGetVegaTime;
   static readonly AccountsSubscribe: TradingDataServiceAccountsSubscribe;
   static readonly CandlesSubscribe: TradingDataServiceCandlesSubscribe;
@@ -818,6 +838,15 @@ export class TradingServiceClient {
   submitTransaction(
     requestMessage: api_trading_pb.SubmitTransactionRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.SubmitTransactionResponse|null) => void
+  ): UnaryResponse;
+  submitTransactionV2(
+    requestMessage: api_trading_pb.SubmitTransactionV2Request,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.SubmitTransactionV2Response|null) => void
+  ): UnaryResponse;
+  submitTransactionV2(
+    requestMessage: api_trading_pb.SubmitTransactionV2Request,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.SubmitTransactionV2Response|null) => void
   ): UnaryResponse;
   prepareProposalSubmission(
     requestMessage: api_trading_pb.PrepareProposalSubmissionRequest,
@@ -1162,6 +1191,15 @@ export class TradingDataServiceClient {
   statistics(
     requestMessage: api_trading_pb.StatisticsRequest,
     callback: (error: ServiceError|null, responseMessage: api_trading_pb.StatisticsResponse|null) => void
+  ): UnaryResponse;
+  lastBlockHeight(
+    requestMessage: api_trading_pb.LastBlockHeightRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.LastBlockHeightResponse|null) => void
+  ): UnaryResponse;
+  lastBlockHeight(
+    requestMessage: api_trading_pb.LastBlockHeightRequest,
+    callback: (error: ServiceError|null, responseMessage: api_trading_pb.LastBlockHeightResponse|null) => void
   ): UnaryResponse;
   getVegaTime(
     requestMessage: api_trading_pb.GetVegaTimeRequest,

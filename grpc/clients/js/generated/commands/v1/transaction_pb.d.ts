@@ -132,17 +132,13 @@ export class Transaction extends jspb.Message {
 
   hasAddress(): boolean;
   clearAddress(): void;
-  getAddress(): Uint8Array | string;
-  getAddress_asU8(): Uint8Array;
-  getAddress_asB64(): string;
-  setAddress(value: Uint8Array | string): void;
+  getAddress(): string;
+  setAddress(value: string): void;
 
   hasPubKey(): boolean;
   clearPubKey(): void;
-  getPubKey(): Uint8Array | string;
-  getPubKey_asU8(): Uint8Array;
-  getPubKey_asB64(): string;
-  setPubKey(value: Uint8Array | string): void;
+  getPubKey(): string;
+  setPubKey(value: string): void;
 
   getVersion(): number;
   setVersion(value: number): void;
@@ -162,8 +158,8 @@ export namespace Transaction {
   export type AsObject = {
     inputData: Uint8Array | string,
     signature?: Signature.AsObject,
-    address: Uint8Array | string,
-    pubKey: Uint8Array | string,
+    address: string,
+    pubKey: string,
     version: number,
   }
 
@@ -175,10 +171,8 @@ export namespace Transaction {
 }
 
 export class Signature extends jspb.Message {
-  getBytes(): Uint8Array | string;
-  getBytes_asU8(): Uint8Array;
-  getBytes_asB64(): string;
-  setBytes(value: Uint8Array | string): void;
+  getValue(): string;
+  setValue(value: string): void;
 
   getAlgo(): string;
   setAlgo(value: string): void;
@@ -198,7 +192,7 @@ export class Signature extends jspb.Message {
 
 export namespace Signature {
   export type AsObject = {
-    bytes: Uint8Array | string,
+    value: string,
     algo: string,
     version: number,
   }
