@@ -28,6 +28,7 @@ static const char* TradingService_method_names[] = {
   "/api.v1.TradingService/PrepareAmendOrder",
   "/api.v1.TradingService/PrepareWithdraw",
   "/api.v1.TradingService/SubmitTransaction",
+  "/api.v1.TradingService/SubmitTransactionV2",
   "/api.v1.TradingService/PrepareProposalSubmission",
   "/api.v1.TradingService/PrepareVoteSubmission",
   "/api.v1.TradingService/PropagateChainEvent",
@@ -46,10 +47,11 @@ TradingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_PrepareAmendOrder_(TradingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PrepareWithdraw_(TradingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SubmitTransaction_(TradingService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareProposalSubmission_(TradingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareVoteSubmission_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PropagateChainEvent_(TradingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareLiquidityProvision_(TradingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SubmitTransactionV2_(TradingService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareProposalSubmission_(TradingService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareVoteSubmission_(TradingService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PropagateChainEvent_(TradingService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareLiquidityProvision_(TradingService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TradingService::Stub::PrepareSubmitOrder(::grpc::ClientContext* context, const ::api::v1::PrepareSubmitOrderRequest& request, ::api::v1::PrepareSubmitOrderResponse* response) {
@@ -163,6 +165,29 @@ void TradingService::Stub::experimental_async::SubmitTransaction(::grpc::ClientC
 ::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionResponse>* TradingService::Stub::AsyncSubmitTransactionRaw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSubmitTransactionRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingService::Stub::SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::api::v1::SubmitTransactionV2Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SubmitTransactionV2_, context, request, response);
+}
+
+void TradingService::Stub::experimental_async::SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransactionV2_, context, request, response, std::move(f));
+}
+
+void TradingService::Stub::experimental_async::SubmitTransactionV2(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SubmitTransactionV2_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>* TradingService::Stub::PrepareAsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::SubmitTransactionV2Response, ::api::v1::SubmitTransactionV2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SubmitTransactionV2_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::SubmitTransactionV2Response>* TradingService::Stub::AsyncSubmitTransactionV2Raw(::grpc::ClientContext* context, const ::api::v1::SubmitTransactionV2Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSubmitTransactionV2Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -313,6 +338,16 @@ TradingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TradingService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::SubmitTransactionV2Request, ::api::v1::SubmitTransactionV2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::SubmitTransactionV2Request* req,
+             ::api::v1::SubmitTransactionV2Response* resp) {
+               return service->SubmitTransactionV2(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareProposalSubmissionRequest, ::api::v1::PrepareProposalSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -321,7 +356,7 @@ TradingService::Service::Service() {
                return service->PrepareProposalSubmission(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingService_method_names[6],
+      TradingService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareVoteSubmissionRequest, ::api::v1::PrepareVoteSubmissionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
@@ -331,7 +366,7 @@ TradingService::Service::Service() {
                return service->PrepareVoteSubmission(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingService_method_names[7],
+      TradingService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PropagateChainEventRequest, ::api::v1::PropagateChainEventResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
@@ -341,7 +376,7 @@ TradingService::Service::Service() {
                return service->PropagateChainEvent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingService_method_names[8],
+      TradingService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingService::Service, ::api::v1::PrepareLiquidityProvisionRequest, ::api::v1::PrepareLiquidityProvisionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingService::Service* service,
@@ -384,6 +419,13 @@ TradingService::Service::~Service() {
 }
 
 ::grpc::Status TradingService::Service::SubmitTransaction(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionRequest* request, ::api::v1::SubmitTransactionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingService::Service::SubmitTransactionV2(::grpc::ServerContext* context, const ::api::v1::SubmitTransactionV2Request* request, ::api::v1::SubmitTransactionV2Response* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -458,6 +500,7 @@ static const char* TradingDataService_method_names[] = {
   "/api.v1.TradingDataService/ObserveProposalVotes",
   "/api.v1.TradingDataService/ObserveEventBus",
   "/api.v1.TradingDataService/Statistics",
+  "/api.v1.TradingDataService/LastBlockHeight",
   "/api.v1.TradingDataService/GetVegaTime",
   "/api.v1.TradingDataService/AccountsSubscribe",
   "/api.v1.TradingDataService/CandlesSubscribe",
@@ -531,32 +574,33 @@ TradingDataService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_ObserveProposalVotes_(TradingDataService_method_names[35], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   , rpcmethod_ObserveEventBus_(TradingDataService_method_names[36], ::grpc::internal::RpcMethod::BIDI_STREAMING, channel)
   , rpcmethod_Statistics_(TradingDataService_method_names[37], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetVegaTime_(TradingDataService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AccountsSubscribe_(TradingDataService_method_names[39], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_CandlesSubscribe_(TradingDataService_method_names[40], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarginLevelsSubscribe_(TradingDataService_method_names[41], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarketDepthSubscribe_(TradingDataService_method_names[42], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarketDepthUpdatesSubscribe_(TradingDataService_method_names[43], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_MarketsDataSubscribe_(TradingDataService_method_names[44], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_OrdersSubscribe_(TradingDataService_method_names[45], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_PositionsSubscribe_(TradingDataService_method_names[46], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_TradesSubscribe_(TradingDataService_method_names[47], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_TransferResponsesSubscribe_(TradingDataService_method_names[48], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetNodeSignaturesAggregate_(TradingDataService_method_names[49], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AssetByID_(TradingDataService_method_names[50], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Assets_(TradingDataService_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EstimateFee_(TradingDataService_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_EstimateMargin_(TradingDataService_method_names[53], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ERC20WithdrawalApproval_(TradingDataService_method_names[54], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Withdrawal_(TradingDataService_method_names[55], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Withdrawals_(TradingDataService_method_names[56], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Deposit_(TradingDataService_method_names[57], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Deposits_(TradingDataService_method_names[58], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_NetworkParameters_(TradingDataService_method_names[59], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_LiquidityProvisions_(TradingDataService_method_names[60], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OracleSpec_(TradingDataService_method_names[61], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OracleSpecs_(TradingDataService_method_names[62], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_OracleDataBySpec_(TradingDataService_method_names[63], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LastBlockHeight_(TradingDataService_method_names[38], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetVegaTime_(TradingDataService_method_names[39], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AccountsSubscribe_(TradingDataService_method_names[40], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_CandlesSubscribe_(TradingDataService_method_names[41], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarginLevelsSubscribe_(TradingDataService_method_names[42], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarketDepthSubscribe_(TradingDataService_method_names[43], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarketDepthUpdatesSubscribe_(TradingDataService_method_names[44], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_MarketsDataSubscribe_(TradingDataService_method_names[45], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_OrdersSubscribe_(TradingDataService_method_names[46], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_PositionsSubscribe_(TradingDataService_method_names[47], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_TradesSubscribe_(TradingDataService_method_names[48], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_TransferResponsesSubscribe_(TradingDataService_method_names[49], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetNodeSignaturesAggregate_(TradingDataService_method_names[50], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AssetByID_(TradingDataService_method_names[51], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Assets_(TradingDataService_method_names[52], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EstimateFee_(TradingDataService_method_names[53], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_EstimateMargin_(TradingDataService_method_names[54], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ERC20WithdrawalApproval_(TradingDataService_method_names[55], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Withdrawal_(TradingDataService_method_names[56], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Withdrawals_(TradingDataService_method_names[57], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Deposit_(TradingDataService_method_names[58], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Deposits_(TradingDataService_method_names[59], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_NetworkParameters_(TradingDataService_method_names[60], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LiquidityProvisions_(TradingDataService_method_names[61], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleSpec_(TradingDataService_method_names[62], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleSpecs_(TradingDataService_method_names[63], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_OracleDataBySpec_(TradingDataService_method_names[64], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status TradingDataService::Stub::MarketAccounts(::grpc::ClientContext* context, const ::api::v1::MarketAccountsRequest& request, ::api::v1::MarketAccountsResponse* response) {
@@ -1394,6 +1438,29 @@ void TradingDataService::Stub::experimental_async::Statistics(::grpc::ClientCont
 ::grpc::ClientAsyncResponseReader< ::api::v1::StatisticsResponse>* TradingDataService::Stub::AsyncStatisticsRaw(::grpc::ClientContext* context, const ::api::v1::StatisticsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncStatisticsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status TradingDataService::Stub::LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::api::v1::LastBlockHeightResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LastBlockHeight_, context, request, response);
+}
+
+void TradingDataService::Stub::experimental_async::LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LastBlockHeight_, context, request, response, std::move(f));
+}
+
+void TradingDataService::Stub::experimental_async::LastBlockHeight(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LastBlockHeight_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>* TradingDataService::Stub::PrepareAsyncLastBlockHeightRaw(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::api::v1::LastBlockHeightResponse, ::api::v1::LastBlockHeightRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LastBlockHeight_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::api::v1::LastBlockHeightResponse>* TradingDataService::Stub::AsyncLastBlockHeightRaw(::grpc::ClientContext* context, const ::api::v1::LastBlockHeightRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLastBlockHeightRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -2310,6 +2377,16 @@ TradingDataService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TradingDataService_method_names[38],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::LastBlockHeightRequest, ::api::v1::LastBlockHeightResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](TradingDataService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::api::v1::LastBlockHeightRequest* req,
+             ::api::v1::LastBlockHeightResponse* resp) {
+               return service->LastBlockHeight(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      TradingDataService_method_names[39],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetVegaTimeRequest, ::api::v1::GetVegaTimeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -2318,7 +2395,7 @@ TradingDataService::Service::Service() {
                return service->GetVegaTime(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[39],
+      TradingDataService_method_names[40],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::AccountsSubscribeRequest, ::api::v1::AccountsSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2328,7 +2405,7 @@ TradingDataService::Service::Service() {
                return service->AccountsSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[40],
+      TradingDataService_method_names[41],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::CandlesSubscribeRequest, ::api::v1::CandlesSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2338,7 +2415,7 @@ TradingDataService::Service::Service() {
                return service->CandlesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[41],
+      TradingDataService_method_names[42],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarginLevelsSubscribeRequest, ::api::v1::MarginLevelsSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2348,7 +2425,7 @@ TradingDataService::Service::Service() {
                return service->MarginLevelsSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[42],
+      TradingDataService_method_names[43],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarketDepthSubscribeRequest, ::api::v1::MarketDepthSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2358,7 +2435,7 @@ TradingDataService::Service::Service() {
                return service->MarketDepthSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[43],
+      TradingDataService_method_names[44],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarketDepthUpdatesSubscribeRequest, ::api::v1::MarketDepthUpdatesSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2368,7 +2445,7 @@ TradingDataService::Service::Service() {
                return service->MarketDepthUpdatesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[44],
+      TradingDataService_method_names[45],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::MarketsDataSubscribeRequest, ::api::v1::MarketsDataSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2378,7 +2455,7 @@ TradingDataService::Service::Service() {
                return service->MarketsDataSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[45],
+      TradingDataService_method_names[46],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::OrdersSubscribeRequest, ::api::v1::OrdersSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2388,7 +2465,7 @@ TradingDataService::Service::Service() {
                return service->OrdersSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[46],
+      TradingDataService_method_names[47],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::PositionsSubscribeRequest, ::api::v1::PositionsSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2398,7 +2475,7 @@ TradingDataService::Service::Service() {
                return service->PositionsSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[47],
+      TradingDataService_method_names[48],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::TradesSubscribeRequest, ::api::v1::TradesSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2408,7 +2485,7 @@ TradingDataService::Service::Service() {
                return service->TradesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[48],
+      TradingDataService_method_names[49],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TradingDataService::Service, ::api::v1::TransferResponsesSubscribeRequest, ::api::v1::TransferResponsesSubscribeResponse>(
           [](TradingDataService::Service* service,
@@ -2418,7 +2495,7 @@ TradingDataService::Service::Service() {
                return service->TransferResponsesSubscribe(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[49],
+      TradingDataService_method_names[50],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::GetNodeSignaturesAggregateRequest, ::api::v1::GetNodeSignaturesAggregateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2428,7 +2505,7 @@ TradingDataService::Service::Service() {
                return service->GetNodeSignaturesAggregate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[50],
+      TradingDataService_method_names[51],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::AssetByIDRequest, ::api::v1::AssetByIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2438,7 +2515,7 @@ TradingDataService::Service::Service() {
                return service->AssetByID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[51],
+      TradingDataService_method_names[52],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::AssetsRequest, ::api::v1::AssetsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2448,7 +2525,7 @@ TradingDataService::Service::Service() {
                return service->Assets(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[52],
+      TradingDataService_method_names[53],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::EstimateFeeRequest, ::api::v1::EstimateFeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2458,7 +2535,7 @@ TradingDataService::Service::Service() {
                return service->EstimateFee(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[53],
+      TradingDataService_method_names[54],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::EstimateMarginRequest, ::api::v1::EstimateMarginResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2468,7 +2545,7 @@ TradingDataService::Service::Service() {
                return service->EstimateMargin(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[54],
+      TradingDataService_method_names[55],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::ERC20WithdrawalApprovalRequest, ::api::v1::ERC20WithdrawalApprovalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2478,7 +2555,7 @@ TradingDataService::Service::Service() {
                return service->ERC20WithdrawalApproval(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[55],
+      TradingDataService_method_names[56],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::WithdrawalRequest, ::api::v1::WithdrawalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2488,7 +2565,7 @@ TradingDataService::Service::Service() {
                return service->Withdrawal(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[56],
+      TradingDataService_method_names[57],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::WithdrawalsRequest, ::api::v1::WithdrawalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2498,7 +2575,7 @@ TradingDataService::Service::Service() {
                return service->Withdrawals(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[57],
+      TradingDataService_method_names[58],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::DepositRequest, ::api::v1::DepositResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2508,7 +2585,7 @@ TradingDataService::Service::Service() {
                return service->Deposit(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[58],
+      TradingDataService_method_names[59],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::DepositsRequest, ::api::v1::DepositsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2518,7 +2595,7 @@ TradingDataService::Service::Service() {
                return service->Deposits(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[59],
+      TradingDataService_method_names[60],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::NetworkParametersRequest, ::api::v1::NetworkParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2528,7 +2605,7 @@ TradingDataService::Service::Service() {
                return service->NetworkParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[60],
+      TradingDataService_method_names[61],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::LiquidityProvisionsRequest, ::api::v1::LiquidityProvisionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2538,7 +2615,7 @@ TradingDataService::Service::Service() {
                return service->LiquidityProvisions(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[61],
+      TradingDataService_method_names[62],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleSpecRequest, ::api::v1::OracleSpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2548,7 +2625,7 @@ TradingDataService::Service::Service() {
                return service->OracleSpec(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[62],
+      TradingDataService_method_names[63],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleSpecsRequest, ::api::v1::OracleSpecsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2558,7 +2635,7 @@ TradingDataService::Service::Service() {
                return service->OracleSpecs(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      TradingDataService_method_names[63],
+      TradingDataService_method_names[64],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TradingDataService::Service, ::api::v1::OracleDataBySpecRequest, ::api::v1::OracleDataBySpecResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](TradingDataService::Service* service,
@@ -2831,6 +2908,13 @@ TradingDataService::Service::~Service() {
 }
 
 ::grpc::Status TradingDataService::Service::Statistics(::grpc::ServerContext* context, const ::api::v1::StatisticsRequest* request, ::api::v1::StatisticsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status TradingDataService::Service::LastBlockHeight(::grpc::ServerContext* context, const ::api::v1::LastBlockHeightRequest* request, ::api::v1::LastBlockHeightResponse* response) {
   (void) context;
   (void) request;
   (void) response;

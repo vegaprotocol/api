@@ -20,8 +20,8 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * A random number used to provided uniqueness and prevents
-     * against replay attack.
+     * A random number used to provided uniqueness and prevents against replay
+     * attack.
      * </pre>
      *
      * <code>uint64 nonce = 1 [json_name = "nonce"];</code>
@@ -32,8 +32,8 @@ public final class TransactionOuterClass {
     /**
      * <pre>
      * The block height associated to the transaction.
-     * This should always be current height of the node at the time of sending the Tx.
-     * BlockHeight is used as a mechanism for replay protection.
+     * This should always be current height of the node at the time of sending the
+     * Tx. BlockHeight is used as a mechanism for replay protection.
      * </pre>
      *
      * <code>uint64 block_height = 2 [json_name = "blockHeight"];</code>
@@ -43,7 +43,7 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * user commands
+     * User commands
      * </pre>
      *
      * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -52,7 +52,7 @@ public final class TransactionOuterClass {
     boolean hasOrderSubmission();
     /**
      * <pre>
-     * user commands
+     * User commands
      * </pre>
      *
      * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -61,7 +61,7 @@ public final class TransactionOuterClass {
     io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission getOrderSubmission();
     /**
      * <pre>
-     * user commands
+     * User commands
      * </pre>
      *
      * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -160,7 +160,7 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * validator commands
+     * Validator commands
      * </pre>
      *
      * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -169,7 +169,7 @@ public final class TransactionOuterClass {
     boolean hasNodeRegistration();
     /**
      * <pre>
-     * validator commands
+     * Validator commands
      * </pre>
      *
      * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -178,7 +178,7 @@ public final class TransactionOuterClass {
     io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration getNodeRegistration();
     /**
      * <pre>
-     * validator commands
+     * Validator commands
      * </pre>
      *
      * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -579,8 +579,8 @@ public final class TransactionOuterClass {
     private long nonce_;
     /**
      * <pre>
-     * A random number used to provided uniqueness and prevents
-     * against replay attack.
+     * A random number used to provided uniqueness and prevents against replay
+     * attack.
      * </pre>
      *
      * <code>uint64 nonce = 1 [json_name = "nonce"];</code>
@@ -596,8 +596,8 @@ public final class TransactionOuterClass {
     /**
      * <pre>
      * The block height associated to the transaction.
-     * This should always be current height of the node at the time of sending the Tx.
-     * BlockHeight is used as a mechanism for replay protection.
+     * This should always be current height of the node at the time of sending the
+     * Tx. BlockHeight is used as a mechanism for replay protection.
      * </pre>
      *
      * <code>uint64 block_height = 2 [json_name = "blockHeight"];</code>
@@ -611,7 +611,7 @@ public final class TransactionOuterClass {
     public static final int ORDER_SUBMISSION_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * user commands
+     * User commands
      * </pre>
      *
      * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -623,7 +623,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * user commands
+     * User commands
      * </pre>
      *
      * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -638,7 +638,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * user commands
+     * User commands
      * </pre>
      *
      * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -840,7 +840,7 @@ public final class TransactionOuterClass {
     public static final int NODE_REGISTRATION_FIELD_NUMBER = 2001;
     /**
      * <pre>
-     * validator commands
+     * Validator commands
      * </pre>
      *
      * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -852,7 +852,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * validator commands
+     * Validator commands
      * </pre>
      *
      * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -867,7 +867,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * validator commands
+     * Validator commands
      * </pre>
      *
      * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -1684,8 +1684,8 @@ public final class TransactionOuterClass {
       private long nonce_ ;
       /**
        * <pre>
-       * A random number used to provided uniqueness and prevents
-       * against replay attack.
+       * A random number used to provided uniqueness and prevents against replay
+       * attack.
        * </pre>
        *
        * <code>uint64 nonce = 1 [json_name = "nonce"];</code>
@@ -1697,8 +1697,8 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * A random number used to provided uniqueness and prevents
-       * against replay attack.
+       * A random number used to provided uniqueness and prevents against replay
+       * attack.
        * </pre>
        *
        * <code>uint64 nonce = 1 [json_name = "nonce"];</code>
@@ -1713,8 +1713,8 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * A random number used to provided uniqueness and prevents
-       * against replay attack.
+       * A random number used to provided uniqueness and prevents against replay
+       * attack.
        * </pre>
        *
        * <code>uint64 nonce = 1 [json_name = "nonce"];</code>
@@ -1731,8 +1731,8 @@ public final class TransactionOuterClass {
       /**
        * <pre>
        * The block height associated to the transaction.
-       * This should always be current height of the node at the time of sending the Tx.
-       * BlockHeight is used as a mechanism for replay protection.
+       * This should always be current height of the node at the time of sending the
+       * Tx. BlockHeight is used as a mechanism for replay protection.
        * </pre>
        *
        * <code>uint64 block_height = 2 [json_name = "blockHeight"];</code>
@@ -1745,8 +1745,8 @@ public final class TransactionOuterClass {
       /**
        * <pre>
        * The block height associated to the transaction.
-       * This should always be current height of the node at the time of sending the Tx.
-       * BlockHeight is used as a mechanism for replay protection.
+       * This should always be current height of the node at the time of sending the
+       * Tx. BlockHeight is used as a mechanism for replay protection.
        * </pre>
        *
        * <code>uint64 block_height = 2 [json_name = "blockHeight"];</code>
@@ -1762,8 +1762,8 @@ public final class TransactionOuterClass {
       /**
        * <pre>
        * The block height associated to the transaction.
-       * This should always be current height of the node at the time of sending the Tx.
-       * BlockHeight is used as a mechanism for replay protection.
+       * This should always be current height of the node at the time of sending the
+       * Tx. BlockHeight is used as a mechanism for replay protection.
        * </pre>
        *
        * <code>uint64 block_height = 2 [json_name = "blockHeight"];</code>
@@ -1780,7 +1780,7 @@ public final class TransactionOuterClass {
           io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission, io.vegaprotocol.vega.commands.v1.Commands.OrderSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.OrderSubmissionOrBuilder> orderSubmissionBuilder_;
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1792,7 +1792,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1814,7 +1814,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1834,7 +1834,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1852,7 +1852,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1878,7 +1878,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1901,7 +1901,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1911,7 +1911,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -1929,7 +1929,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * user commands
+       * User commands
        * </pre>
        *
        * <code>.vega.commands.v1.OrderSubmission order_submission = 1001 [json_name = "orderSubmission"];</code>
@@ -2803,7 +2803,7 @@ public final class TransactionOuterClass {
           io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration, io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration.Builder, io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistrationOrBuilder> nodeRegistrationBuilder_;
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2815,7 +2815,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2837,7 +2837,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2857,7 +2857,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2875,7 +2875,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2901,7 +2901,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2924,7 +2924,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2934,7 +2934,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -2952,7 +2952,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * validator commands
+       * Validator commands
        * </pre>
        *
        * <code>.vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];</code>
@@ -3644,7 +3644,7 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * The signature of the inputData
+     * The signature of the inputData.
      * </pre>
      *
      * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -3653,7 +3653,7 @@ public final class TransactionOuterClass {
     boolean hasSignature();
     /**
      * <pre>
-     * The signature of the inputData
+     * The signature of the inputData.
      * </pre>
      *
      * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -3662,7 +3662,7 @@ public final class TransactionOuterClass {
     io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature getSignature();
     /**
      * <pre>
-     * The signature of the inputData
+     * The signature of the inputData.
      * </pre>
      *
      * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -3671,29 +3671,48 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * The address of the sender.
+     * The address of the sender (hex-encoded). Not supported yet.
      * </pre>
      *
-     * <code>bytes address = 1001 [json_name = "address"];</code>
+     * <code>string address = 1001 [json_name = "address"];</code>
      * @return The address.
      */
-    com.google.protobuf.ByteString getAddress();
-
+    java.lang.String getAddress();
     /**
      * <pre>
-     * The public key of the sender.
+     * The address of the sender (hex-encoded). Not supported yet.
      * </pre>
      *
-     * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
-     * @return The pubKey.
+     * <code>string address = 1001 [json_name = "address"];</code>
+     * @return The bytes for address.
      */
-    com.google.protobuf.ByteString getPubKey();
+    com.google.protobuf.ByteString
+        getAddressBytes();
 
     /**
      * <pre>
-     * A version of the transaction, to be used
-     * in the future in case we want to implement
-     * changes to the Transaction format
+     * The public key of the sender (hex-encoded).
+     * </pre>
+     *
+     * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
+     * @return The pubKey.
+     */
+    java.lang.String getPubKey();
+    /**
+     * <pre>
+     * The public key of the sender (hex-encoded).
+     * </pre>
+     *
+     * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
+     * @return The bytes for pubKey.
+     */
+    com.google.protobuf.ByteString
+        getPubKeyBytes();
+
+    /**
+     * <pre>
+     * A version of the transaction, to be used in the future in case we want to
+     * implement changes to the Transaction format.
      * </pre>
      *
      * <code>uint32 version = 2000 [json_name = "version"];</code>
@@ -3772,13 +3791,15 @@ public final class TransactionOuterClass {
               break;
             }
             case 8010: {
+              java.lang.String s = input.readStringRequireUtf8();
               fromCase_ = 1001;
-              from_ = input.readBytes();
+              from_ = s;
               break;
             }
             case 8018: {
+              java.lang.String s = input.readStringRequireUtf8();
               fromCase_ = 1002;
-              from_ = input.readBytes();
+              from_ = s;
               break;
             }
             case 16000: {
@@ -3878,7 +3899,7 @@ public final class TransactionOuterClass {
     private io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature signature_;
     /**
      * <pre>
-     * The signature of the inputData
+     * The signature of the inputData.
      * </pre>
      *
      * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -3890,7 +3911,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * The signature of the inputData
+     * The signature of the inputData.
      * </pre>
      *
      * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -3902,7 +3923,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * The signature of the inputData
+     * The signature of the inputData.
      * </pre>
      *
      * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -3915,44 +3936,115 @@ public final class TransactionOuterClass {
     public static final int ADDRESS_FIELD_NUMBER = 1001;
     /**
      * <pre>
-     * The address of the sender.
+     * The address of the sender (hex-encoded). Not supported yet.
      * </pre>
      *
-     * <code>bytes address = 1001 [json_name = "address"];</code>
+     * <code>string address = 1001 [json_name = "address"];</code>
      * @return The address.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getAddress() {
+    public java.lang.String getAddress() {
+      java.lang.Object ref = "";
       if (fromCase_ == 1001) {
-        return (com.google.protobuf.ByteString) from_;
+        ref = from_;
       }
-      return com.google.protobuf.ByteString.EMPTY;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (fromCase_ == 1001) {
+          from_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The address of the sender (hex-encoded). Not supported yet.
+     * </pre>
+     *
+     * <code>string address = 1001 [json_name = "address"];</code>
+     * @return The bytes for address.
+     */
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = "";
+      if (fromCase_ == 1001) {
+        ref = from_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (fromCase_ == 1001) {
+          from_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int PUB_KEY_FIELD_NUMBER = 1002;
     /**
      * <pre>
-     * The public key of the sender.
+     * The public key of the sender (hex-encoded).
      * </pre>
      *
-     * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
+     * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
      * @return The pubKey.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getPubKey() {
+    public java.lang.String getPubKey() {
+      java.lang.Object ref = "";
       if (fromCase_ == 1002) {
-        return (com.google.protobuf.ByteString) from_;
+        ref = from_;
       }
-      return com.google.protobuf.ByteString.EMPTY;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (fromCase_ == 1002) {
+          from_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The public key of the sender (hex-encoded).
+     * </pre>
+     *
+     * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
+     * @return The bytes for pubKey.
+     */
+    public com.google.protobuf.ByteString
+        getPubKeyBytes() {
+      java.lang.Object ref = "";
+      if (fromCase_ == 1002) {
+        ref = from_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (fromCase_ == 1002) {
+          from_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int VERSION_FIELD_NUMBER = 2000;
     private int version_;
     /**
      * <pre>
-     * A version of the transaction, to be used
-     * in the future in case we want to implement
-     * changes to the Transaction format
+     * A version of the transaction, to be used in the future in case we want to
+     * implement changes to the Transaction format.
      * </pre>
      *
      * <code>uint32 version = 2000 [json_name = "version"];</code>
@@ -3984,12 +4076,10 @@ public final class TransactionOuterClass {
         output.writeMessage(2, getSignature());
       }
       if (fromCase_ == 1001) {
-        output.writeBytes(
-            1001, (com.google.protobuf.ByteString) from_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1001, from_);
       }
       if (fromCase_ == 1002) {
-        output.writeBytes(
-            1002, (com.google.protobuf.ByteString) from_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1002, from_);
       }
       if (version_ != 0) {
         output.writeUInt32(2000, version_);
@@ -4012,14 +4102,10 @@ public final class TransactionOuterClass {
           .computeMessageSize(2, getSignature());
       }
       if (fromCase_ == 1001) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(
-              1001, (com.google.protobuf.ByteString) from_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1001, from_);
       }
       if (fromCase_ == 1002) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(
-              1002, (com.google.protobuf.ByteString) from_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1002, from_);
       }
       if (version_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -4341,11 +4427,15 @@ public final class TransactionOuterClass {
         }
         switch (other.getFromCase()) {
           case ADDRESS: {
-            setAddress(other.getAddress());
+            fromCase_ = 1001;
+            from_ = other.from_;
+            onChanged();
             break;
           }
           case PUB_KEY: {
-            setPubKey(other.getPubKey());
+            fromCase_ = 1002;
+            from_ = other.from_;
+            onChanged();
             break;
           }
           case FROM_NOT_SET: {
@@ -4447,7 +4537,7 @@ public final class TransactionOuterClass {
           io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature.Builder, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.SignatureOrBuilder> signatureBuilder_;
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4458,7 +4548,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4473,7 +4563,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4493,7 +4583,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4511,7 +4601,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4533,7 +4623,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4551,7 +4641,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4563,7 +4653,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4578,7 +4668,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The signature of the inputData
+       * The signature of the inputData.
        * </pre>
        *
        * <code>.vega.commands.v1.Signature signature = 2 [json_name = "signature"];</code>
@@ -4599,28 +4689,68 @@ public final class TransactionOuterClass {
 
       /**
        * <pre>
-       * The address of the sender.
+       * The address of the sender (hex-encoded). Not supported yet.
        * </pre>
        *
-       * <code>bytes address = 1001 [json_name = "address"];</code>
+       * <code>string address = 1001 [json_name = "address"];</code>
        * @return The address.
        */
-      public com.google.protobuf.ByteString getAddress() {
+      @java.lang.Override
+      public java.lang.String getAddress() {
+        java.lang.Object ref = "";
         if (fromCase_ == 1001) {
-          return (com.google.protobuf.ByteString) from_;
+          ref = from_;
         }
-        return com.google.protobuf.ByteString.EMPTY;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (fromCase_ == 1001) {
+            from_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
-       * The address of the sender.
+       * The address of the sender (hex-encoded). Not supported yet.
        * </pre>
        *
-       * <code>bytes address = 1001 [json_name = "address"];</code>
+       * <code>string address = 1001 [json_name = "address"];</code>
+       * @return The bytes for address.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = "";
+        if (fromCase_ == 1001) {
+          ref = from_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (fromCase_ == 1001) {
+            from_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The address of the sender (hex-encoded). Not supported yet.
+       * </pre>
+       *
+       * <code>string address = 1001 [json_name = "address"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
-      public Builder setAddress(com.google.protobuf.ByteString value) {
+      public Builder setAddress(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4631,10 +4761,10 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The address of the sender.
+       * The address of the sender (hex-encoded). Not supported yet.
        * </pre>
        *
-       * <code>bytes address = 1001 [json_name = "address"];</code>
+       * <code>string address = 1001 [json_name = "address"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -4645,31 +4775,91 @@ public final class TransactionOuterClass {
         }
         return this;
       }
+      /**
+       * <pre>
+       * The address of the sender (hex-encoded). Not supported yet.
+       * </pre>
+       *
+       * <code>string address = 1001 [json_name = "address"];</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        fromCase_ = 1001;
+        from_ = value;
+        onChanged();
+        return this;
+      }
 
       /**
        * <pre>
-       * The public key of the sender.
+       * The public key of the sender (hex-encoded).
        * </pre>
        *
-       * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
+       * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
        * @return The pubKey.
        */
-      public com.google.protobuf.ByteString getPubKey() {
+      @java.lang.Override
+      public java.lang.String getPubKey() {
+        java.lang.Object ref = "";
         if (fromCase_ == 1002) {
-          return (com.google.protobuf.ByteString) from_;
+          ref = from_;
         }
-        return com.google.protobuf.ByteString.EMPTY;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (fromCase_ == 1002) {
+            from_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
-       * The public key of the sender.
+       * The public key of the sender (hex-encoded).
        * </pre>
        *
-       * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
+       * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
+       * @return The bytes for pubKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getPubKeyBytes() {
+        java.lang.Object ref = "";
+        if (fromCase_ == 1002) {
+          ref = from_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (fromCase_ == 1002) {
+            from_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The public key of the sender (hex-encoded).
+       * </pre>
+       *
+       * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
        * @param value The pubKey to set.
        * @return This builder for chaining.
        */
-      public Builder setPubKey(com.google.protobuf.ByteString value) {
+      public Builder setPubKey(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4680,10 +4870,10 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The public key of the sender.
+       * The public key of the sender (hex-encoded).
        * </pre>
        *
-       * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
+       * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPubKey() {
@@ -4694,13 +4884,32 @@ public final class TransactionOuterClass {
         }
         return this;
       }
+      /**
+       * <pre>
+       * The public key of the sender (hex-encoded).
+       * </pre>
+       *
+       * <code>string pub_key = 1002 [json_name = "pubKey"];</code>
+       * @param value The bytes for pubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPubKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        fromCase_ = 1002;
+        from_ = value;
+        onChanged();
+        return this;
+      }
 
       private int version_ ;
       /**
        * <pre>
-       * A version of the transaction, to be used
-       * in the future in case we want to implement
-       * changes to the Transaction format
+       * A version of the transaction, to be used in the future in case we want to
+       * implement changes to the Transaction format.
        * </pre>
        *
        * <code>uint32 version = 2000 [json_name = "version"];</code>
@@ -4712,9 +4921,8 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * A version of the transaction, to be used
-       * in the future in case we want to implement
-       * changes to the Transaction format
+       * A version of the transaction, to be used in the future in case we want to
+       * implement changes to the Transaction format.
        * </pre>
        *
        * <code>uint32 version = 2000 [json_name = "version"];</code>
@@ -4729,9 +4937,8 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * A version of the transaction, to be used
-       * in the future in case we want to implement
-       * changes to the Transaction format
+       * A version of the transaction, to be used in the future in case we want to
+       * implement changes to the Transaction format.
        * </pre>
        *
        * <code>uint32 version = 2000 [json_name = "version"];</code>
@@ -4802,17 +5009,27 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * The bytes of the signature
+     * The bytes of the signature (hex-encoded).
      * </pre>
      *
-     * <code>bytes bytes = 1 [json_name = "bytes"];</code>
-     * @return The bytes.
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The value.
      */
-    com.google.protobuf.ByteString getBytes();
+    java.lang.String getValue();
+    /**
+     * <pre>
+     * The bytes of the signature (hex-encoded).
+     * </pre>
+     *
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
 
     /**
      * <pre>
-     * The algorithm used to create the signature
+     * The algorithm used to create the signature.
      * </pre>
      *
      * <code>string algo = 2 [json_name = "algo"];</code>
@@ -4821,7 +5038,7 @@ public final class TransactionOuterClass {
     java.lang.String getAlgo();
     /**
      * <pre>
-     * The algorithm used to create the signature
+     * The algorithm used to create the signature.
      * </pre>
      *
      * <code>string algo = 2 [json_name = "algo"];</code>
@@ -4832,7 +5049,7 @@ public final class TransactionOuterClass {
 
     /**
      * <pre>
-     * The version of the signature used to create the signature
+     * The version of the signature used to create the signature.
      * </pre>
      *
      * <code>uint32 version = 3 [json_name = "version"];</code>
@@ -4842,8 +5059,8 @@ public final class TransactionOuterClass {
   }
   /**
    * <pre>
-   * A signature to be authenticate a transaction
-   * and to be verified by the vega network
+   * A signature to be authenticate a transaction and to be verified by the vega
+   * network.
    * </pre>
    *
    * Protobuf type {@code vega.commands.v1.Signature}
@@ -4858,7 +5075,7 @@ public final class TransactionOuterClass {
       super(builder);
     }
     private Signature() {
-      bytes_ = com.google.protobuf.ByteString.EMPTY;
+      value_ = "";
       algo_ = "";
     }
 
@@ -4893,8 +5110,9 @@ public final class TransactionOuterClass {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              bytes_ = input.readBytes();
+              value_ = s;
               break;
             }
             case 18: {
@@ -4940,26 +5158,57 @@ public final class TransactionOuterClass {
               io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature.class, io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature.Builder.class);
     }
 
-    public static final int BYTES_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString bytes_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object value_;
     /**
      * <pre>
-     * The bytes of the signature
+     * The bytes of the signature (hex-encoded).
      * </pre>
      *
-     * <code>bytes bytes = 1 [json_name = "bytes"];</code>
-     * @return The bytes.
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The value.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getBytes() {
-      return bytes_;
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The bytes of the signature (hex-encoded).
+     * </pre>
+     *
+     * <code>string value = 1 [json_name = "value"];</code>
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ALGO_FIELD_NUMBER = 2;
     private volatile java.lang.Object algo_;
     /**
      * <pre>
-     * The algorithm used to create the signature
+     * The algorithm used to create the signature.
      * </pre>
      *
      * <code>string algo = 2 [json_name = "algo"];</code>
@@ -4980,7 +5229,7 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * The algorithm used to create the signature
+     * The algorithm used to create the signature.
      * </pre>
      *
      * <code>string algo = 2 [json_name = "algo"];</code>
@@ -5005,7 +5254,7 @@ public final class TransactionOuterClass {
     private int version_;
     /**
      * <pre>
-     * The version of the signature used to create the signature
+     * The version of the signature used to create the signature.
      * </pre>
      *
      * <code>uint32 version = 3 [json_name = "version"];</code>
@@ -5030,8 +5279,8 @@ public final class TransactionOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!bytes_.isEmpty()) {
-        output.writeBytes(1, bytes_);
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, value_);
       }
       if (!getAlgoBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, algo_);
@@ -5048,9 +5297,8 @@ public final class TransactionOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!bytes_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, bytes_);
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, value_);
       }
       if (!getAlgoBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, algo_);
@@ -5074,8 +5322,8 @@ public final class TransactionOuterClass {
       }
       io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature other = (io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature) obj;
 
-      if (!getBytes()
-          .equals(other.getBytes())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
       if (!getAlgo()
           .equals(other.getAlgo())) return false;
       if (getVersion()
@@ -5091,8 +5339,8 @@ public final class TransactionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BYTES_FIELD_NUMBER;
-      hash = (53 * hash) + getBytes().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
       hash = (37 * hash) + ALGO_FIELD_NUMBER;
       hash = (53 * hash) + getAlgo().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -5194,8 +5442,8 @@ public final class TransactionOuterClass {
     }
     /**
      * <pre>
-     * A signature to be authenticate a transaction
-     * and to be verified by the vega network
+     * A signature to be authenticate a transaction and to be verified by the vega
+     * network.
      * </pre>
      *
      * Protobuf type {@code vega.commands.v1.Signature}
@@ -5235,7 +5483,7 @@ public final class TransactionOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bytes_ = com.google.protobuf.ByteString.EMPTY;
+        value_ = "";
 
         algo_ = "";
 
@@ -5267,7 +5515,7 @@ public final class TransactionOuterClass {
       @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature buildPartial() {
         io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature result = new io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature(this);
-        result.bytes_ = bytes_;
+        result.value_ = value_;
         result.algo_ = algo_;
         result.version_ = version_;
         onBuilt();
@@ -5318,8 +5566,9 @@ public final class TransactionOuterClass {
 
       public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature other) {
         if (other == io.vegaprotocol.vega.commands.v1.TransactionOuterClass.Signature.getDefaultInstance()) return this;
-        if (other.getBytes() != com.google.protobuf.ByteString.EMPTY) {
-          setBytes(other.getBytes());
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
         }
         if (!other.getAlgo().isEmpty()) {
           algo_ = other.algo_;
@@ -5357,48 +5606,98 @@ public final class TransactionOuterClass {
         return this;
       }
 
-      private com.google.protobuf.ByteString bytes_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object value_ = "";
       /**
        * <pre>
-       * The bytes of the signature
+       * The bytes of the signature (hex-encoded).
        * </pre>
        *
-       * <code>bytes bytes = 1 [json_name = "bytes"];</code>
-       * @return The bytes.
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @return The value.
        */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getBytes() {
-        return bytes_;
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
-       * The bytes of the signature
+       * The bytes of the signature (hex-encoded).
        * </pre>
        *
-       * <code>bytes bytes = 1 [json_name = "bytes"];</code>
-       * @param value The bytes to set.
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The bytes of the signature (hex-encoded).
+       * </pre>
+       *
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @param value The value to set.
        * @return This builder for chaining.
        */
-      public Builder setBytes(com.google.protobuf.ByteString value) {
+      public Builder setValue(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        bytes_ = value;
+        value_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The bytes of the signature
+       * The bytes of the signature (hex-encoded).
        * </pre>
        *
-       * <code>bytes bytes = 1 [json_name = "bytes"];</code>
+       * <code>string value = 1 [json_name = "value"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearBytes() {
+      public Builder clearValue() {
 
-        bytes_ = getDefaultInstance().getBytes();
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The bytes of the signature (hex-encoded).
+       * </pre>
+       *
+       * <code>string value = 1 [json_name = "value"];</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        value_ = value;
         onChanged();
         return this;
       }
@@ -5406,7 +5705,7 @@ public final class TransactionOuterClass {
       private java.lang.Object algo_ = "";
       /**
        * <pre>
-       * The algorithm used to create the signature
+       * The algorithm used to create the signature.
        * </pre>
        *
        * <code>string algo = 2 [json_name = "algo"];</code>
@@ -5426,7 +5725,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The algorithm used to create the signature
+       * The algorithm used to create the signature.
        * </pre>
        *
        * <code>string algo = 2 [json_name = "algo"];</code>
@@ -5447,7 +5746,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The algorithm used to create the signature
+       * The algorithm used to create the signature.
        * </pre>
        *
        * <code>string algo = 2 [json_name = "algo"];</code>
@@ -5466,7 +5765,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The algorithm used to create the signature
+       * The algorithm used to create the signature.
        * </pre>
        *
        * <code>string algo = 2 [json_name = "algo"];</code>
@@ -5480,7 +5779,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The algorithm used to create the signature
+       * The algorithm used to create the signature.
        * </pre>
        *
        * <code>string algo = 2 [json_name = "algo"];</code>
@@ -5502,7 +5801,7 @@ public final class TransactionOuterClass {
       private int version_ ;
       /**
        * <pre>
-       * The version of the signature used to create the signature
+       * The version of the signature used to create the signature.
        * </pre>
        *
        * <code>uint32 version = 3 [json_name = "version"];</code>
@@ -5514,7 +5813,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The version of the signature used to create the signature
+       * The version of the signature used to create the signature.
        * </pre>
        *
        * <code>uint32 version = 3 [json_name = "version"];</code>
@@ -5529,7 +5828,7 @@ public final class TransactionOuterClass {
       }
       /**
        * <pre>
-       * The version of the signature used to create the signature
+       * The version of the signature used to create the signature.
        * </pre>
        *
        * <code>uint32 version = 3 [json_name = "version"];</code>
@@ -5651,10 +5950,10 @@ public final class TransactionOuterClass {
       "oracleDataSubmissionB\t\n\007command\"\303\001\n\013Tran" +
       "saction\022\035\n\ninput_data\030\001 \001(\014R\tinputData\0229" +
       "\n\tsignature\030\002 \001(\0132\033.vega.commands.v1.Sig" +
-      "natureR\tsignature\022\033\n\007address\030\351\007 \001(\014H\000R\007a" +
-      "ddress\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pubKey\022\031\n\007ve" +
+      "natureR\tsignature\022\033\n\007address\030\351\007 \001(\tH\000R\007a" +
+      "ddress\022\032\n\007pub_key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007ve" +
       "rsion\030\320\017 \001(\rR\007versionB\006\n\004from\"O\n\tSignatu" +
-      "re\022\024\n\005bytes\030\001 \001(\014R\005bytes\022\022\n\004algo\030\002 \001(\tR\004" +
+      "re\022\024\n\005value\030\001 \001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004" +
       "algo\022\030\n\007version\030\003 \001(\rR\007versionBO\n io.veg" +
       "aprotocol.vega.commands.v1Z+code.vegapro" +
       "tocol.io/vega/proto/commands/v1b\006proto3"
@@ -5683,7 +5982,7 @@ public final class TransactionOuterClass {
     internal_static_vega_commands_v1_Signature_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_Signature_descriptor,
-        new java.lang.String[] { "Bytes", "Algo", "Version", });
+        new java.lang.String[] { "Value", "Algo", "Version", });
     io.vegaprotocol.vega.commands.v1.Commands.getDescriptor();
     io.vegaprotocol.vega.commands.v1.ValidatorCommands.getDescriptor();
     io.vegaprotocol.vega.commands.v1.Oracles.getDescriptor();

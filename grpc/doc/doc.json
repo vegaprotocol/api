@@ -298,7 +298,7 @@
       "services": []
     },
     {
-      "name": "oracles/v1/oracle_spec.proto",
+      "name": "oracles/v1/spec.proto",
       "description": "",
       "package": "oracles.v1",
       "hasEnums": false,
@@ -4107,6 +4107,18 @@
               "defaultValue": ""
             },
             {
+              "name": "extension_trigger",
+              "description": "When a market auction is extended, this field indicates what caused the extension",
+              "label": "",
+              "type": "AuctionTrigger",
+              "longType": "AuctionTrigger",
+              "fullType": "vega.AuctionTrigger",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
               "name": "target_stake",
               "description": "Targeted stake for the given market",
               "label": "",
@@ -5186,9 +5198,9 @@
               "name": "version",
               "description": "The version of the signature used to create the signature",
               "label": "",
-              "type": "uint64",
-              "longType": "uint64",
-              "fullType": "uint64",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -6361,60 +6373,12 @@
               "defaultValue": ""
             },
             {
-              "name": "name",
-              "description": "Name of the asset (e.g: Great British Pound)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "symbol",
-              "description": "Symbol of the asset (e.g: GBP)",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "total_supply",
-              "description": "Total circulating supply for the asset",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "decimals",
-              "description": "Number of decimals / precision handled by this asset",
-              "label": "",
-              "type": "uint64",
-              "longType": "uint64",
-              "fullType": "uint64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "source",
+              "name": "details",
               "description": "The definition of the external source for this asset",
               "label": "",
-              "type": "AssetSource",
-              "longType": "AssetSource",
-              "fullType": "vega.AssetSource",
+              "type": "AssetDetails",
+              "longType": "AssetDetails",
+              "fullType": "vega.AssetDetails",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -6423,49 +6387,13 @@
           ]
         },
         {
-          "name": "AssetSource",
-          "longName": "AssetSource",
-          "fullName": "vega.AssetSource",
-          "description": "Asset source definition",
+          "name": "AssetDetails",
+          "longName": "AssetDetails",
+          "fullName": "vega.AssetDetails",
+          "description": "The Vega representation of an external asset",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "builtin_asset",
-              "description": "A built-in asset",
-              "label": "",
-              "type": "BuiltinAsset",
-              "longType": "BuiltinAsset",
-              "fullType": "vega.BuiltinAsset",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "source",
-              "defaultValue": ""
-            },
-            {
-              "name": "erc20",
-              "description": "An Ethereum ERC20 asset",
-              "label": "",
-              "type": "ERC20",
-              "longType": "ERC20",
-              "fullType": "vega.ERC20",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "source",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "BuiltinAsset",
-          "longName": "BuiltinAsset",
-          "fullName": "vega.BuiltinAsset",
-          "description": "A Vega internal asset",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
           "extensions": [],
           "fields": [
             {
@@ -6516,6 +6444,54 @@
               "oneofdecl": "",
               "defaultValue": ""
             },
+            {
+              "name": "min_lp_stake",
+              "description": "Min stake required for this asset from liquidity providers",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "builtin_asset",
+              "description": "A built-in asset",
+              "label": "",
+              "type": "BuiltinAsset",
+              "longType": "BuiltinAsset",
+              "fullType": "vega.BuiltinAsset",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "source",
+              "defaultValue": ""
+            },
+            {
+              "name": "erc20",
+              "description": "An Ethereum ERC20 asset",
+              "label": "",
+              "type": "ERC20",
+              "longType": "ERC20",
+              "fullType": "vega.ERC20",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "source",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "BuiltinAsset",
+          "longName": "BuiltinAsset",
+          "fullName": "vega.BuiltinAsset",
+          "description": "A Vega internal asset",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
             {
               "name": "max_faucet_amount_mint",
               "description": "Maximum amount that can be requested by a party through the built-in asset faucet at a time",
@@ -6774,6 +6750,21 @@
               "name": "PROPOSAL_ERROR_INVALID_RISK_PARAMETER",
               "number": "30",
               "description": "Market proposal invalid risk parameter"
+            },
+            {
+              "name": "PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED",
+              "number": "31",
+              "description": "Proposal was declined because vote didn't reach the majority thershold required"
+            },
+            {
+              "name": "PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED",
+              "number": "32",
+              "description": "Proposal declined because the participation threshold was not reached"
+            },
+            {
+              "name": "PROPOSAL_ERROR_INVALID_ASSET_DETAILS",
+              "number": "33",
+              "description": "Asset proposal invalid asset details"
             }
           ]
         },
@@ -7121,9 +7112,9 @@
               "name": "changes",
               "description": "The configuration of the new asset",
               "label": "",
-              "type": "AssetSource",
-              "longType": "AssetSource",
-              "fullType": "vega.AssetSource",
+              "type": "AssetDetails",
+              "longType": "AssetDetails",
+              "fullType": "vega.AssetDetails",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -7780,7 +7771,7 @@
       "services": []
     },
     {
-      "name": "oracles/v1/oracle_data.proto",
+      "name": "oracles/v1/data.proto",
       "description": "",
       "package": "oracles.v1",
       "hasEnums": false,
@@ -10602,6 +10593,389 @@
       "services": []
     },
     {
+      "name": "commands/v1/oracles.proto",
+      "description": "",
+      "package": "vega.commands.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [
+        {
+          "name": "OracleSource",
+          "longName": "OracleDataSubmission.OracleSource",
+          "fullName": "vega.commands.v1.OracleDataSubmission.OracleSource",
+          "description": "The supported Oracle sources",
+          "values": [
+            {
+              "name": "ORACLE_SOURCE_UNSPECIFIED",
+              "number": "0",
+              "description": "The default value"
+            },
+            {
+              "name": "ORACLE_SOURCE_OPEN_ORACLE",
+              "number": "1",
+              "description": "Support for Open Oracle standard"
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "OracleDataSubmission",
+          "longName": "OracleDataSubmission",
+          "fullName": "vega.commands.v1.OracleDataSubmission",
+          "description": "Command to submit new Oracle data from third party providers",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "source",
+              "description": "The source from which the data is coming from",
+              "label": "",
+              "type": "OracleSource",
+              "longType": "OracleDataSubmission.OracleSource",
+              "fullType": "vega.commands.v1.OracleDataSubmission.OracleSource",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "payload",
+              "description": "The data provided by the third party provider",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "commands/v1/transaction.proto",
+      "description": "",
+      "package": "vega.commands.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "InputData",
+          "longName": "InputData",
+          "fullName": "vega.commands.v1.InputData",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "nonce",
+              "description": "A random number used to provided uniqueness and prevents against replay\nattack.",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "block_height",
+              "description": "The block height associated to the transaction.\nThis should always be current height of the node at the time of sending the\nTx. BlockHeight is used as a mechanism for replay protection.",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "order_submission",
+              "description": "User commands",
+              "label": "",
+              "type": "OrderSubmission",
+              "longType": "OrderSubmission",
+              "fullType": "vega.commands.v1.OrderSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "order_cancellation",
+              "description": "",
+              "label": "",
+              "type": "OrderCancellation",
+              "longType": "OrderCancellation",
+              "fullType": "vega.commands.v1.OrderCancellation",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "order_amendment",
+              "description": "",
+              "label": "",
+              "type": "OrderAmendment",
+              "longType": "OrderAmendment",
+              "fullType": "vega.commands.v1.OrderAmendment",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "withdraw_submission",
+              "description": "",
+              "label": "",
+              "type": "WithdrawSubmission",
+              "longType": "WithdrawSubmission",
+              "fullType": "vega.commands.v1.WithdrawSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "proposal_submission",
+              "description": "",
+              "label": "",
+              "type": "ProposalSubmission",
+              "longType": "ProposalSubmission",
+              "fullType": "vega.commands.v1.ProposalSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "vote_submission",
+              "description": "",
+              "label": "",
+              "type": "VoteSubmission",
+              "longType": "VoteSubmission",
+              "fullType": "vega.commands.v1.VoteSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "liquidity_provision_submission",
+              "description": "",
+              "label": "",
+              "type": "LiquidityProvisionSubmission",
+              "longType": "LiquidityProvisionSubmission",
+              "fullType": "vega.commands.v1.LiquidityProvisionSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_registration",
+              "description": "Validator commands",
+              "label": "",
+              "type": "NodeRegistration",
+              "longType": "NodeRegistration",
+              "fullType": "vega.commands.v1.NodeRegistration",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_vote",
+              "description": "",
+              "label": "",
+              "type": "NodeVote",
+              "longType": "NodeVote",
+              "fullType": "vega.commands.v1.NodeVote",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_signature",
+              "description": "",
+              "label": "",
+              "type": "NodeSignature",
+              "longType": "NodeSignature",
+              "fullType": "vega.commands.v1.NodeSignature",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "chain_event",
+              "description": "",
+              "label": "",
+              "type": "ChainEvent",
+              "longType": "ChainEvent",
+              "fullType": "vega.commands.v1.ChainEvent",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "oracle_data_submission",
+              "description": "Oracles",
+              "label": "",
+              "type": "OracleDataSubmission",
+              "longType": "OracleDataSubmission",
+              "fullType": "vega.commands.v1.OracleDataSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Signature",
+          "longName": "Signature",
+          "fullName": "vega.commands.v1.Signature",
+          "description": "A signature to be authenticate a transaction and to be verified by the vega\nnetwork.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "value",
+              "description": "The bytes of the signature (hex-encoded).",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "algo",
+              "description": "The algorithm used to create the signature.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "version",
+              "description": "The version of the signature used to create the signature.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Transaction",
+          "longName": "Transaction",
+          "fullName": "vega.commands.v1.Transaction",
+          "description": "Represents a transaction to be sent to Vega.",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "input_data",
+              "description": "One of the set of Vega commands (proto marshalled).",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "signature",
+              "description": "The signature of the inputData.",
+              "label": "",
+              "type": "Signature",
+              "longType": "Signature",
+              "fullType": "vega.commands.v1.Signature",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "address",
+              "description": "The address of the sender (hex-encoded). Not supported yet.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "from",
+              "defaultValue": ""
+            },
+            {
+              "name": "pub_key",
+              "description": "The public key of the sender (hex-encoded).",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "from",
+              "defaultValue": ""
+            },
+            {
+              "name": "version",
+              "description": "A version of the transaction, to be used in the future in case we want to\nimplement changes to the Transaction format.",
+              "label": "",
+              "type": "uint32",
+              "longType": "uint32",
+              "fullType": "uint32",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
       "name": "api/trading.proto",
       "description": "",
       "package": "api.v1",
@@ -10614,6 +10988,34 @@
           "name": "Type",
           "longName": "SubmitTransactionRequest.Type",
           "fullName": "api.v1.SubmitTransactionRequest.Type",
+          "description": "Blockchain transaction type",
+          "values": [
+            {
+              "name": "TYPE_UNSPECIFIED",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "TYPE_ASYNC",
+              "number": "1",
+              "description": "The transaction will be submitted without waiting for response"
+            },
+            {
+              "name": "TYPE_SYNC",
+              "number": "2",
+              "description": "The transaction will be submitted, and blocking until the\ntendermint mempool return a response"
+            },
+            {
+              "name": "TYPE_COMMIT",
+              "number": "3",
+              "description": "The transaction will submitted, and blocking until the tendermint\nnetwork will have committed it into a block"
+            }
+          ]
+        },
+        {
+          "name": "Type",
+          "longName": "SubmitTransactionV2Request.Type",
+          "fullName": "api.v1.SubmitTransactionV2Request.Type",
           "description": "Blockchain transaction type",
           "values": [
             {
@@ -11912,6 +12314,41 @@
               "type": "Vote",
               "longType": "vega.Vote",
               "fullType": "vega.Vote",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "LastBlockHeightRequest",
+          "longName": "LastBlockHeightRequest",
+          "fullName": "api.v1.LastBlockHeightRequest",
+          "description": "A request to get the height of the very last block processed\nby tendermint",
+          "hasExtensions": false,
+          "hasFields": false,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "LastBlockHeightResponse",
+          "longName": "LastBlockHeightResponse",
+          "fullName": "api.v1.LastBlockHeightResponse",
+          "description": "A response with the height of the last block processed by\ntendermint",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "height",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -14553,6 +14990,66 @@
           ]
         },
         {
+          "name": "SubmitTransactionV2Request",
+          "longName": "SubmitTransactionV2Request",
+          "fullName": "api.v1.SubmitTransactionV2Request",
+          "description": "Request for submitting a transaction v2 on Vega",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "tx",
+              "description": "A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain",
+              "label": "",
+              "type": "Transaction",
+              "longType": "vega.commands.v1.Transaction",
+              "fullType": "vega.commands.v1.Transaction",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response",
+              "label": "",
+              "type": "Type",
+              "longType": "SubmitTransactionV2Request.Type",
+              "fullType": "api.v1.SubmitTransactionV2Request.Type",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SubmitTransactionV2Response",
+          "longName": "SubmitTransactionV2Response",
+          "fullName": "api.v1.SubmitTransactionV2Response",
+          "description": "Response for submitting a transaction v2 on Vega",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "success",
+              "description": "Success will be true if the transaction was accepted by the node,\n**Important** - success does not mean that the event is confirmed by consensus",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
           "name": "TradesByMarketRequest",
           "longName": "TradesByMarketRequest",
           "fullName": "api.v1.TradesByMarketRequest",
@@ -15412,6 +15909,18 @@
               "responseStreaming": false
             },
             {
+              "name": "LastBlockHeight",
+              "description": "",
+              "requestType": "LastBlockHeightRequest",
+              "requestLongType": "LastBlockHeightRequest",
+              "requestFullType": "api.v1.LastBlockHeightRequest",
+              "requestStreaming": false,
+              "responseType": "LastBlockHeightResponse",
+              "responseLongType": "LastBlockHeightResponse",
+              "responseFullType": "api.v1.LastBlockHeightResponse",
+              "responseStreaming": false
+            },
+            {
               "name": "GetVegaTime",
               "description": "Get Time",
               "requestType": "GetVegaTimeRequest",
@@ -15792,6 +16301,18 @@
               "responseStreaming": false
             },
             {
+              "name": "SubmitTransactionV2",
+              "description": "Submit a signed transaction (v2)",
+              "requestType": "SubmitTransactionV2Request",
+              "requestLongType": "SubmitTransactionV2Request",
+              "requestFullType": "api.v1.SubmitTransactionV2Request",
+              "requestStreaming": false,
+              "responseType": "SubmitTransactionV2Response",
+              "responseLongType": "SubmitTransactionV2Response",
+              "responseFullType": "api.v1.SubmitTransactionV2Response",
+              "responseStreaming": false
+            },
+            {
               "name": "PrepareProposalSubmission",
               "description": "Prepare a governance proposal",
               "requestType": "PrepareProposalSubmissionRequest",
@@ -15842,389 +16363,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "commands/v1/oracles.proto",
-      "description": "",
-      "package": "vega.commands.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [
-        {
-          "name": "OracleSource",
-          "longName": "OracleDataSubmission.OracleSource",
-          "fullName": "vega.commands.v1.OracleDataSubmission.OracleSource",
-          "description": "The supported Oracle sources",
-          "values": [
-            {
-              "name": "ORACLE_SOURCE_UNSPECIFIED",
-              "number": "0",
-              "description": "The default value"
-            },
-            {
-              "name": "ORACLE_SOURCE_OPEN_ORACLE",
-              "number": "1",
-              "description": "Support for Open Oracle standard"
-            }
-          ]
-        }
-      ],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "OracleDataSubmission",
-          "longName": "OracleDataSubmission",
-          "fullName": "vega.commands.v1.OracleDataSubmission",
-          "description": "Command to submit new Oracle data from third party providers",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "source",
-              "description": "The source from which the data is coming from",
-              "label": "",
-              "type": "OracleSource",
-              "longType": "OracleDataSubmission.OracleSource",
-              "fullType": "vega.commands.v1.OracleDataSubmission.OracleSource",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "payload",
-              "description": "The data provided by the third party provider",
-              "label": "",
-              "type": "bytes",
-              "longType": "bytes",
-              "fullType": "bytes",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
-    },
-    {
-      "name": "commands/v1/transaction.proto",
-      "description": "",
-      "package": "vega.commands.v1",
-      "hasEnums": false,
-      "hasExtensions": false,
-      "hasMessages": true,
-      "hasServices": false,
-      "enums": [],
-      "extensions": [],
-      "messages": [
-        {
-          "name": "InputData",
-          "longName": "InputData",
-          "fullName": "vega.commands.v1.InputData",
-          "description": "",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "nonce",
-              "description": "A random number used to provided uniqueness and prevents\nagainst replay attack.",
-              "label": "",
-              "type": "uint64",
-              "longType": "uint64",
-              "fullType": "uint64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "block_height",
-              "description": "The block height associated to the transaction.\nThis should always be current height of the node at the time of sending the Tx.\nBlockHeight is used as a mechanism for replay protection.",
-              "label": "",
-              "type": "uint64",
-              "longType": "uint64",
-              "fullType": "uint64",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "order_submission",
-              "description": "user commands",
-              "label": "",
-              "type": "OrderSubmission",
-              "longType": "OrderSubmission",
-              "fullType": "vega.commands.v1.OrderSubmission",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "order_cancellation",
-              "description": "",
-              "label": "",
-              "type": "OrderCancellation",
-              "longType": "OrderCancellation",
-              "fullType": "vega.commands.v1.OrderCancellation",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "order_amendment",
-              "description": "",
-              "label": "",
-              "type": "OrderAmendment",
-              "longType": "OrderAmendment",
-              "fullType": "vega.commands.v1.OrderAmendment",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "withdraw_submission",
-              "description": "",
-              "label": "",
-              "type": "WithdrawSubmission",
-              "longType": "WithdrawSubmission",
-              "fullType": "vega.commands.v1.WithdrawSubmission",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "proposal_submission",
-              "description": "",
-              "label": "",
-              "type": "ProposalSubmission",
-              "longType": "ProposalSubmission",
-              "fullType": "vega.commands.v1.ProposalSubmission",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "vote_submission",
-              "description": "",
-              "label": "",
-              "type": "VoteSubmission",
-              "longType": "VoteSubmission",
-              "fullType": "vega.commands.v1.VoteSubmission",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "liquidity_provision_submission",
-              "description": "",
-              "label": "",
-              "type": "LiquidityProvisionSubmission",
-              "longType": "LiquidityProvisionSubmission",
-              "fullType": "vega.commands.v1.LiquidityProvisionSubmission",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "node_registration",
-              "description": "validator commands",
-              "label": "",
-              "type": "NodeRegistration",
-              "longType": "NodeRegistration",
-              "fullType": "vega.commands.v1.NodeRegistration",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "node_vote",
-              "description": "",
-              "label": "",
-              "type": "NodeVote",
-              "longType": "NodeVote",
-              "fullType": "vega.commands.v1.NodeVote",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "node_signature",
-              "description": "",
-              "label": "",
-              "type": "NodeSignature",
-              "longType": "NodeSignature",
-              "fullType": "vega.commands.v1.NodeSignature",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "chain_event",
-              "description": "",
-              "label": "",
-              "type": "ChainEvent",
-              "longType": "ChainEvent",
-              "fullType": "vega.commands.v1.ChainEvent",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            },
-            {
-              "name": "oracle_data_submission",
-              "description": "Oracles",
-              "label": "",
-              "type": "OracleDataSubmission",
-              "longType": "OracleDataSubmission",
-              "fullType": "vega.commands.v1.OracleDataSubmission",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "command",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "Signature",
-          "longName": "Signature",
-          "fullName": "vega.commands.v1.Signature",
-          "description": "A signature to be authenticate a transaction\nand to be verified by the vega network",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": false,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "bytes",
-              "description": "The bytes of the signature",
-              "label": "",
-              "type": "bytes",
-              "longType": "bytes",
-              "fullType": "bytes",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "algo",
-              "description": "The algorithm used to create the signature",
-              "label": "",
-              "type": "string",
-              "longType": "string",
-              "fullType": "string",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "version",
-              "description": "The version of the signature used to create the signature",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        },
-        {
-          "name": "Transaction",
-          "longName": "Transaction",
-          "fullName": "vega.commands.v1.Transaction",
-          "description": "Represents a transaction to be sent to Vega.",
-          "hasExtensions": false,
-          "hasFields": true,
-          "hasOneofs": true,
-          "extensions": [],
-          "fields": [
-            {
-              "name": "input_data",
-              "description": "One of the set of Vega commands (proto marshalled).",
-              "label": "",
-              "type": "bytes",
-              "longType": "bytes",
-              "fullType": "bytes",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "signature",
-              "description": "The signature of the inputData",
-              "label": "",
-              "type": "Signature",
-              "longType": "Signature",
-              "fullType": "vega.commands.v1.Signature",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "address",
-              "description": "The address of the sender.",
-              "label": "",
-              "type": "bytes",
-              "longType": "bytes",
-              "fullType": "bytes",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "from",
-              "defaultValue": ""
-            },
-            {
-              "name": "pub_key",
-              "description": "The public key of the sender.",
-              "label": "",
-              "type": "bytes",
-              "longType": "bytes",
-              "fullType": "bytes",
-              "ismap": false,
-              "isoneof": true,
-              "oneofdecl": "from",
-              "defaultValue": ""
-            },
-            {
-              "name": "version",
-              "description": "A version of the transaction, to be used\nin the future in case we want to implement\nchanges to the Transaction format",
-              "label": "",
-              "type": "uint32",
-              "longType": "uint32",
-              "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            }
-          ]
-        }
-      ],
-      "services": []
     },
     {
       "name": "tm/replay.proto",
@@ -17253,6 +17391,200 @@
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": []
+    },
+    {
+      "name": "wallet/v1/wallet.proto",
+      "description": "",
+      "package": "vega.wallet.v1",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": false,
+      "enums": [],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "SubmitTransactionRequest",
+          "longName": "SubmitTransactionRequest",
+          "fullName": "vega.wallet.v1.SubmitTransactionRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "pub_key",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "propagate",
+              "description": "",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "order_submission",
+              "description": "User commands",
+              "label": "",
+              "type": "OrderSubmission",
+              "longType": "vega.commands.v1.OrderSubmission",
+              "fullType": "vega.commands.v1.OrderSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "order_cancellation",
+              "description": "",
+              "label": "",
+              "type": "OrderCancellation",
+              "longType": "vega.commands.v1.OrderCancellation",
+              "fullType": "vega.commands.v1.OrderCancellation",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "order_amendment",
+              "description": "",
+              "label": "",
+              "type": "OrderAmendment",
+              "longType": "vega.commands.v1.OrderAmendment",
+              "fullType": "vega.commands.v1.OrderAmendment",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "withdraw_submission",
+              "description": "",
+              "label": "",
+              "type": "WithdrawSubmission",
+              "longType": "vega.commands.v1.WithdrawSubmission",
+              "fullType": "vega.commands.v1.WithdrawSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "proposal_submission",
+              "description": "",
+              "label": "",
+              "type": "ProposalSubmission",
+              "longType": "vega.commands.v1.ProposalSubmission",
+              "fullType": "vega.commands.v1.ProposalSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "vote_submission",
+              "description": "",
+              "label": "",
+              "type": "VoteSubmission",
+              "longType": "vega.commands.v1.VoteSubmission",
+              "fullType": "vega.commands.v1.VoteSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "liquidity_provision_submission",
+              "description": "",
+              "label": "",
+              "type": "LiquidityProvisionSubmission",
+              "longType": "vega.commands.v1.LiquidityProvisionSubmission",
+              "fullType": "vega.commands.v1.LiquidityProvisionSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_registration",
+              "description": "Validator commands",
+              "label": "",
+              "type": "NodeRegistration",
+              "longType": "vega.commands.v1.NodeRegistration",
+              "fullType": "vega.commands.v1.NodeRegistration",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_vote",
+              "description": "",
+              "label": "",
+              "type": "NodeVote",
+              "longType": "vega.commands.v1.NodeVote",
+              "fullType": "vega.commands.v1.NodeVote",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_signature",
+              "description": "",
+              "label": "",
+              "type": "NodeSignature",
+              "longType": "vega.commands.v1.NodeSignature",
+              "fullType": "vega.commands.v1.NodeSignature",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "chain_event",
+              "description": "",
+              "label": "",
+              "type": "ChainEvent",
+              "longType": "vega.commands.v1.ChainEvent",
+              "fullType": "vega.commands.v1.ChainEvent",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "oracle_data_submission",
+              "description": "Oracle commands",
+              "label": "",
+              "type": "OracleDataSubmission",
+              "longType": "vega.commands.v1.OracleDataSubmission",
+              "fullType": "vega.commands.v1.OracleDataSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
               "defaultValue": ""
             }
           ]

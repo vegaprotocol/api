@@ -674,7 +674,7 @@ class Transaction PROTOBUF_FINAL :
   void _internal_set_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // bytes address = 1001 [json_name = "address"];
+  // string address = 1001 [json_name = "address"];
   private:
   bool _internal_has_address() const;
   public:
@@ -683,7 +683,7 @@ class Transaction PROTOBUF_FINAL :
   void set_address(const std::string& value);
   void set_address(std::string&& value);
   void set_address(const char* value);
-  void set_address(const void* value, size_t size);
+  void set_address(const char* value, size_t size);
   std::string* mutable_address();
   std::string* release_address();
   void set_allocated_address(std::string* address);
@@ -693,7 +693,7 @@ class Transaction PROTOBUF_FINAL :
   std::string* _internal_mutable_address();
   public:
 
-  // bytes pub_key = 1002 [json_name = "pubKey"];
+  // string pub_key = 1002 [json_name = "pubKey"];
   private:
   bool _internal_has_pub_key() const;
   public:
@@ -702,7 +702,7 @@ class Transaction PROTOBUF_FINAL :
   void set_pub_key(const std::string& value);
   void set_pub_key(std::string&& value);
   void set_pub_key(const char* value);
-  void set_pub_key(const void* value, size_t size);
+  void set_pub_key(const char* value, size_t size);
   std::string* mutable_pub_key();
   std::string* release_pub_key();
   void set_allocated_pub_key(std::string* pub_key);
@@ -853,24 +853,24 @@ class Signature PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBytesFieldNumber = 1,
+    kValueFieldNumber = 1,
     kAlgoFieldNumber = 2,
     kVersionFieldNumber = 3,
   };
-  // bytes bytes = 1 [json_name = "bytes"];
-  void clear_bytes();
-  const std::string& bytes() const;
-  void set_bytes(const std::string& value);
-  void set_bytes(std::string&& value);
-  void set_bytes(const char* value);
-  void set_bytes(const void* value, size_t size);
-  std::string* mutable_bytes();
-  std::string* release_bytes();
-  void set_allocated_bytes(std::string* bytes);
+  // string value = 1 [json_name = "value"];
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  const std::string& _internal_bytes() const;
-  void _internal_set_bytes(const std::string& value);
-  std::string* _internal_mutable_bytes();
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
 
   // string algo = 2 [json_name = "algo"];
@@ -905,7 +905,7 @@ class Signature PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bytes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr algo_;
   ::PROTOBUF_NAMESPACE_ID::uint32 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1899,7 +1899,7 @@ inline void Transaction::set_allocated_signature(::vega::commands::v1::Signature
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.Transaction.signature)
 }
 
-// bytes address = 1001 [json_name = "address"];
+// string address = 1001 [json_name = "address"];
 inline bool Transaction::_internal_has_address() const {
   return from_case() == kAddress;
 }
@@ -1960,7 +1960,7 @@ inline void Transaction::set_address(const char* value) {
       ::std::string(value), GetArena());
   // @@protoc_insertion_point(field_set_char:vega.commands.v1.Transaction.address)
 }
-inline void Transaction::set_address(const void* value,
+inline void Transaction::set_address(const char* value,
                              size_t size) {
   if (!_internal_has_address()) {
     clear_from();
@@ -2006,7 +2006,7 @@ inline void Transaction::set_allocated_address(std::string* address) {
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.Transaction.address)
 }
 
-// bytes pub_key = 1002 [json_name = "pubKey"];
+// string pub_key = 1002 [json_name = "pubKey"];
 inline bool Transaction::_internal_has_pub_key() const {
   return from_case() == kPubKey;
 }
@@ -2067,7 +2067,7 @@ inline void Transaction::set_pub_key(const char* value) {
       ::std::string(value), GetArena());
   // @@protoc_insertion_point(field_set_char:vega.commands.v1.Transaction.pub_key)
 }
-inline void Transaction::set_pub_key(const void* value,
+inline void Transaction::set_pub_key(const char* value,
                              size_t size) {
   if (!_internal_has_pub_key()) {
     clear_from();
@@ -2146,65 +2146,65 @@ inline Transaction::FromCase Transaction::from_case() const {
 
 // Signature
 
-// bytes bytes = 1 [json_name = "bytes"];
-inline void Signature::clear_bytes() {
-  bytes_.ClearToEmpty();
+// string value = 1 [json_name = "value"];
+inline void Signature::clear_value() {
+  value_.ClearToEmpty();
 }
-inline const std::string& Signature::bytes() const {
-  // @@protoc_insertion_point(field_get:vega.commands.v1.Signature.bytes)
-  return _internal_bytes();
+inline const std::string& Signature::value() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.Signature.value)
+  return _internal_value();
 }
-inline void Signature::set_bytes(const std::string& value) {
-  _internal_set_bytes(value);
-  // @@protoc_insertion_point(field_set:vega.commands.v1.Signature.bytes)
+inline void Signature::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:vega.commands.v1.Signature.value)
 }
-inline std::string* Signature::mutable_bytes() {
-  // @@protoc_insertion_point(field_mutable:vega.commands.v1.Signature.bytes)
-  return _internal_mutable_bytes();
+inline std::string* Signature::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.Signature.value)
+  return _internal_mutable_value();
 }
-inline const std::string& Signature::_internal_bytes() const {
-  return bytes_.Get();
+inline const std::string& Signature::_internal_value() const {
+  return value_.Get();
 }
-inline void Signature::_internal_set_bytes(const std::string& value) {
+inline void Signature::_internal_set_value(const std::string& value) {
 
-  bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Signature::set_bytes(std::string&& value) {
+inline void Signature::set_value(std::string&& value) {
 
-  bytes_.Set(
+  value_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.Signature.bytes)
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.Signature.value)
 }
-inline void Signature::set_bytes(const char* value) {
+inline void Signature::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
-  bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.commands.v1.Signature.bytes)
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.Signature.value)
 }
-inline void Signature::set_bytes(const void* value,
+inline void Signature::set_value(const char* value,
     size_t size) {
 
-  bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.Signature.bytes)
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.Signature.value)
 }
-inline std::string* Signature::_internal_mutable_bytes() {
+inline std::string* Signature::_internal_mutable_value() {
 
-  return bytes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Signature::release_bytes() {
-  // @@protoc_insertion_point(field_release:vega.commands.v1.Signature.bytes)
-  return bytes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Signature::release_value() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.Signature.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Signature::set_allocated_bytes(std::string* bytes) {
-  if (bytes != nullptr) {
+inline void Signature::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
 
   } else {
 
   }
-  bytes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), bytes,
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.Signature.bytes)
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.Signature.value)
 }
 
 // string algo = 2 [json_name = "algo"];

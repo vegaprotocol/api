@@ -1226,6 +1226,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vega_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, indicative_volume_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, market_trading_mode_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, trigger_),
+  PROTOBUF_FIELD_OFFSET(::vega::MarketData, extension_trigger_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, target_stake_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, supplied_stake_),
   PROTOBUF_FIELD_OFFSET(::vega::MarketData, price_monitoring_bounds_),
@@ -1367,17 +1368,17 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 335, -1, sizeof(::vega::TransferResponse)},
   { 342, -1, sizeof(::vega::MarginLevels)},
   { 355, -1, sizeof(::vega::MarketData)},
-  { 385, -1, sizeof(::vega::LiquidityProviderFeeShare)},
-  { 393, -1, sizeof(::vega::PriceMonitoringBounds)},
-  { 402, -1, sizeof(::vega::ErrorDetail)},
-  { 410, -1, sizeof(::vega::Transaction)},
-  { 421, -1, sizeof(::vega::Signature)},
-  { 429, -1, sizeof(::vega::SignedBundle)},
-  { 436, -1, sizeof(::vega::NetworkParameter)},
-  { 443, -1, sizeof(::vega::LiquidityOrder)},
-  { 451, -1, sizeof(::vega::LiquidityOrderReference)},
-  { 458, -1, sizeof(::vega::LiquidityProvision)},
-  { 475, -1, sizeof(::vega::EthereumConfig)},
+  { 386, -1, sizeof(::vega::LiquidityProviderFeeShare)},
+  { 394, -1, sizeof(::vega::PriceMonitoringBounds)},
+  { 403, -1, sizeof(::vega::ErrorDetail)},
+  { 411, -1, sizeof(::vega::Transaction)},
+  { 422, -1, sizeof(::vega::Signature)},
+  { 430, -1, sizeof(::vega::SignedBundle)},
+  { 437, -1, sizeof(::vega::NetworkParameter)},
+  { 444, -1, sizeof(::vega::LiquidityOrder)},
+  { 452, -1, sizeof(::vega::LiquidityOrderReference)},
+  { 459, -1, sizeof(::vega::LiquidityProvision)},
+  { 476, -1, sizeof(::vega::EthereumConfig)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1624,7 +1625,7 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "lateralReleaseLevel\022\031\n\010party_id\030\005 \001(\tR\007p"
   "artyId\022\033\n\tmarket_id\030\006 \001(\tR\010marketId\022\024\n\005a"
   "sset\030\007 \001(\tR\005asset\022\034\n\ttimestamp\030\010 \001(\003R\tti"
-  "mestamp\"\220\t\n\nMarketData\022\035\n\nmark_price\030\001 \001"
+  "mestamp\"\323\t\n\nMarketData\022\035\n\nmark_price\030\001 \001"
   "(\004R\tmarkPrice\022$\n\016best_bid_price\030\002 \001(\004R\014b"
   "estBidPrice\022&\n\017best_bid_volume\030\003 \001(\004R\rbe"
   "stBidVolume\022(\n\020best_offer_price\030\004 \001(\004R\016b"
@@ -1645,155 +1646,157 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "ve_volume\030\022 \001(\004R\020indicativeVolume\022H\n\023mar"
   "ket_trading_mode\030\023 \001(\0162\030.vega.Market.Tra"
   "dingModeR\021marketTradingMode\022.\n\007trigger\030\024"
-  " \001(\0162\024.vega.AuctionTriggerR\007trigger\022!\n\014t"
-  "arget_stake\030\025 \001(\tR\013targetStake\022%\n\016suppli"
-  "ed_stake\030\026 \001(\tR\rsuppliedStake\022S\n\027price_m"
-  "onitoring_bounds\030\027 \003(\0132\033.vega.PriceMonit"
-  "oringBoundsR\025priceMonitoringBounds\022,\n\022ma"
-  "rket_value_proxy\030\030 \001(\tR\020marketValueProxy"
-  "\022`\n\034liquidity_provider_fee_share\030\031 \003(\0132\037"
-  ".vega.LiquidityProviderFeeShareR\031liquidi"
-  "tyProviderFeeShare\"\225\001\n\031LiquidityProvider"
-  "FeeShare\022\024\n\005party\030\001 \001(\tR\005party\022*\n\021equity"
-  "_like_share\030\002 \001(\tR\017equityLikeShare\0226\n\027av"
-  "erage_entry_valuation\030\003 \001(\tR\025averageEntr"
-  "yValuation\"\310\001\n\025PriceMonitoringBounds\022&\n\017"
-  "min_valid_price\030\001 \001(\004R\rminValidPrice\022&\n\017"
-  "max_valid_price\030\002 \001(\004R\rmaxValidPrice\0226\n\007"
-  "trigger\030\003 \001(\0132\034.vega.PriceMonitoringTrig"
-  "gerR\007trigger\022\'\n\017reference_price\030\004 \001(\001R\016r"
-  "eferencePrice\"Q\n\013ErrorDetail\022\022\n\004code\030\001 \001"
-  "(\005R\004code\022\030\n\007message\030\002 \001(\tR\007message\022\024\n\005in"
-  "ner\030\003 \001(\tR\005inner\"\246\001\n\013Transaction\022\035\n\ninpu"
-  "t_data\030\001 \001(\014R\tinputData\022\024\n\005nonce\030\002 \001(\004R\005"
-  "nonce\022!\n\014block_height\030\003 \001(\004R\013blockHeight"
-  "\022\033\n\007address\030\351\007 \001(\014H\000R\007address\022\032\n\007pub_key"
-  "\030\352\007 \001(\014H\000R\006pubKeyB\006\n\004from\"K\n\tSignature\022\020"
-  "\n\003sig\030\001 \001(\014R\003sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007"
-  "version\030\003 \001(\004R\007version\"A\n\014SignedBundle\022\016"
-  "\n\002tx\030\001 \001(\014R\002tx\022!\n\003sig\030\002 \001(\0132\017.vega.Signa"
-  "tureR\003sig\":\n\020NetworkParameter\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value\"}\n\016Liquidi"
-  "tyOrder\0223\n\treference\030\001 \001(\0162\025.vega.Pegged"
-  "ReferenceR\treference\022\036\n\nproportion\030\002 \001(\r"
-  "R\nproportion\022\026\n\006offset\030\003 \001(\003R\006offset\"s\n\027"
-  "LiquidityOrderReference\022\031\n\010order_id\030\001 \001("
-  "\tR\007orderId\022=\n\017liquidity_order\030\002 \001(\0132\024.ve"
-  "ga.LiquidityOrderR\016liquidityOrder\"\332\004\n\022Li"
-  "quidityProvision\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010part"
-  "y_id\030\002 \001(\tR\007partyId\022\035\n\ncreated_at\030\003 \001(\003R"
-  "\tcreatedAt\022\035\n\nupdated_at\030\004 \001(\003R\tupdatedA"
-  "t\022#\n\tmarket_id\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+"
-  "\n\021commitment_amount\030\006 \001(\004R\020commitmentAmo"
-  "unt\022\020\n\003fee\030\007 \001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.v"
-  "ega.LiquidityOrderReferenceR\005sells\0221\n\004bu"
-  "ys\030\t \003(\0132\035.vega.LiquidityOrderReferenceR"
-  "\004buys\022\030\n\007version\030\n \001(\tR\007version\0227\n\006statu"
-  "s\030\013 \001(\0162\037.vega.LiquidityProvision.Status"
-  "R\006status\022\034\n\treference\030\014 \001(\tR\treference\"\235"
-  "\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\021\n\rSTA"
-  "TUS_ACTIVE\020\001\022\022\n\016STATUS_STOPPED\020\002\022\024\n\020STAT"
-  "US_CANCELLED\020\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021S"
-  "TATUS_UNDEPLOYED\020\005\022\022\n\016STATUS_PENDING\020\006\"\227"
-  "\001\n\016EthereumConfig\022\035\n\nnetwork_id\030\001 \001(\tR\tn"
-  "etworkId\022\031\n\010chain_id\030\002 \001(\tR\007chainId\022%\n\016b"
-  "ridge_address\030\003 \001(\tR\rbridgeAddress\022$\n\rco"
-  "nfirmations\030\004 \001(\rR\rconfirmations*9\n\004Side"
-  "\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\t"
-  "SIDE_SELL\020\002*\230\001\n\010Interval\022\030\n\024INTERVAL_UNS"
-  "PECIFIED\020\000\022\020\n\014INTERVAL_I1M\020<\022\021\n\014INTERVAL"
-  "_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204\007\022\021\n\014INTERVAL_"
-  "I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I"
-  "1D\020\200\243\005*\243\001\n\016AuctionTrigger\022\037\n\033AUCTION_TRI"
-  "GGER_UNSPECIFIED\020\000\022\031\n\025AUCTION_TRIGGER_BA"
-  "TCH\020\001\022\033\n\027AUCTION_TRIGGER_OPENING\020\002\022\031\n\025AU"
-  "CTION_TRIGGER_PRICE\020\003\022\035\n\031AUCTION_TRIGGER"
-  "_LIQUIDITY\020\004*\213\001\n\017PeggedReference\022 \n\034PEGG"
-  "ED_REFERENCE_UNSPECIFIED\020\000\022\030\n\024PEGGED_REF"
-  "ERENCE_MID\020\001\022\035\n\031PEGGED_REFERENCE_BEST_BI"
-  "D\020\002\022\035\n\031PEGGED_REFERENCE_BEST_ASK\020\003*\370\017\n\nO"
-  "rderError\022\033\n\027ORDER_ERROR_UNSPECIFIED\020\000\022!"
-  "\n\035ORDER_ERROR_INVALID_MARKET_ID\020\001\022 \n\034ORD"
-  "ER_ERROR_INVALID_ORDER_ID\020\002\022\037\n\033ORDER_ERR"
-  "OR_OUT_OF_SEQUENCE\020\003\022&\n\"ORDER_ERROR_INVA"
-  "LID_REMAINING_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME"
-  "_FAILURE\020\005\022\037\n\033ORDER_ERROR_REMOVAL_FAILUR"
-  "E\020\006\022+\n\'ORDER_ERROR_INVALID_EXPIRATION_DA"
-  "TETIME\020\007\022\'\n#ORDER_ERROR_INVALID_ORDER_RE"
-  "FERENCE\020\010\022 \n\034ORDER_ERROR_EDIT_NOT_ALLOWE"
-  "D\020\t\022\035\n\031ORDER_ERROR_AMEND_FAILURE\020\n\022\031\n\025OR"
-  "DER_ERROR_NOT_FOUND\020\013\022 \n\034ORDER_ERROR_INV"
-  "ALID_PARTY_ID\020\014\022\035\n\031ORDER_ERROR_MARKET_CL"
-  "OSED\020\r\022#\n\037ORDER_ERROR_MARGIN_CHECK_FAILE"
-  "D\020\016\022\'\n#ORDER_ERROR_MISSING_GENERAL_ACCOU"
-  "NT\020\017\022\036\n\032ORDER_ERROR_INTERNAL_ERROR\020\020\022\034\n\030"
-  "ORDER_ERROR_INVALID_SIZE\020\021\022#\n\037ORDER_ERRO"
-  "R_INVALID_PERSISTENCE\020\022\022\034\n\030ORDER_ERROR_I"
-  "NVALID_TYPE\020\023\022\034\n\030ORDER_ERROR_SELF_TRADIN"
-  "G\020\024\022.\n*ORDER_ERROR_INSUFFICIENT_FUNDS_TO"
-  "_PAY_FEES\020\025\022%\n!ORDER_ERROR_INCORRECT_MAR"
-  "KET_TYPE\020\026\022%\n!ORDER_ERROR_INVALID_TIME_I"
-  "N_FORCE\020\027\022+\n\'ORDER_ERROR_GFN_ORDER_DURIN"
-  "G_AN_AUCTION\020\030\0223\n/ORDER_ERROR_GFA_ORDER_"
-  "DURING_CONTINUOUS_TRADING\020\031\0224\n0ORDER_ERR"
-  "OR_CANNOT_AMEND_TO_GTT_WITHOUT_EXPIRYAT\020"
-  "\032\022)\n%ORDER_ERROR_EXPIRYAT_BEFORE_CREATED"
-  "AT\020\033\022,\n(ORDER_ERROR_CANNOT_HAVE_GTC_AND_"
-  "EXPIRYAT\020\034\022*\n&ORDER_ERROR_CANNOT_AMEND_T"
-  "O_FOK_OR_IOC\020\035\022*\n&ORDER_ERROR_CANNOT_AME"
-  "ND_TO_GFA_OR_GFN\020\036\022,\n(ORDER_ERROR_CANNOT"
-  "_AMEND_FROM_GFA_OR_GFN\020\037\0224\n0ORDER_ERROR_"
-  "CANNOT_SEND_IOC_ORDER_DURING_AUCTION\020 \0224"
-  "\n0ORDER_ERROR_CANNOT_SEND_FOK_ORDER_DURI"
-  "NG_AUCTION\020!\022#\n\037ORDER_ERROR_MUST_BE_LIMI"
-  "T_ORDER\020\"\022\"\n\036ORDER_ERROR_MUST_BE_GTT_OR_"
-  "GTC\020#\022\'\n#ORDER_ERROR_WITHOUT_REFERENCE_P"
-  "RICE\020$\0223\n/ORDER_ERROR_BUY_CANNOT_REFEREN"
-  "CE_BEST_ASK_PRICE\020%\0224\n0ORDER_ERROR_OFFSE"
-  "T_MUST_BE_LESS_OR_EQUAL_TO_ZERO\020&\022-\n)ORD"
-  "ER_ERROR_OFFSET_MUST_BE_LESS_THAN_ZERO\020\'"
-  "\0227\n3ORDER_ERROR_OFFSET_MUST_BE_GREATER_O"
-  "R_EQUAL_TO_ZERO\020(\0224\n0ORDER_ERROR_SELL_CA"
-  "NNOT_REFERENCE_BEST_BID_PRICE\020)\0220\n,ORDER"
-  "_ERROR_OFFSET_MUST_BE_GREATER_THAN_ZERO\020"
-  "*\022*\n&ORDER_ERROR_INSUFFICIENT_ASSET_BALA"
-  "NCE\020+\022E\nAORDER_ERROR_CANNOT_AMEND_PEGGED"
-  "_ORDER_DETAILS_ON_NON_PEGGED_ORDER\020,\022.\n*"
-  "ORDER_ERROR_UNABLE_TO_REPRICE_PEGGED_ORD"
-  "ER\020-\0225\n1ORDER_ERROR_UNABLE_TO_AMEND_PRIC"
-  "E_ON_PEGGED_ORDER\020.\0228\n4ORDER_ERROR_NON_P"
-  "ERSISTENT_ORDER_OUT_OF_PRICE_BOUNDS\020/*\202\001"
-  "\n\013ChainStatus\022\034\n\030CHAIN_STATUS_UNSPECIFIE"
-  "D\020\000\022\035\n\031CHAIN_STATUS_DISCONNECTED\020\001\022\032\n\026CH"
-  "AIN_STATUS_REPLAYING\020\002\022\032\n\026CHAIN_STATUS_C"
-  "ONNECTED\020\003*\315\002\n\013AccountType\022\034\n\030ACCOUNT_TY"
-  "PE_UNSPECIFIED\020\000\022\032\n\026ACCOUNT_TYPE_INSURAN"
-  "CE\020\001\022\033\n\027ACCOUNT_TYPE_SETTLEMENT\020\002\022\027\n\023ACC"
-  "OUNT_TYPE_MARGIN\020\003\022\030\n\024ACCOUNT_TYPE_GENER"
-  "AL\020\004\022$\n ACCOUNT_TYPE_FEES_INFRASTRUCTURE"
-  "\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027A"
-  "CCOUNT_TYPE_FEES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE"
-  "_LOCK_WITHDRAW\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022"
-  "\031\n\025ACCOUNT_TYPE_EXTERNAL\020\n*\263\005\n\014TransferT"
-  "ype\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022TR"
-  "ANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020"
-  "\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_T"
-  "YPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020"
-  "\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANS"
-  "FER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE_"
-  "MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_MA"
-  "KER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FEE"
-  "_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCTU"
-  "RE_FEE_PAY\020\013\022/\n+TRANSFER_TYPE_INFRASTRUC"
-  "TURE_FEE_DISTRIBUTE\020\014\022#\n\037TRANSFER_TYPE_L"
-  "IQUIDITY_FEE_PAY\020\r\022*\n&TRANSFER_TYPE_LIQU"
-  "IDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TRANSFER_TYPE_"
-  "BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_BOND_HIGH\020\020\022"
-  "\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\021\022\032\n\026TRAN"
-  "SFER_TYPE_WITHDRAW\020\022\022\031\n\025TRANSFER_TYPE_DE"
-  "POSIT\020\023\022\037\n\033TRANSFER_TYPE_BOND_SLASHING\020\024"
-  "B7\n\024io.vegaprotocol.vegaZ\037code.vegaproto"
-  "col.io/vega/protob\006proto3"
+  " \001(\0162\024.vega.AuctionTriggerR\007trigger\022A\n\021e"
+  "xtension_trigger\030\025 \001(\0162\024.vega.AuctionTri"
+  "ggerR\020extensionTrigger\022!\n\014target_stake\030\026"
+  " \001(\tR\013targetStake\022%\n\016supplied_stake\030\027 \001("
+  "\tR\rsuppliedStake\022S\n\027price_monitoring_bou"
+  "nds\030\030 \003(\0132\033.vega.PriceMonitoringBoundsR\025"
+  "priceMonitoringBounds\022,\n\022market_value_pr"
+  "oxy\030\031 \001(\tR\020marketValueProxy\022`\n\034liquidity"
+  "_provider_fee_share\030\032 \003(\0132\037.vega.Liquidi"
+  "tyProviderFeeShareR\031liquidityProviderFee"
+  "Share\"\225\001\n\031LiquidityProviderFeeShare\022\024\n\005p"
+  "arty\030\001 \001(\tR\005party\022*\n\021equity_like_share\030\002"
+  " \001(\tR\017equityLikeShare\0226\n\027average_entry_v"
+  "aluation\030\003 \001(\tR\025averageEntryValuation\"\310\001"
+  "\n\025PriceMonitoringBounds\022&\n\017min_valid_pri"
+  "ce\030\001 \001(\004R\rminValidPrice\022&\n\017max_valid_pri"
+  "ce\030\002 \001(\004R\rmaxValidPrice\0226\n\007trigger\030\003 \001(\013"
+  "2\034.vega.PriceMonitoringTriggerR\007trigger\022"
+  "\'\n\017reference_price\030\004 \001(\001R\016referencePrice"
+  "\"Q\n\013ErrorDetail\022\022\n\004code\030\001 \001(\005R\004code\022\030\n\007m"
+  "essage\030\002 \001(\tR\007message\022\024\n\005inner\030\003 \001(\tR\005in"
+  "ner\"\246\001\n\013Transaction\022\035\n\ninput_data\030\001 \001(\014R"
+  "\tinputData\022\024\n\005nonce\030\002 \001(\004R\005nonce\022!\n\014bloc"
+  "k_height\030\003 \001(\004R\013blockHeight\022\033\n\007address\030\351"
+  "\007 \001(\014H\000R\007address\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pu"
+  "bKeyB\006\n\004from\"K\n\tSignature\022\020\n\003sig\030\001 \001(\014R\003"
+  "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\r"
+  "R\007version\"A\n\014SignedBundle\022\016\n\002tx\030\001 \001(\014R\002t"
+  "x\022!\n\003sig\030\002 \001(\0132\017.vega.SignatureR\003sig\":\n\020"
+  "NetworkParameter\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
+  "lue\030\002 \001(\tR\005value\"}\n\016LiquidityOrder\0223\n\tre"
+  "ference\030\001 \001(\0162\025.vega.PeggedReferenceR\tre"
+  "ference\022\036\n\nproportion\030\002 \001(\rR\nproportion\022"
+  "\026\n\006offset\030\003 \001(\003R\006offset\"s\n\027LiquidityOrde"
+  "rReference\022\031\n\010order_id\030\001 \001(\tR\007orderId\022=\n"
+  "\017liquidity_order\030\002 \001(\0132\024.vega.LiquidityO"
+  "rderR\016liquidityOrder\"\332\004\n\022LiquidityProvis"
+  "ion\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010party_id\030\002 \001(\tR\007p"
+  "artyId\022\035\n\ncreated_at\030\003 \001(\003R\tcreatedAt\022\035\n"
+  "\nupdated_at\030\004 \001(\003R\tupdatedAt\022#\n\tmarket_i"
+  "d\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commitment_"
+  "amount\030\006 \001(\004R\020commitmentAmount\022\020\n\003fee\030\007 "
+  "\001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.vega.Liquidity"
+  "OrderReferenceR\005sells\0221\n\004buys\030\t \003(\0132\035.ve"
+  "ga.LiquidityOrderReferenceR\004buys\022\030\n\007vers"
+  "ion\030\n \001(\tR\007version\0227\n\006status\030\013 \001(\0162\037.veg"
+  "a.LiquidityProvision.StatusR\006status\022\034\n\tr"
+  "eference\030\014 \001(\tR\treference\"\235\001\n\006Status\022\026\n\022"
+  "STATUS_UNSPECIFIED\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022"
+  "\022\n\016STATUS_STOPPED\020\002\022\024\n\020STATUS_CANCELLED\020"
+  "\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021STATUS_UNDEPLO"
+  "YED\020\005\022\022\n\016STATUS_PENDING\020\006\"\227\001\n\016EthereumCo"
+  "nfig\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId\022\031\n\010c"
+  "hain_id\030\002 \001(\tR\007chainId\022%\n\016bridge_address"
+  "\030\003 \001(\tR\rbridgeAddress\022$\n\rconfirmations\030\004"
+  " \001(\rR\rconfirmations*9\n\004Side\022\024\n\020SIDE_UNSP"
+  "ECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230"
+  "\001\n\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n"
+  "\014INTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rIN"
+  "TERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INT"
+  "ERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Au"
+  "ctionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIF"
+  "IED\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCT"
+  "ION_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER"
+  "_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*"
+  "\213\001\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_"
+  "UNSPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022"
+  "\035\n\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED"
+  "_REFERENCE_BEST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027"
+  "ORDER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR"
+  "_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVA"
+  "LID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQ"
+  "UENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING"
+  "_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n"
+  "\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_"
+  "ERROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#O"
+  "RDER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034"
+  "ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_"
+  "ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT"
+  "_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID"
+  "\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORD"
+  "ER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_"
+  "ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER"
+  "_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_I"
+  "NVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PER"
+  "SISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023"
+  "\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_"
+  "ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%"
+  "\n!ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n"
+  "!ORDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'"
+  "ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020"
+  "\030\0223\n/ORDER_ERROR_GFA_ORDER_DURING_CONTIN"
+  "UOUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AME"
+  "ND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ER"
+  "ROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER"
+  "_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n"
+  "&ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020"
+  "\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_"
+  "GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_G"
+  "FA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_I"
+  "OC_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR"
+  "_CANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022"
+  "#\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036"
+  "ORDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDE"
+  "R_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORD"
+  "ER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_P"
+  "RICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LES"
+  "S_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFS"
+  "ET_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERR"
+  "OR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZE"
+  "RO\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENC"
+  "E_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET"
+  "_MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ER"
+  "ROR_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDE"
+  "R_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAIL"
+  "S_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_U"
+  "NABLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER"
+  "_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_O"
+  "RDER\020.\0228\n4ORDER_ERROR_NON_PERSISTENT_ORD"
+  "ER_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus"
+  "\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_"
+  "STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_RE"
+  "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\315\002"
+  "\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIE"
+  "D\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOU"
+  "NT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MAR"
+  "GIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOU"
+  "NT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT"
+  "_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_F"
+  "EES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRA"
+  "W\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TY"
+  "PE_EXTERNAL\020\n*\263\005\n\014TransferType\022\035\n\031TRANSF"
+  "ER_TYPE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_TYPE_L"
+  "OSS\020\001\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER"
+  "_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020"
+  "\004\022\031\n\025TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER"
+  "_TYPE_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE_MARG"
+  "IN_HIGH\020\007\022$\n TRANSFER_TYPE_MARGIN_CONFIS"
+  "CATED\020\010\022\037\n\033TRANSFER_TYPE_MAKER_FEE_PAY\020\t"
+  "\022#\n\037TRANSFER_TYPE_MAKER_FEE_RECEIVE\020\n\022(\n"
+  "$TRANSFER_TYPE_INFRASTRUCTURE_FEE_PAY\020\013\022"
+  "/\n+TRANSFER_TYPE_INFRASTRUCTURE_FEE_DIST"
+  "RIBUTE\020\014\022#\n\037TRANSFER_TYPE_LIQUIDITY_FEE_"
+  "PAY\020\r\022*\n&TRANSFER_TYPE_LIQUIDITY_FEE_DIS"
+  "TRIBUTE\020\016\022\032\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033\n"
+  "\027TRANSFER_TYPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_T"
+  "YPE_WITHDRAW_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WIT"
+  "HDRAW\020\022\022\031\n\025TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TR"
+  "ANSFER_TYPE_BOND_SLASHING\020\024B7\n\024io.vegapr"
+  "otocol.vegaZ\037code.vegaprotocol.io/vega/p"
+  "rotob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vega_2eproto_deps[2] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
@@ -1849,7 +1852,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_veg
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vega_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vega_2eproto = {
-  false, false, descriptor_table_protodef_vega_2eproto, "vega.proto", 14545,
+  false, false, descriptor_table_protodef_vega_2eproto, "vega.proto", 14612,
   &descriptor_table_vega_2eproto_once, descriptor_table_vega_2eproto_sccs, descriptor_table_vega_2eproto_deps, 46, 2,
   schemas, file_default_instances, TableStruct_vega_2eproto::offsets,
   file_level_metadata_vega_2eproto, 46, file_level_enum_descriptors_vega_2eproto, file_level_service_descriptors_vega_2eproto,
@@ -13282,8 +13285,8 @@ MarketData::MarketData(const MarketData& from)
       GetArena());
   }
   ::memcpy(&mark_price_, &from.mark_price_,
-    static_cast<size_t>(reinterpret_cast<char*>(&trigger_) -
-    reinterpret_cast<char*>(&mark_price_)) + sizeof(trigger_));
+    static_cast<size_t>(reinterpret_cast<char*>(&extension_trigger_) -
+    reinterpret_cast<char*>(&mark_price_)) + sizeof(extension_trigger_));
   // @@protoc_insertion_point(copy_constructor:vega.MarketData)
 }
 
@@ -13295,8 +13298,8 @@ void MarketData::SharedCtor() {
   market_value_proxy_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
       reinterpret_cast<char*>(&mark_price_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&trigger_) -
-      reinterpret_cast<char*>(&mark_price_)) + sizeof(trigger_));
+      0, static_cast<size_t>(reinterpret_cast<char*>(&extension_trigger_) -
+      reinterpret_cast<char*>(&mark_price_)) + sizeof(extension_trigger_));
 }
 
 MarketData::~MarketData() {
@@ -13341,8 +13344,8 @@ void MarketData::Clear() {
   supplied_stake_.ClearToEmpty();
   market_value_proxy_.ClearToEmpty();
   ::memset(&mark_price_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&trigger_) -
-      reinterpret_cast<char*>(&mark_price_)) + sizeof(trigger_));
+      reinterpret_cast<char*>(&extension_trigger_) -
+      reinterpret_cast<char*>(&mark_price_)) + sizeof(extension_trigger_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -13497,55 +13500,63 @@ const char* MarketData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           _internal_set_trigger(static_cast<::vega::AuctionTrigger>(val));
         } else goto handle_unusual;
         continue;
-      // string target_stake = 21 [json_name = "targetStake"];
+      // .vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];
       case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 168)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_extension_trigger(static_cast<::vega::AuctionTrigger>(val));
+        } else goto handle_unusual;
+        continue;
+      // string target_stake = 22 [json_name = "targetStake"];
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 178)) {
           auto str = _internal_mutable_target_stake();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.MarketData.target_stake"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string supplied_stake = 22 [json_name = "suppliedStake"];
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 178)) {
+      // string supplied_stake = 23 [json_name = "suppliedStake"];
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
           auto str = _internal_mutable_supplied_stake();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.MarketData.supplied_stake"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
+      // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 194)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_price_monitoring_bounds(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<194>(ptr));
         } else goto handle_unusual;
         continue;
-      // string market_value_proxy = 24 [json_name = "marketValueProxy"];
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 194)) {
+      // string market_value_proxy = 25 [json_name = "marketValueProxy"];
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 202)) {
           auto str = _internal_mutable_market_value_proxy();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.MarketData.market_value_proxy"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 202)) {
+      // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 210)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_liquidity_provider_fee_share(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<202>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<210>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -13702,50 +13713,57 @@ failure:
       20, this->_internal_trigger(), target);
   }
 
-  // string target_stake = 21 [json_name = "targetStake"];
+  // .vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];
+  if (this->extension_trigger() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      21, this->_internal_extension_trigger(), target);
+  }
+
+  // string target_stake = 22 [json_name = "targetStake"];
   if (this->target_stake().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_target_stake().data(), static_cast<int>(this->_internal_target_stake().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.MarketData.target_stake");
     target = stream->WriteStringMaybeAliased(
-        21, this->_internal_target_stake(), target);
+        22, this->_internal_target_stake(), target);
   }
 
-  // string supplied_stake = 22 [json_name = "suppliedStake"];
+  // string supplied_stake = 23 [json_name = "suppliedStake"];
   if (this->supplied_stake().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_supplied_stake().data(), static_cast<int>(this->_internal_supplied_stake().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.MarketData.supplied_stake");
     target = stream->WriteStringMaybeAliased(
-        22, this->_internal_supplied_stake(), target);
+        23, this->_internal_supplied_stake(), target);
   }
 
-  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
+  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_price_monitoring_bounds_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(23, this->_internal_price_monitoring_bounds(i), target, stream);
+      InternalWriteMessage(24, this->_internal_price_monitoring_bounds(i), target, stream);
   }
 
-  // string market_value_proxy = 24 [json_name = "marketValueProxy"];
+  // string market_value_proxy = 25 [json_name = "marketValueProxy"];
   if (this->market_value_proxy().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_market_value_proxy().data(), static_cast<int>(this->_internal_market_value_proxy().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.MarketData.market_value_proxy");
     target = stream->WriteStringMaybeAliased(
-        24, this->_internal_market_value_proxy(), target);
+        25, this->_internal_market_value_proxy(), target);
   }
 
-  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
+  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_liquidity_provider_fee_share_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(25, this->_internal_liquidity_provider_fee_share(i), target, stream);
+      InternalWriteMessage(26, this->_internal_liquidity_provider_fee_share(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -13764,14 +13782,14 @@ size_t MarketData::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 23 [json_name = "priceMonitoringBounds"];
+  // repeated .vega.PriceMonitoringBounds price_monitoring_bounds = 24 [json_name = "priceMonitoringBounds"];
   total_size += 2UL * this->_internal_price_monitoring_bounds_size();
   for (const auto& msg : this->price_monitoring_bounds_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 25 [json_name = "liquidityProviderFeeShare"];
+  // repeated .vega.LiquidityProviderFeeShare liquidity_provider_fee_share = 26 [json_name = "liquidityProviderFeeShare"];
   total_size += 2UL * this->_internal_liquidity_provider_fee_share_size();
   for (const auto& msg : this->liquidity_provider_fee_share_) {
     total_size +=
@@ -13785,21 +13803,21 @@ size_t MarketData::ByteSizeLong() const {
         this->_internal_market());
   }
 
-  // string target_stake = 21 [json_name = "targetStake"];
+  // string target_stake = 22 [json_name = "targetStake"];
   if (this->target_stake().size() > 0) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_target_stake());
   }
 
-  // string supplied_stake = 22 [json_name = "suppliedStake"];
+  // string supplied_stake = 23 [json_name = "suppliedStake"];
   if (this->supplied_stake().size() > 0) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_supplied_stake());
   }
 
-  // string market_value_proxy = 24 [json_name = "marketValueProxy"];
+  // string market_value_proxy = 25 [json_name = "marketValueProxy"];
   if (this->market_value_proxy().size() > 0) {
     total_size += 2 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -13937,6 +13955,12 @@ size_t MarketData::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_trigger());
   }
 
+  // .vega.AuctionTrigger extension_trigger = 21 [json_name = "extensionTrigger"];
+  if (this->extension_trigger() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_extension_trigger());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -14039,6 +14063,9 @@ void MarketData::MergeFrom(const MarketData& from) {
   if (from.trigger() != 0) {
     _internal_set_trigger(from._internal_trigger());
   }
+  if (from.extension_trigger() != 0) {
+    _internal_set_extension_trigger(from._internal_extension_trigger());
+  }
 }
 
 void MarketData::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -14069,8 +14096,8 @@ void MarketData::InternalSwap(MarketData* other) {
   supplied_stake_.Swap(&other->supplied_stake_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   market_value_proxy_.Swap(&other->market_value_proxy_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(MarketData, trigger_)
-      + sizeof(MarketData::trigger_)
+      PROTOBUF_FIELD_OFFSET(MarketData, extension_trigger_)
+      + sizeof(MarketData::extension_trigger_)
       - PROTOBUF_FIELD_OFFSET(MarketData, mark_price_)>(
           reinterpret_cast<char*>(&mark_price_),
           reinterpret_cast<char*>(&other->mark_price_));
@@ -15327,7 +15354,7 @@ void Signature::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Signature_vega_2eproto.base);
   sig_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   algo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_ = PROTOBUF_ULONGLONG(0);
+  version_ = 0u;
 }
 
 Signature::~Signature() {
@@ -15365,7 +15392,7 @@ void Signature::Clear() {
 
   sig_.ClearToEmpty();
   algo_.ClearToEmpty();
-  version_ = PROTOBUF_ULONGLONG(0);
+  version_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15393,10 +15420,10 @@ const char* Signature::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 version = 3 [json_name = "version"];
+      // uint32 version = 3 [json_name = "version"];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -15444,10 +15471,10 @@ failure:
         2, this->_internal_algo(), target);
   }
 
-  // uint64 version = 3 [json_name = "version"];
+  // uint32 version = 3 [json_name = "version"];
   if (this->version() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_version(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_version(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15480,10 +15507,10 @@ size_t Signature::ByteSizeLong() const {
         this->_internal_algo());
   }
 
-  // uint64 version = 3 [json_name = "version"];
+  // uint32 version = 3 [json_name = "version"];
   if (this->version() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_version());
   }
 

@@ -12,6 +12,7 @@ interface ITradingServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
   prepareAmendOrder: grpc.MethodDefinition<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.MethodDefinition<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.MethodDefinition<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
+  submitTransactionV2: grpc.MethodDefinition<api_trading_pb.SubmitTransactionV2Request, api_trading_pb.SubmitTransactionV2Response>;
   prepareProposalSubmission: grpc.MethodDefinition<api_trading_pb.PrepareProposalSubmissionRequest, api_trading_pb.PrepareProposalSubmissionResponse>;
   prepareVoteSubmission: grpc.MethodDefinition<api_trading_pb.PrepareVoteSubmissionRequest, api_trading_pb.PrepareVoteSubmissionResponse>;
   propagateChainEvent: grpc.MethodDefinition<api_trading_pb.PropagateChainEventRequest, api_trading_pb.PropagateChainEventResponse>;
@@ -26,6 +27,7 @@ export interface ITradingServiceServer extends grpc.UntypedServiceImplementation
   prepareAmendOrder: grpc.handleUnaryCall<api_trading_pb.PrepareAmendOrderRequest, api_trading_pb.PrepareAmendOrderResponse>;
   prepareWithdraw: grpc.handleUnaryCall<api_trading_pb.PrepareWithdrawRequest, api_trading_pb.PrepareWithdrawResponse>;
   submitTransaction: grpc.handleUnaryCall<api_trading_pb.SubmitTransactionRequest, api_trading_pb.SubmitTransactionResponse>;
+  submitTransactionV2: grpc.handleUnaryCall<api_trading_pb.SubmitTransactionV2Request, api_trading_pb.SubmitTransactionV2Response>;
   prepareProposalSubmission: grpc.handleUnaryCall<api_trading_pb.PrepareProposalSubmissionRequest, api_trading_pb.PrepareProposalSubmissionResponse>;
   prepareVoteSubmission: grpc.handleUnaryCall<api_trading_pb.PrepareVoteSubmissionRequest, api_trading_pb.PrepareVoteSubmissionResponse>;
   propagateChainEvent: grpc.handleUnaryCall<api_trading_pb.PropagateChainEventRequest, api_trading_pb.PropagateChainEventResponse>;
@@ -49,6 +51,9 @@ export class TradingServiceClient extends grpc.Client {
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
   submitTransaction(argument: api_trading_pb.SubmitTransactionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionResponse>): grpc.ClientUnaryCall;
+  submitTransactionV2(argument: api_trading_pb.SubmitTransactionV2Request, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionV2Response>): grpc.ClientUnaryCall;
+  submitTransactionV2(argument: api_trading_pb.SubmitTransactionV2Request, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionV2Response>): grpc.ClientUnaryCall;
+  submitTransactionV2(argument: api_trading_pb.SubmitTransactionV2Request, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.SubmitTransactionV2Response>): grpc.ClientUnaryCall;
   prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
   prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
   prepareProposalSubmission(argument: api_trading_pb.PrepareProposalSubmissionRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.PrepareProposalSubmissionResponse>): grpc.ClientUnaryCall;
@@ -102,6 +107,7 @@ interface ITradingDataServiceService extends grpc.ServiceDefinition<grpc.Untyped
   observeProposalVotes: grpc.MethodDefinition<api_trading_pb.ObserveProposalVotesRequest, api_trading_pb.ObserveProposalVotesResponse>;
   observeEventBus: grpc.MethodDefinition<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
   statistics: grpc.MethodDefinition<api_trading_pb.StatisticsRequest, api_trading_pb.StatisticsResponse>;
+  lastBlockHeight: grpc.MethodDefinition<api_trading_pb.LastBlockHeightRequest, api_trading_pb.LastBlockHeightResponse>;
   getVegaTime: grpc.MethodDefinition<api_trading_pb.GetVegaTimeRequest, api_trading_pb.GetVegaTimeResponse>;
   accountsSubscribe: grpc.MethodDefinition<api_trading_pb.AccountsSubscribeRequest, api_trading_pb.AccountsSubscribeResponse>;
   candlesSubscribe: grpc.MethodDefinition<api_trading_pb.CandlesSubscribeRequest, api_trading_pb.CandlesSubscribeResponse>;
@@ -171,6 +177,7 @@ export interface ITradingDataServiceServer extends grpc.UntypedServiceImplementa
   observeProposalVotes: grpc.handleServerStreamingCall<api_trading_pb.ObserveProposalVotesRequest, api_trading_pb.ObserveProposalVotesResponse>;
   observeEventBus: grpc.handleBidiStreamingCall<api_trading_pb.ObserveEventBusRequest, api_trading_pb.ObserveEventBusResponse>;
   statistics: grpc.handleUnaryCall<api_trading_pb.StatisticsRequest, api_trading_pb.StatisticsResponse>;
+  lastBlockHeight: grpc.handleUnaryCall<api_trading_pb.LastBlockHeightRequest, api_trading_pb.LastBlockHeightResponse>;
   getVegaTime: grpc.handleUnaryCall<api_trading_pb.GetVegaTimeRequest, api_trading_pb.GetVegaTimeResponse>;
   accountsSubscribe: grpc.handleServerStreamingCall<api_trading_pb.AccountsSubscribeRequest, api_trading_pb.AccountsSubscribeResponse>;
   candlesSubscribe: grpc.handleServerStreamingCall<api_trading_pb.CandlesSubscribeRequest, api_trading_pb.CandlesSubscribeResponse>;
@@ -310,6 +317,9 @@ export class TradingDataServiceClient extends grpc.Client {
   statistics(argument: api_trading_pb.StatisticsRequest, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
   statistics(argument: api_trading_pb.StatisticsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
   statistics(argument: api_trading_pb.StatisticsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.StatisticsResponse>): grpc.ClientUnaryCall;
+  lastBlockHeight(argument: api_trading_pb.LastBlockHeightRequest, callback: grpc.requestCallback<api_trading_pb.LastBlockHeightResponse>): grpc.ClientUnaryCall;
+  lastBlockHeight(argument: api_trading_pb.LastBlockHeightRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.LastBlockHeightResponse>): grpc.ClientUnaryCall;
+  lastBlockHeight(argument: api_trading_pb.LastBlockHeightRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.LastBlockHeightResponse>): grpc.ClientUnaryCall;
   getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
   getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;
   getVegaTime(argument: api_trading_pb.GetVegaTimeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<api_trading_pb.GetVegaTimeResponse>): grpc.ClientUnaryCall;

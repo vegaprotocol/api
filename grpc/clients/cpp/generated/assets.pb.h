@@ -57,9 +57,9 @@ namespace vega {
 class Asset;
 class AssetDefaultTypeInternal;
 extern AssetDefaultTypeInternal _Asset_default_instance_;
-class AssetSource;
-class AssetSourceDefaultTypeInternal;
-extern AssetSourceDefaultTypeInternal _AssetSource_default_instance_;
+class AssetDetails;
+class AssetDetailsDefaultTypeInternal;
+extern AssetDetailsDefaultTypeInternal _AssetDetails_default_instance_;
 class BuiltinAsset;
 class BuiltinAssetDefaultTypeInternal;
 extern BuiltinAssetDefaultTypeInternal _BuiltinAsset_default_instance_;
@@ -69,7 +69,7 @@ extern ERC20DefaultTypeInternal _ERC20_default_instance_;
 }  // namespace vega
 PROTOBUF_NAMESPACE_OPEN
 template<> ::vega::Asset* Arena::CreateMaybeMessage<::vega::Asset>(Arena*);
-template<> ::vega::AssetSource* Arena::CreateMaybeMessage<::vega::AssetSource>(Arena*);
+template<> ::vega::AssetDetails* Arena::CreateMaybeMessage<::vega::AssetDetails>(Arena*);
 template<> ::vega::BuiltinAsset* Arena::CreateMaybeMessage<::vega::BuiltinAsset>(Arena*);
 template<> ::vega::ERC20* Arena::CreateMaybeMessage<::vega::ERC20>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -190,11 +190,7 @@ class Asset PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kNameFieldNumber = 2,
-    kSymbolFieldNumber = 3,
-    kTotalSupplyFieldNumber = 4,
-    kSourceFieldNumber = 7,
-    kDecimalsFieldNumber = 5,
+    kDetailsFieldNumber = 2,
   };
   // string id = 1 [json_name = "id"];
   void clear_id();
@@ -212,80 +208,23 @@ class Asset PROTOBUF_FINAL :
   std::string* _internal_mutable_id();
   public:
 
-  // string name = 2 [json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
+  // .vega.AssetDetails details = 2 [json_name = "details"];
+  bool has_details() const;
   private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  bool _internal_has_details() const;
   public:
-
-  // string symbol = 3 [json_name = "symbol"];
-  void clear_symbol();
-  const std::string& symbol() const;
-  void set_symbol(const std::string& value);
-  void set_symbol(std::string&& value);
-  void set_symbol(const char* value);
-  void set_symbol(const char* value, size_t size);
-  std::string* mutable_symbol();
-  std::string* release_symbol();
-  void set_allocated_symbol(std::string* symbol);
+  void clear_details();
+  const ::vega::AssetDetails& details() const;
+  ::vega::AssetDetails* release_details();
+  ::vega::AssetDetails* mutable_details();
+  void set_allocated_details(::vega::AssetDetails* details);
   private:
-  const std::string& _internal_symbol() const;
-  void _internal_set_symbol(const std::string& value);
-  std::string* _internal_mutable_symbol();
+  const ::vega::AssetDetails& _internal_details() const;
+  ::vega::AssetDetails* _internal_mutable_details();
   public:
-
-  // string total_supply = 4 [json_name = "totalSupply"];
-  void clear_total_supply();
-  const std::string& total_supply() const;
-  void set_total_supply(const std::string& value);
-  void set_total_supply(std::string&& value);
-  void set_total_supply(const char* value);
-  void set_total_supply(const char* value, size_t size);
-  std::string* mutable_total_supply();
-  std::string* release_total_supply();
-  void set_allocated_total_supply(std::string* total_supply);
-  private:
-  const std::string& _internal_total_supply() const;
-  void _internal_set_total_supply(const std::string& value);
-  std::string* _internal_mutable_total_supply();
-  public:
-
-  // .vega.AssetSource source = 7 [json_name = "source"];
-  bool has_source() const;
-  private:
-  bool _internal_has_source() const;
-  public:
-  void clear_source();
-  const ::vega::AssetSource& source() const;
-  ::vega::AssetSource* release_source();
-  ::vega::AssetSource* mutable_source();
-  void set_allocated_source(::vega::AssetSource* source);
-  private:
-  const ::vega::AssetSource& _internal_source() const;
-  ::vega::AssetSource* _internal_mutable_source();
-  public:
-  void unsafe_arena_set_allocated_source(
-      ::vega::AssetSource* source);
-  ::vega::AssetSource* unsafe_arena_release_source();
-
-  // uint64 decimals = 5 [json_name = "decimals"];
-  void clear_decimals();
-  ::PROTOBUF_NAMESPACE_ID::uint64 decimals() const;
-  void set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_decimals() const;
-  void _internal_set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
+  void unsafe_arena_set_allocated_details(
+      ::vega::AssetDetails* details);
+  ::vega::AssetDetails* unsafe_arena_release_details();
 
   // @@protoc_insertion_point(class_scope:vega.Asset)
  private:
@@ -295,33 +234,29 @@ class Asset PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr symbol_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_supply_;
-  ::vega::AssetSource* source_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 decimals_;
+  ::vega::AssetDetails* details_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_assets_2eproto;
 };
 // -------------------------------------------------------------------
 
-class AssetSource PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.AssetSource) */ {
+class AssetDetails PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.AssetDetails) */ {
  public:
-  inline AssetSource() : AssetSource(nullptr) {}
-  virtual ~AssetSource();
+  inline AssetDetails() : AssetDetails(nullptr) {}
+  virtual ~AssetDetails();
 
-  AssetSource(const AssetSource& from);
-  AssetSource(AssetSource&& from) noexcept
-    : AssetSource() {
+  AssetDetails(const AssetDetails& from);
+  AssetDetails(AssetDetails&& from) noexcept
+    : AssetDetails() {
     *this = ::std::move(from);
   }
 
-  inline AssetSource& operator=(const AssetSource& from) {
+  inline AssetDetails& operator=(const AssetDetails& from) {
     CopyFrom(from);
     return *this;
   }
-  inline AssetSource& operator=(AssetSource&& from) noexcept {
+  inline AssetDetails& operator=(AssetDetails&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -339,25 +274,25 @@ class AssetSource PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const AssetSource& default_instance();
+  static const AssetDetails& default_instance();
 
   enum SourceCase {
-    kBuiltinAsset = 1,
-    kErc20 = 2,
+    kBuiltinAsset = 101,
+    kErc20 = 102,
     SOURCE_NOT_SET = 0,
   };
 
-  static inline const AssetSource* internal_default_instance() {
-    return reinterpret_cast<const AssetSource*>(
-               &_AssetSource_default_instance_);
+  static inline const AssetDetails* internal_default_instance() {
+    return reinterpret_cast<const AssetDetails*>(
+               &_AssetDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(AssetSource& a, AssetSource& b) {
+  friend void swap(AssetDetails& a, AssetDetails& b) {
     a.Swap(&b);
   }
-  inline void Swap(AssetSource* other) {
+  inline void Swap(AssetDetails* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -365,7 +300,7 @@ class AssetSource PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(AssetSource* other) {
+  void UnsafeArenaSwap(AssetDetails* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -373,17 +308,17 @@ class AssetSource PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline AssetSource* New() const final {
-    return CreateMaybeMessage<AssetSource>(nullptr);
+  inline AssetDetails* New() const final {
+    return CreateMaybeMessage<AssetDetails>(nullptr);
   }
 
-  AssetSource* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AssetSource>(arena);
+  AssetDetails* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AssetDetails>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const AssetSource& from);
-  void MergeFrom(const AssetSource& from);
+  void CopyFrom(const AssetDetails& from);
+  void MergeFrom(const AssetDetails& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -397,13 +332,13 @@ class AssetSource PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AssetSource* other);
+  void InternalSwap(AssetDetails* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "vega.AssetSource";
+    return "vega.AssetDetails";
   }
   protected:
-  explicit AssetSource(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit AssetDetails(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -423,10 +358,88 @@ class AssetSource PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBuiltinAssetFieldNumber = 1,
-    kErc20FieldNumber = 2,
+    kNameFieldNumber = 1,
+    kSymbolFieldNumber = 2,
+    kTotalSupplyFieldNumber = 3,
+    kMinLpStakeFieldNumber = 5,
+    kDecimalsFieldNumber = 4,
+    kBuiltinAssetFieldNumber = 101,
+    kErc20FieldNumber = 102,
   };
-  // .vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];
+  // string name = 1 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string symbol = 2 [json_name = "symbol"];
+  void clear_symbol();
+  const std::string& symbol() const;
+  void set_symbol(const std::string& value);
+  void set_symbol(std::string&& value);
+  void set_symbol(const char* value);
+  void set_symbol(const char* value, size_t size);
+  std::string* mutable_symbol();
+  std::string* release_symbol();
+  void set_allocated_symbol(std::string* symbol);
+  private:
+  const std::string& _internal_symbol() const;
+  void _internal_set_symbol(const std::string& value);
+  std::string* _internal_mutable_symbol();
+  public:
+
+  // string total_supply = 3 [json_name = "totalSupply"];
+  void clear_total_supply();
+  const std::string& total_supply() const;
+  void set_total_supply(const std::string& value);
+  void set_total_supply(std::string&& value);
+  void set_total_supply(const char* value);
+  void set_total_supply(const char* value, size_t size);
+  std::string* mutable_total_supply();
+  std::string* release_total_supply();
+  void set_allocated_total_supply(std::string* total_supply);
+  private:
+  const std::string& _internal_total_supply() const;
+  void _internal_set_total_supply(const std::string& value);
+  std::string* _internal_mutable_total_supply();
+  public:
+
+  // string min_lp_stake = 5 [json_name = "minLpStake"];
+  void clear_min_lp_stake();
+  const std::string& min_lp_stake() const;
+  void set_min_lp_stake(const std::string& value);
+  void set_min_lp_stake(std::string&& value);
+  void set_min_lp_stake(const char* value);
+  void set_min_lp_stake(const char* value, size_t size);
+  std::string* mutable_min_lp_stake();
+  std::string* release_min_lp_stake();
+  void set_allocated_min_lp_stake(std::string* min_lp_stake);
+  private:
+  const std::string& _internal_min_lp_stake() const;
+  void _internal_set_min_lp_stake(const std::string& value);
+  std::string* _internal_mutable_min_lp_stake();
+  public:
+
+  // uint64 decimals = 4 [json_name = "decimals"];
+  void clear_decimals();
+  ::PROTOBUF_NAMESPACE_ID::uint64 decimals() const;
+  void set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_decimals() const;
+  void _internal_set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // .vega.BuiltinAsset builtin_asset = 101 [json_name = "builtinAsset"];
   bool has_builtin_asset() const;
   private:
   bool _internal_has_builtin_asset() const;
@@ -444,7 +457,7 @@ class AssetSource PROTOBUF_FINAL :
       ::vega::BuiltinAsset* builtin_asset);
   ::vega::BuiltinAsset* unsafe_arena_release_builtin_asset();
 
-  // .vega.ERC20 erc20 = 2 [json_name = "erc20"];
+  // .vega.ERC20 erc20 = 102 [json_name = "erc20"];
   bool has_erc20() const;
   private:
   bool _internal_has_erc20() const;
@@ -464,7 +477,7 @@ class AssetSource PROTOBUF_FINAL :
 
   void clear_source();
   SourceCase source_case() const;
-  // @@protoc_insertion_point(class_scope:vega.AssetSource)
+  // @@protoc_insertion_point(class_scope:vega.AssetDetails)
  private:
   class _Internal;
   void set_has_builtin_asset();
@@ -476,6 +489,11 @@ class AssetSource PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr symbol_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_supply_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr min_lp_stake_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 decimals_;
   union SourceUnion {
     SourceUnion() {}
     ::vega::BuiltinAsset* builtin_asset_;
@@ -600,61 +618,9 @@ class BuiltinAsset PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kSymbolFieldNumber = 2,
-    kTotalSupplyFieldNumber = 3,
-    kMaxFaucetAmountMintFieldNumber = 5,
-    kDecimalsFieldNumber = 4,
+    kMaxFaucetAmountMintFieldNumber = 1,
   };
-  // string name = 1 [json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // string symbol = 2 [json_name = "symbol"];
-  void clear_symbol();
-  const std::string& symbol() const;
-  void set_symbol(const std::string& value);
-  void set_symbol(std::string&& value);
-  void set_symbol(const char* value);
-  void set_symbol(const char* value, size_t size);
-  std::string* mutable_symbol();
-  std::string* release_symbol();
-  void set_allocated_symbol(std::string* symbol);
-  private:
-  const std::string& _internal_symbol() const;
-  void _internal_set_symbol(const std::string& value);
-  std::string* _internal_mutable_symbol();
-  public:
-
-  // string total_supply = 3 [json_name = "totalSupply"];
-  void clear_total_supply();
-  const std::string& total_supply() const;
-  void set_total_supply(const std::string& value);
-  void set_total_supply(std::string&& value);
-  void set_total_supply(const char* value);
-  void set_total_supply(const char* value, size_t size);
-  std::string* mutable_total_supply();
-  std::string* release_total_supply();
-  void set_allocated_total_supply(std::string* total_supply);
-  private:
-  const std::string& _internal_total_supply() const;
-  void _internal_set_total_supply(const std::string& value);
-  std::string* _internal_mutable_total_supply();
-  public:
-
-  // string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];
+  // string max_faucet_amount_mint = 1 [json_name = "maxFaucetAmountMint"];
   void clear_max_faucet_amount_mint();
   const std::string& max_faucet_amount_mint() const;
   void set_max_faucet_amount_mint(const std::string& value);
@@ -670,15 +636,6 @@ class BuiltinAsset PROTOBUF_FINAL :
   std::string* _internal_mutable_max_faucet_amount_mint();
   public:
 
-  // uint64 decimals = 4 [json_name = "decimals"];
-  void clear_decimals();
-  ::PROTOBUF_NAMESPACE_ID::uint64 decimals() const;
-  void set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_decimals() const;
-  void _internal_set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:vega.BuiltinAsset)
  private:
   class _Internal;
@@ -686,11 +643,7 @@ class BuiltinAsset PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr symbol_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr total_supply_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr max_faucet_amount_mint_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 decimals_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_assets_2eproto;
 };
@@ -909,57 +862,144 @@ inline void Asset::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:vega.Asset.id)
 }
 
-// string name = 2 [json_name = "name"];
-inline void Asset::clear_name() {
+// .vega.AssetDetails details = 2 [json_name = "details"];
+inline bool Asset::_internal_has_details() const {
+  return this != internal_default_instance() && details_ != nullptr;
+}
+inline bool Asset::has_details() const {
+  return _internal_has_details();
+}
+inline void Asset::clear_details() {
+  if (GetArena() == nullptr && details_ != nullptr) {
+    delete details_;
+  }
+  details_ = nullptr;
+}
+inline const ::vega::AssetDetails& Asset::_internal_details() const {
+  const ::vega::AssetDetails* p = details_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::AssetDetails&>(
+      ::vega::_AssetDetails_default_instance_);
+}
+inline const ::vega::AssetDetails& Asset::details() const {
+  // @@protoc_insertion_point(field_get:vega.Asset.details)
+  return _internal_details();
+}
+inline void Asset::unsafe_arena_set_allocated_details(
+    ::vega::AssetDetails* details) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(details_);
+  }
+  details_ = details;
+  if (details) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Asset.details)
+}
+inline ::vega::AssetDetails* Asset::release_details() {
+
+  ::vega::AssetDetails* temp = details_;
+  details_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::vega::AssetDetails* Asset::unsafe_arena_release_details() {
+  // @@protoc_insertion_point(field_release:vega.Asset.details)
+
+  ::vega::AssetDetails* temp = details_;
+  details_ = nullptr;
+  return temp;
+}
+inline ::vega::AssetDetails* Asset::_internal_mutable_details() {
+
+  if (details_ == nullptr) {
+    auto* p = CreateMaybeMessage<::vega::AssetDetails>(GetArena());
+    details_ = p;
+  }
+  return details_;
+}
+inline ::vega::AssetDetails* Asset::mutable_details() {
+  // @@protoc_insertion_point(field_mutable:vega.Asset.details)
+  return _internal_mutable_details();
+}
+inline void Asset::set_allocated_details(::vega::AssetDetails* details) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete details_;
+  }
+  if (details) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(details);
+    if (message_arena != submessage_arena) {
+      details = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, details, submessage_arena);
+    }
+
+  } else {
+
+  }
+  details_ = details;
+  // @@protoc_insertion_point(field_set_allocated:vega.Asset.details)
+}
+
+// -------------------------------------------------------------------
+
+// AssetDetails
+
+// string name = 1 [json_name = "name"];
+inline void AssetDetails::clear_name() {
   name_.ClearToEmpty();
 }
-inline const std::string& Asset::name() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.name)
+inline const std::string& AssetDetails::name() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.name)
   return _internal_name();
 }
-inline void Asset::set_name(const std::string& value) {
+inline void AssetDetails::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:vega.Asset.name)
+  // @@protoc_insertion_point(field_set:vega.AssetDetails.name)
 }
-inline std::string* Asset::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:vega.Asset.name)
+inline std::string* AssetDetails::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:vega.AssetDetails.name)
   return _internal_mutable_name();
 }
-inline const std::string& Asset::_internal_name() const {
+inline const std::string& AssetDetails::_internal_name() const {
   return name_.Get();
 }
-inline void Asset::_internal_set_name(const std::string& value) {
+inline void AssetDetails::_internal_set_name(const std::string& value) {
 
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Asset::set_name(std::string&& value) {
+inline void AssetDetails::set_name(std::string&& value) {
 
   name_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Asset.name)
+  // @@protoc_insertion_point(field_set_rvalue:vega.AssetDetails.name)
 }
-inline void Asset::set_name(const char* value) {
+inline void AssetDetails::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Asset.name)
+  // @@protoc_insertion_point(field_set_char:vega.AssetDetails.name)
 }
-inline void Asset::set_name(const char* value,
+inline void AssetDetails::set_name(const char* value,
     size_t size) {
 
   name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Asset.name)
+  // @@protoc_insertion_point(field_set_pointer:vega.AssetDetails.name)
 }
-inline std::string* Asset::_internal_mutable_name() {
+inline std::string* AssetDetails::_internal_mutable_name() {
 
   return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Asset::release_name() {
-  // @@protoc_insertion_point(field_release:vega.Asset.name)
+inline std::string* AssetDetails::release_name() {
+  // @@protoc_insertion_point(field_release:vega.AssetDetails.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Asset::set_allocated_name(std::string* name) {
+inline void AssetDetails::set_allocated_name(std::string* name) {
   if (name != nullptr) {
 
   } else {
@@ -967,60 +1007,60 @@ inline void Asset::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Asset.name)
+  // @@protoc_insertion_point(field_set_allocated:vega.AssetDetails.name)
 }
 
-// string symbol = 3 [json_name = "symbol"];
-inline void Asset::clear_symbol() {
+// string symbol = 2 [json_name = "symbol"];
+inline void AssetDetails::clear_symbol() {
   symbol_.ClearToEmpty();
 }
-inline const std::string& Asset::symbol() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.symbol)
+inline const std::string& AssetDetails::symbol() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.symbol)
   return _internal_symbol();
 }
-inline void Asset::set_symbol(const std::string& value) {
+inline void AssetDetails::set_symbol(const std::string& value) {
   _internal_set_symbol(value);
-  // @@protoc_insertion_point(field_set:vega.Asset.symbol)
+  // @@protoc_insertion_point(field_set:vega.AssetDetails.symbol)
 }
-inline std::string* Asset::mutable_symbol() {
-  // @@protoc_insertion_point(field_mutable:vega.Asset.symbol)
+inline std::string* AssetDetails::mutable_symbol() {
+  // @@protoc_insertion_point(field_mutable:vega.AssetDetails.symbol)
   return _internal_mutable_symbol();
 }
-inline const std::string& Asset::_internal_symbol() const {
+inline const std::string& AssetDetails::_internal_symbol() const {
   return symbol_.Get();
 }
-inline void Asset::_internal_set_symbol(const std::string& value) {
+inline void AssetDetails::_internal_set_symbol(const std::string& value) {
 
   symbol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Asset::set_symbol(std::string&& value) {
+inline void AssetDetails::set_symbol(std::string&& value) {
 
   symbol_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Asset.symbol)
+  // @@protoc_insertion_point(field_set_rvalue:vega.AssetDetails.symbol)
 }
-inline void Asset::set_symbol(const char* value) {
+inline void AssetDetails::set_symbol(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   symbol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Asset.symbol)
+  // @@protoc_insertion_point(field_set_char:vega.AssetDetails.symbol)
 }
-inline void Asset::set_symbol(const char* value,
+inline void AssetDetails::set_symbol(const char* value,
     size_t size) {
 
   symbol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Asset.symbol)
+  // @@protoc_insertion_point(field_set_pointer:vega.AssetDetails.symbol)
 }
-inline std::string* Asset::_internal_mutable_symbol() {
+inline std::string* AssetDetails::_internal_mutable_symbol() {
 
   return symbol_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Asset::release_symbol() {
-  // @@protoc_insertion_point(field_release:vega.Asset.symbol)
+inline std::string* AssetDetails::release_symbol() {
+  // @@protoc_insertion_point(field_release:vega.AssetDetails.symbol)
   return symbol_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Asset::set_allocated_symbol(std::string* symbol) {
+inline void AssetDetails::set_allocated_symbol(std::string* symbol) {
   if (symbol != nullptr) {
 
   } else {
@@ -1028,60 +1068,60 @@ inline void Asset::set_allocated_symbol(std::string* symbol) {
   }
   symbol_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), symbol,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Asset.symbol)
+  // @@protoc_insertion_point(field_set_allocated:vega.AssetDetails.symbol)
 }
 
-// string total_supply = 4 [json_name = "totalSupply"];
-inline void Asset::clear_total_supply() {
+// string total_supply = 3 [json_name = "totalSupply"];
+inline void AssetDetails::clear_total_supply() {
   total_supply_.ClearToEmpty();
 }
-inline const std::string& Asset::total_supply() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.total_supply)
+inline const std::string& AssetDetails::total_supply() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.total_supply)
   return _internal_total_supply();
 }
-inline void Asset::set_total_supply(const std::string& value) {
+inline void AssetDetails::set_total_supply(const std::string& value) {
   _internal_set_total_supply(value);
-  // @@protoc_insertion_point(field_set:vega.Asset.total_supply)
+  // @@protoc_insertion_point(field_set:vega.AssetDetails.total_supply)
 }
-inline std::string* Asset::mutable_total_supply() {
-  // @@protoc_insertion_point(field_mutable:vega.Asset.total_supply)
+inline std::string* AssetDetails::mutable_total_supply() {
+  // @@protoc_insertion_point(field_mutable:vega.AssetDetails.total_supply)
   return _internal_mutable_total_supply();
 }
-inline const std::string& Asset::_internal_total_supply() const {
+inline const std::string& AssetDetails::_internal_total_supply() const {
   return total_supply_.Get();
 }
-inline void Asset::_internal_set_total_supply(const std::string& value) {
+inline void AssetDetails::_internal_set_total_supply(const std::string& value) {
 
   total_supply_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Asset::set_total_supply(std::string&& value) {
+inline void AssetDetails::set_total_supply(std::string&& value) {
 
   total_supply_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.Asset.total_supply)
+  // @@protoc_insertion_point(field_set_rvalue:vega.AssetDetails.total_supply)
 }
-inline void Asset::set_total_supply(const char* value) {
+inline void AssetDetails::set_total_supply(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   total_supply_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.Asset.total_supply)
+  // @@protoc_insertion_point(field_set_char:vega.AssetDetails.total_supply)
 }
-inline void Asset::set_total_supply(const char* value,
+inline void AssetDetails::set_total_supply(const char* value,
     size_t size) {
 
   total_supply_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.Asset.total_supply)
+  // @@protoc_insertion_point(field_set_pointer:vega.AssetDetails.total_supply)
 }
-inline std::string* Asset::_internal_mutable_total_supply() {
+inline std::string* AssetDetails::_internal_mutable_total_supply() {
 
   return total_supply_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Asset::release_total_supply() {
-  // @@protoc_insertion_point(field_release:vega.Asset.total_supply)
+inline std::string* AssetDetails::release_total_supply() {
+  // @@protoc_insertion_point(field_release:vega.AssetDetails.total_supply)
   return total_supply_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Asset::set_allocated_total_supply(std::string* total_supply) {
+inline void AssetDetails::set_allocated_total_supply(std::string* total_supply) {
   if (total_supply != nullptr) {
 
   } else {
@@ -1089,127 +1129,101 @@ inline void Asset::set_allocated_total_supply(std::string* total_supply) {
   }
   total_supply_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), total_supply,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.Asset.total_supply)
+  // @@protoc_insertion_point(field_set_allocated:vega.AssetDetails.total_supply)
 }
 
-// uint64 decimals = 5 [json_name = "decimals"];
-inline void Asset::clear_decimals() {
+// uint64 decimals = 4 [json_name = "decimals"];
+inline void AssetDetails::clear_decimals() {
   decimals_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Asset::_internal_decimals() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetDetails::_internal_decimals() const {
   return decimals_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Asset::decimals() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.decimals)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetDetails::decimals() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.decimals)
   return _internal_decimals();
 }
-inline void Asset::_internal_set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void AssetDetails::_internal_set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   decimals_ = value;
 }
-inline void Asset::set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void AssetDetails::set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_decimals(value);
-  // @@protoc_insertion_point(field_set:vega.Asset.decimals)
+  // @@protoc_insertion_point(field_set:vega.AssetDetails.decimals)
 }
 
-// .vega.AssetSource source = 7 [json_name = "source"];
-inline bool Asset::_internal_has_source() const {
-  return this != internal_default_instance() && source_ != nullptr;
+// string min_lp_stake = 5 [json_name = "minLpStake"];
+inline void AssetDetails::clear_min_lp_stake() {
+  min_lp_stake_.ClearToEmpty();
 }
-inline bool Asset::has_source() const {
-  return _internal_has_source();
+inline const std::string& AssetDetails::min_lp_stake() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.min_lp_stake)
+  return _internal_min_lp_stake();
 }
-inline void Asset::clear_source() {
-  if (GetArena() == nullptr && source_ != nullptr) {
-    delete source_;
-  }
-  source_ = nullptr;
+inline void AssetDetails::set_min_lp_stake(const std::string& value) {
+  _internal_set_min_lp_stake(value);
+  // @@protoc_insertion_point(field_set:vega.AssetDetails.min_lp_stake)
 }
-inline const ::vega::AssetSource& Asset::_internal_source() const {
-  const ::vega::AssetSource* p = source_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::AssetSource&>(
-      ::vega::_AssetSource_default_instance_);
+inline std::string* AssetDetails::mutable_min_lp_stake() {
+  // @@protoc_insertion_point(field_mutable:vega.AssetDetails.min_lp_stake)
+  return _internal_mutable_min_lp_stake();
 }
-inline const ::vega::AssetSource& Asset::source() const {
-  // @@protoc_insertion_point(field_get:vega.Asset.source)
-  return _internal_source();
+inline const std::string& AssetDetails::_internal_min_lp_stake() const {
+  return min_lp_stake_.Get();
 }
-inline void Asset::unsafe_arena_set_allocated_source(
-    ::vega::AssetSource* source) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(source_);
-  }
-  source_ = source;
-  if (source) {
+inline void AssetDetails::_internal_set_min_lp_stake(const std::string& value) {
 
-  } else {
+  min_lp_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void AssetDetails::set_min_lp_stake(std::string&& value) {
 
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.Asset.source)
+  min_lp_stake_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.AssetDetails.min_lp_stake)
 }
-inline ::vega::AssetSource* Asset::release_source() {
+inline void AssetDetails::set_min_lp_stake(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
 
-  ::vega::AssetSource* temp = source_;
-  source_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
+  min_lp_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.AssetDetails.min_lp_stake)
 }
-inline ::vega::AssetSource* Asset::unsafe_arena_release_source() {
-  // @@protoc_insertion_point(field_release:vega.Asset.source)
+inline void AssetDetails::set_min_lp_stake(const char* value,
+    size_t size) {
 
-  ::vega::AssetSource* temp = source_;
-  source_ = nullptr;
-  return temp;
+  min_lp_stake_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.AssetDetails.min_lp_stake)
 }
-inline ::vega::AssetSource* Asset::_internal_mutable_source() {
+inline std::string* AssetDetails::_internal_mutable_min_lp_stake() {
 
-  if (source_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::AssetSource>(GetArena());
-    source_ = p;
-  }
-  return source_;
+  return min_lp_stake_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline ::vega::AssetSource* Asset::mutable_source() {
-  // @@protoc_insertion_point(field_mutable:vega.Asset.source)
-  return _internal_mutable_source();
+inline std::string* AssetDetails::release_min_lp_stake() {
+  // @@protoc_insertion_point(field_release:vega.AssetDetails.min_lp_stake)
+  return min_lp_stake_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Asset::set_allocated_source(::vega::AssetSource* source) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete source_;
-  }
-  if (source) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(source);
-    if (message_arena != submessage_arena) {
-      source = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, source, submessage_arena);
-    }
+inline void AssetDetails::set_allocated_min_lp_stake(std::string* min_lp_stake) {
+  if (min_lp_stake != nullptr) {
 
   } else {
 
   }
-  source_ = source;
-  // @@protoc_insertion_point(field_set_allocated:vega.Asset.source)
+  min_lp_stake_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), min_lp_stake,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.AssetDetails.min_lp_stake)
 }
 
-// -------------------------------------------------------------------
-
-// AssetSource
-
-// .vega.BuiltinAsset builtin_asset = 1 [json_name = "builtinAsset"];
-inline bool AssetSource::_internal_has_builtin_asset() const {
+// .vega.BuiltinAsset builtin_asset = 101 [json_name = "builtinAsset"];
+inline bool AssetDetails::_internal_has_builtin_asset() const {
   return source_case() == kBuiltinAsset;
 }
-inline bool AssetSource::has_builtin_asset() const {
+inline bool AssetDetails::has_builtin_asset() const {
   return _internal_has_builtin_asset();
 }
-inline void AssetSource::set_has_builtin_asset() {
+inline void AssetDetails::set_has_builtin_asset() {
   _oneof_case_[0] = kBuiltinAsset;
 }
-inline void AssetSource::clear_builtin_asset() {
+inline void AssetDetails::clear_builtin_asset() {
   if (_internal_has_builtin_asset()) {
     if (GetArena() == nullptr) {
       delete source_.builtin_asset_;
@@ -1217,8 +1231,8 @@ inline void AssetSource::clear_builtin_asset() {
     clear_has_source();
   }
 }
-inline ::vega::BuiltinAsset* AssetSource::release_builtin_asset() {
-  // @@protoc_insertion_point(field_release:vega.AssetSource.builtin_asset)
+inline ::vega::BuiltinAsset* AssetDetails::release_builtin_asset() {
+  // @@protoc_insertion_point(field_release:vega.AssetDetails.builtin_asset)
   if (_internal_has_builtin_asset()) {
     clear_has_source();
       ::vega::BuiltinAsset* temp = source_.builtin_asset_;
@@ -1231,17 +1245,17 @@ inline ::vega::BuiltinAsset* AssetSource::release_builtin_asset() {
     return nullptr;
   }
 }
-inline const ::vega::BuiltinAsset& AssetSource::_internal_builtin_asset() const {
+inline const ::vega::BuiltinAsset& AssetDetails::_internal_builtin_asset() const {
   return _internal_has_builtin_asset()
       ? *source_.builtin_asset_
       : reinterpret_cast< ::vega::BuiltinAsset&>(::vega::_BuiltinAsset_default_instance_);
 }
-inline const ::vega::BuiltinAsset& AssetSource::builtin_asset() const {
-  // @@protoc_insertion_point(field_get:vega.AssetSource.builtin_asset)
+inline const ::vega::BuiltinAsset& AssetDetails::builtin_asset() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.builtin_asset)
   return _internal_builtin_asset();
 }
-inline ::vega::BuiltinAsset* AssetSource::unsafe_arena_release_builtin_asset() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.AssetSource.builtin_asset)
+inline ::vega::BuiltinAsset* AssetDetails::unsafe_arena_release_builtin_asset() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.AssetDetails.builtin_asset)
   if (_internal_has_builtin_asset()) {
     clear_has_source();
     ::vega::BuiltinAsset* temp = source_.builtin_asset_;
@@ -1251,15 +1265,15 @@ inline ::vega::BuiltinAsset* AssetSource::unsafe_arena_release_builtin_asset() {
     return nullptr;
   }
 }
-inline void AssetSource::unsafe_arena_set_allocated_builtin_asset(::vega::BuiltinAsset* builtin_asset) {
+inline void AssetDetails::unsafe_arena_set_allocated_builtin_asset(::vega::BuiltinAsset* builtin_asset) {
   clear_source();
   if (builtin_asset) {
     set_has_builtin_asset();
     source_.builtin_asset_ = builtin_asset;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.AssetSource.builtin_asset)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.AssetDetails.builtin_asset)
 }
-inline ::vega::BuiltinAsset* AssetSource::_internal_mutable_builtin_asset() {
+inline ::vega::BuiltinAsset* AssetDetails::_internal_mutable_builtin_asset() {
   if (!_internal_has_builtin_asset()) {
     clear_source();
     set_has_builtin_asset();
@@ -1267,22 +1281,22 @@ inline ::vega::BuiltinAsset* AssetSource::_internal_mutable_builtin_asset() {
   }
   return source_.builtin_asset_;
 }
-inline ::vega::BuiltinAsset* AssetSource::mutable_builtin_asset() {
-  // @@protoc_insertion_point(field_mutable:vega.AssetSource.builtin_asset)
+inline ::vega::BuiltinAsset* AssetDetails::mutable_builtin_asset() {
+  // @@protoc_insertion_point(field_mutable:vega.AssetDetails.builtin_asset)
   return _internal_mutable_builtin_asset();
 }
 
-// .vega.ERC20 erc20 = 2 [json_name = "erc20"];
-inline bool AssetSource::_internal_has_erc20() const {
+// .vega.ERC20 erc20 = 102 [json_name = "erc20"];
+inline bool AssetDetails::_internal_has_erc20() const {
   return source_case() == kErc20;
 }
-inline bool AssetSource::has_erc20() const {
+inline bool AssetDetails::has_erc20() const {
   return _internal_has_erc20();
 }
-inline void AssetSource::set_has_erc20() {
+inline void AssetDetails::set_has_erc20() {
   _oneof_case_[0] = kErc20;
 }
-inline void AssetSource::clear_erc20() {
+inline void AssetDetails::clear_erc20() {
   if (_internal_has_erc20()) {
     if (GetArena() == nullptr) {
       delete source_.erc20_;
@@ -1290,8 +1304,8 @@ inline void AssetSource::clear_erc20() {
     clear_has_source();
   }
 }
-inline ::vega::ERC20* AssetSource::release_erc20() {
-  // @@protoc_insertion_point(field_release:vega.AssetSource.erc20)
+inline ::vega::ERC20* AssetDetails::release_erc20() {
+  // @@protoc_insertion_point(field_release:vega.AssetDetails.erc20)
   if (_internal_has_erc20()) {
     clear_has_source();
       ::vega::ERC20* temp = source_.erc20_;
@@ -1304,17 +1318,17 @@ inline ::vega::ERC20* AssetSource::release_erc20() {
     return nullptr;
   }
 }
-inline const ::vega::ERC20& AssetSource::_internal_erc20() const {
+inline const ::vega::ERC20& AssetDetails::_internal_erc20() const {
   return _internal_has_erc20()
       ? *source_.erc20_
       : reinterpret_cast< ::vega::ERC20&>(::vega::_ERC20_default_instance_);
 }
-inline const ::vega::ERC20& AssetSource::erc20() const {
-  // @@protoc_insertion_point(field_get:vega.AssetSource.erc20)
+inline const ::vega::ERC20& AssetDetails::erc20() const {
+  // @@protoc_insertion_point(field_get:vega.AssetDetails.erc20)
   return _internal_erc20();
 }
-inline ::vega::ERC20* AssetSource::unsafe_arena_release_erc20() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vega.AssetSource.erc20)
+inline ::vega::ERC20* AssetDetails::unsafe_arena_release_erc20() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.AssetDetails.erc20)
   if (_internal_has_erc20()) {
     clear_has_source();
     ::vega::ERC20* temp = source_.erc20_;
@@ -1324,15 +1338,15 @@ inline ::vega::ERC20* AssetSource::unsafe_arena_release_erc20() {
     return nullptr;
   }
 }
-inline void AssetSource::unsafe_arena_set_allocated_erc20(::vega::ERC20* erc20) {
+inline void AssetDetails::unsafe_arena_set_allocated_erc20(::vega::ERC20* erc20) {
   clear_source();
   if (erc20) {
     set_has_erc20();
     source_.erc20_ = erc20;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.AssetSource.erc20)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.AssetDetails.erc20)
 }
-inline ::vega::ERC20* AssetSource::_internal_mutable_erc20() {
+inline ::vega::ERC20* AssetDetails::_internal_mutable_erc20() {
   if (!_internal_has_erc20()) {
     clear_source();
     set_has_erc20();
@@ -1340,228 +1354,25 @@ inline ::vega::ERC20* AssetSource::_internal_mutable_erc20() {
   }
   return source_.erc20_;
 }
-inline ::vega::ERC20* AssetSource::mutable_erc20() {
-  // @@protoc_insertion_point(field_mutable:vega.AssetSource.erc20)
+inline ::vega::ERC20* AssetDetails::mutable_erc20() {
+  // @@protoc_insertion_point(field_mutable:vega.AssetDetails.erc20)
   return _internal_mutable_erc20();
 }
 
-inline bool AssetSource::has_source() const {
+inline bool AssetDetails::has_source() const {
   return source_case() != SOURCE_NOT_SET;
 }
-inline void AssetSource::clear_has_source() {
+inline void AssetDetails::clear_has_source() {
   _oneof_case_[0] = SOURCE_NOT_SET;
 }
-inline AssetSource::SourceCase AssetSource::source_case() const {
-  return AssetSource::SourceCase(_oneof_case_[0]);
+inline AssetDetails::SourceCase AssetDetails::source_case() const {
+  return AssetDetails::SourceCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
 // BuiltinAsset
 
-// string name = 1 [json_name = "name"];
-inline void BuiltinAsset::clear_name() {
-  name_.ClearToEmpty();
-}
-inline const std::string& BuiltinAsset::name() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAsset.name)
-  return _internal_name();
-}
-inline void BuiltinAsset::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAsset.name)
-}
-inline std::string* BuiltinAsset::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.name)
-  return _internal_mutable_name();
-}
-inline const std::string& BuiltinAsset::_internal_name() const {
-  return name_.Get();
-}
-inline void BuiltinAsset::_internal_set_name(const std::string& value) {
-
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void BuiltinAsset::set_name(std::string&& value) {
-
-  name_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.name)
-}
-inline void BuiltinAsset::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.name)
-}
-inline void BuiltinAsset::set_name(const char* value,
-    size_t size) {
-
-  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.name)
-}
-inline std::string* BuiltinAsset::_internal_mutable_name() {
-
-  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* BuiltinAsset::release_name() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAsset.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void BuiltinAsset::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-
-  } else {
-
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.name)
-}
-
-// string symbol = 2 [json_name = "symbol"];
-inline void BuiltinAsset::clear_symbol() {
-  symbol_.ClearToEmpty();
-}
-inline const std::string& BuiltinAsset::symbol() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAsset.symbol)
-  return _internal_symbol();
-}
-inline void BuiltinAsset::set_symbol(const std::string& value) {
-  _internal_set_symbol(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAsset.symbol)
-}
-inline std::string* BuiltinAsset::mutable_symbol() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.symbol)
-  return _internal_mutable_symbol();
-}
-inline const std::string& BuiltinAsset::_internal_symbol() const {
-  return symbol_.Get();
-}
-inline void BuiltinAsset::_internal_set_symbol(const std::string& value) {
-
-  symbol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void BuiltinAsset::set_symbol(std::string&& value) {
-
-  symbol_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.symbol)
-}
-inline void BuiltinAsset::set_symbol(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  symbol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.symbol)
-}
-inline void BuiltinAsset::set_symbol(const char* value,
-    size_t size) {
-
-  symbol_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.symbol)
-}
-inline std::string* BuiltinAsset::_internal_mutable_symbol() {
-
-  return symbol_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* BuiltinAsset::release_symbol() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAsset.symbol)
-  return symbol_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void BuiltinAsset::set_allocated_symbol(std::string* symbol) {
-  if (symbol != nullptr) {
-
-  } else {
-
-  }
-  symbol_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), symbol,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.symbol)
-}
-
-// string total_supply = 3 [json_name = "totalSupply"];
-inline void BuiltinAsset::clear_total_supply() {
-  total_supply_.ClearToEmpty();
-}
-inline const std::string& BuiltinAsset::total_supply() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAsset.total_supply)
-  return _internal_total_supply();
-}
-inline void BuiltinAsset::set_total_supply(const std::string& value) {
-  _internal_set_total_supply(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAsset.total_supply)
-}
-inline std::string* BuiltinAsset::mutable_total_supply() {
-  // @@protoc_insertion_point(field_mutable:vega.BuiltinAsset.total_supply)
-  return _internal_mutable_total_supply();
-}
-inline const std::string& BuiltinAsset::_internal_total_supply() const {
-  return total_supply_.Get();
-}
-inline void BuiltinAsset::_internal_set_total_supply(const std::string& value) {
-
-  total_supply_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void BuiltinAsset::set_total_supply(std::string&& value) {
-
-  total_supply_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.BuiltinAsset.total_supply)
-}
-inline void BuiltinAsset::set_total_supply(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-
-  total_supply_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.BuiltinAsset.total_supply)
-}
-inline void BuiltinAsset::set_total_supply(const char* value,
-    size_t size) {
-
-  total_supply_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.BuiltinAsset.total_supply)
-}
-inline std::string* BuiltinAsset::_internal_mutable_total_supply() {
-
-  return total_supply_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* BuiltinAsset::release_total_supply() {
-  // @@protoc_insertion_point(field_release:vega.BuiltinAsset.total_supply)
-  return total_supply_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void BuiltinAsset::set_allocated_total_supply(std::string* total_supply) {
-  if (total_supply != nullptr) {
-
-  } else {
-
-  }
-  total_supply_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), total_supply,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.BuiltinAsset.total_supply)
-}
-
-// uint64 decimals = 4 [json_name = "decimals"];
-inline void BuiltinAsset::clear_decimals() {
-  decimals_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BuiltinAsset::_internal_decimals() const {
-  return decimals_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BuiltinAsset::decimals() const {
-  // @@protoc_insertion_point(field_get:vega.BuiltinAsset.decimals)
-  return _internal_decimals();
-}
-inline void BuiltinAsset::_internal_set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
-  decimals_ = value;
-}
-inline void BuiltinAsset::set_decimals(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_decimals(value);
-  // @@protoc_insertion_point(field_set:vega.BuiltinAsset.decimals)
-}
-
-// string max_faucet_amount_mint = 5 [json_name = "maxFaucetAmountMint"];
+// string max_faucet_amount_mint = 1 [json_name = "maxFaucetAmountMint"];
 inline void BuiltinAsset::clear_max_faucet_amount_mint() {
   max_faucet_amount_mint_.ClearToEmpty();
 }

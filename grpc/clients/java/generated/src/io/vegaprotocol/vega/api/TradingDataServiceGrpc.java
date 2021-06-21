@@ -1192,6 +1192,37 @@ public final class TradingDataServiceGrpc {
     return getStatisticsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest,
+      io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> getLastBlockHeightMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LastBlockHeight",
+      requestType = io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.class,
+      responseType = io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest,
+      io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> getLastBlockHeightMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest, io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> getLastBlockHeightMethod;
+    if ((getLastBlockHeightMethod = TradingDataServiceGrpc.getLastBlockHeightMethod) == null) {
+      synchronized (TradingDataServiceGrpc.class) {
+        if ((getLastBlockHeightMethod = TradingDataServiceGrpc.getLastBlockHeightMethod) == null) {
+          TradingDataServiceGrpc.getLastBlockHeightMethod = getLastBlockHeightMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest, io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LastBlockHeight"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new TradingDataServiceMethodDescriptorSupplier("LastBlockHeight"))
+              .build();
+        }
+      }
+    }
+    return getLastBlockHeightMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest,
       io.vegaprotocol.vega.api.Trading.GetVegaTimeResponse> getGetVegaTimeMethod;
 
@@ -2429,6 +2460,13 @@ public final class TradingDataServiceGrpc {
     }
 
     /**
+     */
+    public void lastBlockHeight(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLastBlockHeightMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * Get Time
      * </pre>
@@ -2957,6 +2995,13 @@ public final class TradingDataServiceGrpc {
                 io.vegaprotocol.vega.api.Trading.StatisticsRequest,
                 io.vegaprotocol.vega.api.Trading.StatisticsResponse>(
                   this, METHODID_STATISTICS)))
+          .addMethod(
+            getLastBlockHeightMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest,
+                io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse>(
+                  this, METHODID_LAST_BLOCK_HEIGHT)))
           .addMethod(
             getGetVegaTimeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3575,6 +3620,14 @@ public final class TradingDataServiceGrpc {
         io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.StatisticsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStatisticsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void lastBlockHeight(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLastBlockHeightMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -4256,6 +4309,13 @@ public final class TradingDataServiceGrpc {
     }
 
     /**
+     */
+    public io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse lastBlockHeight(io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLastBlockHeightMethod(), getCallOptions(), request);
+    }
+
+    /**
      * <pre>
      * Get Time
      * </pre>
@@ -4907,6 +4967,14 @@ public final class TradingDataServiceGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse> lastBlockHeight(
+        io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLastBlockHeightMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * Get Time
      * </pre>
@@ -5121,33 +5189,34 @@ public final class TradingDataServiceGrpc {
   private static final int METHODID_OBSERVE_PARTY_VOTES = 34;
   private static final int METHODID_OBSERVE_PROPOSAL_VOTES = 35;
   private static final int METHODID_STATISTICS = 36;
-  private static final int METHODID_GET_VEGA_TIME = 37;
-  private static final int METHODID_ACCOUNTS_SUBSCRIBE = 38;
-  private static final int METHODID_CANDLES_SUBSCRIBE = 39;
-  private static final int METHODID_MARGIN_LEVELS_SUBSCRIBE = 40;
-  private static final int METHODID_MARKET_DEPTH_SUBSCRIBE = 41;
-  private static final int METHODID_MARKET_DEPTH_UPDATES_SUBSCRIBE = 42;
-  private static final int METHODID_MARKETS_DATA_SUBSCRIBE = 43;
-  private static final int METHODID_ORDERS_SUBSCRIBE = 44;
-  private static final int METHODID_POSITIONS_SUBSCRIBE = 45;
-  private static final int METHODID_TRADES_SUBSCRIBE = 46;
-  private static final int METHODID_TRANSFER_RESPONSES_SUBSCRIBE = 47;
-  private static final int METHODID_GET_NODE_SIGNATURES_AGGREGATE = 48;
-  private static final int METHODID_ASSET_BY_ID = 49;
-  private static final int METHODID_ASSETS = 50;
-  private static final int METHODID_ESTIMATE_FEE = 51;
-  private static final int METHODID_ESTIMATE_MARGIN = 52;
-  private static final int METHODID_ERC20WITHDRAWAL_APPROVAL = 53;
-  private static final int METHODID_WITHDRAWAL = 54;
-  private static final int METHODID_WITHDRAWALS = 55;
-  private static final int METHODID_DEPOSIT = 56;
-  private static final int METHODID_DEPOSITS = 57;
-  private static final int METHODID_NETWORK_PARAMETERS = 58;
-  private static final int METHODID_LIQUIDITY_PROVISIONS = 59;
-  private static final int METHODID_ORACLE_SPEC = 60;
-  private static final int METHODID_ORACLE_SPECS = 61;
-  private static final int METHODID_ORACLE_DATA_BY_SPEC = 62;
-  private static final int METHODID_OBSERVE_EVENT_BUS = 63;
+  private static final int METHODID_LAST_BLOCK_HEIGHT = 37;
+  private static final int METHODID_GET_VEGA_TIME = 38;
+  private static final int METHODID_ACCOUNTS_SUBSCRIBE = 39;
+  private static final int METHODID_CANDLES_SUBSCRIBE = 40;
+  private static final int METHODID_MARGIN_LEVELS_SUBSCRIBE = 41;
+  private static final int METHODID_MARKET_DEPTH_SUBSCRIBE = 42;
+  private static final int METHODID_MARKET_DEPTH_UPDATES_SUBSCRIBE = 43;
+  private static final int METHODID_MARKETS_DATA_SUBSCRIBE = 44;
+  private static final int METHODID_ORDERS_SUBSCRIBE = 45;
+  private static final int METHODID_POSITIONS_SUBSCRIBE = 46;
+  private static final int METHODID_TRADES_SUBSCRIBE = 47;
+  private static final int METHODID_TRANSFER_RESPONSES_SUBSCRIBE = 48;
+  private static final int METHODID_GET_NODE_SIGNATURES_AGGREGATE = 49;
+  private static final int METHODID_ASSET_BY_ID = 50;
+  private static final int METHODID_ASSETS = 51;
+  private static final int METHODID_ESTIMATE_FEE = 52;
+  private static final int METHODID_ESTIMATE_MARGIN = 53;
+  private static final int METHODID_ERC20WITHDRAWAL_APPROVAL = 54;
+  private static final int METHODID_WITHDRAWAL = 55;
+  private static final int METHODID_WITHDRAWALS = 56;
+  private static final int METHODID_DEPOSIT = 57;
+  private static final int METHODID_DEPOSITS = 58;
+  private static final int METHODID_NETWORK_PARAMETERS = 59;
+  private static final int METHODID_LIQUIDITY_PROVISIONS = 60;
+  private static final int METHODID_ORACLE_SPEC = 61;
+  private static final int METHODID_ORACLE_SPECS = 62;
+  private static final int METHODID_ORACLE_DATA_BY_SPEC = 63;
+  private static final int METHODID_OBSERVE_EVENT_BUS = 64;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5313,6 +5382,10 @@ public final class TradingDataServiceGrpc {
         case METHODID_STATISTICS:
           serviceImpl.statistics((io.vegaprotocol.vega.api.Trading.StatisticsRequest) request,
               (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.StatisticsResponse>) responseObserver);
+          break;
+        case METHODID_LAST_BLOCK_HEIGHT:
+          serviceImpl.lastBlockHeight((io.vegaprotocol.vega.api.Trading.LastBlockHeightRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.api.Trading.LastBlockHeightResponse>) responseObserver);
           break;
         case METHODID_GET_VEGA_TIME:
           serviceImpl.getVegaTime((io.vegaprotocol.vega.api.Trading.GetVegaTimeRequest) request,
@@ -5520,6 +5593,7 @@ public final class TradingDataServiceGrpc {
               .addMethod(getObserveProposalVotesMethod())
               .addMethod(getObserveEventBusMethod())
               .addMethod(getStatisticsMethod())
+              .addMethod(getLastBlockHeightMethod())
               .addMethod(getGetVegaTimeMethod())
               .addMethod(getAccountsSubscribeMethod())
               .addMethod(getCandlesSubscribeMethod())

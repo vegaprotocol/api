@@ -15,6 +15,7 @@ from .generated import (
     events,
     oracles,
     tm,
+    wallet,
 {%- for i in imports %}
     {{ i }},
 {%- endfor %}
@@ -31,6 +32,7 @@ __all__ = [
     "events",
     "oracles",
     "tm",
+    "wallet",
 {%- for a in all_list %}
     "{{ a }}",
 {%- endfor %}

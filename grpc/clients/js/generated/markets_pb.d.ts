@@ -3,7 +3,7 @@
 
 import * as jspb from "google-protobuf";
 import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.com/mwitkow/go-proto-validators/validator_pb";
-import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
+import * as oracles_v1_spec_pb from "./oracles/v1/spec_pb";
 
 export class AuctionDuration extends jspb.Message {
   getDuration(): number;
@@ -85,8 +85,8 @@ export class Future extends jspb.Message {
 
   hasOracleSpec(): boolean;
   clearOracleSpec(): void;
-  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
-  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
+  getOracleSpec(): oracles_v1_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_spec_pb.OracleSpec): void;
 
   hasOracleSpecBinding(): boolean;
   clearOracleSpecBinding(): void;
@@ -108,7 +108,7 @@ export namespace Future {
     maturity: string,
     settlementAsset: string,
     quoteName: string,
-    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
+    oracleSpec?: oracles_v1_spec_pb.OracleSpec.AsObject,
     oracleSpecBinding?: OracleSpecToFutureBinding.AsObject,
   }
 }

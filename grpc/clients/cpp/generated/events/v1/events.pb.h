@@ -36,8 +36,8 @@
 #include "assets.pb.h"
 #include "governance.pb.h"
 #include "vega.pb.h"
-#include "oracles/v1/oracle_spec.pb.h"
-#include "oracles/v1/oracle_data.pb.h"
+#include "oracles/v1/spec.pb.h"
+#include "oracles/v1/data.pb.h"
 #include "commands/v1/commands.pb.h"
 #include "commands/v1/validator_commands.pb.h"
 // @@protoc_insertion_point(includes)

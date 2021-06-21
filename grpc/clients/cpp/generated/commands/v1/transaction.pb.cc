@@ -138,7 +138,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2ftransaction_2e
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::Signature, bytes_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::Signature, value_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::Signature, algo_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::Signature, version_),
 };
@@ -188,10 +188,10 @@ const char descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto[] PROTO
   "oracleDataSubmissionB\t\n\007command\"\303\001\n\013Tran"
   "saction\022\035\n\ninput_data\030\001 \001(\014R\tinputData\0229"
   "\n\tsignature\030\002 \001(\0132\033.vega.commands.v1.Sig"
-  "natureR\tsignature\022\033\n\007address\030\351\007 \001(\014H\000R\007a"
-  "ddress\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pubKey\022\031\n\007ve"
+  "natureR\tsignature\022\033\n\007address\030\351\007 \001(\tH\000R\007a"
+  "ddress\022\032\n\007pub_key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007ve"
   "rsion\030\320\017 \001(\rR\007versionB\006\n\004from\"O\n\tSignatu"
-  "re\022\024\n\005bytes\030\001 \001(\014R\005bytes\022\022\n\004algo\030\002 \001(\tR\004"
+  "re\022\024\n\005value\030\001 \001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004"
   "algo\022\030\n\007version\030\003 \001(\rR\007versionBO\n io.veg"
   "aprotocol.vega.commands.v1Z+code.vegapro"
   "tocol.io/vega/proto/commands/v1b\006proto3"
@@ -1397,19 +1397,21 @@ const char* Transaction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes address = 1001 [json_name = "address"];
+      // string address = 1001 [json_name = "address"];
       case 1001:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.Transaction.address"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pub_key = 1002 [json_name = "pubKey"];
+      // string pub_key = 1002 [json_name = "pubKey"];
       case 1002:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           auto str = _internal_mutable_pub_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.Transaction.pub_key"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1462,15 +1464,23 @@ failure:
         2, _Internal::signature(this), target, stream);
   }
 
-  // bytes address = 1001 [json_name = "address"];
+  // string address = 1001 [json_name = "address"];
   if (_internal_has_address()) {
-    target = stream->WriteBytesMaybeAliased(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.Transaction.address");
+    target = stream->WriteStringMaybeAliased(
         1001, this->_internal_address(), target);
   }
 
-  // bytes pub_key = 1002 [json_name = "pubKey"];
+  // string pub_key = 1002 [json_name = "pubKey"];
   if (_internal_has_pub_key()) {
-    target = stream->WriteBytesMaybeAliased(
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_pub_key().data(), static_cast<int>(this->_internal_pub_key().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.Transaction.pub_key");
+    target = stream->WriteStringMaybeAliased(
         1002, this->_internal_pub_key(), target);
   }
 
@@ -1518,17 +1528,17 @@ size_t Transaction::ByteSizeLong() const {
   }
 
   switch (from_case()) {
-    // bytes address = 1001 [json_name = "address"];
+    // string address = 1001 [json_name = "address"];
     case kAddress: {
       total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_address());
       break;
     }
-    // bytes pub_key = 1002 [json_name = "pubKey"];
+    // string pub_key = 1002 [json_name = "pubKey"];
     case kPubKey: {
       total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_pub_key());
       break;
     }
@@ -1643,9 +1653,9 @@ Signature::Signature(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Signature::Signature(const Signature& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_bytes().empty()) {
-    bytes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_bytes(),
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(),
       GetArena());
   }
   algo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1659,7 +1669,7 @@ Signature::Signature(const Signature& from)
 
 void Signature::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Signature_commands_2fv1_2ftransaction_2eproto.base);
-  bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   algo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   version_ = 0u;
 }
@@ -1672,7 +1682,7 @@ Signature::~Signature() {
 
 void Signature::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  bytes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   algo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1697,7 +1707,7 @@ void Signature::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  bytes_.ClearToEmpty();
+  value_.ClearToEmpty();
   algo_.ClearToEmpty();
   version_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1710,11 +1720,12 @@ const char* Signature::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes bytes = 1 [json_name = "bytes"];
+      // string value = 1 [json_name = "value"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_bytes();
+          auto str = _internal_mutable_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.Signature.value"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1762,10 +1773,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes bytes = 1 [json_name = "bytes"];
-  if (this->bytes().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_bytes(), target);
+  // string value = 1 [json_name = "value"];
+  if (this->value().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.Signature.value");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_value(), target);
   }
 
   // string algo = 2 [json_name = "algo"];
@@ -1800,11 +1815,11 @@ size_t Signature::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes bytes = 1 [json_name = "bytes"];
-  if (this->bytes().size() > 0) {
+  // string value = 1 [json_name = "value"];
+  if (this->value().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_bytes());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_value());
   }
 
   // string algo = 2 [json_name = "algo"];
@@ -1852,8 +1867,8 @@ void Signature::MergeFrom(const Signature& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.bytes().size() > 0) {
-    _internal_set_bytes(from._internal_bytes());
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
   }
   if (from.algo().size() > 0) {
     _internal_set_algo(from._internal_algo());
@@ -1884,7 +1899,7 @@ bool Signature::IsInitialized() const {
 void Signature::InternalSwap(Signature* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  bytes_.Swap(&other->bytes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   algo_.Swap(&other->algo_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(version_, other->version_);
 }

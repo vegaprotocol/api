@@ -31,12 +31,12 @@ type InputData struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// A random number used to provided uniqueness and prevents
-	// against replay attack.
+	// A random number used to provided uniqueness and prevents against replay
+	// attack.
 	Nonce uint64 `protobuf:"varint,1,opt,name=nonce,proto3" json:"nonce,omitempty"`
 	// The block height associated to the transaction.
-	// This should always be current height of the node at the time of sending the Tx.
-	// BlockHeight is used as a mechanism for replay protection.
+	// This should always be current height of the node at the time of sending the
+	// Tx. BlockHeight is used as a mechanism for replay protection.
 	BlockHeight uint64 `protobuf:"varint,2,opt,name=block_height,json=blockHeight,proto3" json:"block_height,omitempty"`
 	// Types that are assignable to Command:
 	//	*InputData_OrderSubmission
@@ -196,7 +196,7 @@ type isInputData_Command interface {
 }
 
 type InputData_OrderSubmission struct {
-	// user commands
+	// User commands
 	OrderSubmission *OrderSubmission `protobuf:"bytes,1001,opt,name=order_submission,json=orderSubmission,proto3,oneof"`
 }
 
@@ -225,7 +225,7 @@ type InputData_LiquidityProvisionSubmission struct {
 }
 
 type InputData_NodeRegistration struct {
-	// validator commands
+	// Validator commands
 	NodeRegistration *NodeRegistration `protobuf:"bytes,2001,opt,name=node_registration,json=nodeRegistration,proto3,oneof"`
 }
 
@@ -278,7 +278,7 @@ type Transaction struct {
 
 	// One of the set of Vega commands (proto marshalled).
 	InputData []byte `protobuf:"bytes,1,opt,name=input_data,json=inputData,proto3" json:"input_data,omitempty"`
-	// The signature of the inputData
+	// The signature of the inputData.
 	Signature *Signature `protobuf:"bytes,2,opt,name=signature,proto3" json:"signature,omitempty"`
 	// The sender of the transaction.
 	// Any of the following would be valid:
@@ -287,9 +287,8 @@ type Transaction struct {
 	//	*Transaction_Address
 	//	*Transaction_PubKey
 	From isTransaction_From `protobuf_oneof:"from"`
-	// A version of the transaction, to be used
-	// in the future in case we want to implement
-	// changes to the Transaction format
+	// A version of the transaction, to be used in the future in case we want to
+	// implement changes to the Transaction format.
 	Version uint32 `protobuf:"varint,2000,opt,name=version,proto3" json:"version,omitempty"`
 }
 
@@ -346,18 +345,18 @@ func (m *Transaction) GetFrom() isTransaction_From {
 	return nil
 }
 
-func (x *Transaction) GetAddress() []byte {
+func (x *Transaction) GetAddress() string {
 	if x, ok := x.GetFrom().(*Transaction_Address); ok {
 		return x.Address
 	}
-	return nil
+	return ""
 }
 
-func (x *Transaction) GetPubKey() []byte {
+func (x *Transaction) GetPubKey() string {
 	if x, ok := x.GetFrom().(*Transaction_PubKey); ok {
 		return x.PubKey
 	}
-	return nil
+	return ""
 }
 
 func (x *Transaction) GetVersion() uint32 {
@@ -372,31 +371,31 @@ type isTransaction_From interface {
 }
 
 type Transaction_Address struct {
-	// The address of the sender.
-	Address []byte `protobuf:"bytes,1001,opt,name=address,proto3,oneof"`
+	// The address of the sender (hex-encoded). Not supported yet.
+	Address string `protobuf:"bytes,1001,opt,name=address,proto3,oneof"`
 }
 
 type Transaction_PubKey struct {
-	// The public key of the sender.
-	PubKey []byte `protobuf:"bytes,1002,opt,name=pub_key,json=pubKey,proto3,oneof"`
+	// The public key of the sender (hex-encoded).
+	PubKey string `protobuf:"bytes,1002,opt,name=pub_key,json=pubKey,proto3,oneof"`
 }
 
 func (*Transaction_Address) isTransaction_From() {}
 
 func (*Transaction_PubKey) isTransaction_From() {}
 
-// A signature to be authenticate a transaction
-// and to be verified by the vega network
+// A signature to be authenticate a transaction and to be verified by the vega
+// network.
 type Signature struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The bytes of the signature
-	Bytes []byte `protobuf:"bytes,1,opt,name=bytes,proto3" json:"bytes,omitempty"`
-	// The algorithm used to create the signature
+	// The bytes of the signature (hex-encoded).
+	Value string `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
+	// The algorithm used to create the signature.
 	Algo string `protobuf:"bytes,2,opt,name=algo,proto3" json:"algo,omitempty"`
-	// The version of the signature used to create the signature
+	// The version of the signature used to create the signature.
 	Version uint32 `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
 }
 
@@ -432,11 +431,11 @@ func (*Signature) Descriptor() ([]byte, []int) {
 	return file_commands_v1_transaction_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *Signature) GetBytes() []byte {
+func (x *Signature) GetValue() string {
 	if x != nil {
-		return x.Bytes
+		return x.Value
 	}
-	return nil
+	return ""
 }
 
 func (x *Signature) GetAlgo() string {
@@ -540,14 +539,14 @@ var file_commands_v1_transaction_proto_rawDesc = []byte{
 	0x0b, 0x32, 0x1b, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64,
 	0x73, 0x2e, 0x76, 0x31, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x52, 0x09,
 	0x73, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75, 0x72, 0x65, 0x12, 0x1b, 0x0a, 0x07, 0x61, 0x64, 0x64,
-	0x72, 0x65, 0x73, 0x73, 0x18, 0xe9, 0x07, 0x20, 0x01, 0x28, 0x0c, 0x48, 0x00, 0x52, 0x07, 0x61,
+	0x72, 0x65, 0x73, 0x73, 0x18, 0xe9, 0x07, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x07, 0x61,
 	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x1a, 0x0a, 0x07, 0x70, 0x75, 0x62, 0x5f, 0x6b, 0x65,
-	0x79, 0x18, 0xea, 0x07, 0x20, 0x01, 0x28, 0x0c, 0x48, 0x00, 0x52, 0x06, 0x70, 0x75, 0x62, 0x4b,
+	0x79, 0x18, 0xea, 0x07, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x06, 0x70, 0x75, 0x62, 0x4b,
 	0x65, 0x79, 0x12, 0x19, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0xd0, 0x0f,
 	0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x06, 0x0a,
 	0x04, 0x66, 0x72, 0x6f, 0x6d, 0x22, 0x4f, 0x0a, 0x09, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x74, 0x75,
-	0x72, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0c, 0x52, 0x05, 0x62, 0x79, 0x74, 0x65, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x61, 0x6c, 0x67, 0x6f,
+	0x72, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x61, 0x6c, 0x67, 0x6f,
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x61, 0x6c, 0x67, 0x6f, 0x12, 0x18, 0x0a, 0x07,
 	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x76,
 	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x42, 0x4f, 0x0a, 0x20, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67,

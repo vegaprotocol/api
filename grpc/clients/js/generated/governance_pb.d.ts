@@ -6,7 +6,7 @@ import * as github_com_mwitkow_go_proto_validators_validator_pb from "./github.c
 import * as markets_pb from "./markets_pb";
 import * as vega_pb from "./vega_pb";
 import * as assets_pb from "./assets_pb";
-import * as oracles_v1_oracle_spec_pb from "./oracles/v1/oracle_spec_pb";
+import * as oracles_v1_spec_pb from "./oracles/v1/spec_pb";
 
 export class FutureProduct extends jspb.Message {
   getMaturity(): string;
@@ -20,8 +20,8 @@ export class FutureProduct extends jspb.Message {
 
   hasOracleSpec(): boolean;
   clearOracleSpec(): void;
-  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpecConfiguration | undefined;
-  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpecConfiguration): void;
+  getOracleSpec(): oracles_v1_spec_pb.OracleSpecConfiguration | undefined;
+  setOracleSpec(value?: oracles_v1_spec_pb.OracleSpecConfiguration): void;
 
   hasOracleSpecBinding(): boolean;
   clearOracleSpecBinding(): void;
@@ -43,7 +43,7 @@ export namespace FutureProduct {
     maturity: string,
     settlementAsset: string,
     quoteName: string,
-    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpecConfiguration.AsObject,
+    oracleSpec?: oracles_v1_spec_pb.OracleSpecConfiguration.AsObject,
     oracleSpecBinding?: markets_pb.OracleSpecToFutureBinding.AsObject,
   }
 }
@@ -275,8 +275,8 @@ export namespace UpdateNetworkParameter {
 export class NewAsset extends jspb.Message {
   hasChanges(): boolean;
   clearChanges(): void;
-  getChanges(): assets_pb.AssetSource | undefined;
-  setChanges(value?: assets_pb.AssetSource): void;
+  getChanges(): assets_pb.AssetDetails | undefined;
+  setChanges(value?: assets_pb.AssetDetails): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewAsset.AsObject;
@@ -290,7 +290,7 @@ export class NewAsset extends jspb.Message {
 
 export namespace NewAsset {
   export type AsObject = {
-    changes?: assets_pb.AssetSource.AsObject,
+    changes?: assets_pb.AssetDetails.AsObject,
   }
 }
 
@@ -538,6 +538,9 @@ export interface ProposalErrorMap {
   PROPOSAL_ERROR_INVALID_FEE_AMOUNT: 28;
   PROPOSAL_ERROR_INVALID_SHAPE: 29;
   PROPOSAL_ERROR_INVALID_RISK_PARAMETER: 30;
+  PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED: 31;
+  PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED: 32;
+  PROPOSAL_ERROR_INVALID_ASSET_DETAILS: 33;
 }
 
 export const ProposalError: ProposalErrorMap;
