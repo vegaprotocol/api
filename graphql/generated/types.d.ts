@@ -57,6 +57,8 @@ export type Asset = {
   totalSupply: Scalars['String'];
   /** The precision of the asset */
   decimals: Scalars['Int'];
+  /** The min stake to become an lp for any market using this asset for settlement */
+  minLpStake: Scalars['String'];
   /** The origin source of the asset (e.g: an erc20 asset) */
   source: AssetSource;
   /** The infrastructure fee account for this asset */
@@ -117,30 +119,12 @@ export enum AuctionTrigger {
 /** A vega builtin asset, mostly for testing purpose */
 export type BuiltinAsset = {
   __typename?: 'BuiltinAsset';
-  /** The id of the asset */
-  id: Scalars['ID'];
-  /** The full name of the asset (e.g: Great British Pound) */
-  name: Scalars['String'];
-  /** The symbol of the asset (e.g: GBP) */
-  symbol: Scalars['String'];
-  /** The total supply of the market */
-  totalSupply: Scalars['String'];
-  /** The precision of the asset */
-  decimals: Scalars['Int'];
   /** Maximum amount that can be requested by a party through the built-in asset faucet at a time */
   maxFaucetAmountMint: Scalars['String'];
 };
 
 /** A vega builtin asset, mostly for testing purpose */
 export type BuiltinAssetInput = {
-  /** The full name of the asset (e.g: Great British Pound) */
-  name: Scalars['String'];
-  /** The symbol of the asset (e.g: GBP) */
-  symbol: Scalars['String'];
-  /** The total supply of the market */
-  totalSupply: Scalars['String'];
-  /** The precision of the asset */
-  decimals: Scalars['Int'];
   /** Maximum amount that can be requested by a party through the built-in asset faucet at a time */
   maxFaucetAmountMint: Scalars['String'];
 };
@@ -878,6 +862,8 @@ export type MarketData = {
   marketTradingMode: MarketTradingMode;
   /** what triggered an auction (if an auction was started) */
   trigger: AuctionTrigger;
+  /** what extended the ongoing auction (if an auction was extended) */
+  extensionTrigger: AuctionTrigger;
   /** the amount of stake targeted for this market */
   targetStake?: Maybe<Scalars['String']>;
   /** the supplied stake for the market */
@@ -1144,12 +1130,32 @@ export type NetworkParameterInput = {
 /** A new asset proposal change */
 export type NewAsset = {
   __typename?: 'NewAsset';
+  /** The full name of the asset (e.g: Great British Pound) */
+  name: Scalars['String'];
+  /** The symbol of the asset (e.g: GBP) */
+  symbol: Scalars['String'];
+  /** The total supply of the market */
+  totalSupply: Scalars['String'];
+  /** The precision of the asset */
+  decimals: Scalars['Int'];
+  /** The min stake to become an lp for any market using this asset for settlement */
+  minLpStake: Scalars['String'];
   /** the source of the new Asset */
   source: AssetSource;
 };
 
 /** A new asset to be added into vega */
 export type NewAssetInput = {
+  /** The full name of the asset (e.g: Great British Pound) */
+  name: Scalars['String'];
+  /** The symbol of the asset (e.g: GBP) */
+  symbol: Scalars['String'];
+  /** The total supply of the market */
+  totalSupply: Scalars['String'];
+  /** The precision of the asset */
+  decimals: Scalars['Int'];
+  /** The min stake to become an lp for any market using this asset for settlement */
+  minLpStake: Scalars['String'];
   /** A new builtin assed to be created */
   builtinAsset?: Maybe<BuiltinAssetInput>;
   /** A new ERC20 asset to be created */
@@ -1953,7 +1959,13 @@ export enum ProposalRejectionReason {
   /** Market proposal have one or more invalid shape */
   InvalidShape = 'InvalidShape',
   /** Market proposal use an invalid risk parameter */
-  InvalidRiskParameter = 'InvalidRiskParameter'
+  InvalidRiskParameter = 'InvalidRiskParameter',
+  /** Proposal declined because the majority threshold was not reached */
+  MajorityThresholdNotReached = 'MajorityThresholdNotReached',
+  /** Proposal declined because the participation threshold was not reached */
+  ParticipationThresholdNotReached = 'ParticipationThresholdNotReached',
+  /** Asset details are invalid */
+  InvalidAssetDetails = 'InvalidAssetDetails'
 }
 
 /**
@@ -2071,6 +2083,8 @@ export type Query = {
   party?: Maybe<Party>;
   /** a bunch of statistics about the node */
   statistics: Statistics;
+  /** The last block process by the blockchain */
+  lastBlockHeight: Scalars['String'];
   /** All registered oracle specs */
   oracleSpecs?: Maybe<Array<OracleSpec>>;
   /** An oracle spec for a given oracle spec ID */

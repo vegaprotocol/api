@@ -6,13 +6,14 @@ export type AccountFieldPolicy = {
 	type?: FieldPolicy<any> | FieldReadFunction<any>,
 	market?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AssetKeySpecifier = ('id' | 'name' | 'symbol' | 'totalSupply' | 'decimals' | 'source' | 'infrastructureFeeAccount' | AssetKeySpecifier)[];
+export type AssetKeySpecifier = ('id' | 'name' | 'symbol' | 'totalSupply' | 'decimals' | 'minLpStake' | 'source' | 'infrastructureFeeAccount' | AssetKeySpecifier)[];
 export type AssetFieldPolicy = {
 	id?: FieldPolicy<any> | FieldReadFunction<any>,
 	name?: FieldPolicy<any> | FieldReadFunction<any>,
 	symbol?: FieldPolicy<any> | FieldReadFunction<any>,
 	totalSupply?: FieldPolicy<any> | FieldReadFunction<any>,
 	decimals?: FieldPolicy<any> | FieldReadFunction<any>,
+	minLpStake?: FieldPolicy<any> | FieldReadFunction<any>,
 	source?: FieldPolicy<any> | FieldReadFunction<any>,
 	infrastructureFeeAccount?: FieldPolicy<any> | FieldReadFunction<any>
 };
@@ -31,13 +32,8 @@ export type AuctionEventFieldPolicy = {
 	trigger?: FieldPolicy<any> | FieldReadFunction<any>,
 	extensionTrigger?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type BuiltinAssetKeySpecifier = ('id' | 'name' | 'symbol' | 'totalSupply' | 'decimals' | 'maxFaucetAmountMint' | BuiltinAssetKeySpecifier)[];
+export type BuiltinAssetKeySpecifier = ('maxFaucetAmountMint' | BuiltinAssetKeySpecifier)[];
 export type BuiltinAssetFieldPolicy = {
-	id?: FieldPolicy<any> | FieldReadFunction<any>,
-	name?: FieldPolicy<any> | FieldReadFunction<any>,
-	symbol?: FieldPolicy<any> | FieldReadFunction<any>,
-	totalSupply?: FieldPolicy<any> | FieldReadFunction<any>,
-	decimals?: FieldPolicy<any> | FieldReadFunction<any>,
 	maxFaucetAmountMint?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type BusEventKeySpecifier = ('eventId' | 'block' | 'type' | 'event' | BusEventKeySpecifier)[];
@@ -255,7 +251,7 @@ export type MarketFieldPolicy = {
 	liquidityProvisions?: FieldPolicy<any> | FieldReadFunction<any>,
 	marketTimestamps?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MarketDataKeySpecifier = ('market' | 'markPrice' | 'bestBidPrice' | 'bestBidVolume' | 'bestOfferPrice' | 'bestOfferVolume' | 'bestStaticBidPrice' | 'bestStaticBidVolume' | 'bestStaticOfferPrice' | 'bestStaticOfferVolume' | 'midPrice' | 'staticMidPrice' | 'timestamp' | 'openInterest' | 'auctionEnd' | 'auctionStart' | 'indicativePrice' | 'indicativeVolume' | 'marketTradingMode' | 'trigger' | 'targetStake' | 'suppliedStake' | 'commitments' | 'priceMonitoringBounds' | 'marketValueProxy' | 'liquidityProviderFeeShare' | MarketDataKeySpecifier)[];
+export type MarketDataKeySpecifier = ('market' | 'markPrice' | 'bestBidPrice' | 'bestBidVolume' | 'bestOfferPrice' | 'bestOfferVolume' | 'bestStaticBidPrice' | 'bestStaticBidVolume' | 'bestStaticOfferPrice' | 'bestStaticOfferVolume' | 'midPrice' | 'staticMidPrice' | 'timestamp' | 'openInterest' | 'auctionEnd' | 'auctionStart' | 'indicativePrice' | 'indicativeVolume' | 'marketTradingMode' | 'trigger' | 'extensionTrigger' | 'targetStake' | 'suppliedStake' | 'commitments' | 'priceMonitoringBounds' | 'marketValueProxy' | 'liquidityProviderFeeShare' | MarketDataKeySpecifier)[];
 export type MarketDataFieldPolicy = {
 	market?: FieldPolicy<any> | FieldReadFunction<any>,
 	markPrice?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -277,6 +273,7 @@ export type MarketDataFieldPolicy = {
 	indicativeVolume?: FieldPolicy<any> | FieldReadFunction<any>,
 	marketTradingMode?: FieldPolicy<any> | FieldReadFunction<any>,
 	trigger?: FieldPolicy<any> | FieldReadFunction<any>,
+	extensionTrigger?: FieldPolicy<any> | FieldReadFunction<any>,
 	targetStake?: FieldPolicy<any> | FieldReadFunction<any>,
 	suppliedStake?: FieldPolicy<any> | FieldReadFunction<any>,
 	commitments?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -337,8 +334,13 @@ export type NetworkParameterFieldPolicy = {
 	key?: FieldPolicy<any> | FieldReadFunction<any>,
 	value?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type NewAssetKeySpecifier = ('source' | NewAssetKeySpecifier)[];
+export type NewAssetKeySpecifier = ('name' | 'symbol' | 'totalSupply' | 'decimals' | 'minLpStake' | 'source' | NewAssetKeySpecifier)[];
 export type NewAssetFieldPolicy = {
+	name?: FieldPolicy<any> | FieldReadFunction<any>,
+	symbol?: FieldPolicy<any> | FieldReadFunction<any>,
+	totalSupply?: FieldPolicy<any> | FieldReadFunction<any>,
+	decimals?: FieldPolicy<any> | FieldReadFunction<any>,
+	minLpStake?: FieldPolicy<any> | FieldReadFunction<any>,
 	source?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type NewMarketKeySpecifier = ('instrument' | 'decimalPlaces' | 'riskParameters' | 'metadata' | 'tradingMode' | 'commitment' | NewMarketKeySpecifier)[];
@@ -556,13 +558,14 @@ export type ProposalVotesFieldPolicy = {
 	yes?: FieldPolicy<any> | FieldReadFunction<any>,
 	no?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type QueryKeySpecifier = ('markets' | 'market' | 'parties' | 'party' | 'statistics' | 'oracleSpecs' | 'oracleSpec' | 'oracleDataBySpec' | 'orderByID' | 'orderVersions' | 'orderByReference' | 'proposals' | 'proposal' | 'newMarketProposals' | 'updateMarketProposals' | 'networkParametersProposals' | 'newAssetProposals' | 'nodeSignatures' | 'asset' | 'assets' | 'estimateOrder' | 'withdrawal' | 'erc20WithdrawalApproval' | 'deposit' | 'networkParameters' | QueryKeySpecifier)[];
+export type QueryKeySpecifier = ('markets' | 'market' | 'parties' | 'party' | 'statistics' | 'lastBlockHeight' | 'oracleSpecs' | 'oracleSpec' | 'oracleDataBySpec' | 'orderByID' | 'orderVersions' | 'orderByReference' | 'proposals' | 'proposal' | 'newMarketProposals' | 'updateMarketProposals' | 'networkParametersProposals' | 'newAssetProposals' | 'nodeSignatures' | 'asset' | 'assets' | 'estimateOrder' | 'withdrawal' | 'erc20WithdrawalApproval' | 'deposit' | 'networkParameters' | QueryKeySpecifier)[];
 export type QueryFieldPolicy = {
 	markets?: FieldPolicy<any> | FieldReadFunction<any>,
 	market?: FieldPolicy<any> | FieldReadFunction<any>,
 	parties?: FieldPolicy<any> | FieldReadFunction<any>,
 	party?: FieldPolicy<any> | FieldReadFunction<any>,
 	statistics?: FieldPolicy<any> | FieldReadFunction<any>,
+	lastBlockHeight?: FieldPolicy<any> | FieldReadFunction<any>,
 	oracleSpecs?: FieldPolicy<any> | FieldReadFunction<any>,
 	oracleSpec?: FieldPolicy<any> | FieldReadFunction<any>,
 	oracleDataBySpec?: FieldPolicy<any> | FieldReadFunction<any>,
