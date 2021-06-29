@@ -16,15 +16,15 @@ name: Go
       - "v[0-9]+.[0-9]+.[0-9]+"
       - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+"
 
-
 jobs:
 
-  build-linux:
-    name: Linux build
-    runs-on: ubuntu-latest
+  build:
+    name: Build on ${{ matrix.os }} with Go ${{ matrix.go }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         go: ['1.16', '1.15']
+        os: [macos-latest, windows-latest, ubuntu-latest]
     env:
       GO111MODULE: "on"
       GO_VER: ${{ matrix.go }}
@@ -46,11 +46,7 @@ jobs:
 
       - name: Lint
         run: |
-          if ! command -v golint 1>/dev/null ; then
-            v="$(awk '/golang.org\/x\/lint\/golint/ {print $2}' go.mod)"
-            [[ -z "$v" ]] && v=v0.0.0-20190313153728-d0100b6bd8b3
-            go get "golang.org/x/lint/golint@$v" || exit 1
-          fi
+          go get golang.org/x/lint/golint@latest || exit 1
           cd grpc/clients/go
           make lint
 
@@ -66,20 +62,4 @@ jobs:
           GOTOOLDIR: /usr/local/go/pkg/tool/linux_amd64
         with:
           args: ./...
-        if: env.GO_VER == '1.16'
-
-#   build-macos:
-#     name: MacOS build
-#     runs-on: macos-latest
-#     strategy:
-#       matrix:
-#         go: ['1.16', '1.15']
-#     steps: # same as for Linux
-
-#   build-windows:
-#     name: Windows Build
-#     runs-on: windows-latest
-#     strategy:
-#       matrix:
-#         go: ['1.16', '1.15']
-#     steps: # same as for Linux
+        if: ${{ matrix.go == '1.16' && matrix.os == 'ubuntu-latest' }}
