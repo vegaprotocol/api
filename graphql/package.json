@@ -10,6 +10,7 @@
     "ws": "7.4.6"
   },
   "scripts": {
+    "docs": "graphqldoc -f -s schema.graphql -o doc/ && find doc -name '*.html' -print0 | xargs -0r sed --in-place -e 's#><#>\\n<#g'",
     "generate": "graphql-codegen"
   }
 }
