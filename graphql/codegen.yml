@@ -1,0 +1,17 @@
+---
+
+schema: ./schema.graphql
+
+generates:
+
+  ./generated/types.d.ts:
+    plugins:
+      - typescript
+
+  ./generated/apollo-client-helpers.ts:
+    plugins:
+      - typescript-apollo-client-helpers
+
+  ./generated/react-apollo.ts:
+    plugins:
+      - typescript-react-apollo
