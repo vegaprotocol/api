@@ -145,7 +145,7 @@ cat >req.json <<EOF
 }
 EOF
 echo "Request for SignTx: $(cat req.json)"
-url="$walletserver_url/api/v1/messages/sync"
+url="$walletserver_url/api/v1/messages"
 response="$(curl -s -XPOST -H "$hdr" -d @req.json "$url")"
 signedTx="$(echo "$response" | jq .signedTx)"
 echo "Response from SignTx: $signedTx"

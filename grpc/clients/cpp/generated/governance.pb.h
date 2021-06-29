@@ -39,7 +39,7 @@
 #include "markets.pb.h"
 #include "vega.pb.h"
 #include "assets.pb.h"
-#include "oracles/v1/oracle_spec.pb.h"
+#include "oracles/v1/spec.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_governance_2eproto
@@ -213,12 +213,15 @@ enum ProposalError : int {
   PROPOSAL_ERROR_INVALID_FEE_AMOUNT = 28,
   PROPOSAL_ERROR_INVALID_SHAPE = 29,
   PROPOSAL_ERROR_INVALID_RISK_PARAMETER = 30,
+  PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED = 31,
+  PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED = 32,
+  PROPOSAL_ERROR_INVALID_ASSET_DETAILS = 33,
   ProposalError_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   ProposalError_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool ProposalError_IsValid(int value);
 constexpr ProposalError ProposalError_MIN = PROPOSAL_ERROR_UNSPECIFIED;
-constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_RISK_PARAMETER;
+constexpr ProposalError ProposalError_MAX = PROPOSAL_ERROR_INVALID_ASSET_DETAILS;
 constexpr int ProposalError_ARRAYSIZE = ProposalError_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ProposalError_descriptor();
@@ -1748,23 +1751,23 @@ class NewAsset PROTOBUF_FINAL :
   enum : int {
     kChangesFieldNumber = 1,
   };
-  // .vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = {
+  // .vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = {
   bool has_changes() const;
   private:
   bool _internal_has_changes() const;
   public:
   void clear_changes();
-  const ::vega::AssetSource& changes() const;
-  ::vega::AssetSource* release_changes();
-  ::vega::AssetSource* mutable_changes();
-  void set_allocated_changes(::vega::AssetSource* changes);
+  const ::vega::AssetDetails& changes() const;
+  ::vega::AssetDetails* release_changes();
+  ::vega::AssetDetails* mutable_changes();
+  void set_allocated_changes(::vega::AssetDetails* changes);
   private:
-  const ::vega::AssetSource& _internal_changes() const;
-  ::vega::AssetSource* _internal_mutable_changes();
+  const ::vega::AssetDetails& _internal_changes() const;
+  ::vega::AssetDetails* _internal_mutable_changes();
   public:
   void unsafe_arena_set_allocated_changes(
-      ::vega::AssetSource* changes);
-  ::vega::AssetSource* unsafe_arena_release_changes();
+      ::vega::AssetDetails* changes);
+  ::vega::AssetDetails* unsafe_arena_release_changes();
 
   // @@protoc_insertion_point(class_scope:vega.NewAsset)
  private:
@@ -1773,7 +1776,7 @@ class NewAsset PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::vega::AssetSource* changes_;
+  ::vega::AssetDetails* changes_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_governance_2eproto;
 };
@@ -2488,6 +2491,7 @@ class Proposal PROTOBUF_FINAL :
     kIdFieldNumber = 1,
     kReferenceFieldNumber = 2,
     kPartyIdFieldNumber = 3,
+    kErrorDetailsFieldNumber = 8,
     kTermsFieldNumber = 6,
     kTimestampFieldNumber = 5,
     kStateFieldNumber = 4,
@@ -2539,6 +2543,22 @@ class Proposal PROTOBUF_FINAL :
   const std::string& _internal_party_id() const;
   void _internal_set_party_id(const std::string& value);
   std::string* _internal_mutable_party_id();
+  public:
+
+  // string error_details = 8 [json_name = "errorDetails"];
+  void clear_error_details();
+  const std::string& error_details() const;
+  void set_error_details(const std::string& value);
+  void set_error_details(std::string&& value);
+  void set_error_details(const char* value);
+  void set_error_details(const char* value, size_t size);
+  std::string* mutable_error_details();
+  std::string* release_error_details();
+  void set_allocated_error_details(std::string* error_details);
+  private:
+  const std::string& _internal_error_details() const;
+  void _internal_set_error_details(const std::string& value);
+  std::string* _internal_mutable_error_details();
   public:
 
   // .vega.ProposalTerms terms = 6 [json_name = "terms", (.validator.field) = {
@@ -2596,6 +2616,7 @@ class Proposal PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reference_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_details_;
   ::vega::ProposalTerms* terms_;
   ::PROTOBUF_NAMESPACE_ID::int64 timestamp_;
   int state_;
@@ -4493,24 +4514,24 @@ inline void UpdateNetworkParameter::set_allocated_changes(::vega::NetworkParamet
 
 // NewAsset
 
-// .vega.AssetSource changes = 1 [json_name = "changes", (.validator.field) = {
+// .vega.AssetDetails changes = 1 [json_name = "changes", (.validator.field) = {
 inline bool NewAsset::_internal_has_changes() const {
   return this != internal_default_instance() && changes_ != nullptr;
 }
 inline bool NewAsset::has_changes() const {
   return _internal_has_changes();
 }
-inline const ::vega::AssetSource& NewAsset::_internal_changes() const {
-  const ::vega::AssetSource* p = changes_;
-  return p != nullptr ? *p : reinterpret_cast<const ::vega::AssetSource&>(
-      ::vega::_AssetSource_default_instance_);
+inline const ::vega::AssetDetails& NewAsset::_internal_changes() const {
+  const ::vega::AssetDetails* p = changes_;
+  return p != nullptr ? *p : reinterpret_cast<const ::vega::AssetDetails&>(
+      ::vega::_AssetDetails_default_instance_);
 }
-inline const ::vega::AssetSource& NewAsset::changes() const {
+inline const ::vega::AssetDetails& NewAsset::changes() const {
   // @@protoc_insertion_point(field_get:vega.NewAsset.changes)
   return _internal_changes();
 }
 inline void NewAsset::unsafe_arena_set_allocated_changes(
-    ::vega::AssetSource* changes) {
+    ::vega::AssetDetails* changes) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(changes_);
   }
@@ -4522,35 +4543,35 @@ inline void NewAsset::unsafe_arena_set_allocated_changes(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.NewAsset.changes)
 }
-inline ::vega::AssetSource* NewAsset::release_changes() {
+inline ::vega::AssetDetails* NewAsset::release_changes() {
 
-  ::vega::AssetSource* temp = changes_;
+  ::vega::AssetDetails* temp = changes_;
   changes_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::vega::AssetSource* NewAsset::unsafe_arena_release_changes() {
+inline ::vega::AssetDetails* NewAsset::unsafe_arena_release_changes() {
   // @@protoc_insertion_point(field_release:vega.NewAsset.changes)
 
-  ::vega::AssetSource* temp = changes_;
+  ::vega::AssetDetails* temp = changes_;
   changes_ = nullptr;
   return temp;
 }
-inline ::vega::AssetSource* NewAsset::_internal_mutable_changes() {
+inline ::vega::AssetDetails* NewAsset::_internal_mutable_changes() {
 
   if (changes_ == nullptr) {
-    auto* p = CreateMaybeMessage<::vega::AssetSource>(GetArena());
+    auto* p = CreateMaybeMessage<::vega::AssetDetails>(GetArena());
     changes_ = p;
   }
   return changes_;
 }
-inline ::vega::AssetSource* NewAsset::mutable_changes() {
+inline ::vega::AssetDetails* NewAsset::mutable_changes() {
   // @@protoc_insertion_point(field_mutable:vega.NewAsset.changes)
   return _internal_mutable_changes();
 }
-inline void NewAsset::set_allocated_changes(::vega::AssetSource* changes) {
+inline void NewAsset::set_allocated_changes(::vega::AssetDetails* changes) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(changes_);
@@ -5490,6 +5511,67 @@ inline void Proposal::_internal_set_reason(::vega::ProposalError value) {
 inline void Proposal::set_reason(::vega::ProposalError value) {
   _internal_set_reason(value);
   // @@protoc_insertion_point(field_set:vega.Proposal.reason)
+}
+
+// string error_details = 8 [json_name = "errorDetails"];
+inline void Proposal::clear_error_details() {
+  error_details_.ClearToEmpty();
+}
+inline const std::string& Proposal::error_details() const {
+  // @@protoc_insertion_point(field_get:vega.Proposal.error_details)
+  return _internal_error_details();
+}
+inline void Proposal::set_error_details(const std::string& value) {
+  _internal_set_error_details(value);
+  // @@protoc_insertion_point(field_set:vega.Proposal.error_details)
+}
+inline std::string* Proposal::mutable_error_details() {
+  // @@protoc_insertion_point(field_mutable:vega.Proposal.error_details)
+  return _internal_mutable_error_details();
+}
+inline const std::string& Proposal::_internal_error_details() const {
+  return error_details_.Get();
+}
+inline void Proposal::_internal_set_error_details(const std::string& value) {
+
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Proposal::set_error_details(std::string&& value) {
+
+  error_details_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.Proposal.error_details)
+}
+inline void Proposal::set_error_details(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.Proposal.error_details)
+}
+inline void Proposal::set_error_details(const char* value,
+    size_t size) {
+
+  error_details_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.Proposal.error_details)
+}
+inline std::string* Proposal::_internal_mutable_error_details() {
+
+  return error_details_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* Proposal::release_error_details() {
+  // @@protoc_insertion_point(field_release:vega.Proposal.error_details)
+  return error_details_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Proposal::set_allocated_error_details(std::string* error_details) {
+  if (error_details != nullptr) {
+
+  } else {
+
+  }
+  error_details_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error_details,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.Proposal.error_details)
 }
 
 // -------------------------------------------------------------------

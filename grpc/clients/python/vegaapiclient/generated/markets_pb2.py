@@ -12,7 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from .github.com.mwitkow.go_proto_validators import validator_pb2 as github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2
-from .oracles.v1 import oracle_spec_pb2 as oracles_dot_v1_dot_oracle__spec__pb2
+from .oracles.v1 import spec_pb2 as oracles_dot_v1_dot_spec__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024io.vegaprotocol.vegaZ\037code.vegaprotocol.io/vega/proto',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rmarkets.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\x1a\x1coracles/v1/oracle_spec.proto\"E\n\x0f\x41uctionDuration\x12\x1a\n\x08\x64uration\x18\x01 \x01(\x03R\x08\x64uration\x12\x16\n\x06volume\x18\x02 \x01(\x04R\x06volume\"0\n\x11\x43ontinuousTrading\x12\x1b\n\ttick_size\x18\x01 \x01(\tR\x08tickSize\"`\n\x0f\x44iscreteTrading\x12\x30\n\x0b\x64uration_ns\x18\x01 \x01(\x03\x42\x0f\xe2\xdf\x1f\x0b\x10\x00\x18\x80\x80\x88\xba\x90\xad\xcd\x04R\ndurationNs\x12\x1b\n\ttick_size\x18\x02 \x01(\tR\x08tickSize\"\xf8\x01\n\x06\x46uture\x12\x1a\n\x08maturity\x18\x01 \x01(\tR\x08maturity\x12)\n\x10settlement_asset\x18\x02 \x01(\tR\x0fsettlementAsset\x12\x1d\n\nquote_name\x18\x04 \x01(\tR\tquoteName\x12\x37\n\x0boracle_spec\x18\x05 \x01(\x0b\x32\x16.oracles.v1.OracleSpecR\noracleSpec\x12O\n\x13oracle_spec_binding\x18\x06 \x01(\x0b\x32\x1f.vega.OracleSpecToFutureBindingR\x11oracleSpecBinding\"W\n\x19OracleSpecToFutureBinding\x12:\n\x19settlement_price_property\x18\x01 \x01(\tR\x17settlementPriceProperty\"(\n\x12InstrumentMetadata\x12\x12\n\x04tags\x18\x01 \x03(\tR\x04tags\"\xad\x01\n\nInstrument\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04\x63ode\x18\x02 \x01(\tR\x04\x63ode\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x34\n\x08metadata\x18\x04 \x01(\x0b\x32\x18.vega.InstrumentMetadataR\x08metadata\x12&\n\x06\x66uture\x18\x64 \x01(\x0b\x32\x0c.vega.FutureH\x00R\x06\x66utureB\t\n\x07product\"\x92\x01\n\x12LogNormalRiskModel\x12\x36\n\x17risk_aversion_parameter\x18\x01 \x01(\x01R\x15riskAversionParameter\x12\x10\n\x03tau\x18\x02 \x01(\x01R\x03tau\x12\x32\n\x06params\x18\x03 \x01(\x0b\x32\x1a.vega.LogNormalModelParamsR\x06params\"J\n\x14LogNormalModelParams\x12\x0e\n\x02mu\x18\x01 \x01(\x01R\x02mu\x12\x0c\n\x01r\x18\x02 \x01(\x01R\x01r\x12\x14\n\x05sigma\x18\x03 \x01(\x01R\x05sigma\"B\n\x0fSimpleRiskModel\x12/\n\x06params\x18\x01 \x01(\x0b\x32\x17.vega.SimpleModelParamsR\x06params\"\x87\x02\n\x11SimpleModelParams\x12\x1f\n\x0b\x66\x61\x63tor_long\x18\x01 \x01(\x01R\nfactorLong\x12!\n\x0c\x66\x61\x63tor_short\x18\x02 \x01(\x01R\x0b\x66\x61\x63torShort\x12-\n\x0bmax_move_up\x18\x03 \x01(\x01\x42\r\xe2\xdf\x1f\tI\x00\x00\x00\x00\x00\x00\x00\x00R\tmaxMoveUp\x12\x31\n\rmin_move_down\x18\x04 \x01(\x01\x42\r\xe2\xdf\x1f\tQ\x00\x00\x00\x00\x00\x00\x00\x00R\x0bminMoveDown\x12L\n\x16probability_of_trading\x18\x05 \x01(\x01\x42\x16\xe2\xdf\x1f\x12I\x00\x00\x00\x00\x00\x00\x00\x00Q\x00\x00\x00\x00\x00\x00\xf0?R\x14probabilityOfTrading\"\x89\x01\n\x0eScalingFactors\x12!\n\x0csearch_level\x18\x01 \x01(\x01R\x0bsearchLevel\x12%\n\x0einitial_margin\x18\x02 \x01(\x01R\rinitialMargin\x12-\n\x12\x63ollateral_release\x18\x03 \x01(\x01R\x11\x63ollateralRelease\"Q\n\x10MarginCalculator\x12=\n\x0fscaling_factors\x18\x01 \x01(\x0b\x32\x14.vega.ScalingFactorsR\x0escalingFactors\"\xad\x02\n\x12TradableInstrument\x12\x30\n\ninstrument\x18\x01 \x01(\x0b\x32\x10.vega.InstrumentR\ninstrument\x12\x43\n\x11margin_calculator\x18\x02 \x01(\x0b\x32\x16.vega.MarginCalculatorR\x10marginCalculator\x12M\n\x15log_normal_risk_model\x18\x64 \x01(\x0b\x32\x18.vega.LogNormalRiskModelH\x00R\x12logNormalRiskModel\x12\x43\n\x11simple_risk_model\x18\x65 \x01(\x0b\x32\x15.vega.SimpleRiskModelH\x00R\x0fsimpleRiskModelB\x0c\n\nrisk_model\"}\n\nFeeFactors\x12\x1b\n\tmaker_fee\x18\x01 \x01(\tR\x08makerFee\x12-\n\x12infrastructure_fee\x18\x02 \x01(\tR\x11infrastructureFee\x12#\n\rliquidity_fee\x18\x03 \x01(\tR\x0cliquidityFee\"2\n\x04\x46\x65\x65s\x12*\n\x07\x66\x61\x63tors\x18\x01 \x01(\x0b\x32\x10.vega.FeeFactorsR\x07\x66\x61\x63tors\"\xa9\x01\n\x16PriceMonitoringTrigger\x12 \n\x07horizon\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x07horizon\x12\x38\n\x0bprobability\x18\x02 \x01(\x01\x42\x16\xe2\xdf\x1f\x12\x31\x00\x00\x00\x00\x00\x00\x00\x00\x39\x00\x00\x00\x00\x00\x00\xf0?R\x0bprobability\x12\x33\n\x11\x61uction_extension\x18\x03 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x10\x61uctionExtension\"U\n\x19PriceMonitoringParameters\x12\x38\n\x08triggers\x18\x01 \x03(\x0b\x32\x1c.vega.PriceMonitoringTriggerR\x08triggers\"\x85\x01\n\x17PriceMonitoringSettings\x12?\n\nparameters\x18\x01 \x01(\x0b\x32\x1f.vega.PriceMonitoringParametersR\nparameters\x12)\n\x10update_frequency\x18\x02 \x01(\x03R\x0fupdateFrequency\"\xe4\x01\n\x1dLiquidityMonitoringParameters\x12S\n\x17target_stake_parameters\x18\x01 \x01(\x0b\x32\x1b.vega.TargetStakeParametersR\x15targetStakeParameters\x12\x41\n\x10triggering_ratio\x18\x02 \x01(\x01\x42\x16\xe2\xdf\x1f\x12I\x00\x00\x00\x00\x00\x00\x00\x00Q\x00\x00\x00\x00\x00\x00\xf0?R\x0ftriggeringRatio\x12+\n\x11\x61uction_extension\x18\x03 \x01(\x03R\x10\x61uctionExtension\"v\n\x15TargetStakeParameters\x12\'\n\x0btime_window\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\ntimeWindow\x12\x34\n\x0escaling_factor\x18\x02 \x01(\x01\x42\r\xe2\xdf\x1f\t1\x00\x00\x00\x00\x00\x00\x00\x00R\rscalingFactor\"\xf2\x08\n\x06Market\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12I\n\x13tradable_instrument\x18\x02 \x01(\x0b\x32\x18.vega.TradableInstrumentR\x12tradableInstrument\x12%\n\x0e\x64\x65\x63imal_places\x18\x03 \x01(\x04R\rdecimalPlaces\x12\x1e\n\x04\x66\x65\x65s\x18\x04 \x01(\x0b\x32\n.vega.FeesR\x04\x66\x65\x65s\x12>\n\x0fopening_auction\x18\x05 \x01(\x0b\x32\x15.vega.AuctionDurationR\x0eopeningAuction\x12\x39\n\ncontinuous\x18\x64 \x01(\x0b\x32\x17.vega.ContinuousTradingH\x00R\ncontinuous\x12\x33\n\x08\x64iscrete\x18\x65 \x01(\x0b\x32\x15.vega.DiscreteTradingH\x00R\x08\x64iscrete\x12Y\n\x19price_monitoring_settings\x18\x06 \x01(\x0b\x32\x1d.vega.PriceMonitoringSettingsR\x17priceMonitoringSettings\x12k\n\x1fliquidity_monitoring_parameters\x18\x07 \x01(\x0b\x32#.vega.LiquidityMonitoringParametersR\x1dliquidityMonitoringParameters\x12;\n\x0ctrading_mode\x18\x08 \x01(\x0e\x32\x18.vega.Market.TradingModeR\x0btradingMode\x12(\n\x05state\x18\t \x01(\x0e\x32\x12.vega.Market.StateR\x05state\x12\x43\n\x11market_timestamps\x18\n \x01(\x0b\x32\x16.vega.MarketTimestampsR\x10marketTimestamps\"\xd8\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATE_PROPOSED\x10\x01\x12\x12\n\x0eSTATE_REJECTED\x10\x02\x12\x11\n\rSTATE_PENDING\x10\x03\x12\x13\n\x0fSTATE_CANCELLED\x10\x04\x12\x10\n\x0cSTATE_ACTIVE\x10\x05\x12\x13\n\x0fSTATE_SUSPENDED\x10\x06\x12\x10\n\x0cSTATE_CLOSED\x10\x07\x12\x1c\n\x18STATE_TRADING_TERMINATED\x10\x08\x12\x11\n\rSTATE_SETTLED\x10\t\"\xaf\x01\n\x0bTradingMode\x12\x1c\n\x18TRADING_MODE_UNSPECIFIED\x10\x00\x12\x1b\n\x17TRADING_MODE_CONTINUOUS\x10\x01\x12\x1e\n\x1aTRADING_MODE_BATCH_AUCTION\x10\x02\x12 \n\x1cTRADING_MODE_OPENING_AUCTION\x10\x03\x12#\n\x1fTRADING_MODE_MONITORING_AUCTION\x10\x04\x42\x15\n\x13trading_mode_config\"r\n\x10MarketTimestamps\x12\x1a\n\x08proposed\x18\x01 \x01(\x03R\x08proposed\x12\x18\n\x07pending\x18\x02 \x01(\x03R\x07pending\x12\x12\n\x04open\x18\x03 \x01(\x03R\x04open\x12\x14\n\x05\x63lose\x18\x04 \x01(\x03R\x05\x63loseB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
+  serialized_pb=b'\n\rmarkets.proto\x12\x04vega\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\x1a\x15oracles/v1/spec.proto\"E\n\x0f\x41uctionDuration\x12\x1a\n\x08\x64uration\x18\x01 \x01(\x03R\x08\x64uration\x12\x16\n\x06volume\x18\x02 \x01(\x04R\x06volume\"0\n\x11\x43ontinuousTrading\x12\x1b\n\ttick_size\x18\x01 \x01(\tR\x08tickSize\"`\n\x0f\x44iscreteTrading\x12\x30\n\x0b\x64uration_ns\x18\x01 \x01(\x03\x42\x0f\xe2\xdf\x1f\x0b\x10\x00\x18\x80\x80\x88\xba\x90\xad\xcd\x04R\ndurationNs\x12\x1b\n\ttick_size\x18\x02 \x01(\tR\x08tickSize\"\xf8\x01\n\x06\x46uture\x12\x1a\n\x08maturity\x18\x01 \x01(\tR\x08maturity\x12)\n\x10settlement_asset\x18\x02 \x01(\tR\x0fsettlementAsset\x12\x1d\n\nquote_name\x18\x04 \x01(\tR\tquoteName\x12\x37\n\x0boracle_spec\x18\x05 \x01(\x0b\x32\x16.oracles.v1.OracleSpecR\noracleSpec\x12O\n\x13oracle_spec_binding\x18\x06 \x01(\x0b\x32\x1f.vega.OracleSpecToFutureBindingR\x11oracleSpecBinding\"W\n\x19OracleSpecToFutureBinding\x12:\n\x19settlement_price_property\x18\x01 \x01(\tR\x17settlementPriceProperty\"(\n\x12InstrumentMetadata\x12\x12\n\x04tags\x18\x01 \x03(\tR\x04tags\"\xad\x01\n\nInstrument\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04\x63ode\x18\x02 \x01(\tR\x04\x63ode\x12\x12\n\x04name\x18\x03 \x01(\tR\x04name\x12\x34\n\x08metadata\x18\x04 \x01(\x0b\x32\x18.vega.InstrumentMetadataR\x08metadata\x12&\n\x06\x66uture\x18\x64 \x01(\x0b\x32\x0c.vega.FutureH\x00R\x06\x66utureB\t\n\x07product\"\x92\x01\n\x12LogNormalRiskModel\x12\x36\n\x17risk_aversion_parameter\x18\x01 \x01(\x01R\x15riskAversionParameter\x12\x10\n\x03tau\x18\x02 \x01(\x01R\x03tau\x12\x32\n\x06params\x18\x03 \x01(\x0b\x32\x1a.vega.LogNormalModelParamsR\x06params\"J\n\x14LogNormalModelParams\x12\x0e\n\x02mu\x18\x01 \x01(\x01R\x02mu\x12\x0c\n\x01r\x18\x02 \x01(\x01R\x01r\x12\x14\n\x05sigma\x18\x03 \x01(\x01R\x05sigma\"B\n\x0fSimpleRiskModel\x12/\n\x06params\x18\x01 \x01(\x0b\x32\x17.vega.SimpleModelParamsR\x06params\"\x87\x02\n\x11SimpleModelParams\x12\x1f\n\x0b\x66\x61\x63tor_long\x18\x01 \x01(\x01R\nfactorLong\x12!\n\x0c\x66\x61\x63tor_short\x18\x02 \x01(\x01R\x0b\x66\x61\x63torShort\x12-\n\x0bmax_move_up\x18\x03 \x01(\x01\x42\r\xe2\xdf\x1f\tI\x00\x00\x00\x00\x00\x00\x00\x00R\tmaxMoveUp\x12\x31\n\rmin_move_down\x18\x04 \x01(\x01\x42\r\xe2\xdf\x1f\tQ\x00\x00\x00\x00\x00\x00\x00\x00R\x0bminMoveDown\x12L\n\x16probability_of_trading\x18\x05 \x01(\x01\x42\x16\xe2\xdf\x1f\x12I\x00\x00\x00\x00\x00\x00\x00\x00Q\x00\x00\x00\x00\x00\x00\xf0?R\x14probabilityOfTrading\"\x89\x01\n\x0eScalingFactors\x12!\n\x0csearch_level\x18\x01 \x01(\x01R\x0bsearchLevel\x12%\n\x0einitial_margin\x18\x02 \x01(\x01R\rinitialMargin\x12-\n\x12\x63ollateral_release\x18\x03 \x01(\x01R\x11\x63ollateralRelease\"Q\n\x10MarginCalculator\x12=\n\x0fscaling_factors\x18\x01 \x01(\x0b\x32\x14.vega.ScalingFactorsR\x0escalingFactors\"\xad\x02\n\x12TradableInstrument\x12\x30\n\ninstrument\x18\x01 \x01(\x0b\x32\x10.vega.InstrumentR\ninstrument\x12\x43\n\x11margin_calculator\x18\x02 \x01(\x0b\x32\x16.vega.MarginCalculatorR\x10marginCalculator\x12M\n\x15log_normal_risk_model\x18\x64 \x01(\x0b\x32\x18.vega.LogNormalRiskModelH\x00R\x12logNormalRiskModel\x12\x43\n\x11simple_risk_model\x18\x65 \x01(\x0b\x32\x15.vega.SimpleRiskModelH\x00R\x0fsimpleRiskModelB\x0c\n\nrisk_model\"}\n\nFeeFactors\x12\x1b\n\tmaker_fee\x18\x01 \x01(\tR\x08makerFee\x12-\n\x12infrastructure_fee\x18\x02 \x01(\tR\x11infrastructureFee\x12#\n\rliquidity_fee\x18\x03 \x01(\tR\x0cliquidityFee\"2\n\x04\x46\x65\x65s\x12*\n\x07\x66\x61\x63tors\x18\x01 \x01(\x0b\x32\x10.vega.FeeFactorsR\x07\x66\x61\x63tors\"\xa9\x01\n\x16PriceMonitoringTrigger\x12 \n\x07horizon\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x07horizon\x12\x38\n\x0bprobability\x18\x02 \x01(\x01\x42\x16\xe2\xdf\x1f\x12\x31\x00\x00\x00\x00\x00\x00\x00\x00\x39\x00\x00\x00\x00\x00\x00\xf0?R\x0bprobability\x12\x33\n\x11\x61uction_extension\x18\x03 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x10\x61uctionExtension\"U\n\x19PriceMonitoringParameters\x12\x38\n\x08triggers\x18\x01 \x03(\x0b\x32\x1c.vega.PriceMonitoringTriggerR\x08triggers\"\x85\x01\n\x17PriceMonitoringSettings\x12?\n\nparameters\x18\x01 \x01(\x0b\x32\x1f.vega.PriceMonitoringParametersR\nparameters\x12)\n\x10update_frequency\x18\x02 \x01(\x03R\x0fupdateFrequency\"\xe4\x01\n\x1dLiquidityMonitoringParameters\x12S\n\x17target_stake_parameters\x18\x01 \x01(\x0b\x32\x1b.vega.TargetStakeParametersR\x15targetStakeParameters\x12\x41\n\x10triggering_ratio\x18\x02 \x01(\x01\x42\x16\xe2\xdf\x1f\x12I\x00\x00\x00\x00\x00\x00\x00\x00Q\x00\x00\x00\x00\x00\x00\xf0?R\x0ftriggeringRatio\x12+\n\x11\x61uction_extension\x18\x03 \x01(\x03R\x10\x61uctionExtension\"v\n\x15TargetStakeParameters\x12\'\n\x0btime_window\x18\x01 \x01(\x03\x42\x06\xe2\xdf\x1f\x02\x10\x00R\ntimeWindow\x12\x34\n\x0escaling_factor\x18\x02 \x01(\x01\x42\r\xe2\xdf\x1f\t1\x00\x00\x00\x00\x00\x00\x00\x00R\rscalingFactor\"\xf2\x08\n\x06Market\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12I\n\x13tradable_instrument\x18\x02 \x01(\x0b\x32\x18.vega.TradableInstrumentR\x12tradableInstrument\x12%\n\x0e\x64\x65\x63imal_places\x18\x03 \x01(\x04R\rdecimalPlaces\x12\x1e\n\x04\x66\x65\x65s\x18\x04 \x01(\x0b\x32\n.vega.FeesR\x04\x66\x65\x65s\x12>\n\x0fopening_auction\x18\x05 \x01(\x0b\x32\x15.vega.AuctionDurationR\x0eopeningAuction\x12\x39\n\ncontinuous\x18\x64 \x01(\x0b\x32\x17.vega.ContinuousTradingH\x00R\ncontinuous\x12\x33\n\x08\x64iscrete\x18\x65 \x01(\x0b\x32\x15.vega.DiscreteTradingH\x00R\x08\x64iscrete\x12Y\n\x19price_monitoring_settings\x18\x06 \x01(\x0b\x32\x1d.vega.PriceMonitoringSettingsR\x17priceMonitoringSettings\x12k\n\x1fliquidity_monitoring_parameters\x18\x07 \x01(\x0b\x32#.vega.LiquidityMonitoringParametersR\x1dliquidityMonitoringParameters\x12;\n\x0ctrading_mode\x18\x08 \x01(\x0e\x32\x18.vega.Market.TradingModeR\x0btradingMode\x12(\n\x05state\x18\t \x01(\x0e\x32\x12.vega.Market.StateR\x05state\x12\x43\n\x11market_timestamps\x18\n \x01(\x0b\x32\x16.vega.MarketTimestampsR\x10marketTimestamps\"\xd8\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATE_PROPOSED\x10\x01\x12\x12\n\x0eSTATE_REJECTED\x10\x02\x12\x11\n\rSTATE_PENDING\x10\x03\x12\x13\n\x0fSTATE_CANCELLED\x10\x04\x12\x10\n\x0cSTATE_ACTIVE\x10\x05\x12\x13\n\x0fSTATE_SUSPENDED\x10\x06\x12\x10\n\x0cSTATE_CLOSED\x10\x07\x12\x1c\n\x18STATE_TRADING_TERMINATED\x10\x08\x12\x11\n\rSTATE_SETTLED\x10\t\"\xaf\x01\n\x0bTradingMode\x12\x1c\n\x18TRADING_MODE_UNSPECIFIED\x10\x00\x12\x1b\n\x17TRADING_MODE_CONTINUOUS\x10\x01\x12\x1e\n\x1aTRADING_MODE_BATCH_AUCTION\x10\x02\x12 \n\x1cTRADING_MODE_OPENING_AUCTION\x10\x03\x12#\n\x1fTRADING_MODE_MONITORING_AUCTION\x10\x04\x42\x15\n\x13trading_mode_config\"r\n\x10MarketTimestamps\x12\x1a\n\x08proposed\x18\x01 \x01(\x03R\x08proposed\x12\x18\n\x07pending\x18\x02 \x01(\x03R\x07pending\x12\x12\n\x04open\x18\x03 \x01(\x03R\x04open\x12\x14\n\x05\x63lose\x18\x04 \x01(\x03R\x05\x63loseB7\n\x14io.vegaprotocol.vegaZ\x1f\x63ode.vegaprotocol.io/vega/protob\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,oracles_dot_v1_dot_oracle__spec__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,oracles_dot_v1_dot_spec__pb2.DESCRIPTOR,])
 
 
 
@@ -87,8 +87,8 @@ _MARKET_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3619,
-  serialized_end=3835,
+  serialized_start=3612,
+  serialized_end=3828,
 )
 _sym_db.RegisterEnumDescriptor(_MARKET_STATE)
 
@@ -127,8 +127,8 @@ _MARKET_TRADINGMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3838,
-  serialized_end=4013,
+  serialized_start=3831,
+  serialized_end=4006,
 )
 _sym_db.RegisterEnumDescriptor(_MARKET_TRADINGMODE)
 
@@ -167,8 +167,8 @@ _AUCTIONDURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=109,
-  serialized_end=178,
+  serialized_start=102,
+  serialized_end=171,
 )
 
 
@@ -199,8 +199,8 @@ _CONTINUOUSTRADING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=180,
-  serialized_end=228,
+  serialized_start=173,
+  serialized_end=221,
 )
 
 
@@ -238,8 +238,8 @@ _DISCRETETRADING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=230,
-  serialized_end=326,
+  serialized_start=223,
+  serialized_end=319,
 )
 
 
@@ -298,8 +298,8 @@ _FUTURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=329,
-  serialized_end=577,
+  serialized_start=322,
+  serialized_end=570,
 )
 
 
@@ -330,8 +330,8 @@ _ORACLESPECTOFUTUREBINDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=579,
-  serialized_end=666,
+  serialized_start=572,
+  serialized_end=659,
 )
 
 
@@ -362,8 +362,8 @@ _INSTRUMENTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=668,
-  serialized_end=708,
+  serialized_start=661,
+  serialized_end=701,
 )
 
 
@@ -427,8 +427,8 @@ _INSTRUMENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=711,
-  serialized_end=884,
+  serialized_start=704,
+  serialized_end=877,
 )
 
 
@@ -473,8 +473,8 @@ _LOGNORMALRISKMODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=887,
-  serialized_end=1033,
+  serialized_start=880,
+  serialized_end=1026,
 )
 
 
@@ -519,8 +519,8 @@ _LOGNORMALMODELPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1035,
-  serialized_end=1109,
+  serialized_start=1028,
+  serialized_end=1102,
 )
 
 
@@ -551,8 +551,8 @@ _SIMPLERISKMODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1111,
-  serialized_end=1177,
+  serialized_start=1104,
+  serialized_end=1170,
 )
 
 
@@ -611,8 +611,8 @@ _SIMPLEMODELPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1180,
-  serialized_end=1443,
+  serialized_start=1173,
+  serialized_end=1436,
 )
 
 
@@ -657,8 +657,8 @@ _SCALINGFACTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1446,
-  serialized_end=1583,
+  serialized_start=1439,
+  serialized_end=1576,
 )
 
 
@@ -689,8 +689,8 @@ _MARGINCALCULATOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1585,
-  serialized_end=1666,
+  serialized_start=1578,
+  serialized_end=1659,
 )
 
 
@@ -747,8 +747,8 @@ _TRADABLEINSTRUMENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1669,
-  serialized_end=1970,
+  serialized_start=1662,
+  serialized_end=1963,
 )
 
 
@@ -793,8 +793,8 @@ _FEEFACTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1972,
-  serialized_end=2097,
+  serialized_start=1965,
+  serialized_end=2090,
 )
 
 
@@ -825,8 +825,8 @@ _FEES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2099,
-  serialized_end=2149,
+  serialized_start=2092,
+  serialized_end=2142,
 )
 
 
@@ -871,8 +871,8 @@ _PRICEMONITORINGTRIGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2152,
-  serialized_end=2321,
+  serialized_start=2145,
+  serialized_end=2314,
 )
 
 
@@ -903,8 +903,8 @@ _PRICEMONITORINGPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2323,
-  serialized_end=2408,
+  serialized_start=2316,
+  serialized_end=2401,
 )
 
 
@@ -942,8 +942,8 @@ _PRICEMONITORINGSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2411,
-  serialized_end=2544,
+  serialized_start=2404,
+  serialized_end=2537,
 )
 
 
@@ -988,8 +988,8 @@ _LIQUIDITYMONITORINGPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2547,
-  serialized_end=2775,
+  serialized_start=2540,
+  serialized_end=2768,
 )
 
 
@@ -1027,8 +1027,8 @@ _TARGETSTAKEPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2777,
-  serialized_end=2895,
+  serialized_start=2770,
+  serialized_end=2888,
 )
 
 
@@ -1143,8 +1143,8 @@ _MARKET = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2898,
-  serialized_end=4036,
+  serialized_start=2891,
+  serialized_end=4029,
 )
 
 
@@ -1196,11 +1196,11 @@ _MARKETTIMESTAMPS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4038,
-  serialized_end=4152,
+  serialized_start=4031,
+  serialized_end=4145,
 )
 
-_FUTURE.fields_by_name['oracle_spec'].message_type = oracles_dot_v1_dot_oracle__spec__pb2._ORACLESPEC
+_FUTURE.fields_by_name['oracle_spec'].message_type = oracles_dot_v1_dot_spec__pb2._ORACLESPEC
 _FUTURE.fields_by_name['oracle_spec_binding'].message_type = _ORACLESPECTOFUTUREBINDING
 _INSTRUMENT.fields_by_name['metadata'].message_type = _INSTRUMENTMETADATA
 _INSTRUMENT.fields_by_name['future'].message_type = _FUTURE

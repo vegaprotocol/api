@@ -11,7 +11,8 @@ for x in \
 	events/v1 \
 	github/com/mwitkow/go_proto_validators \
 	oracles/v1 \
-	tm
+	tm \
+	wallet/v1
 do
 	# from . import XX as XX
 	pb_py="$(find "$python_generated_dir/$x/" -maxdepth 1 -name '*_pb2.py' -o -name '*_pb2_grpc.py' -o -type d | sort | tail -n +2)"
@@ -54,7 +55,8 @@ for x in \
 	github \
 	github/com \
 	github/com/mwitkow \
-	oracles
+	oracles \
+	wallet
 do
 	touch "$python_generated_dir/$x/__init__.py"
 done
@@ -65,6 +67,7 @@ find "$python_generated_dir" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --
 	-e 's#^from commands.v1 import#from .commands.v1 import#' \
 	-e 's#^from events.v1 import#from .events.v1 import#' \
 	-e 's#^from oracles.v1 import#from .oracles.v1 import#' \
+	-e 's#^from wallet.v1 import#from .wallet.v1 import#' \
 	-e 's#^import ([a-z_]*)_pb2 as #from . import \1_pb2 as #'
 
 find "$python_generated_dir/api" -maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
@@ -72,6 +75,7 @@ find "$python_generated_dir/api" -maxdepth 1 -name '*.py' -print0 | xargs -0r se
 	-e 's#^from commands.v1 import#from ..commands.v1 import#' \
 	-e 's#^from events.v1 import#from ..events.v1 import#' \
 	-e 's#^from oracles.v1 import#from ..oracles.v1 import#' \
+	-e 's#^from wallet.v1 import#from ..wallet.v1 import#' \
 	-e 's#^import ([a-z_]*)_pb2 as #from .. import \1_pb2 as #' \
 	-e 's#^from api import #from . import #'
 
@@ -79,9 +83,10 @@ find \
 	"$python_generated_dir/commands/v1" \
 	"$python_generated_dir/events/v1" \
 	"$python_generated_dir/oracles/v1" \
+	"$python_generated_dir/wallet/v1" \
 	-maxdepth 1 -name '*.py' -print0 | xargs -0r sed --in-place -r \
 	-e 's#^import ([a-z_]*_pb2) as #from ... import \1 as #' \
-	-e 's#^from (commands.v1|events.v2|oracles.v1|github.com.mwitkow.go_proto_validators) import #from ...\1 import #'
+	-e 's#^from (commands.v1|events.v2|oracles.v1|wallet.v1|github.com.mwitkow.go_proto_validators) import #from ...\1 import #'
 
 pushd grpc/clients/python 1>/dev/null || exit 1
 python3 generate_init.py >"vegaapiclient/__init__.py"

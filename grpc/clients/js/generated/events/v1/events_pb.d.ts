@@ -6,8 +6,8 @@ import * as markets_pb from "../../markets_pb";
 import * as assets_pb from "../../assets_pb";
 import * as governance_pb from "../../governance_pb";
 import * as vega_pb from "../../vega_pb";
-import * as oracles_v1_oracle_spec_pb from "../../oracles/v1/oracle_spec_pb";
-import * as oracles_v1_oracle_data_pb from "../../oracles/v1/oracle_data_pb";
+import * as oracles_v1_spec_pb from "../../oracles/v1/spec_pb";
+import * as oracles_v1_data_pb from "../../oracles/v1/data_pb";
 import * as commands_v1_commands_pb from "../../commands/v1/commands_pb";
 import * as commands_v1_validator_commands_pb from "../../commands/v1/validator_commands_pb";
 
@@ -510,13 +510,13 @@ export class BusEvent extends jspb.Message {
 
   hasOracleSpec(): boolean;
   clearOracleSpec(): void;
-  getOracleSpec(): oracles_v1_oracle_spec_pb.OracleSpec | undefined;
-  setOracleSpec(value?: oracles_v1_oracle_spec_pb.OracleSpec): void;
+  getOracleSpec(): oracles_v1_spec_pb.OracleSpec | undefined;
+  setOracleSpec(value?: oracles_v1_spec_pb.OracleSpec): void;
 
   hasOracleData(): boolean;
   clearOracleData(): void;
-  getOracleData(): oracles_v1_oracle_data_pb.OracleData | undefined;
-  setOracleData(value?: oracles_v1_oracle_data_pb.OracleData): void;
+  getOracleData(): oracles_v1_data_pb.OracleData | undefined;
+  setOracleData(value?: oracles_v1_data_pb.OracleData): void;
 
   hasMarket(): boolean;
   clearMarket(): void;
@@ -569,8 +569,8 @@ export namespace BusEvent {
     networkParameter?: vega_pb.NetworkParameter.AsObject,
     liquidityProvision?: vega_pb.LiquidityProvision.AsObject,
     marketUpdated?: markets_pb.Market.AsObject,
-    oracleSpec?: oracles_v1_oracle_spec_pb.OracleSpec.AsObject,
-    oracleData?: oracles_v1_oracle_data_pb.OracleData.AsObject,
+    oracleSpec?: oracles_v1_spec_pb.OracleSpec.AsObject,
+    oracleData?: oracles_v1_data_pb.OracleData.AsObject,
     market?: MarketEvent.AsObject,
     txErrEvent?: TxErrorEvent.AsObject,
   }

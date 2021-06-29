@@ -12,7 +12,7 @@ default:
 preproto:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@rm -rf proto && mkdir proto
-	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm ; do \
+	@for x in proto proto/api proto/commands/v1 proto/events/v1 proto/oracles/v1 proto/tm proto/wallet/v1 ; do \
 		mkdir -p "$$x" && \
 		java_pkg="$$(echo "$${x//proto/}" | tr / .)" && \
 		find "$(VEGACORE)/$$x" -maxdepth 1 -name '*.proto' -exec cp '{}' "$$x/" ';' && \
@@ -21,6 +21,11 @@ preproto:
 	@find proto -name '*.proto' -print0 | xargs -0 sed --in-place -re 's#[ \t]+$$##'
 	@(cd "$(VEGACORE)" && git describe --tags) >proto/from.txt
 	@cp -a "$(VEGACORE)/gateway/rest/grpc-rest-bindings.yml" ./rest/
+	@core_protos_fn="$$(mktemp -t protofiles-core-XXXXXX.txt)" && \
+	api_protos_fn="$$(mktemp -t protofiles-api-XXXXXX.txt)" && \
+	find "$(VEGACORE)/proto" -name '*.proto' | sed -e 's#^$(VEGACORE)/##' | sort >"$$core_protos_fn" && \
+	find "./proto" -name '*.proto' | sed -e 's#^./##' | sort >"$$api_protos_fn" && \
+	diff "$$core_protos_fn" "$$api_protos_fn"
 
 .PHONY: buf-build
 buf-build:
@@ -33,6 +38,23 @@ GO_GENERATED_DIR := grpc/clients/go/generated
 JAVA_GENERATED_DIR := grpc/clients/java/generated
 JAVASCRIPT_GENERATED_DIR := grpc/clients/js/generated
 PYTHON_GENERATED_DIR := grpc/clients/python/vegaapiclient/generated
+
+# Pull the version from pom.xml
+PROTOC_GEN_GRPC_JAVA_VER := $(shell awk '/<grpc.version>1.38.0/ {print $1}' grpc/clients/java/pom.xml | cut -f2 -d '>' | cut -f1 -d '<')
+ifeq ($(OS),Windows_NT)
+	PROTOC_GEN_GRPC_JAVA_OS_ARCH := windows-x86_64
+else
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Linux)
+		PROTOC_GEN_GRPC_JAVA_OS_ARCH := linux-x86_64
+	endif
+	ifeq ($(UNAME_S),Darwin)
+		PROTOC_GEN_GRPC_JAVA_OS_ARCH := osx-x86_64
+	endif
+endif
+# yes, all protoc-gen-grpc-java binaries end in ".exe", whatever the OS.
+PROTOC_GEN_GRPC_JAVA_URL := https://repo1.maven.org/maven2/io/grpc/protoc-gen-grpc-java/$(PROTOC_GEN_GRPC_JAVA_VER)/protoc-gen-grpc-java-$(PROTOC_GEN_GRPC_JAVA_VER)-$(PROTOC_GEN_GRPC_JAVA_OS_ARCH).exe
+PROTOC_GEN_GRPC_JAVA := ./tools/java/protoc-gen-grpc-java
 
 .PHONY: buf-generate
 buf-generate: buf-build
@@ -67,6 +89,11 @@ buf-generate: buf-build
 			echo "Not found/executable: protoc-gen-ts" ; \
 			exit 1 ; \
 		fi ; \
+	fi
+	@if ! [[ -x "$(PROTOC_GEN_GRPC_JAVA)" ]] ; then \
+		mkdir -p "$$(dirname "$(PROTOC_GEN_GRPC_JAVA)")" && \
+		wget -qO "$(PROTOC_GEN_GRPC_JAVA)" "$(PROTOC_GEN_GRPC_JAVA_URL)" && \
+		chmod +x "$(PROTOC_GEN_GRPC_JAVA)" ; \
 	fi
 	@for d in \
 		"$(CPP_GENERATED_DIR)" \
@@ -119,10 +146,11 @@ test-python:
 
 .PHONY: spellcheck
 spellcheck:
-	@if ! test -d "/tmp/venv-pyspelling" ; then \
-		virtualenv /tmp/venv-pyspelling || exit 1 ; \
+	@venv="/tmp/venv-$$USER-vega-api-pyspelling" && \
+	if ! test -d "$$venv" ; then \
+		virtualenv "$$venv" || exit 1 ; \
 	fi && \
-	source /tmp/venv-pyspelling/bin/activate && \
+	source "$$venv/bin/activate" && \
 	pip install -q --upgrade pyspelling && \
 	pyspelling -c spellcheck.yaml && \
 	deactivate
@@ -143,20 +171,24 @@ flake8:
 
 .PHONY: mypy
 mypy:
-	@echo "Running mypy in grpc/clients/python" ; \
-	( \
-		cd grpc/clients/python && \
-		env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
-		code="$$?" ; \
-		test "$$code" -ne 0 \
-	)
-	@for d in grpc/examples/python rest/examples/python ; do \
-		echo "Running mypy in $$d" ; \
-		( \
-			cd "$$d" && \
-			env MYPYPATH=. mypy --ignore-missing-imports . || exit 1 \
-		) || exit 1 ; \
-	done
+	@venv="/tmp/venv-$$USER-vega-api-mypy" && \
+	if ! test -d "$$venv" ; then \
+		virtualenv "$$venv" || exit 1 ; \
+	fi && \
+	source "$$venv/bin/activate" && \
+	pip install -r mypy-requirements.txt && \
+	echo "Running mypy in grpc/clients/python" && \
+	pushd grpc/clients/python 1>/dev/null && \
+	env MYPYPATH=. mypy --ignore-missing-imports . | grep -vE '(^Found|/generated/|: note: )' ; \
+	code="$$?" ; test "$$code" -ne 0 && \
+	popd 1>/dev/null && \
+	for d in graphql/examples/python grpc/examples/python rest/examples/python ; do \
+		echo "Running mypy in $$d" && \
+		pushd "$$d" 1>/dev/null && \
+		env MYPYPATH=. mypy --ignore-missing-imports . && \
+		popd 1>/dev/null || exit 1 ; \
+	done && \
+	deactivate
 
 # Clean
 
@@ -173,7 +205,7 @@ clean-go:
 
 .PHONY: clean-java
 clean-java:
-	@rm -rf "$(JAVA_GENERATED_DIR)"
+	@rm -rf tools/java "$(JAVA_GENERATED_DIR)"
 
 .PHONY: clean-javascript
 clean-javascript:

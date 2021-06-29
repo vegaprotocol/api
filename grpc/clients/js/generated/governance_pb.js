@@ -22,8 +22,8 @@ var vega_pb = require('./vega_pb.js');
 goog.object.extend(proto, vega_pb);
 var assets_pb = require('./assets_pb.js');
 goog.object.extend(proto, assets_pb);
-var oracles_v1_oracle_spec_pb = require('./oracles/v1/oracle_spec_pb.js');
-goog.object.extend(proto, oracles_v1_oracle_spec_pb);
+var oracles_v1_spec_pb = require('./oracles/v1/spec_pb.js');
+goog.object.extend(proto, oracles_v1_spec_pb);
 goog.exportSymbol('proto.vega.FutureProduct', null, global);
 goog.exportSymbol('proto.vega.GovernanceData', null, global);
 goog.exportSymbol('proto.vega.InstrumentConfiguration', null, global);
@@ -330,7 +330,7 @@ proto.vega.FutureProduct.toObject = function(includeInstance, msg) {
     maturity: jspb.Message.getFieldWithDefault(msg, 1, ""),
     settlementAsset: jspb.Message.getFieldWithDefault(msg, 2, ""),
     quoteName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_oracle_spec_pb.OracleSpecConfiguration.toObject(includeInstance, f),
+    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_spec_pb.OracleSpecConfiguration.toObject(includeInstance, f),
     oracleSpecBinding: (f = msg.getOracleSpecBinding()) && markets_pb.OracleSpecToFutureBinding.toObject(includeInstance, f)
   };
 
@@ -381,8 +381,8 @@ proto.vega.FutureProduct.deserializeBinaryFromReader = function(msg, reader) {
       msg.setQuoteName(value);
       break;
     case 5:
-      var value = new oracles_v1_oracle_spec_pb.OracleSpecConfiguration;
-      reader.readMessage(value,oracles_v1_oracle_spec_pb.OracleSpecConfiguration.deserializeBinaryFromReader);
+      var value = new oracles_v1_spec_pb.OracleSpecConfiguration;
+      reader.readMessage(value,oracles_v1_spec_pb.OracleSpecConfiguration.deserializeBinaryFromReader);
       msg.setOracleSpec(value);
       break;
     case 6:
@@ -445,7 +445,7 @@ proto.vega.FutureProduct.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       5,
       f,
-      oracles_v1_oracle_spec_pb.OracleSpecConfiguration.serializeBinaryToWriter
+      oracles_v1_spec_pb.OracleSpecConfiguration.serializeBinaryToWriter
     );
   }
   f = message.getOracleSpecBinding();
@@ -519,7 +519,7 @@ proto.vega.FutureProduct.prototype.setQuoteName = function(value) {
  */
 proto.vega.FutureProduct.prototype.getOracleSpec = function() {
   return /** @type{?proto.oracles.v1.OracleSpecConfiguration} */ (
-    jspb.Message.getWrapperField(this, oracles_v1_oracle_spec_pb.OracleSpecConfiguration, 5));
+    jspb.Message.getWrapperField(this, oracles_v1_spec_pb.OracleSpecConfiguration, 5));
 };
 
 
@@ -2197,7 +2197,7 @@ proto.vega.NewAsset.prototype.toObject = function(opt_includeInstance) {
  */
 proto.vega.NewAsset.toObject = function(includeInstance, msg) {
   var f, obj = {
-    changes: (f = msg.getChanges()) && assets_pb.AssetSource.toObject(includeInstance, f)
+    changes: (f = msg.getChanges()) && assets_pb.AssetDetails.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2235,8 +2235,8 @@ proto.vega.NewAsset.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new assets_pb.AssetSource;
-      reader.readMessage(value,assets_pb.AssetSource.deserializeBinaryFromReader);
+      var value = new assets_pb.AssetDetails;
+      reader.readMessage(value,assets_pb.AssetDetails.deserializeBinaryFromReader);
       msg.setChanges(value);
       break;
     default:
@@ -2273,24 +2273,24 @@ proto.vega.NewAsset.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       1,
       f,
-      assets_pb.AssetSource.serializeBinaryToWriter
+      assets_pb.AssetDetails.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional AssetSource changes = 1;
- * @return {?proto.vega.AssetSource}
+ * optional AssetDetails changes = 1;
+ * @return {?proto.vega.AssetDetails}
  */
 proto.vega.NewAsset.prototype.getChanges = function() {
-  return /** @type{?proto.vega.AssetSource} */ (
-    jspb.Message.getWrapperField(this, assets_pb.AssetSource, 1));
+  return /** @type{?proto.vega.AssetDetails} */ (
+    jspb.Message.getWrapperField(this, assets_pb.AssetDetails, 1));
 };
 
 
 /**
- * @param {?proto.vega.AssetSource|undefined} value
+ * @param {?proto.vega.AssetDetails|undefined} value
  * @return {!proto.vega.NewAsset} returns this
 */
 proto.vega.NewAsset.prototype.setChanges = function(value) {
@@ -3106,7 +3106,8 @@ proto.vega.Proposal.toObject = function(includeInstance, msg) {
     state: jspb.Message.getFieldWithDefault(msg, 4, 0),
     timestamp: jspb.Message.getFieldWithDefault(msg, 5, 0),
     terms: (f = msg.getTerms()) && proto.vega.ProposalTerms.toObject(includeInstance, f),
-    reason: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    reason: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    errorDetails: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -3171,6 +3172,10 @@ proto.vega.Proposal.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {!proto.vega.ProposalError} */ (reader.readEnum());
       msg.setReason(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setErrorDetails(value);
       break;
     default:
       reader.skipField();
@@ -3248,6 +3253,13 @@ proto.vega.Proposal.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       7,
+      f
+    );
+  }
+  f = message.getErrorDetails();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -3410,6 +3422,24 @@ proto.vega.Proposal.prototype.getReason = function() {
  */
 proto.vega.Proposal.prototype.setReason = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
+};
+
+
+/**
+ * optional string error_details = 8;
+ * @return {string}
+ */
+proto.vega.Proposal.prototype.getErrorDetails = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.Proposal} returns this
+ */
+proto.vega.Proposal.prototype.setErrorDetails = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -3736,7 +3766,10 @@ proto.vega.ProposalError = {
   PROPOSAL_ERROR_MISSING_COMMITMENT_AMOUNT: 27,
   PROPOSAL_ERROR_INVALID_FEE_AMOUNT: 28,
   PROPOSAL_ERROR_INVALID_SHAPE: 29,
-  PROPOSAL_ERROR_INVALID_RISK_PARAMETER: 30
+  PROPOSAL_ERROR_INVALID_RISK_PARAMETER: 30,
+  PROPOSAL_ERROR_MAJORITY_THRESHOLD_NOT_REACHED: 31,
+  PROPOSAL_ERROR_PARTICIPATION_THRESHOLD_NOT_REACHED: 32,
+  PROPOSAL_ERROR_INVALID_ASSET_DETAILS: 33
 };
 
 goog.object.extend(exports, proto.vega);

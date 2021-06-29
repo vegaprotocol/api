@@ -1,6 +1,6 @@
 # Vega API
 
-Version: 0.36.0
+Version: 0.38.0
 
 This repository contains everything you need for interacting with the Vega APIs.
 
@@ -52,15 +52,25 @@ The per-language API clients are found in [`grpc/clients/`](https://github.com/v
 
 Pull requests for additional languages are gratefully received.
 
-
 # Example API scripts
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/vegaprotocol/api/tree/198-api-examples/)
 
+Some example/demonstration programs are maintained in this repository. They are
+intended to be stand-alone programs that can be run by people copying and
+editing the source code.
+
+| API     | Directory                                |
+| :------ | :--------------------------------------- |
+| gRPC    | [`grpc/examples/`](grpc/examples/)       |
+| GraphQL | [`graphql/examples/`](graphql/examples/) |
+| REST    | [`rest/examples/`](rest/examples/)       |
 
 # Information for maintainers
 
 ## Update process - gRPC
+
+Install `buf`: https://docs.buf.build/installation/
 
 ```bash
 # Copy proto files from Core
@@ -73,6 +83,15 @@ make proto
 # Run tests
 GRPC_NODE=veganode.example.com:1234 WALLETSERVER=https://vegawallet.example.com make test
 ```
+
+### Java gRPC generation
+
+Run the update for gRPC in general and this will generate all the Java source files.
+
+Install maven
+* Linux: `sudo apt install maven`
+
+Run `./make-jar.sh` in the `grpc/clients/java` directory.
 
 ## Update process - GraphQL
 

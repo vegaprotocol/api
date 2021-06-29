@@ -29,6 +29,8 @@ type TradingServiceClient interface {
 	PrepareWithdraw(ctx context.Context, in *PrepareWithdrawRequest, opts ...grpc.CallOption) (*PrepareWithdrawResponse, error)
 	// Submit a signed transaction
 	SubmitTransaction(ctx context.Context, in *SubmitTransactionRequest, opts ...grpc.CallOption) (*SubmitTransactionResponse, error)
+	// Submit a signed transaction (v2)
+	SubmitTransactionV2(ctx context.Context, in *SubmitTransactionV2Request, opts ...grpc.CallOption) (*SubmitTransactionV2Response, error)
 	// Prepare a governance proposal
 	PrepareProposalSubmission(ctx context.Context, in *PrepareProposalSubmissionRequest, opts ...grpc.CallOption) (*PrepareProposalSubmissionResponse, error)
 	// Prepare a governance vote
@@ -92,6 +94,15 @@ func (c *tradingServiceClient) SubmitTransaction(ctx context.Context, in *Submit
 	return out, nil
 }
 
+func (c *tradingServiceClient) SubmitTransactionV2(ctx context.Context, in *SubmitTransactionV2Request, opts ...grpc.CallOption) (*SubmitTransactionV2Response, error) {
+	out := new(SubmitTransactionV2Response)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingService/SubmitTransactionV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *tradingServiceClient) PrepareProposalSubmission(ctx context.Context, in *PrepareProposalSubmissionRequest, opts ...grpc.CallOption) (*PrepareProposalSubmissionResponse, error) {
 	out := new(PrepareProposalSubmissionResponse)
 	err := c.cc.Invoke(ctx, "/api.v1.TradingService/PrepareProposalSubmission", in, out, opts...)
@@ -142,6 +153,8 @@ type TradingServiceServer interface {
 	PrepareWithdraw(context.Context, *PrepareWithdrawRequest) (*PrepareWithdrawResponse, error)
 	// Submit a signed transaction
 	SubmitTransaction(context.Context, *SubmitTransactionRequest) (*SubmitTransactionResponse, error)
+	// Submit a signed transaction (v2)
+	SubmitTransactionV2(context.Context, *SubmitTransactionV2Request) (*SubmitTransactionV2Response, error)
 	// Prepare a governance proposal
 	PrepareProposalSubmission(context.Context, *PrepareProposalSubmissionRequest) (*PrepareProposalSubmissionResponse, error)
 	// Prepare a governance vote
@@ -171,6 +184,9 @@ func (UnimplementedTradingServiceServer) PrepareWithdraw(context.Context, *Prepa
 }
 func (UnimplementedTradingServiceServer) SubmitTransaction(context.Context, *SubmitTransactionRequest) (*SubmitTransactionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitTransaction not implemented")
+}
+func (UnimplementedTradingServiceServer) SubmitTransactionV2(context.Context, *SubmitTransactionV2Request) (*SubmitTransactionV2Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitTransactionV2 not implemented")
 }
 func (UnimplementedTradingServiceServer) PrepareProposalSubmission(context.Context, *PrepareProposalSubmissionRequest) (*PrepareProposalSubmissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PrepareProposalSubmission not implemented")
@@ -287,6 +303,24 @@ func _TradingService_SubmitTransaction_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TradingService_SubmitTransactionV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SubmitTransactionV2Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingServiceServer).SubmitTransactionV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.v1.TradingService/SubmitTransactionV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingServiceServer).SubmitTransactionV2(ctx, req.(*SubmitTransactionV2Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _TradingService_PrepareProposalSubmission_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(PrepareProposalSubmissionRequest)
 	if err := dec(in); err != nil {
@@ -385,6 +419,10 @@ var TradingService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitTransaction",
 			Handler:    _TradingService_SubmitTransaction_Handler,
+		},
+		{
+			MethodName: "SubmitTransactionV2",
+			Handler:    _TradingService_SubmitTransactionV2_Handler,
 		},
 		{
 			MethodName: "PrepareProposalSubmission",
@@ -489,6 +527,7 @@ type TradingDataServiceClient interface {
 	ObserveEventBus(ctx context.Context, opts ...grpc.CallOption) (TradingDataService_ObserveEventBusClient, error)
 	// Get Statistics on Vega
 	Statistics(ctx context.Context, in *StatisticsRequest, opts ...grpc.CallOption) (*StatisticsResponse, error)
+	LastBlockHeight(ctx context.Context, in *LastBlockHeightRequest, opts ...grpc.CallOption) (*LastBlockHeightResponse, error)
 	// Get Time
 	GetVegaTime(ctx context.Context, in *GetVegaTimeRequest, opts ...grpc.CallOption) (*GetVegaTimeResponse, error)
 	// Subscribe to a stream of Accounts
@@ -1002,6 +1041,15 @@ func (x *tradingDataServiceObserveEventBusClient) Recv() (*ObserveEventBusRespon
 func (c *tradingDataServiceClient) Statistics(ctx context.Context, in *StatisticsRequest, opts ...grpc.CallOption) (*StatisticsResponse, error) {
 	out := new(StatisticsResponse)
 	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/Statistics", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *tradingDataServiceClient) LastBlockHeight(ctx context.Context, in *LastBlockHeightRequest, opts ...grpc.CallOption) (*LastBlockHeightResponse, error) {
+	out := new(LastBlockHeightResponse)
+	err := c.cc.Invoke(ctx, "/api.v1.TradingDataService/LastBlockHeight", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1554,6 +1602,7 @@ type TradingDataServiceServer interface {
 	ObserveEventBus(TradingDataService_ObserveEventBusServer) error
 	// Get Statistics on Vega
 	Statistics(context.Context, *StatisticsRequest) (*StatisticsResponse, error)
+	LastBlockHeight(context.Context, *LastBlockHeightRequest) (*LastBlockHeightResponse, error)
 	// Get Time
 	GetVegaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error)
 	// Subscribe to a stream of Accounts
@@ -1727,6 +1776,9 @@ func (UnimplementedTradingDataServiceServer) ObserveEventBus(TradingDataService_
 }
 func (UnimplementedTradingDataServiceServer) Statistics(context.Context, *StatisticsRequest) (*StatisticsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Statistics not implemented")
+}
+func (UnimplementedTradingDataServiceServer) LastBlockHeight(context.Context, *LastBlockHeightRequest) (*LastBlockHeightResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LastBlockHeight not implemented")
 }
 func (UnimplementedTradingDataServiceServer) GetVegaTime(context.Context, *GetVegaTimeRequest) (*GetVegaTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVegaTime not implemented")
@@ -2523,6 +2575,24 @@ func _TradingDataService_Statistics_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TradingDataService_LastBlockHeight_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LastBlockHeightRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TradingDataServiceServer).LastBlockHeight(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.v1.TradingDataService/LastBlockHeight",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TradingDataServiceServer).LastBlockHeight(ctx, req.(*LastBlockHeightRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _TradingDataService_GetVegaTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetVegaTimeRequest)
 	if err := dec(in); err != nil {
@@ -3159,6 +3229,10 @@ var TradingDataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Statistics",
 			Handler:    _TradingDataService_Statistics_Handler,
+		},
+		{
+			MethodName: "LastBlockHeight",
+			Handler:    _TradingDataService_LastBlockHeight_Handler,
 		},
 		{
 			MethodName: "GetVegaTime",

@@ -1388,6 +1388,9 @@ export class MarketData extends jspb.Message {
   getTrigger(): AuctionTriggerMap[keyof AuctionTriggerMap];
   setTrigger(value: AuctionTriggerMap[keyof AuctionTriggerMap]): void;
 
+  getExtensionTrigger(): AuctionTriggerMap[keyof AuctionTriggerMap];
+  setExtensionTrigger(value: AuctionTriggerMap[keyof AuctionTriggerMap]): void;
+
   getTargetStake(): string;
   setTargetStake(value: string): void;
 
@@ -1439,6 +1442,7 @@ export namespace MarketData {
     indicativeVolume: number,
     marketTradingMode: markets_pb.Market.TradingModeMap[keyof markets_pb.Market.TradingModeMap],
     trigger: AuctionTriggerMap[keyof AuctionTriggerMap],
+    extensionTrigger: AuctionTriggerMap[keyof AuctionTriggerMap],
     targetStake: string,
     suppliedStake: string,
     priceMonitoringBoundsList: Array<PriceMonitoringBounds.AsObject>,

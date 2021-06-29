@@ -7,3 +7,4 @@ credentials
 .idea
 .DS_Store
 token.temp
+tools/

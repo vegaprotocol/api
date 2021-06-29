@@ -1,11 +1,11 @@
-from . import oracle_data_pb2_grpc as oracle_data_grpc
-from . import oracle_data_pb2 as oracle_data
-from . import oracle_spec_pb2_grpc as oracle_spec_grpc
-from . import oracle_spec_pb2 as oracle_spec
+from . import data_pb2_grpc as data_grpc
+from . import data_pb2 as data
+from . import spec_pb2_grpc as spec_grpc
+from . import spec_pb2 as spec
 
 __all__ = [
-    "oracle_data_grpc",
-    "oracle_data",
-    "oracle_spec_grpc",
-    "oracle_spec",
+    "data_grpc",
+    "data",
+    "spec_grpc",
+    "spec",
 ]
