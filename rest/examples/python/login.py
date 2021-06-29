@@ -1,5 +1,3 @@
-# Run this script to get and store a new token
-
 import requests
 import os.path
 import json
@@ -8,6 +6,7 @@ import helpers
 
 ci_args = "--ci"
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
+
 
 def load_token():
     if ci_args in sys.argv:

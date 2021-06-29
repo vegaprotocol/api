@@ -123,7 +123,7 @@ print(f"Prepared liquidity commitment for market: {marketID} {marketName}")
 # Note: Setting propagate to true will also submit to a Vega node
 blob = prepared_order["blob"]
 req = {"tx": blob, "pubKey": pubkey, "propagate": True}
-url = f"{wallet_server_url}/api/v1/messages/sync"
+url = f"{wallet_server_url}/api/v1/messages"
 headers = {"Authorization": f"Bearer {token}"}
 response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
@@ -175,7 +175,7 @@ print(f"Prepared liquidity commitment (amendment) for market: {marketID} {market
 # Note: Setting propagate to true will also submit to a Vega node
 blob = prepared_order["blob"]
 req = {"tx": blob, "pubKey": pubkey, "propagate": True}
-url = f"{wallet_server_url}/api/v1/messages/sync"
+url = f"{wallet_server_url}/api/v1/messages"
 response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
 
@@ -212,7 +212,7 @@ print(f"Prepared liquidity commitment (cancellation) for market: {marketID} {mar
 # Note: Setting propagate to true will also submit to a Vega node
 blob = prepared_order["blob"]
 req = {"tx": blob, "pubKey": pubkey, "propagate": True}
-url = f"{wallet_server_url}/api/v1/messages/sync"
+url = f"{wallet_server_url}/api/v1/messages"
 response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
 

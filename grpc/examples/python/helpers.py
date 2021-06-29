@@ -17,9 +17,9 @@ def check_var(val: str) -> bool:
     """
     Return true if the value is ok.
     """
-    if val is not None and val == "":
+    if val is None or val == "":
         return False
-    if val is not None and invalid(val):
+    if invalid(val):
         return False
     return True
 

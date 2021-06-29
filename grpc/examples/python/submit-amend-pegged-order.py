@@ -24,32 +24,17 @@ Apps/Libraries:
 import base64
 import helpers
 import time
-import os
+import requests
 
 from google.protobuf.wrappers_pb2 import Int64Value
 
-node_url_grpc = os.getenv("NODE_URL_GRPC")
-if not helpers.check_var(node_url_grpc):
-    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
-    exit(1)
+# Vega wallet interaction helper, see login.py for detail
+from login import token, pubkey
 
-wallet_server_url = os.getenv("WALLETSERVER_URL")
-if not helpers.check_url(wallet_server_url):
-    print("Error: Invalid or missing WALLETSERVER_URL environment variable.")
-    exit(1)
-
-wallet_name = os.getenv("WALLET_NAME")
-if not helpers.check_var(wallet_name):
-    print("Error: Invalid or missing WALLET_NAME environment variable.")
-    exit(1)
-
-wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
-if not helpers.check_var(wallet_passphrase):
-    print("Error: Invalid or missing WALLET_PASSPHRASE environment variable.")
-    exit(1)
-
-# Help guide users against including api version suffix on url
-wallet_server_url = helpers.check_wallet_url(wallet_server_url)
+# Load Vega network URLs, these are set using 'source examples-config'
+# located in the root folder of the api repository
+wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 
 # __import_client:
 import vegaapiclient as vac
@@ -57,34 +42,7 @@ import vegaapiclient as vac
 # Vega gRPC clients for reading/writing data
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 trading_client = vac.VegaTradingClient(node_url_grpc)
-wallet_client = vac.WalletClient(wallet_server_url)
 # :import_client__
-
-#####################################################################################
-#                           W A L L E T   S E R V I C E                             #
-#####################################################################################
-
-print(f"Logging into wallet: {wallet_name}")
-
-# __login_wallet:
-# Log in to an existing wallet
-response = wallet_client.login(wallet_name, wallet_passphrase)
-helpers.check_response(response)
-# Note: secret wallet token is stored internally for duration of session
-# :login_wallet__
-
-print("Logged in to wallet successfully")
-
-# __get_pubkey:
-# List key pairs and select public key to use
-response = wallet_client.listkeys()
-helpers.check_response(response)
-keys = response.json()["keys"]
-pubkey = keys[0]["pub"]
-# :get_pubkey__
-
-assert pubkey != ""
-print("Selected pubkey for signing")
 
 #####################################################################################
 #                               F I N D   M A R K E T                               #
@@ -142,7 +100,10 @@ print(f"Prepared pegged order, ref: {order_ref}")
 # Sign the prepared pegged order transaction
 # Note: Setting propagate to true will submit to a Vega node
 blob_base64 = base64.b64encode(prepared_order.blob).decode("ascii")
-response = wallet_client.signtx(blob_base64, pubkey, True)
+req = {"tx": blob_base64, "pubKey": pubkey, "propagate": True}
+url = f"{wallet_server_url}/api/v1/messages"
+headers = {"Authorization": f"Bearer {token}"}
+response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
 signedTx = response.json()["signedTx"]
 # :sign_tx_pegged_order__
@@ -190,8 +151,12 @@ print(f"Amendment prepared for order ID: {orderID}")
 # __sign_tx_pegged_amend:
 # Sign the prepared pegged order transaction for amendment
 # Note: Setting propagate to true will also submit to a Vega node
-response = wallet_client.signtx(blob_base64, pubkey, True)
+req = {"tx": blob_base64, "pubKey": pubkey, "propagate": True}
+url = f"{wallet_server_url}/api/v1/messages"
+headers = {"Authorization": f"Bearer {token}"}
+response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
+signedTx = response.json()["signedTx"]
 # :sign_tx_pegged_amend__
 
 print("Signed pegged order amendment and sent to Vega")
