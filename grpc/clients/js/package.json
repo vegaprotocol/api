@@ -33,7 +33,7 @@
     "@types/node": "14.17.4",
     "@typescript-eslint/eslint-plugin": "4.28.1",
     "@typescript-eslint/parser": "4.28.1",
-    "eslint": "7.29.0",
+    "eslint": "7.30.0",
     "google-protobuf": "3.17.3",
     "tape": "5.2.2",
     "tinyify": "3.0.0",
