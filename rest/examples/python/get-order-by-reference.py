@@ -21,7 +21,6 @@ Apps/Libraries:
 
 import json
 import requests
-import os
 import helpers
 
 # Load REST Vega Node URL, this is set using 'source examples-config'

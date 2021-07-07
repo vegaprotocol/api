@@ -29,22 +29,22 @@ import requests
 # Vega wallet interaction helper, see login.py for detail
 from login import token, pubkey
 
+# __import_client:
+import vegaapiclient as vac
+
 # Load Vega network URLs, these are set using 'source examples-config'
 # located in the root folder of the api repository
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
-
-# __import_client:
-import vegaapiclient as vac
 
 # Vega gRPC clients for reading/writing data
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 trading_client = vac.VegaTradingClient(node_url_grpc)
 # :import_client__
 
-#####################################################################################
-#                               F I N D   M A R K E T                               #
-#####################################################################################
+###############################################################################
+#                             F I N D   M A R K E T                           #
+###############################################################################
 
 # __get_market:
 # Request the identifier for the market to place on
@@ -55,22 +55,23 @@ marketID = markets[0].id
 assert marketID != ""
 print(f"Market found: {marketID}")
 
-#####################################################################################
-#                          B L O C K C H A I N   T I M E                            #
-#####################################################################################
+###############################################################################
+#                        B L O C K C H A I N   T I M E                        #
+###############################################################################
 
 # __get_expiry_time:
 # Request the current blockchain time, calculate an expiry time
-blockchain_time = data_client.GetVegaTime(vac.api.trading.GetVegaTimeRequest()).timestamp
+time_request = vac.api.trading.GetVegaTimeRequest()
+blockchain_time = data_client.GetVegaTime(time_request).timestamp
 expiresAt = int(blockchain_time + 120 * 1e9)  # expire in 2 minutes
 # :get_expiry_time__
 
 assert blockchain_time > 0
 print(f"Blockchain time: {blockchain_time}")
 
-#####################################################################################
-#                              S U B M I T   O R D E R                              #
-#####################################################################################
+###############################################################################
+#                          S U B M I T   O R D E R                            #
+###############################################################################
 
 # __prepare_submit_order:
 # Prepare a submit order message
@@ -110,19 +111,20 @@ print("Signed order and sent to Vega")
 # Wait for order submission to be included in a block
 print("Waiting for blockchain...")
 time.sleep(4)
-order_ref_request = vac.api.trading.OrderByReferenceRequest(reference=order_ref)
-response = data_client.OrderByReference(order_ref_request)
+order_ref_req = vac.api.trading.OrderByReferenceRequest(reference=order_ref)
+response = data_client.OrderByReference(order_ref_req)
 orderID = response.order.id
 orderStatus = helpers.enum_to_str(vac.vega.Order.Status, response.order.status)
 createVersion = response.order.version
 orderReason = response.order.reason
-print(f"Order processed, ID: {orderID}, Status: {orderStatus}, Version: {createVersion}")
+print(f"Order processed, ID: {orderID}, Status: {orderStatus}, " +
+      f"Version: {createVersion}")
 if orderStatus == "STATUS_REJECTED":
     print(f"Rejection reason: {orderReason}")
 
-#####################################################################################
-#                               A M E N D   O R D E R                               #
-#####################################################################################
+###############################################################################
+#                             A M E N D   O R D E R                           #
+###############################################################################
 
 # __prepare_amend_order:
 # Prepare the amend order message
@@ -161,8 +163,12 @@ response = data_client.OrderByID(order_id_request)
 orderID = response.order.id
 orderPrice = response.order.price
 orderSize = response.order.size
-orderTif = helpers.enum_to_str(vac.vega.Order.TimeInForce, response.order.time_in_force)
-orderStatus = helpers.enum_to_str(vac.vega.Order.Status, response.order.status)
+orderTif = helpers.enum_to_str(
+    vac.vega.Order.TimeInForce, response.order.time_in_force
+)
+orderStatus = helpers.enum_to_str(
+    vac.vega.Order.Status, response.order.status
+)
 orderVersion = response.order.version
 orderReason = response.order.reason
 
@@ -174,11 +180,12 @@ print(f"ID: {orderID}, Status: {orderStatus}, Price(Old): 1, "
 if orderStatus == "STATUS_REJECTED":
     print(f"Rejection reason: {orderReason}")
 
-#####################################################################################
-#                             C A N C E L   O R D E R S                             #
-#####################################################################################
+###############################################################################
+#                          C A N C E L   O R D E R S                          #
+###############################################################################
 
-# Select the mode to cancel orders from the following (comment out others), default = 3
+# Select the mode to cancel orders from the following
+# (comment out others), default = 3
 
 # __prepare_cancel_order_req1:
 # 1 - Cancel single order for party (pubkey)
@@ -227,8 +234,8 @@ print("Signed cancellation and sent to Vega")
 # Wait for cancellation to be included in a block
 print("Waiting for blockchain...")
 time.sleep(4)
-order_ref_request = vac.api.trading.OrderByReferenceRequest(reference=order_ref)
-response = data_client.OrderByReference(order_ref_request)
+order_ref_req = vac.api.trading.OrderByReferenceRequest(reference=order_ref)
+response = data_client.OrderByReference(order_ref_req)
 orderStatus = helpers.enum_to_str(vac.vega.Order.Status, response.order.status)
 orderReason = response.order.reason
 

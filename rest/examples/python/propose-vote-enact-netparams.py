@@ -32,9 +32,9 @@ from login import token, pubkey
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
-#####################################################################################
-#                              F I N D   A S S E T S                                #
-#####################################################################################
+###############################################################################
+#                            F I N D   A S S E T S                            #
+###############################################################################
 
 # __get_assets:
 # Request a list of assets available on a Vega network
@@ -53,9 +53,9 @@ found_asset_id = "UNKNOWN"
 print(response)
 assets = response.json()["assets"]
 
-#####################################################################################
-#                   G O V E R N A N C E   T O K E N   C H E C K                     #
-#####################################################################################
+###############################################################################
+#                 G O V E R N A N C E   T O K E N   C H E C K                 #
+###############################################################################
 
 # Get the identifier of the governance asset on the Vega network
 vote_asset_id = "UNKNOWN"
@@ -65,7 +65,8 @@ for asset in assets:
         break
 
 if vote_asset_id == "UNKNOWN":
-    print("tVOTE asset not found on specified Vega network, please symbol name check and try again")
+    print("tVOTE asset not found on specified Vega network," +
+          " please symbol name check and try again")
     exit(1)
 
 # Request accounts for party and check governance asset balance
@@ -90,9 +91,9 @@ if voting_balance == 0:
     print(f"Please deposit tVOTE asset to public key {pubkey} and try again")
     exit(1)
 
-#####################################################################################
-#                          B L O C K C H A I N   T I M E                            #
-#####################################################################################
+###############################################################################
+#                        B L O C K C H A I N   T I M E                        #
+###############################################################################
 
 # __get_time:
 # Request the current blockchain time, and convert to time in seconds
@@ -104,11 +105,12 @@ blockchain_time_seconds = int(blockchain_time / 1e9)  # Seconds precision
 
 assert blockchain_time > 0
 assert blockchain_time_seconds > 0
-print(f"Blockchain time: {blockchain_time} ({blockchain_time_seconds} seconds past epoch)")
+print(f"Blockchain time: {blockchain_time} " +
+      f"({blockchain_time_seconds} seconds past epoch)")
 
-#####################################################################################
-#                           UPDATE NETWORK PARAMETER                                #
-#####################################################################################
+###############################################################################
+#                 U P D A T E   N E T W O R K   P A R A M E T E R             #
+###############################################################################
 
 # Step 1 propose a network parameter update
 
@@ -120,15 +122,19 @@ value = "0.7"
 market = {
     "partyId": pubkey,
     "proposal": {
-        # Set validation timestamp to a valid time offset from the current Vega blockchain time
+        # Set validation timestamp to a valid time offset from the current
+        # Vega blockchain time
         "validationTimestamp": blockchain_time_seconds + 1,
-        # Set closing timestamp to a valid time offset from the current Vega blockchain time
+        # Set closing timestamp to a valid time offset from the current Vega
+        # blockchain time
         "closingTimestamp": blockchain_time_seconds + 3600 + 60,
-        # Set enactment timestamp to a valid time offset from the current Vega blockchain time
+        # Set enactment timestamp to a valid time offset from the current Vega
+        # blockchain time
         "enactmentTimestamp": blockchain_time_seconds + 3600 + 120,
-        # Note: the timestamps above are specified in seconds, and must meet minimums required by network
-        # This is the main part: "key" is any network parameter and "value" is its value
-        # As an example we vote to chage the parameter market.liquidity.targetstake.triggering.ratio.
+        # Note: the timestamps above are specified in seconds, and must meet
+        # minimums required by network. This is the main part: "key" is any
+        # network parameter and "value" is its value. As an example we vote to
+        # change the parameter market.liquidity.targetstake.triggering.ratio.
         "updateNetworkParameter": {
             "changes": {
                 "key": "market.liquidity.targetstake.triggering.ratio",
@@ -164,14 +170,15 @@ print("Signed market proposal and sent to Vega")
 # Debugging
 # print("Signed transaction:\n", response.json(), "\n")
 
-# Wait for proposal to be included in a block and to be accepted by Vega network
+# Wait for proposal to be included in a block and be accepted by Vega network
 print("Waiting for blockchain...", end="", flush=True)
 proposal_id = ""
 done = False
 while not done:
     time.sleep(0.5)
     print(".", end="", flush=True)
-    my_proposals = requests.get(node_url_rest + "/parties/" + pubkey + "/proposals")
+    my_proposals = requests.get(node_url_rest + "/parties/" +
+                                pubkey + "/proposals")
     if my_proposals.status_code != 200:
         continue
 
@@ -186,20 +193,22 @@ while not done:
 
 assert proposal_id != ""
 
-#####################################################################################
-#                            V O T E   O N   P A R A M T E R                        #
-#####################################################################################
+###############################################################################
+#                      V O T E   O N   P A R A M E T E R                      #
+###############################################################################
 
 # STEP 2 - Let's vote on the market proposal
 
 # IMPORTANT: When voting for a proposal on the Vega Testnet, typically a single
-# YES vote from the proposer will not be enough to vote the market into existence.
-# This is because of the network minimum threshold for voting on proposals, this
-# threshold for market proposals this is currently a 66% majority vote either YES or NO.
-# A proposer should enlist the help/YES votes from other community members, ideally on the
-# Community forums (https://community.vega.xyz/c/testnet) or Discord (https://vega.xyz/discord)
+# YES vote from the proposer will not be enough to vote the market into
+# existence. This is because of the network minimum threshold for voting on
+# proposals, this threshold for market proposals this is currently a 66%
+# majority vote either YES or NO. A proposer should enlist the help/YES votes
+# from other community members, ideally on the Community forums
+# (https://community.vega.xyz/c/testnet) or Discord (https://vega.xyz/discord)
 
-# Further documentation on proposal voting and review here: https://docs.testnet.vega.xyz/docs/api-howtos/proposals/
+# Further documentation on proposal voting and review here:
+# https://docs.testnet.vega.xyz/docs/api-howtos/proposals/
 
 # __prepare_vote:
 # Prepare a vote for the proposal
@@ -240,7 +249,8 @@ print("Waiting for vote on proposal to succeed or fail...", end="", flush=True)
 done = False
 while not done:
     time.sleep(0.5)
-    my_proposals = requests.get(node_url_rest + "/parties/" + pubkey + "/proposals")
+    my_proposals = requests.get(node_url_rest + "/parties/" +
+                                pubkey + "/proposals")
     if my_proposals.status_code != 200:
         continue
 

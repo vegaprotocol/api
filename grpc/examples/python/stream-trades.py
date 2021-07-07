@@ -29,9 +29,11 @@ import vegaapiclient as vac
 
 node_url_grpc = os.getenv("NODE_URL_GRPC")
 
+
 def signal_handler(sig, frame):
     print('Exit requested.')
     sys.exit(0)
+
 
 signal.signal(signal.SIGINT, signal_handler)
 
@@ -50,12 +52,10 @@ market_id = markets[0].id
 # Subscribe to the Trades stream for the marketID specified
 # Optional: Market identifier - filter by market
 #            Party identifier - filter by party
-# By default, all trades on all markets for all parties will be returned on the stream.
+# By default, all trades on all markets for all parties will be returned
 subscribe_request = vac.api.trading.TradesSubscribeRequest(market_id=market_id)
 for stream_resp in data_client.TradesSubscribe(subscribe_request):
     for trade in stream_resp.trades:
         # All trades arriving over the channel/stream will be printed
         print(trade)
 # :stream_trades__
-
-

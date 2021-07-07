@@ -23,6 +23,7 @@ def check_var(val: str) -> bool:
         return False
     return True
 
+
 def check_url(url: str) -> bool:
     """
     Return true if the URL is ok.

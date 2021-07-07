@@ -33,9 +33,9 @@ from login import token, pubkey
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
-#####################################################################################
-#                               F I N D   M A R K E T                               #
-#####################################################################################
+###############################################################################
+#                          F I N D   M A R K E T                              #
+###############################################################################
 
 # __get_market:
 # Request the identifier for the market to place on
@@ -46,12 +46,13 @@ marketID = response.json()["markets"][0]["id"]
 # :get_market__
 
 assert marketID != ""
-marketName = response.json()["markets"][0]["tradableInstrument"]["instrument"]["name"]
+resp = response.json()
+marketName = resp["markets"][0]["tradableInstrument"]["instrument"]["name"]
 print(f"Market found: {marketID} {marketName}")
 
-#####################################################################################
-#                          B L O C K C H A I N   T I M E                            #
-#####################################################################################
+###############################################################################
+#                       B L O C K C H A I N   T I M E                         #
+###############################################################################
 
 # __get_expiry_time:
 # Request the current blockchain time, calculate an expiry time
@@ -64,9 +65,9 @@ expiresAt = str(int(blockchain_time + 120 * 1e9))  # expire in 2 minutes
 assert blockchain_time > 0
 print(f"Blockchain time: {blockchain_time}")
 
-#####################################################################################
-#                      S U B M I T   P E G G E D   O R D E R                        #
-#####################################################################################
+###############################################################################
+#                    S U B M I T   P E G G E D   O R D E R                    #
+###############################################################################
 
 # __prepare_submit_pegged_order:
 # Prepare a submit order message with a pegged BUY order
@@ -111,9 +112,9 @@ print("Waiting for blockchain...", end="", flush=True)
 url = f"{node_url_rest}/orders/{order_ref}"
 response = requests.get(url)
 while response.status_code != 200:
-  time.sleep(0.5)
-  print(".", end="", flush=True)
-  response = requests.get(url)
+    time.sleep(0.5)
+    print(".", end="", flush=True)
+    response = requests.get(url)
 
 response_json = response.json()
 orderID = response_json["order"]["id"]
@@ -121,15 +122,16 @@ orderStatus = response_json["order"]["status"]
 orderPegged = response_json["order"]["peggedOrder"]
 createVersion = response_json["order"]["version"]
 orderReason = response_json["order"]["reason"]
-print(f"\nPegged order processed, ID: {orderID}, Status: {orderStatus}, Version: {createVersion}")
+print(f"\nPegged order processed, ID: {orderID}, "
+      f"Status: {orderStatus}, Version: {createVersion}")
 if orderStatus == "STATUS_REJECTED":
     print(f"Rejection reason: {orderReason}")
 else:
     print(f"Pegged at: {orderPegged}")
 
-#####################################################################################
-#                        A M E N D   P E G G E D   O R D E R                        #
-#####################################################################################
+###############################################################################
+#                    A M E N D   P E G G E D   O R D E R                      #
+###############################################################################
 
 # __prepare_amend_pegged_order:
 # Prepare the amend order message

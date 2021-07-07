@@ -26,6 +26,7 @@ import helpers
 
 # Vega wallet interaction helper, see login.py for detail
 from login import token, pubkey
+print(token)
 
 # Load REST Vega Node URL, this is set using 'source examples-config'
 # located in the root folder of the api repository
@@ -37,7 +38,9 @@ url = "{base}/parties/{party}/orders".format(base=node_url_rest, party=pubkey)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("OrdersByParty:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("OrdersByParty:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_orders_for_party__
 
 # __get_trades_for_party:
@@ -46,5 +49,7 @@ url = "{base}/parties/{party}/trades".format(base=node_url_rest, party=pubkey)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("TradesByParty:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("TradesByParty:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_trades_for_party__

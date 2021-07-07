@@ -33,7 +33,9 @@ url = "{base}/markets".format(base=node_url_rest)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("Markets:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("Markets:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_markets__
 
 market_id = response_json["markets"][0]["id"]
@@ -41,9 +43,13 @@ assert market_id != ""
 
 # __get_market_data:
 # Request the market data for a market on a Vega network
-url = "{base}/markets-data/{marketId}".format(base=node_url_rest, marketId=market_id)
+url = "{base}/markets-data/{marketId}".format(
+    base=node_url_rest, marketId=market_id
+)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("MarketData:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("MarketData:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_market_data__

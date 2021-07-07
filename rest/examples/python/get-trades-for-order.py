@@ -30,9 +30,13 @@ node_url_rest = helpers.get_from_env("NODE_URL_REST")
 # __get_trades_for_order:
 # Request a list of trades for a specific order on a Vega network
 orderID = "V0000929211-0046318720"
-url = "{base}/orders/{orderID}/trades".format(base=node_url_rest, orderID=orderID)
+url = "{base}/orders/{orderID}/trades".format(
+    base=node_url_rest, orderID=orderID
+)
 response = requests.get(url)
 helpers.check_response(response)
 responseJson = response.json()
-print("TradesByOrderID:\n{}".format(json.dumps(responseJson, indent=2, sort_keys=True)))
+print("TradesByOrderID:\n{}".format(
+    json.dumps(responseJson, indent=2, sort_keys=True)
+))
 # :get_trades_for_order__

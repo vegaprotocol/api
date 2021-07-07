@@ -20,20 +20,21 @@ Apps/Libraries:
 # :something__
 
 import queue
-import os
 import signal
 import sys
-
-node_url_grpc = os.getenv("NODE_URL_GRPC")
+import helpers
 
 # __import_client:
 import vegaapiclient as vac
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 # :import_client__
+
 
 def signal_handler(sig, frame):
     print('Exit requested.')
     sys.exit(0)
+
 
 signal.signal(signal.SIGINT, signal_handler)
 
@@ -50,20 +51,27 @@ print("Connecting to stream...")
 
 # __stream_events:
 # Subscribe to the events bus stream for the marketID specified
-# Required: type field - A collection of one or more event types e.g. BUS_EVENT_TYPE_ORDER.
-# Required: batch_size field - Default: 0 - Total number of events to batch on server before sending to client.
+# Required: type field
+#   - A collection of one or more event types  e.g. BUS_EVENT_TYPE_ORDER.
+# Required: batch_size field
+#   - Default: 0
+#       - Total number of events to batch on server before sending to client.
 # Optional: Market identifier - filter by market
 #           Party identifier - filter by party
-# By default, all events on all markets for all parties will be returned on the stream.
+# By default, all events on all markets for all
+# parties will be returned on the stream.
 # e.g. all_types = vac.events.BUS_EVENT_TYPE_ALL
 event_types = vac.events.BUS_EVENT_TYPE_MARKET_TICK
-subscribe_events_request = vac.api.trading.ObserveEventBusRequest(batch_size=0, type=[event_types], market_id=market_id)
+subscribe_events_request = vac.api.trading.ObserveEventBusRequest(
+    batch_size=0, type=[event_types], market_id=market_id
+)
 send_queue = queue.SimpleQueue()
 stream = data_client.ObserveEventBus(iter(send_queue.get, None))
 send_queue.put_nowait(subscribe_events_request)
 for stream_resp in stream:
     for events in stream_resp.events:
-        # All events (as per request filter) arriving over the channel/stream will be printed
+        # All events (as per request filter) arriving
+        # over the channel/stream will be printed
         print(events)
 # :stream_events__
 

@@ -34,9 +34,9 @@ from login import token, pubkey
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
-#####################################################################################
-#                               F I N D   M A R K E T                               #
-#####################################################################################
+###############################################################################
+#                           F I N D   M A R K E T                             #
+###############################################################################
 
 # __get_market:
 # Request the identifier for the market to place on
@@ -46,31 +46,40 @@ helpers.check_response(response)
 marketID = response.json()["markets"][0]["id"]
 # :get_market__
 
+
 assert marketID != ""
-marketName = response.json()["markets"][0]["tradableInstrument"]["instrument"]["name"]
+resp = response.json()
+marketName = resp["markets"][0]["tradableInstrument"]["instrument"]["name"]
 print(f"Market found: {marketID} {marketName}")
 
-#####################################################################################
-#                 L I S T   L I Q U I D I T Y   P R O V I S I O N S                 #
-#####################################################################################
+###############################################################################
+#               L I S T   L I Q U I D I T Y   P R O V I S I O N S             #
+###############################################################################
 
 # __get_liquidity_provisions:
 # Request liquidity provisions for the market
-partyID="" # specify party ID if needed, otherwise all liquidity provisions for the market get returned 
-url = "{base}/liquidity-provisions/party/{party}/market/{marketId}".format(base=node_url_rest, party=partyID, marketId=marketID)
+# Specify party ID below (if needed), otherwise all liquidity
+# provisions for the market will be returned
+partyID = ""
+url = "{base}/liquidity-provisions/party/{party}/market/{marketId}".format(
+    base=node_url_rest, party=partyID, marketId=marketID
+)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
 
-print("Liquidity provisions:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("Liquidity provisions:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_liquidity_provisions__
 
-#####################################################################################
-#              S U B M I T   L I Q U I D I T Y   C O M M I T M E N T                #
-#####################################################################################
+###############################################################################
+#             S U B M I T   L I Q U I D I T Y   C O M M I T M E N T           #
+###############################################################################
 
-# Note: commitmentAmount is an integer. For example 123456 is a price of 1.23456,
-# for a market which is configured to have a precision of 5 decimal places.
+# Note: commitmentAmount is an integer. For example 123456 is a
+# price of 1.23456, for a market which is configured to have a
+# precision of 5 decimal places.
 
 # __prepare_liquidity_order:
 # Prepare a liquidity commitment transaction message
@@ -131,16 +140,17 @@ helpers.check_response(response)
 
 print("Signed liquidity commitment and sent to Vega")
 
-# Comment out the lines below to add a cancellation of the newly created LP commitment
+# Comment out the lines below to add a cancellation of the LP commitment
 print("To add cancellation step, uncomment line 180 of the script file")
 exit(0)
 
-#####################################################################################
-#               A M E N D    L I Q U I D I T Y   C O M M I T M E N T                #
-#####################################################################################
+###############################################################################
+#              A M E N D    L I Q U I D I T Y   C O M M I T M E N T           #
+###############################################################################
 
 # __amend_liquidity_order:
-# Prepare a liquidity commitment order message (it will now serve as an amendment request): modify fields to be amended
+# Prepare a liquidity commitment order message (it will now serve as an
+# amendment request): modify fields to be amended
 
 req = {
     "submission": {
@@ -169,7 +179,8 @@ helpers.check_response(response)
 prepared_order = response.json()
 # :amend_liquidity_order__
 
-print(f"Prepared liquidity commitment (amendment) for market: {marketID} {marketName}")
+print("Prepared liquidity commitment (amendment)" +
+      " for market: {marketID} {marketName}")
 
 # Sign the prepared liquidity commitment transaction
 # Note: Setting propagate to true will also submit to a Vega node
@@ -185,13 +196,14 @@ print("Signed liquidity commitment (amendment) and sent to Vega")
 
 time.sleep(10)
 
-#####################################################################################
-#               C A N C E L    L I Q U I D I T Y   C O M M I T M E N T              #
-#####################################################################################
+###############################################################################
+#              C A N C E L    L I Q U I D I T Y   C O M M I T M E N T         #
+###############################################################################
 
 # __cancel_liquidity_order:
-# Prepare a liquidity commitment order message (it will now serve as a cancellation request): set commitmentAmount to 0, 
-# note that transaction may get rejected if removing previously supplied liquidity 
+# Prepare a liquidity commitment order message (it will now serve as a
+# cancellation request): set commitmentAmount to 0, that transaction may
+# get rejected if removing previously supplied liquidity
 # will result in insufficient liquidity for the market
 
 req = {
@@ -206,7 +218,8 @@ helpers.check_response(response)
 prepared_order = response.json()
 # :cancel_liquidity_order__
 
-print(f"Prepared liquidity commitment (cancellation) for market: {marketID} {marketName}")
+print("Prepared liquidity commitment (cancellation)" +
+      " for market: {marketID} {marketName}")
 
 # Sign the prepared liquidity commitment transaction
 # Note: Setting propagate to true will also submit to a Vega node

@@ -19,24 +19,25 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import os
 import signal
 import sys
+import helpers
 
 # __import_client:
 import vegaapiclient as vac
 # :import_client__
 
-node_url_grpc = os.getenv("NODE_URL_GRPC")
 
 def signal_handler(sig, frame):
     print('Exit requested.')
     sys.exit(0)
 
+
 signal.signal(signal.SIGINT, signal_handler)
 
 # __create_client:
 # Create a Vega gRPC data client
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 # :create_client__
 

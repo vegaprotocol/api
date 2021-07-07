@@ -21,13 +21,15 @@ def load_token():
 
 def get_pubkey(token):
     auth_headers = {"Authorization": "Bearer " + token}
-    response = requests.get(wallet_server_url + "/api/v1/keys", headers=auth_headers)
+    response = requests.get(wallet_server_url + "/api/v1/keys",
+                            headers=auth_headers)
     if response.status_code != 200:
         print("Error listing keys: " + response.text)
         exit(1)
     keys = response.json()["keys"]
     if len(keys) < 1:
-        print("Error: No keys found, use Vega Console or Vega Wallet CLI to create one")
+        print("Error: No keys found, use Vega Console" +
+              " or Vega Wallet CLI to create one")
         exit(1)
     return keys[0]["pub"], auth_headers
 
@@ -39,16 +41,17 @@ def perform_login():
     valid_user = helpers.check_var(wallet_name)
     valid_pass = helpers.check_var(wallet_passphrase)
     if ci_args in sys.argv and not valid_user:
-        print(f"Error: Missing environment variable WALLET_NAME")
+        print("Error: Missing environment variable WALLET_NAME")
         exit(1)
     if ci_args in sys.argv and not valid_pass:
-        print(f"Error: Missing environment variable WALLET_PASSPHRASE")
+        print("Error: Missing environment variable WALLET_PASSPHRASE")
         exit(1)
     if not valid_user or not valid_pass:
         wallet_name = input("Enter Vega wallet username: ")
         wallet_passphrase = getpass.getpass("Vega wallet passphrase: ")
     req = {"wallet": wallet_name, "passphrase": wallet_passphrase}
-    response = requests.post(wallet_server_url + "/api/v1/auth/token", json=req)
+    response = requests.post(wallet_server_url
+                             + "/api/v1/auth/token", json=req)
     if response.status_code != 200:
         print("Error logging in: " + response.text)
         exit(1)

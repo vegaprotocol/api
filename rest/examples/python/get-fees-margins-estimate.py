@@ -21,7 +21,6 @@ Apps/Libraries:
 
 import json
 import requests
-import os
 import helpers
 
 # Vega wallet interaction helper, see login.py for detail
@@ -31,9 +30,9 @@ from login import pubkey
 # located in the root folder of the api repository
 node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
-#####################################################################################
-#                               F I N D   M A R K E T                               #
-#####################################################################################
+###############################################################################
+#                           F I N D   M A R K E T                             #
+###############################################################################
 
 # __get_market:
 # Request the identifier for the market to place on
@@ -46,9 +45,9 @@ marketID = response.json()["markets"][0]["id"]
 assert marketID != ""
 print(f"Market found: {marketID}")
 
-#####################################################################################
-#                           F E E   E S T I M A T I O N                             #
-#####################################################################################
+###############################################################################
+#                         F E E   E S T I M A T I O N                         #
+###############################################################################
 
 # __get_fees_estimate:
 # Request to estimate trading fees on a Vega network
@@ -72,9 +71,9 @@ print("FeeEstimates:\n{}".format(
     json.dumps(estimatedFees, indent=2, sort_keys=True)))
 # :get_fees_estimate__
 
-#####################################################################################
-#                         M A R G I N   E S T I M A T I O N                         #
-#####################################################################################
+###############################################################################
+#                       M A R G I N   E S T I M A T I O N                     #
+###############################################################################
 
 # __get_margins_estimate:
 # Request to estimate trading margin on a Vega network

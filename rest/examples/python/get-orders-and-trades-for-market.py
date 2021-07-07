@@ -36,18 +36,26 @@ assert marketID != ""
 
 # __get_orders_for_market:
 # Request a list of orders by market on a Vega network
-url = "{base}/markets/{marketID}/orders".format(base=node_url_rest, marketID=marketID)
+url = "{base}/markets/{marketID}/orders".format(
+    base=node_url_rest, marketID=marketID
+)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("OrdersByMarket:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("OrdersByMarket:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_orders_for_market__
 
 # __get_trades_for_market:
 # Request a list of trades by market on a Vega network
-url = "{base}/markets/{marketID}/trades".format(base=node_url_rest, marketID=marketID)
+url = "{base}/markets/{marketID}/trades".format(
+    base=node_url_rest, marketID=marketID
+)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("TradesByMarket:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("TradesByMarket:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_trades_for_market__

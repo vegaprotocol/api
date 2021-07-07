@@ -33,9 +33,9 @@ from login import pubkey
 # located in the root folder of the api repository
 node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
-#####################################################################################
-#                           M A R K E T   A C C O U N T S                           #
-#####################################################################################
+###############################################################################
+#                        M A R K E T   A C C O U N T S                        #
+###############################################################################
 
 # Request a list of markets and select the first one
 url = f"{node_url_rest}/markets"
@@ -52,12 +52,14 @@ url = f"{node_url_rest}/markets/{marketID}/accounts"
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("Market accounts:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("Market accounts:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_accounts_by_market__
 
-#####################################################################################
-#                            P A R T Y   A C C O U N T S                            #
-#####################################################################################
+###############################################################################
+#                         P A R T Y   A C C O U N T S                         #
+###############################################################################
 
 # __get_accounts_by_party:
 # Request a list of accounts for a party (pubkey) on a Vega network
@@ -65,12 +67,14 @@ url = f"{node_url_rest}/parties/{pubkey}/accounts"
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("Party accounts:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("Party accounts:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_accounts_by_party__
 
-#####################################################################################
-#                           P A R T Y   P O S I T I O N S                           #
-#####################################################################################
+###############################################################################
+#                        P A R T Y   P O S I T I O N S                        #
+###############################################################################
 
 # __get_positions_by_party:
 # Request a list of positions for a party (pubkey) on a Vega network
@@ -78,5 +82,7 @@ url = f"{node_url_rest}/parties/{pubkey}/positions"
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("Party positions:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("Party positions:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_positions_by_party__

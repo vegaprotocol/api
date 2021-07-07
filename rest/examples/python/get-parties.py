@@ -36,7 +36,9 @@ url = "{base}/parties".format(base=node_url_rest)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("Parties:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("Parties:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_parties__
 
 assert len(response_json["parties"]) > 0
@@ -48,5 +50,7 @@ url = "{base}/parties/{partyID}".format(base=node_url_rest, partyID=pubkey)
 response = requests.get(url)
 helpers.check_response(response)
 response_json = response.json()
-print("PartyById:\n{}".format(json.dumps(response_json, indent=2, sort_keys=True)))
+print("PartyById:\n{}".format(
+    json.dumps(response_json, indent=2, sort_keys=True)
+))
 # :get_party_by_id__

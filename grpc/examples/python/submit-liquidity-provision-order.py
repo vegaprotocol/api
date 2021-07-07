@@ -29,23 +29,22 @@ import requests
 # Vega wallet interaction helper, see login.py for detail
 from login import token, pubkey
 
+# __import_client:
+import vegaapiclient as vac
+
 # Load Vega network URLs, these are set using 'source examples-config'
 # located in the root folder of the api repository
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
-
-
-# __import_client:
-import vegaapiclient as vac
 
 # Vega gRPC clients for reading/writing data
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 trading_client = vac.VegaTradingClient(node_url_grpc)
 # :import_client__
 
-#####################################################################################
-#                               F I N D   M A R K E T                               #
-#####################################################################################
+###############################################################################
+#                            F I N D   M A R K E T                            #
+###############################################################################
 
 # __get_market:
 # Request the identifier for the market to place on
@@ -57,27 +56,32 @@ assert marketID != ""
 marketName = markets[0].tradable_instrument.instrument.name
 print(f"Market found: {marketID} {marketName}")
 
-#####################################################################################
-#                 L I S T   L I Q U I D I T Y   P R O V I S I O N S                 #
-#####################################################################################
+###############################################################################
+#              L I S T   L I Q U I D I T Y   P R O V I S I O N S              #
+###############################################################################
 
 # __get_liquidity_provisions:
 # Request liquidity provisions for the market
-partyID="" # specify party ID if needed, otherwise all liquidity provisions for the market get returned 
-liquidityProvisions = data_client.LiquidityProvisions(vac.api.trading.LiquidityProvisionsRequest(
-    party=partyID,
-    market=marketID
-))
+
+# specify party ID below if needed, otherwise all liquidity
+# provisions for the market get returned
+partyID = ""
+liquidityProvisions = data_client.LiquidityProvisions(
+    vac.api.trading.LiquidityProvisionsRequest(
+        party=partyID,
+        market=marketID
+    )
+)
 
 print("Liquidity provisions:\n{}".format(liquidityProvisions))
 # :get_liquidity_provisions__
 
-#####################################################################################
-#              S U B M I T   L I Q U I D I T Y   C O M M I T M E N T                #
-#####################################################################################
+###############################################################################
+#           S U B M I T   L I Q U I D I T Y   C O M M I T M E N T             #
+###############################################################################
 
-# Note: commitment_amount is an integer. For example 123456 is a price of 1.23456,
-# for a market which is configured to have a precision of 5 decimal places.
+# Note: commitment_amount is an integer. For example 123456 is a price of
+# 1.23456, for a market configured to have a precision of 5 decimal places.
 
 # __prepare_liquidity_order:
 # Prepare a liquidity commitment transaction message
@@ -121,12 +125,13 @@ order = vac.api.trading.PrepareLiquidityProvisionRequest(
 prepared_order = trading_client.PrepareLiquidityProvision(order)
 # :prepare_liquidity_order__
 
-#####################################################################################
-#               A M E N D    L I Q U I D I T Y   C O M M I T M E N T                #
-#####################################################################################
+###############################################################################
+#            A M E N D    L I Q U I D I T Y   C O M M I T M E N T             #
+###############################################################################
 
 # __amend_liquidity_order:
-# Prepare a liquidity commitment order message (it will now serve as an amendment request): modify fields to be amended
+# Prepare a liquidity commitment order message (it will now serve as an
+# amendment request): modify fields to be amended
 order = vac.api.trading.PrepareLiquidityProvisionRequest(
     submission=vac.commands.v1.commands.LiquidityProvisionSubmission(
         market_id=marketID,
@@ -167,13 +172,14 @@ print("Signed order and sent to Vega")
 
 time.sleep(10)
 
-#####################################################################################
-#               C A N C E L    L I Q U I D I T Y   C O M M I T M E N T              #
-#####################################################################################
+###############################################################################
+#             C A N C E L    L I Q U I D I T Y   C O M M I T M E N T          #
+###############################################################################
 
 # __cancel_liquidity_order:
-# Prepare a liquidity commitment order message (it will now serve as a cancellation request): set commitmentAmount to 0, 
-# note that transaction may get rejected if removing previously supplied liquidity 
+# Prepare a liquidity commitment order message (it will now serve as a
+# cancellation request): set commitmentAmount to 0, note that transaction
+# may get rejected if removing previously supplied liquidity
 # will result in insufficient liquidity for the market
 order = vac.api.trading.PrepareLiquidityProvisionRequest(
     submission=vac.commands.v1.commands.LiquidityProvisionSubmission(

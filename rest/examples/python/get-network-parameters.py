@@ -27,9 +27,9 @@ import helpers
 # located in the root folder of the api repository
 node_url_rest = helpers.get_from_env("NODE_URL_REST")
 
-#####################################################################################
-#                        N E T W O R K   P A R A M E T E R S                        #
-#####################################################################################
+###############################################################################
+#                     N E T W O R K   P A R A M E T E R S                     #
+###############################################################################
 
 # __get_network_params:
 # Request a list of network parameters configured on a Vega network

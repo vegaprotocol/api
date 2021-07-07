@@ -19,12 +19,11 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import os
-
-node_url_grpc = os.getenv("NODE_URL_GRPC")
+import helpers
 
 # __import_client:
 import vegaapiclient as vac
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 # :import_client__
 

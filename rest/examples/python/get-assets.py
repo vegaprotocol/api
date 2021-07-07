@@ -49,7 +49,8 @@ for asset in assets:
         break
 
 if found_asset_id == "UNKNOWN":
-    print("tDAI asset not found on specified Vega network, please propose and create the tDAI asset")
+    print("tDAI asset not found on specified Vega network, " +
+          "please propose and create the tDAI asset")
 
 assert found_asset_id != "UNKNOWN"
 print()
@@ -64,6 +65,3 @@ print("Asset by ID:\n{}".format(
 # :get_asset__
 
 # Completed.
-
-
-

@@ -20,23 +20,18 @@ Apps/Libraries:
 # :something__
 
 import helpers
-import os
-
-node_url_grpc = os.getenv("NODE_URL_GRPC")
-if not helpers.check_var(node_url_grpc):
-    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
-    exit(1)
 
 # __import_client:
 import vegaapiclient as vac
 
 # Vega gRPC clients for reading/writing data
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 # :import_client__
 
-#####################################################################################
-#                        N E T W O R K   P A R A M E T E R S                        #
-#####################################################################################
+###############################################################################
+#                      N E T W O R K   P A R A M E T E R S                    #
+###############################################################################
 
 # __get_network_params:
 # Request a list of network parameters configured on a Vega network

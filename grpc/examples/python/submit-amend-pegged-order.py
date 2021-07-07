@@ -31,22 +31,23 @@ from google.protobuf.wrappers_pb2 import Int64Value
 # Vega wallet interaction helper, see login.py for detail
 from login import token, pubkey
 
+
+# __import_client:
+import vegaapiclient as vac
+
 # Load Vega network URLs, these are set using 'source examples-config'
 # located in the root folder of the api repository
 wallet_server_url = helpers.get_from_env("WALLETSERVER_URL")
 node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
-
-# __import_client:
-import vegaapiclient as vac
 
 # Vega gRPC clients for reading/writing data
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 trading_client = vac.VegaTradingClient(node_url_grpc)
 # :import_client__
 
-#####################################################################################
-#                               F I N D   M A R K E T                               #
-#####################################################################################
+###############################################################################
+#                              F I N D   M A R K E T                          #
+###############################################################################
 
 # __get_market:
 # Request the identifier for the market to place on
@@ -57,22 +58,23 @@ marketID = markets[0].id
 assert marketID != ""
 print(f"Market found: {marketID}")
 
-#####################################################################################
-#                          B L O C K C H A I N   T I M E                            #
-#####################################################################################
+###############################################################################
+#                          B L O C K C H A I N   T I M E                      #
+###############################################################################
 
 # __get_expiry_time:
 # Request the current blockchain time, calculate an expiry time
-blockchain_time = data_client.GetVegaTime(vac.api.trading.GetVegaTimeRequest()).timestamp
+time_req = vac.api.trading.GetVegaTimeRequest()
+blockchain_time = data_client.GetVegaTime(time_req).timestamp
 expiresAt = int(blockchain_time + 120 * 1e9)  # expire in 2 minutes
 # :get_expiry_time__
 
 assert blockchain_time > 0
 print(f"Blockchain time: {blockchain_time}")
 
-#####################################################################################
-#                      S U B M I T   P E G G E D   O R D E R                        #
-#####################################################################################
+###############################################################################
+#                      S U B M I T   P E G G E D   O R D E R                  #
+###############################################################################
 
 # __prepare_submit_pegged_order:
 # Prepare a submit order message with a pegged BUY order
@@ -113,23 +115,24 @@ print("Signed pegged order and sent to Vega")
 # Wait for order submission to be included in a block
 print("Waiting for blockchain...")
 time.sleep(4)
-order_ref_request = vac.api.trading.OrderByReferenceRequest(reference=order_ref)
-response = data_client.OrderByReference(order_ref_request)
+order_ref_req = vac.api.trading.OrderByReferenceRequest(reference=order_ref)
+response = data_client.OrderByReference(order_ref_req)
 orderID = response.order.id
 orderStatus = helpers.enum_to_str(vac.vega.Order.Status, response.order.status)
 createVersion = response.order.version
 orderReason = response.order.reason
 
-print(f"\nPegged order processed, ID: {orderID}, Status: {orderStatus}, Version: {createVersion}")
+print(f"\nPegged order processed, ID: {orderID}, " +
+      f"Status: {orderStatus}, Version: {createVersion}")
 
 if orderStatus == "STATUS_REJECTED":
     print(f"Rejection reason: {orderReason}")
 else:
     print(f"Pegged at:\n{response.order.pegged_order}")
 
-#####################################################################################
-#                        A M E N D   P E G G E D   O R D E R                        #
-#####################################################################################
+###############################################################################
+#                     A M E N D   P E G G E D   O R D E R                     #
+###############################################################################
 
 # __prepare_amend_pegged_order:
 # Prepare the amend pegged order message
@@ -169,8 +172,12 @@ response = data_client.OrderByID(order_id_request)
 orderID = response.order.id
 orderPrice = response.order.status
 orderSize = response.order.size
-orderTif = helpers.enum_to_str(vac.vega.Order.TimeInForce, response.order.time_in_force)
-orderStatus = helpers.enum_to_str(vac.vega.Order.Status, response.order.status)
+orderTif = helpers.enum_to_str(
+    vac.vega.Order.TimeInForce, response.order.time_in_force
+)
+orderStatus = helpers.enum_to_str(
+    vac.vega.Order.Status, response.order.status
+)
 orderVersion = response.order.version
 orderReason = response.order.reason
 

@@ -23,68 +23,24 @@ Responses:
 # :something__
 
 import helpers
-import os
 
-node_url_grpc = os.getenv("NODE_URL_GRPC")
-if not helpers.check_var(node_url_grpc):
-    print("Error: Invalid or missing NODE_URL_GRPC environment variable.")
-    exit(1)
+# Vega wallet interaction helper, see login.py for detail
+from login import token, pubkey
 
-wallet_server_url = os.getenv("WALLETSERVER_URL")
-if not helpers.check_url(wallet_server_url):
-    print("Error: Invalid or missing WALLETSERVER_URL environment variable.")
-    exit(1)
-
-wallet_name = os.getenv("WALLET_NAME")
-if not helpers.check_var(wallet_name):
-    print("Error: Invalid or missing WALLET_NAME environment variable.")
-    exit(1)
-
-wallet_passphrase = os.getenv("WALLET_PASSPHRASE")
-if not helpers.check_var(wallet_passphrase):
-    print("Error: Invalid or missing WALLET_PASSPHRASE environment variable.")
-    exit(1)
-
-# Help guide users against including api version suffix on url
-wallet_server_url = helpers.check_wallet_url(wallet_server_url)
+# Load gRPC Vega Node URL, this is set using 'source examples-config'
+# located in the root folder of the api repository
 
 # __import_client:
 import vegaapiclient as vac
-
-# Vega gRPC clients for reading/writing data
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
-wallet_client = vac.WalletClient(wallet_server_url)
 # :import_client__
 
-#####################################################################################
-#                           W A L L E T   S E R V I C E                             #
-#####################################################################################
+print(token)
 
-print(f"Logging into wallet: {wallet_name}")
-
-# __login_wallet:
-# Log in to an existing wallet
-response = wallet_client.login(wallet_name, wallet_passphrase)
-helpers.check_response(response)
-# Note: secret wallet token is stored internally for duration of session
-# :login_wallet__
-
-print("Logged in to wallet successfully")
-
-# __get_pubkey:
-# List key pairs and select public key to use
-response = wallet_client.listkeys()
-helpers.check_response(response)
-keys = response.json()["keys"]
-pubkey = keys[0]["pub"]
-# :get_pubkey__
-
-assert pubkey != ""
-print("Selected pubkey for signing")
-
-#####################################################################################
-#                            L I S T   P R O P O S A L S                            #
-#####################################################################################
+###############################################################################
+#                            L I S T   P R O P O S A L S                      #
+###############################################################################
 
 # __get_proposals:
 # Request a list of proposals on a Vega network
@@ -97,9 +53,9 @@ proposalID = proposals.data[0].proposal.id
 assert proposalID != ""
 print(f"Proposal found: {proposalID}")
 
-#####################################################################################
-#                         P R O P O S A L   D E T A I L S                           #
-#####################################################################################
+###############################################################################
+#                         P R O P O S A L   D E T A I L S                     #
+###############################################################################
 
 # __get_proposal_detail:
 # Request results of a specific proposal on a Vega network
@@ -108,9 +64,9 @@ proposal = data_client.GetProposalByID(request)
 print("Proposal:\n{}".format(proposal))
 # :get_proposal_detail__
 
-#####################################################################################
-#                          P A R T Y   P R O P O S A L S                            #
-#####################################################################################
+###############################################################################
+#                          P A R T Y   P R O P O S A L S                      #
+###############################################################################
 
 # __get_proposals_by_party:
 # Request a list of proposals for a party (pubkey) on a Vega network
