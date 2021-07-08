@@ -7,6 +7,8 @@ name: VerifyIssue
 
 "on":
   pull_request:
+    branches:
+      - '!vegaprotocol/api/renovate/**'
     types: [edited, synchronize, opened, reopened]
   check_run:
 
