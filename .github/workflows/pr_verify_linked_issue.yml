@@ -7,8 +7,6 @@ name: VerifyIssue
 
 "on":
   pull_request:
-    branches:
-      - '!vegaprotocol/api/renovate/**'
     types: [edited, synchronize, opened, reopened]
   check_run:
 
@@ -19,5 +17,6 @@ jobs:
     steps:
       - name: Verify Linked Issue
         uses: hattan/verify-linked-issue-action@95c0d0150d7e7687e45a76fbf0b0c6aa8daef288
+        if: startsWith(github.head_ref, 'renovate') == false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
