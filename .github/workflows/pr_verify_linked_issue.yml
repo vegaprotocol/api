@@ -12,11 +12,11 @@ name: VerifyIssue
 
 jobs:
   verify_linked_issue:
+    if: startsWith(github.head_ref, 'renovate/') != true
     runs-on: ubuntu-latest
     name: Ensure Pull Request has a linked issue.
     steps:
       - name: Verify Linked Issue
         uses: hattan/verify-linked-issue-action@95c0d0150d7e7687e45a76fbf0b0c6aa8daef288
-        if: startsWith(github.head_ref, 'renovate') == false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
