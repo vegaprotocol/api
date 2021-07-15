@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Add new issues to Core Current Sprint project
     steps:
-      - uses: alex-page/github-project-automation-plus@50502d399cbb98cefe7ce1f99f93f78c6756562e
+      - uses: alex-page/github-project-automation-plus@f1ec7354e5be4f3e61eb052ca3caf4b7ce62c29a
         with:
           project: Core (Team Board)
           column: Incoming to triage
