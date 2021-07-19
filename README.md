@@ -1,6 +1,6 @@
 # Vega API
 
-Version: 0.39.0
+Version: 0.40.0
 
 This repository contains everything you need for interacting with the Vega APIs.
 

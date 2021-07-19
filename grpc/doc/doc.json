@@ -2007,6 +2007,11 @@
               "name": "ACCOUNT_TYPE_EXTERNAL",
               "number": "10",
               "description": "External account represents an external source (deposit/withdrawal)"
+            },
+            {
+              "name": "ACCOUNT_TYPE_GLOBAL_INSURANCE",
+              "number": "11",
+              "description": "Global insurance account for the asset"
             }
           ]
         },

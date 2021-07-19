@@ -1955,6 +1955,7 @@ export interface AccountTypeMap {
   ACCOUNT_TYPE_LOCK_WITHDRAW: 8;
   ACCOUNT_TYPE_BOND: 9;
   ACCOUNT_TYPE_EXTERNAL: 10;
+  ACCOUNT_TYPE_GLOBAL_INSURANCE: 11;
 }
 
 export const AccountType: AccountTypeMap;
