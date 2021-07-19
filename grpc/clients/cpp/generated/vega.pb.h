@@ -670,12 +670,13 @@ enum AccountType : int {
   ACCOUNT_TYPE_LOCK_WITHDRAW = 8,
   ACCOUNT_TYPE_BOND = 9,
   ACCOUNT_TYPE_EXTERNAL = 10,
+  ACCOUNT_TYPE_GLOBAL_INSURANCE = 11,
   AccountType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   AccountType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool AccountType_IsValid(int value);
 constexpr AccountType AccountType_MIN = ACCOUNT_TYPE_UNSPECIFIED;
-constexpr AccountType AccountType_MAX = ACCOUNT_TYPE_EXTERNAL;
+constexpr AccountType AccountType_MAX = ACCOUNT_TYPE_GLOBAL_INSURANCE;
 constexpr int AccountType_ARRAYSIZE = AccountType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AccountType_descriptor();

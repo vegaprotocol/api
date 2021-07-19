@@ -28,6 +28,8 @@ export type Account = {
 export enum AccountType {
   /** Insurance pool account - only for 'system' party */
   Insurance = 'Insurance',
+  /** Global insurance pool account for an asset */
+  GlobalInsurance = 'GlobalInsurance',
   /** Settlement - only for 'system' party */
   Settlement = 'Settlement',
   /** Margin - The leverage account for traders */

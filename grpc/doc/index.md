@@ -1996,6 +1996,7 @@ General accounts are where funds are initially deposited or withdrawn from, it i
 | ACCOUNT_TYPE_LOCK_WITHDRAW | 8 | This account is created to lock funds to be withdrawn by parties |
 | ACCOUNT_TYPE_BOND | 9 | This account is created to maintain liquidity providers funds commitments |
 | ACCOUNT_TYPE_EXTERNAL | 10 | External account represents an external source (deposit/withdrawal) |
+| ACCOUNT_TYPE_GLOBAL_INSURANCE | 11 | Global insurance account for the asset |
 
 
 

@@ -1019,7 +1019,7 @@
 <td id="L6" class="td-index">6</td>
 <td id="LC6" class="td-code">
 <span class="tab">
-<span class="comment line">#   Settlement - only for 'system' party</span>
+<span class="comment line">#   Global insurance pool account for an asset</span>
 </span>
 </td>
 </tr>
@@ -1027,7 +1027,7 @@
 <td id="L7" class="td-index">7</td>
 <td id="LC7" class="td-code">
 <span class="tab">
-<span class="meta">Settlement</span>
+<span class="meta">GlobalInsurance</span>
 </span>
 </td>
 </tr>
@@ -1042,7 +1042,7 @@
 <td id="L9" class="td-index">9</td>
 <td id="LC9" class="td-code">
 <span class="tab">
-<span class="comment line">#   Margin - The leverage account for traders</span>
+<span class="comment line">#   Settlement - only for 'system' party</span>
 </span>
 </td>
 </tr>
@@ -1050,7 +1050,7 @@
 <td id="L10" class="td-index">10</td>
 <td id="LC10" class="td-code">
 <span class="tab">
-<span class="meta">Margin</span>
+<span class="meta">Settlement</span>
 </span>
 </td>
 </tr>
@@ -1065,7 +1065,7 @@
 <td id="L12" class="td-index">12</td>
 <td id="LC12" class="td-code">
 <span class="tab">
-<span class="comment line">#   General account - the account containing 'unused' collateral for traders</span>
+<span class="comment line">#   Margin - The leverage account for traders</span>
 </span>
 </td>
 </tr>
@@ -1073,7 +1073,7 @@
 <td id="L13" class="td-index">13</td>
 <td id="LC13" class="td-code">
 <span class="tab">
-<span class="meta">General</span>
+<span class="meta">Margin</span>
 </span>
 </td>
 </tr>
@@ -1088,7 +1088,7 @@
 <td id="L15" class="td-index">15</td>
 <td id="LC15" class="td-code">
 <span class="tab">
-<span class="comment line">#   Infrastructure fee account - the account where all infrastructure fees are </span>
+<span class="comment line">#   General account - the account containing 'unused' collateral for traders</span>
 </span>
 </td>
 </tr>
@@ -1096,7 +1096,7 @@
 <td id="L16" class="td-index">16</td>
 <td id="LC16" class="td-code">
 <span class="tab">
-<span class="comment line">#   collected</span>
+<span class="meta">General</span>
 </span>
 </td>
 </tr>
@@ -1104,7 +1104,6 @@
 <td id="L17" class="td-index">17</td>
 <td id="LC17" class="td-code">
 <span class="tab">
-<span class="meta">FeeInfrastructure</span>
 </span>
 </td>
 </tr>
@@ -1112,6 +1111,7 @@
 <td id="L18" class="td-index">18</td>
 <td id="LC18" class="td-code">
 <span class="tab">
+<span class="comment line">#   Infrastructure fee account - the account where all infrastructure fees are </span>
 </span>
 </td>
 </tr>
@@ -1119,7 +1119,7 @@
 <td id="L19" class="td-index">19</td>
 <td id="LC19" class="td-code">
 <span class="tab">
-<span class="comment line">#   Liquidity fee account - the account where all infrastructure fees are collected</span>
+<span class="comment line">#   collected</span>
 </span>
 </td>
 </tr>
@@ -1127,7 +1127,7 @@
 <td id="L20" class="td-index">20</td>
 <td id="LC20" class="td-code">
 <span class="tab">
-<span class="meta">FeeLiquidity</span>
+<span class="meta">FeeInfrastructure</span>
 </span>
 </td>
 </tr>
@@ -1142,7 +1142,7 @@
 <td id="L22" class="td-index">22</td>
 <td id="LC22" class="td-code">
 <span class="tab">
-<span class="comment line">#   LockWithdraw - and account use for party in the process of withdrawing funds</span>
+<span class="comment line">#   Liquidity fee account - the account where all infrastructure fees are collected</span>
 </span>
 </td>
 </tr>
@@ -1150,7 +1150,7 @@
 <td id="L23" class="td-index">23</td>
 <td id="LC23" class="td-code">
 <span class="tab">
-<span class="meta">LockWithdraw</span>
+<span class="meta">FeeLiquidity</span>
 </span>
 </td>
 </tr>
@@ -1165,7 +1165,7 @@
 <td id="L25" class="td-index">25</td>
 <td id="LC25" class="td-code">
 <span class="tab">
-<span class="comment line">#   Bond - an account use to maintain MM commitments</span>
+<span class="comment line">#   LockWithdraw - and account use for party in the process of withdrawing funds</span>
 </span>
 </td>
 </tr>
@@ -1173,13 +1173,36 @@
 <td id="L26" class="td-index">26</td>
 <td id="LC26" class="td-code">
 <span class="tab">
-<span class="meta">Bond</span>
+<span class="meta">LockWithdraw</span>
 </span>
 </td>
 </tr>
 <tr class="row">
 <td id="L27" class="td-index">27</td>
-<td id="LC27" class="td-code">}</td>
+<td id="LC27" class="td-code">
+<span class="tab">
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L28" class="td-index">28</td>
+<td id="LC28" class="td-code">
+<span class="tab">
+<span class="comment line">#   Bond - an account use to maintain MM commitments</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L29" class="td-index">29</td>
+<td id="LC29" class="td-code">
+<span class="tab">
+<span class="meta">Bond</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L30" class="td-index">30</td>
+<td id="LC30" class="td-code">}</td>
 </tr>
 </tbody>
 </table>
