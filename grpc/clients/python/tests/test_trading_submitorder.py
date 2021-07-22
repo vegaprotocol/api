@@ -41,7 +41,7 @@ def test_SubmitOrder(
     # Either: Prepare the SubmitOrder using the Vega node
     # blob = trading.PrepareSubmitOrder(request, contact_node=True).blob
     # Or: Prepare the SubmitOrder ourselves
-    blob = trading.PrepareSubmitOrder(request, contact_node=False).blob
+    blob = trading.PrepareSubmitOrder(request).blob
 
     # Sign the tx
     r = walletclient.signtx(
