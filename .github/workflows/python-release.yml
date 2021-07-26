@@ -1,0 +1,57 @@
+---
+
+name: Python
+
+"on":
+  push:
+    branches:
+      - develop
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"  # release
+      - "v[0-9]+.[0-9]+.[0-9]+-a[0-9]+"  # alpha
+      - "v[0-9]+.[0-9]+.[0-9]+-pre[0-9]+" # pre-release / rc
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8"]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Push release to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          twine_test_password: ${{ secrets.TWINE_TEST_PASSWORD }}
+          twine_prod_password: ${{ secrets.TWINE_PASSWORD }}
+        run: |
+          cd grpc/clients/python
+          github_tag="${GITHUB_REF#refs/tags/v}"
+          if [[ "$v" =~ ^v[0-9]+.[0-9]+.[0-9]+-a[0-9]+$ ]] ; then
+            echo "This is an alpha release."
+            # Inject the version, rather than requiring it in setup.py.
+            sed --in-place -e 's#^VERSION.*$#VERSION = "'"$github_tag"'"#' setup.py
+            make_target=dist_test
+            export TWINE_PASSWORD="$twine_test_password"
+          else
+            echo "This is a (pre)release."
+            setuppy_tag="$(python -c "$(awk '/^VERSION = /' setup.py); print(VERSION)")"
+            make_target=dist
+            export TWINE_PASSWORD="$twine_prod_password"
+          fi
+          if [[ "$github_tag" != "$setuppy_tag" ]] ; then
+            echo "Tags do not match."
+            echo "Github:   $github_tag"
+            echo "setup.py: $setuppy_tag"
+            exit 1
+          fi
+          command -v twine 1>/dev/null || pip install twine
+          make "$make_target"
