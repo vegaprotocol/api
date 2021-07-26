@@ -2513,17 +2513,24 @@ anymore.</p></td>
                 </tr>
 
                 <tr>
-                  <td>oracle_spec</td>
+                  <td>oracle_spec_for_settlement_price</td>
                   <td><a href="#oracles.v1.OracleSpec">oracles.v1.OracleSpec</a></td>
                   <td></td>
-                  <td><p>The oracle spec describing the oracle data of interest </p></td>
+                  <td><p>The oracle spec describing the settlement price oracle filter </p></td>
+                </tr>
+
+                <tr>
+                  <td>oracle_spec_for_trading_termination</td>
+                  <td><a href="#oracles.v1.OracleSpec">oracles.v1.OracleSpec</a></td>
+                  <td></td>
+                  <td><p>the oracle spec describing the trading termination oracle filter </p></td>
                 </tr>
 
                 <tr>
                   <td>oracle_spec_binding</td>
                   <td><a href="#vega.OracleSpecToFutureBinding">OracleSpecToFutureBinding</a></td>
                   <td></td>
-                  <td><p>The binding between the oracle spec and the settlement price </p></td>
+                  <td><p>The binding between the oracle spec and the oracle data </p></td>
                 </tr>
 
             </tbody>
@@ -2926,7 +2933,7 @@ duration and optionally a minimum traded volume) </p></td>
 
 
         <h3 id="vega.OracleSpecToFutureBinding">OracleSpecToFutureBinding</h3>
-        <p>OracleSpecToFutureBinding tells on which property oracle data should be</p><p>used as settlement price.</p>
+        <p>OracleSpecToFutureBinding tells on which property oracle data should be</p><p>used as settlement price and which to use the trading terminated trigger</p>
 
 
           <table class="field-table">
@@ -2943,6 +2950,13 @@ duration and optionally a minimum traded volume) </p></td>
 that should be used as settlement price.
 If it is set to &#34;prices.BTC.value&#34;, then the Future will use the value of
 this property as settlement price. </p></td>
+                </tr>
+
+                <tr>
+                  <td>trading_termination_property</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>the name of the property in the oracle data that signals termination of trading </p></td>
                 </tr>
 
             </tbody>
@@ -6180,7 +6194,7 @@ it is also the account where funds are taken to fulfil fees and initial margin r
                 <td>ACCOUNT_TYPE_FEES_MAKER</td>
                 <td>7</td>
                 <td><p>This account is created to hold fees earned by placing orders that sit on the book
-and are then matched with an incoming order to create a trade - These fees reward traders
+and are then matched with an incoming order to create a trade - These fees reward parties
 who provide the best priced liquidity that actually allows trading to take place</p></td>
               </tr>
 
@@ -6577,7 +6591,7 @@ margin check fails, then they will be cancelled without any penalties.</p></td>
               <tr>
                 <td>TYPE_NETWORK</td>
                 <td>3</td>
-                <td><p>Used for orders where the initiating party is the network (with distressed traders)</p></td>
+                <td><p>Used for orders where the initiating party is the network (with distressed parties)</p></td>
               </tr>
 
           </tbody>
@@ -7362,10 +7376,17 @@ Vega network and are unlocked on the foreign chain bridge, for example, on the E
                 </tr>
 
                 <tr>
-                  <td>oracle_spec</td>
+                  <td>oracle_spec_for_settlement_price</td>
                   <td><a href="#oracles.v1.OracleSpecConfiguration">oracles.v1.OracleSpecConfiguration</a></td>
                   <td></td>
-                  <td><p>The oracle spec describing the oracle data of interest </p></td>
+                  <td><p>The oracle spec describing the oracle data of settlement price </p></td>
+                </tr>
+
+                <tr>
+                  <td>oracle_spec_for_trading_termination</td>
+                  <td><a href="#oracles.v1.OracleSpecConfiguration">oracles.v1.OracleSpecConfiguration</a></td>
+                  <td></td>
+                  <td><p>The oracle spec describing the oracle data of trading termination </p></td>
                 </tr>
 
                 <tr>

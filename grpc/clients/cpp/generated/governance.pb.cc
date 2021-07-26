@@ -315,7 +315,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_governance_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, maturity_),
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, settlement_asset_),
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, quote_name_),
-  PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, oracle_spec_),
+  PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, oracle_spec_for_settlement_price_),
+  PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, oracle_spec_for_trading_termination_),
   PROTOBUF_FIELD_OFFSET(::vega::FutureProduct, oracle_spec_binding_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::InstrumentConfiguration, _internal_metadata_),
@@ -444,19 +445,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_governance_2eproto::offsets[] 
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::FutureProduct)},
-  { 10, -1, sizeof(::vega::InstrumentConfiguration)},
-  { 19, -1, sizeof(::vega::NewMarketConfiguration)},
-  { 35, -1, sizeof(::vega::NewMarketCommitment)},
-  { 45, -1, sizeof(::vega::NewMarket)},
-  { 52, -1, sizeof(::vega::UpdateMarket)},
-  { 57, -1, sizeof(::vega::UpdateNetworkParameter)},
-  { 63, -1, sizeof(::vega::NewAsset)},
-  { 69, -1, sizeof(::vega::ProposalTerms)},
-  { 82, 89, sizeof(::vega::GovernanceData_YesPartyEntry_DoNotUse)},
-  { 91, 98, sizeof(::vega::GovernanceData_NoPartyEntry_DoNotUse)},
-  { 100, -1, sizeof(::vega::GovernanceData)},
-  { 110, -1, sizeof(::vega::Proposal)},
-  { 123, -1, sizeof(::vega::Vote)},
+  { 11, -1, sizeof(::vega::InstrumentConfiguration)},
+  { 20, -1, sizeof(::vega::NewMarketConfiguration)},
+  { 36, -1, sizeof(::vega::NewMarketCommitment)},
+  { 46, -1, sizeof(::vega::NewMarket)},
+  { 53, -1, sizeof(::vega::UpdateMarket)},
+  { 58, -1, sizeof(::vega::UpdateNetworkParameter)},
+  { 64, -1, sizeof(::vega::NewAsset)},
+  { 70, -1, sizeof(::vega::ProposalTerms)},
+  { 83, 90, sizeof(::vega::GovernanceData_YesPartyEntry_DoNotUse)},
+  { 92, 99, sizeof(::vega::GovernanceData_NoPartyEntry_DoNotUse)},
+  { 101, -1, sizeof(::vega::GovernanceData)},
+  { 111, -1, sizeof(::vega::Proposal)},
+  { 124, -1, sizeof(::vega::Vote)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -480,129 +481,133 @@ const char descriptor_table_protodef_governance_2eproto[] PROTOBUF_SECTION_VARIA
   "\n\020governance.proto\022\004vega\0326github.com/mwi"
   "tkow/go-proto-validators/validator.proto"
   "\032\rmarkets.proto\032\nvega.proto\032\014assets.prot"
-  "o\032\025oracles/v1/spec.proto\"\244\002\n\rFutureProdu"
+  "o\032\025oracles/v1/spec.proto\"\276\003\n\rFutureProdu"
   "ct\022\"\n\010maturity\030\001 \001(\tB\006\342\337\037\002X\001R\010maturity\0221"
   "\n\020settlement_asset\030\002 \001(\tB\006\342\337\037\002X\001R\017settle"
   "mentAsset\022%\n\nquote_name\030\003 \001(\tB\006\342\337\037\002X\001R\tq"
-  "uoteName\022D\n\013oracle_spec\030\005 \001(\0132#.oracles."
-  "v1.OracleSpecConfigurationR\noracleSpec\022O"
-  "\n\023oracle_spec_binding\030\006 \001(\0132\037.vega.Oracl"
-  "eSpecToFutureBindingR\021oracleSpecBinding\""
-  "\213\001\n\027InstrumentConfiguration\022\032\n\004name\030\001 \001("
-  "\tB\006\342\337\037\002X\001R\004name\022\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004c"
-  "ode\022-\n\006future\030d \001(\0132\023.vega.FutureProduct"
-  "H\000R\006futureB\t\n\007product\"\374\004\n\026NewMarketConfi"
-  "guration\022E\n\ninstrument\030\001 \001(\0132\035.vega.Inst"
-  "rumentConfigurationB\006\342\337\037\002 \001R\ninstrument\022"
-  ".\n\016decimal_places\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecima"
-  "lPlaces\022\032\n\010metadata\030\003 \003(\tR\010metadata\022_\n\033p"
-  "rice_monitoring_parameters\030\004 \001(\0132\037.vega."
-  "PriceMonitoringParametersR\031priceMonitori"
-  "ngParameters\022k\n\037liquidity_monitoring_par"
-  "ameters\030\005 \001(\0132#.vega.LiquidityMonitoring"
-  "ParametersR\035liquidityMonitoringParameter"
-  "s\0221\n\006simple\030d \001(\0132\027.vega.SimpleModelPara"
-  "msH\000R\006simple\0229\n\nlog_normal\030e \001(\0132\030.vega."
-  "LogNormalRiskModelH\000R\tlogNormal\022:\n\nconti"
-  "nuous\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001R"
-  "\ncontinuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Di"
-  "screteTradingH\001R\010discreteB\021\n\017risk_parame"
-  "tersB\016\n\014trading_mode\"\310\001\n\023NewMarketCommit"
-  "ment\022+\n\021commitment_amount\030\001 \001(\004R\020commitm"
-  "entAmount\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003"
-  "(\0132\024.vega.LiquidityOrderR\005sells\022(\n\004buys\030"
-  "\004 \003(\0132\024.vega.LiquidityOrderR\004buys\022\034\n\tref"
-  "erence\030\005 \001(\tR\treference\"\231\001\n\tNewMarket\022>\n"
-  "\007changes\030\001 \001(\0132\034.vega.NewMarketConfigura"
-  "tionB\006\342\337\037\002 \001R\007changes\022L\n\024liquidity_commi"
-  "tment\030\002 \001(\0132\031.vega.NewMarketCommitmentR\023"
-  "liquidityCommitment\"\016\n\014UpdateMarket\"R\n\026U"
-  "pdateNetworkParameter\0228\n\007changes\030\001 \001(\0132\026"
-  ".vega.NetworkParameterB\006\342\337\037\002 \001R\007changes\""
-  "@\n\010NewAsset\0224\n\007changes\030\001 \001(\0132\022.vega.Asse"
-  "tDetailsB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProposalTe"
-  "rms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020"
-  "closingTimestamp\0227\n\023enactment_timestamp\030"
-  "\002 \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\0221\n\024val"
-  "idation_timestamp\030\003 \001(\003R\023validationTimes"
-  "tamp\0229\n\rupdate_market\030e \001(\0132\022.vega.Updat"
-  "eMarketH\000R\014updateMarket\0220\n\nnew_market\030f "
-  "\001(\0132\017.vega.NewMarketH\000R\tnewMarket\022X\n\030upd"
-  "ate_network_parameter\030g \001(\0132\034.vega.Updat"
-  "eNetworkParameterH\000R\026updateNetworkParame"
-  "ter\022-\n\tnew_asset\030h \001(\0132\016.vega.NewAssetH\000"
-  "R\010newAssetB\010\n\006change\"\206\003\n\016GovernanceData\022"
-  "*\n\010proposal\030\001 \001(\0132\016.vega.ProposalR\010propo"
-  "sal\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030"
-  "\003 \003(\0132\n.vega.VoteR\002no\022\?\n\tyes_party\030\004 \003(\013"
-  "2\".vega.GovernanceData.YesPartyEntryR\010ye"
-  "sParty\022<\n\010no_party\030\005 \003(\0132!.vega.Governan"
-  "ceData.NoPartyEntryR\007noParty\032G\n\rYesParty"
-  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n"
-  ".vega.VoteR\005value:\0028\001\032F\n\014NoPartyEntry\022\020\n"
-  "\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.Vo"
-  "teR\005value:\0028\001\"\344\003\n\010Proposal\022\016\n\002id\030\001 \001(\tR\002"
-  "id\022\034\n\treference\030\002 \001(\tR\treference\022!\n\010part"
-  "y_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005state\030\004 \001"
-  "(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R\005state"
-  "\022\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005terms\030"
-  "\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005term"
-  "s\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalErrorR\006"
-  "reason\022#\n\rerror_details\030\010 \001(\tR\014errorDeta"
-  "ils\"\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014"
-  "STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_"
-  "PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DE"
-  "CLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAI"
-  "TING_FOR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!\n\010party_i"
-  "d\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005value\030\002 \001(\0162"
-  "\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013pro"
-  "posal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\tti"
-  "mestamp\030\004 \001(\003R\ttimestamp\022C\n\036total_govern"
-  "ance_token_balance\030\005 \001(\004R\033totalGovernanc"
-  "eTokenBalance\022A\n\035total_governance_token_"
-  "weight\030\006 \001(\tR\032totalGovernanceTokenWeight"
-  "\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALU"
-  "E_NO\020\001\022\r\n\tVALUE_YES\020\002*\375\013\n\rProposalError\022"
-  "\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPO"
-  "SAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPO"
-  "SAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPO"
-  "SAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPO"
-  "SAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPO"
-  "SAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPO"
-  "SAL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006\022"
-  "\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOS"
-  "AL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOS"
-  "AL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAM"
-  "P\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_I"
-  "S_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_"
-  "MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRA"
-  "DING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALID"
-  "ATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING"
-  "_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR"
-  "_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PRO"
-  "POSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_"
-  "ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPO"
-  "SAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOS"
-  "AL_ERROR_NETWORK_PARAMETER_INVALID_KEY\020\023"
-  "\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER_INV"
-  "ALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_P"
-  "ARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL"
-  "_ERROR_OPENING_AUCTION_DURATION_TOO_SMAL"
-  "L\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_DU"
-  "RATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MAR"
-  "KET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PR"
-  "OPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKE"
-  "T\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRO"
-  "DUCT\020\032\022,\n(PROPOSAL_ERROR_MISSING_COMMITM"
-  "ENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_F"
-  "EE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SH"
-  "APE\020\035\022)\n%PROPOSAL_ERROR_INVALID_RISK_PAR"
-  "AMETER\020\036\0221\n-PROPOSAL_ERROR_MAJORITY_THRE"
-  "SHOLD_NOT_REACHED\020\037\0226\n2PROPOSAL_ERROR_PA"
-  "RTICIPATION_THRESHOLD_NOT_REACHED\020 \022(\n$P"
-  "ROPOSAL_ERROR_INVALID_ASSET_DETAILS\020!B7\n"
-  "\024io.vegaprotocol.vegaZ\037code.vegaprotocol"
-  ".io/vega/protob\006proto3"
+  "uoteName\022k\n oracle_spec_for_settlement_p"
+  "rice\030\005 \001(\0132#.oracles.v1.OracleSpecConfig"
+  "urationR\034oracleSpecForSettlementPrice\022q\n"
+  "#oracle_spec_for_trading_termination\030\006 \001"
+  "(\0132#.oracles.v1.OracleSpecConfigurationR"
+  "\037oracleSpecForTradingTermination\022O\n\023orac"
+  "le_spec_binding\030\007 \001(\0132\037.vega.OracleSpecT"
+  "oFutureBindingR\021oracleSpecBinding\"\213\001\n\027In"
+  "strumentConfiguration\022\032\n\004name\030\001 \001(\tB\006\342\337\037"
+  "\002X\001R\004name\022\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004code\022-\n"
+  "\006future\030d \001(\0132\023.vega.FutureProductH\000R\006fu"
+  "tureB\t\n\007product\"\374\004\n\026NewMarketConfigurati"
+  "on\022E\n\ninstrument\030\001 \001(\0132\035.vega.Instrument"
+  "ConfigurationB\006\342\337\037\002 \001R\ninstrument\022.\n\016dec"
+  "imal_places\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecimalPlace"
+  "s\022\032\n\010metadata\030\003 \003(\tR\010metadata\022_\n\033price_m"
+  "onitoring_parameters\030\004 \001(\0132\037.vega.PriceM"
+  "onitoringParametersR\031priceMonitoringPara"
+  "meters\022k\n\037liquidity_monitoring_parameter"
+  "s\030\005 \001(\0132#.vega.LiquidityMonitoringParame"
+  "tersR\035liquidityMonitoringParameters\0221\n\006s"
+  "imple\030d \001(\0132\027.vega.SimpleModelParamsH\000R\006"
+  "simple\0229\n\nlog_normal\030e \001(\0132\030.vega.LogNor"
+  "malRiskModelH\000R\tlogNormal\022:\n\ncontinuous\030"
+  "\310\001 \001(\0132\027.vega.ContinuousTradingH\001R\nconti"
+  "nuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Discrete"
+  "TradingH\001R\010discreteB\021\n\017risk_parametersB\016"
+  "\n\014trading_mode\"\310\001\n\023NewMarketCommitment\022+"
+  "\n\021commitment_amount\030\001 \001(\004R\020commitmentAmo"
+  "unt\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003(\0132\024.v"
+  "ega.LiquidityOrderR\005sells\022(\n\004buys\030\004 \003(\0132"
+  "\024.vega.LiquidityOrderR\004buys\022\034\n\treference"
+  "\030\005 \001(\tR\treference\"\231\001\n\tNewMarket\022>\n\007chang"
+  "es\030\001 \001(\0132\034.vega.NewMarketConfigurationB\006"
+  "\342\337\037\002 \001R\007changes\022L\n\024liquidity_commitment\030"
+  "\002 \001(\0132\031.vega.NewMarketCommitmentR\023liquid"
+  "ityCommitment\"\016\n\014UpdateMarket\"R\n\026UpdateN"
+  "etworkParameter\0228\n\007changes\030\001 \001(\0132\026.vega."
+  "NetworkParameterB\006\342\337\037\002 \001R\007changes\"@\n\010New"
+  "Asset\0224\n\007changes\030\001 \001(\0132\022.vega.AssetDetai"
+  "lsB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProposalTerms\0223\n"
+  "\021closing_timestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020closin"
+  "gTimestamp\0227\n\023enactment_timestamp\030\002 \001(\003B"
+  "\006\342\337\037\002\020\000R\022enactmentTimestamp\0221\n\024validatio"
+  "n_timestamp\030\003 \001(\003R\023validationTimestamp\0229"
+  "\n\rupdate_market\030e \001(\0132\022.vega.UpdateMarke"
+  "tH\000R\014updateMarket\0220\n\nnew_market\030f \001(\0132\017."
+  "vega.NewMarketH\000R\tnewMarket\022X\n\030update_ne"
+  "twork_parameter\030g \001(\0132\034.vega.UpdateNetwo"
+  "rkParameterH\000R\026updateNetworkParameter\022-\n"
+  "\tnew_asset\030h \001(\0132\016.vega.NewAssetH\000R\010newA"
+  "ssetB\010\n\006change\"\206\003\n\016GovernanceData\022*\n\010pro"
+  "posal\030\001 \001(\0132\016.vega.ProposalR\010proposal\022\034\n"
+  "\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030\003 \003(\0132"
+  "\n.vega.VoteR\002no\022\?\n\tyes_party\030\004 \003(\0132\".veg"
+  "a.GovernanceData.YesPartyEntryR\010yesParty"
+  "\022<\n\010no_party\030\005 \003(\0132!.vega.GovernanceData"
+  ".NoPartyEntryR\007noParty\032G\n\rYesPartyEntry\022"
+  "\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega."
+  "VoteR\005value:\0028\001\032F\n\014NoPartyEntry\022\020\n\003key\030\001"
+  " \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.VoteR\005va"
+  "lue:\0028\001\"\344\003\n\010Proposal\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\t"
+  "reference\030\002 \001(\tR\treference\022!\n\010party_id\030\003"
+  " \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005state\030\004 \001(\0162\024.v"
+  "ega.Proposal.StateB\007\342\337\037\003\210\001\001R\005state\022\034\n\tti"
+  "mestamp\030\005 \001(\003R\ttimestamp\0221\n\005terms\030\006 \001(\0132"
+  "\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005terms\022+\n\006r"
+  "eason\030\007 \001(\0162\023.vega.ProposalErrorR\006reason"
+  "\022#\n\rerror_details\030\010 \001(\tR\014errorDetails\"\256\001"
+  "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014STATE_"
+  "FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_PASSED"
+  "\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DECLINED"
+  "\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAITING_F"
+  "OR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!\n\010party_id\030\001 \001("
+  "\tB\006\342\337\037\002X\001R\007partyId\022/\n\005value\030\002 \001(\0162\020.vega"
+  ".Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013proposal_"
+  "id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\ttimestam"
+  "p\030\004 \001(\003R\ttimestamp\022C\n\036total_governance_t"
+  "oken_balance\030\005 \001(\004R\033totalGovernanceToken"
+  "Balance\022A\n\035total_governance_token_weight"
+  "\030\006 \001(\tR\032totalGovernanceTokenWeight\";\n\005Va"
+  "lue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001"
+  "\022\r\n\tVALUE_YES\020\002*\375\013\n\rProposalError\022\036\n\032PRO"
+  "POSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ER"
+  "ROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ER"
+  "ROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ER"
+  "ROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ER"
+  "ROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ER"
+  "ROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ER"
+  "ROR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PRO"
+  "POSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERR"
+  "OR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERR"
+  "OR_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n"
+  ")PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASS"
+  "ED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013"
+  "\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_M"
+  "ODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_"
+  "FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILT"
+  "IN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSI"
+  "NG_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_"
+  "ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_"
+  "INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ER"
+  "ROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERR"
+  "OR_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PR"
+  "OPOSAL_ERROR_NETWORK_PARAMETER_INVALID_V"
+  "ALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMET"
+  "ER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR"
+  "_OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n"
+  "1PROPOSAL_ERROR_OPENING_AUCTION_DURATION"
+  "_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MI"
+  "SSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL"
+  "_ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031\022)\n"
+  "%PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032"
+  "\022,\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AM"
+  "OUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_AMO"
+  "UNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035\022"
+  ")\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER"
+  "\020\036\0221\n-PROPOSAL_ERROR_MAJORITY_THRESHOLD_"
+  "NOT_REACHED\020\037\0226\n2PROPOSAL_ERROR_PARTICIP"
+  "ATION_THRESHOLD_NOT_REACHED\020 \022(\n$PROPOSA"
+  "L_ERROR_INVALID_ASSET_DETAILS\020!B7\n\024io.ve"
+  "gaprotocol.vegaZ\037code.vegaprotocol.io/ve"
+  "ga/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_governance_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
@@ -629,7 +634,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gov
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_governance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_governance_2eproto = {
-  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 5022,
+  false, false, descriptor_table_protodef_governance_2eproto, "governance.proto", 5176,
   &descriptor_table_governance_2eproto_once, descriptor_table_governance_2eproto_sccs, descriptor_table_governance_2eproto_deps, 14, 5,
   schemas, file_default_instances, TableStruct_governance_2eproto::offsets,
   file_level_metadata_governance_2eproto, 14, file_level_enum_descriptors_governance_2eproto, file_level_service_descriptors_governance_2eproto,
@@ -745,23 +750,34 @@ bool ProposalError_IsValid(int value) {
 
 class FutureProduct::_Internal {
  public:
-  static const ::oracles::v1::OracleSpecConfiguration& oracle_spec(const FutureProduct* msg);
+  static const ::oracles::v1::OracleSpecConfiguration& oracle_spec_for_settlement_price(const FutureProduct* msg);
+  static const ::oracles::v1::OracleSpecConfiguration& oracle_spec_for_trading_termination(const FutureProduct* msg);
   static const ::vega::OracleSpecToFutureBinding& oracle_spec_binding(const FutureProduct* msg);
 };
 
 const ::oracles::v1::OracleSpecConfiguration&
-FutureProduct::_Internal::oracle_spec(const FutureProduct* msg) {
-  return *msg->oracle_spec_;
+FutureProduct::_Internal::oracle_spec_for_settlement_price(const FutureProduct* msg) {
+  return *msg->oracle_spec_for_settlement_price_;
+}
+const ::oracles::v1::OracleSpecConfiguration&
+FutureProduct::_Internal::oracle_spec_for_trading_termination(const FutureProduct* msg) {
+  return *msg->oracle_spec_for_trading_termination_;
 }
 const ::vega::OracleSpecToFutureBinding&
 FutureProduct::_Internal::oracle_spec_binding(const FutureProduct* msg) {
   return *msg->oracle_spec_binding_;
 }
-void FutureProduct::clear_oracle_spec() {
-  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
-    delete oracle_spec_;
+void FutureProduct::clear_oracle_spec_for_settlement_price() {
+  if (GetArena() == nullptr && oracle_spec_for_settlement_price_ != nullptr) {
+    delete oracle_spec_for_settlement_price_;
   }
-  oracle_spec_ = nullptr;
+  oracle_spec_for_settlement_price_ = nullptr;
+}
+void FutureProduct::clear_oracle_spec_for_trading_termination() {
+  if (GetArena() == nullptr && oracle_spec_for_trading_termination_ != nullptr) {
+    delete oracle_spec_for_trading_termination_;
+  }
+  oracle_spec_for_trading_termination_ = nullptr;
 }
 void FutureProduct::clear_oracle_spec_binding() {
   if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
@@ -793,10 +809,15 @@ FutureProduct::FutureProduct(const FutureProduct& from)
     quote_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_quote_name(),
       GetArena());
   }
-  if (from._internal_has_oracle_spec()) {
-    oracle_spec_ = new ::oracles::v1::OracleSpecConfiguration(*from.oracle_spec_);
+  if (from._internal_has_oracle_spec_for_settlement_price()) {
+    oracle_spec_for_settlement_price_ = new ::oracles::v1::OracleSpecConfiguration(*from.oracle_spec_for_settlement_price_);
   } else {
-    oracle_spec_ = nullptr;
+    oracle_spec_for_settlement_price_ = nullptr;
+  }
+  if (from._internal_has_oracle_spec_for_trading_termination()) {
+    oracle_spec_for_trading_termination_ = new ::oracles::v1::OracleSpecConfiguration(*from.oracle_spec_for_trading_termination_);
+  } else {
+    oracle_spec_for_trading_termination_ = nullptr;
   }
   if (from._internal_has_oracle_spec_binding()) {
     oracle_spec_binding_ = new ::vega::OracleSpecToFutureBinding(*from.oracle_spec_binding_);
@@ -812,9 +833,9 @@ void FutureProduct::SharedCtor() {
   settlement_asset_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quote_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&oracle_spec_) - reinterpret_cast<char*>(this)),
+      reinterpret_cast<char*>(&oracle_spec_for_settlement_price_) - reinterpret_cast<char*>(this)),
       0, static_cast<size_t>(reinterpret_cast<char*>(&oracle_spec_binding_) -
-      reinterpret_cast<char*>(&oracle_spec_)) + sizeof(oracle_spec_binding_));
+      reinterpret_cast<char*>(&oracle_spec_for_settlement_price_)) + sizeof(oracle_spec_binding_));
 }
 
 FutureProduct::~FutureProduct() {
@@ -828,7 +849,8 @@ void FutureProduct::SharedDtor() {
   maturity_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   settlement_asset_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   quote_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete oracle_spec_;
+  if (this != internal_default_instance()) delete oracle_spec_for_settlement_price_;
+  if (this != internal_default_instance()) delete oracle_spec_for_trading_termination_;
   if (this != internal_default_instance()) delete oracle_spec_binding_;
 }
 
@@ -856,10 +878,14 @@ void FutureProduct::Clear() {
   maturity_.ClearToEmpty();
   settlement_asset_.ClearToEmpty();
   quote_name_.ClearToEmpty();
-  if (GetArena() == nullptr && oracle_spec_ != nullptr) {
-    delete oracle_spec_;
+  if (GetArena() == nullptr && oracle_spec_for_settlement_price_ != nullptr) {
+    delete oracle_spec_for_settlement_price_;
   }
-  oracle_spec_ = nullptr;
+  oracle_spec_for_settlement_price_ = nullptr;
+  if (GetArena() == nullptr && oracle_spec_for_trading_termination_ != nullptr) {
+    delete oracle_spec_for_trading_termination_;
+  }
+  oracle_spec_for_trading_termination_ = nullptr;
   if (GetArena() == nullptr && oracle_spec_binding_ != nullptr) {
     delete oracle_spec_binding_;
   }
@@ -901,16 +927,23 @@ const char* FutureProduct::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
+      // .oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec_for_settlement_price(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+      // .oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_oracle_spec_for_trading_termination(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr = ctx->ParseMessage(_internal_mutable_oracle_spec_binding(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -973,20 +1006,28 @@ failure:
         3, this->_internal_quote_name(), target);
   }
 
-  // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
-  if (this->has_oracle_spec()) {
+  // .oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];
+  if (this->has_oracle_spec_for_settlement_price()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::oracle_spec(this), target, stream);
+        5, _Internal::oracle_spec_for_settlement_price(this), target, stream);
   }
 
-  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  // .oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];
+  if (this->has_oracle_spec_for_trading_termination()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::oracle_spec_for_trading_termination(this), target, stream);
+  }
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];
   if (this->has_oracle_spec_binding()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::oracle_spec_binding(this), target, stream);
+        7, _Internal::oracle_spec_binding(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1026,14 +1067,21 @@ size_t FutureProduct::ByteSizeLong() const {
         this->_internal_quote_name());
   }
 
-  // .oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];
-  if (this->has_oracle_spec()) {
+  // .oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];
+  if (this->has_oracle_spec_for_settlement_price()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *oracle_spec_);
+        *oracle_spec_for_settlement_price_);
   }
 
-  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];
+  // .oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];
+  if (this->has_oracle_spec_for_trading_termination()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *oracle_spec_for_trading_termination_);
+  }
+
+  // .vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];
   if (this->has_oracle_spec_binding()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1080,8 +1128,11 @@ void FutureProduct::MergeFrom(const FutureProduct& from) {
   if (from.quote_name().size() > 0) {
     _internal_set_quote_name(from._internal_quote_name());
   }
-  if (from.has_oracle_spec()) {
-    _internal_mutable_oracle_spec()->::oracles::v1::OracleSpecConfiguration::MergeFrom(from._internal_oracle_spec());
+  if (from.has_oracle_spec_for_settlement_price()) {
+    _internal_mutable_oracle_spec_for_settlement_price()->::oracles::v1::OracleSpecConfiguration::MergeFrom(from._internal_oracle_spec_for_settlement_price());
+  }
+  if (from.has_oracle_spec_for_trading_termination()) {
+    _internal_mutable_oracle_spec_for_trading_termination()->::oracles::v1::OracleSpecConfiguration::MergeFrom(from._internal_oracle_spec_for_trading_termination());
   }
   if (from.has_oracle_spec_binding()) {
     _internal_mutable_oracle_spec_binding()->::vega::OracleSpecToFutureBinding::MergeFrom(from._internal_oracle_spec_binding());
@@ -1115,9 +1166,9 @@ void FutureProduct::InternalSwap(FutureProduct* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(FutureProduct, oracle_spec_binding_)
       + sizeof(FutureProduct::oracle_spec_binding_)
-      - PROTOBUF_FIELD_OFFSET(FutureProduct, oracle_spec_)>(
-          reinterpret_cast<char*>(&oracle_spec_),
-          reinterpret_cast<char*>(&other->oracle_spec_));
+      - PROTOBUF_FIELD_OFFSET(FutureProduct, oracle_spec_for_settlement_price_)>(
+          reinterpret_cast<char*>(&oracle_spec_for_settlement_price_),
+          reinterpret_cast<char*>(&other->oracle_spec_for_settlement_price_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FutureProduct::GetMetadata() const {

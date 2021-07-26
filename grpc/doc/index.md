@@ -723,8 +723,9 @@ Future product definition
 | maturity | [string](#string) |  | The maturity for the future |
 | settlement_asset | [string](#string) |  | The asset for the future |
 | quote_name | [string](#string) |  | Quote name of the instrument |
-| oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | The oracle spec describing the oracle data of interest |
-| oracle_spec_binding | [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding) |  | The binding between the oracle spec and the settlement price |
+| oracle_spec_for_settlement_price | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | The oracle spec describing the settlement price oracle filter |
+| oracle_spec_for_trading_termination | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | the oracle spec describing the trading termination oracle filter |
+| oracle_spec_binding | [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding) |  | The binding between the oracle spec and the oracle data |
 
 
 
@@ -879,12 +880,13 @@ Time stamps for important times about creating, enacting etc the market
 
 ### OracleSpecToFutureBinding
 OracleSpecToFutureBinding tells on which property oracle data should be
-used as settlement price.
+used as settlement price and which to use the trading terminated trigger
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | settlement_price_property | [string](#string) |  | settlement_price_property holds the name of the property in the oracle data that should be used as settlement price. If it is set to &#34;prices.BTC.value&#34;, then the Future will use the value of this property as settlement price. |
+| trading_termination_property | [string](#string) |  | the name of the property in the oracle data that signals termination of trading |
 
 
 
@@ -1992,7 +1994,7 @@ Margin account funds will alter as margin requirements on positions change |
 General accounts are where funds are initially deposited or withdrawn from, it is also the account where funds are taken to fulfil fees and initial margin requirements |
 | ACCOUNT_TYPE_FEES_INFRASTRUCTURE | 5 | Infrastructure accounts contain fees earned by providing infrastructure on Vega |
 | ACCOUNT_TYPE_FEES_LIQUIDITY | 6 | Liquidity accounts contain fees earned by providing liquidity on Vega markets |
-| ACCOUNT_TYPE_FEES_MAKER | 7 | This account is created to hold fees earned by placing orders that sit on the book and are then matched with an incoming order to create a trade - These fees reward traders who provide the best priced liquidity that actually allows trading to take place |
+| ACCOUNT_TYPE_FEES_MAKER | 7 | This account is created to hold fees earned by placing orders that sit on the book and are then matched with an incoming order to create a trade - These fees reward parties who provide the best priced liquidity that actually allows trading to take place |
 | ACCOUNT_TYPE_LOCK_WITHDRAW | 8 | This account is created to lock funds to be withdrawn by parties |
 | ACCOUNT_TYPE_BOND | 9 | This account is created to maintain liquidity providers funds commitments |
 | ACCOUNT_TYPE_EXTERNAL | 10 | External account represents an external source (deposit/withdrawal) |
@@ -2125,7 +2127,7 @@ Type values for an order
 | TYPE_UNSPECIFIED | 0 | Default value, always invalid |
 | TYPE_LIMIT | 1 | Used for Limit orders |
 | TYPE_MARKET | 2 | Used for Market orders |
-| TYPE_NETWORK | 3 | Used for orders where the initiating party is the network (with distressed traders) |
+| TYPE_NETWORK | 3 | Used for orders where the initiating party is the network (with distressed parties) |
 
 
 
@@ -2383,7 +2385,8 @@ Future product configuration
 | maturity | [string](#string) |  | Future product maturity (ISO8601/RFC3339 timestamp) |
 | settlement_asset | [string](#string) |  | Product settlement asset identifier |
 | quote_name | [string](#string) |  | Product quote name |
-| oracle_spec | [oracles.v1.OracleSpecConfiguration](#oracles.v1.OracleSpecConfiguration) |  | The oracle spec describing the oracle data of interest |
+| oracle_spec_for_settlement_price | [oracles.v1.OracleSpecConfiguration](#oracles.v1.OracleSpecConfiguration) |  | The oracle spec describing the oracle data of settlement price |
+| oracle_spec_for_trading_termination | [oracles.v1.OracleSpecConfiguration](#oracles.v1.OracleSpecConfiguration) |  | The oracle spec describing the oracle data of trading termination |
 | oracle_spec_binding | [OracleSpecToFutureBinding](#vega.OracleSpecToFutureBinding) |  | The binding between the oracle spec and the settlement price |
 
 

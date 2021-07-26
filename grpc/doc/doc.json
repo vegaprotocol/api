@@ -974,8 +974,20 @@
               "defaultValue": ""
             },
             {
-              "name": "oracle_spec",
-              "description": "The oracle spec describing the oracle data of interest",
+              "name": "oracle_spec_for_settlement_price",
+              "description": "The oracle spec describing the settlement price oracle filter",
+              "label": "",
+              "type": "OracleSpec",
+              "longType": "oracles.v1.OracleSpec",
+              "fullType": "oracles.v1.OracleSpec",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "oracle_spec_for_trading_termination",
+              "description": "the oracle spec describing the trading termination oracle filter",
               "label": "",
               "type": "OracleSpec",
               "longType": "oracles.v1.OracleSpec",
@@ -987,7 +999,7 @@
             },
             {
               "name": "oracle_spec_binding",
-              "description": "The binding between the oracle spec and the settlement price",
+              "description": "The binding between the oracle spec and the oracle data",
               "label": "",
               "type": "OracleSpecToFutureBinding",
               "longType": "OracleSpecToFutureBinding",
@@ -1495,7 +1507,7 @@
           "name": "OracleSpecToFutureBinding",
           "longName": "OracleSpecToFutureBinding",
           "fullName": "vega.OracleSpecToFutureBinding",
-          "description": "OracleSpecToFutureBinding tells on which property oracle data should be\nused as settlement price.",
+          "description": "OracleSpecToFutureBinding tells on which property oracle data should be\nused as settlement price and which to use the trading terminated trigger",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -1504,6 +1516,18 @@
             {
               "name": "settlement_price_property",
               "description": "settlement_price_property holds the name of the property in the oracle data\nthat should be used as settlement price.\nIf it is set to \"prices.BTC.value\", then the Future will use the value of\nthis property as settlement price.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "trading_termination_property",
+              "description": "the name of the property in the oracle data that signals termination of trading",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -1991,7 +2015,7 @@
             {
               "name": "ACCOUNT_TYPE_FEES_MAKER",
               "number": "7",
-              "description": "This account is created to hold fees earned by placing orders that sit on the book\nand are then matched with an incoming order to create a trade - These fees reward traders\nwho provide the best priced liquidity that actually allows trading to take place"
+              "description": "This account is created to hold fees earned by placing orders that sit on the book\nand are then matched with an incoming order to create a trade - These fees reward parties\nwho provide the best priced liquidity that actually allows trading to take place"
             },
             {
               "name": "ACCOUNT_TYPE_LOCK_WITHDRAW",
@@ -2310,7 +2334,7 @@
             {
               "name": "TYPE_NETWORK",
               "number": "3",
-              "description": "Used for orders where the initiating party is the network (with distressed traders)"
+              "description": "Used for orders where the initiating party is the network (with distressed parties)"
             }
           ]
         },
@@ -6870,8 +6894,20 @@
               }
             },
             {
-              "name": "oracle_spec",
-              "description": "The oracle spec describing the oracle data of interest",
+              "name": "oracle_spec_for_settlement_price",
+              "description": "The oracle spec describing the oracle data of settlement price",
+              "label": "",
+              "type": "OracleSpecConfiguration",
+              "longType": "oracles.v1.OracleSpecConfiguration",
+              "fullType": "oracles.v1.OracleSpecConfiguration",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "oracle_spec_for_trading_termination",
+              "description": "The oracle spec describing the oracle data of trading termination",
               "label": "",
               "type": "OracleSpecConfiguration",
               "longType": "oracles.v1.OracleSpecConfiguration",

@@ -1867,7 +1867,7 @@ public final class Vega {
     /**
      * <pre>
      * This account is created to hold fees earned by placing orders that sit on the book
-     * and are then matched with an incoming order to create a trade - These fees reward traders
+     * and are then matched with an incoming order to create a trade - These fees reward parties
      * who provide the best priced liquidity that actually allows trading to take place
      * </pre>
      *
@@ -1974,7 +1974,7 @@ public final class Vega {
     /**
      * <pre>
      * This account is created to hold fees earned by placing orders that sit on the book
-     * and are then matched with an incoming order to create a trade - These fees reward traders
+     * and are then matched with an incoming order to create a trade - These fees reward parties
      * who provide the best priced liquidity that actually allows trading to take place
      * </pre>
      *
@@ -7778,7 +7778,7 @@ public final class Vega {
       TYPE_MARKET(2),
       /**
        * <pre>
-       * Used for orders where the initiating party is the network (with distressed traders)
+       * Used for orders where the initiating party is the network (with distressed parties)
        * </pre>
        *
        * <code>TYPE_NETWORK = 3;</code>
@@ -7813,7 +7813,7 @@ public final class Vega {
       public static final int TYPE_MARKET_VALUE = 2;
       /**
        * <pre>
-       * Used for orders where the initiating party is the network (with distressed traders)
+       * Used for orders where the initiating party is the network (with distressed parties)
        * </pre>
        *
        * <code>TYPE_NETWORK = 3;</code>

@@ -1054,7 +1054,7 @@
 <td id="L12" class="td-index">12</td>
 <td id="LC12" class="td-code">
 <span class="tab">
-<span class="comment line">#   The oracle spec describing the oracle data of interest.</span>
+<span class="comment line">#   The oracle spec describing the oracle data of interest for settlement price.</span>
 </span>
 </td>
 </tr>
@@ -1062,7 +1062,7 @@
 <td id="L13" class="td-index">13</td>
 <td id="LC13" class="td-code">
 <span class="tab">
-<span class="meta">oracleSpec</span>: <a class="support type" href="oraclespec.doc.html">OracleSpec</a>! </span>
+<span class="meta">oracleSpecForSettlementPrice</span>: <a class="support type" href="oraclespec.doc.html">OracleSpec</a>! </span>
 </td>
 </tr>
 <tr class="row">
@@ -1074,7 +1074,7 @@
 <td id="L15" class="td-index">15</td>
 <td id="LC15" class="td-code">
 <span class="tab">
-<span class="comment line">#   The binding between the oracle spec and the settlement price</span>
+<span class="comment line">#   The oracle spec describing the oracle data of interest for trading termination.</span>
 </span>
 </td>
 </tr>
@@ -1082,7 +1082,7 @@
 <td id="L16" class="td-index">16</td>
 <td id="LC16" class="td-code">
 <span class="tab">
-<span class="meta">oracleSpecBinding</span>: <a class="support type" href="oraclespectofuturebinding.doc.html">OracleSpecToFutureBinding</a>! </span>
+<span class="meta">oracleSpecForTradingTermination</span>: <a class="support type" href="oraclespec.doc.html">OracleSpec</a>! </span>
 </td>
 </tr>
 <tr class="row">
@@ -1092,7 +1092,27 @@
 </tr>
 <tr class="row">
 <td id="L18" class="td-index">18</td>
-<td id="LC18" class="td-code">}</td>
+<td id="LC18" class="td-code">
+<span class="tab">
+<span class="comment line">#   The binding between the oracle spec and the settlement price</span>
+</span>
+</td>
+</tr>
+<tr class="row">
+<td id="L19" class="td-index">19</td>
+<td id="LC19" class="td-code">
+<span class="tab">
+<span class="meta">oracleSpecBinding</span>: <a class="support type" href="oraclespectofuturebinding.doc.html">OracleSpecToFutureBinding</a>! </span>
+</td>
+</tr>
+<tr class="row">
+<td id="L20" class="td-index">20</td>
+<td id="LC20" class="td-code">
+</td>
+</tr>
+<tr class="row">
+<td id="L21" class="td-index">21</td>
+<td id="LC21" class="td-code">}</td>
 </tr>
 </tbody>
 </table>
