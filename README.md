@@ -52,7 +52,9 @@ The per-language API clients are found in [`grpc/clients/`](https://github.com/v
 
 Pull requests for additional languages are gratefully received.
 
-# Examples
+# Example API scripts
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/vegaprotocol/api/tree/198-api-examples/)
 
 Some example/demonstration programs are maintained in this repository. They are
 intended to be stand-alone programs that can be run by people copying and

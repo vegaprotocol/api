@@ -1,0 +1,12 @@
+---
+
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: pipenv install -r requirements.txt --python 3.8
+  - command: |
+      pipenv shell
+      source examples-config
+
+ports: []

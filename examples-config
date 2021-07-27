@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Default server configuration used by REST/GRPC/GRAPHQL examples
+
+NODE_URL_REST="https://lb.testnet.vega.xyz"
+NODE_URL_GRAPHQL="https://lb.testnet.vega.xyz/query"
+NODE_URL_GRPC="n06.testnet.vega.xyz:3002"
+WALLETSERVER_URL="https://wallet.testnet.vega.xyz"
+
+export NODE_URL_GRPC
+export NODE_URL_REST
+export NODE_URL_GRAPHQL
+export WALLETSERVER_URL

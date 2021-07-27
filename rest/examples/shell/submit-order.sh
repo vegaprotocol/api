@@ -17,7 +17,7 @@
 #   # :something__
 
 # shellcheck disable=SC1091
-source ../../../grpc/examples/shell/helpers.sh
+source ../../../rest/examples/shell/helpers.sh
 
 # --- Edit these values below ---
 node_url_rest=">> e.g. n06.testnet.vega.xyz:3002"
