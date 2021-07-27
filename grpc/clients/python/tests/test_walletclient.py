@@ -4,8 +4,6 @@ import requests
 import string
 from typing import Dict, List
 
-from .fixtures import walletclient, walletname, walletpassphrase  # noqa: F401
-
 
 def check_response(r: requests.Response) -> None:
     assert (
@@ -26,9 +24,7 @@ def random_metadata() -> List[Dict[str, str]]:
     ]
 
 
-def test_walletclient(
-    walletclient, walletname, walletpassphrase  # noqa: F811
-):
+def test_walletclient(walletclient, walletname, walletpassphrase):
     wname = walletname
     wpass = walletpassphrase
 

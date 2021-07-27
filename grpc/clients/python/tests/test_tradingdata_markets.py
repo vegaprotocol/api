@@ -2,10 +2,8 @@ from google.protobuf.empty_pb2 import Empty
 
 import vegaapiclient as vac
 
-from .fixtures import tradingdata  # noqa: F401
 
-
-def test_MarketByID(tradingdata):  # noqa: F811
+def test_MarketByID(tradingdata):
     markets = tradingdata.Markets(Empty()).markets
     assert len(markets) > 0
     marketID = markets[0].id
@@ -16,6 +14,6 @@ def test_MarketByID(tradingdata):  # noqa: F811
     assert market.market.id == markets[0].id
 
 
-def test_Markets(tradingdata):  # noqa: F811
+def test_Markets(tradingdata):
     markets = tradingdata.Markets(Empty())
     assert len(markets.markets) > 0

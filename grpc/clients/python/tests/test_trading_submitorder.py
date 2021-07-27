@@ -4,21 +4,11 @@ from google.protobuf.empty_pb2 import Empty
 
 import vegaapiclient as vac
 
-from .fixtures import (  # noqa: F401
-    trading,
-    tradingdata,
-    walletclient,
-    walletClientWalletKeypair,
-    walletname,
-    walletpassphrase,
-)
 from .helpers import check_response
 
 
-def test_SubmitOrder(
-    trading, tradingdata, walletClientWalletKeypair  # noqa: F811
-):
-    (walletclient, _, _, pubKey) = walletClientWalletKeypair  # noqa: F811
+def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):
+    (walletclient, _, _, pubKey) = walletClientWalletKeypair
 
     # Get a market
     req = vac.api.trading.MarketByIDRequest(market_id="076BB86A5AA41E3E")
