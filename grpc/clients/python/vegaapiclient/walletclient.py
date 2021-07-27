@@ -1,9 +1,16 @@
-import requests
-
+import json
 from typing import Any, Dict, List
 
+import google.protobuf.json_format as goog_json
+import requests
 
-class WalletClient(object):
+
+class WalletClient:
+    """
+    WalletClient is a thin wrapper, and does little more than take care of the
+    token.
+    """
+
     def __init__(self, url: str) -> None:
         self.token = ""
         self.url = url
@@ -22,13 +29,13 @@ class WalletClient(object):
         returned.
         """
         req = {"wallet": walletname, "passphrase": passphrase}
-        url = "{}/api/v1/wallets".format(self.url)
-        r = self._httpsession.post(url, json=req)
-        if r.status_code != 200:
+        url = f"{self.url}/api/v1/wallets"
+        response = self._httpsession.post(url, json=req)
+        if response.status_code != 200:
             self.token = ""
         else:
-            self.token = r.json()["token"]
-        return r
+            self.token = response.json()["token"]
+        return response
 
     def login(self, walletname: str, passphrase: str) -> requests.Response:
         """
@@ -38,12 +45,12 @@ class WalletClient(object):
         """
         req = {"wallet": walletname, "passphrase": passphrase}
         url = "{}/api/v1/auth/token".format(self.url)
-        r = self._httpsession.post(url, json=req)
-        if r.status_code == 200:
-            self.token = r.json()["token"]
+        response = self._httpsession.post(url, json=req)
+        if response.status_code == 200:
+            self.token = response.json()["token"]
         else:
             self.token = ""
-        return r
+        return response
 
     def logout(self) -> requests.Response:
         """
@@ -51,28 +58,28 @@ class WalletClient(object):
         object.
         """
         url = "{}/api/v1/auth/token".format(self.url)
-        r = self._httpsession.delete(url, headers=self._header())
-        if r.status_code == 200:
+        response = self._httpsession.delete(url, headers=self._header())
+        if response.status_code == 200:
             self.token = ""
-        return r
+        return response
 
-    def getkey(self, pubKey: str) -> requests.Response:
+    def getkey(self, pub_key: str) -> requests.Response:
         """
         Get keypair information (excluding private key).
 
-        `pubKey` must be a hex-encoded string.
+        `pub_key` must be a hex-encoded string.
         """
-        url = "{}/api/v1/keys/{}".format(self.url, pubKey)
+        url = "{}/api/v1/keys/{}".format(self.url, pub_key)
         return self._httpsession.get(url, headers=self._header())
 
-    def taintkey(self, pubKey: str, passphrase: str) -> requests.Response:
+    def taintkey(self, pub_key: str, passphrase: str) -> requests.Response:
         """
         Label a keypair as tainted.
 
-        pubKey must be a hex-encoded string.
+        pub_key must be a hex-encoded string.
         """
         req = {"passphrase": passphrase}
-        url = "{}/api/v1/keys/{}/taint".format(self.url, pubKey)
+        url = "{}/api/v1/keys/{}/taint".format(self.url, pub_key)
         return self._httpsession.put(url, headers=self._header(), json=req)
 
     def listkeys(self) -> requests.Response:
@@ -92,30 +99,41 @@ class WalletClient(object):
         url = "{}/api/v1/keys".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
-    def signtx(self, tx, pubKey, propagate) -> requests.Response:
+    def signtx(self, txn, pub_key, propagate) -> requests.Response:
         """
         Sign a transaction.
 
-        `tx` must be a base64-encoded string, e.g.
+        `txn` must be a base64-encoded string, e.g.
         ```
-        tx = base64.b64encode(b"someblob").decode("ascii")
+        txn = base64.b64encode(b"someblob").decode("ascii")
         ```
 
-        pubKey must be a hex-encoded string.
+        pub_key must be a hex-encoded string.
         """
-        req = {"tx": tx, "pubKey": pubKey, "propagate": propagate}
+        req = {"tx": txn, "pub_key": pub_key, "propagate": propagate}
         url = "{}/api/v1/messages".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
+    def signtxv2(self, txn) -> requests.Response:
+        """
+        Sign a transaction V2.
+
+        See also: https://googleapis.dev/python/protobuf/latest/google/protobuf
+                  /json_format.html#google.protobuf.json_format.MessageToJson
+        """
+        req = json.loads(goog_json.MessageToJson(txn))
+        url = f"{self.url}/api/v1/command"
+        return self._httpsession.post(url, headers=self._header(), json=req)
+
     def updatekeymetadata(
-        self, pubKey: str, passphrase: str, metadata: List[Dict[str, str]]
+        self, pub_key: str, passphrase: str, metadata: List[Dict[str, str]]
     ) -> requests.Response:
         """
         Update the metadata for a key pair. Any existing metadata is removed,
         and replaced with the supplied metadata.
 
-        `pubKey` must be a hex-encoded string.
+        `pub_key` must be a hex-encoded string.
         """
         req = {"passphrase": passphrase, "meta": metadata}
-        url = "{}/api/v1/keys/{}/metadata".format(self.url, pubKey)
+        url = "{}/api/v1/keys/{}/metadata".format(self.url, pub_key)
         return self._httpsession.put(url, headers=self._header(), json=req)
