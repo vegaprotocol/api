@@ -19,19 +19,19 @@ Apps/Libraries:
 # some code here
 # :something__
 
-import os
+import helpers
 
 # __import_client:
 import vegaapiclient as vac
 # :import_client__
 
-node_url_grpc = os.getenv("NODE_URL_GRPC")
+node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 
 # __get_order_by_ref:
 # Request an order by reference on a Vega network
 # Note: This is an example and order reference will be provided in the response
 # from a prepareSubmitOrder request in the field named `submitID` or similar.
-reference = "4617844f-6fab-4cf6-8852-e29dbd96e5f1"
+reference = "15b757d2-9dcd-4442-81da-18c709c8d97e"
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 order_by_ref_request = vac.api.trading.OrderByReferenceRequest(
     reference=reference

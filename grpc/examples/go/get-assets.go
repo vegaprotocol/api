@@ -3,18 +3,15 @@ package main
 import (
 	"context"
 	"fmt"
-	"os"
 
-	"github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto/api"
+	"github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/api"
+	"github.com/vegaprotocol/api/grpc/examples/go/helpers"
+
 	"google.golang.org/grpc"
 )
 
 func main() {
-	nodeURLGrpc := os.Getenv("NODE_URL_GRPC")
-	if len(nodeURLGrpc) == 0 {
-		panic("NODE_URL_GRPC is null or empty")
-	}
-
+	nodeURLGrpc := helpers.GetFromEnv("NODE_URL_GRPC")
 	conn, err := grpc.Dial(nodeURLGrpc, grpc.WithInsecure())
 	if err != nil {
 		panic(err)
@@ -22,6 +19,7 @@ func main() {
 	defer conn.Close()
 
 	dataClient := api.NewTradingDataServiceClient(conn)
+
 	// __get_assets:
 	// Request a list of assets available on a Vega network
 	request := api.AssetsRequest{}
@@ -35,9 +33,9 @@ func main() {
 	assetFound := false
 	var assetId string
 	for _, asset := range assets.Assets {
-		fmt.Printf("Assets: %s \n", asset.Name)
-		fmt.Printf("Assets: %s \n", asset.Symbol)
-		if asset.Symbol == "tDAI" {
+		fmt.Printf("Assets: %s \n", asset.Details.Name)
+		fmt.Printf("Assets: %s \n", asset.Details.Symbol)
+		if asset.Details.Symbol == "tDAI" {
 			fmt.Println("Found an asset with name tDAI:")
 			assetId = asset.Id
 			assetFound = true

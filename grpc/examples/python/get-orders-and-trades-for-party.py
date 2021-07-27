@@ -31,7 +31,7 @@ node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 # :import_client__
 
-print(token)
+print("Token:", token)
 
 # __get_orders_for_party:
 # Request a list of orders by party (pubKey)

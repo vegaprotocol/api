@@ -4,19 +4,16 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"os"
 
-	"github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
-	"github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto/api"
+	"github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/api"
+	v1 "github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/events/v1"
+	"github.com/vegaprotocol/api/grpc/examples/go/helpers"
+
 	"google.golang.org/grpc"
 )
 
 func main() {
-	nodeURLGrpc := os.Getenv("NODE_URL_GRPC")
-	if len(nodeURLGrpc) == 0 {
-		panic("NODE_URL_GRPC is null or empty")
-	}
-
+	nodeURLGrpc := helpers.GetFromEnv("NODE_URL_GRPC")
 	conn, err := grpc.Dial(nodeURLGrpc, grpc.WithInsecure())
 	if err != nil {
 		panic(err)
@@ -42,7 +39,7 @@ func main() {
 	// Optional: Market identifier - filter by market
 	//            Party identifier - filter by party
 	// By default, all trades on all markets for all parties will be returned on the stream.
-	eventType := proto.BusEventType_BUS_EVENT_TYPE_TRADE
+	eventType := v1.BusEventType_BUS_EVENT_TYPE_TRADE
 	event, err := dataClient.ObserveEventBus(context.Background())
 
 	done := make(chan bool)
@@ -62,7 +59,7 @@ func main() {
 		}
 	}()
 
-	observerEvent := api.ObserveEventBusRequest{Type: []proto.BusEventType{eventType}, MarketId: marketID}
+	observerEvent := api.ObserveEventBusRequest{Type: []v1.BusEventType{eventType}, MarketId: marketID}
 	event.Send(&observerEvent)
 	event.CloseSend()
 

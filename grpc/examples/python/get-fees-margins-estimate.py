@@ -27,7 +27,6 @@ import vegaapiclient as vac
 
 # Vega wallet interaction helper, please see login.py for more detail
 from login import token, pubkey
-print(token)
 
 # Load gRPC Vega Node URL, this is set using 'source examples-config'
 # located in the root folder of the api repository
@@ -35,6 +34,8 @@ node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 
 # Vega gRPC clients for reading/writing data
 data_client = vac.VegaTradingDataClient(node_url_grpc)
+
+print("Token:", token)
 
 ###############################################################################
 #                           F I N D   M A R K E T                             #

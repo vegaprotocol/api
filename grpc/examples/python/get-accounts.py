@@ -33,7 +33,7 @@ node_url_grpc = helpers.get_from_env("NODE_URL_GRPC")
 data_client = vac.VegaTradingDataClient(node_url_grpc)
 # :import_client__
 
-print(token)
+print("Token:", token)
 
 ###############################################################################
 #                        M A R K E T   A C C O U N T S                        #

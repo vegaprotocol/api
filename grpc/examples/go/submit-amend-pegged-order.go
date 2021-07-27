@@ -1,48 +1,30 @@
 package main
 
 import (
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"net/http"
-	"os"
+	"log"
 	"time"
 
-	"github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto"
-	"github.com/vegaprotocol/api-clients/go/generated/code.vegaprotocol.io/vega/proto/api"
+	uuid "github.com/satori/go.uuid"
+	"github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto"
+	"github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/api"
+	v1 "github.com/vegaprotocol/api/grpc/clients/go/generated/code.vegaprotocol.io/vega/proto/commands/v1"
+	"github.com/vegaprotocol/api/grpc/examples/go/helpers"
+
+	"github.com/golang/protobuf/ptypes/wrappers"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	"google.golang.org/protobuf/types/known/wrapperspb"
-	"code.vegaprotocol.io/go-wallet/wallet"
+	
 )
 
 func main() {
-	nodeURLGrpc := os.Getenv("NODE_URL_GRPC")
-	if len(nodeURLGrpc) == 0 {
-		panic("NODE_URL_GRPC is null or empty")
-	}
-	walletserverURL := os.Getenv("WALLETSERVER_URL")
-	if len(walletserverURL) == 0 {
-		panic("WALLETSERVER_URL is null or empty")
-	}
-	walletName := os.Getenv("WALLET_NAME")
-	if len(walletName) == 0 {
-		panic("WALLET_NAME is null or empty")
-	}
-	walletPassphrase := os.Getenv("WALLET_PASSPHRASE")
-	if len(walletPassphrase) == 0 {
-		panic("WALLET_PASSPHRASE is null or empty")
-	}
+	// Helpers include logic to authenticate with a Vega wallet service
+	// including token storage/public key operations/signing of commands
+	// visit ./helpers/wallet.go for more detail
+	pubkey := helpers.GetPubKey()
 
-	walletserverURL = CheckWalletUrl(walletserverURL)
-
-	walletConfig := WalletConfig{
-		URL:        walletserverURL,
-		Name:       walletName,
-		Passphrase: walletPassphrase,
-	}
-
+	nodeURLGrpc := helpers.GetFromEnv("NODE_URL_GRPC")
 	conn, err := grpc.Dial(nodeURLGrpc, grpc.WithInsecure())
 	if err != nil {
 		panic(err)
@@ -50,42 +32,6 @@ func main() {
 	defer conn.Close()
 
 	dataClient := api.NewTradingDataServiceClient(conn)
-	tradingClient := api.NewTradingServiceClient(conn)
-
-	var token wallet.TokenResponse
-	body, err := LoginWallet(walletConfig)
-	if err != nil {
-		panic(err)
-	}
-	json.Unmarshal([]byte(body), &token)
-	fmt.Println(token.Token)
-
-	// List existing keypairs
-	url := walletserverURL + "/api/v1/keys"
-	req, err := http.NewRequest(http.MethodGet, url, nil)
-	req.Header.Set("Authorization", "Bearer "+token.Token)
-
-	client := &http.Client{}
-	resp, err := client.Do(req)
-	if err != nil {
-		panic(err)
-	}
-	defer resp.Body.Close()
-
-	body, err = ioutil.ReadAll(resp.Body)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("response Body:", string(body))
-	var keypair wallet.KeysResponse
-	json.Unmarshal([]byte(body), &keypair)
-
-	if len(keypair.Keys) == 0 {
-		panic("No keys!")
-	}
-
-	pubkey := keypair.Keys[0].Pub
-	fmt.Println("pubkey: ", pubkey)
 
 	// __get_market:
 	// Request the identifier for the market to place on
@@ -109,41 +55,38 @@ func main() {
 	fmt.Printf("Order expiration time: %d\n", expireAt)
 
 	// __prepare_submit_pegged_order:
-	// Prepare a submit order message with a pegged BUY order
+	// Compose the submit order message with a pegged BUY order
+	orderRef := fmt.Sprintf("%s-%s", pubkey, uuid.NewV4())
 	peggedOrder := proto.PeggedOrder{
 		Offset:    -5,
 		Reference: proto.PeggedReference_PEGGED_REFERENCE_MID,
 	}
-	orderSubmission := proto.OrderSubmission{
+	orderSubmission := &v1.OrderSubmission{
 		Size:        1,
 		Price:       100000,
-		PartyId:     pubkey,
 		MarketId:    marketId,
 		Side:        proto.Side_SIDE_BUY,
 		TimeInForce: proto.Order_TIME_IN_FORCE_GTT,
 		Type:        proto.Order_TYPE_LIMIT,
 		ExpiresAt:   expireAt,
 		PeggedOrder: &peggedOrder,
+		Reference:   orderRef,
 	}
-
-	order := api.PrepareSubmitOrderRequest{Submission: &orderSubmission}
-
-	fmt.Printf("Request for PrepareSubmitOrder: %v\n", order)
-	orderRequest, err := tradingClient.PrepareSubmitOrder(context.Background(), &order)
 	// :prepare_submit_pegged_order__
 
-	fmt.Printf("%v\n", err)
-	fmt.Printf("%v\n", orderRequest)
+	log.Printf("Order submission: %v\n", orderSubmission)
 
-	// Sign the prepared transaction
-	data := orderRequest.Blob
-	sEnc := base64.StdEncoding.EncodeToString([]byte(data))
-	_, err = SignTransaction(walletConfig, token.Token, pubkey, string(sEnc))
+	// __sign_tx_order:
+	reqCmd, _ := json.Marshal(orderSubmission)
+	reqStr := fmt.Sprintf(
+		"{ \"pub_key\": \"%s\", \"propagate\": true, \"order_submission\": %s }",
+		pubkey, reqCmd)
+
+	_, err = helpers.SignTransactionCommand(reqStr)
 	if err != nil {
 		panic(err)
 	}
-
-	orderRef := orderRequest.SubmitId
+	// :sign_tx_order__
 
 	fmt.Printf("Signed pegged order and sent to Vega\n")
 
@@ -151,44 +94,43 @@ func main() {
 	fmt.Printf("Waiting for blockchain...\n")
 	time.Sleep(4 * time.Second)
 	orderByRef := api.OrderByReferenceRequest{Reference: orderRef}
+
 	orderByRefResp, err := dataClient.OrderByReference(context.Background(), &orderByRef)
 	if err != nil {
 		panic(err)
 	}
 
 	orderID := orderByRefResp.Order.Id
-	orderStatus := orderByRefResp.Order.Status
-	fmt.Printf("Pegged order processed. ID: %s, Status: %d\n", orderID, orderStatus)
+	orderStatus := orderByRefResp.Order.Status.String()
+	fmt.Printf("Pegged order processed. ID: %s, Status: %s\n", orderID, orderStatus)
 
 	// __prepare_amend_pegged_order:
-	// Prepare the amend pegged order message
-	var peggedOffset wrapperspb.Int64Value
+	// Compose the amend pegged order message
+	var peggedOffset wrappers.Int64Value
 	peggedOffset.Value = -100
-	amend := proto.OrderAmendment{
+
+	orderAmendment := &v1.OrderAmendment{
 		MarketId:        marketId,
-		PartyId:         pubkey,
 		OrderId:         orderID,
 		SizeDelta:       -25,
 		TimeInForce:     proto.Order_TIME_IN_FORCE_GTC,
 		PeggedReference: proto.PeggedReference_PEGGED_REFERENCE_BEST_BID,
 		PeggedOffset:    &peggedOffset,
 	}
-
-	amendObj := api.PrepareAmendOrderRequest{Amendment: &amend}
-	amendResp, err := tradingClient.PrepareAmendOrder(context.Background(), &amendObj)
-	if err != nil {
-		panic(err)
-	}
 	// :prepare_amend_pegged_order__
+	log.Printf("Order amendment: %v\n", orderAmendment)
 
-	// Sign the prepared transaction
-	data = amendResp.Blob
-	sEnc = base64.StdEncoding.EncodeToString([]byte(data))
+	// __sign_tx_amend:
+	reqCmd, _ = json.Marshal(orderAmendment)
+	reqStr = fmt.Sprintf(
+		"{ \"pub_key\": \"%s\", \"propagate\": true, \"order_amendment\": %s }",
+		pubkey, reqCmd)
 
-	_, err = SignTransaction(walletConfig, token.Token, pubkey, string(sEnc))
+	_, err = helpers.SignTransactionCommand(reqStr)
 	if err != nil {
 		panic(err)
 	}
+	// :sign_tx_amend__
 
 	fmt.Printf("Signed pegged order amendment and sent to Vega\n")
 
@@ -202,14 +144,14 @@ func main() {
 	}
 
 	orderID = orderByRefResp.Order.Id
-	orderStatus = orderByRefResp.Order.Status
+	orderStatus = orderByRefResp.Order.Status.String()
 	oderSize := orderByRefResp.Order.Size
-	orderTif := orderByRefResp.Order.TimeInForce
+	orderTif := orderByRefResp.Order.TimeInForce.String()
 	peggedOrderRef := orderByRefResp.Order.PeggedOrder
 
 	fmt.Printf("Amended pegged order:\n")
-	fmt.Printf("Pegged order processed. ID: %s, Status: %d\n", orderID, orderStatus)
+	fmt.Printf("Pegged order processed. ID: %s, Status: %s\n", orderID, orderStatus)
 	fmt.Printf("Size(Old): 50, Size(New): %d,\n", oderSize)
-	fmt.Printf("TimeInForce(Old): TIME_IN_FORCE_GTT, TimeInForce(New): %d,\n", orderTif)
+	fmt.Printf("TimeInForce(Old): TIME_IN_FORCE_GTT, TimeInForce(New): %s,\n", orderTif)
 	fmt.Printf("Pegged at:\n%s\n", peggedOrderRef)
 }
