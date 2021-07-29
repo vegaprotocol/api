@@ -15,6 +15,17 @@ default:
 check_dist:
 	@bash check_dist.sh
 
+.PHONY: coverage
+coverage:
+	@if test -z "$$GRPC_NODE" ; then echo "Please set GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
+	@if test -z "$$WALLETSERVER" ; then echo "Please set WALLETSERVER (e.g. https://wallet.xx.vega.zzz)." ; exit 1 ; fi
+	@rm -rf .coverage.d
+	@pipenv --bare install # 1>/dev/null 2>&1
+	@pipenv run pip install -e .
+	@find . -name __pycache__ | xargs -r rm -rf
+	@find . -name  '*.pyc' -o -name '*.so' | xargs -r rm -rf
+	@pipenv run pytest --cov=vegaapiclient --cov-report=term --cov-report=html:.coverage.d tests/
+
 .PHONY: dist
 dist:
 	@if test -z "$$TWINE_USERNAME" -o -z "$$TWINE_PASSWORD" ; then \
@@ -33,13 +44,13 @@ dist_test:
 	fi
 	@rm -rf build dist && mkdir build dist
 	@python3 setup.py sdist bdist_wheel
-	@echo twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+	@twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 .PHONY: pylint
 pylint:
 	@pipenv --bare install # 1>/dev/null 2>&1
 	@pipenv run pip install -e .
-	@env pipenv run pylint --ignore=generated vegaapiclient
+	@pipenv run pylint --ignore=generated vegaapiclient
 
 .PHONY: test
 test:

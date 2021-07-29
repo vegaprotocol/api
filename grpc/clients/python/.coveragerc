@@ -1,0 +1,6 @@
+[run]
+omit =
+    */generated/*
+    */.local/*
+    tests/*
+    /usr/*
