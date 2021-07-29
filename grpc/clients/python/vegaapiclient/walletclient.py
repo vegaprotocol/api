@@ -7,8 +7,8 @@ import requests
 
 class WalletClient:
     """
-    WalletClient is a thin wrapper, and does little more than take care of the
-    token.
+    `WalletClient` is a thin wrapper, and does little more than take care of
+    the token.
     """
 
     def __init__(self, url: str) -> None:
@@ -110,17 +110,15 @@ class WalletClient:
 
         pub_key must be a hex-encoded string.
         """
-        req = {"tx": txn, "pub_key": pub_key, "propagate": propagate}
+        req = {"tx": txn, "pubKey": pub_key, "propagate": propagate}
         url = "{}/api/v1/messages".format(self.url)
         return self._httpsession.post(url, headers=self._header(), json=req)
 
     def signtxv2(self, txn) -> requests.Response:
-        """
-        Sign a transaction V2.
+        """Sign a transaction V2."""
+        # `https://googleapis.dev/python/protobuf/latest/google/protobuf`
+        # `/json_format.html#google.protobuf.json_format.MessageToJson`
 
-        See also: https://googleapis.dev/python/protobuf/latest/google/protobuf
-                  /json_format.html#google.protobuf.json_format.MessageToJson
-        """
         req = json.loads(goog_json.MessageToJson(txn))
         url = f"{self.url}/api/v1/command"
         return self._httpsession.post(url, headers=self._header(), json=req)
