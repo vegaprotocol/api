@@ -1,7 +1,9 @@
 import base64
-import grpc
 import uuid
 from typing import Any, Callable
+
+import google.protobuf.json_format as goog_json
+import grpc
 
 from .blockchain import CommandByte
 from .generated import vega_pb2 as vega
@@ -12,7 +14,7 @@ from .generated.api import (
 from .walletclient import WalletClient
 
 
-class VegaTradingClient(object):
+class VegaTradingClient:
     """
     The Vega Trading Client talks to a back-end node.
     """
@@ -105,6 +107,45 @@ class VegaTradingClient(object):
             raise Exception(
                 "Vega node failed to submit signed transaction (success=false)"
             )
+
+    def sign_submit_tx_v2(
+        self,
+        walletcli: WalletClient,
+        submit_tx_req: Any,  # wallet.v1.wallet_pb2.SubmitTransactionRequest
+    ):
+        """Sign and submit a V2 transaction."""
+
+        # Sign the tx
+        response = walletcli.signtxv2(submit_tx_req)
+        if response.status_code != 200:
+            raise Exception(
+                "wallet server failed to sign tx v2: HTTP "
+                f"{response.status_code} {response.text}"
+            )
+        responsej = response.json()
+        if "error" in responsej:
+            msg = "wallet server failed to sign tx v2: " + responsej["error"]
+            if "details" in responsej and responsej["details"] is not None:
+                msg += " details: " + responsej["details"]
+            raise Exception(msg)
+
+        if not submit_tx_req.propagate:
+            # The wallet server was not instructed to send the signed tx to the
+            # Vega node, so do this now.
+            asy = trading.SubmitTransactionV2Request.TYPE_ASYNC  # type: ignore
+            req = goog_json.ParseDict(
+                {
+                    "tx": responsej,
+                    "type": asy,
+                },
+                trading.SubmitTransactionV2Request(),
+                ignore_unknown_fields=False,
+                descriptor_pool=None,
+            )
+            submit_response = self.SubmitTransactionV2(req)
+            if not submit_response.success:
+                msg = "failed to submit tx v2 to Vega node: success=false"
+                raise Exception(msg)
 
     def __getattr__(self, funcname):
         return getattr(self._trading, funcname)
