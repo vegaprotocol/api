@@ -39,4 +39,4 @@ jobs:
           WALLETSERVER_URL: ${{ secrets.WALLETSERVER }}
         run: |
           cd rest/examples/shell
-          make
+          make ci

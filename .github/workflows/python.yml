@@ -71,7 +71,7 @@ jobs:
         run: |
           command -v pipenv 1>/dev/null || pip install pipenv
           cd grpc/examples/python
-          make
+          make ci
         if: ${{ matrix.python-version == '3.9' }}
 
       - name: Run example scripts for GraphQL
@@ -83,7 +83,7 @@ jobs:
         run: |
           command -v pipenv 1>/dev/null || pip install pipenv
           cd graphql/examples/python
-          make
+          make  # no "ci" here, yet
         if: ${{ matrix.python-version == '3.9' }}
 
       - name: Run example scripts for REST
@@ -95,5 +95,5 @@ jobs:
         run: |
           command -v pipenv 1>/dev/null || pip install pipenv
           cd rest/examples/python
-          make
+          make ci
         if: ${{ matrix.python-version == '3.9' }}
