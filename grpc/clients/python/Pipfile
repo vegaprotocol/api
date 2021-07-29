@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 grpcio-tools = "*"
+pylint = "*"
 pytest = "*"
 pytest-cov = "*"
 requests = "*"

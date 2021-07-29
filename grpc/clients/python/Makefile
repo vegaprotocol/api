@@ -35,6 +35,12 @@ dist_test:
 	@python3 setup.py sdist bdist_wheel
 	@echo twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
+.PHONY: pylint
+pylint:
+	@pipenv --bare install # 1>/dev/null 2>&1
+	@pipenv run pip install -e .
+	@env pipenv run pylint --ignore=generated vegaapiclient
+
 .PHONY: test
 test:
 	@if test -z "$$GRPC_NODE" ; then echo "Please set GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
