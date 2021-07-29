@@ -32,6 +32,12 @@ walletserver_url = ">> Vega-hosted wallet: https://wallet.testnet.vega.xyz"
 walletserver_url = ">> self-hosted wallet: http://localhost:1789"
 wallet_name = ">> your wallet name here"
 wallet_passphrase = ">> your passphrase here"
+
+node_url_rest = "https://n03.s.vega.xyz"
+walletserver_url = "https://wallet.s.vega.xyz"
+wallet_name = "demo"
+wallet_passphrase = "123"
+
 # --- Edit these values above ---
 
 if "--ci" in sys.argv:
@@ -86,7 +92,7 @@ headers = {"Authorization": f"Bearer {token}"}
 
 # __generate_keypair:
 GENERATE_NEW_KEYPAIR = False
-pubKey = ""
+pub_key = ""
 if GENERATE_NEW_KEYPAIR:
     # EITHER: Generate a new keypair
     req = {
@@ -96,7 +102,7 @@ if GENERATE_NEW_KEYPAIR:
     url = f"{walletserver_url}/api/v1/keys"
     response = requests.post(url, headers=headers, json=req)
     helpers.check_response(response)
-    pubKey = response.json()["key"]["pub"]
+    pub_key = response.json()["key"]["pub"]
 else:
     # OR: List existing keypairs
     url = f"{walletserver_url}/api/v1/keys"
@@ -104,10 +110,10 @@ else:
     helpers.check_response(response)
     keys = response.json()["keys"]
     assert len(keys) > 0
-    pubKey = keys[0]["pub"]
+    pub_key = keys[0]["pub"]
 # :generate_keypair__
 
-assert pubKey != ""
+assert pub_key != ""
 
 # __get_market:
 # Next, get a Market ID
@@ -118,57 +124,42 @@ marketID = response.json()["markets"][0]["id"]
 # :get_market__
 
 # __prepare_order:
-# Next, prepare a SubmitOrder
+# Next, prepare an order_submission tx
 response = requests.get(f"{node_url_rest}/time")
 helpers.check_response(response)
 blockchaintime = int(response.json()["timestamp"])
 expiresAt = str(int(blockchaintime + 120 * 1e9))  # expire in 2 minutes
 
 req = {
-    "submission": {
-        "marketId": marketID,
-        "partyId": pubKey,
-        "price": "100000",  # Note: price is an integer. For example 123456
-        "size": "100",  # is a price of 1.23456, assuming 5 decimal places.
+    "pub_key": pub_key,
+    "propagate": True,
+    "order_submission": {
+        "market_id": marketID,
+        # Note: price is an integer. For example 123456 is a price of 1.23456,
+        # assuming 5 decimal places.
+        "price": "100000",
+        "size": "100",
         "side": "SIDE_BUY",
-        "timeInForce": "TIME_IN_FORCE_GTT",
-        "expiresAt": expiresAt,
+        "time_in_force": "TIME_IN_FORCE_GTT",
+        "expires_at": expiresAt,
         "type": "TYPE_LIMIT",
-    }
+        "reference": "222repo:api;lang:python;sample:submit-order-rest",
+        # "pegged_order": None,
+    },
 }
-print("Request for PrepareSubmitOrder:")
-print(json.dumps(req, indent=2, sort_keys=True))
-url = f"{node_url_rest}/orders/prepare/submit"
-response = requests.post(url, json=req)
-helpers.check_response(response)
-preparedOrder = response.json()
 # :prepare_order__
-print("Response from PrepareSubmitOrder:")
-print(json.dumps(preparedOrder, indent=2, sort_keys=True))
 
 # __sign_tx:
 # Wallet server: Sign the prepared transaction
-blob = preparedOrder["blob"]
-req = {"tx": blob, "pubKey": pubKey, "propagate": False}
 print("Request for SignTx:")
 print(json.dumps(req, indent=2, sort_keys=True))
-url = f"{walletserver_url}/api/v1/messages"
+url = f"{walletserver_url}/api/v1/command"
 response = requests.post(url, headers=headers, json=req)
 helpers.check_response(response)
-signedTx = response.json()["signedTx"]
+responsejson = response.json()
 # :sign_tx__
+
 print("Response from SignTx:")
-print(json.dumps(signedTx, indent=2, sort_keys=True))
+print(json.dumps(responsejson, indent=2, sort_keys=True))
 
-# __submit_tx:
-# Vega node: Submit the signed transaction
-req = {"tx": signedTx}
-print("Request for SubmitTransaction:")
-print(json.dumps(req, indent=2, sort_keys=True))
-url = f"{node_url_rest}/transaction"
-response = requests.post(url, json=req)
-helpers.check_response(response)
-# :submit_tx__
-
-assert response.json()["success"]
 print("All is well.")

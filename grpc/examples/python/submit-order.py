@@ -15,13 +15,10 @@ Apps/Libraries:
 # Note: this file uses special tags in comments to enable snippets to be
 # included in documentation.
 # Example
-#   #  __something:
+#   # __something:
 #   some code here
 #   # :something__
 
-import base64
-import grpc
-import json
 import sys
 
 # __import_client:
@@ -91,67 +88,44 @@ marketID = markets[0].id
 GENERATE_NEW_KEYPAIR = False
 if GENERATE_NEW_KEYPAIR:
     # If you don't already have a keypair, generate one.
-    response = walletclient.generatekey(wallet_passphrase, [])
+    response = walletclient.generatekey(
+        wallet_passphrase,
+        [{"key": "alias", "value": "my_key_alias"}],
+    )
     helpers.check_response(response)
-    pubKey = response.json()["key"]["pub"]
+    pub_key = response.json()["key"]["pub"]
 else:
     # List keypairs
     response = walletclient.listkeys()
     helpers.check_response(response)
     keys = response.json()["keys"]
     assert len(keys) > 0
-    pubKey = keys[0]["pub"]
+    pub_key = keys[0]["pub"]
 # :generate_keypair__
 
 # __prepare_order:
-# Vega node: Prepare the SubmitOrder
-order = vac.api.trading.PrepareSubmitOrderRequest(
-    submission=vac.commands.v1.commands.OrderSubmission(
+req = vac.wallet.v1.wallet.SubmitTransactionRequest(
+    pub_key=pub_key,
+    propagate=False,
+    order_submission=vac.commands.v1.commands.OrderSubmission(
         market_id=marketID,
         # price is an integer. For example 123456 is a price of 1.23456,
         # assuming 5 decimal places.
         price=100000,
-        side=vac.vega.Side.SIDE_BUY,
         size=1,
+        side=vac.vega.Side.SIDE_BUY,
         time_in_force=vac.vega.Order.TimeInForce.TIME_IN_FORCE_GTC,
+        expires_at=0,  # not needed for GTC orders
         type=vac.vega.Order.Type.TYPE_LIMIT,
-    )
+        reference="repo:api;lang:python;sample:submit-order-grpc",
+        # pegged_order=None,
+    ),
 )
-print(f"Request for PrepareSubmitOrder: {order}")
-try:
-    prepare_response = tradingcli.PrepareSubmitOrder(order)
-except grpc.RpcError as exc:
-    print(json.dumps(vac.grpc_error_detail(exc), indent=2, sort_keys=True))
-    exit(1)
-print(f"Response from PrepareSubmitOrder: {prepare_response}")
 # :prepare_order__
 
 # __sign_tx:
-# Wallet server: Sign the prepared transaction
-blob_base64 = base64.b64encode(prepare_response.blob).decode("ascii")
-print(f"Request for SignTx: blob={blob_base64}, pubKey={pubKey}")
-response = walletclient.signtx(blob_base64, pubKey, False)
-helpers.check_response(response)
-responsejson = response.json()
-print("Response from SignTx:")
-print(json.dumps(responsejson, indent=2, sort_keys=True))
-signedTx = responsejson["signedTx"]
+# Use the helper function to sign and submit the tx
+tradingcli.sign_submit_tx_v2(walletclient, req)
 # :sign_tx__
 
-# __submit_tx:
-# Vega node: Submit the signed transaction
-request = vac.api.trading.SubmitTransactionRequest(
-    tx=vac.vega.SignedBundle(
-        tx=base64.b64decode(signedTx["tx"]),
-        sig=vac.vega.Signature(
-            sig=base64.b64decode(signedTx["sig"]["sig"]),
-            algo="vega/ed25519",
-            version=1,
-        ),
-    ),
-)
-print(f"Request for SubmitTransaction: {request}")
-submittx_response = tradingcli.SubmitTransaction(request)
-# :submit_tx__
-assert submittx_response.success
 print("All is well.")

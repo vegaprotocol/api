@@ -4,4 +4,14 @@
 default:
 	@pipenv --bare sync
 	@pipenv --bare clean
-	@env PYTHONPATH=../../../grpc/examples/python:. pipenv run python3 submit-order.py --ci
+	@find . -name '*.py' | while read -r pyscript ; do \
+		env PYTHONPATH=../../../grpc/examples/python:. pipenv run python3 "$$pyscript" || exit 1 ; \
+	done
+
+.PHONY: ci
+ci:
+	@pipenv --bare sync
+	@pipenv --bare clean
+	@find . -name '*.py' | while read -r pyscript ; do \
+		env PYTHONPATH=../../../grpc/examples/python:. pipenv run python3 "$$pyscript" --ci || exit 1 ; \
+	done
