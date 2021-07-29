@@ -3,7 +3,6 @@ import uuid
 from typing import Any, Callable
 
 import google.protobuf.json_format as goog_json
-import grpc
 
 from .blockchain import CommandByte
 from .generated import vega_pb2 as vega
@@ -11,25 +10,18 @@ from .generated.api import (
     trading_pb2 as trading,
     trading_pb2_grpc as trading_grpc,
 )
+from .grpcclient import GRPCClient
 from .walletclient import WalletClient
 
 
-class VegaTradingClient:
+class VegaTradingClient(GRPCClient):
     """
     The Vega Trading Client talks to a back-end node.
     """
 
     def __init__(self, url: str, channel=None) -> None:
-        if url is None:
-            raise Exception("Missing node URL")
-        self.url = url
-
-        if channel is None:
-            # get a gRPC channel
-            channel = grpc.insecure_channel(self.url)
-            grpc.channel_ready_future(channel).result(timeout=10)
-
-        self._trading = trading_grpc.TradingServiceStub(channel)
+        super().__init__(url, channel=channel)
+        self._trading = trading_grpc.TradingServiceStub(self.channel)
 
     def PrepareSubmitOrder(self, request: Any, contact_node=True) -> Any:
         """

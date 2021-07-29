@@ -1,19 +1,19 @@
-import grpc
 import itertools
 import json
 import re
 from typing import Any, Dict, List
 
 import google.rpc.status_pb2 as goog_status
+import grpc
 
 
-def remove_control_chars(s: str) -> str:
+def remove_control_chars(data: str) -> str:
     # https://stackoverflow.com/questions/92438
     control_chars = "".join(
         map(chr, itertools.chain(range(0x00, 0x20), range(0x7F, 0xA0)))
     )
     control_char_re = re.compile(f"[{re.escape(control_chars)}]")
-    return control_char_re.sub("?", s)
+    return control_char_re.sub("?", data)
 
 
 def grpc_error_detail(err: grpc.RpcError) -> Dict[str, Any]:
@@ -38,20 +38,20 @@ def grpc_error_detail(err: grpc.RpcError) -> Dict[str, Any]:
     if not isinstance(err, grpc.RpcError):
         raise ValueError(f"Not a gRPC error: {err}")
 
-    e: Dict[str, Any] = {}
+    errinfo: Dict[str, Any] = {}
     for arg in err.args:
         for attr in ["code", "details"]:
             if hasattr(arg, attr):
-                e[attr] = str(getattr(arg, attr))
+                errinfo[attr] = str(getattr(arg, attr))
 
         if hasattr(arg, "debug_error_string"):
             try:
                 parsed = json.loads(arg.debug_error_string)
-                e["debug_error_string"] = parsed
+                errinfo["debug_error_string"] = parsed
             except json.decoder.JSONDecodeError:
-                e["debug_error_string_raw"] = arg.debug_error_string
+                errinfo["debug_error_string_raw"] = arg.debug_error_string
 
-    md: List[Dict[str, Any]] = []
+    metadata: List[Dict[str, Any]] = []
     for tmd in err.trailing_metadata():
         if not (
             hasattr(tmd, "key")
@@ -62,22 +62,25 @@ def grpc_error_detail(err: grpc.RpcError) -> Dict[str, Any]:
 
         status = goog_status.Status()
         status.MergeFromString(tmd.value)
-        md.append(
+        metadata.append(
             {
                 "code": str(status.code),
                 "message": status.message,
                 "details": [
                     {
-                        "type": d.type_url,
+                        "type": detail.type_url,
                         "value": remove_control_chars(
-                            d.value.decode("utf-8", errors="backslashreplace")
+                            detail.value.decode(
+                                "utf-8",
+                                errors="backslashreplace",
+                            )
                         ),
                     }
-                    for d in status.details
+                    for detail in status.details
                 ],
             }
         )
 
-    e["metadata"] = md
+    errinfo["metadata"] = metadata
 
-    return {"gRPCerror": e}
+    return {"gRPCerror": errinfo}
