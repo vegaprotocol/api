@@ -24,7 +24,7 @@ coverage:
 	@pipenv run pip install -e .
 	@find . -name __pycache__ | xargs -r rm -rf
 	@find . -name  '*.pyc' -o -name '*.so' | xargs -r rm -rf
-	@pipenv run pytest --cov=vegaapiclient --cov-report=term --cov-report=html:.coverage.d tests/
+	@pipenv run pytest --cov-config=.coveragerc --cov=vegaapiclient --cov-report=term --cov-report=html:.coverage.d tests/
 
 .PHONY: dist
 dist:
