@@ -1,13 +1,7 @@
-import base64
-import uuid
-from google.protobuf.empty_pb2 import Empty
-
 import vegaapiclient as vac
 
-from .helpers import check_response
 
-
-def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):
+def test_order_submission(trading, tradingdata, walletClientWalletKeypair):
     (walletclient, _, _, pub_key) = walletClientWalletKeypair
 
     # Get a market
@@ -32,7 +26,7 @@ def test_SubmitOrder(trading, tradingdata, walletClientWalletKeypair):
             time_in_force=vac.vega.Order.TimeInForce.TIME_IN_FORCE_GTT,
             expires_at=now + 120000000000,
             type=vac.vega.Order.Type.TYPE_LIMIT,
-            reference=str(uuid.uuid4()),
+            reference="repo:api;lang:python;test_order_submission",
             # pegged_order=None,
         ),
     )
