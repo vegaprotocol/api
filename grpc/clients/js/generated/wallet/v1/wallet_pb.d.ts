@@ -48,6 +48,16 @@ export class SubmitTransactionRequest extends jspb.Message {
   getLiquidityProvisionSubmission(): commands_v1_commands_pb.LiquidityProvisionSubmission | undefined;
   setLiquidityProvisionSubmission(value?: commands_v1_commands_pb.LiquidityProvisionSubmission): void;
 
+  hasDelegateSubmission(): boolean;
+  clearDelegateSubmission(): void;
+  getDelegateSubmission(): commands_v1_commands_pb.DelegateSubmission | undefined;
+  setDelegateSubmission(value?: commands_v1_commands_pb.DelegateSubmission): void;
+
+  hasUndelegateAtEpochEndSubmission(): boolean;
+  clearUndelegateAtEpochEndSubmission(): void;
+  getUndelegateAtEpochEndSubmission(): commands_v1_commands_pb.UndelegateAtEpochEndSubmission | undefined;
+  setUndelegateAtEpochEndSubmission(value?: commands_v1_commands_pb.UndelegateAtEpochEndSubmission): void;
+
   hasNodeRegistration(): boolean;
   clearNodeRegistration(): void;
   getNodeRegistration(): commands_v1_validator_commands_pb.NodeRegistration | undefined;
@@ -95,6 +105,8 @@ export namespace SubmitTransactionRequest {
     proposalSubmission?: commands_v1_commands_pb.ProposalSubmission.AsObject,
     voteSubmission?: commands_v1_commands_pb.VoteSubmission.AsObject,
     liquidityProvisionSubmission?: commands_v1_commands_pb.LiquidityProvisionSubmission.AsObject,
+    delegateSubmission?: commands_v1_commands_pb.DelegateSubmission.AsObject,
+    undelegateAtEpochEndSubmission?: commands_v1_commands_pb.UndelegateAtEpochEndSubmission.AsObject,
     nodeRegistration?: commands_v1_validator_commands_pb.NodeRegistration.AsObject,
     nodeVote?: commands_v1_validator_commands_pb.NodeVote.AsObject,
     nodeSignature?: commands_v1_validator_commands_pb.NodeSignature.AsObject,
@@ -111,6 +123,8 @@ export namespace SubmitTransactionRequest {
     PROPOSAL_SUBMISSION = 1005,
     VOTE_SUBMISSION = 1006,
     LIQUIDITY_PROVISION_SUBMISSION = 1007,
+    DELEGATE_SUBMISSION = 1008,
+    UNDELEGATE_AT_EPOCH_END_SUBMISSION = 1009,
     NODE_REGISTRATION = 2001,
     NODE_VOTE = 2002,
     NODE_SIGNATURE = 2003,

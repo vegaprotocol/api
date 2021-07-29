@@ -740,6 +740,10 @@
             <ul>
 
                 <li>
+                  <a href="#vega.commands.v1.DelegateSubmission"><span class="badge">M</span>DelegateSubmission</a>
+                </li>
+
+                <li>
                   <a href="#vega.commands.v1.LiquidityProvisionSubmission"><span class="badge">M</span>LiquidityProvisionSubmission</a>
                 </li>
 
@@ -757,6 +761,10 @@
 
                 <li>
                   <a href="#vega.commands.v1.ProposalSubmission"><span class="badge">M</span>ProposalSubmission</a>
+                </li>
+
+                <li>
+                  <a href="#vega.commands.v1.UndelegateAtEpochEndSubmission"><span class="badge">M</span>UndelegateAtEpochEndSubmission</a>
                 </li>
 
                 <li>
@@ -8725,6 +8733,64 @@ time. </p></td>
       <p></p>
 
 
+        <h3 id="vega.commands.v1.DelegateSubmission">DelegateSubmission</h3>
+        <p>A command to submit an instruction to delegate some stake to a node</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The ID for the node to delegate to </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>The amount of stake to delegate </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+            <h4>Validated Fields</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Field</td>
+                  <td>Validations</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+
+
+
         <h3 id="vega.commands.v1.LiquidityProvisionSubmission">LiquidityProvisionSubmission</h3>
         <p>A liquidity provision submitted for a given market</p>
 
@@ -9119,6 +9185,64 @@ set internally by the node to return a unique reference identifier for the order
                     <ul>
 
                       <li>msg_exists: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+
+
+
+        <h3 id="vega.commands.v1.UndelegateAtEpochEndSubmission">UndelegateAtEpochEndSubmission</h3>
+        <p>A command to submit an instruction to undelete stake from a node</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The ID for the node to undelegate from </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>The amount of stake to undelegate </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+            <h4>Validated Fields</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Field</td>
+                  <td>Validations</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
 
                     </ul>
                   </td>
@@ -11181,6 +11305,20 @@ Tx. BlockHeight is used as a mechanism for replay protection. </p></td>
                 <tr>
                   <td>liquidity_provision_submission</td>
                   <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">LiquidityProvisionSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>delegate_submission</td>
+                  <td><a href="#vega.commands.v1.DelegateSubmission">DelegateSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegate_at_epoch_end_submission</td>
+                  <td><a href="#vega.commands.v1.UndelegateAtEpochEndSubmission">UndelegateAtEpochEndSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -17742,6 +17880,20 @@ these data are being used to bundle the call to the smart contract on the ethere
                 <tr>
                   <td>liquidity_provision_submission</td>
                   <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">vega.commands.v1.LiquidityProvisionSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>delegate_submission</td>
+                  <td><a href="#vega.commands.v1.DelegateSubmission">vega.commands.v1.DelegateSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegate_at_epoch_end_submission</td>
+                  <td><a href="#vega.commands.v1.UndelegateAtEpochEndSubmission">vega.commands.v1.UndelegateAtEpochEndSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

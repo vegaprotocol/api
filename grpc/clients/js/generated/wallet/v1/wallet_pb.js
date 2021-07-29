@@ -52,7 +52,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.wallet.v1.SubmitTransactionRequest.oneofGroups_ = [[1001,1002,1003,1004,1005,1006,1007,2001,2002,2003,2004,3001]];
+proto.vega.wallet.v1.SubmitTransactionRequest.oneofGroups_ = [[1001,1002,1003,1004,1005,1006,1007,1008,1009,2001,2002,2003,2004,3001]];
 
 /**
  * @enum {number}
@@ -66,6 +66,8 @@ proto.vega.wallet.v1.SubmitTransactionRequest.CommandCase = {
   PROPOSAL_SUBMISSION: 1005,
   VOTE_SUBMISSION: 1006,
   LIQUIDITY_PROVISION_SUBMISSION: 1007,
+  DELEGATE_SUBMISSION: 1008,
+  UNDELEGATE_AT_EPOCH_END_SUBMISSION: 1009,
   NODE_REGISTRATION: 2001,
   NODE_VOTE: 2002,
   NODE_SIGNATURE: 2003,
@@ -120,6 +122,8 @@ proto.vega.wallet.v1.SubmitTransactionRequest.toObject = function(includeInstanc
     proposalSubmission: (f = msg.getProposalSubmission()) && commands_v1_commands_pb.ProposalSubmission.toObject(includeInstance, f),
     voteSubmission: (f = msg.getVoteSubmission()) && commands_v1_commands_pb.VoteSubmission.toObject(includeInstance, f),
     liquidityProvisionSubmission: (f = msg.getLiquidityProvisionSubmission()) && commands_v1_commands_pb.LiquidityProvisionSubmission.toObject(includeInstance, f),
+    delegateSubmission: (f = msg.getDelegateSubmission()) && commands_v1_commands_pb.DelegateSubmission.toObject(includeInstance, f),
+    undelegateAtEpochEndSubmission: (f = msg.getUndelegateAtEpochEndSubmission()) && commands_v1_commands_pb.UndelegateAtEpochEndSubmission.toObject(includeInstance, f),
     nodeRegistration: (f = msg.getNodeRegistration()) && commands_v1_validator_commands_pb.NodeRegistration.toObject(includeInstance, f),
     nodeVote: (f = msg.getNodeVote()) && commands_v1_validator_commands_pb.NodeVote.toObject(includeInstance, f),
     nodeSignature: (f = msg.getNodeSignature()) && commands_v1_validator_commands_pb.NodeSignature.toObject(includeInstance, f),
@@ -203,6 +207,16 @@ proto.vega.wallet.v1.SubmitTransactionRequest.deserializeBinaryFromReader = func
       var value = new commands_v1_commands_pb.LiquidityProvisionSubmission;
       reader.readMessage(value,commands_v1_commands_pb.LiquidityProvisionSubmission.deserializeBinaryFromReader);
       msg.setLiquidityProvisionSubmission(value);
+      break;
+    case 1008:
+      var value = new commands_v1_commands_pb.DelegateSubmission;
+      reader.readMessage(value,commands_v1_commands_pb.DelegateSubmission.deserializeBinaryFromReader);
+      msg.setDelegateSubmission(value);
+      break;
+    case 1009:
+      var value = new commands_v1_commands_pb.UndelegateAtEpochEndSubmission;
+      reader.readMessage(value,commands_v1_commands_pb.UndelegateAtEpochEndSubmission.deserializeBinaryFromReader);
+      msg.setUndelegateAtEpochEndSubmission(value);
       break;
     case 2001:
       var value = new commands_v1_validator_commands_pb.NodeRegistration;
@@ -326,6 +340,22 @@ proto.vega.wallet.v1.SubmitTransactionRequest.serializeBinaryToWriter = function
       1007,
       f,
       commands_v1_commands_pb.LiquidityProvisionSubmission.serializeBinaryToWriter
+    );
+  }
+  f = message.getDelegateSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      1008,
+      f,
+      commands_v1_commands_pb.DelegateSubmission.serializeBinaryToWriter
+    );
+  }
+  f = message.getUndelegateAtEpochEndSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      1009,
+      f,
+      commands_v1_commands_pb.UndelegateAtEpochEndSubmission.serializeBinaryToWriter
     );
   }
   f = message.getNodeRegistration();
@@ -663,6 +693,80 @@ proto.vega.wallet.v1.SubmitTransactionRequest.prototype.clearLiquidityProvisionS
  */
 proto.vega.wallet.v1.SubmitTransactionRequest.prototype.hasLiquidityProvisionSubmission = function() {
   return jspb.Message.getField(this, 1007) != null;
+};
+
+
+/**
+ * optional vega.commands.v1.DelegateSubmission delegate_submission = 1008;
+ * @return {?proto.vega.commands.v1.DelegateSubmission}
+ */
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.getDelegateSubmission = function() {
+  return /** @type{?proto.vega.commands.v1.DelegateSubmission} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.DelegateSubmission, 1008));
+};
+
+
+/**
+ * @param {?proto.vega.commands.v1.DelegateSubmission|undefined} value
+ * @return {!proto.vega.wallet.v1.SubmitTransactionRequest} returns this
+*/
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.setDelegateSubmission = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1008, proto.vega.wallet.v1.SubmitTransactionRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.wallet.v1.SubmitTransactionRequest} returns this
+ */
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.clearDelegateSubmission = function() {
+  return this.setDelegateSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.hasDelegateSubmission = function() {
+  return jspb.Message.getField(this, 1008) != null;
+};
+
+
+/**
+ * optional vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009;
+ * @return {?proto.vega.commands.v1.UndelegateAtEpochEndSubmission}
+ */
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.getUndelegateAtEpochEndSubmission = function() {
+  return /** @type{?proto.vega.commands.v1.UndelegateAtEpochEndSubmission} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.UndelegateAtEpochEndSubmission, 1009));
+};
+
+
+/**
+ * @param {?proto.vega.commands.v1.UndelegateAtEpochEndSubmission|undefined} value
+ * @return {!proto.vega.wallet.v1.SubmitTransactionRequest} returns this
+*/
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.setUndelegateAtEpochEndSubmission = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1009, proto.vega.wallet.v1.SubmitTransactionRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.wallet.v1.SubmitTransactionRequest} returns this
+ */
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.clearUndelegateAtEpochEndSubmission = function() {
+  return this.setUndelegateAtEpochEndSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.wallet.v1.SubmitTransactionRequest.prototype.hasUndelegateAtEpochEndSubmission = function() {
+  return jspb.Message.getField(this, 1009) != null;
 };
 
 

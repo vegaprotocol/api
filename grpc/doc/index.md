@@ -144,11 +144,13 @@
     - [Property](#oracles.v1.Property)
 
 - [commands/v1/commands.proto](#commands/v1/commands.proto)
+    - [DelegateSubmission](#vega.commands.v1.DelegateSubmission)
     - [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission)
     - [OrderAmendment](#vega.commands.v1.OrderAmendment)
     - [OrderCancellation](#vega.commands.v1.OrderCancellation)
     - [OrderSubmission](#vega.commands.v1.OrderSubmission)
     - [ProposalSubmission](#vega.commands.v1.ProposalSubmission)
+    - [UndelegateAtEpochEndSubmission](#vega.commands.v1.UndelegateAtEpochEndSubmission)
     - [VoteSubmission](#vega.commands.v1.VoteSubmission)
     - [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission)
 
@@ -2770,6 +2772,22 @@ Property describes one property of an oracle spec with a key with its value.
 
 
 
+<a name="vega.commands.v1.DelegateSubmission"></a>
+
+### DelegateSubmission
+A command to submit an instruction to delegate some stake to a node
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| node_id | [string](#string) |  | The ID for the node to delegate to |
+| amount | [uint64](#uint64) |  | The amount of stake to delegate |
+
+
+
+
+
+
 <a name="vega.commands.v1.LiquidityProvisionSubmission"></a>
 
 ### LiquidityProvisionSubmission
@@ -2862,6 +2880,22 @@ vega network governance
 | ----- | ---- | ----- | ----------- |
 | reference | [string](#string) |  | Proposal reference |
 | terms | [vega.ProposalTerms](#vega.ProposalTerms) |  | Proposal configuration and the actual change that is meant to be executed when proposal is enacted |
+
+
+
+
+
+
+<a name="vega.commands.v1.UndelegateAtEpochEndSubmission"></a>
+
+### UndelegateAtEpochEndSubmission
+A command to submit an instruction to undelete stake from a node
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| node_id | [string](#string) |  | The ID for the node to undelegate from |
+| amount | [uint64](#uint64) |  | The amount of stake to undelegate |
 
 
 
@@ -3675,6 +3709,8 @@ The supported Oracle sources
 | proposal_submission | [ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
 | vote_submission | [VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
 | liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
+| delegate_submission | [DelegateSubmission](#vega.commands.v1.DelegateSubmission) |  |  |
+| undelegate_at_epoch_end_submission | [UndelegateAtEpochEndSubmission](#vega.commands.v1.UndelegateAtEpochEndSubmission) |  |  |
 | node_registration | [NodeRegistration](#vega.commands.v1.NodeRegistration) |  | Validator commands |
 | node_vote | [NodeVote](#vega.commands.v1.NodeVote) |  |  |
 | node_signature | [NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
@@ -6561,6 +6597,8 @@ Blockchain transaction type
 | proposal_submission | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
 | vote_submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
 | liquidity_provision_submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
+| delegate_submission | [vega.commands.v1.DelegateSubmission](#vega.commands.v1.DelegateSubmission) |  |  |
+| undelegate_at_epoch_end_submission | [vega.commands.v1.UndelegateAtEpochEndSubmission](#vega.commands.v1.UndelegateAtEpochEndSubmission) |  |  |
 | node_registration | [vega.commands.v1.NodeRegistration](#vega.commands.v1.NodeRegistration) |  | Validator commands |
 | node_vote | [vega.commands.v1.NodeVote](#vega.commands.v1.NodeVote) |  |  |
 | node_signature | [vega.commands.v1.NodeSignature](#vega.commands.v1.NodeSignature) |  |  |

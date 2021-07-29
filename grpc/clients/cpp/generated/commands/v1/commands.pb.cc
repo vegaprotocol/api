@@ -52,9 +52,30 @@ class VoteSubmissionDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VoteSubmission> _instance;
 } _VoteSubmission_default_instance_;
+class DelegateSubmissionDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DelegateSubmission> _instance;
+} _DelegateSubmission_default_instance_;
+class UndelegateAtEpochEndSubmissionDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UndelegateAtEpochEndSubmission> _instance;
+} _UndelegateAtEpochEndSubmission_default_instance_;
 }  // namespace v1
 }  // namespace commands
 }  // namespace vega
+static void InitDefaultsscc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::commands::v1::_DelegateSubmission_default_instance_;
+    new (ptr) ::vega::commands::v1::DelegateSubmission();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto}, {}};
+
 static void InitDefaultsscc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -126,6 +147,19 @@ static void InitDefaultsscc_info_ProposalSubmission_commands_2fv1_2fcommands_2ep
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto}, {
       &scc_info_ProposalTerms_governance_2eproto.base,}};
 
+static void InitDefaultsscc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::commands::v1::_UndelegateAtEpochEndSubmission_default_instance_;
+    new (ptr) ::vega::commands::v1::UndelegateAtEpochEndSubmission();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto}, {}};
+
 static void InitDefaultsscc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -153,7 +187,7 @@ static void InitDefaultsscc_info_WithdrawSubmission_commands_2fv1_2fcommands_2ep
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto}, {
       &scc_info_WithdrawExt_vega_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_commands_2fv1_2fcommands_2eproto[7];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_commands_2fv1_2fcommands_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_commands_2fv1_2fcommands_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_commands_2fv1_2fcommands_2eproto = nullptr;
 
@@ -225,6 +259,20 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2fcommands_2epro
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::VoteSubmission, proposal_id_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::VoteSubmission, value_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::DelegateSubmission, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::DelegateSubmission, node_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::DelegateSubmission, amount_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::UndelegateAtEpochEndSubmission, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::UndelegateAtEpochEndSubmission, node_id_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::UndelegateAtEpochEndSubmission, amount_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::commands::v1::OrderSubmission)},
@@ -234,6 +282,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 45, -1, sizeof(::vega::commands::v1::WithdrawSubmission)},
   { 53, -1, sizeof(::vega::commands::v1::ProposalSubmission)},
   { 60, -1, sizeof(::vega::commands::v1::VoteSubmission)},
+  { 67, -1, sizeof(::vega::commands::v1::DelegateSubmission)},
+  { 74, -1, sizeof(::vega::commands::v1::UndelegateAtEpochEndSubmission)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -244,6 +294,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::commands::v1::_WithdrawSubmission_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::commands::v1::_ProposalSubmission_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::commands::v1::_VoteSubmission_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::commands::v1::_DelegateSubmission_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::commands::v1::_UndelegateAtEpochEndSubmission_default_instance_),
 };
 
 const char descriptor_table_protodef_commands_2fv1_2fcommands_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -285,9 +337,13 @@ const char descriptor_table_protodef_commands_2fv1_2fcommands_2eproto[] PROTOBUF
   "\002 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005term"
   "s\"a\n\016VoteSubmission\022\'\n\013proposal_id\030\001 \001(\t"
   "B\006\342\337\037\002X\001R\nproposalId\022&\n\005value\030\002 \001(\0162\020.ve"
-  "ga.Vote.ValueR\005valueBO\n io.vegaprotocol."
-  "vega.commands.v1Z+code.vegaprotocol.io/v"
-  "ega/proto/commands/v1b\006proto3"
+  "ga.Vote.ValueR\005value\"M\n\022DelegateSubmissi"
+  "on\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006nodeId\022\026\n\006a"
+  "mount\030\002 \001(\004R\006amount\"Y\n\036UndelegateAtEpoch"
+  "EndSubmission\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006"
+  "nodeId\022\026\n\006amount\030\002 \001(\004R\006amountBO\n io.veg"
+  "aprotocol.vega.commands.v1Z+code.vegapro"
+  "tocol.io/vega/proto/commands/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_commands_2fv1_2fcommands_2eproto_deps[4] = {
   &::descriptor_table_github_2ecom_2fmwitkow_2fgo_2dproto_2dvalidators_2fvalidator_2eproto,
@@ -295,21 +351,23 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_governance_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_commands_2fv1_2fcommands_2eproto_sccs[7] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_commands_2fv1_2fcommands_2eproto_sccs[9] = {
+  &scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_OrderAmendment_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto.base,
+  &scc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto.base,
   &scc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_commands_2fv1_2fcommands_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_commands_2fv1_2fcommands_2eproto = {
-  false, false, descriptor_table_protodef_commands_2fv1_2fcommands_2eproto, "commands/v1/commands.proto", 1629,
-  &descriptor_table_commands_2fv1_2fcommands_2eproto_once, descriptor_table_commands_2fv1_2fcommands_2eproto_sccs, descriptor_table_commands_2fv1_2fcommands_2eproto_deps, 7, 4,
+  false, false, descriptor_table_protodef_commands_2fv1_2fcommands_2eproto, "commands/v1/commands.proto", 1799,
+  &descriptor_table_commands_2fv1_2fcommands_2eproto_once, descriptor_table_commands_2fv1_2fcommands_2eproto_sccs, descriptor_table_commands_2fv1_2fcommands_2eproto_deps, 9, 4,
   schemas, file_default_instances, TableStruct_commands_2fv1_2fcommands_2eproto::offsets,
-  file_level_metadata_commands_2fv1_2fcommands_2eproto, 7, file_level_enum_descriptors_commands_2fv1_2fcommands_2eproto, file_level_service_descriptors_commands_2fv1_2fcommands_2eproto,
+  file_level_metadata_commands_2fv1_2fcommands_2eproto, 9, file_level_enum_descriptors_commands_2fv1_2fcommands_2eproto, file_level_service_descriptors_commands_2fv1_2fcommands_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2632,6 +2690,472 @@ void VoteSubmission::InternalSwap(VoteSubmission* other) {
 }
 
 
+// ===================================================================
+
+class DelegateSubmission::_Internal {
+ public:
+};
+
+DelegateSubmission::DelegateSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.commands.v1.DelegateSubmission)
+}
+DelegateSubmission::DelegateSubmission(const DelegateSubmission& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_node_id().empty()) {
+    node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node_id(),
+      GetArena());
+  }
+  amount_ = from.amount_;
+  // @@protoc_insertion_point(copy_constructor:vega.commands.v1.DelegateSubmission)
+}
+
+void DelegateSubmission::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto.base);
+  node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  amount_ = PROTOBUF_ULONGLONG(0);
+}
+
+DelegateSubmission::~DelegateSubmission() {
+  // @@protoc_insertion_point(destructor:vega.commands.v1.DelegateSubmission)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void DelegateSubmission::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  node_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DelegateSubmission::ArenaDtor(void* object) {
+  DelegateSubmission* _this = reinterpret_cast< DelegateSubmission* >(object);
+  (void)_this;
+}
+void DelegateSubmission::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DelegateSubmission::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DelegateSubmission& DelegateSubmission::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DelegateSubmission::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.commands.v1.DelegateSubmission)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  node_id_.ClearToEmpty();
+  amount_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DelegateSubmission::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_node_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.DelegateSubmission.node_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 amount = 2 [json_name = "amount"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DelegateSubmission::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.commands.v1.DelegateSubmission)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
+  if (this->node_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_node_id().data(), static_cast<int>(this->_internal_node_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.DelegateSubmission.node_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_node_id(), target);
+  }
+
+  // uint64 amount = 2 [json_name = "amount"];
+  if (this->amount() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_amount(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.commands.v1.DelegateSubmission)
+  return target;
+}
+
+size_t DelegateSubmission::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.commands.v1.DelegateSubmission)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
+  if (this->node_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_node_id());
+  }
+
+  // uint64 amount = 2 [json_name = "amount"];
+  if (this->amount() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_amount());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DelegateSubmission::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.commands.v1.DelegateSubmission)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DelegateSubmission* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DelegateSubmission>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.commands.v1.DelegateSubmission)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.commands.v1.DelegateSubmission)
+    MergeFrom(*source);
+  }
+}
+
+void DelegateSubmission::MergeFrom(const DelegateSubmission& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.commands.v1.DelegateSubmission)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.node_id().size() > 0) {
+    _internal_set_node_id(from._internal_node_id());
+  }
+  if (from.amount() != 0) {
+    _internal_set_amount(from._internal_amount());
+  }
+}
+
+void DelegateSubmission::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.commands.v1.DelegateSubmission)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DelegateSubmission::CopyFrom(const DelegateSubmission& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.commands.v1.DelegateSubmission)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DelegateSubmission::IsInitialized() const {
+  return true;
+}
+
+void DelegateSubmission::InternalSwap(DelegateSubmission* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  node_id_.Swap(&other->node_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(amount_, other->amount_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DelegateSubmission::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class UndelegateAtEpochEndSubmission::_Internal {
+ public:
+};
+
+UndelegateAtEpochEndSubmission::UndelegateAtEpochEndSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.commands.v1.UndelegateAtEpochEndSubmission)
+}
+UndelegateAtEpochEndSubmission::UndelegateAtEpochEndSubmission(const UndelegateAtEpochEndSubmission& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_node_id().empty()) {
+    node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node_id(),
+      GetArena());
+  }
+  amount_ = from.amount_;
+  // @@protoc_insertion_point(copy_constructor:vega.commands.v1.UndelegateAtEpochEndSubmission)
+}
+
+void UndelegateAtEpochEndSubmission::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto.base);
+  node_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  amount_ = PROTOBUF_ULONGLONG(0);
+}
+
+UndelegateAtEpochEndSubmission::~UndelegateAtEpochEndSubmission() {
+  // @@protoc_insertion_point(destructor:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void UndelegateAtEpochEndSubmission::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  node_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void UndelegateAtEpochEndSubmission::ArenaDtor(void* object) {
+  UndelegateAtEpochEndSubmission* _this = reinterpret_cast< UndelegateAtEpochEndSubmission* >(object);
+  (void)_this;
+}
+void UndelegateAtEpochEndSubmission::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void UndelegateAtEpochEndSubmission::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UndelegateAtEpochEndSubmission& UndelegateAtEpochEndSubmission::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void UndelegateAtEpochEndSubmission::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  node_id_.ClearToEmpty();
+  amount_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UndelegateAtEpochEndSubmission::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_node_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.UndelegateAtEpochEndSubmission.node_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 amount = 2 [json_name = "amount"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          amount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* UndelegateAtEpochEndSubmission::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
+  if (this->node_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_node_id().data(), static_cast<int>(this->_internal_node_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.UndelegateAtEpochEndSubmission.node_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_node_id(), target);
+  }
+
+  // uint64 amount = 2 [json_name = "amount"];
+  if (this->amount() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_amount(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  return target;
+}
+
+size_t UndelegateAtEpochEndSubmission::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
+  if (this->node_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_node_id());
+  }
+
+  // uint64 amount = 2 [json_name = "amount"];
+  if (this->amount() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_amount());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void UndelegateAtEpochEndSubmission::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UndelegateAtEpochEndSubmission* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UndelegateAtEpochEndSubmission>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.commands.v1.UndelegateAtEpochEndSubmission)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.commands.v1.UndelegateAtEpochEndSubmission)
+    MergeFrom(*source);
+  }
+}
+
+void UndelegateAtEpochEndSubmission::MergeFrom(const UndelegateAtEpochEndSubmission& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.node_id().size() > 0) {
+    _internal_set_node_id(from._internal_node_id());
+  }
+  if (from.amount() != 0) {
+    _internal_set_amount(from._internal_amount());
+  }
+}
+
+void UndelegateAtEpochEndSubmission::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UndelegateAtEpochEndSubmission::CopyFrom(const UndelegateAtEpochEndSubmission& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UndelegateAtEpochEndSubmission::IsInitialized() const {
+  return true;
+}
+
+void UndelegateAtEpochEndSubmission::InternalSwap(UndelegateAtEpochEndSubmission* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  node_id_.Swap(&other->node_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(amount_, other->amount_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UndelegateAtEpochEndSubmission::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace commands
@@ -2657,6 +3181,12 @@ template<> PROTOBUF_NOINLINE ::vega::commands::v1::ProposalSubmission* Arena::Cr
 }
 template<> PROTOBUF_NOINLINE ::vega::commands::v1::VoteSubmission* Arena::CreateMaybeMessage< ::vega::commands::v1::VoteSubmission >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::commands::v1::VoteSubmission >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::commands::v1::DelegateSubmission* Arena::CreateMaybeMessage< ::vega::commands::v1::DelegateSubmission >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::commands::v1::DelegateSubmission >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::commands::v1::UndelegateAtEpochEndSubmission* Arena::CreateMaybeMessage< ::vega::commands::v1::UndelegateAtEpochEndSubmission >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::commands::v1::UndelegateAtEpochEndSubmission >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

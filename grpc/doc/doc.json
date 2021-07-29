@@ -7933,6 +7933,50 @@
       "extensions": [],
       "messages": [
         {
+          "name": "DelegateSubmission",
+          "longName": "DelegateSubmission",
+          "fullName": "vega.commands.v1.DelegateSubmission",
+          "description": "A command to submit an instruction to delegate some stake to a node",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "node_id",
+              "description": "The ID for the node to delegate to",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": "",
+              "options": {
+                "validator.field": [
+                  {
+                    "name": "string_not_empty",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "amount",
+              "description": "The amount of stake to delegate",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
           "name": "LiquidityProvisionSubmission",
           "longName": "LiquidityProvisionSubmission",
           "fullName": "vega.commands.v1.LiquidityProvisionSubmission",
@@ -8353,6 +8397,50 @@
                   }
                 ]
               }
+            }
+          ]
+        },
+        {
+          "name": "UndelegateAtEpochEndSubmission",
+          "longName": "UndelegateAtEpochEndSubmission",
+          "fullName": "vega.commands.v1.UndelegateAtEpochEndSubmission",
+          "description": "A command to submit an instruction to undelete stake from a node",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "node_id",
+              "description": "The ID for the node to undelegate from",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": "",
+              "options": {
+                "validator.field": [
+                  {
+                    "name": "string_not_empty",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "amount",
+              "description": "The amount of stake to undelegate",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
             }
           ]
         },
@@ -10826,6 +10914,30 @@
               "type": "LiquidityProvisionSubmission",
               "longType": "LiquidityProvisionSubmission",
               "fullType": "vega.commands.v1.LiquidityProvisionSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "delegate_submission",
+              "description": "",
+              "label": "",
+              "type": "DelegateSubmission",
+              "longType": "DelegateSubmission",
+              "fullType": "vega.commands.v1.DelegateSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "undelegate_at_epoch_end_submission",
+              "description": "",
+              "label": "",
+              "type": "UndelegateAtEpochEndSubmission",
+              "longType": "UndelegateAtEpochEndSubmission",
+              "fullType": "vega.commands.v1.UndelegateAtEpochEndSubmission",
               "ismap": false,
               "isoneof": true,
               "oneofdecl": "command",
@@ -17563,6 +17675,30 @@
               "type": "LiquidityProvisionSubmission",
               "longType": "vega.commands.v1.LiquidityProvisionSubmission",
               "fullType": "vega.commands.v1.LiquidityProvisionSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "delegate_submission",
+              "description": "",
+              "label": "",
+              "type": "DelegateSubmission",
+              "longType": "vega.commands.v1.DelegateSubmission",
+              "fullType": "vega.commands.v1.DelegateSubmission",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "command",
+              "defaultValue": ""
+            },
+            {
+              "name": "undelegate_at_epoch_end_submission",
+              "description": "",
+              "label": "",
+              "type": "UndelegateAtEpochEndSubmission",
+              "longType": "vega.commands.v1.UndelegateAtEpochEndSubmission",
+              "fullType": "vega.commands.v1.UndelegateAtEpochEndSubmission",
               "ismap": false,
               "isoneof": true,
               "oneofdecl": "command",

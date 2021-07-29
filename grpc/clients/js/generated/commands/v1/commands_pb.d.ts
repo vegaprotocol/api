@@ -263,3 +263,51 @@ export namespace VoteSubmission {
   }
 }
 
+export class DelegateSubmission extends jspb.Message {
+  getNodeId(): string;
+  setNodeId(value: string): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DelegateSubmission.AsObject;
+  static toObject(includeInstance: boolean, msg: DelegateSubmission): DelegateSubmission.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DelegateSubmission, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DelegateSubmission;
+  static deserializeBinaryFromReader(message: DelegateSubmission, reader: jspb.BinaryReader): DelegateSubmission;
+}
+
+export namespace DelegateSubmission {
+  export type AsObject = {
+    nodeId: string,
+    amount: number,
+  }
+}
+
+export class UndelegateAtEpochEndSubmission extends jspb.Message {
+  getNodeId(): string;
+  setNodeId(value: string): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UndelegateAtEpochEndSubmission.AsObject;
+  static toObject(includeInstance: boolean, msg: UndelegateAtEpochEndSubmission): UndelegateAtEpochEndSubmission.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UndelegateAtEpochEndSubmission, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UndelegateAtEpochEndSubmission;
+  static deserializeBinaryFromReader(message: UndelegateAtEpochEndSubmission, reader: jspb.BinaryReader): UndelegateAtEpochEndSubmission;
+}
+
+export namespace UndelegateAtEpochEndSubmission {
+  export type AsObject = {
+    nodeId: string,
+    amount: number,
+  }
+}
+
