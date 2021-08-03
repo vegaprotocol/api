@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "@graphql-codegen/cli": "1.21.8",
-    "@graphql-codegen/typescript": "1.23.0",
-    "@graphql-codegen/typescript-apollo-client-helpers": "1.1.10",
-    "@graphql-codegen/typescript-react-apollo": "2.3.1",
+    "@graphql-codegen/cli": "2.0.0",
+    "@graphql-codegen/typescript": "2.0.0",
+    "@graphql-codegen/typescript-apollo-client-helpers": "2.0.0",
+    "@graphql-codegen/typescript-react-apollo": "3.0.0",
     "graphql": "15.5.1",
     "graphqldoc": "2.5.2",
     "marked": "2.1.3",
