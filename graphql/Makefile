@@ -12,6 +12,7 @@ default:
 pregraphql:
 	@if test -z "$(VEGACORE)" ; then echo "Please set VEGACORE" ; exit 1 ; fi
 	@cp -a "$(VEGACORE)/gateway/graphql/schema.graphql" ./
+	@(cd "$(VEGACORE)" && git describe --tags) >from.txt
 
 .PHONY: graphql
 graphql:

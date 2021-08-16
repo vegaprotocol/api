@@ -115,22 +115,20 @@ export type FilterFieldPolicy = {
 	key?: FieldPolicy<any> | FieldReadFunction<any>,
 	conditions?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type FutureKeySpecifier = ('maturity' | 'settlementAsset' | 'quoteName' | 'oracleSpecForSettlementPrice' | 'oracleSpecForTradingTermination' | 'oracleSpecBinding' | FutureKeySpecifier)[];
+export type FutureKeySpecifier = ('maturity' | 'settlementAsset' | 'quoteName' | 'oracleSpec' | 'oracleSpecBinding' | FutureKeySpecifier)[];
 export type FutureFieldPolicy = {
 	maturity?: FieldPolicy<any> | FieldReadFunction<any>,
 	settlementAsset?: FieldPolicy<any> | FieldReadFunction<any>,
 	quoteName?: FieldPolicy<any> | FieldReadFunction<any>,
-	oracleSpecForSettlementPrice?: FieldPolicy<any> | FieldReadFunction<any>,
-	oracleSpecForTradingTermination?: FieldPolicy<any> | FieldReadFunction<any>,
+	oracleSpec?: FieldPolicy<any> | FieldReadFunction<any>,
 	oracleSpecBinding?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type FutureProductKeySpecifier = ('maturity' | 'settlementAsset' | 'quoteName' | 'oracleSpecForSettlementPrice' | 'oracleSpecForTradingTermination' | 'oracleSpecBinding' | FutureProductKeySpecifier)[];
+export type FutureProductKeySpecifier = ('maturity' | 'settlementAsset' | 'quoteName' | 'oracleSpec' | 'oracleSpecBinding' | FutureProductKeySpecifier)[];
 export type FutureProductFieldPolicy = {
 	maturity?: FieldPolicy<any> | FieldReadFunction<any>,
 	settlementAsset?: FieldPolicy<any> | FieldReadFunction<any>,
 	quoteName?: FieldPolicy<any> | FieldReadFunction<any>,
-	oracleSpecForSettlementPrice?: FieldPolicy<any> | FieldReadFunction<any>,
-	oracleSpecForTradingTermination?: FieldPolicy<any> | FieldReadFunction<any>,
+	oracleSpec?: FieldPolicy<any> | FieldReadFunction<any>,
 	oracleSpecBinding?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type InstrumentKeySpecifier = ('id' | 'code' | 'name' | 'metadata' | 'product' | InstrumentKeySpecifier)[];
@@ -388,10 +386,9 @@ export type OracleSpecConfigurationFieldPolicy = {
 	pubKeys?: FieldPolicy<any> | FieldReadFunction<any>,
 	filters?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OracleSpecToFutureBindingKeySpecifier = ('settlementPriceProperty' | 'tradingTerminationProperty' | OracleSpecToFutureBindingKeySpecifier)[];
+export type OracleSpecToFutureBindingKeySpecifier = ('settlementPriceProperty' | OracleSpecToFutureBindingKeySpecifier)[];
 export type OracleSpecToFutureBindingFieldPolicy = {
-	settlementPriceProperty?: FieldPolicy<any> | FieldReadFunction<any>,
-	tradingTerminationProperty?: FieldPolicy<any> | FieldReadFunction<any>
+	settlementPriceProperty?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type OrderKeySpecifier = ('id' | 'price' | 'timeInForce' | 'side' | 'market' | 'size' | 'remaining' | 'party' | 'createdAt' | 'expiresAt' | 'status' | 'reference' | 'trades' | 'type' | 'rejectionReason' | 'version' | 'updatedAt' | 'peggedOrder' | 'liquidityProvision' | OrderKeySpecifier)[];
 export type OrderFieldPolicy = {
