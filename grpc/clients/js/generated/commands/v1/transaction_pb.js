@@ -112,7 +112,7 @@ proto.vega.commands.v1.InputData.CommandCase = {
   VOTE_SUBMISSION: 1006,
   LIQUIDITY_PROVISION_SUBMISSION: 1007,
   DELEGATE_SUBMISSION: 1008,
-  UNDELEGATE_AT_EPOCH_END_SUBMISSION: 1009,
+  UNDELEGATE_SUBMISSION: 1009,
   NODE_REGISTRATION: 2001,
   NODE_VOTE: 2002,
   NODE_SIGNATURE: 2003,
@@ -168,7 +168,7 @@ proto.vega.commands.v1.InputData.toObject = function(includeInstance, msg) {
     voteSubmission: (f = msg.getVoteSubmission()) && commands_v1_commands_pb.VoteSubmission.toObject(includeInstance, f),
     liquidityProvisionSubmission: (f = msg.getLiquidityProvisionSubmission()) && commands_v1_commands_pb.LiquidityProvisionSubmission.toObject(includeInstance, f),
     delegateSubmission: (f = msg.getDelegateSubmission()) && commands_v1_commands_pb.DelegateSubmission.toObject(includeInstance, f),
-    undelegateAtEpochEndSubmission: (f = msg.getUndelegateAtEpochEndSubmission()) && commands_v1_commands_pb.UndelegateAtEpochEndSubmission.toObject(includeInstance, f),
+    undelegateSubmission: (f = msg.getUndelegateSubmission()) && commands_v1_commands_pb.UndelegateSubmission.toObject(includeInstance, f),
     nodeRegistration: (f = msg.getNodeRegistration()) && commands_v1_validator_commands_pb.NodeRegistration.toObject(includeInstance, f),
     nodeVote: (f = msg.getNodeVote()) && commands_v1_validator_commands_pb.NodeVote.toObject(includeInstance, f),
     nodeSignature: (f = msg.getNodeSignature()) && commands_v1_validator_commands_pb.NodeSignature.toObject(includeInstance, f),
@@ -259,9 +259,9 @@ proto.vega.commands.v1.InputData.deserializeBinaryFromReader = function(msg, rea
       msg.setDelegateSubmission(value);
       break;
     case 1009:
-      var value = new commands_v1_commands_pb.UndelegateAtEpochEndSubmission;
-      reader.readMessage(value,commands_v1_commands_pb.UndelegateAtEpochEndSubmission.deserializeBinaryFromReader);
-      msg.setUndelegateAtEpochEndSubmission(value);
+      var value = new commands_v1_commands_pb.UndelegateSubmission;
+      reader.readMessage(value,commands_v1_commands_pb.UndelegateSubmission.deserializeBinaryFromReader);
+      msg.setUndelegateSubmission(value);
       break;
     case 2001:
       var value = new commands_v1_validator_commands_pb.NodeRegistration;
@@ -395,12 +395,12 @@ proto.vega.commands.v1.InputData.serializeBinaryToWriter = function(message, wri
       commands_v1_commands_pb.DelegateSubmission.serializeBinaryToWriter
     );
   }
-  f = message.getUndelegateAtEpochEndSubmission();
+  f = message.getUndelegateSubmission();
   if (f != null) {
     writer.writeMessage(
       1009,
       f,
-      commands_v1_commands_pb.UndelegateAtEpochEndSubmission.serializeBinaryToWriter
+      commands_v1_commands_pb.UndelegateSubmission.serializeBinaryToWriter
     );
   }
   f = message.getNodeRegistration();
@@ -779,20 +779,20 @@ proto.vega.commands.v1.InputData.prototype.hasDelegateSubmission = function() {
 
 
 /**
- * optional UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009;
- * @return {?proto.vega.commands.v1.UndelegateAtEpochEndSubmission}
+ * optional UndelegateSubmission undelegate_submission = 1009;
+ * @return {?proto.vega.commands.v1.UndelegateSubmission}
  */
-proto.vega.commands.v1.InputData.prototype.getUndelegateAtEpochEndSubmission = function() {
-  return /** @type{?proto.vega.commands.v1.UndelegateAtEpochEndSubmission} */ (
-    jspb.Message.getWrapperField(this, commands_v1_commands_pb.UndelegateAtEpochEndSubmission, 1009));
+proto.vega.commands.v1.InputData.prototype.getUndelegateSubmission = function() {
+  return /** @type{?proto.vega.commands.v1.UndelegateSubmission} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.UndelegateSubmission, 1009));
 };
 
 
 /**
- * @param {?proto.vega.commands.v1.UndelegateAtEpochEndSubmission|undefined} value
+ * @param {?proto.vega.commands.v1.UndelegateSubmission|undefined} value
  * @return {!proto.vega.commands.v1.InputData} returns this
 */
-proto.vega.commands.v1.InputData.prototype.setUndelegateAtEpochEndSubmission = function(value) {
+proto.vega.commands.v1.InputData.prototype.setUndelegateSubmission = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1009, proto.vega.commands.v1.InputData.oneofGroups_[0], value);
 };
 
@@ -801,8 +801,8 @@ proto.vega.commands.v1.InputData.prototype.setUndelegateAtEpochEndSubmission = f
  * Clears the message field making it undefined.
  * @return {!proto.vega.commands.v1.InputData} returns this
  */
-proto.vega.commands.v1.InputData.prototype.clearUndelegateAtEpochEndSubmission = function() {
-  return this.setUndelegateAtEpochEndSubmission(undefined);
+proto.vega.commands.v1.InputData.prototype.clearUndelegateSubmission = function() {
+  return this.setUndelegateSubmission(undefined);
 };
 
 
@@ -810,7 +810,7 @@ proto.vega.commands.v1.InputData.prototype.clearUndelegateAtEpochEndSubmission =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.commands.v1.InputData.prototype.hasUndelegateAtEpochEndSubmission = function() {
+proto.vega.commands.v1.InputData.prototype.hasUndelegateSubmission = function() {
   return jspb.Message.getField(this, 1009) != null;
 };
 

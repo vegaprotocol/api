@@ -28,7 +28,7 @@ message InputData {
     VoteSubmission vote_submission = 1006;
     LiquidityProvisionSubmission liquidity_provision_submission = 1007;
     DelegateSubmission delegate_submission = 1008;
-    UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009;
+    UndelegateSubmission undelegate_submission = 1009;
 
     // Validator commands
     NodeRegistration node_registration = 2001;

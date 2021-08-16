@@ -11,6 +11,110 @@ import * as oracles_v1_data_pb from "../../oracles/v1/data_pb";
 import * as commands_v1_commands_pb from "../../commands/v1/commands_pb";
 import * as commands_v1_validator_commands_pb from "../../commands/v1/validator_commands_pb";
 
+export class StakingEvent extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getType(): StakingEvent.TypeMap[keyof StakingEvent.TypeMap];
+  setType(value: StakingEvent.TypeMap[keyof StakingEvent.TypeMap]): void;
+
+  getTs(): number;
+  setTs(value: number): void;
+
+  getParty(): string;
+  setParty(value: string): void;
+
+  getAmount(): string;
+  setAmount(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StakingEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: StakingEvent): StakingEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: StakingEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StakingEvent;
+  static deserializeBinaryFromReader(message: StakingEvent, reader: jspb.BinaryReader): StakingEvent;
+}
+
+export namespace StakingEvent {
+  export type AsObject = {
+    id: string,
+    type: StakingEvent.TypeMap[keyof StakingEvent.TypeMap],
+    ts: number,
+    party: string,
+    amount: string,
+  }
+
+  export interface TypeMap {
+    TYPE_UNSPECIFIED: 0;
+    TYPE_DEPOSIT: 1;
+    TYPE_REMOVE: 2;
+  }
+
+  export const Type: TypeMap;
+}
+
+export class DelegationBalanceEvent extends jspb.Message {
+  getParty(): string;
+  setParty(value: string): void;
+
+  getNodeId(): string;
+  setNodeId(value: string): void;
+
+  getAmount(): number;
+  setAmount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DelegationBalanceEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: DelegationBalanceEvent): DelegationBalanceEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DelegationBalanceEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DelegationBalanceEvent;
+  static deserializeBinaryFromReader(message: DelegationBalanceEvent, reader: jspb.BinaryReader): DelegationBalanceEvent;
+}
+
+export namespace DelegationBalanceEvent {
+  export type AsObject = {
+    party: string,
+    nodeId: string,
+    amount: number,
+  }
+}
+
+export class PendingDelegationBalanceEvent extends jspb.Message {
+  getParty(): string;
+  setParty(value: string): void;
+
+  getNodeId(): string;
+  setNodeId(value: string): void;
+
+  getDelegationAmount(): number;
+  setDelegationAmount(value: number): void;
+
+  getUndelegationAmount(): number;
+  setUndelegationAmount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PendingDelegationBalanceEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: PendingDelegationBalanceEvent): PendingDelegationBalanceEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PendingDelegationBalanceEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PendingDelegationBalanceEvent;
+  static deserializeBinaryFromReader(message: PendingDelegationBalanceEvent, reader: jspb.BinaryReader): PendingDelegationBalanceEvent;
+}
+
+export namespace PendingDelegationBalanceEvent {
+  export type AsObject = {
+    party: string,
+    nodeId: string,
+    delegationAmount: number,
+    undelegationAmount: number,
+  }
+}
+
 export class MarketEvent extends jspb.Message {
   getMarketId(): string;
   setMarketId(value: string): void;
@@ -130,6 +234,38 @@ export class TimeUpdate extends jspb.Message {
 export namespace TimeUpdate {
   export type AsObject = {
     timestamp: number,
+  }
+}
+
+export class EpochEvent extends jspb.Message {
+  getSeq(): number;
+  setSeq(value: number): void;
+
+  getStartTime(): number;
+  setStartTime(value: number): void;
+
+  getExpireTime(): number;
+  setExpireTime(value: number): void;
+
+  getEndTime(): number;
+  setEndTime(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EpochEvent.AsObject;
+  static toObject(includeInstance: boolean, msg: EpochEvent): EpochEvent.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EpochEvent, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EpochEvent;
+  static deserializeBinaryFromReader(message: EpochEvent, reader: jspb.BinaryReader): EpochEvent;
+}
+
+export namespace EpochEvent {
+  export type AsObject = {
+    seq: number,
+    startTime: number,
+    expireTime: number,
+    endTime: number,
   }
 }
 
@@ -373,6 +509,38 @@ export namespace AuctionEvent {
   }
 }
 
+export class ValidatorUpdate extends jspb.Message {
+  getPubKey(): string;
+  setPubKey(value: string): void;
+
+  getTmPubKey(): string;
+  setTmPubKey(value: string): void;
+
+  getInfoUrl(): string;
+  setInfoUrl(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ValidatorUpdate.AsObject;
+  static toObject(includeInstance: boolean, msg: ValidatorUpdate): ValidatorUpdate.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ValidatorUpdate, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ValidatorUpdate;
+  static deserializeBinaryFromReader(message: ValidatorUpdate, reader: jspb.BinaryReader): ValidatorUpdate;
+}
+
+export namespace ValidatorUpdate {
+  export type AsObject = {
+    pubKey: string,
+    tmPubKey: string,
+    infoUrl: string,
+    country: string,
+  }
+}
+
 export class BusEvent extends jspb.Message {
   getId(): string;
   setId(value: string): void;
@@ -518,6 +686,31 @@ export class BusEvent extends jspb.Message {
   getOracleData(): oracles_v1_data_pb.OracleData | undefined;
   setOracleData(value?: oracles_v1_data_pb.OracleData): void;
 
+  hasDelegationBalance(): boolean;
+  clearDelegationBalance(): void;
+  getDelegationBalance(): DelegationBalanceEvent | undefined;
+  setDelegationBalance(value?: DelegationBalanceEvent): void;
+
+  hasPendingDelegationBalance(): boolean;
+  clearPendingDelegationBalance(): void;
+  getPendingDelegationBalance(): PendingDelegationBalanceEvent | undefined;
+  setPendingDelegationBalance(value?: PendingDelegationBalanceEvent): void;
+
+  hasEpochEvent(): boolean;
+  clearEpochEvent(): void;
+  getEpochEvent(): EpochEvent | undefined;
+  setEpochEvent(value?: EpochEvent): void;
+
+  hasValidatorUpdate(): boolean;
+  clearValidatorUpdate(): void;
+  getValidatorUpdate(): ValidatorUpdate | undefined;
+  setValidatorUpdate(value?: ValidatorUpdate): void;
+
+  hasStakingEvent(): boolean;
+  clearStakingEvent(): void;
+  getStakingEvent(): StakingEvent | undefined;
+  setStakingEvent(value?: StakingEvent): void;
+
   hasMarket(): boolean;
   clearMarket(): void;
   getMarket(): MarketEvent | undefined;
@@ -571,6 +764,11 @@ export namespace BusEvent {
     marketUpdated?: markets_pb.Market.AsObject,
     oracleSpec?: oracles_v1_spec_pb.OracleSpec.AsObject,
     oracleData?: oracles_v1_data_pb.OracleData.AsObject,
+    delegationBalance?: DelegationBalanceEvent.AsObject,
+    pendingDelegationBalance?: PendingDelegationBalanceEvent.AsObject,
+    epochEvent?: EpochEvent.AsObject,
+    validatorUpdate?: ValidatorUpdate.AsObject,
+    stakingEvent?: StakingEvent.AsObject,
     market?: MarketEvent.AsObject,
     txErrEvent?: TxErrorEvent.AsObject,
   }
@@ -604,6 +802,11 @@ export namespace BusEvent {
     MARKET_UPDATED = 125,
     ORACLE_SPEC = 126,
     ORACLE_DATA = 127,
+    DELEGATION_BALANCE = 129,
+    PENDING_DELEGATION_BALANCE = 130,
+    EPOCH_EVENT = 131,
+    VALIDATOR_UPDATE = 132,
+    STAKING_EVENT = 133,
     MARKET = 1001,
     TX_ERR_EVENT = 2001,
   }
@@ -639,6 +842,11 @@ export interface BusEventTypeMap {
   BUS_EVENT_TYPE_MARKET_UPDATED: 26;
   BUS_EVENT_TYPE_ORACLE_SPEC: 27;
   BUS_EVENT_TYPE_ORACLE_DATA: 28;
+  BUS_EVENT_TYPE_DELEGATION_BALANCE: 29;
+  BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE: 30;
+  BUS_EVENT_TYPE_EPOCH_UPDATE: 31;
+  BUS_EVENT_TYPE_VALIDATOR_UPDATE: 32;
+  BUS_EVENT_TYPE_STAKING_EVENT: 33;
   BUS_EVENT_TYPE_MARKET: 101;
   BUS_EVENT_TYPE_TX_ERROR: 201;
 }

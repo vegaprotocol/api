@@ -28,7 +28,8 @@ goog.exportSymbol('proto.vega.commands.v1.OrderAmendment', null, global);
 goog.exportSymbol('proto.vega.commands.v1.OrderCancellation', null, global);
 goog.exportSymbol('proto.vega.commands.v1.OrderSubmission', null, global);
 goog.exportSymbol('proto.vega.commands.v1.ProposalSubmission', null, global);
-goog.exportSymbol('proto.vega.commands.v1.UndelegateAtEpochEndSubmission', null, global);
+goog.exportSymbol('proto.vega.commands.v1.UndelegateSubmission', null, global);
+goog.exportSymbol('proto.vega.commands.v1.UndelegateSubmission.Method', null, global);
 goog.exportSymbol('proto.vega.commands.v1.VoteSubmission', null, global);
 goog.exportSymbol('proto.vega.commands.v1.WithdrawSubmission', null, global);
 /**
@@ -209,16 +210,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission = function(opt_data) {
+proto.vega.commands.v1.UndelegateSubmission = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.vega.commands.v1.UndelegateAtEpochEndSubmission, jspb.Message);
+goog.inherits(proto.vega.commands.v1.UndelegateSubmission, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.vega.commands.v1.UndelegateAtEpochEndSubmission.displayName = 'proto.vega.commands.v1.UndelegateAtEpochEndSubmission';
+  proto.vega.commands.v1.UndelegateSubmission.displayName = 'proto.vega.commands.v1.UndelegateSubmission';
 }
 
 
@@ -2235,8 +2236,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.toObject = function(opt_includeInstance) {
-  return proto.vega.commands.v1.UndelegateAtEpochEndSubmission.toObject(opt_includeInstance, this);
+proto.vega.commands.v1.UndelegateSubmission.prototype.toObject = function(opt_includeInstance) {
+  return proto.vega.commands.v1.UndelegateSubmission.toObject(opt_includeInstance, this);
 };
 
 
@@ -2245,14 +2246,15 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.toObject = funct
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission} msg The msg instance to transform.
+ * @param {!proto.vega.commands.v1.UndelegateSubmission} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.toObject = function(includeInstance, msg) {
+proto.vega.commands.v1.UndelegateSubmission.toObject = function(includeInstance, msg) {
   var f, obj = {
     nodeId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    amount: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    method: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2266,23 +2268,23 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.toObject = function(includ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission}
+ * @return {!proto.vega.commands.v1.UndelegateSubmission}
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.deserializeBinary = function(bytes) {
+proto.vega.commands.v1.UndelegateSubmission.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.vega.commands.v1.UndelegateAtEpochEndSubmission;
-  return proto.vega.commands.v1.UndelegateAtEpochEndSubmission.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.vega.commands.v1.UndelegateSubmission;
+  return proto.vega.commands.v1.UndelegateSubmission.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission} msg The message object to deserialize into.
+ * @param {!proto.vega.commands.v1.UndelegateSubmission} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission}
+ * @return {!proto.vega.commands.v1.UndelegateSubmission}
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.deserializeBinaryFromReader = function(msg, reader) {
+proto.vega.commands.v1.UndelegateSubmission.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2297,6 +2299,10 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.deserializeBinaryFromReade
       var value = /** @type {number} */ (reader.readUint64());
       msg.setAmount(value);
       break;
+    case 3:
+      var value = /** @type {!proto.vega.commands.v1.UndelegateSubmission.Method} */ (reader.readEnum());
+      msg.setMethod(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2310,9 +2316,9 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.deserializeBinaryFromReade
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.serializeBinary = function() {
+proto.vega.commands.v1.UndelegateSubmission.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.vega.commands.v1.UndelegateAtEpochEndSubmission.serializeBinaryToWriter(this, writer);
+  proto.vega.commands.v1.UndelegateSubmission.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2320,11 +2326,11 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.serializeBinary 
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission} message
+ * @param {!proto.vega.commands.v1.UndelegateSubmission} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.serializeBinaryToWriter = function(message, writer) {
+proto.vega.commands.v1.UndelegateSubmission.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNodeId();
   if (f.length > 0) {
@@ -2340,23 +2346,40 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.serializeBinaryToWriter = 
       f
     );
   }
+  f = message.getMethod();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.vega.commands.v1.UndelegateSubmission.Method = {
+  METHOD_UNSPECIFIED: 0,
+  METHOD_NOW: 1,
+  METHOD_AT_END_OF_EPOCH: 2,
+  METHOD_IN_ANGER: 3
+};
 
 /**
  * optional string node_id = 1;
  * @return {string}
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.getNodeId = function() {
+proto.vega.commands.v1.UndelegateSubmission.prototype.getNodeId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission} returns this
+ * @return {!proto.vega.commands.v1.UndelegateSubmission} returns this
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.setNodeId = function(value) {
+proto.vega.commands.v1.UndelegateSubmission.prototype.setNodeId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2365,17 +2388,35 @@ proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.setNodeId = func
  * optional uint64 amount = 2;
  * @return {number}
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.getAmount = function() {
+proto.vega.commands.v1.UndelegateSubmission.prototype.getAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.vega.commands.v1.UndelegateAtEpochEndSubmission} returns this
+ * @return {!proto.vega.commands.v1.UndelegateSubmission} returns this
  */
-proto.vega.commands.v1.UndelegateAtEpochEndSubmission.prototype.setAmount = function(value) {
+proto.vega.commands.v1.UndelegateSubmission.prototype.setAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional Method method = 3;
+ * @return {!proto.vega.commands.v1.UndelegateSubmission.Method}
+ */
+proto.vega.commands.v1.UndelegateSubmission.prototype.getMethod = function() {
+  return /** @type {!proto.vega.commands.v1.UndelegateSubmission.Method} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {!proto.vega.commands.v1.UndelegateSubmission.Method} value
+ * @return {!proto.vega.commands.v1.UndelegateSubmission} returns this
+ */
+proto.vega.commands.v1.UndelegateSubmission.prototype.setMethod = function(value) {
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 

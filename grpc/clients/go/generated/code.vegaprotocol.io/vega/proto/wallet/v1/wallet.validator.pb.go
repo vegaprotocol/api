@@ -74,10 +74,10 @@ func (this *SubmitTransactionRequest) Validate() error {
 			}
 		}
 	}
-	if oneOfNester, ok := this.GetCommand().(*SubmitTransactionRequest_UndelegateAtEpochEndSubmission); ok {
-		if oneOfNester.UndelegateAtEpochEndSubmission != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.UndelegateAtEpochEndSubmission); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("UndelegateAtEpochEndSubmission", err)
+	if oneOfNester, ok := this.GetCommand().(*SubmitTransactionRequest_UndelegateSubmission); ok {
+		if oneOfNester.UndelegateSubmission != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.UndelegateSubmission); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("UndelegateSubmission", err)
 			}
 		}
 	}

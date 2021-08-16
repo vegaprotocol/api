@@ -129,10 +129,15 @@ message DelegateSubmission {
   uint64 amount = 2;
 }
 
-// A command to submit an instruction to undelete stake from a node
-message UndelegateAtEpochEndSubmission {
-  // The ID for the node to undelegate from
+message UndelegateSubmission {
+  enum Method {
+    METHOD_UNSPECIFIED = 0;
+    METHOD_NOW = 1;
+    METHOD_AT_END_OF_EPOCH = 2;
+    METHOD_IN_ANGER = 3;
+  }
   string node_id = 1 [(validator.field) = {string_not_empty : true}];
-  // The amount of stake to undelegate
+  // optional, if not specified = ALL
   uint64 amount = 2;
+  Method method = 3;
 }

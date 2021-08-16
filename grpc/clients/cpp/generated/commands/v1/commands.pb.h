@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "governance.pb.h"
 #include "vega.pb.h"
@@ -78,9 +79,9 @@ extern OrderSubmissionDefaultTypeInternal _OrderSubmission_default_instance_;
 class ProposalSubmission;
 class ProposalSubmissionDefaultTypeInternal;
 extern ProposalSubmissionDefaultTypeInternal _ProposalSubmission_default_instance_;
-class UndelegateAtEpochEndSubmission;
-class UndelegateAtEpochEndSubmissionDefaultTypeInternal;
-extern UndelegateAtEpochEndSubmissionDefaultTypeInternal _UndelegateAtEpochEndSubmission_default_instance_;
+class UndelegateSubmission;
+class UndelegateSubmissionDefaultTypeInternal;
+extern UndelegateSubmissionDefaultTypeInternal _UndelegateSubmission_default_instance_;
 class VoteSubmission;
 class VoteSubmissionDefaultTypeInternal;
 extern VoteSubmissionDefaultTypeInternal _VoteSubmission_default_instance_;
@@ -97,7 +98,7 @@ template<> ::vega::commands::v1::OrderAmendment* Arena::CreateMaybeMessage<::veg
 template<> ::vega::commands::v1::OrderCancellation* Arena::CreateMaybeMessage<::vega::commands::v1::OrderCancellation>(Arena*);
 template<> ::vega::commands::v1::OrderSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::OrderSubmission>(Arena*);
 template<> ::vega::commands::v1::ProposalSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::ProposalSubmission>(Arena*);
-template<> ::vega::commands::v1::UndelegateAtEpochEndSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::UndelegateAtEpochEndSubmission>(Arena*);
+template<> ::vega::commands::v1::UndelegateSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::UndelegateSubmission>(Arena*);
 template<> ::vega::commands::v1::VoteSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::VoteSubmission>(Arena*);
 template<> ::vega::commands::v1::WithdrawSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::WithdrawSubmission>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -105,6 +106,33 @@ namespace vega {
 namespace commands {
 namespace v1 {
 
+enum UndelegateSubmission_Method : int {
+  UndelegateSubmission_Method_METHOD_UNSPECIFIED = 0,
+  UndelegateSubmission_Method_METHOD_NOW = 1,
+  UndelegateSubmission_Method_METHOD_AT_END_OF_EPOCH = 2,
+  UndelegateSubmission_Method_METHOD_IN_ANGER = 3,
+  UndelegateSubmission_Method_UndelegateSubmission_Method_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  UndelegateSubmission_Method_UndelegateSubmission_Method_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool UndelegateSubmission_Method_IsValid(int value);
+constexpr UndelegateSubmission_Method UndelegateSubmission_Method_Method_MIN = UndelegateSubmission_Method_METHOD_UNSPECIFIED;
+constexpr UndelegateSubmission_Method UndelegateSubmission_Method_Method_MAX = UndelegateSubmission_Method_METHOD_IN_ANGER;
+constexpr int UndelegateSubmission_Method_Method_ARRAYSIZE = UndelegateSubmission_Method_Method_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UndelegateSubmission_Method_descriptor();
+template<typename T>
+inline const std::string& UndelegateSubmission_Method_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, UndelegateSubmission_Method>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function UndelegateSubmission_Method_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    UndelegateSubmission_Method_descriptor(), enum_t_value);
+}
+inline bool UndelegateSubmission_Method_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, UndelegateSubmission_Method* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<UndelegateSubmission_Method>(
+    UndelegateSubmission_Method_descriptor(), name, value);
+}
 // ===================================================================
 
 class OrderSubmission PROTOBUF_FINAL :
@@ -1644,23 +1672,23 @@ class DelegateSubmission PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.commands.v1.UndelegateAtEpochEndSubmission) */ {
+class UndelegateSubmission PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.commands.v1.UndelegateSubmission) */ {
  public:
-  inline UndelegateAtEpochEndSubmission() : UndelegateAtEpochEndSubmission(nullptr) {}
-  virtual ~UndelegateAtEpochEndSubmission();
+  inline UndelegateSubmission() : UndelegateSubmission(nullptr) {}
+  virtual ~UndelegateSubmission();
 
-  UndelegateAtEpochEndSubmission(const UndelegateAtEpochEndSubmission& from);
-  UndelegateAtEpochEndSubmission(UndelegateAtEpochEndSubmission&& from) noexcept
-    : UndelegateAtEpochEndSubmission() {
+  UndelegateSubmission(const UndelegateSubmission& from);
+  UndelegateSubmission(UndelegateSubmission&& from) noexcept
+    : UndelegateSubmission() {
     *this = ::std::move(from);
   }
 
-  inline UndelegateAtEpochEndSubmission& operator=(const UndelegateAtEpochEndSubmission& from) {
+  inline UndelegateSubmission& operator=(const UndelegateSubmission& from) {
     CopyFrom(from);
     return *this;
   }
-  inline UndelegateAtEpochEndSubmission& operator=(UndelegateAtEpochEndSubmission&& from) noexcept {
+  inline UndelegateSubmission& operator=(UndelegateSubmission&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1678,19 +1706,19 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const UndelegateAtEpochEndSubmission& default_instance();
+  static const UndelegateSubmission& default_instance();
 
-  static inline const UndelegateAtEpochEndSubmission* internal_default_instance() {
-    return reinterpret_cast<const UndelegateAtEpochEndSubmission*>(
-               &_UndelegateAtEpochEndSubmission_default_instance_);
+  static inline const UndelegateSubmission* internal_default_instance() {
+    return reinterpret_cast<const UndelegateSubmission*>(
+               &_UndelegateSubmission_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     8;
 
-  friend void swap(UndelegateAtEpochEndSubmission& a, UndelegateAtEpochEndSubmission& b) {
+  friend void swap(UndelegateSubmission& a, UndelegateSubmission& b) {
     a.Swap(&b);
   }
-  inline void Swap(UndelegateAtEpochEndSubmission* other) {
+  inline void Swap(UndelegateSubmission* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -1698,7 +1726,7 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(UndelegateAtEpochEndSubmission* other) {
+  void UnsafeArenaSwap(UndelegateSubmission* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -1706,17 +1734,17 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline UndelegateAtEpochEndSubmission* New() const final {
-    return CreateMaybeMessage<UndelegateAtEpochEndSubmission>(nullptr);
+  inline UndelegateSubmission* New() const final {
+    return CreateMaybeMessage<UndelegateSubmission>(nullptr);
   }
 
-  UndelegateAtEpochEndSubmission* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UndelegateAtEpochEndSubmission>(arena);
+  UndelegateSubmission* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UndelegateSubmission>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const UndelegateAtEpochEndSubmission& from);
-  void MergeFrom(const UndelegateAtEpochEndSubmission& from);
+  void CopyFrom(const UndelegateSubmission& from);
+  void MergeFrom(const UndelegateSubmission& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1730,13 +1758,13 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(UndelegateAtEpochEndSubmission* other);
+  void InternalSwap(UndelegateSubmission* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "vega.commands.v1.UndelegateAtEpochEndSubmission";
+    return "vega.commands.v1.UndelegateSubmission";
   }
   protected:
-  explicit UndelegateAtEpochEndSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit UndelegateSubmission(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1753,11 +1781,46 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
 
   // nested types ----------------------------------------------------
 
+  typedef UndelegateSubmission_Method Method;
+  static constexpr Method METHOD_UNSPECIFIED =
+    UndelegateSubmission_Method_METHOD_UNSPECIFIED;
+  static constexpr Method METHOD_NOW =
+    UndelegateSubmission_Method_METHOD_NOW;
+  static constexpr Method METHOD_AT_END_OF_EPOCH =
+    UndelegateSubmission_Method_METHOD_AT_END_OF_EPOCH;
+  static constexpr Method METHOD_IN_ANGER =
+    UndelegateSubmission_Method_METHOD_IN_ANGER;
+  static inline bool Method_IsValid(int value) {
+    return UndelegateSubmission_Method_IsValid(value);
+  }
+  static constexpr Method Method_MIN =
+    UndelegateSubmission_Method_Method_MIN;
+  static constexpr Method Method_MAX =
+    UndelegateSubmission_Method_Method_MAX;
+  static constexpr int Method_ARRAYSIZE =
+    UndelegateSubmission_Method_Method_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Method_descriptor() {
+    return UndelegateSubmission_Method_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Method_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Method>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Method_Name.");
+    return UndelegateSubmission_Method_Name(enum_t_value);
+  }
+  static inline bool Method_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      Method* value) {
+    return UndelegateSubmission_Method_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kNodeIdFieldNumber = 1,
     kAmountFieldNumber = 2,
+    kMethodFieldNumber = 3,
   };
   // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
   void clear_node_id();
@@ -1784,7 +1847,16 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
   void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  // .vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];
+  void clear_method();
+  ::vega::commands::v1::UndelegateSubmission_Method method() const;
+  void set_method(::vega::commands::v1::UndelegateSubmission_Method value);
+  private:
+  ::vega::commands::v1::UndelegateSubmission_Method _internal_method() const;
+  void _internal_set_method(::vega::commands::v1::UndelegateSubmission_Method value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.commands.v1.UndelegateSubmission)
  private:
   class _Internal;
 
@@ -1793,6 +1865,7 @@ class UndelegateAtEpochEndSubmission PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
+  int method_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
 };
@@ -3424,59 +3497,59 @@ inline void DelegateSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value
 
 // -------------------------------------------------------------------
 
-// UndelegateAtEpochEndSubmission
+// UndelegateSubmission
 
 // string node_id = 1 [json_name = "nodeId", (.validator.field) = {
-inline void UndelegateAtEpochEndSubmission::clear_node_id() {
+inline void UndelegateSubmission::clear_node_id() {
   node_id_.ClearToEmpty();
 }
-inline const std::string& UndelegateAtEpochEndSubmission::node_id() const {
-  // @@protoc_insertion_point(field_get:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+inline const std::string& UndelegateSubmission::node_id() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.UndelegateSubmission.node_id)
   return _internal_node_id();
 }
-inline void UndelegateAtEpochEndSubmission::set_node_id(const std::string& value) {
+inline void UndelegateSubmission::set_node_id(const std::string& value) {
   _internal_set_node_id(value);
-  // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+  // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateSubmission.node_id)
 }
-inline std::string* UndelegateAtEpochEndSubmission::mutable_node_id() {
-  // @@protoc_insertion_point(field_mutable:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+inline std::string* UndelegateSubmission::mutable_node_id() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.UndelegateSubmission.node_id)
   return _internal_mutable_node_id();
 }
-inline const std::string& UndelegateAtEpochEndSubmission::_internal_node_id() const {
+inline const std::string& UndelegateSubmission::_internal_node_id() const {
   return node_id_.Get();
 }
-inline void UndelegateAtEpochEndSubmission::_internal_set_node_id(const std::string& value) {
+inline void UndelegateSubmission::_internal_set_node_id(const std::string& value) {
 
   node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void UndelegateAtEpochEndSubmission::set_node_id(std::string&& value) {
+inline void UndelegateSubmission::set_node_id(std::string&& value) {
 
   node_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.UndelegateSubmission.node_id)
 }
-inline void UndelegateAtEpochEndSubmission::set_node_id(const char* value) {
+inline void UndelegateSubmission::set_node_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
 
   node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.UndelegateSubmission.node_id)
 }
-inline void UndelegateAtEpochEndSubmission::set_node_id(const char* value,
+inline void UndelegateSubmission::set_node_id(const char* value,
     size_t size) {
 
   node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.UndelegateSubmission.node_id)
 }
-inline std::string* UndelegateAtEpochEndSubmission::_internal_mutable_node_id() {
+inline std::string* UndelegateSubmission::_internal_mutable_node_id() {
 
   return node_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* UndelegateAtEpochEndSubmission::release_node_id() {
-  // @@protoc_insertion_point(field_release:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+inline std::string* UndelegateSubmission::release_node_id() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.UndelegateSubmission.node_id)
   return node_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void UndelegateAtEpochEndSubmission::set_allocated_node_id(std::string* node_id) {
+inline void UndelegateSubmission::set_allocated_node_id(std::string* node_id) {
   if (node_id != nullptr) {
 
   } else {
@@ -3484,27 +3557,47 @@ inline void UndelegateAtEpochEndSubmission::set_allocated_node_id(std::string* n
   }
   node_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), node_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.UndelegateAtEpochEndSubmission.node_id)
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.UndelegateSubmission.node_id)
 }
 
 // uint64 amount = 2 [json_name = "amount"];
-inline void UndelegateAtEpochEndSubmission::clear_amount() {
+inline void UndelegateSubmission::clear_amount() {
   amount_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 UndelegateAtEpochEndSubmission::_internal_amount() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 UndelegateSubmission::_internal_amount() const {
   return amount_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 UndelegateAtEpochEndSubmission::amount() const {
-  // @@protoc_insertion_point(field_get:vega.commands.v1.UndelegateAtEpochEndSubmission.amount)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 UndelegateSubmission::amount() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.UndelegateSubmission.amount)
   return _internal_amount();
 }
-inline void UndelegateAtEpochEndSubmission::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void UndelegateSubmission::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
   amount_ = value;
 }
-inline void UndelegateAtEpochEndSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void UndelegateSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_amount(value);
-  // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateAtEpochEndSubmission.amount)
+  // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateSubmission.amount)
+}
+
+// .vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];
+inline void UndelegateSubmission::clear_method() {
+  method_ = 0;
+}
+inline ::vega::commands::v1::UndelegateSubmission_Method UndelegateSubmission::_internal_method() const {
+  return static_cast< ::vega::commands::v1::UndelegateSubmission_Method >(method_);
+}
+inline ::vega::commands::v1::UndelegateSubmission_Method UndelegateSubmission::method() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.UndelegateSubmission.method)
+  return _internal_method();
+}
+inline void UndelegateSubmission::_internal_set_method(::vega::commands::v1::UndelegateSubmission_Method value) {
+
+  method_ = value;
+}
+inline void UndelegateSubmission::set_method(::vega::commands::v1::UndelegateSubmission_Method value) {
+  _internal_set_method(value);
+  // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateSubmission.method)
 }
 
 #ifdef __GNUC__
@@ -3532,6 +3625,16 @@ inline void UndelegateAtEpochEndSubmission::set_amount(::PROTOBUF_NAMESPACE_ID::
 }  // namespace v1
 }  // namespace commands
 }  // namespace vega
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::vega::commands::v1::UndelegateSubmission_Method> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::commands::v1::UndelegateSubmission_Method>() {
+  return ::vega::commands::v1::UndelegateSubmission_Method_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

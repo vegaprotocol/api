@@ -29,6 +29,58 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+type UndelegateSubmission_Method int32
+
+const (
+	UndelegateSubmission_METHOD_UNSPECIFIED     UndelegateSubmission_Method = 0
+	UndelegateSubmission_METHOD_NOW             UndelegateSubmission_Method = 1
+	UndelegateSubmission_METHOD_AT_END_OF_EPOCH UndelegateSubmission_Method = 2
+	UndelegateSubmission_METHOD_IN_ANGER        UndelegateSubmission_Method = 3
+)
+
+// Enum value maps for UndelegateSubmission_Method.
+var (
+	UndelegateSubmission_Method_name = map[int32]string{
+		0: "METHOD_UNSPECIFIED",
+		1: "METHOD_NOW",
+		2: "METHOD_AT_END_OF_EPOCH",
+		3: "METHOD_IN_ANGER",
+	}
+	UndelegateSubmission_Method_value = map[string]int32{
+		"METHOD_UNSPECIFIED":     0,
+		"METHOD_NOW":             1,
+		"METHOD_AT_END_OF_EPOCH": 2,
+		"METHOD_IN_ANGER":        3,
+	}
+)
+
+func (x UndelegateSubmission_Method) Enum() *UndelegateSubmission_Method {
+	p := new(UndelegateSubmission_Method)
+	*p = x
+	return p
+}
+
+func (x UndelegateSubmission_Method) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (UndelegateSubmission_Method) Descriptor() protoreflect.EnumDescriptor {
+	return file_commands_v1_commands_proto_enumTypes[0].Descriptor()
+}
+
+func (UndelegateSubmission_Method) Type() protoreflect.EnumType {
+	return &file_commands_v1_commands_proto_enumTypes[0]
+}
+
+func (x UndelegateSubmission_Method) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use UndelegateSubmission_Method.Descriptor instead.
+func (UndelegateSubmission_Method) EnumDescriptor() ([]byte, []int) {
+	return file_commands_v1_commands_proto_rawDescGZIP(), []int{8, 0}
+}
+
 // An order submission is a request to submit or create a new order on Vega
 type OrderSubmission struct {
 	state         protoimpl.MessageState
@@ -670,20 +722,19 @@ func (x *DelegateSubmission) GetAmount() uint64 {
 	return 0
 }
 
-// A command to submit an instruction to undelete stake from a node
-type UndelegateAtEpochEndSubmission struct {
+type UndelegateSubmission struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// The ID for the node to undelegate from
 	NodeId string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
-	// The amount of stake to undelegate
-	Amount uint64 `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	// optional, if not specified = ALL
+	Amount uint64                      `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	Method UndelegateSubmission_Method `protobuf:"varint,3,opt,name=method,proto3,enum=vega.commands.v1.UndelegateSubmission_Method" json:"method,omitempty"`
 }
 
-func (x *UndelegateAtEpochEndSubmission) Reset() {
-	*x = UndelegateAtEpochEndSubmission{}
+func (x *UndelegateSubmission) Reset() {
+	*x = UndelegateSubmission{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_commands_v1_commands_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -691,13 +742,13 @@ func (x *UndelegateAtEpochEndSubmission) Reset() {
 	}
 }
 
-func (x *UndelegateAtEpochEndSubmission) String() string {
+func (x *UndelegateSubmission) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UndelegateAtEpochEndSubmission) ProtoMessage() {}
+func (*UndelegateSubmission) ProtoMessage() {}
 
-func (x *UndelegateAtEpochEndSubmission) ProtoReflect() protoreflect.Message {
+func (x *UndelegateSubmission) ProtoReflect() protoreflect.Message {
 	mi := &file_commands_v1_commands_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -709,23 +760,30 @@ func (x *UndelegateAtEpochEndSubmission) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UndelegateAtEpochEndSubmission.ProtoReflect.Descriptor instead.
-func (*UndelegateAtEpochEndSubmission) Descriptor() ([]byte, []int) {
+// Deprecated: Use UndelegateSubmission.ProtoReflect.Descriptor instead.
+func (*UndelegateSubmission) Descriptor() ([]byte, []int) {
 	return file_commands_v1_commands_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *UndelegateAtEpochEndSubmission) GetNodeId() string {
+func (x *UndelegateSubmission) GetNodeId() string {
 	if x != nil {
 		return x.NodeId
 	}
 	return ""
 }
 
-func (x *UndelegateAtEpochEndSubmission) GetAmount() uint64 {
+func (x *UndelegateSubmission) GetAmount() uint64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
+}
+
+func (x *UndelegateSubmission) GetMethod() UndelegateSubmission_Method {
+	if x != nil {
+		return x.Method
+	}
+	return UndelegateSubmission_METHOD_UNSPECIFIED
 }
 
 var File_commands_v1_commands_proto protoreflect.FileDescriptor
@@ -832,18 +890,28 @@ var file_commands_v1_commands_proto_rawDesc = []byte{
 	0x64, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f,
 	0x02, 0x58, 0x01, 0x52, 0x06, 0x6e, 0x6f, 0x64, 0x65, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61,
 	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f,
-	0x75, 0x6e, 0x74, 0x22, 0x59, 0x0a, 0x1e, 0x55, 0x6e, 0x64, 0x65, 0x6c, 0x65, 0x67, 0x61, 0x74,
-	0x65, 0x41, 0x74, 0x45, 0x70, 0x6f, 0x63, 0x68, 0x45, 0x6e, 0x64, 0x53, 0x75, 0x62, 0x6d, 0x69,
-	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x1f, 0x0a, 0x07, 0x6e, 0x6f, 0x64, 0x65, 0x5f, 0x69, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2, 0xdf, 0x1f, 0x02, 0x58, 0x01, 0x52, 0x06,
-	0x6e, 0x6f, 0x64, 0x65, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x42, 0x4f,
-	0x0a, 0x20, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f,
-	0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2e,
-	0x76, 0x31, 0x5a, 0x2b, 0x63, 0x6f, 0x64, 0x65, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69, 0x6f, 0x2f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2f, 0x76, 0x31, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x75, 0x6e, 0x74, 0x22, 0xf9, 0x01, 0x0a, 0x14, 0x55, 0x6e, 0x64, 0x65, 0x6c, 0x65, 0x67, 0x61,
+	0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x1f, 0x0a, 0x07,
+	0x6e, 0x6f, 0x64, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x06, 0xe2,
+	0xdf, 0x1f, 0x02, 0x58, 0x01, 0x52, 0x06, 0x6e, 0x6f, 0x64, 0x65, 0x49, 0x64, 0x12, 0x16, 0x0a,
+	0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61,
+	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x45, 0x0a, 0x06, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x2d, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x64, 0x65, 0x6c, 0x65, 0x67,
+	0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x65,
+	0x74, 0x68, 0x6f, 0x64, 0x52, 0x06, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x22, 0x61, 0x0a, 0x06,
+	0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x16, 0x0a, 0x12, 0x4d, 0x45, 0x54, 0x48, 0x4f, 0x44,
+	0x5f, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x0e,
+	0x0a, 0x0a, 0x4d, 0x45, 0x54, 0x48, 0x4f, 0x44, 0x5f, 0x4e, 0x4f, 0x57, 0x10, 0x01, 0x12, 0x1a,
+	0x0a, 0x16, 0x4d, 0x45, 0x54, 0x48, 0x4f, 0x44, 0x5f, 0x41, 0x54, 0x5f, 0x45, 0x4e, 0x44, 0x5f,
+	0x4f, 0x46, 0x5f, 0x45, 0x50, 0x4f, 0x43, 0x48, 0x10, 0x02, 0x12, 0x13, 0x0a, 0x0f, 0x4d, 0x45,
+	0x54, 0x48, 0x4f, 0x44, 0x5f, 0x49, 0x4e, 0x5f, 0x41, 0x4e, 0x47, 0x45, 0x52, 0x10, 0x03, 0x42,
+	0x4f, 0x0a, 0x20, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63,
+	0x6f, 0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73,
+	0x2e, 0x76, 0x31, 0x5a, 0x2b, 0x63, 0x6f, 0x64, 0x65, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69, 0x6f, 0x2f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x61, 0x6e, 0x64, 0x73, 0x2f, 0x76, 0x31,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -858,50 +926,53 @@ func file_commands_v1_commands_proto_rawDescGZIP() []byte {
 	return file_commands_v1_commands_proto_rawDescData
 }
 
+var file_commands_v1_commands_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_commands_v1_commands_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_commands_v1_commands_proto_goTypes = []interface{}{
-	(*OrderSubmission)(nil),                // 0: vega.commands.v1.OrderSubmission
-	(*OrderCancellation)(nil),              // 1: vega.commands.v1.OrderCancellation
-	(*OrderAmendment)(nil),                 // 2: vega.commands.v1.OrderAmendment
-	(*LiquidityProvisionSubmission)(nil),   // 3: vega.commands.v1.LiquidityProvisionSubmission
-	(*WithdrawSubmission)(nil),             // 4: vega.commands.v1.WithdrawSubmission
-	(*ProposalSubmission)(nil),             // 5: vega.commands.v1.ProposalSubmission
-	(*VoteSubmission)(nil),                 // 6: vega.commands.v1.VoteSubmission
-	(*DelegateSubmission)(nil),             // 7: vega.commands.v1.DelegateSubmission
-	(*UndelegateAtEpochEndSubmission)(nil), // 8: vega.commands.v1.UndelegateAtEpochEndSubmission
-	(proto1.Side)(0),                       // 9: vega.Side
-	(proto1.Order_TimeInForce)(0),          // 10: vega.Order.TimeInForce
-	(proto1.Order_Type)(0),                 // 11: vega.Order.Type
-	(*proto1.PeggedOrder)(nil),             // 12: vega.PeggedOrder
-	(*proto1.Price)(nil),                   // 13: vega.Price
-	(*proto1.Timestamp)(nil),               // 14: vega.Timestamp
-	(*wrappers.Int64Value)(nil),            // 15: google.protobuf.Int64Value
-	(proto1.PeggedReference)(0),            // 16: vega.PeggedReference
-	(*proto1.LiquidityOrder)(nil),          // 17: vega.LiquidityOrder
-	(*proto1.WithdrawExt)(nil),             // 18: vega.WithdrawExt
-	(*proto1.ProposalTerms)(nil),           // 19: vega.ProposalTerms
-	(proto1.Vote_Value)(0),                 // 20: vega.Vote.Value
+	(UndelegateSubmission_Method)(0),     // 0: vega.commands.v1.UndelegateSubmission.Method
+	(*OrderSubmission)(nil),              // 1: vega.commands.v1.OrderSubmission
+	(*OrderCancellation)(nil),            // 2: vega.commands.v1.OrderCancellation
+	(*OrderAmendment)(nil),               // 3: vega.commands.v1.OrderAmendment
+	(*LiquidityProvisionSubmission)(nil), // 4: vega.commands.v1.LiquidityProvisionSubmission
+	(*WithdrawSubmission)(nil),           // 5: vega.commands.v1.WithdrawSubmission
+	(*ProposalSubmission)(nil),           // 6: vega.commands.v1.ProposalSubmission
+	(*VoteSubmission)(nil),               // 7: vega.commands.v1.VoteSubmission
+	(*DelegateSubmission)(nil),           // 8: vega.commands.v1.DelegateSubmission
+	(*UndelegateSubmission)(nil),         // 9: vega.commands.v1.UndelegateSubmission
+	(proto1.Side)(0),                     // 10: vega.Side
+	(proto1.Order_TimeInForce)(0),        // 11: vega.Order.TimeInForce
+	(proto1.Order_Type)(0),               // 12: vega.Order.Type
+	(*proto1.PeggedOrder)(nil),           // 13: vega.PeggedOrder
+	(*proto1.Price)(nil),                 // 14: vega.Price
+	(*proto1.Timestamp)(nil),             // 15: vega.Timestamp
+	(*wrappers.Int64Value)(nil),          // 16: google.protobuf.Int64Value
+	(proto1.PeggedReference)(0),          // 17: vega.PeggedReference
+	(*proto1.LiquidityOrder)(nil),        // 18: vega.LiquidityOrder
+	(*proto1.WithdrawExt)(nil),           // 19: vega.WithdrawExt
+	(*proto1.ProposalTerms)(nil),         // 20: vega.ProposalTerms
+	(proto1.Vote_Value)(0),               // 21: vega.Vote.Value
 }
 var file_commands_v1_commands_proto_depIdxs = []int32{
-	9,  // 0: vega.commands.v1.OrderSubmission.side:type_name -> vega.Side
-	10, // 1: vega.commands.v1.OrderSubmission.time_in_force:type_name -> vega.Order.TimeInForce
-	11, // 2: vega.commands.v1.OrderSubmission.type:type_name -> vega.Order.Type
-	12, // 3: vega.commands.v1.OrderSubmission.pegged_order:type_name -> vega.PeggedOrder
-	13, // 4: vega.commands.v1.OrderAmendment.price:type_name -> vega.Price
-	14, // 5: vega.commands.v1.OrderAmendment.expires_at:type_name -> vega.Timestamp
-	10, // 6: vega.commands.v1.OrderAmendment.time_in_force:type_name -> vega.Order.TimeInForce
-	15, // 7: vega.commands.v1.OrderAmendment.pegged_offset:type_name -> google.protobuf.Int64Value
-	16, // 8: vega.commands.v1.OrderAmendment.pegged_reference:type_name -> vega.PeggedReference
-	17, // 9: vega.commands.v1.LiquidityProvisionSubmission.sells:type_name -> vega.LiquidityOrder
-	17, // 10: vega.commands.v1.LiquidityProvisionSubmission.buys:type_name -> vega.LiquidityOrder
-	18, // 11: vega.commands.v1.WithdrawSubmission.ext:type_name -> vega.WithdrawExt
-	19, // 12: vega.commands.v1.ProposalSubmission.terms:type_name -> vega.ProposalTerms
-	20, // 13: vega.commands.v1.VoteSubmission.value:type_name -> vega.Vote.Value
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	10, // 0: vega.commands.v1.OrderSubmission.side:type_name -> vega.Side
+	11, // 1: vega.commands.v1.OrderSubmission.time_in_force:type_name -> vega.Order.TimeInForce
+	12, // 2: vega.commands.v1.OrderSubmission.type:type_name -> vega.Order.Type
+	13, // 3: vega.commands.v1.OrderSubmission.pegged_order:type_name -> vega.PeggedOrder
+	14, // 4: vega.commands.v1.OrderAmendment.price:type_name -> vega.Price
+	15, // 5: vega.commands.v1.OrderAmendment.expires_at:type_name -> vega.Timestamp
+	11, // 6: vega.commands.v1.OrderAmendment.time_in_force:type_name -> vega.Order.TimeInForce
+	16, // 7: vega.commands.v1.OrderAmendment.pegged_offset:type_name -> google.protobuf.Int64Value
+	17, // 8: vega.commands.v1.OrderAmendment.pegged_reference:type_name -> vega.PeggedReference
+	18, // 9: vega.commands.v1.LiquidityProvisionSubmission.sells:type_name -> vega.LiquidityOrder
+	18, // 10: vega.commands.v1.LiquidityProvisionSubmission.buys:type_name -> vega.LiquidityOrder
+	19, // 11: vega.commands.v1.WithdrawSubmission.ext:type_name -> vega.WithdrawExt
+	20, // 12: vega.commands.v1.ProposalSubmission.terms:type_name -> vega.ProposalTerms
+	21, // 13: vega.commands.v1.VoteSubmission.value:type_name -> vega.Vote.Value
+	0,  // 14: vega.commands.v1.UndelegateSubmission.method:type_name -> vega.commands.v1.UndelegateSubmission.Method
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_commands_v1_commands_proto_init() }
@@ -1007,7 +1078,7 @@ func file_commands_v1_commands_proto_init() {
 			}
 		}
 		file_commands_v1_commands_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UndelegateAtEpochEndSubmission); i {
+			switch v := v.(*UndelegateSubmission); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1024,13 +1095,14 @@ func file_commands_v1_commands_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_commands_v1_commands_proto_rawDesc,
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_commands_v1_commands_proto_goTypes,
 		DependencyIndexes: file_commands_v1_commands_proto_depIdxs,
+		EnumInfos:         file_commands_v1_commands_proto_enumTypes,
 		MessageInfos:      file_commands_v1_commands_proto_msgTypes,
 	}.Build()
 	File_commands_v1_commands_proto = out.File

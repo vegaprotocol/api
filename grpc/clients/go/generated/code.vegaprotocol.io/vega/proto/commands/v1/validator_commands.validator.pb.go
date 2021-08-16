@@ -19,6 +19,12 @@ var _ = fmt.Errorf
 var _ = math.Inf
 
 func (this *NodeRegistration) Validate() error {
+	if this.InfoUrl == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("InfoUrl", fmt.Errorf(`value '%v' must not be an empty string`, this.InfoUrl))
+	}
+	if this.Country == "" {
+		return github_com_mwitkow_go_proto_validators.FieldError("Country", fmt.Errorf(`value '%v' must not be an empty string`, this.Country))
+	}
 	return nil
 }
 func (this *NodeVote) Validate() error {

@@ -174,19 +174,19 @@ public final class TransactionOuterClass {
     io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmissionOrBuilder getDelegateSubmissionOrBuilder();
 
     /**
-     * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
-     * @return Whether the undelegateAtEpochEndSubmission field is set.
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
+     * @return Whether the undelegateSubmission field is set.
      */
-    boolean hasUndelegateAtEpochEndSubmission();
+    boolean hasUndelegateSubmission();
     /**
-     * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
-     * @return The undelegateAtEpochEndSubmission.
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
+     * @return The undelegateSubmission.
      */
-    io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission getUndelegateAtEpochEndSubmission();
+    io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getUndelegateSubmission();
     /**
-     * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
      */
-    io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder getUndelegateAtEpochEndSubmissionOrBuilder();
+    io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder getUndelegateSubmissionOrBuilder();
 
     /**
      * <pre>
@@ -457,14 +457,14 @@ public final class TransactionOuterClass {
               break;
             }
             case 8074: {
-              io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder subBuilder = null;
+              io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder subBuilder = null;
               if (commandCase_ == 1009) {
-                subBuilder = ((io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_).toBuilder();
+                subBuilder = ((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_).toBuilder();
               }
               command_ =
-                  input.readMessage(io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.parser(), extensionRegistry);
+                  input.readMessage(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_);
+                subBuilder.mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_);
                 command_ = subBuilder.buildPartial();
               }
               commandCase_ = 1009;
@@ -585,7 +585,7 @@ public final class TransactionOuterClass {
       VOTE_SUBMISSION(1006),
       LIQUIDITY_PROVISION_SUBMISSION(1007),
       DELEGATE_SUBMISSION(1008),
-      UNDELEGATE_AT_EPOCH_END_SUBMISSION(1009),
+      UNDELEGATE_SUBMISSION(1009),
       NODE_REGISTRATION(2001),
       NODE_VOTE(2002),
       NODE_SIGNATURE(2003),
@@ -616,7 +616,7 @@ public final class TransactionOuterClass {
           case 1006: return VOTE_SUBMISSION;
           case 1007: return LIQUIDITY_PROVISION_SUBMISSION;
           case 1008: return DELEGATE_SUBMISSION;
-          case 1009: return UNDELEGATE_AT_EPOCH_END_SUBMISSION;
+          case 1009: return UNDELEGATE_SUBMISSION;
           case 2001: return NODE_REGISTRATION;
           case 2002: return NODE_VOTE;
           case 2003: return NODE_SIGNATURE;
@@ -930,35 +930,35 @@ public final class TransactionOuterClass {
       return io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission.getDefaultInstance();
     }
 
-    public static final int UNDELEGATE_AT_EPOCH_END_SUBMISSION_FIELD_NUMBER = 1009;
+    public static final int UNDELEGATE_SUBMISSION_FIELD_NUMBER = 1009;
     /**
-     * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
-     * @return Whether the undelegateAtEpochEndSubmission field is set.
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
+     * @return Whether the undelegateSubmission field is set.
      */
     @java.lang.Override
-    public boolean hasUndelegateAtEpochEndSubmission() {
+    public boolean hasUndelegateSubmission() {
       return commandCase_ == 1009;
     }
     /**
-     * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
-     * @return The undelegateAtEpochEndSubmission.
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
+     * @return The undelegateSubmission.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission getUndelegateAtEpochEndSubmission() {
+    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getUndelegateSubmission() {
       if (commandCase_ == 1009) {
-         return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_;
+         return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_;
       }
-      return io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+      return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
     }
     /**
-     * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+     * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder getUndelegateAtEpochEndSubmissionOrBuilder() {
+    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder getUndelegateSubmissionOrBuilder() {
       if (commandCase_ == 1009) {
-         return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_;
+         return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_;
       }
-      return io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+      return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
     }
 
     public static final int NODE_REGISTRATION_FIELD_NUMBER = 2001;
@@ -1185,7 +1185,7 @@ public final class TransactionOuterClass {
         output.writeMessage(1008, (io.vegaprotocol.vega.commands.v1.Commands.DelegateSubmission) command_);
       }
       if (commandCase_ == 1009) {
-        output.writeMessage(1009, (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_);
+        output.writeMessage(1009, (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_);
       }
       if (commandCase_ == 2001) {
         output.writeMessage(2001, (io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration) command_);
@@ -1253,7 +1253,7 @@ public final class TransactionOuterClass {
       }
       if (commandCase_ == 1009) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1009, (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_);
+          .computeMessageSize(1009, (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_);
       }
       if (commandCase_ == 2001) {
         size += com.google.protobuf.CodedOutputStream
@@ -1329,8 +1329,8 @@ public final class TransactionOuterClass {
               .equals(other.getDelegateSubmission())) return false;
           break;
         case 1009:
-          if (!getUndelegateAtEpochEndSubmission()
-              .equals(other.getUndelegateAtEpochEndSubmission())) return false;
+          if (!getUndelegateSubmission()
+              .equals(other.getUndelegateSubmission())) return false;
           break;
         case 2001:
           if (!getNodeRegistration()
@@ -1406,8 +1406,8 @@ public final class TransactionOuterClass {
           hash = (53 * hash) + getDelegateSubmission().hashCode();
           break;
         case 1009:
-          hash = (37 * hash) + UNDELEGATE_AT_EPOCH_END_SUBMISSION_FIELD_NUMBER;
-          hash = (53 * hash) + getUndelegateAtEpochEndSubmission().hashCode();
+          hash = (37 * hash) + UNDELEGATE_SUBMISSION_FIELD_NUMBER;
+          hash = (53 * hash) + getUndelegateSubmission().hashCode();
           break;
         case 2001:
           hash = (37 * hash) + NODE_REGISTRATION_FIELD_NUMBER;
@@ -1656,10 +1656,10 @@ public final class TransactionOuterClass {
           }
         }
         if (commandCase_ == 1009) {
-          if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+          if (undelegateSubmissionBuilder_ == null) {
             result.command_ = command_;
           } else {
-            result.command_ = undelegateAtEpochEndSubmissionBuilder_.build();
+            result.command_ = undelegateSubmissionBuilder_.build();
           }
         }
         if (commandCase_ == 2001) {
@@ -1785,8 +1785,8 @@ public final class TransactionOuterClass {
             mergeDelegateSubmission(other.getDelegateSubmission());
             break;
           }
-          case UNDELEGATE_AT_EPOCH_END_SUBMISSION: {
-            mergeUndelegateAtEpochEndSubmission(other.getUndelegateAtEpochEndSubmission());
+          case UNDELEGATE_SUBMISSION: {
+            mergeUndelegateSubmission(other.getUndelegateSubmission());
             break;
           }
           case NODE_REGISTRATION: {
@@ -3117,71 +3117,71 @@ public final class TransactionOuterClass {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder> undelegateAtEpochEndSubmissionBuilder_;
+          io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder> undelegateSubmissionBuilder_;
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
-       * @return Whether the undelegateAtEpochEndSubmission field is set.
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
+       * @return Whether the undelegateSubmission field is set.
        */
       @java.lang.Override
-      public boolean hasUndelegateAtEpochEndSubmission() {
+      public boolean hasUndelegateSubmission() {
         return commandCase_ == 1009;
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
-       * @return The undelegateAtEpochEndSubmission.
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
+       * @return The undelegateSubmission.
        */
       @java.lang.Override
-      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission getUndelegateAtEpochEndSubmission() {
-        if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getUndelegateSubmission() {
+        if (undelegateSubmissionBuilder_ == null) {
           if (commandCase_ == 1009) {
-            return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_;
+            return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_;
           }
-          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
         } else {
           if (commandCase_ == 1009) {
-            return undelegateAtEpochEndSubmissionBuilder_.getMessage();
+            return undelegateSubmissionBuilder_.getMessage();
           }
-          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
         }
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
-      public Builder setUndelegateAtEpochEndSubmission(io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission value) {
-        if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+      public Builder setUndelegateSubmission(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission value) {
+        if (undelegateSubmissionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           command_ = value;
           onChanged();
         } else {
-          undelegateAtEpochEndSubmissionBuilder_.setMessage(value);
+          undelegateSubmissionBuilder_.setMessage(value);
         }
         commandCase_ = 1009;
         return this;
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
-      public Builder setUndelegateAtEpochEndSubmission(
-          io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder builderForValue) {
-        if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+      public Builder setUndelegateSubmission(
+          io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder builderForValue) {
+        if (undelegateSubmissionBuilder_ == null) {
           command_ = builderForValue.build();
           onChanged();
         } else {
-          undelegateAtEpochEndSubmissionBuilder_.setMessage(builderForValue.build());
+          undelegateSubmissionBuilder_.setMessage(builderForValue.build());
         }
         commandCase_ = 1009;
         return this;
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
-      public Builder mergeUndelegateAtEpochEndSubmission(io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission value) {
-        if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+      public Builder mergeUndelegateSubmission(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission value) {
+        if (undelegateSubmissionBuilder_ == null) {
           if (commandCase_ == 1009 &&
-              command_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance()) {
-            command_ = io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.newBuilder((io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_)
+              command_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance()) {
+            command_ = io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.newBuilder((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_)
                 .mergeFrom(value).buildPartial();
           } else {
             command_ = value;
@@ -3189,18 +3189,18 @@ public final class TransactionOuterClass {
           onChanged();
         } else {
           if (commandCase_ == 1009) {
-            undelegateAtEpochEndSubmissionBuilder_.mergeFrom(value);
+            undelegateSubmissionBuilder_.mergeFrom(value);
           }
-          undelegateAtEpochEndSubmissionBuilder_.setMessage(value);
+          undelegateSubmissionBuilder_.setMessage(value);
         }
         commandCase_ = 1009;
         return this;
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
-      public Builder clearUndelegateAtEpochEndSubmission() {
-        if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+      public Builder clearUndelegateSubmission() {
+        if (undelegateSubmissionBuilder_ == null) {
           if (commandCase_ == 1009) {
             commandCase_ = 0;
             command_ = null;
@@ -3211,50 +3211,50 @@ public final class TransactionOuterClass {
             commandCase_ = 0;
             command_ = null;
           }
-          undelegateAtEpochEndSubmissionBuilder_.clear();
+          undelegateSubmissionBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
-      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder getUndelegateAtEpochEndSubmissionBuilder() {
-        return getUndelegateAtEpochEndSubmissionFieldBuilder().getBuilder();
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder getUndelegateSubmissionBuilder() {
+        return getUndelegateSubmissionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
       @java.lang.Override
-      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder getUndelegateAtEpochEndSubmissionOrBuilder() {
-        if ((commandCase_ == 1009) && (undelegateAtEpochEndSubmissionBuilder_ != null)) {
-          return undelegateAtEpochEndSubmissionBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder getUndelegateSubmissionOrBuilder() {
+        if ((commandCase_ == 1009) && (undelegateSubmissionBuilder_ != null)) {
+          return undelegateSubmissionBuilder_.getMessageOrBuilder();
         } else {
           if (commandCase_ == 1009) {
-            return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_;
+            return (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_;
           }
-          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+          return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
         }
       }
       /**
-       * <code>.vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];</code>
+       * <code>.vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder>
-          getUndelegateAtEpochEndSubmissionFieldBuilder() {
-        if (undelegateAtEpochEndSubmissionBuilder_ == null) {
+          io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder>
+          getUndelegateSubmissionFieldBuilder() {
+        if (undelegateSubmissionBuilder_ == null) {
           if (!(commandCase_ == 1009)) {
-            command_ = io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+            command_ = io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
           }
-          undelegateAtEpochEndSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder>(
-                  (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) command_,
+          undelegateSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder>(
+                  (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) command_,
                   getParentForChildren(),
                   isClean());
           command_ = null;
         }
         commandCase_ = 1009;
         onChanged();;
-        return undelegateAtEpochEndSubmissionBuilder_;
+        return undelegateSubmissionBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6378,7 +6378,7 @@ public final class TransactionOuterClass {
       "\n\035commands/v1/transaction.proto\022\020vega.co" +
       "mmands.v1\032\032commands/v1/commands.proto\032$c" +
       "ommands/v1/validator_commands.proto\032\031com" +
-      "mands/v1/oracles.proto\"\231\n\n\tInputData\022\024\n\005" +
+      "mands/v1/oracles.proto\"\370\t\n\tInputData\022\024\n\005" +
       "nonce\030\001 \001(\004R\005nonce\022!\n\014block_height\030\002 \001(\004" +
       "R\013blockHeight\022O\n\020order_submission\030\351\007 \001(\013" +
       "2!.vega.commands.v1.OrderSubmissionH\000R\017o" +
@@ -6398,29 +6398,28 @@ public final class TransactionOuterClass {
       "issionH\000R\034liquidityProvisionSubmission\022X" +
       "\n\023delegate_submission\030\360\007 \001(\0132$.vega.comm" +
       "ands.v1.DelegateSubmissionH\000R\022delegateSu" +
-      "bmission\022\177\n\"undelegate_at_epoch_end_subm" +
-      "ission\030\361\007 \001(\01320.vega.commands.v1.Undeleg" +
-      "ateAtEpochEndSubmissionH\000R\036undelegateAtE" +
-      "pochEndSubmission\022R\n\021node_registration\030\321" +
-      "\017 \001(\0132\".vega.commands.v1.NodeRegistratio" +
-      "nH\000R\020nodeRegistration\022:\n\tnode_vote\030\322\017 \001(" +
-      "\0132\032.vega.commands.v1.NodeVoteH\000R\010nodeVot" +
-      "e\022I\n\016node_signature\030\323\017 \001(\0132\037.vega.comman" +
-      "ds.v1.NodeSignatureH\000R\rnodeSignature\022@\n\013" +
-      "chain_event\030\324\017 \001(\0132\034.vega.commands.v1.Ch" +
-      "ainEventH\000R\nchainEvent\022_\n\026oracle_data_su" +
-      "bmission\030\271\027 \001(\0132&.vega.commands.v1.Oracl" +
-      "eDataSubmissionH\000R\024oracleDataSubmissionB" +
-      "\t\n\007command\"\303\001\n\013Transaction\022\035\n\ninput_data" +
-      "\030\001 \001(\014R\tinputData\0229\n\tsignature\030\002 \001(\0132\033.v" +
-      "ega.commands.v1.SignatureR\tsignature\022\033\n\007" +
-      "address\030\351\007 \001(\tH\000R\007address\022\032\n\007pub_key\030\352\007 " +
-      "\001(\tH\000R\006pubKey\022\031\n\007version\030\320\017 \001(\rR\007version" +
-      "B\006\n\004from\"O\n\tSignature\022\024\n\005value\030\001 \001(\tR\005va" +
-      "lue\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\r" +
-      "R\007versionBO\n io.vegaprotocol.vega.comman" +
-      "ds.v1Z+code.vegaprotocol.io/vega/proto/c" +
-      "ommands/v1b\006proto3"
+      "bmission\022^\n\025undelegate_submission\030\361\007 \001(\013" +
+      "2&.vega.commands.v1.UndelegateSubmission" +
+      "H\000R\024undelegateSubmission\022R\n\021node_registr" +
+      "ation\030\321\017 \001(\0132\".vega.commands.v1.NodeRegi" +
+      "strationH\000R\020nodeRegistration\022:\n\tnode_vot" +
+      "e\030\322\017 \001(\0132\032.vega.commands.v1.NodeVoteH\000R\010" +
+      "nodeVote\022I\n\016node_signature\030\323\017 \001(\0132\037.vega" +
+      ".commands.v1.NodeSignatureH\000R\rnodeSignat" +
+      "ure\022@\n\013chain_event\030\324\017 \001(\0132\034.vega.command" +
+      "s.v1.ChainEventH\000R\nchainEvent\022_\n\026oracle_" +
+      "data_submission\030\271\027 \001(\0132&.vega.commands.v" +
+      "1.OracleDataSubmissionH\000R\024oracleDataSubm" +
+      "issionB\t\n\007command\"\303\001\n\013Transaction\022\035\n\ninp" +
+      "ut_data\030\001 \001(\014R\tinputData\0229\n\tsignature\030\002 " +
+      "\001(\0132\033.vega.commands.v1.SignatureR\tsignat" +
+      "ure\022\033\n\007address\030\351\007 \001(\tH\000R\007address\022\032\n\007pub_" +
+      "key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007version\030\320\017 \001(\rR\007" +
+      "versionB\006\n\004from\"O\n\tSignature\022\024\n\005value\030\001 " +
+      "\001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007versio" +
+      "n\030\003 \001(\rR\007versionBO\n io.vegaprotocol.vega" +
+      ".commands.v1Z+code.vegaprotocol.io/vega/" +
+      "proto/commands/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6434,7 +6433,7 @@ public final class TransactionOuterClass {
     internal_static_vega_commands_v1_InputData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_InputData_descriptor,
-        new java.lang.String[] { "Nonce", "BlockHeight", "OrderSubmission", "OrderCancellation", "OrderAmendment", "WithdrawSubmission", "ProposalSubmission", "VoteSubmission", "LiquidityProvisionSubmission", "DelegateSubmission", "UndelegateAtEpochEndSubmission", "NodeRegistration", "NodeVote", "NodeSignature", "ChainEvent", "OracleDataSubmission", "Command", });
+        new java.lang.String[] { "Nonce", "BlockHeight", "OrderSubmission", "OrderCancellation", "OrderAmendment", "WithdrawSubmission", "ProposalSubmission", "VoteSubmission", "LiquidityProvisionSubmission", "DelegateSubmission", "UndelegateSubmission", "NodeRegistration", "NodeVote", "NodeSignature", "ChainEvent", "OracleDataSubmission", "Command", });
     internal_static_vega_commands_v1_Transaction_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_commands_v1_Transaction_fieldAccessorTable = new

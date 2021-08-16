@@ -150,9 +150,11 @@
     - [OrderCancellation](#vega.commands.v1.OrderCancellation)
     - [OrderSubmission](#vega.commands.v1.OrderSubmission)
     - [ProposalSubmission](#vega.commands.v1.ProposalSubmission)
-    - [UndelegateAtEpochEndSubmission](#vega.commands.v1.UndelegateAtEpochEndSubmission)
+    - [UndelegateSubmission](#vega.commands.v1.UndelegateSubmission)
     - [VoteSubmission](#vega.commands.v1.VoteSubmission)
     - [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission)
+
+    - [UndelegateSubmission.Method](#vega.commands.v1.UndelegateSubmission.Method)
 
 - [chain_events.proto](#chain_events.proto)
     - [AddValidator](#vega.AddValidator)
@@ -184,18 +186,24 @@
 - [events/v1/events.proto](#events/v1/events.proto)
     - [AuctionEvent](#vega.events.v1.AuctionEvent)
     - [BusEvent](#vega.events.v1.BusEvent)
+    - [DelegationBalanceEvent](#vega.events.v1.DelegationBalanceEvent)
+    - [EpochEvent](#vega.events.v1.EpochEvent)
     - [LossSocialization](#vega.events.v1.LossSocialization)
     - [MarketEvent](#vega.events.v1.MarketEvent)
     - [MarketTick](#vega.events.v1.MarketTick)
+    - [PendingDelegationBalanceEvent](#vega.events.v1.PendingDelegationBalanceEvent)
     - [PositionResolution](#vega.events.v1.PositionResolution)
     - [SettleDistressed](#vega.events.v1.SettleDistressed)
     - [SettlePosition](#vega.events.v1.SettlePosition)
+    - [StakingEvent](#vega.events.v1.StakingEvent)
     - [TimeUpdate](#vega.events.v1.TimeUpdate)
     - [TradeSettlement](#vega.events.v1.TradeSettlement)
     - [TransferResponses](#vega.events.v1.TransferResponses)
     - [TxErrorEvent](#vega.events.v1.TxErrorEvent)
+    - [ValidatorUpdate](#vega.events.v1.ValidatorUpdate)
 
     - [BusEventType](#vega.events.v1.BusEventType)
+    - [StakingEvent.Type](#vega.events.v1.StakingEvent.Type)
 
 - [commands/v1/oracles.proto](#commands/v1/oracles.proto)
     - [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission)
@@ -2001,6 +2009,7 @@ General accounts are where funds are initially deposited or withdrawn from, it i
 | ACCOUNT_TYPE_BOND | 9 | This account is created to maintain liquidity providers funds commitments |
 | ACCOUNT_TYPE_EXTERNAL | 10 | External account represents an external source (deposit/withdrawal) |
 | ACCOUNT_TYPE_GLOBAL_INSURANCE | 11 | Global insurance account for the asset |
+| ACCOUNT_TYPE_GLOBAL_REWARD | 12 | Global reward account for the asset |
 
 
 
@@ -2262,6 +2271,7 @@ Transfers can occur between parties on Vega, these are the types that indicate w
 | TRANSFER_TYPE_WITHDRAW | 18 | Actual withdraw from system |
 | TRANSFER_TYPE_DEPOSIT | 19 | Deposit funds |
 | TRANSFER_TYPE_BOND_SLASHING | 20 | Bond slashing |
+| TRANSFER_TYPE_STAKE_REWARD | 21 | Stake reward |
 
 
 
@@ -2886,16 +2896,17 @@ vega network governance
 
 
 
-<a name="vega.commands.v1.UndelegateAtEpochEndSubmission"></a>
+<a name="vega.commands.v1.UndelegateSubmission"></a>
 
-### UndelegateAtEpochEndSubmission
-A command to submit an instruction to undelete stake from a node
+### UndelegateSubmission
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| node_id | [string](#string) |  | The ID for the node to undelegate from |
-| amount | [uint64](#uint64) |  | The amount of stake to undelegate |
+| node_id | [string](#string) |  |  |
+| amount | [uint64](#uint64) |  | optional, if not specified = ALL |
+| method | [UndelegateSubmission.Method](#vega.commands.v1.UndelegateSubmission.Method) |  |  |
 
 
 
@@ -2935,6 +2946,20 @@ Represents the submission request to withdraw funds for a party on Vega
 
 
 
+
+
+
+<a name="vega.commands.v1.UndelegateSubmission.Method"></a>
+
+### UndelegateSubmission.Method
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| METHOD_UNSPECIFIED | 0 |  |
+| METHOD_NOW | 1 |  |
+| METHOD_AT_END_OF_EPOCH | 2 |  |
+| METHOD_IN_ANGER | 3 |  |
 
 
 
@@ -3279,6 +3304,8 @@ Used to Register a node as a validator during network start-up
 | ----- | ---- | ----- | ----------- |
 | pub_key | [bytes](#bytes) |  | Public key, required field |
 | chain_pub_key | [bytes](#bytes) |  | Public key for the blockchain, required field |
+| info_url | [string](#string) |  | URL with more info on the node |
+| country | [string](#string) |  | Country code (ISO 3166-1 alpha-2) for the location of the node |
 
 
 
@@ -3407,8 +3434,48 @@ A bus event is a container for event bus events emitted by Vega
 | market_updated | [vega.Market](#vega.Market) |  | Market created events |
 | oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | OracleSpec events |
 | oracle_data | [oracles.v1.OracleData](#oracles.v1.OracleData) |  | OracleData events |
+| delegation_balance | [DelegationBalanceEvent](#vega.events.v1.DelegationBalanceEvent) |  | Delegation balance events |
+| pending_delegation_balance | [PendingDelegationBalanceEvent](#vega.events.v1.PendingDelegationBalanceEvent) |  | Pending delegation balance events |
+| epoch_event | [EpochEvent](#vega.events.v1.EpochEvent) |  | Epoch update events - See [Epoch](#vega.Epoch) |
+| validator_update | [ValidatorUpdate](#vega.events.v1.ValidatorUpdate) |  | Validator update events |
+| staking_event | [StakingEvent](#vega.events.v1.StakingEvent) |  | Staking event |
 | market | [MarketEvent](#vega.events.v1.MarketEvent) |  | Market tick events - See [MarketEvent](#vega.MarketEvent) |
 | tx_err_event | [TxErrorEvent](#vega.events.v1.TxErrorEvent) |  | Transaction error events, not included in the ALL event type |
+
+
+
+
+
+
+<a name="vega.events.v1.DelegationBalanceEvent"></a>
+
+### DelegationBalanceEvent
+DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| node_id | [string](#string) |  |  |
+| amount | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="vega.events.v1.EpochEvent"></a>
+
+### EpochEvent
+Epoch details
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| seq | [uint64](#uint64) |  | Sequence number that increases by one each epoch |
+| start_time | [int64](#int64) |  | What time did this epoch start |
+| expire_time | [int64](#int64) |  | What time should this epoch end |
+| end_time | [int64](#int64) |  | What time did it actually end |
 
 
 
@@ -3465,6 +3532,24 @@ A market ticket event contains the time value for when a particular market was l
 
 
 
+<a name="vega.events.v1.PendingDelegationBalanceEvent"></a>
+
+### PendingDelegationBalanceEvent
+PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| node_id | [string](#string) |  |  |
+| delegation_amount | [uint64](#uint64) |  |  |
+| undelegation_amount | [uint64](#uint64) |  |  |
+
+
+
+
+
+
 <a name="vega.events.v1.PositionResolution"></a>
 
 ### PositionResolution
@@ -3513,6 +3598,26 @@ A settle position event contains position settlement information for a party
 | party_id | [string](#string) |  | Party identifier (public key) for the event |
 | price | [uint64](#uint64) |  | Price of settlement as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
 | trade_settlements | [TradeSettlement](#vega.events.v1.TradeSettlement) | repeated | A collection of 1 or more trade settlements |
+
+
+
+
+
+
+<a name="vega.events.v1.StakingEvent"></a>
+
+### StakingEvent
+StakingEvent - an event notifying of stake being deposited or removed for a given party
+These events are emitted for every Staking deposit or removed accepted by the network
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | The internal ID for this staking event |
+| type | [StakingEvent.Type](#vega.events.v1.StakingEvent.Type) |  | The type of event |
+| ts | [int64](#int64) |  | The timestamps at which the event was emitted by ethereum |
+| party | [string](#string) |  | The party to whom the event is directed at. |
+| amount | [string](#string) |  | The amount of stake deposited or removed |
 
 
 
@@ -3588,6 +3693,24 @@ A transfer responses event contains a collection of transfer information
 
 
 
+<a name="vega.events.v1.ValidatorUpdate"></a>
+
+### ValidatorUpdate
+A validator update event contains information about validator node
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pub_key | [string](#string) |  | Public key of validator node |
+| tm_pub_key | [string](#string) |  | Public key of Tendermint |
+| info_url | [string](#string) |  | URL with more info on the node |
+| country | [string](#string) |  | Country code (ISO 3166-1 alpha-2) for the location of the node |
+
+
+
+
+
+
 
 
 <a name="vega.events.v1.BusEventType"></a>
@@ -3629,8 +3752,26 @@ Group values (e.g. BUS_EVENT_TYPE_AUCTION) where they represent a group of data 
 | BUS_EVENT_TYPE_MARKET_UPDATED | 26 | Event indicating a new market was created |
 | BUS_EVENT_TYPE_ORACLE_SPEC | 27 | Event indicating an oracle spec has been created or updated |
 | BUS_EVENT_TYPE_ORACLE_DATA | 28 | Event indicating that an oracle data has been broadcast |
+| BUS_EVENT_TYPE_DELEGATION_BALANCE | 29 | Event indicating that an delegation balance of a party to a node for current epoch has changed |
+| BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE | 30 | Event indicating that an delegation balance of a party to a node for next epoch has changed |
+| BUS_EVENT_TYPE_EPOCH_UPDATE | 31 | Event indicating the start or end of an epoch |
+| BUS_EVENT_TYPE_VALIDATOR_UPDATE | 32 | Event indicating that validator node has been updated |
+| BUS_EVENT_TYPE_STAKING_EVENT | 33 | Event indicating a new staking event have been processed by the network |
 | BUS_EVENT_TYPE_MARKET | 101 | Event indicating a market related event, for example when a market opens |
 | BUS_EVENT_TYPE_TX_ERROR | 201 | Event used to report failed transactions back to a user, this is excluded from the ALL type |
+
+
+
+<a name="vega.events.v1.StakingEvent.Type"></a>
+
+### StakingEvent.Type
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TYPE_UNSPECIFIED | 0 | Default value |
+| TYPE_DEPOSIT | 1 | Indicate of a stake deposit instruction |
+| TYPE_REMOVE | 2 | Indicate of a stake remove instruction |
 
 
 
@@ -3710,7 +3851,7 @@ The supported Oracle sources
 | vote_submission | [VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
 | liquidity_provision_submission | [LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
 | delegate_submission | [DelegateSubmission](#vega.commands.v1.DelegateSubmission) |  |  |
-| undelegate_at_epoch_end_submission | [UndelegateAtEpochEndSubmission](#vega.commands.v1.UndelegateAtEpochEndSubmission) |  |  |
+| undelegate_submission | [UndelegateSubmission](#vega.commands.v1.UndelegateSubmission) |  |  |
 | node_registration | [NodeRegistration](#vega.commands.v1.NodeRegistration) |  | Validator commands |
 | node_vote | [NodeVote](#vega.commands.v1.NodeVote) |  |  |
 | node_signature | [NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
@@ -6598,7 +6739,7 @@ Blockchain transaction type
 | vote_submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  |  |
 | liquidity_provision_submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  |  |
 | delegate_submission | [vega.commands.v1.DelegateSubmission](#vega.commands.v1.DelegateSubmission) |  |  |
-| undelegate_at_epoch_end_submission | [vega.commands.v1.UndelegateAtEpochEndSubmission](#vega.commands.v1.UndelegateAtEpochEndSubmission) |  |  |
+| undelegate_submission | [vega.commands.v1.UndelegateSubmission](#vega.commands.v1.UndelegateSubmission) |  |  |
 | node_registration | [vega.commands.v1.NodeRegistration](#vega.commands.v1.NodeRegistration) |  | Validator commands |
 | node_vote | [vega.commands.v1.NodeVote](#vega.commands.v1.NodeVote) |  |  |
 | node_signature | [vega.commands.v1.NodeSignature](#vega.commands.v1.NodeSignature) |  |  |

@@ -182,6 +182,46 @@ public final class ValidatorCommands {
      * @return The chainPubKey.
      */
     com.google.protobuf.ByteString getChainPubKey();
+
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * @return The infoUrl.
+     */
+    java.lang.String getInfoUrl();
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * @return The bytes for infoUrl.
+     */
+    com.google.protobuf.ByteString
+        getInfoUrlBytes();
+
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * @return The country.
+     */
+    java.lang.String getCountry();
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * @return The bytes for country.
+     */
+    com.google.protobuf.ByteString
+        getCountryBytes();
   }
   /**
    * <pre>
@@ -202,6 +242,8 @@ public final class ValidatorCommands {
     private NodeRegistration() {
       pubKey_ = com.google.protobuf.ByteString.EMPTY;
       chainPubKey_ = com.google.protobuf.ByteString.EMPTY;
+      infoUrl_ = "";
+      country_ = "";
     }
 
     @java.lang.Override
@@ -242,6 +284,18 @@ public final class ValidatorCommands {
             case 18: {
 
               chainPubKey_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              infoUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              country_ = s;
               break;
             }
             default: {
@@ -306,6 +360,98 @@ public final class ValidatorCommands {
       return chainPubKey_;
     }
 
+    public static final int INFO_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object infoUrl_;
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * @return The infoUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getInfoUrl() {
+      java.lang.Object ref = infoUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        infoUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * @return The bytes for infoUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInfoUrlBytes() {
+      java.lang.Object ref = infoUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        infoUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COUNTRY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object country_;
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * @return The country.
+     */
+    @java.lang.Override
+    public java.lang.String getCountry() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        country_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * @return The bytes for country.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        country_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -326,6 +472,12 @@ public final class ValidatorCommands {
       if (!chainPubKey_.isEmpty()) {
         output.writeBytes(2, chainPubKey_);
       }
+      if (!getInfoUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, infoUrl_);
+      }
+      if (!getCountryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, country_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -342,6 +494,12 @@ public final class ValidatorCommands {
       if (!chainPubKey_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, chainPubKey_);
+      }
+      if (!getInfoUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, infoUrl_);
+      }
+      if (!getCountryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, country_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -362,6 +520,10 @@ public final class ValidatorCommands {
           .equals(other.getPubKey())) return false;
       if (!getChainPubKey()
           .equals(other.getChainPubKey())) return false;
+      if (!getInfoUrl()
+          .equals(other.getInfoUrl())) return false;
+      if (!getCountry()
+          .equals(other.getCountry())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -377,6 +539,10 @@ public final class ValidatorCommands {
       hash = (53 * hash) + getPubKey().hashCode();
       hash = (37 * hash) + CHAIN_PUB_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getChainPubKey().hashCode();
+      hash = (37 * hash) + INFO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getInfoUrl().hashCode();
+      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+      hash = (53 * hash) + getCountry().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -518,6 +684,10 @@ public final class ValidatorCommands {
 
         chainPubKey_ = com.google.protobuf.ByteString.EMPTY;
 
+        infoUrl_ = "";
+
+        country_ = "";
+
         return this;
       }
 
@@ -546,6 +716,8 @@ public final class ValidatorCommands {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration result = new io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration(this);
         result.pubKey_ = pubKey_;
         result.chainPubKey_ = chainPubKey_;
+        result.infoUrl_ = infoUrl_;
+        result.country_ = country_;
         onBuilt();
         return result;
       }
@@ -599,6 +771,14 @@ public final class ValidatorCommands {
         }
         if (other.getChainPubKey() != com.google.protobuf.ByteString.EMPTY) {
           setChainPubKey(other.getChainPubKey());
+        }
+        if (!other.getInfoUrl().isEmpty()) {
+          infoUrl_ = other.infoUrl_;
+          onChanged();
+        }
+        if (!other.getCountry().isEmpty()) {
+          country_ = other.country_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -717,6 +897,198 @@ public final class ValidatorCommands {
       public Builder clearChainPubKey() {
 
         chainPubKey_ = getDefaultInstance().getChainPubKey();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object infoUrl_ = "";
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * @return The infoUrl.
+       */
+      public java.lang.String getInfoUrl() {
+        java.lang.Object ref = infoUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          infoUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * @return The bytes for infoUrl.
+       */
+      public com.google.protobuf.ByteString
+          getInfoUrlBytes() {
+        java.lang.Object ref = infoUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          infoUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * @param value The infoUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        infoUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfoUrl() {
+
+        infoUrl_ = getDefaultInstance().getInfoUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * @param value The bytes for infoUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        infoUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object country_ = "";
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * @return The country.
+       */
+      public java.lang.String getCountry() {
+        java.lang.Object ref = country_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          country_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * @return The bytes for country.
+       */
+      public com.google.protobuf.ByteString
+          getCountryBytes() {
+        java.lang.Object ref = country_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          country_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * @param value The country to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountry(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        country_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCountry() {
+
+        country_ = getDefaultInstance().getCountry();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * @param value The bytes for country to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        country_ = value;
         onChanged();
         return this;
       }
@@ -4292,26 +4664,28 @@ public final class ValidatorCommands {
       "\n$commands/v1/validator_commands.proto\022\020" +
       "vega.commands.v1\032\022chain_events.proto\0326gi" +
       "thub.com/mwitkow/go-proto-validators/val" +
-      "idator.proto\"_\n\020NodeRegistration\022\037\n\007pub_" +
-      "key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022*\n\rchain_pub_k" +
-      "ey\030\002 \001(\014B\006\342\337\037\002X\001R\013chainPubKey\"Q\n\010NodeVot" +
-      "e\022\037\n\007pub_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022$\n\tre" +
-      "ference\030\002 \001(\tB\006\342\337\037\002X\001R\treference\"j\n\rNode" +
-      "Signature\022\016\n\002id\030\001 \001(\tR\002id\022\020\n\003sig\030\002 \001(\014R\003" +
-      "sig\0227\n\004kind\030\003 \001(\0162#.vega.commands.v1.Nod" +
-      "eSignatureKindR\004kind\"\375\001\n\nChainEvent\022\023\n\005t" +
-      "x_id\030\001 \001(\tR\004txId\022\024\n\005nonce\030\002 \001(\004R\005nonce\0224" +
-      "\n\007builtin\030\351\007 \001(\0132\027.vega.BuiltinAssetEven" +
-      "tH\000R\007builtin\022)\n\005erc20\030\352\007 \001(\0132\020.vega.ERC2" +
-      "0EventH\000R\005erc20\022#\n\003btc\030\353\007 \001(\0132\016.vega.BTC" +
-      "EventH\000R\003btc\0225\n\tvalidator\030\354\007 \001(\0132\024.vega." +
-      "ValidatorEventH\000R\tvalidatorB\007\n\005event*\205\001\n" +
-      "\021NodeSignatureKind\022#\n\037NODE_SIGNATURE_KIN" +
-      "D_UNSPECIFIED\020\000\022!\n\035NODE_SIGNATURE_KIND_A" +
-      "SSET_NEW\020\001\022(\n$NODE_SIGNATURE_KIND_ASSET_" +
-      "WITHDRAWAL\020\002BO\n io.vegaprotocol.vega.com" +
-      "mands.v1Z+code.vegaprotocol.io/vega/prot" +
-      "o/commands/v1b\006proto3"
+      "idator.proto\"\244\001\n\020NodeRegistration\022\037\n\007pub" +
+      "_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022*\n\rchain_pub_" +
+      "key\030\002 \001(\014B\006\342\337\037\002X\001R\013chainPubKey\022!\n\010info_u" +
+      "rl\030\003 \001(\tB\006\342\337\037\002X\001R\007infoUrl\022 \n\007country\030\004 \001" +
+      "(\tB\006\342\337\037\002X\001R\007country\"Q\n\010NodeVote\022\037\n\007pub_k" +
+      "ey\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022$\n\treference\030\002 " +
+      "\001(\tB\006\342\337\037\002X\001R\treference\"j\n\rNodeSignature\022" +
+      "\016\n\002id\030\001 \001(\tR\002id\022\020\n\003sig\030\002 \001(\014R\003sig\0227\n\004kin" +
+      "d\030\003 \001(\0162#.vega.commands.v1.NodeSignature" +
+      "KindR\004kind\"\375\001\n\nChainEvent\022\023\n\005tx_id\030\001 \001(\t" +
+      "R\004txId\022\024\n\005nonce\030\002 \001(\004R\005nonce\0224\n\007builtin\030" +
+      "\351\007 \001(\0132\027.vega.BuiltinAssetEventH\000R\007built" +
+      "in\022)\n\005erc20\030\352\007 \001(\0132\020.vega.ERC20EventH\000R\005" +
+      "erc20\022#\n\003btc\030\353\007 \001(\0132\016.vega.BTCEventH\000R\003b" +
+      "tc\0225\n\tvalidator\030\354\007 \001(\0132\024.vega.ValidatorE" +
+      "ventH\000R\tvalidatorB\007\n\005event*\205\001\n\021NodeSigna" +
+      "tureKind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIF" +
+      "IED\020\000\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001" +
+      "\022(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL" +
+      "\020\002BO\n io.vegaprotocol.vega.commands.v1Z+" +
+      "code.vegaprotocol.io/vega/proto/commands" +
+      "/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4324,7 +4698,7 @@ public final class ValidatorCommands {
     internal_static_vega_commands_v1_NodeRegistration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_NodeRegistration_descriptor,
-        new java.lang.String[] { "PubKey", "ChainPubKey", });
+        new java.lang.String[] { "PubKey", "ChainPubKey", "InfoUrl", "Country", });
     internal_static_vega_commands_v1_NodeVote_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_commands_v1_NodeVote_fieldAccessorTable = new

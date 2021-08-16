@@ -51,7 +51,7 @@ extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAME
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2ftransaction_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Transaction_commands_2fv1_2ftransaction_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_events_2fv1_2fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<28> scc_info_BusEvent_events_2fv1_2fevents_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_events_2fv1_2fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<33> scc_info_BusEvent_events_2fv1_2fevents_2eproto;
 namespace api {
 namespace v1 {
 class PropagateChainEventRequestDefaultTypeInternal {

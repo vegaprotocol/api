@@ -53,10 +53,10 @@ export class SubmitTransactionRequest extends jspb.Message {
   getDelegateSubmission(): commands_v1_commands_pb.DelegateSubmission | undefined;
   setDelegateSubmission(value?: commands_v1_commands_pb.DelegateSubmission): void;
 
-  hasUndelegateAtEpochEndSubmission(): boolean;
-  clearUndelegateAtEpochEndSubmission(): void;
-  getUndelegateAtEpochEndSubmission(): commands_v1_commands_pb.UndelegateAtEpochEndSubmission | undefined;
-  setUndelegateAtEpochEndSubmission(value?: commands_v1_commands_pb.UndelegateAtEpochEndSubmission): void;
+  hasUndelegateSubmission(): boolean;
+  clearUndelegateSubmission(): void;
+  getUndelegateSubmission(): commands_v1_commands_pb.UndelegateSubmission | undefined;
+  setUndelegateSubmission(value?: commands_v1_commands_pb.UndelegateSubmission): void;
 
   hasNodeRegistration(): boolean;
   clearNodeRegistration(): void;
@@ -106,7 +106,7 @@ export namespace SubmitTransactionRequest {
     voteSubmission?: commands_v1_commands_pb.VoteSubmission.AsObject,
     liquidityProvisionSubmission?: commands_v1_commands_pb.LiquidityProvisionSubmission.AsObject,
     delegateSubmission?: commands_v1_commands_pb.DelegateSubmission.AsObject,
-    undelegateAtEpochEndSubmission?: commands_v1_commands_pb.UndelegateAtEpochEndSubmission.AsObject,
+    undelegateSubmission?: commands_v1_commands_pb.UndelegateSubmission.AsObject,
     nodeRegistration?: commands_v1_validator_commands_pb.NodeRegistration.AsObject,
     nodeVote?: commands_v1_validator_commands_pb.NodeVote.AsObject,
     nodeSignature?: commands_v1_validator_commands_pb.NodeSignature.AsObject,
@@ -124,7 +124,7 @@ export namespace SubmitTransactionRequest {
     VOTE_SUBMISSION = 1006,
     LIQUIDITY_PROVISION_SUBMISSION = 1007,
     DELEGATE_SUBMISSION = 1008,
-    UNDELEGATE_AT_EPOCH_END_SUBMISSION = 1009,
+    UNDELEGATE_SUBMISSION = 1009,
     NODE_REGISTRATION = 2001,
     NODE_VOTE = 2002,
     NODE_SIGNATURE = 2003,

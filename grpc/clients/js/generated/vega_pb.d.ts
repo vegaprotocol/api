@@ -1956,6 +1956,7 @@ export interface AccountTypeMap {
   ACCOUNT_TYPE_BOND: 9;
   ACCOUNT_TYPE_EXTERNAL: 10;
   ACCOUNT_TYPE_GLOBAL_INSURANCE: 11;
+  ACCOUNT_TYPE_GLOBAL_REWARD: 12;
 }
 
 export const AccountType: AccountTypeMap;
@@ -1982,6 +1983,7 @@ export interface TransferTypeMap {
   TRANSFER_TYPE_WITHDRAW: 18;
   TRANSFER_TYPE_DEPOSIT: 19;
   TRANSFER_TYPE_BOND_SLASHING: 20;
+  TRANSFER_TYPE_STAKE_REWARD: 21;
 }
 
 export const TransferType: TransferTypeMap;

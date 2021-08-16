@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\036io.vegaprotocol.vega.wallet.v1Z)code.vegaprotocol.io/vega/proto/wallet/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16wallet/v1/wallet.proto\x12\x0evega.wallet.v1\x1a\x1a\x63ommands/v1/commands.proto\x1a$commands/v1/validator_commands.proto\x1a\x19\x63ommands/v1/oracles.proto\"\xa6\n\n\x18SubmitTransactionRequest\x12\x17\n\x07pub_key\x18\x01 \x01(\tR\x06pubKey\x12\x1c\n\tpropagate\x18\x02 \x01(\x08R\tpropagate\x12O\n\x10order_submission\x18\xe9\x07 \x01(\x0b\x32!.vega.commands.v1.OrderSubmissionH\x00R\x0forderSubmission\x12U\n\x12order_cancellation\x18\xea\x07 \x01(\x0b\x32#.vega.commands.v1.OrderCancellationH\x00R\x11orderCancellation\x12L\n\x0forder_amendment\x18\xeb\x07 \x01(\x0b\x32 .vega.commands.v1.OrderAmendmentH\x00R\x0eorderAmendment\x12X\n\x13withdraw_submission\x18\xec\x07 \x01(\x0b\x32$.vega.commands.v1.WithdrawSubmissionH\x00R\x12withdrawSubmission\x12X\n\x13proposal_submission\x18\xed\x07 \x01(\x0b\x32$.vega.commands.v1.ProposalSubmissionH\x00R\x12proposalSubmission\x12L\n\x0fvote_submission\x18\xee\x07 \x01(\x0b\x32 .vega.commands.v1.VoteSubmissionH\x00R\x0evoteSubmission\x12w\n\x1eliquidity_provision_submission\x18\xef\x07 \x01(\x0b\x32..vega.commands.v1.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmission\x12X\n\x13\x64\x65legate_submission\x18\xf0\x07 \x01(\x0b\x32$.vega.commands.v1.DelegateSubmissionH\x00R\x12\x64\x65legateSubmission\x12\x7f\n\"undelegate_at_epoch_end_submission\x18\xf1\x07 \x01(\x0b\x32\x30.vega.commands.v1.UndelegateAtEpochEndSubmissionH\x00R\x1eundelegateAtEpochEndSubmission\x12R\n\x11node_registration\x18\xd1\x0f \x01(\x0b\x32\".vega.commands.v1.NodeRegistrationH\x00R\x10nodeRegistration\x12:\n\tnode_vote\x18\xd2\x0f \x01(\x0b\x32\x1a.vega.commands.v1.NodeVoteH\x00R\x08nodeVote\x12I\n\x0enode_signature\x18\xd3\x0f \x01(\x0b\x32\x1f.vega.commands.v1.NodeSignatureH\x00R\rnodeSignature\x12@\n\x0b\x63hain_event\x18\xd4\x0f \x01(\x0b\x32\x1c.vega.commands.v1.ChainEventH\x00R\nchainEvent\x12_\n\x16oracle_data_submission\x18\xb9\x17 \x01(\x0b\x32&.vega.commands.v1.OracleDataSubmissionH\x00R\x14oracleDataSubmissionB\t\n\x07\x63ommandBK\n\x1eio.vegaprotocol.vega.wallet.v1Z)code.vegaprotocol.io/vega/proto/wallet/v1b\x06proto3'
+  serialized_pb=b'\n\x16wallet/v1/wallet.proto\x12\x0evega.wallet.v1\x1a\x1a\x63ommands/v1/commands.proto\x1a$commands/v1/validator_commands.proto\x1a\x19\x63ommands/v1/oracles.proto\"\x85\n\n\x18SubmitTransactionRequest\x12\x17\n\x07pub_key\x18\x01 \x01(\tR\x06pubKey\x12\x1c\n\tpropagate\x18\x02 \x01(\x08R\tpropagate\x12O\n\x10order_submission\x18\xe9\x07 \x01(\x0b\x32!.vega.commands.v1.OrderSubmissionH\x00R\x0forderSubmission\x12U\n\x12order_cancellation\x18\xea\x07 \x01(\x0b\x32#.vega.commands.v1.OrderCancellationH\x00R\x11orderCancellation\x12L\n\x0forder_amendment\x18\xeb\x07 \x01(\x0b\x32 .vega.commands.v1.OrderAmendmentH\x00R\x0eorderAmendment\x12X\n\x13withdraw_submission\x18\xec\x07 \x01(\x0b\x32$.vega.commands.v1.WithdrawSubmissionH\x00R\x12withdrawSubmission\x12X\n\x13proposal_submission\x18\xed\x07 \x01(\x0b\x32$.vega.commands.v1.ProposalSubmissionH\x00R\x12proposalSubmission\x12L\n\x0fvote_submission\x18\xee\x07 \x01(\x0b\x32 .vega.commands.v1.VoteSubmissionH\x00R\x0evoteSubmission\x12w\n\x1eliquidity_provision_submission\x18\xef\x07 \x01(\x0b\x32..vega.commands.v1.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmission\x12X\n\x13\x64\x65legate_submission\x18\xf0\x07 \x01(\x0b\x32$.vega.commands.v1.DelegateSubmissionH\x00R\x12\x64\x65legateSubmission\x12^\n\x15undelegate_submission\x18\xf1\x07 \x01(\x0b\x32&.vega.commands.v1.UndelegateSubmissionH\x00R\x14undelegateSubmission\x12R\n\x11node_registration\x18\xd1\x0f \x01(\x0b\x32\".vega.commands.v1.NodeRegistrationH\x00R\x10nodeRegistration\x12:\n\tnode_vote\x18\xd2\x0f \x01(\x0b\x32\x1a.vega.commands.v1.NodeVoteH\x00R\x08nodeVote\x12I\n\x0enode_signature\x18\xd3\x0f \x01(\x0b\x32\x1f.vega.commands.v1.NodeSignatureH\x00R\rnodeSignature\x12@\n\x0b\x63hain_event\x18\xd4\x0f \x01(\x0b\x32\x1c.vega.commands.v1.ChainEventH\x00R\nchainEvent\x12_\n\x16oracle_data_submission\x18\xb9\x17 \x01(\x0b\x32&.vega.commands.v1.OracleDataSubmissionH\x00R\x14oracleDataSubmissionB\t\n\x07\x63ommandBK\n\x1eio.vegaprotocol.vega.wallet.v1Z)code.vegaprotocol.io/vega/proto/wallet/v1b\x06proto3'
   ,
   dependencies=[commands_dot_v1_dot_commands__pb2.DESCRIPTOR,commands_dot_v1_dot_validator__commands__pb2.DESCRIPTOR,commands_dot_v1_dot_oracles__pb2.DESCRIPTOR,])
 
@@ -108,12 +108,12 @@ _SUBMITTRANSACTIONREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='delegateSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='undelegate_at_epoch_end_submission', full_name='vega.wallet.v1.SubmitTransactionRequest.undelegate_at_epoch_end_submission', index=10,
+      name='undelegate_submission', full_name='vega.wallet.v1.SubmitTransactionRequest.undelegate_submission', index=10,
       number=1009, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='undelegateAtEpochEndSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='undelegateSubmission', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='node_registration', full_name='vega.wallet.v1.SubmitTransactionRequest.node_registration', index=11,
       number=2001, type=11, cpp_type=10, label=1,
@@ -167,7 +167,7 @@ _SUBMITTRANSACTIONREQUEST = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=136,
-  serialized_end=1454,
+  serialized_end=1421,
 )
 
 _SUBMITTRANSACTIONREQUEST.fields_by_name['order_submission'].message_type = commands_dot_v1_dot_commands__pb2._ORDERSUBMISSION
@@ -178,7 +178,7 @@ _SUBMITTRANSACTIONREQUEST.fields_by_name['proposal_submission'].message_type = c
 _SUBMITTRANSACTIONREQUEST.fields_by_name['vote_submission'].message_type = commands_dot_v1_dot_commands__pb2._VOTESUBMISSION
 _SUBMITTRANSACTIONREQUEST.fields_by_name['liquidity_provision_submission'].message_type = commands_dot_v1_dot_commands__pb2._LIQUIDITYPROVISIONSUBMISSION
 _SUBMITTRANSACTIONREQUEST.fields_by_name['delegate_submission'].message_type = commands_dot_v1_dot_commands__pb2._DELEGATESUBMISSION
-_SUBMITTRANSACTIONREQUEST.fields_by_name['undelegate_at_epoch_end_submission'].message_type = commands_dot_v1_dot_commands__pb2._UNDELEGATEATEPOCHENDSUBMISSION
+_SUBMITTRANSACTIONREQUEST.fields_by_name['undelegate_submission'].message_type = commands_dot_v1_dot_commands__pb2._UNDELEGATESUBMISSION
 _SUBMITTRANSACTIONREQUEST.fields_by_name['node_registration'].message_type = commands_dot_v1_dot_validator__commands__pb2._NODEREGISTRATION
 _SUBMITTRANSACTIONREQUEST.fields_by_name['node_vote'].message_type = commands_dot_v1_dot_validator__commands__pb2._NODEVOTE
 _SUBMITTRANSACTIONREQUEST.fields_by_name['node_signature'].message_type = commands_dot_v1_dot_validator__commands__pb2._NODESIGNATURE
@@ -209,8 +209,8 @@ _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command'].fields.append(
   _SUBMITTRANSACTIONREQUEST.fields_by_name['delegate_submission'])
 _SUBMITTRANSACTIONREQUEST.fields_by_name['delegate_submission'].containing_oneof = _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command']
 _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command'].fields.append(
-  _SUBMITTRANSACTIONREQUEST.fields_by_name['undelegate_at_epoch_end_submission'])
-_SUBMITTRANSACTIONREQUEST.fields_by_name['undelegate_at_epoch_end_submission'].containing_oneof = _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command']
+  _SUBMITTRANSACTIONREQUEST.fields_by_name['undelegate_submission'])
+_SUBMITTRANSACTIONREQUEST.fields_by_name['undelegate_submission'].containing_oneof = _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command']
 _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command'].fields.append(
   _SUBMITTRANSACTIONREQUEST.fields_by_name['node_registration'])
 _SUBMITTRANSACTIONREQUEST.fields_by_name['node_registration'].containing_oneof = _SUBMITTRANSACTIONREQUEST.oneofs_by_name['command']

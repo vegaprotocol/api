@@ -740,6 +740,9 @@ enum AccountType {
   // Global insurance account for the asset
   ACCOUNT_TYPE_GLOBAL_INSURANCE = 11;
 
+  // Global reward account for the asset
+  ACCOUNT_TYPE_GLOBAL_REWARD = 12;
+
   // Note: If adding an enum value, add a matching entry in:
   //       - gateway/graphql/helpers_enum.go
   //       - gateway/graphql/schema.graphql (enum AccountType)
@@ -816,6 +819,8 @@ enum TransferType {
   TRANSFER_TYPE_DEPOSIT = 19;
   // Bond slashing
   TRANSFER_TYPE_BOND_SLASHING = 20;
+  // Stake reward
+  TRANSFER_TYPE_STAKE_REWARD = 21;
 }
 
 // Represents a financial transfer within Vega

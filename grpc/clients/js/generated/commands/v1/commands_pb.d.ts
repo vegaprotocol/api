@@ -287,27 +287,40 @@ export namespace DelegateSubmission {
   }
 }
 
-export class UndelegateAtEpochEndSubmission extends jspb.Message {
+export class UndelegateSubmission extends jspb.Message {
   getNodeId(): string;
   setNodeId(value: string): void;
 
   getAmount(): number;
   setAmount(value: number): void;
 
+  getMethod(): UndelegateSubmission.MethodMap[keyof UndelegateSubmission.MethodMap];
+  setMethod(value: UndelegateSubmission.MethodMap[keyof UndelegateSubmission.MethodMap]): void;
+
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UndelegateAtEpochEndSubmission.AsObject;
-  static toObject(includeInstance: boolean, msg: UndelegateAtEpochEndSubmission): UndelegateAtEpochEndSubmission.AsObject;
+  toObject(includeInstance?: boolean): UndelegateSubmission.AsObject;
+  static toObject(includeInstance: boolean, msg: UndelegateSubmission): UndelegateSubmission.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UndelegateAtEpochEndSubmission, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UndelegateAtEpochEndSubmission;
-  static deserializeBinaryFromReader(message: UndelegateAtEpochEndSubmission, reader: jspb.BinaryReader): UndelegateAtEpochEndSubmission;
+  static serializeBinaryToWriter(message: UndelegateSubmission, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UndelegateSubmission;
+  static deserializeBinaryFromReader(message: UndelegateSubmission, reader: jspb.BinaryReader): UndelegateSubmission;
 }
 
-export namespace UndelegateAtEpochEndSubmission {
+export namespace UndelegateSubmission {
   export type AsObject = {
     nodeId: string,
     amount: number,
+    method: UndelegateSubmission.MethodMap[keyof UndelegateSubmission.MethodMap],
   }
+
+  export interface MethodMap {
+    METHOD_UNSPECIFIED: 0;
+    METHOD_NOW: 1;
+    METHOD_AT_END_OF_EPOCH: 2;
+    METHOD_IN_ANGER: 3;
+  }
+
+  export const Method: MethodMap;
 }
 

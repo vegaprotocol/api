@@ -260,6 +260,46 @@ public final class Events {
     BUS_EVENT_TYPE_ORACLE_DATA(28),
     /**
      * <pre>
+     * Event indicating that an delegation balance of a party to a node for current epoch has changed
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_DELEGATION_BALANCE = 29;</code>
+     */
+    BUS_EVENT_TYPE_DELEGATION_BALANCE(29),
+    /**
+     * <pre>
+     * Event indicating that an delegation balance of a party to a node for next epoch has changed
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30;</code>
+     */
+    BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE(30),
+    /**
+     * <pre>
+     * Event indicating the start or end of an epoch
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_EPOCH_UPDATE = 31;</code>
+     */
+    BUS_EVENT_TYPE_EPOCH_UPDATE(31),
+    /**
+     * <pre>
+     * Event indicating that validator node has been updated
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32;</code>
+     */
+    BUS_EVENT_TYPE_VALIDATOR_UPDATE(32),
+    /**
+     * <pre>
+     * Event indicating a new staking event have been processed by the network
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_STAKING_EVENT = 33;</code>
+     */
+    BUS_EVENT_TYPE_STAKING_EVENT(33),
+    /**
+     * <pre>
      * Event indicating a market related event, for example when a market opens
      * </pre>
      *
@@ -511,6 +551,46 @@ public final class Events {
     public static final int BUS_EVENT_TYPE_ORACLE_DATA_VALUE = 28;
     /**
      * <pre>
+     * Event indicating that an delegation balance of a party to a node for current epoch has changed
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_DELEGATION_BALANCE = 29;</code>
+     */
+    public static final int BUS_EVENT_TYPE_DELEGATION_BALANCE_VALUE = 29;
+    /**
+     * <pre>
+     * Event indicating that an delegation balance of a party to a node for next epoch has changed
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30;</code>
+     */
+    public static final int BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE_VALUE = 30;
+    /**
+     * <pre>
+     * Event indicating the start or end of an epoch
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_EPOCH_UPDATE = 31;</code>
+     */
+    public static final int BUS_EVENT_TYPE_EPOCH_UPDATE_VALUE = 31;
+    /**
+     * <pre>
+     * Event indicating that validator node has been updated
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32;</code>
+     */
+    public static final int BUS_EVENT_TYPE_VALIDATOR_UPDATE_VALUE = 32;
+    /**
+     * <pre>
+     * Event indicating a new staking event have been processed by the network
+     * </pre>
+     *
+     * <code>BUS_EVENT_TYPE_STAKING_EVENT = 33;</code>
+     */
+    public static final int BUS_EVENT_TYPE_STAKING_EVENT_VALUE = 33;
+    /**
+     * <pre>
      * Event indicating a market related event, for example when a market opens
      * </pre>
      *
@@ -580,6 +660,11 @@ public final class Events {
         case 26: return BUS_EVENT_TYPE_MARKET_UPDATED;
         case 27: return BUS_EVENT_TYPE_ORACLE_SPEC;
         case 28: return BUS_EVENT_TYPE_ORACLE_DATA;
+        case 29: return BUS_EVENT_TYPE_DELEGATION_BALANCE;
+        case 30: return BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE;
+        case 31: return BUS_EVENT_TYPE_EPOCH_UPDATE;
+        case 32: return BUS_EVENT_TYPE_VALIDATOR_UPDATE;
+        case 33: return BUS_EVENT_TYPE_STAKING_EVENT;
         case 101: return BUS_EVENT_TYPE_MARKET;
         case 201: return BUS_EVENT_TYPE_TX_ERROR;
         default: return null;
@@ -636,6 +721,3032 @@ public final class Events {
     }
 
     // @@protoc_insertion_point(enum_scope:vega.events.v1.BusEventType)
+  }
+
+  public interface StakingEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.events.v1.StakingEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The internal ID for this staking event
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The internal ID for this staking event
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * The type of event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * The type of event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+     * @return The type.
+     */
+    io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type getType();
+
+    /**
+     * <pre>
+     * The timestamps at which the event was emitted by ethereum
+     * </pre>
+     *
+     * <code>int64 ts = 3 [json_name = "ts"];</code>
+     * @return The ts.
+     */
+    long getTs();
+
+    /**
+     * <pre>
+     * The party to whom the event is directed at.
+     * </pre>
+     *
+     * <code>string party = 4 [json_name = "party"];</code>
+     * @return The party.
+     */
+    java.lang.String getParty();
+    /**
+     * <pre>
+     * The party to whom the event is directed at.
+     * </pre>
+     *
+     * <code>string party = 4 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+
+    /**
+     * <pre>
+     * The amount of stake deposited or removed
+     * </pre>
+     *
+     * <code>string amount = 5 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * The amount of stake deposited or removed
+     * </pre>
+     *
+     * <code>string amount = 5 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+  }
+  /**
+   * <pre>
+   * StakingEvent - an event notifying of stake being deposited or removed for a given party
+   * These events are emitted for every Staking deposit or removed accepted by the network
+   * </pre>
+   *
+   * Protobuf type {@code vega.events.v1.StakingEvent}
+   */
+  public static final class StakingEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.events.v1.StakingEvent)
+      StakingEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StakingEvent.newBuilder() to construct.
+    private StakingEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StakingEvent() {
+      id_ = "";
+      type_ = 0;
+      party_ = "";
+      amount_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StakingEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StakingEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 24: {
+
+              ts_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_StakingEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_StakingEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.events.v1.Events.StakingEvent.class, io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code vega.events.v1.StakingEvent.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * Default value
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       * <pre>
+       * Indicate of a stake deposit instruction
+       * </pre>
+       *
+       * <code>TYPE_DEPOSIT = 1;</code>
+       */
+      TYPE_DEPOSIT(1),
+      /**
+       * <pre>
+       * Indicate of a stake remove instruction
+       * </pre>
+       *
+       * <code>TYPE_REMOVE = 2;</code>
+       */
+      TYPE_REMOVE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * Default value
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       * <pre>
+       * Indicate of a stake deposit instruction
+       * </pre>
+       *
+       * <code>TYPE_DEPOSIT = 1;</code>
+       */
+      public static final int TYPE_DEPOSIT_VALUE = 1;
+      /**
+       * <pre>
+       * Indicate of a stake remove instruction
+       * </pre>
+       *
+       * <code>TYPE_REMOVE = 2;</code>
+       */
+      public static final int TYPE_REMOVE_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TYPE_UNSPECIFIED;
+          case 1: return TYPE_DEPOSIT;
+          case 2: return TYPE_REMOVE;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:vega.events.v1.StakingEvent.Type)
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The internal ID for this staking event
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The internal ID for this staking event
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_;
+    /**
+     * <pre>
+     * The type of event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The type of event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type getType() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type result = io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type.valueOf(type_);
+      return result == null ? io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int TS_FIELD_NUMBER = 3;
+    private long ts_;
+    /**
+     * <pre>
+     * The timestamps at which the event was emitted by ethereum
+     * </pre>
+     *
+     * <code>int64 ts = 3 [json_name = "ts"];</code>
+     * @return The ts.
+     */
+    @java.lang.Override
+    public long getTs() {
+      return ts_;
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object party_;
+    /**
+     * <pre>
+     * The party to whom the event is directed at.
+     * </pre>
+     *
+     * <code>string party = 4 [json_name = "party"];</code>
+     * @return The party.
+     */
+    @java.lang.Override
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The party to whom the event is directed at.
+     * </pre>
+     *
+     * <code>string party = 4 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object amount_;
+    /**
+     * <pre>
+     * The amount of stake deposited or removed
+     * </pre>
+     *
+     * <code>string amount = 5 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount of stake deposited or removed
+     * </pre>
+     *
+     * <code>string amount = 5 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (type_ != io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type.TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      if (ts_ != 0L) {
+        output.writeInt64(3, ts_);
+      }
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, party_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, amount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (type_ != io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type.TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, type_);
+      }
+      if (ts_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, ts_);
+      }
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, party_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, amount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.events.v1.Events.StakingEvent)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.events.v1.Events.StakingEvent other = (io.vegaprotocol.vega.events.v1.Events.StakingEvent) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (type_ != other.type_) return false;
+      if (getTs()
+          != other.getTs()) return false;
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + TS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTs());
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.events.v1.Events.StakingEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * StakingEvent - an event notifying of stake being deposited or removed for a given party
+     * These events are emitted for every Staking deposit or removed accepted by the network
+     * </pre>
+     *
+     * Protobuf type {@code vega.events.v1.StakingEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.events.v1.StakingEvent)
+        io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_StakingEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_StakingEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.events.v1.Events.StakingEvent.class, io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.events.v1.Events.StakingEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        type_ = 0;
+
+        ts_ = 0L;
+
+        party_ = "";
+
+        amount_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_StakingEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.StakingEvent getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.StakingEvent build() {
+        io.vegaprotocol.vega.events.v1.Events.StakingEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.StakingEvent buildPartial() {
+        io.vegaprotocol.vega.events.v1.Events.StakingEvent result = new io.vegaprotocol.vega.events.v1.Events.StakingEvent(this);
+        result.id_ = id_;
+        result.type_ = type_;
+        result.ts_ = ts_;
+        result.party_ = party_;
+        result.amount_ = amount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.events.v1.Events.StakingEvent) {
+          return mergeFrom((io.vegaprotocol.vega.events.v1.Events.StakingEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.events.v1.Events.StakingEvent other) {
+        if (other == io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.getTs() != 0L) {
+          setTs(other.getTs());
+        }
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.events.v1.Events.StakingEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.events.v1.Events.StakingEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The internal ID for this staking event
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal ID for this staking event
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The internal ID for this staking event
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal ID for this staking event
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The internal ID for this staking event
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * The type of event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * The type of event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type of event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type getType() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type result = io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type.valueOf(type_);
+        return result == null ? io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The type of event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(io.vegaprotocol.vega.events.v1.Events.StakingEvent.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The type of event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long ts_ ;
+      /**
+       * <pre>
+       * The timestamps at which the event was emitted by ethereum
+       * </pre>
+       *
+       * <code>int64 ts = 3 [json_name = "ts"];</code>
+       * @return The ts.
+       */
+      @java.lang.Override
+      public long getTs() {
+        return ts_;
+      }
+      /**
+       * <pre>
+       * The timestamps at which the event was emitted by ethereum
+       * </pre>
+       *
+       * <code>int64 ts = 3 [json_name = "ts"];</code>
+       * @param value The ts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTs(long value) {
+
+        ts_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The timestamps at which the event was emitted by ethereum
+       * </pre>
+       *
+       * <code>int64 ts = 3 [json_name = "ts"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTs() {
+
+        ts_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object party_ = "";
+      /**
+       * <pre>
+       * The party to whom the event is directed at.
+       * </pre>
+       *
+       * <code>string party = 4 [json_name = "party"];</code>
+       * @return The party.
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The party to whom the event is directed at.
+       * </pre>
+       *
+       * <code>string party = 4 [json_name = "party"];</code>
+       * @return The bytes for party.
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The party to whom the event is directed at.
+       * </pre>
+       *
+       * <code>string party = 4 [json_name = "party"];</code>
+       * @param value The party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The party to whom the event is directed at.
+       * </pre>
+       *
+       * <code>string party = 4 [json_name = "party"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The party to whom the event is directed at.
+       * </pre>
+       *
+       * <code>string party = 4 [json_name = "party"];</code>
+       * @param value The bytes for party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <pre>
+       * The amount of stake deposited or removed
+       * </pre>
+       *
+       * <code>string amount = 5 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount of stake deposited or removed
+       * </pre>
+       *
+       * <code>string amount = 5 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount of stake deposited or removed
+       * </pre>
+       *
+       * <code>string amount = 5 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount of stake deposited or removed
+       * </pre>
+       *
+       * <code>string amount = 5 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount of stake deposited or removed
+       * </pre>
+       *
+       * <code>string amount = 5 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.events.v1.StakingEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.events.v1.StakingEvent)
+    private static final io.vegaprotocol.vega.events.v1.Events.StakingEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.events.v1.Events.StakingEvent();
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.StakingEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StakingEvent>
+        PARSER = new com.google.protobuf.AbstractParser<StakingEvent>() {
+      @java.lang.Override
+      public StakingEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StakingEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StakingEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StakingEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.StakingEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DelegationBalanceEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.events.v1.DelegationBalanceEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    java.lang.String getParty();
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The nodeId.
+     */
+    java.lang.String getNodeId();
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The bytes for nodeId.
+     */
+    com.google.protobuf.ByteString
+        getNodeIdBytes();
+
+    /**
+     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    long getAmount();
+  }
+  /**
+   * <pre>
+   *DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect
+   * </pre>
+   *
+   * Protobuf type {@code vega.events.v1.DelegationBalanceEvent}
+   */
+  public static final class DelegationBalanceEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.events.v1.DelegationBalanceEvent)
+      DelegationBalanceEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DelegationBalanceEvent.newBuilder() to construct.
+    private DelegationBalanceEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DelegationBalanceEvent() {
+      party_ = "";
+      nodeId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DelegationBalanceEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DelegationBalanceEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeId_ = s;
+              break;
+            }
+            case 24: {
+
+              amount_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_DelegationBalanceEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_DelegationBalanceEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.class, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder.class);
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object party_;
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    @java.lang.Override
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NODE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nodeId_;
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The nodeId.
+     */
+    @java.lang.Override
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The bytes for nodeId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 3;
+    private long amount_;
+    /**
+     * <code>uint64 amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public long getAmount() {
+      return amount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, party_);
+      }
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeId_);
+      }
+      if (amount_ != 0L) {
+        output.writeUInt64(3, amount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, party_);
+      }
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeId_);
+      }
+      if (amount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, amount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent other = (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) obj;
+
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!getNodeId()
+          .equals(other.getNodeId())) return false;
+      if (getAmount()
+          != other.getAmount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAmount());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect
+     * </pre>
+     *
+     * Protobuf type {@code vega.events.v1.DelegationBalanceEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.events.v1.DelegationBalanceEvent)
+        io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_DelegationBalanceEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_DelegationBalanceEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.class, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        party_ = "";
+
+        nodeId_ = "";
+
+        amount_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_DelegationBalanceEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent build() {
+        io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent buildPartial() {
+        io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent result = new io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent(this);
+        result.party_ = party_;
+        result.nodeId_ = nodeId_;
+        result.amount_ = amount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) {
+          return mergeFrom((io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent other) {
+        if (other == io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance()) return this;
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
+          onChanged();
+        }
+        if (other.getAmount() != 0L) {
+          setAmount(other.getAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object party_ = "";
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The party.
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The bytes for party.
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The bytes for party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nodeId_ = "";
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return The nodeId.
+       */
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return The bytes for nodeId.
+       */
+      public com.google.protobuf.ByteString
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @param value The nodeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNodeId() {
+
+        nodeId_ = getDefaultInstance().getNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @param value The bytes for nodeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long amount_ ;
+      /**
+       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      @java.lang.Override
+      public long getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(long value) {
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 amount = 3 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+
+        amount_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.events.v1.DelegationBalanceEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.events.v1.DelegationBalanceEvent)
+    private static final io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent();
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DelegationBalanceEvent>
+        PARSER = new com.google.protobuf.AbstractParser<DelegationBalanceEvent>() {
+      @java.lang.Override
+      public DelegationBalanceEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DelegationBalanceEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DelegationBalanceEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DelegationBalanceEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PendingDelegationBalanceEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.events.v1.PendingDelegationBalanceEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    java.lang.String getParty();
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The nodeId.
+     */
+    java.lang.String getNodeId();
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The bytes for nodeId.
+     */
+    com.google.protobuf.ByteString
+        getNodeIdBytes();
+
+    /**
+     * <code>uint64 delegation_amount = 3 [json_name = "delegationAmount"];</code>
+     * @return The delegationAmount.
+     */
+    long getDelegationAmount();
+
+    /**
+     * <code>uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];</code>
+     * @return The undelegationAmount.
+     */
+    long getUndelegationAmount();
+  }
+  /**
+   * <pre>
+   *PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch
+   * </pre>
+   *
+   * Protobuf type {@code vega.events.v1.PendingDelegationBalanceEvent}
+   */
+  public static final class PendingDelegationBalanceEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.events.v1.PendingDelegationBalanceEvent)
+      PendingDelegationBalanceEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PendingDelegationBalanceEvent.newBuilder() to construct.
+    private PendingDelegationBalanceEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PendingDelegationBalanceEvent() {
+      party_ = "";
+      nodeId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PendingDelegationBalanceEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PendingDelegationBalanceEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeId_ = s;
+              break;
+            }
+            case 24: {
+
+              delegationAmount_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              undelegationAmount_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_PendingDelegationBalanceEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_PendingDelegationBalanceEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.class, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder.class);
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object party_;
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    @java.lang.Override
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NODE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nodeId_;
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The nodeId.
+     */
+    @java.lang.Override
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The bytes for nodeId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DELEGATION_AMOUNT_FIELD_NUMBER = 3;
+    private long delegationAmount_;
+    /**
+     * <code>uint64 delegation_amount = 3 [json_name = "delegationAmount"];</code>
+     * @return The delegationAmount.
+     */
+    @java.lang.Override
+    public long getDelegationAmount() {
+      return delegationAmount_;
+    }
+
+    public static final int UNDELEGATION_AMOUNT_FIELD_NUMBER = 4;
+    private long undelegationAmount_;
+    /**
+     * <code>uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];</code>
+     * @return The undelegationAmount.
+     */
+    @java.lang.Override
+    public long getUndelegationAmount() {
+      return undelegationAmount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, party_);
+      }
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeId_);
+      }
+      if (delegationAmount_ != 0L) {
+        output.writeUInt64(3, delegationAmount_);
+      }
+      if (undelegationAmount_ != 0L) {
+        output.writeUInt64(4, undelegationAmount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, party_);
+      }
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeId_);
+      }
+      if (delegationAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, delegationAmount_);
+      }
+      if (undelegationAmount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, undelegationAmount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent other = (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) obj;
+
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!getNodeId()
+          .equals(other.getNodeId())) return false;
+      if (getDelegationAmount()
+          != other.getDelegationAmount()) return false;
+      if (getUndelegationAmount()
+          != other.getUndelegationAmount()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
+      hash = (37 * hash) + DELEGATION_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDelegationAmount());
+      hash = (37 * hash) + UNDELEGATION_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUndelegationAmount());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch
+     * </pre>
+     *
+     * Protobuf type {@code vega.events.v1.PendingDelegationBalanceEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.events.v1.PendingDelegationBalanceEvent)
+        io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_PendingDelegationBalanceEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_PendingDelegationBalanceEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.class, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        party_ = "";
+
+        nodeId_ = "";
+
+        delegationAmount_ = 0L;
+
+        undelegationAmount_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_PendingDelegationBalanceEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent build() {
+        io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent buildPartial() {
+        io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent result = new io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent(this);
+        result.party_ = party_;
+        result.nodeId_ = nodeId_;
+        result.delegationAmount_ = delegationAmount_;
+        result.undelegationAmount_ = undelegationAmount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) {
+          return mergeFrom((io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent other) {
+        if (other == io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance()) return this;
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
+          onChanged();
+        }
+        if (other.getDelegationAmount() != 0L) {
+          setDelegationAmount(other.getDelegationAmount());
+        }
+        if (other.getUndelegationAmount() != 0L) {
+          setUndelegationAmount(other.getUndelegationAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object party_ = "";
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The party.
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The bytes for party.
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The bytes for party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nodeId_ = "";
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return The nodeId.
+       */
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return The bytes for nodeId.
+       */
+      public com.google.protobuf.ByteString
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @param value The nodeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNodeId() {
+
+        nodeId_ = getDefaultInstance().getNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @param value The bytes for nodeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long delegationAmount_ ;
+      /**
+       * <code>uint64 delegation_amount = 3 [json_name = "delegationAmount"];</code>
+       * @return The delegationAmount.
+       */
+      @java.lang.Override
+      public long getDelegationAmount() {
+        return delegationAmount_;
+      }
+      /**
+       * <code>uint64 delegation_amount = 3 [json_name = "delegationAmount"];</code>
+       * @param value The delegationAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDelegationAmount(long value) {
+
+        delegationAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 delegation_amount = 3 [json_name = "delegationAmount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDelegationAmount() {
+
+        delegationAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long undelegationAmount_ ;
+      /**
+       * <code>uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];</code>
+       * @return The undelegationAmount.
+       */
+      @java.lang.Override
+      public long getUndelegationAmount() {
+        return undelegationAmount_;
+      }
+      /**
+       * <code>uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];</code>
+       * @param value The undelegationAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUndelegationAmount(long value) {
+
+        undelegationAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUndelegationAmount() {
+
+        undelegationAmount_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.events.v1.PendingDelegationBalanceEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.events.v1.PendingDelegationBalanceEvent)
+    private static final io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent();
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PendingDelegationBalanceEvent>
+        PARSER = new com.google.protobuf.AbstractParser<PendingDelegationBalanceEvent>() {
+      @java.lang.Override
+      public PendingDelegationBalanceEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PendingDelegationBalanceEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PendingDelegationBalanceEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PendingDelegationBalanceEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface MarketEventOrBuilder extends
@@ -4414,6 +7525,796 @@ public final class Events {
 
     @java.lang.Override
     public io.vegaprotocol.vega.events.v1.Events.TimeUpdate getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EpochEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.events.v1.EpochEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Sequence number that increases by one each epoch
+     * </pre>
+     *
+     * <code>uint64 seq = 1 [json_name = "seq"];</code>
+     * @return The seq.
+     */
+    long getSeq();
+
+    /**
+     * <pre>
+     * What time did this epoch start
+     * </pre>
+     *
+     * <code>int64 start_time = 2 [json_name = "startTime"];</code>
+     * @return The startTime.
+     */
+    long getStartTime();
+
+    /**
+     * <pre>
+     * What time should this epoch end
+     * </pre>
+     *
+     * <code>int64 expire_time = 3 [json_name = "expireTime"];</code>
+     * @return The expireTime.
+     */
+    long getExpireTime();
+
+    /**
+     * <pre>
+     * What time did it actually end
+     * </pre>
+     *
+     * <code>int64 end_time = 4 [json_name = "endTime"];</code>
+     * @return The endTime.
+     */
+    long getEndTime();
+  }
+  /**
+   * <pre>
+   * Epoch details
+   * </pre>
+   *
+   * Protobuf type {@code vega.events.v1.EpochEvent}
+   */
+  public static final class EpochEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.events.v1.EpochEvent)
+      EpochEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EpochEvent.newBuilder() to construct.
+    private EpochEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EpochEvent() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EpochEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EpochEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              seq_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              startTime_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              expireTime_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              endTime_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_EpochEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_EpochEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.events.v1.Events.EpochEvent.class, io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder.class);
+    }
+
+    public static final int SEQ_FIELD_NUMBER = 1;
+    private long seq_;
+    /**
+     * <pre>
+     * Sequence number that increases by one each epoch
+     * </pre>
+     *
+     * <code>uint64 seq = 1 [json_name = "seq"];</code>
+     * @return The seq.
+     */
+    @java.lang.Override
+    public long getSeq() {
+      return seq_;
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 2;
+    private long startTime_;
+    /**
+     * <pre>
+     * What time did this epoch start
+     * </pre>
+     *
+     * <code>int64 start_time = 2 [json_name = "startTime"];</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
+    }
+
+    public static final int EXPIRE_TIME_FIELD_NUMBER = 3;
+    private long expireTime_;
+    /**
+     * <pre>
+     * What time should this epoch end
+     * </pre>
+     *
+     * <code>int64 expire_time = 3 [json_name = "expireTime"];</code>
+     * @return The expireTime.
+     */
+    @java.lang.Override
+    public long getExpireTime() {
+      return expireTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 4;
+    private long endTime_;
+    /**
+     * <pre>
+     * What time did it actually end
+     * </pre>
+     *
+     * <code>int64 end_time = 4 [json_name = "endTime"];</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public long getEndTime() {
+      return endTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (seq_ != 0L) {
+        output.writeUInt64(1, seq_);
+      }
+      if (startTime_ != 0L) {
+        output.writeInt64(2, startTime_);
+      }
+      if (expireTime_ != 0L) {
+        output.writeInt64(3, expireTime_);
+      }
+      if (endTime_ != 0L) {
+        output.writeInt64(4, endTime_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (seq_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, seq_);
+      }
+      if (startTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, startTime_);
+      }
+      if (expireTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, expireTime_);
+      }
+      if (endTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, endTime_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.events.v1.Events.EpochEvent)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.events.v1.Events.EpochEvent other = (io.vegaprotocol.vega.events.v1.Events.EpochEvent) obj;
+
+      if (getSeq()
+          != other.getSeq()) return false;
+      if (getStartTime()
+          != other.getStartTime()) return false;
+      if (getExpireTime()
+          != other.getExpireTime()) return false;
+      if (getEndTime()
+          != other.getEndTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SEQ_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSeq());
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartTime());
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExpireTime());
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEndTime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.events.v1.Events.EpochEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Epoch details
+     * </pre>
+     *
+     * Protobuf type {@code vega.events.v1.EpochEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.events.v1.EpochEvent)
+        io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_EpochEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_EpochEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.events.v1.Events.EpochEvent.class, io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.events.v1.Events.EpochEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        seq_ = 0L;
+
+        startTime_ = 0L;
+
+        expireTime_ = 0L;
+
+        endTime_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_EpochEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.EpochEvent getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.EpochEvent build() {
+        io.vegaprotocol.vega.events.v1.Events.EpochEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.EpochEvent buildPartial() {
+        io.vegaprotocol.vega.events.v1.Events.EpochEvent result = new io.vegaprotocol.vega.events.v1.Events.EpochEvent(this);
+        result.seq_ = seq_;
+        result.startTime_ = startTime_;
+        result.expireTime_ = expireTime_;
+        result.endTime_ = endTime_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.events.v1.Events.EpochEvent) {
+          return mergeFrom((io.vegaprotocol.vega.events.v1.Events.EpochEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.events.v1.Events.EpochEvent other) {
+        if (other == io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance()) return this;
+        if (other.getSeq() != 0L) {
+          setSeq(other.getSeq());
+        }
+        if (other.getStartTime() != 0L) {
+          setStartTime(other.getStartTime());
+        }
+        if (other.getExpireTime() != 0L) {
+          setExpireTime(other.getExpireTime());
+        }
+        if (other.getEndTime() != 0L) {
+          setEndTime(other.getEndTime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.events.v1.Events.EpochEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.events.v1.Events.EpochEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long seq_ ;
+      /**
+       * <pre>
+       * Sequence number that increases by one each epoch
+       * </pre>
+       *
+       * <code>uint64 seq = 1 [json_name = "seq"];</code>
+       * @return The seq.
+       */
+      @java.lang.Override
+      public long getSeq() {
+        return seq_;
+      }
+      /**
+       * <pre>
+       * Sequence number that increases by one each epoch
+       * </pre>
+       *
+       * <code>uint64 seq = 1 [json_name = "seq"];</code>
+       * @param value The seq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSeq(long value) {
+
+        seq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Sequence number that increases by one each epoch
+       * </pre>
+       *
+       * <code>uint64 seq = 1 [json_name = "seq"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSeq() {
+
+        seq_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long startTime_ ;
+      /**
+       * <pre>
+       * What time did this epoch start
+       * </pre>
+       *
+       * <code>int64 start_time = 2 [json_name = "startTime"];</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <pre>
+       * What time did this epoch start
+       * </pre>
+       *
+       * <code>int64 start_time = 2 [json_name = "startTime"];</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(long value) {
+
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * What time did this epoch start
+       * </pre>
+       *
+       * <code>int64 start_time = 2 [json_name = "startTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+
+        startTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long expireTime_ ;
+      /**
+       * <pre>
+       * What time should this epoch end
+       * </pre>
+       *
+       * <code>int64 expire_time = 3 [json_name = "expireTime"];</code>
+       * @return The expireTime.
+       */
+      @java.lang.Override
+      public long getExpireTime() {
+        return expireTime_;
+      }
+      /**
+       * <pre>
+       * What time should this epoch end
+       * </pre>
+       *
+       * <code>int64 expire_time = 3 [json_name = "expireTime"];</code>
+       * @param value The expireTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpireTime(long value) {
+
+        expireTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * What time should this epoch end
+       * </pre>
+       *
+       * <code>int64 expire_time = 3 [json_name = "expireTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExpireTime() {
+
+        expireTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long endTime_ ;
+      /**
+       * <pre>
+       * What time did it actually end
+       * </pre>
+       *
+       * <code>int64 end_time = 4 [json_name = "endTime"];</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public long getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <pre>
+       * What time did it actually end
+       * </pre>
+       *
+       * <code>int64 end_time = 4 [json_name = "endTime"];</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(long value) {
+
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * What time did it actually end
+       * </pre>
+       *
+       * <code>int64 end_time = 4 [json_name = "endTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+
+        endTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.events.v1.EpochEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.events.v1.EpochEvent)
+    private static final io.vegaprotocol.vega.events.v1.Events.EpochEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.events.v1.Events.EpochEvent();
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.EpochEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EpochEvent>
+        PARSER = new com.google.protobuf.AbstractParser<EpochEvent>() {
+      @java.lang.Override
+      public EpochEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EpochEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EpochEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EpochEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.EpochEvent getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12069,6 +15970,1176 @@ public final class Events {
 
   }
 
+  public interface ValidatorUpdateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.events.v1.ValidatorUpdate)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Public key of validator node
+     * </pre>
+     *
+     * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+     * @return The pubKey.
+     */
+    java.lang.String getPubKey();
+    /**
+     * <pre>
+     * Public key of validator node
+     * </pre>
+     *
+     * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+     * @return The bytes for pubKey.
+     */
+    com.google.protobuf.ByteString
+        getPubKeyBytes();
+
+    /**
+     * <pre>
+     * Public key of Tendermint
+     * </pre>
+     *
+     * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+     * @return The tmPubKey.
+     */
+    java.lang.String getTmPubKey();
+    /**
+     * <pre>
+     * Public key of Tendermint
+     * </pre>
+     *
+     * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+     * @return The bytes for tmPubKey.
+     */
+    com.google.protobuf.ByteString
+        getTmPubKeyBytes();
+
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The infoUrl.
+     */
+    java.lang.String getInfoUrl();
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The bytes for infoUrl.
+     */
+    com.google.protobuf.ByteString
+        getInfoUrlBytes();
+
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country"];</code>
+     * @return The country.
+     */
+    java.lang.String getCountry();
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country"];</code>
+     * @return The bytes for country.
+     */
+    com.google.protobuf.ByteString
+        getCountryBytes();
+  }
+  /**
+   * <pre>
+   * A validator update event contains information about validator node
+   * </pre>
+   *
+   * Protobuf type {@code vega.events.v1.ValidatorUpdate}
+   */
+  public static final class ValidatorUpdate extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.events.v1.ValidatorUpdate)
+      ValidatorUpdateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ValidatorUpdate.newBuilder() to construct.
+    private ValidatorUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ValidatorUpdate() {
+      pubKey_ = "";
+      tmPubKey_ = "";
+      infoUrl_ = "";
+      country_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ValidatorUpdate();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ValidatorUpdate(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pubKey_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tmPubKey_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              infoUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              country_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_ValidatorUpdate_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_ValidatorUpdate_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.class, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder.class);
+    }
+
+    public static final int PUB_KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object pubKey_;
+    /**
+     * <pre>
+     * Public key of validator node
+     * </pre>
+     *
+     * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+     * @return The pubKey.
+     */
+    @java.lang.Override
+    public java.lang.String getPubKey() {
+      java.lang.Object ref = pubKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pubKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Public key of validator node
+     * </pre>
+     *
+     * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+     * @return The bytes for pubKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPubKeyBytes() {
+      java.lang.Object ref = pubKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pubKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TM_PUB_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tmPubKey_;
+    /**
+     * <pre>
+     * Public key of Tendermint
+     * </pre>
+     *
+     * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+     * @return The tmPubKey.
+     */
+    @java.lang.Override
+    public java.lang.String getTmPubKey() {
+      java.lang.Object ref = tmPubKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tmPubKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Public key of Tendermint
+     * </pre>
+     *
+     * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+     * @return The bytes for tmPubKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTmPubKeyBytes() {
+      java.lang.Object ref = tmPubKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tmPubKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INFO_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object infoUrl_;
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The infoUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getInfoUrl() {
+      java.lang.Object ref = infoUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        infoUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URL with more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The bytes for infoUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInfoUrlBytes() {
+      java.lang.Object ref = infoUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        infoUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COUNTRY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object country_;
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country"];</code>
+     * @return The country.
+     */
+    @java.lang.Override
+    public java.lang.String getCountry() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        country_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Country code (ISO 3166-1 alpha-2) for the location of the node
+     * </pre>
+     *
+     * <code>string country = 4 [json_name = "country"];</code>
+     * @return The bytes for country.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        country_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPubKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pubKey_);
+      }
+      if (!getTmPubKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tmPubKey_);
+      }
+      if (!getInfoUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, infoUrl_);
+      }
+      if (!getCountryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, country_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPubKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pubKey_);
+      }
+      if (!getTmPubKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tmPubKey_);
+      }
+      if (!getInfoUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, infoUrl_);
+      }
+      if (!getCountryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, country_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate other = (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) obj;
+
+      if (!getPubKey()
+          .equals(other.getPubKey())) return false;
+      if (!getTmPubKey()
+          .equals(other.getTmPubKey())) return false;
+      if (!getInfoUrl()
+          .equals(other.getInfoUrl())) return false;
+      if (!getCountry()
+          .equals(other.getCountry())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PUB_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPubKey().hashCode();
+      hash = (37 * hash) + TM_PUB_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getTmPubKey().hashCode();
+      hash = (37 * hash) + INFO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getInfoUrl().hashCode();
+      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
+      hash = (53 * hash) + getCountry().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A validator update event contains information about validator node
+     * </pre>
+     *
+     * Protobuf type {@code vega.events.v1.ValidatorUpdate}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.events.v1.ValidatorUpdate)
+        io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_ValidatorUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_ValidatorUpdate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.class, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        pubKey_ = "";
+
+        tmPubKey_ = "";
+
+        infoUrl_ = "";
+
+        country_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.events.v1.Events.internal_static_vega_events_v1_ValidatorUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate build() {
+        io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate buildPartial() {
+        io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate result = new io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate(this);
+        result.pubKey_ = pubKey_;
+        result.tmPubKey_ = tmPubKey_;
+        result.infoUrl_ = infoUrl_;
+        result.country_ = country_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) {
+          return mergeFrom((io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate other) {
+        if (other == io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance()) return this;
+        if (!other.getPubKey().isEmpty()) {
+          pubKey_ = other.pubKey_;
+          onChanged();
+        }
+        if (!other.getTmPubKey().isEmpty()) {
+          tmPubKey_ = other.tmPubKey_;
+          onChanged();
+        }
+        if (!other.getInfoUrl().isEmpty()) {
+          infoUrl_ = other.infoUrl_;
+          onChanged();
+        }
+        if (!other.getCountry().isEmpty()) {
+          country_ = other.country_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object pubKey_ = "";
+      /**
+       * <pre>
+       * Public key of validator node
+       * </pre>
+       *
+       * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+       * @return The pubKey.
+       */
+      public java.lang.String getPubKey() {
+        java.lang.Object ref = pubKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pubKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Public key of validator node
+       * </pre>
+       *
+       * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+       * @return The bytes for pubKey.
+       */
+      public com.google.protobuf.ByteString
+          getPubKeyBytes() {
+        java.lang.Object ref = pubKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pubKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Public key of validator node
+       * </pre>
+       *
+       * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+       * @param value The pubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPubKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        pubKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Public key of validator node
+       * </pre>
+       *
+       * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPubKey() {
+
+        pubKey_ = getDefaultInstance().getPubKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Public key of validator node
+       * </pre>
+       *
+       * <code>string pub_key = 1 [json_name = "pubKey"];</code>
+       * @param value The bytes for pubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPubKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        pubKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tmPubKey_ = "";
+      /**
+       * <pre>
+       * Public key of Tendermint
+       * </pre>
+       *
+       * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+       * @return The tmPubKey.
+       */
+      public java.lang.String getTmPubKey() {
+        java.lang.Object ref = tmPubKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tmPubKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Public key of Tendermint
+       * </pre>
+       *
+       * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+       * @return The bytes for tmPubKey.
+       */
+      public com.google.protobuf.ByteString
+          getTmPubKeyBytes() {
+        java.lang.Object ref = tmPubKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tmPubKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Public key of Tendermint
+       * </pre>
+       *
+       * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+       * @param value The tmPubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTmPubKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        tmPubKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Public key of Tendermint
+       * </pre>
+       *
+       * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTmPubKey() {
+
+        tmPubKey_ = getDefaultInstance().getTmPubKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Public key of Tendermint
+       * </pre>
+       *
+       * <code>string tm_pub_key = 2 [json_name = "tmPubKey"];</code>
+       * @param value The bytes for tmPubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTmPubKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        tmPubKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object infoUrl_ = "";
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @return The infoUrl.
+       */
+      public java.lang.String getInfoUrl() {
+        java.lang.Object ref = infoUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          infoUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @return The bytes for infoUrl.
+       */
+      public com.google.protobuf.ByteString
+          getInfoUrlBytes() {
+        java.lang.Object ref = infoUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          infoUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @param value The infoUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        infoUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfoUrl() {
+
+        infoUrl_ = getDefaultInstance().getInfoUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL with more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @param value The bytes for infoUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        infoUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object country_ = "";
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country"];</code>
+       * @return The country.
+       */
+      public java.lang.String getCountry() {
+        java.lang.Object ref = country_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          country_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country"];</code>
+       * @return The bytes for country.
+       */
+      public com.google.protobuf.ByteString
+          getCountryBytes() {
+        java.lang.Object ref = country_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          country_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country"];</code>
+       * @param value The country to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountry(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        country_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCountry() {
+
+        country_ = getDefaultInstance().getCountry();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Country code (ISO 3166-1 alpha-2) for the location of the node
+       * </pre>
+       *
+       * <code>string country = 4 [json_name = "country"];</code>
+       * @param value The bytes for country to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        country_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.events.v1.ValidatorUpdate)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.events.v1.ValidatorUpdate)
+    private static final io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate();
+    }
+
+    public static io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ValidatorUpdate>
+        PARSER = new com.google.protobuf.AbstractParser<ValidatorUpdate>() {
+      @java.lang.Override
+      public ValidatorUpdate parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ValidatorUpdate(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ValidatorUpdate> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ValidatorUpdate> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface BusEventOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.events.v1.BusEvent)
       com.google.protobuf.MessageOrBuilder {
@@ -12863,6 +17934,141 @@ public final class Events {
 
     /**
      * <pre>
+     * Delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+     * @return Whether the delegationBalance field is set.
+     */
+    boolean hasDelegationBalance();
+    /**
+     * <pre>
+     * Delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+     * @return The delegationBalance.
+     */
+    io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent getDelegationBalance();
+    /**
+     * <pre>
+     * Delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder getDelegationBalanceOrBuilder();
+
+    /**
+     * <pre>
+     * Pending delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+     * @return Whether the pendingDelegationBalance field is set.
+     */
+    boolean hasPendingDelegationBalance();
+    /**
+     * <pre>
+     * Pending delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+     * @return The pendingDelegationBalance.
+     */
+    io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent getPendingDelegationBalance();
+    /**
+     * <pre>
+     * Pending delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder getPendingDelegationBalanceOrBuilder();
+
+    /**
+     * <pre>
+     * Epoch update events - See [Epoch](#vega.Epoch)
+     * </pre>
+     *
+     * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+     * @return Whether the epochEvent field is set.
+     */
+    boolean hasEpochEvent();
+    /**
+     * <pre>
+     * Epoch update events - See [Epoch](#vega.Epoch)
+     * </pre>
+     *
+     * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+     * @return The epochEvent.
+     */
+    io.vegaprotocol.vega.events.v1.Events.EpochEvent getEpochEvent();
+    /**
+     * <pre>
+     * Epoch update events - See [Epoch](#vega.Epoch)
+     * </pre>
+     *
+     * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder getEpochEventOrBuilder();
+
+    /**
+     * <pre>
+     * Validator update events
+     * </pre>
+     *
+     * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+     * @return Whether the validatorUpdate field is set.
+     */
+    boolean hasValidatorUpdate();
+    /**
+     * <pre>
+     * Validator update events
+     * </pre>
+     *
+     * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+     * @return The validatorUpdate.
+     */
+    io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate getValidatorUpdate();
+    /**
+     * <pre>
+     * Validator update events
+     * </pre>
+     *
+     * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder getValidatorUpdateOrBuilder();
+
+    /**
+     * <pre>
+     * Staking event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+     * @return Whether the stakingEvent field is set.
+     */
+    boolean hasStakingEvent();
+    /**
+     * <pre>
+     * Staking event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+     * @return The stakingEvent.
+     */
+    io.vegaprotocol.vega.events.v1.Events.StakingEvent getStakingEvent();
+    /**
+     * <pre>
+     * Staking event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+     */
+    io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder getStakingEventOrBuilder();
+
+    /**
+     * <pre>
      * Market tick events - See [MarketEvent](#vega.MarketEvent)
      * </pre>
      *
@@ -13365,6 +18571,76 @@ public final class Events {
               eventCase_ = 127;
               break;
             }
+            case 1034: {
+              io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder subBuilder = null;
+              if (eventCase_ == 129) {
+                subBuilder = ((io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 129;
+              break;
+            }
+            case 1042: {
+              io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder subBuilder = null;
+              if (eventCase_ == 130) {
+                subBuilder = ((io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 130;
+              break;
+            }
+            case 1050: {
+              io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder subBuilder = null;
+              if (eventCase_ == 131) {
+                subBuilder = ((io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.events.v1.Events.EpochEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 131;
+              break;
+            }
+            case 1058: {
+              io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder subBuilder = null;
+              if (eventCase_ == 132) {
+                subBuilder = ((io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 132;
+              break;
+            }
+            case 1066: {
+              io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder subBuilder = null;
+              if (eventCase_ == 133) {
+                subBuilder = ((io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.events.v1.Events.StakingEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 133;
+              break;
+            }
             case 8010: {
               io.vegaprotocol.vega.events.v1.Events.MarketEvent.Builder subBuilder = null;
               if (eventCase_ == 1001) {
@@ -13457,6 +18733,11 @@ public final class Events {
       MARKET_UPDATED(125),
       ORACLE_SPEC(126),
       ORACLE_DATA(127),
+      DELEGATION_BALANCE(129),
+      PENDING_DELEGATION_BALANCE(130),
+      EPOCH_EVENT(131),
+      VALIDATOR_UPDATE(132),
+      STAKING_EVENT(133),
       MARKET(1001),
       TX_ERR_EVENT(2001),
       EVENT_NOT_SET(0);
@@ -13503,6 +18784,11 @@ public final class Events {
           case 125: return MARKET_UPDATED;
           case 126: return ORACLE_SPEC;
           case 127: return ORACLE_DATA;
+          case 129: return DELEGATION_BALANCE;
+          case 130: return PENDING_DELEGATION_BALANCE;
+          case 131: return EPOCH_EVENT;
+          case 132: return VALIDATOR_UPDATE;
+          case 133: return STAKING_EVENT;
           case 1001: return MARKET;
           case 2001: return TX_ERR_EVENT;
           case 0: return EVENT_NOT_SET;
@@ -14800,6 +20086,221 @@ public final class Events {
       return io.vegaprotocol.vega.oracles.v1.Data.OracleData.getDefaultInstance();
     }
 
+    public static final int DELEGATION_BALANCE_FIELD_NUMBER = 129;
+    /**
+     * <pre>
+     * Delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+     * @return Whether the delegationBalance field is set.
+     */
+    @java.lang.Override
+    public boolean hasDelegationBalance() {
+      return eventCase_ == 129;
+    }
+    /**
+     * <pre>
+     * Delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+     * @return The delegationBalance.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent getDelegationBalance() {
+      if (eventCase_ == 129) {
+         return (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder getDelegationBalanceOrBuilder() {
+      if (eventCase_ == 129) {
+         return (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+    }
+
+    public static final int PENDING_DELEGATION_BALANCE_FIELD_NUMBER = 130;
+    /**
+     * <pre>
+     * Pending delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+     * @return Whether the pendingDelegationBalance field is set.
+     */
+    @java.lang.Override
+    public boolean hasPendingDelegationBalance() {
+      return eventCase_ == 130;
+    }
+    /**
+     * <pre>
+     * Pending delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+     * @return The pendingDelegationBalance.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent getPendingDelegationBalance() {
+      if (eventCase_ == 130) {
+         return (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Pending delegation balance events
+     * </pre>
+     *
+     * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder getPendingDelegationBalanceOrBuilder() {
+      if (eventCase_ == 130) {
+         return (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+    }
+
+    public static final int EPOCH_EVENT_FIELD_NUMBER = 131;
+    /**
+     * <pre>
+     * Epoch update events - See [Epoch](#vega.Epoch)
+     * </pre>
+     *
+     * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+     * @return Whether the epochEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasEpochEvent() {
+      return eventCase_ == 131;
+    }
+    /**
+     * <pre>
+     * Epoch update events - See [Epoch](#vega.Epoch)
+     * </pre>
+     *
+     * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+     * @return The epochEvent.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.EpochEvent getEpochEvent() {
+      if (eventCase_ == 131) {
+         return (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Epoch update events - See [Epoch](#vega.Epoch)
+     * </pre>
+     *
+     * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder getEpochEventOrBuilder() {
+      if (eventCase_ == 131) {
+         return (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+    }
+
+    public static final int VALIDATOR_UPDATE_FIELD_NUMBER = 132;
+    /**
+     * <pre>
+     * Validator update events
+     * </pre>
+     *
+     * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+     * @return Whether the validatorUpdate field is set.
+     */
+    @java.lang.Override
+    public boolean hasValidatorUpdate() {
+      return eventCase_ == 132;
+    }
+    /**
+     * <pre>
+     * Validator update events
+     * </pre>
+     *
+     * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+     * @return The validatorUpdate.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate getValidatorUpdate() {
+      if (eventCase_ == 132) {
+         return (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Validator update events
+     * </pre>
+     *
+     * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder getValidatorUpdateOrBuilder() {
+      if (eventCase_ == 132) {
+         return (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+    }
+
+    public static final int STAKING_EVENT_FIELD_NUMBER = 133;
+    /**
+     * <pre>
+     * Staking event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+     * @return Whether the stakingEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakingEvent() {
+      return eventCase_ == 133;
+    }
+    /**
+     * <pre>
+     * Staking event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+     * @return The stakingEvent.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.StakingEvent getStakingEvent() {
+      if (eventCase_ == 133) {
+         return (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Staking event
+     * </pre>
+     *
+     * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder getStakingEventOrBuilder() {
+      if (eventCase_ == 133) {
+         return (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_;
+      }
+      return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+    }
+
     public static final int MARKET_FIELD_NUMBER = 1001;
     /**
      * <pre>
@@ -14990,6 +20491,21 @@ public final class Events {
       if (eventCase_ == 127) {
         output.writeMessage(127, (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_);
       }
+      if (eventCase_ == 129) {
+        output.writeMessage(129, (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_);
+      }
+      if (eventCase_ == 130) {
+        output.writeMessage(130, (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_);
+      }
+      if (eventCase_ == 131) {
+        output.writeMessage(131, (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_);
+      }
+      if (eventCase_ == 132) {
+        output.writeMessage(132, (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_);
+      }
+      if (eventCase_ == 133) {
+        output.writeMessage(133, (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_);
+      }
       if (eventCase_ == 1001) {
         output.writeMessage(1001, (io.vegaprotocol.vega.events.v1.Events.MarketEvent) event_);
       }
@@ -15122,6 +20638,26 @@ public final class Events {
       if (eventCase_ == 127) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(127, (io.vegaprotocol.vega.oracles.v1.Data.OracleData) event_);
+      }
+      if (eventCase_ == 129) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(129, (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_);
+      }
+      if (eventCase_ == 130) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(130, (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_);
+      }
+      if (eventCase_ == 131) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(131, (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_);
+      }
+      if (eventCase_ == 132) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(132, (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_);
+      }
+      if (eventCase_ == 133) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(133, (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_);
       }
       if (eventCase_ == 1001) {
         size += com.google.protobuf.CodedOutputStream
@@ -15261,6 +20797,26 @@ public final class Events {
           if (!getOracleData()
               .equals(other.getOracleData())) return false;
           break;
+        case 129:
+          if (!getDelegationBalance()
+              .equals(other.getDelegationBalance())) return false;
+          break;
+        case 130:
+          if (!getPendingDelegationBalance()
+              .equals(other.getPendingDelegationBalance())) return false;
+          break;
+        case 131:
+          if (!getEpochEvent()
+              .equals(other.getEpochEvent())) return false;
+          break;
+        case 132:
+          if (!getValidatorUpdate()
+              .equals(other.getValidatorUpdate())) return false;
+          break;
+        case 133:
+          if (!getStakingEvent()
+              .equals(other.getStakingEvent())) return false;
+          break;
         case 1001:
           if (!getMarket()
               .equals(other.getMarket())) return false;
@@ -15397,6 +20953,26 @@ public final class Events {
         case 127:
           hash = (37 * hash) + ORACLE_DATA_FIELD_NUMBER;
           hash = (53 * hash) + getOracleData().hashCode();
+          break;
+        case 129:
+          hash = (37 * hash) + DELEGATION_BALANCE_FIELD_NUMBER;
+          hash = (53 * hash) + getDelegationBalance().hashCode();
+          break;
+        case 130:
+          hash = (37 * hash) + PENDING_DELEGATION_BALANCE_FIELD_NUMBER;
+          hash = (53 * hash) + getPendingDelegationBalance().hashCode();
+          break;
+        case 131:
+          hash = (37 * hash) + EPOCH_EVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getEpochEvent().hashCode();
+          break;
+        case 132:
+          hash = (37 * hash) + VALIDATOR_UPDATE_FIELD_NUMBER;
+          hash = (53 * hash) + getValidatorUpdate().hashCode();
+          break;
+        case 133:
+          hash = (37 * hash) + STAKING_EVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getStakingEvent().hashCode();
           break;
         case 1001:
           hash = (37 * hash) + MARKET_FIELD_NUMBER;
@@ -15772,6 +21348,41 @@ public final class Events {
             result.event_ = oracleDataBuilder_.build();
           }
         }
+        if (eventCase_ == 129) {
+          if (delegationBalanceBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = delegationBalanceBuilder_.build();
+          }
+        }
+        if (eventCase_ == 130) {
+          if (pendingDelegationBalanceBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = pendingDelegationBalanceBuilder_.build();
+          }
+        }
+        if (eventCase_ == 131) {
+          if (epochEventBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = epochEventBuilder_.build();
+          }
+        }
+        if (eventCase_ == 132) {
+          if (validatorUpdateBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = validatorUpdateBuilder_.build();
+          }
+        }
+        if (eventCase_ == 133) {
+          if (stakingEventBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = stakingEventBuilder_.build();
+          }
+        }
         if (eventCase_ == 1001) {
           if (marketBuilder_ == null) {
             result.event_ = event_;
@@ -15953,6 +21564,26 @@ public final class Events {
           }
           case ORACLE_DATA: {
             mergeOracleData(other.getOracleData());
+            break;
+          }
+          case DELEGATION_BALANCE: {
+            mergeDelegationBalance(other.getDelegationBalance());
+            break;
+          }
+          case PENDING_DELEGATION_BALANCE: {
+            mergePendingDelegationBalance(other.getPendingDelegationBalance());
+            break;
+          }
+          case EPOCH_EVENT: {
+            mergeEpochEvent(other.getEpochEvent());
+            break;
+          }
+          case VALIDATOR_UPDATE: {
+            mergeValidatorUpdate(other.getValidatorUpdate());
+            break;
+          }
+          case STAKING_EVENT: {
+            mergeStakingEvent(other.getStakingEvent());
             break;
           }
           case MARKET: {
@@ -21057,6 +26688,891 @@ public final class Events {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder> delegationBalanceBuilder_;
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       * @return Whether the delegationBalance field is set.
+       */
+      @java.lang.Override
+      public boolean hasDelegationBalance() {
+        return eventCase_ == 129;
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       * @return The delegationBalance.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent getDelegationBalance() {
+        if (delegationBalanceBuilder_ == null) {
+          if (eventCase_ == 129) {
+            return (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+        } else {
+          if (eventCase_ == 129) {
+            return delegationBalanceBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      public Builder setDelegationBalance(io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent value) {
+        if (delegationBalanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          delegationBalanceBuilder_.setMessage(value);
+        }
+        eventCase_ = 129;
+        return this;
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      public Builder setDelegationBalance(
+          io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder builderForValue) {
+        if (delegationBalanceBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          delegationBalanceBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 129;
+        return this;
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      public Builder mergeDelegationBalance(io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent value) {
+        if (delegationBalanceBuilder_ == null) {
+          if (eventCase_ == 129 &&
+              event_ != io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.newBuilder((io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 129) {
+            delegationBalanceBuilder_.mergeFrom(value);
+          }
+          delegationBalanceBuilder_.setMessage(value);
+        }
+        eventCase_ = 129;
+        return this;
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      public Builder clearDelegationBalance() {
+        if (delegationBalanceBuilder_ == null) {
+          if (eventCase_ == 129) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 129) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          delegationBalanceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder getDelegationBalanceBuilder() {
+        return getDelegationBalanceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder getDelegationBalanceOrBuilder() {
+        if ((eventCase_ == 129) && (delegationBalanceBuilder_ != null)) {
+          return delegationBalanceBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 129) {
+            return (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder>
+          getDelegationBalanceFieldBuilder() {
+        if (delegationBalanceBuilder_ == null) {
+          if (!(eventCase_ == 129)) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.getDefaultInstance();
+          }
+          delegationBalanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent.Builder, io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEventOrBuilder>(
+                  (io.vegaprotocol.vega.events.v1.Events.DelegationBalanceEvent) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 129;
+        onChanged();;
+        return delegationBalanceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder> pendingDelegationBalanceBuilder_;
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       * @return Whether the pendingDelegationBalance field is set.
+       */
+      @java.lang.Override
+      public boolean hasPendingDelegationBalance() {
+        return eventCase_ == 130;
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       * @return The pendingDelegationBalance.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent getPendingDelegationBalance() {
+        if (pendingDelegationBalanceBuilder_ == null) {
+          if (eventCase_ == 130) {
+            return (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+        } else {
+          if (eventCase_ == 130) {
+            return pendingDelegationBalanceBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      public Builder setPendingDelegationBalance(io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent value) {
+        if (pendingDelegationBalanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          pendingDelegationBalanceBuilder_.setMessage(value);
+        }
+        eventCase_ = 130;
+        return this;
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      public Builder setPendingDelegationBalance(
+          io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder builderForValue) {
+        if (pendingDelegationBalanceBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          pendingDelegationBalanceBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 130;
+        return this;
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      public Builder mergePendingDelegationBalance(io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent value) {
+        if (pendingDelegationBalanceBuilder_ == null) {
+          if (eventCase_ == 130 &&
+              event_ != io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.newBuilder((io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 130) {
+            pendingDelegationBalanceBuilder_.mergeFrom(value);
+          }
+          pendingDelegationBalanceBuilder_.setMessage(value);
+        }
+        eventCase_ = 130;
+        return this;
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      public Builder clearPendingDelegationBalance() {
+        if (pendingDelegationBalanceBuilder_ == null) {
+          if (eventCase_ == 130) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 130) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          pendingDelegationBalanceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder getPendingDelegationBalanceBuilder() {
+        return getPendingDelegationBalanceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder getPendingDelegationBalanceOrBuilder() {
+        if ((eventCase_ == 130) && (pendingDelegationBalanceBuilder_ != null)) {
+          return pendingDelegationBalanceBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 130) {
+            return (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Pending delegation balance events
+       * </pre>
+       *
+       * <code>.vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder>
+          getPendingDelegationBalanceFieldBuilder() {
+        if (pendingDelegationBalanceBuilder_ == null) {
+          if (!(eventCase_ == 130)) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.getDefaultInstance();
+          }
+          pendingDelegationBalanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent.Builder, io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEventOrBuilder>(
+                  (io.vegaprotocol.vega.events.v1.Events.PendingDelegationBalanceEvent) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 130;
+        onChanged();;
+        return pendingDelegationBalanceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.EpochEvent, io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder, io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder> epochEventBuilder_;
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       * @return Whether the epochEvent field is set.
+       */
+      @java.lang.Override
+      public boolean hasEpochEvent() {
+        return eventCase_ == 131;
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       * @return The epochEvent.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.EpochEvent getEpochEvent() {
+        if (epochEventBuilder_ == null) {
+          if (eventCase_ == 131) {
+            return (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+        } else {
+          if (eventCase_ == 131) {
+            return epochEventBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      public Builder setEpochEvent(io.vegaprotocol.vega.events.v1.Events.EpochEvent value) {
+        if (epochEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          epochEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 131;
+        return this;
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      public Builder setEpochEvent(
+          io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder builderForValue) {
+        if (epochEventBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          epochEventBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 131;
+        return this;
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      public Builder mergeEpochEvent(io.vegaprotocol.vega.events.v1.Events.EpochEvent value) {
+        if (epochEventBuilder_ == null) {
+          if (eventCase_ == 131 &&
+              event_ != io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.EpochEvent.newBuilder((io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 131) {
+            epochEventBuilder_.mergeFrom(value);
+          }
+          epochEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 131;
+        return this;
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      public Builder clearEpochEvent() {
+        if (epochEventBuilder_ == null) {
+          if (eventCase_ == 131) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 131) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          epochEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder getEpochEventBuilder() {
+        return getEpochEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder getEpochEventOrBuilder() {
+        if ((eventCase_ == 131) && (epochEventBuilder_ != null)) {
+          return epochEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 131) {
+            return (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Epoch update events - See [Epoch](#vega.Epoch)
+       * </pre>
+       *
+       * <code>.vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.EpochEvent, io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder, io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder>
+          getEpochEventFieldBuilder() {
+        if (epochEventBuilder_ == null) {
+          if (!(eventCase_ == 131)) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.EpochEvent.getDefaultInstance();
+          }
+          epochEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.events.v1.Events.EpochEvent, io.vegaprotocol.vega.events.v1.Events.EpochEvent.Builder, io.vegaprotocol.vega.events.v1.Events.EpochEventOrBuilder>(
+                  (io.vegaprotocol.vega.events.v1.Events.EpochEvent) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 131;
+        onChanged();;
+        return epochEventBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder> validatorUpdateBuilder_;
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       * @return Whether the validatorUpdate field is set.
+       */
+      @java.lang.Override
+      public boolean hasValidatorUpdate() {
+        return eventCase_ == 132;
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       * @return The validatorUpdate.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate getValidatorUpdate() {
+        if (validatorUpdateBuilder_ == null) {
+          if (eventCase_ == 132) {
+            return (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+        } else {
+          if (eventCase_ == 132) {
+            return validatorUpdateBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      public Builder setValidatorUpdate(io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate value) {
+        if (validatorUpdateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          validatorUpdateBuilder_.setMessage(value);
+        }
+        eventCase_ = 132;
+        return this;
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      public Builder setValidatorUpdate(
+          io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder builderForValue) {
+        if (validatorUpdateBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          validatorUpdateBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 132;
+        return this;
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      public Builder mergeValidatorUpdate(io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate value) {
+        if (validatorUpdateBuilder_ == null) {
+          if (eventCase_ == 132 &&
+              event_ != io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.newBuilder((io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 132) {
+            validatorUpdateBuilder_.mergeFrom(value);
+          }
+          validatorUpdateBuilder_.setMessage(value);
+        }
+        eventCase_ = 132;
+        return this;
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      public Builder clearValidatorUpdate() {
+        if (validatorUpdateBuilder_ == null) {
+          if (eventCase_ == 132) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 132) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          validatorUpdateBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder getValidatorUpdateBuilder() {
+        return getValidatorUpdateFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder getValidatorUpdateOrBuilder() {
+        if ((eventCase_ == 132) && (validatorUpdateBuilder_ != null)) {
+          return validatorUpdateBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 132) {
+            return (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Validator update events
+       * </pre>
+       *
+       * <code>.vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder>
+          getValidatorUpdateFieldBuilder() {
+        if (validatorUpdateBuilder_ == null) {
+          if (!(eventCase_ == 132)) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.getDefaultInstance();
+          }
+          validatorUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate.Builder, io.vegaprotocol.vega.events.v1.Events.ValidatorUpdateOrBuilder>(
+                  (io.vegaprotocol.vega.events.v1.Events.ValidatorUpdate) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 132;
+        onChanged();;
+        return validatorUpdateBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.StakingEvent, io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder, io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder> stakingEventBuilder_;
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       * @return Whether the stakingEvent field is set.
+       */
+      @java.lang.Override
+      public boolean hasStakingEvent() {
+        return eventCase_ == 133;
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       * @return The stakingEvent.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.StakingEvent getStakingEvent() {
+        if (stakingEventBuilder_ == null) {
+          if (eventCase_ == 133) {
+            return (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+        } else {
+          if (eventCase_ == 133) {
+            return stakingEventBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      public Builder setStakingEvent(io.vegaprotocol.vega.events.v1.Events.StakingEvent value) {
+        if (stakingEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          stakingEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 133;
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      public Builder setStakingEvent(
+          io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder builderForValue) {
+        if (stakingEventBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakingEventBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 133;
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      public Builder mergeStakingEvent(io.vegaprotocol.vega.events.v1.Events.StakingEvent value) {
+        if (stakingEventBuilder_ == null) {
+          if (eventCase_ == 133 &&
+              event_ != io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.StakingEvent.newBuilder((io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 133) {
+            stakingEventBuilder_.mergeFrom(value);
+          }
+          stakingEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 133;
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      public Builder clearStakingEvent() {
+        if (stakingEventBuilder_ == null) {
+          if (eventCase_ == 133) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 133) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          stakingEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      public io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder getStakingEventBuilder() {
+        return getStakingEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder getStakingEventOrBuilder() {
+        if ((eventCase_ == 133) && (stakingEventBuilder_ != null)) {
+          return stakingEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 133) {
+            return (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_;
+          }
+          return io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Staking event
+       * </pre>
+       *
+       * <code>.vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.events.v1.Events.StakingEvent, io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder, io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder>
+          getStakingEventFieldBuilder() {
+        if (stakingEventBuilder_ == null) {
+          if (!(eventCase_ == 133)) {
+            event_ = io.vegaprotocol.vega.events.v1.Events.StakingEvent.getDefaultInstance();
+          }
+          stakingEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.events.v1.Events.StakingEvent, io.vegaprotocol.vega.events.v1.Events.StakingEvent.Builder, io.vegaprotocol.vega.events.v1.Events.StakingEventOrBuilder>(
+                  (io.vegaprotocol.vega.events.v1.Events.StakingEvent) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 133;
+        onChanged();;
+        return stakingEventBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.events.v1.Events.MarketEvent, io.vegaprotocol.vega.events.v1.Events.MarketEvent.Builder, io.vegaprotocol.vega.events.v1.Events.MarketEventOrBuilder> marketBuilder_;
       /**
        * <pre>
@@ -21463,6 +27979,21 @@ public final class Events {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_events_v1_StakingEvent_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_events_v1_StakingEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_events_v1_DelegationBalanceEvent_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_events_v1_DelegationBalanceEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_events_v1_PendingDelegationBalanceEvent_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_events_v1_PendingDelegationBalanceEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_events_v1_MarketEvent_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21477,6 +28008,11 @@ public final class Events {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_events_v1_TimeUpdate_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_events_v1_EpochEvent_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_events_v1_EpochEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_events_v1_TransferResponses_descriptor;
   private static final
@@ -21518,6 +28054,11 @@ public final class Events {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_events_v1_AuctionEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_events_v1_ValidatorUpdate_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_events_v1_ValidatorUpdate_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_events_v1_BusEvent_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21536,124 +28077,157 @@ public final class Events {
       "e.proto\032\nvega.proto\032\025oracles/v1/spec.pro" +
       "to\032\025oracles/v1/data.proto\032\032commands/v1/c" +
       "ommands.proto\032$commands/v1/validator_com" +
-      "mands.proto\"D\n\013MarketEvent\022\033\n\tmarket_id\030" +
-      "\001 \001(\tR\010marketId\022\030\n\007payload\030\002 \001(\tR\007payloa" +
-      "d\"\246\005\n\014TxErrorEvent\022\031\n\010party_id\030\001 \001(\tR\007pa" +
-      "rtyId\022\027\n\007err_msg\030\002 \001(\tR\006errMsg\022N\n\020order_" +
-      "submission\030e \001(\0132!.vega.commands.v1.Orde" +
-      "rSubmissionH\000R\017orderSubmission\022K\n\017order_" +
-      "amendment\030f \001(\0132 .vega.commands.v1.Order" +
-      "AmendmentH\000R\016orderAmendment\022T\n\022order_can" +
-      "cellation\030g \001(\0132#.vega.commands.v1.Order" +
-      "CancellationH\000R\021orderCancellation\022B\n\010pro" +
-      "posal\030h \001(\0132$.vega.commands.v1.ProposalS" +
-      "ubmissionH\000R\010proposal\022K\n\017vote_submission" +
-      "\030i \001(\0132 .vega.commands.v1.VoteSubmission" +
-      "H\000R\016voteSubmission\022v\n\036liquidity_provisio" +
-      "n_submission\030j \001(\0132..vega.commands.v1.Li" +
-      "quidityProvisionSubmissionH\000R\034liquidityP" +
-      "rovisionSubmission\022W\n\023withdraw_submissio" +
-      "n\030k \001(\0132$.vega.commands.v1.WithdrawSubmi" +
-      "ssionH\000R\022withdrawSubmissionB\r\n\013transacti" +
-      "on\"*\n\nTimeUpdate\022\034\n\ttimestamp\030\001 \001(\003R\ttim" +
-      "estamp\"I\n\021TransferResponses\0224\n\tresponses" +
-      "\030\001 \003(\0132\026.vega.TransferResponseR\tresponse" +
-      "s\"\210\001\n\022PositionResolution\022\033\n\tmarket_id\030\001 " +
-      "\001(\tR\010marketId\022\036\n\ndistressed\030\002 \001(\003R\ndistr" +
-      "essed\022\026\n\006closed\030\003 \001(\003R\006closed\022\035\n\nmark_pr" +
-      "ice\030\004 \001(\004R\tmarkPrice\"c\n\021LossSocializatio" +
-      "n\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_" +
-      "id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\003R\006amoun" +
-      "t\";\n\017TradeSettlement\022\022\n\004size\030\001 \001(\003R\004size" +
-      "\022\024\n\005price\030\002 \001(\004R\005price\"\254\001\n\016SettlePositio" +
-      "n\022\033\n\tmarket_id\030\001 \001(\tR\010marketId\022\031\n\010party_" +
-      "id\030\002 \001(\tR\007partyId\022\024\n\005price\030\003 \001(\004R\005price\022" +
-      "L\n\021trade_settlements\030\004 \003(\0132\037.vega.events" +
-      ".v1.TradeSettlementR\020tradeSettlements\"x\n" +
-      "\020SettleDistressed\022\033\n\tmarket_id\030\001 \001(\tR\010ma" +
-      "rketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006mar" +
-      "gin\030\003 \001(\004R\006margin\022\024\n\005price\030\004 \001(\004R\005price\"" +
-      "0\n\nMarketTick\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004time\030\002 " +
-      "\001(\003R\004time\"\205\002\n\014AuctionEvent\022\033\n\tmarket_id\030" +
-      "\001 \001(\tR\010marketId\022\'\n\017opening_auction\030\002 \001(\010" +
-      "R\016openingAuction\022\024\n\005leave\030\003 \001(\010R\005leave\022\024" +
-      "\n\005start\030\004 \001(\003R\005start\022\020\n\003end\030\005 \001(\003R\003end\022." +
-      "\n\007trigger\030\006 \001(\0162\024.vega.AuctionTriggerR\007t" +
-      "rigger\022A\n\021extension_trigger\030\007 \001(\0162\024.vega" +
-      ".AuctionTriggerR\020extensionTrigger\"\216\016\n\010Bu" +
-      "sEvent\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005block\030\002 \001(\tR\005b" +
-      "lock\0220\n\004type\030\003 \001(\0162\034.vega.events.v1.BusE" +
-      "ventTypeR\004type\022=\n\013time_update\030e \001(\0132\032.ve" +
-      "ga.events.v1.TimeUpdateH\000R\ntimeUpdate\022R\n" +
-      "\022transfer_responses\030f \001(\0132!.vega.events." +
-      "v1.TransferResponsesH\000R\021transferResponse" +
-      "s\022U\n\023position_resolution\030g \001(\0132\".vega.ev" +
-      "ents.v1.PositionResolutionH\000R\022positionRe" +
-      "solution\022#\n\005order\030h \001(\0132\013.vega.OrderH\000R\005" +
-      "order\022)\n\007account\030i \001(\0132\r.vega.AccountH\000R" +
-      "\007account\022#\n\005party\030j \001(\0132\013.vega.PartyH\000R\005" +
-      "party\022#\n\005trade\030k \001(\0132\013.vega.TradeH\000R\005tra" +
-      "de\0229\n\rmargin_levels\030l \001(\0132\022.vega.MarginL" +
-      "evelsH\000R\014marginLevels\022,\n\010proposal\030m \001(\0132" +
-      "\016.vega.ProposalH\000R\010proposal\022 \n\004vote\030n \001(" +
-      "\0132\n.vega.VoteH\000R\004vote\0223\n\013market_data\030o \001" +
-      "(\0132\020.vega.MarketDataH\000R\nmarketData\022H\n\016no" +
-      "de_signature\030p \001(\0132\037.vega.commands.v1.No" +
-      "deSignatureH\000R\rnodeSignature\022R\n\022loss_soc" +
-      "ialization\030q \001(\0132!.vega.events.v1.LossSo" +
-      "cializationH\000R\021lossSocialization\022I\n\017sett" +
-      "le_position\030r \001(\0132\036.vega.events.v1.Settl" +
-      "ePositionH\000R\016settlePosition\022O\n\021settle_di" +
-      "stressed\030s \001(\0132 .vega.events.v1.SettleDi" +
-      "stressedH\000R\020settleDistressed\0225\n\016market_c" +
-      "reated\030t \001(\0132\014.vega.MarketH\000R\rmarketCrea" +
-      "ted\022#\n\005asset\030u \001(\0132\013.vega.AssetH\000R\005asset" +
-      "\022=\n\013market_tick\030v \001(\0132\032.vega.events.v1.M" +
-      "arketTickH\000R\nmarketTick\0222\n\nwithdrawal\030w " +
-      "\001(\0132\020.vega.WithdrawalH\000R\nwithdrawal\022)\n\007d" +
-      "eposit\030x \001(\0132\r.vega.DepositH\000R\007deposit\0228" +
-      "\n\007auction\030y \001(\0132\034.vega.events.v1.Auction" +
-      "EventH\000R\007auction\0223\n\013risk_factor\030z \001(\0132\020." +
-      "vega.RiskFactorH\000R\nriskFactor\022E\n\021network" +
-      "_parameter\030{ \001(\0132\026.vega.NetworkParameter" +
-      "H\000R\020networkParameter\022K\n\023liquidity_provis" +
-      "ion\030| \001(\0132\030.vega.LiquidityProvisionH\000R\022l" +
-      "iquidityProvision\0225\n\016market_updated\030} \001(" +
-      "\0132\014.vega.MarketH\000R\rmarketUpdated\0229\n\013orac" +
-      "le_spec\030~ \001(\0132\026.oracles.v1.OracleSpecH\000R" +
-      "\noracleSpec\0229\n\013oracle_data\030\177 \001(\0132\026.oracl" +
-      "es.v1.OracleDataH\000R\noracleData\0226\n\006market" +
-      "\030\351\007 \001(\0132\033.vega.events.v1.MarketEventH\000R\006" +
-      "market\022A\n\014tx_err_event\030\321\017 \001(\0132\034.vega.eve" +
-      "nts.v1.TxErrorEventH\000R\ntxErrEventB\007\n\005eve" +
-      "nt*\351\007\n\014BusEventType\022\036\n\032BUS_EVENT_TYPE_UN" +
-      "SPECIFIED\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032B" +
-      "US_EVENT_TYPE_TIME_UPDATE\020\002\022%\n!BUS_EVENT" +
-      "_TYPE_TRANSFER_RESPONSES\020\003\022&\n\"BUS_EVENT_" +
-      "TYPE_POSITION_RESOLUTION\020\004\022\030\n\024BUS_EVENT_" +
-      "TYPE_ORDER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020\006" +
-      "\022\030\n\024BUS_EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT_" +
-      "TYPE_TRADE\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_LE" +
-      "VELS\020\t\022\033\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023B" +
-      "US_EVENT_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_M" +
-      "ARKET_DATA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIGN" +
-      "ATURE\020\r\022%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZA" +
-      "TION\020\016\022\"\n\036BUS_EVENT_TYPE_SETTLE_POSITION" +
-      "\020\017\022$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\020\020" +
-      "\022!\n\035BUS_EVENT_TYPE_MARKET_CREATED\020\021\022\030\n\024B" +
-      "US_EVENT_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE_" +
-      "MARKET_TICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRAW" +
-      "AL\020\024\022\032\n\026BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS_" +
-      "EVENT_TYPE_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_R" +
-      "ISK_FACTOR\020\027\022$\n BUS_EVENT_TYPE_NETWORK_P" +
-      "ARAMETER\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDITY_P" +
-      "ROVISION\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_UPDA" +
-      "TED\020\032\022\036\n\032BUS_EVENT_TYPE_ORACLE_SPEC\020\033\022\036\n" +
-      "\032BUS_EVENT_TYPE_ORACLE_DATA\020\034\022\031\n\025BUS_EVE" +
-      "NT_TYPE_MARKET\020e\022\034\n\027BUS_EVENT_TYPE_TX_ER" +
-      "ROR\020\311\001BK\n\036io.vegaprotocol.vega.events.v1" +
-      "Z)code.vegaprotocol.io/vega/proto/events" +
-      "/v1b\006proto3"
+      "mands.proto\"\324\001\n\014StakingEvent\022\016\n\002id\030\001 \001(\t" +
+      "R\002id\0225\n\004type\030\002 \001(\0162!.vega.events.v1.Stak" +
+      "ingEvent.TypeR\004type\022\016\n\002ts\030\003 \001(\003R\002ts\022\024\n\005p" +
+      "arty\030\004 \001(\tR\005party\022\026\n\006amount\030\005 \001(\tR\006amoun" +
+      "t\"?\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_" +
+      "DEPOSIT\020\001\022\017\n\013TYPE_REMOVE\020\002\"_\n\026Delegation" +
+      "BalanceEvent\022\024\n\005party\030\001 \001(\tR\005party\022\027\n\007no" +
+      "de_id\030\002 \001(\tR\006nodeId\022\026\n\006amount\030\003 \001(\004R\006amo" +
+      "unt\"\254\001\n\035PendingDelegationBalanceEvent\022\024\n" +
+      "\005party\030\001 \001(\tR\005party\022\027\n\007node_id\030\002 \001(\tR\006no" +
+      "deId\022+\n\021delegation_amount\030\003 \001(\004R\020delegat" +
+      "ionAmount\022/\n\023undelegation_amount\030\004 \001(\004R\022" +
+      "undelegationAmount\"D\n\013MarketEvent\022\033\n\tmar" +
+      "ket_id\030\001 \001(\tR\010marketId\022\030\n\007payload\030\002 \001(\tR" +
+      "\007payload\"\246\005\n\014TxErrorEvent\022\031\n\010party_id\030\001 " +
+      "\001(\tR\007partyId\022\027\n\007err_msg\030\002 \001(\tR\006errMsg\022N\n" +
+      "\020order_submission\030e \001(\0132!.vega.commands." +
+      "v1.OrderSubmissionH\000R\017orderSubmission\022K\n" +
+      "\017order_amendment\030f \001(\0132 .vega.commands.v" +
+      "1.OrderAmendmentH\000R\016orderAmendment\022T\n\022or" +
+      "der_cancellation\030g \001(\0132#.vega.commands.v" +
+      "1.OrderCancellationH\000R\021orderCancellation" +
+      "\022B\n\010proposal\030h \001(\0132$.vega.commands.v1.Pr" +
+      "oposalSubmissionH\000R\010proposal\022K\n\017vote_sub" +
+      "mission\030i \001(\0132 .vega.commands.v1.VoteSub" +
+      "missionH\000R\016voteSubmission\022v\n\036liquidity_p" +
+      "rovision_submission\030j \001(\0132..vega.command" +
+      "s.v1.LiquidityProvisionSubmissionH\000R\034liq" +
+      "uidityProvisionSubmission\022W\n\023withdraw_su" +
+      "bmission\030k \001(\0132$.vega.commands.v1.Withdr" +
+      "awSubmissionH\000R\022withdrawSubmissionB\r\n\013tr" +
+      "ansaction\"*\n\nTimeUpdate\022\034\n\ttimestamp\030\001 \001" +
+      "(\003R\ttimestamp\"y\n\nEpochEvent\022\020\n\003seq\030\001 \001(\004" +
+      "R\003seq\022\035\n\nstart_time\030\002 \001(\003R\tstartTime\022\037\n\013" +
+      "expire_time\030\003 \001(\003R\nexpireTime\022\031\n\010end_tim" +
+      "e\030\004 \001(\003R\007endTime\"I\n\021TransferResponses\0224\n" +
+      "\tresponses\030\001 \003(\0132\026.vega.TransferResponse" +
+      "R\tresponses\"\210\001\n\022PositionResolution\022\033\n\tma" +
+      "rket_id\030\001 \001(\tR\010marketId\022\036\n\ndistressed\030\002 " +
+      "\001(\003R\ndistressed\022\026\n\006closed\030\003 \001(\003R\006closed\022" +
+      "\035\n\nmark_price\030\004 \001(\004R\tmarkPrice\"c\n\021LossSo" +
+      "cialization\022\033\n\tmarket_id\030\001 \001(\tR\010marketId" +
+      "\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 " +
+      "\001(\003R\006amount\";\n\017TradeSettlement\022\022\n\004size\030\001" +
+      " \001(\003R\004size\022\024\n\005price\030\002 \001(\004R\005price\"\254\001\n\016Set" +
+      "tlePosition\022\033\n\tmarket_id\030\001 \001(\tR\010marketId" +
+      "\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005price\030\003 \001" +
+      "(\004R\005price\022L\n\021trade_settlements\030\004 \003(\0132\037.v" +
+      "ega.events.v1.TradeSettlementR\020tradeSett" +
+      "lements\"x\n\020SettleDistressed\022\033\n\tmarket_id" +
+      "\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\tR\007part" +
+      "yId\022\026\n\006margin\030\003 \001(\004R\006margin\022\024\n\005price\030\004 \001" +
+      "(\004R\005price\"0\n\nMarketTick\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\022\n\004time\030\002 \001(\003R\004time\"\205\002\n\014AuctionEvent\022\033\n\t" +
+      "market_id\030\001 \001(\tR\010marketId\022\'\n\017opening_auc" +
+      "tion\030\002 \001(\010R\016openingAuction\022\024\n\005leave\030\003 \001(" +
+      "\010R\005leave\022\024\n\005start\030\004 \001(\003R\005start\022\020\n\003end\030\005 " +
+      "\001(\003R\003end\022.\n\007trigger\030\006 \001(\0162\024.vega.Auction" +
+      "TriggerR\007trigger\022A\n\021extension_trigger\030\007 " +
+      "\001(\0162\024.vega.AuctionTriggerR\020extensionTrig" +
+      "ger\"}\n\017ValidatorUpdate\022\027\n\007pub_key\030\001 \001(\tR" +
+      "\006pubKey\022\034\n\ntm_pub_key\030\002 \001(\tR\010tmPubKey\022\031\n" +
+      "\010info_url\030\003 \001(\tR\007infoUrl\022\030\n\007country\030\004 \001(" +
+      "\tR\007country\"\255\021\n\010BusEvent\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\024\n\005block\030\002 \001(\tR\005block\0220\n\004type\030\003 \001(\0162\034.ve" +
+      "ga.events.v1.BusEventTypeR\004type\022=\n\013time_" +
+      "update\030e \001(\0132\032.vega.events.v1.TimeUpdate" +
+      "H\000R\ntimeUpdate\022R\n\022transfer_responses\030f \001" +
+      "(\0132!.vega.events.v1.TransferResponsesH\000R" +
+      "\021transferResponses\022U\n\023position_resolutio" +
+      "n\030g \001(\0132\".vega.events.v1.PositionResolut" +
+      "ionH\000R\022positionResolution\022#\n\005order\030h \001(\013" +
+      "2\013.vega.OrderH\000R\005order\022)\n\007account\030i \001(\0132" +
+      "\r.vega.AccountH\000R\007account\022#\n\005party\030j \001(\013" +
+      "2\013.vega.PartyH\000R\005party\022#\n\005trade\030k \001(\0132\013." +
+      "vega.TradeH\000R\005trade\0229\n\rmargin_levels\030l \001" +
+      "(\0132\022.vega.MarginLevelsH\000R\014marginLevels\022," +
+      "\n\010proposal\030m \001(\0132\016.vega.ProposalH\000R\010prop" +
+      "osal\022 \n\004vote\030n \001(\0132\n.vega.VoteH\000R\004vote\0223" +
+      "\n\013market_data\030o \001(\0132\020.vega.MarketDataH\000R" +
+      "\nmarketData\022H\n\016node_signature\030p \001(\0132\037.ve" +
+      "ga.commands.v1.NodeSignatureH\000R\rnodeSign" +
+      "ature\022R\n\022loss_socialization\030q \001(\0132!.vega" +
+      ".events.v1.LossSocializationH\000R\021lossSoci" +
+      "alization\022I\n\017settle_position\030r \001(\0132\036.veg" +
+      "a.events.v1.SettlePositionH\000R\016settlePosi" +
+      "tion\022O\n\021settle_distressed\030s \001(\0132 .vega.e" +
+      "vents.v1.SettleDistressedH\000R\020settleDistr" +
+      "essed\0225\n\016market_created\030t \001(\0132\014.vega.Mar" +
+      "ketH\000R\rmarketCreated\022#\n\005asset\030u \001(\0132\013.ve" +
+      "ga.AssetH\000R\005asset\022=\n\013market_tick\030v \001(\0132\032" +
+      ".vega.events.v1.MarketTickH\000R\nmarketTick" +
+      "\0222\n\nwithdrawal\030w \001(\0132\020.vega.WithdrawalH\000" +
+      "R\nwithdrawal\022)\n\007deposit\030x \001(\0132\r.vega.Dep" +
+      "ositH\000R\007deposit\0228\n\007auction\030y \001(\0132\034.vega." +
+      "events.v1.AuctionEventH\000R\007auction\0223\n\013ris" +
+      "k_factor\030z \001(\0132\020.vega.RiskFactorH\000R\nrisk" +
+      "Factor\022E\n\021network_parameter\030{ \001(\0132\026.vega" +
+      ".NetworkParameterH\000R\020networkParameter\022K\n" +
+      "\023liquidity_provision\030| \001(\0132\030.vega.Liquid" +
+      "ityProvisionH\000R\022liquidityProvision\0225\n\016ma" +
+      "rket_updated\030} \001(\0132\014.vega.MarketH\000R\rmark" +
+      "etUpdated\0229\n\013oracle_spec\030~ \001(\0132\026.oracles" +
+      ".v1.OracleSpecH\000R\noracleSpec\0229\n\013oracle_d" +
+      "ata\030\177 \001(\0132\026.oracles.v1.OracleDataH\000R\nora" +
+      "cleData\022X\n\022delegation_balance\030\201\001 \001(\0132&.v" +
+      "ega.events.v1.DelegationBalanceEventH\000R\021" +
+      "delegationBalance\022n\n\032pending_delegation_" +
+      "balance\030\202\001 \001(\0132-.vega.events.v1.PendingD" +
+      "elegationBalanceEventH\000R\030pendingDelegati" +
+      "onBalance\022>\n\013epoch_event\030\203\001 \001(\0132\032.vega.e" +
+      "vents.v1.EpochEventH\000R\nepochEvent\022M\n\020val" +
+      "idator_update\030\204\001 \001(\0132\037.vega.events.v1.Va" +
+      "lidatorUpdateH\000R\017validatorUpdate\022D\n\rstak" +
+      "ing_event\030\205\001 \001(\0132\034.vega.events.v1.Stakin" +
+      "gEventH\000R\014stakingEvent\0226\n\006market\030\351\007 \001(\0132" +
+      "\033.vega.events.v1.MarketEventH\000R\006market\022A" +
+      "\n\014tx_err_event\030\321\017 \001(\0132\034.vega.events.v1.T" +
+      "xErrorEventH\000R\ntxErrEventB\007\n\005event*\247\t\n\014B" +
+      "usEventType\022\036\n\032BUS_EVENT_TYPE_UNSPECIFIE" +
+      "D\020\000\022\026\n\022BUS_EVENT_TYPE_ALL\020\001\022\036\n\032BUS_EVENT" +
+      "_TYPE_TIME_UPDATE\020\002\022%\n!BUS_EVENT_TYPE_TR" +
+      "ANSFER_RESPONSES\020\003\022&\n\"BUS_EVENT_TYPE_POS" +
+      "ITION_RESOLUTION\020\004\022\030\n\024BUS_EVENT_TYPE_ORD" +
+      "ER\020\005\022\032\n\026BUS_EVENT_TYPE_ACCOUNT\020\006\022\030\n\024BUS_" +
+      "EVENT_TYPE_PARTY\020\007\022\030\n\024BUS_EVENT_TYPE_TRA" +
+      "DE\020\010\022 \n\034BUS_EVENT_TYPE_MARGIN_LEVELS\020\t\022\033" +
+      "\n\027BUS_EVENT_TYPE_PROPOSAL\020\n\022\027\n\023BUS_EVENT" +
+      "_TYPE_VOTE\020\013\022\036\n\032BUS_EVENT_TYPE_MARKET_DA" +
+      "TA\020\014\022!\n\035BUS_EVENT_TYPE_NODE_SIGNATURE\020\r\022" +
+      "%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\020\016\022\"" +
+      "\n\036BUS_EVENT_TYPE_SETTLE_POSITION\020\017\022$\n BU" +
+      "S_EVENT_TYPE_SETTLE_DISTRESSED\020\020\022!\n\035BUS_" +
+      "EVENT_TYPE_MARKET_CREATED\020\021\022\030\n\024BUS_EVENT" +
+      "_TYPE_ASSET\020\022\022\036\n\032BUS_EVENT_TYPE_MARKET_T" +
+      "ICK\020\023\022\035\n\031BUS_EVENT_TYPE_WITHDRAWAL\020\024\022\032\n\026" +
+      "BUS_EVENT_TYPE_DEPOSIT\020\025\022\032\n\026BUS_EVENT_TY" +
+      "PE_AUCTION\020\026\022\036\n\032BUS_EVENT_TYPE_RISK_FACT" +
+      "OR\020\027\022$\n BUS_EVENT_TYPE_NETWORK_PARAMETER" +
+      "\020\030\022&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION" +
+      "\020\031\022!\n\035BUS_EVENT_TYPE_MARKET_UPDATED\020\032\022\036\n" +
+      "\032BUS_EVENT_TYPE_ORACLE_SPEC\020\033\022\036\n\032BUS_EVE" +
+      "NT_TYPE_ORACLE_DATA\020\034\022%\n!BUS_EVENT_TYPE_" +
+      "DELEGATION_BALANCE\020\035\022-\n)BUS_EVENT_TYPE_P" +
+      "ENDING_DELEGATION_BALANCE\020\036\022\037\n\033BUS_EVENT" +
+      "_TYPE_EPOCH_UPDATE\020\037\022#\n\037BUS_EVENT_TYPE_V" +
+      "ALIDATOR_UPDATE\020 \022 \n\034BUS_EVENT_TYPE_STAK" +
+      "ING_EVENT\020!\022\031\n\025BUS_EVENT_TYPE_MARKET\020e\022\034" +
+      "\n\027BUS_EVENT_TYPE_TX_ERROR\020\311\001BK\n\036io.vegap" +
+      "rotocol.vega.events.v1Z)code.vegaprotoco" +
+      "l.io/vega/proto/events/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21667,78 +28241,108 @@ public final class Events {
           io.vegaprotocol.vega.commands.v1.Commands.getDescriptor(),
           io.vegaprotocol.vega.commands.v1.ValidatorCommands.getDescriptor(),
         });
-    internal_static_vega_events_v1_MarketEvent_descriptor =
+    internal_static_vega_events_v1_StakingEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_vega_events_v1_StakingEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_events_v1_StakingEvent_descriptor,
+        new java.lang.String[] { "Id", "Type", "Ts", "Party", "Amount", });
+    internal_static_vega_events_v1_DelegationBalanceEvent_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_vega_events_v1_DelegationBalanceEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_events_v1_DelegationBalanceEvent_descriptor,
+        new java.lang.String[] { "Party", "NodeId", "Amount", });
+    internal_static_vega_events_v1_PendingDelegationBalanceEvent_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_vega_events_v1_PendingDelegationBalanceEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_events_v1_PendingDelegationBalanceEvent_descriptor,
+        new java.lang.String[] { "Party", "NodeId", "DelegationAmount", "UndelegationAmount", });
+    internal_static_vega_events_v1_MarketEvent_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_vega_events_v1_MarketEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_MarketEvent_descriptor,
         new java.lang.String[] { "MarketId", "Payload", });
     internal_static_vega_events_v1_TxErrorEvent_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_vega_events_v1_TxErrorEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_TxErrorEvent_descriptor,
         new java.lang.String[] { "PartyId", "ErrMsg", "OrderSubmission", "OrderAmendment", "OrderCancellation", "Proposal", "VoteSubmission", "LiquidityProvisionSubmission", "WithdrawSubmission", "Transaction", });
     internal_static_vega_events_v1_TimeUpdate_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_vega_events_v1_TimeUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_TimeUpdate_descriptor,
         new java.lang.String[] { "Timestamp", });
+    internal_static_vega_events_v1_EpochEvent_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_vega_events_v1_EpochEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_events_v1_EpochEvent_descriptor,
+        new java.lang.String[] { "Seq", "StartTime", "ExpireTime", "EndTime", });
     internal_static_vega_events_v1_TransferResponses_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_vega_events_v1_TransferResponses_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_TransferResponses_descriptor,
         new java.lang.String[] { "Responses", });
     internal_static_vega_events_v1_PositionResolution_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_vega_events_v1_PositionResolution_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_PositionResolution_descriptor,
         new java.lang.String[] { "MarketId", "Distressed", "Closed", "MarkPrice", });
     internal_static_vega_events_v1_LossSocialization_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_vega_events_v1_LossSocialization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_LossSocialization_descriptor,
         new java.lang.String[] { "MarketId", "PartyId", "Amount", });
     internal_static_vega_events_v1_TradeSettlement_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_vega_events_v1_TradeSettlement_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_TradeSettlement_descriptor,
         new java.lang.String[] { "Size", "Price", });
     internal_static_vega_events_v1_SettlePosition_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_vega_events_v1_SettlePosition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_SettlePosition_descriptor,
         new java.lang.String[] { "MarketId", "PartyId", "Price", "TradeSettlements", });
     internal_static_vega_events_v1_SettleDistressed_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_vega_events_v1_SettleDistressed_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_SettleDistressed_descriptor,
         new java.lang.String[] { "MarketId", "PartyId", "Margin", "Price", });
     internal_static_vega_events_v1_MarketTick_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_vega_events_v1_MarketTick_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_MarketTick_descriptor,
         new java.lang.String[] { "Id", "Time", });
     internal_static_vega_events_v1_AuctionEvent_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_vega_events_v1_AuctionEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_AuctionEvent_descriptor,
         new java.lang.String[] { "MarketId", "OpeningAuction", "Leave", "Start", "End", "Trigger", "ExtensionTrigger", });
+    internal_static_vega_events_v1_ValidatorUpdate_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_vega_events_v1_ValidatorUpdate_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_events_v1_ValidatorUpdate_descriptor,
+        new java.lang.String[] { "PubKey", "TmPubKey", "InfoUrl", "Country", });
     internal_static_vega_events_v1_BusEvent_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_vega_events_v1_BusEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_events_v1_BusEvent_descriptor,
-        new java.lang.String[] { "Id", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "MarketUpdated", "OracleSpec", "OracleData", "Market", "TxErrEvent", "Event", });
+        new java.lang.String[] { "Id", "Block", "Type", "TimeUpdate", "TransferResponses", "PositionResolution", "Order", "Account", "Party", "Trade", "MarginLevels", "Proposal", "Vote", "MarketData", "NodeSignature", "LossSocialization", "SettlePosition", "SettleDistressed", "MarketCreated", "Asset", "MarketTick", "Withdrawal", "Deposit", "Auction", "RiskFactor", "NetworkParameter", "LiquidityProvision", "MarketUpdated", "OracleSpec", "OracleData", "DelegationBalance", "PendingDelegationBalance", "EpochEvent", "ValidatorUpdate", "StakingEvent", "Market", "TxErrEvent", "Event", });
     io.vegaprotocol.vega.Markets.getDescriptor();
     io.vegaprotocol.vega.Assets.getDescriptor();
     io.vegaprotocol.vega.Governance.getDescriptor();

@@ -2036,6 +2036,11 @@
               "name": "ACCOUNT_TYPE_GLOBAL_INSURANCE",
               "number": "11",
               "description": "Global insurance account for the asset"
+            },
+            {
+              "name": "ACCOUNT_TYPE_GLOBAL_REWARD",
+              "number": "12",
+              "description": "Global reward account for the asset"
             }
           ]
         },
@@ -2775,6 +2780,11 @@
               "name": "TRANSFER_TYPE_BOND_SLASHING",
               "number": "20",
               "description": "Bond slashing"
+            },
+            {
+              "name": "TRANSFER_TYPE_STAKE_REWARD",
+              "number": "21",
+              "description": "Stake reward"
             }
           ]
         },
@@ -7929,7 +7939,36 @@
       "hasExtensions": false,
       "hasMessages": true,
       "hasServices": false,
-      "enums": [],
+      "enums": [
+        {
+          "name": "Method",
+          "longName": "UndelegateSubmission.Method",
+          "fullName": "vega.commands.v1.UndelegateSubmission.Method",
+          "description": "",
+          "values": [
+            {
+              "name": "METHOD_UNSPECIFIED",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "METHOD_NOW",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "METHOD_AT_END_OF_EPOCH",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "METHOD_IN_ANGER",
+              "number": "3",
+              "description": ""
+            }
+          ]
+        }
+      ],
       "extensions": [],
       "messages": [
         {
@@ -8401,10 +8440,10 @@
           ]
         },
         {
-          "name": "UndelegateAtEpochEndSubmission",
-          "longName": "UndelegateAtEpochEndSubmission",
-          "fullName": "vega.commands.v1.UndelegateAtEpochEndSubmission",
-          "description": "A command to submit an instruction to undelete stake from a node",
+          "name": "UndelegateSubmission",
+          "longName": "UndelegateSubmission",
+          "fullName": "vega.commands.v1.UndelegateSubmission",
+          "description": "",
           "hasExtensions": false,
           "hasFields": true,
           "hasOneofs": false,
@@ -8412,7 +8451,7 @@
           "fields": [
             {
               "name": "node_id",
-              "description": "The ID for the node to undelegate from",
+              "description": "",
               "label": "",
               "type": "string",
               "longType": "string",
@@ -8432,11 +8471,23 @@
             },
             {
               "name": "amount",
-              "description": "The amount of stake to undelegate",
+              "description": "optional, if not specified = ALL",
               "label": "",
               "type": "uint64",
               "longType": "uint64",
               "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "method",
+              "description": "",
+              "label": "",
+              "type": "Method",
+              "longType": "UndelegateSubmission.Method",
+              "fullType": "vega.commands.v1.UndelegateSubmission.Method",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -9441,6 +9492,46 @@
                   }
                 ]
               }
+            },
+            {
+              "name": "info_url",
+              "description": "URL with more info on the node",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": "",
+              "options": {
+                "validator.field": [
+                  {
+                    "name": "string_not_empty",
+                    "value": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "country",
+              "description": "Country code (ISO 3166-1 alpha-2) for the location of the node",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": "",
+              "options": {
+                "validator.field": [
+                  {
+                    "name": "string_not_empty",
+                    "value": true
+                  }
+                ]
+              }
             }
           ]
         },
@@ -9708,6 +9799,31 @@
               "description": "Event indicating that an oracle data has been broadcast"
             },
             {
+              "name": "BUS_EVENT_TYPE_DELEGATION_BALANCE",
+              "number": "29",
+              "description": "Event indicating that an delegation balance of a party to a node for current epoch has changed"
+            },
+            {
+              "name": "BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE",
+              "number": "30",
+              "description": "Event indicating that an delegation balance of a party to a node for next epoch has changed"
+            },
+            {
+              "name": "BUS_EVENT_TYPE_EPOCH_UPDATE",
+              "number": "31",
+              "description": "Event indicating the start or end of an epoch"
+            },
+            {
+              "name": "BUS_EVENT_TYPE_VALIDATOR_UPDATE",
+              "number": "32",
+              "description": "Event indicating that validator node has been updated"
+            },
+            {
+              "name": "BUS_EVENT_TYPE_STAKING_EVENT",
+              "number": "33",
+              "description": "Event indicating a new staking event have been processed by the network"
+            },
+            {
               "name": "BUS_EVENT_TYPE_MARKET",
               "number": "101",
               "description": "Event indicating a market related event, for example when a market opens"
@@ -9716,6 +9832,29 @@
               "name": "BUS_EVENT_TYPE_TX_ERROR",
               "number": "201",
               "description": "Event used to report failed transactions back to a user, this is excluded from the ALL type"
+            }
+          ]
+        },
+        {
+          "name": "Type",
+          "longName": "StakingEvent.Type",
+          "fullName": "vega.events.v1.StakingEvent.Type",
+          "description": "",
+          "values": [
+            {
+              "name": "TYPE_UNSPECIFIED",
+              "number": "0",
+              "description": "Default value"
+            },
+            {
+              "name": "TYPE_DEPOSIT",
+              "number": "1",
+              "description": "Indicate of a stake deposit instruction"
+            },
+            {
+              "name": "TYPE_REMOVE",
+              "number": "2",
+              "description": "Indicate of a stake remove instruction"
             }
           ]
         }
@@ -10189,6 +10328,66 @@
               "defaultValue": ""
             },
             {
+              "name": "delegation_balance",
+              "description": "Delegation balance events",
+              "label": "",
+              "type": "DelegationBalanceEvent",
+              "longType": "DelegationBalanceEvent",
+              "fullType": "vega.events.v1.DelegationBalanceEvent",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "event",
+              "defaultValue": ""
+            },
+            {
+              "name": "pending_delegation_balance",
+              "description": "Pending delegation balance events",
+              "label": "",
+              "type": "PendingDelegationBalanceEvent",
+              "longType": "PendingDelegationBalanceEvent",
+              "fullType": "vega.events.v1.PendingDelegationBalanceEvent",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "event",
+              "defaultValue": ""
+            },
+            {
+              "name": "epoch_event",
+              "description": "Epoch update events - See [Epoch](#vega.Epoch)",
+              "label": "",
+              "type": "EpochEvent",
+              "longType": "EpochEvent",
+              "fullType": "vega.events.v1.EpochEvent",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "event",
+              "defaultValue": ""
+            },
+            {
+              "name": "validator_update",
+              "description": "Validator update events",
+              "label": "",
+              "type": "ValidatorUpdate",
+              "longType": "ValidatorUpdate",
+              "fullType": "vega.events.v1.ValidatorUpdate",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "event",
+              "defaultValue": ""
+            },
+            {
+              "name": "staking_event",
+              "description": "Staking event",
+              "label": "",
+              "type": "StakingEvent",
+              "longType": "StakingEvent",
+              "fullType": "vega.events.v1.StakingEvent",
+              "ismap": false,
+              "isoneof": true,
+              "oneofdecl": "event",
+              "defaultValue": ""
+            },
+            {
               "name": "market",
               "description": "Market tick events - See [MarketEvent](#vega.MarketEvent)",
               "label": "",
@@ -10210,6 +10409,114 @@
               "ismap": false,
               "isoneof": true,
               "oneofdecl": "event",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DelegationBalanceEvent",
+          "longName": "DelegationBalanceEvent",
+          "fullName": "vega.events.v1.DelegationBalanceEvent",
+          "description": "DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "party",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_id",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "amount",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "EpochEvent",
+          "longName": "EpochEvent",
+          "fullName": "vega.events.v1.EpochEvent",
+          "description": "Epoch details",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "seq",
+              "description": "Sequence number that increases by one each epoch",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "start_time",
+              "description": "What time did this epoch start",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "expire_time",
+              "description": "What time should this epoch end",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "end_time",
+              "description": "What time did it actually end",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
               "defaultValue": ""
             }
           ]
@@ -10327,6 +10634,66 @@
               "type": "int64",
               "longType": "int64",
               "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "PendingDelegationBalanceEvent",
+          "longName": "PendingDelegationBalanceEvent",
+          "fullName": "vega.events.v1.PendingDelegationBalanceEvent",
+          "description": "PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "party",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "node_id",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "delegation_amount",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "undelegation_amount",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -10507,6 +10874,78 @@
               "type": "TradeSettlement",
               "longType": "TradeSettlement",
               "fullType": "vega.events.v1.TradeSettlement",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "StakingEvent",
+          "longName": "StakingEvent",
+          "fullName": "vega.events.v1.StakingEvent",
+          "description": "StakingEvent - an event notifying of stake being deposited or removed for a given party\nThese events are emitted for every Staking deposit or removed accepted by the network",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "id",
+              "description": "The internal ID for this staking event",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "The type of event",
+              "label": "",
+              "type": "Type",
+              "longType": "StakingEvent.Type",
+              "fullType": "vega.events.v1.StakingEvent.Type",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "ts",
+              "description": "The timestamps at which the event was emitted by ethereum",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "party",
+              "description": "The party to whom the event is directed at.",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "amount",
+              "description": "The amount of stake deposited or removed",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -10714,6 +11153,66 @@
               "ismap": false,
               "isoneof": true,
               "oneofdecl": "transaction",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ValidatorUpdate",
+          "longName": "ValidatorUpdate",
+          "fullName": "vega.events.v1.ValidatorUpdate",
+          "description": "A validator update event contains information about validator node",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "pub_key",
+              "description": "Public key of validator node",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "tm_pub_key",
+              "description": "Public key of Tendermint",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "info_url",
+              "description": "URL with more info on the node",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "country",
+              "description": "Country code (ISO 3166-1 alpha-2) for the location of the node",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
               "defaultValue": ""
             }
           ]
@@ -10932,12 +11431,12 @@
               "defaultValue": ""
             },
             {
-              "name": "undelegate_at_epoch_end_submission",
+              "name": "undelegate_submission",
               "description": "",
               "label": "",
-              "type": "UndelegateAtEpochEndSubmission",
-              "longType": "UndelegateAtEpochEndSubmission",
-              "fullType": "vega.commands.v1.UndelegateAtEpochEndSubmission",
+              "type": "UndelegateSubmission",
+              "longType": "UndelegateSubmission",
+              "fullType": "vega.commands.v1.UndelegateSubmission",
               "ismap": false,
               "isoneof": true,
               "oneofdecl": "command",
@@ -17693,12 +18192,12 @@
               "defaultValue": ""
             },
             {
-              "name": "undelegate_at_epoch_end_submission",
+              "name": "undelegate_submission",
               "description": "",
               "label": "",
-              "type": "UndelegateAtEpochEndSubmission",
-              "longType": "vega.commands.v1.UndelegateAtEpochEndSubmission",
-              "fullType": "vega.commands.v1.UndelegateAtEpochEndSubmission",
+              "type": "UndelegateSubmission",
+              "longType": "vega.commands.v1.UndelegateSubmission",
+              "fullType": "vega.commands.v1.UndelegateSubmission",
               "ismap": false,
               "isoneof": true,
               "oneofdecl": "command",

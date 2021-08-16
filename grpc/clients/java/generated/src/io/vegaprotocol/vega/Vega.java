@@ -1906,6 +1906,14 @@ public final class Vega {
      * <code>ACCOUNT_TYPE_GLOBAL_INSURANCE = 11;</code>
      */
     ACCOUNT_TYPE_GLOBAL_INSURANCE(11),
+    /**
+     * <pre>
+     * Global reward account for the asset
+     * </pre>
+     *
+     * <code>ACCOUNT_TYPE_GLOBAL_REWARD = 12;</code>
+     */
+    ACCOUNT_TYPE_GLOBAL_REWARD(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -2013,6 +2021,14 @@ public final class Vega {
      * <code>ACCOUNT_TYPE_GLOBAL_INSURANCE = 11;</code>
      */
     public static final int ACCOUNT_TYPE_GLOBAL_INSURANCE_VALUE = 11;
+    /**
+     * <pre>
+     * Global reward account for the asset
+     * </pre>
+     *
+     * <code>ACCOUNT_TYPE_GLOBAL_REWARD = 12;</code>
+     */
+    public static final int ACCOUNT_TYPE_GLOBAL_REWARD_VALUE = 12;
 
 
     public final int getNumber() {
@@ -2051,6 +2067,7 @@ public final class Vega {
         case 9: return ACCOUNT_TYPE_BOND;
         case 10: return ACCOUNT_TYPE_EXTERNAL;
         case 11: return ACCOUNT_TYPE_GLOBAL_INSURANCE;
+        case 12: return ACCOUNT_TYPE_GLOBAL_REWARD;
         default: return null;
       }
     }
@@ -2284,6 +2301,14 @@ public final class Vega {
      * <code>TRANSFER_TYPE_BOND_SLASHING = 20;</code>
      */
     TRANSFER_TYPE_BOND_SLASHING(20),
+    /**
+     * <pre>
+     * Stake reward
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_STAKE_REWARD = 21;</code>
+     */
+    TRANSFER_TYPE_STAKE_REWARD(21),
     UNRECOGNIZED(-1),
     ;
 
@@ -2455,6 +2480,14 @@ public final class Vega {
      * <code>TRANSFER_TYPE_BOND_SLASHING = 20;</code>
      */
     public static final int TRANSFER_TYPE_BOND_SLASHING_VALUE = 20;
+    /**
+     * <pre>
+     * Stake reward
+     * </pre>
+     *
+     * <code>TRANSFER_TYPE_STAKE_REWARD = 21;</code>
+     */
+    public static final int TRANSFER_TYPE_STAKE_REWARD_VALUE = 21;
 
 
     public final int getNumber() {
@@ -2502,6 +2535,7 @@ public final class Vega {
         case 18: return TRANSFER_TYPE_WITHDRAW;
         case 19: return TRANSFER_TYPE_DEPOSIT;
         case 20: return TRANSFER_TYPE_BOND_SLASHING;
+        case 21: return TRANSFER_TYPE_STAKE_REWARD;
         default: return null;
       }
     }
@@ -62529,7 +62563,7 @@ public final class Vega {
       "ER_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus" +
       "\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_" +
       "STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_RE" +
-      "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\360\002" +
+      "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\220\003" +
       "\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIE" +
       "D\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOU" +
       "NT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MAR" +
@@ -62539,26 +62573,27 @@ public final class Vega {
       "EES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRA" +
       "W\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TY" +
       "PE_EXTERNAL\020\n\022!\n\035ACCOUNT_TYPE_GLOBAL_INS" +
-      "URANCE\020\013*\263\005\n\014TransferType\022\035\n\031TRANSFER_TY" +
-      "PE_UNSPECIFIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001" +
-      "\022\025\n\021TRANSFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE" +
-      "_CLOSE\020\003\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025" +
-      "TRANSFER_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE" +
-      "_MARGIN_LOW\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HI" +
-      "GH\020\007\022$\n TRANSFER_TYPE_MARGIN_CONFISCATED" +
-      "\020\010\022\037\n\033TRANSFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037T" +
-      "RANSFER_TYPE_MAKER_FEE_RECEIVE\020\n\022(\n$TRAN" +
-      "SFER_TYPE_INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TR" +
-      "ANSFER_TYPE_INFRASTRUCTURE_FEE_DISTRIBUT" +
-      "E\020\014\022#\n\037TRANSFER_TYPE_LIQUIDITY_FEE_PAY\020\r" +
-      "\022*\n&TRANSFER_TYPE_LIQUIDITY_FEE_DISTRIBU" +
-      "TE\020\016\022\032\n\026TRANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRAN" +
-      "SFER_TYPE_BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_W" +
-      "ITHDRAW_LOCK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW" +
-      "\020\022\022\031\n\025TRANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFE" +
-      "R_TYPE_BOND_SLASHING\020\024B7\n\024io.vegaprotoco" +
-      "l.vegaZ\037code.vegaprotocol.io/vega/protob" +
-      "\006proto3"
+      "URANCE\020\013\022\036\n\032ACCOUNT_TYPE_GLOBAL_REWARD\020\014" +
+      "*\323\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPE" +
+      "CIFIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRAN" +
+      "SFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003" +
+      "\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER" +
+      "_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_" +
+      "LOW\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n " +
+      "TRANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TR" +
+      "ANSFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_" +
+      "TYPE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYP" +
+      "E_INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER_T" +
+      "YPE_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n\037T" +
+      "RANSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TRAN" +
+      "SFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026" +
+      "TRANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_TYP" +
+      "E_BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRAW_" +
+      "LOCK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025TR" +
+      "ANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE_B" +
+      "OND_SLASHING\020\024\022\036\n\032TRANSFER_TYPE_STAKE_RE" +
+      "WARD\020\025B7\n\024io.vegaprotocol.vegaZ\037code.veg" +
+      "aprotocol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

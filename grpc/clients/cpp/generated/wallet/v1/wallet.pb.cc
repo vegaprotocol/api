@@ -25,7 +25,7 @@ extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAME
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndelegateSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto;
 namespace vega {
@@ -58,7 +58,7 @@ static void InitDefaultsscc_info_SubmitTransactionRequest_wallet_2fv1_2fwallet_2
       &scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto.base,
-      &scc_info_UndelegateAtEpochEndSubmission_commands_2fv1_2fcommands_2eproto.base,
+      &scc_info_UndelegateSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
       &scc_info_NodeVote_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
       &scc_info_NodeSignature_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
@@ -105,7 +105,7 @@ const char descriptor_table_protodef_wallet_2fv1_2fwallet_2eproto[] PROTOBUF_SEC
   "\n\026wallet/v1/wallet.proto\022\016vega.wallet.v1"
   "\032\032commands/v1/commands.proto\032$commands/v"
   "1/validator_commands.proto\032\031commands/v1/"
-  "oracles.proto\"\246\n\n\030SubmitTransactionReque"
+  "oracles.proto\"\205\n\n\030SubmitTransactionReque"
   "st\022\027\n\007pub_key\030\001 \001(\tR\006pubKey\022\034\n\tpropagate"
   "\030\002 \001(\010R\tpropagate\022O\n\020order_submission\030\351\007"
   " \001(\0132!.vega.commands.v1.OrderSubmissionH"
@@ -125,22 +125,21 @@ const char descriptor_table_protodef_wallet_2fv1_2fwallet_2eproto[] PROTOBUF_SEC
   "SubmissionH\000R\034liquidityProvisionSubmissi"
   "on\022X\n\023delegate_submission\030\360\007 \001(\0132$.vega."
   "commands.v1.DelegateSubmissionH\000R\022delega"
-  "teSubmission\022\177\n\"undelegate_at_epoch_end_"
-  "submission\030\361\007 \001(\01320.vega.commands.v1.Und"
-  "elegateAtEpochEndSubmissionH\000R\036undelegat"
-  "eAtEpochEndSubmission\022R\n\021node_registrati"
-  "on\030\321\017 \001(\0132\".vega.commands.v1.NodeRegistr"
-  "ationH\000R\020nodeRegistration\022:\n\tnode_vote\030\322"
-  "\017 \001(\0132\032.vega.commands.v1.NodeVoteH\000R\010nod"
-  "eVote\022I\n\016node_signature\030\323\017 \001(\0132\037.vega.co"
-  "mmands.v1.NodeSignatureH\000R\rnodeSignature"
-  "\022@\n\013chain_event\030\324\017 \001(\0132\034.vega.commands.v"
-  "1.ChainEventH\000R\nchainEvent\022_\n\026oracle_dat"
-  "a_submission\030\271\027 \001(\0132&.vega.commands.v1.O"
-  "racleDataSubmissionH\000R\024oracleDataSubmiss"
-  "ionB\t\n\007commandBK\n\036io.vegaprotocol.vega.w"
-  "allet.v1Z)code.vegaprotocol.io/vega/prot"
-  "o/wallet/v1b\006proto3"
+  "teSubmission\022^\n\025undelegate_submission\030\361\007"
+  " \001(\0132&.vega.commands.v1.UndelegateSubmis"
+  "sionH\000R\024undelegateSubmission\022R\n\021node_reg"
+  "istration\030\321\017 \001(\0132\".vega.commands.v1.Node"
+  "RegistrationH\000R\020nodeRegistration\022:\n\tnode"
+  "_vote\030\322\017 \001(\0132\032.vega.commands.v1.NodeVote"
+  "H\000R\010nodeVote\022I\n\016node_signature\030\323\017 \001(\0132\037."
+  "vega.commands.v1.NodeSignatureH\000R\rnodeSi"
+  "gnature\022@\n\013chain_event\030\324\017 \001(\0132\034.vega.com"
+  "mands.v1.ChainEventH\000R\nchainEvent\022_\n\026ora"
+  "cle_data_submission\030\271\027 \001(\0132&.vega.comman"
+  "ds.v1.OracleDataSubmissionH\000R\024oracleData"
+  "SubmissionB\t\n\007commandBK\n\036io.vegaprotocol"
+  ".vega.wallet.v1Z)code.vegaprotocol.io/ve"
+  "ga/proto/wallet/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_wallet_2fv1_2fwallet_2eproto_deps[3] = {
   &::descriptor_table_commands_2fv1_2fcommands_2eproto,
@@ -152,7 +151,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_wal
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_wallet_2fv1_2fwallet_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_wallet_2fv1_2fwallet_2eproto = {
-  false, false, descriptor_table_protodef_wallet_2fv1_2fwallet_2eproto, "wallet/v1/wallet.proto", 1539,
+  false, false, descriptor_table_protodef_wallet_2fv1_2fwallet_2eproto, "wallet/v1/wallet.proto", 1506,
   &descriptor_table_wallet_2fv1_2fwallet_2eproto_once, descriptor_table_wallet_2fv1_2fwallet_2eproto_sccs, descriptor_table_wallet_2fv1_2fwallet_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_wallet_2fv1_2fwallet_2eproto::offsets,
   file_level_metadata_wallet_2fv1_2fwallet_2eproto, 1, file_level_enum_descriptors_wallet_2fv1_2fwallet_2eproto, file_level_service_descriptors_wallet_2fv1_2fwallet_2eproto,
@@ -176,7 +175,7 @@ class SubmitTransactionRequest::_Internal {
   static const ::vega::commands::v1::VoteSubmission& vote_submission(const SubmitTransactionRequest* msg);
   static const ::vega::commands::v1::LiquidityProvisionSubmission& liquidity_provision_submission(const SubmitTransactionRequest* msg);
   static const ::vega::commands::v1::DelegateSubmission& delegate_submission(const SubmitTransactionRequest* msg);
-  static const ::vega::commands::v1::UndelegateAtEpochEndSubmission& undelegate_at_epoch_end_submission(const SubmitTransactionRequest* msg);
+  static const ::vega::commands::v1::UndelegateSubmission& undelegate_submission(const SubmitTransactionRequest* msg);
   static const ::vega::commands::v1::NodeRegistration& node_registration(const SubmitTransactionRequest* msg);
   static const ::vega::commands::v1::NodeVote& node_vote(const SubmitTransactionRequest* msg);
   static const ::vega::commands::v1::NodeSignature& node_signature(const SubmitTransactionRequest* msg);
@@ -216,9 +215,9 @@ const ::vega::commands::v1::DelegateSubmission&
 SubmitTransactionRequest::_Internal::delegate_submission(const SubmitTransactionRequest* msg) {
   return *msg->command_.delegate_submission_;
 }
-const ::vega::commands::v1::UndelegateAtEpochEndSubmission&
-SubmitTransactionRequest::_Internal::undelegate_at_epoch_end_submission(const SubmitTransactionRequest* msg) {
-  return *msg->command_.undelegate_at_epoch_end_submission_;
+const ::vega::commands::v1::UndelegateSubmission&
+SubmitTransactionRequest::_Internal::undelegate_submission(const SubmitTransactionRequest* msg) {
+  return *msg->command_.undelegate_submission_;
 }
 const ::vega::commands::v1::NodeRegistration&
 SubmitTransactionRequest::_Internal::node_registration(const SubmitTransactionRequest* msg) {
@@ -424,25 +423,25 @@ void SubmitTransactionRequest::clear_delegate_submission() {
     clear_has_command();
   }
 }
-void SubmitTransactionRequest::set_allocated_undelegate_at_epoch_end_submission(::vega::commands::v1::UndelegateAtEpochEndSubmission* undelegate_at_epoch_end_submission) {
+void SubmitTransactionRequest::set_allocated_undelegate_submission(::vega::commands::v1::UndelegateSubmission* undelegate_submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_command();
-  if (undelegate_at_epoch_end_submission) {
+  if (undelegate_submission) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(undelegate_at_epoch_end_submission)->GetArena();
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(undelegate_submission)->GetArena();
     if (message_arena != submessage_arena) {
-      undelegate_at_epoch_end_submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, undelegate_at_epoch_end_submission, submessage_arena);
+      undelegate_submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, undelegate_submission, submessage_arena);
     }
-    set_has_undelegate_at_epoch_end_submission();
-    command_.undelegate_at_epoch_end_submission_ = undelegate_at_epoch_end_submission;
+    set_has_undelegate_submission();
+    command_.undelegate_submission_ = undelegate_submission;
   }
-  // @@protoc_insertion_point(field_set_allocated:vega.wallet.v1.SubmitTransactionRequest.undelegate_at_epoch_end_submission)
+  // @@protoc_insertion_point(field_set_allocated:vega.wallet.v1.SubmitTransactionRequest.undelegate_submission)
 }
-void SubmitTransactionRequest::clear_undelegate_at_epoch_end_submission() {
-  if (_internal_has_undelegate_at_epoch_end_submission()) {
+void SubmitTransactionRequest::clear_undelegate_submission() {
+  if (_internal_has_undelegate_submission()) {
     if (GetArena() == nullptr) {
-      delete command_.undelegate_at_epoch_end_submission_;
+      delete command_.undelegate_submission_;
     }
     clear_has_command();
   }
@@ -611,8 +610,8 @@ SubmitTransactionRequest::SubmitTransactionRequest(const SubmitTransactionReques
       _internal_mutable_delegate_submission()->::vega::commands::v1::DelegateSubmission::MergeFrom(from._internal_delegate_submission());
       break;
     }
-    case kUndelegateAtEpochEndSubmission: {
-      _internal_mutable_undelegate_at_epoch_end_submission()->::vega::commands::v1::UndelegateAtEpochEndSubmission::MergeFrom(from._internal_undelegate_at_epoch_end_submission());
+    case kUndelegateSubmission: {
+      _internal_mutable_undelegate_submission()->::vega::commands::v1::UndelegateSubmission::MergeFrom(from._internal_undelegate_submission());
       break;
     }
     case kNodeRegistration: {
@@ -729,9 +728,9 @@ void SubmitTransactionRequest::clear_command() {
       }
       break;
     }
-    case kUndelegateAtEpochEndSubmission: {
+    case kUndelegateSubmission: {
       if (GetArena() == nullptr) {
-        delete command_.undelegate_at_epoch_end_submission_;
+        delete command_.undelegate_submission_;
       }
       break;
     }
@@ -864,10 +863,10 @@ const char* SubmitTransactionRequest::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];
+      // .vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];
       case 1009:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
-          ptr = ctx->ParseMessage(_internal_mutable_undelegate_at_epoch_end_submission(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_undelegate_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1014,12 +1013,12 @@ failure:
         1008, _Internal::delegate_submission(this), target, stream);
   }
 
-  // .vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];
-  if (_internal_has_undelegate_at_epoch_end_submission()) {
+  // .vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];
+  if (_internal_has_undelegate_submission()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1009, _Internal::undelegate_at_epoch_end_submission(this), target, stream);
+        1009, _Internal::undelegate_submission(this), target, stream);
   }
 
   // .vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];
@@ -1147,11 +1146,11 @@ size_t SubmitTransactionRequest::ByteSizeLong() const {
           *command_.delegate_submission_);
       break;
     }
-    // .vega.commands.v1.UndelegateAtEpochEndSubmission undelegate_at_epoch_end_submission = 1009 [json_name = "undelegateAtEpochEndSubmission"];
-    case kUndelegateAtEpochEndSubmission: {
+    // .vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];
+    case kUndelegateSubmission: {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *command_.undelegate_at_epoch_end_submission_);
+          *command_.undelegate_submission_);
       break;
     }
     // .vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];
@@ -1263,8 +1262,8 @@ void SubmitTransactionRequest::MergeFrom(const SubmitTransactionRequest& from) {
       _internal_mutable_delegate_submission()->::vega::commands::v1::DelegateSubmission::MergeFrom(from._internal_delegate_submission());
       break;
     }
-    case kUndelegateAtEpochEndSubmission: {
-      _internal_mutable_undelegate_at_epoch_end_submission()->::vega::commands::v1::UndelegateAtEpochEndSubmission::MergeFrom(from._internal_undelegate_at_epoch_end_submission());
+    case kUndelegateSubmission: {
+      _internal_mutable_undelegate_submission()->::vega::commands::v1::UndelegateSubmission::MergeFrom(from._internal_undelegate_submission());
       break;
     }
     case kNodeRegistration: {

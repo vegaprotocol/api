@@ -9989,24 +9989,16 @@ public final class Commands {
 
   }
 
-  public interface UndelegateAtEpochEndSubmissionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.commands.v1.UndelegateAtEpochEndSubmission)
+  public interface UndelegateSubmissionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.commands.v1.UndelegateSubmission)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * The ID for the node to undelegate from
-     * </pre>
-     *
      * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
      * @return The nodeId.
      */
     java.lang.String getNodeId();
     /**
-     * <pre>
-     * The ID for the node to undelegate from
-     * </pre>
-     *
      * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
      * @return The bytes for nodeId.
      */
@@ -10015,39 +10007,47 @@ public final class Commands {
 
     /**
      * <pre>
-     * The amount of stake to undelegate
+     * optional, if not specified = ALL
      * </pre>
      *
      * <code>uint64 amount = 2 [json_name = "amount"];</code>
      * @return The amount.
      */
     long getAmount();
+
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+     * @return The enum numeric value on the wire for method.
+     */
+    int getMethodValue();
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+     * @return The method.
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method getMethod();
   }
   /**
-   * <pre>
-   * A command to submit an instruction to undelete stake from a node
-   * </pre>
-   *
-   * Protobuf type {@code vega.commands.v1.UndelegateAtEpochEndSubmission}
+   * Protobuf type {@code vega.commands.v1.UndelegateSubmission}
    */
-  public static final class UndelegateAtEpochEndSubmission extends
+  public static final class UndelegateSubmission extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.commands.v1.UndelegateAtEpochEndSubmission)
-      UndelegateAtEpochEndSubmissionOrBuilder {
+      // @@protoc_insertion_point(message_implements:vega.commands.v1.UndelegateSubmission)
+      UndelegateSubmissionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UndelegateAtEpochEndSubmission.newBuilder() to construct.
-    private UndelegateAtEpochEndSubmission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UndelegateSubmission.newBuilder() to construct.
+    private UndelegateSubmission(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UndelegateAtEpochEndSubmission() {
+    private UndelegateSubmission() {
       nodeId_ = "";
+      method_ = 0;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UndelegateAtEpochEndSubmission();
+      return new UndelegateSubmission();
     }
 
     @java.lang.Override
@@ -10055,7 +10055,7 @@ public final class Commands {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UndelegateAtEpochEndSubmission(
+    private UndelegateSubmission(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10084,6 +10084,12 @@ public final class Commands {
               amount_ = input.readUInt64();
               break;
             }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              method_ = rawValue;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -10105,24 +10111,146 @@ public final class Commands {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_descriptor;
+      return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateSubmission_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_fieldAccessorTable
+      return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateSubmission_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.class, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder.class);
+              io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.class, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code vega.commands.v1.UndelegateSubmission.Method}
+     */
+    public enum Method
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>METHOD_UNSPECIFIED = 0;</code>
+       */
+      METHOD_UNSPECIFIED(0),
+      /**
+       * <code>METHOD_NOW = 1;</code>
+       */
+      METHOD_NOW(1),
+      /**
+       * <code>METHOD_AT_END_OF_EPOCH = 2;</code>
+       */
+      METHOD_AT_END_OF_EPOCH(2),
+      /**
+       * <code>METHOD_IN_ANGER = 3;</code>
+       */
+      METHOD_IN_ANGER(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>METHOD_UNSPECIFIED = 0;</code>
+       */
+      public static final int METHOD_UNSPECIFIED_VALUE = 0;
+      /**
+       * <code>METHOD_NOW = 1;</code>
+       */
+      public static final int METHOD_NOW_VALUE = 1;
+      /**
+       * <code>METHOD_AT_END_OF_EPOCH = 2;</code>
+       */
+      public static final int METHOD_AT_END_OF_EPOCH_VALUE = 2;
+      /**
+       * <code>METHOD_IN_ANGER = 3;</code>
+       */
+      public static final int METHOD_IN_ANGER_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Method valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Method forNumber(int value) {
+        switch (value) {
+          case 0: return METHOD_UNSPECIFIED;
+          case 1: return METHOD_NOW;
+          case 2: return METHOD_AT_END_OF_EPOCH;
+          case 3: return METHOD_IN_ANGER;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Method>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Method> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Method>() {
+              public Method findValueByNumber(int number) {
+                return Method.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Method[] VALUES = values();
+
+      public static Method valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Method(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:vega.commands.v1.UndelegateSubmission.Method)
     }
 
     public static final int NODE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object nodeId_;
     /**
-     * <pre>
-     * The ID for the node to undelegate from
-     * </pre>
-     *
      * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
      * @return The nodeId.
      */
@@ -10140,10 +10268,6 @@ public final class Commands {
       }
     }
     /**
-     * <pre>
-     * The ID for the node to undelegate from
-     * </pre>
-     *
      * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
      * @return The bytes for nodeId.
      */
@@ -10166,7 +10290,7 @@ public final class Commands {
     private long amount_;
     /**
      * <pre>
-     * The amount of stake to undelegate
+     * optional, if not specified = ALL
      * </pre>
      *
      * <code>uint64 amount = 2 [json_name = "amount"];</code>
@@ -10175,6 +10299,25 @@ public final class Commands {
     @java.lang.Override
     public long getAmount() {
       return amount_;
+    }
+
+    public static final int METHOD_FIELD_NUMBER = 3;
+    private int method_;
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+     * @return The enum numeric value on the wire for method.
+     */
+    @java.lang.Override public int getMethodValue() {
+      return method_;
+    }
+    /**
+     * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+     * @return The method.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method getMethod() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method result = io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.valueOf(method_);
+      return result == null ? io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10197,6 +10340,9 @@ public final class Commands {
       if (amount_ != 0L) {
         output.writeUInt64(2, amount_);
       }
+      if (method_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.METHOD_UNSPECIFIED.getNumber()) {
+        output.writeEnum(3, method_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10213,6 +10359,10 @@ public final class Commands {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(2, amount_);
       }
+      if (method_ != io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.METHOD_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, method_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10223,15 +10373,16 @@ public final class Commands {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission)) {
+      if (!(obj instanceof io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission)) {
         return super.equals(obj);
       }
-      io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) obj;
+      io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission other = (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) obj;
 
       if (!getNodeId()
           .equals(other.getNodeId())) return false;
       if (getAmount()
           != other.getAmount()) return false;
+      if (method_ != other.method_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10248,74 +10399,76 @@ public final class Commands {
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAmount());
+      hash = (37 * hash) + METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + method_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(byte[] data)
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseDelimitedFrom(java.io.InputStream input)
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseDelimitedFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parseFrom(
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10328,7 +10481,7 @@ public final class Commands {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission prototype) {
+    public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10344,30 +10497,26 @@ public final class Commands {
       return builder;
     }
     /**
-     * <pre>
-     * A command to submit an instruction to undelete stake from a node
-     * </pre>
-     *
-     * Protobuf type {@code vega.commands.v1.UndelegateAtEpochEndSubmission}
+     * Protobuf type {@code vega.commands.v1.UndelegateSubmission}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.commands.v1.UndelegateAtEpochEndSubmission)
-        io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmissionOrBuilder {
+        // @@protoc_insertion_point(builder_implements:vega.commands.v1.UndelegateSubmission)
+        io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmissionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_descriptor;
+        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateSubmission_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_fieldAccessorTable
+        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateSubmission_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.class, io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.Builder.class);
+                io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.class, io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Builder.class);
       }
 
-      // Construct using io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.newBuilder()
+      // Construct using io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10389,23 +10538,25 @@ public final class Commands {
 
         amount_ = 0L;
 
+        method_ = 0;
+
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_descriptor;
+        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_UndelegateSubmission_descriptor;
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance();
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance();
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission build() {
-        io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission result = buildPartial();
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission build() {
+        io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10413,10 +10564,11 @@ public final class Commands {
       }
 
       @java.lang.Override
-      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission buildPartial() {
-        io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission(this);
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission buildPartial() {
+        io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission result = new io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission(this);
         result.nodeId_ = nodeId_;
         result.amount_ = amount_;
+        result.method_ = method_;
         onBuilt();
         return result;
       }
@@ -10455,22 +10607,25 @@ public final class Commands {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) {
-          return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission)other);
+        if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) {
+          return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission other) {
-        if (other == io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission.getDefaultInstance()) return this;
+      public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission other) {
+        if (other == io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.getDefaultInstance()) return this;
         if (!other.getNodeId().isEmpty()) {
           nodeId_ = other.nodeId_;
           onChanged();
         }
         if (other.getAmount() != 0L) {
           setAmount(other.getAmount());
+        }
+        if (other.method_ != 0) {
+          setMethodValue(other.getMethodValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10487,11 +10642,11 @@ public final class Commands {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission parsedMessage = null;
+        io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission) e.getUnfinishedMessage();
+          parsedMessage = (io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10503,10 +10658,6 @@ public final class Commands {
 
       private java.lang.Object nodeId_ = "";
       /**
-       * <pre>
-       * The ID for the node to undelegate from
-       * </pre>
-       *
        * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
        * @return The nodeId.
        */
@@ -10523,10 +10674,6 @@ public final class Commands {
         }
       }
       /**
-       * <pre>
-       * The ID for the node to undelegate from
-       * </pre>
-       *
        * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
        * @return The bytes for nodeId.
        */
@@ -10544,10 +10691,6 @@ public final class Commands {
         }
       }
       /**
-       * <pre>
-       * The ID for the node to undelegate from
-       * </pre>
-       *
        * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
        * @param value The nodeId to set.
        * @return This builder for chaining.
@@ -10563,10 +10706,6 @@ public final class Commands {
         return this;
       }
       /**
-       * <pre>
-       * The ID for the node to undelegate from
-       * </pre>
-       *
        * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -10577,10 +10716,6 @@ public final class Commands {
         return this;
       }
       /**
-       * <pre>
-       * The ID for the node to undelegate from
-       * </pre>
-       *
        * <code>string node_id = 1 [json_name = "nodeId", (.validator.field) = { ... }</code>
        * @param value The bytes for nodeId to set.
        * @return This builder for chaining.
@@ -10600,7 +10735,7 @@ public final class Commands {
       private long amount_ ;
       /**
        * <pre>
-       * The amount of stake to undelegate
+       * optional, if not specified = ALL
        * </pre>
        *
        * <code>uint64 amount = 2 [json_name = "amount"];</code>
@@ -10612,7 +10747,7 @@ public final class Commands {
       }
       /**
        * <pre>
-       * The amount of stake to undelegate
+       * optional, if not specified = ALL
        * </pre>
        *
        * <code>uint64 amount = 2 [json_name = "amount"];</code>
@@ -10627,7 +10762,7 @@ public final class Commands {
       }
       /**
        * <pre>
-       * The amount of stake to undelegate
+       * optional, if not specified = ALL
        * </pre>
        *
        * <code>uint64 amount = 2 [json_name = "amount"];</code>
@@ -10636,6 +10771,60 @@ public final class Commands {
       public Builder clearAmount() {
 
         amount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int method_ = 0;
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+       * @return The enum numeric value on the wire for method.
+       */
+      @java.lang.Override public int getMethodValue() {
+        return method_;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+       * @param value The enum numeric value on the wire for method to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMethodValue(int value) {
+
+        method_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+       * @return The method.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method getMethod() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method result = io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.valueOf(method_);
+        return result == null ? io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+       * @param value The method to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMethod(io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission.Method value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        method_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.vega.commands.v1.UndelegateSubmission.Method method = 3 [json_name = "method"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMethod() {
+
+        method_ = 0;
         onChanged();
         return this;
       }
@@ -10652,41 +10841,41 @@ public final class Commands {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:vega.commands.v1.UndelegateAtEpochEndSubmission)
+      // @@protoc_insertion_point(builder_scope:vega.commands.v1.UndelegateSubmission)
     }
 
-    // @@protoc_insertion_point(class_scope:vega.commands.v1.UndelegateAtEpochEndSubmission)
-    private static final io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:vega.commands.v1.UndelegateSubmission)
+    private static final io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission();
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission();
     }
 
-    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission getDefaultInstance() {
+    public static io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UndelegateAtEpochEndSubmission>
-        PARSER = new com.google.protobuf.AbstractParser<UndelegateAtEpochEndSubmission>() {
+    private static final com.google.protobuf.Parser<UndelegateSubmission>
+        PARSER = new com.google.protobuf.AbstractParser<UndelegateSubmission>() {
       @java.lang.Override
-      public UndelegateAtEpochEndSubmission parsePartialFrom(
+      public UndelegateSubmission parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UndelegateAtEpochEndSubmission(input, extensionRegistry);
+        return new UndelegateSubmission(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UndelegateAtEpochEndSubmission> parser() {
+    public static com.google.protobuf.Parser<UndelegateSubmission> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UndelegateAtEpochEndSubmission> getParserForType() {
+    public com.google.protobuf.Parser<UndelegateSubmission> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateAtEpochEndSubmission getDefaultInstanceForType() {
+    public io.vegaprotocol.vega.commands.v1.Commands.UndelegateSubmission getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10733,10 +10922,10 @@ public final class Commands {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_DelegateSubmission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_descriptor;
+    internal_static_vega_commands_v1_UndelegateSubmission_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_fieldAccessorTable;
+      internal_static_vega_commands_v1_UndelegateSubmission_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10786,11 +10975,15 @@ public final class Commands {
       "B\006\342\337\037\002X\001R\nproposalId\022&\n\005value\030\002 \001(\0162\020.ve" +
       "ga.Vote.ValueR\005value\"M\n\022DelegateSubmissi" +
       "on\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006nodeId\022\026\n\006a" +
-      "mount\030\002 \001(\004R\006amount\"Y\n\036UndelegateAtEpoch" +
-      "EndSubmission\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006" +
-      "nodeId\022\026\n\006amount\030\002 \001(\004R\006amountBO\n io.veg" +
-      "aprotocol.vega.commands.v1Z+code.vegapro" +
-      "tocol.io/vega/proto/commands/v1b\006proto3"
+      "mount\030\002 \001(\004R\006amount\"\371\001\n\024UndelegateSubmis" +
+      "sion\022\037\n\007node_id\030\001 \001(\tB\006\342\337\037\002X\001R\006nodeId\022\026\n" +
+      "\006amount\030\002 \001(\004R\006amount\022E\n\006method\030\003 \001(\0162-." +
+      "vega.commands.v1.UndelegateSubmission.Me" +
+      "thodR\006method\"a\n\006Method\022\026\n\022METHOD_UNSPECI" +
+      "FIED\020\000\022\016\n\nMETHOD_NOW\020\001\022\032\n\026METHOD_AT_END_" +
+      "OF_EPOCH\020\002\022\023\n\017METHOD_IN_ANGER\020\003BO\n io.ve" +
+      "gaprotocol.vega.commands.v1Z+code.vegapr" +
+      "otocol.io/vega/proto/commands/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10848,12 +11041,12 @@ public final class Commands {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_DelegateSubmission_descriptor,
         new java.lang.String[] { "NodeId", "Amount", });
-    internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_descriptor =
+    internal_static_vega_commands_v1_UndelegateSubmission_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_fieldAccessorTable = new
+    internal_static_vega_commands_v1_UndelegateSubmission_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_commands_v1_UndelegateAtEpochEndSubmission_descriptor,
-        new java.lang.String[] { "NodeId", "Amount", });
+        internal_static_vega_commands_v1_UndelegateSubmission_descriptor,
+        new java.lang.String[] { "NodeId", "Amount", "Method", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);
