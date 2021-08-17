@@ -28,7 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\036io.vegaprotocol.vega.events.v1Z)code.vegaprotocol.io/vega/proto/events/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x65vents/v1/events.proto\x12\x0evega.events.v1\x1a\rmarkets.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\nvega.proto\x1a\x15oracles/v1/spec.proto\x1a\x15oracles/v1/data.proto\x1a\x1a\x63ommands/v1/commands.proto\x1a$commands/v1/validator_commands.proto\"D\n\x0bMarketEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x18\n\x07payload\x18\x02 \x01(\tR\x07payload\"\xa6\x05\n\x0cTxErrorEvent\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x17\n\x07\x65rr_msg\x18\x02 \x01(\tR\x06\x65rrMsg\x12N\n\x10order_submission\x18\x65 \x01(\x0b\x32!.vega.commands.v1.OrderSubmissionH\x00R\x0forderSubmission\x12K\n\x0forder_amendment\x18\x66 \x01(\x0b\x32 .vega.commands.v1.OrderAmendmentH\x00R\x0eorderAmendment\x12T\n\x12order_cancellation\x18g \x01(\x0b\x32#.vega.commands.v1.OrderCancellationH\x00R\x11orderCancellation\x12\x42\n\x08proposal\x18h \x01(\x0b\x32$.vega.commands.v1.ProposalSubmissionH\x00R\x08proposal\x12K\n\x0fvote_submission\x18i \x01(\x0b\x32 .vega.commands.v1.VoteSubmissionH\x00R\x0evoteSubmission\x12v\n\x1eliquidity_provision_submission\x18j \x01(\x0b\x32..vega.commands.v1.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmission\x12W\n\x13withdraw_submission\x18k \x01(\x0b\x32$.vega.commands.v1.WithdrawSubmissionH\x00R\x12withdrawSubmissionB\r\n\x0btransaction\"*\n\nTimeUpdate\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"I\n\x11TransferResponses\x12\x34\n\tresponses\x18\x01 \x03(\x0b\x32\x16.vega.TransferResponseR\tresponses\"\x88\x01\n\x12PositionResolution\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x1e\n\ndistressed\x18\x02 \x01(\x03R\ndistressed\x12\x16\n\x06\x63losed\x18\x03 \x01(\x03R\x06\x63losed\x12\x1d\n\nmark_price\x18\x04 \x01(\x04R\tmarkPrice\"c\n\x11LossSocialization\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x03R\x06\x61mount\";\n\x0fTradeSettlement\x12\x12\n\x04size\x18\x01 \x01(\x03R\x04size\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\"\xac\x01\n\x0eSettlePosition\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x14\n\x05price\x18\x03 \x01(\x04R\x05price\x12L\n\x11trade_settlements\x18\x04 \x03(\x0b\x32\x1f.vega.events.v1.TradeSettlementR\x10tradeSettlements\"x\n\x10SettleDistressed\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06margin\x18\x03 \x01(\x04R\x06margin\x12\x14\n\x05price\x18\x04 \x01(\x04R\x05price\"0\n\nMarketTick\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04time\x18\x02 \x01(\x03R\x04time\"\x85\x02\n\x0c\x41uctionEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\'\n\x0fopening_auction\x18\x02 \x01(\x08R\x0eopeningAuction\x12\x14\n\x05leave\x18\x03 \x01(\x08R\x05leave\x12\x14\n\x05start\x18\x04 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x05 \x01(\x03R\x03\x65nd\x12.\n\x07trigger\x18\x06 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x07trigger\x12\x41\n\x11\x65xtension_trigger\x18\x07 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x10\x65xtensionTrigger\"\x8e\x0e\n\x08\x42usEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05\x62lock\x18\x02 \x01(\tR\x05\x62lock\x12\x30\n\x04type\x18\x03 \x01(\x0e\x32\x1c.vega.events.v1.BusEventTypeR\x04type\x12=\n\x0btime_update\x18\x65 \x01(\x0b\x32\x1a.vega.events.v1.TimeUpdateH\x00R\ntimeUpdate\x12R\n\x12transfer_responses\x18\x66 \x01(\x0b\x32!.vega.events.v1.TransferResponsesH\x00R\x11transferResponses\x12U\n\x13position_resolution\x18g \x01(\x0b\x32\".vega.events.v1.PositionResolutionH\x00R\x12positionResolution\x12#\n\x05order\x18h \x01(\x0b\x32\x0b.vega.OrderH\x00R\x05order\x12)\n\x07\x61\x63\x63ount\x18i \x01(\x0b\x32\r.vega.AccountH\x00R\x07\x61\x63\x63ount\x12#\n\x05party\x18j \x01(\x0b\x32\x0b.vega.PartyH\x00R\x05party\x12#\n\x05trade\x18k \x01(\x0b\x32\x0b.vega.TradeH\x00R\x05trade\x12\x39\n\rmargin_levels\x18l \x01(\x0b\x32\x12.vega.MarginLevelsH\x00R\x0cmarginLevels\x12,\n\x08proposal\x18m \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18n \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12\x33\n\x0bmarket_data\x18o \x01(\x0b\x32\x10.vega.MarketDataH\x00R\nmarketData\x12H\n\x0enode_signature\x18p \x01(\x0b\x32\x1f.vega.commands.v1.NodeSignatureH\x00R\rnodeSignature\x12R\n\x12loss_socialization\x18q \x01(\x0b\x32!.vega.events.v1.LossSocializationH\x00R\x11lossSocialization\x12I\n\x0fsettle_position\x18r \x01(\x0b\x32\x1e.vega.events.v1.SettlePositionH\x00R\x0esettlePosition\x12O\n\x11settle_distressed\x18s \x01(\x0b\x32 .vega.events.v1.SettleDistressedH\x00R\x10settleDistressed\x12\x35\n\x0emarket_created\x18t \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketCreated\x12#\n\x05\x61sset\x18u \x01(\x0b\x32\x0b.vega.AssetH\x00R\x05\x61sset\x12=\n\x0bmarket_tick\x18v \x01(\x0b\x32\x1a.vega.events.v1.MarketTickH\x00R\nmarketTick\x12\x32\n\nwithdrawal\x18w \x01(\x0b\x32\x10.vega.WithdrawalH\x00R\nwithdrawal\x12)\n\x07\x64\x65posit\x18x \x01(\x0b\x32\r.vega.DepositH\x00R\x07\x64\x65posit\x12\x38\n\x07\x61uction\x18y \x01(\x0b\x32\x1c.vega.events.v1.AuctionEventH\x00R\x07\x61uction\x12\x33\n\x0brisk_factor\x18z \x01(\x0b\x32\x10.vega.RiskFactorH\x00R\nriskFactor\x12\x45\n\x11network_parameter\x18{ \x01(\x0b\x32\x16.vega.NetworkParameterH\x00R\x10networkParameter\x12K\n\x13liquidity_provision\x18| \x01(\x0b\x32\x18.vega.LiquidityProvisionH\x00R\x12liquidityProvision\x12\x35\n\x0emarket_updated\x18} \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketUpdated\x12\x39\n\x0boracle_spec\x18~ \x01(\x0b\x32\x16.oracles.v1.OracleSpecH\x00R\noracleSpec\x12\x39\n\x0boracle_data\x18\x7f \x01(\x0b\x32\x16.oracles.v1.OracleDataH\x00R\noracleData\x12\x36\n\x06market\x18\xe9\x07 \x01(\x0b\x32\x1b.vega.events.v1.MarketEventH\x00R\x06market\x12\x41\n\x0ctx_err_event\x18\xd1\x0f \x01(\x0b\x32\x1c.vega.events.v1.TxErrorEventH\x00R\ntxErrEventB\x07\n\x05\x65vent*\xe9\x07\n\x0c\x42usEventType\x12\x1e\n\x1a\x42US_EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42US_EVENT_TYPE_ALL\x10\x01\x12\x1e\n\x1a\x42US_EVENT_TYPE_TIME_UPDATE\x10\x02\x12%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\x10\x03\x12&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\x10\x04\x12\x18\n\x14\x42US_EVENT_TYPE_ORDER\x10\x05\x12\x1a\n\x16\x42US_EVENT_TYPE_ACCOUNT\x10\x06\x12\x18\n\x14\x42US_EVENT_TYPE_PARTY\x10\x07\x12\x18\n\x14\x42US_EVENT_TYPE_TRADE\x10\x08\x12 \n\x1c\x42US_EVENT_TYPE_MARGIN_LEVELS\x10\t\x12\x1b\n\x17\x42US_EVENT_TYPE_PROPOSAL\x10\n\x12\x17\n\x13\x42US_EVENT_TYPE_VOTE\x10\x0b\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_DATA\x10\x0c\x12!\n\x1d\x42US_EVENT_TYPE_NODE_SIGNATURE\x10\r\x12%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\x10\x0e\x12\"\n\x1e\x42US_EVENT_TYPE_SETTLE_POSITION\x10\x0f\x12$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\x10\x10\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_CREATED\x10\x11\x12\x18\n\x14\x42US_EVENT_TYPE_ASSET\x10\x12\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_TICK\x10\x13\x12\x1d\n\x19\x42US_EVENT_TYPE_WITHDRAWAL\x10\x14\x12\x1a\n\x16\x42US_EVENT_TYPE_DEPOSIT\x10\x15\x12\x1a\n\x16\x42US_EVENT_TYPE_AUCTION\x10\x16\x12\x1e\n\x1a\x42US_EVENT_TYPE_RISK_FACTOR\x10\x17\x12$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\x10\x18\x12&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION\x10\x19\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_UPDATED\x10\x1a\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_SPEC\x10\x1b\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_DATA\x10\x1c\x12\x19\n\x15\x42US_EVENT_TYPE_MARKET\x10\x65\x12\x1c\n\x17\x42US_EVENT_TYPE_TX_ERROR\x10\xc9\x01\x42K\n\x1eio.vegaprotocol.vega.events.v1Z)code.vegaprotocol.io/vega/proto/events/v1b\x06proto3'
+  serialized_pb=b'\n\x16\x65vents/v1/events.proto\x12\x0evega.events.v1\x1a\rmarkets.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\nvega.proto\x1a\x15oracles/v1/spec.proto\x1a\x15oracles/v1/data.proto\x1a\x1a\x63ommands/v1/commands.proto\x1a$commands/v1/validator_commands.proto\"\xd4\x01\n\x0cStakingEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x35\n\x04type\x18\x02 \x01(\x0e\x32!.vega.events.v1.StakingEvent.TypeR\x04type\x12\x0e\n\x02ts\x18\x03 \x01(\x03R\x02ts\x12\x14\n\x05party\x18\x04 \x01(\tR\x05party\x12\x16\n\x06\x61mount\x18\x05 \x01(\tR\x06\x61mount\"?\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cTYPE_DEPOSIT\x10\x01\x12\x0f\n\x0bTYPE_REMOVE\x10\x02\"_\n\x16\x44\x65legationBalanceEvent\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x17\n\x07node_id\x18\x02 \x01(\tR\x06nodeId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x04R\x06\x61mount\"\xac\x01\n\x1dPendingDelegationBalanceEvent\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x17\n\x07node_id\x18\x02 \x01(\tR\x06nodeId\x12+\n\x11\x64\x65legation_amount\x18\x03 \x01(\x04R\x10\x64\x65legationAmount\x12/\n\x13undelegation_amount\x18\x04 \x01(\x04R\x12undelegationAmount\"D\n\x0bMarketEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x18\n\x07payload\x18\x02 \x01(\tR\x07payload\"\xa6\x05\n\x0cTxErrorEvent\x12\x19\n\x08party_id\x18\x01 \x01(\tR\x07partyId\x12\x17\n\x07\x65rr_msg\x18\x02 \x01(\tR\x06\x65rrMsg\x12N\n\x10order_submission\x18\x65 \x01(\x0b\x32!.vega.commands.v1.OrderSubmissionH\x00R\x0forderSubmission\x12K\n\x0forder_amendment\x18\x66 \x01(\x0b\x32 .vega.commands.v1.OrderAmendmentH\x00R\x0eorderAmendment\x12T\n\x12order_cancellation\x18g \x01(\x0b\x32#.vega.commands.v1.OrderCancellationH\x00R\x11orderCancellation\x12\x42\n\x08proposal\x18h \x01(\x0b\x32$.vega.commands.v1.ProposalSubmissionH\x00R\x08proposal\x12K\n\x0fvote_submission\x18i \x01(\x0b\x32 .vega.commands.v1.VoteSubmissionH\x00R\x0evoteSubmission\x12v\n\x1eliquidity_provision_submission\x18j \x01(\x0b\x32..vega.commands.v1.LiquidityProvisionSubmissionH\x00R\x1cliquidityProvisionSubmission\x12W\n\x13withdraw_submission\x18k \x01(\x0b\x32$.vega.commands.v1.WithdrawSubmissionH\x00R\x12withdrawSubmissionB\r\n\x0btransaction\"*\n\nTimeUpdate\x12\x1c\n\ttimestamp\x18\x01 \x01(\x03R\ttimestamp\"y\n\nEpochEvent\x12\x10\n\x03seq\x18\x01 \x01(\x04R\x03seq\x12\x1d\n\nstart_time\x18\x02 \x01(\x03R\tstartTime\x12\x1f\n\x0b\x65xpire_time\x18\x03 \x01(\x03R\nexpireTime\x12\x19\n\x08\x65nd_time\x18\x04 \x01(\x03R\x07\x65ndTime\"I\n\x11TransferResponses\x12\x34\n\tresponses\x18\x01 \x03(\x0b\x32\x16.vega.TransferResponseR\tresponses\"\x88\x01\n\x12PositionResolution\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x1e\n\ndistressed\x18\x02 \x01(\x03R\ndistressed\x12\x16\n\x06\x63losed\x18\x03 \x01(\x03R\x06\x63losed\x12\x1d\n\nmark_price\x18\x04 \x01(\x04R\tmarkPrice\"c\n\x11LossSocialization\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06\x61mount\x18\x03 \x01(\x03R\x06\x61mount\";\n\x0fTradeSettlement\x12\x12\n\x04size\x18\x01 \x01(\x03R\x04size\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\"\xac\x01\n\x0eSettlePosition\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x14\n\x05price\x18\x03 \x01(\x04R\x05price\x12L\n\x11trade_settlements\x18\x04 \x03(\x0b\x32\x1f.vega.events.v1.TradeSettlementR\x10tradeSettlements\"x\n\x10SettleDistressed\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\x19\n\x08party_id\x18\x02 \x01(\tR\x07partyId\x12\x16\n\x06margin\x18\x03 \x01(\x04R\x06margin\x12\x14\n\x05price\x18\x04 \x01(\x04R\x05price\"0\n\nMarketTick\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04time\x18\x02 \x01(\x03R\x04time\"\x85\x02\n\x0c\x41uctionEvent\x12\x1b\n\tmarket_id\x18\x01 \x01(\tR\x08marketId\x12\'\n\x0fopening_auction\x18\x02 \x01(\x08R\x0eopeningAuction\x12\x14\n\x05leave\x18\x03 \x01(\x08R\x05leave\x12\x14\n\x05start\x18\x04 \x01(\x03R\x05start\x12\x10\n\x03\x65nd\x18\x05 \x01(\x03R\x03\x65nd\x12.\n\x07trigger\x18\x06 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x07trigger\x12\x41\n\x11\x65xtension_trigger\x18\x07 \x01(\x0e\x32\x14.vega.AuctionTriggerR\x10\x65xtensionTrigger\"}\n\x0fValidatorUpdate\x12\x17\n\x07pub_key\x18\x01 \x01(\tR\x06pubKey\x12\x1c\n\ntm_pub_key\x18\x02 \x01(\tR\x08tmPubKey\x12\x19\n\x08info_url\x18\x03 \x01(\tR\x07infoUrl\x12\x18\n\x07\x63ountry\x18\x04 \x01(\tR\x07\x63ountry\"\xad\x11\n\x08\x42usEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05\x62lock\x18\x02 \x01(\tR\x05\x62lock\x12\x30\n\x04type\x18\x03 \x01(\x0e\x32\x1c.vega.events.v1.BusEventTypeR\x04type\x12=\n\x0btime_update\x18\x65 \x01(\x0b\x32\x1a.vega.events.v1.TimeUpdateH\x00R\ntimeUpdate\x12R\n\x12transfer_responses\x18\x66 \x01(\x0b\x32!.vega.events.v1.TransferResponsesH\x00R\x11transferResponses\x12U\n\x13position_resolution\x18g \x01(\x0b\x32\".vega.events.v1.PositionResolutionH\x00R\x12positionResolution\x12#\n\x05order\x18h \x01(\x0b\x32\x0b.vega.OrderH\x00R\x05order\x12)\n\x07\x61\x63\x63ount\x18i \x01(\x0b\x32\r.vega.AccountH\x00R\x07\x61\x63\x63ount\x12#\n\x05party\x18j \x01(\x0b\x32\x0b.vega.PartyH\x00R\x05party\x12#\n\x05trade\x18k \x01(\x0b\x32\x0b.vega.TradeH\x00R\x05trade\x12\x39\n\rmargin_levels\x18l \x01(\x0b\x32\x12.vega.MarginLevelsH\x00R\x0cmarginLevels\x12,\n\x08proposal\x18m \x01(\x0b\x32\x0e.vega.ProposalH\x00R\x08proposal\x12 \n\x04vote\x18n \x01(\x0b\x32\n.vega.VoteH\x00R\x04vote\x12\x33\n\x0bmarket_data\x18o \x01(\x0b\x32\x10.vega.MarketDataH\x00R\nmarketData\x12H\n\x0enode_signature\x18p \x01(\x0b\x32\x1f.vega.commands.v1.NodeSignatureH\x00R\rnodeSignature\x12R\n\x12loss_socialization\x18q \x01(\x0b\x32!.vega.events.v1.LossSocializationH\x00R\x11lossSocialization\x12I\n\x0fsettle_position\x18r \x01(\x0b\x32\x1e.vega.events.v1.SettlePositionH\x00R\x0esettlePosition\x12O\n\x11settle_distressed\x18s \x01(\x0b\x32 .vega.events.v1.SettleDistressedH\x00R\x10settleDistressed\x12\x35\n\x0emarket_created\x18t \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketCreated\x12#\n\x05\x61sset\x18u \x01(\x0b\x32\x0b.vega.AssetH\x00R\x05\x61sset\x12=\n\x0bmarket_tick\x18v \x01(\x0b\x32\x1a.vega.events.v1.MarketTickH\x00R\nmarketTick\x12\x32\n\nwithdrawal\x18w \x01(\x0b\x32\x10.vega.WithdrawalH\x00R\nwithdrawal\x12)\n\x07\x64\x65posit\x18x \x01(\x0b\x32\r.vega.DepositH\x00R\x07\x64\x65posit\x12\x38\n\x07\x61uction\x18y \x01(\x0b\x32\x1c.vega.events.v1.AuctionEventH\x00R\x07\x61uction\x12\x33\n\x0brisk_factor\x18z \x01(\x0b\x32\x10.vega.RiskFactorH\x00R\nriskFactor\x12\x45\n\x11network_parameter\x18{ \x01(\x0b\x32\x16.vega.NetworkParameterH\x00R\x10networkParameter\x12K\n\x13liquidity_provision\x18| \x01(\x0b\x32\x18.vega.LiquidityProvisionH\x00R\x12liquidityProvision\x12\x35\n\x0emarket_updated\x18} \x01(\x0b\x32\x0c.vega.MarketH\x00R\rmarketUpdated\x12\x39\n\x0boracle_spec\x18~ \x01(\x0b\x32\x16.oracles.v1.OracleSpecH\x00R\noracleSpec\x12\x39\n\x0boracle_data\x18\x7f \x01(\x0b\x32\x16.oracles.v1.OracleDataH\x00R\noracleData\x12X\n\x12\x64\x65legation_balance\x18\x81\x01 \x01(\x0b\x32&.vega.events.v1.DelegationBalanceEventH\x00R\x11\x64\x65legationBalance\x12n\n\x1apending_delegation_balance\x18\x82\x01 \x01(\x0b\x32-.vega.events.v1.PendingDelegationBalanceEventH\x00R\x18pendingDelegationBalance\x12>\n\x0b\x65poch_event\x18\x83\x01 \x01(\x0b\x32\x1a.vega.events.v1.EpochEventH\x00R\nepochEvent\x12M\n\x10validator_update\x18\x84\x01 \x01(\x0b\x32\x1f.vega.events.v1.ValidatorUpdateH\x00R\x0fvalidatorUpdate\x12\x44\n\rstaking_event\x18\x85\x01 \x01(\x0b\x32\x1c.vega.events.v1.StakingEventH\x00R\x0cstakingEvent\x12\x36\n\x06market\x18\xe9\x07 \x01(\x0b\x32\x1b.vega.events.v1.MarketEventH\x00R\x06market\x12\x41\n\x0ctx_err_event\x18\xd1\x0f \x01(\x0b\x32\x1c.vega.events.v1.TxErrorEventH\x00R\ntxErrEventB\x07\n\x05\x65vent*\xa7\t\n\x0c\x42usEventType\x12\x1e\n\x1a\x42US_EVENT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x42US_EVENT_TYPE_ALL\x10\x01\x12\x1e\n\x1a\x42US_EVENT_TYPE_TIME_UPDATE\x10\x02\x12%\n!BUS_EVENT_TYPE_TRANSFER_RESPONSES\x10\x03\x12&\n\"BUS_EVENT_TYPE_POSITION_RESOLUTION\x10\x04\x12\x18\n\x14\x42US_EVENT_TYPE_ORDER\x10\x05\x12\x1a\n\x16\x42US_EVENT_TYPE_ACCOUNT\x10\x06\x12\x18\n\x14\x42US_EVENT_TYPE_PARTY\x10\x07\x12\x18\n\x14\x42US_EVENT_TYPE_TRADE\x10\x08\x12 \n\x1c\x42US_EVENT_TYPE_MARGIN_LEVELS\x10\t\x12\x1b\n\x17\x42US_EVENT_TYPE_PROPOSAL\x10\n\x12\x17\n\x13\x42US_EVENT_TYPE_VOTE\x10\x0b\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_DATA\x10\x0c\x12!\n\x1d\x42US_EVENT_TYPE_NODE_SIGNATURE\x10\r\x12%\n!BUS_EVENT_TYPE_LOSS_SOCIALIZATION\x10\x0e\x12\"\n\x1e\x42US_EVENT_TYPE_SETTLE_POSITION\x10\x0f\x12$\n BUS_EVENT_TYPE_SETTLE_DISTRESSED\x10\x10\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_CREATED\x10\x11\x12\x18\n\x14\x42US_EVENT_TYPE_ASSET\x10\x12\x12\x1e\n\x1a\x42US_EVENT_TYPE_MARKET_TICK\x10\x13\x12\x1d\n\x19\x42US_EVENT_TYPE_WITHDRAWAL\x10\x14\x12\x1a\n\x16\x42US_EVENT_TYPE_DEPOSIT\x10\x15\x12\x1a\n\x16\x42US_EVENT_TYPE_AUCTION\x10\x16\x12\x1e\n\x1a\x42US_EVENT_TYPE_RISK_FACTOR\x10\x17\x12$\n BUS_EVENT_TYPE_NETWORK_PARAMETER\x10\x18\x12&\n\"BUS_EVENT_TYPE_LIQUIDITY_PROVISION\x10\x19\x12!\n\x1d\x42US_EVENT_TYPE_MARKET_UPDATED\x10\x1a\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_SPEC\x10\x1b\x12\x1e\n\x1a\x42US_EVENT_TYPE_ORACLE_DATA\x10\x1c\x12%\n!BUS_EVENT_TYPE_DELEGATION_BALANCE\x10\x1d\x12-\n)BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE\x10\x1e\x12\x1f\n\x1b\x42US_EVENT_TYPE_EPOCH_UPDATE\x10\x1f\x12#\n\x1f\x42US_EVENT_TYPE_VALIDATOR_UPDATE\x10 \x12 \n\x1c\x42US_EVENT_TYPE_STAKING_EVENT\x10!\x12\x19\n\x15\x42US_EVENT_TYPE_MARKET\x10\x65\x12\x1c\n\x17\x42US_EVENT_TYPE_TX_ERROR\x10\xc9\x01\x42K\n\x1eio.vegaprotocol.vega.events.v1Z)code.vegaprotocol.io/vega/proto/events/v1b\x06proto3'
   ,
   dependencies=[markets__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,oracles_dot_v1_dot_spec__pb2.DESCRIPTOR,oracles_dot_v1_dot_data__pb2.DESCRIPTOR,commands_dot_v1_dot_commands__pb2.DESCRIPTOR,commands_dot_v1_dot_validator__commands__pb2.DESCRIPTOR,])
 
@@ -185,20 +185,45 @@ _BUSEVENTTYPE = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='BUS_EVENT_TYPE_MARKET', index=29, number=101,
+      name='BUS_EVENT_TYPE_DELEGATION_BALANCE', index=29, number=29,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='BUS_EVENT_TYPE_TX_ERROR', index=30, number=201,
+      name='BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE', index=30, number=30,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BUS_EVENT_TYPE_EPOCH_UPDATE', index=31, number=31,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BUS_EVENT_TYPE_VALIDATOR_UPDATE', index=32, number=32,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BUS_EVENT_TYPE_STAKING_EVENT', index=33, number=33,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BUS_EVENT_TYPE_MARKET', index=34, number=101,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BUS_EVENT_TYPE_TX_ERROR', index=35, number=201,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3805,
-  serialized_end=4806,
+  serialized_start=4957,
+  serialized_end=6148,
 )
 _sym_db.RegisterEnumDescriptor(_BUSEVENTTYPE)
 
@@ -232,9 +257,204 @@ BUS_EVENT_TYPE_LIQUIDITY_PROVISION = 25
 BUS_EVENT_TYPE_MARKET_UPDATED = 26
 BUS_EVENT_TYPE_ORACLE_SPEC = 27
 BUS_EVENT_TYPE_ORACLE_DATA = 28
+BUS_EVENT_TYPE_DELEGATION_BALANCE = 29
+BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30
+BUS_EVENT_TYPE_EPOCH_UPDATE = 31
+BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32
+BUS_EVENT_TYPE_STAKING_EVENT = 33
 BUS_EVENT_TYPE_MARKET = 101
 BUS_EVENT_TYPE_TX_ERROR = 201
 
+
+_STAKINGEVENT_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='vega.events.v1.StakingEvent.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_DEPOSIT', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_REMOVE', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=363,
+  serialized_end=426,
+)
+_sym_db.RegisterEnumDescriptor(_STAKINGEVENT_TYPE)
+
+
+_STAKINGEVENT = _descriptor.Descriptor(
+  name='StakingEvent',
+  full_name='vega.events.v1.StakingEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='vega.events.v1.StakingEvent.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='id', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='vega.events.v1.StakingEvent.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='type', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ts', full_name='vega.events.v1.StakingEvent.ts', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='ts', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='party', full_name='vega.events.v1.StakingEvent.party', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='party', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.events.v1.StakingEvent.amount', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STAKINGEVENT_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=214,
+  serialized_end=426,
+)
+
+
+_DELEGATIONBALANCEEVENT = _descriptor.Descriptor(
+  name='DelegationBalanceEvent',
+  full_name='vega.events.v1.DelegationBalanceEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party', full_name='vega.events.v1.DelegationBalanceEvent.party', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='party', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='node_id', full_name='vega.events.v1.DelegationBalanceEvent.node_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nodeId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.events.v1.DelegationBalanceEvent.amount', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=428,
+  serialized_end=523,
+)
+
+
+_PENDINGDELEGATIONBALANCEEVENT = _descriptor.Descriptor(
+  name='PendingDelegationBalanceEvent',
+  full_name='vega.events.v1.PendingDelegationBalanceEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party', full_name='vega.events.v1.PendingDelegationBalanceEvent.party', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='party', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='node_id', full_name='vega.events.v1.PendingDelegationBalanceEvent.node_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='nodeId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delegation_amount', full_name='vega.events.v1.PendingDelegationBalanceEvent.delegation_amount', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='delegationAmount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='undelegation_amount', full_name='vega.events.v1.PendingDelegationBalanceEvent.undelegation_amount', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='undelegationAmount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=526,
+  serialized_end=698,
+)
 
 
 _MARKETEVENT = _descriptor.Descriptor(
@@ -271,8 +491,8 @@ _MARKETEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=213,
-  serialized_end=281,
+  serialized_start=700,
+  serialized_end=768,
 )
 
 
@@ -364,8 +584,8 @@ _TXERROREVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=284,
-  serialized_end=962,
+  serialized_start=771,
+  serialized_end=1449,
 )
 
 
@@ -396,8 +616,61 @@ _TIMEUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=964,
-  serialized_end=1006,
+  serialized_start=1451,
+  serialized_end=1493,
+)
+
+
+_EPOCHEVENT = _descriptor.Descriptor(
+  name='EpochEvent',
+  full_name='vega.events.v1.EpochEvent',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='seq', full_name='vega.events.v1.EpochEvent.seq', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='seq', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_time', full_name='vega.events.v1.EpochEvent.start_time', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='startTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='expire_time', full_name='vega.events.v1.EpochEvent.expire_time', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='expireTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='end_time', full_name='vega.events.v1.EpochEvent.end_time', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='endTime', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1495,
+  serialized_end=1616,
 )
 
 
@@ -428,8 +701,8 @@ _TRANSFERRESPONSES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1008,
-  serialized_end=1081,
+  serialized_start=1618,
+  serialized_end=1691,
 )
 
 
@@ -481,8 +754,8 @@ _POSITIONRESOLUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1084,
-  serialized_end=1220,
+  serialized_start=1694,
+  serialized_end=1830,
 )
 
 
@@ -527,8 +800,8 @@ _LOSSSOCIALIZATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1222,
-  serialized_end=1321,
+  serialized_start=1832,
+  serialized_end=1931,
 )
 
 
@@ -566,8 +839,8 @@ _TRADESETTLEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1323,
-  serialized_end=1382,
+  serialized_start=1933,
+  serialized_end=1992,
 )
 
 
@@ -619,8 +892,8 @@ _SETTLEPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1385,
-  serialized_end=1557,
+  serialized_start=1995,
+  serialized_end=2167,
 )
 
 
@@ -672,8 +945,8 @@ _SETTLEDISTRESSED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1559,
-  serialized_end=1679,
+  serialized_start=2169,
+  serialized_end=2289,
 )
 
 
@@ -711,8 +984,8 @@ _MARKETTICK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1681,
-  serialized_end=1729,
+  serialized_start=2291,
+  serialized_end=2339,
 )
 
 
@@ -785,8 +1058,61 @@ _AUCTIONEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1732,
-  serialized_end=1993,
+  serialized_start=2342,
+  serialized_end=2603,
+)
+
+
+_VALIDATORUPDATE = _descriptor.Descriptor(
+  name='ValidatorUpdate',
+  full_name='vega.events.v1.ValidatorUpdate',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pub_key', full_name='vega.events.v1.ValidatorUpdate.pub_key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pubKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tm_pub_key', full_name='vega.events.v1.ValidatorUpdate.tm_pub_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='tmPubKey', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='info_url', full_name='vega.events.v1.ValidatorUpdate.info_url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='infoUrl', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='country', full_name='vega.events.v1.ValidatorUpdate.country', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='country', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2605,
+  serialized_end=2730,
 )
 
 
@@ -1009,14 +1335,49 @@ _BUSEVENT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='oracleData', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='market', full_name='vega.events.v1.BusEvent.market', index=30,
+      name='delegation_balance', full_name='vega.events.v1.BusEvent.delegation_balance', index=30,
+      number=129, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='delegationBalance', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pending_delegation_balance', full_name='vega.events.v1.BusEvent.pending_delegation_balance', index=31,
+      number=130, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pendingDelegationBalance', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='epoch_event', full_name='vega.events.v1.BusEvent.epoch_event', index=32,
+      number=131, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='epochEvent', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='validator_update', full_name='vega.events.v1.BusEvent.validator_update', index=33,
+      number=132, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='validatorUpdate', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='staking_event', full_name='vega.events.v1.BusEvent.staking_event', index=34,
+      number=133, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='stakingEvent', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='market', full_name='vega.events.v1.BusEvent.market', index=35,
       number=1001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='market', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tx_err_event', full_name='vega.events.v1.BusEvent.tx_err_event', index=31,
+      name='tx_err_event', full_name='vega.events.v1.BusEvent.tx_err_event', index=36,
       number=2001, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1039,10 +1400,12 @@ _BUSEVENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1996,
-  serialized_end=3802,
+  serialized_start=2733,
+  serialized_end=4954,
 )
 
+_STAKINGEVENT.fields_by_name['type'].enum_type = _STAKINGEVENT_TYPE
+_STAKINGEVENT_TYPE.containing_type = _STAKINGEVENT
 _TXERROREVENT.fields_by_name['order_submission'].message_type = commands_dot_v1_dot_commands__pb2._ORDERSUBMISSION
 _TXERROREVENT.fields_by_name['order_amendment'].message_type = commands_dot_v1_dot_commands__pb2._ORDERAMENDMENT
 _TXERROREVENT.fields_by_name['order_cancellation'].message_type = commands_dot_v1_dot_commands__pb2._ORDERCANCELLATION
@@ -1103,6 +1466,11 @@ _BUSEVENT.fields_by_name['liquidity_provision'].message_type = vega__pb2._LIQUID
 _BUSEVENT.fields_by_name['market_updated'].message_type = markets__pb2._MARKET
 _BUSEVENT.fields_by_name['oracle_spec'].message_type = oracles_dot_v1_dot_spec__pb2._ORACLESPEC
 _BUSEVENT.fields_by_name['oracle_data'].message_type = oracles_dot_v1_dot_data__pb2._ORACLEDATA
+_BUSEVENT.fields_by_name['delegation_balance'].message_type = _DELEGATIONBALANCEEVENT
+_BUSEVENT.fields_by_name['pending_delegation_balance'].message_type = _PENDINGDELEGATIONBALANCEEVENT
+_BUSEVENT.fields_by_name['epoch_event'].message_type = _EPOCHEVENT
+_BUSEVENT.fields_by_name['validator_update'].message_type = _VALIDATORUPDATE
+_BUSEVENT.fields_by_name['staking_event'].message_type = _STAKINGEVENT
 _BUSEVENT.fields_by_name['market'].message_type = _MARKETEVENT
 _BUSEVENT.fields_by_name['tx_err_event'].message_type = _TXERROREVENT
 _BUSEVENT.oneofs_by_name['event'].fields.append(
@@ -1187,14 +1555,33 @@ _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['oracle_data'])
 _BUSEVENT.fields_by_name['oracle_data'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
+  _BUSEVENT.fields_by_name['delegation_balance'])
+_BUSEVENT.fields_by_name['delegation_balance'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+_BUSEVENT.oneofs_by_name['event'].fields.append(
+  _BUSEVENT.fields_by_name['pending_delegation_balance'])
+_BUSEVENT.fields_by_name['pending_delegation_balance'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+_BUSEVENT.oneofs_by_name['event'].fields.append(
+  _BUSEVENT.fields_by_name['epoch_event'])
+_BUSEVENT.fields_by_name['epoch_event'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+_BUSEVENT.oneofs_by_name['event'].fields.append(
+  _BUSEVENT.fields_by_name['validator_update'])
+_BUSEVENT.fields_by_name['validator_update'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+_BUSEVENT.oneofs_by_name['event'].fields.append(
+  _BUSEVENT.fields_by_name['staking_event'])
+_BUSEVENT.fields_by_name['staking_event'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+_BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['market'])
 _BUSEVENT.fields_by_name['market'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
 _BUSEVENT.oneofs_by_name['event'].fields.append(
   _BUSEVENT.fields_by_name['tx_err_event'])
 _BUSEVENT.fields_by_name['tx_err_event'].containing_oneof = _BUSEVENT.oneofs_by_name['event']
+DESCRIPTOR.message_types_by_name['StakingEvent'] = _STAKINGEVENT
+DESCRIPTOR.message_types_by_name['DelegationBalanceEvent'] = _DELEGATIONBALANCEEVENT
+DESCRIPTOR.message_types_by_name['PendingDelegationBalanceEvent'] = _PENDINGDELEGATIONBALANCEEVENT
 DESCRIPTOR.message_types_by_name['MarketEvent'] = _MARKETEVENT
 DESCRIPTOR.message_types_by_name['TxErrorEvent'] = _TXERROREVENT
 DESCRIPTOR.message_types_by_name['TimeUpdate'] = _TIMEUPDATE
+DESCRIPTOR.message_types_by_name['EpochEvent'] = _EPOCHEVENT
 DESCRIPTOR.message_types_by_name['TransferResponses'] = _TRANSFERRESPONSES
 DESCRIPTOR.message_types_by_name['PositionResolution'] = _POSITIONRESOLUTION
 DESCRIPTOR.message_types_by_name['LossSocialization'] = _LOSSSOCIALIZATION
@@ -1203,9 +1590,31 @@ DESCRIPTOR.message_types_by_name['SettlePosition'] = _SETTLEPOSITION
 DESCRIPTOR.message_types_by_name['SettleDistressed'] = _SETTLEDISTRESSED
 DESCRIPTOR.message_types_by_name['MarketTick'] = _MARKETTICK
 DESCRIPTOR.message_types_by_name['AuctionEvent'] = _AUCTIONEVENT
+DESCRIPTOR.message_types_by_name['ValidatorUpdate'] = _VALIDATORUPDATE
 DESCRIPTOR.message_types_by_name['BusEvent'] = _BUSEVENT
 DESCRIPTOR.enum_types_by_name['BusEventType'] = _BUSEVENTTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+StakingEvent = _reflection.GeneratedProtocolMessageType('StakingEvent', (_message.Message,), {
+  'DESCRIPTOR' : _STAKINGEVENT,
+  '__module__' : 'events.v1.events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.events.v1.StakingEvent)
+  })
+_sym_db.RegisterMessage(StakingEvent)
+
+DelegationBalanceEvent = _reflection.GeneratedProtocolMessageType('DelegationBalanceEvent', (_message.Message,), {
+  'DESCRIPTOR' : _DELEGATIONBALANCEEVENT,
+  '__module__' : 'events.v1.events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.events.v1.DelegationBalanceEvent)
+  })
+_sym_db.RegisterMessage(DelegationBalanceEvent)
+
+PendingDelegationBalanceEvent = _reflection.GeneratedProtocolMessageType('PendingDelegationBalanceEvent', (_message.Message,), {
+  'DESCRIPTOR' : _PENDINGDELEGATIONBALANCEEVENT,
+  '__module__' : 'events.v1.events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.events.v1.PendingDelegationBalanceEvent)
+  })
+_sym_db.RegisterMessage(PendingDelegationBalanceEvent)
 
 MarketEvent = _reflection.GeneratedProtocolMessageType('MarketEvent', (_message.Message,), {
   'DESCRIPTOR' : _MARKETEVENT,
@@ -1227,6 +1636,13 @@ TimeUpdate = _reflection.GeneratedProtocolMessageType('TimeUpdate', (_message.Me
   # @@protoc_insertion_point(class_scope:vega.events.v1.TimeUpdate)
   })
 _sym_db.RegisterMessage(TimeUpdate)
+
+EpochEvent = _reflection.GeneratedProtocolMessageType('EpochEvent', (_message.Message,), {
+  'DESCRIPTOR' : _EPOCHEVENT,
+  '__module__' : 'events.v1.events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.events.v1.EpochEvent)
+  })
+_sym_db.RegisterMessage(EpochEvent)
 
 TransferResponses = _reflection.GeneratedProtocolMessageType('TransferResponses', (_message.Message,), {
   'DESCRIPTOR' : _TRANSFERRESPONSES,
@@ -1283,6 +1699,13 @@ AuctionEvent = _reflection.GeneratedProtocolMessageType('AuctionEvent', (_messag
   # @@protoc_insertion_point(class_scope:vega.events.v1.AuctionEvent)
   })
 _sym_db.RegisterMessage(AuctionEvent)
+
+ValidatorUpdate = _reflection.GeneratedProtocolMessageType('ValidatorUpdate', (_message.Message,), {
+  'DESCRIPTOR' : _VALIDATORUPDATE,
+  '__module__' : 'events.v1.events_pb2'
+  # @@protoc_insertion_point(class_scope:vega.events.v1.ValidatorUpdate)
+  })
+_sym_db.RegisterMessage(ValidatorUpdate)
 
 BusEvent = _reflection.GeneratedProtocolMessageType('BusEvent', (_message.Message,), {
   'DESCRIPTOR' : _BUSEVENT,

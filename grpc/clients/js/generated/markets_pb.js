@@ -1014,7 +1014,8 @@ proto.vega.Future.toObject = function(includeInstance, msg) {
     maturity: jspb.Message.getFieldWithDefault(msg, 1, ""),
     settlementAsset: jspb.Message.getFieldWithDefault(msg, 2, ""),
     quoteName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    oracleSpec: (f = msg.getOracleSpec()) && oracles_v1_spec_pb.OracleSpec.toObject(includeInstance, f),
+    oracleSpecForSettlementPrice: (f = msg.getOracleSpecForSettlementPrice()) && oracles_v1_spec_pb.OracleSpec.toObject(includeInstance, f),
+    oracleSpecForTradingTermination: (f = msg.getOracleSpecForTradingTermination()) && oracles_v1_spec_pb.OracleSpec.toObject(includeInstance, f),
     oracleSpecBinding: (f = msg.getOracleSpecBinding()) && proto.vega.OracleSpecToFutureBinding.toObject(includeInstance, f)
   };
 
@@ -1067,9 +1068,14 @@ proto.vega.Future.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = new oracles_v1_spec_pb.OracleSpec;
       reader.readMessage(value,oracles_v1_spec_pb.OracleSpec.deserializeBinaryFromReader);
-      msg.setOracleSpec(value);
+      msg.setOracleSpecForSettlementPrice(value);
       break;
     case 6:
+      var value = new oracles_v1_spec_pb.OracleSpec;
+      reader.readMessage(value,oracles_v1_spec_pb.OracleSpec.deserializeBinaryFromReader);
+      msg.setOracleSpecForTradingTermination(value);
+      break;
+    case 7:
       var value = new proto.vega.OracleSpecToFutureBinding;
       reader.readMessage(value,proto.vega.OracleSpecToFutureBinding.deserializeBinaryFromReader);
       msg.setOracleSpecBinding(value);
@@ -1124,7 +1130,7 @@ proto.vega.Future.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOracleSpec();
+  f = message.getOracleSpecForSettlementPrice();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -1132,10 +1138,18 @@ proto.vega.Future.serializeBinaryToWriter = function(message, writer) {
       oracles_v1_spec_pb.OracleSpec.serializeBinaryToWriter
     );
   }
-  f = message.getOracleSpecBinding();
+  f = message.getOracleSpecForTradingTermination();
   if (f != null) {
     writer.writeMessage(
       6,
+      f,
+      oracles_v1_spec_pb.OracleSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getOracleSpecBinding();
+  if (f != null) {
+    writer.writeMessage(
+      7,
       f,
       proto.vega.OracleSpecToFutureBinding.serializeBinaryToWriter
     );
@@ -1198,10 +1212,10 @@ proto.vega.Future.prototype.setQuoteName = function(value) {
 
 
 /**
- * optional oracles.v1.OracleSpec oracle_spec = 5;
+ * optional oracles.v1.OracleSpec oracle_spec_for_settlement_price = 5;
  * @return {?proto.oracles.v1.OracleSpec}
  */
-proto.vega.Future.prototype.getOracleSpec = function() {
+proto.vega.Future.prototype.getOracleSpecForSettlementPrice = function() {
   return /** @type{?proto.oracles.v1.OracleSpec} */ (
     jspb.Message.getWrapperField(this, oracles_v1_spec_pb.OracleSpec, 5));
 };
@@ -1211,7 +1225,7 @@ proto.vega.Future.prototype.getOracleSpec = function() {
  * @param {?proto.oracles.v1.OracleSpec|undefined} value
  * @return {!proto.vega.Future} returns this
 */
-proto.vega.Future.prototype.setOracleSpec = function(value) {
+proto.vega.Future.prototype.setOracleSpecForSettlementPrice = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -1220,8 +1234,8 @@ proto.vega.Future.prototype.setOracleSpec = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.vega.Future} returns this
  */
-proto.vega.Future.prototype.clearOracleSpec = function() {
-  return this.setOracleSpec(undefined);
+proto.vega.Future.prototype.clearOracleSpecForSettlementPrice = function() {
+  return this.setOracleSpecForSettlementPrice(undefined);
 };
 
 
@@ -1229,18 +1243,55 @@ proto.vega.Future.prototype.clearOracleSpec = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.vega.Future.prototype.hasOracleSpec = function() {
+proto.vega.Future.prototype.hasOracleSpecForSettlementPrice = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional OracleSpecToFutureBinding oracle_spec_binding = 6;
+ * optional oracles.v1.OracleSpec oracle_spec_for_trading_termination = 6;
+ * @return {?proto.oracles.v1.OracleSpec}
+ */
+proto.vega.Future.prototype.getOracleSpecForTradingTermination = function() {
+  return /** @type{?proto.oracles.v1.OracleSpec} */ (
+    jspb.Message.getWrapperField(this, oracles_v1_spec_pb.OracleSpec, 6));
+};
+
+
+/**
+ * @param {?proto.oracles.v1.OracleSpec|undefined} value
+ * @return {!proto.vega.Future} returns this
+*/
+proto.vega.Future.prototype.setOracleSpecForTradingTermination = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.Future} returns this
+ */
+proto.vega.Future.prototype.clearOracleSpecForTradingTermination = function() {
+  return this.setOracleSpecForTradingTermination(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.Future.prototype.hasOracleSpecForTradingTermination = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional OracleSpecToFutureBinding oracle_spec_binding = 7;
  * @return {?proto.vega.OracleSpecToFutureBinding}
  */
 proto.vega.Future.prototype.getOracleSpecBinding = function() {
   return /** @type{?proto.vega.OracleSpecToFutureBinding} */ (
-    jspb.Message.getWrapperField(this, proto.vega.OracleSpecToFutureBinding, 6));
+    jspb.Message.getWrapperField(this, proto.vega.OracleSpecToFutureBinding, 7));
 };
 
 
@@ -1249,7 +1300,7 @@ proto.vega.Future.prototype.getOracleSpecBinding = function() {
  * @return {!proto.vega.Future} returns this
 */
 proto.vega.Future.prototype.setOracleSpecBinding = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1267,7 +1318,7 @@ proto.vega.Future.prototype.clearOracleSpecBinding = function() {
  * @return {boolean}
  */
 proto.vega.Future.prototype.hasOracleSpecBinding = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -1303,7 +1354,8 @@ proto.vega.OracleSpecToFutureBinding.prototype.toObject = function(opt_includeIn
  */
 proto.vega.OracleSpecToFutureBinding.toObject = function(includeInstance, msg) {
   var f, obj = {
-    settlementPriceProperty: jspb.Message.getFieldWithDefault(msg, 1, "")
+    settlementPriceProperty: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    tradingTerminationProperty: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1344,6 +1396,10 @@ proto.vega.OracleSpecToFutureBinding.deserializeBinaryFromReader = function(msg,
       var value = /** @type {string} */ (reader.readString());
       msg.setSettlementPriceProperty(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTradingTerminationProperty(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1380,6 +1436,13 @@ proto.vega.OracleSpecToFutureBinding.serializeBinaryToWriter = function(message,
       f
     );
   }
+  f = message.getTradingTerminationProperty();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1398,6 +1461,24 @@ proto.vega.OracleSpecToFutureBinding.prototype.getSettlementPriceProperty = func
  */
 proto.vega.OracleSpecToFutureBinding.prototype.setSettlementPriceProperty = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string trading_termination_property = 2;
+ * @return {string}
+ */
+proto.vega.OracleSpecToFutureBinding.prototype.getTradingTerminationProperty = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.OracleSpecToFutureBinding} returns this
+ */
+proto.vega.OracleSpecToFutureBinding.prototype.setTradingTerminationProperty = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

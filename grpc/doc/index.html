@@ -740,6 +740,10 @@
             <ul>
 
                 <li>
+                  <a href="#vega.commands.v1.DelegateSubmission"><span class="badge">M</span>DelegateSubmission</a>
+                </li>
+
+                <li>
                   <a href="#vega.commands.v1.LiquidityProvisionSubmission"><span class="badge">M</span>LiquidityProvisionSubmission</a>
                 </li>
 
@@ -760,6 +764,10 @@
                 </li>
 
                 <li>
+                  <a href="#vega.commands.v1.UndelegateSubmission"><span class="badge">M</span>UndelegateSubmission</a>
+                </li>
+
+                <li>
                   <a href="#vega.commands.v1.VoteSubmission"><span class="badge">M</span>VoteSubmission</a>
                 </li>
 
@@ -767,6 +775,10 @@
                   <a href="#vega.commands.v1.WithdrawSubmission"><span class="badge">M</span>WithdrawSubmission</a>
                 </li>
 
+
+                <li>
+                  <a href="#vega.commands.v1.UndelegateSubmission.Method"><span class="badge">E</span>UndelegateSubmission.Method</a>
+                </li>
 
 
 
@@ -897,6 +909,14 @@
                 </li>
 
                 <li>
+                  <a href="#vega.events.v1.DelegationBalanceEvent"><span class="badge">M</span>DelegationBalanceEvent</a>
+                </li>
+
+                <li>
+                  <a href="#vega.events.v1.EpochEvent"><span class="badge">M</span>EpochEvent</a>
+                </li>
+
+                <li>
                   <a href="#vega.events.v1.LossSocialization"><span class="badge">M</span>LossSocialization</a>
                 </li>
 
@@ -909,6 +929,10 @@
                 </li>
 
                 <li>
+                  <a href="#vega.events.v1.PendingDelegationBalanceEvent"><span class="badge">M</span>PendingDelegationBalanceEvent</a>
+                </li>
+
+                <li>
                   <a href="#vega.events.v1.PositionResolution"><span class="badge">M</span>PositionResolution</a>
                 </li>
 
@@ -918,6 +942,10 @@
 
                 <li>
                   <a href="#vega.events.v1.SettlePosition"><span class="badge">M</span>SettlePosition</a>
+                </li>
+
+                <li>
+                  <a href="#vega.events.v1.StakingEvent"><span class="badge">M</span>StakingEvent</a>
                 </li>
 
                 <li>
@@ -936,9 +964,17 @@
                   <a href="#vega.events.v1.TxErrorEvent"><span class="badge">M</span>TxErrorEvent</a>
                 </li>
 
+                <li>
+                  <a href="#vega.events.v1.ValidatorUpdate"><span class="badge">M</span>ValidatorUpdate</a>
+                </li>
+
 
                 <li>
                   <a href="#vega.events.v1.BusEventType"><span class="badge">E</span>BusEventType</a>
+                </li>
+
+                <li>
+                  <a href="#vega.events.v1.StakingEvent.Type"><span class="badge">E</span>StakingEvent.Type</a>
                 </li>
 
 
@@ -2513,17 +2549,24 @@ anymore.</p></td>
                 </tr>
 
                 <tr>
-                  <td>oracle_spec</td>
+                  <td>oracle_spec_for_settlement_price</td>
                   <td><a href="#oracles.v1.OracleSpec">oracles.v1.OracleSpec</a></td>
                   <td></td>
-                  <td><p>The oracle spec describing the oracle data of interest </p></td>
+                  <td><p>The oracle spec describing the settlement price oracle filter </p></td>
+                </tr>
+
+                <tr>
+                  <td>oracle_spec_for_trading_termination</td>
+                  <td><a href="#oracles.v1.OracleSpec">oracles.v1.OracleSpec</a></td>
+                  <td></td>
+                  <td><p>the oracle spec describing the trading termination oracle filter </p></td>
                 </tr>
 
                 <tr>
                   <td>oracle_spec_binding</td>
                   <td><a href="#vega.OracleSpecToFutureBinding">OracleSpecToFutureBinding</a></td>
                   <td></td>
-                  <td><p>The binding between the oracle spec and the settlement price </p></td>
+                  <td><p>The binding between the oracle spec and the oracle data </p></td>
                 </tr>
 
             </tbody>
@@ -2926,7 +2969,7 @@ duration and optionally a minimum traded volume) </p></td>
 
 
         <h3 id="vega.OracleSpecToFutureBinding">OracleSpecToFutureBinding</h3>
-        <p>OracleSpecToFutureBinding tells on which property oracle data should be</p><p>used as settlement price.</p>
+        <p>OracleSpecToFutureBinding tells on which property oracle data should be</p><p>used as settlement price and which to use the trading terminated trigger</p>
 
 
           <table class="field-table">
@@ -2943,6 +2986,13 @@ duration and optionally a minimum traded volume) </p></td>
 that should be used as settlement price.
 If it is set to &#34;prices.BTC.value&#34;, then the Future will use the value of
 this property as settlement price. </p></td>
+                </tr>
+
+                <tr>
+                  <td>trading_termination_property</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>the name of the property in the oracle data that signals termination of trading </p></td>
                 </tr>
 
             </tbody>
@@ -6180,7 +6230,7 @@ it is also the account where funds are taken to fulfil fees and initial margin r
                 <td>ACCOUNT_TYPE_FEES_MAKER</td>
                 <td>7</td>
                 <td><p>This account is created to hold fees earned by placing orders that sit on the book
-and are then matched with an incoming order to create a trade - These fees reward traders
+and are then matched with an incoming order to create a trade - These fees reward parties
 who provide the best priced liquidity that actually allows trading to take place</p></td>
               </tr>
 
@@ -6206,6 +6256,12 @@ who provide the best priced liquidity that actually allows trading to take place
                 <td>ACCOUNT_TYPE_GLOBAL_INSURANCE</td>
                 <td>11</td>
                 <td><p>Global insurance account for the asset</p></td>
+              </tr>
+
+              <tr>
+                <td>ACCOUNT_TYPE_GLOBAL_REWARD</td>
+                <td>12</td>
+                <td><p>Global reward account for the asset</p></td>
               </tr>
 
           </tbody>
@@ -6577,7 +6633,7 @@ margin check fails, then they will be cancelled without any penalties.</p></td>
               <tr>
                 <td>TYPE_NETWORK</td>
                 <td>3</td>
-                <td><p>Used for orders where the initiating party is the network (with distressed traders)</p></td>
+                <td><p>Used for orders where the initiating party is the network (with distressed parties)</p></td>
               </tr>
 
           </tbody>
@@ -7120,6 +7176,12 @@ with a distressed party in order to zero-out the position of the party</p></td>
                 <td><p>Bond slashing</p></td>
               </tr>
 
+              <tr>
+                <td>TRANSFER_TYPE_STAKE_REWARD</td>
+                <td>21</td>
+                <td><p>Stake reward</p></td>
+              </tr>
+
           </tbody>
         </table>
 
@@ -7362,10 +7424,17 @@ Vega network and are unlocked on the foreign chain bridge, for example, on the E
                 </tr>
 
                 <tr>
-                  <td>oracle_spec</td>
+                  <td>oracle_spec_for_settlement_price</td>
                   <td><a href="#oracles.v1.OracleSpecConfiguration">oracles.v1.OracleSpecConfiguration</a></td>
                   <td></td>
-                  <td><p>The oracle spec describing the oracle data of interest </p></td>
+                  <td><p>The oracle spec describing the oracle data of settlement price </p></td>
+                </tr>
+
+                <tr>
+                  <td>oracle_spec_for_trading_termination</td>
+                  <td><a href="#oracles.v1.OracleSpecConfiguration">oracles.v1.OracleSpecConfiguration</a></td>
+                  <td></td>
+                  <td><p>The oracle spec describing the oracle data of trading termination </p></td>
                 </tr>
 
                 <tr>
@@ -8704,6 +8773,64 @@ time. </p></td>
       <p></p>
 
 
+        <h3 id="vega.commands.v1.DelegateSubmission">DelegateSubmission</h3>
+        <p>A command to submit an instruction to delegate some stake to a node</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The ID for the node to delegate to </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>The amount of stake to delegate </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+            <h4>Validated Fields</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Field</td>
+                  <td>Validations</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+
+
+
         <h3 id="vega.commands.v1.LiquidityProvisionSubmission">LiquidityProvisionSubmission</h3>
         <p>A liquidity provision submitted for a given market</p>
 
@@ -9110,6 +9237,71 @@ set internally by the node to return a unique reference identifier for the order
 
 
 
+        <h3 id="vega.commands.v1.UndelegateSubmission">UndelegateSubmission</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>optional, if not specified = ALL </p></td>
+                </tr>
+
+                <tr>
+                  <td>method</td>
+                  <td><a href="#vega.commands.v1.UndelegateSubmission.Method">UndelegateSubmission.Method</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+            <h4>Validated Fields</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Field</td>
+                  <td>Validations</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>node_id</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+
+
+
         <h3 id="vega.commands.v1.VoteSubmission">VoteSubmission</h3>
         <p>A command to submit a new vote for a governance</p><p>proposal.</p>
 
@@ -9207,6 +9399,41 @@ set internally by the node to return a unique reference identifier for the order
 
 
 
+
+        <h3 id="vega.commands.v1.UndelegateSubmission.Method">UndelegateSubmission.Method</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>METHOD_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>METHOD_NOW</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>METHOD_AT_END_OF_EPOCH</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>METHOD_IN_ANGER</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
 
 
 
@@ -9907,6 +10134,20 @@ set internally by the node to return a unique reference identifier for the order
                   <td><p>Public key for the blockchain, required field </p></td>
                 </tr>
 
+                <tr>
+                  <td>info_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>URL with more info on the node </p></td>
+                </tr>
+
+                <tr>
+                  <td>country</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Country code (ISO 3166-1 alpha-2) for the location of the node </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -9936,6 +10177,28 @@ set internally by the node to return a unique reference identifier for the order
 
                 <tr>
                   <td>chain_pub_key</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>info_url</td>
+                  <td>
+                    <ul>
+
+                      <li>string_not_empty: true</li>
+
+                    </ul>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>country</td>
                   <td>
                     <ul>
 
@@ -10390,6 +10653,41 @@ be set to the trigger type indicating which component extended the auction </p><
                 </tr>
 
                 <tr>
+                  <td>delegation_balance</td>
+                  <td><a href="#vega.events.v1.DelegationBalanceEvent">DelegationBalanceEvent</a></td>
+                  <td></td>
+                  <td><p>Delegation balance events </p></td>
+                </tr>
+
+                <tr>
+                  <td>pending_delegation_balance</td>
+                  <td><a href="#vega.events.v1.PendingDelegationBalanceEvent">PendingDelegationBalanceEvent</a></td>
+                  <td></td>
+                  <td><p>Pending delegation balance events </p></td>
+                </tr>
+
+                <tr>
+                  <td>epoch_event</td>
+                  <td><a href="#vega.events.v1.EpochEvent">EpochEvent</a></td>
+                  <td></td>
+                  <td><p>Epoch update events - See [Epoch](#vega.Epoch) </p></td>
+                </tr>
+
+                <tr>
+                  <td>validator_update</td>
+                  <td><a href="#vega.events.v1.ValidatorUpdate">ValidatorUpdate</a></td>
+                  <td></td>
+                  <td><p>Validator update events </p></td>
+                </tr>
+
+                <tr>
+                  <td>staking_event</td>
+                  <td><a href="#vega.events.v1.StakingEvent">StakingEvent</a></td>
+                  <td></td>
+                  <td><p>Staking event </p></td>
+                </tr>
+
+                <tr>
                   <td>market</td>
                   <td><a href="#vega.events.v1.MarketEvent">MarketEvent</a></td>
                   <td></td>
@@ -10401,6 +10699,89 @@ be set to the trigger type indicating which component extended the auction </p><
                   <td><a href="#vega.events.v1.TxErrorEvent">TxErrorEvent</a></td>
                   <td></td>
                   <td><p>Transaction error events, not included in the ALL event type </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.events.v1.DelegationBalanceEvent">DelegationBalanceEvent</h3>
+        <p>DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>party</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.events.v1.EpochEvent">EpochEvent</h3>
+        <p>Epoch details</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>seq</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Sequence number that increases by one each epoch </p></td>
+                </tr>
+
+                <tr>
+                  <td>start_time</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>What time did this epoch start </p></td>
+                </tr>
+
+                <tr>
+                  <td>expire_time</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>What time should this epoch end </p></td>
+                </tr>
+
+                <tr>
+                  <td>end_time</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>What time did it actually end </p></td>
                 </tr>
 
             </tbody>
@@ -10501,6 +10882,51 @@ be set to the trigger type indicating which component extended the auction </p><
                   <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p>Timestamp containing latest update from Vega blockchain aka Vega-time </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.events.v1.PendingDelegationBalanceEvent">PendingDelegationBalanceEvent</h3>
+        <p>PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>party</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>delegation_amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegation_amount</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
 
             </tbody>
@@ -10640,6 +11066,58 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                   <td><a href="#vega.events.v1.TradeSettlement">TradeSettlement</a></td>
                   <td>repeated</td>
                   <td><p>A collection of 1 or more trade settlements </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.events.v1.StakingEvent">StakingEvent</h3>
+        <p>StakingEvent - an event notifying of stake being deposited or removed for a given party</p><p>These events are emitted for every Staking deposit or removed accepted by the network</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The internal ID for this staking event </p></td>
+                </tr>
+
+                <tr>
+                  <td>type</td>
+                  <td><a href="#vega.events.v1.StakingEvent.Type">StakingEvent.Type</a></td>
+                  <td></td>
+                  <td><p>The type of event </p></td>
+                </tr>
+
+                <tr>
+                  <td>ts</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p>The timestamps at which the event was emitted by ethereum </p></td>
+                </tr>
+
+                <tr>
+                  <td>party</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The party to whom the event is directed at. </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The amount of stake deposited or removed </p></td>
                 </tr>
 
             </tbody>
@@ -10800,6 +11278,51 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                   <td><a href="#vega.commands.v1.WithdrawSubmission">vega.commands.v1.WithdrawSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.events.v1.ValidatorUpdate">ValidatorUpdate</h3>
+        <p>A validator update event contains information about validator node</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>pub_key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Public key of validator node </p></td>
+                </tr>
+
+                <tr>
+                  <td>tm_pub_key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Public key of Tendermint </p></td>
+                </tr>
+
+                <tr>
+                  <td>info_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>URL with more info on the node </p></td>
+                </tr>
+
+                <tr>
+                  <td>country</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Country code (ISO 3166-1 alpha-2) for the location of the node </p></td>
                 </tr>
 
             </tbody>
@@ -10994,6 +11517,36 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
               </tr>
 
               <tr>
+                <td>BUS_EVENT_TYPE_DELEGATION_BALANCE</td>
+                <td>29</td>
+                <td><p>Event indicating that an delegation balance of a party to a node for current epoch has changed</p></td>
+              </tr>
+
+              <tr>
+                <td>BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE</td>
+                <td>30</td>
+                <td><p>Event indicating that an delegation balance of a party to a node for next epoch has changed</p></td>
+              </tr>
+
+              <tr>
+                <td>BUS_EVENT_TYPE_EPOCH_UPDATE</td>
+                <td>31</td>
+                <td><p>Event indicating the start or end of an epoch</p></td>
+              </tr>
+
+              <tr>
+                <td>BUS_EVENT_TYPE_VALIDATOR_UPDATE</td>
+                <td>32</td>
+                <td><p>Event indicating that validator node has been updated</p></td>
+              </tr>
+
+              <tr>
+                <td>BUS_EVENT_TYPE_STAKING_EVENT</td>
+                <td>33</td>
+                <td><p>Event indicating a new staking event have been processed by the network</p></td>
+              </tr>
+
+              <tr>
                 <td>BUS_EVENT_TYPE_MARKET</td>
                 <td>101</td>
                 <td><p>Event indicating a market related event, for example when a market opens</p></td>
@@ -11003,6 +11556,35 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                 <td>BUS_EVENT_TYPE_TX_ERROR</td>
                 <td>201</td>
                 <td><p>Event used to report failed transactions back to a user, this is excluded from the ALL type</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="vega.events.v1.StakingEvent.Type">StakingEvent.Type</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Default value</p></td>
+              </tr>
+
+              <tr>
+                <td>TYPE_DEPOSIT</td>
+                <td>1</td>
+                <td><p>Indicate of a stake deposit instruction</p></td>
+              </tr>
+
+              <tr>
+                <td>TYPE_REMOVE</td>
+                <td>2</td>
+                <td><p>Indicate of a stake remove instruction</p></td>
               </tr>
 
           </tbody>
@@ -11160,6 +11742,20 @@ Tx. BlockHeight is used as a mechanism for replay protection. </p></td>
                 <tr>
                   <td>liquidity_provision_submission</td>
                   <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">LiquidityProvisionSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>delegate_submission</td>
+                  <td><a href="#vega.commands.v1.DelegateSubmission">DelegateSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegate_submission</td>
+                  <td><a href="#vega.commands.v1.UndelegateSubmission">UndelegateSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -17721,6 +18317,20 @@ these data are being used to bundle the call to the smart contract on the ethere
                 <tr>
                   <td>liquidity_provision_submission</td>
                   <td><a href="#vega.commands.v1.LiquidityProvisionSubmission">vega.commands.v1.LiquidityProvisionSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>delegate_submission</td>
+                  <td><a href="#vega.commands.v1.DelegateSubmission">vega.commands.v1.DelegateSubmission</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegate_submission</td>
+                  <td><a href="#vega.commands.v1.UndelegateSubmission">vega.commands.v1.UndelegateSubmission</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

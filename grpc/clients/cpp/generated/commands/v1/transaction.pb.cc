@@ -15,6 +15,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodeSignature_commands_2fv1_2fvalidator_5fcommands_2eproto;
@@ -25,6 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAME
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2ftransaction_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Signature_commands_2fv1_2ftransaction_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndelegateSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_WithdrawSubmission_commands_2fv1_2fcommands_2eproto;
 namespace vega {
@@ -55,8 +57,8 @@ static void InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto()
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<12> scc_info_InputData_commands_2fv1_2ftransaction_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 12, 0, InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<14> scc_info_InputData_commands_2fv1_2ftransaction_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 14, 0, InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto}, {
       &scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_OrderAmendment_commands_2fv1_2fcommands_2eproto.base,
@@ -64,6 +66,8 @@ static void InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto()
       &scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto.base,
+      &scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto.base,
+      &scc_info_UndelegateSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
       &scc_info_NodeVote_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
       &scc_info_NodeSignature_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
@@ -121,6 +125,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2ftransaction_2e
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::InputData, command_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::Transaction, _internal_metadata_),
@@ -144,8 +150,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2ftransaction_2e
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::commands::v1::InputData)},
-  { 20, -1, sizeof(::vega::commands::v1::Transaction)},
-  { 31, -1, sizeof(::vega::commands::v1::Signature)},
+  { 22, -1, sizeof(::vega::commands::v1::Transaction)},
+  { 33, -1, sizeof(::vega::commands::v1::Signature)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -158,7 +164,7 @@ const char descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto[] PROTO
   "\n\035commands/v1/transaction.proto\022\020vega.co"
   "mmands.v1\032\032commands/v1/commands.proto\032$c"
   "ommands/v1/validator_commands.proto\032\031com"
-  "mands/v1/oracles.proto\"\276\010\n\tInputData\022\024\n\005"
+  "mands/v1/oracles.proto\"\370\t\n\tInputData\022\024\n\005"
   "nonce\030\001 \001(\004R\005nonce\022!\n\014block_height\030\002 \001(\004"
   "R\013blockHeight\022O\n\020order_submission\030\351\007 \001(\013"
   "2!.vega.commands.v1.OrderSubmissionH\000R\017o"
@@ -175,26 +181,31 @@ const char descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto[] PROTO
   "s.v1.VoteSubmissionH\000R\016voteSubmission\022w\n"
   "\036liquidity_provision_submission\030\357\007 \001(\0132."
   ".vega.commands.v1.LiquidityProvisionSubm"
-  "issionH\000R\034liquidityProvisionSubmission\022R"
-  "\n\021node_registration\030\321\017 \001(\0132\".vega.comman"
-  "ds.v1.NodeRegistrationH\000R\020nodeRegistrati"
-  "on\022:\n\tnode_vote\030\322\017 \001(\0132\032.vega.commands.v"
-  "1.NodeVoteH\000R\010nodeVote\022I\n\016node_signature"
-  "\030\323\017 \001(\0132\037.vega.commands.v1.NodeSignature"
-  "H\000R\rnodeSignature\022@\n\013chain_event\030\324\017 \001(\0132"
-  "\034.vega.commands.v1.ChainEventH\000R\nchainEv"
-  "ent\022_\n\026oracle_data_submission\030\271\027 \001(\0132&.v"
-  "ega.commands.v1.OracleDataSubmissionH\000R\024"
-  "oracleDataSubmissionB\t\n\007command\"\303\001\n\013Tran"
-  "saction\022\035\n\ninput_data\030\001 \001(\014R\tinputData\0229"
-  "\n\tsignature\030\002 \001(\0132\033.vega.commands.v1.Sig"
-  "natureR\tsignature\022\033\n\007address\030\351\007 \001(\tH\000R\007a"
-  "ddress\022\032\n\007pub_key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007ve"
-  "rsion\030\320\017 \001(\rR\007versionB\006\n\004from\"O\n\tSignatu"
-  "re\022\024\n\005value\030\001 \001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004"
-  "algo\022\030\n\007version\030\003 \001(\rR\007versionBO\n io.veg"
-  "aprotocol.vega.commands.v1Z+code.vegapro"
-  "tocol.io/vega/proto/commands/v1b\006proto3"
+  "issionH\000R\034liquidityProvisionSubmission\022X"
+  "\n\023delegate_submission\030\360\007 \001(\0132$.vega.comm"
+  "ands.v1.DelegateSubmissionH\000R\022delegateSu"
+  "bmission\022^\n\025undelegate_submission\030\361\007 \001(\013"
+  "2&.vega.commands.v1.UndelegateSubmission"
+  "H\000R\024undelegateSubmission\022R\n\021node_registr"
+  "ation\030\321\017 \001(\0132\".vega.commands.v1.NodeRegi"
+  "strationH\000R\020nodeRegistration\022:\n\tnode_vot"
+  "e\030\322\017 \001(\0132\032.vega.commands.v1.NodeVoteH\000R\010"
+  "nodeVote\022I\n\016node_signature\030\323\017 \001(\0132\037.vega"
+  ".commands.v1.NodeSignatureH\000R\rnodeSignat"
+  "ure\022@\n\013chain_event\030\324\017 \001(\0132\034.vega.command"
+  "s.v1.ChainEventH\000R\nchainEvent\022_\n\026oracle_"
+  "data_submission\030\271\027 \001(\0132&.vega.commands.v"
+  "1.OracleDataSubmissionH\000R\024oracleDataSubm"
+  "issionB\t\n\007command\"\303\001\n\013Transaction\022\035\n\ninp"
+  "ut_data\030\001 \001(\014R\tinputData\0229\n\tsignature\030\002 "
+  "\001(\0132\033.vega.commands.v1.SignatureR\tsignat"
+  "ure\022\033\n\007address\030\351\007 \001(\tH\000R\007address\022\032\n\007pub_"
+  "key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007version\030\320\017 \001(\rR\007"
+  "versionB\006\n\004from\"O\n\tSignature\022\024\n\005value\030\001 "
+  "\001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007versio"
+  "n\030\003 \001(\rR\007versionBO\n io.vegaprotocol.vega"
+  ".commands.v1Z+code.vegaprotocol.io/vega/"
+  "proto/commands/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_commands_2fv1_2ftransaction_2eproto_deps[3] = {
   &::descriptor_table_commands_2fv1_2fcommands_2eproto,
@@ -208,7 +219,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_commands_2fv1_2ftransaction_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_commands_2fv1_2ftransaction_2eproto = {
-  false, false, descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto, "commands/v1/transaction.proto", 1599,
+  false, false, descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto, "commands/v1/transaction.proto", 1785,
   &descriptor_table_commands_2fv1_2ftransaction_2eproto_once, descriptor_table_commands_2fv1_2ftransaction_2eproto_sccs, descriptor_table_commands_2fv1_2ftransaction_2eproto_deps, 3, 3,
   schemas, file_default_instances, TableStruct_commands_2fv1_2ftransaction_2eproto::offsets,
   file_level_metadata_commands_2fv1_2ftransaction_2eproto, 3, file_level_enum_descriptors_commands_2fv1_2ftransaction_2eproto, file_level_service_descriptors_commands_2fv1_2ftransaction_2eproto,
@@ -231,6 +242,8 @@ class InputData::_Internal {
   static const ::vega::commands::v1::ProposalSubmission& proposal_submission(const InputData* msg);
   static const ::vega::commands::v1::VoteSubmission& vote_submission(const InputData* msg);
   static const ::vega::commands::v1::LiquidityProvisionSubmission& liquidity_provision_submission(const InputData* msg);
+  static const ::vega::commands::v1::DelegateSubmission& delegate_submission(const InputData* msg);
+  static const ::vega::commands::v1::UndelegateSubmission& undelegate_submission(const InputData* msg);
   static const ::vega::commands::v1::NodeRegistration& node_registration(const InputData* msg);
   static const ::vega::commands::v1::NodeVote& node_vote(const InputData* msg);
   static const ::vega::commands::v1::NodeSignature& node_signature(const InputData* msg);
@@ -265,6 +278,14 @@ InputData::_Internal::vote_submission(const InputData* msg) {
 const ::vega::commands::v1::LiquidityProvisionSubmission&
 InputData::_Internal::liquidity_provision_submission(const InputData* msg) {
   return *msg->command_.liquidity_provision_submission_;
+}
+const ::vega::commands::v1::DelegateSubmission&
+InputData::_Internal::delegate_submission(const InputData* msg) {
+  return *msg->command_.delegate_submission_;
+}
+const ::vega::commands::v1::UndelegateSubmission&
+InputData::_Internal::undelegate_submission(const InputData* msg) {
+  return *msg->command_.undelegate_submission_;
 }
 const ::vega::commands::v1::NodeRegistration&
 InputData::_Internal::node_registration(const InputData* msg) {
@@ -447,6 +468,52 @@ void InputData::clear_liquidity_provision_submission() {
     clear_has_command();
   }
 }
+void InputData::set_allocated_delegate_submission(::vega::commands::v1::DelegateSubmission* delegate_submission) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_command();
+  if (delegate_submission) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(delegate_submission)->GetArena();
+    if (message_arena != submessage_arena) {
+      delegate_submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, delegate_submission, submessage_arena);
+    }
+    set_has_delegate_submission();
+    command_.delegate_submission_ = delegate_submission;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.InputData.delegate_submission)
+}
+void InputData::clear_delegate_submission() {
+  if (_internal_has_delegate_submission()) {
+    if (GetArena() == nullptr) {
+      delete command_.delegate_submission_;
+    }
+    clear_has_command();
+  }
+}
+void InputData::set_allocated_undelegate_submission(::vega::commands::v1::UndelegateSubmission* undelegate_submission) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_command();
+  if (undelegate_submission) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(undelegate_submission)->GetArena();
+    if (message_arena != submessage_arena) {
+      undelegate_submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, undelegate_submission, submessage_arena);
+    }
+    set_has_undelegate_submission();
+    command_.undelegate_submission_ = undelegate_submission;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.InputData.undelegate_submission)
+}
+void InputData::clear_undelegate_submission() {
+  if (_internal_has_undelegate_submission()) {
+    if (GetArena() == nullptr) {
+      delete command_.undelegate_submission_;
+    }
+    clear_has_command();
+  }
+}
 void InputData::set_allocated_node_registration(::vega::commands::v1::NodeRegistration* node_registration) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_command();
@@ -604,6 +671,14 @@ InputData::InputData(const InputData& from)
       _internal_mutable_liquidity_provision_submission()->::vega::commands::v1::LiquidityProvisionSubmission::MergeFrom(from._internal_liquidity_provision_submission());
       break;
     }
+    case kDelegateSubmission: {
+      _internal_mutable_delegate_submission()->::vega::commands::v1::DelegateSubmission::MergeFrom(from._internal_delegate_submission());
+      break;
+    }
+    case kUndelegateSubmission: {
+      _internal_mutable_undelegate_submission()->::vega::commands::v1::UndelegateSubmission::MergeFrom(from._internal_undelegate_submission());
+      break;
+    }
     case kNodeRegistration: {
       _internal_mutable_node_registration()->::vega::commands::v1::NodeRegistration::MergeFrom(from._internal_node_registration());
       break;
@@ -710,6 +785,18 @@ void InputData::clear_command() {
     case kLiquidityProvisionSubmission: {
       if (GetArena() == nullptr) {
         delete command_.liquidity_provision_submission_;
+      }
+      break;
+    }
+    case kDelegateSubmission: {
+      if (GetArena() == nullptr) {
+        delete command_.delegate_submission_;
+      }
+      break;
+    }
+    case kUndelegateSubmission: {
+      if (GetArena() == nullptr) {
+        delete command_.undelegate_submission_;
       }
       break;
     }
@@ -831,6 +918,20 @@ const char* InputData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 1007:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
           ptr = ctx->ParseMessage(_internal_mutable_liquidity_provision_submission(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.commands.v1.DelegateSubmission delegate_submission = 1008 [json_name = "delegateSubmission"];
+      case 1008:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_delegate_submission(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];
+      case 1009:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          ptr = ctx->ParseMessage(_internal_mutable_undelegate_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -965,6 +1066,22 @@ failure:
         1007, _Internal::liquidity_provision_submission(this), target, stream);
   }
 
+  // .vega.commands.v1.DelegateSubmission delegate_submission = 1008 [json_name = "delegateSubmission"];
+  if (_internal_has_delegate_submission()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1008, _Internal::delegate_submission(this), target, stream);
+  }
+
+  // .vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];
+  if (_internal_has_undelegate_submission()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1009, _Internal::undelegate_submission(this), target, stream);
+  }
+
   // .vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];
   if (_internal_has_node_registration()) {
     target = stream->EnsureSpace(target);
@@ -1085,6 +1202,20 @@ size_t InputData::ByteSizeLong() const {
           *command_.liquidity_provision_submission_);
       break;
     }
+    // .vega.commands.v1.DelegateSubmission delegate_submission = 1008 [json_name = "delegateSubmission"];
+    case kDelegateSubmission: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *command_.delegate_submission_);
+      break;
+    }
+    // .vega.commands.v1.UndelegateSubmission undelegate_submission = 1009 [json_name = "undelegateSubmission"];
+    case kUndelegateSubmission: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *command_.undelegate_submission_);
+      break;
+    }
     // .vega.commands.v1.NodeRegistration node_registration = 2001 [json_name = "nodeRegistration"];
     case kNodeRegistration: {
       total_size += 2 +
@@ -1188,6 +1319,14 @@ void InputData::MergeFrom(const InputData& from) {
     }
     case kLiquidityProvisionSubmission: {
       _internal_mutable_liquidity_provision_submission()->::vega::commands::v1::LiquidityProvisionSubmission::MergeFrom(from._internal_liquidity_provision_submission());
+      break;
+    }
+    case kDelegateSubmission: {
+      _internal_mutable_delegate_submission()->::vega::commands::v1::DelegateSubmission::MergeFrom(from._internal_delegate_submission());
+      break;
+    }
+    case kUndelegateSubmission: {
+      _internal_mutable_undelegate_submission()->::vega::commands::v1::UndelegateSubmission::MergeFrom(from._internal_undelegate_submission());
       break;
     }
     case kNodeRegistration: {

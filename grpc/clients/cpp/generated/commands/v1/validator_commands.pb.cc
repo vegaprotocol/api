@@ -108,6 +108,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2fvalidator_5fco
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, pub_key_),
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, chain_pub_key_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, info_url_),
+  PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeRegistration, country_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::NodeVote, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -138,9 +140,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2fvalidator_5fco
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::commands::v1::NodeRegistration)},
-  { 7, -1, sizeof(::vega::commands::v1::NodeVote)},
-  { 14, -1, sizeof(::vega::commands::v1::NodeSignature)},
-  { 22, -1, sizeof(::vega::commands::v1::ChainEvent)},
+  { 9, -1, sizeof(::vega::commands::v1::NodeVote)},
+  { 16, -1, sizeof(::vega::commands::v1::NodeSignature)},
+  { 24, -1, sizeof(::vega::commands::v1::ChainEvent)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -154,26 +156,28 @@ const char descriptor_table_protodef_commands_2fv1_2fvalidator_5fcommands_2eprot
   "\n$commands/v1/validator_commands.proto\022\020"
   "vega.commands.v1\032\022chain_events.proto\0326gi"
   "thub.com/mwitkow/go-proto-validators/val"
-  "idator.proto\"_\n\020NodeRegistration\022\037\n\007pub_"
-  "key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022*\n\rchain_pub_k"
-  "ey\030\002 \001(\014B\006\342\337\037\002X\001R\013chainPubKey\"Q\n\010NodeVot"
-  "e\022\037\n\007pub_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022$\n\tre"
-  "ference\030\002 \001(\tB\006\342\337\037\002X\001R\treference\"j\n\rNode"
-  "Signature\022\016\n\002id\030\001 \001(\tR\002id\022\020\n\003sig\030\002 \001(\014R\003"
-  "sig\0227\n\004kind\030\003 \001(\0162#.vega.commands.v1.Nod"
-  "eSignatureKindR\004kind\"\375\001\n\nChainEvent\022\023\n\005t"
-  "x_id\030\001 \001(\tR\004txId\022\024\n\005nonce\030\002 \001(\004R\005nonce\0224"
-  "\n\007builtin\030\351\007 \001(\0132\027.vega.BuiltinAssetEven"
-  "tH\000R\007builtin\022)\n\005erc20\030\352\007 \001(\0132\020.vega.ERC2"
-  "0EventH\000R\005erc20\022#\n\003btc\030\353\007 \001(\0132\016.vega.BTC"
-  "EventH\000R\003btc\0225\n\tvalidator\030\354\007 \001(\0132\024.vega."
-  "ValidatorEventH\000R\tvalidatorB\007\n\005event*\205\001\n"
-  "\021NodeSignatureKind\022#\n\037NODE_SIGNATURE_KIN"
-  "D_UNSPECIFIED\020\000\022!\n\035NODE_SIGNATURE_KIND_A"
-  "SSET_NEW\020\001\022(\n$NODE_SIGNATURE_KIND_ASSET_"
-  "WITHDRAWAL\020\002BO\n io.vegaprotocol.vega.com"
-  "mands.v1Z+code.vegaprotocol.io/vega/prot"
-  "o/commands/v1b\006proto3"
+  "idator.proto\"\244\001\n\020NodeRegistration\022\037\n\007pub"
+  "_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022*\n\rchain_pub_"
+  "key\030\002 \001(\014B\006\342\337\037\002X\001R\013chainPubKey\022!\n\010info_u"
+  "rl\030\003 \001(\tB\006\342\337\037\002X\001R\007infoUrl\022 \n\007country\030\004 \001"
+  "(\tB\006\342\337\037\002X\001R\007country\"Q\n\010NodeVote\022\037\n\007pub_k"
+  "ey\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022$\n\treference\030\002 "
+  "\001(\tB\006\342\337\037\002X\001R\treference\"j\n\rNodeSignature\022"
+  "\016\n\002id\030\001 \001(\tR\002id\022\020\n\003sig\030\002 \001(\014R\003sig\0227\n\004kin"
+  "d\030\003 \001(\0162#.vega.commands.v1.NodeSignature"
+  "KindR\004kind\"\375\001\n\nChainEvent\022\023\n\005tx_id\030\001 \001(\t"
+  "R\004txId\022\024\n\005nonce\030\002 \001(\004R\005nonce\0224\n\007builtin\030"
+  "\351\007 \001(\0132\027.vega.BuiltinAssetEventH\000R\007built"
+  "in\022)\n\005erc20\030\352\007 \001(\0132\020.vega.ERC20EventH\000R\005"
+  "erc20\022#\n\003btc\030\353\007 \001(\0132\016.vega.BTCEventH\000R\003b"
+  "tc\0225\n\tvalidator\030\354\007 \001(\0132\024.vega.ValidatorE"
+  "ventH\000R\tvalidatorB\007\n\005event*\205\001\n\021NodeSigna"
+  "tureKind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIF"
+  "IED\020\000\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001"
+  "\022(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL"
+  "\020\002BO\n io.vegaprotocol.vega.commands.v1Z+"
+  "code.vegaprotocol.io/vega/proto/commands"
+  "/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_deps[2] = {
   &::descriptor_table_chain_5fevents_2eproto,
@@ -187,7 +191,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto = {
-  false, false, descriptor_table_protodef_commands_2fv1_2fvalidator_5fcommands_2eproto, "commands/v1/validator_commands.proto", 901,
+  false, false, descriptor_table_protodef_commands_2fv1_2fvalidator_5fcommands_2eproto, "commands/v1/validator_commands.proto", 971,
   &descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_once, descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_sccs, descriptor_table_commands_2fv1_2fvalidator_5fcommands_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_commands_2fv1_2fvalidator_5fcommands_2eproto::offsets,
   file_level_metadata_commands_2fv1_2fvalidator_5fcommands_2eproto, 4, file_level_enum_descriptors_commands_2fv1_2fvalidator_5fcommands_2eproto, file_level_service_descriptors_commands_2fv1_2fvalidator_5fcommands_2eproto,
@@ -239,6 +243,16 @@ NodeRegistration::NodeRegistration(const NodeRegistration& from)
     chain_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chain_pub_key(),
       GetArena());
   }
+  info_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_info_url().empty()) {
+    info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_info_url(),
+      GetArena());
+  }
+  country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_country().empty()) {
+    country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_country(),
+      GetArena());
+  }
   // @@protoc_insertion_point(copy_constructor:vega.commands.v1.NodeRegistration)
 }
 
@@ -246,6 +260,8 @@ void NodeRegistration::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto.base);
   pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   chain_pub_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  info_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 NodeRegistration::~NodeRegistration() {
@@ -258,6 +274,8 @@ void NodeRegistration::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   pub_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   chain_pub_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  info_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void NodeRegistration::ArenaDtor(void* object) {
@@ -283,6 +301,8 @@ void NodeRegistration::Clear() {
 
   pub_key_.ClearToEmpty();
   chain_pub_key_.ClearToEmpty();
+  info_url_.ClearToEmpty();
+  country_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -306,6 +326,24 @@ const char* NodeRegistration::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_chain_pub_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_info_url();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.info_url"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string country = 4 [json_name = "country", (.validator.field) = {
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_country();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.commands.v1.NodeRegistration.country"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -349,6 +387,26 @@ failure:
         2, this->_internal_chain_pub_key(), target);
   }
 
+  // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+  if (this->info_url().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_info_url().data(), static_cast<int>(this->_internal_info_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.NodeRegistration.info_url");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_info_url(), target);
+  }
+
+  // string country = 4 [json_name = "country", (.validator.field) = {
+  if (this->country().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.commands.v1.NodeRegistration.country");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_country(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -377,6 +435,20 @@ size_t NodeRegistration::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_chain_pub_key());
+  }
+
+  // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+  if (this->info_url().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_info_url());
+  }
+
+  // string country = 4 [json_name = "country", (.validator.field) = {
+  if (this->country().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_country());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -416,6 +488,12 @@ void NodeRegistration::MergeFrom(const NodeRegistration& from) {
   if (from.chain_pub_key().size() > 0) {
     _internal_set_chain_pub_key(from._internal_chain_pub_key());
   }
+  if (from.info_url().size() > 0) {
+    _internal_set_info_url(from._internal_info_url());
+  }
+  if (from.country().size() > 0) {
+    _internal_set_country(from._internal_country());
+  }
 }
 
 void NodeRegistration::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -441,6 +519,8 @@ void NodeRegistration::InternalSwap(NodeRegistration* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   pub_key_.Swap(&other->pub_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   chain_pub_key_.Swap(&other->chain_pub_key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  info_url_.Swap(&other->info_url_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  country_.Swap(&other->country_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NodeRegistration::GetMetadata() const {

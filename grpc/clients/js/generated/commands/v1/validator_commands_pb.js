@@ -141,7 +141,9 @@ proto.vega.commands.v1.NodeRegistration.prototype.toObject = function(opt_includ
 proto.vega.commands.v1.NodeRegistration.toObject = function(includeInstance, msg) {
   var f, obj = {
     pubKey: msg.getPubKey_asB64(),
-    chainPubKey: msg.getChainPubKey_asB64()
+    chainPubKey: msg.getChainPubKey_asB64(),
+    infoUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    country: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -186,6 +188,14 @@ proto.vega.commands.v1.NodeRegistration.deserializeBinaryFromReader = function(m
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setChainPubKey(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInfoUrl(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCountry(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -226,6 +236,20 @@ proto.vega.commands.v1.NodeRegistration.serializeBinaryToWriter = function(messa
   if (f.length > 0) {
     writer.writeBytes(
       2,
+      f
+    );
+  }
+  f = message.getInfoUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getCountry();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -313,6 +337,42 @@ proto.vega.commands.v1.NodeRegistration.prototype.getChainPubKey_asU8 = function
  */
 proto.vega.commands.v1.NodeRegistration.prototype.setChainPubKey = function(value) {
   return jspb.Message.setProto3BytesField(this, 2, value);
+};
+
+
+/**
+ * optional string info_url = 3;
+ * @return {string}
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.getInfoUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.commands.v1.NodeRegistration} returns this
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.setInfoUrl = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string country = 4;
+ * @return {string}
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.getCountry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.vega.commands.v1.NodeRegistration} returns this
+ */
+proto.vega.commands.v1.NodeRegistration.prototype.setCountry = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

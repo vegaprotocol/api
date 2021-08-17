@@ -1,6 +1,6 @@
 /build
-/coverage
 .coverage
+.coverage.d
 /dist
 *.egg-info
 .mypy_cache

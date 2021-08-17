@@ -2,4 +2,12 @@
 
 .PHONY: default
 default:
-	@./submit-order.sh --ci
+	@find . -name '*.sh' | while read -r shscript ; do \
+		"$$shscript" || exit 1 ; \
+	done
+
+.PHONY: ci
+ci:
+	@find . -name '*.sh' | while read -r shscript ; do \
+		"$$shscript" --ci || exit 1 ; \
+	done

@@ -671,12 +671,13 @@ enum AccountType : int {
   ACCOUNT_TYPE_BOND = 9,
   ACCOUNT_TYPE_EXTERNAL = 10,
   ACCOUNT_TYPE_GLOBAL_INSURANCE = 11,
+  ACCOUNT_TYPE_GLOBAL_REWARD = 12,
   AccountType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   AccountType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool AccountType_IsValid(int value);
 constexpr AccountType AccountType_MIN = ACCOUNT_TYPE_UNSPECIFIED;
-constexpr AccountType AccountType_MAX = ACCOUNT_TYPE_GLOBAL_INSURANCE;
+constexpr AccountType AccountType_MAX = ACCOUNT_TYPE_GLOBAL_REWARD;
 constexpr int AccountType_ARRAYSIZE = AccountType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AccountType_descriptor();
@@ -715,12 +716,13 @@ enum TransferType : int {
   TRANSFER_TYPE_WITHDRAW = 18,
   TRANSFER_TYPE_DEPOSIT = 19,
   TRANSFER_TYPE_BOND_SLASHING = 20,
+  TRANSFER_TYPE_STAKE_REWARD = 21,
   TransferType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   TransferType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool TransferType_IsValid(int value);
 constexpr TransferType TransferType_MIN = TRANSFER_TYPE_UNSPECIFIED;
-constexpr TransferType TransferType_MAX = TRANSFER_TYPE_BOND_SLASHING;
+constexpr TransferType TransferType_MAX = TRANSFER_TYPE_STAKE_REWARD;
 constexpr int TransferType_ARRAYSIZE = TransferType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TransferType_descriptor();

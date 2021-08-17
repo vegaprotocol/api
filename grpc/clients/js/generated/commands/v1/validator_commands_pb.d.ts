@@ -16,6 +16,12 @@ export class NodeRegistration extends jspb.Message {
   getChainPubKey_asB64(): string;
   setChainPubKey(value: Uint8Array | string): void;
 
+  getInfoUrl(): string;
+  setInfoUrl(value: string): void;
+
+  getCountry(): string;
+  setCountry(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NodeRegistration.AsObject;
   static toObject(includeInstance: boolean, msg: NodeRegistration): NodeRegistration.AsObject;
@@ -30,6 +36,8 @@ export namespace NodeRegistration {
   export type AsObject = {
     pubKey: Uint8Array | string,
     chainPubKey: Uint8Array | string,
+    infoUrl: string,
+    country: string,
   }
 }
 

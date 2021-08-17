@@ -18,10 +18,15 @@ export class FutureProduct extends jspb.Message {
   getQuoteName(): string;
   setQuoteName(value: string): void;
 
-  hasOracleSpec(): boolean;
-  clearOracleSpec(): void;
-  getOracleSpec(): oracles_v1_spec_pb.OracleSpecConfiguration | undefined;
-  setOracleSpec(value?: oracles_v1_spec_pb.OracleSpecConfiguration): void;
+  hasOracleSpecForSettlementPrice(): boolean;
+  clearOracleSpecForSettlementPrice(): void;
+  getOracleSpecForSettlementPrice(): oracles_v1_spec_pb.OracleSpecConfiguration | undefined;
+  setOracleSpecForSettlementPrice(value?: oracles_v1_spec_pb.OracleSpecConfiguration): void;
+
+  hasOracleSpecForTradingTermination(): boolean;
+  clearOracleSpecForTradingTermination(): void;
+  getOracleSpecForTradingTermination(): oracles_v1_spec_pb.OracleSpecConfiguration | undefined;
+  setOracleSpecForTradingTermination(value?: oracles_v1_spec_pb.OracleSpecConfiguration): void;
 
   hasOracleSpecBinding(): boolean;
   clearOracleSpecBinding(): void;
@@ -43,7 +48,8 @@ export namespace FutureProduct {
     maturity: string,
     settlementAsset: string,
     quoteName: string,
-    oracleSpec?: oracles_v1_spec_pb.OracleSpecConfiguration.AsObject,
+    oracleSpecForSettlementPrice?: oracles_v1_spec_pb.OracleSpecConfiguration.AsObject,
+    oracleSpecForTradingTermination?: oracles_v1_spec_pb.OracleSpecConfiguration.AsObject,
     oracleSpecBinding?: markets_pb.OracleSpecToFutureBinding.AsObject,
   }
 }

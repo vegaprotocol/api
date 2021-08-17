@@ -226,9 +226,17 @@
           "title": "The batch (or block) of transactions that the events relate to",
           "type": "string"
         },
+        "delegation_balance": {
+          "$ref": "#/definitions/v1DelegationBalanceEvent",
+          "title": "Delegation balance events"
+        },
         "deposit": {
           "$ref": "#/definitions/vegaDeposit",
           "title": "Deposit events"
+        },
+        "epoch_event": {
+          "$ref": "#/definitions/v1EpochEvent",
+          "title": "Epoch update events - See [Epoch](#vega.Epoch)"
         },
         "id": {
           "title": "A unique event identifier for the message",
@@ -290,6 +298,10 @@
           "$ref": "#/definitions/vegaParty",
           "title": "Party events"
         },
+        "pending_delegation_balance": {
+          "$ref": "#/definitions/v1PendingDelegationBalanceEvent",
+          "title": "Pending delegation balance events"
+        },
         "position_resolution": {
           "$ref": "#/definitions/v1PositionResolution",
           "title": "Position resolution events - See [PositionResolution](#vega.PositionResolution)"
@@ -309,6 +321,10 @@
         "settle_position": {
           "$ref": "#/definitions/v1SettlePosition",
           "title": "Position settlement events - See [SettlePosition](#vega.SettlePosition)"
+        },
+        "staking_event": {
+          "$ref": "#/definitions/v1StakingEvent",
+          "title": "Staking event"
         },
         "time_update": {
           "$ref": "#/definitions/v1TimeUpdate",
@@ -330,6 +346,10 @@
           "$ref": "#/definitions/v1BusEventType",
           "title": "The type of bus event (one of the list below)"
         },
+        "validator_update": {
+          "$ref": "#/definitions/v1ValidatorUpdate",
+          "title": "Validator update events"
+        },
         "vote": {
           "$ref": "#/definitions/vegaVote",
           "title": "Vote events (for governance)"
@@ -344,7 +364,7 @@
     },
     "v1BusEventType": {
       "default": "BUS_EVENT_TYPE_UNSPECIFIED",
-      "description": "- BUS_EVENT_TYPE_UNSPECIFIED: Default value, always invalid\n - BUS_EVENT_TYPE_ALL: Events of ALL event types, used when filtering stream from event bus\n - BUS_EVENT_TYPE_TIME_UPDATE: Event for blockchain time updates\n - BUS_EVENT_TYPE_TRANSFER_RESPONSES: Event for when a transfer happens internally, contains the transfer information\n - BUS_EVENT_TYPE_POSITION_RESOLUTION: Event indicating position resolution has occurred\n - BUS_EVENT_TYPE_ORDER: Event for order updates, both new and existing orders\n - BUS_EVENT_TYPE_ACCOUNT: Event for account updates\n - BUS_EVENT_TYPE_PARTY: Event for party updates\n - BUS_EVENT_TYPE_TRADE: Event indicating a new trade has occurred\n - BUS_EVENT_TYPE_MARGIN_LEVELS: Event indicating margin levels have changed for a party\n - BUS_EVENT_TYPE_PROPOSAL: Event for proposal updates (for governance)\n - BUS_EVENT_TYPE_VOTE: Event indicating a new vote has occurred (for governance)\n - BUS_EVENT_TYPE_MARKET_DATA: Event for market data updates\n - BUS_EVENT_TYPE_NODE_SIGNATURE: Event for a new signature for a Vega node\n - BUS_EVENT_TYPE_LOSS_SOCIALIZATION: Event indicating loss socialisation occurred for a party\n - BUS_EVENT_TYPE_SETTLE_POSITION: Event for when a position is being settled\n - BUS_EVENT_TYPE_SETTLE_DISTRESSED: Event for when a position is distressed\n - BUS_EVENT_TYPE_MARKET_CREATED: Event indicating a new market was created\n - BUS_EVENT_TYPE_ASSET: Event for when an asset is added to Vega\n - BUS_EVENT_TYPE_MARKET_TICK: Event indicating a market tick event\n - BUS_EVENT_TYPE_WITHDRAWAL: Event for when a withdrawal occurs\n - BUS_EVENT_TYPE_DEPOSIT: Event for when a deposit occurs\n - BUS_EVENT_TYPE_AUCTION: Event indicating a change in auction state, for example starting or ending an auction\n - BUS_EVENT_TYPE_RISK_FACTOR: Event indicating a risk factor has been updated\n - BUS_EVENT_TYPE_NETWORK_PARAMETER: Event indicating a network parameter has been added or updated\n - BUS_EVENT_TYPE_LIQUIDITY_PROVISION: Event indicating a liquidity provision has been created or updated\n - BUS_EVENT_TYPE_MARKET_UPDATED: Event indicating a new market was created\n - BUS_EVENT_TYPE_ORACLE_SPEC: Event indicating an oracle spec has been created or updated\n - BUS_EVENT_TYPE_ORACLE_DATA: Event indicating that an oracle data has been broadcast\n - BUS_EVENT_TYPE_MARKET: Event indicating a market related event, for example when a market opens\n - BUS_EVENT_TYPE_TX_ERROR: Event used to report failed transactions back to a user, this is excluded from the ALL type",
+      "description": "- BUS_EVENT_TYPE_UNSPECIFIED: Default value, always invalid\n - BUS_EVENT_TYPE_ALL: Events of ALL event types, used when filtering stream from event bus\n - BUS_EVENT_TYPE_TIME_UPDATE: Event for blockchain time updates\n - BUS_EVENT_TYPE_TRANSFER_RESPONSES: Event for when a transfer happens internally, contains the transfer information\n - BUS_EVENT_TYPE_POSITION_RESOLUTION: Event indicating position resolution has occurred\n - BUS_EVENT_TYPE_ORDER: Event for order updates, both new and existing orders\n - BUS_EVENT_TYPE_ACCOUNT: Event for account updates\n - BUS_EVENT_TYPE_PARTY: Event for party updates\n - BUS_EVENT_TYPE_TRADE: Event indicating a new trade has occurred\n - BUS_EVENT_TYPE_MARGIN_LEVELS: Event indicating margin levels have changed for a party\n - BUS_EVENT_TYPE_PROPOSAL: Event for proposal updates (for governance)\n - BUS_EVENT_TYPE_VOTE: Event indicating a new vote has occurred (for governance)\n - BUS_EVENT_TYPE_MARKET_DATA: Event for market data updates\n - BUS_EVENT_TYPE_NODE_SIGNATURE: Event for a new signature for a Vega node\n - BUS_EVENT_TYPE_LOSS_SOCIALIZATION: Event indicating loss socialisation occurred for a party\n - BUS_EVENT_TYPE_SETTLE_POSITION: Event for when a position is being settled\n - BUS_EVENT_TYPE_SETTLE_DISTRESSED: Event for when a position is distressed\n - BUS_EVENT_TYPE_MARKET_CREATED: Event indicating a new market was created\n - BUS_EVENT_TYPE_ASSET: Event for when an asset is added to Vega\n - BUS_EVENT_TYPE_MARKET_TICK: Event indicating a market tick event\n - BUS_EVENT_TYPE_WITHDRAWAL: Event for when a withdrawal occurs\n - BUS_EVENT_TYPE_DEPOSIT: Event for when a deposit occurs\n - BUS_EVENT_TYPE_AUCTION: Event indicating a change in auction state, for example starting or ending an auction\n - BUS_EVENT_TYPE_RISK_FACTOR: Event indicating a risk factor has been updated\n - BUS_EVENT_TYPE_NETWORK_PARAMETER: Event indicating a network parameter has been added or updated\n - BUS_EVENT_TYPE_LIQUIDITY_PROVISION: Event indicating a liquidity provision has been created or updated\n - BUS_EVENT_TYPE_MARKET_UPDATED: Event indicating a new market was created\n - BUS_EVENT_TYPE_ORACLE_SPEC: Event indicating an oracle spec has been created or updated\n - BUS_EVENT_TYPE_ORACLE_DATA: Event indicating that an oracle data has been broadcast\n - BUS_EVENT_TYPE_DELEGATION_BALANCE: Event indicating that an delegation balance of a party to a node for current epoch has changed\n - BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE: Event indicating that an delegation balance of a party to a node for next epoch has changed\n - BUS_EVENT_TYPE_EPOCH_UPDATE: Event indicating the start or end of an epoch\n - BUS_EVENT_TYPE_VALIDATOR_UPDATE: Event indicating that validator node has been updated\n - BUS_EVENT_TYPE_STAKING_EVENT: Event indicating a new staking event have been processed by the network\n - BUS_EVENT_TYPE_MARKET: Event indicating a market related event, for example when a market opens\n - BUS_EVENT_TYPE_TX_ERROR: Event used to report failed transactions back to a user, this is excluded from the ALL type",
       "enum": [
         "BUS_EVENT_TYPE_UNSPECIFIED",
         "BUS_EVENT_TYPE_ALL",
@@ -375,6 +395,11 @@
         "BUS_EVENT_TYPE_MARKET_UPDATED",
         "BUS_EVENT_TYPE_ORACLE_SPEC",
         "BUS_EVENT_TYPE_ORACLE_DATA",
+        "BUS_EVENT_TYPE_DELEGATION_BALANCE",
+        "BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE",
+        "BUS_EVENT_TYPE_EPOCH_UPDATE",
+        "BUS_EVENT_TYPE_VALIDATOR_UPDATE",
+        "BUS_EVENT_TYPE_STAKING_EVENT",
         "BUS_EVENT_TYPE_MARKET",
         "BUS_EVENT_TYPE_TX_ERROR"
       ],
@@ -447,6 +472,22 @@
       "title": "Condition describes the condition that must be validated by the",
       "type": "object"
     },
+    "v1DelegationBalanceEvent": {
+      "properties": {
+        "amount": {
+          "format": "uint64",
+          "type": "string"
+        },
+        "node_id": {
+          "type": "string"
+        },
+        "party": {
+          "type": "string"
+        }
+      },
+      "title": "DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect",
+      "type": "object"
+    },
     "v1DepositResponse": {
       "properties": {
         "deposit": {
@@ -495,6 +536,32 @@
         }
       },
       "title": "The response with all information required to bundle the call to finalise the withdrawal on the erc20 bridge\nfunction withdraw_asset(address asset_source, uint256 asset_id, uint256 amount, uint256 expiry, uint256 nonce, bytes memory signatures)",
+      "type": "object"
+    },
+    "v1EpochEvent": {
+      "properties": {
+        "end_time": {
+          "format": "int64",
+          "title": "What time did it actually end",
+          "type": "string"
+        },
+        "expire_time": {
+          "format": "int64",
+          "title": "What time should this epoch end",
+          "type": "string"
+        },
+        "seq": {
+          "format": "uint64",
+          "title": "Sequence number that increases by one each epoch",
+          "type": "string"
+        },
+        "start_time": {
+          "format": "int64",
+          "title": "What time did this epoch start",
+          "type": "string"
+        }
+      },
+      "title": "Epoch details",
       "type": "object"
     },
     "v1EstimateFeeRequest": {
@@ -1427,6 +1494,26 @@
       "title": "Response for a party given a party identifier",
       "type": "object"
     },
+    "v1PendingDelegationBalanceEvent": {
+      "properties": {
+        "delegation_amount": {
+          "format": "uint64",
+          "type": "string"
+        },
+        "node_id": {
+          "type": "string"
+        },
+        "party": {
+          "type": "string"
+        },
+        "undelegation_amount": {
+          "format": "uint64",
+          "type": "string"
+        }
+      },
+      "title": "PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch",
+      "type": "object"
+    },
     "v1PositionResolution": {
       "properties": {
         "closed": {
@@ -1748,6 +1835,43 @@
       "title": "A settle position event contains position settlement information for a party",
       "type": "object"
     },
+    "v1StakingEvent": {
+      "properties": {
+        "amount": {
+          "title": "The amount of stake deposited or removed",
+          "type": "string"
+        },
+        "id": {
+          "title": "The internal ID for this staking event",
+          "type": "string"
+        },
+        "party": {
+          "description": "The party to whom the event is directed at.",
+          "type": "string"
+        },
+        "ts": {
+          "format": "int64",
+          "title": "The timestamps at which the event was emitted by ethereum",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/v1StakingEventType",
+          "title": "The type of event"
+        }
+      },
+      "title": "StakingEvent - an event notifying of stake being deposited or removed for a given party\nThese events are emitted for every Staking deposit or removed accepted by the network",
+      "type": "object"
+    },
+    "v1StakingEventType": {
+      "default": "TYPE_UNSPECIFIED",
+      "enum": [
+        "TYPE_UNSPECIFIED",
+        "TYPE_DEPOSIT",
+        "TYPE_REMOVE"
+      ],
+      "title": "- TYPE_UNSPECIFIED: Default value\n - TYPE_DEPOSIT: Indicate of a stake deposit instruction\n - TYPE_REMOVE: Indicate of a stake remove instruction",
+      "type": "string"
+    },
     "v1StatisticsResponse": {
       "properties": {
         "statistics": {
@@ -1950,6 +2074,28 @@
       },
       "type": "object"
     },
+    "v1ValidatorUpdate": {
+      "properties": {
+        "country": {
+          "title": "Country code (ISO 3166-1 alpha-2) for the location of the node",
+          "type": "string"
+        },
+        "info_url": {
+          "title": "URL with more info on the node",
+          "type": "string"
+        },
+        "pub_key": {
+          "title": "Public key of validator node",
+          "type": "string"
+        },
+        "tm_pub_key": {
+          "title": "Public key of Tendermint",
+          "type": "string"
+        }
+      },
+      "title": "A validator update event contains information about validator node",
+      "type": "object"
+    },
     "v1VoteSubmission": {
       "description": "A command to submit a new vote for a governance\nproposal.",
       "properties": {
@@ -2039,7 +2185,7 @@
     },
     "vegaAccountType": {
       "default": "ACCOUNT_TYPE_UNSPECIFIED",
-      "description": "- ACCOUNT_TYPE_UNSPECIFIED: Default value\n - ACCOUNT_TYPE_INSURANCE: Insurance pool accounts contain insurance pool funds for a market\n - ACCOUNT_TYPE_SETTLEMENT: Settlement accounts exist only during settlement or mark-to-market\n - ACCOUNT_TYPE_MARGIN: Margin accounts contain margin funds for a party and each party will\nhave multiple margin accounts, one for each market they have traded in\n\nMargin account funds will alter as margin requirements on positions change\n - ACCOUNT_TYPE_GENERAL: General accounts contains general funds for a party. A party will\nhave multiple general accounts, one for each asset they want\nto trade with\n\nGeneral accounts are where funds are initially deposited or withdrawn from,\nit is also the account where funds are taken to fulfil fees and initial margin requirements\n - ACCOUNT_TYPE_FEES_INFRASTRUCTURE: Infrastructure accounts contain fees earned by providing infrastructure on Vega\n - ACCOUNT_TYPE_FEES_LIQUIDITY: Liquidity accounts contain fees earned by providing liquidity on Vega markets\n - ACCOUNT_TYPE_FEES_MAKER: This account is created to hold fees earned by placing orders that sit on the book\nand are then matched with an incoming order to create a trade - These fees reward traders\nwho provide the best priced liquidity that actually allows trading to take place\n - ACCOUNT_TYPE_LOCK_WITHDRAW: This account is created to lock funds to be withdrawn by parties\n - ACCOUNT_TYPE_BOND: This account is created to maintain liquidity providers funds commitments\n - ACCOUNT_TYPE_EXTERNAL: External account represents an external source (deposit/withdrawal)\n - ACCOUNT_TYPE_GLOBAL_INSURANCE: Global insurance account for the asset",
+      "description": "- ACCOUNT_TYPE_UNSPECIFIED: Default value\n - ACCOUNT_TYPE_INSURANCE: Insurance pool accounts contain insurance pool funds for a market\n - ACCOUNT_TYPE_SETTLEMENT: Settlement accounts exist only during settlement or mark-to-market\n - ACCOUNT_TYPE_MARGIN: Margin accounts contain margin funds for a party and each party will\nhave multiple margin accounts, one for each market they have traded in\n\nMargin account funds will alter as margin requirements on positions change\n - ACCOUNT_TYPE_GENERAL: General accounts contains general funds for a party. A party will\nhave multiple general accounts, one for each asset they want\nto trade with\n\nGeneral accounts are where funds are initially deposited or withdrawn from,\nit is also the account where funds are taken to fulfil fees and initial margin requirements\n - ACCOUNT_TYPE_FEES_INFRASTRUCTURE: Infrastructure accounts contain fees earned by providing infrastructure on Vega\n - ACCOUNT_TYPE_FEES_LIQUIDITY: Liquidity accounts contain fees earned by providing liquidity on Vega markets\n - ACCOUNT_TYPE_FEES_MAKER: This account is created to hold fees earned by placing orders that sit on the book\nand are then matched with an incoming order to create a trade - These fees reward parties\nwho provide the best priced liquidity that actually allows trading to take place\n - ACCOUNT_TYPE_LOCK_WITHDRAW: This account is created to lock funds to be withdrawn by parties\n - ACCOUNT_TYPE_BOND: This account is created to maintain liquidity providers funds commitments\n - ACCOUNT_TYPE_EXTERNAL: External account represents an external source (deposit/withdrawal)\n - ACCOUNT_TYPE_GLOBAL_INSURANCE: Global insurance account for the asset\n - ACCOUNT_TYPE_GLOBAL_REWARD: Global reward account for the asset",
       "enum": [
         "ACCOUNT_TYPE_UNSPECIFIED",
         "ACCOUNT_TYPE_INSURANCE",
@@ -2052,7 +2198,8 @@
         "ACCOUNT_TYPE_LOCK_WITHDRAW",
         "ACCOUNT_TYPE_BOND",
         "ACCOUNT_TYPE_EXTERNAL",
-        "ACCOUNT_TYPE_GLOBAL_INSURANCE"
+        "ACCOUNT_TYPE_GLOBAL_INSURANCE",
+        "ACCOUNT_TYPE_GLOBAL_REWARD"
       ],
       "title": "Various collateral/account types as used by Vega",
       "type": "string"
@@ -2591,13 +2738,17 @@
           "title": "The maturity for the future",
           "type": "string"
         },
-        "oracle_spec": {
-          "$ref": "#/definitions/v1OracleSpec",
-          "title": "The oracle spec describing the oracle data of interest"
-        },
         "oracle_spec_binding": {
           "$ref": "#/definitions/vegaOracleSpecToFutureBinding",
-          "title": "The binding between the oracle spec and the settlement price"
+          "title": "The binding between the oracle spec and the oracle data"
+        },
+        "oracle_spec_for_settlement_price": {
+          "$ref": "#/definitions/v1OracleSpec",
+          "title": "The oracle spec describing the settlement price oracle filter"
+        },
+        "oracle_spec_for_trading_termination": {
+          "$ref": "#/definitions/v1OracleSpec",
+          "title": "the oracle spec describing the trading termination oracle filter"
         },
         "quote_name": {
           "title": "Quote name of the instrument",
@@ -2617,13 +2768,17 @@
           "title": "Future product maturity (ISO8601/RFC3339 timestamp)",
           "type": "string"
         },
-        "oracle_spec": {
-          "$ref": "#/definitions/v1OracleSpecConfiguration",
-          "title": "The oracle spec describing the oracle data of interest"
-        },
         "oracle_spec_binding": {
           "$ref": "#/definitions/vegaOracleSpecToFutureBinding",
           "title": "The binding between the oracle spec and the settlement price"
+        },
+        "oracle_spec_for_settlement_price": {
+          "$ref": "#/definitions/v1OracleSpecConfiguration",
+          "title": "The oracle spec describing the oracle data of settlement price"
+        },
+        "oracle_spec_for_trading_termination": {
+          "$ref": "#/definitions/v1OracleSpecConfiguration",
+          "title": "The oracle spec describing the oracle data of trading termination"
         },
         "quote_name": {
           "title": "Product quote name",
@@ -3445,13 +3600,17 @@
       "type": "object"
     },
     "vegaOracleSpecToFutureBinding": {
-      "description": "OracleSpecToFutureBinding tells on which property oracle data should be\nused as settlement price.",
       "properties": {
         "settlement_price_property": {
           "description": "settlement_price_property holds the name of the property in the oracle data\nthat should be used as settlement price.\nIf it is set to \"prices.BTC.value\", then the Future will use the value of\nthis property as settlement price.",
           "type": "string"
+        },
+        "trading_termination_property": {
+          "title": "the name of the property in the oracle data that signals termination of trading",
+          "type": "string"
         }
       },
+      "title": "OracleSpecToFutureBinding tells on which property oracle data should be\nused as settlement price and which to use the trading terminated trigger",
       "type": "object"
     },
     "vegaOrder": {
@@ -3618,7 +3777,7 @@
     },
     "vegaOrderType": {
       "default": "TYPE_UNSPECIFIED",
-      "description": "- TYPE_UNSPECIFIED: Default value, always invalid\n - TYPE_LIMIT: Used for Limit orders\n - TYPE_MARKET: Used for Market orders\n - TYPE_NETWORK: Used for orders where the initiating party is the network (with distressed traders)",
+      "description": "- TYPE_UNSPECIFIED: Default value, always invalid\n - TYPE_LIMIT: Used for Limit orders\n - TYPE_MARKET: Used for Market orders\n - TYPE_NETWORK: Used for orders where the initiating party is the network (with distressed parties)",
       "enum": [
         "TYPE_UNSPECIFIED",
         "TYPE_LIMIT",
@@ -5714,7 +5873,7 @@
           },
           {
             "default": "ACCOUNT_TYPE_UNSPECIFIED",
-            "description": "Account type, required field.\n\n - ACCOUNT_TYPE_UNSPECIFIED: Default value\n - ACCOUNT_TYPE_INSURANCE: Insurance pool accounts contain insurance pool funds for a market\n - ACCOUNT_TYPE_SETTLEMENT: Settlement accounts exist only during settlement or mark-to-market\n - ACCOUNT_TYPE_MARGIN: Margin accounts contain margin funds for a party and each party will\nhave multiple margin accounts, one for each market they have traded in\n\nMargin account funds will alter as margin requirements on positions change\n - ACCOUNT_TYPE_GENERAL: General accounts contains general funds for a party. A party will\nhave multiple general accounts, one for each asset they want\nto trade with\n\nGeneral accounts are where funds are initially deposited or withdrawn from,\nit is also the account where funds are taken to fulfil fees and initial margin requirements\n - ACCOUNT_TYPE_FEES_INFRASTRUCTURE: Infrastructure accounts contain fees earned by providing infrastructure on Vega\n - ACCOUNT_TYPE_FEES_LIQUIDITY: Liquidity accounts contain fees earned by providing liquidity on Vega markets\n - ACCOUNT_TYPE_FEES_MAKER: This account is created to hold fees earned by placing orders that sit on the book\nand are then matched with an incoming order to create a trade - These fees reward traders\nwho provide the best priced liquidity that actually allows trading to take place\n - ACCOUNT_TYPE_LOCK_WITHDRAW: This account is created to lock funds to be withdrawn by parties\n - ACCOUNT_TYPE_BOND: This account is created to maintain liquidity providers funds commitments\n - ACCOUNT_TYPE_EXTERNAL: External account represents an external source (deposit/withdrawal)\n - ACCOUNT_TYPE_GLOBAL_INSURANCE: Global insurance account for the asset",
+            "description": "Account type, required field.\n\n - ACCOUNT_TYPE_UNSPECIFIED: Default value\n - ACCOUNT_TYPE_INSURANCE: Insurance pool accounts contain insurance pool funds for a market\n - ACCOUNT_TYPE_SETTLEMENT: Settlement accounts exist only during settlement or mark-to-market\n - ACCOUNT_TYPE_MARGIN: Margin accounts contain margin funds for a party and each party will\nhave multiple margin accounts, one for each market they have traded in\n\nMargin account funds will alter as margin requirements on positions change\n - ACCOUNT_TYPE_GENERAL: General accounts contains general funds for a party. A party will\nhave multiple general accounts, one for each asset they want\nto trade with\n\nGeneral accounts are where funds are initially deposited or withdrawn from,\nit is also the account where funds are taken to fulfil fees and initial margin requirements\n - ACCOUNT_TYPE_FEES_INFRASTRUCTURE: Infrastructure accounts contain fees earned by providing infrastructure on Vega\n - ACCOUNT_TYPE_FEES_LIQUIDITY: Liquidity accounts contain fees earned by providing liquidity on Vega markets\n - ACCOUNT_TYPE_FEES_MAKER: This account is created to hold fees earned by placing orders that sit on the book\nand are then matched with an incoming order to create a trade - These fees reward parties\nwho provide the best priced liquidity that actually allows trading to take place\n - ACCOUNT_TYPE_LOCK_WITHDRAW: This account is created to lock funds to be withdrawn by parties\n - ACCOUNT_TYPE_BOND: This account is created to maintain liquidity providers funds commitments\n - ACCOUNT_TYPE_EXTERNAL: External account represents an external source (deposit/withdrawal)\n - ACCOUNT_TYPE_GLOBAL_INSURANCE: Global insurance account for the asset\n - ACCOUNT_TYPE_GLOBAL_REWARD: Global reward account for the asset",
             "enum": [
               "ACCOUNT_TYPE_UNSPECIFIED",
               "ACCOUNT_TYPE_INSURANCE",
@@ -5727,7 +5886,8 @@
               "ACCOUNT_TYPE_LOCK_WITHDRAW",
               "ACCOUNT_TYPE_BOND",
               "ACCOUNT_TYPE_EXTERNAL",
-              "ACCOUNT_TYPE_GLOBAL_INSURANCE"
+              "ACCOUNT_TYPE_GLOBAL_INSURANCE",
+              "ACCOUNT_TYPE_GLOBAL_REWARD"
             ],
             "in": "query",
             "name": "type",

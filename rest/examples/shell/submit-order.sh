@@ -25,6 +25,11 @@ walletserver_url=">> Vega-hosted wallet: https://wallet.testnet.vega.xyz"
 walletserver_url=">> self-hosted wallet: http://localhost:1789"
 wallet_name=">> your wallet name here"
 wallet_passphrase=">> your passphrase here"
+
+node_url_rest="https://n03.s.vega.xyz"
+walletserver_url="https://wallet.s.vega.xyz"
+wallet_name="demo"
+wallet_passphrase="123"
 # --- Edit these values above ---
 
 ci=no
@@ -78,23 +83,23 @@ trap cleanup EXIT SIGINT
 
 # __generate_keypair:
 GENERATE_NEW_KEYPAIR=no
-pubKey=""
+pub_key=""
 if test "$GENERATE_NEW_KEYPAIR" == yes ; then
 	### EITHER: Generate a new keypair ###
 	req='{"passphrase":"'"$wallet_passphrase"'","meta":[{"key":"alias","value":"my_key_alias"}]}'
 	url="$walletserver_url/api/v1/keys"
 	response="$(curl -s -XPOST -H "$hdr" -d "$req" "$url")"
-	pubKey="$(echo "$response" | jq -r .key.pub)"
+	pub_key="$(echo "$response" | jq -r .key.pub)"
 else
 	### OR: List existing keypairs ###
 	url="$walletserver_url/api/v1/keys"
 	response="$(curl -s -XGET -H "$hdr" "$url")"
-	pubKey="$(echo "$response" | jq -r '.keys[0].pub')"
+	pub_key="$(echo "$response" | jq -r '.keys[0].pub')"
 fi
 # :generate_keypair__
 
-test -n "$pubKey" || exit 1
-test "$pubKey" == null && exit 1
+test -n "$pub_key" || exit 1
+test "$pub_key" == null && exit 1
 
 # __get_market:
 ### Next, get a Market ID ###
@@ -114,58 +119,36 @@ url="$node_url_rest/time"
 response="$(curl -s "$url")"
 blockchaintime="$(echo "$response" | jq -r .timestamp)"
 expiresAt="$((blockchaintime+120*10**9))" # expire in 2 minutes
+# Note: price is an integer. For example 123456 is a price of 1.23456,
+# assuming 5 decimal places.
 cat >req.json <<EOF
 {
-    "submission": {
-        "marketId": "$marketID",
+    "pub_key": "$pub_key",
+    "propagate": true,
+    "order_submission": {
+        "market_id": "$marketID",
         "price": "100000",
         "size": "100",
         "side": "SIDE_BUY",
-        "timeInForce": "TIME_IN_FORCE_GTT",
-        "expiresAt": "$expiresAt",
-        "type": "TYPE_LIMIT"
+        "time_in_force": "TIME_IN_FORCE_GTT",
+        "expires_at": "$expiresAt",
+        "type": "TYPE_LIMIT",
+        "reference": "333repo:api;lang:bash;sample:submit-order-rest"
     }
 }
 EOF
-echo "Request for PrepareSubmitOrder: $(cat req.json)"
-url="$node_url_rest/orders/prepare/submit"
-response="$(curl -s -XPOST -d @req.json "$url")"
-echo "Response from PrepareSubmitOrder: $response"
 # :prepare_order__
 
 # __sign_tx:
 ### Wallet server: Sign the prepared transaction ###
-blob="$(echo "$response" | jq -r .blob)"
-test "$blob" == null && exit 1
-cat >req.json <<EOF
-{
-    "tx": "$blob",
-    "pubKey": "$pubKey",
-    "propagate": false
-}
-EOF
 echo "Request for SignTx: $(cat req.json)"
-url="$walletserver_url/api/v1/messages"
+url="$walletserver_url/api/v1/command"
 response="$(curl -s -XPOST -H "$hdr" -d @req.json "$url")"
-signedTx="$(echo "$response" | jq .signedTx)"
-echo "Response from SignTx: $signedTx"
+responsejson="$(echo "$response" | jq .)"
+echo "Response from SignTx: $responsejson"
 # :sign_tx__
-test "$signedTx" == null && exit 1
+test "$responsejson" == null && exit 1
+errors="$(echo "$responsejson" | jq .errors)"
+test "$errors" == null || exit 1
 
-# __submit_tx:
-### Vega node: Submit the signed transaction ###
-cat >req.json <<EOF
-{
-    "tx": $signedTx
-}
-EOF
-echo "Request for SubmitTransaction: $(cat req.json)"
-url="$node_url_rest/transaction"
-response="$(curl -s -XPOST -d @req.json "$url")"
-# :submit_tx__
-
-if ! echo "$response" | jq -r .success | grep -q '^true$' ; then
-	echo "Failed"
-	exit 1
-fi
 echo "All is well."

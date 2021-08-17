@@ -226,6 +226,8 @@ class NodeRegistration PROTOBUF_FINAL :
   enum : int {
     kPubKeyFieldNumber = 1,
     kChainPubKeyFieldNumber = 2,
+    kInfoUrlFieldNumber = 3,
+    kCountryFieldNumber = 4,
   };
   // bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = {
   void clear_pub_key();
@@ -259,6 +261,38 @@ class NodeRegistration PROTOBUF_FINAL :
   std::string* _internal_mutable_chain_pub_key();
   public:
 
+  // string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+  void clear_info_url();
+  const std::string& info_url() const;
+  void set_info_url(const std::string& value);
+  void set_info_url(std::string&& value);
+  void set_info_url(const char* value);
+  void set_info_url(const char* value, size_t size);
+  std::string* mutable_info_url();
+  std::string* release_info_url();
+  void set_allocated_info_url(std::string* info_url);
+  private:
+  const std::string& _internal_info_url() const;
+  void _internal_set_info_url(const std::string& value);
+  std::string* _internal_mutable_info_url();
+  public:
+
+  // string country = 4 [json_name = "country", (.validator.field) = {
+  void clear_country();
+  const std::string& country() const;
+  void set_country(const std::string& value);
+  void set_country(std::string&& value);
+  void set_country(const char* value);
+  void set_country(const char* value, size_t size);
+  std::string* mutable_country();
+  std::string* release_country();
+  void set_allocated_country(std::string* country);
+  private:
+  const std::string& _internal_country() const;
+  void _internal_set_country(const std::string& value);
+  std::string* _internal_mutable_country();
+  public:
+
   // @@protoc_insertion_point(class_scope:vega.commands.v1.NodeRegistration)
  private:
   class _Internal;
@@ -268,6 +302,8 @@ class NodeRegistration PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pub_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_pub_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr info_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr country_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fvalidator_5fcommands_2eproto;
 };
@@ -991,6 +1027,128 @@ inline void NodeRegistration::set_allocated_chain_pub_key(std::string* chain_pub
   chain_pub_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chain_pub_key,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.NodeRegistration.chain_pub_key)
+}
+
+// string info_url = 3 [json_name = "infoUrl", (.validator.field) = {
+inline void NodeRegistration::clear_info_url() {
+  info_url_.ClearToEmpty();
+}
+inline const std::string& NodeRegistration::info_url() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.NodeRegistration.info_url)
+  return _internal_info_url();
+}
+inline void NodeRegistration::set_info_url(const std::string& value) {
+  _internal_set_info_url(value);
+  // @@protoc_insertion_point(field_set:vega.commands.v1.NodeRegistration.info_url)
+}
+inline std::string* NodeRegistration::mutable_info_url() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.NodeRegistration.info_url)
+  return _internal_mutable_info_url();
+}
+inline const std::string& NodeRegistration::_internal_info_url() const {
+  return info_url_.Get();
+}
+inline void NodeRegistration::_internal_set_info_url(const std::string& value) {
+
+  info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void NodeRegistration::set_info_url(std::string&& value) {
+
+  info_url_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.NodeRegistration.info_url)
+}
+inline void NodeRegistration::set_info_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.NodeRegistration.info_url)
+}
+inline void NodeRegistration::set_info_url(const char* value,
+    size_t size) {
+
+  info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.NodeRegistration.info_url)
+}
+inline std::string* NodeRegistration::_internal_mutable_info_url() {
+
+  return info_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* NodeRegistration::release_info_url() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.NodeRegistration.info_url)
+  return info_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void NodeRegistration::set_allocated_info_url(std::string* info_url) {
+  if (info_url != nullptr) {
+
+  } else {
+
+  }
+  info_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), info_url,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.NodeRegistration.info_url)
+}
+
+// string country = 4 [json_name = "country", (.validator.field) = {
+inline void NodeRegistration::clear_country() {
+  country_.ClearToEmpty();
+}
+inline const std::string& NodeRegistration::country() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.NodeRegistration.country)
+  return _internal_country();
+}
+inline void NodeRegistration::set_country(const std::string& value) {
+  _internal_set_country(value);
+  // @@protoc_insertion_point(field_set:vega.commands.v1.NodeRegistration.country)
+}
+inline std::string* NodeRegistration::mutable_country() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.NodeRegistration.country)
+  return _internal_mutable_country();
+}
+inline const std::string& NodeRegistration::_internal_country() const {
+  return country_.Get();
+}
+inline void NodeRegistration::_internal_set_country(const std::string& value) {
+
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void NodeRegistration::set_country(std::string&& value) {
+
+  country_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.NodeRegistration.country)
+}
+inline void NodeRegistration::set_country(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.NodeRegistration.country)
+}
+inline void NodeRegistration::set_country(const char* value,
+    size_t size) {
+
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.NodeRegistration.country)
+}
+inline std::string* NodeRegistration::_internal_mutable_country() {
+
+  return country_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* NodeRegistration::release_country() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.NodeRegistration.country)
+  return country_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void NodeRegistration::set_allocated_country(std::string* country) {
+  if (country != nullptr) {
+
+  } else {
+
+  }
+  country_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), country,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.NodeRegistration.country)
 }
 
 // -------------------------------------------------------------------

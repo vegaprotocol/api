@@ -66,6 +66,20 @@ func (this *InputData) Validate() error {
 			}
 		}
 	}
+	if oneOfNester, ok := this.GetCommand().(*InputData_DelegateSubmission); ok {
+		if oneOfNester.DelegateSubmission != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.DelegateSubmission); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("DelegateSubmission", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetCommand().(*InputData_UndelegateSubmission); ok {
+		if oneOfNester.UndelegateSubmission != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.UndelegateSubmission); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("UndelegateSubmission", err)
+			}
+		}
+	}
 	if oneOfNester, ok := this.GetCommand().(*InputData_NodeRegistration); ok {
 		if oneOfNester.NodeRegistration != nil {
 			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.NodeRegistration); err != nil {

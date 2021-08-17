@@ -23,11 +23,46 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1a\x63ommands/v1/commands.proto\x12\x10vega.commands.v1\x1a\x10governance.proto\x1a\nvega.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"\xde\x02\n\x0fOrderSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\x12\x1a\n\x04size\x18\x03 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x04size\x12\x1e\n\x04side\x18\x04 \x01(\x0e\x32\n.vega.SideR\x04side\x12;\n\rtime_in_force\x18\x05 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12\x1d\n\nexpires_at\x18\x06 \x01(\x03R\texpiresAt\x12$\n\x04type\x18\x07 \x01(\x0e\x32\x10.vega.Order.TypeR\x04type\x12\x1c\n\treference\x18\x08 \x01(\tR\treference\x12\x34\n\x0cpegged_order\x18\t \x01(\x0b\x32\x11.vega.PeggedOrderR\x0bpeggedOrder\"K\n\x11OrderCancellation\x12\x19\n\x08order_id\x18\x01 \x01(\tR\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"\x83\x03\n\x0eOrderAmendment\x12!\n\x08order_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\x12!\n\x05price\x18\x03 \x01(\x0b\x32\x0b.vega.PriceR\x05price\x12\x1d\n\nsize_delta\x18\x04 \x01(\x03R\tsizeDelta\x12.\n\nexpires_at\x18\x05 \x01(\x0b\x32\x0f.vega.TimestampR\texpiresAt\x12;\n\rtime_in_force\x18\x06 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12@\n\rpegged_offset\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x0cpeggedOffset\x12@\n\x10pegged_reference\x18\x08 \x01(\x0e\x32\x15.vega.PeggedReferenceR\x0fpeggedReference\"\xf6\x01\n\x1cLiquidityProvisionSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12+\n\x11\x63ommitment_amount\x18\x02 \x01(\x04R\x10\x63ommitmentAmount\x12\x10\n\x03\x66\x65\x65\x18\x03 \x01(\tR\x03\x66\x65\x65\x12*\n\x05sells\x18\x04 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x05sells\x12(\n\x04\x62uys\x18\x05 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x04\x62uys\x12\x1c\n\treference\x18\x06 \x01(\tR\treference\"g\n\x12WithdrawSubmission\x12\x16\n\x06\x61mount\x18\x01 \x01(\x04R\x06\x61mount\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\x12#\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x11.vega.WithdrawExtR\x03\x65xt\"e\n\x12ProposalSubmission\x12\x1c\n\treference\x18\x01 \x01(\tR\treference\x12\x31\n\x05terms\x18\x02 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x05terms\"a\n\x0eVoteSubmission\x12\'\n\x0bproposal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\x12&\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueR\x05valueBO\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1b\x06proto3'
+  serialized_pb=b'\n\x1a\x63ommands/v1/commands.proto\x12\x10vega.commands.v1\x1a\x10governance.proto\x1a\nvega.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x36github.com/mwitkow/go-proto-validators/validator.proto\"\xde\x02\n\x0fOrderSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12\x14\n\x05price\x18\x02 \x01(\x04R\x05price\x12\x1a\n\x04size\x18\x03 \x01(\x04\x42\x06\xe2\xdf\x1f\x02\x10\x00R\x04size\x12\x1e\n\x04side\x18\x04 \x01(\x0e\x32\n.vega.SideR\x04side\x12;\n\rtime_in_force\x18\x05 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12\x1d\n\nexpires_at\x18\x06 \x01(\x03R\texpiresAt\x12$\n\x04type\x18\x07 \x01(\x0e\x32\x10.vega.Order.TypeR\x04type\x12\x1c\n\treference\x18\x08 \x01(\tR\treference\x12\x34\n\x0cpegged_order\x18\t \x01(\x0b\x32\x11.vega.PeggedOrderR\x0bpeggedOrder\"K\n\x11OrderCancellation\x12\x19\n\x08order_id\x18\x01 \x01(\tR\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\"\x83\x03\n\x0eOrderAmendment\x12!\n\x08order_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x07orderId\x12\x1b\n\tmarket_id\x18\x02 \x01(\tR\x08marketId\x12!\n\x05price\x18\x03 \x01(\x0b\x32\x0b.vega.PriceR\x05price\x12\x1d\n\nsize_delta\x18\x04 \x01(\x03R\tsizeDelta\x12.\n\nexpires_at\x18\x05 \x01(\x0b\x32\x0f.vega.TimestampR\texpiresAt\x12;\n\rtime_in_force\x18\x06 \x01(\x0e\x32\x17.vega.Order.TimeInForceR\x0btimeInForce\x12@\n\rpegged_offset\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueR\x0cpeggedOffset\x12@\n\x10pegged_reference\x18\x08 \x01(\x0e\x32\x15.vega.PeggedReferenceR\x0fpeggedReference\"\xf6\x01\n\x1cLiquidityProvisionSubmission\x12#\n\tmarket_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x08marketId\x12+\n\x11\x63ommitment_amount\x18\x02 \x01(\x04R\x10\x63ommitmentAmount\x12\x10\n\x03\x66\x65\x65\x18\x03 \x01(\tR\x03\x66\x65\x65\x12*\n\x05sells\x18\x04 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x05sells\x12(\n\x04\x62uys\x18\x05 \x03(\x0b\x32\x14.vega.LiquidityOrderR\x04\x62uys\x12\x1c\n\treference\x18\x06 \x01(\tR\treference\"g\n\x12WithdrawSubmission\x12\x16\n\x06\x61mount\x18\x01 \x01(\x04R\x06\x61mount\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\x12#\n\x03\x65xt\x18\x03 \x01(\x0b\x32\x11.vega.WithdrawExtR\x03\x65xt\"e\n\x12ProposalSubmission\x12\x1c\n\treference\x18\x01 \x01(\tR\treference\x12\x31\n\x05terms\x18\x02 \x01(\x0b\x32\x13.vega.ProposalTermsB\x06\xe2\xdf\x1f\x02 \x01R\x05terms\"a\n\x0eVoteSubmission\x12\'\n\x0bproposal_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\nproposalId\x12&\n\x05value\x18\x02 \x01(\x0e\x32\x10.vega.Vote.ValueR\x05value\"M\n\x12\x44\x65legateSubmission\x12\x1f\n\x07node_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x06nodeId\x12\x16\n\x06\x61mount\x18\x02 \x01(\x04R\x06\x61mount\"\xf9\x01\n\x14UndelegateSubmission\x12\x1f\n\x07node_id\x18\x01 \x01(\tB\x06\xe2\xdf\x1f\x02X\x01R\x06nodeId\x12\x16\n\x06\x61mount\x18\x02 \x01(\x04R\x06\x61mount\x12\x45\n\x06method\x18\x03 \x01(\x0e\x32-.vega.commands.v1.UndelegateSubmission.MethodR\x06method\"a\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x0e\n\nMETHOD_NOW\x10\x01\x12\x1a\n\x16METHOD_AT_END_OF_EPOCH\x10\x02\x12\x13\n\x0fMETHOD_IN_ANGER\x10\x03\x42O\n io.vegaprotocol.vega.commands.v1Z+code.vegaprotocol.io/vega/proto/commands/v1b\x06proto3'
   ,
   dependencies=[governance__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,github_dot_com_dot_mwitkow_dot_go__proto__validators_dot_validator__pb2.DESCRIPTOR,])
 
 
+
+_UNDELEGATESUBMISSION_METHOD = _descriptor.EnumDescriptor(
+  name='Method',
+  full_name='vega.commands.v1.UndelegateSubmission.Method',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='METHOD_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='METHOD_NOW', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='METHOD_AT_END_OF_EPOCH', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='METHOD_IN_ANGER', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1774,
+  serialized_end=1871,
+)
+_sym_db.RegisterEnumDescriptor(_UNDELEGATESUBMISSION_METHOD)
 
 
 _ORDERSUBMISSION = _descriptor.Descriptor(
@@ -428,6 +463,92 @@ _VOTESUBMISSION = _descriptor.Descriptor(
   serialized_end=1540,
 )
 
+
+_DELEGATESUBMISSION = _descriptor.Descriptor(
+  name='DelegateSubmission',
+  full_name='vega.commands.v1.DelegateSubmission',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='node_id', full_name='vega.commands.v1.DelegateSubmission.node_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\002X\001', json_name='nodeId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.commands.v1.DelegateSubmission.amount', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1542,
+  serialized_end=1619,
+)
+
+
+_UNDELEGATESUBMISSION = _descriptor.Descriptor(
+  name='UndelegateSubmission',
+  full_name='vega.commands.v1.UndelegateSubmission',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='node_id', full_name='vega.commands.v1.UndelegateSubmission.node_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\002X\001', json_name='nodeId', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.commands.v1.UndelegateSubmission.amount', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='method', full_name='vega.commands.v1.UndelegateSubmission.method', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='method', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _UNDELEGATESUBMISSION_METHOD,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1622,
+  serialized_end=1871,
+)
+
 _ORDERSUBMISSION.fields_by_name['side'].enum_type = vega__pb2._SIDE
 _ORDERSUBMISSION.fields_by_name['time_in_force'].enum_type = vega__pb2._ORDER_TIMEINFORCE
 _ORDERSUBMISSION.fields_by_name['type'].enum_type = vega__pb2._ORDER_TYPE
@@ -442,6 +563,8 @@ _LIQUIDITYPROVISIONSUBMISSION.fields_by_name['buys'].message_type = vega__pb2._L
 _WITHDRAWSUBMISSION.fields_by_name['ext'].message_type = vega__pb2._WITHDRAWEXT
 _PROPOSALSUBMISSION.fields_by_name['terms'].message_type = governance__pb2._PROPOSALTERMS
 _VOTESUBMISSION.fields_by_name['value'].enum_type = governance__pb2._VOTE_VALUE
+_UNDELEGATESUBMISSION.fields_by_name['method'].enum_type = _UNDELEGATESUBMISSION_METHOD
+_UNDELEGATESUBMISSION_METHOD.containing_type = _UNDELEGATESUBMISSION
 DESCRIPTOR.message_types_by_name['OrderSubmission'] = _ORDERSUBMISSION
 DESCRIPTOR.message_types_by_name['OrderCancellation'] = _ORDERCANCELLATION
 DESCRIPTOR.message_types_by_name['OrderAmendment'] = _ORDERAMENDMENT
@@ -449,6 +572,8 @@ DESCRIPTOR.message_types_by_name['LiquidityProvisionSubmission'] = _LIQUIDITYPRO
 DESCRIPTOR.message_types_by_name['WithdrawSubmission'] = _WITHDRAWSUBMISSION
 DESCRIPTOR.message_types_by_name['ProposalSubmission'] = _PROPOSALSUBMISSION
 DESCRIPTOR.message_types_by_name['VoteSubmission'] = _VOTESUBMISSION
+DESCRIPTOR.message_types_by_name['DelegateSubmission'] = _DELEGATESUBMISSION
+DESCRIPTOR.message_types_by_name['UndelegateSubmission'] = _UNDELEGATESUBMISSION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 OrderSubmission = _reflection.GeneratedProtocolMessageType('OrderSubmission', (_message.Message,), {
@@ -500,6 +625,20 @@ VoteSubmission = _reflection.GeneratedProtocolMessageType('VoteSubmission', (_me
   })
 _sym_db.RegisterMessage(VoteSubmission)
 
+DelegateSubmission = _reflection.GeneratedProtocolMessageType('DelegateSubmission', (_message.Message,), {
+  'DESCRIPTOR' : _DELEGATESUBMISSION,
+  '__module__' : 'commands.v1.commands_pb2'
+  # @@protoc_insertion_point(class_scope:vega.commands.v1.DelegateSubmission)
+  })
+_sym_db.RegisterMessage(DelegateSubmission)
+
+UndelegateSubmission = _reflection.GeneratedProtocolMessageType('UndelegateSubmission', (_message.Message,), {
+  'DESCRIPTOR' : _UNDELEGATESUBMISSION,
+  '__module__' : 'commands.v1.commands_pb2'
+  # @@protoc_insertion_point(class_scope:vega.commands.v1.UndelegateSubmission)
+  })
+_sym_db.RegisterMessage(UndelegateSubmission)
+
 
 DESCRIPTOR._options = None
 _ORDERSUBMISSION.fields_by_name['market_id']._options = None
@@ -508,4 +647,6 @@ _ORDERAMENDMENT.fields_by_name['order_id']._options = None
 _LIQUIDITYPROVISIONSUBMISSION.fields_by_name['market_id']._options = None
 _PROPOSALSUBMISSION.fields_by_name['terms']._options = None
 _VOTESUBMISSION.fields_by_name['proposal_id']._options = None
+_DELEGATESUBMISSION.fields_by_name['node_id']._options = None
+_UNDELEGATESUBMISSION.fields_by_name['node_id']._options = None
 # @@protoc_insertion_point(module_scope)

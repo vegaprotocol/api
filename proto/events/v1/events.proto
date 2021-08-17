@@ -13,6 +13,45 @@ import "oracles/v1/data.proto";
 import "commands/v1/commands.proto";
 import "commands/v1/validator_commands.proto";
 
+// StakingEvent - an event notifying of stake being deposited or removed for a given party
+// These events are emitted for every Staking deposit or removed accepted by the network
+message StakingEvent {
+  enum Type {
+    // Default value
+    TYPE_UNSPECIFIED = 0;
+    // Indicate of a stake deposit instruction
+    TYPE_DEPOSIT = 1;
+    // Indicate of a stake remove instruction
+    TYPE_REMOVE = 2;
+  }
+
+  // The internal ID for this staking event
+  string id = 1;
+  // The type of event
+  Type type = 2;
+  // The timestamps at which the event was emitted by ethereum
+  int64 ts = 3;
+  // The party to whom the event is directed at.
+  string party = 4;
+  // The amount of stake deposited or removed
+  string amount = 5;
+}
+
+//DelegationBalanceEvent - updates on the delegation balance of a party to a node in the current epoch in effect
+message DelegationBalanceEvent {
+  string party = 1;
+  string node_id = 2;
+  uint64 amount = 3;
+}
+
+//PendingDelegationBalanceEvent - updates on the delegation/undelegation balance of a party to a node for the next epoch
+message PendingDelegationBalanceEvent {
+  string party = 1;
+  string node_id = 2;
+  uint64 delegation_amount = 3;
+  uint64 undelegation_amount = 4;
+}
+
 // MarketEvent - the common denominator for all market events
 // interface has a method to return a string for logging
 message MarketEvent {
@@ -43,6 +82,18 @@ message TxErrorEvent {
 message TimeUpdate {
   // Timestamp containing latest update from Vega blockchain aka Vega-time
   int64 timestamp = 1;
+}
+
+// Epoch details
+message EpochEvent {
+	// Sequence number that increases by one each epoch
+	uint64 seq = 1;
+	// What time did this epoch start
+	int64  start_time = 2;
+	// What time should this epoch end
+	int64  expire_time = 3;
+	// What time did it actually end
+	int64  end_time = 4;
 }
 
 // A transfer responses event contains a collection of transfer information
@@ -139,6 +190,18 @@ message AuctionEvent {
   AuctionTrigger extension_trigger = 7;
 }
 
+// A validator update event contains information about validator node
+message ValidatorUpdate {
+  // Public key of validator node
+  string pub_key = 1;
+  // Public key of Tendermint
+  string tm_pub_key = 2;
+  // URL with more info on the node
+  string info_url = 3;
+  // Country code (ISO 3166-1 alpha-2) for the location of the node
+  string country = 4;
+}
+
 // An (event) bus event type is used to specify a type of event
 // It has 2 styles of event:
 // Single values (e.g. BUS_EVENT_TYPE_ORDER) where they represent one data item
@@ -202,6 +265,16 @@ enum BusEventType {
     BUS_EVENT_TYPE_ORACLE_SPEC = 27;
     // Event indicating that an oracle data has been broadcast
     BUS_EVENT_TYPE_ORACLE_DATA = 28;
+    // Event indicating that an delegation balance of a party to a node for current epoch has changed
+    BUS_EVENT_TYPE_DELEGATION_BALANCE = 29;
+    // Event indicating that an delegation balance of a party to a node for next epoch has changed
+    BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30;
+    // Event indicating the start or end of an epoch
+    BUS_EVENT_TYPE_EPOCH_UPDATE = 31;
+    // Event indicating that validator node has been updated
+    BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32;
+    // Event indicating a new staking event have been processed by the network
+    BUS_EVENT_TYPE_STAKING_EVENT = 33;
     // Event indicating a market related event, for example when a market opens
     BUS_EVENT_TYPE_MARKET = 101;
     // Event used to report failed transactions back to a user, this is excluded from the ALL type
@@ -271,6 +344,16 @@ message BusEvent {
     oracles.v1.OracleSpec oracle_spec = 126;
     // OracleData events
     oracles.v1.OracleData oracle_data = 127;
+    // Delegation balance events
+    DelegationBalanceEvent delegation_balance = 129;
+    // Pending delegation balance events
+    PendingDelegationBalanceEvent pending_delegation_balance = 130;
+    // Epoch update events - See [Epoch](#vega.Epoch)
+    EpochEvent epoch_event = 131;
+    // Validator update events
+    ValidatorUpdate validator_update = 132;
+    // Staking event
+    StakingEvent staking_event = 133;
     // Market tick events - See [MarketEvent](#vega.MarketEvent)
     MarketEvent market = 1001;
     // Transaction error events, not included in the ALL event type

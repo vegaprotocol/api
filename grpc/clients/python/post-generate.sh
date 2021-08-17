@@ -5,6 +5,18 @@ python_generated_dir="${PYTHON_GENERATED_DIR:?}"
 mv "$python_generated_dir/github.com/mwitkow/go_proto_validators/validator_pb2_grpc.py" "$python_generated_dir/github/com/mwitkow/go_proto_validators/"
 rm -rf "$python_generated_dir/github.com"
 
+cat >"$python_generated_dir/wallet/__init__.py" <<EOF
+"""
+This file is here as an unexplained hack so that "v1" appears in "wallet".
+The hack is not necessary for "commands", "events" or "oracles", despite them
+having the same directory layout as "wallet".
+"""
+
+from . import v1
+
+__all__ = ["v1"]
+EOF
+
 for x in \
 	api \
 	commands/v1 \

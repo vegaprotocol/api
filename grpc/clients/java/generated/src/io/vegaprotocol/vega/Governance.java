@@ -752,37 +752,64 @@ public final class Governance {
 
     /**
      * <pre>
-     * The oracle spec describing the oracle data of interest
+     * The oracle spec describing the oracle data of settlement price
      * </pre>
      *
-     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
-     * @return Whether the oracleSpec field is set.
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
+     * @return Whether the oracleSpecForSettlementPrice field is set.
      */
-    boolean hasOracleSpec();
+    boolean hasOracleSpecForSettlementPrice();
     /**
      * <pre>
-     * The oracle spec describing the oracle data of interest
+     * The oracle spec describing the oracle data of settlement price
      * </pre>
      *
-     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
-     * @return The oracleSpec.
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
+     * @return The oracleSpecForSettlementPrice.
      */
-    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpec();
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpecForSettlementPrice();
     /**
      * <pre>
-     * The oracle spec describing the oracle data of interest
+     * The oracle spec describing the oracle data of settlement price
      * </pre>
      *
-     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
      */
-    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecOrBuilder();
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecForSettlementPriceOrBuilder();
+
+    /**
+     * <pre>
+     * The oracle spec describing the oracle data of trading termination
+     * </pre>
+     *
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+     * @return Whether the oracleSpecForTradingTermination field is set.
+     */
+    boolean hasOracleSpecForTradingTermination();
+    /**
+     * <pre>
+     * The oracle spec describing the oracle data of trading termination
+     * </pre>
+     *
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+     * @return The oracleSpecForTradingTermination.
+     */
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpecForTradingTermination();
+    /**
+     * <pre>
+     * The oracle spec describing the oracle data of trading termination
+     * </pre>
+     *
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+     */
+    io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecForTradingTerminationOrBuilder();
 
     /**
      * <pre>
      * The binding between the oracle spec and the settlement price
      * </pre>
      *
-     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
      * @return Whether the oracleSpecBinding field is set.
      */
     boolean hasOracleSpecBinding();
@@ -791,7 +818,7 @@ public final class Governance {
      * The binding between the oracle spec and the settlement price
      * </pre>
      *
-     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
      * @return The oracleSpecBinding.
      */
     io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getOracleSpecBinding();
@@ -800,7 +827,7 @@ public final class Governance {
      * The binding between the oracle spec and the settlement price
      * </pre>
      *
-     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
      */
     io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder getOracleSpecBindingOrBuilder();
   }
@@ -876,18 +903,31 @@ public final class Governance {
             }
             case 42: {
               io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder subBuilder = null;
-              if (oracleSpec_ != null) {
-                subBuilder = oracleSpec_.toBuilder();
+              if (oracleSpecForSettlementPrice_ != null) {
+                subBuilder = oracleSpecForSettlementPrice_.toBuilder();
               }
-              oracleSpec_ = input.readMessage(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.parser(), extensionRegistry);
+              oracleSpecForSettlementPrice_ = input.readMessage(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(oracleSpec_);
-                oracleSpec_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(oracleSpecForSettlementPrice_);
+                oracleSpecForSettlementPrice_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 50: {
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder subBuilder = null;
+              if (oracleSpecForTradingTermination_ != null) {
+                subBuilder = oracleSpecForTradingTermination_.toBuilder();
+              }
+              oracleSpecForTradingTermination_ = input.readMessage(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(oracleSpecForTradingTermination_);
+                oracleSpecForTradingTermination_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
               io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder subBuilder = null;
               if (oracleSpecBinding_ != null) {
                 subBuilder = oracleSpecBinding_.toBuilder();
@@ -1070,52 +1110,90 @@ public final class Governance {
       }
     }
 
-    public static final int ORACLE_SPEC_FIELD_NUMBER = 5;
-    private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration oracleSpec_;
+    public static final int ORACLE_SPEC_FOR_SETTLEMENT_PRICE_FIELD_NUMBER = 5;
+    private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration oracleSpecForSettlementPrice_;
     /**
      * <pre>
-     * The oracle spec describing the oracle data of interest
+     * The oracle spec describing the oracle data of settlement price
      * </pre>
      *
-     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
-     * @return Whether the oracleSpec field is set.
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
+     * @return Whether the oracleSpecForSettlementPrice field is set.
      */
     @java.lang.Override
-    public boolean hasOracleSpec() {
-      return oracleSpec_ != null;
+    public boolean hasOracleSpecForSettlementPrice() {
+      return oracleSpecForSettlementPrice_ != null;
     }
     /**
      * <pre>
-     * The oracle spec describing the oracle data of interest
+     * The oracle spec describing the oracle data of settlement price
      * </pre>
      *
-     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
-     * @return The oracleSpec.
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
+     * @return The oracleSpecForSettlementPrice.
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpec() {
-      return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpec_;
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpecForSettlementPrice() {
+      return oracleSpecForSettlementPrice_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpecForSettlementPrice_;
     }
     /**
      * <pre>
-     * The oracle spec describing the oracle data of interest
+     * The oracle spec describing the oracle data of settlement price
      * </pre>
      *
-     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
      */
     @java.lang.Override
-    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecOrBuilder() {
-      return getOracleSpec();
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecForSettlementPriceOrBuilder() {
+      return getOracleSpecForSettlementPrice();
     }
 
-    public static final int ORACLE_SPEC_BINDING_FIELD_NUMBER = 6;
+    public static final int ORACLE_SPEC_FOR_TRADING_TERMINATION_FIELD_NUMBER = 6;
+    private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration oracleSpecForTradingTermination_;
+    /**
+     * <pre>
+     * The oracle spec describing the oracle data of trading termination
+     * </pre>
+     *
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+     * @return Whether the oracleSpecForTradingTermination field is set.
+     */
+    @java.lang.Override
+    public boolean hasOracleSpecForTradingTermination() {
+      return oracleSpecForTradingTermination_ != null;
+    }
+    /**
+     * <pre>
+     * The oracle spec describing the oracle data of trading termination
+     * </pre>
+     *
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+     * @return The oracleSpecForTradingTermination.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpecForTradingTermination() {
+      return oracleSpecForTradingTermination_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpecForTradingTermination_;
+    }
+    /**
+     * <pre>
+     * The oracle spec describing the oracle data of trading termination
+     * </pre>
+     *
+     * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecForTradingTerminationOrBuilder() {
+      return getOracleSpecForTradingTermination();
+    }
+
+    public static final int ORACLE_SPEC_BINDING_FIELD_NUMBER = 7;
     private io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding oracleSpecBinding_;
     /**
      * <pre>
      * The binding between the oracle spec and the settlement price
      * </pre>
      *
-     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
      * @return Whether the oracleSpecBinding field is set.
      */
     @java.lang.Override
@@ -1127,7 +1205,7 @@ public final class Governance {
      * The binding between the oracle spec and the settlement price
      * </pre>
      *
-     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
      * @return The oracleSpecBinding.
      */
     @java.lang.Override
@@ -1139,7 +1217,7 @@ public final class Governance {
      * The binding between the oracle spec and the settlement price
      * </pre>
      *
-     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+     * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder getOracleSpecBindingOrBuilder() {
@@ -1169,11 +1247,14 @@ public final class Governance {
       if (!getQuoteNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, quoteName_);
       }
-      if (oracleSpec_ != null) {
-        output.writeMessage(5, getOracleSpec());
+      if (oracleSpecForSettlementPrice_ != null) {
+        output.writeMessage(5, getOracleSpecForSettlementPrice());
+      }
+      if (oracleSpecForTradingTermination_ != null) {
+        output.writeMessage(6, getOracleSpecForTradingTermination());
       }
       if (oracleSpecBinding_ != null) {
-        output.writeMessage(6, getOracleSpecBinding());
+        output.writeMessage(7, getOracleSpecBinding());
       }
       unknownFields.writeTo(output);
     }
@@ -1193,13 +1274,17 @@ public final class Governance {
       if (!getQuoteNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, quoteName_);
       }
-      if (oracleSpec_ != null) {
+      if (oracleSpecForSettlementPrice_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getOracleSpec());
+          .computeMessageSize(5, getOracleSpecForSettlementPrice());
+      }
+      if (oracleSpecForTradingTermination_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getOracleSpecForTradingTermination());
       }
       if (oracleSpecBinding_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getOracleSpecBinding());
+          .computeMessageSize(7, getOracleSpecBinding());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1222,10 +1307,15 @@ public final class Governance {
           .equals(other.getSettlementAsset())) return false;
       if (!getQuoteName()
           .equals(other.getQuoteName())) return false;
-      if (hasOracleSpec() != other.hasOracleSpec()) return false;
-      if (hasOracleSpec()) {
-        if (!getOracleSpec()
-            .equals(other.getOracleSpec())) return false;
+      if (hasOracleSpecForSettlementPrice() != other.hasOracleSpecForSettlementPrice()) return false;
+      if (hasOracleSpecForSettlementPrice()) {
+        if (!getOracleSpecForSettlementPrice()
+            .equals(other.getOracleSpecForSettlementPrice())) return false;
+      }
+      if (hasOracleSpecForTradingTermination() != other.hasOracleSpecForTradingTermination()) return false;
+      if (hasOracleSpecForTradingTermination()) {
+        if (!getOracleSpecForTradingTermination()
+            .equals(other.getOracleSpecForTradingTermination())) return false;
       }
       if (hasOracleSpecBinding() != other.hasOracleSpecBinding()) return false;
       if (hasOracleSpecBinding()) {
@@ -1249,9 +1339,13 @@ public final class Governance {
       hash = (53 * hash) + getSettlementAsset().hashCode();
       hash = (37 * hash) + QUOTE_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getQuoteName().hashCode();
-      if (hasOracleSpec()) {
-        hash = (37 * hash) + ORACLE_SPEC_FIELD_NUMBER;
-        hash = (53 * hash) + getOracleSpec().hashCode();
+      if (hasOracleSpecForSettlementPrice()) {
+        hash = (37 * hash) + ORACLE_SPEC_FOR_SETTLEMENT_PRICE_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSpecForSettlementPrice().hashCode();
+      }
+      if (hasOracleSpecForTradingTermination()) {
+        hash = (37 * hash) + ORACLE_SPEC_FOR_TRADING_TERMINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getOracleSpecForTradingTermination().hashCode();
       }
       if (hasOracleSpecBinding()) {
         hash = (37 * hash) + ORACLE_SPEC_BINDING_FIELD_NUMBER;
@@ -1400,11 +1494,17 @@ public final class Governance {
 
         quoteName_ = "";
 
-        if (oracleSpecBuilder_ == null) {
-          oracleSpec_ = null;
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          oracleSpecForSettlementPrice_ = null;
         } else {
-          oracleSpec_ = null;
-          oracleSpecBuilder_ = null;
+          oracleSpecForSettlementPrice_ = null;
+          oracleSpecForSettlementPriceBuilder_ = null;
+        }
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          oracleSpecForTradingTermination_ = null;
+        } else {
+          oracleSpecForTradingTermination_ = null;
+          oracleSpecForTradingTerminationBuilder_ = null;
         }
         if (oracleSpecBindingBuilder_ == null) {
           oracleSpecBinding_ = null;
@@ -1441,10 +1541,15 @@ public final class Governance {
         result.maturity_ = maturity_;
         result.settlementAsset_ = settlementAsset_;
         result.quoteName_ = quoteName_;
-        if (oracleSpecBuilder_ == null) {
-          result.oracleSpec_ = oracleSpec_;
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          result.oracleSpecForSettlementPrice_ = oracleSpecForSettlementPrice_;
         } else {
-          result.oracleSpec_ = oracleSpecBuilder_.build();
+          result.oracleSpecForSettlementPrice_ = oracleSpecForSettlementPriceBuilder_.build();
+        }
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          result.oracleSpecForTradingTermination_ = oracleSpecForTradingTermination_;
+        } else {
+          result.oracleSpecForTradingTermination_ = oracleSpecForTradingTerminationBuilder_.build();
         }
         if (oracleSpecBindingBuilder_ == null) {
           result.oracleSpecBinding_ = oracleSpecBinding_;
@@ -1511,8 +1616,11 @@ public final class Governance {
           quoteName_ = other.quoteName_;
           onChanged();
         }
-        if (other.hasOracleSpec()) {
-          mergeOracleSpec(other.getOracleSpec());
+        if (other.hasOracleSpecForSettlementPrice()) {
+          mergeOracleSpecForSettlementPrice(other.getOracleSpecForSettlementPrice());
+        }
+        if (other.hasOracleSpecForTradingTermination()) {
+          mergeOracleSpecForTradingTermination(other.getOracleSpecForTradingTermination());
         }
         if (other.hasOracleSpecBinding()) {
           mergeOracleSpecBinding(other.getOracleSpecBinding());
@@ -1834,159 +1942,314 @@ public final class Governance {
         return this;
       }
 
-      private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration oracleSpec_;
+      private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration oracleSpecForSettlementPrice_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder> oracleSpecBuilder_;
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder> oracleSpecForSettlementPriceBuilder_;
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
-       * @return Whether the oracleSpec field is set.
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
+       * @return Whether the oracleSpecForSettlementPrice field is set.
        */
-      public boolean hasOracleSpec() {
-        return oracleSpecBuilder_ != null || oracleSpec_ != null;
+      public boolean hasOracleSpecForSettlementPrice() {
+        return oracleSpecForSettlementPriceBuilder_ != null || oracleSpecForSettlementPrice_ != null;
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
-       * @return The oracleSpec.
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
+       * @return The oracleSpecForSettlementPrice.
        */
-      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpec() {
-        if (oracleSpecBuilder_ == null) {
-          return oracleSpec_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpec_;
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpecForSettlementPrice() {
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          return oracleSpecForSettlementPrice_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpecForSettlementPrice_;
         } else {
-          return oracleSpecBuilder_.getMessage();
+          return oracleSpecForSettlementPriceBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
-      public Builder setOracleSpec(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration value) {
-        if (oracleSpecBuilder_ == null) {
+      public Builder setOracleSpecForSettlementPrice(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration value) {
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          oracleSpec_ = value;
+          oracleSpecForSettlementPrice_ = value;
           onChanged();
         } else {
-          oracleSpecBuilder_.setMessage(value);
+          oracleSpecForSettlementPriceBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
-      public Builder setOracleSpec(
+      public Builder setOracleSpecForSettlementPrice(
           io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder builderForValue) {
-        if (oracleSpecBuilder_ == null) {
-          oracleSpec_ = builderForValue.build();
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          oracleSpecForSettlementPrice_ = builderForValue.build();
           onChanged();
         } else {
-          oracleSpecBuilder_.setMessage(builderForValue.build());
+          oracleSpecForSettlementPriceBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
-      public Builder mergeOracleSpec(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration value) {
-        if (oracleSpecBuilder_ == null) {
-          if (oracleSpec_ != null) {
-            oracleSpec_ =
-              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.newBuilder(oracleSpec_).mergeFrom(value).buildPartial();
+      public Builder mergeOracleSpecForSettlementPrice(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration value) {
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          if (oracleSpecForSettlementPrice_ != null) {
+            oracleSpecForSettlementPrice_ =
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.newBuilder(oracleSpecForSettlementPrice_).mergeFrom(value).buildPartial();
           } else {
-            oracleSpec_ = value;
+            oracleSpecForSettlementPrice_ = value;
           }
           onChanged();
         } else {
-          oracleSpecBuilder_.mergeFrom(value);
+          oracleSpecForSettlementPriceBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
-      public Builder clearOracleSpec() {
-        if (oracleSpecBuilder_ == null) {
-          oracleSpec_ = null;
+      public Builder clearOracleSpecForSettlementPrice() {
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          oracleSpecForSettlementPrice_ = null;
           onChanged();
         } else {
-          oracleSpec_ = null;
-          oracleSpecBuilder_ = null;
+          oracleSpecForSettlementPrice_ = null;
+          oracleSpecForSettlementPriceBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder getOracleSpecBuilder() {
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder getOracleSpecForSettlementPriceBuilder() {
 
         onChanged();
-        return getOracleSpecFieldBuilder().getBuilder();
+        return getOracleSpecForSettlementPriceFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
-      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecOrBuilder() {
-        if (oracleSpecBuilder_ != null) {
-          return oracleSpecBuilder_.getMessageOrBuilder();
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecForSettlementPriceOrBuilder() {
+        if (oracleSpecForSettlementPriceBuilder_ != null) {
+          return oracleSpecForSettlementPriceBuilder_.getMessageOrBuilder();
         } else {
-          return oracleSpec_ == null ?
-              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpec_;
+          return oracleSpecForSettlementPrice_ == null ?
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpecForSettlementPrice_;
         }
       }
       /**
        * <pre>
-       * The oracle spec describing the oracle data of interest
+       * The oracle spec describing the oracle data of settlement price
        * </pre>
        *
-       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec = 5 [json_name = "oracleSpec"];</code>
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_settlement_price = 5 [json_name = "oracleSpecForSettlementPrice"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder>
-          getOracleSpecFieldBuilder() {
-        if (oracleSpecBuilder_ == null) {
-          oracleSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getOracleSpecForSettlementPriceFieldBuilder() {
+        if (oracleSpecForSettlementPriceBuilder_ == null) {
+          oracleSpecForSettlementPriceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder>(
-                  getOracleSpec(),
+                  getOracleSpecForSettlementPrice(),
                   getParentForChildren(),
                   isClean());
-          oracleSpec_ = null;
+          oracleSpecForSettlementPrice_ = null;
         }
-        return oracleSpecBuilder_;
+        return oracleSpecForSettlementPriceBuilder_;
+      }
+
+      private io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration oracleSpecForTradingTermination_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder> oracleSpecForTradingTerminationBuilder_;
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       * @return Whether the oracleSpecForTradingTermination field is set.
+       */
+      public boolean hasOracleSpecForTradingTermination() {
+        return oracleSpecForTradingTerminationBuilder_ != null || oracleSpecForTradingTermination_ != null;
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       * @return The oracleSpecForTradingTermination.
+       */
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration getOracleSpecForTradingTermination() {
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          return oracleSpecForTradingTermination_ == null ? io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpecForTradingTermination_;
+        } else {
+          return oracleSpecForTradingTerminationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      public Builder setOracleSpecForTradingTermination(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration value) {
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oracleSpecForTradingTermination_ = value;
+          onChanged();
+        } else {
+          oracleSpecForTradingTerminationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      public Builder setOracleSpecForTradingTermination(
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder builderForValue) {
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          oracleSpecForTradingTermination_ = builderForValue.build();
+          onChanged();
+        } else {
+          oracleSpecForTradingTerminationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      public Builder mergeOracleSpecForTradingTermination(io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration value) {
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          if (oracleSpecForTradingTermination_ != null) {
+            oracleSpecForTradingTermination_ =
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.newBuilder(oracleSpecForTradingTermination_).mergeFrom(value).buildPartial();
+          } else {
+            oracleSpecForTradingTermination_ = value;
+          }
+          onChanged();
+        } else {
+          oracleSpecForTradingTerminationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      public Builder clearOracleSpecForTradingTermination() {
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          oracleSpecForTradingTermination_ = null;
+          onChanged();
+        } else {
+          oracleSpecForTradingTermination_ = null;
+          oracleSpecForTradingTerminationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder getOracleSpecForTradingTerminationBuilder() {
+
+        onChanged();
+        return getOracleSpecForTradingTerminationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      public io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder getOracleSpecForTradingTerminationOrBuilder() {
+        if (oracleSpecForTradingTerminationBuilder_ != null) {
+          return oracleSpecForTradingTerminationBuilder_.getMessageOrBuilder();
+        } else {
+          return oracleSpecForTradingTermination_ == null ?
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.getDefaultInstance() : oracleSpecForTradingTermination_;
+        }
+      }
+      /**
+       * <pre>
+       * The oracle spec describing the oracle data of trading termination
+       * </pre>
+       *
+       * <code>.oracles.v1.OracleSpecConfiguration oracle_spec_for_trading_termination = 6 [json_name = "oracleSpecForTradingTermination"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder>
+          getOracleSpecForTradingTerminationFieldBuilder() {
+        if (oracleSpecForTradingTerminationBuilder_ == null) {
+          oracleSpecForTradingTerminationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfiguration.Builder, io.vegaprotocol.vega.oracles.v1.Spec.OracleSpecConfigurationOrBuilder>(
+                  getOracleSpecForTradingTermination(),
+                  getParentForChildren(),
+                  isClean());
+          oracleSpecForTradingTermination_ = null;
+        }
+        return oracleSpecForTradingTerminationBuilder_;
       }
 
       private io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding oracleSpecBinding_;
@@ -1997,7 +2260,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        * @return Whether the oracleSpecBinding field is set.
        */
       public boolean hasOracleSpecBinding() {
@@ -2008,7 +2271,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        * @return The oracleSpecBinding.
        */
       public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding getOracleSpecBinding() {
@@ -2023,7 +2286,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       public Builder setOracleSpecBinding(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding value) {
         if (oracleSpecBindingBuilder_ == null) {
@@ -2043,7 +2306,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       public Builder setOracleSpecBinding(
           io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder builderForValue) {
@@ -2061,7 +2324,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       public Builder mergeOracleSpecBinding(io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding value) {
         if (oracleSpecBindingBuilder_ == null) {
@@ -2083,7 +2346,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       public Builder clearOracleSpecBinding() {
         if (oracleSpecBindingBuilder_ == null) {
@@ -2101,7 +2364,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       public io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder getOracleSpecBindingBuilder() {
 
@@ -2113,7 +2376,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       public io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder getOracleSpecBindingOrBuilder() {
         if (oracleSpecBindingBuilder_ != null) {
@@ -2128,7 +2391,7 @@ public final class Governance {
        * The binding between the oracle spec and the settlement price
        * </pre>
        *
-       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 6 [json_name = "oracleSpecBinding"];</code>
+       * <code>.vega.OracleSpecToFutureBinding oracle_spec_binding = 7 [json_name = "oracleSpecBinding"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding, io.vegaprotocol.vega.Markets.OracleSpecToFutureBinding.Builder, io.vegaprotocol.vega.Markets.OracleSpecToFutureBindingOrBuilder>
@@ -18838,129 +19101,133 @@ public final class Governance {
       "\n\020governance.proto\022\004vega\0326github.com/mwi" +
       "tkow/go-proto-validators/validator.proto" +
       "\032\rmarkets.proto\032\nvega.proto\032\014assets.prot" +
-      "o\032\025oracles/v1/spec.proto\"\244\002\n\rFutureProdu" +
+      "o\032\025oracles/v1/spec.proto\"\276\003\n\rFutureProdu" +
       "ct\022\"\n\010maturity\030\001 \001(\tB\006\342\337\037\002X\001R\010maturity\0221" +
       "\n\020settlement_asset\030\002 \001(\tB\006\342\337\037\002X\001R\017settle" +
       "mentAsset\022%\n\nquote_name\030\003 \001(\tB\006\342\337\037\002X\001R\tq" +
-      "uoteName\022D\n\013oracle_spec\030\005 \001(\0132#.oracles." +
-      "v1.OracleSpecConfigurationR\noracleSpec\022O" +
-      "\n\023oracle_spec_binding\030\006 \001(\0132\037.vega.Oracl" +
-      "eSpecToFutureBindingR\021oracleSpecBinding\"" +
-      "\213\001\n\027InstrumentConfiguration\022\032\n\004name\030\001 \001(" +
-      "\tB\006\342\337\037\002X\001R\004name\022\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004c" +
-      "ode\022-\n\006future\030d \001(\0132\023.vega.FutureProduct" +
-      "H\000R\006futureB\t\n\007product\"\374\004\n\026NewMarketConfi" +
-      "guration\022E\n\ninstrument\030\001 \001(\0132\035.vega.Inst" +
-      "rumentConfigurationB\006\342\337\037\002 \001R\ninstrument\022" +
-      ".\n\016decimal_places\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecima" +
-      "lPlaces\022\032\n\010metadata\030\003 \003(\tR\010metadata\022_\n\033p" +
-      "rice_monitoring_parameters\030\004 \001(\0132\037.vega." +
-      "PriceMonitoringParametersR\031priceMonitori" +
-      "ngParameters\022k\n\037liquidity_monitoring_par" +
-      "ameters\030\005 \001(\0132#.vega.LiquidityMonitoring" +
-      "ParametersR\035liquidityMonitoringParameter" +
-      "s\0221\n\006simple\030d \001(\0132\027.vega.SimpleModelPara" +
-      "msH\000R\006simple\0229\n\nlog_normal\030e \001(\0132\030.vega." +
-      "LogNormalRiskModelH\000R\tlogNormal\022:\n\nconti" +
-      "nuous\030\310\001 \001(\0132\027.vega.ContinuousTradingH\001R" +
-      "\ncontinuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Di" +
-      "screteTradingH\001R\010discreteB\021\n\017risk_parame" +
-      "tersB\016\n\014trading_mode\"\310\001\n\023NewMarketCommit" +
-      "ment\022+\n\021commitment_amount\030\001 \001(\004R\020commitm" +
-      "entAmount\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003" +
-      "(\0132\024.vega.LiquidityOrderR\005sells\022(\n\004buys\030" +
-      "\004 \003(\0132\024.vega.LiquidityOrderR\004buys\022\034\n\tref" +
-      "erence\030\005 \001(\tR\treference\"\231\001\n\tNewMarket\022>\n" +
-      "\007changes\030\001 \001(\0132\034.vega.NewMarketConfigura" +
-      "tionB\006\342\337\037\002 \001R\007changes\022L\n\024liquidity_commi" +
-      "tment\030\002 \001(\0132\031.vega.NewMarketCommitmentR\023" +
-      "liquidityCommitment\"\016\n\014UpdateMarket\"R\n\026U" +
-      "pdateNetworkParameter\0228\n\007changes\030\001 \001(\0132\026" +
-      ".vega.NetworkParameterB\006\342\337\037\002 \001R\007changes\"" +
-      "@\n\010NewAsset\0224\n\007changes\030\001 \001(\0132\022.vega.Asse" +
-      "tDetailsB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProposalTe" +
-      "rms\0223\n\021closing_timestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020" +
-      "closingTimestamp\0227\n\023enactment_timestamp\030" +
-      "\002 \001(\003B\006\342\337\037\002\020\000R\022enactmentTimestamp\0221\n\024val" +
-      "idation_timestamp\030\003 \001(\003R\023validationTimes" +
-      "tamp\0229\n\rupdate_market\030e \001(\0132\022.vega.Updat" +
-      "eMarketH\000R\014updateMarket\0220\n\nnew_market\030f " +
-      "\001(\0132\017.vega.NewMarketH\000R\tnewMarket\022X\n\030upd" +
-      "ate_network_parameter\030g \001(\0132\034.vega.Updat" +
-      "eNetworkParameterH\000R\026updateNetworkParame" +
-      "ter\022-\n\tnew_asset\030h \001(\0132\016.vega.NewAssetH\000" +
-      "R\010newAssetB\010\n\006change\"\206\003\n\016GovernanceData\022" +
-      "*\n\010proposal\030\001 \001(\0132\016.vega.ProposalR\010propo" +
-      "sal\022\034\n\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030" +
-      "\003 \003(\0132\n.vega.VoteR\002no\022?\n\tyes_party\030\004 \003(\013" +
-      "2\".vega.GovernanceData.YesPartyEntryR\010ye" +
-      "sParty\022<\n\010no_party\030\005 \003(\0132!.vega.Governan" +
-      "ceData.NoPartyEntryR\007noParty\032G\n\rYesParty" +
-      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n" +
-      ".vega.VoteR\005value:\0028\001\032F\n\014NoPartyEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.Vo" +
-      "teR\005value:\0028\001\"\344\003\n\010Proposal\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022\034\n\treference\030\002 \001(\tR\treference\022!\n\010part" +
-      "y_id\030\003 \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005state\030\004 \001" +
-      "(\0162\024.vega.Proposal.StateB\007\342\337\037\003\210\001\001R\005state" +
-      "\022\034\n\ttimestamp\030\005 \001(\003R\ttimestamp\0221\n\005terms\030" +
-      "\006 \001(\0132\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005term" +
-      "s\022+\n\006reason\030\007 \001(\0162\023.vega.ProposalErrorR\006" +
-      "reason\022#\n\rerror_details\030\010 \001(\tR\014errorDeta" +
-      "ils\"\256\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014" +
-      "STATE_FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_" +
-      "PASSED\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DE" +
-      "CLINED\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAI" +
-      "TING_FOR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!\n\010party_i" +
-      "d\030\001 \001(\tB\006\342\337\037\002X\001R\007partyId\022/\n\005value\030\002 \001(\0162" +
-      "\020.vega.Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013pro" +
-      "posal_id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\tti" +
-      "mestamp\030\004 \001(\003R\ttimestamp\022C\n\036total_govern" +
-      "ance_token_balance\030\005 \001(\004R\033totalGovernanc" +
-      "eTokenBalance\022A\n\035total_governance_token_" +
-      "weight\030\006 \001(\tR\032totalGovernanceTokenWeight" +
-      "\";\n\005Value\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALU" +
-      "E_NO\020\001\022\r\n\tVALUE_YES\020\002*\375\013\n\rProposalError\022" +
-      "\036\n\032PROPOSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPO" +
-      "SAL_ERROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPO" +
-      "SAL_ERROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPO" +
-      "SAL_ERROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPO" +
-      "SAL_ERROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPO" +
-      "SAL_ERROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPO" +
-      "SAL_ERROR_INVALID_INSTRUMENT_SECURITY\020\006\022" +
-      "\035\n\031PROPOSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOS" +
-      "AL_ERROR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOS" +
-      "AL_ERROR_INVALID_FUTURE_PRODUCT_TIMESTAM" +
-      "P\020\t\022-\n)PROPOSAL_ERROR_PRODUCT_MATURITY_I" +
-      "S_PASSED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_" +
-      "MODE\020\013\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRA" +
-      "DING_MODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALID" +
-      "ATION_FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING" +
-      "_BUILTIN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR" +
-      "_MISSING_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PRO" +
-      "POSAL_ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_" +
-      "ERROR_INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPO" +
-      "SAL_ERROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOS" +
-      "AL_ERROR_NETWORK_PARAMETER_INVALID_KEY\020\023" +
-      "\0222\n.PROPOSAL_ERROR_NETWORK_PARAMETER_INV" +
-      "ALID_VALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_P" +
-      "ARAMETER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL" +
-      "_ERROR_OPENING_AUCTION_DURATION_TOO_SMAL" +
-      "L\020\026\0225\n1PROPOSAL_ERROR_OPENING_AUCTION_DU" +
-      "RATION_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MAR" +
-      "KET_MISSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PR" +
-      "OPOSAL_ERROR_COULD_NOT_INSTANTIATE_MARKE" +
-      "T\020\031\022)\n%PROPOSAL_ERROR_INVALID_FUTURE_PRO" +
-      "DUCT\020\032\022,\n(PROPOSAL_ERROR_MISSING_COMMITM" +
-      "ENT_AMOUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_F" +
-      "EE_AMOUNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SH" +
-      "APE\020\035\022)\n%PROPOSAL_ERROR_INVALID_RISK_PAR" +
-      "AMETER\020\036\0221\n-PROPOSAL_ERROR_MAJORITY_THRE" +
-      "SHOLD_NOT_REACHED\020\037\0226\n2PROPOSAL_ERROR_PA" +
-      "RTICIPATION_THRESHOLD_NOT_REACHED\020 \022(\n$P" +
-      "ROPOSAL_ERROR_INVALID_ASSET_DETAILS\020!B7\n" +
-      "\024io.vegaprotocol.vegaZ\037code.vegaprotocol" +
-      ".io/vega/protob\006proto3"
+      "uoteName\022k\n oracle_spec_for_settlement_p" +
+      "rice\030\005 \001(\0132#.oracles.v1.OracleSpecConfig" +
+      "urationR\034oracleSpecForSettlementPrice\022q\n" +
+      "#oracle_spec_for_trading_termination\030\006 \001" +
+      "(\0132#.oracles.v1.OracleSpecConfigurationR" +
+      "\037oracleSpecForTradingTermination\022O\n\023orac" +
+      "le_spec_binding\030\007 \001(\0132\037.vega.OracleSpecT" +
+      "oFutureBindingR\021oracleSpecBinding\"\213\001\n\027In" +
+      "strumentConfiguration\022\032\n\004name\030\001 \001(\tB\006\342\337\037" +
+      "\002X\001R\004name\022\032\n\004code\030\002 \001(\tB\006\342\337\037\002X\001R\004code\022-\n" +
+      "\006future\030d \001(\0132\023.vega.FutureProductH\000R\006fu" +
+      "tureB\t\n\007product\"\374\004\n\026NewMarketConfigurati" +
+      "on\022E\n\ninstrument\030\001 \001(\0132\035.vega.Instrument" +
+      "ConfigurationB\006\342\337\037\002 \001R\ninstrument\022.\n\016dec" +
+      "imal_places\030\002 \001(\004B\007\342\337\037\003\030\226\001R\rdecimalPlace" +
+      "s\022\032\n\010metadata\030\003 \003(\tR\010metadata\022_\n\033price_m" +
+      "onitoring_parameters\030\004 \001(\0132\037.vega.PriceM" +
+      "onitoringParametersR\031priceMonitoringPara" +
+      "meters\022k\n\037liquidity_monitoring_parameter" +
+      "s\030\005 \001(\0132#.vega.LiquidityMonitoringParame" +
+      "tersR\035liquidityMonitoringParameters\0221\n\006s" +
+      "imple\030d \001(\0132\027.vega.SimpleModelParamsH\000R\006" +
+      "simple\0229\n\nlog_normal\030e \001(\0132\030.vega.LogNor" +
+      "malRiskModelH\000R\tlogNormal\022:\n\ncontinuous\030" +
+      "\310\001 \001(\0132\027.vega.ContinuousTradingH\001R\nconti" +
+      "nuous\0224\n\010discrete\030\311\001 \001(\0132\025.vega.Discrete" +
+      "TradingH\001R\010discreteB\021\n\017risk_parametersB\016" +
+      "\n\014trading_mode\"\310\001\n\023NewMarketCommitment\022+" +
+      "\n\021commitment_amount\030\001 \001(\004R\020commitmentAmo" +
+      "unt\022\020\n\003fee\030\002 \001(\tR\003fee\022*\n\005sells\030\003 \003(\0132\024.v" +
+      "ega.LiquidityOrderR\005sells\022(\n\004buys\030\004 \003(\0132" +
+      "\024.vega.LiquidityOrderR\004buys\022\034\n\treference" +
+      "\030\005 \001(\tR\treference\"\231\001\n\tNewMarket\022>\n\007chang" +
+      "es\030\001 \001(\0132\034.vega.NewMarketConfigurationB\006" +
+      "\342\337\037\002 \001R\007changes\022L\n\024liquidity_commitment\030" +
+      "\002 \001(\0132\031.vega.NewMarketCommitmentR\023liquid" +
+      "ityCommitment\"\016\n\014UpdateMarket\"R\n\026UpdateN" +
+      "etworkParameter\0228\n\007changes\030\001 \001(\0132\026.vega." +
+      "NetworkParameterB\006\342\337\037\002 \001R\007changes\"@\n\010New" +
+      "Asset\0224\n\007changes\030\001 \001(\0132\022.vega.AssetDetai" +
+      "lsB\006\342\337\037\002 \001R\007changes\"\260\003\n\rProposalTerms\0223\n" +
+      "\021closing_timestamp\030\001 \001(\003B\006\342\337\037\002\020\000R\020closin" +
+      "gTimestamp\0227\n\023enactment_timestamp\030\002 \001(\003B" +
+      "\006\342\337\037\002\020\000R\022enactmentTimestamp\0221\n\024validatio" +
+      "n_timestamp\030\003 \001(\003R\023validationTimestamp\0229" +
+      "\n\rupdate_market\030e \001(\0132\022.vega.UpdateMarke" +
+      "tH\000R\014updateMarket\0220\n\nnew_market\030f \001(\0132\017." +
+      "vega.NewMarketH\000R\tnewMarket\022X\n\030update_ne" +
+      "twork_parameter\030g \001(\0132\034.vega.UpdateNetwo" +
+      "rkParameterH\000R\026updateNetworkParameter\022-\n" +
+      "\tnew_asset\030h \001(\0132\016.vega.NewAssetH\000R\010newA" +
+      "ssetB\010\n\006change\"\206\003\n\016GovernanceData\022*\n\010pro" +
+      "posal\030\001 \001(\0132\016.vega.ProposalR\010proposal\022\034\n" +
+      "\003yes\030\002 \003(\0132\n.vega.VoteR\003yes\022\032\n\002no\030\003 \003(\0132" +
+      "\n.vega.VoteR\002no\022?\n\tyes_party\030\004 \003(\0132\".veg" +
+      "a.GovernanceData.YesPartyEntryR\010yesParty" +
+      "\022<\n\010no_party\030\005 \003(\0132!.vega.GovernanceData" +
+      ".NoPartyEntryR\007noParty\032G\n\rYesPartyEntry\022" +
+      "\020\n\003key\030\001 \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega." +
+      "VoteR\005value:\0028\001\032F\n\014NoPartyEntry\022\020\n\003key\030\001" +
+      " \001(\tR\003key\022 \n\005value\030\002 \001(\0132\n.vega.VoteR\005va" +
+      "lue:\0028\001\"\344\003\n\010Proposal\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\t" +
+      "reference\030\002 \001(\tR\treference\022!\n\010party_id\030\003" +
+      " \001(\tB\006\342\337\037\002X\001R\007partyId\0223\n\005state\030\004 \001(\0162\024.v" +
+      "ega.Proposal.StateB\007\342\337\037\003\210\001\001R\005state\022\034\n\tti" +
+      "mestamp\030\005 \001(\003R\ttimestamp\0221\n\005terms\030\006 \001(\0132" +
+      "\023.vega.ProposalTermsB\006\342\337\037\002 \001R\005terms\022+\n\006r" +
+      "eason\030\007 \001(\0162\023.vega.ProposalErrorR\006reason" +
+      "\022#\n\rerror_details\030\010 \001(\tR\014errorDetails\"\256\001" +
+      "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014STATE_" +
+      "FAILED\020\001\022\016\n\nSTATE_OPEN\020\002\022\020\n\014STATE_PASSED" +
+      "\020\003\022\022\n\016STATE_REJECTED\020\004\022\022\n\016STATE_DECLINED" +
+      "\020\005\022\021\n\rSTATE_ENACTED\020\006\022\037\n\033STATE_WAITING_F" +
+      "OR_NODE_VOTE\020\007\"\346\002\n\004Vote\022!\n\010party_id\030\001 \001(" +
+      "\tB\006\342\337\037\002X\001R\007partyId\022/\n\005value\030\002 \001(\0162\020.vega" +
+      ".Vote.ValueB\007\342\337\037\003\210\001\001R\005value\022\'\n\013proposal_" +
+      "id\030\003 \001(\tB\006\342\337\037\002X\001R\nproposalId\022\034\n\ttimestam" +
+      "p\030\004 \001(\003R\ttimestamp\022C\n\036total_governance_t" +
+      "oken_balance\030\005 \001(\004R\033totalGovernanceToken" +
+      "Balance\022A\n\035total_governance_token_weight" +
+      "\030\006 \001(\tR\032totalGovernanceTokenWeight\";\n\005Va" +
+      "lue\022\025\n\021VALUE_UNSPECIFIED\020\000\022\014\n\010VALUE_NO\020\001" +
+      "\022\r\n\tVALUE_YES\020\002*\375\013\n\rProposalError\022\036\n\032PRO" +
+      "POSAL_ERROR_UNSPECIFIED\020\000\022&\n\"PROPOSAL_ER" +
+      "ROR_CLOSE_TIME_TOO_SOON\020\001\022&\n\"PROPOSAL_ER" +
+      "ROR_CLOSE_TIME_TOO_LATE\020\002\022&\n\"PROPOSAL_ER" +
+      "ROR_ENACT_TIME_TOO_SOON\020\003\022&\n\"PROPOSAL_ER" +
+      "ROR_ENACT_TIME_TOO_LATE\020\004\022&\n\"PROPOSAL_ER" +
+      "ROR_INSUFFICIENT_TOKENS\020\005\022.\n*PROPOSAL_ER" +
+      "ROR_INVALID_INSTRUMENT_SECURITY\020\006\022\035\n\031PRO" +
+      "POSAL_ERROR_NO_PRODUCT\020\007\022&\n\"PROPOSAL_ERR" +
+      "OR_UNSUPPORTED_PRODUCT\020\010\0223\n/PROPOSAL_ERR" +
+      "OR_INVALID_FUTURE_PRODUCT_TIMESTAMP\020\t\022-\n" +
+      ")PROPOSAL_ERROR_PRODUCT_MATURITY_IS_PASS" +
+      "ED\020\n\022\"\n\036PROPOSAL_ERROR_NO_TRADING_MODE\020\013" +
+      "\022+\n\'PROPOSAL_ERROR_UNSUPPORTED_TRADING_M" +
+      "ODE\020\014\022)\n%PROPOSAL_ERROR_NODE_VALIDATION_" +
+      "FAILED\020\r\022.\n*PROPOSAL_ERROR_MISSING_BUILT" +
+      "IN_ASSET_FIELD\020\016\0221\n-PROPOSAL_ERROR_MISSI" +
+      "NG_ERC20_CONTRACT_ADDRESS\020\017\022 \n\034PROPOSAL_" +
+      "ERROR_INVALID_ASSET\020\020\022*\n&PROPOSAL_ERROR_" +
+      "INCOMPATIBLE_TIMESTAMPS\020\021\022%\n!PROPOSAL_ER" +
+      "ROR_NO_RISK_PARAMETERS\020\022\0220\n,PROPOSAL_ERR" +
+      "OR_NETWORK_PARAMETER_INVALID_KEY\020\023\0222\n.PR" +
+      "OPOSAL_ERROR_NETWORK_PARAMETER_INVALID_V" +
+      "ALUE\020\024\0226\n2PROPOSAL_ERROR_NETWORK_PARAMET" +
+      "ER_VALIDATION_FAILED\020\025\0225\n1PROPOSAL_ERROR" +
+      "_OPENING_AUCTION_DURATION_TOO_SMALL\020\026\0225\n" +
+      "1PROPOSAL_ERROR_OPENING_AUCTION_DURATION" +
+      "_TOO_LARGE\020\027\0226\n2PROPOSAL_ERROR_MARKET_MI" +
+      "SSING_LIQUIDITY_COMMITMENT\020\030\022/\n+PROPOSAL" +
+      "_ERROR_COULD_NOT_INSTANTIATE_MARKET\020\031\022)\n" +
+      "%PROPOSAL_ERROR_INVALID_FUTURE_PRODUCT\020\032" +
+      "\022,\n(PROPOSAL_ERROR_MISSING_COMMITMENT_AM" +
+      "OUNT\020\033\022%\n!PROPOSAL_ERROR_INVALID_FEE_AMO" +
+      "UNT\020\034\022 \n\034PROPOSAL_ERROR_INVALID_SHAPE\020\035\022" +
+      ")\n%PROPOSAL_ERROR_INVALID_RISK_PARAMETER" +
+      "\020\036\0221\n-PROPOSAL_ERROR_MAJORITY_THRESHOLD_" +
+      "NOT_REACHED\020\037\0226\n2PROPOSAL_ERROR_PARTICIP" +
+      "ATION_THRESHOLD_NOT_REACHED\020 \022(\n$PROPOSA" +
+      "L_ERROR_INVALID_ASSET_DETAILS\020!B7\n\024io.ve" +
+      "gaprotocol.vegaZ\037code.vegaprotocol.io/ve" +
+      "ga/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18976,7 +19243,7 @@ public final class Governance {
     internal_static_vega_FutureProduct_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_FutureProduct_descriptor,
-        new java.lang.String[] { "Maturity", "SettlementAsset", "QuoteName", "OracleSpec", "OracleSpecBinding", });
+        new java.lang.String[] { "Maturity", "SettlementAsset", "QuoteName", "OracleSpecForSettlementPrice", "OracleSpecForTradingTermination", "OracleSpecBinding", });
     internal_static_vega_InstrumentConfiguration_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_InstrumentConfiguration_fieldAccessorTable = new

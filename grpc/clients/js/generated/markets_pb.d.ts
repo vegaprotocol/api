@@ -83,10 +83,15 @@ export class Future extends jspb.Message {
   getQuoteName(): string;
   setQuoteName(value: string): void;
 
-  hasOracleSpec(): boolean;
-  clearOracleSpec(): void;
-  getOracleSpec(): oracles_v1_spec_pb.OracleSpec | undefined;
-  setOracleSpec(value?: oracles_v1_spec_pb.OracleSpec): void;
+  hasOracleSpecForSettlementPrice(): boolean;
+  clearOracleSpecForSettlementPrice(): void;
+  getOracleSpecForSettlementPrice(): oracles_v1_spec_pb.OracleSpec | undefined;
+  setOracleSpecForSettlementPrice(value?: oracles_v1_spec_pb.OracleSpec): void;
+
+  hasOracleSpecForTradingTermination(): boolean;
+  clearOracleSpecForTradingTermination(): void;
+  getOracleSpecForTradingTermination(): oracles_v1_spec_pb.OracleSpec | undefined;
+  setOracleSpecForTradingTermination(value?: oracles_v1_spec_pb.OracleSpec): void;
 
   hasOracleSpecBinding(): boolean;
   clearOracleSpecBinding(): void;
@@ -108,7 +113,8 @@ export namespace Future {
     maturity: string,
     settlementAsset: string,
     quoteName: string,
-    oracleSpec?: oracles_v1_spec_pb.OracleSpec.AsObject,
+    oracleSpecForSettlementPrice?: oracles_v1_spec_pb.OracleSpec.AsObject,
+    oracleSpecForTradingTermination?: oracles_v1_spec_pb.OracleSpec.AsObject,
     oracleSpecBinding?: OracleSpecToFutureBinding.AsObject,
   }
 }
@@ -116,6 +122,9 @@ export namespace Future {
 export class OracleSpecToFutureBinding extends jspb.Message {
   getSettlementPriceProperty(): string;
   setSettlementPriceProperty(value: string): void;
+
+  getTradingTerminationProperty(): string;
+  setTradingTerminationProperty(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): OracleSpecToFutureBinding.AsObject;
@@ -130,6 +139,7 @@ export class OracleSpecToFutureBinding extends jspb.Message {
 export namespace OracleSpecToFutureBinding {
   export type AsObject = {
     settlementPriceProperty: string,
+    tradingTerminationProperty: string,
   }
 }
 

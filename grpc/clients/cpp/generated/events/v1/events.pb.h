@@ -55,7 +55,7 @@ struct TableStruct_events_2fv1_2fevents_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -71,6 +71,12 @@ extern AuctionEventDefaultTypeInternal _AuctionEvent_default_instance_;
 class BusEvent;
 class BusEventDefaultTypeInternal;
 extern BusEventDefaultTypeInternal _BusEvent_default_instance_;
+class DelegationBalanceEvent;
+class DelegationBalanceEventDefaultTypeInternal;
+extern DelegationBalanceEventDefaultTypeInternal _DelegationBalanceEvent_default_instance_;
+class EpochEvent;
+class EpochEventDefaultTypeInternal;
+extern EpochEventDefaultTypeInternal _EpochEvent_default_instance_;
 class LossSocialization;
 class LossSocializationDefaultTypeInternal;
 extern LossSocializationDefaultTypeInternal _LossSocialization_default_instance_;
@@ -80,6 +86,9 @@ extern MarketEventDefaultTypeInternal _MarketEvent_default_instance_;
 class MarketTick;
 class MarketTickDefaultTypeInternal;
 extern MarketTickDefaultTypeInternal _MarketTick_default_instance_;
+class PendingDelegationBalanceEvent;
+class PendingDelegationBalanceEventDefaultTypeInternal;
+extern PendingDelegationBalanceEventDefaultTypeInternal _PendingDelegationBalanceEvent_default_instance_;
 class PositionResolution;
 class PositionResolutionDefaultTypeInternal;
 extern PositionResolutionDefaultTypeInternal _PositionResolution_default_instance_;
@@ -89,6 +98,9 @@ extern SettleDistressedDefaultTypeInternal _SettleDistressed_default_instance_;
 class SettlePosition;
 class SettlePositionDefaultTypeInternal;
 extern SettlePositionDefaultTypeInternal _SettlePosition_default_instance_;
+class StakingEvent;
+class StakingEventDefaultTypeInternal;
+extern StakingEventDefaultTypeInternal _StakingEvent_default_instance_;
 class TimeUpdate;
 class TimeUpdateDefaultTypeInternal;
 extern TimeUpdateDefaultTypeInternal _TimeUpdate_default_instance_;
@@ -101,27 +113,61 @@ extern TransferResponsesDefaultTypeInternal _TransferResponses_default_instance_
 class TxErrorEvent;
 class TxErrorEventDefaultTypeInternal;
 extern TxErrorEventDefaultTypeInternal _TxErrorEvent_default_instance_;
+class ValidatorUpdate;
+class ValidatorUpdateDefaultTypeInternal;
+extern ValidatorUpdateDefaultTypeInternal _ValidatorUpdate_default_instance_;
 }  // namespace v1
 }  // namespace events
 }  // namespace vega
 PROTOBUF_NAMESPACE_OPEN
 template<> ::vega::events::v1::AuctionEvent* Arena::CreateMaybeMessage<::vega::events::v1::AuctionEvent>(Arena*);
 template<> ::vega::events::v1::BusEvent* Arena::CreateMaybeMessage<::vega::events::v1::BusEvent>(Arena*);
+template<> ::vega::events::v1::DelegationBalanceEvent* Arena::CreateMaybeMessage<::vega::events::v1::DelegationBalanceEvent>(Arena*);
+template<> ::vega::events::v1::EpochEvent* Arena::CreateMaybeMessage<::vega::events::v1::EpochEvent>(Arena*);
 template<> ::vega::events::v1::LossSocialization* Arena::CreateMaybeMessage<::vega::events::v1::LossSocialization>(Arena*);
 template<> ::vega::events::v1::MarketEvent* Arena::CreateMaybeMessage<::vega::events::v1::MarketEvent>(Arena*);
 template<> ::vega::events::v1::MarketTick* Arena::CreateMaybeMessage<::vega::events::v1::MarketTick>(Arena*);
+template<> ::vega::events::v1::PendingDelegationBalanceEvent* Arena::CreateMaybeMessage<::vega::events::v1::PendingDelegationBalanceEvent>(Arena*);
 template<> ::vega::events::v1::PositionResolution* Arena::CreateMaybeMessage<::vega::events::v1::PositionResolution>(Arena*);
 template<> ::vega::events::v1::SettleDistressed* Arena::CreateMaybeMessage<::vega::events::v1::SettleDistressed>(Arena*);
 template<> ::vega::events::v1::SettlePosition* Arena::CreateMaybeMessage<::vega::events::v1::SettlePosition>(Arena*);
+template<> ::vega::events::v1::StakingEvent* Arena::CreateMaybeMessage<::vega::events::v1::StakingEvent>(Arena*);
 template<> ::vega::events::v1::TimeUpdate* Arena::CreateMaybeMessage<::vega::events::v1::TimeUpdate>(Arena*);
 template<> ::vega::events::v1::TradeSettlement* Arena::CreateMaybeMessage<::vega::events::v1::TradeSettlement>(Arena*);
 template<> ::vega::events::v1::TransferResponses* Arena::CreateMaybeMessage<::vega::events::v1::TransferResponses>(Arena*);
 template<> ::vega::events::v1::TxErrorEvent* Arena::CreateMaybeMessage<::vega::events::v1::TxErrorEvent>(Arena*);
+template<> ::vega::events::v1::ValidatorUpdate* Arena::CreateMaybeMessage<::vega::events::v1::ValidatorUpdate>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace vega {
 namespace events {
 namespace v1 {
 
+enum StakingEvent_Type : int {
+  StakingEvent_Type_TYPE_UNSPECIFIED = 0,
+  StakingEvent_Type_TYPE_DEPOSIT = 1,
+  StakingEvent_Type_TYPE_REMOVE = 2,
+  StakingEvent_Type_StakingEvent_Type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  StakingEvent_Type_StakingEvent_Type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool StakingEvent_Type_IsValid(int value);
+constexpr StakingEvent_Type StakingEvent_Type_Type_MIN = StakingEvent_Type_TYPE_UNSPECIFIED;
+constexpr StakingEvent_Type StakingEvent_Type_Type_MAX = StakingEvent_Type_TYPE_REMOVE;
+constexpr int StakingEvent_Type_Type_ARRAYSIZE = StakingEvent_Type_Type_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* StakingEvent_Type_descriptor();
+template<typename T>
+inline const std::string& StakingEvent_Type_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, StakingEvent_Type>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function StakingEvent_Type_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    StakingEvent_Type_descriptor(), enum_t_value);
+}
+inline bool StakingEvent_Type_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, StakingEvent_Type* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<StakingEvent_Type>(
+    StakingEvent_Type_descriptor(), name, value);
+}
 enum BusEventType : int {
   BUS_EVENT_TYPE_UNSPECIFIED = 0,
   BUS_EVENT_TYPE_ALL = 1,
@@ -152,6 +198,11 @@ enum BusEventType : int {
   BUS_EVENT_TYPE_MARKET_UPDATED = 26,
   BUS_EVENT_TYPE_ORACLE_SPEC = 27,
   BUS_EVENT_TYPE_ORACLE_DATA = 28,
+  BUS_EVENT_TYPE_DELEGATION_BALANCE = 29,
+  BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE = 30,
+  BUS_EVENT_TYPE_EPOCH_UPDATE = 31,
+  BUS_EVENT_TYPE_VALIDATOR_UPDATE = 32,
+  BUS_EVENT_TYPE_STAKING_EVENT = 33,
   BUS_EVENT_TYPE_MARKET = 101,
   BUS_EVENT_TYPE_TX_ERROR = 201,
   BusEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
@@ -177,6 +228,594 @@ inline bool BusEventType_Parse(
     BusEventType_descriptor(), name, value);
 }
 // ===================================================================
+
+class StakingEvent PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.StakingEvent) */ {
+ public:
+  inline StakingEvent() : StakingEvent(nullptr) {}
+  virtual ~StakingEvent();
+
+  StakingEvent(const StakingEvent& from);
+  StakingEvent(StakingEvent&& from) noexcept
+    : StakingEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline StakingEvent& operator=(const StakingEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StakingEvent& operator=(StakingEvent&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const StakingEvent& default_instance();
+
+  static inline const StakingEvent* internal_default_instance() {
+    return reinterpret_cast<const StakingEvent*>(
+               &_StakingEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(StakingEvent& a, StakingEvent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(StakingEvent* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StakingEvent* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StakingEvent* New() const final {
+    return CreateMaybeMessage<StakingEvent>(nullptr);
+  }
+
+  StakingEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<StakingEvent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const StakingEvent& from);
+  void MergeFrom(const StakingEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StakingEvent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.events.v1.StakingEvent";
+  }
+  protected:
+  explicit StakingEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_events_2fv1_2fevents_2eproto);
+    return ::descriptor_table_events_2fv1_2fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef StakingEvent_Type Type;
+  static constexpr Type TYPE_UNSPECIFIED =
+    StakingEvent_Type_TYPE_UNSPECIFIED;
+  static constexpr Type TYPE_DEPOSIT =
+    StakingEvent_Type_TYPE_DEPOSIT;
+  static constexpr Type TYPE_REMOVE =
+    StakingEvent_Type_TYPE_REMOVE;
+  static inline bool Type_IsValid(int value) {
+    return StakingEvent_Type_IsValid(value);
+  }
+  static constexpr Type Type_MIN =
+    StakingEvent_Type_Type_MIN;
+  static constexpr Type Type_MAX =
+    StakingEvent_Type_Type_MAX;
+  static constexpr int Type_ARRAYSIZE =
+    StakingEvent_Type_Type_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Type_descriptor() {
+    return StakingEvent_Type_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Type_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Type>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Type_Name.");
+    return StakingEvent_Type_Name(enum_t_value);
+  }
+  static inline bool Type_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      Type* value) {
+    return StakingEvent_Type_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kPartyFieldNumber = 4,
+    kAmountFieldNumber = 5,
+    kTsFieldNumber = 3,
+    kTypeFieldNumber = 2,
+  };
+  // string id = 1 [json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
+  private:
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
+  public:
+
+  // string party = 4 [json_name = "party"];
+  void clear_party();
+  const std::string& party() const;
+  void set_party(const std::string& value);
+  void set_party(std::string&& value);
+  void set_party(const char* value);
+  void set_party(const char* value, size_t size);
+  std::string* mutable_party();
+  std::string* release_party();
+  void set_allocated_party(std::string* party);
+  private:
+  const std::string& _internal_party() const;
+  void _internal_set_party(const std::string& value);
+  std::string* _internal_mutable_party();
+  public:
+
+  // string amount = 5 [json_name = "amount"];
+  void clear_amount();
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
+  private:
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
+  public:
+
+  // int64 ts = 3 [json_name = "ts"];
+  void clear_ts();
+  ::PROTOBUF_NAMESPACE_ID::int64 ts() const;
+  void set_ts(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_ts() const;
+  void _internal_set_ts(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // .vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];
+  void clear_type();
+  ::vega::events::v1::StakingEvent_Type type() const;
+  void set_type(::vega::events::v1::StakingEvent_Type value);
+  private:
+  ::vega::events::v1::StakingEvent_Type _internal_type() const;
+  void _internal_set_type(::vega::events::v1::StakingEvent_Type value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.events.v1.StakingEvent)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
+  ::PROTOBUF_NAMESPACE_ID::int64 ts_;
+  int type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_events_2fv1_2fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DelegationBalanceEvent PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.DelegationBalanceEvent) */ {
+ public:
+  inline DelegationBalanceEvent() : DelegationBalanceEvent(nullptr) {}
+  virtual ~DelegationBalanceEvent();
+
+  DelegationBalanceEvent(const DelegationBalanceEvent& from);
+  DelegationBalanceEvent(DelegationBalanceEvent&& from) noexcept
+    : DelegationBalanceEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline DelegationBalanceEvent& operator=(const DelegationBalanceEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DelegationBalanceEvent& operator=(DelegationBalanceEvent&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DelegationBalanceEvent& default_instance();
+
+  static inline const DelegationBalanceEvent* internal_default_instance() {
+    return reinterpret_cast<const DelegationBalanceEvent*>(
+               &_DelegationBalanceEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(DelegationBalanceEvent& a, DelegationBalanceEvent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DelegationBalanceEvent* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DelegationBalanceEvent* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DelegationBalanceEvent* New() const final {
+    return CreateMaybeMessage<DelegationBalanceEvent>(nullptr);
+  }
+
+  DelegationBalanceEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DelegationBalanceEvent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DelegationBalanceEvent& from);
+  void MergeFrom(const DelegationBalanceEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DelegationBalanceEvent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.events.v1.DelegationBalanceEvent";
+  }
+  protected:
+  explicit DelegationBalanceEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_events_2fv1_2fevents_2eproto);
+    return ::descriptor_table_events_2fv1_2fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPartyFieldNumber = 1,
+    kNodeIdFieldNumber = 2,
+    kAmountFieldNumber = 3,
+  };
+  // string party = 1 [json_name = "party"];
+  void clear_party();
+  const std::string& party() const;
+  void set_party(const std::string& value);
+  void set_party(std::string&& value);
+  void set_party(const char* value);
+  void set_party(const char* value, size_t size);
+  std::string* mutable_party();
+  std::string* release_party();
+  void set_allocated_party(std::string* party);
+  private:
+  const std::string& _internal_party() const;
+  void _internal_set_party(const std::string& value);
+  std::string* _internal_mutable_party();
+  public:
+
+  // string node_id = 2 [json_name = "nodeId"];
+  void clear_node_id();
+  const std::string& node_id() const;
+  void set_node_id(const std::string& value);
+  void set_node_id(std::string&& value);
+  void set_node_id(const char* value);
+  void set_node_id(const char* value, size_t size);
+  std::string* mutable_node_id();
+  std::string* release_node_id();
+  void set_allocated_node_id(std::string* node_id);
+  private:
+  const std::string& _internal_node_id() const;
+  void _internal_set_node_id(const std::string& value);
+  std::string* _internal_mutable_node_id();
+  public:
+
+  // uint64 amount = 3 [json_name = "amount"];
+  void clear_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount() const;
+  void set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_amount() const;
+  void _internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.events.v1.DelegationBalanceEvent)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 amount_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_events_2fv1_2fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PendingDelegationBalanceEvent PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.PendingDelegationBalanceEvent) */ {
+ public:
+  inline PendingDelegationBalanceEvent() : PendingDelegationBalanceEvent(nullptr) {}
+  virtual ~PendingDelegationBalanceEvent();
+
+  PendingDelegationBalanceEvent(const PendingDelegationBalanceEvent& from);
+  PendingDelegationBalanceEvent(PendingDelegationBalanceEvent&& from) noexcept
+    : PendingDelegationBalanceEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline PendingDelegationBalanceEvent& operator=(const PendingDelegationBalanceEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PendingDelegationBalanceEvent& operator=(PendingDelegationBalanceEvent&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PendingDelegationBalanceEvent& default_instance();
+
+  static inline const PendingDelegationBalanceEvent* internal_default_instance() {
+    return reinterpret_cast<const PendingDelegationBalanceEvent*>(
+               &_PendingDelegationBalanceEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(PendingDelegationBalanceEvent& a, PendingDelegationBalanceEvent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PendingDelegationBalanceEvent* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PendingDelegationBalanceEvent* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PendingDelegationBalanceEvent* New() const final {
+    return CreateMaybeMessage<PendingDelegationBalanceEvent>(nullptr);
+  }
+
+  PendingDelegationBalanceEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PendingDelegationBalanceEvent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PendingDelegationBalanceEvent& from);
+  void MergeFrom(const PendingDelegationBalanceEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PendingDelegationBalanceEvent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.events.v1.PendingDelegationBalanceEvent";
+  }
+  protected:
+  explicit PendingDelegationBalanceEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_events_2fv1_2fevents_2eproto);
+    return ::descriptor_table_events_2fv1_2fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPartyFieldNumber = 1,
+    kNodeIdFieldNumber = 2,
+    kDelegationAmountFieldNumber = 3,
+    kUndelegationAmountFieldNumber = 4,
+  };
+  // string party = 1 [json_name = "party"];
+  void clear_party();
+  const std::string& party() const;
+  void set_party(const std::string& value);
+  void set_party(std::string&& value);
+  void set_party(const char* value);
+  void set_party(const char* value, size_t size);
+  std::string* mutable_party();
+  std::string* release_party();
+  void set_allocated_party(std::string* party);
+  private:
+  const std::string& _internal_party() const;
+  void _internal_set_party(const std::string& value);
+  std::string* _internal_mutable_party();
+  public:
+
+  // string node_id = 2 [json_name = "nodeId"];
+  void clear_node_id();
+  const std::string& node_id() const;
+  void set_node_id(const std::string& value);
+  void set_node_id(std::string&& value);
+  void set_node_id(const char* value);
+  void set_node_id(const char* value, size_t size);
+  std::string* mutable_node_id();
+  std::string* release_node_id();
+  void set_allocated_node_id(std::string* node_id);
+  private:
+  const std::string& _internal_node_id() const;
+  void _internal_set_node_id(const std::string& value);
+  std::string* _internal_mutable_node_id();
+  public:
+
+  // uint64 delegation_amount = 3 [json_name = "delegationAmount"];
+  void clear_delegation_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 delegation_amount() const;
+  void set_delegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_delegation_amount() const;
+  void _internal_set_delegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];
+  void clear_undelegation_amount();
+  ::PROTOBUF_NAMESPACE_ID::uint64 undelegation_amount() const;
+  void set_undelegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_undelegation_amount() const;
+  void _internal_set_undelegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.events.v1.PendingDelegationBalanceEvent)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 delegation_amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 undelegation_amount_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_events_2fv1_2fevents_2eproto;
+};
+// -------------------------------------------------------------------
 
 class MarketEvent PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.MarketEvent) */ {
@@ -219,7 +858,7 @@ class MarketEvent PROTOBUF_FINAL :
                &_MarketEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    3;
 
   friend void swap(MarketEvent& a, MarketEvent& b) {
     a.Swap(&b);
@@ -391,7 +1030,7 @@ class TxErrorEvent PROTOBUF_FINAL :
                &_TxErrorEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    4;
 
   friend void swap(TxErrorEvent& a, TxErrorEvent& b) {
     a.Swap(&b);
@@ -709,7 +1348,7 @@ class TimeUpdate PROTOBUF_FINAL :
                &_TimeUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    5;
 
   friend void swap(TimeUpdate& a, TimeUpdate& b) {
     a.Swap(&b);
@@ -804,6 +1443,175 @@ class TimeUpdate PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class EpochEvent PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.EpochEvent) */ {
+ public:
+  inline EpochEvent() : EpochEvent(nullptr) {}
+  virtual ~EpochEvent();
+
+  EpochEvent(const EpochEvent& from);
+  EpochEvent(EpochEvent&& from) noexcept
+    : EpochEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline EpochEvent& operator=(const EpochEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline EpochEvent& operator=(EpochEvent&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const EpochEvent& default_instance();
+
+  static inline const EpochEvent* internal_default_instance() {
+    return reinterpret_cast<const EpochEvent*>(
+               &_EpochEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(EpochEvent& a, EpochEvent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(EpochEvent* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(EpochEvent* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EpochEvent* New() const final {
+    return CreateMaybeMessage<EpochEvent>(nullptr);
+  }
+
+  EpochEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<EpochEvent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const EpochEvent& from);
+  void MergeFrom(const EpochEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EpochEvent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.events.v1.EpochEvent";
+  }
+  protected:
+  explicit EpochEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_events_2fv1_2fevents_2eproto);
+    return ::descriptor_table_events_2fv1_2fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSeqFieldNumber = 1,
+    kStartTimeFieldNumber = 2,
+    kExpireTimeFieldNumber = 3,
+    kEndTimeFieldNumber = 4,
+  };
+  // uint64 seq = 1 [json_name = "seq"];
+  void clear_seq();
+  ::PROTOBUF_NAMESPACE_ID::uint64 seq() const;
+  void set_seq(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_seq() const;
+  void _internal_set_seq(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // int64 start_time = 2 [json_name = "startTime"];
+  void clear_start_time();
+  ::PROTOBUF_NAMESPACE_ID::int64 start_time() const;
+  void set_start_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_start_time() const;
+  void _internal_set_start_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 expire_time = 3 [json_name = "expireTime"];
+  void clear_expire_time();
+  ::PROTOBUF_NAMESPACE_ID::int64 expire_time() const;
+  void set_expire_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_expire_time() const;
+  void _internal_set_expire_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // int64 end_time = 4 [json_name = "endTime"];
+  void clear_end_time();
+  ::PROTOBUF_NAMESPACE_ID::int64 end_time() const;
+  void set_end_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_end_time() const;
+  void _internal_set_end_time(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.events.v1.EpochEvent)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 seq_;
+  ::PROTOBUF_NAMESPACE_ID::int64 start_time_;
+  ::PROTOBUF_NAMESPACE_ID::int64 expire_time_;
+  ::PROTOBUF_NAMESPACE_ID::int64 end_time_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_events_2fv1_2fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TransferResponses PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.TransferResponses) */ {
  public:
@@ -845,7 +1653,7 @@ class TransferResponses PROTOBUF_FINAL :
                &_TransferResponses_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
   friend void swap(TransferResponses& a, TransferResponses& b) {
     a.Swap(&b);
@@ -990,7 +1798,7 @@ class PositionResolution PROTOBUF_FINAL :
                &_PositionResolution_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    8;
 
   friend void swap(PositionResolution& a, PositionResolution& b) {
     a.Swap(&b);
@@ -1166,7 +1974,7 @@ class LossSocialization PROTOBUF_FINAL :
                &_LossSocialization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    9;
 
   friend void swap(LossSocialization& a, LossSocialization& b) {
     a.Swap(&b);
@@ -1338,7 +2146,7 @@ class TradeSettlement PROTOBUF_FINAL :
                &_TradeSettlement_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    10;
 
   friend void swap(TradeSettlement& a, TradeSettlement& b) {
     a.Swap(&b);
@@ -1485,7 +2293,7 @@ class SettlePosition PROTOBUF_FINAL :
                &_SettlePosition_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(SettlePosition& a, SettlePosition& b) {
     a.Swap(&b);
@@ -1677,7 +2485,7 @@ class SettleDistressed PROTOBUF_FINAL :
                &_SettleDistressed_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(SettleDistressed& a, SettleDistressed& b) {
     a.Swap(&b);
@@ -1860,7 +2668,7 @@ class MarketTick PROTOBUF_FINAL :
                &_MarketTick_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(MarketTick& a, MarketTick& b) {
     a.Swap(&b);
@@ -2014,7 +2822,7 @@ class AuctionEvent PROTOBUF_FINAL :
                &_AuctionEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(AuctionEvent& a, AuctionEvent& b) {
     a.Swap(&b);
@@ -2182,6 +2990,203 @@ class AuctionEvent PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class ValidatorUpdate PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.ValidatorUpdate) */ {
+ public:
+  inline ValidatorUpdate() : ValidatorUpdate(nullptr) {}
+  virtual ~ValidatorUpdate();
+
+  ValidatorUpdate(const ValidatorUpdate& from);
+  ValidatorUpdate(ValidatorUpdate&& from) noexcept
+    : ValidatorUpdate() {
+    *this = ::std::move(from);
+  }
+
+  inline ValidatorUpdate& operator=(const ValidatorUpdate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ValidatorUpdate& operator=(ValidatorUpdate&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ValidatorUpdate& default_instance();
+
+  static inline const ValidatorUpdate* internal_default_instance() {
+    return reinterpret_cast<const ValidatorUpdate*>(
+               &_ValidatorUpdate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(ValidatorUpdate& a, ValidatorUpdate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ValidatorUpdate* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ValidatorUpdate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ValidatorUpdate* New() const final {
+    return CreateMaybeMessage<ValidatorUpdate>(nullptr);
+  }
+
+  ValidatorUpdate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ValidatorUpdate>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ValidatorUpdate& from);
+  void MergeFrom(const ValidatorUpdate& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ValidatorUpdate* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.events.v1.ValidatorUpdate";
+  }
+  protected:
+  explicit ValidatorUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_events_2fv1_2fevents_2eproto);
+    return ::descriptor_table_events_2fv1_2fevents_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPubKeyFieldNumber = 1,
+    kTmPubKeyFieldNumber = 2,
+    kInfoUrlFieldNumber = 3,
+    kCountryFieldNumber = 4,
+  };
+  // string pub_key = 1 [json_name = "pubKey"];
+  void clear_pub_key();
+  const std::string& pub_key() const;
+  void set_pub_key(const std::string& value);
+  void set_pub_key(std::string&& value);
+  void set_pub_key(const char* value);
+  void set_pub_key(const char* value, size_t size);
+  std::string* mutable_pub_key();
+  std::string* release_pub_key();
+  void set_allocated_pub_key(std::string* pub_key);
+  private:
+  const std::string& _internal_pub_key() const;
+  void _internal_set_pub_key(const std::string& value);
+  std::string* _internal_mutable_pub_key();
+  public:
+
+  // string tm_pub_key = 2 [json_name = "tmPubKey"];
+  void clear_tm_pub_key();
+  const std::string& tm_pub_key() const;
+  void set_tm_pub_key(const std::string& value);
+  void set_tm_pub_key(std::string&& value);
+  void set_tm_pub_key(const char* value);
+  void set_tm_pub_key(const char* value, size_t size);
+  std::string* mutable_tm_pub_key();
+  std::string* release_tm_pub_key();
+  void set_allocated_tm_pub_key(std::string* tm_pub_key);
+  private:
+  const std::string& _internal_tm_pub_key() const;
+  void _internal_set_tm_pub_key(const std::string& value);
+  std::string* _internal_mutable_tm_pub_key();
+  public:
+
+  // string info_url = 3 [json_name = "infoUrl"];
+  void clear_info_url();
+  const std::string& info_url() const;
+  void set_info_url(const std::string& value);
+  void set_info_url(std::string&& value);
+  void set_info_url(const char* value);
+  void set_info_url(const char* value, size_t size);
+  std::string* mutable_info_url();
+  std::string* release_info_url();
+  void set_allocated_info_url(std::string* info_url);
+  private:
+  const std::string& _internal_info_url() const;
+  void _internal_set_info_url(const std::string& value);
+  std::string* _internal_mutable_info_url();
+  public:
+
+  // string country = 4 [json_name = "country"];
+  void clear_country();
+  const std::string& country() const;
+  void set_country(const std::string& value);
+  void set_country(std::string&& value);
+  void set_country(const char* value);
+  void set_country(const char* value, size_t size);
+  std::string* mutable_country();
+  std::string* release_country();
+  void set_allocated_country(std::string* country);
+  private:
+  const std::string& _internal_country() const;
+  void _internal_set_country(const std::string& value);
+  std::string* _internal_mutable_country();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.events.v1.ValidatorUpdate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pub_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tm_pub_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr info_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr country_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_events_2fv1_2fevents_2eproto;
+};
+// -------------------------------------------------------------------
+
 class BusEvent PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.events.v1.BusEvent) */ {
  public:
@@ -2246,6 +3251,11 @@ class BusEvent PROTOBUF_FINAL :
     kMarketUpdated = 125,
     kOracleSpec = 126,
     kOracleData = 127,
+    kDelegationBalance = 129,
+    kPendingDelegationBalance = 130,
+    kEpochEvent = 131,
+    kValidatorUpdate = 132,
+    kStakingEvent = 133,
     kMarket = 1001,
     kTxErrEvent = 2001,
     EVENT_NOT_SET = 0,
@@ -2256,7 +3266,7 @@ class BusEvent PROTOBUF_FINAL :
                &_BusEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    16;
 
   friend void swap(BusEvent& a, BusEvent& b) {
     a.Swap(&b);
@@ -2357,6 +3367,11 @@ class BusEvent PROTOBUF_FINAL :
     kMarketUpdatedFieldNumber = 125,
     kOracleSpecFieldNumber = 126,
     kOracleDataFieldNumber = 127,
+    kDelegationBalanceFieldNumber = 129,
+    kPendingDelegationBalanceFieldNumber = 130,
+    kEpochEventFieldNumber = 131,
+    kValidatorUpdateFieldNumber = 132,
+    kStakingEventFieldNumber = 133,
     kMarketFieldNumber = 1001,
     kTxErrEventFieldNumber = 2001,
   };
@@ -2887,6 +3902,96 @@ class BusEvent PROTOBUF_FINAL :
       ::oracles::v1::OracleData* oracle_data);
   ::oracles::v1::OracleData* unsafe_arena_release_oracle_data();
 
+  // .vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];
+  bool has_delegation_balance() const;
+  private:
+  bool _internal_has_delegation_balance() const;
+  public:
+  void clear_delegation_balance();
+  const ::vega::events::v1::DelegationBalanceEvent& delegation_balance() const;
+  ::vega::events::v1::DelegationBalanceEvent* release_delegation_balance();
+  ::vega::events::v1::DelegationBalanceEvent* mutable_delegation_balance();
+  void set_allocated_delegation_balance(::vega::events::v1::DelegationBalanceEvent* delegation_balance);
+  private:
+  const ::vega::events::v1::DelegationBalanceEvent& _internal_delegation_balance() const;
+  ::vega::events::v1::DelegationBalanceEvent* _internal_mutable_delegation_balance();
+  public:
+  void unsafe_arena_set_allocated_delegation_balance(
+      ::vega::events::v1::DelegationBalanceEvent* delegation_balance);
+  ::vega::events::v1::DelegationBalanceEvent* unsafe_arena_release_delegation_balance();
+
+  // .vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];
+  bool has_pending_delegation_balance() const;
+  private:
+  bool _internal_has_pending_delegation_balance() const;
+  public:
+  void clear_pending_delegation_balance();
+  const ::vega::events::v1::PendingDelegationBalanceEvent& pending_delegation_balance() const;
+  ::vega::events::v1::PendingDelegationBalanceEvent* release_pending_delegation_balance();
+  ::vega::events::v1::PendingDelegationBalanceEvent* mutable_pending_delegation_balance();
+  void set_allocated_pending_delegation_balance(::vega::events::v1::PendingDelegationBalanceEvent* pending_delegation_balance);
+  private:
+  const ::vega::events::v1::PendingDelegationBalanceEvent& _internal_pending_delegation_balance() const;
+  ::vega::events::v1::PendingDelegationBalanceEvent* _internal_mutable_pending_delegation_balance();
+  public:
+  void unsafe_arena_set_allocated_pending_delegation_balance(
+      ::vega::events::v1::PendingDelegationBalanceEvent* pending_delegation_balance);
+  ::vega::events::v1::PendingDelegationBalanceEvent* unsafe_arena_release_pending_delegation_balance();
+
+  // .vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];
+  bool has_epoch_event() const;
+  private:
+  bool _internal_has_epoch_event() const;
+  public:
+  void clear_epoch_event();
+  const ::vega::events::v1::EpochEvent& epoch_event() const;
+  ::vega::events::v1::EpochEvent* release_epoch_event();
+  ::vega::events::v1::EpochEvent* mutable_epoch_event();
+  void set_allocated_epoch_event(::vega::events::v1::EpochEvent* epoch_event);
+  private:
+  const ::vega::events::v1::EpochEvent& _internal_epoch_event() const;
+  ::vega::events::v1::EpochEvent* _internal_mutable_epoch_event();
+  public:
+  void unsafe_arena_set_allocated_epoch_event(
+      ::vega::events::v1::EpochEvent* epoch_event);
+  ::vega::events::v1::EpochEvent* unsafe_arena_release_epoch_event();
+
+  // .vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];
+  bool has_validator_update() const;
+  private:
+  bool _internal_has_validator_update() const;
+  public:
+  void clear_validator_update();
+  const ::vega::events::v1::ValidatorUpdate& validator_update() const;
+  ::vega::events::v1::ValidatorUpdate* release_validator_update();
+  ::vega::events::v1::ValidatorUpdate* mutable_validator_update();
+  void set_allocated_validator_update(::vega::events::v1::ValidatorUpdate* validator_update);
+  private:
+  const ::vega::events::v1::ValidatorUpdate& _internal_validator_update() const;
+  ::vega::events::v1::ValidatorUpdate* _internal_mutable_validator_update();
+  public:
+  void unsafe_arena_set_allocated_validator_update(
+      ::vega::events::v1::ValidatorUpdate* validator_update);
+  ::vega::events::v1::ValidatorUpdate* unsafe_arena_release_validator_update();
+
+  // .vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];
+  bool has_staking_event() const;
+  private:
+  bool _internal_has_staking_event() const;
+  public:
+  void clear_staking_event();
+  const ::vega::events::v1::StakingEvent& staking_event() const;
+  ::vega::events::v1::StakingEvent* release_staking_event();
+  ::vega::events::v1::StakingEvent* mutable_staking_event();
+  void set_allocated_staking_event(::vega::events::v1::StakingEvent* staking_event);
+  private:
+  const ::vega::events::v1::StakingEvent& _internal_staking_event() const;
+  ::vega::events::v1::StakingEvent* _internal_mutable_staking_event();
+  public:
+  void unsafe_arena_set_allocated_staking_event(
+      ::vega::events::v1::StakingEvent* staking_event);
+  ::vega::events::v1::StakingEvent* unsafe_arena_release_staking_event();
+
   // .vega.events.v1.MarketEvent market = 1001 [json_name = "market"];
   bool has_market() const;
   private:
@@ -2955,6 +4060,11 @@ class BusEvent PROTOBUF_FINAL :
   void set_has_market_updated();
   void set_has_oracle_spec();
   void set_has_oracle_data();
+  void set_has_delegation_balance();
+  void set_has_pending_delegation_balance();
+  void set_has_epoch_event();
+  void set_has_validator_update();
+  void set_has_staking_event();
   void set_has_market();
   void set_has_tx_err_event();
 
@@ -2996,6 +4106,11 @@ class BusEvent PROTOBUF_FINAL :
     ::vega::Market* market_updated_;
     ::oracles::v1::OracleSpec* oracle_spec_;
     ::oracles::v1::OracleData* oracle_data_;
+    ::vega::events::v1::DelegationBalanceEvent* delegation_balance_;
+    ::vega::events::v1::PendingDelegationBalanceEvent* pending_delegation_balance_;
+    ::vega::events::v1::EpochEvent* epoch_event_;
+    ::vega::events::v1::ValidatorUpdate* validator_update_;
+    ::vega::events::v1::StakingEvent* staking_event_;
     ::vega::events::v1::MarketEvent* market_;
     ::vega::events::v1::TxErrorEvent* tx_err_event_;
   } event_;
@@ -3013,6 +4128,545 @@ class BusEvent PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// StakingEvent
+
+// string id = 1 [json_name = "id"];
+inline void StakingEvent::clear_id() {
+  id_.ClearToEmpty();
+}
+inline const std::string& StakingEvent::id() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.StakingEvent.id)
+  return _internal_id();
+}
+inline void StakingEvent::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.StakingEvent.id)
+}
+inline std::string* StakingEvent::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.StakingEvent.id)
+  return _internal_mutable_id();
+}
+inline const std::string& StakingEvent::_internal_id() const {
+  return id_.Get();
+}
+inline void StakingEvent::_internal_set_id(const std::string& value) {
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakingEvent::set_id(std::string&& value) {
+
+  id_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.StakingEvent.id)
+}
+inline void StakingEvent::set_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.StakingEvent.id)
+}
+inline void StakingEvent::set_id(const char* value,
+    size_t size) {
+
+  id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.StakingEvent.id)
+}
+inline std::string* StakingEvent::_internal_mutable_id() {
+
+  return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakingEvent::release_id() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.StakingEvent.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakingEvent::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
+
+  } else {
+
+  }
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.StakingEvent.id)
+}
+
+// .vega.events.v1.StakingEvent.Type type = 2 [json_name = "type"];
+inline void StakingEvent::clear_type() {
+  type_ = 0;
+}
+inline ::vega::events::v1::StakingEvent_Type StakingEvent::_internal_type() const {
+  return static_cast< ::vega::events::v1::StakingEvent_Type >(type_);
+}
+inline ::vega::events::v1::StakingEvent_Type StakingEvent::type() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.StakingEvent.type)
+  return _internal_type();
+}
+inline void StakingEvent::_internal_set_type(::vega::events::v1::StakingEvent_Type value) {
+
+  type_ = value;
+}
+inline void StakingEvent::set_type(::vega::events::v1::StakingEvent_Type value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.StakingEvent.type)
+}
+
+// int64 ts = 3 [json_name = "ts"];
+inline void StakingEvent::clear_ts() {
+  ts_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 StakingEvent::_internal_ts() const {
+  return ts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 StakingEvent::ts() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.StakingEvent.ts)
+  return _internal_ts();
+}
+inline void StakingEvent::_internal_set_ts(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  ts_ = value;
+}
+inline void StakingEvent::set_ts(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_ts(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.StakingEvent.ts)
+}
+
+// string party = 4 [json_name = "party"];
+inline void StakingEvent::clear_party() {
+  party_.ClearToEmpty();
+}
+inline const std::string& StakingEvent::party() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.StakingEvent.party)
+  return _internal_party();
+}
+inline void StakingEvent::set_party(const std::string& value) {
+  _internal_set_party(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.StakingEvent.party)
+}
+inline std::string* StakingEvent::mutable_party() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.StakingEvent.party)
+  return _internal_mutable_party();
+}
+inline const std::string& StakingEvent::_internal_party() const {
+  return party_.Get();
+}
+inline void StakingEvent::_internal_set_party(const std::string& value) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakingEvent::set_party(std::string&& value) {
+
+  party_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.StakingEvent.party)
+}
+inline void StakingEvent::set_party(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.StakingEvent.party)
+}
+inline void StakingEvent::set_party(const char* value,
+    size_t size) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.StakingEvent.party)
+}
+inline std::string* StakingEvent::_internal_mutable_party() {
+
+  return party_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakingEvent::release_party() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.StakingEvent.party)
+  return party_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakingEvent::set_allocated_party(std::string* party) {
+  if (party != nullptr) {
+
+  } else {
+
+  }
+  party_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.StakingEvent.party)
+}
+
+// string amount = 5 [json_name = "amount"];
+inline void StakingEvent::clear_amount() {
+  amount_.ClearToEmpty();
+}
+inline const std::string& StakingEvent::amount() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.StakingEvent.amount)
+  return _internal_amount();
+}
+inline void StakingEvent::set_amount(const std::string& value) {
+  _internal_set_amount(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.StakingEvent.amount)
+}
+inline std::string* StakingEvent::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.StakingEvent.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& StakingEvent::_internal_amount() const {
+  return amount_.Get();
+}
+inline void StakingEvent::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void StakingEvent::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.StakingEvent.amount)
+}
+inline void StakingEvent::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.StakingEvent.amount)
+}
+inline void StakingEvent::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.StakingEvent.amount)
+}
+inline std::string* StakingEvent::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* StakingEvent::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.StakingEvent.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void StakingEvent::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.StakingEvent.amount)
+}
+
+// -------------------------------------------------------------------
+
+// DelegationBalanceEvent
+
+// string party = 1 [json_name = "party"];
+inline void DelegationBalanceEvent::clear_party() {
+  party_.ClearToEmpty();
+}
+inline const std::string& DelegationBalanceEvent::party() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.DelegationBalanceEvent.party)
+  return _internal_party();
+}
+inline void DelegationBalanceEvent::set_party(const std::string& value) {
+  _internal_set_party(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.DelegationBalanceEvent.party)
+}
+inline std::string* DelegationBalanceEvent::mutable_party() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.DelegationBalanceEvent.party)
+  return _internal_mutable_party();
+}
+inline const std::string& DelegationBalanceEvent::_internal_party() const {
+  return party_.Get();
+}
+inline void DelegationBalanceEvent::_internal_set_party(const std::string& value) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DelegationBalanceEvent::set_party(std::string&& value) {
+
+  party_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.DelegationBalanceEvent.party)
+}
+inline void DelegationBalanceEvent::set_party(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.DelegationBalanceEvent.party)
+}
+inline void DelegationBalanceEvent::set_party(const char* value,
+    size_t size) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.DelegationBalanceEvent.party)
+}
+inline std::string* DelegationBalanceEvent::_internal_mutable_party() {
+
+  return party_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DelegationBalanceEvent::release_party() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.DelegationBalanceEvent.party)
+  return party_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DelegationBalanceEvent::set_allocated_party(std::string* party) {
+  if (party != nullptr) {
+
+  } else {
+
+  }
+  party_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.DelegationBalanceEvent.party)
+}
+
+// string node_id = 2 [json_name = "nodeId"];
+inline void DelegationBalanceEvent::clear_node_id() {
+  node_id_.ClearToEmpty();
+}
+inline const std::string& DelegationBalanceEvent::node_id() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.DelegationBalanceEvent.node_id)
+  return _internal_node_id();
+}
+inline void DelegationBalanceEvent::set_node_id(const std::string& value) {
+  _internal_set_node_id(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.DelegationBalanceEvent.node_id)
+}
+inline std::string* DelegationBalanceEvent::mutable_node_id() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.DelegationBalanceEvent.node_id)
+  return _internal_mutable_node_id();
+}
+inline const std::string& DelegationBalanceEvent::_internal_node_id() const {
+  return node_id_.Get();
+}
+inline void DelegationBalanceEvent::_internal_set_node_id(const std::string& value) {
+
+  node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DelegationBalanceEvent::set_node_id(std::string&& value) {
+
+  node_id_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.DelegationBalanceEvent.node_id)
+}
+inline void DelegationBalanceEvent::set_node_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.DelegationBalanceEvent.node_id)
+}
+inline void DelegationBalanceEvent::set_node_id(const char* value,
+    size_t size) {
+
+  node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.DelegationBalanceEvent.node_id)
+}
+inline std::string* DelegationBalanceEvent::_internal_mutable_node_id() {
+
+  return node_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DelegationBalanceEvent::release_node_id() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.DelegationBalanceEvent.node_id)
+  return node_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DelegationBalanceEvent::set_allocated_node_id(std::string* node_id) {
+  if (node_id != nullptr) {
+
+  } else {
+
+  }
+  node_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), node_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.DelegationBalanceEvent.node_id)
+}
+
+// uint64 amount = 3 [json_name = "amount"];
+inline void DelegationBalanceEvent::clear_amount() {
+  amount_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 DelegationBalanceEvent::_internal_amount() const {
+  return amount_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 DelegationBalanceEvent::amount() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.DelegationBalanceEvent.amount)
+  return _internal_amount();
+}
+inline void DelegationBalanceEvent::_internal_set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  amount_ = value;
+}
+inline void DelegationBalanceEvent::set_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_amount(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.DelegationBalanceEvent.amount)
+}
+
+// -------------------------------------------------------------------
+
+// PendingDelegationBalanceEvent
+
+// string party = 1 [json_name = "party"];
+inline void PendingDelegationBalanceEvent::clear_party() {
+  party_.ClearToEmpty();
+}
+inline const std::string& PendingDelegationBalanceEvent::party() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.PendingDelegationBalanceEvent.party)
+  return _internal_party();
+}
+inline void PendingDelegationBalanceEvent::set_party(const std::string& value) {
+  _internal_set_party(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.PendingDelegationBalanceEvent.party)
+}
+inline std::string* PendingDelegationBalanceEvent::mutable_party() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.PendingDelegationBalanceEvent.party)
+  return _internal_mutable_party();
+}
+inline const std::string& PendingDelegationBalanceEvent::_internal_party() const {
+  return party_.Get();
+}
+inline void PendingDelegationBalanceEvent::_internal_set_party(const std::string& value) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void PendingDelegationBalanceEvent::set_party(std::string&& value) {
+
+  party_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.PendingDelegationBalanceEvent.party)
+}
+inline void PendingDelegationBalanceEvent::set_party(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.PendingDelegationBalanceEvent.party)
+}
+inline void PendingDelegationBalanceEvent::set_party(const char* value,
+    size_t size) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.PendingDelegationBalanceEvent.party)
+}
+inline std::string* PendingDelegationBalanceEvent::_internal_mutable_party() {
+
+  return party_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* PendingDelegationBalanceEvent::release_party() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.PendingDelegationBalanceEvent.party)
+  return party_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void PendingDelegationBalanceEvent::set_allocated_party(std::string* party) {
+  if (party != nullptr) {
+
+  } else {
+
+  }
+  party_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.PendingDelegationBalanceEvent.party)
+}
+
+// string node_id = 2 [json_name = "nodeId"];
+inline void PendingDelegationBalanceEvent::clear_node_id() {
+  node_id_.ClearToEmpty();
+}
+inline const std::string& PendingDelegationBalanceEvent::node_id() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+  return _internal_node_id();
+}
+inline void PendingDelegationBalanceEvent::set_node_id(const std::string& value) {
+  _internal_set_node_id(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+}
+inline std::string* PendingDelegationBalanceEvent::mutable_node_id() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+  return _internal_mutable_node_id();
+}
+inline const std::string& PendingDelegationBalanceEvent::_internal_node_id() const {
+  return node_id_.Get();
+}
+inline void PendingDelegationBalanceEvent::_internal_set_node_id(const std::string& value) {
+
+  node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void PendingDelegationBalanceEvent::set_node_id(std::string&& value) {
+
+  node_id_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+}
+inline void PendingDelegationBalanceEvent::set_node_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+}
+inline void PendingDelegationBalanceEvent::set_node_id(const char* value,
+    size_t size) {
+
+  node_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+}
+inline std::string* PendingDelegationBalanceEvent::_internal_mutable_node_id() {
+
+  return node_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* PendingDelegationBalanceEvent::release_node_id() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+  return node_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void PendingDelegationBalanceEvent::set_allocated_node_id(std::string* node_id) {
+  if (node_id != nullptr) {
+
+  } else {
+
+  }
+  node_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), node_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.PendingDelegationBalanceEvent.node_id)
+}
+
+// uint64 delegation_amount = 3 [json_name = "delegationAmount"];
+inline void PendingDelegationBalanceEvent::clear_delegation_amount() {
+  delegation_amount_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PendingDelegationBalanceEvent::_internal_delegation_amount() const {
+  return delegation_amount_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PendingDelegationBalanceEvent::delegation_amount() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.PendingDelegationBalanceEvent.delegation_amount)
+  return _internal_delegation_amount();
+}
+inline void PendingDelegationBalanceEvent::_internal_set_delegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  delegation_amount_ = value;
+}
+inline void PendingDelegationBalanceEvent::set_delegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_delegation_amount(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.PendingDelegationBalanceEvent.delegation_amount)
+}
+
+// uint64 undelegation_amount = 4 [json_name = "undelegationAmount"];
+inline void PendingDelegationBalanceEvent::clear_undelegation_amount() {
+  undelegation_amount_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PendingDelegationBalanceEvent::_internal_undelegation_amount() const {
+  return undelegation_amount_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 PendingDelegationBalanceEvent::undelegation_amount() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.PendingDelegationBalanceEvent.undelegation_amount)
+  return _internal_undelegation_amount();
+}
+inline void PendingDelegationBalanceEvent::_internal_set_undelegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  undelegation_amount_ = value;
+}
+inline void PendingDelegationBalanceEvent::set_undelegation_amount(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_undelegation_amount(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.PendingDelegationBalanceEvent.undelegation_amount)
+}
+
+// -------------------------------------------------------------------
+
 // MarketEvent
 
 // string market_id = 1 [json_name = "marketId"];
@@ -3749,6 +5403,90 @@ inline void TimeUpdate::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 v
 inline void TimeUpdate::set_timestamp(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_timestamp(value);
   // @@protoc_insertion_point(field_set:vega.events.v1.TimeUpdate.timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// EpochEvent
+
+// uint64 seq = 1 [json_name = "seq"];
+inline void EpochEvent::clear_seq() {
+  seq_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 EpochEvent::_internal_seq() const {
+  return seq_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 EpochEvent::seq() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.EpochEvent.seq)
+  return _internal_seq();
+}
+inline void EpochEvent::_internal_set_seq(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  seq_ = value;
+}
+inline void EpochEvent::set_seq(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_seq(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.EpochEvent.seq)
+}
+
+// int64 start_time = 2 [json_name = "startTime"];
+inline void EpochEvent::clear_start_time() {
+  start_time_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 EpochEvent::_internal_start_time() const {
+  return start_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 EpochEvent::start_time() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.EpochEvent.start_time)
+  return _internal_start_time();
+}
+inline void EpochEvent::_internal_set_start_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  start_time_ = value;
+}
+inline void EpochEvent::set_start_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_start_time(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.EpochEvent.start_time)
+}
+
+// int64 expire_time = 3 [json_name = "expireTime"];
+inline void EpochEvent::clear_expire_time() {
+  expire_time_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 EpochEvent::_internal_expire_time() const {
+  return expire_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 EpochEvent::expire_time() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.EpochEvent.expire_time)
+  return _internal_expire_time();
+}
+inline void EpochEvent::_internal_set_expire_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  expire_time_ = value;
+}
+inline void EpochEvent::set_expire_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_expire_time(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.EpochEvent.expire_time)
+}
+
+// int64 end_time = 4 [json_name = "endTime"];
+inline void EpochEvent::clear_end_time() {
+  end_time_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 EpochEvent::_internal_end_time() const {
+  return end_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 EpochEvent::end_time() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.EpochEvent.end_time)
+  return _internal_end_time();
+}
+inline void EpochEvent::_internal_set_end_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+
+  end_time_ = value;
+}
+inline void EpochEvent::set_end_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_end_time(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.EpochEvent.end_time)
 }
 
 // -------------------------------------------------------------------
@@ -4725,6 +6463,254 @@ inline void AuctionEvent::_internal_set_extension_trigger(::vega::AuctionTrigger
 inline void AuctionEvent::set_extension_trigger(::vega::AuctionTrigger value) {
   _internal_set_extension_trigger(value);
   // @@protoc_insertion_point(field_set:vega.events.v1.AuctionEvent.extension_trigger)
+}
+
+// -------------------------------------------------------------------
+
+// ValidatorUpdate
+
+// string pub_key = 1 [json_name = "pubKey"];
+inline void ValidatorUpdate::clear_pub_key() {
+  pub_key_.ClearToEmpty();
+}
+inline const std::string& ValidatorUpdate::pub_key() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.ValidatorUpdate.pub_key)
+  return _internal_pub_key();
+}
+inline void ValidatorUpdate::set_pub_key(const std::string& value) {
+  _internal_set_pub_key(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.ValidatorUpdate.pub_key)
+}
+inline std::string* ValidatorUpdate::mutable_pub_key() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.ValidatorUpdate.pub_key)
+  return _internal_mutable_pub_key();
+}
+inline const std::string& ValidatorUpdate::_internal_pub_key() const {
+  return pub_key_.Get();
+}
+inline void ValidatorUpdate::_internal_set_pub_key(const std::string& value) {
+
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ValidatorUpdate::set_pub_key(std::string&& value) {
+
+  pub_key_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.ValidatorUpdate.pub_key)
+}
+inline void ValidatorUpdate::set_pub_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.ValidatorUpdate.pub_key)
+}
+inline void ValidatorUpdate::set_pub_key(const char* value,
+    size_t size) {
+
+  pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.ValidatorUpdate.pub_key)
+}
+inline std::string* ValidatorUpdate::_internal_mutable_pub_key() {
+
+  return pub_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ValidatorUpdate::release_pub_key() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.ValidatorUpdate.pub_key)
+  return pub_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ValidatorUpdate::set_allocated_pub_key(std::string* pub_key) {
+  if (pub_key != nullptr) {
+
+  } else {
+
+  }
+  pub_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pub_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.ValidatorUpdate.pub_key)
+}
+
+// string tm_pub_key = 2 [json_name = "tmPubKey"];
+inline void ValidatorUpdate::clear_tm_pub_key() {
+  tm_pub_key_.ClearToEmpty();
+}
+inline const std::string& ValidatorUpdate::tm_pub_key() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.ValidatorUpdate.tm_pub_key)
+  return _internal_tm_pub_key();
+}
+inline void ValidatorUpdate::set_tm_pub_key(const std::string& value) {
+  _internal_set_tm_pub_key(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.ValidatorUpdate.tm_pub_key)
+}
+inline std::string* ValidatorUpdate::mutable_tm_pub_key() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.ValidatorUpdate.tm_pub_key)
+  return _internal_mutable_tm_pub_key();
+}
+inline const std::string& ValidatorUpdate::_internal_tm_pub_key() const {
+  return tm_pub_key_.Get();
+}
+inline void ValidatorUpdate::_internal_set_tm_pub_key(const std::string& value) {
+
+  tm_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ValidatorUpdate::set_tm_pub_key(std::string&& value) {
+
+  tm_pub_key_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.ValidatorUpdate.tm_pub_key)
+}
+inline void ValidatorUpdate::set_tm_pub_key(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  tm_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.ValidatorUpdate.tm_pub_key)
+}
+inline void ValidatorUpdate::set_tm_pub_key(const char* value,
+    size_t size) {
+
+  tm_pub_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.ValidatorUpdate.tm_pub_key)
+}
+inline std::string* ValidatorUpdate::_internal_mutable_tm_pub_key() {
+
+  return tm_pub_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ValidatorUpdate::release_tm_pub_key() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.ValidatorUpdate.tm_pub_key)
+  return tm_pub_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ValidatorUpdate::set_allocated_tm_pub_key(std::string* tm_pub_key) {
+  if (tm_pub_key != nullptr) {
+
+  } else {
+
+  }
+  tm_pub_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tm_pub_key,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.ValidatorUpdate.tm_pub_key)
+}
+
+// string info_url = 3 [json_name = "infoUrl"];
+inline void ValidatorUpdate::clear_info_url() {
+  info_url_.ClearToEmpty();
+}
+inline const std::string& ValidatorUpdate::info_url() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.ValidatorUpdate.info_url)
+  return _internal_info_url();
+}
+inline void ValidatorUpdate::set_info_url(const std::string& value) {
+  _internal_set_info_url(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.ValidatorUpdate.info_url)
+}
+inline std::string* ValidatorUpdate::mutable_info_url() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.ValidatorUpdate.info_url)
+  return _internal_mutable_info_url();
+}
+inline const std::string& ValidatorUpdate::_internal_info_url() const {
+  return info_url_.Get();
+}
+inline void ValidatorUpdate::_internal_set_info_url(const std::string& value) {
+
+  info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ValidatorUpdate::set_info_url(std::string&& value) {
+
+  info_url_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.ValidatorUpdate.info_url)
+}
+inline void ValidatorUpdate::set_info_url(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.ValidatorUpdate.info_url)
+}
+inline void ValidatorUpdate::set_info_url(const char* value,
+    size_t size) {
+
+  info_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.ValidatorUpdate.info_url)
+}
+inline std::string* ValidatorUpdate::_internal_mutable_info_url() {
+
+  return info_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ValidatorUpdate::release_info_url() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.ValidatorUpdate.info_url)
+  return info_url_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ValidatorUpdate::set_allocated_info_url(std::string* info_url) {
+  if (info_url != nullptr) {
+
+  } else {
+
+  }
+  info_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), info_url,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.ValidatorUpdate.info_url)
+}
+
+// string country = 4 [json_name = "country"];
+inline void ValidatorUpdate::clear_country() {
+  country_.ClearToEmpty();
+}
+inline const std::string& ValidatorUpdate::country() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.ValidatorUpdate.country)
+  return _internal_country();
+}
+inline void ValidatorUpdate::set_country(const std::string& value) {
+  _internal_set_country(value);
+  // @@protoc_insertion_point(field_set:vega.events.v1.ValidatorUpdate.country)
+}
+inline std::string* ValidatorUpdate::mutable_country() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.ValidatorUpdate.country)
+  return _internal_mutable_country();
+}
+inline const std::string& ValidatorUpdate::_internal_country() const {
+  return country_.Get();
+}
+inline void ValidatorUpdate::_internal_set_country(const std::string& value) {
+
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ValidatorUpdate::set_country(std::string&& value) {
+
+  country_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.events.v1.ValidatorUpdate.country)
+}
+inline void ValidatorUpdate::set_country(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.events.v1.ValidatorUpdate.country)
+}
+inline void ValidatorUpdate::set_country(const char* value,
+    size_t size) {
+
+  country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.events.v1.ValidatorUpdate.country)
+}
+inline std::string* ValidatorUpdate::_internal_mutable_country() {
+
+  return country_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ValidatorUpdate::release_country() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.ValidatorUpdate.country)
+  return country_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ValidatorUpdate::set_allocated_country(std::string* country) {
+  if (country != nullptr) {
+
+  } else {
+
+  }
+  country_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), country,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.events.v1.ValidatorUpdate.country)
 }
 
 // -------------------------------------------------------------------
@@ -6692,6 +8678,371 @@ inline ::oracles::v1::OracleData* BusEvent::mutable_oracle_data() {
   return _internal_mutable_oracle_data();
 }
 
+// .vega.events.v1.DelegationBalanceEvent delegation_balance = 129 [json_name = "delegationBalance"];
+inline bool BusEvent::_internal_has_delegation_balance() const {
+  return event_case() == kDelegationBalance;
+}
+inline bool BusEvent::has_delegation_balance() const {
+  return _internal_has_delegation_balance();
+}
+inline void BusEvent::set_has_delegation_balance() {
+  _oneof_case_[0] = kDelegationBalance;
+}
+inline void BusEvent::clear_delegation_balance() {
+  if (_internal_has_delegation_balance()) {
+    if (GetArena() == nullptr) {
+      delete event_.delegation_balance_;
+    }
+    clear_has_event();
+  }
+}
+inline ::vega::events::v1::DelegationBalanceEvent* BusEvent::release_delegation_balance() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.BusEvent.delegation_balance)
+  if (_internal_has_delegation_balance()) {
+    clear_has_event();
+      ::vega::events::v1::DelegationBalanceEvent* temp = event_.delegation_balance_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.delegation_balance_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::events::v1::DelegationBalanceEvent& BusEvent::_internal_delegation_balance() const {
+  return _internal_has_delegation_balance()
+      ? *event_.delegation_balance_
+      : reinterpret_cast< ::vega::events::v1::DelegationBalanceEvent&>(::vega::events::v1::_DelegationBalanceEvent_default_instance_);
+}
+inline const ::vega::events::v1::DelegationBalanceEvent& BusEvent::delegation_balance() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.BusEvent.delegation_balance)
+  return _internal_delegation_balance();
+}
+inline ::vega::events::v1::DelegationBalanceEvent* BusEvent::unsafe_arena_release_delegation_balance() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.BusEvent.delegation_balance)
+  if (_internal_has_delegation_balance()) {
+    clear_has_event();
+    ::vega::events::v1::DelegationBalanceEvent* temp = event_.delegation_balance_;
+    event_.delegation_balance_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_delegation_balance(::vega::events::v1::DelegationBalanceEvent* delegation_balance) {
+  clear_event();
+  if (delegation_balance) {
+    set_has_delegation_balance();
+    event_.delegation_balance_ = delegation_balance;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.BusEvent.delegation_balance)
+}
+inline ::vega::events::v1::DelegationBalanceEvent* BusEvent::_internal_mutable_delegation_balance() {
+  if (!_internal_has_delegation_balance()) {
+    clear_event();
+    set_has_delegation_balance();
+    event_.delegation_balance_ = CreateMaybeMessage< ::vega::events::v1::DelegationBalanceEvent >(GetArena());
+  }
+  return event_.delegation_balance_;
+}
+inline ::vega::events::v1::DelegationBalanceEvent* BusEvent::mutable_delegation_balance() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.BusEvent.delegation_balance)
+  return _internal_mutable_delegation_balance();
+}
+
+// .vega.events.v1.PendingDelegationBalanceEvent pending_delegation_balance = 130 [json_name = "pendingDelegationBalance"];
+inline bool BusEvent::_internal_has_pending_delegation_balance() const {
+  return event_case() == kPendingDelegationBalance;
+}
+inline bool BusEvent::has_pending_delegation_balance() const {
+  return _internal_has_pending_delegation_balance();
+}
+inline void BusEvent::set_has_pending_delegation_balance() {
+  _oneof_case_[0] = kPendingDelegationBalance;
+}
+inline void BusEvent::clear_pending_delegation_balance() {
+  if (_internal_has_pending_delegation_balance()) {
+    if (GetArena() == nullptr) {
+      delete event_.pending_delegation_balance_;
+    }
+    clear_has_event();
+  }
+}
+inline ::vega::events::v1::PendingDelegationBalanceEvent* BusEvent::release_pending_delegation_balance() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.BusEvent.pending_delegation_balance)
+  if (_internal_has_pending_delegation_balance()) {
+    clear_has_event();
+      ::vega::events::v1::PendingDelegationBalanceEvent* temp = event_.pending_delegation_balance_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.pending_delegation_balance_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::events::v1::PendingDelegationBalanceEvent& BusEvent::_internal_pending_delegation_balance() const {
+  return _internal_has_pending_delegation_balance()
+      ? *event_.pending_delegation_balance_
+      : reinterpret_cast< ::vega::events::v1::PendingDelegationBalanceEvent&>(::vega::events::v1::_PendingDelegationBalanceEvent_default_instance_);
+}
+inline const ::vega::events::v1::PendingDelegationBalanceEvent& BusEvent::pending_delegation_balance() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.BusEvent.pending_delegation_balance)
+  return _internal_pending_delegation_balance();
+}
+inline ::vega::events::v1::PendingDelegationBalanceEvent* BusEvent::unsafe_arena_release_pending_delegation_balance() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.BusEvent.pending_delegation_balance)
+  if (_internal_has_pending_delegation_balance()) {
+    clear_has_event();
+    ::vega::events::v1::PendingDelegationBalanceEvent* temp = event_.pending_delegation_balance_;
+    event_.pending_delegation_balance_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_pending_delegation_balance(::vega::events::v1::PendingDelegationBalanceEvent* pending_delegation_balance) {
+  clear_event();
+  if (pending_delegation_balance) {
+    set_has_pending_delegation_balance();
+    event_.pending_delegation_balance_ = pending_delegation_balance;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.BusEvent.pending_delegation_balance)
+}
+inline ::vega::events::v1::PendingDelegationBalanceEvent* BusEvent::_internal_mutable_pending_delegation_balance() {
+  if (!_internal_has_pending_delegation_balance()) {
+    clear_event();
+    set_has_pending_delegation_balance();
+    event_.pending_delegation_balance_ = CreateMaybeMessage< ::vega::events::v1::PendingDelegationBalanceEvent >(GetArena());
+  }
+  return event_.pending_delegation_balance_;
+}
+inline ::vega::events::v1::PendingDelegationBalanceEvent* BusEvent::mutable_pending_delegation_balance() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.BusEvent.pending_delegation_balance)
+  return _internal_mutable_pending_delegation_balance();
+}
+
+// .vega.events.v1.EpochEvent epoch_event = 131 [json_name = "epochEvent"];
+inline bool BusEvent::_internal_has_epoch_event() const {
+  return event_case() == kEpochEvent;
+}
+inline bool BusEvent::has_epoch_event() const {
+  return _internal_has_epoch_event();
+}
+inline void BusEvent::set_has_epoch_event() {
+  _oneof_case_[0] = kEpochEvent;
+}
+inline void BusEvent::clear_epoch_event() {
+  if (_internal_has_epoch_event()) {
+    if (GetArena() == nullptr) {
+      delete event_.epoch_event_;
+    }
+    clear_has_event();
+  }
+}
+inline ::vega::events::v1::EpochEvent* BusEvent::release_epoch_event() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.BusEvent.epoch_event)
+  if (_internal_has_epoch_event()) {
+    clear_has_event();
+      ::vega::events::v1::EpochEvent* temp = event_.epoch_event_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.epoch_event_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::events::v1::EpochEvent& BusEvent::_internal_epoch_event() const {
+  return _internal_has_epoch_event()
+      ? *event_.epoch_event_
+      : reinterpret_cast< ::vega::events::v1::EpochEvent&>(::vega::events::v1::_EpochEvent_default_instance_);
+}
+inline const ::vega::events::v1::EpochEvent& BusEvent::epoch_event() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.BusEvent.epoch_event)
+  return _internal_epoch_event();
+}
+inline ::vega::events::v1::EpochEvent* BusEvent::unsafe_arena_release_epoch_event() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.BusEvent.epoch_event)
+  if (_internal_has_epoch_event()) {
+    clear_has_event();
+    ::vega::events::v1::EpochEvent* temp = event_.epoch_event_;
+    event_.epoch_event_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_epoch_event(::vega::events::v1::EpochEvent* epoch_event) {
+  clear_event();
+  if (epoch_event) {
+    set_has_epoch_event();
+    event_.epoch_event_ = epoch_event;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.BusEvent.epoch_event)
+}
+inline ::vega::events::v1::EpochEvent* BusEvent::_internal_mutable_epoch_event() {
+  if (!_internal_has_epoch_event()) {
+    clear_event();
+    set_has_epoch_event();
+    event_.epoch_event_ = CreateMaybeMessage< ::vega::events::v1::EpochEvent >(GetArena());
+  }
+  return event_.epoch_event_;
+}
+inline ::vega::events::v1::EpochEvent* BusEvent::mutable_epoch_event() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.BusEvent.epoch_event)
+  return _internal_mutable_epoch_event();
+}
+
+// .vega.events.v1.ValidatorUpdate validator_update = 132 [json_name = "validatorUpdate"];
+inline bool BusEvent::_internal_has_validator_update() const {
+  return event_case() == kValidatorUpdate;
+}
+inline bool BusEvent::has_validator_update() const {
+  return _internal_has_validator_update();
+}
+inline void BusEvent::set_has_validator_update() {
+  _oneof_case_[0] = kValidatorUpdate;
+}
+inline void BusEvent::clear_validator_update() {
+  if (_internal_has_validator_update()) {
+    if (GetArena() == nullptr) {
+      delete event_.validator_update_;
+    }
+    clear_has_event();
+  }
+}
+inline ::vega::events::v1::ValidatorUpdate* BusEvent::release_validator_update() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.BusEvent.validator_update)
+  if (_internal_has_validator_update()) {
+    clear_has_event();
+      ::vega::events::v1::ValidatorUpdate* temp = event_.validator_update_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.validator_update_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::events::v1::ValidatorUpdate& BusEvent::_internal_validator_update() const {
+  return _internal_has_validator_update()
+      ? *event_.validator_update_
+      : reinterpret_cast< ::vega::events::v1::ValidatorUpdate&>(::vega::events::v1::_ValidatorUpdate_default_instance_);
+}
+inline const ::vega::events::v1::ValidatorUpdate& BusEvent::validator_update() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.BusEvent.validator_update)
+  return _internal_validator_update();
+}
+inline ::vega::events::v1::ValidatorUpdate* BusEvent::unsafe_arena_release_validator_update() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.BusEvent.validator_update)
+  if (_internal_has_validator_update()) {
+    clear_has_event();
+    ::vega::events::v1::ValidatorUpdate* temp = event_.validator_update_;
+    event_.validator_update_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_validator_update(::vega::events::v1::ValidatorUpdate* validator_update) {
+  clear_event();
+  if (validator_update) {
+    set_has_validator_update();
+    event_.validator_update_ = validator_update;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.BusEvent.validator_update)
+}
+inline ::vega::events::v1::ValidatorUpdate* BusEvent::_internal_mutable_validator_update() {
+  if (!_internal_has_validator_update()) {
+    clear_event();
+    set_has_validator_update();
+    event_.validator_update_ = CreateMaybeMessage< ::vega::events::v1::ValidatorUpdate >(GetArena());
+  }
+  return event_.validator_update_;
+}
+inline ::vega::events::v1::ValidatorUpdate* BusEvent::mutable_validator_update() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.BusEvent.validator_update)
+  return _internal_mutable_validator_update();
+}
+
+// .vega.events.v1.StakingEvent staking_event = 133 [json_name = "stakingEvent"];
+inline bool BusEvent::_internal_has_staking_event() const {
+  return event_case() == kStakingEvent;
+}
+inline bool BusEvent::has_staking_event() const {
+  return _internal_has_staking_event();
+}
+inline void BusEvent::set_has_staking_event() {
+  _oneof_case_[0] = kStakingEvent;
+}
+inline void BusEvent::clear_staking_event() {
+  if (_internal_has_staking_event()) {
+    if (GetArena() == nullptr) {
+      delete event_.staking_event_;
+    }
+    clear_has_event();
+  }
+}
+inline ::vega::events::v1::StakingEvent* BusEvent::release_staking_event() {
+  // @@protoc_insertion_point(field_release:vega.events.v1.BusEvent.staking_event)
+  if (_internal_has_staking_event()) {
+    clear_has_event();
+      ::vega::events::v1::StakingEvent* temp = event_.staking_event_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    event_.staking_event_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::vega::events::v1::StakingEvent& BusEvent::_internal_staking_event() const {
+  return _internal_has_staking_event()
+      ? *event_.staking_event_
+      : reinterpret_cast< ::vega::events::v1::StakingEvent&>(::vega::events::v1::_StakingEvent_default_instance_);
+}
+inline const ::vega::events::v1::StakingEvent& BusEvent::staking_event() const {
+  // @@protoc_insertion_point(field_get:vega.events.v1.BusEvent.staking_event)
+  return _internal_staking_event();
+}
+inline ::vega::events::v1::StakingEvent* BusEvent::unsafe_arena_release_staking_event() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:vega.events.v1.BusEvent.staking_event)
+  if (_internal_has_staking_event()) {
+    clear_has_event();
+    ::vega::events::v1::StakingEvent* temp = event_.staking_event_;
+    event_.staking_event_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void BusEvent::unsafe_arena_set_allocated_staking_event(::vega::events::v1::StakingEvent* staking_event) {
+  clear_event();
+  if (staking_event) {
+    set_has_staking_event();
+    event_.staking_event_ = staking_event;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vega.events.v1.BusEvent.staking_event)
+}
+inline ::vega::events::v1::StakingEvent* BusEvent::_internal_mutable_staking_event() {
+  if (!_internal_has_staking_event()) {
+    clear_event();
+    set_has_staking_event();
+    event_.staking_event_ = CreateMaybeMessage< ::vega::events::v1::StakingEvent >(GetArena());
+  }
+  return event_.staking_event_;
+}
+inline ::vega::events::v1::StakingEvent* BusEvent::mutable_staking_event() {
+  // @@protoc_insertion_point(field_mutable:vega.events.v1.BusEvent.staking_event)
+  return _internal_mutable_staking_event();
+}
+
 // .vega.events.v1.MarketEvent market = 1001 [json_name = "market"];
 inline bool BusEvent::_internal_has_market() const {
   return event_case() == kMarket;
@@ -6872,6 +9223,16 @@ inline BusEvent::EventCase BusEvent::event_case() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -6881,6 +9242,11 @@ inline BusEvent::EventCase BusEvent::event_case() const {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::vega::events::v1::StakingEvent_Type> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::vega::events::v1::StakingEvent_Type>() {
+  return ::vega::events::v1::StakingEvent_Type_descriptor();
+}
 template <> struct is_proto_enum< ::vega::events::v1::BusEventType> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::vega::events::v1::BusEventType>() {
