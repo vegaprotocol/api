@@ -7,7 +7,7 @@
     "graphql": "15.5.1",
     "graphqldoc": "2.5.2",
     "marked": "3.0.0",
-    "ws": "8.1.0"
+    "ws": "8.2.0"
   },
   "scripts": {
     "docs": "graphqldoc -f -s schema.graphql -o doc/ && find doc -name '*.html' -print0 | xargs -0r sed --in-place -e 's#><#>\\n<#g'",
