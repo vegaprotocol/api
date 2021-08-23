@@ -7,8 +7,5 @@
       "es2020"
     ],
    "moduleResolution": "Node"
-  },
-  "include": [
-    "tx/**/*.ts"
-  ]
+  }
 }

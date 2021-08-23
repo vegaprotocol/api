@@ -48,4 +48,3 @@ export * as vega_service from "./generated/vega_pb_service";
 export * as wallet_v1_wallet_grpc from "./generated/wallet/v1/wallet_grpc_pb";
 export * as wallet_v1_wallet from "./generated/wallet/v1/wallet_pb";
 export * as wallet_v1_wallet_service from "./generated/wallet/v1/wallet_pb_service";
-export * as tx from "./tx/index";

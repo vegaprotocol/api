@@ -16,7 +16,6 @@ var oracles_v1_spec = require('./generated/oracles/v1/spec_pb.js')
 var tm_replay = require('./generated/tm/replay_pb.js')
 var vega = require('./generated/vega_pb.js')
 var wallet_v1_wallet = require('./generated/wallet/v1/wallet_pb.js')
-var tx = require('./tx')
 
 module.exports = {
   api: {
@@ -55,7 +54,6 @@ module.exports = {
   tm: {
     replay: tm_replay
   },
-  tx: tx,
   vega: vega,
   wallet: {
     v1: {

@@ -115,10 +115,6 @@ def main():
     reqs = js_requires(files)
     js_exp = js_module_exports(files)
 
-    # Add tx
-    reqs.append(["tx", "./tx"])
-    js_exp["tx"] = "tx"
-
     template = env.get_template("index.js.jinja2")
     with open("index.js", "w") as fh:
         fh.write(
@@ -133,9 +129,6 @@ def main():
         )
 
     ts_exp = ts_exports(files)
-
-    # Add tx
-    ts_exp.append(["tx", "./tx/index"])
 
     template = env.get_template("index.d.ts.jinja2")
     with open("index.d.ts", "w") as fh:
