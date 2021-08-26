@@ -16,8 +16,10 @@ from .walletclient import WalletClient
 from .generated import (
     api,
     commands,
+    coreapi,
     events,
     oracles,
+    snapshot,
     tm,
     wallet,
 {%- for i in imports %}
@@ -33,8 +35,10 @@ __all__ = [
     "grpc_error_detail",
     "api",
     "commands",
+    "coreapi",
     "events",
     "oracles",
+    "snapshot",
     "tm",
     "wallet",
 {%- for a in all_list %}
