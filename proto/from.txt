@@ -1,1 +1,1 @@
-v0.41.0
+v0.41.0-125-gc01b94c on feature/remove-vega-apis

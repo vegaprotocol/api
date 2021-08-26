@@ -287,6 +287,33 @@ public final class TransactionOuterClass {
      */
     io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmissionOrBuilder getOracleDataSubmissionOrBuilder();
 
+    /**
+     * <pre>
+     * Checkpoints
+     * </pre>
+     *
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+     * @return Whether the restoreSnapshotSubmission field is set.
+     */
+    boolean hasRestoreSnapshotSubmission();
+    /**
+     * <pre>
+     * Checkpoints
+     * </pre>
+     *
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+     * @return The restoreSnapshotSubmission.
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getRestoreSnapshotSubmission();
+    /**
+     * <pre>
+     * Checkpoints
+     * </pre>
+     *
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+     */
+    io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder getRestoreSnapshotSubmissionOrBuilder();
+
     public io.vegaprotocol.vega.commands.v1.TransactionOuterClass.InputData.CommandCase getCommandCase();
   }
   /**
@@ -540,6 +567,20 @@ public final class TransactionOuterClass {
               commandCase_ = 3001;
               break;
             }
+            case 32010: {
+              io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder subBuilder = null;
+              if (commandCase_ == 4001) {
+                subBuilder = ((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_).toBuilder();
+              }
+              command_ =
+                  input.readMessage(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_);
+                command_ = subBuilder.buildPartial();
+              }
+              commandCase_ = 4001;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -591,6 +632,7 @@ public final class TransactionOuterClass {
       NODE_SIGNATURE(2003),
       CHAIN_EVENT(2004),
       ORACLE_DATA_SUBMISSION(3001),
+      RESTORE_SNAPSHOT_SUBMISSION(4001),
       COMMAND_NOT_SET(0);
       private final int value;
       private CommandCase(int value) {
@@ -622,6 +664,7 @@ public final class TransactionOuterClass {
           case 2003: return NODE_SIGNATURE;
           case 2004: return CHAIN_EVENT;
           case 3001: return ORACLE_DATA_SUBMISSION;
+          case 4001: return RESTORE_SNAPSHOT_SUBMISSION;
           case 0: return COMMAND_NOT_SET;
           default: return null;
         }
@@ -1140,6 +1183,49 @@ public final class TransactionOuterClass {
       return io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission.getDefaultInstance();
     }
 
+    public static final int RESTORE_SNAPSHOT_SUBMISSION_FIELD_NUMBER = 4001;
+    /**
+     * <pre>
+     * Checkpoints
+     * </pre>
+     *
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+     * @return Whether the restoreSnapshotSubmission field is set.
+     */
+    @java.lang.Override
+    public boolean hasRestoreSnapshotSubmission() {
+      return commandCase_ == 4001;
+    }
+    /**
+     * <pre>
+     * Checkpoints
+     * </pre>
+     *
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+     * @return The restoreSnapshotSubmission.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getRestoreSnapshotSubmission() {
+      if (commandCase_ == 4001) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Checkpoints
+     * </pre>
+     *
+     * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder getRestoreSnapshotSubmissionOrBuilder() {
+      if (commandCase_ == 4001) {
+         return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_;
+      }
+      return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1201,6 +1287,9 @@ public final class TransactionOuterClass {
       }
       if (commandCase_ == 3001) {
         output.writeMessage(3001, (io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission) command_);
+      }
+      if (commandCase_ == 4001) {
+        output.writeMessage(4001, (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_);
       }
       unknownFields.writeTo(output);
     }
@@ -1274,6 +1363,10 @@ public final class TransactionOuterClass {
       if (commandCase_ == 3001) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3001, (io.vegaprotocol.vega.commands.v1.Oracles.OracleDataSubmission) command_);
+      }
+      if (commandCase_ == 4001) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4001, (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1352,6 +1445,10 @@ public final class TransactionOuterClass {
           if (!getOracleDataSubmission()
               .equals(other.getOracleDataSubmission())) return false;
           break;
+        case 4001:
+          if (!getRestoreSnapshotSubmission()
+              .equals(other.getRestoreSnapshotSubmission())) return false;
+          break;
         case 0:
         default:
       }
@@ -1428,6 +1525,10 @@ public final class TransactionOuterClass {
         case 3001:
           hash = (37 * hash) + ORACLE_DATA_SUBMISSION_FIELD_NUMBER;
           hash = (53 * hash) + getOracleDataSubmission().hashCode();
+          break;
+        case 4001:
+          hash = (37 * hash) + RESTORE_SNAPSHOT_SUBMISSION_FIELD_NUMBER;
+          hash = (53 * hash) + getRestoreSnapshotSubmission().hashCode();
           break;
         case 0:
         default:
@@ -1697,6 +1798,13 @@ public final class TransactionOuterClass {
             result.command_ = oracleDataSubmissionBuilder_.build();
           }
         }
+        if (commandCase_ == 4001) {
+          if (restoreSnapshotSubmissionBuilder_ == null) {
+            result.command_ = command_;
+          } else {
+            result.command_ = restoreSnapshotSubmissionBuilder_.build();
+          }
+        }
         result.commandCase_ = commandCase_;
         onBuilt();
         return result;
@@ -1807,6 +1915,10 @@ public final class TransactionOuterClass {
           }
           case ORACLE_DATA_SUBMISSION: {
             mergeOracleDataSubmission(other.getOracleDataSubmission());
+            break;
+          }
+          case RESTORE_SNAPSHOT_SUBMISSION: {
+            mergeRestoreSnapshotSubmission(other.getRestoreSnapshotSubmission());
             break;
           }
           case COMMAND_NOT_SET: {
@@ -4032,6 +4144,183 @@ public final class TransactionOuterClass {
         commandCase_ = 3001;
         onChanged();;
         return oracleDataSubmissionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder> restoreSnapshotSubmissionBuilder_;
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       * @return Whether the restoreSnapshotSubmission field is set.
+       */
+      @java.lang.Override
+      public boolean hasRestoreSnapshotSubmission() {
+        return commandCase_ == 4001;
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       * @return The restoreSnapshotSubmission.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getRestoreSnapshotSubmission() {
+        if (restoreSnapshotSubmissionBuilder_ == null) {
+          if (commandCase_ == 4001) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+        } else {
+          if (commandCase_ == 4001) {
+            return restoreSnapshotSubmissionBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      public Builder setRestoreSnapshotSubmission(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot value) {
+        if (restoreSnapshotSubmissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          command_ = value;
+          onChanged();
+        } else {
+          restoreSnapshotSubmissionBuilder_.setMessage(value);
+        }
+        commandCase_ = 4001;
+        return this;
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      public Builder setRestoreSnapshotSubmission(
+          io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder builderForValue) {
+        if (restoreSnapshotSubmissionBuilder_ == null) {
+          command_ = builderForValue.build();
+          onChanged();
+        } else {
+          restoreSnapshotSubmissionBuilder_.setMessage(builderForValue.build());
+        }
+        commandCase_ = 4001;
+        return this;
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      public Builder mergeRestoreSnapshotSubmission(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot value) {
+        if (restoreSnapshotSubmissionBuilder_ == null) {
+          if (commandCase_ == 4001 &&
+              command_ != io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance()) {
+            command_ = io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.newBuilder((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            command_ = value;
+          }
+          onChanged();
+        } else {
+          if (commandCase_ == 4001) {
+            restoreSnapshotSubmissionBuilder_.mergeFrom(value);
+          }
+          restoreSnapshotSubmissionBuilder_.setMessage(value);
+        }
+        commandCase_ = 4001;
+        return this;
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      public Builder clearRestoreSnapshotSubmission() {
+        if (restoreSnapshotSubmissionBuilder_ == null) {
+          if (commandCase_ == 4001) {
+            commandCase_ = 0;
+            command_ = null;
+            onChanged();
+          }
+        } else {
+          if (commandCase_ == 4001) {
+            commandCase_ = 0;
+            command_ = null;
+          }
+          restoreSnapshotSubmissionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder getRestoreSnapshotSubmissionBuilder() {
+        return getRestoreSnapshotSubmissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder getRestoreSnapshotSubmissionOrBuilder() {
+        if ((commandCase_ == 4001) && (restoreSnapshotSubmissionBuilder_ != null)) {
+          return restoreSnapshotSubmissionBuilder_.getMessageOrBuilder();
+        } else {
+          if (commandCase_ == 4001) {
+            return (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_;
+          }
+          return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Checkpoints
+       * </pre>
+       *
+       * <code>.vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder>
+          getRestoreSnapshotSubmissionFieldBuilder() {
+        if (restoreSnapshotSubmissionBuilder_ == null) {
+          if (!(commandCase_ == 4001)) {
+            command_ = io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+          }
+          restoreSnapshotSubmissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder>(
+                  (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) command_,
+                  getParentForChildren(),
+                  isClean());
+          command_ = null;
+        }
+        commandCase_ = 4001;
+        onChanged();;
+        return restoreSnapshotSubmissionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6378,7 +6667,7 @@ public final class TransactionOuterClass {
       "\n\035commands/v1/transaction.proto\022\020vega.co" +
       "mmands.v1\032\032commands/v1/commands.proto\032$c" +
       "ommands/v1/validator_commands.proto\032\031com" +
-      "mands/v1/oracles.proto\"\370\t\n\tInputData\022\024\n\005" +
+      "mands/v1/oracles.proto\"\336\n\n\tInputData\022\024\n\005" +
       "nonce\030\001 \001(\004R\005nonce\022!\n\014block_height\030\002 \001(\004" +
       "R\013blockHeight\022O\n\020order_submission\030\351\007 \001(\013" +
       "2!.vega.commands.v1.OrderSubmissionH\000R\017o" +
@@ -6410,16 +6699,19 @@ public final class TransactionOuterClass {
       "s.v1.ChainEventH\000R\nchainEvent\022_\n\026oracle_" +
       "data_submission\030\271\027 \001(\0132&.vega.commands.v" +
       "1.OracleDataSubmissionH\000R\024oracleDataSubm" +
-      "issionB\t\n\007command\"\303\001\n\013Transaction\022\035\n\ninp" +
-      "ut_data\030\001 \001(\014R\tinputData\0229\n\tsignature\030\002 " +
-      "\001(\0132\033.vega.commands.v1.SignatureR\tsignat" +
-      "ure\022\033\n\007address\030\351\007 \001(\tH\000R\007address\022\032\n\007pub_" +
-      "key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007version\030\320\017 \001(\rR\007" +
-      "versionB\006\n\004from\"O\n\tSignature\022\024\n\005value\030\001 " +
-      "\001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007versio" +
-      "n\030\003 \001(\rR\007versionBO\n io.vegaprotocol.vega" +
-      ".commands.v1Z+code.vegaprotocol.io/vega/" +
-      "proto/commands/v1b\006proto3"
+      "ission\022d\n\033restore_snapshot_submission\030\241\037" +
+      " \001(\0132!.vega.commands.v1.RestoreSnapshotH" +
+      "\000R\031restoreSnapshotSubmissionB\t\n\007command\"" +
+      "\303\001\n\013Transaction\022\035\n\ninput_data\030\001 \001(\014R\tinp" +
+      "utData\0229\n\tsignature\030\002 \001(\0132\033.vega.command" +
+      "s.v1.SignatureR\tsignature\022\033\n\007address\030\351\007 " +
+      "\001(\tH\000R\007address\022\032\n\007pub_key\030\352\007 \001(\tH\000R\006pubK" +
+      "ey\022\031\n\007version\030\320\017 \001(\rR\007versionB\006\n\004from\"O\n" +
+      "\tSignature\022\024\n\005value\030\001 \001(\tR\005value\022\022\n\004algo" +
+      "\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\rR\007versionBO" +
+      "\n io.vegaprotocol.vega.commands.v1Z+code" +
+      ".vegaprotocol.io/vega/proto/commands/v1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6433,7 +6725,7 @@ public final class TransactionOuterClass {
     internal_static_vega_commands_v1_InputData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_InputData_descriptor,
-        new java.lang.String[] { "Nonce", "BlockHeight", "OrderSubmission", "OrderCancellation", "OrderAmendment", "WithdrawSubmission", "ProposalSubmission", "VoteSubmission", "LiquidityProvisionSubmission", "DelegateSubmission", "UndelegateSubmission", "NodeRegistration", "NodeVote", "NodeSignature", "ChainEvent", "OracleDataSubmission", "Command", });
+        new java.lang.String[] { "Nonce", "BlockHeight", "OrderSubmission", "OrderCancellation", "OrderAmendment", "WithdrawSubmission", "ProposalSubmission", "VoteSubmission", "LiquidityProvisionSubmission", "DelegateSubmission", "UndelegateSubmission", "NodeRegistration", "NodeVote", "NodeSignature", "ChainEvent", "OracleDataSubmission", "RestoreSnapshotSubmission", "Command", });
     internal_static_vega_commands_v1_Transaction_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_commands_v1_Transaction_fieldAccessorTable = new

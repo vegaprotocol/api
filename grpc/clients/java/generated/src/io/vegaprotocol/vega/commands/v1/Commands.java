@@ -10881,6 +10881,506 @@ public final class Commands {
 
   }
 
+  public interface RestoreSnapshotOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.commands.v1.RestoreSnapshot)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bytes data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+  }
+  /**
+   * <pre>
+   * A command that loads the state from a given checkpoint
+   * </pre>
+   *
+   * Protobuf type {@code vega.commands.v1.RestoreSnapshot}
+   */
+  public static final class RestoreSnapshot extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.commands.v1.RestoreSnapshot)
+      RestoreSnapshotOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RestoreSnapshot.newBuilder() to construct.
+    private RestoreSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RestoreSnapshot() {
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RestoreSnapshot();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RestoreSnapshot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+
+              data_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_RestoreSnapshot_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_RestoreSnapshot_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.class, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder.class);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString data_;
+    /**
+     * <code>bytes data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!data_.isEmpty()) {
+        output.writeBytes(1, data_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, data_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot other = (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) obj;
+
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A command that loads the state from a given checkpoint
+     * </pre>
+     *
+     * Protobuf type {@code vega.commands.v1.RestoreSnapshot}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.commands.v1.RestoreSnapshot)
+        io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshotOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_RestoreSnapshot_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_RestoreSnapshot_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.class, io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        data_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.commands.v1.Commands.internal_static_vega_commands_v1_RestoreSnapshot_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot build() {
+        io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot buildPartial() {
+        io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot result = new io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot(this);
+        result.data_ = data_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) {
+          return mergeFrom((io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot other) {
+        if (other == io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot.getDefaultInstance()) return this;
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <code>bytes data = 1 [json_name = "data"];</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        data_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes data = 1 [json_name = "data"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.commands.v1.RestoreSnapshot)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.commands.v1.RestoreSnapshot)
+    private static final io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot();
+    }
+
+    public static io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RestoreSnapshot>
+        PARSER = new com.google.protobuf.AbstractParser<RestoreSnapshot>() {
+      @java.lang.Override
+      public RestoreSnapshot parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RestoreSnapshot(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RestoreSnapshot> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RestoreSnapshot> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.commands.v1.Commands.RestoreSnapshot getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_commands_v1_OrderSubmission_descriptor;
   private static final
@@ -10926,6 +11426,11 @@ public final class Commands {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_commands_v1_UndelegateSubmission_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_commands_v1_RestoreSnapshot_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_commands_v1_RestoreSnapshot_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10981,9 +11486,10 @@ public final class Commands {
       "vega.commands.v1.UndelegateSubmission.Me" +
       "thodR\006method\"a\n\006Method\022\026\n\022METHOD_UNSPECI" +
       "FIED\020\000\022\016\n\nMETHOD_NOW\020\001\022\032\n\026METHOD_AT_END_" +
-      "OF_EPOCH\020\002\022\023\n\017METHOD_IN_ANGER\020\003BO\n io.ve" +
-      "gaprotocol.vega.commands.v1Z+code.vegapr" +
-      "otocol.io/vega/proto/commands/v1b\006proto3"
+      "OF_EPOCH\020\002\022\023\n\017METHOD_IN_ANGER\020\003\"%\n\017Resto" +
+      "reSnapshot\022\022\n\004data\030\001 \001(\014R\004dataBO\n io.veg" +
+      "aprotocol.vega.commands.v1Z+code.vegapro" +
+      "tocol.io/vega/proto/commands/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11047,6 +11553,12 @@ public final class Commands {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_UndelegateSubmission_descriptor,
         new java.lang.String[] { "NodeId", "Amount", "Method", });
+    internal_static_vega_commands_v1_RestoreSnapshot_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_vega_commands_v1_RestoreSnapshot_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_commands_v1_RestoreSnapshot_descriptor,
+        new java.lang.String[] { "Data", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

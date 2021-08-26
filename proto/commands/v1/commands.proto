@@ -141,3 +141,8 @@ message UndelegateSubmission {
   uint64 amount = 2;
   Method method = 3;
 }
+
+// A command that loads the state from a given checkpoint
+message RestoreSnapshot {
+  bytes data = 1;
+}

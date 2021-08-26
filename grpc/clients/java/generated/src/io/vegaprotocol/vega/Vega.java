@@ -2592,6 +2592,143 @@ public final class Vega {
     // @@protoc_insertion_point(enum_scope:vega.TransferType)
   }
 
+  /**
+   * <pre>
+   * Node status type
+   * </pre>
+   *
+   * Protobuf enum {@code vega.NodeStatus}
+   */
+  public enum NodeStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NODE_STATUS_UNSPECIFIED = 0;</code>
+     */
+    NODE_STATUS_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * The node is validating
+     * </pre>
+     *
+     * <code>NODE_STATUS_VALIDATOR = 1;</code>
+     */
+    NODE_STATUS_VALIDATOR(1),
+    /**
+     * <pre>
+     * The node is non-validating
+     * </pre>
+     *
+     * <code>NODE_STATUS_NON_VALIDATOR = 2;</code>
+     */
+    NODE_STATUS_NON_VALIDATOR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>NODE_STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int NODE_STATUS_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * The node is validating
+     * </pre>
+     *
+     * <code>NODE_STATUS_VALIDATOR = 1;</code>
+     */
+    public static final int NODE_STATUS_VALIDATOR_VALUE = 1;
+    /**
+     * <pre>
+     * The node is non-validating
+     * </pre>
+     *
+     * <code>NODE_STATUS_NON_VALIDATOR = 2;</code>
+     */
+    public static final int NODE_STATUS_NON_VALIDATOR_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NodeStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NodeStatus forNumber(int value) {
+      switch (value) {
+        case 0: return NODE_STATUS_UNSPECIFIED;
+        case 1: return NODE_STATUS_VALIDATOR;
+        case 2: return NODE_STATUS_NON_VALIDATOR;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NodeStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        NodeStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<NodeStatus>() {
+            public NodeStatus findValueByNumber(int number) {
+              return NodeStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.getDescriptor().getEnumTypes().get(8);
+    }
+
+    private static final NodeStatus[] VALUES = values();
+
+    public static NodeStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NodeStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:vega.NodeStatus)
+  }
+
   public interface PriceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.Price)
       com.google.protobuf.MessageOrBuilder {
@@ -3648,6 +3785,30 @@ public final class Vega {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.Delegation>
+        getDelegationsList();
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    io.vegaprotocol.vega.Vega.Delegation getDelegations(int index);
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    int getDelegationsCount();
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+        getDelegationsOrBuilderList();
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelegationsOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -3667,6 +3828,7 @@ public final class Vega {
     }
     private Party() {
       id_ = "";
+      delegations_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3689,6 +3851,7 @@ public final class Vega {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3703,6 +3866,15 @@ public final class Vega {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                delegations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              delegations_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.Delegation.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -3720,6 +3892,9 @@ public final class Vega {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          delegations_ = java.util.Collections.unmodifiableList(delegations_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3783,6 +3958,46 @@ public final class Vega {
       }
     }
 
+    public static final int DELEGATIONS_FIELD_NUMBER = 2;
+    private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delegations_;
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelegationsList() {
+      return delegations_;
+    }
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+        getDelegationsOrBuilderList() {
+      return delegations_;
+    }
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public int getDelegationsCount() {
+      return delegations_.size();
+    }
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Delegation getDelegations(int index) {
+      return delegations_.get(index);
+    }
+    /**
+     * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelegationsOrBuilder(
+        int index) {
+      return delegations_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3800,6 +4015,9 @@ public final class Vega {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
+      for (int i = 0; i < delegations_.size(); i++) {
+        output.writeMessage(2, delegations_.get(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3811,6 +4029,10 @@ public final class Vega {
       size = 0;
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      for (int i = 0; i < delegations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, delegations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3829,6 +4051,8 @@ public final class Vega {
 
       if (!getId()
           .equals(other.getId())) return false;
+      if (!getDelegationsList()
+          .equals(other.getDelegationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3842,6 +4066,10 @@ public final class Vega {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      if (getDelegationsCount() > 0) {
+        hash = (37 * hash) + DELEGATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDelegationsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3974,6 +4202,7 @@ public final class Vega {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getDelegationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3981,6 +4210,12 @@ public final class Vega {
         super.clear();
         id_ = "";
 
+        if (delegationsBuilder_ == null) {
+          delegations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          delegationsBuilder_.clear();
+        }
         return this;
       }
 
@@ -4007,7 +4242,17 @@ public final class Vega {
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.Party buildPartial() {
         io.vegaprotocol.vega.Vega.Party result = new io.vegaprotocol.vega.Vega.Party(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
+        if (delegationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            delegations_ = java.util.Collections.unmodifiableList(delegations_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.delegations_ = delegations_;
+        } else {
+          result.delegations_ = delegationsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4060,6 +4305,32 @@ public final class Vega {
           id_ = other.id_;
           onChanged();
         }
+        if (delegationsBuilder_ == null) {
+          if (!other.delegations_.isEmpty()) {
+            if (delegations_.isEmpty()) {
+              delegations_ = other.delegations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDelegationsIsMutable();
+              delegations_.addAll(other.delegations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.delegations_.isEmpty()) {
+            if (delegationsBuilder_.isEmpty()) {
+              delegationsBuilder_.dispose();
+              delegationsBuilder_ = null;
+              delegations_ = other.delegations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              delegationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDelegationsFieldBuilder() : null;
+            } else {
+              delegationsBuilder_.addAllMessages(other.delegations_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4088,6 +4359,7 @@ public final class Vega {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -4183,6 +4455,246 @@ public final class Vega {
         id_ = value;
         onChanged();
         return this;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delegations_ =
+        java.util.Collections.emptyList();
+      private void ensureDelegationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          delegations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>(delegations_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder> delegationsBuilder_;
+
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelegationsList() {
+        if (delegationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(delegations_);
+        } else {
+          return delegationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public int getDelegationsCount() {
+        if (delegationsBuilder_ == null) {
+          return delegations_.size();
+        } else {
+          return delegationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation getDelegations(int index) {
+        if (delegationsBuilder_ == null) {
+          return delegations_.get(index);
+        } else {
+          return delegationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder setDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delegationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelegationsIsMutable();
+          delegations_.set(index, value);
+          onChanged();
+        } else {
+          delegationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder setDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          delegationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delegationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelegationsIsMutable();
+          delegations_.add(value);
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delegationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelegationsIsMutable();
+          delegations_.add(index, value);
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(
+          io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder addAllDelegations(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.Delegation> values) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, delegations_);
+          onChanged();
+        } else {
+          delegationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder clearDelegations() {
+        if (delegationsBuilder_ == null) {
+          delegations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          delegationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public Builder removeDelegations(int index) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.remove(index);
+          onChanged();
+        } else {
+          delegationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder getDelegationsBuilder(
+          int index) {
+        return getDelegationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelegationsOrBuilder(
+          int index) {
+        if (delegationsBuilder_ == null) {
+          return delegations_.get(index);  } else {
+          return delegationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+           getDelegationsOrBuilderList() {
+        if (delegationsBuilder_ != null) {
+          return delegationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(delegations_);
+        }
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder addDelegationsBuilder() {
+        return getDelegationsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder addDelegationsBuilder(
+          int index) {
+        return getDelegationsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.Delegation delegations = 2 [json_name = "delegations"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Delegation.Builder>
+           getDelegationsBuilderList() {
+        return getDelegationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+          getDelegationsFieldBuilder() {
+        if (delegationsBuilder_ == null) {
+          delegationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder>(
+                  delegations_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          delegations_ = null;
+        }
+        return delegationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -25919,4157 +26431,6 @@ public final class Vega {
 
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.PositionTrade getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface StatisticsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.Statistics)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Current block height as reported by the Vega blockchain
-     * </pre>
-     *
-     * <code>uint64 block_height = 1 [json_name = "blockHeight"];</code>
-     * @return The blockHeight.
-     */
-    long getBlockHeight();
-
-    /**
-     * <pre>
-     * Current backlog length (number of transactions) that are waiting to be included in a block
-     * </pre>
-     *
-     * <code>uint64 backlog_length = 2 [json_name = "backlogLength"];</code>
-     * @return The backlogLength.
-     */
-    long getBacklogLength();
-
-    /**
-     * <pre>
-     * Total number of connected peers to this node
-     * </pre>
-     *
-     * <code>uint64 total_peers = 3 [json_name = "totalPeers"];</code>
-     * @return The totalPeers.
-     */
-    long getTotalPeers();
-
-    /**
-     * <pre>
-     * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-     * @return The genesisTime.
-     */
-    java.lang.String getGenesisTime();
-    /**
-     * <pre>
-     * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-     * @return The bytes for genesisTime.
-     */
-    com.google.protobuf.ByteString
-        getGenesisTimeBytes();
-
-    /**
-     * <pre>
-     * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string current_time = 5 [json_name = "currentTime"];</code>
-     * @return The currentTime.
-     */
-    java.lang.String getCurrentTime();
-    /**
-     * <pre>
-     * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string current_time = 5 [json_name = "currentTime"];</code>
-     * @return The bytes for currentTime.
-     */
-    com.google.protobuf.ByteString
-        getCurrentTimeBytes();
-
-    /**
-     * <pre>
-     * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-     * @return The vegaTime.
-     */
-    java.lang.String getVegaTime();
-    /**
-     * <pre>
-     * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-     * @return The bytes for vegaTime.
-     */
-    com.google.protobuf.ByteString
-        getVegaTimeBytes();
-
-    /**
-     * <pre>
-     * Status of the connection to the Vega blockchain
-     * - See [`ChainStatus`](#vega.ChainStatus)
-     * </pre>
-     *
-     * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-    /**
-     * <pre>
-     * Status of the connection to the Vega blockchain
-     * - See [`ChainStatus`](#vega.ChainStatus)
-     * </pre>
-     *
-     * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-     * @return The status.
-     */
-    io.vegaprotocol.vega.Vega.ChainStatus getStatus();
-
-    /**
-     * <pre>
-     * Transactions per block
-     * </pre>
-     *
-     * <code>uint64 tx_per_block = 8 [json_name = "txPerBlock"];</code>
-     * @return The txPerBlock.
-     */
-    long getTxPerBlock();
-
-    /**
-     * <pre>
-     * Average transaction size in bytes
-     * </pre>
-     *
-     * <code>uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];</code>
-     * @return The averageTxBytes.
-     */
-    long getAverageTxBytes();
-
-    /**
-     * <pre>
-     * Average orders per block
-     * </pre>
-     *
-     * <code>uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];</code>
-     * @return The averageOrdersPerBlock.
-     */
-    long getAverageOrdersPerBlock();
-
-    /**
-     * <pre>
-     * Trades emitted per second
-     * </pre>
-     *
-     * <code>uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];</code>
-     * @return The tradesPerSecond.
-     */
-    long getTradesPerSecond();
-
-    /**
-     * <pre>
-     * Orders processed per second
-     * </pre>
-     *
-     * <code>uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];</code>
-     * @return The ordersPerSecond.
-     */
-    long getOrdersPerSecond();
-
-    /**
-     * <pre>
-     * Total markets on this Vega network
-     * </pre>
-     *
-     * <code>uint64 total_markets = 13 [json_name = "totalMarkets"];</code>
-     * @return The totalMarkets.
-     */
-    long getTotalMarkets();
-
-    /**
-     * <pre>
-     * Total number of order amendments since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];</code>
-     * @return The totalAmendOrder.
-     */
-    long getTotalAmendOrder();
-
-    /**
-     * <pre>
-     * Total number of order cancellations since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];</code>
-     * @return The totalCancelOrder.
-     */
-    long getTotalCancelOrder();
-
-    /**
-     * <pre>
-     * Total number of order submissions since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_create_order = 18 [json_name = "totalCreateOrder"];</code>
-     * @return The totalCreateOrder.
-     */
-    long getTotalCreateOrder();
-
-    /**
-     * <pre>
-     * Total number of orders processed since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_orders = 19 [json_name = "totalOrders"];</code>
-     * @return The totalOrders.
-     */
-    long getTotalOrders();
-
-    /**
-     * <pre>
-     * Total number of trades emitted since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_trades = 20 [json_name = "totalTrades"];</code>
-     * @return The totalTrades.
-     */
-    long getTotalTrades();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to order data
-     * </pre>
-     *
-     * <code>uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];</code>
-     * @return The orderSubscriptions.
-     */
-    int getOrderSubscriptions();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to trade data
-     * </pre>
-     *
-     * <code>uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];</code>
-     * @return The tradeSubscriptions.
-     */
-    int getTradeSubscriptions();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to candle-stick data
-     * </pre>
-     *
-     * <code>uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];</code>
-     * @return The candleSubscriptions.
-     */
-    int getCandleSubscriptions();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to market depth data
-     * </pre>
-     *
-     * <code>uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];</code>
-     * @return The marketDepthSubscriptions.
-     */
-    int getMarketDepthSubscriptions();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to positions data
-     * </pre>
-     *
-     * <code>uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];</code>
-     * @return The positionsSubscriptions.
-     */
-    int getPositionsSubscriptions();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to account data
-     * </pre>
-     *
-     * <code>uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];</code>
-     * @return The accountSubscriptions.
-     */
-    int getAccountSubscriptions();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to market data
-     * </pre>
-     *
-     * <code>uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];</code>
-     * @return The marketDataSubscriptions.
-     */
-    int getMarketDataSubscriptions();
-
-    /**
-     * <pre>
-     * The version hash of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-     * @return The appVersionHash.
-     */
-    java.lang.String getAppVersionHash();
-    /**
-     * <pre>
-     * The version hash of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-     * @return The bytes for appVersionHash.
-     */
-    com.google.protobuf.ByteString
-        getAppVersionHashBytes();
-
-    /**
-     * <pre>
-     * The version of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version = 29 [json_name = "appVersion"];</code>
-     * @return The appVersion.
-     */
-    java.lang.String getAppVersion();
-    /**
-     * <pre>
-     * The version of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version = 29 [json_name = "appVersion"];</code>
-     * @return The bytes for appVersion.
-     */
-    com.google.protobuf.ByteString
-        getAppVersionBytes();
-
-    /**
-     * <pre>
-     * The version of the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-     * @return The chainVersion.
-     */
-    java.lang.String getChainVersion();
-    /**
-     * <pre>
-     * The version of the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-     * @return The bytes for chainVersion.
-     */
-    com.google.protobuf.ByteString
-        getChainVersionBytes();
-
-    /**
-     * <pre>
-     * Current block duration, in nanoseconds
-     * </pre>
-     *
-     * <code>uint64 block_duration = 31 [json_name = "blockDuration"];</code>
-     * @return The blockDuration.
-     */
-    long getBlockDuration();
-
-    /**
-     * <pre>
-     * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string uptime = 32 [json_name = "uptime"];</code>
-     * @return The uptime.
-     */
-    java.lang.String getUptime();
-    /**
-     * <pre>
-     * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string uptime = 32 [json_name = "uptime"];</code>
-     * @return The bytes for uptime.
-     */
-    com.google.protobuf.ByteString
-        getUptimeBytes();
-
-    /**
-     * <pre>
-     * Unique identifier for the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_id = 33 [json_name = "chainId"];</code>
-     * @return The chainId.
-     */
-    java.lang.String getChainId();
-    /**
-     * <pre>
-     * Unique identifier for the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_id = 33 [json_name = "chainId"];</code>
-     * @return The bytes for chainId.
-     */
-    com.google.protobuf.ByteString
-        getChainIdBytes();
-
-    /**
-     * <pre>
-     * Current number of stream subscribers to market depth update data
-     * </pre>
-     *
-     * <code>uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];</code>
-     * @return The marketDepthUpdatesSubscriptions.
-     */
-    int getMarketDepthUpdatesSubscriptions();
-  }
-  /**
-   * <pre>
-   * Vega domain specific statistics as reported by the node the caller is connected to
-   * </pre>
-   *
-   * Protobuf type {@code vega.Statistics}
-   */
-  public static final class Statistics extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.Statistics)
-      StatisticsOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Statistics.newBuilder() to construct.
-    private Statistics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Statistics() {
-      genesisTime_ = "";
-      currentTime_ = "";
-      vegaTime_ = "";
-      status_ = 0;
-      appVersionHash_ = "";
-      appVersion_ = "";
-      chainVersion_ = "";
-      uptime_ = "";
-      chainId_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Statistics();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Statistics(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              blockHeight_ = input.readUInt64();
-              break;
-            }
-            case 16: {
-
-              backlogLength_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              totalPeers_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              genesisTime_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currentTime_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vegaTime_ = s;
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-            case 64: {
-
-              txPerBlock_ = input.readUInt64();
-              break;
-            }
-            case 72: {
-
-              averageTxBytes_ = input.readUInt64();
-              break;
-            }
-            case 80: {
-
-              averageOrdersPerBlock_ = input.readUInt64();
-              break;
-            }
-            case 88: {
-
-              tradesPerSecond_ = input.readUInt64();
-              break;
-            }
-            case 96: {
-
-              ordersPerSecond_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              totalMarkets_ = input.readUInt64();
-              break;
-            }
-            case 128: {
-
-              totalAmendOrder_ = input.readUInt64();
-              break;
-            }
-            case 136: {
-
-              totalCancelOrder_ = input.readUInt64();
-              break;
-            }
-            case 144: {
-
-              totalCreateOrder_ = input.readUInt64();
-              break;
-            }
-            case 152: {
-
-              totalOrders_ = input.readUInt64();
-              break;
-            }
-            case 160: {
-
-              totalTrades_ = input.readUInt64();
-              break;
-            }
-            case 168: {
-
-              orderSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 176: {
-
-              tradeSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 184: {
-
-              candleSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 192: {
-
-              marketDepthSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 200: {
-
-              positionsSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 208: {
-
-              accountSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 216: {
-
-              marketDataSubscriptions_ = input.readUInt32();
-              break;
-            }
-            case 226: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              appVersionHash_ = s;
-              break;
-            }
-            case 234: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              appVersion_ = s;
-              break;
-            }
-            case 242: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              chainVersion_ = s;
-              break;
-            }
-            case 248: {
-
-              blockDuration_ = input.readUInt64();
-              break;
-            }
-            case 258: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              uptime_ = s;
-              break;
-            }
-            case 266: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              chainId_ = s;
-              break;
-            }
-            case 272: {
-
-              marketDepthUpdatesSubscriptions_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_Statistics_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_Statistics_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Vega.Statistics.class, io.vegaprotocol.vega.Vega.Statistics.Builder.class);
-    }
-
-    public static final int BLOCK_HEIGHT_FIELD_NUMBER = 1;
-    private long blockHeight_;
-    /**
-     * <pre>
-     * Current block height as reported by the Vega blockchain
-     * </pre>
-     *
-     * <code>uint64 block_height = 1 [json_name = "blockHeight"];</code>
-     * @return The blockHeight.
-     */
-    @java.lang.Override
-    public long getBlockHeight() {
-      return blockHeight_;
-    }
-
-    public static final int BACKLOG_LENGTH_FIELD_NUMBER = 2;
-    private long backlogLength_;
-    /**
-     * <pre>
-     * Current backlog length (number of transactions) that are waiting to be included in a block
-     * </pre>
-     *
-     * <code>uint64 backlog_length = 2 [json_name = "backlogLength"];</code>
-     * @return The backlogLength.
-     */
-    @java.lang.Override
-    public long getBacklogLength() {
-      return backlogLength_;
-    }
-
-    public static final int TOTAL_PEERS_FIELD_NUMBER = 3;
-    private long totalPeers_;
-    /**
-     * <pre>
-     * Total number of connected peers to this node
-     * </pre>
-     *
-     * <code>uint64 total_peers = 3 [json_name = "totalPeers"];</code>
-     * @return The totalPeers.
-     */
-    @java.lang.Override
-    public long getTotalPeers() {
-      return totalPeers_;
-    }
-
-    public static final int GENESIS_TIME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object genesisTime_;
-    /**
-     * <pre>
-     * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-     * @return The genesisTime.
-     */
-    @java.lang.Override
-    public java.lang.String getGenesisTime() {
-      java.lang.Object ref = genesisTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        genesisTime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-     * @return The bytes for genesisTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getGenesisTimeBytes() {
-      java.lang.Object ref = genesisTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        genesisTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CURRENT_TIME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object currentTime_;
-    /**
-     * <pre>
-     * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string current_time = 5 [json_name = "currentTime"];</code>
-     * @return The currentTime.
-     */
-    @java.lang.Override
-    public java.lang.String getCurrentTime() {
-      java.lang.Object ref = currentTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        currentTime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string current_time = 5 [json_name = "currentTime"];</code>
-     * @return The bytes for currentTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCurrentTimeBytes() {
-      java.lang.Object ref = currentTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        currentTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VEGA_TIME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object vegaTime_;
-    /**
-     * <pre>
-     * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-     * @return The vegaTime.
-     */
-    @java.lang.Override
-    public java.lang.String getVegaTime() {
-      java.lang.Object ref = vegaTime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vegaTime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-     * @return The bytes for vegaTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVegaTimeBytes() {
-      java.lang.Object ref = vegaTime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vegaTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 7;
-    private int status_;
-    /**
-     * <pre>
-     * Status of the connection to the Vega blockchain
-     * - See [`ChainStatus`](#vega.ChainStatus)
-     * </pre>
-     *
-     * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
-    }
-    /**
-     * <pre>
-     * Status of the connection to the Vega blockchain
-     * - See [`ChainStatus`](#vega.ChainStatus)
-     * </pre>
-     *
-     * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-     * @return The status.
-     */
-    @java.lang.Override public io.vegaprotocol.vega.Vega.ChainStatus getStatus() {
-      @SuppressWarnings("deprecation")
-      io.vegaprotocol.vega.Vega.ChainStatus result = io.vegaprotocol.vega.Vega.ChainStatus.valueOf(status_);
-      return result == null ? io.vegaprotocol.vega.Vega.ChainStatus.UNRECOGNIZED : result;
-    }
-
-    public static final int TX_PER_BLOCK_FIELD_NUMBER = 8;
-    private long txPerBlock_;
-    /**
-     * <pre>
-     * Transactions per block
-     * </pre>
-     *
-     * <code>uint64 tx_per_block = 8 [json_name = "txPerBlock"];</code>
-     * @return The txPerBlock.
-     */
-    @java.lang.Override
-    public long getTxPerBlock() {
-      return txPerBlock_;
-    }
-
-    public static final int AVERAGE_TX_BYTES_FIELD_NUMBER = 9;
-    private long averageTxBytes_;
-    /**
-     * <pre>
-     * Average transaction size in bytes
-     * </pre>
-     *
-     * <code>uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];</code>
-     * @return The averageTxBytes.
-     */
-    @java.lang.Override
-    public long getAverageTxBytes() {
-      return averageTxBytes_;
-    }
-
-    public static final int AVERAGE_ORDERS_PER_BLOCK_FIELD_NUMBER = 10;
-    private long averageOrdersPerBlock_;
-    /**
-     * <pre>
-     * Average orders per block
-     * </pre>
-     *
-     * <code>uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];</code>
-     * @return The averageOrdersPerBlock.
-     */
-    @java.lang.Override
-    public long getAverageOrdersPerBlock() {
-      return averageOrdersPerBlock_;
-    }
-
-    public static final int TRADES_PER_SECOND_FIELD_NUMBER = 11;
-    private long tradesPerSecond_;
-    /**
-     * <pre>
-     * Trades emitted per second
-     * </pre>
-     *
-     * <code>uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];</code>
-     * @return The tradesPerSecond.
-     */
-    @java.lang.Override
-    public long getTradesPerSecond() {
-      return tradesPerSecond_;
-    }
-
-    public static final int ORDERS_PER_SECOND_FIELD_NUMBER = 12;
-    private long ordersPerSecond_;
-    /**
-     * <pre>
-     * Orders processed per second
-     * </pre>
-     *
-     * <code>uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];</code>
-     * @return The ordersPerSecond.
-     */
-    @java.lang.Override
-    public long getOrdersPerSecond() {
-      return ordersPerSecond_;
-    }
-
-    public static final int TOTAL_MARKETS_FIELD_NUMBER = 13;
-    private long totalMarkets_;
-    /**
-     * <pre>
-     * Total markets on this Vega network
-     * </pre>
-     *
-     * <code>uint64 total_markets = 13 [json_name = "totalMarkets"];</code>
-     * @return The totalMarkets.
-     */
-    @java.lang.Override
-    public long getTotalMarkets() {
-      return totalMarkets_;
-    }
-
-    public static final int TOTAL_AMEND_ORDER_FIELD_NUMBER = 16;
-    private long totalAmendOrder_;
-    /**
-     * <pre>
-     * Total number of order amendments since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];</code>
-     * @return The totalAmendOrder.
-     */
-    @java.lang.Override
-    public long getTotalAmendOrder() {
-      return totalAmendOrder_;
-    }
-
-    public static final int TOTAL_CANCEL_ORDER_FIELD_NUMBER = 17;
-    private long totalCancelOrder_;
-    /**
-     * <pre>
-     * Total number of order cancellations since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];</code>
-     * @return The totalCancelOrder.
-     */
-    @java.lang.Override
-    public long getTotalCancelOrder() {
-      return totalCancelOrder_;
-    }
-
-    public static final int TOTAL_CREATE_ORDER_FIELD_NUMBER = 18;
-    private long totalCreateOrder_;
-    /**
-     * <pre>
-     * Total number of order submissions since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_create_order = 18 [json_name = "totalCreateOrder"];</code>
-     * @return The totalCreateOrder.
-     */
-    @java.lang.Override
-    public long getTotalCreateOrder() {
-      return totalCreateOrder_;
-    }
-
-    public static final int TOTAL_ORDERS_FIELD_NUMBER = 19;
-    private long totalOrders_;
-    /**
-     * <pre>
-     * Total number of orders processed since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_orders = 19 [json_name = "totalOrders"];</code>
-     * @return The totalOrders.
-     */
-    @java.lang.Override
-    public long getTotalOrders() {
-      return totalOrders_;
-    }
-
-    public static final int TOTAL_TRADES_FIELD_NUMBER = 20;
-    private long totalTrades_;
-    /**
-     * <pre>
-     * Total number of trades emitted since genesis (on all markets)
-     * </pre>
-     *
-     * <code>uint64 total_trades = 20 [json_name = "totalTrades"];</code>
-     * @return The totalTrades.
-     */
-    @java.lang.Override
-    public long getTotalTrades() {
-      return totalTrades_;
-    }
-
-    public static final int ORDER_SUBSCRIPTIONS_FIELD_NUMBER = 21;
-    private int orderSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to order data
-     * </pre>
-     *
-     * <code>uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];</code>
-     * @return The orderSubscriptions.
-     */
-    @java.lang.Override
-    public int getOrderSubscriptions() {
-      return orderSubscriptions_;
-    }
-
-    public static final int TRADE_SUBSCRIPTIONS_FIELD_NUMBER = 22;
-    private int tradeSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to trade data
-     * </pre>
-     *
-     * <code>uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];</code>
-     * @return The tradeSubscriptions.
-     */
-    @java.lang.Override
-    public int getTradeSubscriptions() {
-      return tradeSubscriptions_;
-    }
-
-    public static final int CANDLE_SUBSCRIPTIONS_FIELD_NUMBER = 23;
-    private int candleSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to candle-stick data
-     * </pre>
-     *
-     * <code>uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];</code>
-     * @return The candleSubscriptions.
-     */
-    @java.lang.Override
-    public int getCandleSubscriptions() {
-      return candleSubscriptions_;
-    }
-
-    public static final int MARKET_DEPTH_SUBSCRIPTIONS_FIELD_NUMBER = 24;
-    private int marketDepthSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to market depth data
-     * </pre>
-     *
-     * <code>uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];</code>
-     * @return The marketDepthSubscriptions.
-     */
-    @java.lang.Override
-    public int getMarketDepthSubscriptions() {
-      return marketDepthSubscriptions_;
-    }
-
-    public static final int POSITIONS_SUBSCRIPTIONS_FIELD_NUMBER = 25;
-    private int positionsSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to positions data
-     * </pre>
-     *
-     * <code>uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];</code>
-     * @return The positionsSubscriptions.
-     */
-    @java.lang.Override
-    public int getPositionsSubscriptions() {
-      return positionsSubscriptions_;
-    }
-
-    public static final int ACCOUNT_SUBSCRIPTIONS_FIELD_NUMBER = 26;
-    private int accountSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to account data
-     * </pre>
-     *
-     * <code>uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];</code>
-     * @return The accountSubscriptions.
-     */
-    @java.lang.Override
-    public int getAccountSubscriptions() {
-      return accountSubscriptions_;
-    }
-
-    public static final int MARKET_DATA_SUBSCRIPTIONS_FIELD_NUMBER = 27;
-    private int marketDataSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to market data
-     * </pre>
-     *
-     * <code>uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];</code>
-     * @return The marketDataSubscriptions.
-     */
-    @java.lang.Override
-    public int getMarketDataSubscriptions() {
-      return marketDataSubscriptions_;
-    }
-
-    public static final int APP_VERSION_HASH_FIELD_NUMBER = 28;
-    private volatile java.lang.Object appVersionHash_;
-    /**
-     * <pre>
-     * The version hash of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-     * @return The appVersionHash.
-     */
-    @java.lang.Override
-    public java.lang.String getAppVersionHash() {
-      java.lang.Object ref = appVersionHash_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appVersionHash_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The version hash of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-     * @return The bytes for appVersionHash.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAppVersionHashBytes() {
-      java.lang.Object ref = appVersionHash_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appVersionHash_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int APP_VERSION_FIELD_NUMBER = 29;
-    private volatile java.lang.Object appVersion_;
-    /**
-     * <pre>
-     * The version of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version = 29 [json_name = "appVersion"];</code>
-     * @return The appVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getAppVersion() {
-      java.lang.Object ref = appVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The version of the Vega node software
-     * </pre>
-     *
-     * <code>string app_version = 29 [json_name = "appVersion"];</code>
-     * @return The bytes for appVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAppVersionBytes() {
-      java.lang.Object ref = appVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CHAIN_VERSION_FIELD_NUMBER = 30;
-    private volatile java.lang.Object chainVersion_;
-    /**
-     * <pre>
-     * The version of the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-     * @return The chainVersion.
-     */
-    @java.lang.Override
-    public java.lang.String getChainVersion() {
-      java.lang.Object ref = chainVersion_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        chainVersion_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The version of the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-     * @return The bytes for chainVersion.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getChainVersionBytes() {
-      java.lang.Object ref = chainVersion_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        chainVersion_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BLOCK_DURATION_FIELD_NUMBER = 31;
-    private long blockDuration_;
-    /**
-     * <pre>
-     * Current block duration, in nanoseconds
-     * </pre>
-     *
-     * <code>uint64 block_duration = 31 [json_name = "blockDuration"];</code>
-     * @return The blockDuration.
-     */
-    @java.lang.Override
-    public long getBlockDuration() {
-      return blockDuration_;
-    }
-
-    public static final int UPTIME_FIELD_NUMBER = 32;
-    private volatile java.lang.Object uptime_;
-    /**
-     * <pre>
-     * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string uptime = 32 [json_name = "uptime"];</code>
-     * @return The uptime.
-     */
-    @java.lang.Override
-    public java.lang.String getUptime() {
-      java.lang.Object ref = uptime_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uptime_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-     * </pre>
-     *
-     * <code>string uptime = 32 [json_name = "uptime"];</code>
-     * @return The bytes for uptime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUptimeBytes() {
-      java.lang.Object ref = uptime_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        uptime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CHAIN_ID_FIELD_NUMBER = 33;
-    private volatile java.lang.Object chainId_;
-    /**
-     * <pre>
-     * Unique identifier for the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_id = 33 [json_name = "chainId"];</code>
-     * @return The chainId.
-     */
-    @java.lang.Override
-    public java.lang.String getChainId() {
-      java.lang.Object ref = chainId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        chainId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Unique identifier for the underlying Vega blockchain
-     * </pre>
-     *
-     * <code>string chain_id = 33 [json_name = "chainId"];</code>
-     * @return The bytes for chainId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getChainIdBytes() {
-      java.lang.Object ref = chainId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        chainId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MARKET_DEPTH_UPDATES_SUBSCRIPTIONS_FIELD_NUMBER = 34;
-    private int marketDepthUpdatesSubscriptions_;
-    /**
-     * <pre>
-     * Current number of stream subscribers to market depth update data
-     * </pre>
-     *
-     * <code>uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];</code>
-     * @return The marketDepthUpdatesSubscriptions.
-     */
-    @java.lang.Override
-    public int getMarketDepthUpdatesSubscriptions() {
-      return marketDepthUpdatesSubscriptions_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (blockHeight_ != 0L) {
-        output.writeUInt64(1, blockHeight_);
-      }
-      if (backlogLength_ != 0L) {
-        output.writeUInt64(2, backlogLength_);
-      }
-      if (totalPeers_ != 0L) {
-        output.writeUInt64(3, totalPeers_);
-      }
-      if (!getGenesisTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, genesisTime_);
-      }
-      if (!getCurrentTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, currentTime_);
-      }
-      if (!getVegaTimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, vegaTime_);
-      }
-      if (status_ != io.vegaprotocol.vega.Vega.ChainStatus.CHAIN_STATUS_UNSPECIFIED.getNumber()) {
-        output.writeEnum(7, status_);
-      }
-      if (txPerBlock_ != 0L) {
-        output.writeUInt64(8, txPerBlock_);
-      }
-      if (averageTxBytes_ != 0L) {
-        output.writeUInt64(9, averageTxBytes_);
-      }
-      if (averageOrdersPerBlock_ != 0L) {
-        output.writeUInt64(10, averageOrdersPerBlock_);
-      }
-      if (tradesPerSecond_ != 0L) {
-        output.writeUInt64(11, tradesPerSecond_);
-      }
-      if (ordersPerSecond_ != 0L) {
-        output.writeUInt64(12, ordersPerSecond_);
-      }
-      if (totalMarkets_ != 0L) {
-        output.writeUInt64(13, totalMarkets_);
-      }
-      if (totalAmendOrder_ != 0L) {
-        output.writeUInt64(16, totalAmendOrder_);
-      }
-      if (totalCancelOrder_ != 0L) {
-        output.writeUInt64(17, totalCancelOrder_);
-      }
-      if (totalCreateOrder_ != 0L) {
-        output.writeUInt64(18, totalCreateOrder_);
-      }
-      if (totalOrders_ != 0L) {
-        output.writeUInt64(19, totalOrders_);
-      }
-      if (totalTrades_ != 0L) {
-        output.writeUInt64(20, totalTrades_);
-      }
-      if (orderSubscriptions_ != 0) {
-        output.writeUInt32(21, orderSubscriptions_);
-      }
-      if (tradeSubscriptions_ != 0) {
-        output.writeUInt32(22, tradeSubscriptions_);
-      }
-      if (candleSubscriptions_ != 0) {
-        output.writeUInt32(23, candleSubscriptions_);
-      }
-      if (marketDepthSubscriptions_ != 0) {
-        output.writeUInt32(24, marketDepthSubscriptions_);
-      }
-      if (positionsSubscriptions_ != 0) {
-        output.writeUInt32(25, positionsSubscriptions_);
-      }
-      if (accountSubscriptions_ != 0) {
-        output.writeUInt32(26, accountSubscriptions_);
-      }
-      if (marketDataSubscriptions_ != 0) {
-        output.writeUInt32(27, marketDataSubscriptions_);
-      }
-      if (!getAppVersionHashBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 28, appVersionHash_);
-      }
-      if (!getAppVersionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 29, appVersion_);
-      }
-      if (!getChainVersionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 30, chainVersion_);
-      }
-      if (blockDuration_ != 0L) {
-        output.writeUInt64(31, blockDuration_);
-      }
-      if (!getUptimeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 32, uptime_);
-      }
-      if (!getChainIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 33, chainId_);
-      }
-      if (marketDepthUpdatesSubscriptions_ != 0) {
-        output.writeUInt32(34, marketDepthUpdatesSubscriptions_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (blockHeight_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, blockHeight_);
-      }
-      if (backlogLength_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, backlogLength_);
-      }
-      if (totalPeers_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, totalPeers_);
-      }
-      if (!getGenesisTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, genesisTime_);
-      }
-      if (!getCurrentTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, currentTime_);
-      }
-      if (!getVegaTimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, vegaTime_);
-      }
-      if (status_ != io.vegaprotocol.vega.Vega.ChainStatus.CHAIN_STATUS_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, status_);
-      }
-      if (txPerBlock_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(8, txPerBlock_);
-      }
-      if (averageTxBytes_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, averageTxBytes_);
-      }
-      if (averageOrdersPerBlock_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(10, averageOrdersPerBlock_);
-      }
-      if (tradesPerSecond_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(11, tradesPerSecond_);
-      }
-      if (ordersPerSecond_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(12, ordersPerSecond_);
-      }
-      if (totalMarkets_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(13, totalMarkets_);
-      }
-      if (totalAmendOrder_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(16, totalAmendOrder_);
-      }
-      if (totalCancelOrder_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(17, totalCancelOrder_);
-      }
-      if (totalCreateOrder_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(18, totalCreateOrder_);
-      }
-      if (totalOrders_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(19, totalOrders_);
-      }
-      if (totalTrades_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(20, totalTrades_);
-      }
-      if (orderSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(21, orderSubscriptions_);
-      }
-      if (tradeSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(22, tradeSubscriptions_);
-      }
-      if (candleSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(23, candleSubscriptions_);
-      }
-      if (marketDepthSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(24, marketDepthSubscriptions_);
-      }
-      if (positionsSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(25, positionsSubscriptions_);
-      }
-      if (accountSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(26, accountSubscriptions_);
-      }
-      if (marketDataSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(27, marketDataSubscriptions_);
-      }
-      if (!getAppVersionHashBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, appVersionHash_);
-      }
-      if (!getAppVersionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, appVersion_);
-      }
-      if (!getChainVersionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, chainVersion_);
-      }
-      if (blockDuration_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(31, blockDuration_);
-      }
-      if (!getUptimeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(32, uptime_);
-      }
-      if (!getChainIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(33, chainId_);
-      }
-      if (marketDepthUpdatesSubscriptions_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(34, marketDepthUpdatesSubscriptions_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Vega.Statistics)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Vega.Statistics other = (io.vegaprotocol.vega.Vega.Statistics) obj;
-
-      if (getBlockHeight()
-          != other.getBlockHeight()) return false;
-      if (getBacklogLength()
-          != other.getBacklogLength()) return false;
-      if (getTotalPeers()
-          != other.getTotalPeers()) return false;
-      if (!getGenesisTime()
-          .equals(other.getGenesisTime())) return false;
-      if (!getCurrentTime()
-          .equals(other.getCurrentTime())) return false;
-      if (!getVegaTime()
-          .equals(other.getVegaTime())) return false;
-      if (status_ != other.status_) return false;
-      if (getTxPerBlock()
-          != other.getTxPerBlock()) return false;
-      if (getAverageTxBytes()
-          != other.getAverageTxBytes()) return false;
-      if (getAverageOrdersPerBlock()
-          != other.getAverageOrdersPerBlock()) return false;
-      if (getTradesPerSecond()
-          != other.getTradesPerSecond()) return false;
-      if (getOrdersPerSecond()
-          != other.getOrdersPerSecond()) return false;
-      if (getTotalMarkets()
-          != other.getTotalMarkets()) return false;
-      if (getTotalAmendOrder()
-          != other.getTotalAmendOrder()) return false;
-      if (getTotalCancelOrder()
-          != other.getTotalCancelOrder()) return false;
-      if (getTotalCreateOrder()
-          != other.getTotalCreateOrder()) return false;
-      if (getTotalOrders()
-          != other.getTotalOrders()) return false;
-      if (getTotalTrades()
-          != other.getTotalTrades()) return false;
-      if (getOrderSubscriptions()
-          != other.getOrderSubscriptions()) return false;
-      if (getTradeSubscriptions()
-          != other.getTradeSubscriptions()) return false;
-      if (getCandleSubscriptions()
-          != other.getCandleSubscriptions()) return false;
-      if (getMarketDepthSubscriptions()
-          != other.getMarketDepthSubscriptions()) return false;
-      if (getPositionsSubscriptions()
-          != other.getPositionsSubscriptions()) return false;
-      if (getAccountSubscriptions()
-          != other.getAccountSubscriptions()) return false;
-      if (getMarketDataSubscriptions()
-          != other.getMarketDataSubscriptions()) return false;
-      if (!getAppVersionHash()
-          .equals(other.getAppVersionHash())) return false;
-      if (!getAppVersion()
-          .equals(other.getAppVersion())) return false;
-      if (!getChainVersion()
-          .equals(other.getChainVersion())) return false;
-      if (getBlockDuration()
-          != other.getBlockDuration()) return false;
-      if (!getUptime()
-          .equals(other.getUptime())) return false;
-      if (!getChainId()
-          .equals(other.getChainId())) return false;
-      if (getMarketDepthUpdatesSubscriptions()
-          != other.getMarketDepthUpdatesSubscriptions()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BLOCK_HEIGHT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBlockHeight());
-      hash = (37 * hash) + BACKLOG_LENGTH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBacklogLength());
-      hash = (37 * hash) + TOTAL_PEERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalPeers());
-      hash = (37 * hash) + GENESIS_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getGenesisTime().hashCode();
-      hash = (37 * hash) + CURRENT_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrentTime().hashCode();
-      hash = (37 * hash) + VEGA_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getVegaTime().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
-      hash = (37 * hash) + TX_PER_BLOCK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTxPerBlock());
-      hash = (37 * hash) + AVERAGE_TX_BYTES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAverageTxBytes());
-      hash = (37 * hash) + AVERAGE_ORDERS_PER_BLOCK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getAverageOrdersPerBlock());
-      hash = (37 * hash) + TRADES_PER_SECOND_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTradesPerSecond());
-      hash = (37 * hash) + ORDERS_PER_SECOND_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getOrdersPerSecond());
-      hash = (37 * hash) + TOTAL_MARKETS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalMarkets());
-      hash = (37 * hash) + TOTAL_AMEND_ORDER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalAmendOrder());
-      hash = (37 * hash) + TOTAL_CANCEL_ORDER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalCancelOrder());
-      hash = (37 * hash) + TOTAL_CREATE_ORDER_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalCreateOrder());
-      hash = (37 * hash) + TOTAL_ORDERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalOrders());
-      hash = (37 * hash) + TOTAL_TRADES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTotalTrades());
-      hash = (37 * hash) + ORDER_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getOrderSubscriptions();
-      hash = (37 * hash) + TRADE_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getTradeSubscriptions();
-      hash = (37 * hash) + CANDLE_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getCandleSubscriptions();
-      hash = (37 * hash) + MARKET_DEPTH_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketDepthSubscriptions();
-      hash = (37 * hash) + POSITIONS_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getPositionsSubscriptions();
-      hash = (37 * hash) + ACCOUNT_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getAccountSubscriptions();
-      hash = (37 * hash) + MARKET_DATA_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketDataSubscriptions();
-      hash = (37 * hash) + APP_VERSION_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getAppVersionHash().hashCode();
-      hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getAppVersion().hashCode();
-      hash = (37 * hash) + CHAIN_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getChainVersion().hashCode();
-      hash = (37 * hash) + BLOCK_DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBlockDuration());
-      hash = (37 * hash) + UPTIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUptime().hashCode();
-      hash = (37 * hash) + CHAIN_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getChainId().hashCode();
-      hash = (37 * hash) + MARKET_DEPTH_UPDATES_SUBSCRIPTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getMarketDepthUpdatesSubscriptions();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Statistics parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Vega.Statistics prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Vega domain specific statistics as reported by the node the caller is connected to
-     * </pre>
-     *
-     * Protobuf type {@code vega.Statistics}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.Statistics)
-        io.vegaprotocol.vega.Vega.StatisticsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Statistics_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Statistics_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Vega.Statistics.class, io.vegaprotocol.vega.Vega.Statistics.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Vega.Statistics.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        blockHeight_ = 0L;
-
-        backlogLength_ = 0L;
-
-        totalPeers_ = 0L;
-
-        genesisTime_ = "";
-
-        currentTime_ = "";
-
-        vegaTime_ = "";
-
-        status_ = 0;
-
-        txPerBlock_ = 0L;
-
-        averageTxBytes_ = 0L;
-
-        averageOrdersPerBlock_ = 0L;
-
-        tradesPerSecond_ = 0L;
-
-        ordersPerSecond_ = 0L;
-
-        totalMarkets_ = 0L;
-
-        totalAmendOrder_ = 0L;
-
-        totalCancelOrder_ = 0L;
-
-        totalCreateOrder_ = 0L;
-
-        totalOrders_ = 0L;
-
-        totalTrades_ = 0L;
-
-        orderSubscriptions_ = 0;
-
-        tradeSubscriptions_ = 0;
-
-        candleSubscriptions_ = 0;
-
-        marketDepthSubscriptions_ = 0;
-
-        positionsSubscriptions_ = 0;
-
-        accountSubscriptions_ = 0;
-
-        marketDataSubscriptions_ = 0;
-
-        appVersionHash_ = "";
-
-        appVersion_ = "";
-
-        chainVersion_ = "";
-
-        blockDuration_ = 0L;
-
-        uptime_ = "";
-
-        chainId_ = "";
-
-        marketDepthUpdatesSubscriptions_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Statistics_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Statistics getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Vega.Statistics.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Statistics build() {
-        io.vegaprotocol.vega.Vega.Statistics result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Statistics buildPartial() {
-        io.vegaprotocol.vega.Vega.Statistics result = new io.vegaprotocol.vega.Vega.Statistics(this);
-        result.blockHeight_ = blockHeight_;
-        result.backlogLength_ = backlogLength_;
-        result.totalPeers_ = totalPeers_;
-        result.genesisTime_ = genesisTime_;
-        result.currentTime_ = currentTime_;
-        result.vegaTime_ = vegaTime_;
-        result.status_ = status_;
-        result.txPerBlock_ = txPerBlock_;
-        result.averageTxBytes_ = averageTxBytes_;
-        result.averageOrdersPerBlock_ = averageOrdersPerBlock_;
-        result.tradesPerSecond_ = tradesPerSecond_;
-        result.ordersPerSecond_ = ordersPerSecond_;
-        result.totalMarkets_ = totalMarkets_;
-        result.totalAmendOrder_ = totalAmendOrder_;
-        result.totalCancelOrder_ = totalCancelOrder_;
-        result.totalCreateOrder_ = totalCreateOrder_;
-        result.totalOrders_ = totalOrders_;
-        result.totalTrades_ = totalTrades_;
-        result.orderSubscriptions_ = orderSubscriptions_;
-        result.tradeSubscriptions_ = tradeSubscriptions_;
-        result.candleSubscriptions_ = candleSubscriptions_;
-        result.marketDepthSubscriptions_ = marketDepthSubscriptions_;
-        result.positionsSubscriptions_ = positionsSubscriptions_;
-        result.accountSubscriptions_ = accountSubscriptions_;
-        result.marketDataSubscriptions_ = marketDataSubscriptions_;
-        result.appVersionHash_ = appVersionHash_;
-        result.appVersion_ = appVersion_;
-        result.chainVersion_ = chainVersion_;
-        result.blockDuration_ = blockDuration_;
-        result.uptime_ = uptime_;
-        result.chainId_ = chainId_;
-        result.marketDepthUpdatesSubscriptions_ = marketDepthUpdatesSubscriptions_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Vega.Statistics) {
-          return mergeFrom((io.vegaprotocol.vega.Vega.Statistics)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Vega.Statistics other) {
-        if (other == io.vegaprotocol.vega.Vega.Statistics.getDefaultInstance()) return this;
-        if (other.getBlockHeight() != 0L) {
-          setBlockHeight(other.getBlockHeight());
-        }
-        if (other.getBacklogLength() != 0L) {
-          setBacklogLength(other.getBacklogLength());
-        }
-        if (other.getTotalPeers() != 0L) {
-          setTotalPeers(other.getTotalPeers());
-        }
-        if (!other.getGenesisTime().isEmpty()) {
-          genesisTime_ = other.genesisTime_;
-          onChanged();
-        }
-        if (!other.getCurrentTime().isEmpty()) {
-          currentTime_ = other.currentTime_;
-          onChanged();
-        }
-        if (!other.getVegaTime().isEmpty()) {
-          vegaTime_ = other.vegaTime_;
-          onChanged();
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
-        }
-        if (other.getTxPerBlock() != 0L) {
-          setTxPerBlock(other.getTxPerBlock());
-        }
-        if (other.getAverageTxBytes() != 0L) {
-          setAverageTxBytes(other.getAverageTxBytes());
-        }
-        if (other.getAverageOrdersPerBlock() != 0L) {
-          setAverageOrdersPerBlock(other.getAverageOrdersPerBlock());
-        }
-        if (other.getTradesPerSecond() != 0L) {
-          setTradesPerSecond(other.getTradesPerSecond());
-        }
-        if (other.getOrdersPerSecond() != 0L) {
-          setOrdersPerSecond(other.getOrdersPerSecond());
-        }
-        if (other.getTotalMarkets() != 0L) {
-          setTotalMarkets(other.getTotalMarkets());
-        }
-        if (other.getTotalAmendOrder() != 0L) {
-          setTotalAmendOrder(other.getTotalAmendOrder());
-        }
-        if (other.getTotalCancelOrder() != 0L) {
-          setTotalCancelOrder(other.getTotalCancelOrder());
-        }
-        if (other.getTotalCreateOrder() != 0L) {
-          setTotalCreateOrder(other.getTotalCreateOrder());
-        }
-        if (other.getTotalOrders() != 0L) {
-          setTotalOrders(other.getTotalOrders());
-        }
-        if (other.getTotalTrades() != 0L) {
-          setTotalTrades(other.getTotalTrades());
-        }
-        if (other.getOrderSubscriptions() != 0) {
-          setOrderSubscriptions(other.getOrderSubscriptions());
-        }
-        if (other.getTradeSubscriptions() != 0) {
-          setTradeSubscriptions(other.getTradeSubscriptions());
-        }
-        if (other.getCandleSubscriptions() != 0) {
-          setCandleSubscriptions(other.getCandleSubscriptions());
-        }
-        if (other.getMarketDepthSubscriptions() != 0) {
-          setMarketDepthSubscriptions(other.getMarketDepthSubscriptions());
-        }
-        if (other.getPositionsSubscriptions() != 0) {
-          setPositionsSubscriptions(other.getPositionsSubscriptions());
-        }
-        if (other.getAccountSubscriptions() != 0) {
-          setAccountSubscriptions(other.getAccountSubscriptions());
-        }
-        if (other.getMarketDataSubscriptions() != 0) {
-          setMarketDataSubscriptions(other.getMarketDataSubscriptions());
-        }
-        if (!other.getAppVersionHash().isEmpty()) {
-          appVersionHash_ = other.appVersionHash_;
-          onChanged();
-        }
-        if (!other.getAppVersion().isEmpty()) {
-          appVersion_ = other.appVersion_;
-          onChanged();
-        }
-        if (!other.getChainVersion().isEmpty()) {
-          chainVersion_ = other.chainVersion_;
-          onChanged();
-        }
-        if (other.getBlockDuration() != 0L) {
-          setBlockDuration(other.getBlockDuration());
-        }
-        if (!other.getUptime().isEmpty()) {
-          uptime_ = other.uptime_;
-          onChanged();
-        }
-        if (!other.getChainId().isEmpty()) {
-          chainId_ = other.chainId_;
-          onChanged();
-        }
-        if (other.getMarketDepthUpdatesSubscriptions() != 0) {
-          setMarketDepthUpdatesSubscriptions(other.getMarketDepthUpdatesSubscriptions());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Vega.Statistics parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Vega.Statistics) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long blockHeight_ ;
-      /**
-       * <pre>
-       * Current block height as reported by the Vega blockchain
-       * </pre>
-       *
-       * <code>uint64 block_height = 1 [json_name = "blockHeight"];</code>
-       * @return The blockHeight.
-       */
-      @java.lang.Override
-      public long getBlockHeight() {
-        return blockHeight_;
-      }
-      /**
-       * <pre>
-       * Current block height as reported by the Vega blockchain
-       * </pre>
-       *
-       * <code>uint64 block_height = 1 [json_name = "blockHeight"];</code>
-       * @param value The blockHeight to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBlockHeight(long value) {
-
-        blockHeight_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current block height as reported by the Vega blockchain
-       * </pre>
-       *
-       * <code>uint64 block_height = 1 [json_name = "blockHeight"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBlockHeight() {
-
-        blockHeight_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long backlogLength_ ;
-      /**
-       * <pre>
-       * Current backlog length (number of transactions) that are waiting to be included in a block
-       * </pre>
-       *
-       * <code>uint64 backlog_length = 2 [json_name = "backlogLength"];</code>
-       * @return The backlogLength.
-       */
-      @java.lang.Override
-      public long getBacklogLength() {
-        return backlogLength_;
-      }
-      /**
-       * <pre>
-       * Current backlog length (number of transactions) that are waiting to be included in a block
-       * </pre>
-       *
-       * <code>uint64 backlog_length = 2 [json_name = "backlogLength"];</code>
-       * @param value The backlogLength to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBacklogLength(long value) {
-
-        backlogLength_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current backlog length (number of transactions) that are waiting to be included in a block
-       * </pre>
-       *
-       * <code>uint64 backlog_length = 2 [json_name = "backlogLength"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBacklogLength() {
-
-        backlogLength_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalPeers_ ;
-      /**
-       * <pre>
-       * Total number of connected peers to this node
-       * </pre>
-       *
-       * <code>uint64 total_peers = 3 [json_name = "totalPeers"];</code>
-       * @return The totalPeers.
-       */
-      @java.lang.Override
-      public long getTotalPeers() {
-        return totalPeers_;
-      }
-      /**
-       * <pre>
-       * Total number of connected peers to this node
-       * </pre>
-       *
-       * <code>uint64 total_peers = 3 [json_name = "totalPeers"];</code>
-       * @param value The totalPeers to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalPeers(long value) {
-
-        totalPeers_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total number of connected peers to this node
-       * </pre>
-       *
-       * <code>uint64 total_peers = 3 [json_name = "totalPeers"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalPeers() {
-
-        totalPeers_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object genesisTime_ = "";
-      /**
-       * <pre>
-       * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-       * @return The genesisTime.
-       */
-      public java.lang.String getGenesisTime() {
-        java.lang.Object ref = genesisTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          genesisTime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-       * @return The bytes for genesisTime.
-       */
-      public com.google.protobuf.ByteString
-          getGenesisTimeBytes() {
-        java.lang.Object ref = genesisTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          genesisTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-       * @param value The genesisTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGenesisTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        genesisTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGenesisTime() {
-
-        genesisTime_ = getDefaultInstance().getGenesisTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string genesis_time = 4 [json_name = "genesisTime"];</code>
-       * @param value The bytes for genesisTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGenesisTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        genesisTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object currentTime_ = "";
-      /**
-       * <pre>
-       * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string current_time = 5 [json_name = "currentTime"];</code>
-       * @return The currentTime.
-       */
-      public java.lang.String getCurrentTime() {
-        java.lang.Object ref = currentTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          currentTime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string current_time = 5 [json_name = "currentTime"];</code>
-       * @return The bytes for currentTime.
-       */
-      public com.google.protobuf.ByteString
-          getCurrentTimeBytes() {
-        java.lang.Object ref = currentTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          currentTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string current_time = 5 [json_name = "currentTime"];</code>
-       * @param value The currentTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrentTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        currentTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string current_time = 5 [json_name = "currentTime"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurrentTime() {
-
-        currentTime_ = getDefaultInstance().getCurrentTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string current_time = 5 [json_name = "currentTime"];</code>
-       * @param value The bytes for currentTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrentTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        currentTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object vegaTime_ = "";
-      /**
-       * <pre>
-       * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-       * @return The vegaTime.
-       */
-      public java.lang.String getVegaTime() {
-        java.lang.Object ref = vegaTime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          vegaTime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-       * @return The bytes for vegaTime.
-       */
-      public com.google.protobuf.ByteString
-          getVegaTimeBytes() {
-        java.lang.Object ref = vegaTime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          vegaTime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-       * @param value The vegaTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVegaTime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        vegaTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVegaTime() {
-
-        vegaTime_ = getDefaultInstance().getVegaTime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string vega_time = 6 [json_name = "vegaTime"];</code>
-       * @param value The bytes for vegaTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVegaTimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        vegaTime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <pre>
-       * Status of the connection to the Vega blockchain
-       * - See [`ChainStatus`](#vega.ChainStatus)
-       * </pre>
-       *
-       * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <pre>
-       * Status of the connection to the Vega blockchain
-       * - See [`ChainStatus`](#vega.ChainStatus)
-       * </pre>
-       *
-       * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
-
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Status of the connection to the Vega blockchain
-       * - See [`ChainStatus`](#vega.ChainStatus)
-       * </pre>
-       *
-       * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.ChainStatus getStatus() {
-        @SuppressWarnings("deprecation")
-        io.vegaprotocol.vega.Vega.ChainStatus result = io.vegaprotocol.vega.Vega.ChainStatus.valueOf(status_);
-        return result == null ? io.vegaprotocol.vega.Vega.ChainStatus.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * Status of the connection to the Vega blockchain
-       * - See [`ChainStatus`](#vega.ChainStatus)
-       * </pre>
-       *
-       * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(io.vegaprotocol.vega.Vega.ChainStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Status of the connection to the Vega blockchain
-       * - See [`ChainStatus`](#vega.ChainStatus)
-       * </pre>
-       *
-       * <code>.vega.ChainStatus status = 7 [json_name = "status"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-
-        status_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long txPerBlock_ ;
-      /**
-       * <pre>
-       * Transactions per block
-       * </pre>
-       *
-       * <code>uint64 tx_per_block = 8 [json_name = "txPerBlock"];</code>
-       * @return The txPerBlock.
-       */
-      @java.lang.Override
-      public long getTxPerBlock() {
-        return txPerBlock_;
-      }
-      /**
-       * <pre>
-       * Transactions per block
-       * </pre>
-       *
-       * <code>uint64 tx_per_block = 8 [json_name = "txPerBlock"];</code>
-       * @param value The txPerBlock to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTxPerBlock(long value) {
-
-        txPerBlock_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Transactions per block
-       * </pre>
-       *
-       * <code>uint64 tx_per_block = 8 [json_name = "txPerBlock"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTxPerBlock() {
-
-        txPerBlock_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long averageTxBytes_ ;
-      /**
-       * <pre>
-       * Average transaction size in bytes
-       * </pre>
-       *
-       * <code>uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];</code>
-       * @return The averageTxBytes.
-       */
-      @java.lang.Override
-      public long getAverageTxBytes() {
-        return averageTxBytes_;
-      }
-      /**
-       * <pre>
-       * Average transaction size in bytes
-       * </pre>
-       *
-       * <code>uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];</code>
-       * @param value The averageTxBytes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAverageTxBytes(long value) {
-
-        averageTxBytes_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Average transaction size in bytes
-       * </pre>
-       *
-       * <code>uint64 average_tx_bytes = 9 [json_name = "averageTxBytes"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAverageTxBytes() {
-
-        averageTxBytes_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long averageOrdersPerBlock_ ;
-      /**
-       * <pre>
-       * Average orders per block
-       * </pre>
-       *
-       * <code>uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];</code>
-       * @return The averageOrdersPerBlock.
-       */
-      @java.lang.Override
-      public long getAverageOrdersPerBlock() {
-        return averageOrdersPerBlock_;
-      }
-      /**
-       * <pre>
-       * Average orders per block
-       * </pre>
-       *
-       * <code>uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];</code>
-       * @param value The averageOrdersPerBlock to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAverageOrdersPerBlock(long value) {
-
-        averageOrdersPerBlock_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Average orders per block
-       * </pre>
-       *
-       * <code>uint64 average_orders_per_block = 10 [json_name = "averageOrdersPerBlock"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAverageOrdersPerBlock() {
-
-        averageOrdersPerBlock_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long tradesPerSecond_ ;
-      /**
-       * <pre>
-       * Trades emitted per second
-       * </pre>
-       *
-       * <code>uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];</code>
-       * @return The tradesPerSecond.
-       */
-      @java.lang.Override
-      public long getTradesPerSecond() {
-        return tradesPerSecond_;
-      }
-      /**
-       * <pre>
-       * Trades emitted per second
-       * </pre>
-       *
-       * <code>uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];</code>
-       * @param value The tradesPerSecond to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTradesPerSecond(long value) {
-
-        tradesPerSecond_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Trades emitted per second
-       * </pre>
-       *
-       * <code>uint64 trades_per_second = 11 [json_name = "tradesPerSecond"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTradesPerSecond() {
-
-        tradesPerSecond_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long ordersPerSecond_ ;
-      /**
-       * <pre>
-       * Orders processed per second
-       * </pre>
-       *
-       * <code>uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];</code>
-       * @return The ordersPerSecond.
-       */
-      @java.lang.Override
-      public long getOrdersPerSecond() {
-        return ordersPerSecond_;
-      }
-      /**
-       * <pre>
-       * Orders processed per second
-       * </pre>
-       *
-       * <code>uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];</code>
-       * @param value The ordersPerSecond to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOrdersPerSecond(long value) {
-
-        ordersPerSecond_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Orders processed per second
-       * </pre>
-       *
-       * <code>uint64 orders_per_second = 12 [json_name = "ordersPerSecond"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOrdersPerSecond() {
-
-        ordersPerSecond_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalMarkets_ ;
-      /**
-       * <pre>
-       * Total markets on this Vega network
-       * </pre>
-       *
-       * <code>uint64 total_markets = 13 [json_name = "totalMarkets"];</code>
-       * @return The totalMarkets.
-       */
-      @java.lang.Override
-      public long getTotalMarkets() {
-        return totalMarkets_;
-      }
-      /**
-       * <pre>
-       * Total markets on this Vega network
-       * </pre>
-       *
-       * <code>uint64 total_markets = 13 [json_name = "totalMarkets"];</code>
-       * @param value The totalMarkets to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalMarkets(long value) {
-
-        totalMarkets_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total markets on this Vega network
-       * </pre>
-       *
-       * <code>uint64 total_markets = 13 [json_name = "totalMarkets"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalMarkets() {
-
-        totalMarkets_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalAmendOrder_ ;
-      /**
-       * <pre>
-       * Total number of order amendments since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];</code>
-       * @return The totalAmendOrder.
-       */
-      @java.lang.Override
-      public long getTotalAmendOrder() {
-        return totalAmendOrder_;
-      }
-      /**
-       * <pre>
-       * Total number of order amendments since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];</code>
-       * @param value The totalAmendOrder to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalAmendOrder(long value) {
-
-        totalAmendOrder_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total number of order amendments since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_amend_order = 16 [json_name = "totalAmendOrder"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalAmendOrder() {
-
-        totalAmendOrder_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalCancelOrder_ ;
-      /**
-       * <pre>
-       * Total number of order cancellations since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];</code>
-       * @return The totalCancelOrder.
-       */
-      @java.lang.Override
-      public long getTotalCancelOrder() {
-        return totalCancelOrder_;
-      }
-      /**
-       * <pre>
-       * Total number of order cancellations since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];</code>
-       * @param value The totalCancelOrder to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalCancelOrder(long value) {
-
-        totalCancelOrder_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total number of order cancellations since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_cancel_order = 17 [json_name = "totalCancelOrder"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalCancelOrder() {
-
-        totalCancelOrder_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalCreateOrder_ ;
-      /**
-       * <pre>
-       * Total number of order submissions since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_create_order = 18 [json_name = "totalCreateOrder"];</code>
-       * @return The totalCreateOrder.
-       */
-      @java.lang.Override
-      public long getTotalCreateOrder() {
-        return totalCreateOrder_;
-      }
-      /**
-       * <pre>
-       * Total number of order submissions since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_create_order = 18 [json_name = "totalCreateOrder"];</code>
-       * @param value The totalCreateOrder to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalCreateOrder(long value) {
-
-        totalCreateOrder_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total number of order submissions since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_create_order = 18 [json_name = "totalCreateOrder"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalCreateOrder() {
-
-        totalCreateOrder_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalOrders_ ;
-      /**
-       * <pre>
-       * Total number of orders processed since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_orders = 19 [json_name = "totalOrders"];</code>
-       * @return The totalOrders.
-       */
-      @java.lang.Override
-      public long getTotalOrders() {
-        return totalOrders_;
-      }
-      /**
-       * <pre>
-       * Total number of orders processed since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_orders = 19 [json_name = "totalOrders"];</code>
-       * @param value The totalOrders to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalOrders(long value) {
-
-        totalOrders_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total number of orders processed since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_orders = 19 [json_name = "totalOrders"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalOrders() {
-
-        totalOrders_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long totalTrades_ ;
-      /**
-       * <pre>
-       * Total number of trades emitted since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_trades = 20 [json_name = "totalTrades"];</code>
-       * @return The totalTrades.
-       */
-      @java.lang.Override
-      public long getTotalTrades() {
-        return totalTrades_;
-      }
-      /**
-       * <pre>
-       * Total number of trades emitted since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_trades = 20 [json_name = "totalTrades"];</code>
-       * @param value The totalTrades to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalTrades(long value) {
-
-        totalTrades_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total number of trades emitted since genesis (on all markets)
-       * </pre>
-       *
-       * <code>uint64 total_trades = 20 [json_name = "totalTrades"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalTrades() {
-
-        totalTrades_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int orderSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to order data
-       * </pre>
-       *
-       * <code>uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];</code>
-       * @return The orderSubscriptions.
-       */
-      @java.lang.Override
-      public int getOrderSubscriptions() {
-        return orderSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to order data
-       * </pre>
-       *
-       * <code>uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];</code>
-       * @param value The orderSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOrderSubscriptions(int value) {
-
-        orderSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to order data
-       * </pre>
-       *
-       * <code>uint32 order_subscriptions = 21 [json_name = "orderSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOrderSubscriptions() {
-
-        orderSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tradeSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to trade data
-       * </pre>
-       *
-       * <code>uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];</code>
-       * @return The tradeSubscriptions.
-       */
-      @java.lang.Override
-      public int getTradeSubscriptions() {
-        return tradeSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to trade data
-       * </pre>
-       *
-       * <code>uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];</code>
-       * @param value The tradeSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTradeSubscriptions(int value) {
-
-        tradeSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to trade data
-       * </pre>
-       *
-       * <code>uint32 trade_subscriptions = 22 [json_name = "tradeSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTradeSubscriptions() {
-
-        tradeSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int candleSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to candle-stick data
-       * </pre>
-       *
-       * <code>uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];</code>
-       * @return The candleSubscriptions.
-       */
-      @java.lang.Override
-      public int getCandleSubscriptions() {
-        return candleSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to candle-stick data
-       * </pre>
-       *
-       * <code>uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];</code>
-       * @param value The candleSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCandleSubscriptions(int value) {
-
-        candleSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to candle-stick data
-       * </pre>
-       *
-       * <code>uint32 candle_subscriptions = 23 [json_name = "candleSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCandleSubscriptions() {
-
-        candleSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int marketDepthSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to market depth data
-       * </pre>
-       *
-       * <code>uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];</code>
-       * @return The marketDepthSubscriptions.
-       */
-      @java.lang.Override
-      public int getMarketDepthSubscriptions() {
-        return marketDepthSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to market depth data
-       * </pre>
-       *
-       * <code>uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];</code>
-       * @param value The marketDepthSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMarketDepthSubscriptions(int value) {
-
-        marketDepthSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to market depth data
-       * </pre>
-       *
-       * <code>uint32 market_depth_subscriptions = 24 [json_name = "marketDepthSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMarketDepthSubscriptions() {
-
-        marketDepthSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int positionsSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to positions data
-       * </pre>
-       *
-       * <code>uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];</code>
-       * @return The positionsSubscriptions.
-       */
-      @java.lang.Override
-      public int getPositionsSubscriptions() {
-        return positionsSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to positions data
-       * </pre>
-       *
-       * <code>uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];</code>
-       * @param value The positionsSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPositionsSubscriptions(int value) {
-
-        positionsSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to positions data
-       * </pre>
-       *
-       * <code>uint32 positions_subscriptions = 25 [json_name = "positionsSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPositionsSubscriptions() {
-
-        positionsSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int accountSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to account data
-       * </pre>
-       *
-       * <code>uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];</code>
-       * @return The accountSubscriptions.
-       */
-      @java.lang.Override
-      public int getAccountSubscriptions() {
-        return accountSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to account data
-       * </pre>
-       *
-       * <code>uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];</code>
-       * @param value The accountSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAccountSubscriptions(int value) {
-
-        accountSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to account data
-       * </pre>
-       *
-       * <code>uint32 account_subscriptions = 26 [json_name = "accountSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAccountSubscriptions() {
-
-        accountSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int marketDataSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to market data
-       * </pre>
-       *
-       * <code>uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];</code>
-       * @return The marketDataSubscriptions.
-       */
-      @java.lang.Override
-      public int getMarketDataSubscriptions() {
-        return marketDataSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to market data
-       * </pre>
-       *
-       * <code>uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];</code>
-       * @param value The marketDataSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMarketDataSubscriptions(int value) {
-
-        marketDataSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to market data
-       * </pre>
-       *
-       * <code>uint32 market_data_subscriptions = 27 [json_name = "marketDataSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMarketDataSubscriptions() {
-
-        marketDataSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object appVersionHash_ = "";
-      /**
-       * <pre>
-       * The version hash of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-       * @return The appVersionHash.
-       */
-      public java.lang.String getAppVersionHash() {
-        java.lang.Object ref = appVersionHash_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appVersionHash_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The version hash of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-       * @return The bytes for appVersionHash.
-       */
-      public com.google.protobuf.ByteString
-          getAppVersionHashBytes() {
-        java.lang.Object ref = appVersionHash_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appVersionHash_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The version hash of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-       * @param value The appVersionHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAppVersionHash(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        appVersionHash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version hash of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAppVersionHash() {
-
-        appVersionHash_ = getDefaultInstance().getAppVersionHash();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version hash of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version_hash = 28 [json_name = "appVersionHash"];</code>
-       * @param value The bytes for appVersionHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAppVersionHashBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        appVersionHash_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object appVersion_ = "";
-      /**
-       * <pre>
-       * The version of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version = 29 [json_name = "appVersion"];</code>
-       * @return The appVersion.
-       */
-      public java.lang.String getAppVersion() {
-        java.lang.Object ref = appVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The version of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version = 29 [json_name = "appVersion"];</code>
-       * @return The bytes for appVersion.
-       */
-      public com.google.protobuf.ByteString
-          getAppVersionBytes() {
-        java.lang.Object ref = appVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The version of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version = 29 [json_name = "appVersion"];</code>
-       * @param value The appVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAppVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        appVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version = 29 [json_name = "appVersion"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAppVersion() {
-
-        appVersion_ = getDefaultInstance().getAppVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version of the Vega node software
-       * </pre>
-       *
-       * <code>string app_version = 29 [json_name = "appVersion"];</code>
-       * @param value The bytes for appVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAppVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        appVersion_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object chainVersion_ = "";
-      /**
-       * <pre>
-       * The version of the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-       * @return The chainVersion.
-       */
-      public java.lang.String getChainVersion() {
-        java.lang.Object ref = chainVersion_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          chainVersion_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The version of the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-       * @return The bytes for chainVersion.
-       */
-      public com.google.protobuf.ByteString
-          getChainVersionBytes() {
-        java.lang.Object ref = chainVersion_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          chainVersion_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The version of the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-       * @param value The chainVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChainVersion(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        chainVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version of the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChainVersion() {
-
-        chainVersion_ = getDefaultInstance().getChainVersion();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version of the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_version = 30 [json_name = "chainVersion"];</code>
-       * @param value The bytes for chainVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChainVersionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        chainVersion_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long blockDuration_ ;
-      /**
-       * <pre>
-       * Current block duration, in nanoseconds
-       * </pre>
-       *
-       * <code>uint64 block_duration = 31 [json_name = "blockDuration"];</code>
-       * @return The blockDuration.
-       */
-      @java.lang.Override
-      public long getBlockDuration() {
-        return blockDuration_;
-      }
-      /**
-       * <pre>
-       * Current block duration, in nanoseconds
-       * </pre>
-       *
-       * <code>uint64 block_duration = 31 [json_name = "blockDuration"];</code>
-       * @param value The blockDuration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBlockDuration(long value) {
-
-        blockDuration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current block duration, in nanoseconds
-       * </pre>
-       *
-       * <code>uint64 block_duration = 31 [json_name = "blockDuration"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBlockDuration() {
-
-        blockDuration_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object uptime_ = "";
-      /**
-       * <pre>
-       * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string uptime = 32 [json_name = "uptime"];</code>
-       * @return The uptime.
-       */
-      public java.lang.String getUptime() {
-        java.lang.Object ref = uptime_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          uptime_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string uptime = 32 [json_name = "uptime"];</code>
-       * @return The bytes for uptime.
-       */
-      public com.google.protobuf.ByteString
-          getUptimeBytes() {
-        java.lang.Object ref = uptime_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          uptime_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string uptime = 32 [json_name = "uptime"];</code>
-       * @param value The uptime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUptime(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        uptime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string uptime = 32 [json_name = "uptime"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUptime() {
-
-        uptime_ = getDefaultInstance().getUptime();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-       * </pre>
-       *
-       * <code>string uptime = 32 [json_name = "uptime"];</code>
-       * @param value The bytes for uptime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUptimeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        uptime_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object chainId_ = "";
-      /**
-       * <pre>
-       * Unique identifier for the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_id = 33 [json_name = "chainId"];</code>
-       * @return The chainId.
-       */
-      public java.lang.String getChainId() {
-        java.lang.Object ref = chainId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          chainId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Unique identifier for the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_id = 33 [json_name = "chainId"];</code>
-       * @return The bytes for chainId.
-       */
-      public com.google.protobuf.ByteString
-          getChainIdBytes() {
-        java.lang.Object ref = chainId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          chainId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Unique identifier for the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_id = 33 [json_name = "chainId"];</code>
-       * @param value The chainId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChainId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        chainId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique identifier for the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_id = 33 [json_name = "chainId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChainId() {
-
-        chainId_ = getDefaultInstance().getChainId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Unique identifier for the underlying Vega blockchain
-       * </pre>
-       *
-       * <code>string chain_id = 33 [json_name = "chainId"];</code>
-       * @param value The bytes for chainId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChainIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        chainId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int marketDepthUpdatesSubscriptions_ ;
-      /**
-       * <pre>
-       * Current number of stream subscribers to market depth update data
-       * </pre>
-       *
-       * <code>uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];</code>
-       * @return The marketDepthUpdatesSubscriptions.
-       */
-      @java.lang.Override
-      public int getMarketDepthUpdatesSubscriptions() {
-        return marketDepthUpdatesSubscriptions_;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to market depth update data
-       * </pre>
-       *
-       * <code>uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];</code>
-       * @param value The marketDepthUpdatesSubscriptions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMarketDepthUpdatesSubscriptions(int value) {
-
-        marketDepthUpdatesSubscriptions_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Current number of stream subscribers to market depth update data
-       * </pre>
-       *
-       * <code>uint32 market_depth_updates_subscriptions = 34 [json_name = "marketDepthUpdatesSubscriptions"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMarketDepthUpdatesSubscriptions() {
-
-        marketDepthUpdatesSubscriptions_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.Statistics)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.Statistics)
-    private static final io.vegaprotocol.vega.Vega.Statistics DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.Statistics();
-    }
-
-    public static io.vegaprotocol.vega.Vega.Statistics getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Statistics>
-        PARSER = new com.google.protobuf.AbstractParser<Statistics>() {
-      @java.lang.Override
-      public Statistics parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Statistics(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Statistics> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Statistics> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Vega.Statistics getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -52756,2584 +49117,6 @@ public final class Vega {
 
   }
 
-  public interface TransactionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.Transaction)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * One of the set of Vega commands (proto marshalled)
-     * </pre>
-     *
-     * <code>bytes input_data = 1 [json_name = "inputData"];</code>
-     * @return The inputData.
-     */
-    com.google.protobuf.ByteString getInputData();
-
-    /**
-     * <pre>
-     * A random number used to provide uniqueness and prevent against replay attack
-     * </pre>
-     *
-     * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
-     * @return The nonce.
-     */
-    long getNonce();
-
-    /**
-     * <pre>
-     * The block height associated to the transaction, this should always be current block height
-     * of the node at the time of sending the Tx and block height is used as a mechanism
-     * for replay protection
-     * </pre>
-     *
-     * <code>uint64 block_height = 3 [json_name = "blockHeight"];</code>
-     * @return The blockHeight.
-     */
-    long getBlockHeight();
-
-    /**
-     * <pre>
-     * The address of the sender
-     * </pre>
-     *
-     * <code>bytes address = 1001 [json_name = "address"];</code>
-     * @return The address.
-     */
-    com.google.protobuf.ByteString getAddress();
-
-    /**
-     * <pre>
-     * The public key of the sender
-     * </pre>
-     *
-     * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
-     * @return The pubKey.
-     */
-    com.google.protobuf.ByteString getPubKey();
-
-    public io.vegaprotocol.vega.Vega.Transaction.FromCase getFromCase();
-  }
-  /**
-   * <pre>
-   * Represents a transaction to be sent to Vega
-   * </pre>
-   *
-   * Protobuf type {@code vega.Transaction}
-   */
-  public static final class Transaction extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.Transaction)
-      TransactionOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Transaction.newBuilder() to construct.
-    private Transaction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Transaction() {
-      inputData_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Transaction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Transaction(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              inputData_ = input.readBytes();
-              break;
-            }
-            case 16: {
-
-              nonce_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              blockHeight_ = input.readUInt64();
-              break;
-            }
-            case 8010: {
-              fromCase_ = 1001;
-              from_ = input.readBytes();
-              break;
-            }
-            case 8018: {
-              fromCase_ = 1002;
-              from_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_Transaction_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_Transaction_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Vega.Transaction.class, io.vegaprotocol.vega.Vega.Transaction.Builder.class);
-    }
-
-    private int fromCase_ = 0;
-    private java.lang.Object from_;
-    public enum FromCase
-        implements com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      ADDRESS(1001),
-      PUB_KEY(1002),
-      FROM_NOT_SET(0);
-      private final int value;
-      private FromCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static FromCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static FromCase forNumber(int value) {
-        switch (value) {
-          case 1001: return ADDRESS;
-          case 1002: return PUB_KEY;
-          case 0: return FROM_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public FromCase
-    getFromCase() {
-      return FromCase.forNumber(
-          fromCase_);
-    }
-
-    public static final int INPUT_DATA_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString inputData_;
-    /**
-     * <pre>
-     * One of the set of Vega commands (proto marshalled)
-     * </pre>
-     *
-     * <code>bytes input_data = 1 [json_name = "inputData"];</code>
-     * @return The inputData.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getInputData() {
-      return inputData_;
-    }
-
-    public static final int NONCE_FIELD_NUMBER = 2;
-    private long nonce_;
-    /**
-     * <pre>
-     * A random number used to provide uniqueness and prevent against replay attack
-     * </pre>
-     *
-     * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
-     * @return The nonce.
-     */
-    @java.lang.Override
-    public long getNonce() {
-      return nonce_;
-    }
-
-    public static final int BLOCK_HEIGHT_FIELD_NUMBER = 3;
-    private long blockHeight_;
-    /**
-     * <pre>
-     * The block height associated to the transaction, this should always be current block height
-     * of the node at the time of sending the Tx and block height is used as a mechanism
-     * for replay protection
-     * </pre>
-     *
-     * <code>uint64 block_height = 3 [json_name = "blockHeight"];</code>
-     * @return The blockHeight.
-     */
-    @java.lang.Override
-    public long getBlockHeight() {
-      return blockHeight_;
-    }
-
-    public static final int ADDRESS_FIELD_NUMBER = 1001;
-    /**
-     * <pre>
-     * The address of the sender
-     * </pre>
-     *
-     * <code>bytes address = 1001 [json_name = "address"];</code>
-     * @return The address.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getAddress() {
-      if (fromCase_ == 1001) {
-        return (com.google.protobuf.ByteString) from_;
-      }
-      return com.google.protobuf.ByteString.EMPTY;
-    }
-
-    public static final int PUB_KEY_FIELD_NUMBER = 1002;
-    /**
-     * <pre>
-     * The public key of the sender
-     * </pre>
-     *
-     * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
-     * @return The pubKey.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getPubKey() {
-      if (fromCase_ == 1002) {
-        return (com.google.protobuf.ByteString) from_;
-      }
-      return com.google.protobuf.ByteString.EMPTY;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!inputData_.isEmpty()) {
-        output.writeBytes(1, inputData_);
-      }
-      if (nonce_ != 0L) {
-        output.writeUInt64(2, nonce_);
-      }
-      if (blockHeight_ != 0L) {
-        output.writeUInt64(3, blockHeight_);
-      }
-      if (fromCase_ == 1001) {
-        output.writeBytes(
-            1001, (com.google.protobuf.ByteString) from_);
-      }
-      if (fromCase_ == 1002) {
-        output.writeBytes(
-            1002, (com.google.protobuf.ByteString) from_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!inputData_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, inputData_);
-      }
-      if (nonce_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, nonce_);
-      }
-      if (blockHeight_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, blockHeight_);
-      }
-      if (fromCase_ == 1001) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(
-              1001, (com.google.protobuf.ByteString) from_);
-      }
-      if (fromCase_ == 1002) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(
-              1002, (com.google.protobuf.ByteString) from_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Vega.Transaction)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Vega.Transaction other = (io.vegaprotocol.vega.Vega.Transaction) obj;
-
-      if (!getInputData()
-          .equals(other.getInputData())) return false;
-      if (getNonce()
-          != other.getNonce()) return false;
-      if (getBlockHeight()
-          != other.getBlockHeight()) return false;
-      if (!getFromCase().equals(other.getFromCase())) return false;
-      switch (fromCase_) {
-        case 1001:
-          if (!getAddress()
-              .equals(other.getAddress())) return false;
-          break;
-        case 1002:
-          if (!getPubKey()
-              .equals(other.getPubKey())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INPUT_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + getInputData().hashCode();
-      hash = (37 * hash) + NONCE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getNonce());
-      hash = (37 * hash) + BLOCK_HEIGHT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getBlockHeight());
-      switch (fromCase_) {
-        case 1001:
-          hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-          hash = (53 * hash) + getAddress().hashCode();
-          break;
-        case 1002:
-          hash = (37 * hash) + PUB_KEY_FIELD_NUMBER;
-          hash = (53 * hash) + getPubKey().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Transaction parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Vega.Transaction prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Represents a transaction to be sent to Vega
-     * </pre>
-     *
-     * Protobuf type {@code vega.Transaction}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.Transaction)
-        io.vegaprotocol.vega.Vega.TransactionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Transaction_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Transaction_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Vega.Transaction.class, io.vegaprotocol.vega.Vega.Transaction.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Vega.Transaction.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        inputData_ = com.google.protobuf.ByteString.EMPTY;
-
-        nonce_ = 0L;
-
-        blockHeight_ = 0L;
-
-        fromCase_ = 0;
-        from_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Transaction_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Transaction getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Vega.Transaction.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Transaction build() {
-        io.vegaprotocol.vega.Vega.Transaction result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Transaction buildPartial() {
-        io.vegaprotocol.vega.Vega.Transaction result = new io.vegaprotocol.vega.Vega.Transaction(this);
-        result.inputData_ = inputData_;
-        result.nonce_ = nonce_;
-        result.blockHeight_ = blockHeight_;
-        if (fromCase_ == 1001) {
-          result.from_ = from_;
-        }
-        if (fromCase_ == 1002) {
-          result.from_ = from_;
-        }
-        result.fromCase_ = fromCase_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Vega.Transaction) {
-          return mergeFrom((io.vegaprotocol.vega.Vega.Transaction)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Vega.Transaction other) {
-        if (other == io.vegaprotocol.vega.Vega.Transaction.getDefaultInstance()) return this;
-        if (other.getInputData() != com.google.protobuf.ByteString.EMPTY) {
-          setInputData(other.getInputData());
-        }
-        if (other.getNonce() != 0L) {
-          setNonce(other.getNonce());
-        }
-        if (other.getBlockHeight() != 0L) {
-          setBlockHeight(other.getBlockHeight());
-        }
-        switch (other.getFromCase()) {
-          case ADDRESS: {
-            setAddress(other.getAddress());
-            break;
-          }
-          case PUB_KEY: {
-            setPubKey(other.getPubKey());
-            break;
-          }
-          case FROM_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Vega.Transaction parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Vega.Transaction) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int fromCase_ = 0;
-      private java.lang.Object from_;
-      public FromCase
-          getFromCase() {
-        return FromCase.forNumber(
-            fromCase_);
-      }
-
-      public Builder clearFrom() {
-        fromCase_ = 0;
-        from_ = null;
-        onChanged();
-        return this;
-      }
-
-
-      private com.google.protobuf.ByteString inputData_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * One of the set of Vega commands (proto marshalled)
-       * </pre>
-       *
-       * <code>bytes input_data = 1 [json_name = "inputData"];</code>
-       * @return The inputData.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getInputData() {
-        return inputData_;
-      }
-      /**
-       * <pre>
-       * One of the set of Vega commands (proto marshalled)
-       * </pre>
-       *
-       * <code>bytes input_data = 1 [json_name = "inputData"];</code>
-       * @param value The inputData to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInputData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        inputData_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * One of the set of Vega commands (proto marshalled)
-       * </pre>
-       *
-       * <code>bytes input_data = 1 [json_name = "inputData"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInputData() {
-
-        inputData_ = getDefaultInstance().getInputData();
-        onChanged();
-        return this;
-      }
-
-      private long nonce_ ;
-      /**
-       * <pre>
-       * A random number used to provide uniqueness and prevent against replay attack
-       * </pre>
-       *
-       * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
-       * @return The nonce.
-       */
-      @java.lang.Override
-      public long getNonce() {
-        return nonce_;
-      }
-      /**
-       * <pre>
-       * A random number used to provide uniqueness and prevent against replay attack
-       * </pre>
-       *
-       * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
-       * @param value The nonce to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNonce(long value) {
-
-        nonce_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * A random number used to provide uniqueness and prevent against replay attack
-       * </pre>
-       *
-       * <code>uint64 nonce = 2 [json_name = "nonce"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNonce() {
-
-        nonce_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long blockHeight_ ;
-      /**
-       * <pre>
-       * The block height associated to the transaction, this should always be current block height
-       * of the node at the time of sending the Tx and block height is used as a mechanism
-       * for replay protection
-       * </pre>
-       *
-       * <code>uint64 block_height = 3 [json_name = "blockHeight"];</code>
-       * @return The blockHeight.
-       */
-      @java.lang.Override
-      public long getBlockHeight() {
-        return blockHeight_;
-      }
-      /**
-       * <pre>
-       * The block height associated to the transaction, this should always be current block height
-       * of the node at the time of sending the Tx and block height is used as a mechanism
-       * for replay protection
-       * </pre>
-       *
-       * <code>uint64 block_height = 3 [json_name = "blockHeight"];</code>
-       * @param value The blockHeight to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBlockHeight(long value) {
-
-        blockHeight_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The block height associated to the transaction, this should always be current block height
-       * of the node at the time of sending the Tx and block height is used as a mechanism
-       * for replay protection
-       * </pre>
-       *
-       * <code>uint64 block_height = 3 [json_name = "blockHeight"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBlockHeight() {
-
-        blockHeight_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      /**
-       * <pre>
-       * The address of the sender
-       * </pre>
-       *
-       * <code>bytes address = 1001 [json_name = "address"];</code>
-       * @return The address.
-       */
-      public com.google.protobuf.ByteString getAddress() {
-        if (fromCase_ == 1001) {
-          return (com.google.protobuf.ByteString) from_;
-        }
-        return com.google.protobuf.ByteString.EMPTY;
-      }
-      /**
-       * <pre>
-       * The address of the sender
-       * </pre>
-       *
-       * <code>bytes address = 1001 [json_name = "address"];</code>
-       * @param value The address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddress(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  fromCase_ = 1001;
-        from_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The address of the sender
-       * </pre>
-       *
-       * <code>bytes address = 1001 [json_name = "address"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAddress() {
-        if (fromCase_ == 1001) {
-          fromCase_ = 0;
-          from_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <pre>
-       * The public key of the sender
-       * </pre>
-       *
-       * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
-       * @return The pubKey.
-       */
-      public com.google.protobuf.ByteString getPubKey() {
-        if (fromCase_ == 1002) {
-          return (com.google.protobuf.ByteString) from_;
-        }
-        return com.google.protobuf.ByteString.EMPTY;
-      }
-      /**
-       * <pre>
-       * The public key of the sender
-       * </pre>
-       *
-       * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
-       * @param value The pubKey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPubKey(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  fromCase_ = 1002;
-        from_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The public key of the sender
-       * </pre>
-       *
-       * <code>bytes pub_key = 1002 [json_name = "pubKey"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPubKey() {
-        if (fromCase_ == 1002) {
-          fromCase_ = 0;
-          from_ = null;
-          onChanged();
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.Transaction)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.Transaction)
-    private static final io.vegaprotocol.vega.Vega.Transaction DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.Transaction();
-    }
-
-    public static io.vegaprotocol.vega.Vega.Transaction getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Transaction>
-        PARSER = new com.google.protobuf.AbstractParser<Transaction>() {
-      @java.lang.Override
-      public Transaction parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Transaction(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Transaction> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Transaction> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Vega.Transaction getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SignatureOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.Signature)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The bytes of the signature
-     * </pre>
-     *
-     * <code>bytes sig = 1 [json_name = "sig"];</code>
-     * @return The sig.
-     */
-    com.google.protobuf.ByteString getSig();
-
-    /**
-     * <pre>
-     * The algorithm used to create the signature
-     * </pre>
-     *
-     * <code>string algo = 2 [json_name = "algo"];</code>
-     * @return The algo.
-     */
-    java.lang.String getAlgo();
-    /**
-     * <pre>
-     * The algorithm used to create the signature
-     * </pre>
-     *
-     * <code>string algo = 2 [json_name = "algo"];</code>
-     * @return The bytes for algo.
-     */
-    com.google.protobuf.ByteString
-        getAlgoBytes();
-
-    /**
-     * <pre>
-     * The version of the signature used to create the signature
-     * </pre>
-     *
-     * <code>uint32 version = 3 [json_name = "version"];</code>
-     * @return The version.
-     */
-    int getVersion();
-  }
-  /**
-   * <pre>
-   * A signature to be authenticate a transaction
-   * and to be verified by the vega network
-   * </pre>
-   *
-   * Protobuf type {@code vega.Signature}
-   */
-  public static final class Signature extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.Signature)
-      SignatureOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Signature.newBuilder() to construct.
-    private Signature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Signature() {
-      sig_ = com.google.protobuf.ByteString.EMPTY;
-      algo_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Signature();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Signature(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              sig_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              algo_ = s;
-              break;
-            }
-            case 24: {
-
-              version_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_Signature_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_Signature_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Vega.Signature.class, io.vegaprotocol.vega.Vega.Signature.Builder.class);
-    }
-
-    public static final int SIG_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString sig_;
-    /**
-     * <pre>
-     * The bytes of the signature
-     * </pre>
-     *
-     * <code>bytes sig = 1 [json_name = "sig"];</code>
-     * @return The sig.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getSig() {
-      return sig_;
-    }
-
-    public static final int ALGO_FIELD_NUMBER = 2;
-    private volatile java.lang.Object algo_;
-    /**
-     * <pre>
-     * The algorithm used to create the signature
-     * </pre>
-     *
-     * <code>string algo = 2 [json_name = "algo"];</code>
-     * @return The algo.
-     */
-    @java.lang.Override
-    public java.lang.String getAlgo() {
-      java.lang.Object ref = algo_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        algo_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The algorithm used to create the signature
-     * </pre>
-     *
-     * <code>string algo = 2 [json_name = "algo"];</code>
-     * @return The bytes for algo.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAlgoBytes() {
-      java.lang.Object ref = algo_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        algo_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VERSION_FIELD_NUMBER = 3;
-    private int version_;
-    /**
-     * <pre>
-     * The version of the signature used to create the signature
-     * </pre>
-     *
-     * <code>uint32 version = 3 [json_name = "version"];</code>
-     * @return The version.
-     */
-    @java.lang.Override
-    public int getVersion() {
-      return version_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!sig_.isEmpty()) {
-        output.writeBytes(1, sig_);
-      }
-      if (!getAlgoBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, algo_);
-      }
-      if (version_ != 0) {
-        output.writeUInt32(3, version_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!sig_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, sig_);
-      }
-      if (!getAlgoBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, algo_);
-      }
-      if (version_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, version_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Vega.Signature)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Vega.Signature other = (io.vegaprotocol.vega.Vega.Signature) obj;
-
-      if (!getSig()
-          .equals(other.getSig())) return false;
-      if (!getAlgo()
-          .equals(other.getAlgo())) return false;
-      if (getVersion()
-          != other.getVersion()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SIG_FIELD_NUMBER;
-      hash = (53 * hash) + getSig().hashCode();
-      hash = (37 * hash) + ALGO_FIELD_NUMBER;
-      hash = (53 * hash) + getAlgo().hashCode();
-      hash = (37 * hash) + VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getVersion();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.Signature parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Vega.Signature prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * A signature to be authenticate a transaction
-     * and to be verified by the vega network
-     * </pre>
-     *
-     * Protobuf type {@code vega.Signature}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.Signature)
-        io.vegaprotocol.vega.Vega.SignatureOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Signature_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Signature_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Vega.Signature.class, io.vegaprotocol.vega.Vega.Signature.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Vega.Signature.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        sig_ = com.google.protobuf.ByteString.EMPTY;
-
-        algo_ = "";
-
-        version_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_Signature_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Signature getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Vega.Signature.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Signature build() {
-        io.vegaprotocol.vega.Vega.Signature result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.Signature buildPartial() {
-        io.vegaprotocol.vega.Vega.Signature result = new io.vegaprotocol.vega.Vega.Signature(this);
-        result.sig_ = sig_;
-        result.algo_ = algo_;
-        result.version_ = version_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Vega.Signature) {
-          return mergeFrom((io.vegaprotocol.vega.Vega.Signature)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Vega.Signature other) {
-        if (other == io.vegaprotocol.vega.Vega.Signature.getDefaultInstance()) return this;
-        if (other.getSig() != com.google.protobuf.ByteString.EMPTY) {
-          setSig(other.getSig());
-        }
-        if (!other.getAlgo().isEmpty()) {
-          algo_ = other.algo_;
-          onChanged();
-        }
-        if (other.getVersion() != 0) {
-          setVersion(other.getVersion());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Vega.Signature parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Vega.Signature) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.ByteString sig_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * The bytes of the signature
-       * </pre>
-       *
-       * <code>bytes sig = 1 [json_name = "sig"];</code>
-       * @return The sig.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getSig() {
-        return sig_;
-      }
-      /**
-       * <pre>
-       * The bytes of the signature
-       * </pre>
-       *
-       * <code>bytes sig = 1 [json_name = "sig"];</code>
-       * @param value The sig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSig(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        sig_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The bytes of the signature
-       * </pre>
-       *
-       * <code>bytes sig = 1 [json_name = "sig"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSig() {
-
-        sig_ = getDefaultInstance().getSig();
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object algo_ = "";
-      /**
-       * <pre>
-       * The algorithm used to create the signature
-       * </pre>
-       *
-       * <code>string algo = 2 [json_name = "algo"];</code>
-       * @return The algo.
-       */
-      public java.lang.String getAlgo() {
-        java.lang.Object ref = algo_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          algo_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The algorithm used to create the signature
-       * </pre>
-       *
-       * <code>string algo = 2 [json_name = "algo"];</code>
-       * @return The bytes for algo.
-       */
-      public com.google.protobuf.ByteString
-          getAlgoBytes() {
-        java.lang.Object ref = algo_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          algo_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The algorithm used to create the signature
-       * </pre>
-       *
-       * <code>string algo = 2 [json_name = "algo"];</code>
-       * @param value The algo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAlgo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        algo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The algorithm used to create the signature
-       * </pre>
-       *
-       * <code>string algo = 2 [json_name = "algo"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAlgo() {
-
-        algo_ = getDefaultInstance().getAlgo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The algorithm used to create the signature
-       * </pre>
-       *
-       * <code>string algo = 2 [json_name = "algo"];</code>
-       * @param value The bytes for algo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAlgoBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-
-        algo_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int version_ ;
-      /**
-       * <pre>
-       * The version of the signature used to create the signature
-       * </pre>
-       *
-       * <code>uint32 version = 3 [json_name = "version"];</code>
-       * @return The version.
-       */
-      @java.lang.Override
-      public int getVersion() {
-        return version_;
-      }
-      /**
-       * <pre>
-       * The version of the signature used to create the signature
-       * </pre>
-       *
-       * <code>uint32 version = 3 [json_name = "version"];</code>
-       * @param value The version to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVersion(int value) {
-
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The version of the signature used to create the signature
-       * </pre>
-       *
-       * <code>uint32 version = 3 [json_name = "version"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVersion() {
-
-        version_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.Signature)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.Signature)
-    private static final io.vegaprotocol.vega.Vega.Signature DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.Signature();
-    }
-
-    public static io.vegaprotocol.vega.Vega.Signature getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Signature>
-        PARSER = new com.google.protobuf.AbstractParser<Signature>() {
-      @java.lang.Override
-      public Signature parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Signature(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Signature> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Signature> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Vega.Signature getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface SignedBundleOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:vega.SignedBundle)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Transaction payload (proto marshalled)
-     * </pre>
-     *
-     * <code>bytes tx = 1 [json_name = "tx"];</code>
-     * @return The tx.
-     */
-    com.google.protobuf.ByteString getTx();
-
-    /**
-     * <pre>
-     * The signature authenticating the transaction
-     * </pre>
-     *
-     * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-     * @return Whether the sig field is set.
-     */
-    boolean hasSig();
-    /**
-     * <pre>
-     * The signature authenticating the transaction
-     * </pre>
-     *
-     * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-     * @return The sig.
-     */
-    io.vegaprotocol.vega.Vega.Signature getSig();
-    /**
-     * <pre>
-     * The signature authenticating the transaction
-     * </pre>
-     *
-     * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-     */
-    io.vegaprotocol.vega.Vega.SignatureOrBuilder getSigOrBuilder();
-  }
-  /**
-   * <pre>
-   * A bundle of a transaction and it's signature
-   * </pre>
-   *
-   * Protobuf type {@code vega.SignedBundle}
-   */
-  public static final class SignedBundle extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:vega.SignedBundle)
-      SignedBundleOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SignedBundle.newBuilder() to construct.
-    private SignedBundle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SignedBundle() {
-      tx_ = com.google.protobuf.ByteString.EMPTY;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SignedBundle();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SignedBundle(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-
-              tx_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              io.vegaprotocol.vega.Vega.Signature.Builder subBuilder = null;
-              if (sig_ != null) {
-                subBuilder = sig_.toBuilder();
-              }
-              sig_ = input.readMessage(io.vegaprotocol.vega.Vega.Signature.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sig_);
-                sig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_SignedBundle_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.vegaprotocol.vega.Vega.internal_static_vega_SignedBundle_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              io.vegaprotocol.vega.Vega.SignedBundle.class, io.vegaprotocol.vega.Vega.SignedBundle.Builder.class);
-    }
-
-    public static final int TX_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString tx_;
-    /**
-     * <pre>
-     * Transaction payload (proto marshalled)
-     * </pre>
-     *
-     * <code>bytes tx = 1 [json_name = "tx"];</code>
-     * @return The tx.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getTx() {
-      return tx_;
-    }
-
-    public static final int SIG_FIELD_NUMBER = 2;
-    private io.vegaprotocol.vega.Vega.Signature sig_;
-    /**
-     * <pre>
-     * The signature authenticating the transaction
-     * </pre>
-     *
-     * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-     * @return Whether the sig field is set.
-     */
-    @java.lang.Override
-    public boolean hasSig() {
-      return sig_ != null;
-    }
-    /**
-     * <pre>
-     * The signature authenticating the transaction
-     * </pre>
-     *
-     * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-     * @return The sig.
-     */
-    @java.lang.Override
-    public io.vegaprotocol.vega.Vega.Signature getSig() {
-      return sig_ == null ? io.vegaprotocol.vega.Vega.Signature.getDefaultInstance() : sig_;
-    }
-    /**
-     * <pre>
-     * The signature authenticating the transaction
-     * </pre>
-     *
-     * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-     */
-    @java.lang.Override
-    public io.vegaprotocol.vega.Vega.SignatureOrBuilder getSigOrBuilder() {
-      return getSig();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!tx_.isEmpty()) {
-        output.writeBytes(1, tx_);
-      }
-      if (sig_ != null) {
-        output.writeMessage(2, getSig());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!tx_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, tx_);
-      }
-      if (sig_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSig());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof io.vegaprotocol.vega.Vega.SignedBundle)) {
-        return super.equals(obj);
-      }
-      io.vegaprotocol.vega.Vega.SignedBundle other = (io.vegaprotocol.vega.Vega.SignedBundle) obj;
-
-      if (!getTx()
-          .equals(other.getTx())) return false;
-      if (hasSig() != other.hasSig()) return false;
-      if (hasSig()) {
-        if (!getSig()
-            .equals(other.getSig())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TX_FIELD_NUMBER;
-      hash = (53 * hash) + getTx().hashCode();
-      if (hasSig()) {
-        hash = (37 * hash) + SIG_FIELD_NUMBER;
-        hash = (53 * hash) + getSig().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static io.vegaprotocol.vega.Vega.SignedBundle parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(io.vegaprotocol.vega.Vega.SignedBundle prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * A bundle of a transaction and it's signature
-     * </pre>
-     *
-     * Protobuf type {@code vega.SignedBundle}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:vega.SignedBundle)
-        io.vegaprotocol.vega.Vega.SignedBundleOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_SignedBundle_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_SignedBundle_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                io.vegaprotocol.vega.Vega.SignedBundle.class, io.vegaprotocol.vega.Vega.SignedBundle.Builder.class);
-      }
-
-      // Construct using io.vegaprotocol.vega.Vega.SignedBundle.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        tx_ = com.google.protobuf.ByteString.EMPTY;
-
-        if (sigBuilder_ == null) {
-          sig_ = null;
-        } else {
-          sig_ = null;
-          sigBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.vegaprotocol.vega.Vega.internal_static_vega_SignedBundle_descriptor;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.SignedBundle getDefaultInstanceForType() {
-        return io.vegaprotocol.vega.Vega.SignedBundle.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.SignedBundle build() {
-        io.vegaprotocol.vega.Vega.SignedBundle result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public io.vegaprotocol.vega.Vega.SignedBundle buildPartial() {
-        io.vegaprotocol.vega.Vega.SignedBundle result = new io.vegaprotocol.vega.Vega.SignedBundle(this);
-        result.tx_ = tx_;
-        if (sigBuilder_ == null) {
-          result.sig_ = sig_;
-        } else {
-          result.sig_ = sigBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.vegaprotocol.vega.Vega.SignedBundle) {
-          return mergeFrom((io.vegaprotocol.vega.Vega.SignedBundle)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(io.vegaprotocol.vega.Vega.SignedBundle other) {
-        if (other == io.vegaprotocol.vega.Vega.SignedBundle.getDefaultInstance()) return this;
-        if (other.getTx() != com.google.protobuf.ByteString.EMPTY) {
-          setTx(other.getTx());
-        }
-        if (other.hasSig()) {
-          mergeSig(other.getSig());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        io.vegaprotocol.vega.Vega.SignedBundle parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.vegaprotocol.vega.Vega.SignedBundle) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.ByteString tx_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * Transaction payload (proto marshalled)
-       * </pre>
-       *
-       * <code>bytes tx = 1 [json_name = "tx"];</code>
-       * @return The tx.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getTx() {
-        return tx_;
-      }
-      /**
-       * <pre>
-       * Transaction payload (proto marshalled)
-       * </pre>
-       *
-       * <code>bytes tx = 1 [json_name = "tx"];</code>
-       * @param value The tx to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTx(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-
-        tx_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Transaction payload (proto marshalled)
-       * </pre>
-       *
-       * <code>bytes tx = 1 [json_name = "tx"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTx() {
-
-        tx_ = getDefaultInstance().getTx();
-        onChanged();
-        return this;
-      }
-
-      private io.vegaprotocol.vega.Vega.Signature sig_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Signature, io.vegaprotocol.vega.Vega.Signature.Builder, io.vegaprotocol.vega.Vega.SignatureOrBuilder> sigBuilder_;
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       * @return Whether the sig field is set.
-       */
-      public boolean hasSig() {
-        return sigBuilder_ != null || sig_ != null;
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       * @return The sig.
-       */
-      public io.vegaprotocol.vega.Vega.Signature getSig() {
-        if (sigBuilder_ == null) {
-          return sig_ == null ? io.vegaprotocol.vega.Vega.Signature.getDefaultInstance() : sig_;
-        } else {
-          return sigBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      public Builder setSig(io.vegaprotocol.vega.Vega.Signature value) {
-        if (sigBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          sig_ = value;
-          onChanged();
-        } else {
-          sigBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      public Builder setSig(
-          io.vegaprotocol.vega.Vega.Signature.Builder builderForValue) {
-        if (sigBuilder_ == null) {
-          sig_ = builderForValue.build();
-          onChanged();
-        } else {
-          sigBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      public Builder mergeSig(io.vegaprotocol.vega.Vega.Signature value) {
-        if (sigBuilder_ == null) {
-          if (sig_ != null) {
-            sig_ =
-              io.vegaprotocol.vega.Vega.Signature.newBuilder(sig_).mergeFrom(value).buildPartial();
-          } else {
-            sig_ = value;
-          }
-          onChanged();
-        } else {
-          sigBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      public Builder clearSig() {
-        if (sigBuilder_ == null) {
-          sig_ = null;
-          onChanged();
-        } else {
-          sig_ = null;
-          sigBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      public io.vegaprotocol.vega.Vega.Signature.Builder getSigBuilder() {
-
-        onChanged();
-        return getSigFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      public io.vegaprotocol.vega.Vega.SignatureOrBuilder getSigOrBuilder() {
-        if (sigBuilder_ != null) {
-          return sigBuilder_.getMessageOrBuilder();
-        } else {
-          return sig_ == null ?
-              io.vegaprotocol.vega.Vega.Signature.getDefaultInstance() : sig_;
-        }
-      }
-      /**
-       * <pre>
-       * The signature authenticating the transaction
-       * </pre>
-       *
-       * <code>.vega.Signature sig = 2 [json_name = "sig"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          io.vegaprotocol.vega.Vega.Signature, io.vegaprotocol.vega.Vega.Signature.Builder, io.vegaprotocol.vega.Vega.SignatureOrBuilder>
-          getSigFieldBuilder() {
-        if (sigBuilder_ == null) {
-          sigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.vegaprotocol.vega.Vega.Signature, io.vegaprotocol.vega.Vega.Signature.Builder, io.vegaprotocol.vega.Vega.SignatureOrBuilder>(
-                  getSig(),
-                  getParentForChildren(),
-                  isClean());
-          sig_ = null;
-        }
-        return sigBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:vega.SignedBundle)
-    }
-
-    // @@protoc_insertion_point(class_scope:vega.SignedBundle)
-    private static final io.vegaprotocol.vega.Vega.SignedBundle DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.SignedBundle();
-    }
-
-    public static io.vegaprotocol.vega.Vega.SignedBundle getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SignedBundle>
-        PARSER = new com.google.protobuf.AbstractParser<SignedBundle>() {
-      @java.lang.Override
-      public SignedBundle parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignedBundle(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SignedBundle> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SignedBundle> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public io.vegaprotocol.vega.Vega.SignedBundle getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface NetworkParameterOrBuilder extends
       // @@protoc_insertion_point(interface_extends:vega.NetworkParameter)
       com.google.protobuf.MessageOrBuilder {
@@ -60986,6 +54769,47 @@ public final class Vega {
      * @return The confirmations.
      */
     int getConfirmations();
+
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @return A list containing the stakingBridgeAddresses.
+     */
+    java.util.List<java.lang.String>
+        getStakingBridgeAddressesList();
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @return The count of stakingBridgeAddresses.
+     */
+    int getStakingBridgeAddressesCount();
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @param index The index of the element to return.
+     * @return The stakingBridgeAddresses at the given index.
+     */
+    java.lang.String getStakingBridgeAddresses(int index);
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the stakingBridgeAddresses at the given index.
+     */
+    com.google.protobuf.ByteString
+        getStakingBridgeAddressesBytes(int index);
   }
   /**
    * <pre>
@@ -61007,6 +54831,7 @@ public final class Vega {
       networkId_ = "";
       chainId_ = "";
       bridgeAddress_ = "";
+      stakingBridgeAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -61029,6 +54854,7 @@ public final class Vega {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -61062,6 +54888,15 @@ public final class Vega {
               confirmations_ = input.readUInt32();
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                stakingBridgeAddresses_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              stakingBridgeAddresses_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -61077,6 +54912,9 @@ public final class Vega {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          stakingBridgeAddresses_ = stakingBridgeAddresses_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -61247,6 +55085,57 @@ public final class Vega {
       return confirmations_;
     }
 
+    public static final int STAKING_BRIDGE_ADDRESSES_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList stakingBridgeAddresses_;
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @return A list containing the stakingBridgeAddresses.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getStakingBridgeAddressesList() {
+      return stakingBridgeAddresses_;
+    }
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @return The count of stakingBridgeAddresses.
+     */
+    public int getStakingBridgeAddressesCount() {
+      return stakingBridgeAddresses_.size();
+    }
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @param index The index of the element to return.
+     * @return The stakingBridgeAddresses at the given index.
+     */
+    public java.lang.String getStakingBridgeAddresses(int index) {
+      return stakingBridgeAddresses_.get(index);
+    }
+    /**
+     * <pre>
+     * Staking Bridge addresses for the ethereum network
+     * </pre>
+     *
+     * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the stakingBridgeAddresses at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getStakingBridgeAddressesBytes(int index) {
+      return stakingBridgeAddresses_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -61273,6 +55162,9 @@ public final class Vega {
       if (confirmations_ != 0) {
         output.writeUInt32(4, confirmations_);
       }
+      for (int i = 0; i < stakingBridgeAddresses_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stakingBridgeAddresses_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -61294,6 +55186,14 @@ public final class Vega {
       if (confirmations_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, confirmations_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < stakingBridgeAddresses_.size(); i++) {
+          dataSize += computeStringSizeNoTag(stakingBridgeAddresses_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getStakingBridgeAddressesList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -61318,6 +55218,8 @@ public final class Vega {
           .equals(other.getBridgeAddress())) return false;
       if (getConfirmations()
           != other.getConfirmations()) return false;
+      if (!getStakingBridgeAddressesList()
+          .equals(other.getStakingBridgeAddressesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -61337,6 +55239,10 @@ public final class Vega {
       hash = (53 * hash) + getBridgeAddress().hashCode();
       hash = (37 * hash) + CONFIRMATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getConfirmations();
+      if (getStakingBridgeAddressesCount() > 0) {
+        hash = (37 * hash) + STAKING_BRIDGE_ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getStakingBridgeAddressesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -61482,6 +55388,8 @@ public final class Vega {
 
         confirmations_ = 0;
 
+        stakingBridgeAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -61508,10 +55416,16 @@ public final class Vega {
       @java.lang.Override
       public io.vegaprotocol.vega.Vega.EthereumConfig buildPartial() {
         io.vegaprotocol.vega.Vega.EthereumConfig result = new io.vegaprotocol.vega.Vega.EthereumConfig(this);
+        int from_bitField0_ = bitField0_;
         result.networkId_ = networkId_;
         result.chainId_ = chainId_;
         result.bridgeAddress_ = bridgeAddress_;
         result.confirmations_ = confirmations_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          stakingBridgeAddresses_ = stakingBridgeAddresses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.stakingBridgeAddresses_ = stakingBridgeAddresses_;
         onBuilt();
         return result;
       }
@@ -61575,6 +55489,16 @@ public final class Vega {
         if (other.getConfirmations() != 0) {
           setConfirmations(other.getConfirmations());
         }
+        if (!other.stakingBridgeAddresses_.isEmpty()) {
+          if (stakingBridgeAddresses_.isEmpty()) {
+            stakingBridgeAddresses_ = other.stakingBridgeAddresses_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureStakingBridgeAddressesIsMutable();
+            stakingBridgeAddresses_.addAll(other.stakingBridgeAddresses_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -61603,6 +55527,7 @@ public final class Vega {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object networkId_ = "";
       /**
@@ -61934,6 +55859,152 @@ public final class Vega {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.LazyStringList stakingBridgeAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureStakingBridgeAddressesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          stakingBridgeAddresses_ = new com.google.protobuf.LazyStringArrayList(stakingBridgeAddresses_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @return A list containing the stakingBridgeAddresses.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getStakingBridgeAddressesList() {
+        return stakingBridgeAddresses_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @return The count of stakingBridgeAddresses.
+       */
+      public int getStakingBridgeAddressesCount() {
+        return stakingBridgeAddresses_.size();
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @param index The index of the element to return.
+       * @return The stakingBridgeAddresses at the given index.
+       */
+      public java.lang.String getStakingBridgeAddresses(int index) {
+        return stakingBridgeAddresses_.get(index);
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the stakingBridgeAddresses at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getStakingBridgeAddressesBytes(int index) {
+        return stakingBridgeAddresses_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @param index The index to set the value at.
+       * @param value The stakingBridgeAddresses to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakingBridgeAddresses(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureStakingBridgeAddressesIsMutable();
+        stakingBridgeAddresses_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @param value The stakingBridgeAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addStakingBridgeAddresses(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureStakingBridgeAddressesIsMutable();
+        stakingBridgeAddresses_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @param values The stakingBridgeAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllStakingBridgeAddresses(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureStakingBridgeAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, stakingBridgeAddresses_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStakingBridgeAddresses() {
+        stakingBridgeAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Staking Bridge addresses for the ethereum network
+       * </pre>
+       *
+       * <code>repeated string staking_bridge_addresses = 5 [json_name = "stakingBridgeAddresses"];</code>
+       * @param value The bytes of the stakingBridgeAddresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addStakingBridgeAddressesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureStakingBridgeAddressesIsMutable();
+        stakingBridgeAddresses_.add(value);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -61982,6 +56053,11822 @@ public final class Vega {
 
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.EthereumConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EpochTimestampsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.EpochTimestamps)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Timestamp of epoch start in nanoseconds, empty if not started
+     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+     * </pre>
+     *
+     * <code>int64 start_time = 1 [json_name = "startTime"];</code>
+     * @return The startTime.
+     */
+    long getStartTime();
+
+    /**
+     * <pre>
+     * Timestamp of epoch end in nanoseconds, empty if not started
+     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+     * </pre>
+     *
+     * <code>int64 end_time = 2 [json_name = "endTime"];</code>
+     * @return The endTime.
+     */
+    long getEndTime();
+
+    /**
+     * <pre>
+     * Height of first block in the epoch
+     * </pre>
+     *
+     * <code>uint64 first_block = 3 [json_name = "firstBlock"];</code>
+     * @return The firstBlock.
+     */
+    long getFirstBlock();
+
+    /**
+     * <pre>
+     * Height of last block in the epoch, empty if not ended
+     * </pre>
+     *
+     * <code>uint64 last_block = 4 [json_name = "lastBlock"];</code>
+     * @return The lastBlock.
+     */
+    long getLastBlock();
+  }
+  /**
+   * <pre>
+   * Describes in both human readable and block time when an epoch spans
+   * </pre>
+   *
+   * Protobuf type {@code vega.EpochTimestamps}
+   */
+  public static final class EpochTimestamps extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.EpochTimestamps)
+      EpochTimestampsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EpochTimestamps.newBuilder() to construct.
+    private EpochTimestamps(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EpochTimestamps() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EpochTimestamps();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EpochTimestamps(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              startTime_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              endTime_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              firstBlock_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              lastBlock_ = input.readUInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_EpochTimestamps_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_EpochTimestamps_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.EpochTimestamps.class, io.vegaprotocol.vega.Vega.EpochTimestamps.Builder.class);
+    }
+
+    public static final int START_TIME_FIELD_NUMBER = 1;
+    private long startTime_;
+    /**
+     * <pre>
+     * Timestamp of epoch start in nanoseconds, empty if not started
+     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+     * </pre>
+     *
+     * <code>int64 start_time = 1 [json_name = "startTime"];</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 2;
+    private long endTime_;
+    /**
+     * <pre>
+     * Timestamp of epoch end in nanoseconds, empty if not started
+     * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+     * </pre>
+     *
+     * <code>int64 end_time = 2 [json_name = "endTime"];</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public long getEndTime() {
+      return endTime_;
+    }
+
+    public static final int FIRST_BLOCK_FIELD_NUMBER = 3;
+    private long firstBlock_;
+    /**
+     * <pre>
+     * Height of first block in the epoch
+     * </pre>
+     *
+     * <code>uint64 first_block = 3 [json_name = "firstBlock"];</code>
+     * @return The firstBlock.
+     */
+    @java.lang.Override
+    public long getFirstBlock() {
+      return firstBlock_;
+    }
+
+    public static final int LAST_BLOCK_FIELD_NUMBER = 4;
+    private long lastBlock_;
+    /**
+     * <pre>
+     * Height of last block in the epoch, empty if not ended
+     * </pre>
+     *
+     * <code>uint64 last_block = 4 [json_name = "lastBlock"];</code>
+     * @return The lastBlock.
+     */
+    @java.lang.Override
+    public long getLastBlock() {
+      return lastBlock_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (startTime_ != 0L) {
+        output.writeInt64(1, startTime_);
+      }
+      if (endTime_ != 0L) {
+        output.writeInt64(2, endTime_);
+      }
+      if (firstBlock_ != 0L) {
+        output.writeUInt64(3, firstBlock_);
+      }
+      if (lastBlock_ != 0L) {
+        output.writeUInt64(4, lastBlock_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (startTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, startTime_);
+      }
+      if (endTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, endTime_);
+      }
+      if (firstBlock_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, firstBlock_);
+      }
+      if (lastBlock_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, lastBlock_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.EpochTimestamps)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.EpochTimestamps other = (io.vegaprotocol.vega.Vega.EpochTimestamps) obj;
+
+      if (getStartTime()
+          != other.getStartTime()) return false;
+      if (getEndTime()
+          != other.getEndTime()) return false;
+      if (getFirstBlock()
+          != other.getFirstBlock()) return false;
+      if (getLastBlock()
+          != other.getLastBlock()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getStartTime());
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEndTime());
+      hash = (37 * hash) + FIRST_BLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFirstBlock());
+      hash = (37 * hash) + LAST_BLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLastBlock());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.EpochTimestamps prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Describes in both human readable and block time when an epoch spans
+     * </pre>
+     *
+     * Protobuf type {@code vega.EpochTimestamps}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.EpochTimestamps)
+        io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochTimestamps_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochTimestamps_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.EpochTimestamps.class, io.vegaprotocol.vega.Vega.EpochTimestamps.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.EpochTimestamps.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        startTime_ = 0L;
+
+        endTime_ = 0L;
+
+        firstBlock_ = 0L;
+
+        lastBlock_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochTimestamps_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochTimestamps getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.EpochTimestamps.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochTimestamps build() {
+        io.vegaprotocol.vega.Vega.EpochTimestamps result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochTimestamps buildPartial() {
+        io.vegaprotocol.vega.Vega.EpochTimestamps result = new io.vegaprotocol.vega.Vega.EpochTimestamps(this);
+        result.startTime_ = startTime_;
+        result.endTime_ = endTime_;
+        result.firstBlock_ = firstBlock_;
+        result.lastBlock_ = lastBlock_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.EpochTimestamps) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.EpochTimestamps)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.EpochTimestamps other) {
+        if (other == io.vegaprotocol.vega.Vega.EpochTimestamps.getDefaultInstance()) return this;
+        if (other.getStartTime() != 0L) {
+          setStartTime(other.getStartTime());
+        }
+        if (other.getEndTime() != 0L) {
+          setEndTime(other.getEndTime());
+        }
+        if (other.getFirstBlock() != 0L) {
+          setFirstBlock(other.getFirstBlock());
+        }
+        if (other.getLastBlock() != 0L) {
+          setLastBlock(other.getLastBlock());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.EpochTimestamps parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.EpochTimestamps) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long startTime_ ;
+      /**
+       * <pre>
+       * Timestamp of epoch start in nanoseconds, empty if not started
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+       * </pre>
+       *
+       * <code>int64 start_time = 1 [json_name = "startTime"];</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <pre>
+       * Timestamp of epoch start in nanoseconds, empty if not started
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+       * </pre>
+       *
+       * <code>int64 start_time = 1 [json_name = "startTime"];</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(long value) {
+
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp of epoch start in nanoseconds, empty if not started
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+       * </pre>
+       *
+       * <code>int64 start_time = 1 [json_name = "startTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+
+        startTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long endTime_ ;
+      /**
+       * <pre>
+       * Timestamp of epoch end in nanoseconds, empty if not started
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+       * </pre>
+       *
+       * <code>int64 end_time = 2 [json_name = "endTime"];</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public long getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <pre>
+       * Timestamp of epoch end in nanoseconds, empty if not started
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+       * </pre>
+       *
+       * <code>int64 end_time = 2 [json_name = "endTime"];</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(long value) {
+
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp of epoch end in nanoseconds, empty if not started
+       * - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+       * </pre>
+       *
+       * <code>int64 end_time = 2 [json_name = "endTime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+
+        endTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long firstBlock_ ;
+      /**
+       * <pre>
+       * Height of first block in the epoch
+       * </pre>
+       *
+       * <code>uint64 first_block = 3 [json_name = "firstBlock"];</code>
+       * @return The firstBlock.
+       */
+      @java.lang.Override
+      public long getFirstBlock() {
+        return firstBlock_;
+      }
+      /**
+       * <pre>
+       * Height of first block in the epoch
+       * </pre>
+       *
+       * <code>uint64 first_block = 3 [json_name = "firstBlock"];</code>
+       * @param value The firstBlock to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFirstBlock(long value) {
+
+        firstBlock_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Height of first block in the epoch
+       * </pre>
+       *
+       * <code>uint64 first_block = 3 [json_name = "firstBlock"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFirstBlock() {
+
+        firstBlock_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long lastBlock_ ;
+      /**
+       * <pre>
+       * Height of last block in the epoch, empty if not ended
+       * </pre>
+       *
+       * <code>uint64 last_block = 4 [json_name = "lastBlock"];</code>
+       * @return The lastBlock.
+       */
+      @java.lang.Override
+      public long getLastBlock() {
+        return lastBlock_;
+      }
+      /**
+       * <pre>
+       * Height of last block in the epoch, empty if not ended
+       * </pre>
+       *
+       * <code>uint64 last_block = 4 [json_name = "lastBlock"];</code>
+       * @param value The lastBlock to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastBlock(long value) {
+
+        lastBlock_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Height of last block in the epoch, empty if not ended
+       * </pre>
+       *
+       * <code>uint64 last_block = 4 [json_name = "lastBlock"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastBlock() {
+
+        lastBlock_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.EpochTimestamps)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.EpochTimestamps)
+    private static final io.vegaprotocol.vega.Vega.EpochTimestamps DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.EpochTimestamps();
+    }
+
+    public static io.vegaprotocol.vega.Vega.EpochTimestamps getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EpochTimestamps>
+        PARSER = new com.google.protobuf.AbstractParser<EpochTimestamps>() {
+      @java.lang.Override
+      public EpochTimestamps parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EpochTimestamps(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EpochTimestamps> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EpochTimestamps> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochTimestamps getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EpochOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.Epoch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Sequence is used as epoch indentifier
+     * </pre>
+     *
+     * <code>uint64 seq = 1 [json_name = "seq"];</code>
+     * @return The seq.
+     */
+    long getSeq();
+
+    /**
+     * <pre>
+     * Timestamps for start/end etc
+     * </pre>
+     *
+     * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+     * @return Whether the timestamps field is set.
+     */
+    boolean hasTimestamps();
+    /**
+     * <pre>
+     * Timestamps for start/end etc
+     * </pre>
+     *
+     * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+     * @return The timestamps.
+     */
+    io.vegaprotocol.vega.Vega.EpochTimestamps getTimestamps();
+    /**
+     * <pre>
+     * Timestamps for start/end etc
+     * </pre>
+     *
+     * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+     */
+    io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder getTimestampsOrBuilder();
+
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.Node>
+        getValidatorsList();
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    io.vegaprotocol.vega.Vega.Node getValidators(int index);
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    int getValidatorsCount();
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.NodeOrBuilder>
+        getValidatorsOrBuilderList();
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    io.vegaprotocol.vega.Vega.NodeOrBuilder getValidatorsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.Delegation>
+        getDelegationsList();
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    io.vegaprotocol.vega.Vega.Delegation getDelegations(int index);
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    int getDelegationsCount();
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+        getDelegationsOrBuilderList();
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelegationsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.Epoch}
+   */
+  public static final class Epoch extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.Epoch)
+      EpochOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Epoch.newBuilder() to construct.
+    private Epoch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Epoch() {
+      validators_ = java.util.Collections.emptyList();
+      delegations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Epoch();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Epoch(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              seq_ = input.readUInt64();
+              break;
+            }
+            case 18: {
+              io.vegaprotocol.vega.Vega.EpochTimestamps.Builder subBuilder = null;
+              if (timestamps_ != null) {
+                subBuilder = timestamps_.toBuilder();
+              }
+              timestamps_ = input.readMessage(io.vegaprotocol.vega.Vega.EpochTimestamps.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamps_);
+                timestamps_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                validators_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Node>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              validators_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.Node.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                delegations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              delegations_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.Delegation.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          validators_ = java.util.Collections.unmodifiableList(validators_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          delegations_ = java.util.Collections.unmodifiableList(delegations_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_Epoch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_Epoch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.Epoch.class, io.vegaprotocol.vega.Vega.Epoch.Builder.class);
+    }
+
+    public static final int SEQ_FIELD_NUMBER = 1;
+    private long seq_;
+    /**
+     * <pre>
+     * Sequence is used as epoch indentifier
+     * </pre>
+     *
+     * <code>uint64 seq = 1 [json_name = "seq"];</code>
+     * @return The seq.
+     */
+    @java.lang.Override
+    public long getSeq() {
+      return seq_;
+    }
+
+    public static final int TIMESTAMPS_FIELD_NUMBER = 2;
+    private io.vegaprotocol.vega.Vega.EpochTimestamps timestamps_;
+    /**
+     * <pre>
+     * Timestamps for start/end etc
+     * </pre>
+     *
+     * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+     * @return Whether the timestamps field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimestamps() {
+      return timestamps_ != null;
+    }
+    /**
+     * <pre>
+     * Timestamps for start/end etc
+     * </pre>
+     *
+     * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+     * @return The timestamps.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochTimestamps getTimestamps() {
+      return timestamps_ == null ? io.vegaprotocol.vega.Vega.EpochTimestamps.getDefaultInstance() : timestamps_;
+    }
+    /**
+     * <pre>
+     * Timestamps for start/end etc
+     * </pre>
+     *
+     * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder getTimestampsOrBuilder() {
+      return getTimestamps();
+    }
+
+    public static final int VALIDATORS_FIELD_NUMBER = 3;
+    private java.util.List<io.vegaprotocol.vega.Vega.Node> validators_;
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Vega.Node> getValidatorsList() {
+      return validators_;
+    }
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.NodeOrBuilder>
+        getValidatorsOrBuilderList() {
+      return validators_;
+    }
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    @java.lang.Override
+    public int getValidatorsCount() {
+      return validators_.size();
+    }
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Node getValidators(int index) {
+      return validators_.get(index);
+    }
+    /**
+     * <pre>
+     * Validators that participated in this epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.NodeOrBuilder getValidatorsOrBuilder(
+        int index) {
+      return validators_.get(index);
+    }
+
+    public static final int DELEGATIONS_FIELD_NUMBER = 4;
+    private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delegations_;
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelegationsList() {
+      return delegations_;
+    }
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+        getDelegationsOrBuilderList() {
+      return delegations_;
+    }
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public int getDelegationsCount() {
+      return delegations_.size();
+    }
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Delegation getDelegations(int index) {
+      return delegations_.get(index);
+    }
+    /**
+     * <pre>
+     * List of all delegations in epoch
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelegationsOrBuilder(
+        int index) {
+      return delegations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (seq_ != 0L) {
+        output.writeUInt64(1, seq_);
+      }
+      if (timestamps_ != null) {
+        output.writeMessage(2, getTimestamps());
+      }
+      for (int i = 0; i < validators_.size(); i++) {
+        output.writeMessage(3, validators_.get(i));
+      }
+      for (int i = 0; i < delegations_.size(); i++) {
+        output.writeMessage(4, delegations_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (seq_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, seq_);
+      }
+      if (timestamps_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getTimestamps());
+      }
+      for (int i = 0; i < validators_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, validators_.get(i));
+      }
+      for (int i = 0; i < delegations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, delegations_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.Epoch)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.Epoch other = (io.vegaprotocol.vega.Vega.Epoch) obj;
+
+      if (getSeq()
+          != other.getSeq()) return false;
+      if (hasTimestamps() != other.hasTimestamps()) return false;
+      if (hasTimestamps()) {
+        if (!getTimestamps()
+            .equals(other.getTimestamps())) return false;
+      }
+      if (!getValidatorsList()
+          .equals(other.getValidatorsList())) return false;
+      if (!getDelegationsList()
+          .equals(other.getDelegationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SEQ_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSeq());
+      if (hasTimestamps()) {
+        hash = (37 * hash) + TIMESTAMPS_FIELD_NUMBER;
+        hash = (53 * hash) + getTimestamps().hashCode();
+      }
+      if (getValidatorsCount() > 0) {
+        hash = (37 * hash) + VALIDATORS_FIELD_NUMBER;
+        hash = (53 * hash) + getValidatorsList().hashCode();
+      }
+      if (getDelegationsCount() > 0) {
+        hash = (37 * hash) + DELEGATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDelegationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Epoch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.Epoch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.Epoch}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.Epoch)
+        io.vegaprotocol.vega.Vega.EpochOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Epoch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Epoch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.Epoch.class, io.vegaprotocol.vega.Vega.Epoch.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.Epoch.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getValidatorsFieldBuilder();
+          getDelegationsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        seq_ = 0L;
+
+        if (timestampsBuilder_ == null) {
+          timestamps_ = null;
+        } else {
+          timestamps_ = null;
+          timestampsBuilder_ = null;
+        }
+        if (validatorsBuilder_ == null) {
+          validators_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          validatorsBuilder_.clear();
+        }
+        if (delegationsBuilder_ == null) {
+          delegations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          delegationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Epoch_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Epoch getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.Epoch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Epoch build() {
+        io.vegaprotocol.vega.Vega.Epoch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Epoch buildPartial() {
+        io.vegaprotocol.vega.Vega.Epoch result = new io.vegaprotocol.vega.Vega.Epoch(this);
+        int from_bitField0_ = bitField0_;
+        result.seq_ = seq_;
+        if (timestampsBuilder_ == null) {
+          result.timestamps_ = timestamps_;
+        } else {
+          result.timestamps_ = timestampsBuilder_.build();
+        }
+        if (validatorsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            validators_ = java.util.Collections.unmodifiableList(validators_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.validators_ = validators_;
+        } else {
+          result.validators_ = validatorsBuilder_.build();
+        }
+        if (delegationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            delegations_ = java.util.Collections.unmodifiableList(delegations_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.delegations_ = delegations_;
+        } else {
+          result.delegations_ = delegationsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.Epoch) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.Epoch)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.Epoch other) {
+        if (other == io.vegaprotocol.vega.Vega.Epoch.getDefaultInstance()) return this;
+        if (other.getSeq() != 0L) {
+          setSeq(other.getSeq());
+        }
+        if (other.hasTimestamps()) {
+          mergeTimestamps(other.getTimestamps());
+        }
+        if (validatorsBuilder_ == null) {
+          if (!other.validators_.isEmpty()) {
+            if (validators_.isEmpty()) {
+              validators_ = other.validators_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureValidatorsIsMutable();
+              validators_.addAll(other.validators_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.validators_.isEmpty()) {
+            if (validatorsBuilder_.isEmpty()) {
+              validatorsBuilder_.dispose();
+              validatorsBuilder_ = null;
+              validators_ = other.validators_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              validatorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getValidatorsFieldBuilder() : null;
+            } else {
+              validatorsBuilder_.addAllMessages(other.validators_);
+            }
+          }
+        }
+        if (delegationsBuilder_ == null) {
+          if (!other.delegations_.isEmpty()) {
+            if (delegations_.isEmpty()) {
+              delegations_ = other.delegations_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureDelegationsIsMutable();
+              delegations_.addAll(other.delegations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.delegations_.isEmpty()) {
+            if (delegationsBuilder_.isEmpty()) {
+              delegationsBuilder_.dispose();
+              delegationsBuilder_ = null;
+              delegations_ = other.delegations_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              delegationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDelegationsFieldBuilder() : null;
+            } else {
+              delegationsBuilder_.addAllMessages(other.delegations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.Epoch parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.Epoch) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long seq_ ;
+      /**
+       * <pre>
+       * Sequence is used as epoch indentifier
+       * </pre>
+       *
+       * <code>uint64 seq = 1 [json_name = "seq"];</code>
+       * @return The seq.
+       */
+      @java.lang.Override
+      public long getSeq() {
+        return seq_;
+      }
+      /**
+       * <pre>
+       * Sequence is used as epoch indentifier
+       * </pre>
+       *
+       * <code>uint64 seq = 1 [json_name = "seq"];</code>
+       * @param value The seq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSeq(long value) {
+
+        seq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Sequence is used as epoch indentifier
+       * </pre>
+       *
+       * <code>uint64 seq = 1 [json_name = "seq"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSeq() {
+
+        seq_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.EpochTimestamps timestamps_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.EpochTimestamps, io.vegaprotocol.vega.Vega.EpochTimestamps.Builder, io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder> timestampsBuilder_;
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       * @return Whether the timestamps field is set.
+       */
+      public boolean hasTimestamps() {
+        return timestampsBuilder_ != null || timestamps_ != null;
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       * @return The timestamps.
+       */
+      public io.vegaprotocol.vega.Vega.EpochTimestamps getTimestamps() {
+        if (timestampsBuilder_ == null) {
+          return timestamps_ == null ? io.vegaprotocol.vega.Vega.EpochTimestamps.getDefaultInstance() : timestamps_;
+        } else {
+          return timestampsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      public Builder setTimestamps(io.vegaprotocol.vega.Vega.EpochTimestamps value) {
+        if (timestampsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          timestamps_ = value;
+          onChanged();
+        } else {
+          timestampsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      public Builder setTimestamps(
+          io.vegaprotocol.vega.Vega.EpochTimestamps.Builder builderForValue) {
+        if (timestampsBuilder_ == null) {
+          timestamps_ = builderForValue.build();
+          onChanged();
+        } else {
+          timestampsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      public Builder mergeTimestamps(io.vegaprotocol.vega.Vega.EpochTimestamps value) {
+        if (timestampsBuilder_ == null) {
+          if (timestamps_ != null) {
+            timestamps_ =
+              io.vegaprotocol.vega.Vega.EpochTimestamps.newBuilder(timestamps_).mergeFrom(value).buildPartial();
+          } else {
+            timestamps_ = value;
+          }
+          onChanged();
+        } else {
+          timestampsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      public Builder clearTimestamps() {
+        if (timestampsBuilder_ == null) {
+          timestamps_ = null;
+          onChanged();
+        } else {
+          timestamps_ = null;
+          timestampsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.EpochTimestamps.Builder getTimestampsBuilder() {
+
+        onChanged();
+        return getTimestampsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder getTimestampsOrBuilder() {
+        if (timestampsBuilder_ != null) {
+          return timestampsBuilder_.getMessageOrBuilder();
+        } else {
+          return timestamps_ == null ?
+              io.vegaprotocol.vega.Vega.EpochTimestamps.getDefaultInstance() : timestamps_;
+        }
+      }
+      /**
+       * <pre>
+       * Timestamps for start/end etc
+       * </pre>
+       *
+       * <code>.vega.EpochTimestamps timestamps = 2 [json_name = "timestamps", (.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.EpochTimestamps, io.vegaprotocol.vega.Vega.EpochTimestamps.Builder, io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder>
+          getTimestampsFieldBuilder() {
+        if (timestampsBuilder_ == null) {
+          timestampsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.EpochTimestamps, io.vegaprotocol.vega.Vega.EpochTimestamps.Builder, io.vegaprotocol.vega.Vega.EpochTimestampsOrBuilder>(
+                  getTimestamps(),
+                  getParentForChildren(),
+                  isClean());
+          timestamps_ = null;
+        }
+        return timestampsBuilder_;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.Node> validators_ =
+        java.util.Collections.emptyList();
+      private void ensureValidatorsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          validators_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Node>(validators_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Node, io.vegaprotocol.vega.Vega.Node.Builder, io.vegaprotocol.vega.Vega.NodeOrBuilder> validatorsBuilder_;
+
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Node> getValidatorsList() {
+        if (validatorsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(validators_);
+        } else {
+          return validatorsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public int getValidatorsCount() {
+        if (validatorsBuilder_ == null) {
+          return validators_.size();
+        } else {
+          return validatorsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Node getValidators(int index) {
+        if (validatorsBuilder_ == null) {
+          return validators_.get(index);
+        } else {
+          return validatorsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder setValidators(
+          int index, io.vegaprotocol.vega.Vega.Node value) {
+        if (validatorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValidatorsIsMutable();
+          validators_.set(index, value);
+          onChanged();
+        } else {
+          validatorsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder setValidators(
+          int index, io.vegaprotocol.vega.Vega.Node.Builder builderForValue) {
+        if (validatorsBuilder_ == null) {
+          ensureValidatorsIsMutable();
+          validators_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          validatorsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder addValidators(io.vegaprotocol.vega.Vega.Node value) {
+        if (validatorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValidatorsIsMutable();
+          validators_.add(value);
+          onChanged();
+        } else {
+          validatorsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder addValidators(
+          int index, io.vegaprotocol.vega.Vega.Node value) {
+        if (validatorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureValidatorsIsMutable();
+          validators_.add(index, value);
+          onChanged();
+        } else {
+          validatorsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder addValidators(
+          io.vegaprotocol.vega.Vega.Node.Builder builderForValue) {
+        if (validatorsBuilder_ == null) {
+          ensureValidatorsIsMutable();
+          validators_.add(builderForValue.build());
+          onChanged();
+        } else {
+          validatorsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder addValidators(
+          int index, io.vegaprotocol.vega.Vega.Node.Builder builderForValue) {
+        if (validatorsBuilder_ == null) {
+          ensureValidatorsIsMutable();
+          validators_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          validatorsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder addAllValidators(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.Node> values) {
+        if (validatorsBuilder_ == null) {
+          ensureValidatorsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, validators_);
+          onChanged();
+        } else {
+          validatorsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder clearValidators() {
+        if (validatorsBuilder_ == null) {
+          validators_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          validatorsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public Builder removeValidators(int index) {
+        if (validatorsBuilder_ == null) {
+          ensureValidatorsIsMutable();
+          validators_.remove(index);
+          onChanged();
+        } else {
+          validatorsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Node.Builder getValidatorsBuilder(
+          int index) {
+        return getValidatorsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.NodeOrBuilder getValidatorsOrBuilder(
+          int index) {
+        if (validatorsBuilder_ == null) {
+          return validators_.get(index);  } else {
+          return validatorsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.NodeOrBuilder>
+           getValidatorsOrBuilderList() {
+        if (validatorsBuilder_ != null) {
+          return validatorsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(validators_);
+        }
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Node.Builder addValidatorsBuilder() {
+        return getValidatorsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.Node.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Node.Builder addValidatorsBuilder(
+          int index) {
+        return getValidatorsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.Node.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Validators that participated in this epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Node validators = 3 [json_name = "validators"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Node.Builder>
+           getValidatorsBuilderList() {
+        return getValidatorsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Node, io.vegaprotocol.vega.Vega.Node.Builder, io.vegaprotocol.vega.Vega.NodeOrBuilder>
+          getValidatorsFieldBuilder() {
+        if (validatorsBuilder_ == null) {
+          validatorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.Node, io.vegaprotocol.vega.Vega.Node.Builder, io.vegaprotocol.vega.Vega.NodeOrBuilder>(
+                  validators_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          validators_ = null;
+        }
+        return validatorsBuilder_;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delegations_ =
+        java.util.Collections.emptyList();
+      private void ensureDelegationsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          delegations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>(delegations_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder> delegationsBuilder_;
+
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelegationsList() {
+        if (delegationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(delegations_);
+        } else {
+          return delegationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public int getDelegationsCount() {
+        if (delegationsBuilder_ == null) {
+          return delegations_.size();
+        } else {
+          return delegationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation getDelegations(int index) {
+        if (delegationsBuilder_ == null) {
+          return delegations_.get(index);
+        } else {
+          return delegationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder setDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delegationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelegationsIsMutable();
+          delegations_.set(index, value);
+          onChanged();
+        } else {
+          delegationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder setDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          delegationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delegationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelegationsIsMutable();
+          delegations_.add(value);
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delegationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelegationsIsMutable();
+          delegations_.add(index, value);
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(
+          io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder addDelegations(
+          int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          delegationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder addAllDelegations(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.Delegation> values) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, delegations_);
+          onChanged();
+        } else {
+          delegationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder clearDelegations() {
+        if (delegationsBuilder_ == null) {
+          delegations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          delegationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public Builder removeDelegations(int index) {
+        if (delegationsBuilder_ == null) {
+          ensureDelegationsIsMutable();
+          delegations_.remove(index);
+          onChanged();
+        } else {
+          delegationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder getDelegationsBuilder(
+          int index) {
+        return getDelegationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelegationsOrBuilder(
+          int index) {
+        if (delegationsBuilder_ == null) {
+          return delegations_.get(index);  } else {
+          return delegationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+           getDelegationsOrBuilderList() {
+        if (delegationsBuilder_ != null) {
+          return delegationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(delegations_);
+        }
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder addDelegationsBuilder() {
+        return getDelegationsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder addDelegationsBuilder(
+          int index) {
+        return getDelegationsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * List of all delegations in epoch
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delegations = 4 [json_name = "delegations"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Delegation.Builder>
+           getDelegationsBuilderList() {
+        return getDelegationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+          getDelegationsFieldBuilder() {
+        if (delegationsBuilder_ == null) {
+          delegationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder>(
+                  delegations_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          delegations_ = null;
+        }
+        return delegationsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.Epoch)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.Epoch)
+    private static final io.vegaprotocol.vega.Vega.Epoch DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.Epoch();
+    }
+
+    public static io.vegaprotocol.vega.Vega.Epoch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Epoch>
+        PARSER = new com.google.protobuf.AbstractParser<Epoch>() {
+      @java.lang.Override
+      public Epoch parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Epoch(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Epoch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Epoch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Epoch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EpochParticipationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.EpochParticipation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+     * @return Whether the epoch field is set.
+     */
+    boolean hasEpoch();
+    /**
+     * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+     * @return The epoch.
+     */
+    io.vegaprotocol.vega.Vega.Epoch getEpoch();
+    /**
+     * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+     */
+    io.vegaprotocol.vega.Vega.EpochOrBuilder getEpochOrBuilder();
+
+    /**
+     * <code>uint64 offline = 2 [json_name = "offline"];</code>
+     * @return The offline.
+     */
+    long getOffline();
+
+    /**
+     * <code>uint64 online = 3 [json_name = "online"];</code>
+     * @return The online.
+     */
+    long getOnline();
+
+    /**
+     * <code>double total_rewards = 4 [json_name = "totalRewards"];</code>
+     * @return The totalRewards.
+     */
+    double getTotalRewards();
+  }
+  /**
+   * Protobuf type {@code vega.EpochParticipation}
+   */
+  public static final class EpochParticipation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.EpochParticipation)
+      EpochParticipationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EpochParticipation.newBuilder() to construct.
+    private EpochParticipation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EpochParticipation() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EpochParticipation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EpochParticipation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              io.vegaprotocol.vega.Vega.Epoch.Builder subBuilder = null;
+              if (epoch_ != null) {
+                subBuilder = epoch_.toBuilder();
+              }
+              epoch_ = input.readMessage(io.vegaprotocol.vega.Vega.Epoch.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(epoch_);
+                epoch_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+
+              offline_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              online_ = input.readUInt64();
+              break;
+            }
+            case 33: {
+
+              totalRewards_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_EpochParticipation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_EpochParticipation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.EpochParticipation.class, io.vegaprotocol.vega.Vega.EpochParticipation.Builder.class);
+    }
+
+    public static final int EPOCH_FIELD_NUMBER = 1;
+    private io.vegaprotocol.vega.Vega.Epoch epoch_;
+    /**
+     * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+     * @return Whether the epoch field is set.
+     */
+    @java.lang.Override
+    public boolean hasEpoch() {
+      return epoch_ != null;
+    }
+    /**
+     * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+     * @return The epoch.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Epoch getEpoch() {
+      return epoch_ == null ? io.vegaprotocol.vega.Vega.Epoch.getDefaultInstance() : epoch_;
+    }
+    /**
+     * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochOrBuilder getEpochOrBuilder() {
+      return getEpoch();
+    }
+
+    public static final int OFFLINE_FIELD_NUMBER = 2;
+    private long offline_;
+    /**
+     * <code>uint64 offline = 2 [json_name = "offline"];</code>
+     * @return The offline.
+     */
+    @java.lang.Override
+    public long getOffline() {
+      return offline_;
+    }
+
+    public static final int ONLINE_FIELD_NUMBER = 3;
+    private long online_;
+    /**
+     * <code>uint64 online = 3 [json_name = "online"];</code>
+     * @return The online.
+     */
+    @java.lang.Override
+    public long getOnline() {
+      return online_;
+    }
+
+    public static final int TOTAL_REWARDS_FIELD_NUMBER = 4;
+    private double totalRewards_;
+    /**
+     * <code>double total_rewards = 4 [json_name = "totalRewards"];</code>
+     * @return The totalRewards.
+     */
+    @java.lang.Override
+    public double getTotalRewards() {
+      return totalRewards_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (epoch_ != null) {
+        output.writeMessage(1, getEpoch());
+      }
+      if (offline_ != 0L) {
+        output.writeUInt64(2, offline_);
+      }
+      if (online_ != 0L) {
+        output.writeUInt64(3, online_);
+      }
+      if (totalRewards_ != 0D) {
+        output.writeDouble(4, totalRewards_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (epoch_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getEpoch());
+      }
+      if (offline_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, offline_);
+      }
+      if (online_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, online_);
+      }
+      if (totalRewards_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, totalRewards_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.EpochParticipation)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.EpochParticipation other = (io.vegaprotocol.vega.Vega.EpochParticipation) obj;
+
+      if (hasEpoch() != other.hasEpoch()) return false;
+      if (hasEpoch()) {
+        if (!getEpoch()
+            .equals(other.getEpoch())) return false;
+      }
+      if (getOffline()
+          != other.getOffline()) return false;
+      if (getOnline()
+          != other.getOnline()) return false;
+      if (java.lang.Double.doubleToLongBits(getTotalRewards())
+          != java.lang.Double.doubleToLongBits(
+              other.getTotalRewards())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEpoch()) {
+        hash = (37 * hash) + EPOCH_FIELD_NUMBER;
+        hash = (53 * hash) + getEpoch().hashCode();
+      }
+      hash = (37 * hash) + OFFLINE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffline());
+      hash = (37 * hash) + ONLINE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOnline());
+      hash = (37 * hash) + TOTAL_REWARDS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTotalRewards()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochParticipation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.EpochParticipation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.EpochParticipation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.EpochParticipation)
+        io.vegaprotocol.vega.Vega.EpochParticipationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochParticipation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochParticipation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.EpochParticipation.class, io.vegaprotocol.vega.Vega.EpochParticipation.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.EpochParticipation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (epochBuilder_ == null) {
+          epoch_ = null;
+        } else {
+          epoch_ = null;
+          epochBuilder_ = null;
+        }
+        offline_ = 0L;
+
+        online_ = 0L;
+
+        totalRewards_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochParticipation_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochParticipation getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.EpochParticipation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochParticipation build() {
+        io.vegaprotocol.vega.Vega.EpochParticipation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochParticipation buildPartial() {
+        io.vegaprotocol.vega.Vega.EpochParticipation result = new io.vegaprotocol.vega.Vega.EpochParticipation(this);
+        if (epochBuilder_ == null) {
+          result.epoch_ = epoch_;
+        } else {
+          result.epoch_ = epochBuilder_.build();
+        }
+        result.offline_ = offline_;
+        result.online_ = online_;
+        result.totalRewards_ = totalRewards_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.EpochParticipation) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.EpochParticipation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.EpochParticipation other) {
+        if (other == io.vegaprotocol.vega.Vega.EpochParticipation.getDefaultInstance()) return this;
+        if (other.hasEpoch()) {
+          mergeEpoch(other.getEpoch());
+        }
+        if (other.getOffline() != 0L) {
+          setOffline(other.getOffline());
+        }
+        if (other.getOnline() != 0L) {
+          setOnline(other.getOnline());
+        }
+        if (other.getTotalRewards() != 0D) {
+          setTotalRewards(other.getTotalRewards());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.EpochParticipation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.EpochParticipation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.Epoch epoch_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Epoch, io.vegaprotocol.vega.Vega.Epoch.Builder, io.vegaprotocol.vega.Vega.EpochOrBuilder> epochBuilder_;
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       * @return Whether the epoch field is set.
+       */
+      public boolean hasEpoch() {
+        return epochBuilder_ != null || epoch_ != null;
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       * @return The epoch.
+       */
+      public io.vegaprotocol.vega.Vega.Epoch getEpoch() {
+        if (epochBuilder_ == null) {
+          return epoch_ == null ? io.vegaprotocol.vega.Vega.Epoch.getDefaultInstance() : epoch_;
+        } else {
+          return epochBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      public Builder setEpoch(io.vegaprotocol.vega.Vega.Epoch value) {
+        if (epochBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          epoch_ = value;
+          onChanged();
+        } else {
+          epochBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      public Builder setEpoch(
+          io.vegaprotocol.vega.Vega.Epoch.Builder builderForValue) {
+        if (epochBuilder_ == null) {
+          epoch_ = builderForValue.build();
+          onChanged();
+        } else {
+          epochBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      public Builder mergeEpoch(io.vegaprotocol.vega.Vega.Epoch value) {
+        if (epochBuilder_ == null) {
+          if (epoch_ != null) {
+            epoch_ =
+              io.vegaprotocol.vega.Vega.Epoch.newBuilder(epoch_).mergeFrom(value).buildPartial();
+          } else {
+            epoch_ = value;
+          }
+          onChanged();
+        } else {
+          epochBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      public Builder clearEpoch() {
+        if (epochBuilder_ == null) {
+          epoch_ = null;
+          onChanged();
+        } else {
+          epoch_ = null;
+          epochBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.Epoch.Builder getEpochBuilder() {
+
+        onChanged();
+        return getEpochFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.EpochOrBuilder getEpochOrBuilder() {
+        if (epochBuilder_ != null) {
+          return epochBuilder_.getMessageOrBuilder();
+        } else {
+          return epoch_ == null ?
+              io.vegaprotocol.vega.Vega.Epoch.getDefaultInstance() : epoch_;
+        }
+      }
+      /**
+       * <code>.vega.Epoch epoch = 1 [json_name = "epoch", (.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Epoch, io.vegaprotocol.vega.Vega.Epoch.Builder, io.vegaprotocol.vega.Vega.EpochOrBuilder>
+          getEpochFieldBuilder() {
+        if (epochBuilder_ == null) {
+          epochBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.Epoch, io.vegaprotocol.vega.Vega.Epoch.Builder, io.vegaprotocol.vega.Vega.EpochOrBuilder>(
+                  getEpoch(),
+                  getParentForChildren(),
+                  isClean());
+          epoch_ = null;
+        }
+        return epochBuilder_;
+      }
+
+      private long offline_ ;
+      /**
+       * <code>uint64 offline = 2 [json_name = "offline"];</code>
+       * @return The offline.
+       */
+      @java.lang.Override
+      public long getOffline() {
+        return offline_;
+      }
+      /**
+       * <code>uint64 offline = 2 [json_name = "offline"];</code>
+       * @param value The offline to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffline(long value) {
+
+        offline_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 offline = 2 [json_name = "offline"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOffline() {
+
+        offline_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long online_ ;
+      /**
+       * <code>uint64 online = 3 [json_name = "online"];</code>
+       * @return The online.
+       */
+      @java.lang.Override
+      public long getOnline() {
+        return online_;
+      }
+      /**
+       * <code>uint64 online = 3 [json_name = "online"];</code>
+       * @param value The online to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnline(long value) {
+
+        online_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 online = 3 [json_name = "online"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnline() {
+
+        online_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double totalRewards_ ;
+      /**
+       * <code>double total_rewards = 4 [json_name = "totalRewards"];</code>
+       * @return The totalRewards.
+       */
+      @java.lang.Override
+      public double getTotalRewards() {
+        return totalRewards_;
+      }
+      /**
+       * <code>double total_rewards = 4 [json_name = "totalRewards"];</code>
+       * @param value The totalRewards to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalRewards(double value) {
+
+        totalRewards_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double total_rewards = 4 [json_name = "totalRewards"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalRewards() {
+
+        totalRewards_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.EpochParticipation)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.EpochParticipation)
+    private static final io.vegaprotocol.vega.Vega.EpochParticipation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.EpochParticipation();
+    }
+
+    public static io.vegaprotocol.vega.Vega.EpochParticipation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EpochParticipation>
+        PARSER = new com.google.protobuf.AbstractParser<EpochParticipation>() {
+      @java.lang.Override
+      public EpochParticipation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EpochParticipation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EpochParticipation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EpochParticipation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochParticipation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EpochDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.EpochData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Total number of epochs since node was created
+     * </pre>
+     *
+     * <code>int32 total = 1 [json_name = "total"];</code>
+     * @return The total.
+     */
+    int getTotal();
+
+    /**
+     * <pre>
+     * Total number of offline epochs since node was created
+     * </pre>
+     *
+     * <code>int32 offline = 2 [json_name = "offline"];</code>
+     * @return The offline.
+     */
+    int getOffline();
+
+    /**
+     * <pre>
+     * Total number of online epochs since node was created
+     * </pre>
+     *
+     * <code>int32 online = 3 [json_name = "online"];</code>
+     * @return The online.
+     */
+    int getOnline();
+  }
+  /**
+   * Protobuf type {@code vega.EpochData}
+   */
+  public static final class EpochData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.EpochData)
+      EpochDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EpochData.newBuilder() to construct.
+    private EpochData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EpochData() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EpochData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EpochData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              total_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              offline_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              online_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_EpochData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_EpochData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.EpochData.class, io.vegaprotocol.vega.Vega.EpochData.Builder.class);
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 1;
+    private int total_;
+    /**
+     * <pre>
+     * Total number of epochs since node was created
+     * </pre>
+     *
+     * <code>int32 total = 1 [json_name = "total"];</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public int getTotal() {
+      return total_;
+    }
+
+    public static final int OFFLINE_FIELD_NUMBER = 2;
+    private int offline_;
+    /**
+     * <pre>
+     * Total number of offline epochs since node was created
+     * </pre>
+     *
+     * <code>int32 offline = 2 [json_name = "offline"];</code>
+     * @return The offline.
+     */
+    @java.lang.Override
+    public int getOffline() {
+      return offline_;
+    }
+
+    public static final int ONLINE_FIELD_NUMBER = 3;
+    private int online_;
+    /**
+     * <pre>
+     * Total number of online epochs since node was created
+     * </pre>
+     *
+     * <code>int32 online = 3 [json_name = "online"];</code>
+     * @return The online.
+     */
+    @java.lang.Override
+    public int getOnline() {
+      return online_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (total_ != 0) {
+        output.writeInt32(1, total_);
+      }
+      if (offline_ != 0) {
+        output.writeInt32(2, offline_);
+      }
+      if (online_ != 0) {
+        output.writeInt32(3, online_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (total_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, total_);
+      }
+      if (offline_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, offline_);
+      }
+      if (online_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, online_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.EpochData)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.EpochData other = (io.vegaprotocol.vega.Vega.EpochData) obj;
+
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (getOffline()
+          != other.getOffline()) return false;
+      if (getOnline()
+          != other.getOnline()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getTotal();
+      hash = (37 * hash) + OFFLINE_FIELD_NUMBER;
+      hash = (53 * hash) + getOffline();
+      hash = (37 * hash) + ONLINE_FIELD_NUMBER;
+      hash = (53 * hash) + getOnline();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.EpochData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.EpochData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.EpochData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.EpochData)
+        io.vegaprotocol.vega.Vega.EpochDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.EpochData.class, io.vegaprotocol.vega.Vega.EpochData.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.EpochData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        total_ = 0;
+
+        offline_ = 0;
+
+        online_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_EpochData_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochData getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.EpochData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochData build() {
+        io.vegaprotocol.vega.Vega.EpochData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.EpochData buildPartial() {
+        io.vegaprotocol.vega.Vega.EpochData result = new io.vegaprotocol.vega.Vega.EpochData(this);
+        result.total_ = total_;
+        result.offline_ = offline_;
+        result.online_ = online_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.EpochData) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.EpochData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.EpochData other) {
+        if (other == io.vegaprotocol.vega.Vega.EpochData.getDefaultInstance()) return this;
+        if (other.getTotal() != 0) {
+          setTotal(other.getTotal());
+        }
+        if (other.getOffline() != 0) {
+          setOffline(other.getOffline());
+        }
+        if (other.getOnline() != 0) {
+          setOnline(other.getOnline());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.EpochData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.EpochData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int total_ ;
+      /**
+       * <pre>
+       * Total number of epochs since node was created
+       * </pre>
+       *
+       * <code>int32 total = 1 [json_name = "total"];</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public int getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * Total number of epochs since node was created
+       * </pre>
+       *
+       * <code>int32 total = 1 [json_name = "total"];</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(int value) {
+
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of epochs since node was created
+       * </pre>
+       *
+       * <code>int32 total = 1 [json_name = "total"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+
+        total_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int offline_ ;
+      /**
+       * <pre>
+       * Total number of offline epochs since node was created
+       * </pre>
+       *
+       * <code>int32 offline = 2 [json_name = "offline"];</code>
+       * @return The offline.
+       */
+      @java.lang.Override
+      public int getOffline() {
+        return offline_;
+      }
+      /**
+       * <pre>
+       * Total number of offline epochs since node was created
+       * </pre>
+       *
+       * <code>int32 offline = 2 [json_name = "offline"];</code>
+       * @param value The offline to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffline(int value) {
+
+        offline_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of offline epochs since node was created
+       * </pre>
+       *
+       * <code>int32 offline = 2 [json_name = "offline"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOffline() {
+
+        offline_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int online_ ;
+      /**
+       * <pre>
+       * Total number of online epochs since node was created
+       * </pre>
+       *
+       * <code>int32 online = 3 [json_name = "online"];</code>
+       * @return The online.
+       */
+      @java.lang.Override
+      public int getOnline() {
+        return online_;
+      }
+      /**
+       * <pre>
+       * Total number of online epochs since node was created
+       * </pre>
+       *
+       * <code>int32 online = 3 [json_name = "online"];</code>
+       * @param value The online to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnline(int value) {
+
+        online_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of online epochs since node was created
+       * </pre>
+       *
+       * <code>int32 online = 3 [json_name = "online"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnline() {
+
+        online_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.EpochData)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.EpochData)
+    private static final io.vegaprotocol.vega.Vega.EpochData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.EpochData();
+    }
+
+    public static io.vegaprotocol.vega.Vega.EpochData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EpochData>
+        PARSER = new com.google.protobuf.AbstractParser<EpochData>() {
+      @java.lang.Override
+      public EpochData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EpochData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EpochData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EpochData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface NodeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.Node)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The node url eg n01.vega.xyz
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * The node url eg n01.vega.xyz
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * Pub key of the node operator
+     * </pre>
+     *
+     * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The pubKey.
+     */
+    java.lang.String getPubKey();
+    /**
+     * <pre>
+     * Pub key of the node operator
+     * </pre>
+     *
+     * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The bytes for pubKey.
+     */
+    com.google.protobuf.ByteString
+        getPubKeyBytes();
+
+    /**
+     * <pre>
+     * URL where I can find out more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The infoUrl.
+     */
+    java.lang.String getInfoUrl();
+    /**
+     * <pre>
+     * URL where I can find out more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The bytes for infoUrl.
+     */
+    com.google.protobuf.ByteString
+        getInfoUrlBytes();
+
+    /**
+     * <pre>
+     * Country code for the location of the node
+     * </pre>
+     *
+     * <code>string location = 4 [json_name = "location"];</code>
+     * @return The location.
+     */
+    java.lang.String getLocation();
+    /**
+     * <pre>
+     * Country code for the location of the node
+     * </pre>
+     *
+     * <code>string location = 4 [json_name = "location"];</code>
+     * @return The bytes for location.
+     */
+    com.google.protobuf.ByteString
+        getLocationBytes();
+
+    /**
+     * <pre>
+     * Value between 0 and 1 for percentage
+     * </pre>
+     *
+     * <code>float fee = 5 [json_name = "fee"];</code>
+     * @return The fee.
+     */
+    float getFee();
+
+    /**
+     * <pre>
+     * The amount the node has put up themselves
+     * </pre>
+     *
+     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * @return The stakedByOperator.
+     */
+    java.lang.String getStakedByOperator();
+    /**
+     * <pre>
+     * The amount the node has put up themselves
+     * </pre>
+     *
+     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * @return The bytes for stakedByOperator.
+     */
+    com.google.protobuf.ByteString
+        getStakedByOperatorBytes();
+
+    /**
+     * <pre>
+     * The amount of stake that has been delegated by token holders
+     * </pre>
+     *
+     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * @return The stakedByDelegates.
+     */
+    java.lang.String getStakedByDelegates();
+    /**
+     * <pre>
+     * The amount of stake that has been delegated by token holders
+     * </pre>
+     *
+     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * @return The bytes for stakedByDelegates.
+     */
+    com.google.protobuf.ByteString
+        getStakedByDelegatesBytes();
+
+    /**
+     * <pre>
+     * Total amount staked on node
+     * </pre>
+     *
+     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * @return The stakedTotal.
+     */
+    java.lang.String getStakedTotal();
+    /**
+     * <pre>
+     * Total amount staked on node
+     * </pre>
+     *
+     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * @return The bytes for stakedTotal.
+     */
+    com.google.protobuf.ByteString
+        getStakedTotalBytes();
+
+    /**
+     * <pre>
+     * Max amount of (wanted) stake, is this a network param or a node param
+     * </pre>
+     *
+     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * @return The maxIntendedStake.
+     */
+    java.lang.String getMaxIntendedStake();
+    /**
+     * <pre>
+     * Max amount of (wanted) stake, is this a network param or a node param
+     * </pre>
+     *
+     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * @return The bytes for maxIntendedStake.
+     */
+    com.google.protobuf.ByteString
+        getMaxIntendedStakeBytes();
+
+    /**
+     * <pre>
+     * Amount of stake on the next epoch
+     * </pre>
+     *
+     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * @return The pendingStake.
+     */
+    java.lang.String getPendingStake();
+    /**
+     * <pre>
+     * Amount of stake on the next epoch
+     * </pre>
+     *
+     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * @return The bytes for pendingStake.
+     */
+    com.google.protobuf.ByteString
+        getPendingStakeBytes();
+
+    /**
+     * <pre>
+     * Informantion about epoch
+     * </pre>
+     *
+     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * @return Whether the epochData field is set.
+     */
+    boolean hasEpochData();
+    /**
+     * <pre>
+     * Informantion about epoch
+     * </pre>
+     *
+     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * @return The epochData.
+     */
+    io.vegaprotocol.vega.Vega.EpochData getEpochData();
+    /**
+     * <pre>
+     * Informantion about epoch
+     * </pre>
+     *
+     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     */
+    io.vegaprotocol.vega.Vega.EpochDataOrBuilder getEpochDataOrBuilder();
+
+    /**
+     * <pre>
+     * Node status
+     * </pre>
+     *
+     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <pre>
+     * Node status
+     * </pre>
+     *
+     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * @return The status.
+     */
+    io.vegaprotocol.vega.Vega.NodeStatus getStatus();
+
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.Delegation>
+        getDelagationsList();
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    io.vegaprotocol.vega.Vega.Delegation getDelagations(int index);
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    int getDelagationsCount();
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+        getDelagationsOrBuilderList();
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.Node}
+   */
+  public static final class Node extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.Node)
+      NodeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Node.newBuilder() to construct.
+    private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Node() {
+      id_ = "";
+      pubKey_ = "";
+      infoUrl_ = "";
+      location_ = "";
+      stakedByOperator_ = "";
+      stakedByDelegates_ = "";
+      stakedTotal_ = "";
+      maxIntendedStake_ = "";
+      pendingStake_ = "";
+      status_ = 0;
+      delagations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Node();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Node(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pubKey_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              infoUrl_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              location_ = s;
+              break;
+            }
+            case 45: {
+
+              fee_ = input.readFloat();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stakedByOperator_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stakedByDelegates_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stakedTotal_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              maxIntendedStake_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pendingStake_ = s;
+              break;
+            }
+            case 90: {
+              io.vegaprotocol.vega.Vega.EpochData.Builder subBuilder = null;
+              if (epochData_ != null) {
+                subBuilder = epochData_.toBuilder();
+              }
+              epochData_ = input.readMessage(io.vegaprotocol.vega.Vega.EpochData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(epochData_);
+                epochData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                delagations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              delagations_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.Delegation.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          delagations_ = java.util.Collections.unmodifiableList(delagations_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_Node_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_Node_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.Node.class, io.vegaprotocol.vega.Vega.Node.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * The node url eg n01.vega.xyz
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The node url eg n01.vega.xyz
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PUB_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object pubKey_;
+    /**
+     * <pre>
+     * Pub key of the node operator
+     * </pre>
+     *
+     * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The pubKey.
+     */
+    @java.lang.Override
+    public java.lang.String getPubKey() {
+      java.lang.Object ref = pubKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pubKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Pub key of the node operator
+     * </pre>
+     *
+     * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+     * @return The bytes for pubKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPubKeyBytes() {
+      java.lang.Object ref = pubKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pubKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INFO_URL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object infoUrl_;
+    /**
+     * <pre>
+     * URL where I can find out more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The infoUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getInfoUrl() {
+      java.lang.Object ref = infoUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        infoUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * URL where I can find out more info on the node
+     * </pre>
+     *
+     * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+     * @return The bytes for infoUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInfoUrlBytes() {
+      java.lang.Object ref = infoUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        infoUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOCATION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object location_;
+    /**
+     * <pre>
+     * Country code for the location of the node
+     * </pre>
+     *
+     * <code>string location = 4 [json_name = "location"];</code>
+     * @return The location.
+     */
+    @java.lang.Override
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Country code for the location of the node
+     * </pre>
+     *
+     * <code>string location = 4 [json_name = "location"];</code>
+     * @return The bytes for location.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FEE_FIELD_NUMBER = 5;
+    private float fee_;
+    /**
+     * <pre>
+     * Value between 0 and 1 for percentage
+     * </pre>
+     *
+     * <code>float fee = 5 [json_name = "fee"];</code>
+     * @return The fee.
+     */
+    @java.lang.Override
+    public float getFee() {
+      return fee_;
+    }
+
+    public static final int STAKED_BY_OPERATOR_FIELD_NUMBER = 6;
+    private volatile java.lang.Object stakedByOperator_;
+    /**
+     * <pre>
+     * The amount the node has put up themselves
+     * </pre>
+     *
+     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * @return The stakedByOperator.
+     */
+    @java.lang.Override
+    public java.lang.String getStakedByOperator() {
+      java.lang.Object ref = stakedByOperator_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stakedByOperator_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount the node has put up themselves
+     * </pre>
+     *
+     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * @return The bytes for stakedByOperator.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStakedByOperatorBytes() {
+      java.lang.Object ref = stakedByOperator_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stakedByOperator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STAKED_BY_DELEGATES_FIELD_NUMBER = 7;
+    private volatile java.lang.Object stakedByDelegates_;
+    /**
+     * <pre>
+     * The amount of stake that has been delegated by token holders
+     * </pre>
+     *
+     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * @return The stakedByDelegates.
+     */
+    @java.lang.Override
+    public java.lang.String getStakedByDelegates() {
+      java.lang.Object ref = stakedByDelegates_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stakedByDelegates_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The amount of stake that has been delegated by token holders
+     * </pre>
+     *
+     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * @return The bytes for stakedByDelegates.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStakedByDelegatesBytes() {
+      java.lang.Object ref = stakedByDelegates_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stakedByDelegates_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STAKED_TOTAL_FIELD_NUMBER = 8;
+    private volatile java.lang.Object stakedTotal_;
+    /**
+     * <pre>
+     * Total amount staked on node
+     * </pre>
+     *
+     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * @return The stakedTotal.
+     */
+    @java.lang.Override
+    public java.lang.String getStakedTotal() {
+      java.lang.Object ref = stakedTotal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stakedTotal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Total amount staked on node
+     * </pre>
+     *
+     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * @return The bytes for stakedTotal.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStakedTotalBytes() {
+      java.lang.Object ref = stakedTotal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stakedTotal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAX_INTENDED_STAKE_FIELD_NUMBER = 9;
+    private volatile java.lang.Object maxIntendedStake_;
+    /**
+     * <pre>
+     * Max amount of (wanted) stake, is this a network param or a node param
+     * </pre>
+     *
+     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * @return The maxIntendedStake.
+     */
+    @java.lang.Override
+    public java.lang.String getMaxIntendedStake() {
+      java.lang.Object ref = maxIntendedStake_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maxIntendedStake_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Max amount of (wanted) stake, is this a network param or a node param
+     * </pre>
+     *
+     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * @return The bytes for maxIntendedStake.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMaxIntendedStakeBytes() {
+      java.lang.Object ref = maxIntendedStake_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        maxIntendedStake_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PENDING_STAKE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object pendingStake_;
+    /**
+     * <pre>
+     * Amount of stake on the next epoch
+     * </pre>
+     *
+     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * @return The pendingStake.
+     */
+    @java.lang.Override
+    public java.lang.String getPendingStake() {
+      java.lang.Object ref = pendingStake_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pendingStake_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Amount of stake on the next epoch
+     * </pre>
+     *
+     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * @return The bytes for pendingStake.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPendingStakeBytes() {
+      java.lang.Object ref = pendingStake_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pendingStake_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EPOCH_DATA_FIELD_NUMBER = 11;
+    private io.vegaprotocol.vega.Vega.EpochData epochData_;
+    /**
+     * <pre>
+     * Informantion about epoch
+     * </pre>
+     *
+     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * @return Whether the epochData field is set.
+     */
+    @java.lang.Override
+    public boolean hasEpochData() {
+      return epochData_ != null;
+    }
+    /**
+     * <pre>
+     * Informantion about epoch
+     * </pre>
+     *
+     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * @return The epochData.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochData getEpochData() {
+      return epochData_ == null ? io.vegaprotocol.vega.Vega.EpochData.getDefaultInstance() : epochData_;
+    }
+    /**
+     * <pre>
+     * Informantion about epoch
+     * </pre>
+     *
+     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.EpochDataOrBuilder getEpochDataOrBuilder() {
+      return getEpochData();
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 12;
+    private int status_;
+    /**
+     * <pre>
+     * Node status
+     * </pre>
+     *
+     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * Node status
+     * </pre>
+     *
+     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * @return The status.
+     */
+    @java.lang.Override public io.vegaprotocol.vega.Vega.NodeStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      io.vegaprotocol.vega.Vega.NodeStatus result = io.vegaprotocol.vega.Vega.NodeStatus.valueOf(status_);
+      return result == null ? io.vegaprotocol.vega.Vega.NodeStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int DELAGATIONS_FIELD_NUMBER = 13;
+    private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delagations_;
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelagationsList() {
+      return delagations_;
+    }
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+        getDelagationsOrBuilderList() {
+      return delagations_;
+    }
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    @java.lang.Override
+    public int getDelagationsCount() {
+      return delagations_.size();
+    }
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Delegation getDelagations(int index) {
+      return delagations_.get(index);
+    }
+    /**
+     * <pre>
+     * Node's delegations
+     * </pre>
+     *
+     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
+        int index) {
+      return delagations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getPubKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pubKey_);
+      }
+      if (!getInfoUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, infoUrl_);
+      }
+      if (!getLocationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
+      }
+      if (fee_ != 0F) {
+        output.writeFloat(5, fee_);
+      }
+      if (!getStakedByOperatorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, stakedByOperator_);
+      }
+      if (!getStakedByDelegatesBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, stakedByDelegates_);
+      }
+      if (!getStakedTotalBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, stakedTotal_);
+      }
+      if (!getMaxIntendedStakeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, maxIntendedStake_);
+      }
+      if (!getPendingStakeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, pendingStake_);
+      }
+      if (epochData_ != null) {
+        output.writeMessage(11, getEpochData());
+      }
+      if (status_ != io.vegaprotocol.vega.Vega.NodeStatus.NODE_STATUS_UNSPECIFIED.getNumber()) {
+        output.writeEnum(12, status_);
+      }
+      for (int i = 0; i < delagations_.size(); i++) {
+        output.writeMessage(13, delagations_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getPubKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pubKey_);
+      }
+      if (!getInfoUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, infoUrl_);
+      }
+      if (!getLocationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
+      }
+      if (fee_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, fee_);
+      }
+      if (!getStakedByOperatorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, stakedByOperator_);
+      }
+      if (!getStakedByDelegatesBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, stakedByDelegates_);
+      }
+      if (!getStakedTotalBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, stakedTotal_);
+      }
+      if (!getMaxIntendedStakeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, maxIntendedStake_);
+      }
+      if (!getPendingStakeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, pendingStake_);
+      }
+      if (epochData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getEpochData());
+      }
+      if (status_ != io.vegaprotocol.vega.Vega.NodeStatus.NODE_STATUS_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, status_);
+      }
+      for (int i = 0; i < delagations_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, delagations_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.Node)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.Node other = (io.vegaprotocol.vega.Vega.Node) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getPubKey()
+          .equals(other.getPubKey())) return false;
+      if (!getInfoUrl()
+          .equals(other.getInfoUrl())) return false;
+      if (!getLocation()
+          .equals(other.getLocation())) return false;
+      if (java.lang.Float.floatToIntBits(getFee())
+          != java.lang.Float.floatToIntBits(
+              other.getFee())) return false;
+      if (!getStakedByOperator()
+          .equals(other.getStakedByOperator())) return false;
+      if (!getStakedByDelegates()
+          .equals(other.getStakedByDelegates())) return false;
+      if (!getStakedTotal()
+          .equals(other.getStakedTotal())) return false;
+      if (!getMaxIntendedStake()
+          .equals(other.getMaxIntendedStake())) return false;
+      if (!getPendingStake()
+          .equals(other.getPendingStake())) return false;
+      if (hasEpochData() != other.hasEpochData()) return false;
+      if (hasEpochData()) {
+        if (!getEpochData()
+            .equals(other.getEpochData())) return false;
+      }
+      if (status_ != other.status_) return false;
+      if (!getDelagationsList()
+          .equals(other.getDelagationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + PUB_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPubKey().hashCode();
+      hash = (37 * hash) + INFO_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getInfoUrl().hashCode();
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+      hash = (37 * hash) + FEE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getFee());
+      hash = (37 * hash) + STAKED_BY_OPERATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getStakedByOperator().hashCode();
+      hash = (37 * hash) + STAKED_BY_DELEGATES_FIELD_NUMBER;
+      hash = (53 * hash) + getStakedByDelegates().hashCode();
+      hash = (37 * hash) + STAKED_TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getStakedTotal().hashCode();
+      hash = (37 * hash) + MAX_INTENDED_STAKE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxIntendedStake().hashCode();
+      hash = (37 * hash) + PENDING_STAKE_FIELD_NUMBER;
+      hash = (53 * hash) + getPendingStake().hashCode();
+      if (hasEpochData()) {
+        hash = (37 * hash) + EPOCH_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getEpochData().hashCode();
+      }
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      if (getDelagationsCount() > 0) {
+        hash = (37 * hash) + DELAGATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getDelagationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Node parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.Node prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.Node}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.Node)
+        io.vegaprotocol.vega.Vega.NodeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Node_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Node_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.Node.class, io.vegaprotocol.vega.Vega.Node.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.Node.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDelagationsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        pubKey_ = "";
+
+        infoUrl_ = "";
+
+        location_ = "";
+
+        fee_ = 0F;
+
+        stakedByOperator_ = "";
+
+        stakedByDelegates_ = "";
+
+        stakedTotal_ = "";
+
+        maxIntendedStake_ = "";
+
+        pendingStake_ = "";
+
+        if (epochDataBuilder_ == null) {
+          epochData_ = null;
+        } else {
+          epochData_ = null;
+          epochDataBuilder_ = null;
+        }
+        status_ = 0;
+
+        if (delagationsBuilder_ == null) {
+          delagations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          delagationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Node_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Node getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.Node.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Node build() {
+        io.vegaprotocol.vega.Vega.Node result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Node buildPartial() {
+        io.vegaprotocol.vega.Vega.Node result = new io.vegaprotocol.vega.Vega.Node(this);
+        int from_bitField0_ = bitField0_;
+        result.id_ = id_;
+        result.pubKey_ = pubKey_;
+        result.infoUrl_ = infoUrl_;
+        result.location_ = location_;
+        result.fee_ = fee_;
+        result.stakedByOperator_ = stakedByOperator_;
+        result.stakedByDelegates_ = stakedByDelegates_;
+        result.stakedTotal_ = stakedTotal_;
+        result.maxIntendedStake_ = maxIntendedStake_;
+        result.pendingStake_ = pendingStake_;
+        if (epochDataBuilder_ == null) {
+          result.epochData_ = epochData_;
+        } else {
+          result.epochData_ = epochDataBuilder_.build();
+        }
+        result.status_ = status_;
+        if (delagationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            delagations_ = java.util.Collections.unmodifiableList(delagations_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.delagations_ = delagations_;
+        } else {
+          result.delagations_ = delagationsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.Node) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.Node)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.Node other) {
+        if (other == io.vegaprotocol.vega.Vega.Node.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getPubKey().isEmpty()) {
+          pubKey_ = other.pubKey_;
+          onChanged();
+        }
+        if (!other.getInfoUrl().isEmpty()) {
+          infoUrl_ = other.infoUrl_;
+          onChanged();
+        }
+        if (!other.getLocation().isEmpty()) {
+          location_ = other.location_;
+          onChanged();
+        }
+        if (other.getFee() != 0F) {
+          setFee(other.getFee());
+        }
+        if (!other.getStakedByOperator().isEmpty()) {
+          stakedByOperator_ = other.stakedByOperator_;
+          onChanged();
+        }
+        if (!other.getStakedByDelegates().isEmpty()) {
+          stakedByDelegates_ = other.stakedByDelegates_;
+          onChanged();
+        }
+        if (!other.getStakedTotal().isEmpty()) {
+          stakedTotal_ = other.stakedTotal_;
+          onChanged();
+        }
+        if (!other.getMaxIntendedStake().isEmpty()) {
+          maxIntendedStake_ = other.maxIntendedStake_;
+          onChanged();
+        }
+        if (!other.getPendingStake().isEmpty()) {
+          pendingStake_ = other.pendingStake_;
+          onChanged();
+        }
+        if (other.hasEpochData()) {
+          mergeEpochData(other.getEpochData());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (delagationsBuilder_ == null) {
+          if (!other.delagations_.isEmpty()) {
+            if (delagations_.isEmpty()) {
+              delagations_ = other.delagations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDelagationsIsMutable();
+              delagations_.addAll(other.delagations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.delagations_.isEmpty()) {
+            if (delagationsBuilder_.isEmpty()) {
+              delagationsBuilder_.dispose();
+              delagationsBuilder_ = null;
+              delagations_ = other.delagations_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              delagationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDelagationsFieldBuilder() : null;
+            } else {
+              delagationsBuilder_.addAllMessages(other.delagations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.Node parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.Node) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * The node url eg n01.vega.xyz
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The node url eg n01.vega.xyz
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The node url eg n01.vega.xyz
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The node url eg n01.vega.xyz
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The node url eg n01.vega.xyz
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pubKey_ = "";
+      /**
+       * <pre>
+       * Pub key of the node operator
+       * </pre>
+       *
+       * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return The pubKey.
+       */
+      public java.lang.String getPubKey() {
+        java.lang.Object ref = pubKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pubKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Pub key of the node operator
+       * </pre>
+       *
+       * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return The bytes for pubKey.
+       */
+      public com.google.protobuf.ByteString
+          getPubKeyBytes() {
+        java.lang.Object ref = pubKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pubKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Pub key of the node operator
+       * </pre>
+       *
+       * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @param value The pubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPubKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        pubKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Pub key of the node operator
+       * </pre>
+       *
+       * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPubKey() {
+
+        pubKey_ = getDefaultInstance().getPubKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Pub key of the node operator
+       * </pre>
+       *
+       * <code>string pub_key = 2 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * @param value The bytes for pubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPubKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        pubKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object infoUrl_ = "";
+      /**
+       * <pre>
+       * URL where I can find out more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @return The infoUrl.
+       */
+      public java.lang.String getInfoUrl() {
+        java.lang.Object ref = infoUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          infoUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL where I can find out more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @return The bytes for infoUrl.
+       */
+      public com.google.protobuf.ByteString
+          getInfoUrlBytes() {
+        java.lang.Object ref = infoUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          infoUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * URL where I can find out more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @param value The infoUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        infoUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL where I can find out more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfoUrl() {
+
+        infoUrl_ = getDefaultInstance().getInfoUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * URL where I can find out more info on the node
+       * </pre>
+       *
+       * <code>string info_url = 3 [json_name = "infoUrl"];</code>
+       * @param value The bytes for infoUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        infoUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object location_ = "";
+      /**
+       * <pre>
+       * Country code for the location of the node
+       * </pre>
+       *
+       * <code>string location = 4 [json_name = "location"];</code>
+       * @return The location.
+       */
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Country code for the location of the node
+       * </pre>
+       *
+       * <code>string location = 4 [json_name = "location"];</code>
+       * @return The bytes for location.
+       */
+      public com.google.protobuf.ByteString
+          getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Country code for the location of the node
+       * </pre>
+       *
+       * <code>string location = 4 [json_name = "location"];</code>
+       * @param value The location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocation(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        location_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Country code for the location of the node
+       * </pre>
+       *
+       * <code>string location = 4 [json_name = "location"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLocation() {
+
+        location_ = getDefaultInstance().getLocation();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Country code for the location of the node
+       * </pre>
+       *
+       * <code>string location = 4 [json_name = "location"];</code>
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        location_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float fee_ ;
+      /**
+       * <pre>
+       * Value between 0 and 1 for percentage
+       * </pre>
+       *
+       * <code>float fee = 5 [json_name = "fee"];</code>
+       * @return The fee.
+       */
+      @java.lang.Override
+      public float getFee() {
+        return fee_;
+      }
+      /**
+       * <pre>
+       * Value between 0 and 1 for percentage
+       * </pre>
+       *
+       * <code>float fee = 5 [json_name = "fee"];</code>
+       * @param value The fee to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFee(float value) {
+
+        fee_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Value between 0 and 1 for percentage
+       * </pre>
+       *
+       * <code>float fee = 5 [json_name = "fee"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFee() {
+
+        fee_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stakedByOperator_ = "";
+      /**
+       * <pre>
+       * The amount the node has put up themselves
+       * </pre>
+       *
+       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * @return The stakedByOperator.
+       */
+      public java.lang.String getStakedByOperator() {
+        java.lang.Object ref = stakedByOperator_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stakedByOperator_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount the node has put up themselves
+       * </pre>
+       *
+       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * @return The bytes for stakedByOperator.
+       */
+      public com.google.protobuf.ByteString
+          getStakedByOperatorBytes() {
+        java.lang.Object ref = stakedByOperator_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stakedByOperator_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount the node has put up themselves
+       * </pre>
+       *
+       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * @param value The stakedByOperator to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedByOperator(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        stakedByOperator_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount the node has put up themselves
+       * </pre>
+       *
+       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStakedByOperator() {
+
+        stakedByOperator_ = getDefaultInstance().getStakedByOperator();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount the node has put up themselves
+       * </pre>
+       *
+       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * @param value The bytes for stakedByOperator to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedByOperatorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        stakedByOperator_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stakedByDelegates_ = "";
+      /**
+       * <pre>
+       * The amount of stake that has been delegated by token holders
+       * </pre>
+       *
+       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * @return The stakedByDelegates.
+       */
+      public java.lang.String getStakedByDelegates() {
+        java.lang.Object ref = stakedByDelegates_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stakedByDelegates_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount of stake that has been delegated by token holders
+       * </pre>
+       *
+       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * @return The bytes for stakedByDelegates.
+       */
+      public com.google.protobuf.ByteString
+          getStakedByDelegatesBytes() {
+        java.lang.Object ref = stakedByDelegates_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stakedByDelegates_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The amount of stake that has been delegated by token holders
+       * </pre>
+       *
+       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * @param value The stakedByDelegates to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedByDelegates(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        stakedByDelegates_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount of stake that has been delegated by token holders
+       * </pre>
+       *
+       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStakedByDelegates() {
+
+        stakedByDelegates_ = getDefaultInstance().getStakedByDelegates();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The amount of stake that has been delegated by token holders
+       * </pre>
+       *
+       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * @param value The bytes for stakedByDelegates to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedByDelegatesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        stakedByDelegates_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stakedTotal_ = "";
+      /**
+       * <pre>
+       * Total amount staked on node
+       * </pre>
+       *
+       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * @return The stakedTotal.
+       */
+      public java.lang.String getStakedTotal() {
+        java.lang.Object ref = stakedTotal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stakedTotal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total amount staked on node
+       * </pre>
+       *
+       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * @return The bytes for stakedTotal.
+       */
+      public com.google.protobuf.ByteString
+          getStakedTotalBytes() {
+        java.lang.Object ref = stakedTotal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stakedTotal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total amount staked on node
+       * </pre>
+       *
+       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * @param value The stakedTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedTotal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        stakedTotal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total amount staked on node
+       * </pre>
+       *
+       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStakedTotal() {
+
+        stakedTotal_ = getDefaultInstance().getStakedTotal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total amount staked on node
+       * </pre>
+       *
+       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * @param value The bytes for stakedTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedTotalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        stakedTotal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object maxIntendedStake_ = "";
+      /**
+       * <pre>
+       * Max amount of (wanted) stake, is this a network param or a node param
+       * </pre>
+       *
+       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * @return The maxIntendedStake.
+       */
+      public java.lang.String getMaxIntendedStake() {
+        java.lang.Object ref = maxIntendedStake_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          maxIntendedStake_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Max amount of (wanted) stake, is this a network param or a node param
+       * </pre>
+       *
+       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * @return The bytes for maxIntendedStake.
+       */
+      public com.google.protobuf.ByteString
+          getMaxIntendedStakeBytes() {
+        java.lang.Object ref = maxIntendedStake_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          maxIntendedStake_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Max amount of (wanted) stake, is this a network param or a node param
+       * </pre>
+       *
+       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * @param value The maxIntendedStake to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxIntendedStake(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        maxIntendedStake_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Max amount of (wanted) stake, is this a network param or a node param
+       * </pre>
+       *
+       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxIntendedStake() {
+
+        maxIntendedStake_ = getDefaultInstance().getMaxIntendedStake();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Max amount of (wanted) stake, is this a network param or a node param
+       * </pre>
+       *
+       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * @param value The bytes for maxIntendedStake to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxIntendedStakeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        maxIntendedStake_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pendingStake_ = "";
+      /**
+       * <pre>
+       * Amount of stake on the next epoch
+       * </pre>
+       *
+       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * @return The pendingStake.
+       */
+      public java.lang.String getPendingStake() {
+        java.lang.Object ref = pendingStake_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pendingStake_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Amount of stake on the next epoch
+       * </pre>
+       *
+       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * @return The bytes for pendingStake.
+       */
+      public com.google.protobuf.ByteString
+          getPendingStakeBytes() {
+        java.lang.Object ref = pendingStake_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pendingStake_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Amount of stake on the next epoch
+       * </pre>
+       *
+       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * @param value The pendingStake to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingStake(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        pendingStake_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Amount of stake on the next epoch
+       * </pre>
+       *
+       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPendingStake() {
+
+        pendingStake_ = getDefaultInstance().getPendingStake();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Amount of stake on the next epoch
+       * </pre>
+       *
+       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * @param value The bytes for pendingStake to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingStakeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        pendingStake_ = value;
+        onChanged();
+        return this;
+      }
+
+      private io.vegaprotocol.vega.Vega.EpochData epochData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.EpochData, io.vegaprotocol.vega.Vega.EpochData.Builder, io.vegaprotocol.vega.Vega.EpochDataOrBuilder> epochDataBuilder_;
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * @return Whether the epochData field is set.
+       */
+      public boolean hasEpochData() {
+        return epochDataBuilder_ != null || epochData_ != null;
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * @return The epochData.
+       */
+      public io.vegaprotocol.vega.Vega.EpochData getEpochData() {
+        if (epochDataBuilder_ == null) {
+          return epochData_ == null ? io.vegaprotocol.vega.Vega.EpochData.getDefaultInstance() : epochData_;
+        } else {
+          return epochDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      public Builder setEpochData(io.vegaprotocol.vega.Vega.EpochData value) {
+        if (epochDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          epochData_ = value;
+          onChanged();
+        } else {
+          epochDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      public Builder setEpochData(
+          io.vegaprotocol.vega.Vega.EpochData.Builder builderForValue) {
+        if (epochDataBuilder_ == null) {
+          epochData_ = builderForValue.build();
+          onChanged();
+        } else {
+          epochDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      public Builder mergeEpochData(io.vegaprotocol.vega.Vega.EpochData value) {
+        if (epochDataBuilder_ == null) {
+          if (epochData_ != null) {
+            epochData_ =
+              io.vegaprotocol.vega.Vega.EpochData.newBuilder(epochData_).mergeFrom(value).buildPartial();
+          } else {
+            epochData_ = value;
+          }
+          onChanged();
+        } else {
+          epochDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      public Builder clearEpochData() {
+        if (epochDataBuilder_ == null) {
+          epochData_ = null;
+          onChanged();
+        } else {
+          epochData_ = null;
+          epochDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.EpochData.Builder getEpochDataBuilder() {
+
+        onChanged();
+        return getEpochDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      public io.vegaprotocol.vega.Vega.EpochDataOrBuilder getEpochDataOrBuilder() {
+        if (epochDataBuilder_ != null) {
+          return epochDataBuilder_.getMessageOrBuilder();
+        } else {
+          return epochData_ == null ?
+              io.vegaprotocol.vega.Vega.EpochData.getDefaultInstance() : epochData_;
+        }
+      }
+      /**
+       * <pre>
+       * Informantion about epoch
+       * </pre>
+       *
+       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.EpochData, io.vegaprotocol.vega.Vega.EpochData.Builder, io.vegaprotocol.vega.Vega.EpochDataOrBuilder>
+          getEpochDataFieldBuilder() {
+        if (epochDataBuilder_ == null) {
+          epochDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.EpochData, io.vegaprotocol.vega.Vega.EpochData.Builder, io.vegaprotocol.vega.Vega.EpochDataOrBuilder>(
+                  getEpochData(),
+                  getParentForChildren(),
+                  isClean());
+          epochData_ = null;
+        }
+        return epochDataBuilder_;
+      }
+
+      private int status_ = 0;
+      /**
+       * <pre>
+       * Node status
+       * </pre>
+       *
+       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <pre>
+       * Node status
+       * </pre>
+       *
+       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node status
+       * </pre>
+       *
+       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NodeStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        io.vegaprotocol.vega.Vega.NodeStatus result = io.vegaprotocol.vega.Vega.NodeStatus.valueOf(status_);
+        return result == null ? io.vegaprotocol.vega.Vega.NodeStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Node status
+       * </pre>
+       *
+       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(io.vegaprotocol.vega.Vega.NodeStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node status
+       * </pre>
+       *
+       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delagations_ =
+        java.util.Collections.emptyList();
+      private void ensureDelagationsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          delagations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>(delagations_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder> delagationsBuilder_;
+
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelagationsList() {
+        if (delagationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(delagations_);
+        } else {
+          return delagationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public int getDelagationsCount() {
+        if (delagationsBuilder_ == null) {
+          return delagations_.size();
+        } else {
+          return delagationsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation getDelagations(int index) {
+        if (delagationsBuilder_ == null) {
+          return delagations_.get(index);
+        } else {
+          return delagationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder setDelagations(
+          int index, io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delagationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelagationsIsMutable();
+          delagations_.set(index, value);
+          onChanged();
+        } else {
+          delagationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder setDelagations(
+          int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delagationsBuilder_ == null) {
+          ensureDelagationsIsMutable();
+          delagations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          delagationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder addDelagations(io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delagationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelagationsIsMutable();
+          delagations_.add(value);
+          onChanged();
+        } else {
+          delagationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder addDelagations(
+          int index, io.vegaprotocol.vega.Vega.Delegation value) {
+        if (delagationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDelagationsIsMutable();
+          delagations_.add(index, value);
+          onChanged();
+        } else {
+          delagationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder addDelagations(
+          io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delagationsBuilder_ == null) {
+          ensureDelagationsIsMutable();
+          delagations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          delagationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder addDelagations(
+          int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
+        if (delagationsBuilder_ == null) {
+          ensureDelagationsIsMutable();
+          delagations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          delagationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder addAllDelagations(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.Delegation> values) {
+        if (delagationsBuilder_ == null) {
+          ensureDelagationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, delagations_);
+          onChanged();
+        } else {
+          delagationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder clearDelagations() {
+        if (delagationsBuilder_ == null) {
+          delagations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          delagationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public Builder removeDelagations(int index) {
+        if (delagationsBuilder_ == null) {
+          ensureDelagationsIsMutable();
+          delagations_.remove(index);
+          onChanged();
+        } else {
+          delagationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder getDelagationsBuilder(
+          int index) {
+        return getDelagationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
+          int index) {
+        if (delagationsBuilder_ == null) {
+          return delagations_.get(index);  } else {
+          return delagationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+           getDelagationsOrBuilderList() {
+        if (delagationsBuilder_ != null) {
+          return delagationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(delagations_);
+        }
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder addDelagationsBuilder() {
+        return getDelagationsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.Delegation.Builder addDelagationsBuilder(
+          int index) {
+        return getDelagationsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Node's delegations
+       * </pre>
+       *
+       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.Delegation.Builder>
+           getDelagationsBuilderList() {
+        return getDelagationsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder>
+          getDelagationsFieldBuilder() {
+        if (delagationsBuilder_ == null) {
+          delagationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.Delegation, io.vegaprotocol.vega.Vega.Delegation.Builder, io.vegaprotocol.vega.Vega.DelegationOrBuilder>(
+                  delagations_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          delagations_ = null;
+        }
+        return delagationsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.Node)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.Node)
+    private static final io.vegaprotocol.vega.Vega.Node DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.Node();
+    }
+
+    public static io.vegaprotocol.vega.Vega.Node getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Node>
+        PARSER = new com.google.protobuf.AbstractParser<Node>() {
+      @java.lang.Override
+      public Node parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Node(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Node> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Node> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Node getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface NodeDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.NodeData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Total staked amount across all nodes
+     * </pre>
+     *
+     * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+     * @return The stakedTotal.
+     */
+    java.lang.String getStakedTotal();
+    /**
+     * <pre>
+     * Total staked amount across all nodes
+     * </pre>
+     *
+     * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+     * @return The bytes for stakedTotal.
+     */
+    com.google.protobuf.ByteString
+        getStakedTotalBytes();
+
+    /**
+     * <pre>
+     * Total number of nodes
+     * </pre>
+     *
+     * <code>uint32 total_nodes = 2 [json_name = "totalNodes"];</code>
+     * @return The totalNodes.
+     */
+    int getTotalNodes();
+
+    /**
+     * <pre>
+     * Number of inactive nodes
+     * </pre>
+     *
+     * <code>uint32 inactive_nodes = 3 [json_name = "inactiveNodes"];</code>
+     * @return The inactiveNodes.
+     */
+    int getInactiveNodes();
+
+    /**
+     * <pre>
+     * Number of nodes validating
+     * </pre>
+     *
+     * <code>uint32 validating_nodes = 4 [json_name = "validatingNodes"];</code>
+     * @return The validatingNodes.
+     */
+    int getValidatingNodes();
+
+    /**
+     * <pre>
+     * Average percentage fee across all nodes
+     * </pre>
+     *
+     * <code>float average_fee = 5 [json_name = "averageFee"];</code>
+     * @return The averageFee.
+     */
+    float getAverageFee();
+
+    /**
+     * <pre>
+     * Total uptime for all epochs across all nodes
+     * </pre>
+     *
+     * <code>float uptime = 6 [json_name = "uptime"];</code>
+     * @return The uptime.
+     */
+    float getUptime();
+  }
+  /**
+   * Protobuf type {@code vega.NodeData}
+   */
+  public static final class NodeData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.NodeData)
+      NodeDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use NodeData.newBuilder() to construct.
+    private NodeData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private NodeData() {
+      stakedTotal_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NodeData();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NodeData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stakedTotal_ = s;
+              break;
+            }
+            case 16: {
+
+              totalNodes_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              inactiveNodes_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              validatingNodes_ = input.readUInt32();
+              break;
+            }
+            case 45: {
+
+              averageFee_ = input.readFloat();
+              break;
+            }
+            case 53: {
+
+              uptime_ = input.readFloat();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_NodeData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_NodeData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.NodeData.class, io.vegaprotocol.vega.Vega.NodeData.Builder.class);
+    }
+
+    public static final int STAKED_TOTAL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object stakedTotal_;
+    /**
+     * <pre>
+     * Total staked amount across all nodes
+     * </pre>
+     *
+     * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+     * @return The stakedTotal.
+     */
+    @java.lang.Override
+    public java.lang.String getStakedTotal() {
+      java.lang.Object ref = stakedTotal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stakedTotal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Total staked amount across all nodes
+     * </pre>
+     *
+     * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+     * @return The bytes for stakedTotal.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStakedTotalBytes() {
+      java.lang.Object ref = stakedTotal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stakedTotal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOTAL_NODES_FIELD_NUMBER = 2;
+    private int totalNodes_;
+    /**
+     * <pre>
+     * Total number of nodes
+     * </pre>
+     *
+     * <code>uint32 total_nodes = 2 [json_name = "totalNodes"];</code>
+     * @return The totalNodes.
+     */
+    @java.lang.Override
+    public int getTotalNodes() {
+      return totalNodes_;
+    }
+
+    public static final int INACTIVE_NODES_FIELD_NUMBER = 3;
+    private int inactiveNodes_;
+    /**
+     * <pre>
+     * Number of inactive nodes
+     * </pre>
+     *
+     * <code>uint32 inactive_nodes = 3 [json_name = "inactiveNodes"];</code>
+     * @return The inactiveNodes.
+     */
+    @java.lang.Override
+    public int getInactiveNodes() {
+      return inactiveNodes_;
+    }
+
+    public static final int VALIDATING_NODES_FIELD_NUMBER = 4;
+    private int validatingNodes_;
+    /**
+     * <pre>
+     * Number of nodes validating
+     * </pre>
+     *
+     * <code>uint32 validating_nodes = 4 [json_name = "validatingNodes"];</code>
+     * @return The validatingNodes.
+     */
+    @java.lang.Override
+    public int getValidatingNodes() {
+      return validatingNodes_;
+    }
+
+    public static final int AVERAGE_FEE_FIELD_NUMBER = 5;
+    private float averageFee_;
+    /**
+     * <pre>
+     * Average percentage fee across all nodes
+     * </pre>
+     *
+     * <code>float average_fee = 5 [json_name = "averageFee"];</code>
+     * @return The averageFee.
+     */
+    @java.lang.Override
+    public float getAverageFee() {
+      return averageFee_;
+    }
+
+    public static final int UPTIME_FIELD_NUMBER = 6;
+    private float uptime_;
+    /**
+     * <pre>
+     * Total uptime for all epochs across all nodes
+     * </pre>
+     *
+     * <code>float uptime = 6 [json_name = "uptime"];</code>
+     * @return The uptime.
+     */
+    @java.lang.Override
+    public float getUptime() {
+      return uptime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getStakedTotalBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stakedTotal_);
+      }
+      if (totalNodes_ != 0) {
+        output.writeUInt32(2, totalNodes_);
+      }
+      if (inactiveNodes_ != 0) {
+        output.writeUInt32(3, inactiveNodes_);
+      }
+      if (validatingNodes_ != 0) {
+        output.writeUInt32(4, validatingNodes_);
+      }
+      if (averageFee_ != 0F) {
+        output.writeFloat(5, averageFee_);
+      }
+      if (uptime_ != 0F) {
+        output.writeFloat(6, uptime_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getStakedTotalBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stakedTotal_);
+      }
+      if (totalNodes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, totalNodes_);
+      }
+      if (inactiveNodes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, inactiveNodes_);
+      }
+      if (validatingNodes_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, validatingNodes_);
+      }
+      if (averageFee_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, averageFee_);
+      }
+      if (uptime_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(6, uptime_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.NodeData)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.NodeData other = (io.vegaprotocol.vega.Vega.NodeData) obj;
+
+      if (!getStakedTotal()
+          .equals(other.getStakedTotal())) return false;
+      if (getTotalNodes()
+          != other.getTotalNodes()) return false;
+      if (getInactiveNodes()
+          != other.getInactiveNodes()) return false;
+      if (getValidatingNodes()
+          != other.getValidatingNodes()) return false;
+      if (java.lang.Float.floatToIntBits(getAverageFee())
+          != java.lang.Float.floatToIntBits(
+              other.getAverageFee())) return false;
+      if (java.lang.Float.floatToIntBits(getUptime())
+          != java.lang.Float.floatToIntBits(
+              other.getUptime())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STAKED_TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getStakedTotal().hashCode();
+      hash = (37 * hash) + TOTAL_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalNodes();
+      hash = (37 * hash) + INACTIVE_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getInactiveNodes();
+      hash = (37 * hash) + VALIDATING_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getValidatingNodes();
+      hash = (37 * hash) + AVERAGE_FEE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getAverageFee());
+      hash = (37 * hash) + UPTIME_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getUptime());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.NodeData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.NodeData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.NodeData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.NodeData)
+        io.vegaprotocol.vega.Vega.NodeDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_NodeData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_NodeData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.NodeData.class, io.vegaprotocol.vega.Vega.NodeData.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.NodeData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        stakedTotal_ = "";
+
+        totalNodes_ = 0;
+
+        inactiveNodes_ = 0;
+
+        validatingNodes_ = 0;
+
+        averageFee_ = 0F;
+
+        uptime_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_NodeData_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NodeData getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.NodeData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NodeData build() {
+        io.vegaprotocol.vega.Vega.NodeData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.NodeData buildPartial() {
+        io.vegaprotocol.vega.Vega.NodeData result = new io.vegaprotocol.vega.Vega.NodeData(this);
+        result.stakedTotal_ = stakedTotal_;
+        result.totalNodes_ = totalNodes_;
+        result.inactiveNodes_ = inactiveNodes_;
+        result.validatingNodes_ = validatingNodes_;
+        result.averageFee_ = averageFee_;
+        result.uptime_ = uptime_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.NodeData) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.NodeData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.NodeData other) {
+        if (other == io.vegaprotocol.vega.Vega.NodeData.getDefaultInstance()) return this;
+        if (!other.getStakedTotal().isEmpty()) {
+          stakedTotal_ = other.stakedTotal_;
+          onChanged();
+        }
+        if (other.getTotalNodes() != 0) {
+          setTotalNodes(other.getTotalNodes());
+        }
+        if (other.getInactiveNodes() != 0) {
+          setInactiveNodes(other.getInactiveNodes());
+        }
+        if (other.getValidatingNodes() != 0) {
+          setValidatingNodes(other.getValidatingNodes());
+        }
+        if (other.getAverageFee() != 0F) {
+          setAverageFee(other.getAverageFee());
+        }
+        if (other.getUptime() != 0F) {
+          setUptime(other.getUptime());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.NodeData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.NodeData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object stakedTotal_ = "";
+      /**
+       * <pre>
+       * Total staked amount across all nodes
+       * </pre>
+       *
+       * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+       * @return The stakedTotal.
+       */
+      public java.lang.String getStakedTotal() {
+        java.lang.Object ref = stakedTotal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stakedTotal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total staked amount across all nodes
+       * </pre>
+       *
+       * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+       * @return The bytes for stakedTotal.
+       */
+      public com.google.protobuf.ByteString
+          getStakedTotalBytes() {
+        java.lang.Object ref = stakedTotal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stakedTotal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total staked amount across all nodes
+       * </pre>
+       *
+       * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+       * @param value The stakedTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedTotal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        stakedTotal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total staked amount across all nodes
+       * </pre>
+       *
+       * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStakedTotal() {
+
+        stakedTotal_ = getDefaultInstance().getStakedTotal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total staked amount across all nodes
+       * </pre>
+       *
+       * <code>string staked_total = 1 [json_name = "stakedTotal"];</code>
+       * @param value The bytes for stakedTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStakedTotalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        stakedTotal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int totalNodes_ ;
+      /**
+       * <pre>
+       * Total number of nodes
+       * </pre>
+       *
+       * <code>uint32 total_nodes = 2 [json_name = "totalNodes"];</code>
+       * @return The totalNodes.
+       */
+      @java.lang.Override
+      public int getTotalNodes() {
+        return totalNodes_;
+      }
+      /**
+       * <pre>
+       * Total number of nodes
+       * </pre>
+       *
+       * <code>uint32 total_nodes = 2 [json_name = "totalNodes"];</code>
+       * @param value The totalNodes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalNodes(int value) {
+
+        totalNodes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total number of nodes
+       * </pre>
+       *
+       * <code>uint32 total_nodes = 2 [json_name = "totalNodes"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalNodes() {
+
+        totalNodes_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int inactiveNodes_ ;
+      /**
+       * <pre>
+       * Number of inactive nodes
+       * </pre>
+       *
+       * <code>uint32 inactive_nodes = 3 [json_name = "inactiveNodes"];</code>
+       * @return The inactiveNodes.
+       */
+      @java.lang.Override
+      public int getInactiveNodes() {
+        return inactiveNodes_;
+      }
+      /**
+       * <pre>
+       * Number of inactive nodes
+       * </pre>
+       *
+       * <code>uint32 inactive_nodes = 3 [json_name = "inactiveNodes"];</code>
+       * @param value The inactiveNodes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInactiveNodes(int value) {
+
+        inactiveNodes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Number of inactive nodes
+       * </pre>
+       *
+       * <code>uint32 inactive_nodes = 3 [json_name = "inactiveNodes"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInactiveNodes() {
+
+        inactiveNodes_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int validatingNodes_ ;
+      /**
+       * <pre>
+       * Number of nodes validating
+       * </pre>
+       *
+       * <code>uint32 validating_nodes = 4 [json_name = "validatingNodes"];</code>
+       * @return The validatingNodes.
+       */
+      @java.lang.Override
+      public int getValidatingNodes() {
+        return validatingNodes_;
+      }
+      /**
+       * <pre>
+       * Number of nodes validating
+       * </pre>
+       *
+       * <code>uint32 validating_nodes = 4 [json_name = "validatingNodes"];</code>
+       * @param value The validatingNodes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValidatingNodes(int value) {
+
+        validatingNodes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Number of nodes validating
+       * </pre>
+       *
+       * <code>uint32 validating_nodes = 4 [json_name = "validatingNodes"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValidatingNodes() {
+
+        validatingNodes_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float averageFee_ ;
+      /**
+       * <pre>
+       * Average percentage fee across all nodes
+       * </pre>
+       *
+       * <code>float average_fee = 5 [json_name = "averageFee"];</code>
+       * @return The averageFee.
+       */
+      @java.lang.Override
+      public float getAverageFee() {
+        return averageFee_;
+      }
+      /**
+       * <pre>
+       * Average percentage fee across all nodes
+       * </pre>
+       *
+       * <code>float average_fee = 5 [json_name = "averageFee"];</code>
+       * @param value The averageFee to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAverageFee(float value) {
+
+        averageFee_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Average percentage fee across all nodes
+       * </pre>
+       *
+       * <code>float average_fee = 5 [json_name = "averageFee"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAverageFee() {
+
+        averageFee_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float uptime_ ;
+      /**
+       * <pre>
+       * Total uptime for all epochs across all nodes
+       * </pre>
+       *
+       * <code>float uptime = 6 [json_name = "uptime"];</code>
+       * @return The uptime.
+       */
+      @java.lang.Override
+      public float getUptime() {
+        return uptime_;
+      }
+      /**
+       * <pre>
+       * Total uptime for all epochs across all nodes
+       * </pre>
+       *
+       * <code>float uptime = 6 [json_name = "uptime"];</code>
+       * @param value The uptime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUptime(float value) {
+
+        uptime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total uptime for all epochs across all nodes
+       * </pre>
+       *
+       * <code>float uptime = 6 [json_name = "uptime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUptime() {
+
+        uptime_ = 0F;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.NodeData)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.NodeData)
+    private static final io.vegaprotocol.vega.Vega.NodeData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.NodeData();
+    }
+
+    public static io.vegaprotocol.vega.Vega.NodeData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NodeData>
+        PARSER = new com.google.protobuf.AbstractParser<NodeData>() {
+      @java.lang.Override
+      public NodeData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NodeData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<NodeData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NodeData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.NodeData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DelegationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.Delegation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Party which is delegating
+     * </pre>
+     *
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    java.lang.String getParty();
+    /**
+     * <pre>
+     * Party which is delegating
+     * </pre>
+     *
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    com.google.protobuf.ByteString
+        getPartyBytes();
+
+    /**
+     * <pre>
+     * Node ID
+     * </pre>
+     *
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The nodeId.
+     */
+    java.lang.String getNodeId();
+    /**
+     * <pre>
+     * Node ID
+     * </pre>
+     *
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The bytes for nodeId.
+     */
+    com.google.protobuf.ByteString
+        getNodeIdBytes();
+
+    /**
+     * <pre>
+     * Amount delegated
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <pre>
+     * Amount delegated
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+
+    /**
+     * <pre>
+     * Epoch of delegation
+     * </pre>
+     *
+     * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+     * @return The epochSeq.
+     */
+    java.lang.String getEpochSeq();
+    /**
+     * <pre>
+     * Epoch of delegation
+     * </pre>
+     *
+     * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+     * @return The bytes for epochSeq.
+     */
+    com.google.protobuf.ByteString
+        getEpochSeqBytes();
+  }
+  /**
+   * Protobuf type {@code vega.Delegation}
+   */
+  public static final class Delegation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.Delegation)
+      DelegationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Delegation.newBuilder() to construct.
+    private Delegation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Delegation() {
+      party_ = "";
+      nodeId_ = "";
+      amount_ = "";
+      epochSeq_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Delegation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Delegation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              party_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              epochSeq_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_Delegation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_Delegation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.Delegation.class, io.vegaprotocol.vega.Vega.Delegation.Builder.class);
+    }
+
+    public static final int PARTY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object party_;
+    /**
+     * <pre>
+     * Party which is delegating
+     * </pre>
+     *
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The party.
+     */
+    @java.lang.Override
+    public java.lang.String getParty() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        party_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Party which is delegating
+     * </pre>
+     *
+     * <code>string party = 1 [json_name = "party"];</code>
+     * @return The bytes for party.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyBytes() {
+      java.lang.Object ref = party_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        party_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NODE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nodeId_;
+    /**
+     * <pre>
+     * Node ID
+     * </pre>
+     *
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The nodeId.
+     */
+    @java.lang.Override
+    public java.lang.String getNodeId() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Node ID
+     * </pre>
+     *
+     * <code>string node_id = 2 [json_name = "nodeId"];</code>
+     * @return The bytes for nodeId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNodeIdBytes() {
+      java.lang.Object ref = nodeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nodeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object amount_;
+    /**
+     * <pre>
+     * Amount delegated
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Amount delegated
+     * </pre>
+     *
+     * <code>string amount = 3 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EPOCH_SEQ_FIELD_NUMBER = 4;
+    private volatile java.lang.Object epochSeq_;
+    /**
+     * <pre>
+     * Epoch of delegation
+     * </pre>
+     *
+     * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+     * @return The epochSeq.
+     */
+    @java.lang.Override
+    public java.lang.String getEpochSeq() {
+      java.lang.Object ref = epochSeq_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        epochSeq_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Epoch of delegation
+     * </pre>
+     *
+     * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+     * @return The bytes for epochSeq.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEpochSeqBytes() {
+      java.lang.Object ref = epochSeq_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        epochSeq_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPartyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, party_);
+      }
+      if (!getNodeIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeId_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, amount_);
+      }
+      if (!getEpochSeqBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, epochSeq_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPartyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, party_);
+      }
+      if (!getNodeIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeId_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, amount_);
+      }
+      if (!getEpochSeqBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, epochSeq_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.Delegation)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.Delegation other = (io.vegaprotocol.vega.Vega.Delegation) obj;
+
+      if (!getParty()
+          .equals(other.getParty())) return false;
+      if (!getNodeId()
+          .equals(other.getNodeId())) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!getEpochSeq()
+          .equals(other.getEpochSeq())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTY_FIELD_NUMBER;
+      hash = (53 * hash) + getParty().hashCode();
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeId().hashCode();
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (37 * hash) + EPOCH_SEQ_FIELD_NUMBER;
+      hash = (53 * hash) + getEpochSeq().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.Delegation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.Delegation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.Delegation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.Delegation)
+        io.vegaprotocol.vega.Vega.DelegationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Delegation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Delegation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.Delegation.class, io.vegaprotocol.vega.Vega.Delegation.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.Delegation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        party_ = "";
+
+        nodeId_ = "";
+
+        amount_ = "";
+
+        epochSeq_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_Delegation_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Delegation getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Delegation build() {
+        io.vegaprotocol.vega.Vega.Delegation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.Delegation buildPartial() {
+        io.vegaprotocol.vega.Vega.Delegation result = new io.vegaprotocol.vega.Vega.Delegation(this);
+        result.party_ = party_;
+        result.nodeId_ = nodeId_;
+        result.amount_ = amount_;
+        result.epochSeq_ = epochSeq_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.Delegation) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.Delegation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.Delegation other) {
+        if (other == io.vegaprotocol.vega.Vega.Delegation.getDefaultInstance()) return this;
+        if (!other.getParty().isEmpty()) {
+          party_ = other.party_;
+          onChanged();
+        }
+        if (!other.getNodeId().isEmpty()) {
+          nodeId_ = other.nodeId_;
+          onChanged();
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
+        }
+        if (!other.getEpochSeq().isEmpty()) {
+          epochSeq_ = other.epochSeq_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.Delegation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.Delegation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object party_ = "";
+      /**
+       * <pre>
+       * Party which is delegating
+       * </pre>
+       *
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The party.
+       */
+      public java.lang.String getParty() {
+        java.lang.Object ref = party_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          party_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Party which is delegating
+       * </pre>
+       *
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return The bytes for party.
+       */
+      public com.google.protobuf.ByteString
+          getPartyBytes() {
+        java.lang.Object ref = party_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          party_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Party which is delegating
+       * </pre>
+       *
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParty(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Party which is delegating
+       * </pre>
+       *
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParty() {
+
+        party_ = getDefaultInstance().getParty();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Party which is delegating
+       * </pre>
+       *
+       * <code>string party = 1 [json_name = "party"];</code>
+       * @param value The bytes for party to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        party_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nodeId_ = "";
+      /**
+       * <pre>
+       * Node ID
+       * </pre>
+       *
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return The nodeId.
+       */
+      public java.lang.String getNodeId() {
+        java.lang.Object ref = nodeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nodeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node ID
+       * </pre>
+       *
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return The bytes for nodeId.
+       */
+      public com.google.protobuf.ByteString
+          getNodeIdBytes() {
+        java.lang.Object ref = nodeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nodeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Node ID
+       * </pre>
+       *
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @param value The nodeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node ID
+       * </pre>
+       *
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNodeId() {
+
+        nodeId_ = getDefaultInstance().getNodeId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Node ID
+       * </pre>
+       *
+       * <code>string node_id = 2 [json_name = "nodeId"];</code>
+       * @param value The bytes for nodeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <pre>
+       * Amount delegated
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Amount delegated
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Amount delegated
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Amount delegated
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Amount delegated
+       * </pre>
+       *
+       * <code>string amount = 3 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object epochSeq_ = "";
+      /**
+       * <pre>
+       * Epoch of delegation
+       * </pre>
+       *
+       * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+       * @return The epochSeq.
+       */
+      public java.lang.String getEpochSeq() {
+        java.lang.Object ref = epochSeq_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          epochSeq_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Epoch of delegation
+       * </pre>
+       *
+       * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+       * @return The bytes for epochSeq.
+       */
+      public com.google.protobuf.ByteString
+          getEpochSeqBytes() {
+        java.lang.Object ref = epochSeq_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          epochSeq_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Epoch of delegation
+       * </pre>
+       *
+       * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+       * @param value The epochSeq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEpochSeq(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        epochSeq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Epoch of delegation
+       * </pre>
+       *
+       * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEpochSeq() {
+
+        epochSeq_ = getDefaultInstance().getEpochSeq();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Epoch of delegation
+       * </pre>
+       *
+       * <code>string epoch_seq = 4 [json_name = "epochSeq"];</code>
+       * @param value The bytes for epochSeq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEpochSeqBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        epochSeq_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.Delegation)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.Delegation)
+    private static final io.vegaprotocol.vega.Vega.Delegation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.Delegation();
+    }
+
+    public static io.vegaprotocol.vega.Vega.Delegation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Delegation>
+        PARSER = new com.google.protobuf.AbstractParser<Delegation>() {
+      @java.lang.Override
+      public Delegation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Delegation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Delegation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Delegation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.Delegation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RewardDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.RewardDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string asset_id = 1 [json_name = "assetId"];</code>
+     * @return The assetId.
+     */
+    java.lang.String getAssetId();
+    /**
+     * <code>string asset_id = 1 [json_name = "assetId"];</code>
+     * @return The bytes for assetId.
+     */
+    com.google.protobuf.ByteString
+        getAssetIdBytes();
+
+    /**
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
+     */
+    java.lang.String getPartyId();
+    /**
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
+     */
+    com.google.protobuf.ByteString
+        getPartyIdBytes();
+
+    /**
+     * <code>uint64 epoch = 3 [json_name = "epoch"];</code>
+     * @return The epoch.
+     */
+    long getEpoch();
+
+    /**
+     * <code>string amount = 4 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    java.lang.String getAmount();
+    /**
+     * <code>string amount = 4 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    com.google.protobuf.ByteString
+        getAmountBytes();
+
+    /**
+     * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+     * @return The percentageOfTotal.
+     */
+    java.lang.String getPercentageOfTotal();
+    /**
+     * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+     * @return The bytes for percentageOfTotal.
+     */
+    com.google.protobuf.ByteString
+        getPercentageOfTotalBytes();
+
+    /**
+     * <code>int64 received_at = 6 [json_name = "receivedAt"];</code>
+     * @return The receivedAt.
+     */
+    long getReceivedAt();
+  }
+  /**
+   * <pre>
+   * Details for a single reward payment
+   * </pre>
+   *
+   * Protobuf type {@code vega.RewardDetails}
+   */
+  public static final class RewardDetails extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.RewardDetails)
+      RewardDetailsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RewardDetails.newBuilder() to construct.
+    private RewardDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RewardDetails() {
+      assetId_ = "";
+      partyId_ = "";
+      amount_ = "";
+      percentageOfTotal_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RewardDetails();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RewardDetails(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              assetId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              partyId_ = s;
+              break;
+            }
+            case 24: {
+
+              epoch_ = input.readUInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              amount_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              percentageOfTotal_ = s;
+              break;
+            }
+            case 48: {
+
+              receivedAt_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_RewardDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_RewardDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.RewardDetails.class, io.vegaprotocol.vega.Vega.RewardDetails.Builder.class);
+    }
+
+    public static final int ASSET_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object assetId_;
+    /**
+     * <code>string asset_id = 1 [json_name = "assetId"];</code>
+     * @return The assetId.
+     */
+    @java.lang.Override
+    public java.lang.String getAssetId() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string asset_id = 1 [json_name = "assetId"];</code>
+     * @return The bytes for assetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAssetIdBytes() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        assetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTY_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object partyId_;
+    /**
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The partyId.
+     */
+    @java.lang.Override
+    public java.lang.String getPartyId() {
+      java.lang.Object ref = partyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string party_id = 2 [json_name = "partyId"];</code>
+     * @return The bytes for partyId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPartyIdBytes() {
+      java.lang.Object ref = partyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EPOCH_FIELD_NUMBER = 3;
+    private long epoch_;
+    /**
+     * <code>uint64 epoch = 3 [json_name = "epoch"];</code>
+     * @return The epoch.
+     */
+    @java.lang.Override
+    public long getEpoch() {
+      return epoch_;
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object amount_;
+    /**
+     * <code>string amount = 4 [json_name = "amount"];</code>
+     * @return The amount.
+     */
+    @java.lang.Override
+    public java.lang.String getAmount() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        amount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string amount = 4 [json_name = "amount"];</code>
+     * @return The bytes for amount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAmountBytes() {
+      java.lang.Object ref = amount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        amount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PERCENTAGE_OF_TOTAL_FIELD_NUMBER = 5;
+    private volatile java.lang.Object percentageOfTotal_;
+    /**
+     * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+     * @return The percentageOfTotal.
+     */
+    @java.lang.Override
+    public java.lang.String getPercentageOfTotal() {
+      java.lang.Object ref = percentageOfTotal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        percentageOfTotal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+     * @return The bytes for percentageOfTotal.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPercentageOfTotalBytes() {
+      java.lang.Object ref = percentageOfTotal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        percentageOfTotal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RECEIVED_AT_FIELD_NUMBER = 6;
+    private long receivedAt_;
+    /**
+     * <code>int64 received_at = 6 [json_name = "receivedAt"];</code>
+     * @return The receivedAt.
+     */
+    @java.lang.Override
+    public long getReceivedAt() {
+      return receivedAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAssetIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, assetId_);
+      }
+      if (!getPartyIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partyId_);
+      }
+      if (epoch_ != 0L) {
+        output.writeUInt64(3, epoch_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, amount_);
+      }
+      if (!getPercentageOfTotalBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, percentageOfTotal_);
+      }
+      if (receivedAt_ != 0L) {
+        output.writeInt64(6, receivedAt_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAssetIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, assetId_);
+      }
+      if (!getPartyIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partyId_);
+      }
+      if (epoch_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, epoch_);
+      }
+      if (!getAmountBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, amount_);
+      }
+      if (!getPercentageOfTotalBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, percentageOfTotal_);
+      }
+      if (receivedAt_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, receivedAt_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.RewardDetails)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.RewardDetails other = (io.vegaprotocol.vega.Vega.RewardDetails) obj;
+
+      if (!getAssetId()
+          .equals(other.getAssetId())) return false;
+      if (!getPartyId()
+          .equals(other.getPartyId())) return false;
+      if (getEpoch()
+          != other.getEpoch()) return false;
+      if (!getAmount()
+          .equals(other.getAmount())) return false;
+      if (!getPercentageOfTotal()
+          .equals(other.getPercentageOfTotal())) return false;
+      if (getReceivedAt()
+          != other.getReceivedAt()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetId().hashCode();
+      hash = (37 * hash) + PARTY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartyId().hashCode();
+      hash = (37 * hash) + EPOCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEpoch());
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAmount().hashCode();
+      hash = (37 * hash) + PERCENTAGE_OF_TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + getPercentageOfTotal().hashCode();
+      hash = (37 * hash) + RECEIVED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getReceivedAt());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.RewardDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Details for a single reward payment
+     * </pre>
+     *
+     * Protobuf type {@code vega.RewardDetails}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.RewardDetails)
+        io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_RewardDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_RewardDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.RewardDetails.class, io.vegaprotocol.vega.Vega.RewardDetails.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.RewardDetails.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        assetId_ = "";
+
+        partyId_ = "";
+
+        epoch_ = 0L;
+
+        amount_ = "";
+
+        percentageOfTotal_ = "";
+
+        receivedAt_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_RewardDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.RewardDetails getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.RewardDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.RewardDetails build() {
+        io.vegaprotocol.vega.Vega.RewardDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.RewardDetails buildPartial() {
+        io.vegaprotocol.vega.Vega.RewardDetails result = new io.vegaprotocol.vega.Vega.RewardDetails(this);
+        result.assetId_ = assetId_;
+        result.partyId_ = partyId_;
+        result.epoch_ = epoch_;
+        result.amount_ = amount_;
+        result.percentageOfTotal_ = percentageOfTotal_;
+        result.receivedAt_ = receivedAt_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.RewardDetails) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.RewardDetails)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.RewardDetails other) {
+        if (other == io.vegaprotocol.vega.Vega.RewardDetails.getDefaultInstance()) return this;
+        if (!other.getAssetId().isEmpty()) {
+          assetId_ = other.assetId_;
+          onChanged();
+        }
+        if (!other.getPartyId().isEmpty()) {
+          partyId_ = other.partyId_;
+          onChanged();
+        }
+        if (other.getEpoch() != 0L) {
+          setEpoch(other.getEpoch());
+        }
+        if (!other.getAmount().isEmpty()) {
+          amount_ = other.amount_;
+          onChanged();
+        }
+        if (!other.getPercentageOfTotal().isEmpty()) {
+          percentageOfTotal_ = other.percentageOfTotal_;
+          onChanged();
+        }
+        if (other.getReceivedAt() != 0L) {
+          setReceivedAt(other.getReceivedAt());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.RewardDetails parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.RewardDetails) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object assetId_ = "";
+      /**
+       * <code>string asset_id = 1 [json_name = "assetId"];</code>
+       * @return The assetId.
+       */
+      public java.lang.String getAssetId() {
+        java.lang.Object ref = assetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          assetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string asset_id = 1 [json_name = "assetId"];</code>
+       * @return The bytes for assetId.
+       */
+      public com.google.protobuf.ByteString
+          getAssetIdBytes() {
+        java.lang.Object ref = assetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          assetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string asset_id = 1 [json_name = "assetId"];</code>
+       * @param value The assetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        assetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string asset_id = 1 [json_name = "assetId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAssetId() {
+
+        assetId_ = getDefaultInstance().getAssetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string asset_id = 1 [json_name = "assetId"];</code>
+       * @param value The bytes for assetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        assetId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object partyId_ = "";
+      /**
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The partyId.
+       */
+      public java.lang.String getPartyId() {
+        java.lang.Object ref = partyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return The bytes for partyId.
+       */
+      public com.google.protobuf.ByteString
+          getPartyIdBytes() {
+        java.lang.Object ref = partyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          partyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The partyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        partyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPartyId() {
+
+        partyId_ = getDefaultInstance().getPartyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string party_id = 2 [json_name = "partyId"];</code>
+       * @param value The bytes for partyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        partyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long epoch_ ;
+      /**
+       * <code>uint64 epoch = 3 [json_name = "epoch"];</code>
+       * @return The epoch.
+       */
+      @java.lang.Override
+      public long getEpoch() {
+        return epoch_;
+      }
+      /**
+       * <code>uint64 epoch = 3 [json_name = "epoch"];</code>
+       * @param value The epoch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEpoch(long value) {
+
+        epoch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 epoch = 3 [json_name = "epoch"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEpoch() {
+
+        epoch_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object amount_ = "";
+      /**
+       * <code>string amount = 4 [json_name = "amount"];</code>
+       * @return The amount.
+       */
+      public java.lang.String getAmount() {
+        java.lang.Object ref = amount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          amount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string amount = 4 [json_name = "amount"];</code>
+       * @return The bytes for amount.
+       */
+      public com.google.protobuf.ByteString
+          getAmountBytes() {
+        java.lang.Object ref = amount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          amount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string amount = 4 [json_name = "amount"];</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amount = 4 [json_name = "amount"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+
+        amount_ = getDefaultInstance().getAmount();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string amount = 4 [json_name = "amount"];</code>
+       * @param value The bytes for amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object percentageOfTotal_ = "";
+      /**
+       * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+       * @return The percentageOfTotal.
+       */
+      public java.lang.String getPercentageOfTotal() {
+        java.lang.Object ref = percentageOfTotal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          percentageOfTotal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+       * @return The bytes for percentageOfTotal.
+       */
+      public com.google.protobuf.ByteString
+          getPercentageOfTotalBytes() {
+        java.lang.Object ref = percentageOfTotal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          percentageOfTotal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+       * @param value The percentageOfTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPercentageOfTotal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        percentageOfTotal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPercentageOfTotal() {
+
+        percentageOfTotal_ = getDefaultInstance().getPercentageOfTotal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string percentage_of_total = 5 [json_name = "percentageOfTotal"];</code>
+       * @param value The bytes for percentageOfTotal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPercentageOfTotalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        percentageOfTotal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long receivedAt_ ;
+      /**
+       * <code>int64 received_at = 6 [json_name = "receivedAt"];</code>
+       * @return The receivedAt.
+       */
+      @java.lang.Override
+      public long getReceivedAt() {
+        return receivedAt_;
+      }
+      /**
+       * <code>int64 received_at = 6 [json_name = "receivedAt"];</code>
+       * @param value The receivedAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceivedAt(long value) {
+
+        receivedAt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 received_at = 6 [json_name = "receivedAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceivedAt() {
+
+        receivedAt_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.RewardDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.RewardDetails)
+    private static final io.vegaprotocol.vega.Vega.RewardDetails DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.RewardDetails();
+    }
+
+    public static io.vegaprotocol.vega.Vega.RewardDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RewardDetails>
+        PARSER = new com.google.protobuf.AbstractParser<RewardDetails>() {
+      @java.lang.Override
+      public RewardDetails parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RewardDetails(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RewardDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RewardDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.RewardDetails getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RewardPerAssetDetailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.RewardPerAssetDetail)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * asset details
+     * </pre>
+     *
+     * <code>string asset = 1 [json_name = "asset"];</code>
+     * @return The asset.
+     */
+    java.lang.String getAsset();
+    /**
+     * <pre>
+     * asset details
+     * </pre>
+     *
+     * <code>string asset = 1 [json_name = "asset"];</code>
+     * @return The bytes for asset.
+     */
+    com.google.protobuf.ByteString
+        getAssetBytes();
+
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Vega.RewardDetails>
+        getDetailsList();
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    io.vegaprotocol.vega.Vega.RewardDetails getDetails(int index);
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    int getDetailsCount();
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder>
+        getDetailsOrBuilderList();
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder getDetailsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * Total amount of rewards for the asset
+     * </pre>
+     *
+     * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+     * @return The totalForAsset.
+     */
+    java.lang.String getTotalForAsset();
+    /**
+     * <pre>
+     * Total amount of rewards for the asset
+     * </pre>
+     *
+     * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+     * @return The bytes for totalForAsset.
+     */
+    com.google.protobuf.ByteString
+        getTotalForAssetBytes();
+  }
+  /**
+   * <pre>
+   * Details for rewards for a single asset
+   * </pre>
+   *
+   * Protobuf type {@code vega.RewardPerAssetDetail}
+   */
+  public static final class RewardPerAssetDetail extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.RewardPerAssetDetail)
+      RewardPerAssetDetailOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RewardPerAssetDetail.newBuilder() to construct.
+    private RewardPerAssetDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RewardPerAssetDetail() {
+      asset_ = "";
+      details_ = java.util.Collections.emptyList();
+      totalForAsset_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RewardPerAssetDetail();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RewardPerAssetDetail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              asset_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                details_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.RewardDetails>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              details_.add(
+                  input.readMessage(io.vegaprotocol.vega.Vega.RewardDetails.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              totalForAsset_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          details_ = java.util.Collections.unmodifiableList(details_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_RewardPerAssetDetail_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.Vega.internal_static_vega_RewardPerAssetDetail_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.Vega.RewardPerAssetDetail.class, io.vegaprotocol.vega.Vega.RewardPerAssetDetail.Builder.class);
+    }
+
+    public static final int ASSET_FIELD_NUMBER = 1;
+    private volatile java.lang.Object asset_;
+    /**
+     * <pre>
+     * asset details
+     * </pre>
+     *
+     * <code>string asset = 1 [json_name = "asset"];</code>
+     * @return The asset.
+     */
+    @java.lang.Override
+    public java.lang.String getAsset() {
+      java.lang.Object ref = asset_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        asset_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * asset details
+     * </pre>
+     *
+     * <code>string asset = 1 [json_name = "asset"];</code>
+     * @return The bytes for asset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAssetBytes() {
+      java.lang.Object ref = asset_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        asset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 2;
+    private java.util.List<io.vegaprotocol.vega.Vega.RewardDetails> details_;
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Vega.RewardDetails> getDetailsList() {
+      return details_;
+    }
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder>
+        getDetailsOrBuilderList() {
+      return details_;
+    }
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public int getDetailsCount() {
+      return details_.size();
+    }
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.RewardDetails getDetails(int index) {
+      return details_.get(index);
+    }
+    /**
+     * <pre>
+     * rewards ordered by received_at
+     * </pre>
+     *
+     * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder getDetailsOrBuilder(
+        int index) {
+      return details_.get(index);
+    }
+
+    public static final int TOTAL_FOR_ASSET_FIELD_NUMBER = 3;
+    private volatile java.lang.Object totalForAsset_;
+    /**
+     * <pre>
+     * Total amount of rewards for the asset
+     * </pre>
+     *
+     * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+     * @return The totalForAsset.
+     */
+    @java.lang.Override
+    public java.lang.String getTotalForAsset() {
+      java.lang.Object ref = totalForAsset_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        totalForAsset_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Total amount of rewards for the asset
+     * </pre>
+     *
+     * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+     * @return The bytes for totalForAsset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTotalForAssetBytes() {
+      java.lang.Object ref = totalForAsset_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        totalForAsset_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAssetBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, asset_);
+      }
+      for (int i = 0; i < details_.size(); i++) {
+        output.writeMessage(2, details_.get(i));
+      }
+      if (!getTotalForAssetBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, totalForAsset_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAssetBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, asset_);
+      }
+      for (int i = 0; i < details_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, details_.get(i));
+      }
+      if (!getTotalForAssetBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, totalForAsset_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.Vega.RewardPerAssetDetail)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.Vega.RewardPerAssetDetail other = (io.vegaprotocol.vega.Vega.RewardPerAssetDetail) obj;
+
+      if (!getAsset()
+          .equals(other.getAsset())) return false;
+      if (!getDetailsList()
+          .equals(other.getDetailsList())) return false;
+      if (!getTotalForAsset()
+          .equals(other.getTotalForAsset())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ASSET_FIELD_NUMBER;
+      hash = (53 * hash) + getAsset().hashCode();
+      if (getDetailsCount() > 0) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDetailsList().hashCode();
+      }
+      hash = (37 * hash) + TOTAL_FOR_ASSET_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalForAsset().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.Vega.RewardPerAssetDetail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Details for rewards for a single asset
+     * </pre>
+     *
+     * Protobuf type {@code vega.RewardPerAssetDetail}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.RewardPerAssetDetail)
+        io.vegaprotocol.vega.Vega.RewardPerAssetDetailOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_RewardPerAssetDetail_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_RewardPerAssetDetail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.Vega.RewardPerAssetDetail.class, io.vegaprotocol.vega.Vega.RewardPerAssetDetail.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.Vega.RewardPerAssetDetail.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getDetailsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        asset_ = "";
+
+        if (detailsBuilder_ == null) {
+          details_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          detailsBuilder_.clear();
+        }
+        totalForAsset_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.Vega.internal_static_vega_RewardPerAssetDetail_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.RewardPerAssetDetail getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.Vega.RewardPerAssetDetail.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.RewardPerAssetDetail build() {
+        io.vegaprotocol.vega.Vega.RewardPerAssetDetail result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.Vega.RewardPerAssetDetail buildPartial() {
+        io.vegaprotocol.vega.Vega.RewardPerAssetDetail result = new io.vegaprotocol.vega.Vega.RewardPerAssetDetail(this);
+        int from_bitField0_ = bitField0_;
+        result.asset_ = asset_;
+        if (detailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            details_ = java.util.Collections.unmodifiableList(details_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.details_ = details_;
+        } else {
+          result.details_ = detailsBuilder_.build();
+        }
+        result.totalForAsset_ = totalForAsset_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.Vega.RewardPerAssetDetail) {
+          return mergeFrom((io.vegaprotocol.vega.Vega.RewardPerAssetDetail)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.Vega.RewardPerAssetDetail other) {
+        if (other == io.vegaprotocol.vega.Vega.RewardPerAssetDetail.getDefaultInstance()) return this;
+        if (!other.getAsset().isEmpty()) {
+          asset_ = other.asset_;
+          onChanged();
+        }
+        if (detailsBuilder_ == null) {
+          if (!other.details_.isEmpty()) {
+            if (details_.isEmpty()) {
+              details_ = other.details_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDetailsIsMutable();
+              details_.addAll(other.details_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.details_.isEmpty()) {
+            if (detailsBuilder_.isEmpty()) {
+              detailsBuilder_.dispose();
+              detailsBuilder_ = null;
+              details_ = other.details_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              detailsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDetailsFieldBuilder() : null;
+            } else {
+              detailsBuilder_.addAllMessages(other.details_);
+            }
+          }
+        }
+        if (!other.getTotalForAsset().isEmpty()) {
+          totalForAsset_ = other.totalForAsset_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.Vega.RewardPerAssetDetail parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.Vega.RewardPerAssetDetail) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object asset_ = "";
+      /**
+       * <pre>
+       * asset details
+       * </pre>
+       *
+       * <code>string asset = 1 [json_name = "asset"];</code>
+       * @return The asset.
+       */
+      public java.lang.String getAsset() {
+        java.lang.Object ref = asset_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          asset_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * asset details
+       * </pre>
+       *
+       * <code>string asset = 1 [json_name = "asset"];</code>
+       * @return The bytes for asset.
+       */
+      public com.google.protobuf.ByteString
+          getAssetBytes() {
+        java.lang.Object ref = asset_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          asset_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * asset details
+       * </pre>
+       *
+       * <code>string asset = 1 [json_name = "asset"];</code>
+       * @param value The asset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAsset(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        asset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * asset details
+       * </pre>
+       *
+       * <code>string asset = 1 [json_name = "asset"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAsset() {
+
+        asset_ = getDefaultInstance().getAsset();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * asset details
+       * </pre>
+       *
+       * <code>string asset = 1 [json_name = "asset"];</code>
+       * @param value The bytes for asset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        asset_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<io.vegaprotocol.vega.Vega.RewardDetails> details_ =
+        java.util.Collections.emptyList();
+      private void ensureDetailsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          details_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.RewardDetails>(details_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.RewardDetails, io.vegaprotocol.vega.Vega.RewardDetails.Builder, io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder> detailsBuilder_;
+
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.RewardDetails> getDetailsList() {
+        if (detailsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(details_);
+        } else {
+          return detailsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public int getDetailsCount() {
+        if (detailsBuilder_ == null) {
+          return details_.size();
+        } else {
+          return detailsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.RewardDetails getDetails(int index) {
+        if (detailsBuilder_ == null) {
+          return details_.get(index);
+        } else {
+          return detailsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder setDetails(
+          int index, io.vegaprotocol.vega.Vega.RewardDetails value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDetailsIsMutable();
+          details_.set(index, value);
+          onChanged();
+        } else {
+          detailsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder setDetails(
+          int index, io.vegaprotocol.vega.Vega.RewardDetails.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          ensureDetailsIsMutable();
+          details_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          detailsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder addDetails(io.vegaprotocol.vega.Vega.RewardDetails value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDetailsIsMutable();
+          details_.add(value);
+          onChanged();
+        } else {
+          detailsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder addDetails(
+          int index, io.vegaprotocol.vega.Vega.RewardDetails value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDetailsIsMutable();
+          details_.add(index, value);
+          onChanged();
+        } else {
+          detailsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder addDetails(
+          io.vegaprotocol.vega.Vega.RewardDetails.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          ensureDetailsIsMutable();
+          details_.add(builderForValue.build());
+          onChanged();
+        } else {
+          detailsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder addDetails(
+          int index, io.vegaprotocol.vega.Vega.RewardDetails.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          ensureDetailsIsMutable();
+          details_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          detailsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder addAllDetails(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.RewardDetails> values) {
+        if (detailsBuilder_ == null) {
+          ensureDetailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, details_);
+          onChanged();
+        } else {
+          detailsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder clearDetails() {
+        if (detailsBuilder_ == null) {
+          details_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          detailsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public Builder removeDetails(int index) {
+        if (detailsBuilder_ == null) {
+          ensureDetailsIsMutable();
+          details_.remove(index);
+          onChanged();
+        } else {
+          detailsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.RewardDetails.Builder getDetailsBuilder(
+          int index) {
+        return getDetailsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder getDetailsOrBuilder(
+          int index) {
+        if (detailsBuilder_ == null) {
+          return details_.get(index);  } else {
+          return detailsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder>
+           getDetailsOrBuilderList() {
+        if (detailsBuilder_ != null) {
+          return detailsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(details_);
+        }
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.RewardDetails.Builder addDetailsBuilder() {
+        return getDetailsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Vega.RewardDetails.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public io.vegaprotocol.vega.Vega.RewardDetails.Builder addDetailsBuilder(
+          int index) {
+        return getDetailsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Vega.RewardDetails.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * rewards ordered by received_at
+       * </pre>
+       *
+       * <code>repeated .vega.RewardDetails details = 2 [json_name = "details"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Vega.RewardDetails.Builder>
+           getDetailsBuilderList() {
+        return getDetailsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Vega.RewardDetails, io.vegaprotocol.vega.Vega.RewardDetails.Builder, io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder>
+          getDetailsFieldBuilder() {
+        if (detailsBuilder_ == null) {
+          detailsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Vega.RewardDetails, io.vegaprotocol.vega.Vega.RewardDetails.Builder, io.vegaprotocol.vega.Vega.RewardDetailsOrBuilder>(
+                  details_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          details_ = null;
+        }
+        return detailsBuilder_;
+      }
+
+      private java.lang.Object totalForAsset_ = "";
+      /**
+       * <pre>
+       * Total amount of rewards for the asset
+       * </pre>
+       *
+       * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+       * @return The totalForAsset.
+       */
+      public java.lang.String getTotalForAsset() {
+        java.lang.Object ref = totalForAsset_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          totalForAsset_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total amount of rewards for the asset
+       * </pre>
+       *
+       * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+       * @return The bytes for totalForAsset.
+       */
+      public com.google.protobuf.ByteString
+          getTotalForAssetBytes() {
+        java.lang.Object ref = totalForAsset_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          totalForAsset_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Total amount of rewards for the asset
+       * </pre>
+       *
+       * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+       * @param value The totalForAsset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalForAsset(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        totalForAsset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total amount of rewards for the asset
+       * </pre>
+       *
+       * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalForAsset() {
+
+        totalForAsset_ = getDefaultInstance().getTotalForAsset();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Total amount of rewards for the asset
+       * </pre>
+       *
+       * <code>string total_for_asset = 3 [json_name = "totalForAsset"];</code>
+       * @param value The bytes for totalForAsset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalForAssetBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        totalForAsset_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.RewardPerAssetDetail)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.RewardPerAssetDetail)
+    private static final io.vegaprotocol.vega.Vega.RewardPerAssetDetail DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.Vega.RewardPerAssetDetail();
+    }
+
+    public static io.vegaprotocol.vega.Vega.RewardPerAssetDetail getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RewardPerAssetDetail>
+        PARSER = new com.google.protobuf.AbstractParser<RewardPerAssetDetail>() {
+      @java.lang.Override
+      public RewardPerAssetDetail parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RewardPerAssetDetail(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RewardPerAssetDetail> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RewardPerAssetDetail> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.Vega.RewardPerAssetDetail getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -62093,11 +67980,6 @@ public final class Vega {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_PositionTrade_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_Statistics_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_Statistics_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_Deposit_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -62178,21 +68060,6 @@ public final class Vega {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_ErrorDetail_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_Transaction_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_Transaction_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_Signature_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_Signature_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_vega_SignedBundle_descriptor;
-  private static final
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_vega_SignedBundle_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_NetworkParameter_descriptor;
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -62217,6 +68084,51 @@ public final class Vega {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_EthereumConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_EpochTimestamps_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_EpochTimestamps_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_Epoch_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_Epoch_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_EpochParticipation_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_EpochParticipation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_EpochData_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_EpochData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_Node_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_Node_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_NodeData_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_NodeData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_Delegation_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_Delegation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_RewardDetails_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_RewardDetails_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_RewardPerAssetDetail_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_RewardPerAssetDetail_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -62228,378 +68140,386 @@ public final class Vega {
     java.lang.String[] descriptorData = {
       "\n\nvega.proto\022\004vega\0326github.com/mwitkow/g" +
       "o-proto-validators/validator.proto\032\rmark" +
-      "ets.proto\"\035\n\005Price\022\024\n\005value\030\001 \001(\004R\005value" +
-      "\"!\n\tTimestamp\022\024\n\005value\030\001 \001(\003R\005value\"\037\n\005P" +
-      "arty\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002 \001R\002id\"N\n\nRiskFact" +
-      "or\022\026\n\006market\030\001 \001(\tR\006market\022\024\n\005short\030\002 \001(" +
-      "\001R\005short\022\022\n\004long\030\003 \001(\001R\004long\"\323\003\n\nRiskRes" +
-      "ult\022+\n\021updated_timestamp\030\001 \001(\003R\020updatedT" +
-      "imestamp\022D\n\014risk_factors\030\002 \003(\0132!.vega.Ri" +
-      "skResult.RiskFactorsEntryR\013riskFactors\0222" +
-      "\n\025next_update_timestamp\030\003 \001(\003R\023nextUpdat" +
-      "eTimestamp\022m\n\033predicted_next_risk_factor" +
-      "s\030\004 \003(\0132..vega.RiskResult.PredictedNextR" +
-      "iskFactorsEntryR\030predictedNextRiskFactor" +
-      "s\032P\n\020RiskFactorsEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
-      "&\n\005value\030\002 \001(\0132\020.vega.RiskFactorR\005value:" +
-      "\0028\001\032]\n\035PredictedNextRiskFactorsEntry\022\020\n\003" +
-      "key\030\001 \001(\tR\003key\022&\n\005value\030\002 \001(\0132\020.vega.Ris" +
-      "kFactorR\005value:\0028\001\"Z\n\013PeggedOrder\0223\n\tref" +
-      "erence\030\001 \001(\0162\025.vega.PeggedReferenceR\tref" +
-      "erence\022\026\n\006offset\030\002 \001(\003R\006offset\"\342\010\n\005Order" +
-      "\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\tmarket_id\030\002 \001(\tR\010mar" +
-      "ketId\022\031\n\010party_id\030\003 \001(\tR\007partyId\022\036\n\004side" +
-      "\030\004 \001(\0162\n.vega.SideR\004side\022\024\n\005price\030\005 \001(\004R" +
-      "\005price\022\022\n\004size\030\006 \001(\004R\004size\022\034\n\tremaining\030" +
-      "\007 \001(\004R\tremaining\022;\n\rtime_in_force\030\010 \001(\0162" +
-      "\027.vega.Order.TimeInForceR\013timeInForce\022$\n" +
-      "\004type\030\t \001(\0162\020.vega.Order.TypeR\004type\022\035\n\nc" +
-      "reated_at\030\n \001(\003R\tcreatedAt\022*\n\006status\030\013 \001" +
-      "(\0162\022.vega.Order.StatusR\006status\022\035\n\nexpire" +
-      "s_at\030\014 \001(\003R\texpiresAt\022\034\n\treference\030\r \001(\t" +
-      "R\treference\022(\n\006reason\030\016 \001(\0162\020.vega.Order" +
-      "ErrorR\006reason\022\035\n\nupdated_at\030\017 \001(\003R\tupdat" +
-      "edAt\022\030\n\007version\030\020 \001(\004R\007version\022\031\n\010batch_" +
-      "id\030\021 \001(\004R\007batchId\0224\n\014pegged_order\030\022 \001(\0132" +
-      "\021.vega.PeggedOrderR\013peggedOrder\0224\n\026liqui" +
-      "dity_provision_id\030\023 \001(\tR\024liquidityProvis" +
-      "ionId\"\266\001\n\013TimeInForce\022\035\n\031TIME_IN_FORCE_U" +
-      "NSPECIFIED\020\000\022\025\n\021TIME_IN_FORCE_GTC\020\001\022\025\n\021T" +
-      "IME_IN_FORCE_GTT\020\002\022\025\n\021TIME_IN_FORCE_IOC\020" +
-      "\003\022\025\n\021TIME_IN_FORCE_FOK\020\004\022\025\n\021TIME_IN_FORC" +
-      "E_GFA\020\005\022\025\n\021TIME_IN_FORCE_GFN\020\006\"O\n\004Type\022\024" +
-      "\n\020TYPE_UNSPECIFIED\020\000\022\016\n\nTYPE_LIMIT\020\001\022\017\n\013" +
-      "TYPE_MARKET\020\002\022\020\n\014TYPE_NETWORK\020\003\"\311\001\n\006Stat" +
-      "us\022\026\n\022STATUS_UNSPECIFIED\020\000\022\021\n\rSTATUS_ACT" +
-      "IVE\020\001\022\022\n\016STATUS_EXPIRED\020\002\022\024\n\020STATUS_CANC" +
-      "ELLED\020\003\022\022\n\016STATUS_STOPPED\020\004\022\021\n\rSTATUS_FI" +
-      "LLED\020\005\022\023\n\017STATUS_REJECTED\020\006\022\033\n\027STATUS_PA" +
-      "RTIALLY_FILLED\020\007\022\021\n\rSTATUS_PARKED\020\010\"B\n\035O" +
-      "rderCancellationConfirmation\022!\n\005order\030\001 " +
-      "\001(\0132\013.vega.OrderR\005order\"\240\001\n\021OrderConfirm" +
-      "ation\022!\n\005order\030\001 \001(\0132\013.vega.OrderR\005order" +
-      "\022#\n\006trades\030\002 \003(\0132\013.vega.TradeR\006trades\022C\n" +
-      "\027passive_orders_affected\030\003 \003(\0132\013.vega.Or" +
-      "derR\025passiveOrdersAffected\"\323\001\n\026AuctionIn" +
-      "dicativeState\022\033\n\tmarket_id\030\001 \001(\tR\010market" +
-      "Id\022)\n\020indicative_price\030\002 \001(\004R\017indicative" +
-      "Price\022+\n\021indicative_volume\030\003 \001(\004R\020indica" +
-      "tiveVolume\022#\n\rauction_start\030\004 \001(\003R\014aucti" +
-      "onStart\022\037\n\013auction_end\030\005 \001(\003R\nauctionEnd" +
-      "\"\333\004\n\005Trade\022\016\n\002id\030\001 \001(\tR\002id\022\033\n\tmarket_id\030" +
-      "\002 \001(\tR\010marketId\022\024\n\005price\030\003 \001(\004R\005price\022\022\n" +
-      "\004size\030\004 \001(\004R\004size\022\024\n\005buyer\030\005 \001(\tR\005buyer\022" +
-      "\026\n\006seller\030\006 \001(\tR\006seller\022(\n\taggressor\030\007 \001" +
-      "(\0162\n.vega.SideR\taggressor\022\033\n\tbuy_order\030\010" +
-      " \001(\tR\010buyOrder\022\035\n\nsell_order\030\t \001(\tR\tsell" +
-      "Order\022\034\n\ttimestamp\030\n \001(\003R\ttimestamp\022$\n\004t" +
-      "ype\030\013 \001(\0162\020.vega.Trade.TypeR\004type\022&\n\tbuy" +
-      "er_fee\030\014 \001(\0132\t.vega.FeeR\010buyerFee\022(\n\nsel" +
-      "ler_fee\030\r \001(\0132\t.vega.FeeR\tsellerFee\022.\n\023b" +
-      "uyer_auction_batch\030\016 \001(\004R\021buyerAuctionBa" +
-      "tch\0220\n\024seller_auction_batch\030\017 \001(\004R\022selle" +
-      "rAuctionBatch\"o\n\004Type\022\024\n\020TYPE_UNSPECIFIE" +
-      "D\020\000\022\020\n\014TYPE_DEFAULT\020\001\022\037\n\033TYPE_NETWORK_CL" +
-      "OSE_OUT_GOOD\020\002\022\036\n\032TYPE_NETWORK_CLOSE_OUT" +
-      "_BAD\020\003\"v\n\003Fee\022\033\n\tmaker_fee\030\001 \001(\004R\010makerF" +
-      "ee\022-\n\022infrastructure_fee\030\002 \001(\004R\021infrastr" +
-      "uctureFee\022#\n\rliquidity_fee\030\003 \001(\004R\014liquid" +
-      "ityFee\"/\n\010TradeSet\022#\n\006trades\030\001 \003(\0132\013.veg" +
-      "a.TradeR\006trades\"\326\001\n\006Candle\022\034\n\ttimestamp\030" +
-      "\001 \001(\003R\ttimestamp\022\032\n\010datetime\030\002 \001(\tR\010date" +
-      "time\022\022\n\004high\030\003 \001(\004R\004high\022\020\n\003low\030\004 \001(\004R\003l" +
-      "ow\022\022\n\004open\030\005 \001(\004R\004open\022\024\n\005close\030\006 \001(\004R\005c" +
-      "lose\022\026\n\006volume\030\007 \001(\004R\006volume\022*\n\010interval" +
-      "\030\010 \001(\0162\016.vega.IntervalR\010interval\"d\n\nPric" +
-      "eLevel\022\024\n\005price\030\001 \001(\004R\005price\022(\n\020number_o" +
-      "f_orders\030\002 \001(\004R\016numberOfOrders\022\026\n\006volume" +
-      "\030\003 \001(\004R\006volume\"\235\001\n\013MarketDepth\022\033\n\tmarket" +
-      "_id\030\001 \001(\tR\010marketId\022\"\n\003buy\030\002 \003(\0132\020.vega." +
-      "PriceLevelR\003buy\022$\n\004sell\030\003 \003(\0132\020.vega.Pri" +
-      "ceLevelR\004sell\022\'\n\017sequence_number\030\004 \001(\004R\016" +
-      "sequenceNumber\"\243\001\n\021MarketDepthUpdate\022\033\n\t" +
-      "market_id\030\001 \001(\tR\010marketId\022\"\n\003buy\030\002 \003(\0132\020" +
-      ".vega.PriceLevelR\003buy\022$\n\004sell\030\003 \003(\0132\020.ve" +
-      "ga.PriceLevelR\004sell\022\'\n\017sequence_number\030\004" +
-      " \001(\004R\016sequenceNumber\"\374\001\n\010Position\022\033\n\tmar" +
-      "ket_id\030\001 \001(\tR\010marketId\022\031\n\010party_id\030\002 \001(\t" +
-      "R\007partyId\022\037\n\013open_volume\030\003 \001(\003R\nopenVolu" +
-      "me\022!\n\014realised_pnl\030\004 \001(\003R\013realisedPnl\022%\n" +
-      "\016unrealised_pnl\030\005 \001(\003R\runrealisedPnl\022.\n\023" +
-      "average_entry_price\030\006 \001(\004R\021averageEntryP" +
-      "rice\022\035\n\nupdated_at\030\007 \001(\003R\tupdatedAt\"=\n\rP" +
-      "ositionTrade\022\026\n\006volume\030\001 \001(\003R\006volume\022\024\n\005" +
-      "price\030\002 \001(\004R\005price\"\351\n\n\nStatistics\022!\n\014blo" +
-      "ck_height\030\001 \001(\004R\013blockHeight\022%\n\016backlog_" +
-      "length\030\002 \001(\004R\rbacklogLength\022\037\n\013total_pee" +
-      "rs\030\003 \001(\004R\ntotalPeers\022!\n\014genesis_time\030\004 \001" +
-      "(\tR\013genesisTime\022!\n\014current_time\030\005 \001(\tR\013c" +
-      "urrentTime\022\033\n\tvega_time\030\006 \001(\tR\010vegaTime\022" +
-      ")\n\006status\030\007 \001(\0162\021.vega.ChainStatusR\006stat" +
-      "us\022 \n\014tx_per_block\030\010 \001(\004R\ntxPerBlock\022(\n\020" +
-      "average_tx_bytes\030\t \001(\004R\016averageTxBytes\0227" +
-      "\n\030average_orders_per_block\030\n \001(\004R\025averag" +
-      "eOrdersPerBlock\022*\n\021trades_per_second\030\013 \001" +
-      "(\004R\017tradesPerSecond\022*\n\021orders_per_second" +
-      "\030\014 \001(\004R\017ordersPerSecond\022#\n\rtotal_markets" +
-      "\030\r \001(\004R\014totalMarkets\022*\n\021total_amend_orde" +
-      "r\030\020 \001(\004R\017totalAmendOrder\022,\n\022total_cancel" +
-      "_order\030\021 \001(\004R\020totalCancelOrder\022,\n\022total_" +
-      "create_order\030\022 \001(\004R\020totalCreateOrder\022!\n\014" +
-      "total_orders\030\023 \001(\004R\013totalOrders\022!\n\014total" +
-      "_trades\030\024 \001(\004R\013totalTrades\022/\n\023order_subs" +
-      "criptions\030\025 \001(\rR\022orderSubscriptions\022/\n\023t" +
-      "rade_subscriptions\030\026 \001(\rR\022tradeSubscript" +
-      "ions\0221\n\024candle_subscriptions\030\027 \001(\rR\023cand" +
-      "leSubscriptions\022<\n\032market_depth_subscrip" +
-      "tions\030\030 \001(\rR\030marketDepthSubscriptions\0227\n" +
-      "\027positions_subscriptions\030\031 \001(\rR\026position" +
-      "sSubscriptions\0223\n\025account_subscriptions\030" +
-      "\032 \001(\rR\024accountSubscriptions\022:\n\031market_da" +
-      "ta_subscriptions\030\033 \001(\rR\027marketDataSubscr" +
-      "iptions\022(\n\020app_version_hash\030\034 \001(\tR\016appVe" +
-      "rsionHash\022\037\n\013app_version\030\035 \001(\tR\nappVersi" +
-      "on\022#\n\rchain_version\030\036 \001(\tR\014chainVersion\022" +
-      "%\n\016block_duration\030\037 \001(\004R\rblockDuration\022\026" +
-      "\n\006uptime\030  \001(\tR\006uptime\022\031\n\010chain_id\030! \001(\t" +
-      "R\007chainId\022K\n\"market_depth_updates_subscr" +
-      "iptions\030\" \001(\rR\037marketDepthUpdatesSubscri" +
-      "ptions\"\344\002\n\007Deposit\022\016\n\002id\030\001 \001(\tR\002id\022,\n\006st" +
-      "atus\030\002 \001(\0162\024.vega.Deposit.StatusR\006status" +
-      "\022\031\n\010party_id\030\003 \001(\tR\007partyId\022\024\n\005asset\030\004 \001" +
-      "(\tR\005asset\022\026\n\006amount\030\005 \001(\tR\006amount\022\027\n\007tx_" +
-      "hash\030\006 \001(\tR\006txHash\022-\n\022credited_timestamp" +
-      "\030\007 \001(\003R\021creditedTimestamp\022+\n\021created_tim" +
-      "estamp\030\010 \001(\003R\020createdTimestamp\"]\n\006Status" +
-      "\022\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013STATUS_OPEN\020" +
-      "\001\022\024\n\020STATUS_CANCELLED\020\002\022\024\n\020STATUS_FINALI" +
-      "ZED\020\003\"\273\003\n\nWithdrawal\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010" +
-      "party_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\004R" +
-      "\006amount\022\024\n\005asset\030\004 \001(\tR\005asset\022/\n\006status\030" +
-      "\005 \001(\0162\027.vega.Withdrawal.StatusR\006status\022\020" +
-      "\n\003ref\030\006 \001(\tR\003ref\022\026\n\006expiry\030\007 \001(\003R\006expiry" +
-      "\022\027\n\007tx_hash\030\010 \001(\tR\006txHash\022+\n\021created_tim" +
-      "estamp\030\t \001(\003R\020createdTimestamp\022/\n\023withdr" +
-      "awn_timestamp\030\n \001(\003R\022withdrawnTimestamp\022" +
-      "#\n\003ext\030\013 \001(\0132\021.vega.WithdrawExtR\003ext\"]\n\006" +
-      "Status\022\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013STATUS" +
-      "_OPEN\020\001\022\024\n\020STATUS_CANCELLED\020\002\022\024\n\020STATUS_" +
-      "FINALIZED\020\003\"D\n\013WithdrawExt\022.\n\005erc20\030\001 \001(" +
-      "\0132\026.vega.Erc20WithdrawExtH\000R\005erc20B\005\n\003ex" +
-      "t\"=\n\020Erc20WithdrawExt\022)\n\020receiver_addres" +
-      "s\030\001 \001(\tR\017receiverAddress\"\243\001\n\007Account\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\024\n\005owner\030\002 \001(\tR\005owner\022\030\n\007ba" +
-      "lance\030\003 \001(\004R\007balance\022\024\n\005asset\030\004 \001(\tR\005ass" +
-      "et\022\033\n\tmarket_id\030\005 \001(\tR\010marketId\022%\n\004type\030" +
-      "\006 \001(\0162\021.vega.AccountTypeR\004type\"?\n\017Financ" +
-      "ialAmount\022\026\n\006amount\030\001 \001(\004R\006amount\022\024\n\005ass" +
-      "et\030\002 \001(\tR\005asset\"\226\001\n\010Transfer\022\024\n\005owner\030\001 " +
-      "\001(\tR\005owner\022-\n\006amount\030\002 \001(\0132\025.vega.Financ" +
-      "ialAmountR\006amount\022&\n\004type\030\003 \001(\0162\022.vega.T" +
-      "ransferTypeR\004type\022\035\n\nmin_amount\030\004 \001(\004R\tm" +
-      "inAmount\"\334\001\n\017TransferRequest\0220\n\014from_acc" +
-      "ount\030\001 \003(\0132\r.vega.AccountR\013fromAccount\022," +
-      "\n\nto_account\030\002 \003(\0132\r.vega.AccountR\ttoAcc" +
-      "ount\022\026\n\006amount\030\003 \001(\004R\006amount\022\035\n\nmin_amou" +
-      "nt\030\004 \001(\004R\tminAmount\022\024\n\005asset\030\005 \001(\tR\005asse" +
-      "t\022\034\n\treference\030\006 \001(\tR\treference\"\267\001\n\013Ledg" +
-      "erEntry\022!\n\014from_account\030\001 \001(\tR\013fromAccou" +
-      "nt\022\035\n\nto_account\030\002 \001(\tR\ttoAccount\022\026\n\006amo" +
-      "unt\030\003 \001(\004R\006amount\022\034\n\treference\030\004 \001(\tR\tre" +
-      "ference\022\022\n\004type\030\005 \001(\tR\004type\022\034\n\ttimestamp" +
-      "\030\006 \001(\003R\ttimestamp\"T\n\017TransferBalance\022\'\n\007" +
-      "account\030\001 \001(\0132\r.vega.AccountR\007account\022\030\n" +
-      "\007balance\030\002 \001(\004R\007balance\"v\n\020TransferRespo" +
-      "nse\022/\n\ttransfers\030\001 \003(\0132\021.vega.LedgerEntr" +
-      "yR\ttransfers\0221\n\010balances\030\002 \003(\0132\025.vega.Tr" +
-      "ansferBalanceR\010balances\"\255\002\n\014MarginLevels" +
-      "\022-\n\022maintenance_margin\030\001 \001(\004R\021maintenanc" +
-      "eMargin\022!\n\014search_level\030\002 \001(\004R\013searchLev" +
-      "el\022%\n\016initial_margin\030\003 \001(\004R\rinitialMargi" +
-      "n\0228\n\030collateral_release_level\030\004 \001(\004R\026col" +
-      "lateralReleaseLevel\022\031\n\010party_id\030\005 \001(\tR\007p" +
-      "artyId\022\033\n\tmarket_id\030\006 \001(\tR\010marketId\022\024\n\005a" +
-      "sset\030\007 \001(\tR\005asset\022\034\n\ttimestamp\030\010 \001(\003R\tti" +
-      "mestamp\"\323\t\n\nMarketData\022\035\n\nmark_price\030\001 \001" +
-      "(\004R\tmarkPrice\022$\n\016best_bid_price\030\002 \001(\004R\014b" +
-      "estBidPrice\022&\n\017best_bid_volume\030\003 \001(\004R\rbe" +
-      "stBidVolume\022(\n\020best_offer_price\030\004 \001(\004R\016b" +
-      "estOfferPrice\022*\n\021best_offer_volume\030\005 \001(\004" +
-      "R\017bestOfferVolume\0221\n\025best_static_bid_pri" +
-      "ce\030\006 \001(\004R\022bestStaticBidPrice\0223\n\026best_sta" +
-      "tic_bid_volume\030\007 \001(\004R\023bestStaticBidVolum" +
-      "e\0225\n\027best_static_offer_price\030\010 \001(\004R\024best" +
-      "StaticOfferPrice\0227\n\030best_static_offer_vo" +
-      "lume\030\t \001(\004R\025bestStaticOfferVolume\022\033\n\tmid" +
-      "_price\030\n \001(\004R\010midPrice\022(\n\020static_mid_pri" +
-      "ce\030\013 \001(\004R\016staticMidPrice\022\026\n\006market\030\014 \001(\t" +
-      "R\006market\022\034\n\ttimestamp\030\r \001(\003R\ttimestamp\022#" +
-      "\n\ropen_interest\030\016 \001(\004R\014openInterest\022\037\n\013a" +
-      "uction_end\030\017 \001(\003R\nauctionEnd\022#\n\rauction_" +
-      "start\030\020 \001(\003R\014auctionStart\022)\n\020indicative_" +
-      "price\030\021 \001(\004R\017indicativePrice\022+\n\021indicati" +
-      "ve_volume\030\022 \001(\004R\020indicativeVolume\022H\n\023mar" +
-      "ket_trading_mode\030\023 \001(\0162\030.vega.Market.Tra" +
-      "dingModeR\021marketTradingMode\022.\n\007trigger\030\024" +
-      " \001(\0162\024.vega.AuctionTriggerR\007trigger\022A\n\021e" +
-      "xtension_trigger\030\025 \001(\0162\024.vega.AuctionTri" +
-      "ggerR\020extensionTrigger\022!\n\014target_stake\030\026" +
-      " \001(\tR\013targetStake\022%\n\016supplied_stake\030\027 \001(" +
-      "\tR\rsuppliedStake\022S\n\027price_monitoring_bou" +
-      "nds\030\030 \003(\0132\033.vega.PriceMonitoringBoundsR\025" +
-      "priceMonitoringBounds\022,\n\022market_value_pr" +
-      "oxy\030\031 \001(\tR\020marketValueProxy\022`\n\034liquidity" +
-      "_provider_fee_share\030\032 \003(\0132\037.vega.Liquidi" +
-      "tyProviderFeeShareR\031liquidityProviderFee" +
-      "Share\"\225\001\n\031LiquidityProviderFeeShare\022\024\n\005p" +
-      "arty\030\001 \001(\tR\005party\022*\n\021equity_like_share\030\002" +
-      " \001(\tR\017equityLikeShare\0226\n\027average_entry_v" +
-      "aluation\030\003 \001(\tR\025averageEntryValuation\"\310\001" +
-      "\n\025PriceMonitoringBounds\022&\n\017min_valid_pri" +
-      "ce\030\001 \001(\004R\rminValidPrice\022&\n\017max_valid_pri" +
-      "ce\030\002 \001(\004R\rmaxValidPrice\0226\n\007trigger\030\003 \001(\013" +
-      "2\034.vega.PriceMonitoringTriggerR\007trigger\022" +
-      "\'\n\017reference_price\030\004 \001(\001R\016referencePrice" +
-      "\"Q\n\013ErrorDetail\022\022\n\004code\030\001 \001(\005R\004code\022\030\n\007m" +
-      "essage\030\002 \001(\tR\007message\022\024\n\005inner\030\003 \001(\tR\005in" +
-      "ner\"\246\001\n\013Transaction\022\035\n\ninput_data\030\001 \001(\014R" +
-      "\tinputData\022\024\n\005nonce\030\002 \001(\004R\005nonce\022!\n\014bloc" +
-      "k_height\030\003 \001(\004R\013blockHeight\022\033\n\007address\030\351" +
-      "\007 \001(\014H\000R\007address\022\032\n\007pub_key\030\352\007 \001(\014H\000R\006pu" +
-      "bKeyB\006\n\004from\"K\n\tSignature\022\020\n\003sig\030\001 \001(\014R\003" +
-      "sig\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\r" +
-      "R\007version\"A\n\014SignedBundle\022\016\n\002tx\030\001 \001(\014R\002t" +
-      "x\022!\n\003sig\030\002 \001(\0132\017.vega.SignatureR\003sig\":\n\020" +
-      "NetworkParameter\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
-      "lue\030\002 \001(\tR\005value\"}\n\016LiquidityOrder\0223\n\tre" +
-      "ference\030\001 \001(\0162\025.vega.PeggedReferenceR\tre" +
-      "ference\022\036\n\nproportion\030\002 \001(\rR\nproportion\022" +
-      "\026\n\006offset\030\003 \001(\003R\006offset\"s\n\027LiquidityOrde" +
-      "rReference\022\031\n\010order_id\030\001 \001(\tR\007orderId\022=\n" +
-      "\017liquidity_order\030\002 \001(\0132\024.vega.LiquidityO" +
-      "rderR\016liquidityOrder\"\332\004\n\022LiquidityProvis" +
-      "ion\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010party_id\030\002 \001(\tR\007p" +
-      "artyId\022\035\n\ncreated_at\030\003 \001(\003R\tcreatedAt\022\035\n" +
-      "\nupdated_at\030\004 \001(\003R\tupdatedAt\022#\n\tmarket_i" +
-      "d\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commitment_" +
-      "amount\030\006 \001(\004R\020commitmentAmount\022\020\n\003fee\030\007 " +
-      "\001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.vega.Liquidity" +
-      "OrderReferenceR\005sells\0221\n\004buys\030\t \003(\0132\035.ve" +
-      "ga.LiquidityOrderReferenceR\004buys\022\030\n\007vers" +
-      "ion\030\n \001(\tR\007version\0227\n\006status\030\013 \001(\0162\037.veg" +
-      "a.LiquidityProvision.StatusR\006status\022\034\n\tr" +
-      "eference\030\014 \001(\tR\treference\"\235\001\n\006Status\022\026\n\022" +
-      "STATUS_UNSPECIFIED\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022" +
-      "\022\n\016STATUS_STOPPED\020\002\022\024\n\020STATUS_CANCELLED\020" +
-      "\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021STATUS_UNDEPLO" +
-      "YED\020\005\022\022\n\016STATUS_PENDING\020\006\"\227\001\n\016EthereumCo" +
-      "nfig\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId\022\031\n\010c" +
-      "hain_id\030\002 \001(\tR\007chainId\022%\n\016bridge_address" +
-      "\030\003 \001(\tR\rbridgeAddress\022$\n\rconfirmations\030\004" +
-      " \001(\rR\rconfirmations*9\n\004Side\022\024\n\020SIDE_UNSP" +
-      "ECIFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230" +
-      "\001\n\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n" +
-      "\014INTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rIN" +
-      "TERVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INT" +
-      "ERVAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Au" +
-      "ctionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIF" +
-      "IED\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCT" +
-      "ION_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER" +
-      "_PRICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*" +
-      "\213\001\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_" +
-      "UNSPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022" +
-      "\035\n\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED" +
-      "_REFERENCE_BEST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027" +
-      "ORDER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR" +
-      "_INVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVA" +
-      "LID_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQ" +
-      "UENCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING" +
-      "_SIZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n" +
-      "\033ORDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_" +
-      "ERROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#O" +
-      "RDER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034" +
-      "ORDER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_" +
-      "ERROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT" +
-      "_FOUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID" +
-      "\020\014\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORD" +
-      "ER_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_" +
-      "ERROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER" +
-      "_ERROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_I" +
-      "NVALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PER" +
-      "SISTENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023" +
-      "\022\034\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_" +
-      "ERROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%" +
-      "\n!ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n" +
-      "!ORDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'" +
-      "ORDER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020" +
-      "\030\0223\n/ORDER_ERROR_GFA_ORDER_DURING_CONTIN" +
-      "UOUS_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AME" +
-      "ND_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ER" +
-      "ROR_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER" +
-      "_ERROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n" +
-      "&ORDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020" +
-      "\035\022*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_" +
-      "GFN\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_G" +
-      "FA_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_I" +
-      "OC_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR" +
-      "_CANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022" +
-      "#\n\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036" +
-      "ORDER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDE" +
-      "R_ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORD" +
-      "ER_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_P" +
-      "RICE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LES" +
-      "S_OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFS" +
-      "ET_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERR" +
-      "OR_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZE" +
-      "RO\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENC" +
-      "E_BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET" +
-      "_MUST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ER" +
-      "ROR_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDE" +
-      "R_ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAIL" +
-      "S_ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_U" +
-      "NABLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER" +
-      "_ERROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_O" +
-      "RDER\020.\0228\n4ORDER_ERROR_NON_PERSISTENT_ORD" +
-      "ER_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus" +
-      "\022\034\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_" +
-      "STATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_RE" +
-      "PLAYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\220\003" +
-      "\n\013AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIE" +
-      "D\020\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOU" +
-      "NT_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MAR" +
-      "GIN\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOU" +
-      "NT_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT" +
-      "_TYPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_F" +
-      "EES_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRA" +
-      "W\020\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TY" +
-      "PE_EXTERNAL\020\n\022!\n\035ACCOUNT_TYPE_GLOBAL_INS" +
-      "URANCE\020\013\022\036\n\032ACCOUNT_TYPE_GLOBAL_REWARD\020\014" +
-      "*\323\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPE" +
-      "CIFIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRAN" +
-      "SFER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003" +
-      "\022\032\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER" +
-      "_TYPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_" +
-      "LOW\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n " +
-      "TRANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TR" +
-      "ANSFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_" +
-      "TYPE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYP" +
-      "E_INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER_T" +
-      "YPE_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n\037T" +
-      "RANSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TRAN" +
-      "SFER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026" +
-      "TRANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_TYP" +
-      "E_BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRAW_" +
-      "LOCK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025TR" +
-      "ANSFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE_B" +
-      "OND_SLASHING\020\024\022\036\n\032TRANSFER_TYPE_STAKE_RE" +
-      "WARD\020\025B7\n\024io.vegaprotocol.vegaZ\037code.veg" +
-      "aprotocol.io/vega/protob\006proto3"
+      "ets.proto\032\014assets.proto\"\035\n\005Price\022\024\n\005valu" +
+      "e\030\001 \001(\004R\005value\"!\n\tTimestamp\022\024\n\005value\030\001 \001" +
+      "(\003R\005value\"S\n\005Party\022\026\n\002id\030\001 \001(\tB\006\342\337\037\002 \001R\002" +
+      "id\0222\n\013delegations\030\002 \003(\0132\020.vega.Delegatio" +
+      "nR\013delegations\"N\n\nRiskFactor\022\026\n\006market\030\001" +
+      " \001(\tR\006market\022\024\n\005short\030\002 \001(\001R\005short\022\022\n\004lo" +
+      "ng\030\003 \001(\001R\004long\"\323\003\n\nRiskResult\022+\n\021updated" +
+      "_timestamp\030\001 \001(\003R\020updatedTimestamp\022D\n\014ri" +
+      "sk_factors\030\002 \003(\0132!.vega.RiskResult.RiskF" +
+      "actorsEntryR\013riskFactors\0222\n\025next_update_" +
+      "timestamp\030\003 \001(\003R\023nextUpdateTimestamp\022m\n\033" +
+      "predicted_next_risk_factors\030\004 \003(\0132..vega" +
+      ".RiskResult.PredictedNextRiskFactorsEntr" +
+      "yR\030predictedNextRiskFactors\032P\n\020RiskFacto" +
+      "rsEntry\022\020\n\003key\030\001 \001(\tR\003key\022&\n\005value\030\002 \001(\013" +
+      "2\020.vega.RiskFactorR\005value:\0028\001\032]\n\035Predict" +
+      "edNextRiskFactorsEntry\022\020\n\003key\030\001 \001(\tR\003key" +
+      "\022&\n\005value\030\002 \001(\0132\020.vega.RiskFactorR\005value" +
+      ":\0028\001\"Z\n\013PeggedOrder\0223\n\treference\030\001 \001(\0162\025" +
+      ".vega.PeggedReferenceR\treference\022\026\n\006offs" +
+      "et\030\002 \001(\003R\006offset\"\342\010\n\005Order\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\022\033\n\tmarket_id\030\002 \001(\tR\010marketId\022\031\n\010party" +
+      "_id\030\003 \001(\tR\007partyId\022\036\n\004side\030\004 \001(\0162\n.vega." +
+      "SideR\004side\022\024\n\005price\030\005 \001(\004R\005price\022\022\n\004size" +
+      "\030\006 \001(\004R\004size\022\034\n\tremaining\030\007 \001(\004R\tremaini" +
+      "ng\022;\n\rtime_in_force\030\010 \001(\0162\027.vega.Order.T" +
+      "imeInForceR\013timeInForce\022$\n\004type\030\t \001(\0162\020." +
+      "vega.Order.TypeR\004type\022\035\n\ncreated_at\030\n \001(" +
+      "\003R\tcreatedAt\022*\n\006status\030\013 \001(\0162\022.vega.Orde" +
+      "r.StatusR\006status\022\035\n\nexpires_at\030\014 \001(\003R\tex" +
+      "piresAt\022\034\n\treference\030\r \001(\tR\treference\022(\n" +
+      "\006reason\030\016 \001(\0162\020.vega.OrderErrorR\006reason\022" +
+      "\035\n\nupdated_at\030\017 \001(\003R\tupdatedAt\022\030\n\007versio" +
+      "n\030\020 \001(\004R\007version\022\031\n\010batch_id\030\021 \001(\004R\007batc" +
+      "hId\0224\n\014pegged_order\030\022 \001(\0132\021.vega.PeggedO" +
+      "rderR\013peggedOrder\0224\n\026liquidity_provision" +
+      "_id\030\023 \001(\tR\024liquidityProvisionId\"\266\001\n\013Time" +
+      "InForce\022\035\n\031TIME_IN_FORCE_UNSPECIFIED\020\000\022\025" +
+      "\n\021TIME_IN_FORCE_GTC\020\001\022\025\n\021TIME_IN_FORCE_G" +
+      "TT\020\002\022\025\n\021TIME_IN_FORCE_IOC\020\003\022\025\n\021TIME_IN_F" +
+      "ORCE_FOK\020\004\022\025\n\021TIME_IN_FORCE_GFA\020\005\022\025\n\021TIM" +
+      "E_IN_FORCE_GFN\020\006\"O\n\004Type\022\024\n\020TYPE_UNSPECI" +
+      "FIED\020\000\022\016\n\nTYPE_LIMIT\020\001\022\017\n\013TYPE_MARKET\020\002\022" +
+      "\020\n\014TYPE_NETWORK\020\003\"\311\001\n\006Status\022\026\n\022STATUS_U" +
+      "NSPECIFIED\020\000\022\021\n\rSTATUS_ACTIVE\020\001\022\022\n\016STATU" +
+      "S_EXPIRED\020\002\022\024\n\020STATUS_CANCELLED\020\003\022\022\n\016STA" +
+      "TUS_STOPPED\020\004\022\021\n\rSTATUS_FILLED\020\005\022\023\n\017STAT" +
+      "US_REJECTED\020\006\022\033\n\027STATUS_PARTIALLY_FILLED" +
+      "\020\007\022\021\n\rSTATUS_PARKED\020\010\"B\n\035OrderCancellati" +
+      "onConfirmation\022!\n\005order\030\001 \001(\0132\013.vega.Ord" +
+      "erR\005order\"\240\001\n\021OrderConfirmation\022!\n\005order" +
+      "\030\001 \001(\0132\013.vega.OrderR\005order\022#\n\006trades\030\002 \003" +
+      "(\0132\013.vega.TradeR\006trades\022C\n\027passive_order" +
+      "s_affected\030\003 \003(\0132\013.vega.OrderR\025passiveOr" +
+      "dersAffected\"\323\001\n\026AuctionIndicativeState\022" +
+      "\033\n\tmarket_id\030\001 \001(\tR\010marketId\022)\n\020indicati" +
+      "ve_price\030\002 \001(\004R\017indicativePrice\022+\n\021indic" +
+      "ative_volume\030\003 \001(\004R\020indicativeVolume\022#\n\r" +
+      "auction_start\030\004 \001(\003R\014auctionStart\022\037\n\013auc" +
+      "tion_end\030\005 \001(\003R\nauctionEnd\"\333\004\n\005Trade\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\033\n\tmarket_id\030\002 \001(\tR\010marketI" +
+      "d\022\024\n\005price\030\003 \001(\004R\005price\022\022\n\004size\030\004 \001(\004R\004s" +
+      "ize\022\024\n\005buyer\030\005 \001(\tR\005buyer\022\026\n\006seller\030\006 \001(" +
+      "\tR\006seller\022(\n\taggressor\030\007 \001(\0162\n.vega.Side" +
+      "R\taggressor\022\033\n\tbuy_order\030\010 \001(\tR\010buyOrder" +
+      "\022\035\n\nsell_order\030\t \001(\tR\tsellOrder\022\034\n\ttimes" +
+      "tamp\030\n \001(\003R\ttimestamp\022$\n\004type\030\013 \001(\0162\020.ve" +
+      "ga.Trade.TypeR\004type\022&\n\tbuyer_fee\030\014 \001(\0132\t" +
+      ".vega.FeeR\010buyerFee\022(\n\nseller_fee\030\r \001(\0132" +
+      "\t.vega.FeeR\tsellerFee\022.\n\023buyer_auction_b" +
+      "atch\030\016 \001(\004R\021buyerAuctionBatch\0220\n\024seller_" +
+      "auction_batch\030\017 \001(\004R\022sellerAuctionBatch\"" +
+      "o\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_DE" +
+      "FAULT\020\001\022\037\n\033TYPE_NETWORK_CLOSE_OUT_GOOD\020\002" +
+      "\022\036\n\032TYPE_NETWORK_CLOSE_OUT_BAD\020\003\"v\n\003Fee\022" +
+      "\033\n\tmaker_fee\030\001 \001(\004R\010makerFee\022-\n\022infrastr" +
+      "ucture_fee\030\002 \001(\004R\021infrastructureFee\022#\n\rl" +
+      "iquidity_fee\030\003 \001(\004R\014liquidityFee\"/\n\010Trad" +
+      "eSet\022#\n\006trades\030\001 \003(\0132\013.vega.TradeR\006trade" +
+      "s\"\326\001\n\006Candle\022\034\n\ttimestamp\030\001 \001(\003R\ttimesta" +
+      "mp\022\032\n\010datetime\030\002 \001(\tR\010datetime\022\022\n\004high\030\003" +
+      " \001(\004R\004high\022\020\n\003low\030\004 \001(\004R\003low\022\022\n\004open\030\005 \001" +
+      "(\004R\004open\022\024\n\005close\030\006 \001(\004R\005close\022\026\n\006volume" +
+      "\030\007 \001(\004R\006volume\022*\n\010interval\030\010 \001(\0162\016.vega." +
+      "IntervalR\010interval\"d\n\nPriceLevel\022\024\n\005pric" +
+      "e\030\001 \001(\004R\005price\022(\n\020number_of_orders\030\002 \001(\004" +
+      "R\016numberOfOrders\022\026\n\006volume\030\003 \001(\004R\006volume" +
+      "\"\235\001\n\013MarketDepth\022\033\n\tmarket_id\030\001 \001(\tR\010mar" +
+      "ketId\022\"\n\003buy\030\002 \003(\0132\020.vega.PriceLevelR\003bu" +
+      "y\022$\n\004sell\030\003 \003(\0132\020.vega.PriceLevelR\004sell\022" +
+      "\'\n\017sequence_number\030\004 \001(\004R\016sequenceNumber" +
+      "\"\243\001\n\021MarketDepthUpdate\022\033\n\tmarket_id\030\001 \001(" +
+      "\tR\010marketId\022\"\n\003buy\030\002 \003(\0132\020.vega.PriceLev" +
+      "elR\003buy\022$\n\004sell\030\003 \003(\0132\020.vega.PriceLevelR" +
+      "\004sell\022\'\n\017sequence_number\030\004 \001(\004R\016sequence" +
+      "Number\"\374\001\n\010Position\022\033\n\tmarket_id\030\001 \001(\tR\010" +
+      "marketId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\037\n\013o" +
+      "pen_volume\030\003 \001(\003R\nopenVolume\022!\n\014realised" +
+      "_pnl\030\004 \001(\003R\013realisedPnl\022%\n\016unrealised_pn" +
+      "l\030\005 \001(\003R\runrealisedPnl\022.\n\023average_entry_" +
+      "price\030\006 \001(\004R\021averageEntryPrice\022\035\n\nupdate" +
+      "d_at\030\007 \001(\003R\tupdatedAt\"=\n\rPositionTrade\022\026" +
+      "\n\006volume\030\001 \001(\003R\006volume\022\024\n\005price\030\002 \001(\004R\005p" +
+      "rice\"\344\002\n\007Deposit\022\016\n\002id\030\001 \001(\tR\002id\022,\n\006stat" +
+      "us\030\002 \001(\0162\024.vega.Deposit.StatusR\006status\022\031" +
+      "\n\010party_id\030\003 \001(\tR\007partyId\022\024\n\005asset\030\004 \001(\t" +
+      "R\005asset\022\026\n\006amount\030\005 \001(\tR\006amount\022\027\n\007tx_ha" +
+      "sh\030\006 \001(\tR\006txHash\022-\n\022credited_timestamp\030\007" +
+      " \001(\003R\021creditedTimestamp\022+\n\021created_times" +
+      "tamp\030\010 \001(\003R\020createdTimestamp\"]\n\006Status\022\026" +
+      "\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013STATUS_OPEN\020\001\022" +
+      "\024\n\020STATUS_CANCELLED\020\002\022\024\n\020STATUS_FINALIZE" +
+      "D\020\003\"\273\003\n\nWithdrawal\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010pa" +
+      "rty_id\030\002 \001(\tR\007partyId\022\026\n\006amount\030\003 \001(\004R\006a" +
+      "mount\022\024\n\005asset\030\004 \001(\tR\005asset\022/\n\006status\030\005 " +
+      "\001(\0162\027.vega.Withdrawal.StatusR\006status\022\020\n\003" +
+      "ref\030\006 \001(\tR\003ref\022\026\n\006expiry\030\007 \001(\003R\006expiry\022\027" +
+      "\n\007tx_hash\030\010 \001(\tR\006txHash\022+\n\021created_times" +
+      "tamp\030\t \001(\003R\020createdTimestamp\022/\n\023withdraw" +
+      "n_timestamp\030\n \001(\003R\022withdrawnTimestamp\022#\n" +
+      "\003ext\030\013 \001(\0132\021.vega.WithdrawExtR\003ext\"]\n\006St" +
+      "atus\022\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013STATUS_O" +
+      "PEN\020\001\022\024\n\020STATUS_CANCELLED\020\002\022\024\n\020STATUS_FI" +
+      "NALIZED\020\003\"D\n\013WithdrawExt\022.\n\005erc20\030\001 \001(\0132" +
+      "\026.vega.Erc20WithdrawExtH\000R\005erc20B\005\n\003ext\"" +
+      "=\n\020Erc20WithdrawExt\022)\n\020receiver_address\030" +
+      "\001 \001(\tR\017receiverAddress\"\243\001\n\007Account\022\016\n\002id" +
+      "\030\001 \001(\tR\002id\022\024\n\005owner\030\002 \001(\tR\005owner\022\030\n\007bala" +
+      "nce\030\003 \001(\004R\007balance\022\024\n\005asset\030\004 \001(\tR\005asset" +
+      "\022\033\n\tmarket_id\030\005 \001(\tR\010marketId\022%\n\004type\030\006 " +
+      "\001(\0162\021.vega.AccountTypeR\004type\"?\n\017Financia" +
+      "lAmount\022\026\n\006amount\030\001 \001(\004R\006amount\022\024\n\005asset" +
+      "\030\002 \001(\tR\005asset\"\226\001\n\010Transfer\022\024\n\005owner\030\001 \001(" +
+      "\tR\005owner\022-\n\006amount\030\002 \001(\0132\025.vega.Financia" +
+      "lAmountR\006amount\022&\n\004type\030\003 \001(\0162\022.vega.Tra" +
+      "nsferTypeR\004type\022\035\n\nmin_amount\030\004 \001(\004R\tmin" +
+      "Amount\"\334\001\n\017TransferRequest\0220\n\014from_accou" +
+      "nt\030\001 \003(\0132\r.vega.AccountR\013fromAccount\022,\n\n" +
+      "to_account\030\002 \003(\0132\r.vega.AccountR\ttoAccou" +
+      "nt\022\026\n\006amount\030\003 \001(\004R\006amount\022\035\n\nmin_amount" +
+      "\030\004 \001(\004R\tminAmount\022\024\n\005asset\030\005 \001(\tR\005asset\022" +
+      "\034\n\treference\030\006 \001(\tR\treference\"\267\001\n\013Ledger" +
+      "Entry\022!\n\014from_account\030\001 \001(\tR\013fromAccount" +
+      "\022\035\n\nto_account\030\002 \001(\tR\ttoAccount\022\026\n\006amoun" +
+      "t\030\003 \001(\004R\006amount\022\034\n\treference\030\004 \001(\tR\trefe" +
+      "rence\022\022\n\004type\030\005 \001(\tR\004type\022\034\n\ttimestamp\030\006" +
+      " \001(\003R\ttimestamp\"T\n\017TransferBalance\022\'\n\007ac" +
+      "count\030\001 \001(\0132\r.vega.AccountR\007account\022\030\n\007b" +
+      "alance\030\002 \001(\004R\007balance\"v\n\020TransferRespons" +
+      "e\022/\n\ttransfers\030\001 \003(\0132\021.vega.LedgerEntryR" +
+      "\ttransfers\0221\n\010balances\030\002 \003(\0132\025.vega.Tran" +
+      "sferBalanceR\010balances\"\255\002\n\014MarginLevels\022-" +
+      "\n\022maintenance_margin\030\001 \001(\004R\021maintenanceM" +
+      "argin\022!\n\014search_level\030\002 \001(\004R\013searchLevel" +
+      "\022%\n\016initial_margin\030\003 \001(\004R\rinitialMargin\022" +
+      "8\n\030collateral_release_level\030\004 \001(\004R\026colla" +
+      "teralReleaseLevel\022\031\n\010party_id\030\005 \001(\tR\007par" +
+      "tyId\022\033\n\tmarket_id\030\006 \001(\tR\010marketId\022\024\n\005ass" +
+      "et\030\007 \001(\tR\005asset\022\034\n\ttimestamp\030\010 \001(\003R\ttime" +
+      "stamp\"\323\t\n\nMarketData\022\035\n\nmark_price\030\001 \001(\004" +
+      "R\tmarkPrice\022$\n\016best_bid_price\030\002 \001(\004R\014bes" +
+      "tBidPrice\022&\n\017best_bid_volume\030\003 \001(\004R\rbest" +
+      "BidVolume\022(\n\020best_offer_price\030\004 \001(\004R\016bes" +
+      "tOfferPrice\022*\n\021best_offer_volume\030\005 \001(\004R\017" +
+      "bestOfferVolume\0221\n\025best_static_bid_price" +
+      "\030\006 \001(\004R\022bestStaticBidPrice\0223\n\026best_stati" +
+      "c_bid_volume\030\007 \001(\004R\023bestStaticBidVolume\022" +
+      "5\n\027best_static_offer_price\030\010 \001(\004R\024bestSt" +
+      "aticOfferPrice\0227\n\030best_static_offer_volu" +
+      "me\030\t \001(\004R\025bestStaticOfferVolume\022\033\n\tmid_p" +
+      "rice\030\n \001(\004R\010midPrice\022(\n\020static_mid_price" +
+      "\030\013 \001(\004R\016staticMidPrice\022\026\n\006market\030\014 \001(\tR\006" +
+      "market\022\034\n\ttimestamp\030\r \001(\003R\ttimestamp\022#\n\r" +
+      "open_interest\030\016 \001(\004R\014openInterest\022\037\n\013auc" +
+      "tion_end\030\017 \001(\003R\nauctionEnd\022#\n\rauction_st" +
+      "art\030\020 \001(\003R\014auctionStart\022)\n\020indicative_pr" +
+      "ice\030\021 \001(\004R\017indicativePrice\022+\n\021indicative" +
+      "_volume\030\022 \001(\004R\020indicativeVolume\022H\n\023marke" +
+      "t_trading_mode\030\023 \001(\0162\030.vega.Market.Tradi" +
+      "ngModeR\021marketTradingMode\022.\n\007trigger\030\024 \001" +
+      "(\0162\024.vega.AuctionTriggerR\007trigger\022A\n\021ext" +
+      "ension_trigger\030\025 \001(\0162\024.vega.AuctionTrigg" +
+      "erR\020extensionTrigger\022!\n\014target_stake\030\026 \001" +
+      "(\tR\013targetStake\022%\n\016supplied_stake\030\027 \001(\tR" +
+      "\rsuppliedStake\022S\n\027price_monitoring_bound" +
+      "s\030\030 \003(\0132\033.vega.PriceMonitoringBoundsR\025pr" +
+      "iceMonitoringBounds\022,\n\022market_value_prox" +
+      "y\030\031 \001(\tR\020marketValueProxy\022`\n\034liquidity_p" +
+      "rovider_fee_share\030\032 \003(\0132\037.vega.Liquidity" +
+      "ProviderFeeShareR\031liquidityProviderFeeSh" +
+      "are\"\225\001\n\031LiquidityProviderFeeShare\022\024\n\005par" +
+      "ty\030\001 \001(\tR\005party\022*\n\021equity_like_share\030\002 \001" +
+      "(\tR\017equityLikeShare\0226\n\027average_entry_val" +
+      "uation\030\003 \001(\tR\025averageEntryValuation\"\310\001\n\025" +
+      "PriceMonitoringBounds\022&\n\017min_valid_price" +
+      "\030\001 \001(\004R\rminValidPrice\022&\n\017max_valid_price" +
+      "\030\002 \001(\004R\rmaxValidPrice\0226\n\007trigger\030\003 \001(\0132\034" +
+      ".vega.PriceMonitoringTriggerR\007trigger\022\'\n" +
+      "\017reference_price\030\004 \001(\001R\016referencePrice\"Q" +
+      "\n\013ErrorDetail\022\022\n\004code\030\001 \001(\005R\004code\022\030\n\007mes" +
+      "sage\030\002 \001(\tR\007message\022\024\n\005inner\030\003 \001(\tR\005inne" +
+      "r\":\n\020NetworkParameter\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\024\n\005value\030\002 \001(\tR\005value\"}\n\016LiquidityOrder\022" +
+      "3\n\treference\030\001 \001(\0162\025.vega.PeggedReferenc" +
+      "eR\treference\022\036\n\nproportion\030\002 \001(\rR\npropor" +
+      "tion\022\026\n\006offset\030\003 \001(\003R\006offset\"s\n\027Liquidit" +
+      "yOrderReference\022\031\n\010order_id\030\001 \001(\tR\007order" +
+      "Id\022=\n\017liquidity_order\030\002 \001(\0132\024.vega.Liqui" +
+      "dityOrderR\016liquidityOrder\"\332\004\n\022LiquidityP" +
+      "rovision\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010party_id\030\002 \001" +
+      "(\tR\007partyId\022\035\n\ncreated_at\030\003 \001(\003R\tcreated" +
+      "At\022\035\n\nupdated_at\030\004 \001(\003R\tupdatedAt\022#\n\tmar" +
+      "ket_id\030\005 \001(\tB\006\342\337\037\002X\001R\010marketId\022+\n\021commit" +
+      "ment_amount\030\006 \001(\004R\020commitmentAmount\022\020\n\003f" +
+      "ee\030\007 \001(\tR\003fee\0223\n\005sells\030\010 \003(\0132\035.vega.Liqu" +
+      "idityOrderReferenceR\005sells\0221\n\004buys\030\t \003(\013" +
+      "2\035.vega.LiquidityOrderReferenceR\004buys\022\030\n" +
+      "\007version\030\n \001(\tR\007version\0227\n\006status\030\013 \001(\0162" +
+      "\037.vega.LiquidityProvision.StatusR\006status" +
+      "\022\034\n\treference\030\014 \001(\tR\treference\"\235\001\n\006Statu" +
+      "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\021\n\rSTATUS_ACTI" +
+      "VE\020\001\022\022\n\016STATUS_STOPPED\020\002\022\024\n\020STATUS_CANCE" +
+      "LLED\020\003\022\023\n\017STATUS_REJECTED\020\004\022\025\n\021STATUS_UN" +
+      "DEPLOYED\020\005\022\022\n\016STATUS_PENDING\020\006\"\321\001\n\016Ether" +
+      "eumConfig\022\035\n\nnetwork_id\030\001 \001(\tR\tnetworkId" +
+      "\022\031\n\010chain_id\030\002 \001(\tR\007chainId\022%\n\016bridge_ad" +
+      "dress\030\003 \001(\tR\rbridgeAddress\022$\n\rconfirmati" +
+      "ons\030\004 \001(\rR\rconfirmations\0228\n\030staking_brid" +
+      "ge_addresses\030\005 \003(\tR\026stakingBridgeAddress" +
+      "es\"\213\001\n\017EpochTimestamps\022\035\n\nstart_time\030\001 \001" +
+      "(\003R\tstartTime\022\031\n\010end_time\030\002 \001(\003R\007endTime" +
+      "\022\037\n\013first_block\030\003 \001(\004R\nfirstBlock\022\035\n\nlas" +
+      "t_block\030\004 \001(\004R\tlastBlock\"\270\001\n\005Epoch\022\020\n\003se" +
+      "q\030\001 \001(\004R\003seq\022=\n\ntimestamps\030\002 \001(\0132\025.vega." +
+      "EpochTimestampsB\006\342\337\037\002 \001R\ntimestamps\022*\n\nv" +
+      "alidators\030\003 \003(\0132\n.vega.NodeR\nvalidators\022" +
+      "2\n\013delegations\030\004 \003(\0132\020.vega.DelegationR\013" +
+      "delegations\"\226\001\n\022EpochParticipation\022)\n\005ep" +
+      "och\030\001 \001(\0132\013.vega.EpochB\006\342\337\037\002X\001R\005epoch\022\030\n" +
+      "\007offline\030\002 \001(\004R\007offline\022\026\n\006online\030\003 \001(\004R" +
+      "\006online\022#\n\rtotal_rewards\030\004 \001(\001R\014totalRew" +
+      "ards\"S\n\tEpochData\022\024\n\005total\030\001 \001(\005R\005total\022" +
+      "\030\n\007offline\030\002 \001(\005R\007offline\022\026\n\006online\030\003 \001(" +
+      "\005R\006online\"\362\003\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu" +
+      "b_key\030\002 \001(\tB\006\342\337\037\002X\001R\006pubKey\022\031\n\010info_url\030" +
+      "\003 \001(\tR\007infoUrl\022\032\n\010location\030\004 \001(\tR\010locati" +
+      "on\022\020\n\003fee\030\005 \001(\002R\003fee\022,\n\022staked_by_operat" +
+      "or\030\006 \001(\tR\020stakedByOperator\022.\n\023staked_by_" +
+      "delegates\030\007 \001(\tR\021stakedByDelegates\022!\n\014st" +
+      "aked_total\030\010 \001(\tR\013stakedTotal\022,\n\022max_int" +
+      "ended_stake\030\t \001(\tR\020maxIntendedStake\022#\n\rp" +
+      "ending_stake\030\n \001(\tR\014pendingStake\0226\n\nepoc" +
+      "h_data\030\013 \001(\0132\017.vega.EpochDataB\006\342\337\037\002 \001R\te" +
+      "pochData\0220\n\006status\030\014 \001(\0162\020.vega.NodeStat" +
+      "usB\006\342\337\037\002 \001R\006status\0222\n\013delagations\030\r \003(\0132" +
+      "\020.vega.DelegationR\013delagations\"\331\001\n\010NodeD" +
+      "ata\022!\n\014staked_total\030\001 \001(\tR\013stakedTotal\022\037" +
+      "\n\013total_nodes\030\002 \001(\rR\ntotalNodes\022%\n\016inact" +
+      "ive_nodes\030\003 \001(\rR\rinactiveNodes\022)\n\020valida" +
+      "ting_nodes\030\004 \001(\rR\017validatingNodes\022\037\n\013ave" +
+      "rage_fee\030\005 \001(\002R\naverageFee\022\026\n\006uptime\030\006 \001" +
+      "(\002R\006uptime\"p\n\nDelegation\022\024\n\005party\030\001 \001(\tR" +
+      "\005party\022\027\n\007node_id\030\002 \001(\tR\006nodeId\022\026\n\006amoun" +
+      "t\030\003 \001(\tR\006amount\022\033\n\tepoch_seq\030\004 \001(\tR\010epoc" +
+      "hSeq\"\304\001\n\rRewardDetails\022\031\n\010asset_id\030\001 \001(\t" +
+      "R\007assetId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005" +
+      "epoch\030\003 \001(\004R\005epoch\022\026\n\006amount\030\004 \001(\tR\006amou" +
+      "nt\022.\n\023percentage_of_total\030\005 \001(\tR\021percent" +
+      "ageOfTotal\022\037\n\013received_at\030\006 \001(\003R\nreceive" +
+      "dAt\"\203\001\n\024RewardPerAssetDetail\022\024\n\005asset\030\001 " +
+      "\001(\tR\005asset\022-\n\007details\030\002 \003(\0132\023.vega.Rewar" +
+      "dDetailsR\007details\022&\n\017total_for_asset\030\003 \001" +
+      "(\tR\rtotalForAsset*9\n\004Side\022\024\n\020SIDE_UNSPEC" +
+      "IFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n" +
+      "\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014I" +
+      "NTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTE" +
+      "RVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTER" +
+      "VAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Auct" +
+      "ionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFIE" +
+      "D\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTIO" +
+      "N_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_P" +
+      "RICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\213\001" +
+      "\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_UN" +
+      "SPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035\n" +
+      "\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED_R" +
+      "EFERENCE_BEST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027OR" +
+      "DER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR_I" +
+      "NVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVALI" +
+      "D_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUE" +
+      "NCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING_S" +
+      "IZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033O" +
+      "RDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_ER" +
+      "ROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#ORD" +
+      "ER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034OR" +
+      "DER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ER" +
+      "ROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_F" +
+      "OUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020\014" +
+      "\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDER" +
+      "_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_ER" +
+      "ROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_E" +
+      "RROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_INV" +
+      "ALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERSI" +
+      "STENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022\034" +
+      "\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_ER" +
+      "ROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!" +
+      "ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n!O" +
+      "RDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'OR" +
+      "DER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020\030\022" +
+      "3\n/ORDER_ERROR_GFA_ORDER_DURING_CONTINUO" +
+      "US_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AMEND" +
+      "_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ERRO" +
+      "R_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER_E" +
+      "RROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&O" +
+      "RDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022" +
+      "*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GF" +
+      "N\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_GFA" +
+      "_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_IOC" +
+      "_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR_C" +
+      "ANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022#\n" +
+      "\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036OR" +
+      "DER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_" +
+      "ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORDER" +
+      "_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRI" +
+      "CE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LESS_" +
+      "OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFSET" +
+      "_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERROR" +
+      "_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO" +
+      "\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENCE_" +
+      "BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET_M" +
+      "UST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ERRO" +
+      "R_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDER_" +
+      "ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_" +
+      "ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_UNA" +
+      "BLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER_E" +
+      "RROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORD" +
+      "ER\020.\0228\n4ORDER_ERROR_NON_PERSISTENT_ORDER" +
+      "_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus\022\034" +
+      "\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_ST" +
+      "ATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_REPL" +
+      "AYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\220\003\n\013" +
+      "AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020" +
+      "\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT" +
+      "_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGI" +
+      "N\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOUNT" +
+      "_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_T" +
+      "YPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEE" +
+      "S_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020" +
+      "\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE" +
+      "_EXTERNAL\020\n\022!\n\035ACCOUNT_TYPE_GLOBAL_INSUR" +
+      "ANCE\020\013\022\036\n\032ACCOUNT_TYPE_GLOBAL_REWARD\020\014*\323" +
+      "\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPECI" +
+      "FIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSF" +
+      "ER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032" +
+      "\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_T" +
+      "YPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LO" +
+      "W\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TR" +
+      "ANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRAN" +
+      "SFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TY" +
+      "PE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_" +
+      "INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER_TYP" +
+      "E_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRA" +
+      "NSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSF" +
+      "ER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TR" +
+      "ANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_" +
+      "BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRAW_LO" +
+      "CK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRAN" +
+      "SFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BON" +
+      "D_SLASHING\020\024\022\036\n\032TRANSFER_TYPE_STAKE_REWA" +
+      "RD\020\025*c\n\nNodeStatus\022\033\n\027NODE_STATUS_UNSPEC" +
+      "IFIED\020\000\022\031\n\025NODE_STATUS_VALIDATOR\020\001\022\035\n\031NO" +
+      "DE_STATUS_NON_VALIDATOR\020\002B7\n\024io.vegaprot" +
+      "ocol.vegaZ\037code.vegaprotocol.io/vega/pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.github.mwitkow.go_proto_validators.Validator.getDescriptor(),
           io.vegaprotocol.vega.Markets.getDescriptor(),
+          io.vegaprotocol.vega.Assets.getDescriptor(),
         });
     internal_static_vega_Price_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -62618,7 +68538,7 @@ public final class Vega {
     internal_static_vega_Party_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Party_descriptor,
-        new java.lang.String[] { "Id", });
+        new java.lang.String[] { "Id", "Delegations", });
     internal_static_vega_RiskFactor_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_vega_RiskFactor_fieldAccessorTable = new
@@ -62727,156 +68647,186 @@ public final class Vega {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PositionTrade_descriptor,
         new java.lang.String[] { "Volume", "Price", });
-    internal_static_vega_Statistics_descriptor =
-      getDescriptor().getMessageTypes().get(19);
-    internal_static_vega_Statistics_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_Statistics_descriptor,
-        new java.lang.String[] { "BlockHeight", "BacklogLength", "TotalPeers", "GenesisTime", "CurrentTime", "VegaTime", "Status", "TxPerBlock", "AverageTxBytes", "AverageOrdersPerBlock", "TradesPerSecond", "OrdersPerSecond", "TotalMarkets", "TotalAmendOrder", "TotalCancelOrder", "TotalCreateOrder", "TotalOrders", "TotalTrades", "OrderSubscriptions", "TradeSubscriptions", "CandleSubscriptions", "MarketDepthSubscriptions", "PositionsSubscriptions", "AccountSubscriptions", "MarketDataSubscriptions", "AppVersionHash", "AppVersion", "ChainVersion", "BlockDuration", "Uptime", "ChainId", "MarketDepthUpdatesSubscriptions", });
     internal_static_vega_Deposit_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_vega_Deposit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Deposit_descriptor,
         new java.lang.String[] { "Id", "Status", "PartyId", "Asset", "Amount", "TxHash", "CreditedTimestamp", "CreatedTimestamp", });
     internal_static_vega_Withdrawal_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_vega_Withdrawal_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Withdrawal_descriptor,
         new java.lang.String[] { "Id", "PartyId", "Amount", "Asset", "Status", "Ref", "Expiry", "TxHash", "CreatedTimestamp", "WithdrawnTimestamp", "Ext", });
     internal_static_vega_WithdrawExt_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_vega_WithdrawExt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_WithdrawExt_descriptor,
         new java.lang.String[] { "Erc20", "Ext", });
     internal_static_vega_Erc20WithdrawExt_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_vega_Erc20WithdrawExt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Erc20WithdrawExt_descriptor,
         new java.lang.String[] { "ReceiverAddress", });
     internal_static_vega_Account_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_vega_Account_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Account_descriptor,
         new java.lang.String[] { "Id", "Owner", "Balance", "Asset", "MarketId", "Type", });
     internal_static_vega_FinancialAmount_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_vega_FinancialAmount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_FinancialAmount_descriptor,
         new java.lang.String[] { "Amount", "Asset", });
     internal_static_vega_Transfer_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_vega_Transfer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Transfer_descriptor,
         new java.lang.String[] { "Owner", "Amount", "Type", "MinAmount", });
     internal_static_vega_TransferRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_vega_TransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferRequest_descriptor,
         new java.lang.String[] { "FromAccount", "ToAccount", "Amount", "MinAmount", "Asset", "Reference", });
     internal_static_vega_LedgerEntry_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_vega_LedgerEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LedgerEntry_descriptor,
         new java.lang.String[] { "FromAccount", "ToAccount", "Amount", "Reference", "Type", "Timestamp", });
     internal_static_vega_TransferBalance_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_vega_TransferBalance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferBalance_descriptor,
         new java.lang.String[] { "Account", "Balance", });
     internal_static_vega_TransferResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_vega_TransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_TransferResponse_descriptor,
         new java.lang.String[] { "Transfers", "Balances", });
     internal_static_vega_MarginLevels_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_vega_MarginLevels_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarginLevels_descriptor,
         new java.lang.String[] { "MaintenanceMargin", "SearchLevel", "InitialMargin", "CollateralReleaseLevel", "PartyId", "MarketId", "Asset", "Timestamp", });
     internal_static_vega_MarketData_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_vega_MarketData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_MarketData_descriptor,
         new java.lang.String[] { "MarkPrice", "BestBidPrice", "BestBidVolume", "BestOfferPrice", "BestOfferVolume", "BestStaticBidPrice", "BestStaticBidVolume", "BestStaticOfferPrice", "BestStaticOfferVolume", "MidPrice", "StaticMidPrice", "Market", "Timestamp", "OpenInterest", "AuctionEnd", "AuctionStart", "IndicativePrice", "IndicativeVolume", "MarketTradingMode", "Trigger", "ExtensionTrigger", "TargetStake", "SuppliedStake", "PriceMonitoringBounds", "MarketValueProxy", "LiquidityProviderFeeShare", });
     internal_static_vega_LiquidityProviderFeeShare_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_vega_LiquidityProviderFeeShare_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityProviderFeeShare_descriptor,
         new java.lang.String[] { "Party", "EquityLikeShare", "AverageEntryValuation", });
     internal_static_vega_PriceMonitoringBounds_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_vega_PriceMonitoringBounds_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_PriceMonitoringBounds_descriptor,
         new java.lang.String[] { "MinValidPrice", "MaxValidPrice", "Trigger", "ReferencePrice", });
     internal_static_vega_ErrorDetail_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_vega_ErrorDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_ErrorDetail_descriptor,
         new java.lang.String[] { "Code", "Message", "Inner", });
-    internal_static_vega_Transaction_descriptor =
-      getDescriptor().getMessageTypes().get(36);
-    internal_static_vega_Transaction_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_Transaction_descriptor,
-        new java.lang.String[] { "InputData", "Nonce", "BlockHeight", "Address", "PubKey", "From", });
-    internal_static_vega_Signature_descriptor =
-      getDescriptor().getMessageTypes().get(37);
-    internal_static_vega_Signature_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_Signature_descriptor,
-        new java.lang.String[] { "Sig", "Algo", "Version", });
-    internal_static_vega_SignedBundle_descriptor =
-      getDescriptor().getMessageTypes().get(38);
-    internal_static_vega_SignedBundle_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_vega_SignedBundle_descriptor,
-        new java.lang.String[] { "Tx", "Sig", });
     internal_static_vega_NetworkParameter_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_vega_NetworkParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NetworkParameter_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_vega_LiquidityOrder_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_vega_LiquidityOrder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityOrder_descriptor,
         new java.lang.String[] { "Reference", "Proportion", "Offset", });
     internal_static_vega_LiquidityOrderReference_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_vega_LiquidityOrderReference_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityOrderReference_descriptor,
         new java.lang.String[] { "OrderId", "LiquidityOrder", });
     internal_static_vega_LiquidityProvision_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_vega_LiquidityProvision_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_LiquidityProvision_descriptor,
         new java.lang.String[] { "Id", "PartyId", "CreatedAt", "UpdatedAt", "MarketId", "CommitmentAmount", "Fee", "Sells", "Buys", "Version", "Status", "Reference", });
     internal_static_vega_EthereumConfig_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_vega_EthereumConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_EthereumConfig_descriptor,
-        new java.lang.String[] { "NetworkId", "ChainId", "BridgeAddress", "Confirmations", });
+        new java.lang.String[] { "NetworkId", "ChainId", "BridgeAddress", "Confirmations", "StakingBridgeAddresses", });
+    internal_static_vega_EpochTimestamps_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_vega_EpochTimestamps_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_EpochTimestamps_descriptor,
+        new java.lang.String[] { "StartTime", "EndTime", "FirstBlock", "LastBlock", });
+    internal_static_vega_Epoch_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_vega_Epoch_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_Epoch_descriptor,
+        new java.lang.String[] { "Seq", "Timestamps", "Validators", "Delegations", });
+    internal_static_vega_EpochParticipation_descriptor =
+      getDescriptor().getMessageTypes().get(42);
+    internal_static_vega_EpochParticipation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_EpochParticipation_descriptor,
+        new java.lang.String[] { "Epoch", "Offline", "Online", "TotalRewards", });
+    internal_static_vega_EpochData_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_vega_EpochData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_EpochData_descriptor,
+        new java.lang.String[] { "Total", "Offline", "Online", });
+    internal_static_vega_Node_descriptor =
+      getDescriptor().getMessageTypes().get(44);
+    internal_static_vega_Node_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_Node_descriptor,
+        new java.lang.String[] { "Id", "PubKey", "InfoUrl", "Location", "Fee", "StakedByOperator", "StakedByDelegates", "StakedTotal", "MaxIntendedStake", "PendingStake", "EpochData", "Status", "Delagations", });
+    internal_static_vega_NodeData_descriptor =
+      getDescriptor().getMessageTypes().get(45);
+    internal_static_vega_NodeData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_NodeData_descriptor,
+        new java.lang.String[] { "StakedTotal", "TotalNodes", "InactiveNodes", "ValidatingNodes", "AverageFee", "Uptime", });
+    internal_static_vega_Delegation_descriptor =
+      getDescriptor().getMessageTypes().get(46);
+    internal_static_vega_Delegation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_Delegation_descriptor,
+        new java.lang.String[] { "Party", "NodeId", "Amount", "EpochSeq", });
+    internal_static_vega_RewardDetails_descriptor =
+      getDescriptor().getMessageTypes().get(47);
+    internal_static_vega_RewardDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_RewardDetails_descriptor,
+        new java.lang.String[] { "AssetId", "PartyId", "Epoch", "Amount", "PercentageOfTotal", "ReceivedAt", });
+    internal_static_vega_RewardPerAssetDetail_descriptor =
+      getDescriptor().getMessageTypes().get(48);
+    internal_static_vega_RewardPerAssetDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_RewardPerAssetDetail_descriptor,
+        new java.lang.String[] { "Asset", "Details", "TotalForAsset", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);
@@ -62884,6 +68834,7 @@ public final class Vega {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.github.mwitkow.go_proto_validators.Validator.getDescriptor();
     io.vegaprotocol.vega.Markets.getDescriptor();
+    io.vegaprotocol.vega.Assets.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

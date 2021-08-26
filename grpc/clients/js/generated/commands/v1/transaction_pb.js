@@ -97,7 +97,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.vega.commands.v1.InputData.oneofGroups_ = [[1001,1002,1003,1004,1005,1006,1007,1008,1009,2001,2002,2003,2004,3001]];
+proto.vega.commands.v1.InputData.oneofGroups_ = [[1001,1002,1003,1004,1005,1006,1007,1008,1009,2001,2002,2003,2004,3001,4001]];
 
 /**
  * @enum {number}
@@ -117,7 +117,8 @@ proto.vega.commands.v1.InputData.CommandCase = {
   NODE_VOTE: 2002,
   NODE_SIGNATURE: 2003,
   CHAIN_EVENT: 2004,
-  ORACLE_DATA_SUBMISSION: 3001
+  ORACLE_DATA_SUBMISSION: 3001,
+  RESTORE_SNAPSHOT_SUBMISSION: 4001
 };
 
 /**
@@ -173,7 +174,8 @@ proto.vega.commands.v1.InputData.toObject = function(includeInstance, msg) {
     nodeVote: (f = msg.getNodeVote()) && commands_v1_validator_commands_pb.NodeVote.toObject(includeInstance, f),
     nodeSignature: (f = msg.getNodeSignature()) && commands_v1_validator_commands_pb.NodeSignature.toObject(includeInstance, f),
     chainEvent: (f = msg.getChainEvent()) && commands_v1_validator_commands_pb.ChainEvent.toObject(includeInstance, f),
-    oracleDataSubmission: (f = msg.getOracleDataSubmission()) && commands_v1_oracles_pb.OracleDataSubmission.toObject(includeInstance, f)
+    oracleDataSubmission: (f = msg.getOracleDataSubmission()) && commands_v1_oracles_pb.OracleDataSubmission.toObject(includeInstance, f),
+    restoreSnapshotSubmission: (f = msg.getRestoreSnapshotSubmission()) && commands_v1_commands_pb.RestoreSnapshot.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -287,6 +289,11 @@ proto.vega.commands.v1.InputData.deserializeBinaryFromReader = function(msg, rea
       var value = new commands_v1_oracles_pb.OracleDataSubmission;
       reader.readMessage(value,commands_v1_oracles_pb.OracleDataSubmission.deserializeBinaryFromReader);
       msg.setOracleDataSubmission(value);
+      break;
+    case 4001:
+      var value = new commands_v1_commands_pb.RestoreSnapshot;
+      reader.readMessage(value,commands_v1_commands_pb.RestoreSnapshot.deserializeBinaryFromReader);
+      msg.setRestoreSnapshotSubmission(value);
       break;
     default:
       reader.skipField();
@@ -441,6 +448,14 @@ proto.vega.commands.v1.InputData.serializeBinaryToWriter = function(message, wri
       3001,
       f,
       commands_v1_oracles_pb.OracleDataSubmission.serializeBinaryToWriter
+    );
+  }
+  f = message.getRestoreSnapshotSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      4001,
+      f,
+      commands_v1_commands_pb.RestoreSnapshot.serializeBinaryToWriter
     );
   }
 };
@@ -997,6 +1012,43 @@ proto.vega.commands.v1.InputData.prototype.clearOracleDataSubmission = function(
  */
 proto.vega.commands.v1.InputData.prototype.hasOracleDataSubmission = function() {
   return jspb.Message.getField(this, 3001) != null;
+};
+
+
+/**
+ * optional RestoreSnapshot restore_snapshot_submission = 4001;
+ * @return {?proto.vega.commands.v1.RestoreSnapshot}
+ */
+proto.vega.commands.v1.InputData.prototype.getRestoreSnapshotSubmission = function() {
+  return /** @type{?proto.vega.commands.v1.RestoreSnapshot} */ (
+    jspb.Message.getWrapperField(this, commands_v1_commands_pb.RestoreSnapshot, 4001));
+};
+
+
+/**
+ * @param {?proto.vega.commands.v1.RestoreSnapshot|undefined} value
+ * @return {!proto.vega.commands.v1.InputData} returns this
+*/
+proto.vega.commands.v1.InputData.prototype.setRestoreSnapshotSubmission = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 4001, proto.vega.commands.v1.InputData.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.vega.commands.v1.InputData} returns this
+ */
+proto.vega.commands.v1.InputData.prototype.clearRestoreSnapshotSubmission = function() {
+  return this.setRestoreSnapshotSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.vega.commands.v1.InputData.prototype.hasRestoreSnapshotSubmission = function() {
+  return jspb.Message.getField(this, 4001) != null;
 };
 
 

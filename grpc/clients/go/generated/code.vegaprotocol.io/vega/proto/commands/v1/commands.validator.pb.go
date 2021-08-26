@@ -114,3 +114,6 @@ func (this *UndelegateSubmission) Validate() error {
 	}
 	return nil
 }
+func (this *RestoreSnapshot) Validate() error {
+	return nil
+}
