@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package vega.coreapi.v1;
+option java_package = "io.vegaprotocol.vega.coreapi.v1";
+option go_package = "code.vegaprotocol.io/vega/proto/coreapi/v1";
+
+import "assets.proto";
+import "vega.proto";
+import "events/v1/events.proto";
+
+service CoreApiService {
+  rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse);
+  rpc ListAssets(ListAssetsRequest) returns (ListAssetsResponse);
+  rpc ListNetworkParameters(ListNetworkParametersRequest) returns (ListNetworkParametersResponse);
+  rpc ListParties(ListPartiesRequest) returns (ListPartiesResponse);
+  rpc ListValidators(ListValidatorsRequest) returns (ListValidatorsResponse);
+}
+
+message Account {
+  string party = 1;
+  string market = 2;
+  string balance = 3;
+  string asset = 5;
+   string type = 6;
+}
+
+message ListAccountsRequest {
+  string party = 1;
+  string market = 2;
+ }
+
+message ListAccountsResponse {
+  repeated Account accounts = 1;
+}
+
+message ListAssetsRequest {
+  string asset = 1; // optional ID
+}
+
+message ListAssetsResponse {
+  repeated vega.Asset assets = 1;
+}
+
+message ListNetworkParametersRequest {
+  string network_parameter_key = 1; // optional parameter key
+}
+
+message ListNetworkParametersResponse {
+  repeated vega.NetworkParameter network_parameters = 1;
+}
+
+message ListPartiesRequest {}
+
+message ListPartiesResponse {
+  repeated vega.Party parties = 1;
+}
+
+message ListValidatorsRequest {}
+
+message ListValidatorsResponse {
+  repeated vega.events.v1.ValidatorUpdate validators = 1;
+}
