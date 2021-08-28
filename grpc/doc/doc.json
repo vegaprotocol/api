@@ -4975,18 +4975,6 @@
               "defaultValue": ""
             },
             {
-              "name": "fee",
-              "description": "Value between 0 and 1 for percentage",
-              "label": "",
-              "type": "float",
-              "longType": "float",
-              "fullType": "float",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
               "name": "staked_by_operator",
               "description": "The amount the node has put up themselves",
               "label": "",
@@ -5153,18 +5141,6 @@
               "type": "uint32",
               "longType": "uint32",
               "fullType": "uint32",
-              "ismap": false,
-              "isoneof": false,
-              "oneofdecl": "",
-              "defaultValue": ""
-            },
-            {
-              "name": "average_fee",
-              "description": "Average percentage fee across all nodes",
-              "label": "",
-              "type": "float",
-              "longType": "float",
-              "fullType": "float",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -13381,6 +13357,54 @@
           ]
         },
         {
+          "name": "ListMarketsRequest",
+          "longName": "ListMarketsRequest",
+          "fullName": "vega.coreapi.v1.ListMarketsRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "market",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListMarketsResponse",
+          "longName": "ListMarketsResponse",
+          "fullName": "vega.coreapi.v1.ListMarketsResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "markets",
+              "description": "",
+              "label": "repeated",
+              "type": "Market",
+              "longType": "vega.Market",
+              "fullType": "vega.Market",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
           "name": "ListNetworkParametersRequest",
           "longName": "ListNetworkParametersRequest",
           "fullName": "vega.coreapi.v1.ListNetworkParametersRequest",
@@ -13456,6 +13480,66 @@
               "type": "Party",
               "longType": "vega.Party",
               "fullType": "vega.Party",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListProposalsRequest",
+          "longName": "ListProposalsRequest",
+          "fullName": "vega.coreapi.v1.ListProposalsRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "proposal",
+              "description": "optional ID",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "proposer",
+              "description": "optional party",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListProposalsResponse",
+          "longName": "ListProposalsResponse",
+          "fullName": "vega.coreapi.v1.ListProposalsResponse",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "proposals",
+              "description": "",
+              "label": "repeated",
+              "type": "Proposal",
+              "longType": "vega.Proposal",
+              "fullType": "vega.Proposal",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",
@@ -13564,6 +13648,30 @@
               "responseType": "ListValidatorsResponse",
               "responseLongType": "ListValidatorsResponse",
               "responseFullType": "vega.coreapi.v1.ListValidatorsResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "ListMarkets",
+              "description": "",
+              "requestType": "ListMarketsRequest",
+              "requestLongType": "ListMarketsRequest",
+              "requestFullType": "vega.coreapi.v1.ListMarketsRequest",
+              "requestStreaming": false,
+              "responseType": "ListMarketsResponse",
+              "responseLongType": "ListMarketsResponse",
+              "responseFullType": "vega.coreapi.v1.ListMarketsResponse",
+              "responseStreaming": false
+            },
+            {
+              "name": "ListProposals",
+              "description": "",
+              "requestType": "ListProposalsRequest",
+              "requestLongType": "ListProposalsRequest",
+              "requestFullType": "vega.coreapi.v1.ListProposalsRequest",
+              "requestStreaming": false,
+              "responseType": "ListProposalsResponse",
+              "responseLongType": "ListProposalsResponse",
+              "responseFullType": "vega.coreapi.v1.ListProposalsResponse",
               "responseStreaming": false
             }
           ]
@@ -13746,6 +13854,18 @@
               "isoneof": false,
               "oneofdecl": "",
               "defaultValue": ""
+            },
+            {
+              "name": "delegation",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
             }
           ]
         },
@@ -13766,6 +13886,114 @@
               "type": "AssetBalance",
               "longType": "AssetBalance",
               "fullType": "vega.snapshot.v1.AssetBalance",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Delegate",
+          "longName": "Delegate",
+          "fullName": "vega.snapshot.v1.Delegate",
+          "description": "Delegate contains all entries for a checkpoint",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "active",
+              "description": "",
+              "label": "repeated",
+              "type": "DelegateEntry",
+              "longType": "DelegateEntry",
+              "fullType": "vega.snapshot.v1.DelegateEntry",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "pending",
+              "description": "",
+              "label": "repeated",
+              "type": "DelegateEntry",
+              "longType": "DelegateEntry",
+              "fullType": "vega.snapshot.v1.DelegateEntry",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DelegateEntry",
+          "longName": "DelegateEntry",
+          "fullName": "vega.snapshot.v1.DelegateEntry",
+          "description": "Delegated amounts for party/node\nundelegate and epoch seq are only relevant for pending entries",
+          "hasExtensions": false,
+          "hasFields": true,
+          "hasOneofs": false,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "party",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "node",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "amount",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "undelegate",
+              "description": "",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "isoneof": false,
+              "oneofdecl": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "epoch_seq",
+              "description": "",
+              "label": "",
+              "type": "uint64",
+              "longType": "uint64",
+              "fullType": "uint64",
               "ismap": false,
               "isoneof": false,
               "oneofdecl": "",

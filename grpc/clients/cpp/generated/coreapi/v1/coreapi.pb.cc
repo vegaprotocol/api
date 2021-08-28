@@ -15,8 +15,10 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_assets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Asset_assets_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_markets_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<8> scc_info_Market_markets_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NetworkParameter_vega_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Party_vega_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Proposal_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_coreapi_2fv1_2fcoreapi_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_coreapi_2fv1_2fcoreapi_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_events_2fv1_2fevents_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ValidatorUpdate_events_2fv1_2fevents_2eproto;
 namespace vega {
@@ -66,6 +68,22 @@ class ListValidatorsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListValidatorsResponse> _instance;
 } _ListValidatorsResponse_default_instance_;
+class ListMarketsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListMarketsRequest> _instance;
+} _ListMarketsRequest_default_instance_;
+class ListMarketsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListMarketsResponse> _instance;
+} _ListMarketsResponse_default_instance_;
+class ListProposalsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListProposalsRequest> _instance;
+} _ListProposalsRequest_default_instance_;
+class ListProposalsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListProposalsResponse> _instance;
+} _ListProposalsResponse_default_instance_;
 }  // namespace v1
 }  // namespace coreapi
 }  // namespace vega
@@ -136,6 +154,33 @@ static void InitDefaultsscc_info_ListAssetsResponse_coreapi_2fv1_2fcoreapi_2epro
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListAssetsResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
       &scc_info_Asset_assets_2eproto.base,}};
 
+static void InitDefaultsscc_info_ListMarketsRequest_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_ListMarketsRequest_default_instance_;
+    new (ptr) ::vega::coreapi::v1::ListMarketsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListMarketsRequest_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListMarketsRequest_coreapi_2fv1_2fcoreapi_2eproto}, {}};
+
+static void InitDefaultsscc_info_ListMarketsResponse_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_ListMarketsResponse_default_instance_;
+    new (ptr) ::vega::coreapi::v1::ListMarketsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListMarketsResponse_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListMarketsResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
+      &scc_info_Market_markets_2eproto.base,}};
+
 static void InitDefaultsscc_info_ListNetworkParametersRequest_coreapi_2fv1_2fcoreapi_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -190,6 +235,33 @@ static void InitDefaultsscc_info_ListPartiesResponse_coreapi_2fv1_2fcoreapi_2epr
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListPartiesResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
       &scc_info_Party_vega_2eproto.base,}};
 
+static void InitDefaultsscc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_ListProposalsRequest_default_instance_;
+    new (ptr) ::vega::coreapi::v1::ListProposalsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto}, {}};
+
+static void InitDefaultsscc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::coreapi::v1::_ListProposalsResponse_default_instance_;
+    new (ptr) ::vega::coreapi::v1::ListProposalsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
+      &scc_info_Proposal_governance_2eproto.base,}};
+
 static void InitDefaultsscc_info_ListValidatorsRequest_coreapi_2fv1_2fcoreapi_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -217,7 +289,7 @@ static void InitDefaultsscc_info_ListValidatorsResponse_coreapi_2fv1_2fcoreapi_2
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListValidatorsResponse_coreapi_2fv1_2fcoreapi_2eproto}, {
       &scc_info_ValidatorUpdate_events_2fv1_2fevents_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto[11];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto[15];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_coreapi_2fv1_2fcoreapi_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_coreapi_2fv1_2fcoreapi_2eproto = nullptr;
 
@@ -291,6 +363,31 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_coreapi_2fv1_2fcoreapi_2eproto
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListValidatorsResponse, validators_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListMarketsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListMarketsRequest, market_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListMarketsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListMarketsResponse, markets_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListProposalsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListProposalsRequest, proposal_),
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListProposalsRequest, proposer_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListProposalsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::coreapi::v1::ListProposalsResponse, proposals_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::coreapi::v1::Account)},
@@ -304,6 +401,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 52, -1, sizeof(::vega::coreapi::v1::ListPartiesResponse)},
   { 58, -1, sizeof(::vega::coreapi::v1::ListValidatorsRequest)},
   { 63, -1, sizeof(::vega::coreapi::v1::ListValidatorsResponse)},
+  { 69, -1, sizeof(::vega::coreapi::v1::ListMarketsRequest)},
+  { 75, -1, sizeof(::vega::coreapi::v1::ListMarketsResponse)},
+  { 81, -1, sizeof(::vega::coreapi::v1::ListProposalsRequest)},
+  { 88, -1, sizeof(::vega::coreapi::v1::ListProposalsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -318,71 +419,93 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListPartiesResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListValidatorsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListValidatorsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListMarketsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListMarketsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListProposalsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::coreapi::v1::_ListProposalsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030coreapi/v1/coreapi.proto\022\017vega.coreapi"
-  ".v1\032\014assets.proto\032\nvega.proto\032\026events/v1"
-  "/events.proto\"{\n\007Account\022\024\n\005party\030\001 \001(\tR"
-  "\005party\022\026\n\006market\030\002 \001(\tR\006market\022\030\n\007balanc"
-  "e\030\003 \001(\tR\007balance\022\024\n\005asset\030\005 \001(\tR\005asset\022\022"
-  "\n\004type\030\006 \001(\tR\004type\"C\n\023ListAccountsReques"
-  "t\022\024\n\005party\030\001 \001(\tR\005party\022\026\n\006market\030\002 \001(\tR"
-  "\006market\"L\n\024ListAccountsResponse\0224\n\010accou"
-  "nts\030\001 \003(\0132\030.vega.coreapi.v1.AccountR\010acc"
-  "ounts\")\n\021ListAssetsRequest\022\024\n\005asset\030\001 \001("
-  "\tR\005asset\"9\n\022ListAssetsResponse\022#\n\006assets"
-  "\030\001 \003(\0132\013.vega.AssetR\006assets\"R\n\034ListNetwo"
-  "rkParametersRequest\0222\n\025network_parameter"
-  "_key\030\001 \001(\tR\023networkParameterKey\"f\n\035ListN"
-  "etworkParametersResponse\022E\n\022network_para"
-  "meters\030\001 \003(\0132\026.vega.NetworkParameterR\021ne"
-  "tworkParameters\"\024\n\022ListPartiesRequest\"<\n"
-  "\023ListPartiesResponse\022%\n\007parties\030\001 \003(\0132\013."
-  "vega.PartyR\007parties\"\027\n\025ListValidatorsReq"
-  "uest\"Y\n\026ListValidatorsResponse\022\?\n\nvalida"
-  "tors\030\001 \003(\0132\037.vega.events.v1.ValidatorUpd"
-  "ateR\nvalidators2\371\003\n\016CoreApiService\022[\n\014Li"
-  "stAccounts\022$.vega.coreapi.v1.ListAccount"
-  "sRequest\032%.vega.coreapi.v1.ListAccountsR"
-  "esponse\022U\n\nListAssets\022\".vega.coreapi.v1."
-  "ListAssetsRequest\032#.vega.coreapi.v1.List"
-  "AssetsResponse\022v\n\025ListNetworkParameters\022"
-  "-.vega.coreapi.v1.ListNetworkParametersR"
-  "equest\032..vega.coreapi.v1.ListNetworkPara"
-  "metersResponse\022X\n\013ListParties\022#.vega.cor"
-  "eapi.v1.ListPartiesRequest\032$.vega.coreap"
-  "i.v1.ListPartiesResponse\022a\n\016ListValidato"
-  "rs\022&.vega.coreapi.v1.ListValidatorsReque"
-  "st\032\'.vega.coreapi.v1.ListValidatorsRespo"
-  "nseBM\n\037io.vegaprotocol.vega.coreapi.v1Z*"
-  "code.vegaprotocol.io/vega/proto/coreapi/"
-  "v1b\006proto3"
+  ".v1\032\014assets.proto\032\020governance.proto\032\rmar"
+  "kets.proto\032\nvega.proto\032\026events/v1/events"
+  ".proto\"{\n\007Account\022\024\n\005party\030\001 \001(\tR\005party\022"
+  "\026\n\006market\030\002 \001(\tR\006market\022\030\n\007balance\030\003 \001(\t"
+  "R\007balance\022\024\n\005asset\030\005 \001(\tR\005asset\022\022\n\004type\030"
+  "\006 \001(\tR\004type\"C\n\023ListAccountsRequest\022\024\n\005pa"
+  "rty\030\001 \001(\tR\005party\022\026\n\006market\030\002 \001(\tR\006market"
+  "\"L\n\024ListAccountsResponse\0224\n\010accounts\030\001 \003"
+  "(\0132\030.vega.coreapi.v1.AccountR\010accounts\")"
+  "\n\021ListAssetsRequest\022\024\n\005asset\030\001 \001(\tR\005asse"
+  "t\"9\n\022ListAssetsResponse\022#\n\006assets\030\001 \003(\0132"
+  "\013.vega.AssetR\006assets\"R\n\034ListNetworkParam"
+  "etersRequest\0222\n\025network_parameter_key\030\001 "
+  "\001(\tR\023networkParameterKey\"f\n\035ListNetworkP"
+  "arametersResponse\022E\n\022network_parameters\030"
+  "\001 \003(\0132\026.vega.NetworkParameterR\021networkPa"
+  "rameters\"\024\n\022ListPartiesRequest\"<\n\023ListPa"
+  "rtiesResponse\022%\n\007parties\030\001 \003(\0132\013.vega.Pa"
+  "rtyR\007parties\"\027\n\025ListValidatorsRequest\"Y\n"
+  "\026ListValidatorsResponse\022\?\n\nvalidators\030\001 "
+  "\003(\0132\037.vega.events.v1.ValidatorUpdateR\nva"
+  "lidators\",\n\022ListMarketsRequest\022\026\n\006market"
+  "\030\001 \001(\tR\006market\"=\n\023ListMarketsResponse\022&\n"
+  "\007markets\030\001 \003(\0132\014.vega.MarketR\007markets\"N\n"
+  "\024ListProposalsRequest\022\032\n\010proposal\030\001 \001(\tR"
+  "\010proposal\022\032\n\010proposer\030\002 \001(\tR\010proposer\"E\n"
+  "\025ListProposalsResponse\022,\n\tproposals\030\001 \003("
+  "\0132\016.vega.ProposalR\tproposals2\263\005\n\016CoreApi"
+  "Service\022[\n\014ListAccounts\022$.vega.coreapi.v"
+  "1.ListAccountsRequest\032%.vega.coreapi.v1."
+  "ListAccountsResponse\022U\n\nListAssets\022\".veg"
+  "a.coreapi.v1.ListAssetsRequest\032#.vega.co"
+  "reapi.v1.ListAssetsResponse\022v\n\025ListNetwo"
+  "rkParameters\022-.vega.coreapi.v1.ListNetwo"
+  "rkParametersRequest\032..vega.coreapi.v1.Li"
+  "stNetworkParametersResponse\022X\n\013ListParti"
+  "es\022#.vega.coreapi.v1.ListPartiesRequest\032"
+  "$.vega.coreapi.v1.ListPartiesResponse\022a\n"
+  "\016ListValidators\022&.vega.coreapi.v1.ListVa"
+  "lidatorsRequest\032\'.vega.coreapi.v1.ListVa"
+  "lidatorsResponse\022X\n\013ListMarkets\022#.vega.c"
+  "oreapi.v1.ListMarketsRequest\032$.vega.core"
+  "api.v1.ListMarketsResponse\022^\n\rListPropos"
+  "als\022%.vega.coreapi.v1.ListProposalsReque"
+  "st\032&.vega.coreapi.v1.ListProposalsRespon"
+  "seBM\n\037io.vegaprotocol.vega.coreapi.v1Z*c"
+  "ode.vegaprotocol.io/vega/proto/coreapi/v"
+  "1b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps[3] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps[5] = {
   &::descriptor_table_assets_2eproto,
   &::descriptor_table_events_2fv1_2fevents_2eproto,
+  &::descriptor_table_governance_2eproto,
+  &::descriptor_table_markets_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs[11] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs[15] = {
   &scc_info_Account_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListAccountsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListAccountsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListAssetsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListAssetsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_ListMarketsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_ListMarketsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListNetworkParametersRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListNetworkParametersResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListPartiesRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListPartiesResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
+  &scc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListValidatorsRequest_coreapi_2fv1_2fcoreapi_2eproto.base,
   &scc_info_ListValidatorsResponse_coreapi_2fv1_2fcoreapi_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_coreapi_2fv1_2fcoreapi_2eproto = {
-  false, false, descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto, "coreapi/v1/coreapi.proto", 1450,
-  &descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_once, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps, 11, 3,
+  false, false, descriptor_table_protodef_coreapi_2fv1_2fcoreapi_2eproto, "coreapi/v1/coreapi.proto", 1929,
+  &descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_once, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_sccs, descriptor_table_coreapi_2fv1_2fcoreapi_2eproto_deps, 15, 5,
   schemas, file_default_instances, TableStruct_coreapi_2fv1_2fcoreapi_2eproto::offsets,
-  file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto, 11, file_level_enum_descriptors_coreapi_2fv1_2fcoreapi_2eproto, file_level_service_descriptors_coreapi_2fv1_2fcoreapi_2eproto,
+  file_level_metadata_coreapi_2fv1_2fcoreapi_2eproto, 15, file_level_enum_descriptors_coreapi_2fv1_2fcoreapi_2eproto, file_level_service_descriptors_coreapi_2fv1_2fcoreapi_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2741,6 +2864,862 @@ void ListValidatorsResponse::InternalSwap(ListValidatorsResponse* other) {
 }
 
 
+// ===================================================================
+
+class ListMarketsRequest::_Internal {
+ public:
+};
+
+ListMarketsRequest::ListMarketsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.ListMarketsRequest)
+}
+ListMarketsRequest::ListMarketsRequest(const ListMarketsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  market_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_market().empty()) {
+    market_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_market(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.ListMarketsRequest)
+}
+
+void ListMarketsRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListMarketsRequest_coreapi_2fv1_2fcoreapi_2eproto.base);
+  market_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ListMarketsRequest::~ListMarketsRequest() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.ListMarketsRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListMarketsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  market_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ListMarketsRequest::ArenaDtor(void* object) {
+  ListMarketsRequest* _this = reinterpret_cast< ListMarketsRequest* >(object);
+  (void)_this;
+}
+void ListMarketsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListMarketsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListMarketsRequest& ListMarketsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListMarketsRequest_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListMarketsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.ListMarketsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  market_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListMarketsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string market = 1 [json_name = "market"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_market();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.coreapi.v1.ListMarketsRequest.market"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListMarketsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.ListMarketsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string market = 1 [json_name = "market"];
+  if (this->market().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_market().data(), static_cast<int>(this->_internal_market().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.coreapi.v1.ListMarketsRequest.market");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_market(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.ListMarketsRequest)
+  return target;
+}
+
+size_t ListMarketsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.ListMarketsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string market = 1 [json_name = "market"];
+  if (this->market().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_market());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListMarketsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.ListMarketsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListMarketsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListMarketsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.ListMarketsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.ListMarketsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ListMarketsRequest::MergeFrom(const ListMarketsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.ListMarketsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.market().size() > 0) {
+    _internal_set_market(from._internal_market());
+  }
+}
+
+void ListMarketsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.ListMarketsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListMarketsRequest::CopyFrom(const ListMarketsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.ListMarketsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListMarketsRequest::IsInitialized() const {
+  return true;
+}
+
+void ListMarketsRequest::InternalSwap(ListMarketsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  market_.Swap(&other->market_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListMarketsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ListMarketsResponse::_Internal {
+ public:
+};
+
+void ListMarketsResponse::clear_markets() {
+  markets_.Clear();
+}
+ListMarketsResponse::ListMarketsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  markets_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.ListMarketsResponse)
+}
+ListMarketsResponse::ListMarketsResponse(const ListMarketsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      markets_(from.markets_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.ListMarketsResponse)
+}
+
+void ListMarketsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListMarketsResponse_coreapi_2fv1_2fcoreapi_2eproto.base);
+}
+
+ListMarketsResponse::~ListMarketsResponse() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.ListMarketsResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListMarketsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void ListMarketsResponse::ArenaDtor(void* object) {
+  ListMarketsResponse* _this = reinterpret_cast< ListMarketsResponse* >(object);
+  (void)_this;
+}
+void ListMarketsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListMarketsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListMarketsResponse& ListMarketsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListMarketsResponse_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListMarketsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.ListMarketsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  markets_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListMarketsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .vega.Market markets = 1 [json_name = "markets"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_markets(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListMarketsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.ListMarketsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .vega.Market markets = 1 [json_name = "markets"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_markets_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_markets(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.ListMarketsResponse)
+  return target;
+}
+
+size_t ListMarketsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.ListMarketsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vega.Market markets = 1 [json_name = "markets"];
+  total_size += 1UL * this->_internal_markets_size();
+  for (const auto& msg : this->markets_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListMarketsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.ListMarketsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListMarketsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListMarketsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.ListMarketsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.ListMarketsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void ListMarketsResponse::MergeFrom(const ListMarketsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.ListMarketsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  markets_.MergeFrom(from.markets_);
+}
+
+void ListMarketsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.ListMarketsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListMarketsResponse::CopyFrom(const ListMarketsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.ListMarketsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListMarketsResponse::IsInitialized() const {
+  return true;
+}
+
+void ListMarketsResponse::InternalSwap(ListMarketsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  markets_.InternalSwap(&other->markets_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListMarketsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ListProposalsRequest::_Internal {
+ public:
+};
+
+ListProposalsRequest::ListProposalsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.ListProposalsRequest)
+}
+ListProposalsRequest::ListProposalsRequest(const ListProposalsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  proposal_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_proposal().empty()) {
+    proposal_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_proposal(),
+      GetArena());
+  }
+  proposer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_proposer().empty()) {
+    proposer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_proposer(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.ListProposalsRequest)
+}
+
+void ListProposalsRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto.base);
+  proposal_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  proposer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ListProposalsRequest::~ListProposalsRequest() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.ListProposalsRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListProposalsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  proposal_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  proposer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ListProposalsRequest::ArenaDtor(void* object) {
+  ListProposalsRequest* _this = reinterpret_cast< ListProposalsRequest* >(object);
+  (void)_this;
+}
+void ListProposalsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListProposalsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListProposalsRequest& ListProposalsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListProposalsRequest_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListProposalsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.ListProposalsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  proposal_.ClearToEmpty();
+  proposer_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListProposalsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string proposal = 1 [json_name = "proposal"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_proposal();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.coreapi.v1.ListProposalsRequest.proposal"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string proposer = 2 [json_name = "proposer"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_proposer();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.coreapi.v1.ListProposalsRequest.proposer"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListProposalsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.ListProposalsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string proposal = 1 [json_name = "proposal"];
+  if (this->proposal().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_proposal().data(), static_cast<int>(this->_internal_proposal().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.coreapi.v1.ListProposalsRequest.proposal");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_proposal(), target);
+  }
+
+  // string proposer = 2 [json_name = "proposer"];
+  if (this->proposer().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_proposer().data(), static_cast<int>(this->_internal_proposer().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.coreapi.v1.ListProposalsRequest.proposer");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_proposer(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.ListProposalsRequest)
+  return target;
+}
+
+size_t ListProposalsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.ListProposalsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string proposal = 1 [json_name = "proposal"];
+  if (this->proposal().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_proposal());
+  }
+
+  // string proposer = 2 [json_name = "proposer"];
+  if (this->proposer().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_proposer());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListProposalsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.ListProposalsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListProposalsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListProposalsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.ListProposalsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.ListProposalsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ListProposalsRequest::MergeFrom(const ListProposalsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.ListProposalsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.proposal().size() > 0) {
+    _internal_set_proposal(from._internal_proposal());
+  }
+  if (from.proposer().size() > 0) {
+    _internal_set_proposer(from._internal_proposer());
+  }
+}
+
+void ListProposalsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.ListProposalsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListProposalsRequest::CopyFrom(const ListProposalsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.ListProposalsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListProposalsRequest::IsInitialized() const {
+  return true;
+}
+
+void ListProposalsRequest::InternalSwap(ListProposalsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  proposal_.Swap(&other->proposal_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  proposer_.Swap(&other->proposer_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListProposalsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ListProposalsResponse::_Internal {
+ public:
+};
+
+void ListProposalsResponse::clear_proposals() {
+  proposals_.Clear();
+}
+ListProposalsResponse::ListProposalsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  proposals_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.coreapi.v1.ListProposalsResponse)
+}
+ListProposalsResponse::ListProposalsResponse(const ListProposalsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      proposals_(from.proposals_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vega.coreapi.v1.ListProposalsResponse)
+}
+
+void ListProposalsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto.base);
+}
+
+ListProposalsResponse::~ListProposalsResponse() {
+  // @@protoc_insertion_point(destructor:vega.coreapi.v1.ListProposalsResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ListProposalsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void ListProposalsResponse::ArenaDtor(void* object) {
+  ListProposalsResponse* _this = reinterpret_cast< ListProposalsResponse* >(object);
+  (void)_this;
+}
+void ListProposalsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListProposalsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ListProposalsResponse& ListProposalsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListProposalsResponse_coreapi_2fv1_2fcoreapi_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ListProposalsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.coreapi.v1.ListProposalsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  proposals_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListProposalsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .vega.Proposal proposals = 1 [json_name = "proposals"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_proposals(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ListProposalsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.coreapi.v1.ListProposalsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .vega.Proposal proposals = 1 [json_name = "proposals"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_proposals_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_proposals(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.coreapi.v1.ListProposalsResponse)
+  return target;
+}
+
+size_t ListProposalsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.coreapi.v1.ListProposalsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vega.Proposal proposals = 1 [json_name = "proposals"];
+  total_size += 1UL * this->_internal_proposals_size();
+  for (const auto& msg : this->proposals_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListProposalsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.coreapi.v1.ListProposalsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ListProposalsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ListProposalsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.coreapi.v1.ListProposalsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.coreapi.v1.ListProposalsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void ListProposalsResponse::MergeFrom(const ListProposalsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.coreapi.v1.ListProposalsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  proposals_.MergeFrom(from.proposals_);
+}
+
+void ListProposalsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.coreapi.v1.ListProposalsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ListProposalsResponse::CopyFrom(const ListProposalsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.coreapi.v1.ListProposalsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListProposalsResponse::IsInitialized() const {
+  return true;
+}
+
+void ListProposalsResponse::InternalSwap(ListProposalsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  proposals_.InternalSwap(&other->proposals_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListProposalsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace coreapi
@@ -2778,6 +3757,18 @@ template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListValidatorsRequest* Arena::
 }
 template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListValidatorsResponse* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListValidatorsResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListValidatorsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListMarketsRequest* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListMarketsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListMarketsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListMarketsResponse* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListMarketsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListMarketsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListProposalsRequest* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListProposalsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListProposalsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::coreapi::v1::ListProposalsResponse* Arena::CreateMaybeMessage< ::vega::coreapi::v1::ListProposalsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::coreapi::v1::ListProposalsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

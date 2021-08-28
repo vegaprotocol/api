@@ -49,7 +49,7 @@ struct TableStruct_snapshot_2fv1_2fsnapshot_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -74,6 +74,12 @@ extern CheckpointDefaultTypeInternal _Checkpoint_default_instance_;
 class Collateral;
 class CollateralDefaultTypeInternal;
 extern CollateralDefaultTypeInternal _Collateral_default_instance_;
+class Delegate;
+class DelegateDefaultTypeInternal;
+extern DelegateDefaultTypeInternal _Delegate_default_instance_;
+class DelegateEntry;
+class DelegateEntryDefaultTypeInternal;
+extern DelegateEntryDefaultTypeInternal _DelegateEntry_default_instance_;
 class NetParams;
 class NetParamsDefaultTypeInternal;
 extern NetParamsDefaultTypeInternal _NetParams_default_instance_;
@@ -92,6 +98,8 @@ template<> ::vega::snapshot::v1::AssetEntry* Arena::CreateMaybeMessage<::vega::s
 template<> ::vega::snapshot::v1::Assets* Arena::CreateMaybeMessage<::vega::snapshot::v1::Assets>(Arena*);
 template<> ::vega::snapshot::v1::Checkpoint* Arena::CreateMaybeMessage<::vega::snapshot::v1::Checkpoint>(Arena*);
 template<> ::vega::snapshot::v1::Collateral* Arena::CreateMaybeMessage<::vega::snapshot::v1::Collateral>(Arena*);
+template<> ::vega::snapshot::v1::Delegate* Arena::CreateMaybeMessage<::vega::snapshot::v1::Delegate>(Arena*);
+template<> ::vega::snapshot::v1::DelegateEntry* Arena::CreateMaybeMessage<::vega::snapshot::v1::DelegateEntry>(Arena*);
 template<> ::vega::snapshot::v1::NetParams* Arena::CreateMaybeMessage<::vega::snapshot::v1::NetParams>(Arena*);
 template<> ::vega::snapshot::v1::Proposals* Arena::CreateMaybeMessage<::vega::snapshot::v1::Proposals>(Arena*);
 template<> ::vega::snapshot::v1::Snapshot* Arena::CreateMaybeMessage<::vega::snapshot::v1::Snapshot>(Arena*);
@@ -379,6 +387,7 @@ class Checkpoint PROTOBUF_FINAL :
     kAssetsFieldNumber = 2,
     kCollateralFieldNumber = 3,
     kNetworkParametersFieldNumber = 4,
+    kDelegationFieldNumber = 5,
   };
   // bytes governance = 1 [json_name = "governance"];
   void clear_governance();
@@ -444,6 +453,22 @@ class Checkpoint PROTOBUF_FINAL :
   std::string* _internal_mutable_network_parameters();
   public:
 
+  // bytes delegation = 5 [json_name = "delegation"];
+  void clear_delegation();
+  const std::string& delegation() const;
+  void set_delegation(const std::string& value);
+  void set_delegation(std::string&& value);
+  void set_delegation(const char* value);
+  void set_delegation(const void* value, size_t size);
+  std::string* mutable_delegation();
+  std::string* release_delegation();
+  void set_allocated_delegation(std::string* delegation);
+  private:
+  const std::string& _internal_delegation() const;
+  void _internal_set_delegation(const std::string& value);
+  std::string* _internal_mutable_delegation();
+  public:
+
   // @@protoc_insertion_point(class_scope:vega.snapshot.v1.Checkpoint)
  private:
   class _Internal;
@@ -455,6 +480,7 @@ class Checkpoint PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr assets_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr collateral_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr network_parameters_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr delegation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_snapshot_2fv1_2fsnapshot_2eproto;
 };
@@ -1380,6 +1406,372 @@ class Proposals PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_snapshot_2fv1_2fsnapshot_2eproto;
 };
+// -------------------------------------------------------------------
+
+class DelegateEntry PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.snapshot.v1.DelegateEntry) */ {
+ public:
+  inline DelegateEntry() : DelegateEntry(nullptr) {}
+  virtual ~DelegateEntry();
+
+  DelegateEntry(const DelegateEntry& from);
+  DelegateEntry(DelegateEntry&& from) noexcept
+    : DelegateEntry() {
+    *this = ::std::move(from);
+  }
+
+  inline DelegateEntry& operator=(const DelegateEntry& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DelegateEntry& operator=(DelegateEntry&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DelegateEntry& default_instance();
+
+  static inline const DelegateEntry* internal_default_instance() {
+    return reinterpret_cast<const DelegateEntry*>(
+               &_DelegateEntry_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(DelegateEntry& a, DelegateEntry& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DelegateEntry* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DelegateEntry* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DelegateEntry* New() const final {
+    return CreateMaybeMessage<DelegateEntry>(nullptr);
+  }
+
+  DelegateEntry* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DelegateEntry>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DelegateEntry& from);
+  void MergeFrom(const DelegateEntry& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DelegateEntry* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.snapshot.v1.DelegateEntry";
+  }
+  protected:
+  explicit DelegateEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_snapshot_2fv1_2fsnapshot_2eproto);
+    return ::descriptor_table_snapshot_2fv1_2fsnapshot_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPartyFieldNumber = 1,
+    kNodeFieldNumber = 2,
+    kAmountFieldNumber = 3,
+    kEpochSeqFieldNumber = 5,
+    kUndelegateFieldNumber = 4,
+  };
+  // string party = 1 [json_name = "party"];
+  void clear_party();
+  const std::string& party() const;
+  void set_party(const std::string& value);
+  void set_party(std::string&& value);
+  void set_party(const char* value);
+  void set_party(const char* value, size_t size);
+  std::string* mutable_party();
+  std::string* release_party();
+  void set_allocated_party(std::string* party);
+  private:
+  const std::string& _internal_party() const;
+  void _internal_set_party(const std::string& value);
+  std::string* _internal_mutable_party();
+  public:
+
+  // string node = 2 [json_name = "node"];
+  void clear_node();
+  const std::string& node() const;
+  void set_node(const std::string& value);
+  void set_node(std::string&& value);
+  void set_node(const char* value);
+  void set_node(const char* value, size_t size);
+  std::string* mutable_node();
+  std::string* release_node();
+  void set_allocated_node(std::string* node);
+  private:
+  const std::string& _internal_node() const;
+  void _internal_set_node(const std::string& value);
+  std::string* _internal_mutable_node();
+  public:
+
+  // string amount = 3 [json_name = "amount"];
+  void clear_amount();
+  const std::string& amount() const;
+  void set_amount(const std::string& value);
+  void set_amount(std::string&& value);
+  void set_amount(const char* value);
+  void set_amount(const char* value, size_t size);
+  std::string* mutable_amount();
+  std::string* release_amount();
+  void set_allocated_amount(std::string* amount);
+  private:
+  const std::string& _internal_amount() const;
+  void _internal_set_amount(const std::string& value);
+  std::string* _internal_mutable_amount();
+  public:
+
+  // uint64 epoch_seq = 5 [json_name = "epochSeq"];
+  void clear_epoch_seq();
+  ::PROTOBUF_NAMESPACE_ID::uint64 epoch_seq() const;
+  void set_epoch_seq(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_epoch_seq() const;
+  void _internal_set_epoch_seq(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // bool undelegate = 4 [json_name = "undelegate"];
+  void clear_undelegate();
+  bool undelegate() const;
+  void set_undelegate(bool value);
+  private:
+  bool _internal_undelegate() const;
+  void _internal_set_undelegate(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.snapshot.v1.DelegateEntry)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr party_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr node_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr amount_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 epoch_seq_;
+  bool undelegate_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_snapshot_2fv1_2fsnapshot_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Delegate PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.snapshot.v1.Delegate) */ {
+ public:
+  inline Delegate() : Delegate(nullptr) {}
+  virtual ~Delegate();
+
+  Delegate(const Delegate& from);
+  Delegate(Delegate&& from) noexcept
+    : Delegate() {
+    *this = ::std::move(from);
+  }
+
+  inline Delegate& operator=(const Delegate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Delegate& operator=(Delegate&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Delegate& default_instance();
+
+  static inline const Delegate* internal_default_instance() {
+    return reinterpret_cast<const Delegate*>(
+               &_Delegate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(Delegate& a, Delegate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Delegate* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Delegate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Delegate* New() const final {
+    return CreateMaybeMessage<Delegate>(nullptr);
+  }
+
+  Delegate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Delegate>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Delegate& from);
+  void MergeFrom(const Delegate& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Delegate* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.snapshot.v1.Delegate";
+  }
+  protected:
+  explicit Delegate(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_snapshot_2fv1_2fsnapshot_2eproto);
+    return ::descriptor_table_snapshot_2fv1_2fsnapshot_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kActiveFieldNumber = 1,
+    kPendingFieldNumber = 2,
+  };
+  // repeated .vega.snapshot.v1.DelegateEntry active = 1 [json_name = "active"];
+  int active_size() const;
+  private:
+  int _internal_active_size() const;
+  public:
+  void clear_active();
+  ::vega::snapshot::v1::DelegateEntry* mutable_active(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >*
+      mutable_active();
+  private:
+  const ::vega::snapshot::v1::DelegateEntry& _internal_active(int index) const;
+  ::vega::snapshot::v1::DelegateEntry* _internal_add_active();
+  public:
+  const ::vega::snapshot::v1::DelegateEntry& active(int index) const;
+  ::vega::snapshot::v1::DelegateEntry* add_active();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >&
+      active() const;
+
+  // repeated .vega.snapshot.v1.DelegateEntry pending = 2 [json_name = "pending"];
+  int pending_size() const;
+  private:
+  int _internal_pending_size() const;
+  public:
+  void clear_pending();
+  ::vega::snapshot::v1::DelegateEntry* mutable_pending(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >*
+      mutable_pending();
+  private:
+  const ::vega::snapshot::v1::DelegateEntry& _internal_pending(int index) const;
+  ::vega::snapshot::v1::DelegateEntry* _internal_add_pending();
+  public:
+  const ::vega::snapshot::v1::DelegateEntry& pending(int index) const;
+  ::vega::snapshot::v1::DelegateEntry* add_pending();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >&
+      pending() const;
+
+  // @@protoc_insertion_point(class_scope:vega.snapshot.v1.Delegate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry > active_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry > pending_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_snapshot_2fv1_2fsnapshot_2eproto;
+};
 // ===================================================================
 
 
@@ -1759,6 +2151,67 @@ inline void Checkpoint::set_allocated_network_parameters(std::string* network_pa
   network_parameters_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), network_parameters,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:vega.snapshot.v1.Checkpoint.network_parameters)
+}
+
+// bytes delegation = 5 [json_name = "delegation"];
+inline void Checkpoint::clear_delegation() {
+  delegation_.ClearToEmpty();
+}
+inline const std::string& Checkpoint::delegation() const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.Checkpoint.delegation)
+  return _internal_delegation();
+}
+inline void Checkpoint::set_delegation(const std::string& value) {
+  _internal_set_delegation(value);
+  // @@protoc_insertion_point(field_set:vega.snapshot.v1.Checkpoint.delegation)
+}
+inline std::string* Checkpoint::mutable_delegation() {
+  // @@protoc_insertion_point(field_mutable:vega.snapshot.v1.Checkpoint.delegation)
+  return _internal_mutable_delegation();
+}
+inline const std::string& Checkpoint::_internal_delegation() const {
+  return delegation_.Get();
+}
+inline void Checkpoint::_internal_set_delegation(const std::string& value) {
+
+  delegation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void Checkpoint::set_delegation(std::string&& value) {
+
+  delegation_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.snapshot.v1.Checkpoint.delegation)
+}
+inline void Checkpoint::set_delegation(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  delegation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.snapshot.v1.Checkpoint.delegation)
+}
+inline void Checkpoint::set_delegation(const void* value,
+    size_t size) {
+
+  delegation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.snapshot.v1.Checkpoint.delegation)
+}
+inline std::string* Checkpoint::_internal_mutable_delegation() {
+
+  return delegation_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* Checkpoint::release_delegation() {
+  // @@protoc_insertion_point(field_release:vega.snapshot.v1.Checkpoint.delegation)
+  return delegation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void Checkpoint::set_allocated_delegation(std::string* delegation) {
+  if (delegation != nullptr) {
+
+  } else {
+
+  }
+  delegation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), delegation,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.snapshot.v1.Checkpoint.delegation)
 }
 
 // -------------------------------------------------------------------
@@ -2256,9 +2709,322 @@ Proposals::proposals() const {
   return proposals_;
 }
 
+// -------------------------------------------------------------------
+
+// DelegateEntry
+
+// string party = 1 [json_name = "party"];
+inline void DelegateEntry::clear_party() {
+  party_.ClearToEmpty();
+}
+inline const std::string& DelegateEntry::party() const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.DelegateEntry.party)
+  return _internal_party();
+}
+inline void DelegateEntry::set_party(const std::string& value) {
+  _internal_set_party(value);
+  // @@protoc_insertion_point(field_set:vega.snapshot.v1.DelegateEntry.party)
+}
+inline std::string* DelegateEntry::mutable_party() {
+  // @@protoc_insertion_point(field_mutable:vega.snapshot.v1.DelegateEntry.party)
+  return _internal_mutable_party();
+}
+inline const std::string& DelegateEntry::_internal_party() const {
+  return party_.Get();
+}
+inline void DelegateEntry::_internal_set_party(const std::string& value) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DelegateEntry::set_party(std::string&& value) {
+
+  party_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.snapshot.v1.DelegateEntry.party)
+}
+inline void DelegateEntry::set_party(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.snapshot.v1.DelegateEntry.party)
+}
+inline void DelegateEntry::set_party(const char* value,
+    size_t size) {
+
+  party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.snapshot.v1.DelegateEntry.party)
+}
+inline std::string* DelegateEntry::_internal_mutable_party() {
+
+  return party_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DelegateEntry::release_party() {
+  // @@protoc_insertion_point(field_release:vega.snapshot.v1.DelegateEntry.party)
+  return party_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DelegateEntry::set_allocated_party(std::string* party) {
+  if (party != nullptr) {
+
+  } else {
+
+  }
+  party_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), party,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.snapshot.v1.DelegateEntry.party)
+}
+
+// string node = 2 [json_name = "node"];
+inline void DelegateEntry::clear_node() {
+  node_.ClearToEmpty();
+}
+inline const std::string& DelegateEntry::node() const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.DelegateEntry.node)
+  return _internal_node();
+}
+inline void DelegateEntry::set_node(const std::string& value) {
+  _internal_set_node(value);
+  // @@protoc_insertion_point(field_set:vega.snapshot.v1.DelegateEntry.node)
+}
+inline std::string* DelegateEntry::mutable_node() {
+  // @@protoc_insertion_point(field_mutable:vega.snapshot.v1.DelegateEntry.node)
+  return _internal_mutable_node();
+}
+inline const std::string& DelegateEntry::_internal_node() const {
+  return node_.Get();
+}
+inline void DelegateEntry::_internal_set_node(const std::string& value) {
+
+  node_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DelegateEntry::set_node(std::string&& value) {
+
+  node_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.snapshot.v1.DelegateEntry.node)
+}
+inline void DelegateEntry::set_node(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  node_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.snapshot.v1.DelegateEntry.node)
+}
+inline void DelegateEntry::set_node(const char* value,
+    size_t size) {
+
+  node_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.snapshot.v1.DelegateEntry.node)
+}
+inline std::string* DelegateEntry::_internal_mutable_node() {
+
+  return node_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DelegateEntry::release_node() {
+  // @@protoc_insertion_point(field_release:vega.snapshot.v1.DelegateEntry.node)
+  return node_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DelegateEntry::set_allocated_node(std::string* node) {
+  if (node != nullptr) {
+
+  } else {
+
+  }
+  node_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), node,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.snapshot.v1.DelegateEntry.node)
+}
+
+// string amount = 3 [json_name = "amount"];
+inline void DelegateEntry::clear_amount() {
+  amount_.ClearToEmpty();
+}
+inline const std::string& DelegateEntry::amount() const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.DelegateEntry.amount)
+  return _internal_amount();
+}
+inline void DelegateEntry::set_amount(const std::string& value) {
+  _internal_set_amount(value);
+  // @@protoc_insertion_point(field_set:vega.snapshot.v1.DelegateEntry.amount)
+}
+inline std::string* DelegateEntry::mutable_amount() {
+  // @@protoc_insertion_point(field_mutable:vega.snapshot.v1.DelegateEntry.amount)
+  return _internal_mutable_amount();
+}
+inline const std::string& DelegateEntry::_internal_amount() const {
+  return amount_.Get();
+}
+inline void DelegateEntry::_internal_set_amount(const std::string& value) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DelegateEntry::set_amount(std::string&& value) {
+
+  amount_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.snapshot.v1.DelegateEntry.amount)
+}
+inline void DelegateEntry::set_amount(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.snapshot.v1.DelegateEntry.amount)
+}
+inline void DelegateEntry::set_amount(const char* value,
+    size_t size) {
+
+  amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.snapshot.v1.DelegateEntry.amount)
+}
+inline std::string* DelegateEntry::_internal_mutable_amount() {
+
+  return amount_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DelegateEntry::release_amount() {
+  // @@protoc_insertion_point(field_release:vega.snapshot.v1.DelegateEntry.amount)
+  return amount_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DelegateEntry::set_allocated_amount(std::string* amount) {
+  if (amount != nullptr) {
+
+  } else {
+
+  }
+  amount_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), amount,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.snapshot.v1.DelegateEntry.amount)
+}
+
+// bool undelegate = 4 [json_name = "undelegate"];
+inline void DelegateEntry::clear_undelegate() {
+  undelegate_ = false;
+}
+inline bool DelegateEntry::_internal_undelegate() const {
+  return undelegate_;
+}
+inline bool DelegateEntry::undelegate() const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.DelegateEntry.undelegate)
+  return _internal_undelegate();
+}
+inline void DelegateEntry::_internal_set_undelegate(bool value) {
+
+  undelegate_ = value;
+}
+inline void DelegateEntry::set_undelegate(bool value) {
+  _internal_set_undelegate(value);
+  // @@protoc_insertion_point(field_set:vega.snapshot.v1.DelegateEntry.undelegate)
+}
+
+// uint64 epoch_seq = 5 [json_name = "epochSeq"];
+inline void DelegateEntry::clear_epoch_seq() {
+  epoch_seq_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 DelegateEntry::_internal_epoch_seq() const {
+  return epoch_seq_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 DelegateEntry::epoch_seq() const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.DelegateEntry.epoch_seq)
+  return _internal_epoch_seq();
+}
+inline void DelegateEntry::_internal_set_epoch_seq(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+
+  epoch_seq_ = value;
+}
+inline void DelegateEntry::set_epoch_seq(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_epoch_seq(value);
+  // @@protoc_insertion_point(field_set:vega.snapshot.v1.DelegateEntry.epoch_seq)
+}
+
+// -------------------------------------------------------------------
+
+// Delegate
+
+// repeated .vega.snapshot.v1.DelegateEntry active = 1 [json_name = "active"];
+inline int Delegate::_internal_active_size() const {
+  return active_.size();
+}
+inline int Delegate::active_size() const {
+  return _internal_active_size();
+}
+inline void Delegate::clear_active() {
+  active_.Clear();
+}
+inline ::vega::snapshot::v1::DelegateEntry* Delegate::mutable_active(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.snapshot.v1.Delegate.active)
+  return active_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >*
+Delegate::mutable_active() {
+  // @@protoc_insertion_point(field_mutable_list:vega.snapshot.v1.Delegate.active)
+  return &active_;
+}
+inline const ::vega::snapshot::v1::DelegateEntry& Delegate::_internal_active(int index) const {
+  return active_.Get(index);
+}
+inline const ::vega::snapshot::v1::DelegateEntry& Delegate::active(int index) const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.Delegate.active)
+  return _internal_active(index);
+}
+inline ::vega::snapshot::v1::DelegateEntry* Delegate::_internal_add_active() {
+  return active_.Add();
+}
+inline ::vega::snapshot::v1::DelegateEntry* Delegate::add_active() {
+  // @@protoc_insertion_point(field_add:vega.snapshot.v1.Delegate.active)
+  return _internal_add_active();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >&
+Delegate::active() const {
+  // @@protoc_insertion_point(field_list:vega.snapshot.v1.Delegate.active)
+  return active_;
+}
+
+// repeated .vega.snapshot.v1.DelegateEntry pending = 2 [json_name = "pending"];
+inline int Delegate::_internal_pending_size() const {
+  return pending_.size();
+}
+inline int Delegate::pending_size() const {
+  return _internal_pending_size();
+}
+inline void Delegate::clear_pending() {
+  pending_.Clear();
+}
+inline ::vega::snapshot::v1::DelegateEntry* Delegate::mutable_pending(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.snapshot.v1.Delegate.pending)
+  return pending_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >*
+Delegate::mutable_pending() {
+  // @@protoc_insertion_point(field_mutable_list:vega.snapshot.v1.Delegate.pending)
+  return &pending_;
+}
+inline const ::vega::snapshot::v1::DelegateEntry& Delegate::_internal_pending(int index) const {
+  return pending_.Get(index);
+}
+inline const ::vega::snapshot::v1::DelegateEntry& Delegate::pending(int index) const {
+  // @@protoc_insertion_point(field_get:vega.snapshot.v1.Delegate.pending)
+  return _internal_pending(index);
+}
+inline ::vega::snapshot::v1::DelegateEntry* Delegate::_internal_add_pending() {
+  return pending_.Add();
+}
+inline ::vega::snapshot::v1::DelegateEntry* Delegate::add_pending() {
+  // @@protoc_insertion_point(field_add:vega.snapshot.v1.Delegate.pending)
+  return _internal_add_pending();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::snapshot::v1::DelegateEntry >&
+Delegate::pending() const {
+  // @@protoc_insertion_point(field_list:vega.snapshot.v1.Delegate.pending)
+  return pending_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

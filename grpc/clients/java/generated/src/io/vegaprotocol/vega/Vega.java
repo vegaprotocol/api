@@ -60210,20 +60210,10 @@ public final class Vega {
 
     /**
      * <pre>
-     * Value between 0 and 1 for percentage
-     * </pre>
-     *
-     * <code>float fee = 5 [json_name = "fee"];</code>
-     * @return The fee.
-     */
-    float getFee();
-
-    /**
-     * <pre>
      * The amount the node has put up themselves
      * </pre>
      *
-     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
      * @return The stakedByOperator.
      */
     java.lang.String getStakedByOperator();
@@ -60232,7 +60222,7 @@ public final class Vega {
      * The amount the node has put up themselves
      * </pre>
      *
-     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
      * @return The bytes for stakedByOperator.
      */
     com.google.protobuf.ByteString
@@ -60243,7 +60233,7 @@ public final class Vega {
      * The amount of stake that has been delegated by token holders
      * </pre>
      *
-     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
      * @return The stakedByDelegates.
      */
     java.lang.String getStakedByDelegates();
@@ -60252,7 +60242,7 @@ public final class Vega {
      * The amount of stake that has been delegated by token holders
      * </pre>
      *
-     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
      * @return The bytes for stakedByDelegates.
      */
     com.google.protobuf.ByteString
@@ -60263,7 +60253,7 @@ public final class Vega {
      * Total amount staked on node
      * </pre>
      *
-     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
      * @return The stakedTotal.
      */
     java.lang.String getStakedTotal();
@@ -60272,7 +60262,7 @@ public final class Vega {
      * Total amount staked on node
      * </pre>
      *
-     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
      * @return The bytes for stakedTotal.
      */
     com.google.protobuf.ByteString
@@ -60283,7 +60273,7 @@ public final class Vega {
      * Max amount of (wanted) stake, is this a network param or a node param
      * </pre>
      *
-     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
      * @return The maxIntendedStake.
      */
     java.lang.String getMaxIntendedStake();
@@ -60292,7 +60282,7 @@ public final class Vega {
      * Max amount of (wanted) stake, is this a network param or a node param
      * </pre>
      *
-     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
      * @return The bytes for maxIntendedStake.
      */
     com.google.protobuf.ByteString
@@ -60303,7 +60293,7 @@ public final class Vega {
      * Amount of stake on the next epoch
      * </pre>
      *
-     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
      * @return The pendingStake.
      */
     java.lang.String getPendingStake();
@@ -60312,7 +60302,7 @@ public final class Vega {
      * Amount of stake on the next epoch
      * </pre>
      *
-     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
      * @return The bytes for pendingStake.
      */
     com.google.protobuf.ByteString
@@ -60323,7 +60313,7 @@ public final class Vega {
      * Informantion about epoch
      * </pre>
      *
-     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
      * @return Whether the epochData field is set.
      */
     boolean hasEpochData();
@@ -60332,7 +60322,7 @@ public final class Vega {
      * Informantion about epoch
      * </pre>
      *
-     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
      * @return The epochData.
      */
     io.vegaprotocol.vega.Vega.EpochData getEpochData();
@@ -60341,7 +60331,7 @@ public final class Vega {
      * Informantion about epoch
      * </pre>
      *
-     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
      */
     io.vegaprotocol.vega.Vega.EpochDataOrBuilder getEpochDataOrBuilder();
 
@@ -60350,7 +60340,7 @@ public final class Vega {
      * Node status
      * </pre>
      *
-     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
@@ -60359,7 +60349,7 @@ public final class Vega {
      * Node status
      * </pre>
      *
-     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
      * @return The status.
      */
     io.vegaprotocol.vega.Vega.NodeStatus getStatus();
@@ -60369,7 +60359,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     java.util.List<io.vegaprotocol.vega.Vega.Delegation>
         getDelagationsList();
@@ -60378,7 +60368,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     io.vegaprotocol.vega.Vega.Delegation getDelagations(int index);
     /**
@@ -60386,7 +60376,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     int getDelagationsCount();
     /**
@@ -60394,7 +60384,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
         getDelagationsOrBuilderList();
@@ -60403,7 +60393,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
         int index);
@@ -60489,42 +60479,37 @@ public final class Vega {
               location_ = s;
               break;
             }
-            case 45: {
-
-              fee_ = input.readFloat();
-              break;
-            }
-            case 50: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               stakedByOperator_ = s;
               break;
             }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               stakedByDelegates_ = s;
               break;
             }
-            case 66: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               stakedTotal_ = s;
               break;
             }
-            case 74: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               maxIntendedStake_ = s;
               break;
             }
-            case 82: {
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               pendingStake_ = s;
               break;
             }
-            case 90: {
+            case 82: {
               io.vegaprotocol.vega.Vega.EpochData.Builder subBuilder = null;
               if (epochData_ != null) {
                 subBuilder = epochData_.toBuilder();
@@ -60537,13 +60522,13 @@ public final class Vega {
 
               break;
             }
-            case 96: {
+            case 88: {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
               break;
             }
-            case 106: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 delagations_ = new java.util.ArrayList<io.vegaprotocol.vega.Vega.Delegation>();
                 mutable_bitField0_ |= 0x00000001;
@@ -60771,29 +60756,14 @@ public final class Vega {
       }
     }
 
-    public static final int FEE_FIELD_NUMBER = 5;
-    private float fee_;
-    /**
-     * <pre>
-     * Value between 0 and 1 for percentage
-     * </pre>
-     *
-     * <code>float fee = 5 [json_name = "fee"];</code>
-     * @return The fee.
-     */
-    @java.lang.Override
-    public float getFee() {
-      return fee_;
-    }
-
-    public static final int STAKED_BY_OPERATOR_FIELD_NUMBER = 6;
+    public static final int STAKED_BY_OPERATOR_FIELD_NUMBER = 5;
     private volatile java.lang.Object stakedByOperator_;
     /**
      * <pre>
      * The amount the node has put up themselves
      * </pre>
      *
-     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
      * @return The stakedByOperator.
      */
     @java.lang.Override
@@ -60814,7 +60784,7 @@ public final class Vega {
      * The amount the node has put up themselves
      * </pre>
      *
-     * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+     * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
      * @return The bytes for stakedByOperator.
      */
     @java.lang.Override
@@ -60832,14 +60802,14 @@ public final class Vega {
       }
     }
 
-    public static final int STAKED_BY_DELEGATES_FIELD_NUMBER = 7;
+    public static final int STAKED_BY_DELEGATES_FIELD_NUMBER = 6;
     private volatile java.lang.Object stakedByDelegates_;
     /**
      * <pre>
      * The amount of stake that has been delegated by token holders
      * </pre>
      *
-     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
      * @return The stakedByDelegates.
      */
     @java.lang.Override
@@ -60860,7 +60830,7 @@ public final class Vega {
      * The amount of stake that has been delegated by token holders
      * </pre>
      *
-     * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+     * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
      * @return The bytes for stakedByDelegates.
      */
     @java.lang.Override
@@ -60878,14 +60848,14 @@ public final class Vega {
       }
     }
 
-    public static final int STAKED_TOTAL_FIELD_NUMBER = 8;
+    public static final int STAKED_TOTAL_FIELD_NUMBER = 7;
     private volatile java.lang.Object stakedTotal_;
     /**
      * <pre>
      * Total amount staked on node
      * </pre>
      *
-     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
      * @return The stakedTotal.
      */
     @java.lang.Override
@@ -60906,7 +60876,7 @@ public final class Vega {
      * Total amount staked on node
      * </pre>
      *
-     * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+     * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
      * @return The bytes for stakedTotal.
      */
     @java.lang.Override
@@ -60924,14 +60894,14 @@ public final class Vega {
       }
     }
 
-    public static final int MAX_INTENDED_STAKE_FIELD_NUMBER = 9;
+    public static final int MAX_INTENDED_STAKE_FIELD_NUMBER = 8;
     private volatile java.lang.Object maxIntendedStake_;
     /**
      * <pre>
      * Max amount of (wanted) stake, is this a network param or a node param
      * </pre>
      *
-     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
      * @return The maxIntendedStake.
      */
     @java.lang.Override
@@ -60952,7 +60922,7 @@ public final class Vega {
      * Max amount of (wanted) stake, is this a network param or a node param
      * </pre>
      *
-     * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+     * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
      * @return The bytes for maxIntendedStake.
      */
     @java.lang.Override
@@ -60970,14 +60940,14 @@ public final class Vega {
       }
     }
 
-    public static final int PENDING_STAKE_FIELD_NUMBER = 10;
+    public static final int PENDING_STAKE_FIELD_NUMBER = 9;
     private volatile java.lang.Object pendingStake_;
     /**
      * <pre>
      * Amount of stake on the next epoch
      * </pre>
      *
-     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
      * @return The pendingStake.
      */
     @java.lang.Override
@@ -60998,7 +60968,7 @@ public final class Vega {
      * Amount of stake on the next epoch
      * </pre>
      *
-     * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+     * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
      * @return The bytes for pendingStake.
      */
     @java.lang.Override
@@ -61016,14 +60986,14 @@ public final class Vega {
       }
     }
 
-    public static final int EPOCH_DATA_FIELD_NUMBER = 11;
+    public static final int EPOCH_DATA_FIELD_NUMBER = 10;
     private io.vegaprotocol.vega.Vega.EpochData epochData_;
     /**
      * <pre>
      * Informantion about epoch
      * </pre>
      *
-     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
      * @return Whether the epochData field is set.
      */
     @java.lang.Override
@@ -61035,7 +61005,7 @@ public final class Vega {
      * Informantion about epoch
      * </pre>
      *
-     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
      * @return The epochData.
      */
     @java.lang.Override
@@ -61047,21 +61017,21 @@ public final class Vega {
      * Informantion about epoch
      * </pre>
      *
-     * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+     * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.EpochDataOrBuilder getEpochDataOrBuilder() {
       return getEpochData();
     }
 
-    public static final int STATUS_FIELD_NUMBER = 12;
+    public static final int STATUS_FIELD_NUMBER = 11;
     private int status_;
     /**
      * <pre>
      * Node status
      * </pre>
      *
-     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -61072,7 +61042,7 @@ public final class Vega {
      * Node status
      * </pre>
      *
-     * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+     * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
      * @return The status.
      */
     @java.lang.Override public io.vegaprotocol.vega.Vega.NodeStatus getStatus() {
@@ -61081,14 +61051,14 @@ public final class Vega {
       return result == null ? io.vegaprotocol.vega.Vega.NodeStatus.UNRECOGNIZED : result;
     }
 
-    public static final int DELAGATIONS_FIELD_NUMBER = 13;
+    public static final int DELAGATIONS_FIELD_NUMBER = 12;
     private java.util.List<io.vegaprotocol.vega.Vega.Delegation> delagations_;
     /**
      * <pre>
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     @java.lang.Override
     public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelagationsList() {
@@ -61099,7 +61069,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     @java.lang.Override
     public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
@@ -61111,7 +61081,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     @java.lang.Override
     public int getDelagationsCount() {
@@ -61122,7 +61092,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.Delegation getDelagations(int index) {
@@ -61133,7 +61103,7 @@ public final class Vega {
      * Node's delegations
      * </pre>
      *
-     * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+     * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
      */
     @java.lang.Override
     public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
@@ -61167,32 +61137,29 @@ public final class Vega {
       if (!getLocationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
       }
-      if (fee_ != 0F) {
-        output.writeFloat(5, fee_);
-      }
       if (!getStakedByOperatorBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, stakedByOperator_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, stakedByOperator_);
       }
       if (!getStakedByDelegatesBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, stakedByDelegates_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, stakedByDelegates_);
       }
       if (!getStakedTotalBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, stakedTotal_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, stakedTotal_);
       }
       if (!getMaxIntendedStakeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, maxIntendedStake_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, maxIntendedStake_);
       }
       if (!getPendingStakeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, pendingStake_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, pendingStake_);
       }
       if (epochData_ != null) {
-        output.writeMessage(11, getEpochData());
+        output.writeMessage(10, getEpochData());
       }
       if (status_ != io.vegaprotocol.vega.Vega.NodeStatus.NODE_STATUS_UNSPECIFIED.getNumber()) {
-        output.writeEnum(12, status_);
+        output.writeEnum(11, status_);
       }
       for (int i = 0; i < delagations_.size(); i++) {
-        output.writeMessage(13, delagations_.get(i));
+        output.writeMessage(12, delagations_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -61215,36 +61182,32 @@ public final class Vega {
       if (!getLocationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
       }
-      if (fee_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, fee_);
-      }
       if (!getStakedByOperatorBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, stakedByOperator_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, stakedByOperator_);
       }
       if (!getStakedByDelegatesBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, stakedByDelegates_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, stakedByDelegates_);
       }
       if (!getStakedTotalBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, stakedTotal_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, stakedTotal_);
       }
       if (!getMaxIntendedStakeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, maxIntendedStake_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, maxIntendedStake_);
       }
       if (!getPendingStakeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, pendingStake_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, pendingStake_);
       }
       if (epochData_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getEpochData());
+          .computeMessageSize(10, getEpochData());
       }
       if (status_ != io.vegaprotocol.vega.Vega.NodeStatus.NODE_STATUS_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, status_);
+          .computeEnumSize(11, status_);
       }
       for (int i = 0; i < delagations_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, delagations_.get(i));
+          .computeMessageSize(12, delagations_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -61269,9 +61232,6 @@ public final class Vega {
           .equals(other.getInfoUrl())) return false;
       if (!getLocation()
           .equals(other.getLocation())) return false;
-      if (java.lang.Float.floatToIntBits(getFee())
-          != java.lang.Float.floatToIntBits(
-              other.getFee())) return false;
       if (!getStakedByOperator()
           .equals(other.getStakedByOperator())) return false;
       if (!getStakedByDelegates()
@@ -61309,9 +61269,6 @@ public final class Vega {
       hash = (53 * hash) + getInfoUrl().hashCode();
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
-      hash = (37 * hash) + FEE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getFee());
       hash = (37 * hash) + STAKED_BY_OPERATOR_FIELD_NUMBER;
       hash = (53 * hash) + getStakedByOperator().hashCode();
       hash = (37 * hash) + STAKED_BY_DELEGATES_FIELD_NUMBER;
@@ -61474,8 +61431,6 @@ public final class Vega {
 
         location_ = "";
 
-        fee_ = 0F;
-
         stakedByOperator_ = "";
 
         stakedByDelegates_ = "";
@@ -61531,7 +61486,6 @@ public final class Vega {
         result.pubKey_ = pubKey_;
         result.infoUrl_ = infoUrl_;
         result.location_ = location_;
-        result.fee_ = fee_;
         result.stakedByOperator_ = stakedByOperator_;
         result.stakedByDelegates_ = stakedByDelegates_;
         result.stakedTotal_ = stakedTotal_;
@@ -61615,9 +61569,6 @@ public final class Vega {
         if (!other.getLocation().isEmpty()) {
           location_ = other.location_;
           onChanged();
-        }
-        if (other.getFee() != 0F) {
-          setFee(other.getFee());
         }
         if (!other.getStakedByOperator().isEmpty()) {
           stakedByOperator_ = other.stakedByOperator_;
@@ -62085,56 +62036,13 @@ public final class Vega {
         return this;
       }
 
-      private float fee_ ;
-      /**
-       * <pre>
-       * Value between 0 and 1 for percentage
-       * </pre>
-       *
-       * <code>float fee = 5 [json_name = "fee"];</code>
-       * @return The fee.
-       */
-      @java.lang.Override
-      public float getFee() {
-        return fee_;
-      }
-      /**
-       * <pre>
-       * Value between 0 and 1 for percentage
-       * </pre>
-       *
-       * <code>float fee = 5 [json_name = "fee"];</code>
-       * @param value The fee to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFee(float value) {
-
-        fee_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Value between 0 and 1 for percentage
-       * </pre>
-       *
-       * <code>float fee = 5 [json_name = "fee"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFee() {
-
-        fee_ = 0F;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object stakedByOperator_ = "";
       /**
        * <pre>
        * The amount the node has put up themselves
        * </pre>
        *
-       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
        * @return The stakedByOperator.
        */
       public java.lang.String getStakedByOperator() {
@@ -62154,7 +62062,7 @@ public final class Vega {
        * The amount the node has put up themselves
        * </pre>
        *
-       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
        * @return The bytes for stakedByOperator.
        */
       public com.google.protobuf.ByteString
@@ -62175,7 +62083,7 @@ public final class Vega {
        * The amount the node has put up themselves
        * </pre>
        *
-       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
        * @param value The stakedByOperator to set.
        * @return This builder for chaining.
        */
@@ -62194,7 +62102,7 @@ public final class Vega {
        * The amount the node has put up themselves
        * </pre>
        *
-       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStakedByOperator() {
@@ -62208,7 +62116,7 @@ public final class Vega {
        * The amount the node has put up themselves
        * </pre>
        *
-       * <code>string staked_by_operator = 6 [json_name = "stakedByOperator"];</code>
+       * <code>string staked_by_operator = 5 [json_name = "stakedByOperator"];</code>
        * @param value The bytes for stakedByOperator to set.
        * @return This builder for chaining.
        */
@@ -62230,7 +62138,7 @@ public final class Vega {
        * The amount of stake that has been delegated by token holders
        * </pre>
        *
-       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
        * @return The stakedByDelegates.
        */
       public java.lang.String getStakedByDelegates() {
@@ -62250,7 +62158,7 @@ public final class Vega {
        * The amount of stake that has been delegated by token holders
        * </pre>
        *
-       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
        * @return The bytes for stakedByDelegates.
        */
       public com.google.protobuf.ByteString
@@ -62271,7 +62179,7 @@ public final class Vega {
        * The amount of stake that has been delegated by token holders
        * </pre>
        *
-       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
        * @param value The stakedByDelegates to set.
        * @return This builder for chaining.
        */
@@ -62290,7 +62198,7 @@ public final class Vega {
        * The amount of stake that has been delegated by token holders
        * </pre>
        *
-       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStakedByDelegates() {
@@ -62304,7 +62212,7 @@ public final class Vega {
        * The amount of stake that has been delegated by token holders
        * </pre>
        *
-       * <code>string staked_by_delegates = 7 [json_name = "stakedByDelegates"];</code>
+       * <code>string staked_by_delegates = 6 [json_name = "stakedByDelegates"];</code>
        * @param value The bytes for stakedByDelegates to set.
        * @return This builder for chaining.
        */
@@ -62326,7 +62234,7 @@ public final class Vega {
        * Total amount staked on node
        * </pre>
        *
-       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
        * @return The stakedTotal.
        */
       public java.lang.String getStakedTotal() {
@@ -62346,7 +62254,7 @@ public final class Vega {
        * Total amount staked on node
        * </pre>
        *
-       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
        * @return The bytes for stakedTotal.
        */
       public com.google.protobuf.ByteString
@@ -62367,7 +62275,7 @@ public final class Vega {
        * Total amount staked on node
        * </pre>
        *
-       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
        * @param value The stakedTotal to set.
        * @return This builder for chaining.
        */
@@ -62386,7 +62294,7 @@ public final class Vega {
        * Total amount staked on node
        * </pre>
        *
-       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStakedTotal() {
@@ -62400,7 +62308,7 @@ public final class Vega {
        * Total amount staked on node
        * </pre>
        *
-       * <code>string staked_total = 8 [json_name = "stakedTotal"];</code>
+       * <code>string staked_total = 7 [json_name = "stakedTotal"];</code>
        * @param value The bytes for stakedTotal to set.
        * @return This builder for chaining.
        */
@@ -62422,7 +62330,7 @@ public final class Vega {
        * Max amount of (wanted) stake, is this a network param or a node param
        * </pre>
        *
-       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
        * @return The maxIntendedStake.
        */
       public java.lang.String getMaxIntendedStake() {
@@ -62442,7 +62350,7 @@ public final class Vega {
        * Max amount of (wanted) stake, is this a network param or a node param
        * </pre>
        *
-       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
        * @return The bytes for maxIntendedStake.
        */
       public com.google.protobuf.ByteString
@@ -62463,7 +62371,7 @@ public final class Vega {
        * Max amount of (wanted) stake, is this a network param or a node param
        * </pre>
        *
-       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
        * @param value The maxIntendedStake to set.
        * @return This builder for chaining.
        */
@@ -62482,7 +62390,7 @@ public final class Vega {
        * Max amount of (wanted) stake, is this a network param or a node param
        * </pre>
        *
-       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxIntendedStake() {
@@ -62496,7 +62404,7 @@ public final class Vega {
        * Max amount of (wanted) stake, is this a network param or a node param
        * </pre>
        *
-       * <code>string max_intended_stake = 9 [json_name = "maxIntendedStake"];</code>
+       * <code>string max_intended_stake = 8 [json_name = "maxIntendedStake"];</code>
        * @param value The bytes for maxIntendedStake to set.
        * @return This builder for chaining.
        */
@@ -62518,7 +62426,7 @@ public final class Vega {
        * Amount of stake on the next epoch
        * </pre>
        *
-       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
        * @return The pendingStake.
        */
       public java.lang.String getPendingStake() {
@@ -62538,7 +62446,7 @@ public final class Vega {
        * Amount of stake on the next epoch
        * </pre>
        *
-       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
        * @return The bytes for pendingStake.
        */
       public com.google.protobuf.ByteString
@@ -62559,7 +62467,7 @@ public final class Vega {
        * Amount of stake on the next epoch
        * </pre>
        *
-       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
        * @param value The pendingStake to set.
        * @return This builder for chaining.
        */
@@ -62578,7 +62486,7 @@ public final class Vega {
        * Amount of stake on the next epoch
        * </pre>
        *
-       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPendingStake() {
@@ -62592,7 +62500,7 @@ public final class Vega {
        * Amount of stake on the next epoch
        * </pre>
        *
-       * <code>string pending_stake = 10 [json_name = "pendingStake"];</code>
+       * <code>string pending_stake = 9 [json_name = "pendingStake"];</code>
        * @param value The bytes for pendingStake to set.
        * @return This builder for chaining.
        */
@@ -62616,7 +62524,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        * @return Whether the epochData field is set.
        */
       public boolean hasEpochData() {
@@ -62627,7 +62535,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        * @return The epochData.
        */
       public io.vegaprotocol.vega.Vega.EpochData getEpochData() {
@@ -62642,7 +62550,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       public Builder setEpochData(io.vegaprotocol.vega.Vega.EpochData value) {
         if (epochDataBuilder_ == null) {
@@ -62662,7 +62570,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       public Builder setEpochData(
           io.vegaprotocol.vega.Vega.EpochData.Builder builderForValue) {
@@ -62680,7 +62588,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       public Builder mergeEpochData(io.vegaprotocol.vega.Vega.EpochData value) {
         if (epochDataBuilder_ == null) {
@@ -62702,7 +62610,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       public Builder clearEpochData() {
         if (epochDataBuilder_ == null) {
@@ -62720,7 +62628,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Vega.EpochData.Builder getEpochDataBuilder() {
 
@@ -62732,7 +62640,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       public io.vegaprotocol.vega.Vega.EpochDataOrBuilder getEpochDataOrBuilder() {
         if (epochDataBuilder_ != null) {
@@ -62747,7 +62655,7 @@ public final class Vega {
        * Informantion about epoch
        * </pre>
        *
-       * <code>.vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = { ... }</code>
+       * <code>.vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = { ... }</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           io.vegaprotocol.vega.Vega.EpochData, io.vegaprotocol.vega.Vega.EpochData.Builder, io.vegaprotocol.vega.Vega.EpochDataOrBuilder>
@@ -62769,7 +62677,7 @@ public final class Vega {
        * Node status
        * </pre>
        *
-       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
        * @return The enum numeric value on the wire for status.
        */
       @java.lang.Override public int getStatusValue() {
@@ -62780,7 +62688,7 @@ public final class Vega {
        * Node status
        * </pre>
        *
-       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
        */
@@ -62795,7 +62703,7 @@ public final class Vega {
        * Node status
        * </pre>
        *
-       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
        * @return The status.
        */
       @java.lang.Override
@@ -62809,7 +62717,7 @@ public final class Vega {
        * Node status
        * </pre>
        *
-       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
@@ -62827,7 +62735,7 @@ public final class Vega {
        * Node status
        * </pre>
        *
-       * <code>.vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = { ... }</code>
+       * <code>.vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -62854,7 +62762,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.Delegation> getDelagationsList() {
         if (delagationsBuilder_ == null) {
@@ -62868,7 +62776,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public int getDelagationsCount() {
         if (delagationsBuilder_ == null) {
@@ -62882,7 +62790,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public io.vegaprotocol.vega.Vega.Delegation getDelagations(int index) {
         if (delagationsBuilder_ == null) {
@@ -62896,7 +62804,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder setDelagations(
           int index, io.vegaprotocol.vega.Vega.Delegation value) {
@@ -62917,7 +62825,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder setDelagations(
           int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
@@ -62935,7 +62843,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder addDelagations(io.vegaprotocol.vega.Vega.Delegation value) {
         if (delagationsBuilder_ == null) {
@@ -62955,7 +62863,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder addDelagations(
           int index, io.vegaprotocol.vega.Vega.Delegation value) {
@@ -62976,7 +62884,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder addDelagations(
           io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
@@ -62994,7 +62902,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder addDelagations(
           int index, io.vegaprotocol.vega.Vega.Delegation.Builder builderForValue) {
@@ -63012,7 +62920,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder addAllDelagations(
           java.lang.Iterable<? extends io.vegaprotocol.vega.Vega.Delegation> values) {
@@ -63031,7 +62939,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder clearDelagations() {
         if (delagationsBuilder_ == null) {
@@ -63048,7 +62956,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public Builder removeDelagations(int index) {
         if (delagationsBuilder_ == null) {
@@ -63065,7 +62973,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public io.vegaprotocol.vega.Vega.Delegation.Builder getDelagationsBuilder(
           int index) {
@@ -63076,7 +62984,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public io.vegaprotocol.vega.Vega.DelegationOrBuilder getDelagationsOrBuilder(
           int index) {
@@ -63090,7 +62998,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public java.util.List<? extends io.vegaprotocol.vega.Vega.DelegationOrBuilder>
            getDelagationsOrBuilderList() {
@@ -63105,7 +63013,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public io.vegaprotocol.vega.Vega.Delegation.Builder addDelagationsBuilder() {
         return getDelagationsFieldBuilder().addBuilder(
@@ -63116,7 +63024,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public io.vegaprotocol.vega.Vega.Delegation.Builder addDelagationsBuilder(
           int index) {
@@ -63128,7 +63036,7 @@ public final class Vega {
        * Node's delegations
        * </pre>
        *
-       * <code>repeated .vega.Delegation delagations = 13 [json_name = "delagations"];</code>
+       * <code>repeated .vega.Delegation delagations = 12 [json_name = "delagations"];</code>
        */
       public java.util.List<io.vegaprotocol.vega.Vega.Delegation.Builder>
            getDelagationsBuilderList() {
@@ -63257,20 +63165,10 @@ public final class Vega {
 
     /**
      * <pre>
-     * Average percentage fee across all nodes
-     * </pre>
-     *
-     * <code>float average_fee = 5 [json_name = "averageFee"];</code>
-     * @return The averageFee.
-     */
-    float getAverageFee();
-
-    /**
-     * <pre>
      * Total uptime for all epochs across all nodes
      * </pre>
      *
-     * <code>float uptime = 6 [json_name = "uptime"];</code>
+     * <code>float uptime = 5 [json_name = "uptime"];</code>
      * @return The uptime.
      */
     float getUptime();
@@ -63343,11 +63241,6 @@ public final class Vega {
               break;
             }
             case 45: {
-
-              averageFee_ = input.readFloat();
-              break;
-            }
-            case 53: {
 
               uptime_ = input.readFloat();
               break;
@@ -63475,29 +63368,14 @@ public final class Vega {
       return validatingNodes_;
     }
 
-    public static final int AVERAGE_FEE_FIELD_NUMBER = 5;
-    private float averageFee_;
-    /**
-     * <pre>
-     * Average percentage fee across all nodes
-     * </pre>
-     *
-     * <code>float average_fee = 5 [json_name = "averageFee"];</code>
-     * @return The averageFee.
-     */
-    @java.lang.Override
-    public float getAverageFee() {
-      return averageFee_;
-    }
-
-    public static final int UPTIME_FIELD_NUMBER = 6;
+    public static final int UPTIME_FIELD_NUMBER = 5;
     private float uptime_;
     /**
      * <pre>
      * Total uptime for all epochs across all nodes
      * </pre>
      *
-     * <code>float uptime = 6 [json_name = "uptime"];</code>
+     * <code>float uptime = 5 [json_name = "uptime"];</code>
      * @return The uptime.
      */
     @java.lang.Override
@@ -63531,11 +63409,8 @@ public final class Vega {
       if (validatingNodes_ != 0) {
         output.writeUInt32(4, validatingNodes_);
       }
-      if (averageFee_ != 0F) {
-        output.writeFloat(5, averageFee_);
-      }
       if (uptime_ != 0F) {
-        output.writeFloat(6, uptime_);
+        output.writeFloat(5, uptime_);
       }
       unknownFields.writeTo(output);
     }
@@ -63561,13 +63436,9 @@ public final class Vega {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, validatingNodes_);
       }
-      if (averageFee_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, averageFee_);
-      }
       if (uptime_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(6, uptime_);
+          .computeFloatSize(5, uptime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -63592,9 +63463,6 @@ public final class Vega {
           != other.getInactiveNodes()) return false;
       if (getValidatingNodes()
           != other.getValidatingNodes()) return false;
-      if (java.lang.Float.floatToIntBits(getAverageFee())
-          != java.lang.Float.floatToIntBits(
-              other.getAverageFee())) return false;
       if (java.lang.Float.floatToIntBits(getUptime())
           != java.lang.Float.floatToIntBits(
               other.getUptime())) return false;
@@ -63617,9 +63485,6 @@ public final class Vega {
       hash = (53 * hash) + getInactiveNodes();
       hash = (37 * hash) + VALIDATING_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getValidatingNodes();
-      hash = (37 * hash) + AVERAGE_FEE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAverageFee());
       hash = (37 * hash) + UPTIME_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getUptime());
@@ -63764,8 +63629,6 @@ public final class Vega {
 
         validatingNodes_ = 0;
 
-        averageFee_ = 0F;
-
         uptime_ = 0F;
 
         return this;
@@ -63798,7 +63661,6 @@ public final class Vega {
         result.totalNodes_ = totalNodes_;
         result.inactiveNodes_ = inactiveNodes_;
         result.validatingNodes_ = validatingNodes_;
-        result.averageFee_ = averageFee_;
         result.uptime_ = uptime_;
         onBuilt();
         return result;
@@ -63860,9 +63722,6 @@ public final class Vega {
         }
         if (other.getValidatingNodes() != 0) {
           setValidatingNodes(other.getValidatingNodes());
-        }
-        if (other.getAverageFee() != 0F) {
-          setAverageFee(other.getAverageFee());
         }
         if (other.getUptime() != 0F) {
           setUptime(other.getUptime());
@@ -64121,56 +63980,13 @@ public final class Vega {
         return this;
       }
 
-      private float averageFee_ ;
-      /**
-       * <pre>
-       * Average percentage fee across all nodes
-       * </pre>
-       *
-       * <code>float average_fee = 5 [json_name = "averageFee"];</code>
-       * @return The averageFee.
-       */
-      @java.lang.Override
-      public float getAverageFee() {
-        return averageFee_;
-      }
-      /**
-       * <pre>
-       * Average percentage fee across all nodes
-       * </pre>
-       *
-       * <code>float average_fee = 5 [json_name = "averageFee"];</code>
-       * @param value The averageFee to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAverageFee(float value) {
-
-        averageFee_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Average percentage fee across all nodes
-       * </pre>
-       *
-       * <code>float average_fee = 5 [json_name = "averageFee"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAverageFee() {
-
-        averageFee_ = 0F;
-        onChanged();
-        return this;
-      }
-
       private float uptime_ ;
       /**
        * <pre>
        * Total uptime for all epochs across all nodes
        * </pre>
        *
-       * <code>float uptime = 6 [json_name = "uptime"];</code>
+       * <code>float uptime = 5 [json_name = "uptime"];</code>
        * @return The uptime.
        */
       @java.lang.Override
@@ -64182,7 +63998,7 @@ public final class Vega {
        * Total uptime for all epochs across all nodes
        * </pre>
        *
-       * <code>float uptime = 6 [json_name = "uptime"];</code>
+       * <code>float uptime = 5 [json_name = "uptime"];</code>
        * @param value The uptime to set.
        * @return This builder for chaining.
        */
@@ -64197,7 +64013,7 @@ public final class Vega {
        * Total uptime for all epochs across all nodes
        * </pre>
        *
-       * <code>float uptime = 6 [json_name = "uptime"];</code>
+       * <code>float uptime = 5 [json_name = "uptime"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUptime() {
@@ -68383,136 +68199,134 @@ public final class Vega {
       "\006online\022#\n\rtotal_rewards\030\004 \001(\001R\014totalRew" +
       "ards\"S\n\tEpochData\022\024\n\005total\030\001 \001(\005R\005total\022" +
       "\030\n\007offline\030\002 \001(\005R\007offline\022\026\n\006online\030\003 \001(" +
-      "\005R\006online\"\362\003\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu" +
+      "\005R\006online\"\340\003\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu" +
       "b_key\030\002 \001(\tB\006\342\337\037\002X\001R\006pubKey\022\031\n\010info_url\030" +
       "\003 \001(\tR\007infoUrl\022\032\n\010location\030\004 \001(\tR\010locati" +
-      "on\022\020\n\003fee\030\005 \001(\002R\003fee\022,\n\022staked_by_operat" +
-      "or\030\006 \001(\tR\020stakedByOperator\022.\n\023staked_by_" +
-      "delegates\030\007 \001(\tR\021stakedByDelegates\022!\n\014st" +
-      "aked_total\030\010 \001(\tR\013stakedTotal\022,\n\022max_int" +
-      "ended_stake\030\t \001(\tR\020maxIntendedStake\022#\n\rp" +
-      "ending_stake\030\n \001(\tR\014pendingStake\0226\n\nepoc" +
-      "h_data\030\013 \001(\0132\017.vega.EpochDataB\006\342\337\037\002 \001R\te" +
-      "pochData\0220\n\006status\030\014 \001(\0162\020.vega.NodeStat" +
-      "usB\006\342\337\037\002 \001R\006status\0222\n\013delagations\030\r \003(\0132" +
-      "\020.vega.DelegationR\013delagations\"\331\001\n\010NodeD" +
-      "ata\022!\n\014staked_total\030\001 \001(\tR\013stakedTotal\022\037" +
-      "\n\013total_nodes\030\002 \001(\rR\ntotalNodes\022%\n\016inact" +
-      "ive_nodes\030\003 \001(\rR\rinactiveNodes\022)\n\020valida" +
-      "ting_nodes\030\004 \001(\rR\017validatingNodes\022\037\n\013ave" +
-      "rage_fee\030\005 \001(\002R\naverageFee\022\026\n\006uptime\030\006 \001" +
-      "(\002R\006uptime\"p\n\nDelegation\022\024\n\005party\030\001 \001(\tR" +
-      "\005party\022\027\n\007node_id\030\002 \001(\tR\006nodeId\022\026\n\006amoun" +
-      "t\030\003 \001(\tR\006amount\022\033\n\tepoch_seq\030\004 \001(\tR\010epoc" +
-      "hSeq\"\304\001\n\rRewardDetails\022\031\n\010asset_id\030\001 \001(\t" +
-      "R\007assetId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005" +
-      "epoch\030\003 \001(\004R\005epoch\022\026\n\006amount\030\004 \001(\tR\006amou" +
-      "nt\022.\n\023percentage_of_total\030\005 \001(\tR\021percent" +
-      "ageOfTotal\022\037\n\013received_at\030\006 \001(\003R\nreceive" +
-      "dAt\"\203\001\n\024RewardPerAssetDetail\022\024\n\005asset\030\001 " +
-      "\001(\tR\005asset\022-\n\007details\030\002 \003(\0132\023.vega.Rewar" +
-      "dDetailsR\007details\022&\n\017total_for_asset\030\003 \001" +
-      "(\tR\rtotalForAsset*9\n\004Side\022\024\n\020SIDE_UNSPEC" +
-      "IFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n" +
-      "\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014I" +
-      "NTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTE" +
-      "RVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTER" +
-      "VAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Auct" +
-      "ionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFIE" +
-      "D\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTIO" +
-      "N_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_P" +
-      "RICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\213\001" +
-      "\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_UN" +
-      "SPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035\n" +
-      "\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED_R" +
-      "EFERENCE_BEST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027OR" +
-      "DER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR_I" +
-      "NVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVALI" +
-      "D_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUE" +
-      "NCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING_S" +
-      "IZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033O" +
-      "RDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_ER" +
-      "ROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#ORD" +
-      "ER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034OR" +
-      "DER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ER" +
-      "ROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_F" +
-      "OUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020\014" +
-      "\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDER" +
-      "_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_ER" +
-      "ROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_E" +
-      "RROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_INV" +
-      "ALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERSI" +
-      "STENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022\034" +
-      "\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_ER" +
-      "ROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!" +
-      "ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n!O" +
-      "RDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'OR" +
-      "DER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020\030\022" +
-      "3\n/ORDER_ERROR_GFA_ORDER_DURING_CONTINUO" +
-      "US_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AMEND" +
-      "_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ERRO" +
-      "R_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER_E" +
-      "RROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&O" +
-      "RDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022" +
-      "*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GF" +
-      "N\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_GFA" +
-      "_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_IOC" +
-      "_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR_C" +
-      "ANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022#\n" +
-      "\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036OR" +
-      "DER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_" +
-      "ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORDER" +
-      "_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRI" +
-      "CE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LESS_" +
-      "OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFSET" +
-      "_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERROR" +
-      "_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO" +
-      "\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENCE_" +
-      "BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET_M" +
-      "UST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ERRO" +
-      "R_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDER_" +
-      "ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_" +
-      "ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_UNA" +
-      "BLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER_E" +
-      "RROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORD" +
-      "ER\020.\0228\n4ORDER_ERROR_NON_PERSISTENT_ORDER" +
-      "_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus\022\034" +
-      "\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_ST" +
-      "ATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_REPL" +
-      "AYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\220\003\n\013" +
-      "AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020" +
-      "\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT" +
-      "_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGI" +
-      "N\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOUNT" +
-      "_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_T" +
-      "YPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEE" +
-      "S_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020" +
-      "\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE" +
-      "_EXTERNAL\020\n\022!\n\035ACCOUNT_TYPE_GLOBAL_INSUR" +
-      "ANCE\020\013\022\036\n\032ACCOUNT_TYPE_GLOBAL_REWARD\020\014*\323" +
-      "\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPECI" +
-      "FIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSF" +
-      "ER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032" +
-      "\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_T" +
-      "YPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LO" +
-      "W\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TR" +
-      "ANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRAN" +
-      "SFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TY" +
-      "PE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_" +
-      "INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER_TYP" +
-      "E_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRA" +
-      "NSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSF" +
-      "ER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TR" +
-      "ANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_" +
-      "BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRAW_LO" +
-      "CK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRAN" +
-      "SFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BON" +
-      "D_SLASHING\020\024\022\036\n\032TRANSFER_TYPE_STAKE_REWA" +
-      "RD\020\025*c\n\nNodeStatus\022\033\n\027NODE_STATUS_UNSPEC" +
-      "IFIED\020\000\022\031\n\025NODE_STATUS_VALIDATOR\020\001\022\035\n\031NO" +
-      "DE_STATUS_NON_VALIDATOR\020\002B7\n\024io.vegaprot" +
-      "ocol.vegaZ\037code.vegaprotocol.io/vega/pro" +
-      "tob\006proto3"
+      "on\022,\n\022staked_by_operator\030\005 \001(\tR\020stakedBy" +
+      "Operator\022.\n\023staked_by_delegates\030\006 \001(\tR\021s" +
+      "takedByDelegates\022!\n\014staked_total\030\007 \001(\tR\013" +
+      "stakedTotal\022,\n\022max_intended_stake\030\010 \001(\tR" +
+      "\020maxIntendedStake\022#\n\rpending_stake\030\t \001(\t" +
+      "R\014pendingStake\0226\n\nepoch_data\030\n \001(\0132\017.veg" +
+      "a.EpochDataB\006\342\337\037\002 \001R\tepochData\0220\n\006status" +
+      "\030\013 \001(\0162\020.vega.NodeStatusB\006\342\337\037\002 \001R\006status" +
+      "\0222\n\013delagations\030\014 \003(\0132\020.vega.DelegationR" +
+      "\013delagations\"\270\001\n\010NodeData\022!\n\014staked_tota" +
+      "l\030\001 \001(\tR\013stakedTotal\022\037\n\013total_nodes\030\002 \001(" +
+      "\rR\ntotalNodes\022%\n\016inactive_nodes\030\003 \001(\rR\ri" +
+      "nactiveNodes\022)\n\020validating_nodes\030\004 \001(\rR\017" +
+      "validatingNodes\022\026\n\006uptime\030\005 \001(\002R\006uptime\"" +
+      "p\n\nDelegation\022\024\n\005party\030\001 \001(\tR\005party\022\027\n\007n" +
+      "ode_id\030\002 \001(\tR\006nodeId\022\026\n\006amount\030\003 \001(\tR\006am" +
+      "ount\022\033\n\tepoch_seq\030\004 \001(\tR\010epochSeq\"\304\001\n\rRe" +
+      "wardDetails\022\031\n\010asset_id\030\001 \001(\tR\007assetId\022\031" +
+      "\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005epoch\030\003 \001(\004" +
+      "R\005epoch\022\026\n\006amount\030\004 \001(\tR\006amount\022.\n\023perce" +
+      "ntage_of_total\030\005 \001(\tR\021percentageOfTotal\022" +
+      "\037\n\013received_at\030\006 \001(\003R\nreceivedAt\"\203\001\n\024Rew" +
+      "ardPerAssetDetail\022\024\n\005asset\030\001 \001(\tR\005asset\022" +
+      "-\n\007details\030\002 \003(\0132\023.vega.RewardDetailsR\007d" +
+      "etails\022&\n\017total_for_asset\030\003 \001(\tR\rtotalFo" +
+      "rAsset*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010" +
+      "SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030" +
+      "\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M" +
+      "\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204" +
+      "\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001" +
+      "\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016AuctionTrigger\022" +
+      "\037\n\033AUCTION_TRIGGER_UNSPECIFIED\020\000\022\031\n\025AUCT" +
+      "ION_TRIGGER_BATCH\020\001\022\033\n\027AUCTION_TRIGGER_O" +
+      "PENING\020\002\022\031\n\025AUCTION_TRIGGER_PRICE\020\003\022\035\n\031A" +
+      "UCTION_TRIGGER_LIQUIDITY\020\004*\213\001\n\017PeggedRef" +
+      "erence\022 \n\034PEGGED_REFERENCE_UNSPECIFIED\020\000" +
+      "\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035\n\031PEGGED_REF" +
+      "ERENCE_BEST_BID\020\002\022\035\n\031PEGGED_REFERENCE_BE" +
+      "ST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027ORDER_ERROR_U" +
+      "NSPECIFIED\020\000\022!\n\035ORDER_ERROR_INVALID_MARK" +
+      "ET_ID\020\001\022 \n\034ORDER_ERROR_INVALID_ORDER_ID\020" +
+      "\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"OR" +
+      "DER_ERROR_INVALID_REMAINING_SIZE\020\004\022\034\n\030OR" +
+      "DER_ERROR_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_" +
+      "REMOVAL_FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID" +
+      "_EXPIRATION_DATETIME\020\007\022\'\n#ORDER_ERROR_IN" +
+      "VALID_ORDER_REFERENCE\020\010\022 \n\034ORDER_ERROR_E" +
+      "DIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_F" +
+      "AILURE\020\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034O" +
+      "RDER_ERROR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_E" +
+      "RROR_MARKET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARG" +
+      "IN_CHECK_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING" +
+      "_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERN" +
+      "AL_ERROR\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021" +
+      "\022#\n\037ORDER_ERROR_INVALID_PERSISTENCE\020\022\022\034\n" +
+      "\030ORDER_ERROR_INVALID_TYPE\020\023\022\034\n\030ORDER_ERR" +
+      "OR_SELF_TRADING\020\024\022.\n*ORDER_ERROR_INSUFFI" +
+      "CIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!ORDER_ERROR" +
+      "_INCORRECT_MARKET_TYPE\020\026\022%\n!ORDER_ERROR_" +
+      "INVALID_TIME_IN_FORCE\020\027\022+\n\'ORDER_ERROR_G" +
+      "FN_ORDER_DURING_AN_AUCTION\020\030\0223\n/ORDER_ER" +
+      "ROR_GFA_ORDER_DURING_CONTINUOUS_TRADING\020" +
+      "\031\0224\n0ORDER_ERROR_CANNOT_AMEND_TO_GTT_WIT" +
+      "HOUT_EXPIRYAT\020\032\022)\n%ORDER_ERROR_EXPIRYAT_" +
+      "BEFORE_CREATEDAT\020\033\022,\n(ORDER_ERROR_CANNOT" +
+      "_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&ORDER_ERROR_" +
+      "CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022*\n&ORDER_ER" +
+      "ROR_CANNOT_AMEND_TO_GFA_OR_GFN\020\036\022,\n(ORDE" +
+      "R_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN\020\037\0224" +
+      "\n0ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURI" +
+      "NG_AUCTION\020 \0224\n0ORDER_ERROR_CANNOT_SEND_" +
+      "FOK_ORDER_DURING_AUCTION\020!\022#\n\037ORDER_ERRO" +
+      "R_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036ORDER_ERROR_M" +
+      "UST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_ERROR_WITHO" +
+      "UT_REFERENCE_PRICE\020$\0223\n/ORDER_ERROR_BUY_" +
+      "CANNOT_REFERENCE_BEST_ASK_PRICE\020%\0224\n0ORD" +
+      "ER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO" +
+      "_ZERO\020&\022-\n)ORDER_ERROR_OFFSET_MUST_BE_LE" +
+      "SS_THAN_ZERO\020\'\0227\n3ORDER_ERROR_OFFSET_MUS" +
+      "T_BE_GREATER_OR_EQUAL_TO_ZERO\020(\0224\n0ORDER" +
+      "_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PR" +
+      "ICE\020)\0220\n,ORDER_ERROR_OFFSET_MUST_BE_GREA" +
+      "TER_THAN_ZERO\020*\022*\n&ORDER_ERROR_INSUFFICI" +
+      "ENT_ASSET_BALANCE\020+\022E\nAORDER_ERROR_CANNO" +
+      "T_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGG" +
+      "ED_ORDER\020,\022.\n*ORDER_ERROR_UNABLE_TO_REPR" +
+      "ICE_PEGGED_ORDER\020-\0225\n1ORDER_ERROR_UNABLE" +
+      "_TO_AMEND_PRICE_ON_PEGGED_ORDER\020.\0228\n4ORD" +
+      "ER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRI" +
+      "CE_BOUNDS\020/*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STA" +
+      "TUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCON" +
+      "NECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026" +
+      "CHAIN_STATUS_CONNECTED\020\003*\220\003\n\013AccountType" +
+      "\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUN" +
+      "T_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTL" +
+      "EMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCO" +
+      "UNT_TYPE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_" +
+      "INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LI" +
+      "QUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036" +
+      "\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010\022\025\n\021ACCOUN" +
+      "T_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE_EXTERNAL\020\n" +
+      "\022!\n\035ACCOUNT_TYPE_GLOBAL_INSURANCE\020\013\022\036\n\032A" +
+      "CCOUNT_TYPE_GLOBAL_REWARD\020\014*\323\005\n\014Transfer" +
+      "Type\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022T" +
+      "RANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN" +
+      "\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_" +
+      "TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN" +
+      "\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRAN" +
+      "SFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE" +
+      "_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_M" +
+      "AKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FE" +
+      "E_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCT" +
+      "URE_FEE_PAY\020\013\022/\n+TRANSFER_TYPE_INFRASTRU" +
+      "CTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRANSFER_TYPE_" +
+      "LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSFER_TYPE_LIQ" +
+      "UIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TRANSFER_TYPE" +
+      "_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_BOND_HIGH\020\020" +
+      "\022\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\021\022\032\n\026TRA" +
+      "NSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRANSFER_TYPE_D" +
+      "EPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BOND_SLASHING\020" +
+      "\024\022\036\n\032TRANSFER_TYPE_STAKE_REWARD\020\025*c\n\nNod" +
+      "eStatus\022\033\n\027NODE_STATUS_UNSPECIFIED\020\000\022\031\n\025" +
+      "NODE_STATUS_VALIDATOR\020\001\022\035\n\031NODE_STATUS_N" +
+      "ON_VALIDATOR\020\002B7\n\024io.vegaprotocol.vegaZ\037" +
+      "code.vegaprotocol.io/vega/protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -68802,13 +68616,13 @@ public final class Vega {
     internal_static_vega_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_Node_descriptor,
-        new java.lang.String[] { "Id", "PubKey", "InfoUrl", "Location", "Fee", "StakedByOperator", "StakedByDelegates", "StakedTotal", "MaxIntendedStake", "PendingStake", "EpochData", "Status", "Delagations", });
+        new java.lang.String[] { "Id", "PubKey", "InfoUrl", "Location", "StakedByOperator", "StakedByDelegates", "StakedTotal", "MaxIntendedStake", "PendingStake", "EpochData", "Status", "Delagations", });
     internal_static_vega_NodeData_descriptor =
       getDescriptor().getMessageTypes().get(45);
     internal_static_vega_NodeData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_NodeData_descriptor,
-        new java.lang.String[] { "StakedTotal", "TotalNodes", "InactiveNodes", "ValidatingNodes", "AverageFee", "Uptime", });
+        new java.lang.String[] { "StakedTotal", "TotalNodes", "InactiveNodes", "ValidatingNodes", "Uptime", });
     internal_static_vega_Delegation_descriptor =
       getDescriptor().getMessageTypes().get(46);
     internal_static_vega_Delegation_fieldAccessorTable = new

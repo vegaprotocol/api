@@ -1411,7 +1411,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vega_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::vega::Node, pub_key_),
   PROTOBUF_FIELD_OFFSET(::vega::Node, info_url_),
   PROTOBUF_FIELD_OFFSET(::vega::Node, location_),
-  PROTOBUF_FIELD_OFFSET(::vega::Node, fee_),
   PROTOBUF_FIELD_OFFSET(::vega::Node, staked_by_operator_),
   PROTOBUF_FIELD_OFFSET(::vega::Node, staked_by_delegates_),
   PROTOBUF_FIELD_OFFSET(::vega::Node, staked_total_),
@@ -1429,7 +1428,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_vega_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::vega::NodeData, total_nodes_),
   PROTOBUF_FIELD_OFFSET(::vega::NodeData, inactive_nodes_),
   PROTOBUF_FIELD_OFFSET(::vega::NodeData, validating_nodes_),
-  PROTOBUF_FIELD_OFFSET(::vega::NodeData, average_fee_),
   PROTOBUF_FIELD_OFFSET(::vega::NodeData, uptime_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::Delegation, _internal_metadata_),
@@ -1508,10 +1506,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 442, -1, sizeof(::vega::EpochParticipation)},
   { 451, -1, sizeof(::vega::EpochData)},
   { 459, -1, sizeof(::vega::Node)},
-  { 477, -1, sizeof(::vega::NodeData)},
-  { 488, -1, sizeof(::vega::Delegation)},
-  { 497, -1, sizeof(::vega::RewardDetails)},
-  { 508, -1, sizeof(::vega::RewardPerAssetDetail)},
+  { 476, -1, sizeof(::vega::NodeData)},
+  { 486, -1, sizeof(::vega::Delegation)},
+  { 495, -1, sizeof(::vega::RewardDetails)},
+  { 506, -1, sizeof(::vega::RewardPerAssetDetail)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1814,136 +1812,134 @@ const char descriptor_table_protodef_vega_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "\006online\022#\n\rtotal_rewards\030\004 \001(\001R\014totalRew"
   "ards\"S\n\tEpochData\022\024\n\005total\030\001 \001(\005R\005total\022"
   "\030\n\007offline\030\002 \001(\005R\007offline\022\026\n\006online\030\003 \001("
-  "\005R\006online\"\362\003\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu"
+  "\005R\006online\"\340\003\n\004Node\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\007pu"
   "b_key\030\002 \001(\tB\006\342\337\037\002X\001R\006pubKey\022\031\n\010info_url\030"
   "\003 \001(\tR\007infoUrl\022\032\n\010location\030\004 \001(\tR\010locati"
-  "on\022\020\n\003fee\030\005 \001(\002R\003fee\022,\n\022staked_by_operat"
-  "or\030\006 \001(\tR\020stakedByOperator\022.\n\023staked_by_"
-  "delegates\030\007 \001(\tR\021stakedByDelegates\022!\n\014st"
-  "aked_total\030\010 \001(\tR\013stakedTotal\022,\n\022max_int"
-  "ended_stake\030\t \001(\tR\020maxIntendedStake\022#\n\rp"
-  "ending_stake\030\n \001(\tR\014pendingStake\0226\n\nepoc"
-  "h_data\030\013 \001(\0132\017.vega.EpochDataB\006\342\337\037\002 \001R\te"
-  "pochData\0220\n\006status\030\014 \001(\0162\020.vega.NodeStat"
-  "usB\006\342\337\037\002 \001R\006status\0222\n\013delagations\030\r \003(\0132"
-  "\020.vega.DelegationR\013delagations\"\331\001\n\010NodeD"
-  "ata\022!\n\014staked_total\030\001 \001(\tR\013stakedTotal\022\037"
-  "\n\013total_nodes\030\002 \001(\rR\ntotalNodes\022%\n\016inact"
-  "ive_nodes\030\003 \001(\rR\rinactiveNodes\022)\n\020valida"
-  "ting_nodes\030\004 \001(\rR\017validatingNodes\022\037\n\013ave"
-  "rage_fee\030\005 \001(\002R\naverageFee\022\026\n\006uptime\030\006 \001"
-  "(\002R\006uptime\"p\n\nDelegation\022\024\n\005party\030\001 \001(\tR"
-  "\005party\022\027\n\007node_id\030\002 \001(\tR\006nodeId\022\026\n\006amoun"
-  "t\030\003 \001(\tR\006amount\022\033\n\tepoch_seq\030\004 \001(\tR\010epoc"
-  "hSeq\"\304\001\n\rRewardDetails\022\031\n\010asset_id\030\001 \001(\t"
-  "R\007assetId\022\031\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005"
-  "epoch\030\003 \001(\004R\005epoch\022\026\n\006amount\030\004 \001(\tR\006amou"
-  "nt\022.\n\023percentage_of_total\030\005 \001(\tR\021percent"
-  "ageOfTotal\022\037\n\013received_at\030\006 \001(\003R\nreceive"
-  "dAt\"\203\001\n\024RewardPerAssetDetail\022\024\n\005asset\030\001 "
-  "\001(\tR\005asset\022-\n\007details\030\002 \003(\0132\023.vega.Rewar"
-  "dDetailsR\007details\022&\n\017total_for_asset\030\003 \001"
-  "(\tR\rtotalForAsset*9\n\004Side\022\024\n\020SIDE_UNSPEC"
-  "IFIED\020\000\022\014\n\010SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n"
-  "\010Interval\022\030\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014I"
-  "NTERVAL_I1M\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTE"
-  "RVAL_I15M\020\204\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTER"
-  "VAL_I6H\020\340\250\001\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016Auct"
-  "ionTrigger\022\037\n\033AUCTION_TRIGGER_UNSPECIFIE"
-  "D\020\000\022\031\n\025AUCTION_TRIGGER_BATCH\020\001\022\033\n\027AUCTIO"
-  "N_TRIGGER_OPENING\020\002\022\031\n\025AUCTION_TRIGGER_P"
-  "RICE\020\003\022\035\n\031AUCTION_TRIGGER_LIQUIDITY\020\004*\213\001"
-  "\n\017PeggedReference\022 \n\034PEGGED_REFERENCE_UN"
-  "SPECIFIED\020\000\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035\n"
-  "\031PEGGED_REFERENCE_BEST_BID\020\002\022\035\n\031PEGGED_R"
-  "EFERENCE_BEST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027OR"
-  "DER_ERROR_UNSPECIFIED\020\000\022!\n\035ORDER_ERROR_I"
-  "NVALID_MARKET_ID\020\001\022 \n\034ORDER_ERROR_INVALI"
-  "D_ORDER_ID\020\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUE"
-  "NCE\020\003\022&\n\"ORDER_ERROR_INVALID_REMAINING_S"
-  "IZE\020\004\022\034\n\030ORDER_ERROR_TIME_FAILURE\020\005\022\037\n\033O"
-  "RDER_ERROR_REMOVAL_FAILURE\020\006\022+\n\'ORDER_ER"
-  "ROR_INVALID_EXPIRATION_DATETIME\020\007\022\'\n#ORD"
-  "ER_ERROR_INVALID_ORDER_REFERENCE\020\010\022 \n\034OR"
-  "DER_ERROR_EDIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ER"
-  "ROR_AMEND_FAILURE\020\n\022\031\n\025ORDER_ERROR_NOT_F"
-  "OUND\020\013\022 \n\034ORDER_ERROR_INVALID_PARTY_ID\020\014"
-  "\022\035\n\031ORDER_ERROR_MARKET_CLOSED\020\r\022#\n\037ORDER"
-  "_ERROR_MARGIN_CHECK_FAILED\020\016\022\'\n#ORDER_ER"
-  "ROR_MISSING_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_E"
-  "RROR_INTERNAL_ERROR\020\020\022\034\n\030ORDER_ERROR_INV"
-  "ALID_SIZE\020\021\022#\n\037ORDER_ERROR_INVALID_PERSI"
-  "STENCE\020\022\022\034\n\030ORDER_ERROR_INVALID_TYPE\020\023\022\034"
-  "\n\030ORDER_ERROR_SELF_TRADING\020\024\022.\n*ORDER_ER"
-  "ROR_INSUFFICIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!"
-  "ORDER_ERROR_INCORRECT_MARKET_TYPE\020\026\022%\n!O"
-  "RDER_ERROR_INVALID_TIME_IN_FORCE\020\027\022+\n\'OR"
-  "DER_ERROR_GFN_ORDER_DURING_AN_AUCTION\020\030\022"
-  "3\n/ORDER_ERROR_GFA_ORDER_DURING_CONTINUO"
-  "US_TRADING\020\031\0224\n0ORDER_ERROR_CANNOT_AMEND"
-  "_TO_GTT_WITHOUT_EXPIRYAT\020\032\022)\n%ORDER_ERRO"
-  "R_EXPIRYAT_BEFORE_CREATEDAT\020\033\022,\n(ORDER_E"
-  "RROR_CANNOT_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&O"
-  "RDER_ERROR_CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022"
-  "*\n&ORDER_ERROR_CANNOT_AMEND_TO_GFA_OR_GF"
-  "N\020\036\022,\n(ORDER_ERROR_CANNOT_AMEND_FROM_GFA"
-  "_OR_GFN\020\037\0224\n0ORDER_ERROR_CANNOT_SEND_IOC"
-  "_ORDER_DURING_AUCTION\020 \0224\n0ORDER_ERROR_C"
-  "ANNOT_SEND_FOK_ORDER_DURING_AUCTION\020!\022#\n"
-  "\037ORDER_ERROR_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036OR"
-  "DER_ERROR_MUST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_"
-  "ERROR_WITHOUT_REFERENCE_PRICE\020$\0223\n/ORDER"
-  "_ERROR_BUY_CANNOT_REFERENCE_BEST_ASK_PRI"
-  "CE\020%\0224\n0ORDER_ERROR_OFFSET_MUST_BE_LESS_"
-  "OR_EQUAL_TO_ZERO\020&\022-\n)ORDER_ERROR_OFFSET"
-  "_MUST_BE_LESS_THAN_ZERO\020\'\0227\n3ORDER_ERROR"
-  "_OFFSET_MUST_BE_GREATER_OR_EQUAL_TO_ZERO"
-  "\020(\0224\n0ORDER_ERROR_SELL_CANNOT_REFERENCE_"
-  "BEST_BID_PRICE\020)\0220\n,ORDER_ERROR_OFFSET_M"
-  "UST_BE_GREATER_THAN_ZERO\020*\022*\n&ORDER_ERRO"
-  "R_INSUFFICIENT_ASSET_BALANCE\020+\022E\nAORDER_"
-  "ERROR_CANNOT_AMEND_PEGGED_ORDER_DETAILS_"
-  "ON_NON_PEGGED_ORDER\020,\022.\n*ORDER_ERROR_UNA"
-  "BLE_TO_REPRICE_PEGGED_ORDER\020-\0225\n1ORDER_E"
-  "RROR_UNABLE_TO_AMEND_PRICE_ON_PEGGED_ORD"
-  "ER\020.\0228\n4ORDER_ERROR_NON_PERSISTENT_ORDER"
-  "_OUT_OF_PRICE_BOUNDS\020/*\202\001\n\013ChainStatus\022\034"
-  "\n\030CHAIN_STATUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_ST"
-  "ATUS_DISCONNECTED\020\001\022\032\n\026CHAIN_STATUS_REPL"
-  "AYING\020\002\022\032\n\026CHAIN_STATUS_CONNECTED\020\003*\220\003\n\013"
-  "AccountType\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020"
-  "\000\022\032\n\026ACCOUNT_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT"
-  "_TYPE_SETTLEMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGI"
-  "N\020\003\022\030\n\024ACCOUNT_TYPE_GENERAL\020\004\022$\n ACCOUNT"
-  "_TYPE_FEES_INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_T"
-  "YPE_FEES_LIQUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEE"
-  "S_MAKER\020\007\022\036\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020"
-  "\010\022\025\n\021ACCOUNT_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE"
-  "_EXTERNAL\020\n\022!\n\035ACCOUNT_TYPE_GLOBAL_INSUR"
-  "ANCE\020\013\022\036\n\032ACCOUNT_TYPE_GLOBAL_REWARD\020\014*\323"
-  "\005\n\014TransferType\022\035\n\031TRANSFER_TYPE_UNSPECI"
-  "FIED\020\000\022\026\n\022TRANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSF"
-  "ER_TYPE_WIN\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032"
-  "\n\026TRANSFER_TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_T"
-  "YPE_MTM_WIN\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LO"
-  "W\020\006\022\035\n\031TRANSFER_TYPE_MARGIN_HIGH\020\007\022$\n TR"
-  "ANSFER_TYPE_MARGIN_CONFISCATED\020\010\022\037\n\033TRAN"
-  "SFER_TYPE_MAKER_FEE_PAY\020\t\022#\n\037TRANSFER_TY"
-  "PE_MAKER_FEE_RECEIVE\020\n\022(\n$TRANSFER_TYPE_"
-  "INFRASTRUCTURE_FEE_PAY\020\013\022/\n+TRANSFER_TYP"
-  "E_INFRASTRUCTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRA"
-  "NSFER_TYPE_LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSF"
-  "ER_TYPE_LIQUIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TR"
-  "ANSFER_TYPE_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_"
-  "BOND_HIGH\020\020\022\037\n\033TRANSFER_TYPE_WITHDRAW_LO"
-  "CK\020\021\022\032\n\026TRANSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRAN"
-  "SFER_TYPE_DEPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BON"
-  "D_SLASHING\020\024\022\036\n\032TRANSFER_TYPE_STAKE_REWA"
-  "RD\020\025*c\n\nNodeStatus\022\033\n\027NODE_STATUS_UNSPEC"
-  "IFIED\020\000\022\031\n\025NODE_STATUS_VALIDATOR\020\001\022\035\n\031NO"
-  "DE_STATUS_NON_VALIDATOR\020\002B7\n\024io.vegaprot"
-  "ocol.vegaZ\037code.vegaprotocol.io/vega/pro"
-  "tob\006proto3"
+  "on\022,\n\022staked_by_operator\030\005 \001(\tR\020stakedBy"
+  "Operator\022.\n\023staked_by_delegates\030\006 \001(\tR\021s"
+  "takedByDelegates\022!\n\014staked_total\030\007 \001(\tR\013"
+  "stakedTotal\022,\n\022max_intended_stake\030\010 \001(\tR"
+  "\020maxIntendedStake\022#\n\rpending_stake\030\t \001(\t"
+  "R\014pendingStake\0226\n\nepoch_data\030\n \001(\0132\017.veg"
+  "a.EpochDataB\006\342\337\037\002 \001R\tepochData\0220\n\006status"
+  "\030\013 \001(\0162\020.vega.NodeStatusB\006\342\337\037\002 \001R\006status"
+  "\0222\n\013delagations\030\014 \003(\0132\020.vega.DelegationR"
+  "\013delagations\"\270\001\n\010NodeData\022!\n\014staked_tota"
+  "l\030\001 \001(\tR\013stakedTotal\022\037\n\013total_nodes\030\002 \001("
+  "\rR\ntotalNodes\022%\n\016inactive_nodes\030\003 \001(\rR\ri"
+  "nactiveNodes\022)\n\020validating_nodes\030\004 \001(\rR\017"
+  "validatingNodes\022\026\n\006uptime\030\005 \001(\002R\006uptime\""
+  "p\n\nDelegation\022\024\n\005party\030\001 \001(\tR\005party\022\027\n\007n"
+  "ode_id\030\002 \001(\tR\006nodeId\022\026\n\006amount\030\003 \001(\tR\006am"
+  "ount\022\033\n\tepoch_seq\030\004 \001(\tR\010epochSeq\"\304\001\n\rRe"
+  "wardDetails\022\031\n\010asset_id\030\001 \001(\tR\007assetId\022\031"
+  "\n\010party_id\030\002 \001(\tR\007partyId\022\024\n\005epoch\030\003 \001(\004"
+  "R\005epoch\022\026\n\006amount\030\004 \001(\tR\006amount\022.\n\023perce"
+  "ntage_of_total\030\005 \001(\tR\021percentageOfTotal\022"
+  "\037\n\013received_at\030\006 \001(\003R\nreceivedAt\"\203\001\n\024Rew"
+  "ardPerAssetDetail\022\024\n\005asset\030\001 \001(\tR\005asset\022"
+  "-\n\007details\030\002 \003(\0132\023.vega.RewardDetailsR\007d"
+  "etails\022&\n\017total_for_asset\030\003 \001(\tR\rtotalFo"
+  "rAsset*9\n\004Side\022\024\n\020SIDE_UNSPECIFIED\020\000\022\014\n\010"
+  "SIDE_BUY\020\001\022\r\n\tSIDE_SELL\020\002*\230\001\n\010Interval\022\030"
+  "\n\024INTERVAL_UNSPECIFIED\020\000\022\020\n\014INTERVAL_I1M"
+  "\020<\022\021\n\014INTERVAL_I5M\020\254\002\022\022\n\rINTERVAL_I15M\020\204"
+  "\007\022\021\n\014INTERVAL_I1H\020\220\034\022\022\n\014INTERVAL_I6H\020\340\250\001"
+  "\022\022\n\014INTERVAL_I1D\020\200\243\005*\243\001\n\016AuctionTrigger\022"
+  "\037\n\033AUCTION_TRIGGER_UNSPECIFIED\020\000\022\031\n\025AUCT"
+  "ION_TRIGGER_BATCH\020\001\022\033\n\027AUCTION_TRIGGER_O"
+  "PENING\020\002\022\031\n\025AUCTION_TRIGGER_PRICE\020\003\022\035\n\031A"
+  "UCTION_TRIGGER_LIQUIDITY\020\004*\213\001\n\017PeggedRef"
+  "erence\022 \n\034PEGGED_REFERENCE_UNSPECIFIED\020\000"
+  "\022\030\n\024PEGGED_REFERENCE_MID\020\001\022\035\n\031PEGGED_REF"
+  "ERENCE_BEST_BID\020\002\022\035\n\031PEGGED_REFERENCE_BE"
+  "ST_ASK\020\003*\370\017\n\nOrderError\022\033\n\027ORDER_ERROR_U"
+  "NSPECIFIED\020\000\022!\n\035ORDER_ERROR_INVALID_MARK"
+  "ET_ID\020\001\022 \n\034ORDER_ERROR_INVALID_ORDER_ID\020"
+  "\002\022\037\n\033ORDER_ERROR_OUT_OF_SEQUENCE\020\003\022&\n\"OR"
+  "DER_ERROR_INVALID_REMAINING_SIZE\020\004\022\034\n\030OR"
+  "DER_ERROR_TIME_FAILURE\020\005\022\037\n\033ORDER_ERROR_"
+  "REMOVAL_FAILURE\020\006\022+\n\'ORDER_ERROR_INVALID"
+  "_EXPIRATION_DATETIME\020\007\022\'\n#ORDER_ERROR_IN"
+  "VALID_ORDER_REFERENCE\020\010\022 \n\034ORDER_ERROR_E"
+  "DIT_NOT_ALLOWED\020\t\022\035\n\031ORDER_ERROR_AMEND_F"
+  "AILURE\020\n\022\031\n\025ORDER_ERROR_NOT_FOUND\020\013\022 \n\034O"
+  "RDER_ERROR_INVALID_PARTY_ID\020\014\022\035\n\031ORDER_E"
+  "RROR_MARKET_CLOSED\020\r\022#\n\037ORDER_ERROR_MARG"
+  "IN_CHECK_FAILED\020\016\022\'\n#ORDER_ERROR_MISSING"
+  "_GENERAL_ACCOUNT\020\017\022\036\n\032ORDER_ERROR_INTERN"
+  "AL_ERROR\020\020\022\034\n\030ORDER_ERROR_INVALID_SIZE\020\021"
+  "\022#\n\037ORDER_ERROR_INVALID_PERSISTENCE\020\022\022\034\n"
+  "\030ORDER_ERROR_INVALID_TYPE\020\023\022\034\n\030ORDER_ERR"
+  "OR_SELF_TRADING\020\024\022.\n*ORDER_ERROR_INSUFFI"
+  "CIENT_FUNDS_TO_PAY_FEES\020\025\022%\n!ORDER_ERROR"
+  "_INCORRECT_MARKET_TYPE\020\026\022%\n!ORDER_ERROR_"
+  "INVALID_TIME_IN_FORCE\020\027\022+\n\'ORDER_ERROR_G"
+  "FN_ORDER_DURING_AN_AUCTION\020\030\0223\n/ORDER_ER"
+  "ROR_GFA_ORDER_DURING_CONTINUOUS_TRADING\020"
+  "\031\0224\n0ORDER_ERROR_CANNOT_AMEND_TO_GTT_WIT"
+  "HOUT_EXPIRYAT\020\032\022)\n%ORDER_ERROR_EXPIRYAT_"
+  "BEFORE_CREATEDAT\020\033\022,\n(ORDER_ERROR_CANNOT"
+  "_HAVE_GTC_AND_EXPIRYAT\020\034\022*\n&ORDER_ERROR_"
+  "CANNOT_AMEND_TO_FOK_OR_IOC\020\035\022*\n&ORDER_ER"
+  "ROR_CANNOT_AMEND_TO_GFA_OR_GFN\020\036\022,\n(ORDE"
+  "R_ERROR_CANNOT_AMEND_FROM_GFA_OR_GFN\020\037\0224"
+  "\n0ORDER_ERROR_CANNOT_SEND_IOC_ORDER_DURI"
+  "NG_AUCTION\020 \0224\n0ORDER_ERROR_CANNOT_SEND_"
+  "FOK_ORDER_DURING_AUCTION\020!\022#\n\037ORDER_ERRO"
+  "R_MUST_BE_LIMIT_ORDER\020\"\022\"\n\036ORDER_ERROR_M"
+  "UST_BE_GTT_OR_GTC\020#\022\'\n#ORDER_ERROR_WITHO"
+  "UT_REFERENCE_PRICE\020$\0223\n/ORDER_ERROR_BUY_"
+  "CANNOT_REFERENCE_BEST_ASK_PRICE\020%\0224\n0ORD"
+  "ER_ERROR_OFFSET_MUST_BE_LESS_OR_EQUAL_TO"
+  "_ZERO\020&\022-\n)ORDER_ERROR_OFFSET_MUST_BE_LE"
+  "SS_THAN_ZERO\020\'\0227\n3ORDER_ERROR_OFFSET_MUS"
+  "T_BE_GREATER_OR_EQUAL_TO_ZERO\020(\0224\n0ORDER"
+  "_ERROR_SELL_CANNOT_REFERENCE_BEST_BID_PR"
+  "ICE\020)\0220\n,ORDER_ERROR_OFFSET_MUST_BE_GREA"
+  "TER_THAN_ZERO\020*\022*\n&ORDER_ERROR_INSUFFICI"
+  "ENT_ASSET_BALANCE\020+\022E\nAORDER_ERROR_CANNO"
+  "T_AMEND_PEGGED_ORDER_DETAILS_ON_NON_PEGG"
+  "ED_ORDER\020,\022.\n*ORDER_ERROR_UNABLE_TO_REPR"
+  "ICE_PEGGED_ORDER\020-\0225\n1ORDER_ERROR_UNABLE"
+  "_TO_AMEND_PRICE_ON_PEGGED_ORDER\020.\0228\n4ORD"
+  "ER_ERROR_NON_PERSISTENT_ORDER_OUT_OF_PRI"
+  "CE_BOUNDS\020/*\202\001\n\013ChainStatus\022\034\n\030CHAIN_STA"
+  "TUS_UNSPECIFIED\020\000\022\035\n\031CHAIN_STATUS_DISCON"
+  "NECTED\020\001\022\032\n\026CHAIN_STATUS_REPLAYING\020\002\022\032\n\026"
+  "CHAIN_STATUS_CONNECTED\020\003*\220\003\n\013AccountType"
+  "\022\034\n\030ACCOUNT_TYPE_UNSPECIFIED\020\000\022\032\n\026ACCOUN"
+  "T_TYPE_INSURANCE\020\001\022\033\n\027ACCOUNT_TYPE_SETTL"
+  "EMENT\020\002\022\027\n\023ACCOUNT_TYPE_MARGIN\020\003\022\030\n\024ACCO"
+  "UNT_TYPE_GENERAL\020\004\022$\n ACCOUNT_TYPE_FEES_"
+  "INFRASTRUCTURE\020\005\022\037\n\033ACCOUNT_TYPE_FEES_LI"
+  "QUIDITY\020\006\022\033\n\027ACCOUNT_TYPE_FEES_MAKER\020\007\022\036"
+  "\n\032ACCOUNT_TYPE_LOCK_WITHDRAW\020\010\022\025\n\021ACCOUN"
+  "T_TYPE_BOND\020\t\022\031\n\025ACCOUNT_TYPE_EXTERNAL\020\n"
+  "\022!\n\035ACCOUNT_TYPE_GLOBAL_INSURANCE\020\013\022\036\n\032A"
+  "CCOUNT_TYPE_GLOBAL_REWARD\020\014*\323\005\n\014Transfer"
+  "Type\022\035\n\031TRANSFER_TYPE_UNSPECIFIED\020\000\022\026\n\022T"
+  "RANSFER_TYPE_LOSS\020\001\022\025\n\021TRANSFER_TYPE_WIN"
+  "\020\002\022\027\n\023TRANSFER_TYPE_CLOSE\020\003\022\032\n\026TRANSFER_"
+  "TYPE_MTM_LOSS\020\004\022\031\n\025TRANSFER_TYPE_MTM_WIN"
+  "\020\005\022\034\n\030TRANSFER_TYPE_MARGIN_LOW\020\006\022\035\n\031TRAN"
+  "SFER_TYPE_MARGIN_HIGH\020\007\022$\n TRANSFER_TYPE"
+  "_MARGIN_CONFISCATED\020\010\022\037\n\033TRANSFER_TYPE_M"
+  "AKER_FEE_PAY\020\t\022#\n\037TRANSFER_TYPE_MAKER_FE"
+  "E_RECEIVE\020\n\022(\n$TRANSFER_TYPE_INFRASTRUCT"
+  "URE_FEE_PAY\020\013\022/\n+TRANSFER_TYPE_INFRASTRU"
+  "CTURE_FEE_DISTRIBUTE\020\014\022#\n\037TRANSFER_TYPE_"
+  "LIQUIDITY_FEE_PAY\020\r\022*\n&TRANSFER_TYPE_LIQ"
+  "UIDITY_FEE_DISTRIBUTE\020\016\022\032\n\026TRANSFER_TYPE"
+  "_BOND_LOW\020\017\022\033\n\027TRANSFER_TYPE_BOND_HIGH\020\020"
+  "\022\037\n\033TRANSFER_TYPE_WITHDRAW_LOCK\020\021\022\032\n\026TRA"
+  "NSFER_TYPE_WITHDRAW\020\022\022\031\n\025TRANSFER_TYPE_D"
+  "EPOSIT\020\023\022\037\n\033TRANSFER_TYPE_BOND_SLASHING\020"
+  "\024\022\036\n\032TRANSFER_TYPE_STAKE_REWARD\020\025*c\n\nNod"
+  "eStatus\022\033\n\027NODE_STATUS_UNSPECIFIED\020\000\022\031\n\025"
+  "NODE_STATUS_VALIDATOR\020\001\022\035\n\031NODE_STATUS_N"
+  "ON_VALIDATOR\020\002B7\n\024io.vegaprotocol.vegaZ\037"
+  "code.vegaprotocol.io/vega/protob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vega_2eproto_deps[3] = {
   &::descriptor_table_assets_2eproto,
@@ -2005,7 +2001,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_veg
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vega_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vega_2eproto = {
-  false, false, descriptor_table_protodef_vega_2eproto, "vega.proto", 14970,
+  false, false, descriptor_table_protodef_vega_2eproto, "vega.proto", 14919,
   &descriptor_table_vega_2eproto_once, descriptor_table_vega_2eproto_sccs, descriptor_table_vega_2eproto_deps, 51, 3,
   schemas, file_default_instances, TableStruct_vega_2eproto::offsets,
   file_level_metadata_vega_2eproto, 51, file_level_enum_descriptors_vega_2eproto, file_level_service_descriptors_vega_2eproto,
@@ -16977,9 +16973,7 @@ Node::Node(const Node& from)
   } else {
     epoch_data_ = nullptr;
   }
-  ::memcpy(&fee_, &from.fee_,
-    static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&fee_)) + sizeof(status_));
+  status_ = from.status_;
   // @@protoc_insertion_point(copy_constructor:vega.Node)
 }
 
@@ -17055,9 +17049,7 @@ void Node::Clear() {
     delete epoch_data_;
   }
   epoch_data_ = nullptr;
-  ::memset(&fee_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) -
-      reinterpret_cast<char*>(&fee_)) + sizeof(status_));
+  status_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -17104,83 +17096,76 @@ const char* Node::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float fee = 5 [json_name = "fee"];
+      // string staked_by_operator = 5 [json_name = "stakedByOperator"];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          fee_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // string staked_by_operator = 6 [json_name = "stakedByOperator"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_staked_by_operator();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Node.staked_by_operator"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string staked_by_delegates = 7 [json_name = "stakedByDelegates"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // string staked_by_delegates = 6 [json_name = "stakedByDelegates"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_staked_by_delegates();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Node.staked_by_delegates"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string staked_total = 8 [json_name = "stakedTotal"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+      // string staked_total = 7 [json_name = "stakedTotal"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_staked_total();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Node.staked_total"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string max_intended_stake = 9 [json_name = "maxIntendedStake"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+      // string max_intended_stake = 8 [json_name = "maxIntendedStake"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_max_intended_stake();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Node.max_intended_stake"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string pending_stake = 10 [json_name = "pendingStake"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+      // string pending_stake = 9 [json_name = "pendingStake"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_pending_stake();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.Node.pending_stake"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = {
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+      // .vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = {
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           ptr = ctx->ParseMessage(_internal_mutable_epoch_data(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = {
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+      // .vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = {
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::vega::NodeStatus>(val));
         } else goto handle_unusual;
         continue;
-      // repeated .vega.Delegation delagations = 13 [json_name = "delagations"];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+      // repeated .vega.Delegation delagations = 12 [json_name = "delagations"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_delagations(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -17251,83 +17236,77 @@ failure:
         4, this->_internal_location(), target);
   }
 
-  // float fee = 5 [json_name = "fee"];
-  if (!(this->fee() <= 0 && this->fee() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_fee(), target);
-  }
-
-  // string staked_by_operator = 6 [json_name = "stakedByOperator"];
+  // string staked_by_operator = 5 [json_name = "stakedByOperator"];
   if (this->staked_by_operator().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_staked_by_operator().data(), static_cast<int>(this->_internal_staked_by_operator().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.Node.staked_by_operator");
     target = stream->WriteStringMaybeAliased(
-        6, this->_internal_staked_by_operator(), target);
+        5, this->_internal_staked_by_operator(), target);
   }
 
-  // string staked_by_delegates = 7 [json_name = "stakedByDelegates"];
+  // string staked_by_delegates = 6 [json_name = "stakedByDelegates"];
   if (this->staked_by_delegates().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_staked_by_delegates().data(), static_cast<int>(this->_internal_staked_by_delegates().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.Node.staked_by_delegates");
     target = stream->WriteStringMaybeAliased(
-        7, this->_internal_staked_by_delegates(), target);
+        6, this->_internal_staked_by_delegates(), target);
   }
 
-  // string staked_total = 8 [json_name = "stakedTotal"];
+  // string staked_total = 7 [json_name = "stakedTotal"];
   if (this->staked_total().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_staked_total().data(), static_cast<int>(this->_internal_staked_total().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.Node.staked_total");
     target = stream->WriteStringMaybeAliased(
-        8, this->_internal_staked_total(), target);
+        7, this->_internal_staked_total(), target);
   }
 
-  // string max_intended_stake = 9 [json_name = "maxIntendedStake"];
+  // string max_intended_stake = 8 [json_name = "maxIntendedStake"];
   if (this->max_intended_stake().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_max_intended_stake().data(), static_cast<int>(this->_internal_max_intended_stake().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.Node.max_intended_stake");
     target = stream->WriteStringMaybeAliased(
-        9, this->_internal_max_intended_stake(), target);
+        8, this->_internal_max_intended_stake(), target);
   }
 
-  // string pending_stake = 10 [json_name = "pendingStake"];
+  // string pending_stake = 9 [json_name = "pendingStake"];
   if (this->pending_stake().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_pending_stake().data(), static_cast<int>(this->_internal_pending_stake().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "vega.Node.pending_stake");
     target = stream->WriteStringMaybeAliased(
-        10, this->_internal_pending_stake(), target);
+        9, this->_internal_pending_stake(), target);
   }
 
-  // .vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = {
+  // .vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = {
   if (this->has_epoch_data()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        11, _Internal::epoch_data(this), target, stream);
+        10, _Internal::epoch_data(this), target, stream);
   }
 
-  // .vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = {
+  // .vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = {
   if (this->status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      12, this->_internal_status(), target);
+      11, this->_internal_status(), target);
   }
 
-  // repeated .vega.Delegation delagations = 13 [json_name = "delagations"];
+  // repeated .vega.Delegation delagations = 12 [json_name = "delagations"];
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_delagations_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(13, this->_internal_delagations(i), target, stream);
+      InternalWriteMessage(12, this->_internal_delagations(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17346,7 +17325,7 @@ size_t Node::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .vega.Delegation delagations = 13 [json_name = "delagations"];
+  // repeated .vega.Delegation delagations = 12 [json_name = "delagations"];
   total_size += 1UL * this->_internal_delagations_size();
   for (const auto& msg : this->delagations_) {
     total_size +=
@@ -17381,54 +17360,49 @@ size_t Node::ByteSizeLong() const {
         this->_internal_location());
   }
 
-  // string staked_by_operator = 6 [json_name = "stakedByOperator"];
+  // string staked_by_operator = 5 [json_name = "stakedByOperator"];
   if (this->staked_by_operator().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_staked_by_operator());
   }
 
-  // string staked_by_delegates = 7 [json_name = "stakedByDelegates"];
+  // string staked_by_delegates = 6 [json_name = "stakedByDelegates"];
   if (this->staked_by_delegates().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_staked_by_delegates());
   }
 
-  // string staked_total = 8 [json_name = "stakedTotal"];
+  // string staked_total = 7 [json_name = "stakedTotal"];
   if (this->staked_total().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_staked_total());
   }
 
-  // string max_intended_stake = 9 [json_name = "maxIntendedStake"];
+  // string max_intended_stake = 8 [json_name = "maxIntendedStake"];
   if (this->max_intended_stake().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_max_intended_stake());
   }
 
-  // string pending_stake = 10 [json_name = "pendingStake"];
+  // string pending_stake = 9 [json_name = "pendingStake"];
   if (this->pending_stake().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_pending_stake());
   }
 
-  // .vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = {
+  // .vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = {
   if (this->has_epoch_data()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *epoch_data_);
   }
 
-  // float fee = 5 [json_name = "fee"];
-  if (!(this->fee() <= 0 && this->fee() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // .vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = {
+  // .vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = {
   if (this->status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
@@ -17495,9 +17469,6 @@ void Node::MergeFrom(const Node& from) {
   }
   if (from.has_epoch_data()) {
     _internal_mutable_epoch_data()->::vega::EpochData::MergeFrom(from._internal_epoch_data());
-  }
-  if (!(from.fee() <= 0 && from.fee() >= 0)) {
-    _internal_set_fee(from._internal_fee());
   }
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
@@ -17659,16 +17630,9 @@ const char* NodeData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float average_fee = 5 [json_name = "averageFee"];
+      // float uptime = 5 [json_name = "uptime"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          average_fee_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float uptime = 6 [json_name = "uptime"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
           uptime_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -17729,16 +17693,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_validating_nodes(), target);
   }
 
-  // float average_fee = 5 [json_name = "averageFee"];
-  if (!(this->average_fee() <= 0 && this->average_fee() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_average_fee(), target);
-  }
-
-  // float uptime = 6 [json_name = "uptime"];
+  // float uptime = 5 [json_name = "uptime"];
   if (!(this->uptime() <= 0 && this->uptime() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_uptime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_uptime(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17785,12 +17743,7 @@ size_t NodeData::ByteSizeLong() const {
         this->_internal_validating_nodes());
   }
 
-  // float average_fee = 5 [json_name = "averageFee"];
-  if (!(this->average_fee() <= 0 && this->average_fee() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float uptime = 6 [json_name = "uptime"];
+  // float uptime = 5 [json_name = "uptime"];
   if (!(this->uptime() <= 0 && this->uptime() >= 0)) {
     total_size += 1 + 4;
   }
@@ -17837,9 +17790,6 @@ void NodeData::MergeFrom(const NodeData& from) {
   }
   if (from.validating_nodes() != 0) {
     _internal_set_validating_nodes(from._internal_validating_nodes());
-  }
-  if (!(from.average_fee() <= 0 && from.average_fee() >= 0)) {
-    _internal_set_average_fee(from._internal_average_fee());
   }
   if (!(from.uptime() <= 0 && from.uptime() >= 0)) {
     _internal_set_uptime(from._internal_uptime());

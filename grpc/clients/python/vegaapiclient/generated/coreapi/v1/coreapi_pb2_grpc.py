@@ -39,6 +39,16 @@ class CoreApiServiceStub(object):
                 request_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListValidatorsRequest.SerializeToString,
                 response_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListValidatorsResponse.FromString,
                 )
+        self.ListMarkets = channel.unary_unary(
+                '/vega.coreapi.v1.CoreApiService/ListMarkets',
+                request_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListMarketsRequest.SerializeToString,
+                response_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListMarketsResponse.FromString,
+                )
+        self.ListProposals = channel.unary_unary(
+                '/vega.coreapi.v1.CoreApiService/ListProposals',
+                request_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListProposalsRequest.SerializeToString,
+                response_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListProposalsResponse.FromString,
+                )
 
 
 class CoreApiServiceServicer(object):
@@ -74,6 +84,18 @@ class CoreApiServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListMarkets(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListProposals(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoreApiServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +123,16 @@ def add_CoreApiServiceServicer_to_server(servicer, server):
                     servicer.ListValidators,
                     request_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListValidatorsRequest.FromString,
                     response_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListValidatorsResponse.SerializeToString,
+            ),
+            'ListMarkets': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListMarkets,
+                    request_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListMarketsRequest.FromString,
+                    response_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListMarketsResponse.SerializeToString,
+            ),
+            'ListProposals': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListProposals,
+                    request_deserializer=coreapi_dot_v1_dot_coreapi__pb2.ListProposalsRequest.FromString,
+                    response_serializer=coreapi_dot_v1_dot_coreapi__pb2.ListProposalsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +226,39 @@ class CoreApiService(object):
         return grpc.experimental.unary_unary(request, target, '/vega.coreapi.v1.CoreApiService/ListValidators',
             coreapi_dot_v1_dot_coreapi__pb2.ListValidatorsRequest.SerializeToString,
             coreapi_dot_v1_dot_coreapi__pb2.ListValidatorsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListMarkets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/vega.coreapi.v1.CoreApiService/ListMarkets',
+            coreapi_dot_v1_dot_coreapi__pb2.ListMarketsRequest.SerializeToString,
+            coreapi_dot_v1_dot_coreapi__pb2.ListMarketsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListProposals(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/vega.coreapi.v1.CoreApiService/ListProposals',
+            coreapi_dot_v1_dot_coreapi__pb2.ListProposalsRequest.SerializeToString,
+            coreapi_dot_v1_dot_coreapi__pb2.ListProposalsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

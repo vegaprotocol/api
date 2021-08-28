@@ -86,3 +86,29 @@ func (this *ListValidatorsResponse) Validate() error {
 	}
 	return nil
 }
+func (this *ListMarketsRequest) Validate() error {
+	return nil
+}
+func (this *ListMarketsResponse) Validate() error {
+	for _, item := range this.Markets {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Markets", err)
+			}
+		}
+	}
+	return nil
+}
+func (this *ListProposalsRequest) Validate() error {
+	return nil
+}
+func (this *ListProposalsResponse) Validate() error {
+	for _, item := range this.Proposals {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Proposals", err)
+			}
+		}
+	}
+	return nil
+}

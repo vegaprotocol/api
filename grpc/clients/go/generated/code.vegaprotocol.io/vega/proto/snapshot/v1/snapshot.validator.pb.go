@@ -74,3 +74,23 @@ func (this *Proposals) Validate() error {
 	}
 	return nil
 }
+func (this *DelegateEntry) Validate() error {
+	return nil
+}
+func (this *Delegate) Validate() error {
+	for _, item := range this.Active {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Active", err)
+			}
+		}
+	}
+	for _, item := range this.Pending {
+		if item != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(item); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Pending", err)
+			}
+		}
+	}
+	return nil
+}

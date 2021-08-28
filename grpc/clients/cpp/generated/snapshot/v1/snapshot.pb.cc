@@ -19,6 +19,7 @@ extern PROTOBUF_INTERNAL_EXPORT_vega_2eproto ::PROTOBUF_NAMESPACE_ID::internal::
 extern PROTOBUF_INTERNAL_EXPORT_governance_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Proposal_governance_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_snapshot_2fv1_2fsnapshot_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AssetBalance_snapshot_2fv1_2fsnapshot_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_snapshot_2fv1_2fsnapshot_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AssetEntry_snapshot_2fv1_2fsnapshot_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_snapshot_2fv1_2fsnapshot_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto;
 namespace vega {
 namespace snapshot {
 namespace v1 {
@@ -54,6 +55,14 @@ class ProposalsDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Proposals> _instance;
 } _Proposals_default_instance_;
+class DelegateEntryDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DelegateEntry> _instance;
+} _DelegateEntry_default_instance_;
+class DelegateDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Delegate> _instance;
+} _Delegate_default_instance_;
 }  // namespace v1
 }  // namespace snapshot
 }  // namespace vega
@@ -125,6 +134,33 @@ static void InitDefaultsscc_info_Collateral_snapshot_2fv1_2fsnapshot_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Collateral_snapshot_2fv1_2fsnapshot_2eproto}, {
       &scc_info_AssetBalance_snapshot_2fv1_2fsnapshot_2eproto.base,}};
 
+static void InitDefaultsscc_info_Delegate_snapshot_2fv1_2fsnapshot_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::snapshot::v1::_Delegate_default_instance_;
+    new (ptr) ::vega::snapshot::v1::Delegate();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Delegate_snapshot_2fv1_2fsnapshot_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Delegate_snapshot_2fv1_2fsnapshot_2eproto}, {
+      &scc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto.base,}};
+
+static void InitDefaultsscc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::vega::snapshot::v1::_DelegateEntry_default_instance_;
+    new (ptr) ::vega::snapshot::v1::DelegateEntry();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto}, {}};
+
 static void InitDefaultsscc_info_NetParams_snapshot_2fv1_2fsnapshot_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -166,7 +202,7 @@ static void InitDefaultsscc_info_Snapshot_snapshot_2fv1_2fsnapshot_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Snapshot_snapshot_2fv1_2fsnapshot_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Snapshot_snapshot_2fv1_2fsnapshot_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_snapshot_2fv1_2fsnapshot_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_snapshot_2fv1_2fsnapshot_2eproto[10];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_snapshot_2fv1_2fsnapshot_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_snapshot_2fv1_2fsnapshot_2eproto = nullptr;
 
@@ -187,6 +223,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_snapshot_2fv1_2fsnapshot_2epro
   PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Checkpoint, assets_),
   PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Checkpoint, collateral_),
   PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Checkpoint, network_parameters_),
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Checkpoint, delegation_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::AssetEntry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -226,16 +263,35 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_snapshot_2fv1_2fsnapshot_2epro
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Proposals, proposals_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::DelegateEntry, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::DelegateEntry, party_),
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::DelegateEntry, node_),
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::DelegateEntry, amount_),
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::DelegateEntry, undelegate_),
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::DelegateEntry, epoch_seq_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Delegate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Delegate, active_),
+  PROTOBUF_FIELD_OFFSET(::vega::snapshot::v1::Delegate, pending_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::snapshot::v1::Snapshot)},
   { 7, -1, sizeof(::vega::snapshot::v1::Checkpoint)},
-  { 16, -1, sizeof(::vega::snapshot::v1::AssetEntry)},
-  { 23, -1, sizeof(::vega::snapshot::v1::Assets)},
-  { 29, -1, sizeof(::vega::snapshot::v1::AssetBalance)},
-  { 37, -1, sizeof(::vega::snapshot::v1::Collateral)},
-  { 43, -1, sizeof(::vega::snapshot::v1::NetParams)},
-  { 49, -1, sizeof(::vega::snapshot::v1::Proposals)},
+  { 17, -1, sizeof(::vega::snapshot::v1::AssetEntry)},
+  { 24, -1, sizeof(::vega::snapshot::v1::Assets)},
+  { 30, -1, sizeof(::vega::snapshot::v1::AssetBalance)},
+  { 38, -1, sizeof(::vega::snapshot::v1::Collateral)},
+  { 44, -1, sizeof(::vega::snapshot::v1::NetParams)},
+  { 50, -1, sizeof(::vega::snapshot::v1::Proposals)},
+  { 56, -1, sizeof(::vega::snapshot::v1::DelegateEntry)},
+  { 66, -1, sizeof(::vega::snapshot::v1::Delegate)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -247,52 +303,63 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::snapshot::v1::_Collateral_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::snapshot::v1::_NetParams_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::snapshot::v1::_Proposals_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::snapshot::v1::_DelegateEntry_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vega::snapshot::v1::_Delegate_default_instance_),
 };
 
 const char descriptor_table_protodef_snapshot_2fv1_2fsnapshot_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\032snapshot/v1/snapshot.proto\022\020vega.snaps"
   "hot.v1\032\nvega.proto\032\014assets.proto\032\020govern"
   "ance.proto\"4\n\010Snapshot\022\022\n\004hash\030\001 \001(\014R\004ha"
-  "sh\022\024\n\005state\030\002 \001(\014R\005state\"\223\001\n\nCheckpoint\022"
+  "sh\022\024\n\005state\030\002 \001(\014R\005state\"\263\001\n\nCheckpoint\022"
   "\036\n\ngovernance\030\001 \001(\014R\ngovernance\022\026\n\006asset"
   "s\030\002 \001(\014R\006assets\022\036\n\ncollateral\030\003 \001(\014R\ncol"
   "lateral\022-\n\022network_parameters\030\004 \001(\014R\021net"
-  "workParameters\"U\n\nAssetEntry\022\016\n\002id\030\001 \001(\t"
-  "R\002id\0227\n\rasset_details\030\002 \001(\0132\022.vega.Asset"
-  "DetailsR\014assetDetails\">\n\006Assets\0224\n\006asset"
-  "s\030\001 \003(\0132\034.vega.snapshot.v1.AssetEntryR\006a"
-  "ssets\"T\n\014AssetBalance\022\024\n\005party\030\001 \001(\tR\005pa"
-  "rty\022\024\n\005asset\030\002 \001(\tR\005asset\022\030\n\007balance\030\003 \001"
-  "(\tR\007balance\"H\n\nCollateral\022:\n\010balances\030\001 "
-  "\003(\0132\036.vega.snapshot.v1.AssetBalanceR\010bal"
-  "ances\";\n\tNetParams\022.\n\006params\030\001 \003(\0132\026.veg"
-  "a.NetworkParameterR\006params\"9\n\tProposals\022"
-  ",\n\tproposals\030\001 \003(\0132\016.vega.ProposalR\tprop"
-  "osalsBO\n io.vegaprotocol.vega.snapshot.v"
-  "1Z+code.vegaprotocol.io/vega/proto/snaps"
-  "hot/v1b\006proto3"
+  "workParameters\022\036\n\ndelegation\030\005 \001(\014R\ndele"
+  "gation\"U\n\nAssetEntry\022\016\n\002id\030\001 \001(\tR\002id\0227\n\r"
+  "asset_details\030\002 \001(\0132\022.vega.AssetDetailsR"
+  "\014assetDetails\">\n\006Assets\0224\n\006assets\030\001 \003(\0132"
+  "\034.vega.snapshot.v1.AssetEntryR\006assets\"T\n"
+  "\014AssetBalance\022\024\n\005party\030\001 \001(\tR\005party\022\024\n\005a"
+  "sset\030\002 \001(\tR\005asset\022\030\n\007balance\030\003 \001(\tR\007bala"
+  "nce\"H\n\nCollateral\022:\n\010balances\030\001 \003(\0132\036.ve"
+  "ga.snapshot.v1.AssetBalanceR\010balances\";\n"
+  "\tNetParams\022.\n\006params\030\001 \003(\0132\026.vega.Networ"
+  "kParameterR\006params\"9\n\tProposals\022,\n\tpropo"
+  "sals\030\001 \003(\0132\016.vega.ProposalR\tproposals\"\216\001"
+  "\n\rDelegateEntry\022\024\n\005party\030\001 \001(\tR\005party\022\022\n"
+  "\004node\030\002 \001(\tR\004node\022\026\n\006amount\030\003 \001(\tR\006amoun"
+  "t\022\036\n\nundelegate\030\004 \001(\010R\nundelegate\022\033\n\tepo"
+  "ch_seq\030\005 \001(\004R\010epochSeq\"~\n\010Delegate\0227\n\006ac"
+  "tive\030\001 \003(\0132\037.vega.snapshot.v1.DelegateEn"
+  "tryR\006active\0229\n\007pending\030\002 \003(\0132\037.vega.snap"
+  "shot.v1.DelegateEntryR\007pendingBO\n io.veg"
+  "aprotocol.vega.snapshot.v1Z+code.vegapro"
+  "tocol.io/vega/proto/snapshot/v1b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_deps[3] = {
   &::descriptor_table_assets_2eproto,
   &::descriptor_table_governance_2eproto,
   &::descriptor_table_vega_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_sccs[8] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_sccs[10] = {
   &scc_info_AssetBalance_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_AssetEntry_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_Assets_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_Checkpoint_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_Collateral_snapshot_2fv1_2fsnapshot_2eproto.base,
+  &scc_info_Delegate_snapshot_2fv1_2fsnapshot_2eproto.base,
+  &scc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_NetParams_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_Proposals_snapshot_2fv1_2fsnapshot_2eproto.base,
   &scc_info_Snapshot_snapshot_2fv1_2fsnapshot_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_snapshot_2fv1_2fsnapshot_2eproto = {
-  false, false, descriptor_table_protodef_snapshot_2fv1_2fsnapshot_2eproto, "snapshot/v1/snapshot.proto", 814,
-  &descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_once, descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_sccs, descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_deps, 8, 3,
+  false, false, descriptor_table_protodef_snapshot_2fv1_2fsnapshot_2eproto, "snapshot/v1/snapshot.proto", 1119,
+  &descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_once, descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_sccs, descriptor_table_snapshot_2fv1_2fsnapshot_2eproto_deps, 10, 3,
   schemas, file_default_instances, TableStruct_snapshot_2fv1_2fsnapshot_2eproto::offsets,
-  file_level_metadata_snapshot_2fv1_2fsnapshot_2eproto, 8, file_level_enum_descriptors_snapshot_2fv1_2fsnapshot_2eproto, file_level_service_descriptors_snapshot_2fv1_2fsnapshot_2eproto,
+  file_level_metadata_snapshot_2fv1_2fsnapshot_2eproto, 10, file_level_enum_descriptors_snapshot_2fv1_2fsnapshot_2eproto, file_level_service_descriptors_snapshot_2fv1_2fsnapshot_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -570,6 +637,11 @@ Checkpoint::Checkpoint(const Checkpoint& from)
     network_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_network_parameters(),
       GetArena());
   }
+  delegation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_delegation().empty()) {
+    delegation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_delegation(),
+      GetArena());
+  }
   // @@protoc_insertion_point(copy_constructor:vega.snapshot.v1.Checkpoint)
 }
 
@@ -579,6 +651,7 @@ void Checkpoint::SharedCtor() {
   assets_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   collateral_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   network_parameters_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  delegation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Checkpoint::~Checkpoint() {
@@ -593,6 +666,7 @@ void Checkpoint::SharedDtor() {
   assets_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   collateral_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   network_parameters_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  delegation_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Checkpoint::ArenaDtor(void* object) {
@@ -620,6 +694,7 @@ void Checkpoint::Clear() {
   assets_.ClearToEmpty();
   collateral_.ClearToEmpty();
   network_parameters_.ClearToEmpty();
+  delegation_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -658,6 +733,14 @@ const char* Checkpoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_network_parameters();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes delegation = 5 [json_name = "delegation"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_delegation();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -714,6 +797,12 @@ failure:
         4, this->_internal_network_parameters(), target);
   }
 
+  // bytes delegation = 5 [json_name = "delegation"];
+  if (this->delegation().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        5, this->_internal_delegation(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -756,6 +845,13 @@ size_t Checkpoint::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_network_parameters());
+  }
+
+  // bytes delegation = 5 [json_name = "delegation"];
+  if (this->delegation().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_delegation());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -801,6 +897,9 @@ void Checkpoint::MergeFrom(const Checkpoint& from) {
   if (from.network_parameters().size() > 0) {
     _internal_set_network_parameters(from._internal_network_parameters());
   }
+  if (from.delegation().size() > 0) {
+    _internal_set_delegation(from._internal_delegation());
+  }
 }
 
 void Checkpoint::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -828,6 +927,7 @@ void Checkpoint::InternalSwap(Checkpoint* other) {
   assets_.Swap(&other->assets_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   collateral_.Swap(&other->collateral_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   network_parameters_.Swap(&other->network_parameters_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  delegation_.Swap(&other->delegation_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Checkpoint::GetMetadata() const {
@@ -2177,6 +2277,580 @@ void Proposals::InternalSwap(Proposals* other) {
 }
 
 
+// ===================================================================
+
+class DelegateEntry::_Internal {
+ public:
+};
+
+DelegateEntry::DelegateEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.snapshot.v1.DelegateEntry)
+}
+DelegateEntry::DelegateEntry(const DelegateEntry& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  party_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_party().empty()) {
+    party_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_party(),
+      GetArena());
+  }
+  node_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_node().empty()) {
+    node_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_node(),
+      GetArena());
+  }
+  amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_amount().empty()) {
+    amount_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_amount(),
+      GetArena());
+  }
+  ::memcpy(&epoch_seq_, &from.epoch_seq_,
+    static_cast<size_t>(reinterpret_cast<char*>(&undelegate_) -
+    reinterpret_cast<char*>(&epoch_seq_)) + sizeof(undelegate_));
+  // @@protoc_insertion_point(copy_constructor:vega.snapshot.v1.DelegateEntry)
+}
+
+void DelegateEntry::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto.base);
+  party_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  node_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  amount_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+      reinterpret_cast<char*>(&epoch_seq_) - reinterpret_cast<char*>(this)),
+      0, static_cast<size_t>(reinterpret_cast<char*>(&undelegate_) -
+      reinterpret_cast<char*>(&epoch_seq_)) + sizeof(undelegate_));
+}
+
+DelegateEntry::~DelegateEntry() {
+  // @@protoc_insertion_point(destructor:vega.snapshot.v1.DelegateEntry)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void DelegateEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  party_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  node_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  amount_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DelegateEntry::ArenaDtor(void* object) {
+  DelegateEntry* _this = reinterpret_cast< DelegateEntry* >(object);
+  (void)_this;
+}
+void DelegateEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DelegateEntry::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DelegateEntry& DelegateEntry::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DelegateEntry_snapshot_2fv1_2fsnapshot_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DelegateEntry::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.snapshot.v1.DelegateEntry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  party_.ClearToEmpty();
+  node_.ClearToEmpty();
+  amount_.ClearToEmpty();
+  ::memset(&epoch_seq_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&undelegate_) -
+      reinterpret_cast<char*>(&epoch_seq_)) + sizeof(undelegate_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DelegateEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string party = 1 [json_name = "party"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_party();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.snapshot.v1.DelegateEntry.party"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string node = 2 [json_name = "node"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_node();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.snapshot.v1.DelegateEntry.node"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string amount = 3 [json_name = "amount"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_amount();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vega.snapshot.v1.DelegateEntry.amount"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool undelegate = 4 [json_name = "undelegate"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          undelegate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 epoch_seq = 5 [json_name = "epochSeq"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          epoch_seq_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DelegateEntry::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.snapshot.v1.DelegateEntry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string party = 1 [json_name = "party"];
+  if (this->party().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_party().data(), static_cast<int>(this->_internal_party().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.snapshot.v1.DelegateEntry.party");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_party(), target);
+  }
+
+  // string node = 2 [json_name = "node"];
+  if (this->node().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_node().data(), static_cast<int>(this->_internal_node().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.snapshot.v1.DelegateEntry.node");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_node(), target);
+  }
+
+  // string amount = 3 [json_name = "amount"];
+  if (this->amount().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_amount().data(), static_cast<int>(this->_internal_amount().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vega.snapshot.v1.DelegateEntry.amount");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_amount(), target);
+  }
+
+  // bool undelegate = 4 [json_name = "undelegate"];
+  if (this->undelegate() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_undelegate(), target);
+  }
+
+  // uint64 epoch_seq = 5 [json_name = "epochSeq"];
+  if (this->epoch_seq() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_epoch_seq(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.snapshot.v1.DelegateEntry)
+  return target;
+}
+
+size_t DelegateEntry::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.snapshot.v1.DelegateEntry)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string party = 1 [json_name = "party"];
+  if (this->party().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_party());
+  }
+
+  // string node = 2 [json_name = "node"];
+  if (this->node().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_node());
+  }
+
+  // string amount = 3 [json_name = "amount"];
+  if (this->amount().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_amount());
+  }
+
+  // uint64 epoch_seq = 5 [json_name = "epochSeq"];
+  if (this->epoch_seq() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_epoch_seq());
+  }
+
+  // bool undelegate = 4 [json_name = "undelegate"];
+  if (this->undelegate() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DelegateEntry::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.snapshot.v1.DelegateEntry)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DelegateEntry* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DelegateEntry>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.snapshot.v1.DelegateEntry)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.snapshot.v1.DelegateEntry)
+    MergeFrom(*source);
+  }
+}
+
+void DelegateEntry::MergeFrom(const DelegateEntry& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.snapshot.v1.DelegateEntry)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.party().size() > 0) {
+    _internal_set_party(from._internal_party());
+  }
+  if (from.node().size() > 0) {
+    _internal_set_node(from._internal_node());
+  }
+  if (from.amount().size() > 0) {
+    _internal_set_amount(from._internal_amount());
+  }
+  if (from.epoch_seq() != 0) {
+    _internal_set_epoch_seq(from._internal_epoch_seq());
+  }
+  if (from.undelegate() != 0) {
+    _internal_set_undelegate(from._internal_undelegate());
+  }
+}
+
+void DelegateEntry::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.snapshot.v1.DelegateEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DelegateEntry::CopyFrom(const DelegateEntry& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.snapshot.v1.DelegateEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DelegateEntry::IsInitialized() const {
+  return true;
+}
+
+void DelegateEntry::InternalSwap(DelegateEntry* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  party_.Swap(&other->party_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  node_.Swap(&other->node_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  amount_.Swap(&other->amount_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DelegateEntry, undelegate_)
+      + sizeof(DelegateEntry::undelegate_)
+      - PROTOBUF_FIELD_OFFSET(DelegateEntry, epoch_seq_)>(
+          reinterpret_cast<char*>(&epoch_seq_),
+          reinterpret_cast<char*>(&other->epoch_seq_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DelegateEntry::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class Delegate::_Internal {
+ public:
+};
+
+Delegate::Delegate(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  active_(arena),
+  pending_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:vega.snapshot.v1.Delegate)
+}
+Delegate::Delegate(const Delegate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      active_(from.active_),
+      pending_(from.pending_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vega.snapshot.v1.Delegate)
+}
+
+void Delegate::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Delegate_snapshot_2fv1_2fsnapshot_2eproto.base);
+}
+
+Delegate::~Delegate() {
+  // @@protoc_insertion_point(destructor:vega.snapshot.v1.Delegate)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void Delegate::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void Delegate::ArenaDtor(void* object) {
+  Delegate* _this = reinterpret_cast< Delegate* >(object);
+  (void)_this;
+}
+void Delegate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Delegate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Delegate& Delegate::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Delegate_snapshot_2fv1_2fsnapshot_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Delegate::Clear() {
+// @@protoc_insertion_point(message_clear_start:vega.snapshot.v1.Delegate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  active_.Clear();
+  pending_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Delegate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .vega.snapshot.v1.DelegateEntry active = 1 [json_name = "active"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_active(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // repeated .vega.snapshot.v1.DelegateEntry pending = 2 [json_name = "pending"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_pending(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Delegate::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vega.snapshot.v1.Delegate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .vega.snapshot.v1.DelegateEntry active = 1 [json_name = "active"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_active_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_active(i), target, stream);
+  }
+
+  // repeated .vega.snapshot.v1.DelegateEntry pending = 2 [json_name = "pending"];
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_pending_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_pending(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vega.snapshot.v1.Delegate)
+  return target;
+}
+
+size_t Delegate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vega.snapshot.v1.Delegate)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vega.snapshot.v1.DelegateEntry active = 1 [json_name = "active"];
+  total_size += 1UL * this->_internal_active_size();
+  for (const auto& msg : this->active_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .vega.snapshot.v1.DelegateEntry pending = 2 [json_name = "pending"];
+  total_size += 1UL * this->_internal_pending_size();
+  for (const auto& msg : this->pending_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Delegate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:vega.snapshot.v1.Delegate)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Delegate* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Delegate>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:vega.snapshot.v1.Delegate)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:vega.snapshot.v1.Delegate)
+    MergeFrom(*source);
+  }
+}
+
+void Delegate::MergeFrom(const Delegate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vega.snapshot.v1.Delegate)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  active_.MergeFrom(from.active_);
+  pending_.MergeFrom(from.pending_);
+}
+
+void Delegate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:vega.snapshot.v1.Delegate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Delegate::CopyFrom(const Delegate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vega.snapshot.v1.Delegate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Delegate::IsInitialized() const {
+  return true;
+}
+
+void Delegate::InternalSwap(Delegate* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  active_.InternalSwap(&other->active_);
+  pending_.InternalSwap(&other->pending_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Delegate::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace snapshot
@@ -2205,6 +2879,12 @@ template<> PROTOBUF_NOINLINE ::vega::snapshot::v1::NetParams* Arena::CreateMaybe
 }
 template<> PROTOBUF_NOINLINE ::vega::snapshot::v1::Proposals* Arena::CreateMaybeMessage< ::vega::snapshot::v1::Proposals >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vega::snapshot::v1::Proposals >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::snapshot::v1::DelegateEntry* Arena::CreateMaybeMessage< ::vega::snapshot::v1::DelegateEntry >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::snapshot::v1::DelegateEntry >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vega::snapshot::v1::Delegate* Arena::CreateMaybeMessage< ::vega::snapshot::v1::Delegate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vega::snapshot::v1::Delegate >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

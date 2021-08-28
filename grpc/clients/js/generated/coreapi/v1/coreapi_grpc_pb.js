@@ -4,6 +4,8 @@
 var grpc = require('@grpc/grpc-js');
 var coreapi_v1_coreapi_pb = require('../../coreapi/v1/coreapi_pb.js');
 var assets_pb = require('../../assets_pb.js');
+var governance_pb = require('../../governance_pb.js');
+var markets_pb = require('../../markets_pb.js');
 var vega_pb = require('../../vega_pb.js');
 var events_v1_events_pb = require('../../events/v1/events_pb.js');
 
@@ -51,6 +53,28 @@ function deserialize_vega_coreapi_v1_ListAssetsResponse(buffer_arg) {
   return coreapi_v1_coreapi_pb.ListAssetsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_vega_coreapi_v1_ListMarketsRequest(arg) {
+  if (!(arg instanceof coreapi_v1_coreapi_pb.ListMarketsRequest)) {
+    throw new Error('Expected argument of type vega.coreapi.v1.ListMarketsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_vega_coreapi_v1_ListMarketsRequest(buffer_arg) {
+  return coreapi_v1_coreapi_pb.ListMarketsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vega_coreapi_v1_ListMarketsResponse(arg) {
+  if (!(arg instanceof coreapi_v1_coreapi_pb.ListMarketsResponse)) {
+    throw new Error('Expected argument of type vega.coreapi.v1.ListMarketsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_vega_coreapi_v1_ListMarketsResponse(buffer_arg) {
+  return coreapi_v1_coreapi_pb.ListMarketsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_vega_coreapi_v1_ListNetworkParametersRequest(arg) {
   if (!(arg instanceof coreapi_v1_coreapi_pb.ListNetworkParametersRequest)) {
     throw new Error('Expected argument of type vega.coreapi.v1.ListNetworkParametersRequest');
@@ -93,6 +117,28 @@ function serialize_vega_coreapi_v1_ListPartiesResponse(arg) {
 
 function deserialize_vega_coreapi_v1_ListPartiesResponse(buffer_arg) {
   return coreapi_v1_coreapi_pb.ListPartiesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vega_coreapi_v1_ListProposalsRequest(arg) {
+  if (!(arg instanceof coreapi_v1_coreapi_pb.ListProposalsRequest)) {
+    throw new Error('Expected argument of type vega.coreapi.v1.ListProposalsRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_vega_coreapi_v1_ListProposalsRequest(buffer_arg) {
+  return coreapi_v1_coreapi_pb.ListProposalsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_vega_coreapi_v1_ListProposalsResponse(arg) {
+  if (!(arg instanceof coreapi_v1_coreapi_pb.ListProposalsResponse)) {
+    throw new Error('Expected argument of type vega.coreapi.v1.ListProposalsResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_vega_coreapi_v1_ListProposalsResponse(buffer_arg) {
+  return coreapi_v1_coreapi_pb.ListProposalsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_vega_coreapi_v1_ListValidatorsRequest(arg) {
@@ -173,6 +219,28 @@ var CoreApiServiceService = exports.CoreApiServiceService = {
     requestDeserialize: deserialize_vega_coreapi_v1_ListValidatorsRequest,
     responseSerialize: serialize_vega_coreapi_v1_ListValidatorsResponse,
     responseDeserialize: deserialize_vega_coreapi_v1_ListValidatorsResponse,
+  },
+  listMarkets: {
+    path: '/vega.coreapi.v1.CoreApiService/ListMarkets',
+    requestStream: false,
+    responseStream: false,
+    requestType: coreapi_v1_coreapi_pb.ListMarketsRequest,
+    responseType: coreapi_v1_coreapi_pb.ListMarketsResponse,
+    requestSerialize: serialize_vega_coreapi_v1_ListMarketsRequest,
+    requestDeserialize: deserialize_vega_coreapi_v1_ListMarketsRequest,
+    responseSerialize: serialize_vega_coreapi_v1_ListMarketsResponse,
+    responseDeserialize: deserialize_vega_coreapi_v1_ListMarketsResponse,
+  },
+  listProposals: {
+    path: '/vega.coreapi.v1.CoreApiService/ListProposals',
+    requestStream: false,
+    responseStream: false,
+    requestType: coreapi_v1_coreapi_pb.ListProposalsRequest,
+    responseType: coreapi_v1_coreapi_pb.ListProposalsResponse,
+    requestSerialize: serialize_vega_coreapi_v1_ListProposalsRequest,
+    requestDeserialize: deserialize_vega_coreapi_v1_ListProposalsRequest,
+    responseSerialize: serialize_vega_coreapi_v1_ListProposalsResponse,
+    responseDeserialize: deserialize_vega_coreapi_v1_ListProposalsResponse,
   },
 };
 

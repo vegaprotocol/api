@@ -29,6 +29,8 @@ static const char* CoreApiService_method_names[] = {
   "/vega.coreapi.v1.CoreApiService/ListNetworkParameters",
   "/vega.coreapi.v1.CoreApiService/ListParties",
   "/vega.coreapi.v1.CoreApiService/ListValidators",
+  "/vega.coreapi.v1.CoreApiService/ListMarkets",
+  "/vega.coreapi.v1.CoreApiService/ListProposals",
 };
 
 std::unique_ptr< CoreApiService::Stub> CoreApiService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -43,6 +45,8 @@ CoreApiService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& cha
   , rpcmethod_ListNetworkParameters_(CoreApiService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListParties_(CoreApiService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ListValidators_(CoreApiService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListMarkets_(CoreApiService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListProposals_(CoreApiService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status CoreApiService::Stub::ListAccounts(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListAccountsRequest& request, ::vega::coreapi::v1::ListAccountsResponse* response) {
@@ -160,6 +164,52 @@ void CoreApiService::Stub::experimental_async::ListValidators(::grpc::ClientCont
   return result;
 }
 
+::grpc::Status CoreApiService::Stub::ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::vega::coreapi::v1::ListMarketsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListMarkets_, context, request, response);
+}
+
+void CoreApiService::Stub::experimental_async::ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListMarkets_, context, request, response, std::move(f));
+}
+
+void CoreApiService::Stub::experimental_async::ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListMarkets_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>* CoreApiService::Stub::PrepareAsyncListMarketsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::vega::coreapi::v1::ListMarketsResponse, ::vega::coreapi::v1::ListMarketsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListMarkets_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>* CoreApiService::Stub::AsyncListMarketsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncListMarketsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status CoreApiService::Stub::ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::vega::coreapi::v1::ListProposalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListProposals_, context, request, response);
+}
+
+void CoreApiService::Stub::experimental_async::ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListProposals_, context, request, response, std::move(f));
+}
+
+void CoreApiService::Stub::experimental_async::ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListProposals_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>* CoreApiService::Stub::PrepareAsyncListProposalsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::vega::coreapi::v1::ListProposalsResponse, ::vega::coreapi::v1::ListProposalsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListProposals_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>* CoreApiService::Stub::AsyncListProposalsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncListProposalsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 CoreApiService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       CoreApiService_method_names[0],
@@ -211,6 +261,26 @@ CoreApiService::Service::Service() {
              ::vega::coreapi::v1::ListValidatorsResponse* resp) {
                return service->ListValidators(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CoreApiService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CoreApiService::Service, ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CoreApiService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::vega::coreapi::v1::ListMarketsRequest* req,
+             ::vega::coreapi::v1::ListMarketsResponse* resp) {
+               return service->ListMarkets(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CoreApiService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CoreApiService::Service, ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CoreApiService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::vega::coreapi::v1::ListProposalsRequest* req,
+             ::vega::coreapi::v1::ListProposalsResponse* resp) {
+               return service->ListProposals(ctx, req, resp);
+             }, this)));
 }
 
 CoreApiService::Service::~Service() {
@@ -245,6 +315,20 @@ CoreApiService::Service::~Service() {
 }
 
 ::grpc::Status CoreApiService::Service::ListValidators(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListValidatorsRequest* request, ::vega::coreapi::v1::ListValidatorsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CoreApiService::Service::ListMarkets(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CoreApiService::Service::ListProposals(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

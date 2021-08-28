@@ -73,6 +73,20 @@ class CoreApiService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListValidatorsResponse>> PrepareAsyncListValidators(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListValidatorsResponse>>(PrepareAsyncListValidatorsRaw(context, request, cq));
     }
+    virtual ::grpc::Status ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::vega::coreapi::v1::ListMarketsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsResponse>> AsyncListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsResponse>>(AsyncListMarketsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsResponse>> PrepareAsyncListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsResponse>>(PrepareAsyncListMarketsRaw(context, request, cq));
+    }
+    virtual ::grpc::Status ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::vega::coreapi::v1::ListProposalsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListProposalsResponse>> AsyncListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListProposalsResponse>>(AsyncListProposalsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListProposalsResponse>> PrepareAsyncListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListProposalsResponse>>(PrepareAsyncListProposalsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -106,6 +120,18 @@ class CoreApiService final {
       #else
       virtual void ListValidators(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest* request, ::vega::coreapi::v1::ListValidatorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -125,6 +151,10 @@ class CoreApiService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListPartiesResponse>* PrepareAsyncListPartiesRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListValidatorsResponse>* AsyncListValidatorsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListValidatorsResponse>* PrepareAsyncListValidatorsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsResponse>* AsyncListMarketsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListMarketsResponse>* PrepareAsyncListMarketsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListProposalsResponse>* AsyncListProposalsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vega::coreapi::v1::ListProposalsResponse>* PrepareAsyncListProposalsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -164,6 +194,20 @@ class CoreApiService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListValidatorsResponse>> PrepareAsyncListValidators(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListValidatorsResponse>>(PrepareAsyncListValidatorsRaw(context, request, cq));
     }
+    ::grpc::Status ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::vega::coreapi::v1::ListMarketsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>> AsyncListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>>(AsyncListMarketsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>> PrepareAsyncListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>>(PrepareAsyncListMarketsRaw(context, request, cq));
+    }
+    ::grpc::Status ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::vega::coreapi::v1::ListProposalsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>> AsyncListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>>(AsyncListProposalsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>> PrepareAsyncListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>>(PrepareAsyncListProposalsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -197,6 +241,18 @@ class CoreApiService final {
       #else
       void ListValidators(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest* request, ::vega::coreapi::v1::ListValidatorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ListMarkets(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ListProposals(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -218,11 +274,17 @@ class CoreApiService final {
     ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListPartiesResponse>* PrepareAsyncListPartiesRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListPartiesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListValidatorsResponse>* AsyncListValidatorsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListValidatorsResponse>* PrepareAsyncListValidatorsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListValidatorsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>* AsyncListMarketsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListMarketsResponse>* PrepareAsyncListMarketsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListMarketsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>* AsyncListProposalsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vega::coreapi::v1::ListProposalsResponse>* PrepareAsyncListProposalsRaw(::grpc::ClientContext* context, const ::vega::coreapi::v1::ListProposalsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ListAccounts_;
     const ::grpc::internal::RpcMethod rpcmethod_ListAssets_;
     const ::grpc::internal::RpcMethod rpcmethod_ListNetworkParameters_;
     const ::grpc::internal::RpcMethod rpcmethod_ListParties_;
     const ::grpc::internal::RpcMethod rpcmethod_ListValidators_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListMarkets_;
+    const ::grpc::internal::RpcMethod rpcmethod_ListProposals_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -235,6 +297,8 @@ class CoreApiService final {
     virtual ::grpc::Status ListNetworkParameters(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListNetworkParametersRequest* request, ::vega::coreapi::v1::ListNetworkParametersResponse* response);
     virtual ::grpc::Status ListParties(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListPartiesRequest* request, ::vega::coreapi::v1::ListPartiesResponse* response);
     virtual ::grpc::Status ListValidators(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListValidatorsRequest* request, ::vega::coreapi::v1::ListValidatorsResponse* response);
+    virtual ::grpc::Status ListMarkets(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response);
+    virtual ::grpc::Status ListProposals(::grpc::ServerContext* context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ListAccounts : public BaseClass {
@@ -336,7 +400,47 @@ class CoreApiService final {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ListAccounts<WithAsyncMethod_ListAssets<WithAsyncMethod_ListNetworkParameters<WithAsyncMethod_ListParties<WithAsyncMethod_ListValidators<Service > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ListMarkets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ListMarkets() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_ListMarkets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListMarkets(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListMarkets(::grpc::ServerContext* context, ::vega::coreapi::v1::ListMarketsRequest* request, ::grpc::ServerAsyncResponseWriter< ::vega::coreapi::v1::ListMarketsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ListProposals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ListProposals() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_ListProposals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListProposals(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListProposals(::grpc::ServerContext* context, ::vega::coreapi::v1::ListProposalsRequest* request, ::grpc::ServerAsyncResponseWriter< ::vega::coreapi::v1::ListProposalsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ListAccounts<WithAsyncMethod_ListAssets<WithAsyncMethod_ListNetworkParameters<WithAsyncMethod_ListParties<WithAsyncMethod_ListValidators<WithAsyncMethod_ListMarkets<WithAsyncMethod_ListProposals<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_ListAccounts : public BaseClass {
    private:
@@ -572,11 +676,105 @@ class CoreApiService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ListMarkets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ListMarkets() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::vega::coreapi::v1::ListMarketsRequest* request, ::vega::coreapi::v1::ListMarketsResponse* response) { return this->ListMarkets(context, request, response); }));}
+    void SetMessageAllocatorFor_ListMarkets(
+        ::grpc::experimental::MessageAllocator< ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_ListMarkets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListMarkets(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ListMarkets(
+      ::grpc::CallbackServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ListMarkets(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ListProposals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ListProposals() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::vega::coreapi::v1::ListProposalsRequest* request, ::vega::coreapi::v1::ListProposalsResponse* response) { return this->ListProposals(context, request, response); }));}
+    void SetMessageAllocatorFor_ListProposals(
+        ::grpc::experimental::MessageAllocator< ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_ListProposals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListProposals(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ListProposals(
+      ::grpc::CallbackServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ListProposals(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<Service > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<ExperimentalWithCallbackMethod_ListMarkets<ExperimentalWithCallbackMethod_ListProposals<Service > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<Service > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_ListAccounts<ExperimentalWithCallbackMethod_ListAssets<ExperimentalWithCallbackMethod_ListNetworkParameters<ExperimentalWithCallbackMethod_ListParties<ExperimentalWithCallbackMethod_ListValidators<ExperimentalWithCallbackMethod_ListMarkets<ExperimentalWithCallbackMethod_ListProposals<Service > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_ListAccounts : public BaseClass {
    private:
@@ -658,6 +856,40 @@ class CoreApiService final {
     }
     // disable synchronous version of this method
     ::grpc::Status ListValidators(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListValidatorsRequest* /*request*/, ::vega::coreapi::v1::ListValidatorsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListMarkets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ListMarkets() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_ListMarkets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListMarkets(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ListProposals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ListProposals() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_ListProposals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListProposals(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -760,6 +992,46 @@ class CoreApiService final {
     }
     void RequestListValidators(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ListMarkets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ListMarkets() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_ListMarkets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListMarkets(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListMarkets(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ListProposals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ListProposals() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_ListProposals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListProposals(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestListProposals(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -953,6 +1225,82 @@ class CoreApiService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ListMarkets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ListMarkets() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListMarkets(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ListMarkets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListMarkets(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ListMarkets(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ListMarkets(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ListProposals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ListProposals() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListProposals(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ListProposals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ListProposals(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ListProposals(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ListProposals(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ListAccounts : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1087,9 +1435,63 @@ class CoreApiService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedListValidators(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vega::coreapi::v1::ListValidatorsRequest,::vega::coreapi::v1::ListValidatorsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<Service > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListMarkets : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ListMarkets() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::vega::coreapi::v1::ListMarketsRequest, ::vega::coreapi::v1::ListMarketsResponse>* streamer) {
+                       return this->StreamedListMarkets(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ListMarkets() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListMarkets(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListMarketsRequest* /*request*/, ::vega::coreapi::v1::ListMarketsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListMarkets(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vega::coreapi::v1::ListMarketsRequest,::vega::coreapi::v1::ListMarketsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ListProposals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ListProposals() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::vega::coreapi::v1::ListProposalsRequest, ::vega::coreapi::v1::ListProposalsResponse>* streamer) {
+                       return this->StreamedListProposals(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ListProposals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ListProposals(::grpc::ServerContext* /*context*/, const ::vega::coreapi::v1::ListProposalsRequest* /*request*/, ::vega::coreapi::v1::ListProposalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedListProposals(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vega::coreapi::v1::ListProposalsRequest,::vega::coreapi::v1::ListProposalsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<WithStreamedUnaryMethod_ListMarkets<WithStreamedUnaryMethod_ListProposals<Service > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ListAccounts<WithStreamedUnaryMethod_ListAssets<WithStreamedUnaryMethod_ListNetworkParameters<WithStreamedUnaryMethod_ListParties<WithStreamedUnaryMethod_ListValidators<WithStreamedUnaryMethod_ListMarkets<WithStreamedUnaryMethod_ListProposals<Service > > > > > > > StreamedService;
 };
 
 }  // namespace v1

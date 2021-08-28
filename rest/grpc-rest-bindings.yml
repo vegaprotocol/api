@@ -35,3 +35,7 @@ http:
       get: '/parties'
     - selector: vega.coreapi.v1.CoreApiService.ListValidators
       get: '/validators'
+    - selector: vega.coreapi.v1.CoreApiService.ListProposals
+      get: '/proposals'
+    - selector: vega.coreapi.v1.CoreApiService.ListMarkets
+      get: '/markets'

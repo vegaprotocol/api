@@ -7,6 +7,8 @@
 import * as grpc from "@grpc/grpc-js";
 import * as coreapi_v1_coreapi_pb from "../../coreapi/v1/coreapi_pb";
 import * as assets_pb from "../../assets_pb";
+import * as governance_pb from "../../governance_pb";
+import * as markets_pb from "../../markets_pb";
 import * as vega_pb from "../../vega_pb";
 import * as events_v1_events_pb from "../../events/v1/events_pb";
 
@@ -16,6 +18,8 @@ interface ICoreApiServiceService extends grpc.ServiceDefinition<grpc.UntypedServ
     listNetworkParameters: ICoreApiServiceService_IListNetworkParameters;
     listParties: ICoreApiServiceService_IListParties;
     listValidators: ICoreApiServiceService_IListValidators;
+    listMarkets: ICoreApiServiceService_IListMarkets;
+    listProposals: ICoreApiServiceService_IListProposals;
 }
 
 interface ICoreApiServiceService_IListAccounts extends grpc.MethodDefinition<coreapi_v1_coreapi_pb.ListAccountsRequest, coreapi_v1_coreapi_pb.ListAccountsResponse> {
@@ -63,6 +67,24 @@ interface ICoreApiServiceService_IListValidators extends grpc.MethodDefinition<c
     responseSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListValidatorsResponse>;
     responseDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListValidatorsResponse>;
 }
+interface ICoreApiServiceService_IListMarkets extends grpc.MethodDefinition<coreapi_v1_coreapi_pb.ListMarketsRequest, coreapi_v1_coreapi_pb.ListMarketsResponse> {
+    path: "/vega.coreapi.v1.CoreApiService/ListMarkets";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListMarketsRequest>;
+    requestDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListMarketsRequest>;
+    responseSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListMarketsResponse>;
+    responseDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListMarketsResponse>;
+}
+interface ICoreApiServiceService_IListProposals extends grpc.MethodDefinition<coreapi_v1_coreapi_pb.ListProposalsRequest, coreapi_v1_coreapi_pb.ListProposalsResponse> {
+    path: "/vega.coreapi.v1.CoreApiService/ListProposals";
+    requestStream: false;
+    responseStream: false;
+    requestSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListProposalsRequest>;
+    requestDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListProposalsRequest>;
+    responseSerialize: grpc.serialize<coreapi_v1_coreapi_pb.ListProposalsResponse>;
+    responseDeserialize: grpc.deserialize<coreapi_v1_coreapi_pb.ListProposalsResponse>;
+}
 
 export const CoreApiServiceService: ICoreApiServiceService;
 
@@ -72,6 +94,8 @@ export interface ICoreApiServiceServer extends grpc.UntypedServiceImplementation
     listNetworkParameters: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListNetworkParametersRequest, coreapi_v1_coreapi_pb.ListNetworkParametersResponse>;
     listParties: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListPartiesRequest, coreapi_v1_coreapi_pb.ListPartiesResponse>;
     listValidators: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListValidatorsRequest, coreapi_v1_coreapi_pb.ListValidatorsResponse>;
+    listMarkets: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListMarketsRequest, coreapi_v1_coreapi_pb.ListMarketsResponse>;
+    listProposals: grpc.handleUnaryCall<coreapi_v1_coreapi_pb.ListProposalsRequest, coreapi_v1_coreapi_pb.ListProposalsResponse>;
 }
 
 export interface ICoreApiServiceClient {
@@ -90,6 +114,12 @@ export interface ICoreApiServiceClient {
     listValidators(request: coreapi_v1_coreapi_pb.ListValidatorsRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListValidatorsResponse) => void): grpc.ClientUnaryCall;
     listValidators(request: coreapi_v1_coreapi_pb.ListValidatorsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListValidatorsResponse) => void): grpc.ClientUnaryCall;
     listValidators(request: coreapi_v1_coreapi_pb.ListValidatorsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListValidatorsResponse) => void): grpc.ClientUnaryCall;
+    listMarkets(request: coreapi_v1_coreapi_pb.ListMarketsRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListMarketsResponse) => void): grpc.ClientUnaryCall;
+    listMarkets(request: coreapi_v1_coreapi_pb.ListMarketsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListMarketsResponse) => void): grpc.ClientUnaryCall;
+    listMarkets(request: coreapi_v1_coreapi_pb.ListMarketsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListMarketsResponse) => void): grpc.ClientUnaryCall;
+    listProposals(request: coreapi_v1_coreapi_pb.ListProposalsRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListProposalsResponse) => void): grpc.ClientUnaryCall;
+    listProposals(request: coreapi_v1_coreapi_pb.ListProposalsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListProposalsResponse) => void): grpc.ClientUnaryCall;
+    listProposals(request: coreapi_v1_coreapi_pb.ListProposalsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListProposalsResponse) => void): grpc.ClientUnaryCall;
 }
 
 export class CoreApiServiceClient extends grpc.Client implements ICoreApiServiceClient {
@@ -109,4 +139,10 @@ export class CoreApiServiceClient extends grpc.Client implements ICoreApiService
     public listValidators(request: coreapi_v1_coreapi_pb.ListValidatorsRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListValidatorsResponse) => void): grpc.ClientUnaryCall;
     public listValidators(request: coreapi_v1_coreapi_pb.ListValidatorsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListValidatorsResponse) => void): grpc.ClientUnaryCall;
     public listValidators(request: coreapi_v1_coreapi_pb.ListValidatorsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListValidatorsResponse) => void): grpc.ClientUnaryCall;
+    public listMarkets(request: coreapi_v1_coreapi_pb.ListMarketsRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListMarketsResponse) => void): grpc.ClientUnaryCall;
+    public listMarkets(request: coreapi_v1_coreapi_pb.ListMarketsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListMarketsResponse) => void): grpc.ClientUnaryCall;
+    public listMarkets(request: coreapi_v1_coreapi_pb.ListMarketsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListMarketsResponse) => void): grpc.ClientUnaryCall;
+    public listProposals(request: coreapi_v1_coreapi_pb.ListProposalsRequest, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListProposalsResponse) => void): grpc.ClientUnaryCall;
+    public listProposals(request: coreapi_v1_coreapi_pb.ListProposalsRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListProposalsResponse) => void): grpc.ClientUnaryCall;
+    public listProposals(request: coreapi_v1_coreapi_pb.ListProposalsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: coreapi_v1_coreapi_pb.ListProposalsResponse) => void): grpc.ClientUnaryCall;
 }

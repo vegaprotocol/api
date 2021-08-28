@@ -1173,6 +1173,14 @@
                 </li>
 
                 <li>
+                  <a href="#vega.coreapi.v1.ListMarketsRequest"><span class="badge">M</span>ListMarketsRequest</a>
+                </li>
+
+                <li>
+                  <a href="#vega.coreapi.v1.ListMarketsResponse"><span class="badge">M</span>ListMarketsResponse</a>
+                </li>
+
+                <li>
                   <a href="#vega.coreapi.v1.ListNetworkParametersRequest"><span class="badge">M</span>ListNetworkParametersRequest</a>
                 </li>
 
@@ -1186,6 +1194,14 @@
 
                 <li>
                   <a href="#vega.coreapi.v1.ListPartiesResponse"><span class="badge">M</span>ListPartiesResponse</a>
+                </li>
+
+                <li>
+                  <a href="#vega.coreapi.v1.ListProposalsRequest"><span class="badge">M</span>ListProposalsRequest</a>
+                </li>
+
+                <li>
+                  <a href="#vega.coreapi.v1.ListProposalsResponse"><span class="badge">M</span>ListProposalsResponse</a>
                 </li>
 
                 <li>
@@ -1229,6 +1245,14 @@
 
                 <li>
                   <a href="#vega.snapshot.v1.Collateral"><span class="badge">M</span>Collateral</a>
+                </li>
+
+                <li>
+                  <a href="#vega.snapshot.v1.Delegate"><span class="badge">M</span>Delegate</a>
+                </li>
+
+                <li>
+                  <a href="#vega.snapshot.v1.DelegateEntry"><span class="badge">M</span>DelegateEntry</a>
                 </li>
 
                 <li>
@@ -4757,13 +4781,6 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                 </tr>
 
                 <tr>
-                  <td>fee</td>
-                  <td><a href="#float">float</a></td>
-                  <td></td>
-                  <td><p>Value between 0 and 1 for percentage </p></td>
-                </tr>
-
-                <tr>
                   <td>staked_by_operator</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -4911,13 +4928,6 @@ formatted price of `1.23456` assuming market configured to 5 decimal places </p>
                   <td><a href="#uint32">uint32</a></td>
                   <td></td>
                   <td><p>Number of nodes validating </p></td>
-                </tr>
-
-                <tr>
-                  <td>average_fee</td>
-                  <td><a href="#float">float</a></td>
-                  <td></td>
-                  <td><p>Average percentage fee across all nodes </p></td>
                 </tr>
 
                 <tr>
@@ -12947,6 +12957,54 @@ network will have committed it into a block</p></td>
 
 
 
+        <h3 id="vega.coreapi.v1.ListMarketsRequest">ListMarketsRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>market</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.coreapi.v1.ListMarketsResponse">ListMarketsResponse</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>markets</td>
+                  <td><a href="#vega.Market">vega.Market</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
         <h3 id="vega.coreapi.v1.ListNetworkParametersRequest">ListNetworkParametersRequest</h3>
         <p></p>
 
@@ -13015,6 +13073,61 @@ network will have committed it into a block</p></td>
                 <tr>
                   <td>parties</td>
                   <td><a href="#vega.Party">vega.Party</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.coreapi.v1.ListProposalsRequest">ListProposalsRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>proposal</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>optional ID </p></td>
+                </tr>
+
+                <tr>
+                  <td>proposer</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>optional party </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.coreapi.v1.ListProposalsResponse">ListProposalsResponse</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>proposals</td>
+                  <td><a href="#vega.Proposal">vega.Proposal</a></td>
                   <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
@@ -13103,6 +13216,20 @@ network will have committed it into a block</p></td>
                 <td>ListValidators</td>
                 <td><a href="#vega.coreapi.v1.ListValidatorsRequest">ListValidatorsRequest</a></td>
                 <td><a href="#vega.coreapi.v1.ListValidatorsResponse">ListValidatorsResponse</a></td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ListMarkets</td>
+                <td><a href="#vega.coreapi.v1.ListMarketsRequest">ListMarketsRequest</a></td>
+                <td><a href="#vega.coreapi.v1.ListMarketsResponse">ListMarketsResponse</a></td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ListProposals</td>
+                <td><a href="#vega.coreapi.v1.ListProposalsRequest">ListProposalsRequest</a></td>
+                <td><a href="#vega.coreapi.v1.ListProposalsResponse">ListProposalsResponse</a></td>
                 <td><p></p></td>
               </tr>
 
@@ -13249,6 +13376,13 @@ network will have committed it into a block</p></td>
                   <td><p> </p></td>
                 </tr>
 
+                <tr>
+                  <td>delegation</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
             </tbody>
           </table>
 
@@ -13270,6 +13404,89 @@ network will have committed it into a block</p></td>
                   <td>balances</td>
                   <td><a href="#vega.snapshot.v1.AssetBalance">AssetBalance</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.snapshot.v1.Delegate">Delegate</h3>
+        <p>Delegate contains all entries for a checkpoint</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>active</td>
+                  <td><a href="#vega.snapshot.v1.DelegateEntry">DelegateEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>pending</td>
+                  <td><a href="#vega.snapshot.v1.DelegateEntry">DelegateEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="vega.snapshot.v1.DelegateEntry">DelegateEntry</h3>
+        <p>Delegated amounts for party/node</p><p>undelegate and epoch seq are only relevant for pending entries</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>party</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>node</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>undelegate</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>epoch_seq</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
 

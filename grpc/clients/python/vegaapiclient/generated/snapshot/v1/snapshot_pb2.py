@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n io.vegaprotocol.vega.snapshot.v1Z+code.vegaprotocol.io/vega/proto/snapshot/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1asnapshot/v1/snapshot.proto\x12\x10vega.snapshot.v1\x1a\nvega.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\"4\n\x08Snapshot\x12\x12\n\x04hash\x18\x01 \x01(\x0cR\x04hash\x12\x14\n\x05state\x18\x02 \x01(\x0cR\x05state\"\x93\x01\n\nCheckpoint\x12\x1e\n\ngovernance\x18\x01 \x01(\x0cR\ngovernance\x12\x16\n\x06\x61ssets\x18\x02 \x01(\x0cR\x06\x61ssets\x12\x1e\n\ncollateral\x18\x03 \x01(\x0cR\ncollateral\x12-\n\x12network_parameters\x18\x04 \x01(\x0cR\x11networkParameters\"U\n\nAssetEntry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x37\n\rasset_details\x18\x02 \x01(\x0b\x32\x12.vega.AssetDetailsR\x0c\x61ssetDetails\">\n\x06\x41ssets\x12\x34\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x1c.vega.snapshot.v1.AssetEntryR\x06\x61ssets\"T\n\x0c\x41ssetBalance\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\x12\x18\n\x07\x62\x61lance\x18\x03 \x01(\tR\x07\x62\x61lance\"H\n\nCollateral\x12:\n\x08\x62\x61lances\x18\x01 \x03(\x0b\x32\x1e.vega.snapshot.v1.AssetBalanceR\x08\x62\x61lances\";\n\tNetParams\x12.\n\x06params\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x06params\"9\n\tProposals\x12,\n\tproposals\x18\x01 \x03(\x0b\x32\x0e.vega.ProposalR\tproposalsBO\n io.vegaprotocol.vega.snapshot.v1Z+code.vegaprotocol.io/vega/proto/snapshot/v1b\x06proto3'
+  serialized_pb=b'\n\x1asnapshot/v1/snapshot.proto\x12\x10vega.snapshot.v1\x1a\nvega.proto\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\"4\n\x08Snapshot\x12\x12\n\x04hash\x18\x01 \x01(\x0cR\x04hash\x12\x14\n\x05state\x18\x02 \x01(\x0cR\x05state\"\xb3\x01\n\nCheckpoint\x12\x1e\n\ngovernance\x18\x01 \x01(\x0cR\ngovernance\x12\x16\n\x06\x61ssets\x18\x02 \x01(\x0cR\x06\x61ssets\x12\x1e\n\ncollateral\x18\x03 \x01(\x0cR\ncollateral\x12-\n\x12network_parameters\x18\x04 \x01(\x0cR\x11networkParameters\x12\x1e\n\ndelegation\x18\x05 \x01(\x0cR\ndelegation\"U\n\nAssetEntry\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x37\n\rasset_details\x18\x02 \x01(\x0b\x32\x12.vega.AssetDetailsR\x0c\x61ssetDetails\">\n\x06\x41ssets\x12\x34\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x1c.vega.snapshot.v1.AssetEntryR\x06\x61ssets\"T\n\x0c\x41ssetBalance\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x14\n\x05\x61sset\x18\x02 \x01(\tR\x05\x61sset\x12\x18\n\x07\x62\x61lance\x18\x03 \x01(\tR\x07\x62\x61lance\"H\n\nCollateral\x12:\n\x08\x62\x61lances\x18\x01 \x03(\x0b\x32\x1e.vega.snapshot.v1.AssetBalanceR\x08\x62\x61lances\";\n\tNetParams\x12.\n\x06params\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x06params\"9\n\tProposals\x12,\n\tproposals\x18\x01 \x03(\x0b\x32\x0e.vega.ProposalR\tproposals\"\x8e\x01\n\rDelegateEntry\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x12\n\x04node\x18\x02 \x01(\tR\x04node\x12\x16\n\x06\x61mount\x18\x03 \x01(\tR\x06\x61mount\x12\x1e\n\nundelegate\x18\x04 \x01(\x08R\nundelegate\x12\x1b\n\tepoch_seq\x18\x05 \x01(\x04R\x08\x65pochSeq\"~\n\x08\x44\x65legate\x12\x37\n\x06\x61\x63tive\x18\x01 \x03(\x0b\x32\x1f.vega.snapshot.v1.DelegateEntryR\x06\x61\x63tive\x12\x39\n\x07pending\x18\x02 \x03(\x0b\x32\x1f.vega.snapshot.v1.DelegateEntryR\x07pendingBO\n io.vegaprotocol.vega.snapshot.v1Z+code.vegaprotocol.io/vega/proto/snapshot/v1b\x06proto3'
   ,
   dependencies=[vega__pb2.DESCRIPTOR,assets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,])
 
@@ -104,6 +104,13 @@ _CHECKPOINT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='networkParameters', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delegation', full_name='vega.snapshot.v1.Checkpoint.delegation', index=4,
+      number=5, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='delegation', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -117,7 +124,7 @@ _CHECKPOINT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=147,
-  serialized_end=294,
+  serialized_end=326,
 )
 
 
@@ -155,8 +162,8 @@ _ASSETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=381,
+  serialized_start=328,
+  serialized_end=413,
 )
 
 
@@ -187,8 +194,8 @@ _ASSETS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=383,
-  serialized_end=445,
+  serialized_start=415,
+  serialized_end=477,
 )
 
 
@@ -233,8 +240,8 @@ _ASSETBALANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=447,
-  serialized_end=531,
+  serialized_start=479,
+  serialized_end=563,
 )
 
 
@@ -265,8 +272,8 @@ _COLLATERAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=533,
-  serialized_end=605,
+  serialized_start=565,
+  serialized_end=637,
 )
 
 
@@ -297,8 +304,8 @@ _NETPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=607,
-  serialized_end=666,
+  serialized_start=639,
+  serialized_end=698,
 )
 
 
@@ -329,8 +336,107 @@ _PROPOSALS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=668,
-  serialized_end=725,
+  serialized_start=700,
+  serialized_end=757,
+)
+
+
+_DELEGATEENTRY = _descriptor.Descriptor(
+  name='DelegateEntry',
+  full_name='vega.snapshot.v1.DelegateEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='party', full_name='vega.snapshot.v1.DelegateEntry.party', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='party', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='node', full_name='vega.snapshot.v1.DelegateEntry.node', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='node', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='vega.snapshot.v1.DelegateEntry.amount', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='amount', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='undelegate', full_name='vega.snapshot.v1.DelegateEntry.undelegate', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='undelegate', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='epoch_seq', full_name='vega.snapshot.v1.DelegateEntry.epoch_seq', index=4,
+      number=5, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='epochSeq', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=760,
+  serialized_end=902,
+)
+
+
+_DELEGATE = _descriptor.Descriptor(
+  name='Delegate',
+  full_name='vega.snapshot.v1.Delegate',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='active', full_name='vega.snapshot.v1.Delegate.active', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='active', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pending', full_name='vega.snapshot.v1.Delegate.pending', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='pending', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=904,
+  serialized_end=1030,
 )
 
 _ASSETENTRY.fields_by_name['asset_details'].message_type = assets__pb2._ASSETDETAILS
@@ -338,6 +444,8 @@ _ASSETS.fields_by_name['assets'].message_type = _ASSETENTRY
 _COLLATERAL.fields_by_name['balances'].message_type = _ASSETBALANCE
 _NETPARAMS.fields_by_name['params'].message_type = vega__pb2._NETWORKPARAMETER
 _PROPOSALS.fields_by_name['proposals'].message_type = governance__pb2._PROPOSAL
+_DELEGATE.fields_by_name['active'].message_type = _DELEGATEENTRY
+_DELEGATE.fields_by_name['pending'].message_type = _DELEGATEENTRY
 DESCRIPTOR.message_types_by_name['Snapshot'] = _SNAPSHOT
 DESCRIPTOR.message_types_by_name['Checkpoint'] = _CHECKPOINT
 DESCRIPTOR.message_types_by_name['AssetEntry'] = _ASSETENTRY
@@ -346,6 +454,8 @@ DESCRIPTOR.message_types_by_name['AssetBalance'] = _ASSETBALANCE
 DESCRIPTOR.message_types_by_name['Collateral'] = _COLLATERAL
 DESCRIPTOR.message_types_by_name['NetParams'] = _NETPARAMS
 DESCRIPTOR.message_types_by_name['Proposals'] = _PROPOSALS
+DESCRIPTOR.message_types_by_name['DelegateEntry'] = _DELEGATEENTRY
+DESCRIPTOR.message_types_by_name['Delegate'] = _DELEGATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Snapshot = _reflection.GeneratedProtocolMessageType('Snapshot', (_message.Message,), {
@@ -403,6 +513,20 @@ Proposals = _reflection.GeneratedProtocolMessageType('Proposals', (_message.Mess
   # @@protoc_insertion_point(class_scope:vega.snapshot.v1.Proposals)
   })
 _sym_db.RegisterMessage(Proposals)
+
+DelegateEntry = _reflection.GeneratedProtocolMessageType('DelegateEntry', (_message.Message,), {
+  'DESCRIPTOR' : _DELEGATEENTRY,
+  '__module__' : 'snapshot.v1.snapshot_pb2'
+  # @@protoc_insertion_point(class_scope:vega.snapshot.v1.DelegateEntry)
+  })
+_sym_db.RegisterMessage(DelegateEntry)
+
+Delegate = _reflection.GeneratedProtocolMessageType('Delegate', (_message.Message,), {
+  'DESCRIPTOR' : _DELEGATE,
+  '__module__' : 'snapshot.v1.snapshot_pb2'
+  # @@protoc_insertion_point(class_scope:vega.snapshot.v1.Delegate)
+  })
+_sym_db.RegisterMessage(Delegate)
 
 
 DESCRIPTOR._options = None

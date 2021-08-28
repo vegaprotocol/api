@@ -9937,21 +9937,20 @@ class Node PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDelagationsFieldNumber = 13,
+    kDelagationsFieldNumber = 12,
     kIdFieldNumber = 1,
     kPubKeyFieldNumber = 2,
     kInfoUrlFieldNumber = 3,
     kLocationFieldNumber = 4,
-    kStakedByOperatorFieldNumber = 6,
-    kStakedByDelegatesFieldNumber = 7,
-    kStakedTotalFieldNumber = 8,
-    kMaxIntendedStakeFieldNumber = 9,
-    kPendingStakeFieldNumber = 10,
-    kEpochDataFieldNumber = 11,
-    kFeeFieldNumber = 5,
-    kStatusFieldNumber = 12,
+    kStakedByOperatorFieldNumber = 5,
+    kStakedByDelegatesFieldNumber = 6,
+    kStakedTotalFieldNumber = 7,
+    kMaxIntendedStakeFieldNumber = 8,
+    kPendingStakeFieldNumber = 9,
+    kEpochDataFieldNumber = 10,
+    kStatusFieldNumber = 11,
   };
-  // repeated .vega.Delegation delagations = 13 [json_name = "delagations"];
+  // repeated .vega.Delegation delagations = 12 [json_name = "delagations"];
   int delagations_size() const;
   private:
   int _internal_delagations_size() const;
@@ -10033,7 +10032,7 @@ class Node PROTOBUF_FINAL :
   std::string* _internal_mutable_location();
   public:
 
-  // string staked_by_operator = 6 [json_name = "stakedByOperator"];
+  // string staked_by_operator = 5 [json_name = "stakedByOperator"];
   void clear_staked_by_operator();
   const std::string& staked_by_operator() const;
   void set_staked_by_operator(const std::string& value);
@@ -10049,7 +10048,7 @@ class Node PROTOBUF_FINAL :
   std::string* _internal_mutable_staked_by_operator();
   public:
 
-  // string staked_by_delegates = 7 [json_name = "stakedByDelegates"];
+  // string staked_by_delegates = 6 [json_name = "stakedByDelegates"];
   void clear_staked_by_delegates();
   const std::string& staked_by_delegates() const;
   void set_staked_by_delegates(const std::string& value);
@@ -10065,7 +10064,7 @@ class Node PROTOBUF_FINAL :
   std::string* _internal_mutable_staked_by_delegates();
   public:
 
-  // string staked_total = 8 [json_name = "stakedTotal"];
+  // string staked_total = 7 [json_name = "stakedTotal"];
   void clear_staked_total();
   const std::string& staked_total() const;
   void set_staked_total(const std::string& value);
@@ -10081,7 +10080,7 @@ class Node PROTOBUF_FINAL :
   std::string* _internal_mutable_staked_total();
   public:
 
-  // string max_intended_stake = 9 [json_name = "maxIntendedStake"];
+  // string max_intended_stake = 8 [json_name = "maxIntendedStake"];
   void clear_max_intended_stake();
   const std::string& max_intended_stake() const;
   void set_max_intended_stake(const std::string& value);
@@ -10097,7 +10096,7 @@ class Node PROTOBUF_FINAL :
   std::string* _internal_mutable_max_intended_stake();
   public:
 
-  // string pending_stake = 10 [json_name = "pendingStake"];
+  // string pending_stake = 9 [json_name = "pendingStake"];
   void clear_pending_stake();
   const std::string& pending_stake() const;
   void set_pending_stake(const std::string& value);
@@ -10113,7 +10112,7 @@ class Node PROTOBUF_FINAL :
   std::string* _internal_mutable_pending_stake();
   public:
 
-  // .vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = {
+  // .vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = {
   bool has_epoch_data() const;
   private:
   bool _internal_has_epoch_data() const;
@@ -10131,16 +10130,7 @@ class Node PROTOBUF_FINAL :
       ::vega::EpochData* epoch_data);
   ::vega::EpochData* unsafe_arena_release_epoch_data();
 
-  // float fee = 5 [json_name = "fee"];
-  void clear_fee();
-  float fee() const;
-  void set_fee(float value);
-  private:
-  float _internal_fee() const;
-  void _internal_set_fee(float value);
-  public:
-
-  // .vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = {
+  // .vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = {
   void clear_status();
   ::vega::NodeStatus status() const;
   void set_status(::vega::NodeStatus value);
@@ -10167,7 +10157,6 @@ class Node PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr max_intended_stake_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pending_stake_;
   ::vega::EpochData* epoch_data_;
-  float fee_;
   int status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -10290,8 +10279,7 @@ class NodeData PROTOBUF_FINAL :
     kTotalNodesFieldNumber = 2,
     kInactiveNodesFieldNumber = 3,
     kValidatingNodesFieldNumber = 4,
-    kAverageFeeFieldNumber = 5,
-    kUptimeFieldNumber = 6,
+    kUptimeFieldNumber = 5,
   };
   // string staked_total = 1 [json_name = "stakedTotal"];
   void clear_staked_total();
@@ -10336,16 +10324,7 @@ class NodeData PROTOBUF_FINAL :
   void _internal_set_validating_nodes(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // float average_fee = 5 [json_name = "averageFee"];
-  void clear_average_fee();
-  float average_fee() const;
-  void set_average_fee(float value);
-  private:
-  float _internal_average_fee() const;
-  void _internal_set_average_fee(float value);
-  public:
-
-  // float uptime = 6 [json_name = "uptime"];
+  // float uptime = 5 [json_name = "uptime"];
   void clear_uptime();
   float uptime() const;
   void set_uptime(float value);
@@ -10365,7 +10344,6 @@ class NodeData PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint32 total_nodes_;
   ::PROTOBUF_NAMESPACE_ID::uint32 inactive_nodes_;
   ::PROTOBUF_NAMESPACE_ID::uint32 validating_nodes_;
-  float average_fee_;
   float uptime_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_vega_2eproto;
@@ -19734,27 +19712,7 @@ inline void Node::set_allocated_location(std::string* location) {
   // @@protoc_insertion_point(field_set_allocated:vega.Node.location)
 }
 
-// float fee = 5 [json_name = "fee"];
-inline void Node::clear_fee() {
-  fee_ = 0;
-}
-inline float Node::_internal_fee() const {
-  return fee_;
-}
-inline float Node::fee() const {
-  // @@protoc_insertion_point(field_get:vega.Node.fee)
-  return _internal_fee();
-}
-inline void Node::_internal_set_fee(float value) {
-
-  fee_ = value;
-}
-inline void Node::set_fee(float value) {
-  _internal_set_fee(value);
-  // @@protoc_insertion_point(field_set:vega.Node.fee)
-}
-
-// string staked_by_operator = 6 [json_name = "stakedByOperator"];
+// string staked_by_operator = 5 [json_name = "stakedByOperator"];
 inline void Node::clear_staked_by_operator() {
   staked_by_operator_.ClearToEmpty();
 }
@@ -19815,7 +19773,7 @@ inline void Node::set_allocated_staked_by_operator(std::string* staked_by_operat
   // @@protoc_insertion_point(field_set_allocated:vega.Node.staked_by_operator)
 }
 
-// string staked_by_delegates = 7 [json_name = "stakedByDelegates"];
+// string staked_by_delegates = 6 [json_name = "stakedByDelegates"];
 inline void Node::clear_staked_by_delegates() {
   staked_by_delegates_.ClearToEmpty();
 }
@@ -19876,7 +19834,7 @@ inline void Node::set_allocated_staked_by_delegates(std::string* staked_by_deleg
   // @@protoc_insertion_point(field_set_allocated:vega.Node.staked_by_delegates)
 }
 
-// string staked_total = 8 [json_name = "stakedTotal"];
+// string staked_total = 7 [json_name = "stakedTotal"];
 inline void Node::clear_staked_total() {
   staked_total_.ClearToEmpty();
 }
@@ -19937,7 +19895,7 @@ inline void Node::set_allocated_staked_total(std::string* staked_total) {
   // @@protoc_insertion_point(field_set_allocated:vega.Node.staked_total)
 }
 
-// string max_intended_stake = 9 [json_name = "maxIntendedStake"];
+// string max_intended_stake = 8 [json_name = "maxIntendedStake"];
 inline void Node::clear_max_intended_stake() {
   max_intended_stake_.ClearToEmpty();
 }
@@ -19998,7 +19956,7 @@ inline void Node::set_allocated_max_intended_stake(std::string* max_intended_sta
   // @@protoc_insertion_point(field_set_allocated:vega.Node.max_intended_stake)
 }
 
-// string pending_stake = 10 [json_name = "pendingStake"];
+// string pending_stake = 9 [json_name = "pendingStake"];
 inline void Node::clear_pending_stake() {
   pending_stake_.ClearToEmpty();
 }
@@ -20059,7 +20017,7 @@ inline void Node::set_allocated_pending_stake(std::string* pending_stake) {
   // @@protoc_insertion_point(field_set_allocated:vega.Node.pending_stake)
 }
 
-// .vega.EpochData epoch_data = 11 [json_name = "epochData", (.validator.field) = {
+// .vega.EpochData epoch_data = 10 [json_name = "epochData", (.validator.field) = {
 inline bool Node::_internal_has_epoch_data() const {
   return this != internal_default_instance() && epoch_data_ != nullptr;
 }
@@ -20142,7 +20100,7 @@ inline void Node::set_allocated_epoch_data(::vega::EpochData* epoch_data) {
   // @@protoc_insertion_point(field_set_allocated:vega.Node.epoch_data)
 }
 
-// .vega.NodeStatus status = 12 [json_name = "status", (.validator.field) = {
+// .vega.NodeStatus status = 11 [json_name = "status", (.validator.field) = {
 inline void Node::clear_status() {
   status_ = 0;
 }
@@ -20162,7 +20120,7 @@ inline void Node::set_status(::vega::NodeStatus value) {
   // @@protoc_insertion_point(field_set:vega.Node.status)
 }
 
-// repeated .vega.Delegation delagations = 13 [json_name = "delagations"];
+// repeated .vega.Delegation delagations = 12 [json_name = "delagations"];
 inline int Node::_internal_delagations_size() const {
   return delagations_.size();
 }
@@ -20326,27 +20284,7 @@ inline void NodeData::set_validating_nodes(::PROTOBUF_NAMESPACE_ID::uint32 value
   // @@protoc_insertion_point(field_set:vega.NodeData.validating_nodes)
 }
 
-// float average_fee = 5 [json_name = "averageFee"];
-inline void NodeData::clear_average_fee() {
-  average_fee_ = 0;
-}
-inline float NodeData::_internal_average_fee() const {
-  return average_fee_;
-}
-inline float NodeData::average_fee() const {
-  // @@protoc_insertion_point(field_get:vega.NodeData.average_fee)
-  return _internal_average_fee();
-}
-inline void NodeData::_internal_set_average_fee(float value) {
-
-  average_fee_ = value;
-}
-inline void NodeData::set_average_fee(float value) {
-  _internal_set_average_fee(value);
-  // @@protoc_insertion_point(field_set:vega.NodeData.average_fee)
-}
-
-// float uptime = 6 [json_name = "uptime"];
+// float uptime = 5 [json_name = "uptime"];
 inline void NodeData::clear_uptime() {
   uptime_ = 0;
 }

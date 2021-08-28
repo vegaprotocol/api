@@ -12,6 +12,8 @@ _sym_db = _symbol_database.Default()
 
 
 from ... import assets_pb2 as assets__pb2
+from ... import governance_pb2 as governance__pb2
+from ... import markets_pb2 as markets__pb2
 from ... import vega_pb2 as vega__pb2
 from ...events.v1 import events_pb2 as events_dot_v1_dot_events__pb2
 
@@ -22,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037io.vegaprotocol.vega.coreapi.v1Z*code.vegaprotocol.io/vega/proto/coreapi/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18\x63oreapi/v1/coreapi.proto\x12\x0fvega.coreapi.v1\x1a\x0c\x61ssets.proto\x1a\nvega.proto\x1a\x16\x65vents/v1/events.proto\"{\n\x07\x41\x63\x63ount\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\x12\x18\n\x07\x62\x61lance\x18\x03 \x01(\tR\x07\x62\x61lance\x12\x14\n\x05\x61sset\x18\x05 \x01(\tR\x05\x61sset\x12\x12\n\x04type\x18\x06 \x01(\tR\x04type\"C\n\x13ListAccountsRequest\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\"L\n\x14ListAccountsResponse\x12\x34\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x18.vega.coreapi.v1.AccountR\x08\x61\x63\x63ounts\")\n\x11ListAssetsRequest\x12\x14\n\x05\x61sset\x18\x01 \x01(\tR\x05\x61sset\"9\n\x12ListAssetsResponse\x12#\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.AssetR\x06\x61ssets\"R\n\x1cListNetworkParametersRequest\x12\x32\n\x15network_parameter_key\x18\x01 \x01(\tR\x13networkParameterKey\"f\n\x1dListNetworkParametersResponse\x12\x45\n\x12network_parameters\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x11networkParameters\"\x14\n\x12ListPartiesRequest\"<\n\x13ListPartiesResponse\x12%\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.PartyR\x07parties\"\x17\n\x15ListValidatorsRequest\"Y\n\x16ListValidatorsResponse\x12?\n\nvalidators\x18\x01 \x03(\x0b\x32\x1f.vega.events.v1.ValidatorUpdateR\nvalidators2\xf9\x03\n\x0e\x43oreApiService\x12[\n\x0cListAccounts\x12$.vega.coreapi.v1.ListAccountsRequest\x1a%.vega.coreapi.v1.ListAccountsResponse\x12U\n\nListAssets\x12\".vega.coreapi.v1.ListAssetsRequest\x1a#.vega.coreapi.v1.ListAssetsResponse\x12v\n\x15ListNetworkParameters\x12-.vega.coreapi.v1.ListNetworkParametersRequest\x1a..vega.coreapi.v1.ListNetworkParametersResponse\x12X\n\x0bListParties\x12#.vega.coreapi.v1.ListPartiesRequest\x1a$.vega.coreapi.v1.ListPartiesResponse\x12\x61\n\x0eListValidators\x12&.vega.coreapi.v1.ListValidatorsRequest\x1a\'.vega.coreapi.v1.ListValidatorsResponseBM\n\x1fio.vegaprotocol.vega.coreapi.v1Z*code.vegaprotocol.io/vega/proto/coreapi/v1b\x06proto3'
+  serialized_pb=b'\n\x18\x63oreapi/v1/coreapi.proto\x12\x0fvega.coreapi.v1\x1a\x0c\x61ssets.proto\x1a\x10governance.proto\x1a\rmarkets.proto\x1a\nvega.proto\x1a\x16\x65vents/v1/events.proto\"{\n\x07\x41\x63\x63ount\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\x12\x18\n\x07\x62\x61lance\x18\x03 \x01(\tR\x07\x62\x61lance\x12\x14\n\x05\x61sset\x18\x05 \x01(\tR\x05\x61sset\x12\x12\n\x04type\x18\x06 \x01(\tR\x04type\"C\n\x13ListAccountsRequest\x12\x14\n\x05party\x18\x01 \x01(\tR\x05party\x12\x16\n\x06market\x18\x02 \x01(\tR\x06market\"L\n\x14ListAccountsResponse\x12\x34\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x18.vega.coreapi.v1.AccountR\x08\x61\x63\x63ounts\")\n\x11ListAssetsRequest\x12\x14\n\x05\x61sset\x18\x01 \x01(\tR\x05\x61sset\"9\n\x12ListAssetsResponse\x12#\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\x0b.vega.AssetR\x06\x61ssets\"R\n\x1cListNetworkParametersRequest\x12\x32\n\x15network_parameter_key\x18\x01 \x01(\tR\x13networkParameterKey\"f\n\x1dListNetworkParametersResponse\x12\x45\n\x12network_parameters\x18\x01 \x03(\x0b\x32\x16.vega.NetworkParameterR\x11networkParameters\"\x14\n\x12ListPartiesRequest\"<\n\x13ListPartiesResponse\x12%\n\x07parties\x18\x01 \x03(\x0b\x32\x0b.vega.PartyR\x07parties\"\x17\n\x15ListValidatorsRequest\"Y\n\x16ListValidatorsResponse\x12?\n\nvalidators\x18\x01 \x03(\x0b\x32\x1f.vega.events.v1.ValidatorUpdateR\nvalidators\",\n\x12ListMarketsRequest\x12\x16\n\x06market\x18\x01 \x01(\tR\x06market\"=\n\x13ListMarketsResponse\x12&\n\x07markets\x18\x01 \x03(\x0b\x32\x0c.vega.MarketR\x07markets\"N\n\x14ListProposalsRequest\x12\x1a\n\x08proposal\x18\x01 \x01(\tR\x08proposal\x12\x1a\n\x08proposer\x18\x02 \x01(\tR\x08proposer\"E\n\x15ListProposalsResponse\x12,\n\tproposals\x18\x01 \x03(\x0b\x32\x0e.vega.ProposalR\tproposals2\xb3\x05\n\x0e\x43oreApiService\x12[\n\x0cListAccounts\x12$.vega.coreapi.v1.ListAccountsRequest\x1a%.vega.coreapi.v1.ListAccountsResponse\x12U\n\nListAssets\x12\".vega.coreapi.v1.ListAssetsRequest\x1a#.vega.coreapi.v1.ListAssetsResponse\x12v\n\x15ListNetworkParameters\x12-.vega.coreapi.v1.ListNetworkParametersRequest\x1a..vega.coreapi.v1.ListNetworkParametersResponse\x12X\n\x0bListParties\x12#.vega.coreapi.v1.ListPartiesRequest\x1a$.vega.coreapi.v1.ListPartiesResponse\x12\x61\n\x0eListValidators\x12&.vega.coreapi.v1.ListValidatorsRequest\x1a\'.vega.coreapi.v1.ListValidatorsResponse\x12X\n\x0bListMarkets\x12#.vega.coreapi.v1.ListMarketsRequest\x1a$.vega.coreapi.v1.ListMarketsResponse\x12^\n\rListProposals\x12%.vega.coreapi.v1.ListProposalsRequest\x1a&.vega.coreapi.v1.ListProposalsResponseBM\n\x1fio.vegaprotocol.vega.coreapi.v1Z*code.vegaprotocol.io/vega/proto/coreapi/v1b\x06proto3'
   ,
-  dependencies=[assets__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,events_dot_v1_dot_events__pb2.DESCRIPTOR,])
+  dependencies=[assets__pb2.DESCRIPTOR,governance__pb2.DESCRIPTOR,markets__pb2.DESCRIPTOR,vega__pb2.DESCRIPTOR,events_dot_v1_dot_events__pb2.DESCRIPTOR,])
 
 
 
@@ -84,8 +86,8 @@ _ACCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=95,
-  serialized_end=218,
+  serialized_start=128,
+  serialized_end=251,
 )
 
 
@@ -123,8 +125,8 @@ _LISTACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=220,
-  serialized_end=287,
+  serialized_start=253,
+  serialized_end=320,
 )
 
 
@@ -155,8 +157,8 @@ _LISTACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=289,
-  serialized_end=365,
+  serialized_start=322,
+  serialized_end=398,
 )
 
 
@@ -187,8 +189,8 @@ _LISTASSETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=367,
-  serialized_end=408,
+  serialized_start=400,
+  serialized_end=441,
 )
 
 
@@ -219,8 +221,8 @@ _LISTASSETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=410,
-  serialized_end=467,
+  serialized_start=443,
+  serialized_end=500,
 )
 
 
@@ -251,8 +253,8 @@ _LISTNETWORKPARAMETERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=469,
-  serialized_end=551,
+  serialized_start=502,
+  serialized_end=584,
 )
 
 
@@ -283,8 +285,8 @@ _LISTNETWORKPARAMETERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=553,
-  serialized_end=655,
+  serialized_start=586,
+  serialized_end=688,
 )
 
 
@@ -308,8 +310,8 @@ _LISTPARTIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=657,
-  serialized_end=677,
+  serialized_start=690,
+  serialized_end=710,
 )
 
 
@@ -340,8 +342,8 @@ _LISTPARTIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=679,
-  serialized_end=739,
+  serialized_start=712,
+  serialized_end=772,
 )
 
 
@@ -365,8 +367,8 @@ _LISTVALIDATORSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=741,
-  serialized_end=764,
+  serialized_start=774,
+  serialized_end=797,
 )
 
 
@@ -397,8 +399,143 @@ _LISTVALIDATORSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=766,
-  serialized_end=855,
+  serialized_start=799,
+  serialized_end=888,
+)
+
+
+_LISTMARKETSREQUEST = _descriptor.Descriptor(
+  name='ListMarketsRequest',
+  full_name='vega.coreapi.v1.ListMarketsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='market', full_name='vega.coreapi.v1.ListMarketsRequest.market', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='market', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=890,
+  serialized_end=934,
+)
+
+
+_LISTMARKETSRESPONSE = _descriptor.Descriptor(
+  name='ListMarketsResponse',
+  full_name='vega.coreapi.v1.ListMarketsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='markets', full_name='vega.coreapi.v1.ListMarketsResponse.markets', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='markets', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=936,
+  serialized_end=997,
+)
+
+
+_LISTPROPOSALSREQUEST = _descriptor.Descriptor(
+  name='ListProposalsRequest',
+  full_name='vega.coreapi.v1.ListProposalsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proposal', full_name='vega.coreapi.v1.ListProposalsRequest.proposal', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='proposal', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='proposer', full_name='vega.coreapi.v1.ListProposalsRequest.proposer', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='proposer', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=999,
+  serialized_end=1077,
+)
+
+
+_LISTPROPOSALSRESPONSE = _descriptor.Descriptor(
+  name='ListProposalsResponse',
+  full_name='vega.coreapi.v1.ListProposalsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='proposals', full_name='vega.coreapi.v1.ListProposalsResponse.proposals', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='proposals', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1079,
+  serialized_end=1148,
 )
 
 _LISTACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = _ACCOUNT
@@ -406,6 +543,8 @@ _LISTASSETSRESPONSE.fields_by_name['assets'].message_type = assets__pb2._ASSET
 _LISTNETWORKPARAMETERSRESPONSE.fields_by_name['network_parameters'].message_type = vega__pb2._NETWORKPARAMETER
 _LISTPARTIESRESPONSE.fields_by_name['parties'].message_type = vega__pb2._PARTY
 _LISTVALIDATORSRESPONSE.fields_by_name['validators'].message_type = events_dot_v1_dot_events__pb2._VALIDATORUPDATE
+_LISTMARKETSRESPONSE.fields_by_name['markets'].message_type = markets__pb2._MARKET
+_LISTPROPOSALSRESPONSE.fields_by_name['proposals'].message_type = governance__pb2._PROPOSAL
 DESCRIPTOR.message_types_by_name['Account'] = _ACCOUNT
 DESCRIPTOR.message_types_by_name['ListAccountsRequest'] = _LISTACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountsResponse'] = _LISTACCOUNTSRESPONSE
@@ -417,6 +556,10 @@ DESCRIPTOR.message_types_by_name['ListPartiesRequest'] = _LISTPARTIESREQUEST
 DESCRIPTOR.message_types_by_name['ListPartiesResponse'] = _LISTPARTIESRESPONSE
 DESCRIPTOR.message_types_by_name['ListValidatorsRequest'] = _LISTVALIDATORSREQUEST
 DESCRIPTOR.message_types_by_name['ListValidatorsResponse'] = _LISTVALIDATORSRESPONSE
+DESCRIPTOR.message_types_by_name['ListMarketsRequest'] = _LISTMARKETSREQUEST
+DESCRIPTOR.message_types_by_name['ListMarketsResponse'] = _LISTMARKETSRESPONSE
+DESCRIPTOR.message_types_by_name['ListProposalsRequest'] = _LISTPROPOSALSREQUEST
+DESCRIPTOR.message_types_by_name['ListProposalsResponse'] = _LISTPROPOSALSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Account = _reflection.GeneratedProtocolMessageType('Account', (_message.Message,), {
@@ -496,6 +639,34 @@ ListValidatorsResponse = _reflection.GeneratedProtocolMessageType('ListValidator
   })
 _sym_db.RegisterMessage(ListValidatorsResponse)
 
+ListMarketsRequest = _reflection.GeneratedProtocolMessageType('ListMarketsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTMARKETSREQUEST,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListMarketsRequest)
+  })
+_sym_db.RegisterMessage(ListMarketsRequest)
+
+ListMarketsResponse = _reflection.GeneratedProtocolMessageType('ListMarketsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTMARKETSRESPONSE,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListMarketsResponse)
+  })
+_sym_db.RegisterMessage(ListMarketsResponse)
+
+ListProposalsRequest = _reflection.GeneratedProtocolMessageType('ListProposalsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTPROPOSALSREQUEST,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListProposalsRequest)
+  })
+_sym_db.RegisterMessage(ListProposalsRequest)
+
+ListProposalsResponse = _reflection.GeneratedProtocolMessageType('ListProposalsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTPROPOSALSRESPONSE,
+  '__module__' : 'coreapi.v1.coreapi_pb2'
+  # @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListProposalsResponse)
+  })
+_sym_db.RegisterMessage(ListProposalsResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -506,8 +677,8 @@ _COREAPISERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=858,
-  serialized_end=1363,
+  serialized_start=1151,
+  serialized_end=1842,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccounts',
@@ -556,6 +727,26 @@ _COREAPISERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTVALIDATORSREQUEST,
     output_type=_LISTVALIDATORSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListMarkets',
+    full_name='vega.coreapi.v1.CoreApiService.ListMarkets',
+    index=5,
+    containing_service=None,
+    input_type=_LISTMARKETSREQUEST,
+    output_type=_LISTMARKETSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListProposals',
+    full_name='vega.coreapi.v1.CoreApiService.ListProposals',
+    index=6,
+    containing_service=None,
+    input_type=_LISTPROPOSALSREQUEST,
+    output_type=_LISTPROPOSALSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

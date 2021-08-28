@@ -169,6 +169,68 @@ public final class CoreApiServiceGrpc {
     return getListValidatorsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest,
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse> getListMarketsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMarkets",
+      requestType = io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.class,
+      responseType = io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest,
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse> getListMarketsMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse> getListMarketsMethod;
+    if ((getListMarketsMethod = CoreApiServiceGrpc.getListMarketsMethod) == null) {
+      synchronized (CoreApiServiceGrpc.class) {
+        if ((getListMarketsMethod = CoreApiServiceGrpc.getListMarketsMethod) == null) {
+          CoreApiServiceGrpc.getListMarketsMethod = getListMarketsMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMarkets"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreApiServiceMethodDescriptorSupplier("ListMarkets"))
+              .build();
+        }
+      }
+    }
+    return getListMarketsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest,
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse> getListProposalsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProposals",
+      requestType = io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.class,
+      responseType = io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest,
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse> getListProposalsMethod() {
+    io.grpc.MethodDescriptor<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse> getListProposalsMethod;
+    if ((getListProposalsMethod = CoreApiServiceGrpc.getListProposalsMethod) == null) {
+      synchronized (CoreApiServiceGrpc.class) {
+        if ((getListProposalsMethod = CoreApiServiceGrpc.getListProposalsMethod) == null) {
+          CoreApiServiceGrpc.getListProposalsMethod = getListProposalsMethod =
+              io.grpc.MethodDescriptor.<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProposals"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CoreApiServiceMethodDescriptorSupplier("ListProposals"))
+              .build();
+        }
+      }
+    }
+    return getListProposalsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -252,6 +314,20 @@ public final class CoreApiServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListValidatorsMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void listMarkets(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListMarketsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listProposals(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListProposalsMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -289,6 +365,20 @@ public final class CoreApiServiceGrpc {
                 io.vegaprotocol.vega.coreapi.v1.Coreapi.ListValidatorsRequest,
                 io.vegaprotocol.vega.coreapi.v1.Coreapi.ListValidatorsResponse>(
                   this, METHODID_LIST_VALIDATORS)))
+          .addMethod(
+            getListMarketsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest,
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse>(
+                  this, METHODID_LIST_MARKETS)))
+          .addMethod(
+            getListProposalsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest,
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse>(
+                  this, METHODID_LIST_PROPOSALS)))
           .build();
     }
   }
@@ -346,6 +436,22 @@ public final class CoreApiServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListValidatorsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listMarkets(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMarketsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listProposals(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest request,
+        io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListProposalsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -395,6 +501,20 @@ public final class CoreApiServiceGrpc {
     public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListValidatorsResponse listValidators(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListValidatorsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListValidatorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse listMarkets(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMarketsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse listProposals(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProposalsMethod(), getCallOptions(), request);
     }
   }
 
@@ -451,6 +571,22 @@ public final class CoreApiServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListValidatorsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse> listMarkets(
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMarketsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse> listProposals(
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListProposalsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ACCOUNTS = 0;
@@ -458,6 +594,8 @@ public final class CoreApiServiceGrpc {
   private static final int METHODID_LIST_NETWORK_PARAMETERS = 2;
   private static final int METHODID_LIST_PARTIES = 3;
   private static final int METHODID_LIST_VALIDATORS = 4;
+  private static final int METHODID_LIST_MARKETS = 5;
+  private static final int METHODID_LIST_PROPOSALS = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -495,6 +633,14 @@ public final class CoreApiServiceGrpc {
         case METHODID_LIST_VALIDATORS:
           serviceImpl.listValidators((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListValidatorsRequest) request,
               (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListValidatorsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_MARKETS:
+          serviceImpl.listMarkets((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PROPOSALS:
+          serviceImpl.listProposals((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest) request,
+              (io.grpc.stub.StreamObserver<io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -562,6 +708,8 @@ public final class CoreApiServiceGrpc {
               .addMethod(getListNetworkParametersMethod())
               .addMethod(getListPartiesMethod())
               .addMethod(getListValidatorsMethod())
+              .addMethod(getListMarketsMethod())
+              .addMethod(getListProposalsMethod())
               .build();
         }
       }

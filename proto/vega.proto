@@ -1081,24 +1081,22 @@ message Node {
   string info_url = 3;
   // Country code for the location of the node
   string location = 4;
-  // Value between 0 and 1 for percentage
-  float fee = 5;
   // The amount the node has put up themselves
-  string staked_by_operator = 6;
+  string staked_by_operator = 5;
   // The amount of stake that has been delegated by token holders
-  string staked_by_delegates = 7;;
+  string staked_by_delegates = 6;;
   // Total amount staked on node
-  string staked_total = 8;
+  string staked_total = 7;
   // Max amount of (wanted) stake, is this a network param or a node param
-  string max_intended_stake = 9;
+  string max_intended_stake = 8;
   // Amount of stake on the next epoch
-  string pending_stake = 10;
+  string pending_stake = 9;
   // Informantion about epoch
-  EpochData epoch_data = 11 [(validator.field) = {msg_exists : true}];
+  EpochData epoch_data = 10 [(validator.field) = {msg_exists : true}];
   // Node status
-  NodeStatus status = 12 [(validator.field) = {msg_exists : true}];
+  NodeStatus status = 11 [(validator.field) = {msg_exists : true}];
   // Node's delegations
-  repeated Delegation delagations = 13;
+  repeated Delegation delagations = 12;
 }
 
 message NodeData {
@@ -1110,10 +1108,8 @@ message NodeData {
   uint32 inactive_nodes = 3;
   // Number of nodes validating
   uint32 validating_nodes = 4;
-  // Average percentage fee across all nodes
-  float average_fee = 5;
   // Total uptime for all epochs across all nodes
-  float uptime = 6;
+  float uptime = 5;
 }
 
 message Delegation {

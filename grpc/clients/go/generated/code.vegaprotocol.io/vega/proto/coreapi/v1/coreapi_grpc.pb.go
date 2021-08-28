@@ -24,6 +24,8 @@ type CoreApiServiceClient interface {
 	ListNetworkParameters(ctx context.Context, in *ListNetworkParametersRequest, opts ...grpc.CallOption) (*ListNetworkParametersResponse, error)
 	ListParties(ctx context.Context, in *ListPartiesRequest, opts ...grpc.CallOption) (*ListPartiesResponse, error)
 	ListValidators(ctx context.Context, in *ListValidatorsRequest, opts ...grpc.CallOption) (*ListValidatorsResponse, error)
+	ListMarkets(ctx context.Context, in *ListMarketsRequest, opts ...grpc.CallOption) (*ListMarketsResponse, error)
+	ListProposals(ctx context.Context, in *ListProposalsRequest, opts ...grpc.CallOption) (*ListProposalsResponse, error)
 }
 
 type coreApiServiceClient struct {
@@ -79,6 +81,24 @@ func (c *coreApiServiceClient) ListValidators(ctx context.Context, in *ListValid
 	return out, nil
 }
 
+func (c *coreApiServiceClient) ListMarkets(ctx context.Context, in *ListMarketsRequest, opts ...grpc.CallOption) (*ListMarketsResponse, error) {
+	out := new(ListMarketsResponse)
+	err := c.cc.Invoke(ctx, "/vega.coreapi.v1.CoreApiService/ListMarkets", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *coreApiServiceClient) ListProposals(ctx context.Context, in *ListProposalsRequest, opts ...grpc.CallOption) (*ListProposalsResponse, error) {
+	out := new(ListProposalsResponse)
+	err := c.cc.Invoke(ctx, "/vega.coreapi.v1.CoreApiService/ListProposals", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CoreApiServiceServer is the server API for CoreApiService service.
 // All implementations must embed UnimplementedCoreApiServiceServer
 // for forward compatibility
@@ -88,6 +108,8 @@ type CoreApiServiceServer interface {
 	ListNetworkParameters(context.Context, *ListNetworkParametersRequest) (*ListNetworkParametersResponse, error)
 	ListParties(context.Context, *ListPartiesRequest) (*ListPartiesResponse, error)
 	ListValidators(context.Context, *ListValidatorsRequest) (*ListValidatorsResponse, error)
+	ListMarkets(context.Context, *ListMarketsRequest) (*ListMarketsResponse, error)
+	ListProposals(context.Context, *ListProposalsRequest) (*ListProposalsResponse, error)
 	mustEmbedUnimplementedCoreApiServiceServer()
 }
 
@@ -109,6 +131,12 @@ func (UnimplementedCoreApiServiceServer) ListParties(context.Context, *ListParti
 }
 func (UnimplementedCoreApiServiceServer) ListValidators(context.Context, *ListValidatorsRequest) (*ListValidatorsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListValidators not implemented")
+}
+func (UnimplementedCoreApiServiceServer) ListMarkets(context.Context, *ListMarketsRequest) (*ListMarketsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListMarkets not implemented")
+}
+func (UnimplementedCoreApiServiceServer) ListProposals(context.Context, *ListProposalsRequest) (*ListProposalsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListProposals not implemented")
 }
 func (UnimplementedCoreApiServiceServer) mustEmbedUnimplementedCoreApiServiceServer() {}
 
@@ -213,6 +241,42 @@ func _CoreApiService_ListValidators_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CoreApiService_ListMarkets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListMarketsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CoreApiServiceServer).ListMarkets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vega.coreapi.v1.CoreApiService/ListMarkets",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CoreApiServiceServer).ListMarkets(ctx, req.(*ListMarketsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CoreApiService_ListProposals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListProposalsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CoreApiServiceServer).ListProposals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vega.coreapi.v1.CoreApiService/ListProposals",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CoreApiServiceServer).ListProposals(ctx, req.(*ListProposalsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CoreApiService_ServiceDesc is the grpc.ServiceDesc for CoreApiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -239,6 +303,14 @@ var CoreApiService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListValidators",
 			Handler:    _CoreApiService_ListValidators_Handler,
+		},
+		{
+			MethodName: "ListMarkets",
+			Handler:    _CoreApiService_ListMarkets_Handler,
+		},
+		{
+			MethodName: "ListProposals",
+			Handler:    _CoreApiService_ListProposals_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

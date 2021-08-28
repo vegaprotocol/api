@@ -13016,7 +13016,7 @@ proto.vega.EpochData.prototype.setOnline = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.vega.Node.repeatedFields_ = [13];
+proto.vega.Node.repeatedFields_ = [12];
 
 
 
@@ -13053,14 +13053,13 @@ proto.vega.Node.toObject = function(includeInstance, msg) {
     pubKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
     infoUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
     location: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    fee: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    stakedByOperator: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    stakedByDelegates: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    stakedTotal: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    maxIntendedStake: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    pendingStake: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    stakedByOperator: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    stakedByDelegates: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    stakedTotal: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    maxIntendedStake: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    pendingStake: jspb.Message.getFieldWithDefault(msg, 9, ""),
     epochData: (f = msg.getEpochData()) && proto.vega.EpochData.toObject(includeInstance, f),
-    status: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    status: jspb.Message.getFieldWithDefault(msg, 11, 0),
     delagationsList: jspb.Message.toObjectList(msg.getDelagationsList(),
     proto.vega.Delegation.toObject, includeInstance)
   };
@@ -13116,39 +13115,35 @@ proto.vega.Node.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLocation(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setFee(value);
-      break;
-    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setStakedByOperator(value);
       break;
-    case 7:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setStakedByDelegates(value);
       break;
-    case 8:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setStakedTotal(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setMaxIntendedStake(value);
       break;
-    case 10:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setPendingStake(value);
       break;
-    case 11:
+    case 10:
       var value = new proto.vega.EpochData;
       reader.readMessage(value,proto.vega.EpochData.deserializeBinaryFromReader);
       msg.setEpochData(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {!proto.vega.NodeStatus} */ (reader.readEnum());
       msg.setStatus(value);
       break;
-    case 13:
+    case 12:
       var value = new proto.vega.Delegation;
       reader.readMessage(value,proto.vega.Delegation.deserializeBinaryFromReader);
       msg.addDelagations(value);
@@ -13210,52 +13205,45 @@ proto.vega.Node.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getFee();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      5,
-      f
-    );
-  }
   f = message.getStakedByOperator();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      5,
       f
     );
   }
   f = message.getStakedByDelegates();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      6,
       f
     );
   }
   f = message.getStakedTotal();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      7,
       f
     );
   }
   f = message.getMaxIntendedStake();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      8,
       f
     );
   }
   f = message.getPendingStake();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      9,
       f
     );
   }
   f = message.getEpochData();
   if (f != null) {
     writer.writeMessage(
-      11,
+      10,
       f,
       proto.vega.EpochData.serializeBinaryToWriter
     );
@@ -13263,14 +13251,14 @@ proto.vega.Node.serializeBinaryToWriter = function(message, writer) {
   f = message.getStatus();
   if (f !== 0.0) {
     writer.writeEnum(
-      12,
+      11,
       f
     );
   }
   f = message.getDelagationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      13,
+      12,
       f,
       proto.vega.Delegation.serializeBinaryToWriter
     );
@@ -13351,29 +13339,11 @@ proto.vega.Node.prototype.setLocation = function(value) {
 
 
 /**
- * optional float fee = 5;
- * @return {number}
- */
-proto.vega.Node.prototype.getFee = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.vega.Node} returns this
- */
-proto.vega.Node.prototype.setFee = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
-};
-
-
-/**
- * optional string staked_by_operator = 6;
+ * optional string staked_by_operator = 5;
  * @return {string}
  */
 proto.vega.Node.prototype.getStakedByOperator = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -13382,16 +13352,16 @@ proto.vega.Node.prototype.getStakedByOperator = function() {
  * @return {!proto.vega.Node} returns this
  */
 proto.vega.Node.prototype.setStakedByOperator = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string staked_by_delegates = 7;
+ * optional string staked_by_delegates = 6;
  * @return {string}
  */
 proto.vega.Node.prototype.getStakedByDelegates = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -13400,16 +13370,16 @@ proto.vega.Node.prototype.getStakedByDelegates = function() {
  * @return {!proto.vega.Node} returns this
  */
 proto.vega.Node.prototype.setStakedByDelegates = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string staked_total = 8;
+ * optional string staked_total = 7;
  * @return {string}
  */
 proto.vega.Node.prototype.getStakedTotal = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -13418,16 +13388,16 @@ proto.vega.Node.prototype.getStakedTotal = function() {
  * @return {!proto.vega.Node} returns this
  */
 proto.vega.Node.prototype.setStakedTotal = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string max_intended_stake = 9;
+ * optional string max_intended_stake = 8;
  * @return {string}
  */
 proto.vega.Node.prototype.getMaxIntendedStake = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -13436,16 +13406,16 @@ proto.vega.Node.prototype.getMaxIntendedStake = function() {
  * @return {!proto.vega.Node} returns this
  */
 proto.vega.Node.prototype.setMaxIntendedStake = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string pending_stake = 10;
+ * optional string pending_stake = 9;
  * @return {string}
  */
 proto.vega.Node.prototype.getPendingStake = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -13454,17 +13424,17 @@ proto.vega.Node.prototype.getPendingStake = function() {
  * @return {!proto.vega.Node} returns this
  */
 proto.vega.Node.prototype.setPendingStake = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional EpochData epoch_data = 11;
+ * optional EpochData epoch_data = 10;
  * @return {?proto.vega.EpochData}
  */
 proto.vega.Node.prototype.getEpochData = function() {
   return /** @type{?proto.vega.EpochData} */ (
-    jspb.Message.getWrapperField(this, proto.vega.EpochData, 11));
+    jspb.Message.getWrapperField(this, proto.vega.EpochData, 10));
 };
 
 
@@ -13473,7 +13443,7 @@ proto.vega.Node.prototype.getEpochData = function() {
  * @return {!proto.vega.Node} returns this
 */
 proto.vega.Node.prototype.setEpochData = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -13491,16 +13461,16 @@ proto.vega.Node.prototype.clearEpochData = function() {
  * @return {boolean}
  */
 proto.vega.Node.prototype.hasEpochData = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional NodeStatus status = 12;
+ * optional NodeStatus status = 11;
  * @return {!proto.vega.NodeStatus}
  */
 proto.vega.Node.prototype.getStatus = function() {
-  return /** @type {!proto.vega.NodeStatus} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {!proto.vega.NodeStatus} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -13509,17 +13479,17 @@ proto.vega.Node.prototype.getStatus = function() {
  * @return {!proto.vega.Node} returns this
  */
 proto.vega.Node.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3EnumField(this, 12, value);
+  return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
 /**
- * repeated Delegation delagations = 13;
+ * repeated Delegation delagations = 12;
  * @return {!Array<!proto.vega.Delegation>}
  */
 proto.vega.Node.prototype.getDelagationsList = function() {
   return /** @type{!Array<!proto.vega.Delegation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.vega.Delegation, 13));
+    jspb.Message.getRepeatedWrapperField(this, proto.vega.Delegation, 12));
 };
 
 
@@ -13528,7 +13498,7 @@ proto.vega.Node.prototype.getDelagationsList = function() {
  * @return {!proto.vega.Node} returns this
 */
 proto.vega.Node.prototype.setDelagationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 13, value);
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
 };
 
 
@@ -13538,7 +13508,7 @@ proto.vega.Node.prototype.setDelagationsList = function(value) {
  * @return {!proto.vega.Delegation}
  */
 proto.vega.Node.prototype.addDelagations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.vega.Delegation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.vega.Delegation, opt_index);
 };
 
 
@@ -13587,8 +13557,7 @@ proto.vega.NodeData.toObject = function(includeInstance, msg) {
     totalNodes: jspb.Message.getFieldWithDefault(msg, 2, 0),
     inactiveNodes: jspb.Message.getFieldWithDefault(msg, 3, 0),
     validatingNodes: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    averageFee: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    uptime: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
+    uptime: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
   if (includeInstance) {
@@ -13642,10 +13611,6 @@ proto.vega.NodeData.deserializeBinaryFromReader = function(msg, reader) {
       msg.setValidatingNodes(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setAverageFee(value);
-      break;
-    case 6:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setUptime(value);
       break;
@@ -13706,17 +13671,10 @@ proto.vega.NodeData.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAverageFee();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      5,
-      f
-    );
-  }
   f = message.getUptime();
   if (f !== 0.0) {
     writer.writeFloat(
-      6,
+      5,
       f
     );
   }
@@ -13796,10 +13754,10 @@ proto.vega.NodeData.prototype.setValidatingNodes = function(value) {
 
 
 /**
- * optional float average_fee = 5;
+ * optional float uptime = 5;
  * @return {number}
  */
-proto.vega.NodeData.prototype.getAverageFee = function() {
+proto.vega.NodeData.prototype.getUptime = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
@@ -13808,26 +13766,8 @@ proto.vega.NodeData.prototype.getAverageFee = function() {
  * @param {number} value
  * @return {!proto.vega.NodeData} returns this
  */
-proto.vega.NodeData.prototype.setAverageFee = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
-};
-
-
-/**
- * optional float uptime = 6;
- * @return {number}
- */
-proto.vega.NodeData.prototype.getUptime = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.vega.NodeData} returns this
- */
 proto.vega.NodeData.prototype.setUptime = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
+  return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 

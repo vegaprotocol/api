@@ -6,6 +6,8 @@
 
 import * as jspb from "google-protobuf";
 import * as assets_pb from "../../assets_pb";
+import * as governance_pb from "../../governance_pb";
+import * as markets_pb from "../../markets_pb";
 import * as vega_pb from "../../vega_pb";
 import * as events_v1_events_pb from "../../events/v1/events_pb";
 
@@ -245,5 +247,92 @@ export class ListValidatorsResponse extends jspb.Message {
 export namespace ListValidatorsResponse {
     export type AsObject = {
         validatorsList: Array<events_v1_events_pb.ValidatorUpdate.AsObject>,
+    }
+}
+
+export class ListMarketsRequest extends jspb.Message {
+    getMarket(): string;
+    setMarket(value: string): ListMarketsRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListMarketsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListMarketsRequest): ListMarketsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListMarketsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListMarketsRequest;
+    static deserializeBinaryFromReader(message: ListMarketsRequest, reader: jspb.BinaryReader): ListMarketsRequest;
+}
+
+export namespace ListMarketsRequest {
+    export type AsObject = {
+        market: string,
+    }
+}
+
+export class ListMarketsResponse extends jspb.Message {
+    clearMarketsList(): void;
+    getMarketsList(): Array<markets_pb.Market>;
+    setMarketsList(value: Array<markets_pb.Market>): ListMarketsResponse;
+    addMarkets(value?: markets_pb.Market, index?: number): markets_pb.Market;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListMarketsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListMarketsResponse): ListMarketsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListMarketsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListMarketsResponse;
+    static deserializeBinaryFromReader(message: ListMarketsResponse, reader: jspb.BinaryReader): ListMarketsResponse;
+}
+
+export namespace ListMarketsResponse {
+    export type AsObject = {
+        marketsList: Array<markets_pb.Market.AsObject>,
+    }
+}
+
+export class ListProposalsRequest extends jspb.Message {
+    getProposal(): string;
+    setProposal(value: string): ListProposalsRequest;
+    getProposer(): string;
+    setProposer(value: string): ListProposalsRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListProposalsRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: ListProposalsRequest): ListProposalsRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListProposalsRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListProposalsRequest;
+    static deserializeBinaryFromReader(message: ListProposalsRequest, reader: jspb.BinaryReader): ListProposalsRequest;
+}
+
+export namespace ListProposalsRequest {
+    export type AsObject = {
+        proposal: string,
+        proposer: string,
+    }
+}
+
+export class ListProposalsResponse extends jspb.Message {
+    clearProposalsList(): void;
+    getProposalsList(): Array<governance_pb.Proposal>;
+    setProposalsList(value: Array<governance_pb.Proposal>): ListProposalsResponse;
+    addProposals(value?: governance_pb.Proposal, index?: number): governance_pb.Proposal;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): ListProposalsResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: ListProposalsResponse): ListProposalsResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: ListProposalsResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): ListProposalsResponse;
+    static deserializeBinaryFromReader(message: ListProposalsResponse, reader: jspb.BinaryReader): ListProposalsResponse;
+}
+
+export namespace ListProposalsResponse {
+    export type AsObject = {
+        proposalsList: Array<governance_pb.Proposal.AsObject>,
     }
 }

@@ -53,6 +53,10 @@ export class Checkpoint extends jspb.Message {
     getNetworkParameters_asU8(): Uint8Array;
     getNetworkParameters_asB64(): string;
     setNetworkParameters(value: Uint8Array | string): Checkpoint;
+    getDelegation(): Uint8Array | string;
+    getDelegation_asU8(): Uint8Array;
+    getDelegation_asB64(): string;
+    setDelegation(value: Uint8Array | string): Checkpoint;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Checkpoint.AsObject;
@@ -70,6 +74,7 @@ export namespace Checkpoint {
         assets: Uint8Array | string,
         collateral: Uint8Array | string,
         networkParameters: Uint8Array | string,
+        delegation: Uint8Array | string,
     }
 }
 
@@ -210,5 +215,64 @@ export class Proposals extends jspb.Message {
 export namespace Proposals {
     export type AsObject = {
         proposalsList: Array<governance_pb.Proposal.AsObject>,
+    }
+}
+
+export class DelegateEntry extends jspb.Message {
+    getParty(): string;
+    setParty(value: string): DelegateEntry;
+    getNode(): string;
+    setNode(value: string): DelegateEntry;
+    getAmount(): string;
+    setAmount(value: string): DelegateEntry;
+    getUndelegate(): boolean;
+    setUndelegate(value: boolean): DelegateEntry;
+    getEpochSeq(): number;
+    setEpochSeq(value: number): DelegateEntry;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DelegateEntry.AsObject;
+    static toObject(includeInstance: boolean, msg: DelegateEntry): DelegateEntry.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DelegateEntry, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DelegateEntry;
+    static deserializeBinaryFromReader(message: DelegateEntry, reader: jspb.BinaryReader): DelegateEntry;
+}
+
+export namespace DelegateEntry {
+    export type AsObject = {
+        party: string,
+        node: string,
+        amount: string,
+        undelegate: boolean,
+        epochSeq: number,
+    }
+}
+
+export class Delegate extends jspb.Message {
+    clearActiveList(): void;
+    getActiveList(): Array<DelegateEntry>;
+    setActiveList(value: Array<DelegateEntry>): Delegate;
+    addActive(value?: DelegateEntry, index?: number): DelegateEntry;
+    clearPendingList(): void;
+    getPendingList(): Array<DelegateEntry>;
+    setPendingList(value: Array<DelegateEntry>): Delegate;
+    addPending(value?: DelegateEntry, index?: number): DelegateEntry;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Delegate.AsObject;
+    static toObject(includeInstance: boolean, msg: Delegate): Delegate.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Delegate, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Delegate;
+    static deserializeBinaryFromReader(message: Delegate, reader: jspb.BinaryReader): Delegate;
+}
+
+export namespace Delegate {
+    export type AsObject = {
+        activeList: Array<DelegateEntry.AsObject>,
+        pendingList: Array<DelegateEntry.AsObject>,
     }
 }

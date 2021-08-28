@@ -253,10 +253,14 @@
     - [ListAccountsResponse](#vega.coreapi.v1.ListAccountsResponse)
     - [ListAssetsRequest](#vega.coreapi.v1.ListAssetsRequest)
     - [ListAssetsResponse](#vega.coreapi.v1.ListAssetsResponse)
+    - [ListMarketsRequest](#vega.coreapi.v1.ListMarketsRequest)
+    - [ListMarketsResponse](#vega.coreapi.v1.ListMarketsResponse)
     - [ListNetworkParametersRequest](#vega.coreapi.v1.ListNetworkParametersRequest)
     - [ListNetworkParametersResponse](#vega.coreapi.v1.ListNetworkParametersResponse)
     - [ListPartiesRequest](#vega.coreapi.v1.ListPartiesRequest)
     - [ListPartiesResponse](#vega.coreapi.v1.ListPartiesResponse)
+    - [ListProposalsRequest](#vega.coreapi.v1.ListProposalsRequest)
+    - [ListProposalsResponse](#vega.coreapi.v1.ListProposalsResponse)
     - [ListValidatorsRequest](#vega.coreapi.v1.ListValidatorsRequest)
     - [ListValidatorsResponse](#vega.coreapi.v1.ListValidatorsResponse)
 
@@ -268,6 +272,8 @@
     - [Assets](#vega.snapshot.v1.Assets)
     - [Checkpoint](#vega.snapshot.v1.Checkpoint)
     - [Collateral](#vega.snapshot.v1.Collateral)
+    - [Delegate](#vega.snapshot.v1.Delegate)
+    - [DelegateEntry](#vega.snapshot.v1.DelegateEntry)
     - [NetParams](#vega.snapshot.v1.NetParams)
     - [Proposals](#vega.snapshot.v1.Proposals)
     - [Snapshot](#vega.snapshot.v1.Snapshot)
@@ -1546,7 +1552,6 @@ Represents a network parameter on Vega
 | pub_key | [string](#string) |  | Pub key of the node operator |
 | info_url | [string](#string) |  | URL where I can find out more info on the node |
 | location | [string](#string) |  | Country code for the location of the node |
-| fee | [float](#float) |  | Value between 0 and 1 for percentage |
 | staked_by_operator | [string](#string) |  | The amount the node has put up themselves |
 | staked_by_delegates | [string](#string) |  | The amount of stake that has been delegated by token holders |
 | staked_total | [string](#string) |  | Total amount staked on node |
@@ -1573,7 +1578,6 @@ Represents a network parameter on Vega
 | total_nodes | [uint32](#uint32) |  | Total number of nodes |
 | inactive_nodes | [uint32](#uint32) |  | Number of inactive nodes |
 | validating_nodes | [uint32](#uint32) |  | Number of nodes validating |
-| average_fee | [float](#float) |  | Average percentage fee across all nodes |
 | uptime | [float](#float) |  | Total uptime for all epochs across all nodes |
 
 
@@ -4379,6 +4383,36 @@ Blockchain transaction type
 
 
 
+<a name="vega.coreapi.v1.ListMarketsRequest"></a>
+
+### ListMarketsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| market | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListMarketsResponse"></a>
+
+### ListMarketsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| markets | [vega.Market](#vega.Market) | repeated |  |
+
+
+
+
+
+
 <a name="vega.coreapi.v1.ListNetworkParametersRequest"></a>
 
 ### ListNetworkParametersRequest
@@ -4434,6 +4468,37 @@ Blockchain transaction type
 
 
 
+<a name="vega.coreapi.v1.ListProposalsRequest"></a>
+
+### ListProposalsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposal | [string](#string) |  | optional ID |
+| proposer | [string](#string) |  | optional party |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListProposalsResponse"></a>
+
+### ListProposalsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposals | [vega.Proposal](#vega.Proposal) | repeated |  |
+
+
+
+
+
+
 <a name="vega.coreapi.v1.ListValidatorsRequest"></a>
 
 ### ListValidatorsRequest
@@ -4477,6 +4542,8 @@ Blockchain transaction type
 | ListNetworkParameters | [ListNetworkParametersRequest](#vega.coreapi.v1.ListNetworkParametersRequest) | [ListNetworkParametersResponse](#vega.coreapi.v1.ListNetworkParametersResponse) |  |
 | ListParties | [ListPartiesRequest](#vega.coreapi.v1.ListPartiesRequest) | [ListPartiesResponse](#vega.coreapi.v1.ListPartiesResponse) |  |
 | ListValidators | [ListValidatorsRequest](#vega.coreapi.v1.ListValidatorsRequest) | [ListValidatorsResponse](#vega.coreapi.v1.ListValidatorsResponse) |  |
+| ListMarkets | [ListMarketsRequest](#vega.coreapi.v1.ListMarketsRequest) | [ListMarketsResponse](#vega.coreapi.v1.ListMarketsResponse) |  |
+| ListProposals | [ListProposalsRequest](#vega.coreapi.v1.ListProposalsRequest) | [ListProposalsResponse](#vega.coreapi.v1.ListProposalsResponse) |  |
 
 
 
@@ -4549,6 +4616,7 @@ Checkpoint aggregates the various engine snapshots
 | assets | [bytes](#bytes) |  |  |
 | collateral | [bytes](#bytes) |  |  |
 | network_parameters | [bytes](#bytes) |  |  |
+| delegation | [bytes](#bytes) |  |  |
 
 
 
@@ -4564,6 +4632,42 @@ Collateral contains the balances per party
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | balances | [AssetBalance](#vega.snapshot.v1.AssetBalance) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Delegate"></a>
+
+### Delegate
+Delegate contains all entries for a checkpoint
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| active | [DelegateEntry](#vega.snapshot.v1.DelegateEntry) | repeated |  |
+| pending | [DelegateEntry](#vega.snapshot.v1.DelegateEntry) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.DelegateEntry"></a>
+
+### DelegateEntry
+Delegated amounts for party/node
+undelegate and epoch seq are only relevant for pending entries
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| node | [string](#string) |  |  |
+| amount | [string](#string) |  |  |
+| undelegate | [bool](#bool) |  |  |
+| epoch_seq | [uint64](#uint64) |  |  |
 
 
 

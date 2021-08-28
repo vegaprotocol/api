@@ -1580,8 +1580,6 @@ export class Node extends jspb.Message {
     setInfoUrl(value: string): Node;
     getLocation(): string;
     setLocation(value: string): Node;
-    getFee(): number;
-    setFee(value: number): Node;
     getStakedByOperator(): string;
     setStakedByOperator(value: string): Node;
     getStakedByDelegates(): string;
@@ -1620,7 +1618,6 @@ export namespace Node {
         pubKey: string,
         infoUrl: string,
         location: string,
-        fee: number,
         stakedByOperator: string,
         stakedByDelegates: string,
         stakedTotal: string,
@@ -1641,8 +1638,6 @@ export class NodeData extends jspb.Message {
     setInactiveNodes(value: number): NodeData;
     getValidatingNodes(): number;
     setValidatingNodes(value: number): NodeData;
-    getAverageFee(): number;
-    setAverageFee(value: number): NodeData;
     getUptime(): number;
     setUptime(value: number): NodeData;
 
@@ -1662,7 +1657,6 @@ export namespace NodeData {
         totalNodes: number,
         inactiveNodes: number,
         validatingNodes: number,
-        averageFee: number,
         uptime: number,
     }
 }

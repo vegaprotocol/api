@@ -7909,6 +7909,2950 @@ public final class Coreapi {
 
   }
 
+  public interface ListMarketsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.ListMarketsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string market = 1 [json_name = "market"];</code>
+     * @return The market.
+     */
+    java.lang.String getMarket();
+    /**
+     * <code>string market = 1 [json_name = "market"];</code>
+     * @return The bytes for market.
+     */
+    com.google.protobuf.ByteString
+        getMarketBytes();
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.ListMarketsRequest}
+   */
+  public static final class ListMarketsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.ListMarketsRequest)
+      ListMarketsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListMarketsRequest.newBuilder() to construct.
+    private ListMarketsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListMarketsRequest() {
+      market_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListMarketsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListMarketsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              market_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.Builder.class);
+    }
+
+    public static final int MARKET_FIELD_NUMBER = 1;
+    private volatile java.lang.Object market_;
+    /**
+     * <code>string market = 1 [json_name = "market"];</code>
+     * @return The market.
+     */
+    @java.lang.Override
+    public java.lang.String getMarket() {
+      java.lang.Object ref = market_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        market_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string market = 1 [json_name = "market"];</code>
+     * @return The bytes for market.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMarketBytes() {
+      java.lang.Object ref = market_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        market_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMarketBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, market_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMarketBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, market_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest) obj;
+
+      if (!getMarket()
+          .equals(other.getMarket())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MARKET_FIELD_NUMBER;
+      hash = (53 * hash) + getMarket().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.ListMarketsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.ListMarketsRequest)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        market_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest(this);
+        result.market_ = market_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest.getDefaultInstance()) return this;
+        if (!other.getMarket().isEmpty()) {
+          market_ = other.market_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object market_ = "";
+      /**
+       * <code>string market = 1 [json_name = "market"];</code>
+       * @return The market.
+       */
+      public java.lang.String getMarket() {
+        java.lang.Object ref = market_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          market_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string market = 1 [json_name = "market"];</code>
+       * @return The bytes for market.
+       */
+      public com.google.protobuf.ByteString
+          getMarketBytes() {
+        java.lang.Object ref = market_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          market_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string market = 1 [json_name = "market"];</code>
+       * @param value The market to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMarket(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        market_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string market = 1 [json_name = "market"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMarket() {
+
+        market_ = getDefaultInstance().getMarket();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string market = 1 [json_name = "market"];</code>
+       * @param value The bytes for market to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMarketBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        market_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.ListMarketsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListMarketsRequest)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListMarketsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListMarketsRequest>() {
+      @java.lang.Override
+      public ListMarketsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListMarketsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListMarketsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListMarketsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListMarketsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.ListMarketsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Markets.Market>
+        getMarketsList();
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    io.vegaprotocol.vega.Markets.Market getMarkets(int index);
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    int getMarketsCount();
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Markets.MarketOrBuilder>
+        getMarketsOrBuilderList();
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.ListMarketsResponse}
+   */
+  public static final class ListMarketsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.ListMarketsResponse)
+      ListMarketsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListMarketsResponse.newBuilder() to construct.
+    private ListMarketsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListMarketsResponse() {
+      markets_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListMarketsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListMarketsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                markets_ = new java.util.ArrayList<io.vegaprotocol.vega.Markets.Market>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              markets_.add(
+                  input.readMessage(io.vegaprotocol.vega.Markets.Market.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          markets_ = java.util.Collections.unmodifiableList(markets_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.Builder.class);
+    }
+
+    public static final int MARKETS_FIELD_NUMBER = 1;
+    private java.util.List<io.vegaprotocol.vega.Markets.Market> markets_;
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Markets.Market> getMarketsList() {
+      return markets_;
+    }
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Markets.MarketOrBuilder>
+        getMarketsOrBuilderList() {
+      return markets_;
+    }
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    @java.lang.Override
+    public int getMarketsCount() {
+      return markets_.size();
+    }
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.Market getMarkets(int index) {
+      return markets_.get(index);
+    }
+    /**
+     * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketsOrBuilder(
+        int index) {
+      return markets_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < markets_.size(); i++) {
+        output.writeMessage(1, markets_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < markets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, markets_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse) obj;
+
+      if (!getMarketsList()
+          .equals(other.getMarketsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getMarketsCount() > 0) {
+        hash = (37 * hash) + MARKETS_FIELD_NUMBER;
+        hash = (53 * hash) + getMarketsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.ListMarketsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.ListMarketsResponse)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getMarketsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (marketsBuilder_ == null) {
+          markets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          marketsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListMarketsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (marketsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            markets_ = java.util.Collections.unmodifiableList(markets_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.markets_ = markets_;
+        } else {
+          result.markets_ = marketsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse.getDefaultInstance()) return this;
+        if (marketsBuilder_ == null) {
+          if (!other.markets_.isEmpty()) {
+            if (markets_.isEmpty()) {
+              markets_ = other.markets_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMarketsIsMutable();
+              markets_.addAll(other.markets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.markets_.isEmpty()) {
+            if (marketsBuilder_.isEmpty()) {
+              marketsBuilder_.dispose();
+              marketsBuilder_ = null;
+              markets_ = other.markets_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              marketsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMarketsFieldBuilder() : null;
+            } else {
+              marketsBuilder_.addAllMessages(other.markets_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<io.vegaprotocol.vega.Markets.Market> markets_ =
+        java.util.Collections.emptyList();
+      private void ensureMarketsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          markets_ = new java.util.ArrayList<io.vegaprotocol.vega.Markets.Market>(markets_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.Market, io.vegaprotocol.vega.Markets.Market.Builder, io.vegaprotocol.vega.Markets.MarketOrBuilder> marketsBuilder_;
+
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Markets.Market> getMarketsList() {
+        if (marketsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(markets_);
+        } else {
+          return marketsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public int getMarketsCount() {
+        if (marketsBuilder_ == null) {
+          return markets_.size();
+        } else {
+          return marketsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.Market getMarkets(int index) {
+        if (marketsBuilder_ == null) {
+          return markets_.get(index);
+        } else {
+          return marketsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder setMarkets(
+          int index, io.vegaprotocol.vega.Markets.Market value) {
+        if (marketsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMarketsIsMutable();
+          markets_.set(index, value);
+          onChanged();
+        } else {
+          marketsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder setMarkets(
+          int index, io.vegaprotocol.vega.Markets.Market.Builder builderForValue) {
+        if (marketsBuilder_ == null) {
+          ensureMarketsIsMutable();
+          markets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          marketsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder addMarkets(io.vegaprotocol.vega.Markets.Market value) {
+        if (marketsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMarketsIsMutable();
+          markets_.add(value);
+          onChanged();
+        } else {
+          marketsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder addMarkets(
+          int index, io.vegaprotocol.vega.Markets.Market value) {
+        if (marketsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMarketsIsMutable();
+          markets_.add(index, value);
+          onChanged();
+        } else {
+          marketsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder addMarkets(
+          io.vegaprotocol.vega.Markets.Market.Builder builderForValue) {
+        if (marketsBuilder_ == null) {
+          ensureMarketsIsMutable();
+          markets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          marketsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder addMarkets(
+          int index, io.vegaprotocol.vega.Markets.Market.Builder builderForValue) {
+        if (marketsBuilder_ == null) {
+          ensureMarketsIsMutable();
+          markets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          marketsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder addAllMarkets(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Markets.Market> values) {
+        if (marketsBuilder_ == null) {
+          ensureMarketsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, markets_);
+          onChanged();
+        } else {
+          marketsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder clearMarkets() {
+        if (marketsBuilder_ == null) {
+          markets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          marketsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public Builder removeMarkets(int index) {
+        if (marketsBuilder_ == null) {
+          ensureMarketsIsMutable();
+          markets_.remove(index);
+          onChanged();
+        } else {
+          marketsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.Market.Builder getMarketsBuilder(
+          int index) {
+        return getMarketsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.MarketOrBuilder getMarketsOrBuilder(
+          int index) {
+        if (marketsBuilder_ == null) {
+          return markets_.get(index);  } else {
+          return marketsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Markets.MarketOrBuilder>
+           getMarketsOrBuilderList() {
+        if (marketsBuilder_ != null) {
+          return marketsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(markets_);
+        }
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.Market.Builder addMarketsBuilder() {
+        return getMarketsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Markets.Market.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public io.vegaprotocol.vega.Markets.Market.Builder addMarketsBuilder(
+          int index) {
+        return getMarketsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Markets.Market.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.Market markets = 1 [json_name = "markets"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Markets.Market.Builder>
+           getMarketsBuilderList() {
+        return getMarketsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Markets.Market, io.vegaprotocol.vega.Markets.Market.Builder, io.vegaprotocol.vega.Markets.MarketOrBuilder>
+          getMarketsFieldBuilder() {
+        if (marketsBuilder_ == null) {
+          marketsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Markets.Market, io.vegaprotocol.vega.Markets.Market.Builder, io.vegaprotocol.vega.Markets.MarketOrBuilder>(
+                  markets_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          markets_ = null;
+        }
+        return marketsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.ListMarketsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListMarketsResponse)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListMarketsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListMarketsResponse>() {
+      @java.lang.Override
+      public ListMarketsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListMarketsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListMarketsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListMarketsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListMarketsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListProposalsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.ListProposalsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * optional ID
+     * </pre>
+     *
+     * <code>string proposal = 1 [json_name = "proposal"];</code>
+     * @return The proposal.
+     */
+    java.lang.String getProposal();
+    /**
+     * <pre>
+     * optional ID
+     * </pre>
+     *
+     * <code>string proposal = 1 [json_name = "proposal"];</code>
+     * @return The bytes for proposal.
+     */
+    com.google.protobuf.ByteString
+        getProposalBytes();
+
+    /**
+     * <pre>
+     * optional party
+     * </pre>
+     *
+     * <code>string proposer = 2 [json_name = "proposer"];</code>
+     * @return The proposer.
+     */
+    java.lang.String getProposer();
+    /**
+     * <pre>
+     * optional party
+     * </pre>
+     *
+     * <code>string proposer = 2 [json_name = "proposer"];</code>
+     * @return The bytes for proposer.
+     */
+    com.google.protobuf.ByteString
+        getProposerBytes();
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.ListProposalsRequest}
+   */
+  public static final class ListProposalsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.ListProposalsRequest)
+      ListProposalsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListProposalsRequest.newBuilder() to construct.
+    private ListProposalsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListProposalsRequest() {
+      proposal_ = "";
+      proposer_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListProposalsRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListProposalsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proposal_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              proposer_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.Builder.class);
+    }
+
+    public static final int PROPOSAL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object proposal_;
+    /**
+     * <pre>
+     * optional ID
+     * </pre>
+     *
+     * <code>string proposal = 1 [json_name = "proposal"];</code>
+     * @return The proposal.
+     */
+    @java.lang.Override
+    public java.lang.String getProposal() {
+      java.lang.Object ref = proposal_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proposal_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * optional ID
+     * </pre>
+     *
+     * <code>string proposal = 1 [json_name = "proposal"];</code>
+     * @return The bytes for proposal.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProposalBytes() {
+      java.lang.Object ref = proposal_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proposal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROPOSER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object proposer_;
+    /**
+     * <pre>
+     * optional party
+     * </pre>
+     *
+     * <code>string proposer = 2 [json_name = "proposer"];</code>
+     * @return The proposer.
+     */
+    @java.lang.Override
+    public java.lang.String getProposer() {
+      java.lang.Object ref = proposer_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proposer_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * optional party
+     * </pre>
+     *
+     * <code>string proposer = 2 [json_name = "proposer"];</code>
+     * @return The bytes for proposer.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProposerBytes() {
+      java.lang.Object ref = proposer_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proposer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getProposalBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, proposal_);
+      }
+      if (!getProposerBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, proposer_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getProposalBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, proposal_);
+      }
+      if (!getProposerBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, proposer_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest) obj;
+
+      if (!getProposal()
+          .equals(other.getProposal())) return false;
+      if (!getProposer()
+          .equals(other.getProposer())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROPOSAL_FIELD_NUMBER;
+      hash = (53 * hash) + getProposal().hashCode();
+      hash = (37 * hash) + PROPOSER_FIELD_NUMBER;
+      hash = (53 * hash) + getProposer().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.ListProposalsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.ListProposalsRequest)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        proposal_ = "";
+
+        proposer_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest(this);
+        result.proposal_ = proposal_;
+        result.proposer_ = proposer_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest.getDefaultInstance()) return this;
+        if (!other.getProposal().isEmpty()) {
+          proposal_ = other.proposal_;
+          onChanged();
+        }
+        if (!other.getProposer().isEmpty()) {
+          proposer_ = other.proposer_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object proposal_ = "";
+      /**
+       * <pre>
+       * optional ID
+       * </pre>
+       *
+       * <code>string proposal = 1 [json_name = "proposal"];</code>
+       * @return The proposal.
+       */
+      public java.lang.String getProposal() {
+        java.lang.Object ref = proposal_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          proposal_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional ID
+       * </pre>
+       *
+       * <code>string proposal = 1 [json_name = "proposal"];</code>
+       * @return The bytes for proposal.
+       */
+      public com.google.protobuf.ByteString
+          getProposalBytes() {
+        java.lang.Object ref = proposal_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          proposal_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional ID
+       * </pre>
+       *
+       * <code>string proposal = 1 [json_name = "proposal"];</code>
+       * @param value The proposal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposal(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        proposal_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional ID
+       * </pre>
+       *
+       * <code>string proposal = 1 [json_name = "proposal"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProposal() {
+
+        proposal_ = getDefaultInstance().getProposal();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional ID
+       * </pre>
+       *
+       * <code>string proposal = 1 [json_name = "proposal"];</code>
+       * @param value The bytes for proposal to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposalBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        proposal_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object proposer_ = "";
+      /**
+       * <pre>
+       * optional party
+       * </pre>
+       *
+       * <code>string proposer = 2 [json_name = "proposer"];</code>
+       * @return The proposer.
+       */
+      public java.lang.String getProposer() {
+        java.lang.Object ref = proposer_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          proposer_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional party
+       * </pre>
+       *
+       * <code>string proposer = 2 [json_name = "proposer"];</code>
+       * @return The bytes for proposer.
+       */
+      public com.google.protobuf.ByteString
+          getProposerBytes() {
+        java.lang.Object ref = proposer_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          proposer_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * optional party
+       * </pre>
+       *
+       * <code>string proposer = 2 [json_name = "proposer"];</code>
+       * @param value The proposer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposer(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        proposer_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional party
+       * </pre>
+       *
+       * <code>string proposer = 2 [json_name = "proposer"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProposer() {
+
+        proposer_ = getDefaultInstance().getProposer();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * optional party
+       * </pre>
+       *
+       * <code>string proposer = 2 [json_name = "proposer"];</code>
+       * @param value The bytes for proposer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProposerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        proposer_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.ListProposalsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListProposalsRequest)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListProposalsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListProposalsRequest>() {
+      @java.lang.Override
+      public ListProposalsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListProposalsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListProposalsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListProposalsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListProposalsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:vega.coreapi.v1.ListProposalsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    java.util.List<io.vegaprotocol.vega.Governance.Proposal>
+        getProposalsList();
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    io.vegaprotocol.vega.Governance.Proposal getProposals(int index);
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    int getProposalsCount();
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    java.util.List<? extends io.vegaprotocol.vega.Governance.ProposalOrBuilder>
+        getProposalsOrBuilderList();
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    io.vegaprotocol.vega.Governance.ProposalOrBuilder getProposalsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code vega.coreapi.v1.ListProposalsResponse}
+   */
+  public static final class ListProposalsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:vega.coreapi.v1.ListProposalsResponse)
+      ListProposalsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListProposalsResponse.newBuilder() to construct.
+    private ListProposalsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListProposalsResponse() {
+      proposals_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListProposalsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListProposalsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                proposals_ = new java.util.ArrayList<io.vegaprotocol.vega.Governance.Proposal>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              proposals_.add(
+                  input.readMessage(io.vegaprotocol.vega.Governance.Proposal.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          proposals_ = java.util.Collections.unmodifiableList(proposals_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.Builder.class);
+    }
+
+    public static final int PROPOSALS_FIELD_NUMBER = 1;
+    private java.util.List<io.vegaprotocol.vega.Governance.Proposal> proposals_;
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<io.vegaprotocol.vega.Governance.Proposal> getProposalsList() {
+      return proposals_;
+    }
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends io.vegaprotocol.vega.Governance.ProposalOrBuilder>
+        getProposalsOrBuilderList() {
+      return proposals_;
+    }
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    @java.lang.Override
+    public int getProposalsCount() {
+      return proposals_.size();
+    }
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Governance.Proposal getProposals(int index) {
+      return proposals_.get(index);
+    }
+    /**
+     * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.Governance.ProposalOrBuilder getProposalsOrBuilder(
+        int index) {
+      return proposals_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < proposals_.size(); i++) {
+        output.writeMessage(1, proposals_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < proposals_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, proposals_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse)) {
+        return super.equals(obj);
+      }
+      io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse other = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse) obj;
+
+      if (!getProposalsList()
+          .equals(other.getProposalsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getProposalsCount() > 0) {
+        hash = (37 * hash) + PROPOSALS_FIELD_NUMBER;
+        hash = (53 * hash) + getProposalsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code vega.coreapi.v1.ListProposalsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:vega.coreapi.v1.ListProposalsResponse)
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.class, io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.Builder.class);
+      }
+
+      // Construct using io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getProposalsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (proposalsBuilder_ == null) {
+          proposals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          proposalsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.internal_static_vega_coreapi_v1_ListProposalsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse getDefaultInstanceForType() {
+        return io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse build() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse buildPartial() {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse result = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (proposalsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            proposals_ = java.util.Collections.unmodifiableList(proposals_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.proposals_ = proposals_;
+        } else {
+          result.proposals_ = proposalsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse) {
+          return mergeFrom((io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse other) {
+        if (other == io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse.getDefaultInstance()) return this;
+        if (proposalsBuilder_ == null) {
+          if (!other.proposals_.isEmpty()) {
+            if (proposals_.isEmpty()) {
+              proposals_ = other.proposals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureProposalsIsMutable();
+              proposals_.addAll(other.proposals_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.proposals_.isEmpty()) {
+            if (proposalsBuilder_.isEmpty()) {
+              proposalsBuilder_.dispose();
+              proposalsBuilder_ = null;
+              proposals_ = other.proposals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              proposalsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProposalsFieldBuilder() : null;
+            } else {
+              proposalsBuilder_.addAllMessages(other.proposals_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<io.vegaprotocol.vega.Governance.Proposal> proposals_ =
+        java.util.Collections.emptyList();
+      private void ensureProposalsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          proposals_ = new java.util.ArrayList<io.vegaprotocol.vega.Governance.Proposal>(proposals_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder> proposalsBuilder_;
+
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Governance.Proposal> getProposalsList() {
+        if (proposalsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(proposals_);
+        } else {
+          return proposalsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public int getProposalsCount() {
+        if (proposalsBuilder_ == null) {
+          return proposals_.size();
+        } else {
+          return proposalsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public io.vegaprotocol.vega.Governance.Proposal getProposals(int index) {
+        if (proposalsBuilder_ == null) {
+          return proposals_.get(index);
+        } else {
+          return proposalsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder setProposals(
+          int index, io.vegaprotocol.vega.Governance.Proposal value) {
+        if (proposalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProposalsIsMutable();
+          proposals_.set(index, value);
+          onChanged();
+        } else {
+          proposalsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder setProposals(
+          int index, io.vegaprotocol.vega.Governance.Proposal.Builder builderForValue) {
+        if (proposalsBuilder_ == null) {
+          ensureProposalsIsMutable();
+          proposals_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          proposalsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder addProposals(io.vegaprotocol.vega.Governance.Proposal value) {
+        if (proposalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProposalsIsMutable();
+          proposals_.add(value);
+          onChanged();
+        } else {
+          proposalsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder addProposals(
+          int index, io.vegaprotocol.vega.Governance.Proposal value) {
+        if (proposalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProposalsIsMutable();
+          proposals_.add(index, value);
+          onChanged();
+        } else {
+          proposalsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder addProposals(
+          io.vegaprotocol.vega.Governance.Proposal.Builder builderForValue) {
+        if (proposalsBuilder_ == null) {
+          ensureProposalsIsMutable();
+          proposals_.add(builderForValue.build());
+          onChanged();
+        } else {
+          proposalsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder addProposals(
+          int index, io.vegaprotocol.vega.Governance.Proposal.Builder builderForValue) {
+        if (proposalsBuilder_ == null) {
+          ensureProposalsIsMutable();
+          proposals_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          proposalsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder addAllProposals(
+          java.lang.Iterable<? extends io.vegaprotocol.vega.Governance.Proposal> values) {
+        if (proposalsBuilder_ == null) {
+          ensureProposalsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, proposals_);
+          onChanged();
+        } else {
+          proposalsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder clearProposals() {
+        if (proposalsBuilder_ == null) {
+          proposals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          proposalsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public Builder removeProposals(int index) {
+        if (proposalsBuilder_ == null) {
+          ensureProposalsIsMutable();
+          proposals_.remove(index);
+          onChanged();
+        } else {
+          proposalsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public io.vegaprotocol.vega.Governance.Proposal.Builder getProposalsBuilder(
+          int index) {
+        return getProposalsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public io.vegaprotocol.vega.Governance.ProposalOrBuilder getProposalsOrBuilder(
+          int index) {
+        if (proposalsBuilder_ == null) {
+          return proposals_.get(index);  } else {
+          return proposalsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public java.util.List<? extends io.vegaprotocol.vega.Governance.ProposalOrBuilder>
+           getProposalsOrBuilderList() {
+        if (proposalsBuilder_ != null) {
+          return proposalsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(proposals_);
+        }
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public io.vegaprotocol.vega.Governance.Proposal.Builder addProposalsBuilder() {
+        return getProposalsFieldBuilder().addBuilder(
+            io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public io.vegaprotocol.vega.Governance.Proposal.Builder addProposalsBuilder(
+          int index) {
+        return getProposalsFieldBuilder().addBuilder(
+            index, io.vegaprotocol.vega.Governance.Proposal.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .vega.Proposal proposals = 1 [json_name = "proposals"];</code>
+       */
+      public java.util.List<io.vegaprotocol.vega.Governance.Proposal.Builder>
+           getProposalsBuilderList() {
+        return getProposalsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder>
+          getProposalsFieldBuilder() {
+        if (proposalsBuilder_ == null) {
+          proposalsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              io.vegaprotocol.vega.Governance.Proposal, io.vegaprotocol.vega.Governance.Proposal.Builder, io.vegaprotocol.vega.Governance.ProposalOrBuilder>(
+                  proposals_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          proposals_ = null;
+        }
+        return proposalsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:vega.coreapi.v1.ListProposalsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListProposalsResponse)
+    private static final io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse();
+    }
+
+    public static io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListProposalsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListProposalsResponse>() {
+      @java.lang.Override
+      public ListProposalsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListProposalsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListProposalsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListProposalsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public io.vegaprotocol.vega.coreapi.v1.Coreapi.ListProposalsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_vega_coreapi_v1_Account_descriptor;
   private static final
@@ -7964,6 +10908,26 @@ public final class Coreapi {
   private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_vega_coreapi_v1_ListValidatorsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_ListMarketsRequest_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_ListMarketsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_ListMarketsResponse_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_ListMarketsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_ListProposalsRequest_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_ListProposalsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_vega_coreapi_v1_ListProposalsResponse_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_vega_coreapi_v1_ListProposalsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7974,47 +10938,61 @@ public final class Coreapi {
   static {
     java.lang.String[] descriptorData = {
       "\n\030coreapi/v1/coreapi.proto\022\017vega.coreapi" +
-      ".v1\032\014assets.proto\032\nvega.proto\032\026events/v1" +
-      "/events.proto\"{\n\007Account\022\024\n\005party\030\001 \001(\tR" +
-      "\005party\022\026\n\006market\030\002 \001(\tR\006market\022\030\n\007balanc" +
-      "e\030\003 \001(\tR\007balance\022\024\n\005asset\030\005 \001(\tR\005asset\022\022" +
-      "\n\004type\030\006 \001(\tR\004type\"C\n\023ListAccountsReques" +
-      "t\022\024\n\005party\030\001 \001(\tR\005party\022\026\n\006market\030\002 \001(\tR" +
-      "\006market\"L\n\024ListAccountsResponse\0224\n\010accou" +
-      "nts\030\001 \003(\0132\030.vega.coreapi.v1.AccountR\010acc" +
-      "ounts\")\n\021ListAssetsRequest\022\024\n\005asset\030\001 \001(" +
-      "\tR\005asset\"9\n\022ListAssetsResponse\022#\n\006assets" +
-      "\030\001 \003(\0132\013.vega.AssetR\006assets\"R\n\034ListNetwo" +
-      "rkParametersRequest\0222\n\025network_parameter" +
-      "_key\030\001 \001(\tR\023networkParameterKey\"f\n\035ListN" +
-      "etworkParametersResponse\022E\n\022network_para" +
-      "meters\030\001 \003(\0132\026.vega.NetworkParameterR\021ne" +
-      "tworkParameters\"\024\n\022ListPartiesRequest\"<\n" +
-      "\023ListPartiesResponse\022%\n\007parties\030\001 \003(\0132\013." +
-      "vega.PartyR\007parties\"\027\n\025ListValidatorsReq" +
-      "uest\"Y\n\026ListValidatorsResponse\022?\n\nvalida" +
-      "tors\030\001 \003(\0132\037.vega.events.v1.ValidatorUpd" +
-      "ateR\nvalidators2\371\003\n\016CoreApiService\022[\n\014Li" +
-      "stAccounts\022$.vega.coreapi.v1.ListAccount" +
-      "sRequest\032%.vega.coreapi.v1.ListAccountsR" +
-      "esponse\022U\n\nListAssets\022\".vega.coreapi.v1." +
-      "ListAssetsRequest\032#.vega.coreapi.v1.List" +
-      "AssetsResponse\022v\n\025ListNetworkParameters\022" +
-      "-.vega.coreapi.v1.ListNetworkParametersR" +
-      "equest\032..vega.coreapi.v1.ListNetworkPara" +
-      "metersResponse\022X\n\013ListParties\022#.vega.cor" +
-      "eapi.v1.ListPartiesRequest\032$.vega.coreap" +
-      "i.v1.ListPartiesResponse\022a\n\016ListValidato" +
-      "rs\022&.vega.coreapi.v1.ListValidatorsReque" +
-      "st\032\'.vega.coreapi.v1.ListValidatorsRespo" +
-      "nseBM\n\037io.vegaprotocol.vega.coreapi.v1Z*" +
-      "code.vegaprotocol.io/vega/proto/coreapi/" +
-      "v1b\006proto3"
+      ".v1\032\014assets.proto\032\020governance.proto\032\rmar" +
+      "kets.proto\032\nvega.proto\032\026events/v1/events" +
+      ".proto\"{\n\007Account\022\024\n\005party\030\001 \001(\tR\005party\022" +
+      "\026\n\006market\030\002 \001(\tR\006market\022\030\n\007balance\030\003 \001(\t" +
+      "R\007balance\022\024\n\005asset\030\005 \001(\tR\005asset\022\022\n\004type\030" +
+      "\006 \001(\tR\004type\"C\n\023ListAccountsRequest\022\024\n\005pa" +
+      "rty\030\001 \001(\tR\005party\022\026\n\006market\030\002 \001(\tR\006market" +
+      "\"L\n\024ListAccountsResponse\0224\n\010accounts\030\001 \003" +
+      "(\0132\030.vega.coreapi.v1.AccountR\010accounts\")" +
+      "\n\021ListAssetsRequest\022\024\n\005asset\030\001 \001(\tR\005asse" +
+      "t\"9\n\022ListAssetsResponse\022#\n\006assets\030\001 \003(\0132" +
+      "\013.vega.AssetR\006assets\"R\n\034ListNetworkParam" +
+      "etersRequest\0222\n\025network_parameter_key\030\001 " +
+      "\001(\tR\023networkParameterKey\"f\n\035ListNetworkP" +
+      "arametersResponse\022E\n\022network_parameters\030" +
+      "\001 \003(\0132\026.vega.NetworkParameterR\021networkPa" +
+      "rameters\"\024\n\022ListPartiesRequest\"<\n\023ListPa" +
+      "rtiesResponse\022%\n\007parties\030\001 \003(\0132\013.vega.Pa" +
+      "rtyR\007parties\"\027\n\025ListValidatorsRequest\"Y\n" +
+      "\026ListValidatorsResponse\022?\n\nvalidators\030\001 " +
+      "\003(\0132\037.vega.events.v1.ValidatorUpdateR\nva" +
+      "lidators\",\n\022ListMarketsRequest\022\026\n\006market" +
+      "\030\001 \001(\tR\006market\"=\n\023ListMarketsResponse\022&\n" +
+      "\007markets\030\001 \003(\0132\014.vega.MarketR\007markets\"N\n" +
+      "\024ListProposalsRequest\022\032\n\010proposal\030\001 \001(\tR" +
+      "\010proposal\022\032\n\010proposer\030\002 \001(\tR\010proposer\"E\n" +
+      "\025ListProposalsResponse\022,\n\tproposals\030\001 \003(" +
+      "\0132\016.vega.ProposalR\tproposals2\263\005\n\016CoreApi" +
+      "Service\022[\n\014ListAccounts\022$.vega.coreapi.v" +
+      "1.ListAccountsRequest\032%.vega.coreapi.v1." +
+      "ListAccountsResponse\022U\n\nListAssets\022\".veg" +
+      "a.coreapi.v1.ListAssetsRequest\032#.vega.co" +
+      "reapi.v1.ListAssetsResponse\022v\n\025ListNetwo" +
+      "rkParameters\022-.vega.coreapi.v1.ListNetwo" +
+      "rkParametersRequest\032..vega.coreapi.v1.Li" +
+      "stNetworkParametersResponse\022X\n\013ListParti" +
+      "es\022#.vega.coreapi.v1.ListPartiesRequest\032" +
+      "$.vega.coreapi.v1.ListPartiesResponse\022a\n" +
+      "\016ListValidators\022&.vega.coreapi.v1.ListVa" +
+      "lidatorsRequest\032\'.vega.coreapi.v1.ListVa" +
+      "lidatorsResponse\022X\n\013ListMarkets\022#.vega.c" +
+      "oreapi.v1.ListMarketsRequest\032$.vega.core" +
+      "api.v1.ListMarketsResponse\022^\n\rListPropos" +
+      "als\022%.vega.coreapi.v1.ListProposalsReque" +
+      "st\032&.vega.coreapi.v1.ListProposalsRespon" +
+      "seBM\n\037io.vegaprotocol.vega.coreapi.v1Z*c" +
+      "ode.vegaprotocol.io/vega/proto/coreapi/v" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.vegaprotocol.vega.Assets.getDescriptor(),
+          io.vegaprotocol.vega.Governance.getDescriptor(),
+          io.vegaprotocol.vega.Markets.getDescriptor(),
           io.vegaprotocol.vega.Vega.getDescriptor(),
           io.vegaprotocol.vega.events.v1.Events.getDescriptor(),
         });
@@ -8084,7 +11062,33 @@ public final class Coreapi {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_coreapi_v1_ListValidatorsResponse_descriptor,
         new java.lang.String[] { "Validators", });
+    internal_static_vega_coreapi_v1_ListMarketsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_vega_coreapi_v1_ListMarketsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_ListMarketsRequest_descriptor,
+        new java.lang.String[] { "Market", });
+    internal_static_vega_coreapi_v1_ListMarketsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_vega_coreapi_v1_ListMarketsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_ListMarketsResponse_descriptor,
+        new java.lang.String[] { "Markets", });
+    internal_static_vega_coreapi_v1_ListProposalsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_vega_coreapi_v1_ListProposalsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_ListProposalsRequest_descriptor,
+        new java.lang.String[] { "Proposal", "Proposer", });
+    internal_static_vega_coreapi_v1_ListProposalsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_vega_coreapi_v1_ListProposalsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_vega_coreapi_v1_ListProposalsResponse_descriptor,
+        new java.lang.String[] { "Proposals", });
     io.vegaprotocol.vega.Assets.getDescriptor();
+    io.vegaprotocol.vega.Governance.getDescriptor();
+    io.vegaprotocol.vega.Markets.getDescriptor();
     io.vegaprotocol.vega.Vega.getDescriptor();
     io.vegaprotocol.vega.events.v1.Events.getDescriptor();
   }

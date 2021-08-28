@@ -32,6 +32,8 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "assets.pb.h"
+#include "governance.pb.h"
+#include "markets.pb.h"
 #include "vega.pb.h"
 #include "events/v1/events.pb.h"
 // @@protoc_insertion_point(includes)
@@ -49,7 +51,7 @@ struct TableStruct_coreapi_2fv1_2fcoreapi_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -74,6 +76,12 @@ extern ListAssetsRequestDefaultTypeInternal _ListAssetsRequest_default_instance_
 class ListAssetsResponse;
 class ListAssetsResponseDefaultTypeInternal;
 extern ListAssetsResponseDefaultTypeInternal _ListAssetsResponse_default_instance_;
+class ListMarketsRequest;
+class ListMarketsRequestDefaultTypeInternal;
+extern ListMarketsRequestDefaultTypeInternal _ListMarketsRequest_default_instance_;
+class ListMarketsResponse;
+class ListMarketsResponseDefaultTypeInternal;
+extern ListMarketsResponseDefaultTypeInternal _ListMarketsResponse_default_instance_;
 class ListNetworkParametersRequest;
 class ListNetworkParametersRequestDefaultTypeInternal;
 extern ListNetworkParametersRequestDefaultTypeInternal _ListNetworkParametersRequest_default_instance_;
@@ -86,6 +94,12 @@ extern ListPartiesRequestDefaultTypeInternal _ListPartiesRequest_default_instanc
 class ListPartiesResponse;
 class ListPartiesResponseDefaultTypeInternal;
 extern ListPartiesResponseDefaultTypeInternal _ListPartiesResponse_default_instance_;
+class ListProposalsRequest;
+class ListProposalsRequestDefaultTypeInternal;
+extern ListProposalsRequestDefaultTypeInternal _ListProposalsRequest_default_instance_;
+class ListProposalsResponse;
+class ListProposalsResponseDefaultTypeInternal;
+extern ListProposalsResponseDefaultTypeInternal _ListProposalsResponse_default_instance_;
 class ListValidatorsRequest;
 class ListValidatorsRequestDefaultTypeInternal;
 extern ListValidatorsRequestDefaultTypeInternal _ListValidatorsRequest_default_instance_;
@@ -101,10 +115,14 @@ template<> ::vega::coreapi::v1::ListAccountsRequest* Arena::CreateMaybeMessage<:
 template<> ::vega::coreapi::v1::ListAccountsResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListAccountsResponse>(Arena*);
 template<> ::vega::coreapi::v1::ListAssetsRequest* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListAssetsRequest>(Arena*);
 template<> ::vega::coreapi::v1::ListAssetsResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListAssetsResponse>(Arena*);
+template<> ::vega::coreapi::v1::ListMarketsRequest* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListMarketsRequest>(Arena*);
+template<> ::vega::coreapi::v1::ListMarketsResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListMarketsResponse>(Arena*);
 template<> ::vega::coreapi::v1::ListNetworkParametersRequest* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListNetworkParametersRequest>(Arena*);
 template<> ::vega::coreapi::v1::ListNetworkParametersResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListNetworkParametersResponse>(Arena*);
 template<> ::vega::coreapi::v1::ListPartiesRequest* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListPartiesRequest>(Arena*);
 template<> ::vega::coreapi::v1::ListPartiesResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListPartiesResponse>(Arena*);
+template<> ::vega::coreapi::v1::ListProposalsRequest* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListProposalsRequest>(Arena*);
+template<> ::vega::coreapi::v1::ListProposalsResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListProposalsResponse>(Arena*);
 template<> ::vega::coreapi::v1::ListValidatorsRequest* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListValidatorsRequest>(Arena*);
 template<> ::vega::coreapi::v1::ListValidatorsResponse* Arena::CreateMaybeMessage<::vega::coreapi::v1::ListValidatorsResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -1745,6 +1763,600 @@ class ListValidatorsResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_coreapi_2fv1_2fcoreapi_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ListMarketsRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.coreapi.v1.ListMarketsRequest) */ {
+ public:
+  inline ListMarketsRequest() : ListMarketsRequest(nullptr) {}
+  virtual ~ListMarketsRequest();
+
+  ListMarketsRequest(const ListMarketsRequest& from);
+  ListMarketsRequest(ListMarketsRequest&& from) noexcept
+    : ListMarketsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListMarketsRequest& operator=(const ListMarketsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListMarketsRequest& operator=(ListMarketsRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListMarketsRequest& default_instance();
+
+  static inline const ListMarketsRequest* internal_default_instance() {
+    return reinterpret_cast<const ListMarketsRequest*>(
+               &_ListMarketsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(ListMarketsRequest& a, ListMarketsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListMarketsRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListMarketsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListMarketsRequest* New() const final {
+    return CreateMaybeMessage<ListMarketsRequest>(nullptr);
+  }
+
+  ListMarketsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListMarketsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListMarketsRequest& from);
+  void MergeFrom(const ListMarketsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListMarketsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.coreapi.v1.ListMarketsRequest";
+  }
+  protected:
+  explicit ListMarketsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto);
+    return ::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMarketFieldNumber = 1,
+  };
+  // string market = 1 [json_name = "market"];
+  void clear_market();
+  const std::string& market() const;
+  void set_market(const std::string& value);
+  void set_market(std::string&& value);
+  void set_market(const char* value);
+  void set_market(const char* value, size_t size);
+  std::string* mutable_market();
+  std::string* release_market();
+  void set_allocated_market(std::string* market);
+  private:
+  const std::string& _internal_market() const;
+  void _internal_set_market(const std::string& value);
+  std::string* _internal_mutable_market();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListMarketsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr market_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coreapi_2fv1_2fcoreapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListMarketsResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.coreapi.v1.ListMarketsResponse) */ {
+ public:
+  inline ListMarketsResponse() : ListMarketsResponse(nullptr) {}
+  virtual ~ListMarketsResponse();
+
+  ListMarketsResponse(const ListMarketsResponse& from);
+  ListMarketsResponse(ListMarketsResponse&& from) noexcept
+    : ListMarketsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListMarketsResponse& operator=(const ListMarketsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListMarketsResponse& operator=(ListMarketsResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListMarketsResponse& default_instance();
+
+  static inline const ListMarketsResponse* internal_default_instance() {
+    return reinterpret_cast<const ListMarketsResponse*>(
+               &_ListMarketsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(ListMarketsResponse& a, ListMarketsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListMarketsResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListMarketsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListMarketsResponse* New() const final {
+    return CreateMaybeMessage<ListMarketsResponse>(nullptr);
+  }
+
+  ListMarketsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListMarketsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListMarketsResponse& from);
+  void MergeFrom(const ListMarketsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListMarketsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.coreapi.v1.ListMarketsResponse";
+  }
+  protected:
+  explicit ListMarketsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto);
+    return ::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMarketsFieldNumber = 1,
+  };
+  // repeated .vega.Market markets = 1 [json_name = "markets"];
+  int markets_size() const;
+  private:
+  int _internal_markets_size() const;
+  public:
+  void clear_markets();
+  ::vega::Market* mutable_markets(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Market >*
+      mutable_markets();
+  private:
+  const ::vega::Market& _internal_markets(int index) const;
+  ::vega::Market* _internal_add_markets();
+  public:
+  const ::vega::Market& markets(int index) const;
+  ::vega::Market* add_markets();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Market >&
+      markets() const;
+
+  // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListMarketsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Market > markets_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coreapi_2fv1_2fcoreapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListProposalsRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.coreapi.v1.ListProposalsRequest) */ {
+ public:
+  inline ListProposalsRequest() : ListProposalsRequest(nullptr) {}
+  virtual ~ListProposalsRequest();
+
+  ListProposalsRequest(const ListProposalsRequest& from);
+  ListProposalsRequest(ListProposalsRequest&& from) noexcept
+    : ListProposalsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListProposalsRequest& operator=(const ListProposalsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListProposalsRequest& operator=(ListProposalsRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListProposalsRequest& default_instance();
+
+  static inline const ListProposalsRequest* internal_default_instance() {
+    return reinterpret_cast<const ListProposalsRequest*>(
+               &_ListProposalsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(ListProposalsRequest& a, ListProposalsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListProposalsRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListProposalsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListProposalsRequest* New() const final {
+    return CreateMaybeMessage<ListProposalsRequest>(nullptr);
+  }
+
+  ListProposalsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListProposalsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListProposalsRequest& from);
+  void MergeFrom(const ListProposalsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListProposalsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.coreapi.v1.ListProposalsRequest";
+  }
+  protected:
+  explicit ListProposalsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto);
+    return ::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kProposalFieldNumber = 1,
+    kProposerFieldNumber = 2,
+  };
+  // string proposal = 1 [json_name = "proposal"];
+  void clear_proposal();
+  const std::string& proposal() const;
+  void set_proposal(const std::string& value);
+  void set_proposal(std::string&& value);
+  void set_proposal(const char* value);
+  void set_proposal(const char* value, size_t size);
+  std::string* mutable_proposal();
+  std::string* release_proposal();
+  void set_allocated_proposal(std::string* proposal);
+  private:
+  const std::string& _internal_proposal() const;
+  void _internal_set_proposal(const std::string& value);
+  std::string* _internal_mutable_proposal();
+  public:
+
+  // string proposer = 2 [json_name = "proposer"];
+  void clear_proposer();
+  const std::string& proposer() const;
+  void set_proposer(const std::string& value);
+  void set_proposer(std::string&& value);
+  void set_proposer(const char* value);
+  void set_proposer(const char* value, size_t size);
+  std::string* mutable_proposer();
+  std::string* release_proposer();
+  void set_allocated_proposer(std::string* proposer);
+  private:
+  const std::string& _internal_proposer() const;
+  void _internal_set_proposer(const std::string& value);
+  std::string* _internal_mutable_proposer();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListProposalsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr proposal_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr proposer_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coreapi_2fv1_2fcoreapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListProposalsResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.coreapi.v1.ListProposalsResponse) */ {
+ public:
+  inline ListProposalsResponse() : ListProposalsResponse(nullptr) {}
+  virtual ~ListProposalsResponse();
+
+  ListProposalsResponse(const ListProposalsResponse& from);
+  ListProposalsResponse(ListProposalsResponse&& from) noexcept
+    : ListProposalsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ListProposalsResponse& operator=(const ListProposalsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListProposalsResponse& operator=(ListProposalsResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ListProposalsResponse& default_instance();
+
+  static inline const ListProposalsResponse* internal_default_instance() {
+    return reinterpret_cast<const ListProposalsResponse*>(
+               &_ListProposalsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(ListProposalsResponse& a, ListProposalsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListProposalsResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListProposalsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ListProposalsResponse* New() const final {
+    return CreateMaybeMessage<ListProposalsResponse>(nullptr);
+  }
+
+  ListProposalsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ListProposalsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ListProposalsResponse& from);
+  void MergeFrom(const ListProposalsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ListProposalsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.coreapi.v1.ListProposalsResponse";
+  }
+  protected:
+  explicit ListProposalsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto);
+    return ::descriptor_table_coreapi_2fv1_2fcoreapi_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kProposalsFieldNumber = 1,
+  };
+  // repeated .vega.Proposal proposals = 1 [json_name = "proposals"];
+  int proposals_size() const;
+  private:
+  int _internal_proposals_size() const;
+  public:
+  void clear_proposals();
+  ::vega::Proposal* mutable_proposals(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Proposal >*
+      mutable_proposals();
+  private:
+  const ::vega::Proposal& _internal_proposals(int index) const;
+  ::vega::Proposal* _internal_add_proposals();
+  public:
+  const ::vega::Proposal& proposals(int index) const;
+  ::vega::Proposal* add_proposals();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Proposal >&
+      proposals() const;
+
+  // @@protoc_insertion_point(class_scope:vega.coreapi.v1.ListProposalsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Proposal > proposals_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_coreapi_2fv1_2fcoreapi_2eproto;
+};
 // ===================================================================
 
 
@@ -2528,9 +3140,288 @@ ListValidatorsResponse::validators() const {
   return validators_;
 }
 
+// -------------------------------------------------------------------
+
+// ListMarketsRequest
+
+// string market = 1 [json_name = "market"];
+inline void ListMarketsRequest::clear_market() {
+  market_.ClearToEmpty();
+}
+inline const std::string& ListMarketsRequest::market() const {
+  // @@protoc_insertion_point(field_get:vega.coreapi.v1.ListMarketsRequest.market)
+  return _internal_market();
+}
+inline void ListMarketsRequest::set_market(const std::string& value) {
+  _internal_set_market(value);
+  // @@protoc_insertion_point(field_set:vega.coreapi.v1.ListMarketsRequest.market)
+}
+inline std::string* ListMarketsRequest::mutable_market() {
+  // @@protoc_insertion_point(field_mutable:vega.coreapi.v1.ListMarketsRequest.market)
+  return _internal_mutable_market();
+}
+inline const std::string& ListMarketsRequest::_internal_market() const {
+  return market_.Get();
+}
+inline void ListMarketsRequest::_internal_set_market(const std::string& value) {
+
+  market_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ListMarketsRequest::set_market(std::string&& value) {
+
+  market_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.coreapi.v1.ListMarketsRequest.market)
+}
+inline void ListMarketsRequest::set_market(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  market_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.coreapi.v1.ListMarketsRequest.market)
+}
+inline void ListMarketsRequest::set_market(const char* value,
+    size_t size) {
+
+  market_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.coreapi.v1.ListMarketsRequest.market)
+}
+inline std::string* ListMarketsRequest::_internal_mutable_market() {
+
+  return market_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ListMarketsRequest::release_market() {
+  // @@protoc_insertion_point(field_release:vega.coreapi.v1.ListMarketsRequest.market)
+  return market_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ListMarketsRequest::set_allocated_market(std::string* market) {
+  if (market != nullptr) {
+
+  } else {
+
+  }
+  market_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.coreapi.v1.ListMarketsRequest.market)
+}
+
+// -------------------------------------------------------------------
+
+// ListMarketsResponse
+
+// repeated .vega.Market markets = 1 [json_name = "markets"];
+inline int ListMarketsResponse::_internal_markets_size() const {
+  return markets_.size();
+}
+inline int ListMarketsResponse::markets_size() const {
+  return _internal_markets_size();
+}
+inline ::vega::Market* ListMarketsResponse::mutable_markets(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.coreapi.v1.ListMarketsResponse.markets)
+  return markets_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Market >*
+ListMarketsResponse::mutable_markets() {
+  // @@protoc_insertion_point(field_mutable_list:vega.coreapi.v1.ListMarketsResponse.markets)
+  return &markets_;
+}
+inline const ::vega::Market& ListMarketsResponse::_internal_markets(int index) const {
+  return markets_.Get(index);
+}
+inline const ::vega::Market& ListMarketsResponse::markets(int index) const {
+  // @@protoc_insertion_point(field_get:vega.coreapi.v1.ListMarketsResponse.markets)
+  return _internal_markets(index);
+}
+inline ::vega::Market* ListMarketsResponse::_internal_add_markets() {
+  return markets_.Add();
+}
+inline ::vega::Market* ListMarketsResponse::add_markets() {
+  // @@protoc_insertion_point(field_add:vega.coreapi.v1.ListMarketsResponse.markets)
+  return _internal_add_markets();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Market >&
+ListMarketsResponse::markets() const {
+  // @@protoc_insertion_point(field_list:vega.coreapi.v1.ListMarketsResponse.markets)
+  return markets_;
+}
+
+// -------------------------------------------------------------------
+
+// ListProposalsRequest
+
+// string proposal = 1 [json_name = "proposal"];
+inline void ListProposalsRequest::clear_proposal() {
+  proposal_.ClearToEmpty();
+}
+inline const std::string& ListProposalsRequest::proposal() const {
+  // @@protoc_insertion_point(field_get:vega.coreapi.v1.ListProposalsRequest.proposal)
+  return _internal_proposal();
+}
+inline void ListProposalsRequest::set_proposal(const std::string& value) {
+  _internal_set_proposal(value);
+  // @@protoc_insertion_point(field_set:vega.coreapi.v1.ListProposalsRequest.proposal)
+}
+inline std::string* ListProposalsRequest::mutable_proposal() {
+  // @@protoc_insertion_point(field_mutable:vega.coreapi.v1.ListProposalsRequest.proposal)
+  return _internal_mutable_proposal();
+}
+inline const std::string& ListProposalsRequest::_internal_proposal() const {
+  return proposal_.Get();
+}
+inline void ListProposalsRequest::_internal_set_proposal(const std::string& value) {
+
+  proposal_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ListProposalsRequest::set_proposal(std::string&& value) {
+
+  proposal_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.coreapi.v1.ListProposalsRequest.proposal)
+}
+inline void ListProposalsRequest::set_proposal(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  proposal_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.coreapi.v1.ListProposalsRequest.proposal)
+}
+inline void ListProposalsRequest::set_proposal(const char* value,
+    size_t size) {
+
+  proposal_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.coreapi.v1.ListProposalsRequest.proposal)
+}
+inline std::string* ListProposalsRequest::_internal_mutable_proposal() {
+
+  return proposal_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ListProposalsRequest::release_proposal() {
+  // @@protoc_insertion_point(field_release:vega.coreapi.v1.ListProposalsRequest.proposal)
+  return proposal_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ListProposalsRequest::set_allocated_proposal(std::string* proposal) {
+  if (proposal != nullptr) {
+
+  } else {
+
+  }
+  proposal_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), proposal,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.coreapi.v1.ListProposalsRequest.proposal)
+}
+
+// string proposer = 2 [json_name = "proposer"];
+inline void ListProposalsRequest::clear_proposer() {
+  proposer_.ClearToEmpty();
+}
+inline const std::string& ListProposalsRequest::proposer() const {
+  // @@protoc_insertion_point(field_get:vega.coreapi.v1.ListProposalsRequest.proposer)
+  return _internal_proposer();
+}
+inline void ListProposalsRequest::set_proposer(const std::string& value) {
+  _internal_set_proposer(value);
+  // @@protoc_insertion_point(field_set:vega.coreapi.v1.ListProposalsRequest.proposer)
+}
+inline std::string* ListProposalsRequest::mutable_proposer() {
+  // @@protoc_insertion_point(field_mutable:vega.coreapi.v1.ListProposalsRequest.proposer)
+  return _internal_mutable_proposer();
+}
+inline const std::string& ListProposalsRequest::_internal_proposer() const {
+  return proposer_.Get();
+}
+inline void ListProposalsRequest::_internal_set_proposer(const std::string& value) {
+
+  proposer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ListProposalsRequest::set_proposer(std::string&& value) {
+
+  proposer_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.coreapi.v1.ListProposalsRequest.proposer)
+}
+inline void ListProposalsRequest::set_proposer(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  proposer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.coreapi.v1.ListProposalsRequest.proposer)
+}
+inline void ListProposalsRequest::set_proposer(const char* value,
+    size_t size) {
+
+  proposer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.coreapi.v1.ListProposalsRequest.proposer)
+}
+inline std::string* ListProposalsRequest::_internal_mutable_proposer() {
+
+  return proposer_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ListProposalsRequest::release_proposer() {
+  // @@protoc_insertion_point(field_release:vega.coreapi.v1.ListProposalsRequest.proposer)
+  return proposer_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ListProposalsRequest::set_allocated_proposer(std::string* proposer) {
+  if (proposer != nullptr) {
+
+  } else {
+
+  }
+  proposer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), proposer,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.coreapi.v1.ListProposalsRequest.proposer)
+}
+
+// -------------------------------------------------------------------
+
+// ListProposalsResponse
+
+// repeated .vega.Proposal proposals = 1 [json_name = "proposals"];
+inline int ListProposalsResponse::_internal_proposals_size() const {
+  return proposals_.size();
+}
+inline int ListProposalsResponse::proposals_size() const {
+  return _internal_proposals_size();
+}
+inline ::vega::Proposal* ListProposalsResponse::mutable_proposals(int index) {
+  // @@protoc_insertion_point(field_mutable:vega.coreapi.v1.ListProposalsResponse.proposals)
+  return proposals_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Proposal >*
+ListProposalsResponse::mutable_proposals() {
+  // @@protoc_insertion_point(field_mutable_list:vega.coreapi.v1.ListProposalsResponse.proposals)
+  return &proposals_;
+}
+inline const ::vega::Proposal& ListProposalsResponse::_internal_proposals(int index) const {
+  return proposals_.Get(index);
+}
+inline const ::vega::Proposal& ListProposalsResponse::proposals(int index) const {
+  // @@protoc_insertion_point(field_get:vega.coreapi.v1.ListProposalsResponse.proposals)
+  return _internal_proposals(index);
+}
+inline ::vega::Proposal* ListProposalsResponse::_internal_add_proposals() {
+  return proposals_.Add();
+}
+inline ::vega::Proposal* ListProposalsResponse::add_proposals() {
+  // @@protoc_insertion_point(field_add:vega.coreapi.v1.ListProposalsResponse.proposals)
+  return _internal_add_proposals();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::vega::Proposal >&
+ListProposalsResponse::proposals() const {
+  // @@protoc_insertion_point(field_list:vega.coreapi.v1.ListProposalsResponse.proposals)
+  return proposals_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

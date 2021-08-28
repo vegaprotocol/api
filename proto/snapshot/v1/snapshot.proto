@@ -20,6 +20,7 @@ message Checkpoint {
   bytes assets = 2;
   bytes collateral = 3;
   bytes network_parameters = 4;
+  bytes delegation = 5;
 }
 
 // AssetEntrty is a single (enabled) asset
@@ -53,4 +54,20 @@ message NetParams {
 // Proposals will contain all accepted proposals
 message Proposals {
   repeated vega.Proposal proposals = 1;
+}
+
+// Delegated amounts for party/node
+// undelegate and epoch seq are only relevant for pending entries
+message DelegateEntry {
+  string party = 1;
+  string node = 2;
+  string amount = 3;
+  bool undelegate = 4;
+  uint64 epoch_seq = 5;
+}
+
+// Delegate contains all entries for a checkpoint
+message Delegate {
+  repeated DelegateEntry active = 1;
+  repeated DelegateEntry pending = 2;
 }
