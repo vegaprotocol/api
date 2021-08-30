@@ -4,7 +4,7 @@
     "@graphql-codegen/typescript": "2.1.2",
     "@graphql-codegen/typescript-apollo-client-helpers": "2.1.2",
     "@graphql-codegen/typescript-react-apollo": "3.1.2",
-    "graphql": "15.5.1",
+    "graphql": "15.5.2",
     "graphqldoc": "2.5.2",
     "marked": "3.0.2",
     "ws": "8.2.1"
