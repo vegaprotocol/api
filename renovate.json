@@ -1,5 +1,17 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "enabled": true,
+      "packagePatterns": [
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "typescript-eslint",
+        "typescript"
+      ],
+      "groupName": "typescript*"
+    }
   ]
 }
