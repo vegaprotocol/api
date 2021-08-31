@@ -17,7 +17,8 @@ check_dist:
 
 .PHONY: coverage
 coverage:
-	@if test -z "$$GRPC_NODE" ; then echo "Please set GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
+	@if test -z "$$CORE_GRPC_NODE" ; then echo "Please set CORE_GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
+	@if test -z "$$DATA_GRPC_NODE" ; then echo "Please set DATA_GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
 	@if test -z "$$WALLETSERVER" ; then echo "Please set WALLETSERVER (e.g. https://wallet.xx.vega.zzz)." ; exit 1 ; fi
 	@rm -rf .coverage.d
 	@pipenv --bare install # 1>/dev/null 2>&1
@@ -54,7 +55,8 @@ pylint:
 
 .PHONY: test
 test:
-	@if test -z "$$GRPC_NODE" ; then echo "Please set GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
+	@if test -z "$$CORE_GRPC_NODE" ; then echo "Please set CORE_GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
+	@if test -z "$$DATA_GRPC_NODE" ; then echo "Please set DATA_GRPC_NODE (e.g. node.xx.vega.zzz:1111)." ; exit 1 ; fi
 	@if test -z "$$WALLETSERVER" ; then echo "Please set WALLETSERVER (e.g. https://wallet.xx.vega.zzz)." ; exit 1 ; fi
 	@pipenv --bare install # 1>/dev/null 2>&1
 	@pipenv run pip install -e .

@@ -5,13 +5,17 @@ import grpc
 import vegaapiclient as vac
 
 
-def test_grpc_error_detail(tradingdata):
+def test_grpc_error_detail(coreapi):
     # Construct a request of the WRONG type.
-    req = vac.api.trading.MarketByIDRequest(market_id="1234")
+    req = vac.api.trading.SubmitTransactionV2Request(
+        tx=vac.commands.v1.transaction.Transaction(
+            input_data=bytes("\x00\x01\x02", "ascii"),
+        ),
+    )
     # TODO: use: with pytest.raises(grpc.RpcError) as e_info:
     try:
         # Make a call using the WRONG request type.
-        result = tradingdata.Candles(req)
+        result = coreapi.ListAccounts(req)
         print(f"result={result}")
         assert False, (
             "The gRPC call using the WRONG request message type should have"

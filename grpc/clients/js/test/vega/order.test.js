@@ -3,31 +3,8 @@ var { skipIfLocalOnly } = require('../lib/env')
 
 // var grpc = require('@grpc/grpc-js');
 // var protoLoader = require('@grpc/proto-loader');
-var xhr = require("xmlhttprequest");
 
-var { commands, vega, api } = require('../../index')
-
-function wallet_server_login(walletServerURL, walletName, walletPassphrase) {
-    var request = new xhr.XMLHttpRequest();
-    var token;
-    request.onload = function () {
-        if (request.status !== 200) {
-            throw "Failed to log in to wallet server: HTTP " + request.status + " " + request.responseText;
-        }
-        var j = JSON.parse(request.responseText);
-        if (j === undefined) {
-            throw "Failed to get parse response JSON: " + request.responseText;
-        }
-        token = j.token;
-        if (token === undefined) {
-            throw "Failed to get token from response body: " + request.responseText;
-        }
-    }
-    request.open("POST", walletServerURL + "/api/v1/auth/token", true);
-    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    request.send(JSON.stringify({wallet: walletName, passphrase: walletPassphrase}, null, 2));
-    return token;
-}
+var { commands, vega } = require('../../index')
 
 test('Basic test: Can create an order', t => {
     const order = new commands.v1.commands.OrderSubmission()
@@ -119,44 +96,3 @@ test('Order can be a pegged order when an order peg is provided', t => {
     })
     t.end()
 })
-
-test('Submit Order', t => {
-    // Log in to wallet server
-    const walletName = "demo";
-    const walletPass = "123";
-    const walletServer = process.env.WALLETSERVER;
-    let token
-
-    if (walletServer === undefined) {
-        t.fail("Missing WALLETSERVER");
-        return t.end()
-    }
-
-    try {
-        token = wallet_server_login(walletServer, walletName, walletPass);
-    } catch (e) {
-        t.fail("Failed to log in to waller server: " + e);
-        return t.end()
-    }
-
-    const sub = new commands.v1.commands.OrderSubmission()
-    sub.setExpiresAt(2000000000000000000)
-    sub.setMarketId("AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPP")
-    sub.setPrice(99912345)
-    sub.setSide(vega.Side.SIDE_BUY) // 1
-    sub.setSize(555)
-    sub.setTimeInForce(vega.Order.TimeInForce.TIME_IN_FORCE_FOK) // 4
-    sub.setType(vega.Order.Type.TYPE_MARKET) // 2
-
-    const req1 = new api.trading.PrepareSubmitOrderRequest();
-    req1.setSubmission(sub)
-
-    const req2 = api.trading.PrepareSubmitOrderRequest.deserializeBinary(req1.serializeBinary())
-
-    // For some reason, nested wrappers can be null or {}.
-    req2.wrappers_["1"].wrappers_ = {};
-
-    t.deepEqual(req2, req1)
-    t.end()
-
-}, skipIfLocalOnly);

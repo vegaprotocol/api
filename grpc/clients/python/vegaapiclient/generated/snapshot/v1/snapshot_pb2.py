@@ -11,9 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import vega_pb2 as vega__pb2
-import assets_pb2 as assets__pb2
-import governance_pb2 as governance__pb2
+from ... import vega_pb2 as vega__pb2
+from ... import assets_pb2 as assets__pb2
+from ... import governance_pb2 as governance__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

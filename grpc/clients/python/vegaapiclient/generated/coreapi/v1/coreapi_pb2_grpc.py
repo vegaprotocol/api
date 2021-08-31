@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from coreapi.v1 import coreapi_pb2 as coreapi_dot_v1_dot_coreapi__pb2
+from ...coreapi.v1 import coreapi_pb2 as coreapi_dot_v1_dot_coreapi__pb2
 
 
 class CoreApiServiceStub(object):
