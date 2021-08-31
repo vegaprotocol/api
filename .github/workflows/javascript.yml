@@ -46,7 +46,8 @@ jobs:
       - name: Test
         env:
           CI: true
-          GRPC_NODE: ${{ secrets.GRPC_NODE }}
+          CORE_GRPC_NODE: ${{ secrets.CORE_GRPC_NODE }}
+          DATA_GRPC_NODE: ${{ secrets.DATA_GRPC_NODE }}
           WALLETSERVER: ${{ secrets.WALLETSERVER }}
         run: |
           cd grpc/clients/js
