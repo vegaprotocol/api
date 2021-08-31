@@ -66,7 +66,7 @@ walletserver_url = helpers.fix_walletserver_url(walletserver_url)
 
 # __create_wallet:
 # Vega node: Create client for accessing public data
-datacli = vac.VegaTradingDataClient(node_url_grpc)
+coreapicli = vac.VegaCoreAPIClient(node_url_grpc)
 
 # Vega node: Create client for trading (e.g. submitting orders)
 tradingcli = vac.VegaTradingClient(node_url_grpc)
@@ -79,7 +79,8 @@ helpers.check_response(login_response)
 
 # __get_market:
 # Get a list of markets
-markets = datacli.Markets(vac.api.trading.MarketsRequest()).markets
+req = vac.coreapi.v1.coreapi.ListMarketsRequest()
+markets = coreapicli.ListMarkets(req).markets
 # Choose the first.
 marketID = markets[0].id
 # :get_market__
