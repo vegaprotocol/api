@@ -49,11 +49,22 @@
     - [Market.State](#vega.Market.State)
     - [Market.TradingMode](#vega.Market.TradingMode)
 
+- [assets.proto](#assets.proto)
+    - [Asset](#vega.Asset)
+    - [AssetDetails](#vega.AssetDetails)
+    - [BuiltinAsset](#vega.BuiltinAsset)
+    - [ERC20](#vega.ERC20)
+
 - [vega.proto](#vega.proto)
     - [Account](#vega.Account)
     - [AuctionIndicativeState](#vega.AuctionIndicativeState)
     - [Candle](#vega.Candle)
+    - [Delegation](#vega.Delegation)
     - [Deposit](#vega.Deposit)
+    - [Epoch](#vega.Epoch)
+    - [EpochData](#vega.EpochData)
+    - [EpochParticipation](#vega.EpochParticipation)
+    - [EpochTimestamps](#vega.EpochTimestamps)
     - [Erc20WithdrawExt](#vega.Erc20WithdrawExt)
     - [ErrorDetail](#vega.ErrorDetail)
     - [EthereumConfig](#vega.EthereumConfig)
@@ -69,6 +80,8 @@
     - [MarketDepth](#vega.MarketDepth)
     - [MarketDepthUpdate](#vega.MarketDepthUpdate)
     - [NetworkParameter](#vega.NetworkParameter)
+    - [Node](#vega.Node)
+    - [NodeData](#vega.NodeData)
     - [Order](#vega.Order)
     - [OrderCancellationConfirmation](#vega.OrderCancellationConfirmation)
     - [OrderConfirmation](#vega.OrderConfirmation)
@@ -79,17 +92,15 @@
     - [Price](#vega.Price)
     - [PriceLevel](#vega.PriceLevel)
     - [PriceMonitoringBounds](#vega.PriceMonitoringBounds)
+    - [RewardDetails](#vega.RewardDetails)
+    - [RewardPerAssetDetail](#vega.RewardPerAssetDetail)
     - [RiskFactor](#vega.RiskFactor)
     - [RiskResult](#vega.RiskResult)
     - [RiskResult.PredictedNextRiskFactorsEntry](#vega.RiskResult.PredictedNextRiskFactorsEntry)
     - [RiskResult.RiskFactorsEntry](#vega.RiskResult.RiskFactorsEntry)
-    - [Signature](#vega.Signature)
-    - [SignedBundle](#vega.SignedBundle)
-    - [Statistics](#vega.Statistics)
     - [Timestamp](#vega.Timestamp)
     - [Trade](#vega.Trade)
     - [TradeSet](#vega.TradeSet)
-    - [Transaction](#vega.Transaction)
     - [Transfer](#vega.Transfer)
     - [TransferBalance](#vega.TransferBalance)
     - [TransferRequest](#vega.TransferRequest)
@@ -103,6 +114,7 @@
     - [Deposit.Status](#vega.Deposit.Status)
     - [Interval](#vega.Interval)
     - [LiquidityProvision.Status](#vega.LiquidityProvision.Status)
+    - [NodeStatus](#vega.NodeStatus)
     - [Order.Status](#vega.Order.Status)
     - [Order.TimeInForce](#vega.Order.TimeInForce)
     - [Order.Type](#vega.Order.Type)
@@ -112,12 +124,6 @@
     - [Trade.Type](#vega.Trade.Type)
     - [TransferType](#vega.TransferType)
     - [Withdrawal.Status](#vega.Withdrawal.Status)
-
-- [assets.proto](#assets.proto)
-    - [Asset](#vega.Asset)
-    - [AssetDetails](#vega.AssetDetails)
-    - [BuiltinAsset](#vega.BuiltinAsset)
-    - [ERC20](#vega.ERC20)
 
 - [governance.proto](#governance.proto)
     - [FutureProduct](#vega.FutureProduct)
@@ -150,6 +156,7 @@
     - [OrderCancellation](#vega.commands.v1.OrderCancellation)
     - [OrderSubmission](#vega.commands.v1.OrderSubmission)
     - [ProposalSubmission](#vega.commands.v1.ProposalSubmission)
+    - [RestoreSnapshot](#vega.commands.v1.RestoreSnapshot)
     - [UndelegateSubmission](#vega.commands.v1.UndelegateSubmission)
     - [VoteSubmission](#vega.commands.v1.VoteSubmission)
     - [WithdrawSubmission](#vega.commands.v1.WithdrawSubmission)
@@ -173,6 +180,9 @@
     - [EthereumAddress](#vega.EthereumAddress)
     - [Identifier](#vega.Identifier)
     - [RemoveValidator](#vega.RemoveValidator)
+    - [StakeDeposited](#vega.StakeDeposited)
+    - [StakeRemoved](#vega.StakeRemoved)
+    - [StakingEvent](#vega.StakingEvent)
     - [ValidatorEvent](#vega.ValidatorEvent)
 
 - [commands/v1/validator_commands.proto](#commands/v1/validator_commands.proto)
@@ -186,6 +196,7 @@
 - [events/v1/events.proto](#events/v1/events.proto)
     - [AuctionEvent](#vega.events.v1.AuctionEvent)
     - [BusEvent](#vega.events.v1.BusEvent)
+    - [CheckpointEvent](#vega.events.v1.CheckpointEvent)
     - [DelegationBalanceEvent](#vega.events.v1.DelegationBalanceEvent)
     - [EpochEvent](#vega.events.v1.EpochEvent)
     - [LossSocialization](#vega.events.v1.LossSocialization)
@@ -193,17 +204,20 @@
     - [MarketTick](#vega.events.v1.MarketTick)
     - [PendingDelegationBalanceEvent](#vega.events.v1.PendingDelegationBalanceEvent)
     - [PositionResolution](#vega.events.v1.PositionResolution)
+    - [RewardPayoutEvent](#vega.events.v1.RewardPayoutEvent)
     - [SettleDistressed](#vega.events.v1.SettleDistressed)
     - [SettlePosition](#vega.events.v1.SettlePosition)
-    - [StakingEvent](#vega.events.v1.StakingEvent)
+    - [StakeLinking](#vega.events.v1.StakeLinking)
     - [TimeUpdate](#vega.events.v1.TimeUpdate)
     - [TradeSettlement](#vega.events.v1.TradeSettlement)
     - [TransferResponses](#vega.events.v1.TransferResponses)
     - [TxErrorEvent](#vega.events.v1.TxErrorEvent)
+    - [ValidatorScoreEvent](#vega.events.v1.ValidatorScoreEvent)
     - [ValidatorUpdate](#vega.events.v1.ValidatorUpdate)
 
     - [BusEventType](#vega.events.v1.BusEventType)
-    - [StakingEvent.Type](#vega.events.v1.StakingEvent.Type)
+    - [StakeLinking.Status](#vega.events.v1.StakeLinking.Status)
+    - [StakeLinking.Type](#vega.events.v1.StakeLinking.Type)
 
 - [commands/v1/oracles.proto](#commands/v1/oracles.proto)
     - [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission)
@@ -216,164 +230,58 @@
     - [Transaction](#vega.commands.v1.Transaction)
 
 - [api/trading.proto](#api/trading.proto)
-    - [AccountsSubscribeRequest](#api.v1.AccountsSubscribeRequest)
-    - [AccountsSubscribeResponse](#api.v1.AccountsSubscribeResponse)
-    - [AssetByIDRequest](#api.v1.AssetByIDRequest)
-    - [AssetByIDResponse](#api.v1.AssetByIDResponse)
-    - [AssetsRequest](#api.v1.AssetsRequest)
-    - [AssetsResponse](#api.v1.AssetsResponse)
-    - [CandlesRequest](#api.v1.CandlesRequest)
-    - [CandlesResponse](#api.v1.CandlesResponse)
-    - [CandlesSubscribeRequest](#api.v1.CandlesSubscribeRequest)
-    - [CandlesSubscribeResponse](#api.v1.CandlesSubscribeResponse)
-    - [DepositRequest](#api.v1.DepositRequest)
-    - [DepositResponse](#api.v1.DepositResponse)
-    - [DepositsRequest](#api.v1.DepositsRequest)
-    - [DepositsResponse](#api.v1.DepositsResponse)
-    - [ERC20WithdrawalApprovalRequest](#api.v1.ERC20WithdrawalApprovalRequest)
-    - [ERC20WithdrawalApprovalResponse](#api.v1.ERC20WithdrawalApprovalResponse)
-    - [EstimateFeeRequest](#api.v1.EstimateFeeRequest)
-    - [EstimateFeeResponse](#api.v1.EstimateFeeResponse)
-    - [EstimateMarginRequest](#api.v1.EstimateMarginRequest)
-    - [EstimateMarginResponse](#api.v1.EstimateMarginResponse)
-    - [FeeInfrastructureAccountsRequest](#api.v1.FeeInfrastructureAccountsRequest)
-    - [FeeInfrastructureAccountsResponse](#api.v1.FeeInfrastructureAccountsResponse)
-    - [GetNetworkParametersProposalsRequest](#api.v1.GetNetworkParametersProposalsRequest)
-    - [GetNetworkParametersProposalsResponse](#api.v1.GetNetworkParametersProposalsResponse)
-    - [GetNewAssetProposalsRequest](#api.v1.GetNewAssetProposalsRequest)
-    - [GetNewAssetProposalsResponse](#api.v1.GetNewAssetProposalsResponse)
-    - [GetNewMarketProposalsRequest](#api.v1.GetNewMarketProposalsRequest)
-    - [GetNewMarketProposalsResponse](#api.v1.GetNewMarketProposalsResponse)
-    - [GetNodeSignaturesAggregateRequest](#api.v1.GetNodeSignaturesAggregateRequest)
-    - [GetNodeSignaturesAggregateResponse](#api.v1.GetNodeSignaturesAggregateResponse)
-    - [GetProposalByIDRequest](#api.v1.GetProposalByIDRequest)
-    - [GetProposalByIDResponse](#api.v1.GetProposalByIDResponse)
-    - [GetProposalByReferenceRequest](#api.v1.GetProposalByReferenceRequest)
-    - [GetProposalByReferenceResponse](#api.v1.GetProposalByReferenceResponse)
-    - [GetProposalsByPartyRequest](#api.v1.GetProposalsByPartyRequest)
-    - [GetProposalsByPartyResponse](#api.v1.GetProposalsByPartyResponse)
-    - [GetProposalsRequest](#api.v1.GetProposalsRequest)
-    - [GetProposalsResponse](#api.v1.GetProposalsResponse)
-    - [GetUpdateMarketProposalsRequest](#api.v1.GetUpdateMarketProposalsRequest)
-    - [GetUpdateMarketProposalsResponse](#api.v1.GetUpdateMarketProposalsResponse)
     - [GetVegaTimeRequest](#api.v1.GetVegaTimeRequest)
     - [GetVegaTimeResponse](#api.v1.GetVegaTimeResponse)
-    - [GetVotesByPartyRequest](#api.v1.GetVotesByPartyRequest)
-    - [GetVotesByPartyResponse](#api.v1.GetVotesByPartyResponse)
     - [LastBlockHeightRequest](#api.v1.LastBlockHeightRequest)
     - [LastBlockHeightResponse](#api.v1.LastBlockHeightResponse)
-    - [LastTradeRequest](#api.v1.LastTradeRequest)
-    - [LastTradeResponse](#api.v1.LastTradeResponse)
-    - [LiquidityProvisionsRequest](#api.v1.LiquidityProvisionsRequest)
-    - [LiquidityProvisionsResponse](#api.v1.LiquidityProvisionsResponse)
-    - [MarginLevelsRequest](#api.v1.MarginLevelsRequest)
-    - [MarginLevelsResponse](#api.v1.MarginLevelsResponse)
-    - [MarginLevelsSubscribeRequest](#api.v1.MarginLevelsSubscribeRequest)
-    - [MarginLevelsSubscribeResponse](#api.v1.MarginLevelsSubscribeResponse)
-    - [MarketAccountsRequest](#api.v1.MarketAccountsRequest)
-    - [MarketAccountsResponse](#api.v1.MarketAccountsResponse)
-    - [MarketByIDRequest](#api.v1.MarketByIDRequest)
-    - [MarketByIDResponse](#api.v1.MarketByIDResponse)
-    - [MarketDataByIDRequest](#api.v1.MarketDataByIDRequest)
-    - [MarketDataByIDResponse](#api.v1.MarketDataByIDResponse)
-    - [MarketDepthRequest](#api.v1.MarketDepthRequest)
-    - [MarketDepthResponse](#api.v1.MarketDepthResponse)
-    - [MarketDepthSubscribeRequest](#api.v1.MarketDepthSubscribeRequest)
-    - [MarketDepthSubscribeResponse](#api.v1.MarketDepthSubscribeResponse)
-    - [MarketDepthUpdatesSubscribeRequest](#api.v1.MarketDepthUpdatesSubscribeRequest)
-    - [MarketDepthUpdatesSubscribeResponse](#api.v1.MarketDepthUpdatesSubscribeResponse)
-    - [MarketsDataRequest](#api.v1.MarketsDataRequest)
-    - [MarketsDataResponse](#api.v1.MarketsDataResponse)
-    - [MarketsDataSubscribeRequest](#api.v1.MarketsDataSubscribeRequest)
-    - [MarketsDataSubscribeResponse](#api.v1.MarketsDataSubscribeResponse)
-    - [MarketsRequest](#api.v1.MarketsRequest)
-    - [MarketsResponse](#api.v1.MarketsResponse)
-    - [NetworkParametersRequest](#api.v1.NetworkParametersRequest)
-    - [NetworkParametersResponse](#api.v1.NetworkParametersResponse)
     - [ObserveEventBusRequest](#api.v1.ObserveEventBusRequest)
     - [ObserveEventBusResponse](#api.v1.ObserveEventBusResponse)
-    - [ObserveGovernanceRequest](#api.v1.ObserveGovernanceRequest)
-    - [ObserveGovernanceResponse](#api.v1.ObserveGovernanceResponse)
-    - [ObservePartyProposalsRequest](#api.v1.ObservePartyProposalsRequest)
-    - [ObservePartyProposalsResponse](#api.v1.ObservePartyProposalsResponse)
-    - [ObservePartyVotesRequest](#api.v1.ObservePartyVotesRequest)
-    - [ObservePartyVotesResponse](#api.v1.ObservePartyVotesResponse)
-    - [ObserveProposalVotesRequest](#api.v1.ObserveProposalVotesRequest)
-    - [ObserveProposalVotesResponse](#api.v1.ObserveProposalVotesResponse)
-    - [OptionalProposalState](#api.v1.OptionalProposalState)
-    - [OracleDataBySpecRequest](#api.v1.OracleDataBySpecRequest)
-    - [OracleDataBySpecResponse](#api.v1.OracleDataBySpecResponse)
-    - [OracleSpecRequest](#api.v1.OracleSpecRequest)
-    - [OracleSpecResponse](#api.v1.OracleSpecResponse)
-    - [OracleSpecsRequest](#api.v1.OracleSpecsRequest)
-    - [OracleSpecsResponse](#api.v1.OracleSpecsResponse)
-    - [OrderByIDRequest](#api.v1.OrderByIDRequest)
-    - [OrderByIDResponse](#api.v1.OrderByIDResponse)
-    - [OrderByMarketAndIDRequest](#api.v1.OrderByMarketAndIDRequest)
-    - [OrderByMarketAndIDResponse](#api.v1.OrderByMarketAndIDResponse)
-    - [OrderByReferenceRequest](#api.v1.OrderByReferenceRequest)
-    - [OrderByReferenceResponse](#api.v1.OrderByReferenceResponse)
-    - [OrderVersionsByIDRequest](#api.v1.OrderVersionsByIDRequest)
-    - [OrderVersionsByIDResponse](#api.v1.OrderVersionsByIDResponse)
-    - [OrdersByMarketRequest](#api.v1.OrdersByMarketRequest)
-    - [OrdersByMarketResponse](#api.v1.OrdersByMarketResponse)
-    - [OrdersByPartyRequest](#api.v1.OrdersByPartyRequest)
-    - [OrdersByPartyResponse](#api.v1.OrdersByPartyResponse)
-    - [OrdersSubscribeRequest](#api.v1.OrdersSubscribeRequest)
-    - [OrdersSubscribeResponse](#api.v1.OrdersSubscribeResponse)
-    - [Pagination](#api.v1.Pagination)
-    - [PartiesRequest](#api.v1.PartiesRequest)
-    - [PartiesResponse](#api.v1.PartiesResponse)
-    - [PartyAccountsRequest](#api.v1.PartyAccountsRequest)
-    - [PartyAccountsResponse](#api.v1.PartyAccountsResponse)
-    - [PartyByIDRequest](#api.v1.PartyByIDRequest)
-    - [PartyByIDResponse](#api.v1.PartyByIDResponse)
-    - [PositionsByPartyRequest](#api.v1.PositionsByPartyRequest)
-    - [PositionsByPartyResponse](#api.v1.PositionsByPartyResponse)
-    - [PositionsSubscribeRequest](#api.v1.PositionsSubscribeRequest)
-    - [PositionsSubscribeResponse](#api.v1.PositionsSubscribeResponse)
-    - [PrepareAmendOrderRequest](#api.v1.PrepareAmendOrderRequest)
-    - [PrepareAmendOrderResponse](#api.v1.PrepareAmendOrderResponse)
-    - [PrepareCancelOrderRequest](#api.v1.PrepareCancelOrderRequest)
-    - [PrepareCancelOrderResponse](#api.v1.PrepareCancelOrderResponse)
-    - [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest)
-    - [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse)
-    - [PrepareProposalSubmissionRequest](#api.v1.PrepareProposalSubmissionRequest)
-    - [PrepareProposalSubmissionResponse](#api.v1.PrepareProposalSubmissionResponse)
-    - [PrepareSubmitOrderRequest](#api.v1.PrepareSubmitOrderRequest)
-    - [PrepareSubmitOrderResponse](#api.v1.PrepareSubmitOrderResponse)
-    - [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest)
-    - [PrepareVoteSubmissionResponse](#api.v1.PrepareVoteSubmissionResponse)
-    - [PrepareWithdrawRequest](#api.v1.PrepareWithdrawRequest)
-    - [PrepareWithdrawResponse](#api.v1.PrepareWithdrawResponse)
     - [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest)
     - [PropagateChainEventResponse](#api.v1.PropagateChainEventResponse)
+    - [Statistics](#api.v1.Statistics)
     - [StatisticsRequest](#api.v1.StatisticsRequest)
     - [StatisticsResponse](#api.v1.StatisticsResponse)
-    - [SubmitTransactionRequest](#api.v1.SubmitTransactionRequest)
-    - [SubmitTransactionResponse](#api.v1.SubmitTransactionResponse)
     - [SubmitTransactionV2Request](#api.v1.SubmitTransactionV2Request)
     - [SubmitTransactionV2Response](#api.v1.SubmitTransactionV2Response)
-    - [TradesByMarketRequest](#api.v1.TradesByMarketRequest)
-    - [TradesByMarketResponse](#api.v1.TradesByMarketResponse)
-    - [TradesByOrderRequest](#api.v1.TradesByOrderRequest)
-    - [TradesByOrderResponse](#api.v1.TradesByOrderResponse)
-    - [TradesByPartyRequest](#api.v1.TradesByPartyRequest)
-    - [TradesByPartyResponse](#api.v1.TradesByPartyResponse)
-    - [TradesSubscribeRequest](#api.v1.TradesSubscribeRequest)
-    - [TradesSubscribeResponse](#api.v1.TradesSubscribeResponse)
-    - [TransferResponsesSubscribeRequest](#api.v1.TransferResponsesSubscribeRequest)
-    - [TransferResponsesSubscribeResponse](#api.v1.TransferResponsesSubscribeResponse)
-    - [WithdrawalRequest](#api.v1.WithdrawalRequest)
-    - [WithdrawalResponse](#api.v1.WithdrawalResponse)
-    - [WithdrawalsRequest](#api.v1.WithdrawalsRequest)
-    - [WithdrawalsResponse](#api.v1.WithdrawalsResponse)
 
-    - [SubmitTransactionRequest.Type](#api.v1.SubmitTransactionRequest.Type)
     - [SubmitTransactionV2Request.Type](#api.v1.SubmitTransactionV2Request.Type)
 
-    - [TradingDataService](#api.v1.TradingDataService)
     - [TradingService](#api.v1.TradingService)
+
+- [coreapi/v1/coreapi.proto](#coreapi/v1/coreapi.proto)
+    - [Account](#vega.coreapi.v1.Account)
+    - [ListAccountsRequest](#vega.coreapi.v1.ListAccountsRequest)
+    - [ListAccountsResponse](#vega.coreapi.v1.ListAccountsResponse)
+    - [ListAssetsRequest](#vega.coreapi.v1.ListAssetsRequest)
+    - [ListAssetsResponse](#vega.coreapi.v1.ListAssetsResponse)
+    - [ListMarketsDataRequest](#vega.coreapi.v1.ListMarketsDataRequest)
+    - [ListMarketsDataResponse](#vega.coreapi.v1.ListMarketsDataResponse)
+    - [ListMarketsRequest](#vega.coreapi.v1.ListMarketsRequest)
+    - [ListMarketsResponse](#vega.coreapi.v1.ListMarketsResponse)
+    - [ListNetworkParametersRequest](#vega.coreapi.v1.ListNetworkParametersRequest)
+    - [ListNetworkParametersResponse](#vega.coreapi.v1.ListNetworkParametersResponse)
+    - [ListPartiesRequest](#vega.coreapi.v1.ListPartiesRequest)
+    - [ListPartiesResponse](#vega.coreapi.v1.ListPartiesResponse)
+    - [ListProposalsRequest](#vega.coreapi.v1.ListProposalsRequest)
+    - [ListProposalsResponse](#vega.coreapi.v1.ListProposalsResponse)
+    - [ListValidatorsRequest](#vega.coreapi.v1.ListValidatorsRequest)
+    - [ListValidatorsResponse](#vega.coreapi.v1.ListValidatorsResponse)
+    - [ListVotesRequest](#vega.coreapi.v1.ListVotesRequest)
+    - [ListVotesResponse](#vega.coreapi.v1.ListVotesResponse)
+
+    - [CoreApiService](#vega.coreapi.v1.CoreApiService)
+
+- [snapshot/v1/snapshot.proto](#snapshot/v1/snapshot.proto)
+    - [AssetBalance](#vega.snapshot.v1.AssetBalance)
+    - [AssetEntry](#vega.snapshot.v1.AssetEntry)
+    - [Assets](#vega.snapshot.v1.Assets)
+    - [Checkpoint](#vega.snapshot.v1.Checkpoint)
+    - [Collateral](#vega.snapshot.v1.Collateral)
+    - [Delegate](#vega.snapshot.v1.Delegate)
+    - [DelegateEntry](#vega.snapshot.v1.DelegateEntry)
+    - [NetParams](#vega.snapshot.v1.NetParams)
+    - [Proposals](#vega.snapshot.v1.Proposals)
+    - [Snapshot](#vega.snapshot.v1.Snapshot)
 
 - [tm/replay.proto](#tm/replay.proto)
     - [BlockParams](#tm.BlockParams)
@@ -1080,6 +988,89 @@ The trading mode the market is currently running, also referred to as &#39;marke
 
 
 
+<a name="assets.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## assets.proto
+
+
+
+<a name="vega.Asset"></a>
+
+### Asset
+The Vega representation of an external asset
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Internal identifier of the asset |
+| details | [AssetDetails](#vega.AssetDetails) |  | The definition of the external source for this asset |
+
+
+
+
+
+
+<a name="vega.AssetDetails"></a>
+
+### AssetDetails
+The Vega representation of an external asset
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  | Name of the asset (e.g: Great British Pound) |
+| symbol | [string](#string) |  | Symbol of the asset (e.g: GBP) |
+| total_supply | [string](#string) |  | Total circulating supply for the asset |
+| decimals | [uint64](#uint64) |  | Number of decimal / precision handled by this asset |
+| min_lp_stake | [string](#string) |  | Min stake required for this asset from liquidity providers |
+| builtin_asset | [BuiltinAsset](#vega.BuiltinAsset) |  | A built-in asset |
+| erc20 | [ERC20](#vega.ERC20) |  | An Ethereum ERC20 asset |
+
+
+
+
+
+
+<a name="vega.BuiltinAsset"></a>
+
+### BuiltinAsset
+A Vega internal asset
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| max_faucet_amount_mint | [string](#string) |  | Maximum amount that can be requested by a party through the built-in asset faucet at a time |
+
+
+
+
+
+
+<a name="vega.ERC20"></a>
+
+### ERC20
+An ERC20 token based asset, living on the ethereum network
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| contract_address | [string](#string) |  | The address of the contract for the token, on the ethereum network |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <a name="vega.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -1149,6 +1140,24 @@ referred to commonly as a candlestick or candle
 
 
 
+<a name="vega.Delegation"></a>
+
+### Delegation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  | Party which is delegating |
+| node_id | [string](#string) |  | Node ID |
+| amount | [string](#string) |  | Amount delegated |
+| epoch_seq | [string](#string) |  | Epoch of delegation |
+
+
+
+
+
+
 <a name="vega.Deposit"></a>
 
 ### Deposit
@@ -1165,6 +1174,77 @@ A deposit on to the Vega network
 | tx_hash | [string](#string) |  | The hash of the transaction from the foreign chain |
 | credited_timestamp | [int64](#int64) |  | Timestamp for when the Vega account was updated with the deposit |
 | created_timestamp | [int64](#int64) |  | Timestamp for when the deposit was created on the Vega network |
+
+
+
+
+
+
+<a name="vega.Epoch"></a>
+
+### Epoch
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| seq | [uint64](#uint64) |  | Sequence is used as epoch indentifier |
+| timestamps | [EpochTimestamps](#vega.EpochTimestamps) |  | Timestamps for start/end etc |
+| validators | [Node](#vega.Node) | repeated | Validators that participated in this epoch |
+| delegations | [Delegation](#vega.Delegation) | repeated | List of all delegations in epoch |
+
+
+
+
+
+
+<a name="vega.EpochData"></a>
+
+### EpochData
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total | [int32](#int32) |  | Total number of epochs since node was created |
+| offline | [int32](#int32) |  | Total number of offline epochs since node was created |
+| online | [int32](#int32) |  | Total number of online epochs since node was created |
+
+
+
+
+
+
+<a name="vega.EpochParticipation"></a>
+
+### EpochParticipation
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| epoch | [Epoch](#vega.Epoch) |  |  |
+| offline | [uint64](#uint64) |  |  |
+| online | [uint64](#uint64) |  |  |
+| total_rewards | [double](#double) |  |  |
+
+
+
+
+
+
+<a name="vega.EpochTimestamps"></a>
+
+### EpochTimestamps
+Describes in both human readable and block time when an epoch spans
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| start_time | [int64](#int64) |  | Timestamp of epoch start in nanoseconds, empty if not started - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
+| end_time | [int64](#int64) |  | Timestamp of epoch end in nanoseconds, empty if not started - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
+| first_block | [uint64](#uint64) |  | Height of first block in the epoch |
+| last_block | [uint64](#uint64) |  | Height of last block in the epoch, empty if not ended |
 
 
 
@@ -1215,6 +1295,7 @@ Ethereum configuration details
 | chain_id | [string](#string) |  | Chain identifier of this Ethereum network |
 | bridge_address | [string](#string) |  | Bridge address for this Ethereum network |
 | confirmations | [uint32](#uint32) |  | Number of confirmations |
+| staking_bridge_addresses | [string](#string) | repeated | Staking Bridge addresses for the ethereum network |
 
 
 
@@ -1464,6 +1545,51 @@ Represents a network parameter on Vega
 
 
 
+<a name="vega.Node"></a>
+
+### Node
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | The node url eg n01.vega.xyz |
+| pub_key | [string](#string) |  | Pub key of the node operator |
+| info_url | [string](#string) |  | URL where I can find out more info on the node |
+| location | [string](#string) |  | Country code for the location of the node |
+| staked_by_operator | [string](#string) |  | The amount the node has put up themselves |
+| staked_by_delegates | [string](#string) |  | The amount of stake that has been delegated by token holders |
+| staked_total | [string](#string) |  | Total amount staked on node |
+| max_intended_stake | [string](#string) |  | Max amount of (wanted) stake, is this a network param or a node param |
+| pending_stake | [string](#string) |  | Amount of stake on the next epoch |
+| epoch_data | [EpochData](#vega.EpochData) |  | Informantion about epoch |
+| status | [NodeStatus](#vega.NodeStatus) |  | Node status |
+| delagations | [Delegation](#vega.Delegation) | repeated | Node&#39;s delegations |
+
+
+
+
+
+
+<a name="vega.NodeData"></a>
+
+### NodeData
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| staked_total | [string](#string) |  | Total staked amount across all nodes |
+| total_nodes | [uint32](#uint32) |  | Total number of nodes |
+| inactive_nodes | [uint32](#uint32) |  | Number of inactive nodes |
+| validating_nodes | [uint32](#uint32) |  | Number of nodes validating |
+| uptime | [float](#float) |  | Total uptime for all epochs across all nodes |
+
+
+
+
+
+
 <a name="vega.Order"></a>
 
 ### Order
@@ -1538,6 +1664,7 @@ A party represents an entity who wishes to trade on or query a Vega network
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | A unique identifier for the party, typically represented by a public key |
+| delegations | [Delegation](#vega.Delegation) | repeated |  |
 
 
 
@@ -1648,6 +1775,43 @@ Represents a list of valid (at the current timestamp) price ranges per associate
 
 
 
+<a name="vega.RewardDetails"></a>
+
+### RewardDetails
+Details for a single reward payment
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset_id | [string](#string) |  |  |
+| party_id | [string](#string) |  |  |
+| epoch | [uint64](#uint64) |  |  |
+| amount | [string](#string) |  |  |
+| percentage_of_total | [string](#string) |  |  |
+| received_at | [int64](#int64) |  |  |
+
+
+
+
+
+
+<a name="vega.RewardPerAssetDetail"></a>
+
+### RewardPerAssetDetail
+Details for rewards for a single asset
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset | [string](#string) |  | asset details |
+| details | [RewardDetails](#vega.RewardDetails) | repeated | rewards ordered by received_at |
+| total_for_asset | [string](#string) |  | Total amount of rewards for the asset |
+
+
+
+
+
+
 <a name="vega.RiskFactor"></a>
 
 ### RiskFactor
@@ -1715,86 +1879,6 @@ Risk results are calculated internally by Vega to attempt to maintain safe tradi
 
 
 
-<a name="vega.Signature"></a>
-
-### Signature
-A signature to be authenticate a transaction
-and to be verified by the vega network
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| sig | [bytes](#bytes) |  | The bytes of the signature |
-| algo | [string](#string) |  | The algorithm used to create the signature |
-| version | [uint32](#uint32) |  | The version of the signature used to create the signature |
-
-
-
-
-
-
-<a name="vega.SignedBundle"></a>
-
-### SignedBundle
-A bundle of a transaction and it&#39;s signature
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tx | [bytes](#bytes) |  | Transaction payload (proto marshalled) |
-| sig | [Signature](#vega.Signature) |  | The signature authenticating the transaction |
-
-
-
-
-
-
-<a name="vega.Statistics"></a>
-
-### Statistics
-Vega domain specific statistics as reported by the node the caller is connected to
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| block_height | [uint64](#uint64) |  | Current block height as reported by the Vega blockchain |
-| backlog_length | [uint64](#uint64) |  | Current backlog length (number of transactions) that are waiting to be included in a block |
-| total_peers | [uint64](#uint64) |  | Total number of connected peers to this node |
-| genesis_time | [string](#string) |  | Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision |
-| current_time | [string](#string) |  | Current system date and time formatted in ISO-8601 datetime format with nanosecond precision |
-| vega_time | [string](#string) |  | Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision |
-| status | [ChainStatus](#vega.ChainStatus) |  | Status of the connection to the Vega blockchain - See [`ChainStatus`](#vega.ChainStatus) |
-| tx_per_block | [uint64](#uint64) |  | Transactions per block |
-| average_tx_bytes | [uint64](#uint64) |  | Average transaction size in bytes |
-| average_orders_per_block | [uint64](#uint64) |  | Average orders per block |
-| trades_per_second | [uint64](#uint64) |  | Trades emitted per second |
-| orders_per_second | [uint64](#uint64) |  | Orders processed per second |
-| total_markets | [uint64](#uint64) |  | Total markets on this Vega network |
-| total_amend_order | [uint64](#uint64) |  | Total number of order amendments since genesis (on all markets) |
-| total_cancel_order | [uint64](#uint64) |  | Total number of order cancellations since genesis (on all markets) |
-| total_create_order | [uint64](#uint64) |  | Total number of order submissions since genesis (on all markets) |
-| total_orders | [uint64](#uint64) |  | Total number of orders processed since genesis (on all markets) |
-| total_trades | [uint64](#uint64) |  | Total number of trades emitted since genesis (on all markets) |
-| order_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to order data |
-| trade_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to trade data |
-| candle_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to candle-stick data |
-| market_depth_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to market depth data |
-| positions_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to positions data |
-| account_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to account data |
-| market_data_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to market data |
-| app_version_hash | [string](#string) |  | The version hash of the Vega node software |
-| app_version | [string](#string) |  | The version of the Vega node software |
-| chain_version | [string](#string) |  | The version of the underlying Vega blockchain |
-| block_duration | [uint64](#uint64) |  | Current block duration, in nanoseconds |
-| uptime | [string](#string) |  | Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision |
-| chain_id | [string](#string) |  | Unique identifier for the underlying Vega blockchain |
-| market_depth_updates_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to market depth update data |
-
-
-
-
-
-
 <a name="vega.Timestamp"></a>
 
 ### Timestamp
@@ -1849,25 +1933,6 @@ A trade occurs when an aggressive order crosses one or more passive orders on th
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | trades | [Trade](#vega.Trade) | repeated | A set of one or more trades |
-
-
-
-
-
-
-<a name="vega.Transaction"></a>
-
-### Transaction
-Represents a transaction to be sent to Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| input_data | [bytes](#bytes) |  | One of the set of Vega commands (proto marshalled) |
-| nonce | [uint64](#uint64) |  | A random number used to provide uniqueness and prevent against replay attack |
-| block_height | [uint64](#uint64) |  | The block height associated to the transaction, this should always be current block height of the node at the time of sending the Tx and block height is used as a mechanism for replay protection |
-| address | [bytes](#bytes) |  | The address of the sender |
-| pub_key | [bytes](#bytes) |  | The public key of the sender |
 
 
 
@@ -2090,6 +2155,19 @@ Status of a liquidity provision order
 
 
 
+<a name="vega.NodeStatus"></a>
+
+### NodeStatus
+Node status type
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NODE_STATUS_UNSPECIFIED | 0 |  |
+| NODE_STATUS_VALIDATOR | 1 | The node is validating |
+| NODE_STATUS_NON_VALIDATOR | 2 | The node is non-validating |
+
+
+
 <a name="vega.Order.Status"></a>
 
 ### Order.Status
@@ -2286,89 +2364,6 @@ The status of the withdrawal
 | STATUS_OPEN | 1 | The withdrawal is open and being processed by the network |
 | STATUS_CANCELLED | 2 | The withdrawal have been cancelled |
 | STATUS_FINALIZED | 3 | The withdrawal went through and is fully finalised, the funds are removed from the Vega network and are unlocked on the foreign chain bridge, for example, on the Ethereum network |
-
-
-
-
-
-
-
-
-
-
-<a name="assets.proto"></a>
-<p align="right"><a href="#top">Top</a></p>
-
-## assets.proto
-
-
-
-<a name="vega.Asset"></a>
-
-### Asset
-The Vega representation of an external asset
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Internal identifier of the asset |
-| details | [AssetDetails](#vega.AssetDetails) |  | The definition of the external source for this asset |
-
-
-
-
-
-
-<a name="vega.AssetDetails"></a>
-
-### AssetDetails
-The Vega representation of an external asset
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| name | [string](#string) |  | Name of the asset (e.g: Great British Pound) |
-| symbol | [string](#string) |  | Symbol of the asset (e.g: GBP) |
-| total_supply | [string](#string) |  | Total circulating supply for the asset |
-| decimals | [uint64](#uint64) |  | Number of decimal / precision handled by this asset |
-| min_lp_stake | [string](#string) |  | Min stake required for this asset from liquidity providers |
-| builtin_asset | [BuiltinAsset](#vega.BuiltinAsset) |  | A built-in asset |
-| erc20 | [ERC20](#vega.ERC20) |  | An Ethereum ERC20 asset |
-
-
-
-
-
-
-<a name="vega.BuiltinAsset"></a>
-
-### BuiltinAsset
-A Vega internal asset
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| max_faucet_amount_mint | [string](#string) |  | Maximum amount that can be requested by a party through the built-in asset faucet at a time |
-
-
-
-
-
-
-<a name="vega.ERC20"></a>
-
-### ERC20
-An ERC20 token based asset, living on the ethereum network
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| contract_address | [string](#string) |  | The address of the contract for the token, on the ethereum network |
-
-
-
-
-
 
 
 
@@ -2896,6 +2891,21 @@ vega network governance
 
 
 
+<a name="vega.commands.v1.RestoreSnapshot"></a>
+
+### RestoreSnapshot
+A command that loads the state from a given checkpoint
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| data | [bytes](#bytes) |  |  |
+
+
+
+
+
+
 <a name="vega.commands.v1.UndelegateSubmission"></a>
 
 ### UndelegateSubmission
@@ -3241,6 +3251,60 @@ A message to notify when a validator is being removed from the Vega network
 
 
 
+<a name="vega.StakeDeposited"></a>
+
+### StakeDeposited
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ethereum_address | [string](#string) |  | Ethereum Address of the user depositing stake (hex encode with 0x prefix) |
+| vega_public_key | [string](#string) |  | The public of the party receiving the stake deposit (hex encode) |
+| amount | [string](#string) |  | The amount deposited (base 10) |
+| block_time | [int64](#int64) |  | The time at which the block was produced will be used to inform the core at what time the stake started to be available. |
+
+
+
+
+
+
+<a name="vega.StakeRemoved"></a>
+
+### StakeRemoved
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ethereum_address | [string](#string) |  | Ethereum address of the user removing stake (hex encode with 0x prefix) |
+| vega_public_key | [string](#string) |  | The public key of the party from which to remove stake (hex encode) |
+| amount | [string](#string) |  | The amount removed (base 10) |
+| block_time | [int64](#int64) |  | The time at which the block was produced will be used to inform the core at what time the stake was made unavailable. |
+
+
+
+
+
+
+<a name="vega.StakingEvent"></a>
+
+### StakingEvent
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| index | [uint64](#uint64) |  | Index of the transaction |
+| block | [uint64](#uint64) |  | The block in which the transaction was added |
+| stake_deposited | [StakeDeposited](#vega.StakeDeposited) |  |  |
+| stake_removed | [StakeRemoved](#vega.StakeRemoved) |  |  |
+
+
+
+
+
+
 <a name="vega.ValidatorEvent"></a>
 
 ### ValidatorEvent
@@ -3288,6 +3352,7 @@ An event forwarded to the Vega network to provide information on events happenin
 | erc20 | [vega.ERC20Event](#vega.ERC20Event) |  | Ethereum ERC20 event |
 | btc | [vega.BTCEvent](#vega.BTCEvent) |  | Bitcoin BTC event |
 | validator | [vega.ValidatorEvent](#vega.ValidatorEvent) |  | Validator event |
+| staking_event | [vega.StakingEvent](#vega.StakingEvent) |  | Ethereum Staking event |
 
 
 
@@ -3302,8 +3367,9 @@ Used to Register a node as a validator during network start-up
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| pub_key | [bytes](#bytes) |  | Public key, required field |
-| chain_pub_key | [bytes](#bytes) |  | Public key for the blockchain, required field |
+| vega_pub_key | [string](#string) |  | Vega public key, required field |
+| ethereum_address | [string](#string) |  | Ethereum public key, required field |
+| chain_pub_key | [string](#string) |  | Public key for the blockchain, required field |
 | info_url | [string](#string) |  | URL with more info on the node |
 | country | [string](#string) |  | Country code (ISO 3166-1 alpha-2) for the location of the node |
 
@@ -3435,12 +3501,31 @@ A bus event is a container for event bus events emitted by Vega
 | oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | OracleSpec events |
 | oracle_data | [oracles.v1.OracleData](#oracles.v1.OracleData) |  | OracleData events |
 | delegation_balance | [DelegationBalanceEvent](#vega.events.v1.DelegationBalanceEvent) |  | Delegation balance events |
-| pending_delegation_balance | [PendingDelegationBalanceEvent](#vega.events.v1.PendingDelegationBalanceEvent) |  | Pending delegation balance events |
+| validator_score | [ValidatorScoreEvent](#vega.events.v1.ValidatorScoreEvent) |  | Validator score calcualted |
 | epoch_event | [EpochEvent](#vega.events.v1.EpochEvent) |  | Epoch update events - See [Epoch](#vega.Epoch) |
 | validator_update | [ValidatorUpdate](#vega.events.v1.ValidatorUpdate) |  | Validator update events |
-| staking_event | [StakingEvent](#vega.events.v1.StakingEvent) |  | Staking event |
+| stake_linking | [StakeLinking](#vega.events.v1.StakeLinking) |  | Staking event |
+| reward_payout | [RewardPayoutEvent](#vega.events.v1.RewardPayoutEvent) |  | Reward payout event |
+| checkpoint | [CheckpointEvent](#vega.events.v1.CheckpointEvent) |  | Checkpoint was created |
 | market | [MarketEvent](#vega.events.v1.MarketEvent) |  | Market tick events - See [MarketEvent](#vega.MarketEvent) |
 | tx_err_event | [TxErrorEvent](#vega.events.v1.TxErrorEvent) |  | Transaction error events, not included in the ALL event type |
+
+
+
+
+
+
+<a name="vega.events.v1.CheckpointEvent"></a>
+
+### CheckpointEvent
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| hash | [string](#string) |  |  |
+| block_hash | [string](#string) |  |  |
+| block_height | [uint64](#uint64) |  |  |
 
 
 
@@ -3458,6 +3543,7 @@ DelegationBalanceEvent - updates on the delegation balance of a party to a node 
 | party | [string](#string) |  |  |
 | node_id | [string](#string) |  |  |
 | amount | [uint64](#uint64) |  |  |
+| epoch_seq | [string](#string) |  |  |
 
 
 
@@ -3544,6 +3630,7 @@ PendingDelegationBalanceEvent - updates on the delegation/undelegation balance o
 | node_id | [string](#string) |  |  |
 | delegation_amount | [uint64](#uint64) |  |  |
 | undelegation_amount | [uint64](#uint64) |  |  |
+| epoch_seq | [string](#string) |  |  |
 
 
 
@@ -3562,6 +3649,26 @@ A position resolution event contains information on distressed trades
 | distressed | [int64](#int64) |  | Number of distressed traders |
 | closed | [int64](#int64) |  | Number of close outs |
 | mark_price | [uint64](#uint64) |  | Mark price, as an integer, for example `123456` is a correctly formatted price of `1.23456` assuming market configured to 5 decimal places |
+
+
+
+
+
+
+<a name="vega.events.v1.RewardPayoutEvent"></a>
+
+### RewardPayoutEvent
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| epoch_seq | [string](#string) |  |  |
+| asset | [string](#string) |  |  |
+| amount | [string](#string) |  |  |
+| percent_of_total_reward | [string](#string) |  |  |
+| timestamp | [int64](#int64) |  |  |
 
 
 
@@ -3604,20 +3711,23 @@ A settle position event contains position settlement information for a party
 
 
 
-<a name="vega.events.v1.StakingEvent"></a>
+<a name="vega.events.v1.StakeLinking"></a>
 
-### StakingEvent
-StakingEvent - an event notifying of stake being deposited or removed for a given party
+### StakeLinking
+StakeLinking - an event notifying of stake being deposited or removed for a given party
 These events are emitted for every Staking deposit or removed accepted by the network
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | The internal ID for this staking event |
-| type | [StakingEvent.Type](#vega.events.v1.StakingEvent.Type) |  | The type of event |
+| type | [StakeLinking.Type](#vega.events.v1.StakeLinking.Type) |  | The type of event |
 | ts | [int64](#int64) |  | The timestamps at which the event was emitted by ethereum |
 | party | [string](#string) |  | The party to whom the event is directed at. |
 | amount | [string](#string) |  | The amount of stake deposited or removed |
+| status | [StakeLinking.Status](#vega.events.v1.StakeLinking.Status) |  | The status of the event |
+| finalized_at | [int64](#int64) |  | The time at which the vega network finalized the state of the event |
+| tx_hash | [string](#string) |  | The hash of the transaction from which the events happen |
 
 
 
@@ -3693,6 +3803,24 @@ A transfer responses event contains a collection of transfer information
 
 
 
+<a name="vega.events.v1.ValidatorScoreEvent"></a>
+
+### ValidatorScoreEvent
+ValidatorScoreEvent is the score a validator gets for a given epoch
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| node_id | [string](#string) |  |  |
+| epoch_seq | [string](#string) |  |  |
+| validator_score | [string](#string) |  |  |
+| normalised_score | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="vega.events.v1.ValidatorUpdate"></a>
 
 ### ValidatorUpdate
@@ -3701,7 +3829,8 @@ A validator update event contains information about validator node
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| pub_key | [string](#string) |  | Public key of validator node |
+| vega_pub_key | [string](#string) |  | Vega public key of validator node |
+| ethereum_address | [string](#string) |  | Ethereum public key of validator node |
 | tm_pub_key | [string](#string) |  | Public key of Tendermint |
 | info_url | [string](#string) |  | URL with more info on the node |
 | country | [string](#string) |  | Country code (ISO 3166-1 alpha-2) for the location of the node |
@@ -3753,25 +3882,41 @@ Group values (e.g. BUS_EVENT_TYPE_AUCTION) where they represent a group of data 
 | BUS_EVENT_TYPE_ORACLE_SPEC | 27 | Event indicating an oracle spec has been created or updated |
 | BUS_EVENT_TYPE_ORACLE_DATA | 28 | Event indicating that an oracle data has been broadcast |
 | BUS_EVENT_TYPE_DELEGATION_BALANCE | 29 | Event indicating that an delegation balance of a party to a node for current epoch has changed |
-| BUS_EVENT_TYPE_PENDING_DELEGATION_BALANCE | 30 | Event indicating that an delegation balance of a party to a node for next epoch has changed |
+| BUS_EVENT_TYPE_VALIDATOR_SCORE | 30 | Event indicating the validator score for the given epoch |
 | BUS_EVENT_TYPE_EPOCH_UPDATE | 31 | Event indicating the start or end of an epoch |
 | BUS_EVENT_TYPE_VALIDATOR_UPDATE | 32 | Event indicating that validator node has been updated |
-| BUS_EVENT_TYPE_STAKING_EVENT | 33 | Event indicating a new staking event have been processed by the network |
+| BUS_EVENT_TYPE_STAKE_LINKING | 33 | Event indicating a new staking event have been processed by the network |
+| BUS_EVENT_TYPE_REWARD_PAYOUT_EVENT | 34 | Event indicating the payout of a reward has been initiated |
+| BUS_EVENT_TYPE_CHECKPOINT | 35 | Event indicating a new checkpoint was created |
 | BUS_EVENT_TYPE_MARKET | 101 | Event indicating a market related event, for example when a market opens |
 | BUS_EVENT_TYPE_TX_ERROR | 201 | Event used to report failed transactions back to a user, this is excluded from the ALL type |
 
 
 
-<a name="vega.events.v1.StakingEvent.Type"></a>
+<a name="vega.events.v1.StakeLinking.Status"></a>
 
-### StakingEvent.Type
+### StakeLinking.Status
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| STATUS_UNSPECIFIED | 0 | Default value |
+| STATUS_PENDING | 1 | Indicate an event waiting for confirmation from the vega network |
+| STATUS_ACCEPTED | 2 | Indicate of an event accepted by the vega network |
+| STATUS_REJECTED | 3 | Indaicate of an event rejected by the vega network |
+
+
+
+<a name="vega.events.v1.StakeLinking.Type"></a>
+
+### StakeLinking.Type
 
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | TYPE_UNSPECIFIED | 0 | Default value |
-| TYPE_DEPOSIT | 1 | Indicate of a stake deposit instruction |
-| TYPE_REMOVE | 2 | Indicate of a stake remove instruction |
+| TYPE_LINK | 1 | Indicate of a stake deposit instruction |
+| TYPE_UNLINK | 2 | Indicate of a stake remove instruction |
 
 
 
@@ -3857,6 +4002,7 @@ The supported Oracle sources
 | node_signature | [NodeSignature](#vega.commands.v1.NodeSignature) |  |  |
 | chain_event | [ChainEvent](#vega.commands.v1.ChainEvent) |  |  |
 | oracle_data_submission | [OracleDataSubmission](#vega.commands.v1.OracleDataSubmission) |  | Oracles |
+| restore_snapshot_submission | [RestoreSnapshot](#vega.commands.v1.RestoreSnapshot) |  | Checkpoints |
 
 
 
@@ -3916,614 +4062,6 @@ Represents a transaction to be sent to Vega.
 
 
 
-<a name="api.v1.AccountsSubscribeRequest"></a>
-
-### AccountsSubscribeRequest
-Request to subscribe to a stream of (Accounts)[#vega.Account]
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-| party_id | [string](#string) |  | Party identifier |
-| asset | [string](#string) |  | Asset identifier |
-| type | [vega.AccountType](#vega.AccountType) |  | Account type to subscribe to, required field |
-
-
-
-
-
-
-<a name="api.v1.AccountsSubscribeResponse"></a>
-
-### AccountsSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| account | [vega.Account](#vega.Account) |  |  |
-
-
-
-
-
-
-<a name="api.v1.AssetByIDRequest"></a>
-
-### AssetByIDRequest
-Request for an asset given an asset identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Asset identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.AssetByIDResponse"></a>
-
-### AssetByIDResponse
-Response for an asset given an asset identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset | [vega.Asset](#vega.Asset) |  | An asset record, if found |
-
-
-
-
-
-
-<a name="api.v1.AssetsRequest"></a>
-
-### AssetsRequest
-Request for a list of all assets enabled on Vega
-
-
-
-
-
-
-<a name="api.v1.AssetsResponse"></a>
-
-### AssetsResponse
-Response for a list of all assets enabled on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| assets | [vega.Asset](#vega.Asset) | repeated | A list of 0 or more assets |
-
-
-
-
-
-
-<a name="api.v1.CandlesRequest"></a>
-
-### CandlesRequest
-Request for a list of candles for a market at an interval
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field. |
-| since_timestamp | [int64](#int64) |  | Timestamp to retrieve candles since, in nanoseconds since the epoch, required field - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp` |
-| interval | [vega.Interval](#vega.Interval) |  | Time interval for the candles, required field |
-
-
-
-
-
-
-<a name="api.v1.CandlesResponse"></a>
-
-### CandlesResponse
-Response for a list of candles for a market at an interval
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| candles | [vega.Candle](#vega.Candle) | repeated | A list of 0 or more candles |
-
-
-
-
-
-
-<a name="api.v1.CandlesSubscribeRequest"></a>
-
-### CandlesSubscribeRequest
-Request to subscribe to a stream of (Candles)[#vega.Candle]
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-| interval | [vega.Interval](#vega.Interval) |  | Time interval for the candles, required field. |
-
-
-
-
-
-
-<a name="api.v1.CandlesSubscribeResponse"></a>
-
-### CandlesSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| candle | [vega.Candle](#vega.Candle) |  |  |
-
-
-
-
-
-
-<a name="api.v1.DepositRequest"></a>
-
-### DepositRequest
-A request to get a specific deposit by identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | The identifier of the deposit |
-
-
-
-
-
-
-<a name="api.v1.DepositResponse"></a>
-
-### DepositResponse
-A response for a deposit
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| deposit | [vega.Deposit](#vega.Deposit) |  | The deposit matching the identifier from the request |
-
-
-
-
-
-
-<a name="api.v1.DepositsRequest"></a>
-
-### DepositsRequest
-A request to get a list of deposit from a given party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | The party to get the deposits for |
-
-
-
-
-
-
-<a name="api.v1.DepositsResponse"></a>
-
-### DepositsResponse
-The response for a list of deposits
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| deposits | [vega.Deposit](#vega.Deposit) | repeated | The list of deposits for the specified party |
-
-
-
-
-
-
-<a name="api.v1.ERC20WithdrawalApprovalRequest"></a>
-
-### ERC20WithdrawalApprovalRequest
-The request to get all information required to bundle the call to finalise the withdrawal on the erc20 bridge
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| withdrawal_id | [string](#string) |  | The identifier of the withdrawal |
-
-
-
-
-
-
-<a name="api.v1.ERC20WithdrawalApprovalResponse"></a>
-
-### ERC20WithdrawalApprovalResponse
-The response with all information required to bundle the call to finalise the withdrawal on the erc20 bridge
-function withdraw_asset(address asset_source, uint256 asset_id, uint256 amount, uint256 expiry, uint256 nonce, bytes memory signatures)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset_source | [string](#string) |  | The address of asset on ethereum |
-| amount | [string](#string) |  | The amount to be withdrawn |
-| expiry | [int64](#int64) |  | The expiry / until what time the request is valid |
-| nonce | [string](#string) |  | The nonce, which is actually the internal reference for the withdrawal |
-| signatures | [string](#string) |  | The signatures bundle as hex encoded data, forward by 0x e.g: 0x &#43; sig1 &#43; sig2 &#43; ... &#43; sixN |
-
-
-
-
-
-
-<a name="api.v1.EstimateFeeRequest"></a>
-
-### EstimateFeeRequest
-Request to fetch the estimated fee if an order were to trade immediately
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order | [vega.Order](#vega.Order) |  | Order to estimate fees for the following fields in the order are required: MarketID (used to specify the fee factors) Price (the price at which the order could trade) Size (the size at which the order could eventually trade) |
-
-
-
-
-
-
-<a name="api.v1.EstimateFeeResponse"></a>
-
-### EstimateFeeResponse
-Response to a EstimateFeeRequest, containing the estimated fees for a given order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| fee | [vega.Fee](#vega.Fee) |  | Summary of the estimated fees for this order if it were to trade now |
-
-
-
-
-
-
-<a name="api.v1.EstimateMarginRequest"></a>
-
-### EstimateMarginRequest
-Request to fetch the estimated MarginLevels if an order were to trade immediately
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order | [vega.Order](#vega.Order) |  | Order to estimate fees for |
-
-
-
-
-
-
-<a name="api.v1.EstimateMarginResponse"></a>
-
-### EstimateMarginResponse
-Response to a EstimateMarginRequest, containing the estimated marginLevels for a given order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| margin_levels | [vega.MarginLevels](#vega.MarginLevels) |  | Summary of the estimated margins for this order if it were to trade now |
-
-
-
-
-
-
-<a name="api.v1.FeeInfrastructureAccountsRequest"></a>
-
-### FeeInfrastructureAccountsRequest
-Request for a list of infrastructure fee accounts
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| asset | [string](#string) |  | Asset identifier, required field - Set to an empty string to return all accounts - Set to an asset ID to return a single infrastructure fee account for a given asset |
-
-
-
-
-
-
-<a name="api.v1.FeeInfrastructureAccountsResponse"></a>
-
-### FeeInfrastructureAccountsResponse
-Response for a list of infrastructure fee accounts
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| accounts | [vega.Account](#vega.Account) | repeated | A list of 0 or more infrastructure fee accounts |
-
-
-
-
-
-
-<a name="api.v1.GetNetworkParametersProposalsRequest"></a>
-
-### GetNetworkParametersProposalsRequest
-Request for a list of network parameter proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| select_in_state | [OptionalProposalState](#api.v1.OptionalProposalState) |  | Optional proposal state |
-
-
-
-
-
-
-<a name="api.v1.GetNetworkParametersProposalsResponse"></a>
-
-### GetNetworkParametersProposalsResponse
-Response for a list of network parameter proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) | repeated | A list of 0 or more governance data |
-
-
-
-
-
-
-<a name="api.v1.GetNewAssetProposalsRequest"></a>
-
-### GetNewAssetProposalsRequest
-Request for a list of new asset proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| select_in_state | [OptionalProposalState](#api.v1.OptionalProposalState) |  | Optional proposal state |
-
-
-
-
-
-
-<a name="api.v1.GetNewAssetProposalsResponse"></a>
-
-### GetNewAssetProposalsResponse
-Response for a list of new asset proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) | repeated | A list of 0 or more governance data |
-
-
-
-
-
-
-<a name="api.v1.GetNewMarketProposalsRequest"></a>
-
-### GetNewMarketProposalsRequest
-Request for a list of new market proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| select_in_state | [OptionalProposalState](#api.v1.OptionalProposalState) |  | Optional proposal state |
-
-
-
-
-
-
-<a name="api.v1.GetNewMarketProposalsResponse"></a>
-
-### GetNewMarketProposalsResponse
-Response for a list of new market proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) | repeated | A list of 0 or more governance data |
-
-
-
-
-
-
-<a name="api.v1.GetNodeSignaturesAggregateRequest"></a>
-
-### GetNodeSignaturesAggregateRequest
-Request to specify the identifier of the resource we want to retrieve aggregated signatures for
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | Resource identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.GetNodeSignaturesAggregateResponse"></a>
-
-### GetNodeSignaturesAggregateResponse
-Response to specify the identifier of the resource we want to retrieve aggregated signatures for
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| signatures | [vega.commands.v1.NodeSignature](#vega.commands.v1.NodeSignature) | repeated | A list of 0 or more signatures |
-
-
-
-
-
-
-<a name="api.v1.GetProposalByIDRequest"></a>
-
-### GetProposalByIDRequest
-Request for a governance proposal given a proposal identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| proposal_id | [string](#string) |  | Proposal identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.GetProposalByIDResponse"></a>
-
-### GetProposalByIDResponse
-Response for a governance proposal given a proposal identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) |  | Governance data, if found |
-
-
-
-
-
-
-<a name="api.v1.GetProposalByReferenceRequest"></a>
-
-### GetProposalByReferenceRequest
-Request for a governance proposal given a proposal reference
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| reference | [string](#string) |  | Proposal reference. Required field |
-
-
-
-
-
-
-<a name="api.v1.GetProposalByReferenceResponse"></a>
-
-### GetProposalByReferenceResponse
-Response for a governance proposal given a proposal reference
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) |  | Governance data, if found |
-
-
-
-
-
-
-<a name="api.v1.GetProposalsByPartyRequest"></a>
-
-### GetProposalsByPartyRequest
-Request for a list of proposals for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-| select_in_state | [OptionalProposalState](#api.v1.OptionalProposalState) |  | Optional proposal state |
-
-
-
-
-
-
-<a name="api.v1.GetProposalsByPartyResponse"></a>
-
-### GetProposalsByPartyResponse
-Response for a list of proposals for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) | repeated | A list of 0 or more governance data |
-
-
-
-
-
-
-<a name="api.v1.GetProposalsRequest"></a>
-
-### GetProposalsRequest
-Request for a list of proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| select_in_state | [OptionalProposalState](#api.v1.OptionalProposalState) |  | Optional proposal state |
-
-
-
-
-
-
-<a name="api.v1.GetProposalsResponse"></a>
-
-### GetProposalsResponse
-Response for a list of proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) | repeated | A list of 0 or more governance data |
-
-
-
-
-
-
-<a name="api.v1.GetUpdateMarketProposalsRequest"></a>
-
-### GetUpdateMarketProposalsRequest
-Request for a list of update market proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-| select_in_state | [OptionalProposalState](#api.v1.OptionalProposalState) |  | Proposal state |
-
-
-
-
-
-
-<a name="api.v1.GetUpdateMarketProposalsResponse"></a>
-
-### GetUpdateMarketProposalsResponse
-Response for a list of update market proposals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) | repeated | A list of 0 or more governance data |
-
-
-
-
-
-
 <a name="api.v1.GetVegaTimeRequest"></a>
 
 ### GetVegaTimeRequest
@@ -4543,36 +4081,6 @@ Response for the current consensus coordinated time on the Vega network, referre
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | timestamp | [int64](#int64) |  | Timestamp representation of current VegaTime as represented in Nanoseconds since the epoch, for example `1580473859111222333` corresponds to `2020-01-31T12:30:59.111222333Z` |
-
-
-
-
-
-
-<a name="api.v1.GetVotesByPartyRequest"></a>
-
-### GetVotesByPartyRequest
-Request for a list of votes for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.GetVotesByPartyResponse"></a>
-
-### GetVotesByPartyResponse
-Response for a list of votes for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| votes | [vega.Vote](#vega.Vote) | repeated | A list of 0 or more votes |
 
 
 
@@ -4600,424 +4108,6 @@ tendermint
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | height | [uint64](#uint64) |  |  |
-
-
-
-
-
-
-<a name="api.v1.LastTradeRequest"></a>
-
-### LastTradeRequest
-Request for the latest trade that occurred on Vega for a given market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.LastTradeResponse"></a>
-
-### LastTradeResponse
-Response for the latest trade that occurred on Vega for a given market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| trade | [vega.Trade](#vega.Trade) |  | A trade, if found |
-
-
-
-
-
-
-<a name="api.v1.LiquidityProvisionsRequest"></a>
-
-### LiquidityProvisionsRequest
-A message requesting for the list of liquidity provision orders for markets
-One of the two filters is required (or both)
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market | [string](#string) |  | The target market for the liquidity provision orders |
-| party | [string](#string) |  | The party which submitted the liquidity provision orders |
-
-
-
-
-
-
-<a name="api.v1.LiquidityProvisionsResponse"></a>
-
-### LiquidityProvisionsResponse
-A response containing all of the Vega liquidity provision orders
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| liquidity_provisions | [vega.LiquidityProvision](#vega.LiquidityProvision) | repeated |  |
-
-
-
-
-
-
-<a name="api.v1.MarginLevelsRequest"></a>
-
-### MarginLevelsRequest
-Request for margin levels for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-| market_id | [string](#string) |  | Market identifier |
-
-
-
-
-
-
-<a name="api.v1.MarginLevelsResponse"></a>
-
-### MarginLevelsResponse
-Response for margin levels for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| margin_levels | [vega.MarginLevels](#vega.MarginLevels) | repeated | A list of 0 or more margin levels |
-
-
-
-
-
-
-<a name="api.v1.MarginLevelsSubscribeRequest"></a>
-
-### MarginLevelsSubscribeRequest
-Request to subscribe to a stream of MarginLevels data matching the given party identifier
-Optionally, the list can be additionally filtered by market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-| market_id | [string](#string) |  | Market identifier |
-
-
-
-
-
-
-<a name="api.v1.MarginLevelsSubscribeResponse"></a>
-
-### MarginLevelsSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| margin_levels | [vega.MarginLevels](#vega.MarginLevels) |  |  |
-
-
-
-
-
-
-<a name="api.v1.MarketAccountsRequest"></a>
-
-### MarketAccountsRequest
-Request for a list of accounts for a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-| asset | [string](#string) |  | Asset identifier |
-
-
-
-
-
-
-<a name="api.v1.MarketAccountsResponse"></a>
-
-### MarketAccountsResponse
-Response for a list of accounts for a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| accounts | [vega.Account](#vega.Account) | repeated | A list of 0 or more accounts |
-
-
-
-
-
-
-<a name="api.v1.MarketByIDRequest"></a>
-
-### MarketByIDRequest
-Request for a market given a market identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.MarketByIDResponse"></a>
-
-### MarketByIDResponse
-Response for a market given a market identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market | [vega.Market](#vega.Market) |  | A market, if found |
-
-
-
-
-
-
-<a name="api.v1.MarketDataByIDRequest"></a>
-
-### MarketDataByIDRequest
-Request for market data for a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-
-
-
-
-
-
-<a name="api.v1.MarketDataByIDResponse"></a>
-
-### MarketDataByIDResponse
-Response for market data for a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_data | [vega.MarketData](#vega.MarketData) |  | Market data, if found |
-
-
-
-
-
-
-<a name="api.v1.MarketDepthRequest"></a>
-
-### MarketDepthRequest
-Request for the market depth/order book price levels on a market
-Optionally, a maximum depth can be set to limit the number of levels returned
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-| max_depth | [uint64](#uint64) |  | Max depth limits the number of levels returned. Default is 0, which returns all levels |
-
-
-
-
-
-
-<a name="api.v1.MarketDepthResponse"></a>
-
-### MarketDepthResponse
-Response for the market depth/order book price levels on a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-| buy | [vega.PriceLevel](#vega.PriceLevel) | repeated | Zero or more price levels for the buy side of the market depth data |
-| sell | [vega.PriceLevel](#vega.PriceLevel) | repeated | Zero or more price levels for the sell side of the market depth data |
-| last_trade | [vega.Trade](#vega.Trade) |  | Last trade recorded on Vega at the time of retrieving the `MarketDepthResponse` |
-| sequence_number | [uint64](#uint64) |  | Sequence number incremented after each update |
-
-
-
-
-
-
-<a name="api.v1.MarketDepthSubscribeRequest"></a>
-
-### MarketDepthSubscribeRequest
-Request to subscribe to a stream of (MarketDepth)[#vega.MarketDepth] data
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field. |
-
-
-
-
-
-
-<a name="api.v1.MarketDepthSubscribeResponse"></a>
-
-### MarketDepthSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_depth | [vega.MarketDepth](#vega.MarketDepth) |  |  |
-
-
-
-
-
-
-<a name="api.v1.MarketDepthUpdatesSubscribeRequest"></a>
-
-### MarketDepthUpdatesSubscribeRequest
-Request to subscribe to a stream of (MarketDepth Update)[#vega.MarketDepthUpdate] data
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.MarketDepthUpdatesSubscribeResponse"></a>
-
-### MarketDepthUpdatesSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| update | [vega.MarketDepthUpdate](#vega.MarketDepthUpdate) |  |  |
-
-
-
-
-
-
-<a name="api.v1.MarketsDataRequest"></a>
-
-### MarketsDataRequest
-Request for market data
-
-
-
-
-
-
-<a name="api.v1.MarketsDataResponse"></a>
-
-### MarketsDataResponse
-Response for market data
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| markets_data | [vega.MarketData](#vega.MarketData) | repeated | A list of 0 or more market data |
-
-
-
-
-
-
-<a name="api.v1.MarketsDataSubscribeRequest"></a>
-
-### MarketsDataSubscribeRequest
-Request to subscribe to a stream of MarketsData
-Optionally, the list can be additionally filtered by market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-
-
-
-
-
-
-<a name="api.v1.MarketsDataSubscribeResponse"></a>
-
-### MarketsDataSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_data | [vega.MarketData](#vega.MarketData) |  |  |
-
-
-
-
-
-
-<a name="api.v1.MarketsRequest"></a>
-
-### MarketsRequest
-Request for a list of markets on Vega
-
-
-
-
-
-
-<a name="api.v1.MarketsResponse"></a>
-
-### MarketsResponse
-Response for a list of markets on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| markets | [vega.Market](#vega.Market) | repeated | A list of 0 or more markets |
-
-
-
-
-
-
-<a name="api.v1.NetworkParametersRequest"></a>
-
-### NetworkParametersRequest
-A message requesting for the list of all network parameters
-
-
-
-
-
-
-<a name="api.v1.NetworkParametersResponse"></a>
-
-### NetworkParametersResponse
-A response containing all of the vega network parameters
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| network_parameters | [vega.NetworkParameter](#vega.NetworkParameter) | repeated |  |
 
 
 
@@ -5057,819 +4147,6 @@ Response to a subscribed stream of events from the Vega event bus
 
 
 
-<a name="api.v1.ObserveGovernanceRequest"></a>
-
-### ObserveGovernanceRequest
-Request to obsever all event related to governance
-
-
-
-
-
-
-<a name="api.v1.ObserveGovernanceResponse"></a>
-
-### ObserveGovernanceResponse
-All events related to governance
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) |  |  |
-
-
-
-
-
-
-<a name="api.v1.ObservePartyProposalsRequest"></a>
-
-### ObservePartyProposalsRequest
-Request to subscribe to a stream of governance proposals for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.ObservePartyProposalsResponse"></a>
-
-### ObservePartyProposalsResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| data | [vega.GovernanceData](#vega.GovernanceData) |  |  |
-
-
-
-
-
-
-<a name="api.v1.ObservePartyVotesRequest"></a>
-
-### ObservePartyVotesRequest
-Request to subscribe to a stream of governance votes for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.ObservePartyVotesResponse"></a>
-
-### ObservePartyVotesResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| vote | [vega.Vote](#vega.Vote) |  |  |
-
-
-
-
-
-
-<a name="api.v1.ObserveProposalVotesRequest"></a>
-
-### ObserveProposalVotesRequest
-Request to subscribe to a stream of governance votes for a proposal
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| proposal_id | [string](#string) |  | Proposal identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.ObserveProposalVotesResponse"></a>
-
-### ObserveProposalVotesResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| vote | [vega.Vote](#vega.Vote) |  |  |
-
-
-
-
-
-
-<a name="api.v1.OptionalProposalState"></a>
-
-### OptionalProposalState
-Optional proposal state
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| value | [vega.Proposal.State](#vega.Proposal.State) |  | Proposal state value |
-
-
-
-
-
-
-<a name="api.v1.OracleDataBySpecRequest"></a>
-
-### OracleDataBySpecRequest
-A request to all oracle data broadcast to a given spec
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | The id to get the oracle spec for |
-
-
-
-
-
-
-<a name="api.v1.OracleDataBySpecResponse"></a>
-
-### OracleDataBySpecResponse
-The response for a list of all oracle data broadcast to a given spec
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| oracle_data | [oracles.v1.OracleData](#oracles.v1.OracleData) | repeated | The list of oracle data broadcast to a given spec |
-
-
-
-
-
-
-<a name="api.v1.OracleSpecRequest"></a>
-
-### OracleSpecRequest
-A request to get a specific oracle spec by identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | The id to get the oracle spec for |
-
-
-
-
-
-
-<a name="api.v1.OracleSpecResponse"></a>
-
-### OracleSpecResponse
-A response for a oracle spec
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| oracle_spec | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) |  | The withdrawal matching the identifier from the request |
-
-
-
-
-
-
-<a name="api.v1.OracleSpecsRequest"></a>
-
-### OracleSpecsRequest
-A request to get a specific oracle spec by identifier
-
-
-
-
-
-
-<a name="api.v1.OracleSpecsResponse"></a>
-
-### OracleSpecsResponse
-The response for a list of withdrawals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| oracle_specs | [oracles.v1.OracleSpec](#oracles.v1.OracleSpec) | repeated | The list of oracle specs |
-
-
-
-
-
-
-<a name="api.v1.OrderByIDRequest"></a>
-
-### OrderByIDRequest
-Request for an order with the specified order identifier
-Optionally, return a specific version of the order with the `version` field
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order_id | [string](#string) |  | Order identifier, required field |
-| version | [uint64](#uint64) |  | Version of the order: - Set `version` to 0 for most recent version of the order - Set `1` for original version of the order - Set `2` for first amendment, `3` for second amendment, etc |
-
-
-
-
-
-
-<a name="api.v1.OrderByIDResponse"></a>
-
-### OrderByIDResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order | [vega.Order](#vega.Order) |  |  |
-
-
-
-
-
-
-<a name="api.v1.OrderByMarketAndIDRequest"></a>
-
-### OrderByMarketAndIDRequest
-Request for an order on a market given an order identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-| order_id | [string](#string) |  | Order identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.OrderByMarketAndIDResponse"></a>
-
-### OrderByMarketAndIDResponse
-Response for an order on a market given an order identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order | [vega.Order](#vega.Order) |  | An order, if found |
-
-
-
-
-
-
-<a name="api.v1.OrderByReferenceRequest"></a>
-
-### OrderByReferenceRequest
-Request for an order given an order reference
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| reference | [string](#string) |  | Unique reference, required field |
-
-
-
-
-
-
-<a name="api.v1.OrderByReferenceResponse"></a>
-
-### OrderByReferenceResponse
-Response for an order given an order reference
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order | [vega.Order](#vega.Order) |  | An order, if found |
-
-
-
-
-
-
-<a name="api.v1.OrderVersionsByIDRequest"></a>
-
-### OrderVersionsByIDRequest
-Request for a list of all versions of an order given the specified order identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order_id | [string](#string) |  | Order identifier, required field |
-| pagination | [Pagination](#api.v1.Pagination) |  | Pagination controls |
-
-
-
-
-
-
-<a name="api.v1.OrderVersionsByIDResponse"></a>
-
-### OrderVersionsByIDResponse
-Response to a request for a list of all versions of an order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| orders | [vega.Order](#vega.Order) | repeated | A list of 0 or more orders (list will contain the same order but with different versions, if it has been amended) |
-
-
-
-
-
-
-<a name="api.v1.OrdersByMarketRequest"></a>
-
-### OrdersByMarketRequest
-Request for a list of orders for a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-| pagination | [Pagination](#api.v1.Pagination) |  | Optional pagination controls |
-
-
-
-
-
-
-<a name="api.v1.OrdersByMarketResponse"></a>
-
-### OrdersByMarketResponse
-Response for a list of orders for a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| orders | [vega.Order](#vega.Order) | repeated | A list of 0 or more orders |
-
-
-
-
-
-
-<a name="api.v1.OrdersByPartyRequest"></a>
-
-### OrdersByPartyRequest
-Request for a list of orders for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-| pagination | [Pagination](#api.v1.Pagination) |  | Pagination controls |
-
-
-
-
-
-
-<a name="api.v1.OrdersByPartyResponse"></a>
-
-### OrdersByPartyResponse
-Response for a list of orders for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| orders | [vega.Order](#vega.Order) | repeated | A list of 0 or more orders |
-
-
-
-
-
-
-<a name="api.v1.OrdersSubscribeRequest"></a>
-
-### OrdersSubscribeRequest
-Request to subscribe to a stream of (Orders)[#vega.Order]
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-| party_id | [string](#string) |  | Party identifier |
-
-
-
-
-
-
-<a name="api.v1.OrdersSubscribeResponse"></a>
-
-### OrdersSubscribeResponse
-A stream of orders
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| orders | [vega.Order](#vega.Order) | repeated | A list of 0 or more orders |
-
-
-
-
-
-
-<a name="api.v1.Pagination"></a>
-
-### Pagination
-Pagination controls
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| skip | [uint64](#uint64) |  | Skip the number of records specified, default is 0 |
-| limit | [uint64](#uint64) |  | Limit the number of returned records to the value specified, default is 50 |
-| descending | [bool](#bool) |  | Descending reverses the order of the records returned, default is true, if false the results will be returned in ascending order |
-
-
-
-
-
-
-<a name="api.v1.PartiesRequest"></a>
-
-### PartiesRequest
-Request for a list of all parties
-
-
-
-
-
-
-<a name="api.v1.PartiesResponse"></a>
-
-### PartiesResponse
-Response to a request for a list of parties
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| parties | [vega.Party](#vega.Party) | repeated | A list of 0 or more parties |
-
-
-
-
-
-
-<a name="api.v1.PartyAccountsRequest"></a>
-
-### PartyAccountsRequest
-Request for a list of accounts for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier |
-| market_id | [string](#string) |  | Market identifier |
-| type | [vega.AccountType](#vega.AccountType) |  | Account type, required field |
-| asset | [string](#string) |  | Asset identifier |
-
-
-
-
-
-
-<a name="api.v1.PartyAccountsResponse"></a>
-
-### PartyAccountsResponse
-Response for a list of accounts for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| accounts | [vega.Account](#vega.Account) | repeated | A list of 0 or more accounts |
-
-
-
-
-
-
-<a name="api.v1.PartyByIDRequest"></a>
-
-### PartyByIDRequest
-Request for a party given a party identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.PartyByIDResponse"></a>
-
-### PartyByIDResponse
-Response for a party given a party identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party | [vega.Party](#vega.Party) |  | A party, if found |
-
-
-
-
-
-
-<a name="api.v1.PositionsByPartyRequest"></a>
-
-### PositionsByPartyRequest
-Request for a list of positions for a party
-Optionally, if a market identifier is set, the results will be filtered for that market only
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, required field |
-| market_id | [string](#string) |  | Market identifier |
-
-
-
-
-
-
-<a name="api.v1.PositionsByPartyResponse"></a>
-
-### PositionsByPartyResponse
-Response for a list of positions for a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| positions | [vega.Position](#vega.Position) | repeated | A list of 0 or more positions |
-
-
-
-
-
-
-<a name="api.v1.PositionsSubscribeRequest"></a>
-
-### PositionsSubscribeRequest
-Request to subscribe to a stream of (Positions)[#vega.Position]
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier, optional field |
-| market_id | [string](#string) |  | Market identifier, optional field |
-
-
-
-
-
-
-<a name="api.v1.PositionsSubscribeResponse"></a>
-
-### PositionsSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| position | [vega.Position](#vega.Position) |  |  |
-
-
-
-
-
-
-<a name="api.v1.PrepareAmendOrderRequest"></a>
-
-### PrepareAmendOrderRequest
-Request to amend an existing order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| amendment | [vega.commands.v1.OrderAmendment](#vega.commands.v1.OrderAmendment) |  | An order amendment |
-
-
-
-
-
-
-<a name="api.v1.PrepareAmendOrderResponse"></a>
-
-### PrepareAmendOrderResponse
-Response for preparing an order amendment
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | Blob is an encoded representation of the order amendment ready to sign using the Vega Wallet and then submit as a transaction. |
-
-
-
-
-
-
-<a name="api.v1.PrepareCancelOrderRequest"></a>
-
-### PrepareCancelOrderRequest
-Request to cancel an existing order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| cancellation | [vega.commands.v1.OrderCancellation](#vega.commands.v1.OrderCancellation) |  | An order cancellation |
-
-
-
-
-
-
-<a name="api.v1.PrepareCancelOrderResponse"></a>
-
-### PrepareCancelOrderResponse
-Response for preparing an order cancellation
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | Blob is an encoded representation of the order cancellation ready to sign using the Vega Wallet and then submit as a transaction |
-
-
-
-
-
-
-<a name="api.v1.PrepareLiquidityProvisionRequest"></a>
-
-### PrepareLiquidityProvisionRequest
-Request to prepare liquiditity provision
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| submission | [vega.commands.v1.LiquidityProvisionSubmission](#vega.commands.v1.LiquidityProvisionSubmission) |  | Submission, required field |
-
-
-
-
-
-
-<a name="api.v1.PrepareLiquidityProvisionResponse"></a>
-
-### PrepareLiquidityProvisionResponse
-Response to a liquidity provision request
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | A blob is an encoded representation of the liquidity provision message ready to sign using the Vega Wallet and then submit as a transaction |
-
-
-
-
-
-
-<a name="api.v1.PrepareProposalSubmissionRequest"></a>
-
-### PrepareProposalSubmissionRequest
-Request to prepare a governance proposal
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| submission | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  |  |
-
-
-
-
-
-
-<a name="api.v1.PrepareProposalSubmissionResponse"></a>
-
-### PrepareProposalSubmissionResponse
-Response to prepare a governance proposal
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | A blob is an encoded representation of the proposal ready to sign using the Vega Wallet and then submit as a transaction |
-| submission | [vega.commands.v1.ProposalSubmission](#vega.commands.v1.ProposalSubmission) |  | A copy of the prepared proposal |
-
-
-
-
-
-
-<a name="api.v1.PrepareSubmitOrderRequest"></a>
-
-### PrepareSubmitOrderRequest
-Request to submit a new order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| submission | [vega.commands.v1.OrderSubmission](#vega.commands.v1.OrderSubmission) |  | An order submission |
-
-
-
-
-
-
-<a name="api.v1.PrepareSubmitOrderResponse"></a>
-
-### PrepareSubmitOrderResponse
-Response for preparing an order submission
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | Blob is an encoded representation of the order submission ready to sign using the Vega Wallet and then submit as a transaction |
-| submit_id | [string](#string) |  | Submission identifier (order reference) |
-
-
-
-
-
-
-<a name="api.v1.PrepareVoteSubmissionRequest"></a>
-
-### PrepareVoteSubmissionRequest
-Request to prepare a governance vote
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  | Vote, required field |
-
-
-
-
-
-
-<a name="api.v1.PrepareVoteSubmissionResponse"></a>
-
-### PrepareVoteSubmissionResponse
-Response to prepare a governance vote
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | A blob is an encoded representation of the vote ready to sign using the Vega Wallet and then submit as a transaction |
-| submission | [vega.commands.v1.VoteSubmission](#vega.commands.v1.VoteSubmission) |  | A copy of the prepared vote |
-
-
-
-
-
-
-<a name="api.v1.PrepareWithdrawRequest"></a>
-
-### PrepareWithdrawRequest
-Request for preparing a withdrawal
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| withdraw | [vega.commands.v1.WithdrawSubmission](#vega.commands.v1.WithdrawSubmission) |  | An asset withdrawal |
-
-
-
-
-
-
-<a name="api.v1.PrepareWithdrawResponse"></a>
-
-### PrepareWithdrawResponse
-Response for preparing a withdrawal
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| blob | [bytes](#bytes) |  | Blob is an encoded representation of the withdrawal ready to sign using the Vega Wallet and then submit as a transaction |
-
-
-
-
-
-
 <a name="api.v1.PropagateChainEventRequest"></a>
 
 ### PropagateChainEventRequest
@@ -5878,7 +4155,7 @@ Request for a new event sent by the blockchain queue to be propagated on Vega
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| evt | [vega.commands.v1.ChainEvent](#vega.commands.v1.ChainEvent) |  | Chain event |
+| event | [bytes](#bytes) |  | Chain event |
 | pub_key | [string](#string) |  | Public key |
 | signature | [bytes](#bytes) |  | Signature |
 
@@ -5896,6 +4173,52 @@ Response for a new event sent by the blockchain queue to be propagated on Vega
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | success | [bool](#bool) |  | Success will be true if the event was accepted by the node, **Important** - success does not mean that the event is confirmed by consensus |
+
+
+
+
+
+
+<a name="api.v1.Statistics"></a>
+
+### Statistics
+Vega domain specific statistics as reported by the node the caller is connected to
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| block_height | [uint64](#uint64) |  | Current block height as reported by the Vega blockchain |
+| backlog_length | [uint64](#uint64) |  | Current backlog length (number of transactions) that are waiting to be included in a block |
+| total_peers | [uint64](#uint64) |  | Total number of connected peers to this node |
+| genesis_time | [string](#string) |  | Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision |
+| current_time | [string](#string) |  | Current system date and time formatted in ISO-8601 datetime format with nanosecond precision |
+| vega_time | [string](#string) |  | Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision |
+| status | [vega.ChainStatus](#vega.ChainStatus) |  | Status of the connection to the Vega blockchain - See [`ChainStatus`](#vega.ChainStatus) |
+| tx_per_block | [uint64](#uint64) |  | Transactions per block |
+| average_tx_bytes | [uint64](#uint64) |  | Average transaction size in bytes |
+| average_orders_per_block | [uint64](#uint64) |  | Average orders per block |
+| trades_per_second | [uint64](#uint64) |  | Trades emitted per second |
+| orders_per_second | [uint64](#uint64) |  | Orders processed per second |
+| total_markets | [uint64](#uint64) |  | Total markets on this Vega network |
+| total_amend_order | [uint64](#uint64) |  | Total number of order amendments since genesis (on all markets) |
+| total_cancel_order | [uint64](#uint64) |  | Total number of order cancellations since genesis (on all markets) |
+| total_create_order | [uint64](#uint64) |  | Total number of order submissions since genesis (on all markets) |
+| total_orders | [uint64](#uint64) |  | Total number of orders processed since genesis (on all markets) |
+| total_trades | [uint64](#uint64) |  | Total number of trades emitted since genesis (on all markets) |
+| order_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to order data |
+| trade_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to trade data |
+| candle_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to candle-stick data |
+| market_depth_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to market depth data |
+| positions_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to positions data |
+| account_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to account data |
+| market_data_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to market data |
+| app_version_hash | [string](#string) |  | The version hash of the Vega node software |
+| app_version | [string](#string) |  | The version of the Vega node software |
+| chain_version | [string](#string) |  | The version of the underlying Vega blockchain |
+| block_duration | [uint64](#uint64) |  | Current block duration, in nanoseconds |
+| uptime | [string](#string) |  | Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision |
+| chain_id | [string](#string) |  | Unique identifier for the underlying Vega blockchain |
+| market_depth_updates_subscriptions | [uint32](#uint32) |  | Current number of stream subscribers to market depth update data |
 
 
 
@@ -5920,38 +4243,7 @@ A a request for statistics about the Vega network
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| statistics | [vega.Statistics](#vega.Statistics) |  |  |
-
-
-
-
-
-
-<a name="api.v1.SubmitTransactionRequest"></a>
-
-### SubmitTransactionRequest
-Request for submitting a transaction on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| tx | [vega.SignedBundle](#vega.SignedBundle) |  | A bundle of signed payload and signature, to form a transaction that will be submitted to the Vega blockchain |
-| type | [SubmitTransactionRequest.Type](#api.v1.SubmitTransactionRequest.Type) |  | Type of transaction request, for example ASYNC, meaning the transaction will be submitted and not block on a response |
-
-
-
-
-
-
-<a name="api.v1.SubmitTransactionResponse"></a>
-
-### SubmitTransactionResponse
-Response for submitting a transaction on Vega
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| success | [bool](#bool) |  | Success will be true if the transaction was accepted by the node, **Important** - success does not mean that the event is confirmed by consensus |
+| statistics | [Statistics](#api.v1.Statistics) |  |  |
 
 
 
@@ -5989,230 +4281,6 @@ Response for submitting a transaction v2 on Vega
 
 
 
-<a name="api.v1.TradesByMarketRequest"></a>
-
-### TradesByMarketRequest
-Request for a list of trades on a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier, required field |
-| pagination | [Pagination](#api.v1.Pagination) |  | Pagination controls |
-
-
-
-
-
-
-<a name="api.v1.TradesByMarketResponse"></a>
-
-### TradesByMarketResponse
-Response for a list of trades on a market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| trades | [vega.Trade](#vega.Trade) | repeated | A list of 0 or more trades |
-
-
-
-
-
-
-<a name="api.v1.TradesByOrderRequest"></a>
-
-### TradesByOrderRequest
-Request for a list of trades related to an order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| order_id | [string](#string) |  | Order identifier, required field |
-
-
-
-
-
-
-<a name="api.v1.TradesByOrderResponse"></a>
-
-### TradesByOrderResponse
-Response for a list of trades related to an order
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| trades | [vega.Trade](#vega.Trade) | repeated | A list of 0 or more trades |
-
-
-
-
-
-
-<a name="api.v1.TradesByPartyRequest"></a>
-
-### TradesByPartyRequest
-Request for a list of trades relating to the given party
-Optionally, the list can be additionally filtered for trades by market
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | Party identifier. Required field |
-| market_id | [string](#string) |  | Market identifier |
-| pagination | [Pagination](#api.v1.Pagination) |  | Pagination controls |
-
-
-
-
-
-
-<a name="api.v1.TradesByPartyResponse"></a>
-
-### TradesByPartyResponse
-Response for a list of trades relating to a party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| trades | [vega.Trade](#vega.Trade) | repeated | A list of 0 or more trades |
-
-
-
-
-
-
-<a name="api.v1.TradesSubscribeRequest"></a>
-
-### TradesSubscribeRequest
-Request to subscribe to a stream of (Trades)[#vega.Trade]
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| market_id | [string](#string) |  | Market identifier |
-| party_id | [string](#string) |  | Party identifier |
-
-
-
-
-
-
-<a name="api.v1.TradesSubscribeResponse"></a>
-
-### TradesSubscribeResponse
-A stream of trades
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| trades | [vega.Trade](#vega.Trade) | repeated | A list of 0 or more trades |
-
-
-
-
-
-
-<a name="api.v1.TransferResponsesSubscribeRequest"></a>
-
-### TransferResponsesSubscribeRequest
-
-
-
-
-
-
-
-<a name="api.v1.TransferResponsesSubscribeResponse"></a>
-
-### TransferResponsesSubscribeResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| response | [vega.TransferResponse](#vega.TransferResponse) |  |  |
-
-
-
-
-
-
-<a name="api.v1.WithdrawalRequest"></a>
-
-### WithdrawalRequest
-A request to get a specific withdrawal by identifier
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| id | [string](#string) |  | The identifier of the withdrawal |
-
-
-
-
-
-
-<a name="api.v1.WithdrawalResponse"></a>
-
-### WithdrawalResponse
-A response for a withdrawal
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| withdrawal | [vega.Withdrawal](#vega.Withdrawal) |  | The withdrawal matching the identifier from the request |
-
-
-
-
-
-
-<a name="api.v1.WithdrawalsRequest"></a>
-
-### WithdrawalsRequest
-A request to get a list of withdrawal from a given party
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| party_id | [string](#string) |  | The party to get the withdrawals for |
-
-
-
-
-
-
-<a name="api.v1.WithdrawalsResponse"></a>
-
-### WithdrawalsResponse
-The response for a list of withdrawals
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| withdrawals | [vega.Withdrawal](#vega.Withdrawal) | repeated | The list of withdrawals for the specified party |
-
-
-
-
-
-
-
-
-<a name="api.v1.SubmitTransactionRequest.Type"></a>
-
-### SubmitTransactionRequest.Type
-Blockchain transaction type
-
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-| TYPE_UNSPECIFIED | 0 |  |
-| TYPE_ASYNC | 1 | The transaction will be submitted without waiting for response |
-| TYPE_SYNC | 2 | The transaction will be submitted, and blocking until the tendermint mempool return a response |
-| TYPE_COMMIT | 3 | The transaction will submitted, and blocking until the tendermint network will have committed it into a block |
-
 
 
 <a name="api.v1.SubmitTransactionV2Request.Type"></a>
@@ -6233,80 +4301,6 @@ Blockchain transaction type
 
 
 
-<a name="api.v1.TradingDataService"></a>
-
-### TradingDataService
-
-
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-| MarketAccounts | [MarketAccountsRequest](#api.v1.MarketAccountsRequest) | [MarketAccountsResponse](#api.v1.MarketAccountsResponse) | Get a list of Accounts by Market |
-| PartyAccounts | [PartyAccountsRequest](#api.v1.PartyAccountsRequest) | [PartyAccountsResponse](#api.v1.PartyAccountsResponse) | Get a list of Accounts by Party |
-| FeeInfrastructureAccounts | [FeeInfrastructureAccountsRequest](#api.v1.FeeInfrastructureAccountsRequest) | [FeeInfrastructureAccountsResponse](#api.v1.FeeInfrastructureAccountsResponse) | Get a list of accounts holding infrastructure fees. Can be filtered by asset, there will be 1 infrastructure fee account per asset in the network. |
-| Candles | [CandlesRequest](#api.v1.CandlesRequest) | [CandlesResponse](#api.v1.CandlesResponse) | Get a list of Candles by Market |
-| MarketDataByID | [MarketDataByIDRequest](#api.v1.MarketDataByIDRequest) | [MarketDataByIDResponse](#api.v1.MarketDataByIDResponse) | Get Market Data by Market ID |
-| MarketsData | [MarketsDataRequest](#api.v1.MarketsDataRequest) | [MarketsDataResponse](#api.v1.MarketsDataResponse) | Get a list of Market Data |
-| MarketByID | [MarketByIDRequest](#api.v1.MarketByIDRequest) | [MarketByIDResponse](#api.v1.MarketByIDResponse) | Get a Market by ID |
-| MarketDepth | [MarketDepthRequest](#api.v1.MarketDepthRequest) | [MarketDepthResponse](#api.v1.MarketDepthResponse) | Get Market Depth |
-| Markets | [MarketsRequest](#api.v1.MarketsRequest) | [MarketsResponse](#api.v1.MarketsResponse) | Get a list of Markets |
-| OrderByMarketAndID | [OrderByMarketAndIDRequest](#api.v1.OrderByMarketAndIDRequest) | [OrderByMarketAndIDResponse](#api.v1.OrderByMarketAndIDResponse) | Get an Order by Market and Order ID |
-| OrderByReference | [OrderByReferenceRequest](#api.v1.OrderByReferenceRequest) | [OrderByReferenceResponse](#api.v1.OrderByReferenceResponse) | Get an Order by Pending Order reference (UUID) |
-| OrdersByMarket | [OrdersByMarketRequest](#api.v1.OrdersByMarketRequest) | [OrdersByMarketResponse](#api.v1.OrdersByMarketResponse) | Get a list of Orders by Market |
-| OrdersByParty | [OrdersByPartyRequest](#api.v1.OrdersByPartyRequest) | [OrdersByPartyResponse](#api.v1.OrdersByPartyResponse) | Get a list of Orders by Party |
-| OrderByID | [OrderByIDRequest](#api.v1.OrderByIDRequest) | [OrderByIDResponse](#api.v1.OrderByIDResponse) | Get a specific order by order ID |
-| OrderVersionsByID | [OrderVersionsByIDRequest](#api.v1.OrderVersionsByIDRequest) | [OrderVersionsByIDResponse](#api.v1.OrderVersionsByIDResponse) | Get all versions of the order by its orderID |
-| MarginLevels | [MarginLevelsRequest](#api.v1.MarginLevelsRequest) | [MarginLevelsResponse](#api.v1.MarginLevelsResponse) | Get Margin Levels by Party ID |
-| Parties | [PartiesRequest](#api.v1.PartiesRequest) | [PartiesResponse](#api.v1.PartiesResponse) | Get a list of Parties |
-| PartyByID | [PartyByIDRequest](#api.v1.PartyByIDRequest) | [PartyByIDResponse](#api.v1.PartyByIDResponse) | Get a Party by ID |
-| PositionsByParty | [PositionsByPartyRequest](#api.v1.PositionsByPartyRequest) | [PositionsByPartyResponse](#api.v1.PositionsByPartyResponse) | Get a list of Positions by Party |
-| LastTrade | [LastTradeRequest](#api.v1.LastTradeRequest) | [LastTradeResponse](#api.v1.LastTradeResponse) | Get latest Trade |
-| TradesByMarket | [TradesByMarketRequest](#api.v1.TradesByMarketRequest) | [TradesByMarketResponse](#api.v1.TradesByMarketResponse) | Get a list of Trades by Market |
-| TradesByOrder | [TradesByOrderRequest](#api.v1.TradesByOrderRequest) | [TradesByOrderResponse](#api.v1.TradesByOrderResponse) | Get a list of Trades by Order |
-| TradesByParty | [TradesByPartyRequest](#api.v1.TradesByPartyRequest) | [TradesByPartyResponse](#api.v1.TradesByPartyResponse) | Get a list of Trades by Party |
-| GetProposals | [GetProposalsRequest](#api.v1.GetProposalsRequest) | [GetProposalsResponse](#api.v1.GetProposalsResponse) | Get governance data (proposals and votes) for all proposals |
-| GetProposalsByParty | [GetProposalsByPartyRequest](#api.v1.GetProposalsByPartyRequest) | [GetProposalsByPartyResponse](#api.v1.GetProposalsByPartyResponse) | Get governance data (proposals and votes) for proposals by party authoring them |
-| GetVotesByParty | [GetVotesByPartyRequest](#api.v1.GetVotesByPartyRequest) | [GetVotesByPartyResponse](#api.v1.GetVotesByPartyResponse) | Get votes by party casting them |
-| GetNewMarketProposals | [GetNewMarketProposalsRequest](#api.v1.GetNewMarketProposalsRequest) | [GetNewMarketProposalsResponse](#api.v1.GetNewMarketProposalsResponse) | Get governance data (proposals and votes) for proposals that aim creating new markets |
-| GetUpdateMarketProposals | [GetUpdateMarketProposalsRequest](#api.v1.GetUpdateMarketProposalsRequest) | [GetUpdateMarketProposalsResponse](#api.v1.GetUpdateMarketProposalsResponse) | Get governance data (proposals and votes) for proposals that aim updating markets |
-| GetNetworkParametersProposals | [GetNetworkParametersProposalsRequest](#api.v1.GetNetworkParametersProposalsRequest) | [GetNetworkParametersProposalsResponse](#api.v1.GetNetworkParametersProposalsResponse) | Get governance data (proposals and votes) for proposals that aim updating Vega network parameters |
-| GetNewAssetProposals | [GetNewAssetProposalsRequest](#api.v1.GetNewAssetProposalsRequest) | [GetNewAssetProposalsResponse](#api.v1.GetNewAssetProposalsResponse) | Get governance data (proposals and votes) for proposals aiming to create new assets |
-| GetProposalByID | [GetProposalByIDRequest](#api.v1.GetProposalByIDRequest) | [GetProposalByIDResponse](#api.v1.GetProposalByIDResponse) | Get governance data (proposals and votes) for a proposal located by ID |
-| GetProposalByReference | [GetProposalByReferenceRequest](#api.v1.GetProposalByReferenceRequest) | [GetProposalByReferenceResponse](#api.v1.GetProposalByReferenceResponse) | Get governance data (proposals and votes) for a proposal located by reference |
-| ObserveGovernance | [ObserveGovernanceRequest](#api.v1.ObserveGovernanceRequest) | [ObserveGovernanceResponse](#api.v1.ObserveGovernanceResponse) stream | Subscribe to a stream of all governance updates |
-| ObservePartyProposals | [ObservePartyProposalsRequest](#api.v1.ObservePartyProposalsRequest) | [ObservePartyProposalsResponse](#api.v1.ObservePartyProposalsResponse) stream | Subscribe to a stream of proposal updates |
-| ObservePartyVotes | [ObservePartyVotesRequest](#api.v1.ObservePartyVotesRequest) | [ObservePartyVotesResponse](#api.v1.ObservePartyVotesResponse) stream | Subscribe to a stream of votes cast by a specific party |
-| ObserveProposalVotes | [ObserveProposalVotesRequest](#api.v1.ObserveProposalVotesRequest) | [ObserveProposalVotesResponse](#api.v1.ObserveProposalVotesResponse) stream | Subscribe to a stream of proposal votes |
-| ObserveEventBus | [ObserveEventBusRequest](#api.v1.ObserveEventBusRequest) stream | [ObserveEventBusResponse](#api.v1.ObserveEventBusResponse) stream | Subscribe to a stream of events from the core |
-| Statistics | [StatisticsRequest](#api.v1.StatisticsRequest) | [StatisticsResponse](#api.v1.StatisticsResponse) | Get Statistics on Vega |
-| LastBlockHeight | [LastBlockHeightRequest](#api.v1.LastBlockHeightRequest) | [LastBlockHeightResponse](#api.v1.LastBlockHeightResponse) |  |
-| GetVegaTime | [GetVegaTimeRequest](#api.v1.GetVegaTimeRequest) | [GetVegaTimeResponse](#api.v1.GetVegaTimeResponse) | Get Time |
-| AccountsSubscribe | [AccountsSubscribeRequest](#api.v1.AccountsSubscribeRequest) | [AccountsSubscribeResponse](#api.v1.AccountsSubscribeResponse) stream | Subscribe to a stream of Accounts |
-| CandlesSubscribe | [CandlesSubscribeRequest](#api.v1.CandlesSubscribeRequest) | [CandlesSubscribeResponse](#api.v1.CandlesSubscribeResponse) stream | Subscribe to a stream of Candles |
-| MarginLevelsSubscribe | [MarginLevelsSubscribeRequest](#api.v1.MarginLevelsSubscribeRequest) | [MarginLevelsSubscribeResponse](#api.v1.MarginLevelsSubscribeResponse) stream | Subscribe to a stream of Margin Levels |
-| MarketDepthSubscribe | [MarketDepthSubscribeRequest](#api.v1.MarketDepthSubscribeRequest) | [MarketDepthSubscribeResponse](#api.v1.MarketDepthSubscribeResponse) stream | Subscribe to a stream of Market Depth |
-| MarketDepthUpdatesSubscribe | [MarketDepthUpdatesSubscribeRequest](#api.v1.MarketDepthUpdatesSubscribeRequest) | [MarketDepthUpdatesSubscribeResponse](#api.v1.MarketDepthUpdatesSubscribeResponse) stream | Subscribe to a stream of Market Depth Price Level Updates |
-| MarketsDataSubscribe | [MarketsDataSubscribeRequest](#api.v1.MarketsDataSubscribeRequest) | [MarketsDataSubscribeResponse](#api.v1.MarketsDataSubscribeResponse) stream | Subscribe to a stream of Markets Data |
-| OrdersSubscribe | [OrdersSubscribeRequest](#api.v1.OrdersSubscribeRequest) | [OrdersSubscribeResponse](#api.v1.OrdersSubscribeResponse) stream | Subscribe to a stream of Orders |
-| PositionsSubscribe | [PositionsSubscribeRequest](#api.v1.PositionsSubscribeRequest) | [PositionsSubscribeResponse](#api.v1.PositionsSubscribeResponse) stream | Subscribe to a stream of Positions |
-| TradesSubscribe | [TradesSubscribeRequest](#api.v1.TradesSubscribeRequest) | [TradesSubscribeResponse](#api.v1.TradesSubscribeResponse) stream | Subscribe to a stream of Trades |
-| TransferResponsesSubscribe | [TransferResponsesSubscribeRequest](#api.v1.TransferResponsesSubscribeRequest) | [TransferResponsesSubscribeResponse](#api.v1.TransferResponsesSubscribeResponse) stream | Subscribe to a stream of Transfer Responses |
-| GetNodeSignaturesAggregate | [GetNodeSignaturesAggregateRequest](#api.v1.GetNodeSignaturesAggregateRequest) | [GetNodeSignaturesAggregateResponse](#api.v1.GetNodeSignaturesAggregateResponse) | Get an aggregate of signatures from all the nodes of the network |
-| AssetByID | [AssetByIDRequest](#api.v1.AssetByIDRequest) | [AssetByIDResponse](#api.v1.AssetByIDResponse) | Get an asset by its identifier |
-| Assets | [AssetsRequest](#api.v1.AssetsRequest) | [AssetsResponse](#api.v1.AssetsResponse) | Get a list of all assets on Vega |
-| EstimateFee | [EstimateFeeRequest](#api.v1.EstimateFeeRequest) | [EstimateFeeResponse](#api.v1.EstimateFeeResponse) | Get an estimate for the fee to be paid for a given order |
-| EstimateMargin | [EstimateMarginRequest](#api.v1.EstimateMarginRequest) | [EstimateMarginResponse](#api.v1.EstimateMarginResponse) | Get an estimate for the margin required for a new order |
-| ERC20WithdrawalApproval | [ERC20WithdrawalApprovalRequest](#api.v1.ERC20WithdrawalApprovalRequest) | [ERC20WithdrawalApprovalResponse](#api.v1.ERC20WithdrawalApprovalResponse) | Get the bundle approval for an ERC20 withdrawal, these data are being used to bundle the call to the smart contract on the ethereum bridge |
-| Withdrawal | [WithdrawalRequest](#api.v1.WithdrawalRequest) | [WithdrawalResponse](#api.v1.WithdrawalResponse) | Get a withdrawal by its identifier |
-| Withdrawals | [WithdrawalsRequest](#api.v1.WithdrawalsRequest) | [WithdrawalsResponse](#api.v1.WithdrawalsResponse) | Get withdrawals for a party |
-| Deposit | [DepositRequest](#api.v1.DepositRequest) | [DepositResponse](#api.v1.DepositResponse) | Get a deposit by its identifier |
-| Deposits | [DepositsRequest](#api.v1.DepositsRequest) | [DepositsResponse](#api.v1.DepositsResponse) | Get deposits for a party |
-| NetworkParameters | [NetworkParametersRequest](#api.v1.NetworkParametersRequest) | [NetworkParametersResponse](#api.v1.NetworkParametersResponse) | Get the network parameters |
-| LiquidityProvisions | [LiquidityProvisionsRequest](#api.v1.LiquidityProvisionsRequest) | [LiquidityProvisionsResponse](#api.v1.LiquidityProvisionsResponse) | Get the liquidity provision orders |
-| OracleSpec | [OracleSpecRequest](#api.v1.OracleSpecRequest) | [OracleSpecResponse](#api.v1.OracleSpecResponse) | Get an oracle spec by ID |
-| OracleSpecs | [OracleSpecsRequest](#api.v1.OracleSpecsRequest) | [OracleSpecsResponse](#api.v1.OracleSpecsResponse) | Get the oracle specs |
-| OracleDataBySpec | [OracleDataBySpecRequest](#api.v1.OracleDataBySpecRequest) | [OracleDataBySpecResponse](#api.v1.OracleDataBySpecResponse) | Get all oracle data |
-
-
 <a name="api.v1.TradingService"></a>
 
 ### TradingService
@@ -6314,16 +4308,508 @@ Blockchain transaction type
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| PrepareSubmitOrder | [PrepareSubmitOrderRequest](#api.v1.PrepareSubmitOrderRequest) | [PrepareSubmitOrderResponse](#api.v1.PrepareSubmitOrderResponse) | Prepare a submit order request |
-| PrepareCancelOrder | [PrepareCancelOrderRequest](#api.v1.PrepareCancelOrderRequest) | [PrepareCancelOrderResponse](#api.v1.PrepareCancelOrderResponse) | Prepare a cancel order request |
-| PrepareAmendOrder | [PrepareAmendOrderRequest](#api.v1.PrepareAmendOrderRequest) | [PrepareAmendOrderResponse](#api.v1.PrepareAmendOrderResponse) | Prepare an amend order request |
-| PrepareWithdraw | [PrepareWithdrawRequest](#api.v1.PrepareWithdrawRequest) | [PrepareWithdrawResponse](#api.v1.PrepareWithdrawResponse) | Request a withdrawal |
-| SubmitTransaction | [SubmitTransactionRequest](#api.v1.SubmitTransactionRequest) | [SubmitTransactionResponse](#api.v1.SubmitTransactionResponse) | Submit a signed transaction |
 | SubmitTransactionV2 | [SubmitTransactionV2Request](#api.v1.SubmitTransactionV2Request) | [SubmitTransactionV2Response](#api.v1.SubmitTransactionV2Response) | Submit a signed transaction (v2) |
-| PrepareProposalSubmission | [PrepareProposalSubmissionRequest](#api.v1.PrepareProposalSubmissionRequest) | [PrepareProposalSubmissionResponse](#api.v1.PrepareProposalSubmissionResponse) | Prepare a governance proposal |
-| PrepareVoteSubmission | [PrepareVoteSubmissionRequest](#api.v1.PrepareVoteSubmissionRequest) | [PrepareVoteSubmissionResponse](#api.v1.PrepareVoteSubmissionResponse) | Prepare a governance vote |
 | PropagateChainEvent | [PropagateChainEventRequest](#api.v1.PropagateChainEventRequest) | [PropagateChainEventResponse](#api.v1.PropagateChainEventResponse) | Propagate a chain event |
-| PrepareLiquidityProvision | [PrepareLiquidityProvisionRequest](#api.v1.PrepareLiquidityProvisionRequest) | [PrepareLiquidityProvisionResponse](#api.v1.PrepareLiquidityProvisionResponse) | Prepare a liquidity provision request |
+| Statistics | [StatisticsRequest](#api.v1.StatisticsRequest) | [StatisticsResponse](#api.v1.StatisticsResponse) | Get Statistics on Vega |
+| LastBlockHeight | [LastBlockHeightRequest](#api.v1.LastBlockHeightRequest) | [LastBlockHeightResponse](#api.v1.LastBlockHeightResponse) | Get the height of the last tendermint block |
+| GetVegaTime | [GetVegaTimeRequest](#api.v1.GetVegaTimeRequest) | [GetVegaTimeResponse](#api.v1.GetVegaTimeResponse) | Get Time |
+| ObserveEventBus | [ObserveEventBusRequest](#api.v1.ObserveEventBusRequest) stream | [ObserveEventBusResponse](#api.v1.ObserveEventBusResponse) stream | Subscribe to a stream of events from the core |
+
+
+
+
+
+<a name="coreapi/v1/coreapi.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## coreapi/v1/coreapi.proto
+
+
+
+<a name="vega.coreapi.v1.Account"></a>
+
+### Account
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| market | [string](#string) |  |  |
+| balance | [string](#string) |  |  |
+| asset | [string](#string) |  |  |
+| type | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListAccountsRequest"></a>
+
+### ListAccountsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| market | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListAccountsResponse"></a>
+
+### ListAccountsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| accounts | [Account](#vega.coreapi.v1.Account) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListAssetsRequest"></a>
+
+### ListAssetsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| asset | [string](#string) |  | optional ID |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListAssetsResponse"></a>
+
+### ListAssetsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assets | [vega.Asset](#vega.Asset) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListMarketsDataRequest"></a>
+
+### ListMarketsDataRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| market | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListMarketsDataResponse"></a>
+
+### ListMarketsDataResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| markets_data | [vega.MarketData](#vega.MarketData) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListMarketsRequest"></a>
+
+### ListMarketsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| market | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListMarketsResponse"></a>
+
+### ListMarketsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| markets | [vega.Market](#vega.Market) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListNetworkParametersRequest"></a>
+
+### ListNetworkParametersRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| network_parameter_key | [string](#string) |  | optional parameter key |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListNetworkParametersResponse"></a>
+
+### ListNetworkParametersResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| network_parameters | [vega.NetworkParameter](#vega.NetworkParameter) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListPartiesRequest"></a>
+
+### ListPartiesRequest
+
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListPartiesResponse"></a>
+
+### ListPartiesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| parties | [vega.Party](#vega.Party) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListProposalsRequest"></a>
+
+### ListProposalsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposal | [string](#string) |  | optional ID |
+| proposer | [string](#string) |  | optional party |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListProposalsResponse"></a>
+
+### ListProposalsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposals | [vega.Proposal](#vega.Proposal) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListValidatorsRequest"></a>
+
+### ListValidatorsRequest
+
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListValidatorsResponse"></a>
+
+### ListValidatorsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| validators | [vega.events.v1.ValidatorUpdate](#vega.events.v1.ValidatorUpdate) | repeated |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListVotesRequest"></a>
+
+### ListVotesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposal | [string](#string) |  |  |
+| party | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.coreapi.v1.ListVotesResponse"></a>
+
+### ListVotesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| votes | [vega.Vote](#vega.Vote) | repeated |  |
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="vega.coreapi.v1.CoreApiService"></a>
+
+### CoreApiService
+
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| ListAccounts | [ListAccountsRequest](#vega.coreapi.v1.ListAccountsRequest) | [ListAccountsResponse](#vega.coreapi.v1.ListAccountsResponse) |  |
+| ListAssets | [ListAssetsRequest](#vega.coreapi.v1.ListAssetsRequest) | [ListAssetsResponse](#vega.coreapi.v1.ListAssetsResponse) |  |
+| ListNetworkParameters | [ListNetworkParametersRequest](#vega.coreapi.v1.ListNetworkParametersRequest) | [ListNetworkParametersResponse](#vega.coreapi.v1.ListNetworkParametersResponse) |  |
+| ListParties | [ListPartiesRequest](#vega.coreapi.v1.ListPartiesRequest) | [ListPartiesResponse](#vega.coreapi.v1.ListPartiesResponse) |  |
+| ListValidators | [ListValidatorsRequest](#vega.coreapi.v1.ListValidatorsRequest) | [ListValidatorsResponse](#vega.coreapi.v1.ListValidatorsResponse) |  |
+| ListMarkets | [ListMarketsRequest](#vega.coreapi.v1.ListMarketsRequest) | [ListMarketsResponse](#vega.coreapi.v1.ListMarketsResponse) |  |
+| ListProposals | [ListProposalsRequest](#vega.coreapi.v1.ListProposalsRequest) | [ListProposalsResponse](#vega.coreapi.v1.ListProposalsResponse) |  |
+| ListMarketsData | [ListMarketsDataRequest](#vega.coreapi.v1.ListMarketsDataRequest) | [ListMarketsDataResponse](#vega.coreapi.v1.ListMarketsDataResponse) |  |
+| ListVotes | [ListVotesRequest](#vega.coreapi.v1.ListVotesRequest) | [ListVotesResponse](#vega.coreapi.v1.ListVotesResponse) |  |
+
+
+
+
+
+<a name="snapshot/v1/snapshot.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## snapshot/v1/snapshot.proto
+
+
+
+<a name="vega.snapshot.v1.AssetBalance"></a>
+
+### AssetBalance
+AssetBalance represents the total balance of a given asset for a party
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| asset | [string](#string) |  |  |
+| balance | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.AssetEntry"></a>
+
+### AssetEntry
+AssetEntrty is a single (enabled) asset
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  |  |
+| asset_details | [vega.AssetDetails](#vega.AssetDetails) |  |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Assets"></a>
+
+### Assets
+Assets contains all the enabled assets as AssetEntries
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| assets | [AssetEntry](#vega.snapshot.v1.AssetEntry) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Checkpoint"></a>
+
+### Checkpoint
+Checkpoint aggregates the various engine snapshots
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| governance | [bytes](#bytes) |  |  |
+| assets | [bytes](#bytes) |  |  |
+| collateral | [bytes](#bytes) |  |  |
+| network_parameters | [bytes](#bytes) |  |  |
+| delegation | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Collateral"></a>
+
+### Collateral
+Collateral contains the balances per party
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| balances | [AssetBalance](#vega.snapshot.v1.AssetBalance) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Delegate"></a>
+
+### Delegate
+Delegate contains all entries for a checkpoint
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| active | [DelegateEntry](#vega.snapshot.v1.DelegateEntry) | repeated |  |
+| pending | [DelegateEntry](#vega.snapshot.v1.DelegateEntry) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.DelegateEntry"></a>
+
+### DelegateEntry
+Delegated amounts for party/node
+undelegate and epoch seq are only relevant for pending entries
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| party | [string](#string) |  |  |
+| node | [string](#string) |  |  |
+| amount | [string](#string) |  |  |
+| undelegate | [bool](#bool) |  |  |
+| epoch_seq | [uint64](#uint64) |  |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.NetParams"></a>
+
+### NetParams
+NetParams contains all network parameters
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| params | [vega.NetworkParameter](#vega.NetworkParameter) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Proposals"></a>
+
+### Proposals
+Proposals will contain all accepted proposals
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| proposals | [vega.Proposal](#vega.Proposal) | repeated |  |
+
+
+
+
+
+
+<a name="vega.snapshot.v1.Snapshot"></a>
+
+### Snapshot
+Snapshot is the entire checkpoint serialised (basically serialised the Checkpoint message &#43; hash)
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| hash | [bytes](#bytes) |  |  |
+| state | [bytes](#bytes) |  |  |
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DelegateSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiquidityProvisionSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fvalidator_5fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NodeRegistration_commands_2fv1_2fvalidator_5fcommands_2eproto;
@@ -25,6 +25,7 @@ extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAME
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProposalSubmission_commands_2fv1_2fcommands_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RestoreSnapshot_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2ftransaction_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Signature_commands_2fv1_2ftransaction_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UndelegateSubmission_commands_2fv1_2fcommands_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_commands_2fv1_2fcommands_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VoteSubmission_commands_2fv1_2fcommands_2eproto;
@@ -57,8 +58,8 @@ static void InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto()
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<14> scc_info_InputData_commands_2fv1_2ftransaction_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 14, 0, InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<15> scc_info_InputData_commands_2fv1_2ftransaction_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 15, 0, InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto}, {
       &scc_info_OrderSubmission_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_OrderCancellation_commands_2fv1_2fcommands_2eproto.base,
       &scc_info_OrderAmendment_commands_2fv1_2fcommands_2eproto.base,
@@ -72,7 +73,8 @@ static void InitDefaultsscc_info_InputData_commands_2fv1_2ftransaction_2eproto()
       &scc_info_NodeVote_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
       &scc_info_NodeSignature_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
       &scc_info_ChainEvent_commands_2fv1_2fvalidator_5fcommands_2eproto.base,
-      &scc_info_OracleDataSubmission_commands_2fv1_2foracles_2eproto.base,}};
+      &scc_info_OracleDataSubmission_commands_2fv1_2foracles_2eproto.base,
+      &scc_info_RestoreSnapshot_commands_2fv1_2fcommands_2eproto.base,}};
 
 static void InitDefaultsscc_info_Signature_commands_2fv1_2ftransaction_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -127,6 +129,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2ftransaction_2e
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::InputData, command_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vega::commands::v1::Transaction, _internal_metadata_),
@@ -150,8 +153,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_commands_2fv1_2ftransaction_2e
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::vega::commands::v1::InputData)},
-  { 22, -1, sizeof(::vega::commands::v1::Transaction)},
-  { 33, -1, sizeof(::vega::commands::v1::Signature)},
+  { 23, -1, sizeof(::vega::commands::v1::Transaction)},
+  { 34, -1, sizeof(::vega::commands::v1::Signature)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -164,7 +167,7 @@ const char descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto[] PROTO
   "\n\035commands/v1/transaction.proto\022\020vega.co"
   "mmands.v1\032\032commands/v1/commands.proto\032$c"
   "ommands/v1/validator_commands.proto\032\031com"
-  "mands/v1/oracles.proto\"\370\t\n\tInputData\022\024\n\005"
+  "mands/v1/oracles.proto\"\336\n\n\tInputData\022\024\n\005"
   "nonce\030\001 \001(\004R\005nonce\022!\n\014block_height\030\002 \001(\004"
   "R\013blockHeight\022O\n\020order_submission\030\351\007 \001(\013"
   "2!.vega.commands.v1.OrderSubmissionH\000R\017o"
@@ -196,16 +199,19 @@ const char descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto[] PROTO
   "s.v1.ChainEventH\000R\nchainEvent\022_\n\026oracle_"
   "data_submission\030\271\027 \001(\0132&.vega.commands.v"
   "1.OracleDataSubmissionH\000R\024oracleDataSubm"
-  "issionB\t\n\007command\"\303\001\n\013Transaction\022\035\n\ninp"
-  "ut_data\030\001 \001(\014R\tinputData\0229\n\tsignature\030\002 "
-  "\001(\0132\033.vega.commands.v1.SignatureR\tsignat"
-  "ure\022\033\n\007address\030\351\007 \001(\tH\000R\007address\022\032\n\007pub_"
-  "key\030\352\007 \001(\tH\000R\006pubKey\022\031\n\007version\030\320\017 \001(\rR\007"
-  "versionB\006\n\004from\"O\n\tSignature\022\024\n\005value\030\001 "
-  "\001(\tR\005value\022\022\n\004algo\030\002 \001(\tR\004algo\022\030\n\007versio"
-  "n\030\003 \001(\rR\007versionBO\n io.vegaprotocol.vega"
-  ".commands.v1Z+code.vegaprotocol.io/vega/"
-  "proto/commands/v1b\006proto3"
+  "ission\022d\n\033restore_snapshot_submission\030\241\037"
+  " \001(\0132!.vega.commands.v1.RestoreSnapshotH"
+  "\000R\031restoreSnapshotSubmissionB\t\n\007command\""
+  "\303\001\n\013Transaction\022\035\n\ninput_data\030\001 \001(\014R\tinp"
+  "utData\0229\n\tsignature\030\002 \001(\0132\033.vega.command"
+  "s.v1.SignatureR\tsignature\022\033\n\007address\030\351\007 "
+  "\001(\tH\000R\007address\022\032\n\007pub_key\030\352\007 \001(\tH\000R\006pubK"
+  "ey\022\031\n\007version\030\320\017 \001(\rR\007versionB\006\n\004from\"O\n"
+  "\tSignature\022\024\n\005value\030\001 \001(\tR\005value\022\022\n\004algo"
+  "\030\002 \001(\tR\004algo\022\030\n\007version\030\003 \001(\rR\007versionBO"
+  "\n io.vegaprotocol.vega.commands.v1Z+code"
+  ".vegaprotocol.io/vega/proto/commands/v1b"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_commands_2fv1_2ftransaction_2eproto_deps[3] = {
   &::descriptor_table_commands_2fv1_2fcommands_2eproto,
@@ -219,7 +225,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_commands_2fv1_2ftransaction_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_commands_2fv1_2ftransaction_2eproto = {
-  false, false, descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto, "commands/v1/transaction.proto", 1785,
+  false, false, descriptor_table_protodef_commands_2fv1_2ftransaction_2eproto, "commands/v1/transaction.proto", 1887,
   &descriptor_table_commands_2fv1_2ftransaction_2eproto_once, descriptor_table_commands_2fv1_2ftransaction_2eproto_sccs, descriptor_table_commands_2fv1_2ftransaction_2eproto_deps, 3, 3,
   schemas, file_default_instances, TableStruct_commands_2fv1_2ftransaction_2eproto::offsets,
   file_level_metadata_commands_2fv1_2ftransaction_2eproto, 3, file_level_enum_descriptors_commands_2fv1_2ftransaction_2eproto, file_level_service_descriptors_commands_2fv1_2ftransaction_2eproto,
@@ -249,6 +255,7 @@ class InputData::_Internal {
   static const ::vega::commands::v1::NodeSignature& node_signature(const InputData* msg);
   static const ::vega::commands::v1::ChainEvent& chain_event(const InputData* msg);
   static const ::vega::commands::v1::OracleDataSubmission& oracle_data_submission(const InputData* msg);
+  static const ::vega::commands::v1::RestoreSnapshot& restore_snapshot_submission(const InputData* msg);
 };
 
 const ::vega::commands::v1::OrderSubmission&
@@ -306,6 +313,10 @@ InputData::_Internal::chain_event(const InputData* msg) {
 const ::vega::commands::v1::OracleDataSubmission&
 InputData::_Internal::oracle_data_submission(const InputData* msg) {
   return *msg->command_.oracle_data_submission_;
+}
+const ::vega::commands::v1::RestoreSnapshot&
+InputData::_Internal::restore_snapshot_submission(const InputData* msg) {
+  return *msg->command_.restore_snapshot_submission_;
 }
 void InputData::set_allocated_order_submission(::vega::commands::v1::OrderSubmission* order_submission) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -629,6 +640,29 @@ void InputData::clear_oracle_data_submission() {
     clear_has_command();
   }
 }
+void InputData::set_allocated_restore_snapshot_submission(::vega::commands::v1::RestoreSnapshot* restore_snapshot_submission) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_command();
+  if (restore_snapshot_submission) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(restore_snapshot_submission)->GetArena();
+    if (message_arena != submessage_arena) {
+      restore_snapshot_submission = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, restore_snapshot_submission, submessage_arena);
+    }
+    set_has_restore_snapshot_submission();
+    command_.restore_snapshot_submission_ = restore_snapshot_submission;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.InputData.restore_snapshot_submission)
+}
+void InputData::clear_restore_snapshot_submission() {
+  if (_internal_has_restore_snapshot_submission()) {
+    if (GetArena() == nullptr) {
+      delete command_.restore_snapshot_submission_;
+    }
+    clear_has_command();
+  }
+}
 InputData::InputData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -697,6 +731,10 @@ InputData::InputData(const InputData& from)
     }
     case kOracleDataSubmission: {
       _internal_mutable_oracle_data_submission()->::vega::commands::v1::OracleDataSubmission::MergeFrom(from._internal_oracle_data_submission());
+      break;
+    }
+    case kRestoreSnapshotSubmission: {
+      _internal_mutable_restore_snapshot_submission()->::vega::commands::v1::RestoreSnapshot::MergeFrom(from._internal_restore_snapshot_submission());
       break;
     }
     case COMMAND_NOT_SET: {
@@ -827,6 +865,12 @@ void InputData::clear_command() {
     case kOracleDataSubmission: {
       if (GetArena() == nullptr) {
         delete command_.oracle_data_submission_;
+      }
+      break;
+    }
+    case kRestoreSnapshotSubmission: {
+      if (GetArena() == nullptr) {
+        delete command_.restore_snapshot_submission_;
       }
       break;
     }
@@ -967,6 +1011,13 @@ const char* InputData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3001:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 202)) {
           ptr = ctx->ParseMessage(_internal_mutable_oracle_data_submission(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];
+      case 4001:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_restore_snapshot_submission(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1122,6 +1173,14 @@ failure:
         3001, _Internal::oracle_data_submission(this), target, stream);
   }
 
+  // .vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];
+  if (_internal_has_restore_snapshot_submission()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4001, _Internal::restore_snapshot_submission(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1251,6 +1310,13 @@ size_t InputData::ByteSizeLong() const {
           *command_.oracle_data_submission_);
       break;
     }
+    // .vega.commands.v1.RestoreSnapshot restore_snapshot_submission = 4001 [json_name = "restoreSnapshotSubmission"];
+    case kRestoreSnapshotSubmission: {
+      total_size += 3 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *command_.restore_snapshot_submission_);
+      break;
+    }
     case COMMAND_NOT_SET: {
       break;
     }
@@ -1347,6 +1413,10 @@ void InputData::MergeFrom(const InputData& from) {
     }
     case kOracleDataSubmission: {
       _internal_mutable_oracle_data_submission()->::vega::commands::v1::OracleDataSubmission::MergeFrom(from._internal_oracle_data_submission());
+      break;
+    }
+    case kRestoreSnapshotSubmission: {
+      _internal_mutable_restore_snapshot_submission()->::vega::commands::v1::RestoreSnapshot::MergeFrom(from._internal_restore_snapshot_submission());
       break;
     }
     case COMMAND_NOT_SET: {

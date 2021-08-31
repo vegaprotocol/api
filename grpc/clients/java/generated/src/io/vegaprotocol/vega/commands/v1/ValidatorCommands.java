@@ -165,30 +165,70 @@ public final class ValidatorCommands {
 
     /**
      * <pre>
-     * Public key, required field
+     * Vega public key, required field
      * </pre>
      *
-     * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
-     * @return The pubKey.
+     * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+     * @return The vegaPubKey.
      */
-    com.google.protobuf.ByteString getPubKey();
+    java.lang.String getVegaPubKey();
+    /**
+     * <pre>
+     * Vega public key, required field
+     * </pre>
+     *
+     * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+     * @return The bytes for vegaPubKey.
+     */
+    com.google.protobuf.ByteString
+        getVegaPubKeyBytes();
+
+    /**
+     * <pre>
+     * Ethereum public key, required field
+     * </pre>
+     *
+     * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+     * @return The ethereumAddress.
+     */
+    java.lang.String getEthereumAddress();
+    /**
+     * <pre>
+     * Ethereum public key, required field
+     * </pre>
+     *
+     * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+     * @return The bytes for ethereumAddress.
+     */
+    com.google.protobuf.ByteString
+        getEthereumAddressBytes();
 
     /**
      * <pre>
      * Public key for the blockchain, required field
      * </pre>
      *
-     * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
      * @return The chainPubKey.
      */
-    com.google.protobuf.ByteString getChainPubKey();
+    java.lang.String getChainPubKey();
+    /**
+     * <pre>
+     * Public key for the blockchain, required field
+     * </pre>
+     *
+     * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * @return The bytes for chainPubKey.
+     */
+    com.google.protobuf.ByteString
+        getChainPubKeyBytes();
 
     /**
      * <pre>
      * URL with more info on the node
      * </pre>
      *
-     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
      * @return The infoUrl.
      */
     java.lang.String getInfoUrl();
@@ -197,7 +237,7 @@ public final class ValidatorCommands {
      * URL with more info on the node
      * </pre>
      *
-     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
      * @return The bytes for infoUrl.
      */
     com.google.protobuf.ByteString
@@ -208,7 +248,7 @@ public final class ValidatorCommands {
      * Country code (ISO 3166-1 alpha-2) for the location of the node
      * </pre>
      *
-     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
      * @return The country.
      */
     java.lang.String getCountry();
@@ -217,7 +257,7 @@ public final class ValidatorCommands {
      * Country code (ISO 3166-1 alpha-2) for the location of the node
      * </pre>
      *
-     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
      * @return The bytes for country.
      */
     com.google.protobuf.ByteString
@@ -240,8 +280,9 @@ public final class ValidatorCommands {
       super(builder);
     }
     private NodeRegistration() {
-      pubKey_ = com.google.protobuf.ByteString.EMPTY;
-      chainPubKey_ = com.google.protobuf.ByteString.EMPTY;
+      vegaPubKey_ = "";
+      ethereumAddress_ = "";
+      chainPubKey_ = "";
       infoUrl_ = "";
       country_ = "";
     }
@@ -277,22 +318,30 @@ public final class ValidatorCommands {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              pubKey_ = input.readBytes();
+              vegaPubKey_ = s;
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              chainPubKey_ = input.readBytes();
+              ethereumAddress_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              infoUrl_ = s;
+              chainPubKey_ = s;
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              infoUrl_ = s;
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               country_ = s;
@@ -330,44 +379,152 @@ public final class ValidatorCommands {
               io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration.class, io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration.Builder.class);
     }
 
-    public static final int PUB_KEY_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString pubKey_;
+    public static final int VEGA_PUB_KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object vegaPubKey_;
     /**
      * <pre>
-     * Public key, required field
+     * Vega public key, required field
      * </pre>
      *
-     * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
-     * @return The pubKey.
+     * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+     * @return The vegaPubKey.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getPubKey() {
-      return pubKey_;
+    public java.lang.String getVegaPubKey() {
+      java.lang.Object ref = vegaPubKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vegaPubKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Vega public key, required field
+     * </pre>
+     *
+     * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+     * @return The bytes for vegaPubKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVegaPubKeyBytes() {
+      java.lang.Object ref = vegaPubKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vegaPubKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int CHAIN_PUB_KEY_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString chainPubKey_;
+    public static final int ETHEREUM_ADDRESS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object ethereumAddress_;
+    /**
+     * <pre>
+     * Ethereum public key, required field
+     * </pre>
+     *
+     * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+     * @return The ethereumAddress.
+     */
+    @java.lang.Override
+    public java.lang.String getEthereumAddress() {
+      java.lang.Object ref = ethereumAddress_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ethereumAddress_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Ethereum public key, required field
+     * </pre>
+     *
+     * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+     * @return The bytes for ethereumAddress.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEthereumAddressBytes() {
+      java.lang.Object ref = ethereumAddress_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ethereumAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHAIN_PUB_KEY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object chainPubKey_;
     /**
      * <pre>
      * Public key for the blockchain, required field
      * </pre>
      *
-     * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
      * @return The chainPubKey.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getChainPubKey() {
-      return chainPubKey_;
+    public java.lang.String getChainPubKey() {
+      java.lang.Object ref = chainPubKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        chainPubKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Public key for the blockchain, required field
+     * </pre>
+     *
+     * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+     * @return The bytes for chainPubKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChainPubKeyBytes() {
+      java.lang.Object ref = chainPubKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        chainPubKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int INFO_URL_FIELD_NUMBER = 3;
+    public static final int INFO_URL_FIELD_NUMBER = 4;
     private volatile java.lang.Object infoUrl_;
     /**
      * <pre>
      * URL with more info on the node
      * </pre>
      *
-     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
      * @return The infoUrl.
      */
     @java.lang.Override
@@ -388,7 +545,7 @@ public final class ValidatorCommands {
      * URL with more info on the node
      * </pre>
      *
-     * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+     * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
      * @return The bytes for infoUrl.
      */
     @java.lang.Override
@@ -406,14 +563,14 @@ public final class ValidatorCommands {
       }
     }
 
-    public static final int COUNTRY_FIELD_NUMBER = 4;
+    public static final int COUNTRY_FIELD_NUMBER = 5;
     private volatile java.lang.Object country_;
     /**
      * <pre>
      * Country code (ISO 3166-1 alpha-2) for the location of the node
      * </pre>
      *
-     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
      * @return The country.
      */
     @java.lang.Override
@@ -434,7 +591,7 @@ public final class ValidatorCommands {
      * Country code (ISO 3166-1 alpha-2) for the location of the node
      * </pre>
      *
-     * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+     * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
      * @return The bytes for country.
      */
     @java.lang.Override
@@ -466,17 +623,20 @@ public final class ValidatorCommands {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!pubKey_.isEmpty()) {
-        output.writeBytes(1, pubKey_);
+      if (!getVegaPubKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vegaPubKey_);
       }
-      if (!chainPubKey_.isEmpty()) {
-        output.writeBytes(2, chainPubKey_);
+      if (!getEthereumAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ethereumAddress_);
+      }
+      if (!getChainPubKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, chainPubKey_);
       }
       if (!getInfoUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, infoUrl_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, infoUrl_);
       }
       if (!getCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, country_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, country_);
       }
       unknownFields.writeTo(output);
     }
@@ -487,19 +647,20 @@ public final class ValidatorCommands {
       if (size != -1) return size;
 
       size = 0;
-      if (!pubKey_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, pubKey_);
+      if (!getVegaPubKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vegaPubKey_);
       }
-      if (!chainPubKey_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, chainPubKey_);
+      if (!getEthereumAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ethereumAddress_);
+      }
+      if (!getChainPubKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, chainPubKey_);
       }
       if (!getInfoUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, infoUrl_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, infoUrl_);
       }
       if (!getCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, country_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, country_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -516,8 +677,10 @@ public final class ValidatorCommands {
       }
       io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration other = (io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration) obj;
 
-      if (!getPubKey()
-          .equals(other.getPubKey())) return false;
+      if (!getVegaPubKey()
+          .equals(other.getVegaPubKey())) return false;
+      if (!getEthereumAddress()
+          .equals(other.getEthereumAddress())) return false;
       if (!getChainPubKey()
           .equals(other.getChainPubKey())) return false;
       if (!getInfoUrl()
@@ -535,8 +698,10 @@ public final class ValidatorCommands {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PUB_KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getPubKey().hashCode();
+      hash = (37 * hash) + VEGA_PUB_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getVegaPubKey().hashCode();
+      hash = (37 * hash) + ETHEREUM_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getEthereumAddress().hashCode();
       hash = (37 * hash) + CHAIN_PUB_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getChainPubKey().hashCode();
       hash = (37 * hash) + INFO_URL_FIELD_NUMBER;
@@ -680,9 +845,11 @@ public final class ValidatorCommands {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pubKey_ = com.google.protobuf.ByteString.EMPTY;
+        vegaPubKey_ = "";
 
-        chainPubKey_ = com.google.protobuf.ByteString.EMPTY;
+        ethereumAddress_ = "";
+
+        chainPubKey_ = "";
 
         infoUrl_ = "";
 
@@ -714,7 +881,8 @@ public final class ValidatorCommands {
       @java.lang.Override
       public io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration buildPartial() {
         io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration result = new io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration(this);
-        result.pubKey_ = pubKey_;
+        result.vegaPubKey_ = vegaPubKey_;
+        result.ethereumAddress_ = ethereumAddress_;
         result.chainPubKey_ = chainPubKey_;
         result.infoUrl_ = infoUrl_;
         result.country_ = country_;
@@ -766,11 +934,17 @@ public final class ValidatorCommands {
 
       public Builder mergeFrom(io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration other) {
         if (other == io.vegaprotocol.vega.commands.v1.ValidatorCommands.NodeRegistration.getDefaultInstance()) return this;
-        if (other.getPubKey() != com.google.protobuf.ByteString.EMPTY) {
-          setPubKey(other.getPubKey());
+        if (!other.getVegaPubKey().isEmpty()) {
+          vegaPubKey_ = other.vegaPubKey_;
+          onChanged();
         }
-        if (other.getChainPubKey() != com.google.protobuf.ByteString.EMPTY) {
-          setChainPubKey(other.getChainPubKey());
+        if (!other.getEthereumAddress().isEmpty()) {
+          ethereumAddress_ = other.ethereumAddress_;
+          onChanged();
+        }
+        if (!other.getChainPubKey().isEmpty()) {
+          chainPubKey_ = other.chainPubKey_;
+          onChanged();
         }
         if (!other.getInfoUrl().isEmpty()) {
           infoUrl_ = other.infoUrl_;
@@ -809,75 +983,251 @@ public final class ValidatorCommands {
         return this;
       }
 
-      private com.google.protobuf.ByteString pubKey_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object vegaPubKey_ = "";
       /**
        * <pre>
-       * Public key, required field
+       * Vega public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
-       * @return The pubKey.
+       * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+       * @return The vegaPubKey.
        */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getPubKey() {
-        return pubKey_;
+      public java.lang.String getVegaPubKey() {
+        java.lang.Object ref = vegaPubKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vegaPubKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
-       * Public key, required field
+       * Vega public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
-       * @param value The pubKey to set.
+       * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+       * @return The bytes for vegaPubKey.
+       */
+      public com.google.protobuf.ByteString
+          getVegaPubKeyBytes() {
+        java.lang.Object ref = vegaPubKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vegaPubKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Vega public key, required field
+       * </pre>
+       *
+       * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+       * @param value The vegaPubKey to set.
        * @return This builder for chaining.
        */
-      public Builder setPubKey(com.google.protobuf.ByteString value) {
+      public Builder setVegaPubKey(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
 
-        pubKey_ = value;
+        vegaPubKey_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Public key, required field
+       * Vega public key, required field
        * </pre>
        *
-       * <code>bytes pub_key = 1 [json_name = "pubKey", (.validator.field) = { ... }</code>
+       * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearPubKey() {
+      public Builder clearVegaPubKey() {
 
-        pubKey_ = getDefaultInstance().getPubKey();
+        vegaPubKey_ = getDefaultInstance().getVegaPubKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Vega public key, required field
+       * </pre>
+       *
+       * <code>string vega_pub_key = 1 [json_name = "vegaPubKey", (.validator.field) = { ... }</code>
+       * @param value The bytes for vegaPubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVegaPubKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        vegaPubKey_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.ByteString chainPubKey_ = com.google.protobuf.ByteString.EMPTY;
+      private java.lang.Object ethereumAddress_ = "";
+      /**
+       * <pre>
+       * Ethereum public key, required field
+       * </pre>
+       *
+       * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+       * @return The ethereumAddress.
+       */
+      public java.lang.String getEthereumAddress() {
+        java.lang.Object ref = ethereumAddress_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ethereumAddress_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum public key, required field
+       * </pre>
+       *
+       * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+       * @return The bytes for ethereumAddress.
+       */
+      public com.google.protobuf.ByteString
+          getEthereumAddressBytes() {
+        java.lang.Object ref = ethereumAddress_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ethereumAddress_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum public key, required field
+       * </pre>
+       *
+       * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+       * @param value The ethereumAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEthereumAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+
+        ethereumAddress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum public key, required field
+       * </pre>
+       *
+       * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEthereumAddress() {
+
+        ethereumAddress_ = getDefaultInstance().getEthereumAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum public key, required field
+       * </pre>
+       *
+       * <code>string ethereum_address = 2 [json_name = "ethereumAddress", (.validator.field) = { ... }</code>
+       * @param value The bytes for ethereumAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEthereumAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        ethereumAddress_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object chainPubKey_ = "";
       /**
        * <pre>
        * Public key for the blockchain, required field
        * </pre>
        *
-       * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
        * @return The chainPubKey.
        */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getChainPubKey() {
-        return chainPubKey_;
+      public java.lang.String getChainPubKey() {
+        java.lang.Object ref = chainPubKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          chainPubKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
        * <pre>
        * Public key for the blockchain, required field
        * </pre>
        *
-       * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * @return The bytes for chainPubKey.
+       */
+      public com.google.protobuf.ByteString
+          getChainPubKeyBytes() {
+        java.lang.Object ref = chainPubKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          chainPubKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Public key for the blockchain, required field
+       * </pre>
+       *
+       * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
        * @param value The chainPubKey to set.
        * @return This builder for chaining.
        */
-      public Builder setChainPubKey(com.google.protobuf.ByteString value) {
+      public Builder setChainPubKey(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -891,12 +1241,32 @@ public final class ValidatorCommands {
        * Public key for the blockchain, required field
        * </pre>
        *
-       * <code>bytes chain_pub_key = 2 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearChainPubKey() {
 
         chainPubKey_ = getDefaultInstance().getChainPubKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Public key for the blockchain, required field
+       * </pre>
+       *
+       * <code>string chain_pub_key = 3 [json_name = "chainPubKey", (.validator.field) = { ... }</code>
+       * @param value The bytes for chainPubKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChainPubKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+        chainPubKey_ = value;
         onChanged();
         return this;
       }
@@ -907,7 +1277,7 @@ public final class ValidatorCommands {
        * URL with more info on the node
        * </pre>
        *
-       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
        * @return The infoUrl.
        */
       public java.lang.String getInfoUrl() {
@@ -927,7 +1297,7 @@ public final class ValidatorCommands {
        * URL with more info on the node
        * </pre>
        *
-       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
        * @return The bytes for infoUrl.
        */
       public com.google.protobuf.ByteString
@@ -948,7 +1318,7 @@ public final class ValidatorCommands {
        * URL with more info on the node
        * </pre>
        *
-       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
        * @param value The infoUrl to set.
        * @return This builder for chaining.
        */
@@ -967,7 +1337,7 @@ public final class ValidatorCommands {
        * URL with more info on the node
        * </pre>
        *
-       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearInfoUrl() {
@@ -981,7 +1351,7 @@ public final class ValidatorCommands {
        * URL with more info on the node
        * </pre>
        *
-       * <code>string info_url = 3 [json_name = "infoUrl", (.validator.field) = { ... }</code>
+       * <code>string info_url = 4 [json_name = "infoUrl", (.validator.field) = { ... }</code>
        * @param value The bytes for infoUrl to set.
        * @return This builder for chaining.
        */
@@ -1003,7 +1373,7 @@ public final class ValidatorCommands {
        * Country code (ISO 3166-1 alpha-2) for the location of the node
        * </pre>
        *
-       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
        * @return The country.
        */
       public java.lang.String getCountry() {
@@ -1023,7 +1393,7 @@ public final class ValidatorCommands {
        * Country code (ISO 3166-1 alpha-2) for the location of the node
        * </pre>
        *
-       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
        * @return The bytes for country.
        */
       public com.google.protobuf.ByteString
@@ -1044,7 +1414,7 @@ public final class ValidatorCommands {
        * Country code (ISO 3166-1 alpha-2) for the location of the node
        * </pre>
        *
-       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
        * @param value The country to set.
        * @return This builder for chaining.
        */
@@ -1063,7 +1433,7 @@ public final class ValidatorCommands {
        * Country code (ISO 3166-1 alpha-2) for the location of the node
        * </pre>
        *
-       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearCountry() {
@@ -1077,7 +1447,7 @@ public final class ValidatorCommands {
        * Country code (ISO 3166-1 alpha-2) for the location of the node
        * </pre>
        *
-       * <code>string country = 4 [json_name = "country", (.validator.field) = { ... }</code>
+       * <code>string country = 5 [json_name = "country", (.validator.field) = { ... }</code>
        * @param value The bytes for country to set.
        * @return This builder for chaining.
        */
@@ -2844,6 +3214,33 @@ public final class ValidatorCommands {
      */
     io.vegaprotocol.vega.ChainEvents.ValidatorEventOrBuilder getValidatorOrBuilder();
 
+    /**
+     * <pre>
+     * Ethereum Staking event
+     * </pre>
+     *
+     * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+     * @return Whether the stakingEvent field is set.
+     */
+    boolean hasStakingEvent();
+    /**
+     * <pre>
+     * Ethereum Staking event
+     * </pre>
+     *
+     * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+     * @return The stakingEvent.
+     */
+    io.vegaprotocol.vega.ChainEvents.StakingEvent getStakingEvent();
+    /**
+     * <pre>
+     * Ethereum Staking event
+     * </pre>
+     *
+     * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+     */
+    io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder getStakingEventOrBuilder();
+
     public io.vegaprotocol.vega.commands.v1.ValidatorCommands.ChainEvent.EventCase getEventCase();
   }
   /**
@@ -2963,6 +3360,20 @@ public final class ValidatorCommands {
               eventCase_ = 1004;
               break;
             }
+            case 8042: {
+              io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder subBuilder = null;
+              if (eventCase_ == 1005) {
+                subBuilder = ((io.vegaprotocol.vega.ChainEvents.StakingEvent) event_).toBuilder();
+              }
+              event_ =
+                  input.readMessage(io.vegaprotocol.vega.ChainEvents.StakingEvent.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.vegaprotocol.vega.ChainEvents.StakingEvent) event_);
+                event_ = subBuilder.buildPartial();
+              }
+              eventCase_ = 1005;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3004,6 +3415,7 @@ public final class ValidatorCommands {
       ERC20(1002),
       BTC(1003),
       VALIDATOR(1004),
+      STAKING_EVENT(1005),
       EVENT_NOT_SET(0);
       private final int value;
       private EventCase(int value) {
@@ -3025,6 +3437,7 @@ public final class ValidatorCommands {
           case 1002: return ERC20;
           case 1003: return BTC;
           case 1004: return VALIDATOR;
+          case 1005: return STAKING_EVENT;
           case 0: return EVENT_NOT_SET;
           default: return null;
         }
@@ -3273,6 +3686,49 @@ public final class ValidatorCommands {
       return io.vegaprotocol.vega.ChainEvents.ValidatorEvent.getDefaultInstance();
     }
 
+    public static final int STAKING_EVENT_FIELD_NUMBER = 1005;
+    /**
+     * <pre>
+     * Ethereum Staking event
+     * </pre>
+     *
+     * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+     * @return Whether the stakingEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasStakingEvent() {
+      return eventCase_ == 1005;
+    }
+    /**
+     * <pre>
+     * Ethereum Staking event
+     * </pre>
+     *
+     * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+     * @return The stakingEvent.
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakingEvent getStakingEvent() {
+      if (eventCase_ == 1005) {
+         return (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_;
+      }
+      return io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Ethereum Staking event
+     * </pre>
+     *
+     * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+     */
+    @java.lang.Override
+    public io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder getStakingEventOrBuilder() {
+      if (eventCase_ == 1005) {
+         return (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_;
+      }
+      return io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3305,6 +3761,9 @@ public final class ValidatorCommands {
       if (eventCase_ == 1004) {
         output.writeMessage(1004, (io.vegaprotocol.vega.ChainEvents.ValidatorEvent) event_);
       }
+      if (eventCase_ == 1005) {
+        output.writeMessage(1005, (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3336,6 +3795,10 @@ public final class ValidatorCommands {
       if (eventCase_ == 1004) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1004, (io.vegaprotocol.vega.ChainEvents.ValidatorEvent) event_);
+      }
+      if (eventCase_ == 1005) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1005, (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3374,6 +3837,10 @@ public final class ValidatorCommands {
           if (!getValidator()
               .equals(other.getValidator())) return false;
           break;
+        case 1005:
+          if (!getStakingEvent()
+              .equals(other.getStakingEvent())) return false;
+          break;
         case 0:
         default:
       }
@@ -3409,6 +3876,10 @@ public final class ValidatorCommands {
         case 1004:
           hash = (37 * hash) + VALIDATOR_FIELD_NUMBER;
           hash = (53 * hash) + getValidator().hashCode();
+          break;
+        case 1005:
+          hash = (37 * hash) + STAKING_EVENT_FIELD_NUMBER;
+          hash = (53 * hash) + getStakingEvent().hashCode();
           break;
         case 0:
         default:
@@ -3612,6 +4083,13 @@ public final class ValidatorCommands {
             result.event_ = validatorBuilder_.build();
           }
         }
+        if (eventCase_ == 1005) {
+          if (stakingEventBuilder_ == null) {
+            result.event_ = event_;
+          } else {
+            result.event_ = stakingEventBuilder_.build();
+          }
+        }
         result.eventCase_ = eventCase_;
         onBuilt();
         return result;
@@ -3683,6 +4161,10 @@ public final class ValidatorCommands {
           }
           case VALIDATOR: {
             mergeValidator(other.getValidator());
+            break;
+          }
+          case STAKING_EVENT: {
+            mergeStakingEvent(other.getStakingEvent());
             break;
           }
           case EVENT_NOT_SET: {
@@ -4579,6 +5061,183 @@ public final class ValidatorCommands {
         onChanged();;
         return validatorBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.ChainEvents.StakingEvent, io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder, io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder> stakingEventBuilder_;
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       * @return Whether the stakingEvent field is set.
+       */
+      @java.lang.Override
+      public boolean hasStakingEvent() {
+        return eventCase_ == 1005;
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       * @return The stakingEvent.
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakingEvent getStakingEvent() {
+        if (stakingEventBuilder_ == null) {
+          if (eventCase_ == 1005) {
+            return (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_;
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+        } else {
+          if (eventCase_ == 1005) {
+            return stakingEventBuilder_.getMessage();
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      public Builder setStakingEvent(io.vegaprotocol.vega.ChainEvents.StakingEvent value) {
+        if (stakingEventBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          stakingEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 1005;
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      public Builder setStakingEvent(
+          io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder builderForValue) {
+        if (stakingEventBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          stakingEventBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 1005;
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      public Builder mergeStakingEvent(io.vegaprotocol.vega.ChainEvents.StakingEvent value) {
+        if (stakingEventBuilder_ == null) {
+          if (eventCase_ == 1005 &&
+              event_ != io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance()) {
+            event_ = io.vegaprotocol.vega.ChainEvents.StakingEvent.newBuilder((io.vegaprotocol.vega.ChainEvents.StakingEvent) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 1005) {
+            stakingEventBuilder_.mergeFrom(value);
+          }
+          stakingEventBuilder_.setMessage(value);
+        }
+        eventCase_ = 1005;
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      public Builder clearStakingEvent() {
+        if (stakingEventBuilder_ == null) {
+          if (eventCase_ == 1005) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 1005) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          stakingEventBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      public io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder getStakingEventBuilder() {
+        return getStakingEventFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      @java.lang.Override
+      public io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder getStakingEventOrBuilder() {
+        if ((eventCase_ == 1005) && (stakingEventBuilder_ != null)) {
+          return stakingEventBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 1005) {
+            return (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_;
+          }
+          return io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Ethereum Staking event
+       * </pre>
+       *
+       * <code>.vega.StakingEvent staking_event = 1005 [json_name = "stakingEvent"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          io.vegaprotocol.vega.ChainEvents.StakingEvent, io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder, io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder>
+          getStakingEventFieldBuilder() {
+        if (stakingEventBuilder_ == null) {
+          if (!(eventCase_ == 1005)) {
+            event_ = io.vegaprotocol.vega.ChainEvents.StakingEvent.getDefaultInstance();
+          }
+          stakingEventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              io.vegaprotocol.vega.ChainEvents.StakingEvent, io.vegaprotocol.vega.ChainEvents.StakingEvent.Builder, io.vegaprotocol.vega.ChainEvents.StakingEventOrBuilder>(
+                  (io.vegaprotocol.vega.ChainEvents.StakingEvent) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 1005;
+        onChanged();;
+        return stakingEventBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4664,22 +5323,25 @@ public final class ValidatorCommands {
       "\n$commands/v1/validator_commands.proto\022\020" +
       "vega.commands.v1\032\022chain_events.proto\0326gi" +
       "thub.com/mwitkow/go-proto-validators/val" +
-      "idator.proto\"\244\001\n\020NodeRegistration\022\037\n\007pub" +
-      "_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022*\n\rchain_pub_" +
-      "key\030\002 \001(\014B\006\342\337\037\002X\001R\013chainPubKey\022!\n\010info_u" +
-      "rl\030\003 \001(\tB\006\342\337\037\002X\001R\007infoUrl\022 \n\007country\030\004 \001" +
-      "(\tB\006\342\337\037\002X\001R\007country\"Q\n\010NodeVote\022\037\n\007pub_k" +
-      "ey\030\001 \001(\014B\006\342\337\037\002X\001R\006pubKey\022$\n\treference\030\002 " +
-      "\001(\tB\006\342\337\037\002X\001R\treference\"j\n\rNodeSignature\022" +
-      "\016\n\002id\030\001 \001(\tR\002id\022\020\n\003sig\030\002 \001(\014R\003sig\0227\n\004kin" +
-      "d\030\003 \001(\0162#.vega.commands.v1.NodeSignature" +
-      "KindR\004kind\"\375\001\n\nChainEvent\022\023\n\005tx_id\030\001 \001(\t" +
-      "R\004txId\022\024\n\005nonce\030\002 \001(\004R\005nonce\0224\n\007builtin\030" +
-      "\351\007 \001(\0132\027.vega.BuiltinAssetEventH\000R\007built" +
-      "in\022)\n\005erc20\030\352\007 \001(\0132\020.vega.ERC20EventH\000R\005" +
-      "erc20\022#\n\003btc\030\353\007 \001(\0132\016.vega.BTCEventH\000R\003b" +
-      "tc\0225\n\tvalidator\030\354\007 \001(\0132\024.vega.ValidatorE" +
-      "ventH\000R\tvalidatorB\007\n\005event*\205\001\n\021NodeSigna" +
+      "idator.proto\"\340\001\n\020NodeRegistration\022(\n\014veg" +
+      "a_pub_key\030\001 \001(\tB\006\342\337\037\002X\001R\nvegaPubKey\0221\n\020e" +
+      "thereum_address\030\002 \001(\tB\006\342\337\037\002X\001R\017ethereumA" +
+      "ddress\022*\n\rchain_pub_key\030\003 \001(\tB\006\342\337\037\002X\001R\013c" +
+      "hainPubKey\022!\n\010info_url\030\004 \001(\tB\006\342\337\037\002X\001R\007in" +
+      "foUrl\022 \n\007country\030\005 \001(\tB\006\342\337\037\002X\001R\007country\"" +
+      "Q\n\010NodeVote\022\037\n\007pub_key\030\001 \001(\014B\006\342\337\037\002X\001R\006pu" +
+      "bKey\022$\n\treference\030\002 \001(\tB\006\342\337\037\002X\001R\treferen" +
+      "ce\"j\n\rNodeSignature\022\016\n\002id\030\001 \001(\tR\002id\022\020\n\003s" +
+      "ig\030\002 \001(\014R\003sig\0227\n\004kind\030\003 \001(\0162#.vega.comma" +
+      "nds.v1.NodeSignatureKindR\004kind\"\271\002\n\nChain" +
+      "Event\022\023\n\005tx_id\030\001 \001(\tR\004txId\022\024\n\005nonce\030\002 \001(" +
+      "\004R\005nonce\0224\n\007builtin\030\351\007 \001(\0132\027.vega.Builti" +
+      "nAssetEventH\000R\007builtin\022)\n\005erc20\030\352\007 \001(\0132\020" +
+      ".vega.ERC20EventH\000R\005erc20\022#\n\003btc\030\353\007 \001(\0132" +
+      "\016.vega.BTCEventH\000R\003btc\0225\n\tvalidator\030\354\007 \001" +
+      "(\0132\024.vega.ValidatorEventH\000R\tvalidator\022:\n" +
+      "\rstaking_event\030\355\007 \001(\0132\022.vega.StakingEven" +
+      "tH\000R\014stakingEventB\007\n\005event*\205\001\n\021NodeSigna" +
       "tureKind\022#\n\037NODE_SIGNATURE_KIND_UNSPECIF" +
       "IED\020\000\022!\n\035NODE_SIGNATURE_KIND_ASSET_NEW\020\001" +
       "\022(\n$NODE_SIGNATURE_KIND_ASSET_WITHDRAWAL" +
@@ -4698,7 +5360,7 @@ public final class ValidatorCommands {
     internal_static_vega_commands_v1_NodeRegistration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_NodeRegistration_descriptor,
-        new java.lang.String[] { "PubKey", "ChainPubKey", "InfoUrl", "Country", });
+        new java.lang.String[] { "VegaPubKey", "EthereumAddress", "ChainPubKey", "InfoUrl", "Country", });
     internal_static_vega_commands_v1_NodeVote_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_vega_commands_v1_NodeVote_fieldAccessorTable = new
@@ -4716,7 +5378,7 @@ public final class ValidatorCommands {
     internal_static_vega_commands_v1_ChainEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_vega_commands_v1_ChainEvent_descriptor,
-        new java.lang.String[] { "TxId", "Nonce", "Builtin", "Erc20", "Btc", "Validator", "Event", });
+        new java.lang.String[] { "TxId", "Nonce", "Builtin", "Erc20", "Btc", "Validator", "StakingEvent", "Event", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.github.mwitkow.go_proto_validators.Validator.field);

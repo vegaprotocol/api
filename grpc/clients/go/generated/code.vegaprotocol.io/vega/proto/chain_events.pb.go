@@ -1238,6 +1238,258 @@ func (*ValidatorEvent_Add) isValidatorEvent_Action() {}
 
 func (*ValidatorEvent_Rm) isValidatorEvent_Action() {}
 
+type StakingEvent struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Index of the transaction
+	Index uint64 `protobuf:"varint,1,opt,name=index,proto3" json:"index,omitempty"`
+	// The block in which the transaction was added
+	Block uint64 `protobuf:"varint,2,opt,name=block,proto3" json:"block,omitempty"`
+	// Types that are assignable to Action:
+	//	*StakingEvent_StakeDeposited
+	//	*StakingEvent_StakeRemoved
+	Action isStakingEvent_Action `protobuf_oneof:"action"`
+}
+
+func (x *StakingEvent) Reset() {
+	*x = StakingEvent{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_chain_events_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StakingEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StakingEvent) ProtoMessage() {}
+
+func (x *StakingEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_chain_events_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StakingEvent.ProtoReflect.Descriptor instead.
+func (*StakingEvent) Descriptor() ([]byte, []int) {
+	return file_chain_events_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *StakingEvent) GetIndex() uint64 {
+	if x != nil {
+		return x.Index
+	}
+	return 0
+}
+
+func (x *StakingEvent) GetBlock() uint64 {
+	if x != nil {
+		return x.Block
+	}
+	return 0
+}
+
+func (m *StakingEvent) GetAction() isStakingEvent_Action {
+	if m != nil {
+		return m.Action
+	}
+	return nil
+}
+
+func (x *StakingEvent) GetStakeDeposited() *StakeDeposited {
+	if x, ok := x.GetAction().(*StakingEvent_StakeDeposited); ok {
+		return x.StakeDeposited
+	}
+	return nil
+}
+
+func (x *StakingEvent) GetStakeRemoved() *StakeRemoved {
+	if x, ok := x.GetAction().(*StakingEvent_StakeRemoved); ok {
+		return x.StakeRemoved
+	}
+	return nil
+}
+
+type isStakingEvent_Action interface {
+	isStakingEvent_Action()
+}
+
+type StakingEvent_StakeDeposited struct {
+	StakeDeposited *StakeDeposited `protobuf:"bytes,1001,opt,name=stake_deposited,json=stakeDeposited,proto3,oneof"`
+}
+
+type StakingEvent_StakeRemoved struct {
+	StakeRemoved *StakeRemoved `protobuf:"bytes,1002,opt,name=stake_removed,json=stakeRemoved,proto3,oneof"`
+}
+
+func (*StakingEvent_StakeDeposited) isStakingEvent_Action() {}
+
+func (*StakingEvent_StakeRemoved) isStakingEvent_Action() {}
+
+type StakeDeposited struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Ethereum Address of the user depositing stake (hex encode with 0x prefix)
+	EthereumAddress string `protobuf:"bytes,1,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
+	// The public of the party receiving the stake deposit (hex encode)
+	VegaPublicKey string `protobuf:"bytes,2,opt,name=vega_public_key,json=vegaPublicKey,proto3" json:"vega_public_key,omitempty"`
+	// The amount deposited (base 10)
+	Amount string `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
+	// The time at which the block was produced
+	// will be used to inform the core at what time
+	// the stake started to be available.
+	BlockTime int64 `protobuf:"varint,4,opt,name=block_time,json=blockTime,proto3" json:"block_time,omitempty"`
+}
+
+func (x *StakeDeposited) Reset() {
+	*x = StakeDeposited{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_chain_events_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StakeDeposited) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StakeDeposited) ProtoMessage() {}
+
+func (x *StakeDeposited) ProtoReflect() protoreflect.Message {
+	mi := &file_chain_events_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StakeDeposited.ProtoReflect.Descriptor instead.
+func (*StakeDeposited) Descriptor() ([]byte, []int) {
+	return file_chain_events_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *StakeDeposited) GetEthereumAddress() string {
+	if x != nil {
+		return x.EthereumAddress
+	}
+	return ""
+}
+
+func (x *StakeDeposited) GetVegaPublicKey() string {
+	if x != nil {
+		return x.VegaPublicKey
+	}
+	return ""
+}
+
+func (x *StakeDeposited) GetAmount() string {
+	if x != nil {
+		return x.Amount
+	}
+	return ""
+}
+
+func (x *StakeDeposited) GetBlockTime() int64 {
+	if x != nil {
+		return x.BlockTime
+	}
+	return 0
+}
+
+type StakeRemoved struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Ethereum address of the user removing stake (hex encode with 0x prefix)
+	EthereumAddress string `protobuf:"bytes,1,opt,name=ethereum_address,json=ethereumAddress,proto3" json:"ethereum_address,omitempty"`
+	// The public key of the party from which to remove stake (hex encode)
+	VegaPublicKey string `protobuf:"bytes,2,opt,name=vega_public_key,json=vegaPublicKey,proto3" json:"vega_public_key,omitempty"`
+	// The amount removed (base 10)
+	Amount string `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
+	// The time at which the block was produced
+	// will be used to inform the core at what time
+	// the stake was made unavailable.
+	BlockTime int64 `protobuf:"varint,4,opt,name=block_time,json=blockTime,proto3" json:"block_time,omitempty"`
+}
+
+func (x *StakeRemoved) Reset() {
+	*x = StakeRemoved{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_chain_events_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *StakeRemoved) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StakeRemoved) ProtoMessage() {}
+
+func (x *StakeRemoved) ProtoReflect() protoreflect.Message {
+	mi := &file_chain_events_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StakeRemoved.ProtoReflect.Descriptor instead.
+func (*StakeRemoved) Descriptor() ([]byte, []int) {
+	return file_chain_events_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *StakeRemoved) GetEthereumAddress() string {
+	if x != nil {
+		return x.EthereumAddress
+	}
+	return ""
+}
+
+func (x *StakeRemoved) GetVegaPublicKey() string {
+	if x != nil {
+		return x.VegaPublicKey
+	}
+	return ""
+}
+
+func (x *StakeRemoved) GetAmount() string {
+	if x != nil {
+		return x.Amount
+	}
+	return ""
+}
+
+func (x *StakeRemoved) GetBlockTime() int64 {
+	if x != nil {
+		return x.BlockTime
+	}
+	return 0
+}
+
 var File_chain_events_proto protoreflect.FileDescriptor
 
 var file_chain_events_proto_rawDesc = []byte{
@@ -1373,11 +1625,43 @@ var file_chain_events_proto_rawDesc = []byte{
 	0x28, 0x0a, 0x02, 0x72, 0x6d, 0x18, 0xea, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x76,
 	0x65, 0x67, 0x61, 0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x56, 0x61, 0x6c, 0x69, 0x64, 0x61,
 	0x74, 0x6f, 0x72, 0x48, 0x00, 0x52, 0x02, 0x72, 0x6d, 0x42, 0x08, 0x0a, 0x06, 0x61, 0x63, 0x74,
-	0x69, 0x6f, 0x6e, 0x42, 0x37, 0x0a, 0x14, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x5a, 0x1f, 0x63, 0x6f, 0x64,
-	0x65, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69,
-	0x6f, 0x2f, 0x76, 0x65, 0x67, 0x61, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x6f, 0x6e, 0x22, 0xc2, 0x01, 0x0a, 0x0c, 0x53, 0x74, 0x61, 0x6b, 0x69, 0x6e, 0x67, 0x45,
+	0x76, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x04, 0x52, 0x05, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x12, 0x14, 0x0a, 0x05, 0x62, 0x6c,
+	0x6f, 0x63, 0x6b, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x05, 0x62, 0x6c, 0x6f, 0x63, 0x6b,
+	0x12, 0x40, 0x0a, 0x0f, 0x73, 0x74, 0x61, 0x6b, 0x65, 0x5f, 0x64, 0x65, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x65, 0x64, 0x18, 0xe9, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x76, 0x65, 0x67,
+	0x61, 0x2e, 0x53, 0x74, 0x61, 0x6b, 0x65, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x65, 0x64,
+	0x48, 0x00, 0x52, 0x0e, 0x73, 0x74, 0x61, 0x6b, 0x65, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x65, 0x64, 0x12, 0x3a, 0x0a, 0x0d, 0x73, 0x74, 0x61, 0x6b, 0x65, 0x5f, 0x72, 0x65, 0x6d, 0x6f,
+	0x76, 0x65, 0x64, 0x18, 0xea, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x76, 0x65, 0x67,
+	0x61, 0x2e, 0x53, 0x74, 0x61, 0x6b, 0x65, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x64, 0x48, 0x00,
+	0x52, 0x0c, 0x73, 0x74, 0x61, 0x6b, 0x65, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x64, 0x42, 0x08,
+	0x0a, 0x06, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x9a, 0x01, 0x0a, 0x0e, 0x53, 0x74, 0x61,
+	0x6b, 0x65, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x65, 0x64, 0x12, 0x29, 0x0a, 0x10, 0x65,
+	0x74, 0x68, 0x65, 0x72, 0x65, 0x75, 0x6d, 0x5f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x65, 0x74, 0x68, 0x65, 0x72, 0x65, 0x75, 0x6d, 0x41,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x12, 0x26, 0x0a, 0x0f, 0x76, 0x65, 0x67, 0x61, 0x5f, 0x70,
+	0x75, 0x62, 0x6c, 0x69, 0x63, 0x5f, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0d, 0x76, 0x65, 0x67, 0x61, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x4b, 0x65, 0x79, 0x12, 0x16,
+	0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06,
+	0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x5f,
+	0x74, 0x69, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x62, 0x6c, 0x6f, 0x63,
+	0x6b, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x98, 0x01, 0x0a, 0x0c, 0x53, 0x74, 0x61, 0x6b, 0x65, 0x52,
+	0x65, 0x6d, 0x6f, 0x76, 0x65, 0x64, 0x12, 0x29, 0x0a, 0x10, 0x65, 0x74, 0x68, 0x65, 0x72, 0x65,
+	0x75, 0x6d, 0x5f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0f, 0x65, 0x74, 0x68, 0x65, 0x72, 0x65, 0x75, 0x6d, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73,
+	0x73, 0x12, 0x26, 0x0a, 0x0f, 0x76, 0x65, 0x67, 0x61, 0x5f, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63,
+	0x5f, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x76, 0x65, 0x67, 0x61,
+	0x50, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x4b, 0x65, 0x79, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f,
+	0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e,
+	0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x54, 0x69, 0x6d, 0x65,
+	0x42, 0x37, 0x0a, 0x14, 0x69, 0x6f, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x63, 0x6f, 0x6c, 0x2e, 0x76, 0x65, 0x67, 0x61, 0x5a, 0x1f, 0x63, 0x6f, 0x64, 0x65, 0x2e, 0x76,
+	0x65, 0x67, 0x61, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x2e, 0x69, 0x6f, 0x2f, 0x76,
+	0x65, 0x67, 0x61, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -1392,7 +1676,7 @@ func file_chain_events_proto_rawDescGZIP() []byte {
 	return file_chain_events_proto_rawDescData
 }
 
-var file_chain_events_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_chain_events_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
 var file_chain_events_proto_goTypes = []interface{}{
 	(*BuiltinAssetDeposit)(nil),    // 0: vega.BuiltinAssetDeposit
 	(*BuiltinAssetWithdrawal)(nil), // 1: vega.BuiltinAssetWithdrawal
@@ -1411,6 +1695,9 @@ var file_chain_events_proto_goTypes = []interface{}{
 	(*AddValidator)(nil),           // 14: vega.AddValidator
 	(*RemoveValidator)(nil),        // 15: vega.RemoveValidator
 	(*ValidatorEvent)(nil),         // 16: vega.ValidatorEvent
+	(*StakingEvent)(nil),           // 17: vega.StakingEvent
+	(*StakeDeposited)(nil),         // 18: vega.StakeDeposited
+	(*StakeRemoved)(nil),           // 19: vega.StakeRemoved
 }
 var file_chain_events_proto_depIdxs = []int32{
 	0,  // 0: vega.BuiltinAssetEvent.deposit:type_name -> vega.BuiltinAssetDeposit
@@ -1427,11 +1714,13 @@ var file_chain_events_proto_depIdxs = []int32{
 	13, // 11: vega.RemoveValidator.id:type_name -> vega.Identifier
 	14, // 12: vega.ValidatorEvent.add:type_name -> vega.AddValidator
 	15, // 13: vega.ValidatorEvent.rm:type_name -> vega.RemoveValidator
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	18, // 14: vega.StakingEvent.stake_deposited:type_name -> vega.StakeDeposited
+	19, // 15: vega.StakingEvent.stake_removed:type_name -> vega.StakeRemoved
+	16, // [16:16] is the sub-list for method output_type
+	16, // [16:16] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_chain_events_proto_init() }
@@ -1644,6 +1933,42 @@ func file_chain_events_proto_init() {
 				return nil
 			}
 		}
+		file_chain_events_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StakingEvent); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_chain_events_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StakeDeposited); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_chain_events_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*StakeRemoved); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_chain_events_proto_msgTypes[2].OneofWrappers = []interface{}{
 		(*BuiltinAssetEvent_Deposit)(nil),
@@ -1667,13 +1992,17 @@ func file_chain_events_proto_init() {
 		(*ValidatorEvent_Add)(nil),
 		(*ValidatorEvent_Rm)(nil),
 	}
+	file_chain_events_proto_msgTypes[17].OneofWrappers = []interface{}{
+		(*StakingEvent_StakeDeposited)(nil),
+		(*StakingEvent_StakeRemoved)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_chain_events_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   17,
+			NumMessages:   20,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

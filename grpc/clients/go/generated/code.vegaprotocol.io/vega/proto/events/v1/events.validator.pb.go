@@ -19,7 +19,16 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-func (this *StakingEvent) Validate() error {
+func (this *StakeLinking) Validate() error {
+	return nil
+}
+func (this *CheckpointEvent) Validate() error {
+	return nil
+}
+func (this *RewardPayoutEvent) Validate() error {
+	return nil
+}
+func (this *ValidatorScoreEvent) Validate() error {
 	return nil
 }
 func (this *DelegationBalanceEvent) Validate() error {
@@ -327,10 +336,10 @@ func (this *BusEvent) Validate() error {
 			}
 		}
 	}
-	if oneOfNester, ok := this.GetEvent().(*BusEvent_PendingDelegationBalance); ok {
-		if oneOfNester.PendingDelegationBalance != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.PendingDelegationBalance); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("PendingDelegationBalance", err)
+	if oneOfNester, ok := this.GetEvent().(*BusEvent_ValidatorScore); ok {
+		if oneOfNester.ValidatorScore != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.ValidatorScore); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("ValidatorScore", err)
 			}
 		}
 	}
@@ -348,10 +357,24 @@ func (this *BusEvent) Validate() error {
 			}
 		}
 	}
-	if oneOfNester, ok := this.GetEvent().(*BusEvent_StakingEvent); ok {
-		if oneOfNester.StakingEvent != nil {
-			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.StakingEvent); err != nil {
-				return github_com_mwitkow_go_proto_validators.FieldError("StakingEvent", err)
+	if oneOfNester, ok := this.GetEvent().(*BusEvent_StakeLinking); ok {
+		if oneOfNester.StakeLinking != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.StakeLinking); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("StakeLinking", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetEvent().(*BusEvent_RewardPayout); ok {
+		if oneOfNester.RewardPayout != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.RewardPayout); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("RewardPayout", err)
+			}
+		}
+	}
+	if oneOfNester, ok := this.GetEvent().(*BusEvent_Checkpoint); ok {
+		if oneOfNester.Checkpoint != nil {
+			if err := github_com_mwitkow_go_proto_validators.CallValidatorIfExists(oneOfNester.Checkpoint); err != nil {
+				return github_com_mwitkow_go_proto_validators.FieldError("Checkpoint", err)
 			}
 		}
 	}

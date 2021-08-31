@@ -51,7 +51,7 @@ struct TableStruct_commands_2fv1_2fcommands_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -79,6 +79,9 @@ extern OrderSubmissionDefaultTypeInternal _OrderSubmission_default_instance_;
 class ProposalSubmission;
 class ProposalSubmissionDefaultTypeInternal;
 extern ProposalSubmissionDefaultTypeInternal _ProposalSubmission_default_instance_;
+class RestoreSnapshot;
+class RestoreSnapshotDefaultTypeInternal;
+extern RestoreSnapshotDefaultTypeInternal _RestoreSnapshot_default_instance_;
 class UndelegateSubmission;
 class UndelegateSubmissionDefaultTypeInternal;
 extern UndelegateSubmissionDefaultTypeInternal _UndelegateSubmission_default_instance_;
@@ -98,6 +101,7 @@ template<> ::vega::commands::v1::OrderAmendment* Arena::CreateMaybeMessage<::veg
 template<> ::vega::commands::v1::OrderCancellation* Arena::CreateMaybeMessage<::vega::commands::v1::OrderCancellation>(Arena*);
 template<> ::vega::commands::v1::OrderSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::OrderSubmission>(Arena*);
 template<> ::vega::commands::v1::ProposalSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::ProposalSubmission>(Arena*);
+template<> ::vega::commands::v1::RestoreSnapshot* Arena::CreateMaybeMessage<::vega::commands::v1::RestoreSnapshot>(Arena*);
 template<> ::vega::commands::v1::UndelegateSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::UndelegateSubmission>(Arena*);
 template<> ::vega::commands::v1::VoteSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::VoteSubmission>(Arena*);
 template<> ::vega::commands::v1::WithdrawSubmission* Arena::CreateMaybeMessage<::vega::commands::v1::WithdrawSubmission>(Arena*);
@@ -1869,6 +1873,149 @@ class UndelegateSubmission PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
 };
+// -------------------------------------------------------------------
+
+class RestoreSnapshot PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vega.commands.v1.RestoreSnapshot) */ {
+ public:
+  inline RestoreSnapshot() : RestoreSnapshot(nullptr) {}
+  virtual ~RestoreSnapshot();
+
+  RestoreSnapshot(const RestoreSnapshot& from);
+  RestoreSnapshot(RestoreSnapshot&& from) noexcept
+    : RestoreSnapshot() {
+    *this = ::std::move(from);
+  }
+
+  inline RestoreSnapshot& operator=(const RestoreSnapshot& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RestoreSnapshot& operator=(RestoreSnapshot&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RestoreSnapshot& default_instance();
+
+  static inline const RestoreSnapshot* internal_default_instance() {
+    return reinterpret_cast<const RestoreSnapshot*>(
+               &_RestoreSnapshot_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(RestoreSnapshot& a, RestoreSnapshot& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RestoreSnapshot* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RestoreSnapshot* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RestoreSnapshot* New() const final {
+    return CreateMaybeMessage<RestoreSnapshot>(nullptr);
+  }
+
+  RestoreSnapshot* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RestoreSnapshot>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RestoreSnapshot& from);
+  void MergeFrom(const RestoreSnapshot& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RestoreSnapshot* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "vega.commands.v1.RestoreSnapshot";
+  }
+  protected:
+  explicit RestoreSnapshot(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_commands_2fv1_2fcommands_2eproto);
+    return ::descriptor_table_commands_2fv1_2fcommands_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+  };
+  // bytes data = 1 [json_name = "data"];
+  void clear_data();
+  const std::string& data() const;
+  void set_data(const std::string& value);
+  void set_data(std::string&& value);
+  void set_data(const char* value);
+  void set_data(const void* value, size_t size);
+  std::string* mutable_data();
+  std::string* release_data();
+  void set_allocated_data(std::string* data);
+  private:
+  const std::string& _internal_data() const;
+  void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
+  public:
+
+  // @@protoc_insertion_point(class_scope:vega.commands.v1.RestoreSnapshot)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_commands_2fv1_2fcommands_2eproto;
+};
 // ===================================================================
 
 
@@ -3600,9 +3747,76 @@ inline void UndelegateSubmission::set_method(::vega::commands::v1::UndelegateSub
   // @@protoc_insertion_point(field_set:vega.commands.v1.UndelegateSubmission.method)
 }
 
+// -------------------------------------------------------------------
+
+// RestoreSnapshot
+
+// bytes data = 1 [json_name = "data"];
+inline void RestoreSnapshot::clear_data() {
+  data_.ClearToEmpty();
+}
+inline const std::string& RestoreSnapshot::data() const {
+  // @@protoc_insertion_point(field_get:vega.commands.v1.RestoreSnapshot.data)
+  return _internal_data();
+}
+inline void RestoreSnapshot::set_data(const std::string& value) {
+  _internal_set_data(value);
+  // @@protoc_insertion_point(field_set:vega.commands.v1.RestoreSnapshot.data)
+}
+inline std::string* RestoreSnapshot::mutable_data() {
+  // @@protoc_insertion_point(field_mutable:vega.commands.v1.RestoreSnapshot.data)
+  return _internal_mutable_data();
+}
+inline const std::string& RestoreSnapshot::_internal_data() const {
+  return data_.Get();
+}
+inline void RestoreSnapshot::_internal_set_data(const std::string& value) {
+
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void RestoreSnapshot::set_data(std::string&& value) {
+
+  data_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:vega.commands.v1.RestoreSnapshot.data)
+}
+inline void RestoreSnapshot::set_data(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:vega.commands.v1.RestoreSnapshot.data)
+}
+inline void RestoreSnapshot::set_data(const void* value,
+    size_t size) {
+
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:vega.commands.v1.RestoreSnapshot.data)
+}
+inline std::string* RestoreSnapshot::_internal_mutable_data() {
+
+  return data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* RestoreSnapshot::release_data() {
+  // @@protoc_insertion_point(field_release:vega.commands.v1.RestoreSnapshot.data)
+  return data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void RestoreSnapshot::set_allocated_data(std::string* data) {
+  if (data != nullptr) {
+
+  } else {
+
+  }
+  data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:vega.commands.v1.RestoreSnapshot.data)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

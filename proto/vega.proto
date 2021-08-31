@@ -6,6 +6,7 @@ option go_package = "code.vegaprotocol.io/vega/proto";
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
 import "markets.proto";
+import "assets.proto";
 
 
 // A side relates to the direction of an order, to Buy, or Sell
@@ -61,6 +62,7 @@ message Timestamp {
 message Party {
   // A unique identifier for the party, typically represented by a public key
   string id = 1 [(validator.field) = {msg_exists : true}];
+  repeated Delegation delegations = 2;
 }
 
 // Risk factors are used to calculate the current risk associated with orders trading on a given market
@@ -531,75 +533,6 @@ message PositionTrade {
   uint64 price = 2;
 }
 
-// Vega domain specific statistics as reported by the node the caller is connected to
-message Statistics {
-  // Current block height as reported by the Vega blockchain
-  uint64 block_height = 1;
-  // Current backlog length (number of transactions) that are waiting to be included in a block
-  uint64 backlog_length = 2;
-  // Total number of connected peers to this node
-  uint64 total_peers = 3;
-  // Genesis block date and time formatted in ISO-8601 datetime format with nanosecond precision
-  string genesis_time = 4;
-  // Current system date and time formatted in ISO-8601 datetime format with nanosecond precision
-  string current_time = 5;
-  // Current Vega date and time formatted in ISO-8601 datetime format with nanosecond precision
-  string vega_time = 6;
-  // Status of the connection to the Vega blockchain
-  // - See [`ChainStatus`](#vega.ChainStatus)
-  ChainStatus status = 7;
-  // Transactions per block
-  uint64 tx_per_block = 8;
-  // Average transaction size in bytes
-  uint64 average_tx_bytes = 9;
-  // Average orders per block
-  uint64 average_orders_per_block = 10;
-  // Trades emitted per second
-  uint64 trades_per_second = 11;
-  // Orders processed per second
-  uint64 orders_per_second = 12;
-  // Total markets on this Vega network
-  uint64 total_markets = 13;
-  // Total number of order amendments since genesis (on all markets)
-  uint64 total_amend_order = 16;
-  // Total number of order cancellations since genesis (on all markets)
-  uint64 total_cancel_order = 17;
-  // Total number of order submissions since genesis (on all markets)
-  uint64 total_create_order = 18;
-  // Total number of orders processed since genesis (on all markets)
-  uint64 total_orders = 19;
-  // Total number of trades emitted since genesis (on all markets)
-  uint64 total_trades = 20;
-  // Current number of stream subscribers to order data
-  uint32 order_subscriptions = 21;
-  // Current number of stream subscribers to trade data
-  uint32 trade_subscriptions = 22;
-  // Current number of stream subscribers to candle-stick data
-  uint32 candle_subscriptions = 23;
-  // Current number of stream subscribers to market depth data
-  uint32 market_depth_subscriptions = 24;
-  // Current number of stream subscribers to positions data
-  uint32 positions_subscriptions = 25;
-  // Current number of stream subscribers to account data
-  uint32 account_subscriptions = 26;
-  // Current number of stream subscribers to market data
-  uint32 market_data_subscriptions = 27;
-  // The version hash of the Vega node software
-  string app_version_hash = 28;
-  // The version of the Vega node software
-  string app_version = 29;
-  // The version of the underlying Vega blockchain
-  string chain_version = 30;
-  // Current block duration, in nanoseconds
-  uint64 block_duration = 31;
-  // Total uptime for this node formatted in ISO-8601 datetime format with nanosecond precision
-  string uptime = 32;
-  // Unique identifier for the underlying Vega blockchain
-  string chain_id = 33;
-  // Current number of stream subscribers to market depth update data
-  uint32 market_depth_updates_subscriptions = 34;
-}
-
 // The Vega blockchain status as reported by the node the caller is connected to
 enum ChainStatus {
   // Default value, always invalid
@@ -999,45 +932,6 @@ message ErrorDetail {
   string inner = 3;
 }
 
-// Represents a transaction to be sent to Vega
-message Transaction {
-  // One of the set of Vega commands (proto marshalled)
-  bytes input_data = 1;
-  // A random number used to provide uniqueness and prevent against replay attack
-  uint64 nonce = 2;
-  // The block height associated to the transaction, this should always be current block height
-  // of the node at the time of sending the Tx and block height is used as a mechanism
-  // for replay protection
-  uint64 block_height = 3;
-  // The sender of the transaction,
-  // any of the following would be valid:
-  oneof from {
-    // The address of the sender
-    bytes address = 1001;
-    // The public key of the sender
-    bytes pub_key = 1002;
-  }
-}
-
-// A signature to be authenticate a transaction
-// and to be verified by the vega network
-message Signature {
-  // The bytes of the signature
-  bytes sig = 1;
-  // The algorithm used to create the signature
-  string algo = 2;
-  // The version of the signature used to create the signature
-  uint32 version = 3;
-}
-
-// A bundle of a transaction and it's signature
-message SignedBundle {
-  // Transaction payload (proto marshalled)
-  bytes tx = 1;
-  // The signature authenticating the transaction
-  Signature sig = 2;
-}
-
 // Represents a network parameter on Vega
 message NetworkParameter {
   // The unique key
@@ -1124,4 +1018,127 @@ message EthereumConfig {
   string bridge_address = 3;
   // Number of confirmations
   uint32 confirmations = 4;
+  // Staking Bridge addresses for the ethereum network
+  repeated string staking_bridge_addresses = 5;
+}
+
+// Node status type
+enum NodeStatus {
+  NODE_STATUS_UNSPECIFIED = 0;
+  // The node is validating
+  NODE_STATUS_VALIDATOR = 1;
+  // The node is non-validating
+  NODE_STATUS_NON_VALIDATOR = 2;
+}
+
+// Describes in both human readable and block time when an epoch spans
+message EpochTimestamps {
+  // Timestamp of epoch start in nanoseconds, empty if not started
+  // - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  int64 start_time = 1;
+  // Timestamp of epoch end in nanoseconds, empty if not started
+  // - See [`VegaTimeResponse`](#api.VegaTimeResponse).`timestamp`
+  int64 end_time = 2;
+  // Height of first block in the epoch
+  uint64 first_block = 3;
+  // Height of last block in the epoch, empty if not ended
+  uint64 last_block = 4;
+}
+
+message Epoch {
+  // Sequence is used as epoch indentifier
+  uint64 seq = 1;
+  // Timestamps for start/end etc
+  EpochTimestamps timestamps = 2 [(validator.field) = {msg_exists : true}];
+  // Validators that participated in this epoch
+  repeated Node validators = 3;
+  // List of all delegations in epoch
+  repeated Delegation delegations = 4;
+}
+
+message EpochParticipation {
+  Epoch epoch = 1 [(validator.field) = {string_not_empty : true}];
+  uint64 offline = 2;
+  uint64 online = 3;
+  double total_rewards = 4;
+}
+
+message EpochData {
+  // Total number of epochs since node was created
+  int32 total = 1;
+  // Total number of offline epochs since node was created
+  int32 offline = 2;
+  // Total number of online epochs since node was created
+  int32 online = 3;
+}
+
+message Node {
+  // The node url eg n01.vega.xyz
+  string id = 1;
+  // Pub key of the node operator
+  string pub_key = 2 [(validator.field) = {string_not_empty : true}];
+  // URL where I can find out more info on the node
+  string info_url = 3;
+  // Country code for the location of the node
+  string location = 4;
+  // The amount the node has put up themselves
+  string staked_by_operator = 5;
+  // The amount of stake that has been delegated by token holders
+  string staked_by_delegates = 6;;
+  // Total amount staked on node
+  string staked_total = 7;
+  // Max amount of (wanted) stake, is this a network param or a node param
+  string max_intended_stake = 8;
+  // Amount of stake on the next epoch
+  string pending_stake = 9;
+  // Informantion about epoch
+  EpochData epoch_data = 10 [(validator.field) = {msg_exists : true}];
+  // Node status
+  NodeStatus status = 11 [(validator.field) = {msg_exists : true}];
+  // Node's delegations
+  repeated Delegation delagations = 12;
+}
+
+message NodeData {
+  // Total staked amount across all nodes
+  string staked_total = 1;
+  // Total number of nodes
+  uint32 total_nodes = 2;
+  // Number of inactive nodes
+  uint32 inactive_nodes = 3;
+  // Number of nodes validating
+  uint32 validating_nodes = 4;
+  // Total uptime for all epochs across all nodes
+  float uptime = 5;
+}
+
+message Delegation {
+  // Party which is delegating
+  string party = 1;
+  // Node ID
+  string node_id = 2;
+  // Amount delegated
+  string amount = 3;
+  // Epoch of delegation
+  string epoch_seq = 4;
+}
+
+// Details for a single reward payment
+message RewardDetails {
+   string asset_id = 1;
+   string party_id = 2;
+   uint64 epoch = 3;
+   string amount = 4;
+   string percentage_of_total = 5;
+   int64 received_at = 6;
+}
+
+// Details for rewards for a single asset
+message RewardPerAssetDetail {
+  // asset details
+  string asset = 1;
+  // rewards ordered by received_at
+  repeated RewardDetails details = 2;
+  // Total amount of rewards for the asset
+  string total_for_asset = 3;
 }
